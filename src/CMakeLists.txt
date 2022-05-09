@@ -3,8 +3,10 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src)
 
 set(SRC
     ${SRCROOT}/dummy.cpp
-    ${SRCROOT}/raylib/Window.hpp
-    ${SRCROOT}/raylib/Window.cpp
+    ${SRCROOT}/Raylib/Camera3D.hpp
+    ${SRCROOT}/Raylib/Camera3D.cpp
+    ${SRCROOT}/Raylib/Window.hpp
+    ${SRCROOT}/Raylib/Window.cpp
 )
 
 set(INCDIRS ${INCROOT})
