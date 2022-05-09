@@ -1,0 +1,23 @@
+# Mirrors the commits of this repo to the Epitech repo
+name: Mirroring
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  to_epitech_github:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # Fetch depth set to 0 means that all commits are to be mirrored
+
+    - uses: pixta-dev/repository-mirroring-action@v1
+      with:
+        target_repo_url:
+          git@github.com:EpitechPromo2025/B-YEP-400-NAN-4-1-indiestudio-quentin.camilleri.git
+        ssh_private_key:
+          ${{secrets.EPITECH_MIRROR_SSH_KEY}}

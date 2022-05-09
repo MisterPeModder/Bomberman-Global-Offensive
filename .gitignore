@@ -1,0 +1,14 @@
+# IDEs
+.vscode
+.idea
+*.sln
+
+# Build Data
+*.o
+/build
+
+# Executable
+/bomberman
+
+# Shame on you!
+vgcore.*
