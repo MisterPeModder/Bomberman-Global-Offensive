@@ -30,34 +30,34 @@ void raylib::Camera3D::end3D()
     EndMode3D();
 }
 
-Vector3 raylib::Camera3D::getPosition() const
+raylib::Vector3 raylib::Camera3D::getPosition() const
 {
-    return _camera.position;
+    return {_camera.position.x, _camera.position.y, _camera.position.z};
 }
 
-void raylib::Camera3D::setPosition(Vector3 position)
+void raylib::Camera3D::setPosition(raylib::Vector3 position)
 {
-    _camera.position = position;
+    _camera.position = {position.getX(), position.getY(), position.getZ()};
 }
 
-Vector3 raylib::Camera3D::getTarget() const
+raylib::Vector3 raylib::Camera3D::getTarget() const
 {
-    return _camera.target;
+    return {_camera.target.x, _camera.target.y, _camera.target.z};
 }
 
-void raylib::Camera3D::setTarget(Vector3 target)
+void raylib::Camera3D::setTarget(raylib::Vector3 target)
 {
-    _camera.target = target;
+    _camera.target = {target.getX(), target.getY(), target.getZ()};
 }
 
-Vector3 raylib::Camera3D::getUp() const
+raylib::Vector3 raylib::Camera3D::getUp() const
 {
-    return _camera.up;
+    return {_camera.up.x, _camera.up.y, _camera.up.z};
 }
 
-void raylib::Camera3D::setUp(Vector3 up)
+void raylib::Camera3D::setUp(raylib::Vector3 up)
 {
-    _camera.up = up;
+    _camera.up = {up.getX(), up.getY(), up.getZ()};
 }
 
 float raylib::Camera3D::getFovy() const
