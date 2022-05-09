@@ -8,6 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 # Add ./cmake to the module path
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+find_package(raylib REQUIRED)
+
 # Unit testing
 if (BUILD_TEST_SUITE)
     # Check for criterion
