@@ -3,6 +3,8 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src)
 
 set(SRC
     ${SRCROOT}/dummy.cpp
+    ${SRCROOT}/raylib/Window.hpp
+    ${SRCROOT}/raylib/Window.cpp
 )
 
 set(INCDIRS ${INCROOT})
@@ -19,6 +21,7 @@ target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
 target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME})
+target_link_libraries(${TARGET_NAME} PUBLIC raylib)
 
 add_custom_command(TARGET ${TARGET_NAME} 
 	POST_BUILD
