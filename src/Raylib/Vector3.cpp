@@ -11,8 +11,19 @@ raylib::Vector3::Vector3(float x, float y, float z)
  : _x(x), _y(y), _z(z)
 {
 }
+
 raylib::Vector3::Vector3(float x, float y)
  : _x(x), _y(y), _z(0.f)
+{
+}
+
+raylib::Vector3::Vector3(float x)
+ : _x(x), _y(0.f), _z(0.f)
+{
+}
+
+raylib::Vector3::Vector3()
+ : _x(0.f), _y(0.f), _z(0.f)
 {
 }
 

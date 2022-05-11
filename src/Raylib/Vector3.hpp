@@ -21,6 +21,11 @@ class Vector3 {
         /// @param x the X axis value of the vector
         /// @param y the Y axis value of the vector
         Vector3(float x, float y);
+        /// @brief 1D constructor of the vector (defaults Y and Z to 0)
+        /// @param x the X axis value of the vector
+        Vector3(float x);
+        /// @brief Default constructor of the vector (defaults all values to 0)
+        Vector3();
         /// @brief The copy constructor
         /// @param vector the vector to copy
         Vector3(const Vector3& vector);
