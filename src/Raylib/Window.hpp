@@ -26,8 +26,8 @@ class Window {
         void endDrawing();
 
     private:
-        Window() {}
-        Window(const Window&);
+        explicit Window() {}
+        explicit Window(const Window&);
         Window &operator=(const Window&);
 };
 

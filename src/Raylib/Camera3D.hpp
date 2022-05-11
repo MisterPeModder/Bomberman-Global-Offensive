@@ -17,11 +17,11 @@ namespace raylib {
 
 class Camera3D {
     public:
-        Camera3D();
+        explicit Camera3D();
         ~Camera3D();
-        Camera3D(const Camera3D&) = delete;
+        explicit Camera3D(const Camera3D&) = delete;
         Camera3D &operator=(const Camera3D&) = delete;
-        Camera3D(Camera3D&&);
+        explicit Camera3D(Camera3D&&);
         Camera3D &operator=(Camera3D&&);
         void begin3D();
         void end3D();
