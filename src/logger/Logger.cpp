@@ -33,10 +33,22 @@ Logger::Logger(std::string_view filename)
     setStyle();
 }
 
-void Logger::displayInformations(std::stringstream &ss)
+void Logger::displayTime(std::stringstream &ss, std::string_view format)
 {
     std::time_t now = std::time(nullptr);
+
+#ifdef _WIN32
     tm loctm;
+    localtime_s(&loctm, &now);
+    ss << std::put_time(&loctm, format.data());
+#else
+    ss << std::put_time(std::localtime(&now), format.data());
+
+#endif
+}
+
+void Logger::displayInformations(std::stringstream &ss)
+{
     bool firstInfo = true;
     auto add_info = [&, this](std::string_view name, std::function<void(void)> writeInfo) {
         if (!firstInfo)
@@ -61,15 +73,9 @@ void Logger::displayInformations(std::stringstream &ss)
     if ((*this)[LogInfo::ThreadId])
         add_info("ThreadID", [&]() { ss << std::this_thread::get_id(); });
     if ((*this)[LogInfo::Date])
-        add_info("", [&]() {
-            localtime_s(&loctm, &now);
-            ss << std::put_time(&loctm, "%x");
-        });
+        add_info("", [&]() { displayTime(ss, "%x"); });
     if ((*this)[LogInfo::Time])
-        add_info("", [&]() {
-            localtime_s(&loctm, &now);
-            ss << std::put_time(&loctm, "%X");
-        });
+        add_info("", [&]() { displayTime(ss, "%X"); });
     if (!firstInfo)
         ss << " ";
 }

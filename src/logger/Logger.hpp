@@ -127,6 +127,7 @@ class Logger {
 
   private:
     void displayInformations(std::stringstream &ss);
+    void displayTime(std::stringstream &ss, std::string_view format);
 
     std::array<bool, static_cast<size_t>(LogInfo::Count)> _infos;
     Severity _logLevel = Severity::Information;
