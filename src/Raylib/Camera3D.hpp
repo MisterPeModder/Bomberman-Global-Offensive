@@ -5,7 +5,8 @@
 ** Camera3D
 */
 
-#pragma once
+#ifndef CAMERA3D_HPP_
+#define CAMERA3D_HPP_
 
 #include "Vector3.hpp"
 extern "C" {
@@ -18,6 +19,10 @@ class Camera3D {
     public:
         Camera3D();
         ~Camera3D();
+        Camera3D(const Camera3D&) = delete;
+        Camera3D &operator=(const Camera3D&) = delete;
+        Camera3D(Camera3D&&);
+        Camera3D &operator=(Camera3D&&);
         void begin3D();
         void end3D();
         raylib::Vector3 getPosition() const;
@@ -31,9 +36,10 @@ class Camera3D {
         int getProjection() const;
         void setProjection(int);
 
-    protected:
     private:
         ::Camera3D _camera;
 };
 
 }
+
+#endif /* CAMERA3D_HPP_ */

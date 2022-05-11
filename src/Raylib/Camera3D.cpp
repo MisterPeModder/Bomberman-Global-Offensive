@@ -20,6 +20,17 @@ raylib::Camera3D::~Camera3D()
 {
 }
 
+raylib::Camera3D::Camera3D(Camera3D&& camera)
+ : _camera(camera._camera)
+{
+}
+
+raylib::Camera3D &raylib::Camera3D::operator=(Camera3D&& camera)
+{
+    _camera = camera._camera;
+    return *this;
+}
+
 void raylib::Camera3D::begin3D()
 {
     BeginMode3D(_camera);

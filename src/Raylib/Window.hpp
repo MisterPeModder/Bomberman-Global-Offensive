@@ -5,15 +5,22 @@
 ** Window
 */
 
-#pragma once
+#ifndef WINDOW_HPP_
+#define WINDOW_HPP_
 
 namespace raylib {
 
 class Window {
     public:
-        Window();
+        static Window& getInstance();
+        Window(const Window&) = delete;
+        Window &operator=(const Window&) = delete;
+        Window(const Window&) = delete;
+        Window &operator=(const Window&) = delete;
+        Window(Window&&) = delete;
+        Window &operator=(Window&&) = delete;
         ~Window();
-        void open(int width, int height, const char *title);
+        void open(int width = 1920, int height = 1080, const char *title = "BM:GO");
         void close();
         void clear();
         bool windowShouldClose();
@@ -22,8 +29,10 @@ class Window {
         void beginDrawing();
         void endDrawing();
 
-    protected:
     private:
+        Window() {}
 };
 
 }
+
+#endif /* WINDOW_HPP_ */
