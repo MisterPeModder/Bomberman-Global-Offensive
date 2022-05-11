@@ -5,6 +5,15 @@
             "name": "unix_makefiles",
             "hidden": true,
             "generator": "Unix Makefiles",
+            "architecture": {
+                "strategy": "external",
+                "value": "arm64"
+            },
+            "generator": "Visual Studio 16 2019",
+            "architecture": {
+                "strategy": "set",
+                "value": "Win32"
+            },
             "binaryDir": "${sourceDir}/build/${presetName}",
             "cacheVariables": {
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
