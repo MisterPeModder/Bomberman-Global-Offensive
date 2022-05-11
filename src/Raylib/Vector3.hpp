@@ -23,6 +23,14 @@ class Vector3 {
         void setZ(float z) { _z = z; }
         Vector3 &operator=(const Vector3& vector);
         Vector3(const Vector3& vector);
+        Vector3 operator+(const Vector3& vector);
+        Vector3 &operator+=(const Vector3& vector);
+        Vector3 operator-(const Vector3& vector);
+        Vector3 &operator-=(const Vector3& vector);
+        Vector3 operator*(const Vector3& vector);
+        Vector3 &operator*=(const Vector3& vector);
+        Vector3 operator/(const Vector3& vector);
+        Vector3 &operator/=(const Vector3& vector);
 
     private:
         float _x;

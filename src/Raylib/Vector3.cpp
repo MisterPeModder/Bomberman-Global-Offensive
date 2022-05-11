@@ -32,3 +32,55 @@ raylib::Vector3 &raylib::Vector3::operator=(const Vector3& vector)
     _z = vector._z;
     return *this;
 }
+
+raylib::Vector3 raylib::Vector3::operator+(const Vector3& vector)
+{
+    return {this->_x + vector._x, this->_y + vector._y, this->_z + vector._z};
+}
+
+raylib::Vector3 &raylib::Vector3::operator+=(const Vector3& vector)
+{
+    this->_x += vector._x;
+    this->_y += vector._y;
+    this->_z += vector._z;
+    return *this;
+}
+
+raylib::Vector3 raylib::Vector3::operator-(const Vector3& vector)
+{
+    return {this->_x - vector._x, this->_y - vector._y, this->_z - vector._z};
+}
+
+raylib::Vector3 &raylib::Vector3::operator-=(const Vector3& vector)
+{
+    this->_x -= vector._x;
+    this->_y -= vector._y;
+    this->_z -= vector._z;
+    return *this;
+}
+
+raylib::Vector3 raylib::Vector3::operator*(const Vector3& vector)
+{
+    return {this->_x * vector._x, this->_y * vector._y, this->_z * vector._z};
+}
+
+raylib::Vector3 &raylib::Vector3::operator*=(const Vector3& vector)
+{
+    this->_x *= vector._x;
+    this->_y *= vector._y;
+    this->_z *= vector._z;
+    return *this;
+}
+
+raylib::Vector3 raylib::Vector3::operator/(const Vector3& vector)
+{
+    return {this->_x / vector._x, this->_y + vector._y, this->_z + vector._z};
+}
+
+raylib::Vector3 &raylib::Vector3::operator/=(const Vector3& vector)
+{
+    this->_x /= vector._x;
+    this->_y /= vector._y;
+    this->_z /= vector._z;
+    return *this;
+}
