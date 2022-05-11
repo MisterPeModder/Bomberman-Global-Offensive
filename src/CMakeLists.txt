@@ -7,6 +7,8 @@ set(SRC
 
 set(INCDIRS ${INCROOT})
 
+add_subdirectory(logger)
+
 source_group("" FILES ${SRC})
 
 set(LIB_NAME libbomberman)
