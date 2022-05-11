@@ -5,6 +5,8 @@ set(SRC
     ${SRCROOT}/dummy.cpp
     ${SRCROOT}/Raylib/Camera3D.cpp
     ${SRCROOT}/Raylib/Camera3D.hpp
+    ${SRCROOT}/Raylib/Vector2.cpp
+    ${SRCROOT}/Raylib/Vector2.hpp
     ${SRCROOT}/Raylib/Vector3.cpp
     ${SRCROOT}/Raylib/Vector3.hpp
     ${SRCROOT}/Raylib/Window.cpp

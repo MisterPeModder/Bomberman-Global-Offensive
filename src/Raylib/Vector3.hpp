@@ -8,24 +8,21 @@
 #ifndef VECTOR3_HPP_
 #define VECTOR3_HPP_
 
+#include "Vector2.hpp"
+
 namespace raylib {
 
 class Vector3 {
     public:
-        /// @brief 3D constructor of the vector
+        /// @brief Constructor of the vector
         /// @param x the X axis value of the vector
         /// @param y the Y axis value of the vector
         /// @param z the Z axis value of the vector
-        Vector3(float x, float y, float z);
-        /// @brief 2D constructor of the vector (defaults Z to 0)
-        /// @param x the X axis value of the vector
-        /// @param y the Y axis value of the vector
-        Vector3(float x, float y);
-        /// @brief 1D constructor of the vector (defaults Y and Z to 0)
-        /// @param x the X axis value of the vector
-        Vector3(float x);
-        /// @brief Default constructor of the vector (defaults all values to 0)
-        Vector3();
+        Vector3(float x = 0.f, float y = 0.f, float z = 0.f);
+        /// @brief Constructor of the 3d vector from a 2d vector
+        /// @param vector the 2d vector to convert
+        /// @param z the Z axis value of the vector
+        Vector3(const Vector2& vector, float z = 0.f);
         /// @brief The copy constructor
         /// @param vector the vector to copy
         Vector3(const Vector3& vector);
