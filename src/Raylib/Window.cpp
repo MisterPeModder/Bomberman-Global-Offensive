@@ -11,8 +11,11 @@ extern "C" {
     #include "raylib.h"
 }
 
-raylib::Window::Window()
+raylib::Window &raylib::Window::getInstance()
 {
+    static Window instance;
+
+    return instance;
 }
 
 raylib::Window::~Window()
@@ -24,7 +27,7 @@ void raylib::Window::open(int width, int height, const char *title)
     InitWindow(width, height, title);
 }
 
-void raylib::Window::close(void)
+void raylib::Window::close()
 {
     CloseWindow();
 }

@@ -13,10 +13,6 @@ namespace raylib {
 class Window {
     public:
         static Window& getInstance();
-        Window(const Window&) = delete;
-        Window &operator=(const Window&) = delete;
-        Window(const Window&) = delete;
-        Window &operator=(const Window&) = delete;
         Window(Window&&) = delete;
         Window &operator=(Window&&) = delete;
         ~Window();
@@ -31,6 +27,8 @@ class Window {
 
     private:
         Window() {}
+        Window(const Window&);
+        Window &operator=(const Window&);
 };
 
 }

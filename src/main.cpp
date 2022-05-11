@@ -5,10 +5,11 @@
 
 int main()
 {
-    raylib::Window window(1200, 800, "hell oworld");
+    raylib::Window& window = raylib::Window::getInstance();
     raylib::Camera3D camera;
 
     window.setTargetFPS(60);
+    window.open(1200, 800, "hell oworld");
 
     while (!window.windowShouldClose()) {
         window.beginDrawing();
@@ -23,4 +24,5 @@ int main()
 
         window.endDrawing();
     }
+    window.close();
 }
