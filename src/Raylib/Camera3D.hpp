@@ -17,24 +17,55 @@ namespace raylib {
 
 class Camera3D {
     public:
+        /// @brief Default constructor
         explicit Camera3D();
+        /// @brief Destructor
         ~Camera3D();
+        /// @brief Deleted copy constructor
         explicit Camera3D(const Camera3D&) = delete;
+        /// @brief Deleted copy operator
         Camera3D &operator=(const Camera3D&) = delete;
-        explicit Camera3D(Camera3D&&);
-        Camera3D &operator=(Camera3D&&);
+        /// @brief Move constructor
+        /// @param camera The camera to move
+        explicit Camera3D(Camera3D&& camera);
+        /// @brief Move operator
+        /// @param camera The camera to move
+        /// @return the moved camera
+        Camera3D &operator=(Camera3D&& camera);
+        /// @brief Start 3D mode (BeginMode3D encapsulation)
         void begin3D();
+        /// @brief End 3D mode (EndMode3D encapsulation)
         void end3D();
+        /// @brief Get the position of the camera
+        /// @return the position of the camera
         raylib::Vector3 getPosition() const;
-        void setPosition(raylib::Vector3);
+        /// @brief Set the position of the camera
+        /// @param position the new position of the camera
+        void setPosition(raylib::Vector3 position);
+        /// @brief Get the target of the camera
+        /// @return the target of the camera
         raylib::Vector3 getTarget() const;
-        void setTarget(raylib::Vector3);
+        /// @brief Set the target of the camera
+        /// @param target the new target of the camera
+        void setTarget(raylib::Vector3 target);
+        /// @brief Get the 'up' of the camera
+        /// @return the 'up' of the camera
         raylib::Vector3 getUp() const;
-        void setUp(raylib::Vector3);
+        /// @brief Set the 'up' of the camera
+        /// @param up the new 'up' of the camera
+        void setUp(raylib::Vector3 up);
+        /// @brief Get the fovy of the camera
+        /// @return the fovy of the camera
         float getFovy() const;
-        void setFovy(float);
+        /// @brief Set the fovy of the camera
+        /// @param fovy the new fovy of the camera
+        void setFovy(float fovy);
+        /// @brief Get the projection of the camera
+        /// @return the projection of the camera
         int getProjection() const;
-        void setProjection(int);
+        /// @brief Set the projection of the camera
+        /// @param projection the new projection of the camera
+        void setProjection(int projection);
 
     private:
         ::Camera3D _camera;
