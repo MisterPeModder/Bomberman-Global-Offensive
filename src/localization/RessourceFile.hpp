@@ -44,11 +44,13 @@ namespace localization
         /// @note The file will be searched in the path given by @ref Localization::getLocalesDirectory().
         ///
         /// @param locale locale to load.
-        RessourceFile(std::string_view locale);
+        /// @param createNew whether or not the file must be created if not found.
+        /// @throw LocaleNotFoundError when the locale can't be found and @c createNew is set to false.
+        RessourceFile(std::string_view locale, bool createNew = false);
 
         /// Destroy the Ressource File object.
         /// @note call @ref save().
-        ~RessourceFile() = default;
+        ~RessourceFile();
 
         /// Load a locale file.
         ///
@@ -74,7 +76,7 @@ namespace localization
         /// @param registerNew whether or not the message must be created if translation not found.
         /// @return std::string_view translated message.
         /// @throw MessageNotFoundError when the translation is not found and @c registerNew is set to false.
-        std::string_view translate(std::string_view msg, bool createNew = false) const;
+        std::string_view translate(std::string_view msg, bool createNew = false);
 
       private:
         /// Current locale.

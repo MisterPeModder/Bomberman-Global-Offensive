@@ -19,7 +19,7 @@ namespace localization
       public:
         /// Destroy the Localization object.
         /// @note call @ref saveLocales().
-        ~Localization() = default;
+        ~Localization();
 
         /// Set the Locales Directory.
         /// @note By default the directory is "./locales"

@@ -1,0 +1,58 @@
+/*
+** EPITECH PROJECT, 2022
+** Bomberman
+** File description:
+** Localization
+*/
+
+#include "Localization.hpp"
+#include <filesystem>
+
+namespace localization
+{
+    Localization::~Localization() { saveLocales(); }
+
+    void Localization::setLocalesDirectory(std::string_view directory) { _Instance._localesDirectory = directory; }
+
+    std::string_view Localization::getLocalesDirectory() { return _Instance._localesDirectory; }
+
+    std::string Localization::getLocalePath(std::string_view locale)
+    {
+        return std::filesystem::path(getLocalesDirectory().data())
+            .append(std::string("locale_") + locale.data() + ".po")
+            .u8string();
+    }
+
+    void Localization::setLocale(std::string_view locale, bool createNew)
+    {
+        std::string key(locale);
+
+        try {
+            _Instance._locales.at(key);
+        } catch (std::out_of_range &) {
+            _Instance._locales.insert({key, RessourceFile(locale, createNew)});
+        }
+        _Instance._locale = key;
+    }
+
+    void Localization::saveLocales()
+    {
+        for (auto it : _Instance._locales)
+            it.second.save();
+    }
+
+    std::string_view Localization::getLocale() { return _Instance._locale; }
+
+    void Localization::loadLocales(const std::vector<std::string_view> &locales, bool createNew)
+    {
+        for (const std::string_view &loc : locales)
+            _Instance._locales[std::string(loc)] = RessourceFile(loc, createNew);
+    }
+
+    std::string_view Localization::translate(std::string_view msg, bool registerNew)
+    {
+        _Instance._locales[_Instance._locale].translate(msg, registerNew);
+    }
+
+    Localization::Localization() : _localesDirectory("locales") { setLocale("en", true); }
+} // namespace localization

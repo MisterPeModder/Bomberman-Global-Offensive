@@ -20,4 +20,28 @@ namespace localization
             std::string("Message '") + message.data() + "' not found in locale '" + locale.data() + "'.")
     {
     }
+
+    RessourceFile::RessourceFile(std::string_view locale, bool createNew) { loadLocale(locale, createNew); }
+
+    RessourceFile::~RessourceFile() { save(); }
+
+    std::string_view RessourceFile::getLocale() const { return _locale; }
+
+    std::string_view RessourceFile::translate(std::string_view msg, bool createNew)
+    {
+        std::string_view res;
+        std::string key(msg);
+
+        try {
+            res = _ressources.at(key);
+        } catch (std::out_of_range &) {
+            if (!createNew)
+                throw MessageNotFoundError(_locale, msg);
+            _ressources[key] = "";
+            res = "";
+        }
+        if (res == "")
+            return msg;
+        return res;
+    }
 } // namespace localization
