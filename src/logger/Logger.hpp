@@ -145,7 +145,7 @@ class Logger {
     /// @param args Next infos to modify.
     template <class... Args> void setLogInfos(LogInfo info, Args... args)
     {
-        clearStyles();
+        clearLogInfos();
         enableLogInfo(true, info, args...);
     }
 
