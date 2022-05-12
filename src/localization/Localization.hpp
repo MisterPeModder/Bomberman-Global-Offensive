@@ -20,6 +20,7 @@ namespace localization
     class Localization {
       public:
         /// Destroy the Localization object.
+        /// @note call @ref saveLocales().
         ~Localization() = default;
 
         /// Set the Locales Directory.
@@ -34,12 +35,19 @@ namespace localization
         /// @return std::string_view locales files directory.
         static std::string_view getLocalesDirectory();
 
-        /// Change the current locale used.
-        /// @note Default locale is english @b "eg" .
+        /// @copydoc RessourceFile::loadLocale
+        static void setLocale(std::string_view locale, bool createNew = false);
+
+        /// Save the loaded locale files.
+        /// @note @ref saveLocales() is called on the Localization instance destruction.
+        static void saveLocales();
+
+        /// Get the loaded locale object
+        /// @note By default the locale is @b "en" .
         ///
-        /// @param locale country code ("en", "fr"...)
-        /// @throw ??? when the locale can't be loaded (no file found).
-        static void setLocale(std::string_view locale);
+        /// @return std::string_view
+        ///
+        static std::string_view getLocale();
 
         /// Load all the locales used by the project.
         /// @note All loaded locales will have new messages written in the corresponding file.
@@ -50,18 +58,13 @@ namespace localization
         ///
         static void loadLocales(const std::vector<std::string_view> &locales, bool createNew = false);
 
-        /// Translate a message in the current locale.
+        /// @copydoc RessourceFile::translate
         /// @note @c registerNew will affect all loaded locales.
-        /// @note If the translation is found but is empty, @c msg will be returned.
-        ///
-        /// @param msg message to translate.
-        /// @param registerNew whether or not the message must be created if translation not found.
-        /// @return std::string_view translated message.
-        /// @throw ??? when the translation is not found and @c registerNew is set to false.
-        ///
         static std::string_view translate(std::string_view msg, bool registerNew = true);
 
       private:
+        /// Construct a new Localization object.
+        /// @note The default locale is @b "en" .
         Localization();
 
         static Localization _Instance;
