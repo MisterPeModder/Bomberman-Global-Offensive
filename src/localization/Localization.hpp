@@ -8,10 +8,8 @@
 #ifndef LOCALIZATION_LOCALIZATION_HPP_
 #define LOCALIZATION_LOCALIZATION_HPP_
 
-#include <map>
 #include <vector>
 #include "RessourceFile.hpp"
-#include <string_view>
 
 /// Namespace regrouping all the i18n related classes.
 namespace localization
@@ -35,6 +33,12 @@ namespace localization
         /// @return std::string_view locales files directory.
         static std::string_view getLocalesDirectory();
 
+        /// Get the path of a locale file.
+        ///
+        /// @param locale locale id (country code).
+        /// @return std::string locale file path.
+        static std::string getLocalePath(std::string_view locale);
+
         /// @copydoc RessourceFile::loadLocale
         static void setLocale(std::string_view locale, bool createNew = false);
 
@@ -54,7 +58,7 @@ namespace localization
         ///
         /// @param locales list of country codes ("en", "fr"...)
         /// @param createNew whether or not the unfound files must be created.
-        /// @throw ??? when a locale is not found and @c createNew is set to false.
+        /// @throw RessourceFile::LocaleNotFoundError when a locale is not found and @c createNew is set to false.
         ///
         static void loadLocales(const std::vector<std::string_view> &locales, bool createNew = false);
 

@@ -4,8 +4,8 @@ set(SRCROOT ${SRCROOT}/localization)
 set(SRC
 	${SRC}
 	${SRCROOT}/Localization.hpp
+	${SRCROOT}/RessourceFile.cpp
 	${SRCROOT}/RessourceFile.hpp
-	${SRCROOT}/RessourceString.hpp
 	PARENT_SCOPE
 )
 
