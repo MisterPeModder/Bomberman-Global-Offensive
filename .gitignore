@@ -11,5 +11,8 @@
 /bomberman
 /bomberman.exe
 
+# Logs
+log.txt
+
 # Shame on you!
 vgcore.*

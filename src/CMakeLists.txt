@@ -8,6 +8,7 @@ set(SRC
 set(INCDIRS ${INCROOT})
 
 add_subdirectory(localization)
+add_subdirectory(logger)
 
 source_group("" FILES ${SRC})
 
