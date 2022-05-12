@@ -118,7 +118,7 @@ class Logger {
     bool &operator[](LogInfo logInfo);
 
     /// Remove all the @ref LogInfo set.
-    void clearLogInfos();
+    void clearLogInfo();
 
     /// Enable/Disable a @ref LogInfo.
     ///
@@ -143,9 +143,9 @@ class Logger {
     /// @tparam Args multiple @ref LogInfo.
     /// @param info First info to modify.
     /// @param args Next infos to modify.
-    template <class... Args> void setLogInfos(LogInfo info, Args... args)
+    template <class... Args> void setLogInfo(LogInfo info, Args... args)
     {
-        clearLogInfos();
+        clearLogInfo();
         enableLogInfo(true, info, args...);
     }
 

@@ -24,13 +24,13 @@ Logger Logger::logger;
 Logger::Logger(std::ostream &stream)
 {
     setStream(stream);
-    setLogInfos(LogInfo::Time);
+    setLogInfo(LogInfo::Time);
 }
 
 Logger::Logger(std::string_view filename)
 {
     setOutputFile(filename);
-    setLogInfos(LogInfo::Time);
+    setLogInfo(LogInfo::Time);
 }
 
 void Logger::displayTime(std::stringstream &ss, std::string_view format)
@@ -125,7 +125,7 @@ void Logger::setLogLevel(Severity logLevel) { _logLevel = logLevel; }
 
 Logger::Severity Logger::getLogLevel() const { return _logLevel; }
 
-void Logger::clearLogInfos() { enableLogInfo(false, LogInfo::PID, LogInfo::ThreadId, LogInfo::Date, LogInfo::Time); }
+void Logger::clearLogInfo() { enableLogInfo(false, LogInfo::PID, LogInfo::ThreadId, LogInfo::Date, LogInfo::Time); }
 
 void Logger::enableLogInfo(bool enabled, LogInfo info) { (*this)[info] = enabled; }
 
