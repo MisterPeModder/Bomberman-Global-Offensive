@@ -117,13 +117,37 @@ class Logger {
     /// @return reference to the current value of the parameter.
     bool &operator[](LogInfo logInfo);
 
-    /// Set the display style of the logger.
+    /// Remove all the @ref LogInfo set.
+    void clearLogInfos();
+
+    /// Enable/Disable a @ref LogInfo.
     ///
-    /// @param[in] time If the time must be displayed "hh:dd:ss"
-    /// @param[in] date If the date must be displayed "dd/mm/yy"
-    /// @param[in] pid  If the process PID must be displayed "PID(pid)"
-    /// @param[in] threadId If the thread id must be displayed "ThreadID(id)"
-    void setStyle(bool time = true, bool date = false, bool pid = false, bool threadId = false);
+    /// @param enabled wheter or not the info must be enabled.
+    /// @param info Info to modify.
+    void enableLogInfo(bool enabled, LogInfo info);
+
+    /// Enable/Disable multiple @ref LogInfo.
+    ///
+    /// @tparam Args multiple @ref LogInfo.
+    /// @param enabled wheter or not the infos must be enabled.
+    /// @param info First info to modify.
+    /// @param args Next infos to modify.
+    template <class... Args> void enableLogInfo(bool enabled, LogInfo info, Args... args)
+    {
+        (*this)[info] = enabled;
+        enableLogInfo(enabled, args...);
+    }
+
+    /// Set the @b exclusive @ref LogInfo enabled (all infos not specified will be disabled).
+    ///
+    /// @tparam Args multiple @ref LogInfo.
+    /// @param info First info to modify.
+    /// @param args Next infos to modify.
+    template <class... Args> void setLogInfos(LogInfo info, Args... args)
+    {
+        clearStyles();
+        enableLogInfo(true, info, args...);
+    }
 
   private:
     void displayInformations(std::stringstream &ss);
