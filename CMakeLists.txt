@@ -13,19 +13,29 @@ find_package(raylib REQUIRED)
 # Unit testing
 if (BUILD_TEST_SUITE)
     # Check for criterion
-    find_package(Criterion REQUIRED)
-    enable_testing()
+    find_package(Criterion)
+    if (CRITERION_FOUND)
+        enable_testing()
+    endif()
 endif()
 
-add_compile_options(
-    "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith" "-Wsuggest-final-methods"
-    "-Wsuggest-final-types" "-Wsuggest-override"
-    "$<$<CONFIG:RELEASE>:-O3;-Werror>"
-    "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
-)
+# Enable Warnings
+if (MSVC)
+    add_compile_options(
+        "/W4" 
+        "/WX"
+    )
+else()
+    add_compile_options(
+        "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith" 
+        "-Wsuggest-final-methods" "-Wsuggest-final-types" "-Wsuggest-override"
+        "$<$<CONFIG:RELEASE>:-O3;-Werror>"
+        "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
+    )
+endif()
 
 add_subdirectory(src)
 
-if (BUILD_TEST_SUITE)
+if ((BUILD_TEST_SUITE) AND (CRITERION_FOUND))
     add_subdirectory(tests)
 endif()
