@@ -10,6 +10,8 @@
 
 namespace localization
 {
+    Localization Localization::_Instance;
+
     Localization::~Localization() { saveLocales(); }
 
     void Localization::setLocalesDirectory(std::string_view directory) { _Instance._localesDirectory = directory; }
@@ -20,18 +22,15 @@ namespace localization
     {
         return std::filesystem::path(getLocalesDirectory().data())
             .append(std::string("locale_") + locale.data() + ".po")
-            .u8string();
+            .generic_string();
     }
 
     void Localization::setLocale(std::string_view locale, bool createNew)
     {
         std::string key(locale);
 
-        try {
-            _Instance._locales.at(key);
-        } catch (std::out_of_range &) {
+        if (_Instance._locales.find(key) == _Instance._locales.end())
             _Instance._locales.insert({key, RessourceFile(locale, createNew)});
-        }
         _Instance._locale = key;
     }
 
@@ -51,7 +50,7 @@ namespace localization
 
     std::string_view Localization::translate(std::string_view msg, bool registerNew)
     {
-        _Instance._locales[_Instance._locale].translate(msg, registerNew);
+        return _Instance._locales[_Instance._locale].translate(msg, registerNew);
     }
 
     Localization::Localization() : _localesDirectory("locales") { setLocale("en", true); }

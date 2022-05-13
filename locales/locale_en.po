@@ -1,0 +1,10 @@
+#Simple hello
+msgid "Hello world"
+msgstr ""
+
+# Multiple lines hello
+msgid ""
+"Hello in\n"
+"multiple\n"
+"lines\n"
+msgstr ""

@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/localization)
 
 set(SRC
 	${SRC}
+	${SRCROOT}/Localization.cpp
 	${SRCROOT}/Localization.hpp
 	${SRCROOT}/RessourceFile.cpp
 	${SRCROOT}/RessourceFile.hpp

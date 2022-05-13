@@ -79,6 +79,19 @@ namespace localization
         std::string_view translate(std::string_view msg, bool createNew = false);
 
       private:
+        enum class Token {
+            Undefined,
+            Comment,
+            MsgId,
+            MsgIdEmpty,
+            MsgStr,
+            MsgStrEmpty,
+            MsgMultiline,
+            EmptyLine,
+        };
+
+        static Token getToken(const std::string &line);
+
         /// Current locale.
         std::string _locale;
         /// Loaded messages.
