@@ -20,7 +20,7 @@ target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
 target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
-target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME})
+target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} raylib)
 
 add_custom_command(TARGET ${TARGET_NAME} 
 	POST_BUILD

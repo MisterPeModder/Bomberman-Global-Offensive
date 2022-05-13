@@ -5,6 +5,11 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.11)
 if (NOT raylib_FOUND)
     INCLUDE(FetchContent)
+
+    if (EMSCRIPTEN)
+        set(PLATFORM "Web" CACHE STRING "Set web platform" FORCE)
+    endif()
+
     FetchContent_Declare(raylib URL https://github.com/raysan5/raylib/archive/refs/tags/4.0.0.tar.gz)
     FetchContent_GetProperties(raylib)
     if (NOT raylib_POPULATED)

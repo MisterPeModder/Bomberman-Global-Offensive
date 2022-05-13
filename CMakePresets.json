@@ -21,9 +21,23 @@
             "inherits": "common"
         },
         {
+            "name": "emscripten",
+            "hidden": true,
+            "generator": "Unix Makefiles",
+            "condition": {
+                "type": "notEquals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "/opt/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+            },
+            "inherits": "common"
+        },
+        {
             "name": "msvc_2022",
             "hidden": true,
-            "generator": "Visual Studio 16 2019", 
+            "generator": "Visual Studio 16 2019",
             "condition": {
                 "type": "equals",
                 "lhs": "${hostSystemName}",
@@ -34,7 +48,7 @@
         {
             "name": "debug_common",
             "hidden": true,
-            "displayName": "Debug Config",            
+            "displayName": "Debug Config",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "BUILD_TEST_SUITE": {
@@ -48,19 +62,36 @@
             }
         },
         {
-            "name": "Debug Unix",
+            "name": "debug_unix",
+            "displayName": "Debug Unix",
             "description": "Debug configuration using Unix Makefiles",
-            "inherits":  ["debug_common", "unix_makefiles"]
+            "inherits": [
+                "debug_common",
+                "unix_makefiles"
+            ]
         },
         {
-            "name": "Debug MSVC",
+            "name": "debug_web",
+            "displayName": "Debug Web",
+            "description": "Web debug configuration using Unix Makefiles",
+            "inherits": [
+                "debug_common",
+                "unix_makefiles",
+                "emscripten"
+            ]
+        },
+        {
+            "name": "debug_msvc",
+            "displayName": "Debug MSVC",
             "description": "Debug configuration using MSVC 2022",
-            "inherits":  ["debug_common", "msvc_2022"]
+            "inherits": [
+                "debug_common",
+                "msvc_2022"
+            ]
         },
         {
             "name": "release_common",
             "hidden": true,
-            "displayName": "Release Config",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
                 "BUILD_TEST_SUITE": {
@@ -70,14 +101,32 @@
             }
         },
         {
-            "name": "Release Unix",
+            "name": "release_unix",
+            "displayName": "Release Unix",
             "description": "Release configuration using Unix Makefiles",
-            "inherits":  ["release_common", "unix_makefiles"]
+            "inherits": [
+                "release_common",
+                "unix_makefiles"
+            ]
         },
         {
-            "name": "Release MSVC",
+            "name": "release_web",
+            "displayName": "Release Web",
+            "description": "Web release configuration using Unix Makefiles",
+            "inherits": [
+                "release_common",
+                "unix_makefiles",
+                "emscripten"
+            ]
+        },
+        {
+            "name": "release_msvc",
+            "displayName": "Release MSVC",
             "description": "Release configuration using MSVC 2022",
-            "inherits":  ["release_common", "msvc_2022"]
+            "inherits": [
+                "release_common",
+                "msvc_2022"
+            ]
         }
     ],
     "buildPresets": [
