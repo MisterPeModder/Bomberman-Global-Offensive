@@ -9,7 +9,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(DetectCompiler)
-include(CompilerFlags)
 
 find_package(raylib REQUIRED)
 

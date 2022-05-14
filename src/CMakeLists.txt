@@ -7,6 +7,8 @@ set(SRC
 
 set(INCDIRS ${INCROOT})
 
+include(CompilerFlags)
+
 add_subdirectory(logger)
 
 source_group("" FILES ${SRC})

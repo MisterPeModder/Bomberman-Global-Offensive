@@ -50,7 +50,7 @@ void Logger::displayTime(std::stringstream &ss, std::string_view format)
 void Logger::displayInformations(std::stringstream &ss)
 {
     bool firstInfo = true;
-    auto add_info = [&, this](std::string_view name, std::function<void(void)> writeInfo) {
+    auto add_info = [&](std::string_view name, std::function<void(void)> writeInfo) {
         if (!firstInfo)
             ss << " ";
         if (name.size() > 0) {
