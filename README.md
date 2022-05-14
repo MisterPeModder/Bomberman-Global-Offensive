@@ -5,25 +5,36 @@ Bomberman
 
 # Building
 
-## Command Line (via CMake)
-
 Required tools:
 - CMake 3.17 (minimum)
 
-on Linux:
-```sh
-# Create the build directory
-mkdir build && cd build 
+## Command Line
 
+For Linux:
+```sh
 # Configure the project
-cmake .. -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release
+cmake -B build/release_unix .. -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release
 
 # Build the executable and libraries
-cmake --build .
-
-# Return to previous directory
-cd -
+cmake --build release_unix
 ```
+
+For Emscripten (on Linux):  
+Make sure you have the [emscriptem toolchain](https://emscripten.org/) installed and in your `PATH`.
+
+```sh
+# Configure the project
+emcmake cmake -B build/release_web .. -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release
+
+# Build the executable and libraries
+cmake --build release_web
+```
+
+## IDEs
+
+The game may also be built with any IDE that has `CMakePresets.json` support, such as Visual Sudio, VSCode + CMake Tools, or CLion.
+Note that for the web platform, the presets assume that the emscripten toolchain is installed at `/opt/emsdk`.
+
 
 # Documentation
 
