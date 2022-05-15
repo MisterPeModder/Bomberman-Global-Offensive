@@ -16,7 +16,7 @@ namespace localization
     namespace Ressources
     {
         /// Simple hello world.
-        const RessourceString rsHello;
+        extern const RessourceString rsHello;
     }; // namespace Ressources
 } // namespace localization
 

@@ -149,6 +149,13 @@ namespace localization
         static void readMsg(
             bool multiline, std::string &out, const TokensVector &tokens, TokensVector::const_iterator &iterator);
 
+        /// Write the content of a msgid/msgstr in @c stream.
+        /// @note This function is used to handle multiline messages.
+        ///
+        /// @param stream output stream (locale file).
+        /// @param msg content to write.
+        static void writeMsg(std::ostream &stream, std::string_view msg);
+
         /// Current locale.
         std::string _locale;
         /// Loaded messages.

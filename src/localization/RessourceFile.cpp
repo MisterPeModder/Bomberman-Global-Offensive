@@ -68,8 +68,10 @@ namespace localization
         if (!file.is_open())
             throw std::runtime_error("Unable to update locale file '" + filepath + "'.");
         for (auto iter = _newRessources.begin(); iter != _newRessources.end(); ++iter) {
-            file << std::endl << "msgid \"" << iter->first << "\"" << std::endl;
-            file << "msgstr \"" << iter->second << "\"" << std::endl;
+            file << std::endl << "msgid ";
+            writeMsg(file, iter->first);
+            file << "msgstr ";
+            writeMsg(file, iter->second);
         }
         _newRessources.clear();
     }
@@ -178,6 +180,25 @@ namespace localization
             std::regex_match(iterator->second, sm, singleLine);
             out = sm[1].str();
             skipComments(tokens, ++iterator);
+        }
+    }
+
+    void RessourceFile::writeMsg(std::ostream &stream, std::string_view msg)
+    {
+        if (msg.find('\n') == std::string::npos) {
+            stream << "\"" << msg << "\"" << std::endl;
+        } else {
+            size_t start = 0;
+            size_t end;
+
+            stream << "\"\"" << std::endl;
+            while ((end = msg.find('\n', start)) != std::string::npos) {
+                std::cout << "'" << msg.substr(start, end) << "'" << std::endl;
+                stream << "\"" << msg.substr(start, end - start) << "\\n\"" << std::endl;
+                start = end + 1;
+            }
+            if (start < msg.size())
+                stream << "\"" << msg.substr(start) << "\\n\"" << std::endl;
         }
     }
 
