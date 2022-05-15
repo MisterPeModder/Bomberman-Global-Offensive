@@ -9,16 +9,16 @@
 
 raylib::Shapes::Rectangle::Rectangle(int posX, int posY, int width, int height)
 {
-    _posX = posX;
-    _posY = posY;
+    _position.x = posX;
+    _position.y = posY;
     _width = width;
     _height = height;
 }
 
 raylib::Shapes::Rectangle::Rectangle(Vector2 pos, int width, int height)
 {
-    _posX = pos._x;
-    _posY = pos._y;
+    _position.x = pos._x;
+    _position.y = pos._y;
     _width = width;
     _height = height;
 }

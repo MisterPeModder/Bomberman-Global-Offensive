@@ -18,7 +18,7 @@ namespace raylib {
     namespace Shapes {
         class Rectangle {
             public:
-            
+
                 /// @brief This function creates a rectangle object with the given parameters
                 /// 
                 /// @param posX The X position of the rectangle.
@@ -122,16 +122,9 @@ namespace raylib {
 
             protected:
             private:
-                int _posX;
-                int _posY;
+                Vector2 _position;
                 int _width;
                 int _height;
-                typedef struct Color{
-                    int _r;
-                    int _g;
-                    int _b;
-                    int _a;
-                }Color ;
         };
     } 
 }
