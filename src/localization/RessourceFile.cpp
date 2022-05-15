@@ -28,17 +28,16 @@ namespace localization
 
     RessourceFile::RessourceFile(std::string_view locale, bool createNew) { loadLocale(locale, createNew); }
 
-    RessourceFile::~RessourceFile() { save(); }
-
     void RessourceFile::loadLocale(std::string_view locale, bool createNew)
     {
-        std::string filepath = Localization::getLocalePath(locale);
+        _locale = locale;
+        std::string filepath = Localization::getLocalePath(_locale);
         std::ifstream file(filepath);
         std::string line;
         TokensVector tokens;
 
         Logger::logger.log(Logger::Severity::Information, [&](std::ostream &writer) {
-            writer << "Loading locale file '" << filepath << "' for locale '" << locale << "'";
+            writer << "Loading locale file '" << filepath << "' for locale '" << _locale << "'";
         });
         if (!file.is_open()) {
             if (createNew) {
@@ -47,7 +46,7 @@ namespace localization
                 newFile.close();
                 return;
             } else
-                throw LocaleNotFoundError(locale);
+                throw LocaleNotFoundError(_locale);
         }
         while (std::getline(file, line))
             tokens.push_back({getToken(line), line});
@@ -55,26 +54,49 @@ namespace localization
         parseTokens(tokens);
     }
 
-    void RessourceFile::save() {}
+    void RessourceFile::save()
+    {
+        if (_newRessources.size() == 0)
+            return;
+        std::string filepath = Localization::getLocalePath(_locale);
+        std::ofstream file;
+
+        Logger::logger.log(Logger::Severity::Information, [&](std::ostream &writer) {
+            writer << "Updating locale file '" << filepath << "' for locale '" << _locale << "'";
+        });
+        file.open(filepath, std::ios_base::app | std::ios_base::out);
+        if (!file.is_open())
+            throw std::runtime_error("Unable to update locale file '" + filepath + "'.");
+        for (auto iter = _newRessources.begin(); iter != _newRessources.end(); ++iter) {
+            file << std::endl << "msgid \"" << iter->first << "\"" << std::endl;
+            file << "msgstr \"" << iter->second << "\"" << std::endl;
+        }
+        _newRessources.clear();
+    }
 
     std::string_view RessourceFile::getLocale() const { return _locale; }
 
     std::string_view RessourceFile::translate(std::string_view msg, bool createNew)
     {
+        std::string key(msg);
+
+        if (_ressources.find(key) == _ressources.end()) {
+            if (!createNew)
+                throw MessageNotFoundError(_locale, msg);
+            registerString(msg);
+        }
+        return _ressources[key];
+    }
+
+    void RessourceFile::registerString(std::string_view msg, std::string_view translation)
+    {
         std::string_view res;
         std::string key(msg);
 
-        try {
-            res = _ressources.at(key);
-        } catch (std::out_of_range &) {
-            if (!createNew)
-                throw MessageNotFoundError(_locale, msg);
-            _ressources[key] = "";
-            res = "";
-        }
-        if (res == "")
-            return msg;
-        return res;
+        if (_ressources.find(key) != _ressources.end() && _ressources[key] == translation)
+            return;
+        _ressources[key] = translation;
+        _newRessources[key] = translation;
     }
 
     void RessourceFile::parseTokens(const TokensVector &tokens)

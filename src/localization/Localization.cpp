@@ -12,8 +12,6 @@ namespace localization
 {
     Localization Localization::_Instance;
 
-    Localization::~Localization() { saveLocales(); }
-
     void Localization::setLocalesDirectory(std::string_view directory) { _Instance._localesDirectory = directory; }
 
     std::string_view Localization::getLocalesDirectory() { return _Instance._localesDirectory; }
@@ -51,6 +49,12 @@ namespace localization
     std::string_view Localization::translate(std::string_view msg, bool registerNew)
     {
         return _Instance._locales[_Instance._locale].translate(msg, registerNew);
+    }
+
+    void Localization::registerString(std::string_view msg)
+    {
+        for (auto iter = _Instance._locales.begin(); iter != _Instance._locales.end(); ++iter)
+            iter->second.registerString(msg);
     }
 
     Localization::Localization() : _localesDirectory("locales") {}

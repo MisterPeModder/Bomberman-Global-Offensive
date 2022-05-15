@@ -20,8 +20,7 @@ namespace localization
     class Localization {
       public:
         /// Destroy the Localization object.
-        /// @note call @ref saveLocales().
-        ~Localization();
+        ~Localization() = default;
 
         /// Set the Locales Directory.
         /// @note By default the directory is "./locales"
@@ -67,6 +66,13 @@ namespace localization
         /// @copydoc RessourceFile::translate
         /// @note @c registerNew will affect all loaded locales.
         static std::string_view translate(std::string_view msg, bool registerNew = true);
+
+        /// Register a new string in the loaded locales.
+        /// @note If the string is already set, does nothing.
+        /// @note The string will be added at the end of the files on save.
+        ///
+        /// @param msg message id.
+        static void registerString(std::string_view msg);
 
       private:
         /// Construct a new Localization object.

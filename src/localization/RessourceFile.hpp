@@ -50,8 +50,7 @@ namespace localization
         RessourceFile(std::string_view locale, bool createNew = false);
 
         /// Destroy the Ressource File object.
-        /// @note call @ref save().
-        ~RessourceFile();
+        ~RessourceFile() = default;
 
         /// Load a locale file.
         ///
@@ -61,7 +60,6 @@ namespace localization
         void loadLocale(std::string_view locale, bool createNew = false);
 
         /// Save the locale file.
-        /// @note @ref save() is called when the file is destroyed.
         void save();
 
         /// Get the loaded locale.
@@ -78,6 +76,14 @@ namespace localization
         /// @return std::string_view translated message.
         /// @throw MessageNotFoundError when the translation is not found and @c registerNew is set to false.
         std::string_view translate(std::string_view msg, bool createNew = false);
+
+        /// Register a new string in the loaded locale.
+        /// @note If the string is already set and has the same translation, does nothing.
+        /// @note The string will be added at the end of the file on save.
+        ///
+        /// @param msg message id.
+        /// @param translation message translation.
+        void registerString(std::string_view msg, std::string_view translation = "");
 
       private:
         enum class Token {
@@ -147,6 +153,8 @@ namespace localization
         std::string _locale;
         /// Loaded messages.
         std::map<std::string, std::string> _ressources;
+        /// New messages (to save).
+        std::map<std::string, std::string> _newRessources;
     };
 
 } // namespace localization
