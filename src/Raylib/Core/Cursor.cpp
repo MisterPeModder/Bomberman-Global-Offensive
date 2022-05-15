@@ -17,30 +17,30 @@ raylib::Core::Cursor::~Cursor()
 
 void raylib::Core::Cursor::showCursor(void)
 {
-    showCursor();
+    ShowCursor();
 }
 
 void raylib::Core::Cursor::hideCursor(void)
 {
-    hideCursor();
+    HideCursor();
 }
 
 bool raylib::Core::Cursor::isCursorHidden(void)
 {
-    return isCursorHidden();
+    return IsCursorHidden();
 }
 
 void raylib::Core::Cursor::enableCursor(void)
 {
-    enableCursor();
+    EnableCursor();
 }
 
 void raylib::Core::Cursor::disableCursor(void)
 {
-    disableCursor();
+    DisableCursor();
 }
 
 bool raylib::Core::Cursor::isCursorOnScreen(void)
 {
-    return isCursorOnScreen();
+    return IsCursorOnScreen();
 }

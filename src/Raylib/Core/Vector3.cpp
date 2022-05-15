@@ -26,6 +26,11 @@ raylib::Core::Vector3::Vector3(const Vector3& vector)
 {
 }
 
+raylib::Core::Vector3::Vector3(::Vector3 vector)
+ : _x(vector.x), _y(vector.y), _z(vector.z)
+{
+}
+
 raylib::Core::Vector3 &raylib::Core::Vector3::operator=(const Vector3& vector)
 {
     _x = vector._x;
