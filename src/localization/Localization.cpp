@@ -48,6 +48,10 @@ namespace localization
 
     std::string_view Localization::translate(std::string_view msg, bool registerNew)
     {
+        if (registerNew)
+            registerString(msg);
+        if (_Instance._locale == "")
+            return msg;
         return _Instance._locales[_Instance._locale].translate(msg, registerNew);
     }
 

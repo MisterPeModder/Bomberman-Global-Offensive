@@ -65,7 +65,8 @@ namespace localization
 
         /// @copydoc RessourceFile::translate
         /// @note @c registerNew will affect all loaded locales.
-        static std::string_view translate(std::string_view msg, bool registerNew = true);
+        /// @note If no locale was set using @ref setLocale() @c msg will always be returned.
+        static std::string_view translate(std::string_view msg, bool registerNew = false);
 
         /// Register a new string in the loaded locales.
         /// @note If the string is already set, does nothing.

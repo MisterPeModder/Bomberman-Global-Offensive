@@ -7,6 +7,10 @@ set(SRC
 	${SRCROOT}/Localization.hpp
 	${SRCROOT}/RessourceFile.cpp
 	${SRCROOT}/RessourceFile.hpp
+	${SRCROOT}/Ressources.cpp
+	${SRCROOT}/Ressources.hpp
+	${SRCROOT}/RessourceString.cpp
+	${SRCROOT}/RessourceString.hpp
 	PARENT_SCOPE
 )
 

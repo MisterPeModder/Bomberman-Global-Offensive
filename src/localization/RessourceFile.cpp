@@ -85,6 +85,8 @@ namespace localization
                 throw MessageNotFoundError(_locale, msg);
             registerString(msg);
         }
+        if (_ressources[key] == "")
+            return msg;
         return _ressources[key];
     }
 
@@ -93,7 +95,7 @@ namespace localization
         std::string_view res;
         std::string key(msg);
 
-        if (_ressources.find(key) != _ressources.end() && _ressources[key] == translation)
+        if (_ressources.find(key) != _ressources.end() && (translation == "" || _ressources[key] == translation))
             return;
         _ressources[key] = translation;
         _newRessources[key] = translation;
