@@ -11,10 +11,10 @@ extern "C" {
     #include "raylib.h"
 }
 
+raylib::Window raylib::Window::instance = raylib::Window();
+
 raylib::Window &raylib::Window::getInstance()
 {
-    static Window instance;
-
     return instance;
 }
 
