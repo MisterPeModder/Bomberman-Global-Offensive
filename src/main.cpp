@@ -10,8 +10,9 @@ int main()
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
 
     localization::Localization::loadLocales({"en", "fr"});
+    localization::Localization::setLocale("fr");
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << _("Hello, World!") << std::endl;
     Logger::logger.log(Logger::Severity::Information, "End of program");
 }

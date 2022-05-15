@@ -10,6 +10,7 @@
 
 #include <map>
 #include <stdexcept>
+#include <vector>
 #include <string_view>
 
 namespace localization
@@ -90,7 +91,57 @@ namespace localization
             EmptyLine,
         };
 
+        using TokensVector = std::vector<std::pair<Token, std::string>>;
+
+        /// Get the Token corresponding to the line sent.
+        ///
+        /// @param line line to analyse.
+        /// @return Token corresponding token.
         static Token getToken(const std::string &line);
+
+        /// Parse the list of tokens corresponding to a locale file.
+        /// @note Invalid messages will be ignored and won't throw exceptions, they will instead write a warning in the
+        /// global logger.
+        ///
+        /// @param tokens list of tokens corresponding to the locale file.
+        void parseTokens(const TokensVector &tokens);
+
+        /// Parse a message (msgid - msgstr) and register it to the known ressources.
+        /// @note Messages must be separated by empty lines.
+        ///
+        /// @param tokens list of tokens corresponding to the locale file.
+        /// @param iterator current iterator.
+        void parseMessage(const TokensVector &tokens, TokensVector::const_iterator &iterator);
+
+        /// Skip all the Comment tokens.
+        ///
+        /// @param tokens list of tokens corresponding to the locale file.
+        /// @param iterator current iterator.
+        static void skipComments(const TokensVector &tokens, TokensVector::const_iterator &iterator);
+
+        /// Skip all the @c token tokens.
+        ///
+        /// @param token token to consume.
+        /// @param tokens list of tokens corresponding to the locale file.
+        /// @param iterator current iterator.
+        static void consumeTokens(Token token, const TokensVector &tokens, TokensVector::const_iterator &iterator);
+
+        /// Consume all the tokens until a @c token is found.
+        ///
+        /// @param token token to found.
+        /// @param tokens list of tokens corresponding to the locale file.
+        /// @param iterator current iterator.
+        static void consumeUntil(Token token, const TokensVector &tokens, TokensVector::const_iterator &iterator);
+
+        /// Read the content of a msgid/msgstr in @c out.
+        ///
+        /// @param multiline whether or not the message is multiline or not (multiline messages start with msgid/str
+        /// "").
+        /// @param out string containing the content of the message.
+        /// @param tokens list of tokens corresponding to the locale file.
+        /// @param iterator current iterator.
+        static void readMsg(
+            bool multiline, std::string &out, const TokensVector &tokens, TokensVector::const_iterator &iterator);
 
         /// Current locale.
         std::string _locale;

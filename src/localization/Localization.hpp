@@ -11,6 +11,8 @@
 #include <vector>
 #include "RessourceFile.hpp"
 
+#define _(...) localization::Localization::translate(__VA_ARGS__)
+
 /// Namespace regrouping all the i18n related classes.
 namespace localization
 {
@@ -47,7 +49,7 @@ namespace localization
         static void saveLocales();
 
         /// Get the loaded locale object
-        /// @note By default the locale is @b "en" .
+        /// @note By default the locale is not set (empty).
         ///
         /// @return std::string_view
         ///
@@ -68,7 +70,7 @@ namespace localization
 
       private:
         /// Construct a new Localization object.
-        /// @note The default locale is @b "en" .
+        /// @note The default locale is empty.
         Localization();
 
         static Localization _Instance;

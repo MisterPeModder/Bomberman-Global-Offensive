@@ -1,5 +1,5 @@
 #Simple hello
-msgid "Hello world"
+msgid "Hello, World!"
 msgstr ""
 
 # Multiple lines hello

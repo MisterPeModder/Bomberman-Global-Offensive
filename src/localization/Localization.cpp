@@ -53,5 +53,5 @@ namespace localization
         return _Instance._locales[_Instance._locale].translate(msg, registerNew);
     }
 
-    Localization::Localization() : _localesDirectory("locales") { setLocale("en", true); }
+    Localization::Localization() : _localesDirectory("locales") {}
 } // namespace localization
