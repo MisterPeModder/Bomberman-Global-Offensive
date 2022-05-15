@@ -8,6 +8,10 @@
 #ifndef CURSOR_HPP_
 #define CURSOR_HPP_
 
+extern "C" {
+    #include "raylib.h"
+}
+
 namespace raylib {
     namespace Core {
         class Cursor {

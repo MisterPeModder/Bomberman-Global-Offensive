@@ -10,6 +10,10 @@
 
 #include "Vector2.hpp"
 
+extern "C" {
+    #include "raylib.h"
+}
+
 namespace raylib {
 
 namespace Core {
@@ -28,6 +32,9 @@ class Vector3 {
         /// @brief The copy constructor
         /// @param vector the vector to copy
         Vector3(const Vector3& vector);
+        /// @brief The copy constructor with vector 3 of raylib
+        /// @param vector the vector to copy
+        Vector3(::Vector3 vector);
         /// @brief Destructor
         ~Vector3();
         /// @brief Get the X axis value of the vector

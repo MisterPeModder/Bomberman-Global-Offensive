@@ -21,6 +21,11 @@ raylib::Core::Vector2::Vector2(const Vector2& vector)
 {
 }
 
+raylib::Core::Vector2::Vector2(::Vector2 vector)
+ : _x(vector.x), _y(vector.y)
+{
+}
+
 raylib::Core::Vector2 &raylib::Core::Vector2::operator=(const Vector2& vector)
 {
     _x = vector._x;

@@ -10,6 +10,10 @@
 
 #include "Vector2.hpp"
 
+extern "C" {
+    #include "raylib.h"
+}
+
 namespace raylib {
     namespace Core {
         class Mouse {

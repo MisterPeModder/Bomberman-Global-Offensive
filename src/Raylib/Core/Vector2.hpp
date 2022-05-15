@@ -8,6 +8,10 @@
 #ifndef VECTOR2_HPP_
 #define VECTOR2_HPP_
 
+extern "C" {
+    #include "raylib.h"
+}
+
 namespace raylib {
 
 namespace Core {
@@ -21,6 +25,7 @@ class Vector2 {
         /// @brief The copy constructor
         /// @param vector the vector to copy
         Vector2(const Vector2& vector);
+        Vector2(::Vector2 vector);
         /// @brief Destructor
         ~Vector2();
         /// @brief Get the X axis value of the vector
