@@ -40,7 +40,7 @@ namespace localization
             writer << "Loading locale file '" << filepath << "' for locale '" << _locale << "'";
         });
         if (!file.is_open())
-#ifdef NDEBUG
+#ifdef BM_RELEASE
             throw LocaleNotFoundError(_locale);
 #else
         {
@@ -85,7 +85,7 @@ namespace localization
         std::string key(msg);
 
         if (_ressources.find(key) == _ressources.end())
-#ifdef NDEBUG
+#ifdef BM_RELEASE
             throw MessageNotFoundError(_locale, msg);
 #else
             registerString(msg);

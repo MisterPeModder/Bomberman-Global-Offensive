@@ -33,8 +33,6 @@ int main()
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
-    localization::Localization::saveLocales();
-    Logger::logger.log(Logger::Severity::Information, "End of program");
 
     // Basic placeholder window
     InitWindow(WIDTH, HEIGHT, "Bomberman: Global Offensive");
@@ -51,6 +49,7 @@ int main()
 #endif
 
     CloseWindow();
-
+    localization::Localization::saveLocales();
+    Logger::logger.log(Logger::Severity::Information, "End of program");
     return 0;
 }

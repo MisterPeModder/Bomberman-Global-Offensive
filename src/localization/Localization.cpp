@@ -50,7 +50,7 @@ namespace localization
 
     std::string_view Localization::translate(std::string_view msg)
     {
-#ifndef NDEBUG
+#ifndef BM_RELEASE
         registerString(msg);
 #endif
         if (_Instance._locale == "")
