@@ -6,6 +6,8 @@ set(SRC
 
 set(TARGET_NAME unit_test_bomberman)
 
+include(CompilerFlags)
+
 add_executable(${TARGET_NAME} ${SRC})
 
 source_group("" FILES ${SRC})

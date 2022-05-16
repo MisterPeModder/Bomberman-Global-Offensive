@@ -10,6 +10,8 @@
 # Executable
 /bomberman
 /bomberman.exe
+/bomberman.html
+/bomberman.js
 
 # Logs
 log.txt
