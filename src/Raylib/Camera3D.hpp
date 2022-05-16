@@ -10,7 +10,7 @@
 
 #include "Vector3.hpp"
 extern "C" {
-    #include "raylib.h"
+    #include <raylib.h>
 }
 
 namespace raylib {
