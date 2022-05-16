@@ -83,7 +83,10 @@ namespace raylib
             return CheckCollisionRecs(rec1.C_rectangle(), rec2.C_rectangle());
         }
 
-        Rectangle getCollisionRec(Rectangle rec1, Rectangle rec2) { return GetCollisionRec(rec1.C_rectangle(), rec2.C_rectangle()); }
-    } // namespace core
+        Rectangle getCollisionRec(Rectangle rec1, Rectangle rec2)
+        {
+            return GetCollisionRec(rec1.C_rectangle(), rec2.C_rectangle());
+        }
+    } // namespace shapes
 
 } // namespace raylib
