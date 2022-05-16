@@ -10,12 +10,12 @@
 
 namespace localization
 {
-    RessourceString::operator std::string_view() const { return Localization::translate(_msgid, true); }
+    RessourceString::operator std::string_view() const { return Localization::translate(_msgid); }
 
     RessourceString::operator std::string() const { return std::string(*this); }
 } // namespace localization
 
 std::ostream &operator<<(std::ostream &stream, const localization::RessourceString &rs)
 {
-    return stream << localization::Localization::translate(rs.getMsgId(), true);
+    return stream << localization::Localization::translate(rs.getMsgId());
 }

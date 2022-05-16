@@ -45,9 +45,8 @@ namespace localization
         /// @note The file will be searched in the path given by @ref Localization::getLocalesDirectory().
         ///
         /// @param locale locale to load.
-        /// @param createNew whether or not the file must be created if not found.
-        /// @throw LocaleNotFoundError when the locale can't be found and @c createNew is set to false.
-        RessourceFile(std::string_view locale, bool createNew = false);
+        /// @throw LocaleNotFoundError when the locale can't be found in release mode, in debug mode create the file.
+        RessourceFile(std::string_view locale);
 
         /// Destroy the Ressource File object.
         ~RessourceFile() = default;
@@ -55,9 +54,8 @@ namespace localization
         /// Load a locale file.
         ///
         /// @param locale country code ("en", "fr"...)
-        /// @param createNew whether or not the file must be created if not found.
-        /// @throw LocaleNotFoundError when the locale can't be found and @c createNew is set to false.
-        void loadLocale(std::string_view locale, bool createNew = false);
+        /// @throw LocaleNotFoundError when the locale can't be found in release mode, in debug mode create the file.
+        void loadLocale(std::string_view locale);
 
         /// Save the locale file.
         void save();
@@ -72,10 +70,10 @@ namespace localization
         /// @note If the translation is found but is empty, @c msg will be returned.
         ///
         /// @param msg message to translate.
-        /// @param registerNew whether or not the message must be created if translation not found.
         /// @return std::string_view translated message.
-        /// @throw MessageNotFoundError when the translation is not found and @c registerNew is set to false.
-        std::string_view translate(std::string_view msg, bool createNew = false);
+        /// @throw MessageNotFoundError when the translation is not found in release mode, in debug mode create the
+        /// message.
+        std::string_view translate(std::string_view msg);
 
         /// Register a new string in the loaded locale.
         /// @note If the string is already set and has the same translation, does nothing.

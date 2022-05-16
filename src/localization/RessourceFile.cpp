@@ -26,9 +26,9 @@ namespace localization
     {
     }
 
-    RessourceFile::RessourceFile(std::string_view locale, bool createNew) { loadLocale(locale, createNew); }
+    RessourceFile::RessourceFile(std::string_view locale) { loadLocale(locale); }
 
-    void RessourceFile::loadLocale(std::string_view locale, bool createNew)
+    void RessourceFile::loadLocale(std::string_view locale)
     {
         _locale = locale;
         std::string filepath = Localization::getLocalePath(_locale);
@@ -39,15 +39,17 @@ namespace localization
         Logger::logger.log(Logger::Severity::Information, [&](std::ostream &writer) {
             writer << "Loading locale file '" << filepath << "' for locale '" << _locale << "'";
         });
-        if (!file.is_open()) {
-            if (createNew) {
-                std::ofstream newFile(filepath);
+        if (!file.is_open())
+#ifdef NDEBUG
+            throw LocaleNotFoundError(_locale);
+#else
+        {
+            std::ofstream newFile(filepath);
 
-                newFile.close();
-                return;
-            } else
-                throw LocaleNotFoundError(_locale);
+            newFile.close();
+            return;
         }
+#endif
         while (std::getline(file, line))
             tokens.push_back({getToken(line), line});
         tokens.push_back({getToken(line), line});
@@ -78,15 +80,16 @@ namespace localization
 
     std::string_view RessourceFile::getLocale() const { return _locale; }
 
-    std::string_view RessourceFile::translate(std::string_view msg, bool createNew)
+    std::string_view RessourceFile::translate(std::string_view msg)
     {
         std::string key(msg);
 
-        if (_ressources.find(key) == _ressources.end()) {
-            if (!createNew)
-                throw MessageNotFoundError(_locale, msg);
+        if (_ressources.find(key) == _ressources.end())
+#ifdef NDEBUG
+            throw MessageNotFoundError(_locale, msg);
+#else
             registerString(msg);
-        }
+#endif
         if (_ressources[key] == "")
             return msg;
         return _ressources[key];

@@ -25,12 +25,12 @@ namespace localization
             .generic_string();
     }
 
-    void Localization::setLocale(std::string_view locale, bool createNew)
+    void Localization::setLocale(std::string_view locale)
     {
         std::string key(locale);
 
         if (_Instance._locales.find(key) == _Instance._locales.end())
-            _Instance._locales.insert({key, RessourceFile(locale, createNew)});
+            _Instance._locales.insert({key, RessourceFile(locale)});
         _Instance._locale = key;
     }
 
@@ -42,19 +42,20 @@ namespace localization
 
     std::string_view Localization::getLocale() { return _Instance._locale; }
 
-    void Localization::loadLocales(const std::vector<std::string_view> &locales, bool createNew)
+    void Localization::loadLocales(const std::vector<std::string_view> &locales)
     {
         for (const std::string_view &loc : locales)
-            _Instance._locales[std::string(loc)] = RessourceFile(loc, createNew);
+            _Instance._locales[std::string(loc)] = RessourceFile(loc);
     }
 
-    std::string_view Localization::translate(std::string_view msg, bool registerNew)
+    std::string_view Localization::translate(std::string_view msg)
     {
-        if (registerNew)
-            registerString(msg);
+#ifndef NDEBUG
+        registerString(msg);
+#endif
         if (_Instance._locale == "")
             return msg;
-        return _Instance._locales[_Instance._locale].translate(msg, registerNew);
+        return _Instance._locales[_Instance._locale].translate(msg);
     }
 
     void Localization::registerString(std::string_view msg)

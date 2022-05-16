@@ -40,7 +40,7 @@ namespace localization
         static std::string getLocalePath(std::string_view locale);
 
         /// @copydoc RessourceFile::loadLocale
-        static void setLocale(std::string_view locale, bool createNew = false);
+        static void setLocale(std::string_view locale);
 
         /// Save the loaded locale files.
         /// @note @ref saveLocales() is called on the Localization instance destruction.
@@ -57,15 +57,14 @@ namespace localization
         /// @note All loaded locales will have new messages written in the corresponding file.
         ///
         /// @param locales list of country codes ("en", "fr"...)
-        /// @param createNew whether or not the unfound files must be created.
-        /// @throw RessourceFile::LocaleNotFoundError when a locale is not found and @c createNew is set to false.
+        /// @throw RessourceFile::LocaleNotFoundError when a locale is not found in release mode, create the file in
+        /// debug.
         ///
-        static void loadLocales(const std::vector<std::string_view> &locales, bool createNew = false);
+        static void loadLocales(const std::vector<std::string_view> &localese);
 
         /// @copydoc RessourceFile::translate
-        /// @note @c registerNew will affect all loaded locales.
         /// @note If no locale was set using @ref setLocale() @c msg will always be returned.
-        static std::string_view translate(std::string_view msg, bool registerNew = false);
+        static std::string_view translate(std::string_view msg);
 
         /// Register a new string in the loaded locales.
         /// @note If the string is already set, does nothing.
