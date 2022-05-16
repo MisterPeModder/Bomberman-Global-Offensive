@@ -5,24 +5,23 @@
 
 int main()
 {
-    raylib::Window& window = raylib::Window::getInstance();
     raylib::Camera3D camera;
 
-    window.setTargetFPS(60);
-    window.open(1200, 800, "hell oworld");
+    raylib::Window::setTargetFPS(60);
+    raylib::Window::open(1200, 800, "hell oworld");
 
-    while (!window.windowShouldClose()) {
-        window.beginDrawing();
+    while (!raylib::Window::windowShouldClose()) {
+        raylib::Window::beginDrawing();
 
-        window.clear();
+        raylib::Window::clear();
         camera.begin3D();
 
         // draw cube
 
         camera.end3D();
-        window.drawFPS(10, 10);
+        raylib::Window::drawFPS(10, 10);
 
-        window.endDrawing();
+        raylib::Window::endDrawing();
     }
-    window.close();
+    raylib::Window::close();
 }

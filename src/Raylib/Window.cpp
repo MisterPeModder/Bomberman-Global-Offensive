@@ -11,17 +11,6 @@ extern "C" {
     #include "raylib.h"
 }
 
-raylib::Window raylib::Window::instance = raylib::Window();
-
-raylib::Window &raylib::Window::getInstance()
-{
-    return instance;
-}
-
-raylib::Window::~Window()
-{
-}
-
 void raylib::Window::open(int width, int height, const char *title)
 {
     InitWindow(width, height, title);

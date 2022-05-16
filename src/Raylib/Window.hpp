@@ -12,24 +12,14 @@ namespace raylib {
 
 class Window {
     public:
-        static Window& getInstance();
-        ~Window();
-        void open(int width = 1920, int height = 1080, const char *title = "BM:GO");
-        void close();
-        void clear();
-        bool windowShouldClose();
-        void setTargetFPS(int fps);
-        void drawFPS(int x, int y);
-        void beginDrawing();
-        void endDrawing();
-
-    private:
-        explicit Window() {}
-        explicit Window(const Window&) = default;
-        Window &operator=(const Window&) = default;
-        Window(Window&&) = default;
-        Window &operator=(Window&&) = default;
-        static Window instance;
+        static void open(int width = 1920, int height = 1080, const char *title = "BM:GO");
+        static void close();
+        static void clear();
+        static bool windowShouldClose();
+        static void setTargetFPS(int fps);
+        static void drawFPS(int x, int y);
+        static void beginDrawing();
+        static void endDrawing();
 };
 
 }
