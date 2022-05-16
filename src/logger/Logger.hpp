@@ -51,19 +51,14 @@ class Logger {
     /// @throw std::runtime_error if the @ref std::ofstream cannot be created from the @c filename.
     Logger(std::string_view filename);
 
-    /// Construct a new Logger object based on an other.
-    ///
-    /// @param[in] other base logger to copy.
-    Logger(const Logger &other) = default;
+    /// Cannot copy loggers, because of the arbitrary output stream, which is not copiable.
+    Logger(const Logger &other) = delete;
 
     /// Destroy the Logger object.
     ~Logger() = default;
 
-    /// Copy the other logger.
-    ///
-    /// @param[in] other base logger to copy.
-    /// @return Logger& @b this.
-    Logger &operator=(const Logger &other) = default;
+    /// Cannot copy loggers, because of the arbitrary output stream, which is not copiable.
+    Logger &operator=(const Logger &other) = delete;
 
     /// Add a message to the logs.
     /// @note The log will be taken in account only if the severity is greater or equal than the current logLevel.
