@@ -8,31 +8,33 @@
 #ifndef WINDOW_HPP_
 #define WINDOW_HPP_
 
-namespace raylib {
+namespace raylib
+{
 
-namespace Core {
+    namespace core
+    {
 
-class Window {
-    public:
-        static Window& getInstance();
-        Window(Window&&) = delete;
-        Window &operator=(Window&&) = delete;
-        ~Window();
-        void open(int width = 1920, int height = 1080, const char *title = "BM:GO");
-        void close();
-        void clear();
-        bool windowShouldClose();
-        void setTargetFPS(int fps);
-        void drawFPS(int x, int y);
-        void beginDrawing();
-        void endDrawing();
+        class Window {
+          public:
+            static Window &getInstance();
+            Window(Window &&) = delete;
+            Window &operator=(Window &&) = delete;
+            ~Window();
+            void open(float width = 1920, float height = 1080, const char *title = "BM:GO");
+            void close();
+            void clear();
+            bool windowShouldClose();
+            void setTargetFPS(float fps);
+            void drawFPS(float x, float y);
+            void beginDrawing();
+            void endDrawing();
 
-    private:
-        explicit Window() {}
-        explicit Window(const Window&);
-        Window &operator=(const Window&);
-};
-}
-}
+          private:
+            explicit Window() {}
+            explicit Window(const Window &);
+            Window &operator=(const Window &);
+        };
+    } // namespace core
+} // namespace raylib
 
 #endif /* WINDOW_HPP_ */

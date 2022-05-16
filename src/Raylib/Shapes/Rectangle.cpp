@@ -7,73 +7,83 @@
 
 #include "Rectangle.hpp"
 
-raylib::Shapes::Rectangle::Rectangle(int posX, int posY, int width, int height)
+namespace raylib
 {
-    _position.x = posX;
-    _position.y = posY;
-    _width = width;
-    _height = height;
-}
+    namespace shapes
+    {
 
-raylib::Shapes::Rectangle::Rectangle(Vector2 pos, int width, int height)
-{
-    _position.x = pos._x;
-    _position.y = pos._y;
-    _width = width;
-    _height = height;
-}
+        Rectangle::Rectangle(float posX, float posY, float width, float height)
+        {
+            _position.x = posX;
+            _position.y = posY;
+            _width = width;
+            _height = height;
+        }
 
-raylib::Shapes::Rectangle::~Rectangle()
-{
+        Rectangle::Rectangle(::Rectangle rec)
+        {
+            _position.x = rec.x;
+            _position.y = rec.y;
+            _width = rec.width;
+            _height = rec.height;
+        }
 
-}
+        Rectangle::Rectangle(Vector2 pos, float width, float height)
+        {
+            _position.x = pos.x;
+            _position.y = pos.y;
+            _width = width;
+            _height = height;
+        }
 
-void raylib::Shapes::Rectangle::drawRectangle(int posX, int posY, int width, int height, Color color)
-{
-    DrawRectangle(posX, posY, width, height, color);
-}
+        Rectangle::~Rectangle() {}
 
-void raylib::Shapes::Rectangle::drawRectangleV(Vector2 position, Vector2 size, Color color)
-{
-    DrawRectangleV(position, size, color);
-}
+        ::Rectangle Rectangle::C_rectangle() { return {_position.x, _position.y, _width, _height}; }
 
-void raylib::Shapes::Rectangle::drawRectangleRec(Rectangle rec, Color color)
-{
-    DrawRectangleRec(rec, color);
-}
+        void Rectangle::drawRectangle(float posX, float posY, float width, float height, Color color)
+        {
+            DrawRectangle(posX, posY, width, height, color);
+        }
 
-void raylib::Shapes::Rectangle::drawRectangleLines(int posX, int posY, int width, int height, Color color)
-{
-    DrawRectangleLines(posX, posY, width, height, color);
-}
+        void Rectangle::drawRectangleV(Vector2 position, Vector2 size, Color color)
+        {
+            DrawRectangleV(position, size, color);
+        }
 
-void raylib::Shapes::Rectangle::drawRectangleLines(Vector2 pos, int width, int height, Color color)
-{
-    DrawRectangleLines(pos.x, pos.y, width, height, color);
-}
+        void Rectangle::drawRectangleRec(Rectangle rec, Color color) { DrawRectangleRec(rec.C_rectangle(), color); }
 
-void raylib::Shapes::Rectangle::drawRectangleLinesEx(Rectangle rec, int lineThick, Color color)
-{
-    DrawRectangleLinesEx(rec, lineThick, color);
-}
+        void Rectangle::drawRectangleLines(float posX, float posY, float width, float height, Color color)
+        {
+            DrawRectangleLines(posX, posY, width, height, color);
+        }
 
-void raylib::Shapes::Rectangle::drawRectangleRounded(Rectangle rec, float roundness, int segments, Color color)
-{
-    DrawRectangleRounded(rec, roundness, segments, color);
-}
+        void Rectangle::drawRectangleLines(Vector2 pos, float width, float height, Color color)
+        {
+            DrawRectangleLines(pos.x, pos.y, width, height, color);
+        }
 
-void raylib::Shapes::Rectangle::drawRectangleRoundedLines(Rectangle rec, float roundness, int segments, int lineThick, Color color)
-{
-    DrawRectangleRoundedLines(rec, roundness, segments, lineThick, color);
-}
+        void Rectangle::drawRectangleLinesEx(Rectangle rec, float lineThick, Color color)
+        {
+            DrawRectangleLinesEx(rec.C_rectangle(), lineThick, color);
+        }
 
-bool raylib::Shapes::Rectangle::checkCollisionRecs(Rectangle rec1, Rectangle rec2)
-{
-    return CheckCollisionRecs(rec1, rec2);
-}
+        void Rectangle::drawRectangleRounded(Rectangle rec, float roundness, float segments, Color color)
+        {
+            DrawRectangleRounded(rec.C_rectangle(), roundness, segments, color);
+        }
 
-raylib::Shapes::Rectangle getCollisionRec(Rectangle rec1, Rectangle rec2)
-{
-    return GetCollisionRec(rec1, rec2);
-}
+        void Rectangle::drawRectangleRoundedLines(
+            Rectangle rec, float roundness, float segments, float lineThick, Color color)
+        {
+            DrawRectangleRoundedLines(rec.C_rectangle(), roundness, segments, lineThick, color);
+        }
+
+        bool Rectangle::checkCollisionRecs(Rectangle rec1, Rectangle rec2)
+        {
+            return CheckCollisionRecs(rec1.C_rectangle(), rec2.C_rectangle());
+        }
+
+        Rectangle getCollisionRec(Rectangle rec1, Rectangle rec2) { return GetCollisionRec(rec1.C_rectangle(), rec2.C_rectangle()); }
+    } // namespace core
+
+} // namespace raylib

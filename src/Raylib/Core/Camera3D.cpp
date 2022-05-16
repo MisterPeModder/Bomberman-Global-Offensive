@@ -7,86 +7,56 @@
 
 #include "Camera3D.hpp"
 
-raylib::Core::Camera3D::Camera3D()
+namespace raylib
 {
-    _camera.position = {0.f, 10.f, 10.f};
-    _camera.target = {0.f, 0.f, 0.f};
-    _camera.up = {0.f, 1.f, 0.f};
-    _camera.fovy = 45.f;
-    _camera.projection = CAMERA_PERSPECTIVE;
-}
 
-raylib::Core::Camera3D::~Camera3D()
-{
-}
+    namespace core
+    {
 
-raylib::Core::Camera3D::Camera3D(Camera3D&& camera)
- : _camera(camera._camera)
-{
-}
+        Camera3D::Camera3D()
+        {
+            _camera.position = {0.f, 10.f, 10.f};
+            _camera.target = {0.f, 0.f, 0.f};
+            _camera.up = {0.f, 1.f, 0.f};
+            _camera.fovy = 45.f;
+            _camera.projection = CAMERA_PERSPECTIVE;
+        }
 
-raylib::Core::Camera3D &raylib::Core::Camera3D::operator=(Camera3D&& camera)
-{
-    _camera = camera._camera;
-    return *this;
-}
+        Camera3D::~Camera3D() {}
 
-void raylib::Core::Camera3D::begin3D()
-{
-    BeginMode3D(_camera);
-}
+        Camera3D::Camera3D(Camera3D &&camera) : _camera(camera._camera) {}
 
-void raylib::Core::Camera3D::end3D()
-{
-    EndMode3D();
-}
+        Camera3D &Camera3D::operator=(Camera3D &&camera)
+        {
+            _camera = camera._camera;
+            return *this;
+        }
 
-raylib::Core::Vector3 raylib::Core::Camera3D::getPosition() const
-{
-    return {_camera.position.x, _camera.position.y, _camera.position.z};
-}
+        void Camera3D::begin3D() { BeginMode3D(_camera); }
 
-void raylib::Core::Camera3D::setPosition(raylib::Core::Vector3 position)
-{
-    _camera.position = {position.getX(), position.getY(), position.getZ()};
-}
+        void Camera3D::end3D() { EndMode3D(); }
 
-raylib::Core::Vector3 raylib::Core::Camera3D::getTarget() const
-{
-    return {_camera.target.x, _camera.target.y, _camera.target.z};
-}
+        Vector3 Camera3D::getPosition() const { return {_camera.position.x, _camera.position.y, _camera.position.z}; }
 
-void raylib::Core::Camera3D::setTarget(raylib::Core::Vector3 target)
-{
-    _camera.target = {target.getX(), target.getY(), target.getZ()};
-}
+        void Camera3D::setPosition(Vector3 position)
+        {
+            _camera.position = {position.getX(), position.getY(), position.getZ()};
+        }
 
-raylib::Core::Vector3 raylib::Core::Camera3D::getUp() const
-{
-    return {_camera.up.x, _camera.up.y, _camera.up.z};
-}
+        Vector3 Camera3D::getTarget() const { return {_camera.target.x, _camera.target.y, _camera.target.z}; }
 
-void raylib::Core::Camera3D::setUp(raylib::Core::Vector3 up)
-{
-    _camera.up = {up.getX(), up.getY(), up.getZ()};
-}
+        void Camera3D::setTarget(Vector3 target) { _camera.target = {target.getX(), target.getY(), target.getZ()}; }
 
-float raylib::Core::Camera3D::getFovy() const
-{
-    return _camera.fovy;
-}
+        Vector3 Camera3D::getUp() const { return {_camera.up.x, _camera.up.y, _camera.up.z}; }
 
-void raylib::Core::Camera3D::setFovy(float fovy)
-{
-    _camera.fovy = fovy;
-}
+        void Camera3D::setUp(Vector3 up) { _camera.up = {up.getX(), up.getY(), up.getZ()}; }
 
-int raylib::Core::Camera3D::getProjection() const
-{
-    return _camera.projection;
-}
+        float Camera3D::getFovy() const { return _camera.fovy; }
 
-void raylib::Core::Camera3D::setProjection(int projection)
-{
-    _camera.projection = projection;
-}
+        void Camera3D::setFovy(float fovy) { _camera.fovy = fovy; }
+
+        int Camera3D::getProjection() const { return _camera.projection; }
+
+        void Camera3D::setProjection(int projection) { _camera.projection = projection; }
+    } // namespace core
+} // namespace raylib

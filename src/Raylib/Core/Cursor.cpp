@@ -7,40 +7,25 @@
 
 #include "Cursor.hpp"
 
-raylib::Core::Cursor::Cursor()
+namespace raylib
 {
-}
+    namespace core
+    {
 
-raylib::Core::Cursor::~Cursor()
-{
-}
+        Cursor::Cursor() {}
 
-void raylib::Core::Cursor::showCursor(void)
-{
-    ShowCursor();
-}
+        Cursor::~Cursor() {}
 
-void raylib::Core::Cursor::hideCursor(void)
-{
-    HideCursor();
-}
+        void Cursor::showCursor(void) { ShowCursor(); }
 
-bool raylib::Core::Cursor::isCursorHidden(void)
-{
-    return IsCursorHidden();
-}
+        void Cursor::hideCursor(void) { HideCursor(); }
 
-void raylib::Core::Cursor::enableCursor(void)
-{
-    EnableCursor();
-}
+        bool Cursor::isCursorHidden(void) { return IsCursorHidden(); }
 
-void raylib::Core::Cursor::disableCursor(void)
-{
-    DisableCursor();
-}
+        void Cursor::enableCursor(void) { EnableCursor(); }
 
-bool raylib::Core::Cursor::isCursorOnScreen(void)
-{
-    return IsCursorOnScreen();
-}
+        void Cursor::disableCursor(void) { DisableCursor(); }
+
+        bool Cursor::isCursorOnScreen(void) { return IsCursorOnScreen(); }
+    } // namespace core
+} // namespace raylib

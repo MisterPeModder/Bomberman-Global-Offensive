@@ -7,57 +7,40 @@
 
 #include "Window.hpp"
 
-extern "C" {
-    #include "raylib.h"
-}
-
-raylib::Core::Window &raylib::Core::Window::getInstance()
+extern "C"
 {
-    static Window instance;
-
-    return instance;
+#include "raylib.h"
 }
 
-raylib::Core::Window::~Window()
+namespace raylib
 {
-}
 
-void raylib::Core::Window::open(int width, int height, const char *title)
-{
-    InitWindow(width, height, title);
-}
+    namespace core
+    {
 
-void raylib::Core::Window::close()
-{
-    CloseWindow();
-}
+        Window &Window::getInstance()
+        {
+            static Window instance;
 
-void raylib::Core::Window::clear()
-{
-    ClearBackground(BLACK);
-}
+            return instance;
+        }
 
-bool raylib::Core::Window::windowShouldClose()
-{
-    return WindowShouldClose();
-}
+        Window::~Window() {}
 
-void raylib::Core::Window::setTargetFPS(int fps)
-{
-    SetTargetFPS(fps);
-}
+        void Window::open(float width, float height, const char *title) { InitWindow(width, height, title); }
 
-void raylib::Core::Window::drawFPS(int x, int y)
-{
-    DrawFPS(x, y);
-}
+        void Window::close() { CloseWindow(); }
 
-void raylib::Core::Window::beginDrawing()
-{
-    BeginDrawing();
-}
+        void Window::clear() { ClearBackground(BLACK); }
 
-void raylib::Core::Window::endDrawing()
-{
-    EndDrawing();
-}
+        bool Window::windowShouldClose() { return WindowShouldClose(); }
+
+        void Window::setTargetFPS(float fps) { SetTargetFPS(fps); }
+
+        void Window::drawFPS(float x, float y) { DrawFPS(x, y); }
+
+        void Window::beginDrawing() { BeginDrawing(); }
+
+        void Window::endDrawing() { EndDrawing(); }
+    } // namespace core
+} // namespace raylib

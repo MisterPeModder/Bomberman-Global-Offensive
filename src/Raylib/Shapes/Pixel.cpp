@@ -7,42 +7,38 @@
 
 #include "Pixel.hpp"
 
-raylib::Shapes::Pixel::Pixel(Color color, int x, int y)
+namespace raylib
 {
-    _position.x = x;
-    _position.y = y;
-    _color = color;
-}
+    namespace shapes
+    {
+        Pixel::Pixel(Color color, float x, float y)
+        {
+            _position.x = x;
+            _position.y = y;
+            _color = color;
+        }
 
-raylib::Shapes::Pixel::Pixel(Vector2 position, Color color)
-{
-    _position.x = position.x;
-    _position.y = position.y;
-    _color = color;
-}
+        Pixel::Pixel(Vector2 position, Color color)
+        {
+            _position.x = position.x;
+            _position.y = position.y;
+            _color = color;
+        }
 
-raylib::Shapes::Pixel::~Pixel()
-{
-}
+        Pixel::~Pixel() {}
 
-void raylib::Shapes::Pixel::drawPixel(int posX, int posY, Color color)
-{
-    DrawPixel(posX, posY, color);
-}
+        void Pixel::drawPixel(float posX, float posY, Color color) { DrawPixel(posX, posY, color); }
 
+        void Pixel::drawPixelV(Vector2 position, Color color) { DrawPixelV(position, color); }
 
-void raylib::Shapes::Pixel::drawPixelV(Vector2 position, Color color)
-{
-    DrawPixelV(position, color);
-}
+        void Pixel::setPixelColor(void *dstPtr, Color color, float format)
+        {
+            _color = color;
+            SetPixelColor(dstPtr, color, format);
+        }
 
-void raylib::Shapes::Pixel::setPixelColor(void *dstPtr, Color color, int format)
-{
-    _color = color;
-    SetPixelColor(dstPtr, color, format);
-}
+        Color Pixel::getPixelColor(void *srcPtr, float format) { return GetPixelColor(srcPtr, format); }
 
-Color raylib::Shapes::Pixel::getPixelColor(void *srcPtr, int format)
-{
-    return GetPixelColor(srcPtr, format);
-}
+    } // namespace shapes
+
+} // namespace raylib

@@ -7,75 +7,39 @@
 
 #include "Mouse.hpp"
 
-raylib::Core::Mouse::Mouse()
+namespace raylib
 {
-}
+    namespace core
+    {
 
-raylib::Core::Mouse::~Mouse()
-{
-}
+        Mouse::Mouse() {}
 
-bool raylib::Core::Mouse::isMouseButtonPressed(int button)
-{
-    return IsMouseButtonPressed(button);
-}
+        Mouse::~Mouse() {}
 
-bool raylib::Core::Mouse::isMouseButtonDown(int button)
-{
-    return IsMouseButtonDown(button);
-}
+        bool Mouse::isMouseButtonPressed(int button) { return IsMouseButtonPressed(button); }
 
-bool raylib::Core::Mouse::isMouseButtonReleased(int button)
-{
-    return IsMouseButtonReleased(button);
-}
+        bool Mouse::isMouseButtonDown(int button) { return IsMouseButtonDown(button); }
 
-bool raylib::Core::Mouse::isMouseButtonUp(int button)
-{
-    return IsMouseButtonUp(button);
-}
+        bool Mouse::isMouseButtonReleased(int button) { return IsMouseButtonReleased(button); }
 
-int raylib::Core::Mouse::getMouseX(void)
-{
-    return GetMouseX();
-}
+        bool Mouse::isMouseButtonUp(int button) { return IsMouseButtonUp(button); }
 
-int raylib::Core::Mouse::getMouseY(void)
-{
-    return GetMouseY();
-}
+        int Mouse::getMouseX(void) { return GetMouseX(); }
 
-raylib::Core::Vector2 raylib::Core::Mouse::getMousePosition(void)
-{
-    return GetMousePosition();
-}
+        int Mouse::getMouseY(void) { return GetMouseY(); }
 
-raylib::Core::Vector2 raylib::Core::Mouse::getMouseDelta(void)
-{
-    return GetMouseDelta();
-}
+        Vector2 Mouse::getMousePosition(void) { return GetMousePosition(); }
 
-void raylib::Core::Mouse::setMousePosition(int x, int y)
-{
-    SetMousePosition(x, y);
-}
+        Vector2 Mouse::getMouseDelta(void) { return GetMouseDelta(); }
 
-void raylib::Core::Mouse::setMouseOffset(int offsetX, int offsetY)
-{
-    SetMouseOffset(offsetX, offsetY);
-}
+        void Mouse::setMousePosition(int x, int y) { SetMousePosition(x, y); }
 
-void raylib::Core::Mouse::setMouseScale(float scaleX, float scaleY)
-{
-    SetMouseScale(scaleX, scaleY);
-}
+        void Mouse::setMouseOffset(int offsetX, int offsetY) { SetMouseOffset(offsetX, offsetY); }
 
-float raylib::Core::Mouse::getMouseWheelMove(void)
-{
-    return GetMouseWheelMove();
-}
+        void Mouse::setMouseScale(float scaleX, float scaleY) { SetMouseScale(scaleX, scaleY); }
 
-void raylib::Core::Mouse::setMouseCursor(int cursor)
-{
-    SetMouseCursor(cursor);
-}
+        float Mouse::getMouseWheelMove(void) { return GetMouseWheelMove(); }
+
+        void Mouse::setMouseCursor(int cursor) { SetMouseCursor(cursor); }
+    } // namespace core
+} // namespace raylib
