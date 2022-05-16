@@ -21,50 +21,52 @@ namespace raylib
     {
         class Pixel {
           public:
-            /// @brief This is the constructor for the Pixel class. It takes in a Color object and two
-            /// floategers, and sets the position and color of the Pixel object
+            /// It creates a pixel with a position and a color.
             ///
+            /// @param x The x position of the pixel.
+            /// @param y The y position of the pixel.
             /// @param color The color of the pixel.
-            /// @param x The x position of the pixel
-            /// @param y The y position of the pixel
-            Pixel(Color color, float x = 0, float y = 0);
+            Pixel(float x = 0, float y = 0, Color color = {0, 0, 0, 0});
 
-            /// @brief A constructor for the Pixel class.
+            /// This function is a constructor for the Pixel class. It takes in a
+            /// Vector2 and a Color and sets the position and color of the Pixel to the
+            /// values passed in
             ///
             /// @param position The position of the pixel.
             /// @param color The color of the pixel.
             Pixel(Vector2 position, Color color);
 
-            /// @brief Destructor
+            /// The destructor for the Pixel class.
             ~Pixel();
 
-            /// Draws a pixel
-            ///
-            /// @param posX The x position of the pixel
-            /// @param posY The Y position of the pixel
-            /// @param color The color of the pixel.
-            void drawPixel(float posX, float posY, Color color);
+            /// Draw a pixel at the position of the pixel object, using the color of the
+            /// pixel object.
+            void draw();
 
-            /// @brief Draws a pixel
+            /// This function sets the color of the pixel to the given color.
             ///
-            /// @param position The position of the pixel to draw.
-            /// @param color Color struct, color to draw pixel
-            void drawPixelV(Vector2 position, Color color);
-
-            /// @brief It sets the color of a pixel.
-            ///
-            /// @param dstPtr A pofloater to the destination image.
             /// @param color The color to set the pixel to.
-            /// @param format The format of the image.
-            void setPixelColor(void *dstPtr, Color color, float format);
+            /// @param format The format of the pixel. This is a float value between 0
+            /// and 1.
+            void setColor(Color color, float format);
 
-            /// @brief It gets the color of a pixel from a texture.
+            /// This function returns the color of the pixel.
             ///
-            /// @param srcPtr Pofloater to the source image data (CPU memory)
-            /// @param format The format of the image.
+            /// @param format The format of the image. This is a float value between 0
+            /// and 1.
             ///
-            /// @return A Color struct.
-            Color getPixelColor(void *srcPtr, float format);
+            /// @return The color of the pixel.
+            Color getColor(float format);
+
+            /// This function sets the position of the pixel to the position passed in
+            ///
+            /// @param position The position of the pixel.
+            void setPosition(Vector2 position);
+
+            /// This function returns the position of the pixel
+            ///
+            /// @return The position of the pixel.
+            Vector2 getPosition();
 
           protected:
           private:

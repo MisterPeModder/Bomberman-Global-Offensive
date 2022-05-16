@@ -21,115 +21,145 @@ namespace raylib
     {
         class Rectangle {
           public:
-            /// @brief This function creates a rectangle object with the given parameters
+            /// This function creates a rectangle with a position, width, height, and
+            /// color
             ///
-            /// @param posX The X position of the rectangle.
+            /// @param posX The x position of the rectangle.
             /// @param posY The Y position of the rectangle.
             /// @param width The width of the rectangle.
             /// @param height The height of the rectangle.
-            Rectangle(float posX = 0, float posY = 0, float width = 0, float height = 0);
+            /// @param color The color of the rectangle.
+            Rectangle(float posX = 0, float posY = 0, float width = 0, float height = 0, Color color = {0, 0, 0, 0});
 
-            /// @brief `raylib::Shapes::Rectangle::Rectangle(Vector2 pos, float width, float height)`
+            /// A constructor that takes a Rectangle as a parameter.
             ///
-            /// This is a constructor for the `Rectangle` class. It takes a `Vector2` object
-            /// called `pos` and two floategers called `width` and `height`
+            /// @param rec The rectangle to copy
+            Rectangle(Vector2 position, float width = 0, float height = 0, Color color = {0, 0, 0, 0});
+
+            /// This function creates a rectangle with a position, width, height, and
+            /// color
             ///
             /// @param pos The position of the rectangle.
-            /// @param width The width of the rectangle
+            /// @param width The width of the rectangle.
             /// @param height The height of the rectangle.
-            Rectangle(Vector2 position, float width = 0, float height = 0);
-
+            /// @param color The color of the rectangle.
             Rectangle(::Rectangle rec);
-            /// @brief Destructor
+
+            /// The destructor for the Rectangle class.
             ~Rectangle();
 
-            /// @brief Draws a rectangle
+            /// "Return a C++ Rectangle object with the same position and dimensions as
+            /// this Rectangle object."
             ///
-            /// @param posX The x position of the rectangle
-            /// @param posY The Y position of the rectangle
-            /// @param width The width of the rectangle
-            /// @param height The height of the rectangle
-            /// @param color The color of the rectangle
-            void drawRectangle(float posX, float posY, float width, float height, Color color);
+            /// The first line of the function is a return statement. It returns a C++
+            /// Rectangle object. The return statement is followed by a pair of curly
+            /// braces. The curly braces contain a list of arguments. The arguments are
+            /// separated by commas. The arguments are the same arguments that are
+            /// passed to the constructor of the C++ Rectangle class
+            ///
+            /// @return A rectangle object.
+            ::Rectangle C_rectangle();
 
-            /// @brief Draws a rectangle defined by its bottom-left corner and size
+            /// `void Rectangle::draw() { DrawRectangleRec(this->C_rectangle(), _color);
+            /// }`
             ///
-            /// @param position The position of the rectangle.
-            /// @param size The size of the rectangle.
+            /// The function `draw()` is a member function of the class `Rectangle`. It
+            /// is a public function, so it can be called from outside the class. It
+            /// takes no arguments and returns nothing. It calls the function
+            /// `DrawRectangleRec()` from the raylib library, which takes two arguments:
+            /// a `Rectangle` and a `Color`. The first argument is the `Rectangle` that
+            /// is a member of the class `Rectangle`. The second argument is the `Color`
+            /// that is a member of the class `Rectangle`
+            void draw();
+
+            /// Draws a rectangle outline (or "wireframe") with the given color
+            ///
             /// @param color The color of the rectangle.
-            void drawRectangleV(Vector2 position, Vector2 size, Color color);
+            void drawLines(Color color);
 
-            /// @brief Draws a rectangle.
+            /// Draws a rectangle outline (or line) with extended parameters
             ///
-            /// @param rec The rectangle to draw
-            /// @param color Color struct
-            void drawRectangleRec(Rectangle rec, Color color);
-
-            /// @brief Draws a rectangle outline
-            ///
-            /// @param posX The x position of the rectangle
-            /// @param posY The Y position of the rectangle
-            /// @param width The width of the rectangle
-            /// @param height The height of the rectangle.
+            /// @param lineThick Thickness of the lines (in pixels)
             /// @param color The color of the rectangle.
-            void drawRectangleLines(float posX, float posY, float width, float height, Color color);
+            void drawLinesEx(float lineThick, Color color);
 
-            /// @brief It draws a rectangle with lines.
+            /// Draws a rectangle with rounded edges
             ///
-            /// @param pos The position of the rectangle
-            /// @param width The width of the rectangle
-            /// @param height The height of the rectangle
+            /// @param roundness The roundness of the corners in the range 0.0f - 1.0f.
+            /// @param segments The number of segments to be used to draw the rounded
+            /// edges (defaults to 30)
             /// @param color The color of the rectangle.
-            void drawRectangleLines(Vector2 pos, float width, float height, Color color);
+            void drawRounded(float roundness, float segments, Color color);
 
-            /// @brief Draws a rectangle outline with extended parameters
+            /// Draws a rectangle with rounded corners outline
             ///
-            /// @param rec The rectangle to draw
-            /// @param lineThick Thickness of the lines
-            /// @param color The color of the rectangle
-            void drawRectangleLinesEx(Rectangle rec, float lineThick, Color color);
+            /// @param roundness The roundness of the corners.
+            /// @param segments The number of segments to be used to draw the rounded
+            /// edges.
+            /// @param lineThick The thickness of the lines.
+            /// @param color The color of the lines
+            void drawRoundedLines(float roundness, float segments, float lineThick, Color color);
 
-            /// @brief Draws a rectangle with rounded edges
+            /// It checks if the rectangle is colliding with another rectangle.
             ///
-            /// @param rec The rectangle to draw
-            /// @param roundness The roundness of the rectangle's corners.
-            /// @param segments The number of segments to use when drawing the rounded corners.
-            /// @param color The color of the rectangle
-            void drawRectangleRounded(Rectangle rec, float roundness, float segments, Color color);
-
-            /// @brief Draws a rectangle with rounded edges (Vector version)
-            ///
-            /// @param rec The rectangle to draw
-            /// @param roundness The roundness of the rectangle's corners.
-            /// @param segments The number of segments to use when drawing the rounded corners.
-            /// @param lineThick Thickness of the lines used to draw the rectangle
-            /// @param color The color of the rectangle
-            void drawRectangleRoundedLines(Rectangle rec, float roundness, float segments, float lineThick, Color color);
-
-            /// @brief Checks collision between two rectangles.
-            ///
-            /// @param rec1 The first rectangle to check.
-            /// @param rec2 The second rectangle to check for collision.
+            /// @param other The other rectangle to check collision with.
             ///
             /// @return A boolean value.
-            bool checkCollisionRecs(Rectangle rec1, Rectangle rec2);
+            bool checkCollision(Rectangle other);
 
-            /// @brief It returns a rectangle that represents the collision area between two
-            /// rectangles.
+            /// It returns the collision rectangle between two rectangles.
             ///
-            /// @param rec1 The first rectangle to check for collision.
-            /// @param rec2 The second rectangle to check for collision.
+            /// @param other The other rectangle to check collision with.
             ///
-            /// @return A raylib::Shapes::Rectangle
-            Rectangle getCollisionRec(Rectangle rec1, Rectangle rec2);
+            /// @return A rectangle
+            Rectangle getCollision(Rectangle other);
 
-            ::Rectangle C_rectangle();
+            /// `Color Rectangle::getColor()`
+            ///
+            /// This function returns a `Color` object. It is a member of the
+            /// `Rectangle` class
+            ///
+            /// @return The color of the rectangle.
+
+            Color getColor();
+
+            /// This function returns the position of the rectangle
+            ///
+            /// @return The position of the rectangle.
+            Vector2 getPosition();
+
+            /// This function returns the width of the rectangle
+            ///
+            /// @return The width of the rectangle.
+            float getWidth();
+
+            /// `getHeight()` returns the height of the rectangle
+            ///
+            /// @return The height of the rectangle
+            float getHeight();
+
+            /// This function sets the position of the rectangle
+            ///
+            /// @param position The position of the rectangle.
+            void setPosition(Vector2 position);
+
+            /// Sets the color of the rectangle to the given color.
+            ///
+            /// @param color The color of the rectangle.
+            void setColor(Color color);
+
+            /// This function sets the width and height of the rectangle.
+            ///
+            /// @param width The width of the rectangle.
+            /// @param height The height of the rectangle.
+            void setSize(float width, float height);
 
           protected:
           private:
             Vector2 _position;
             float _width;
             float _height;
+            Color _color;
         };
     } // namespace shapes
 } // namespace raylib

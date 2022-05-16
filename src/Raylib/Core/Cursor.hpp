@@ -19,30 +19,30 @@ namespace raylib
     {
         class Cursor {
           public:
-            /// @brief Constructor of the Cursor
+            /// Constructor of the Cursor
             Cursor();
 
-            /// @brief Destructor of the Cursor
+            /// Destructor of the Cursor
             ~Cursor();
 
-            /// @brief It shows the cursor
+            /// It shows the cursor
             void showCursor(void);
 
-            /// @brief It hides the cursor.
+            /// It hides the cursor.
             void hideCursor(void);
 
-            /// @brief It returns a boolean value.
+            /// It returns a boolean value.
             ///
             /// @return A boolean value.
             bool isCursorHidden(void);
 
-            /// @brief It enables the cursor.
+            /// It enables the cursor.
             void enableCursor(void);
 
-            /// @brief It disables the cursor.
+            /// It disables the cursor.
             void disableCursor(void);
 
-            /// @brief It returns true if the cursor is on the screen.
+            /// It returns true if the cursor is on the screen.
             ///
             /// @return A boolean value.
             bool isCursorOnScreen(void);
