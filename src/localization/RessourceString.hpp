@@ -19,7 +19,7 @@ namespace localization
         /// Construct a new Ressource String object.
         ///
         /// @param msgid id of the message, also the message used when no translation is set.
-        RessourceString(std::string_view msgid);
+        constexpr RessourceString(std::string_view msgid) : _msgid(msgid) {}
 
         /// Destroy the Ressource String object.
         ~RessourceString() = default;
@@ -27,7 +27,7 @@ namespace localization
         /// Get the Msg Id wrapped.
         ///
         /// @return std::string_view msgid.
-        std::string_view getMsgId() const;
+        constexpr std::string_view getMsgId() const { return _msgid; }
 
         /// Convert the string to its translated version.
         ///
@@ -40,7 +40,7 @@ namespace localization
         operator std::string() const;
 
       private:
-        std::string _msgid;
+        std::string_view _msgid;
     };
 } // namespace localization
 

@@ -6,19 +6,21 @@
 */
 
 #include "Localization.hpp"
-#include <filesystem>
 
 namespace localization
 {
     Localization Localization::_Instance;
 
-    void Localization::setLocalesDirectory(std::string_view directory) { _Instance._localesDirectory = directory; }
+    void Localization::setLocalesDirectory(const std::filesystem::path &directory)
+    {
+        _Instance._localesDirectory = directory;
+    }
 
-    std::string_view Localization::getLocalesDirectory() { return _Instance._localesDirectory; }
+    const std::filesystem::path &Localization::getLocalesDirectory() { return _Instance._localesDirectory; }
 
     std::string Localization::getLocalePath(std::string_view locale)
     {
-        return std::filesystem::path(getLocalesDirectory().data())
+        return std::filesystem::path(getLocalesDirectory())
             .append(std::string("locale_") + locale.data() + ".po")
             .generic_string();
     }

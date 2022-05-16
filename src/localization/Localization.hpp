@@ -8,10 +8,9 @@
 #ifndef LOCALIZATION_LOCALIZATION_HPP_
 #define LOCALIZATION_LOCALIZATION_HPP_
 
+#include <filesystem>
 #include <vector>
 #include "RessourceFile.hpp"
-
-#define _(...) localization::Localization::translate(__VA_ARGS__)
 
 /// Namespace regrouping all the i18n related classes.
 namespace localization
@@ -26,13 +25,13 @@ namespace localization
         /// @note By default the directory is "./locales"
         ///
         /// @param directory locales files directory.
-        static void setLocalesDirectory(std::string_view directory);
+        static void setLocalesDirectory(const std::filesystem::path &directory);
 
         /// Get the Locales Directory.
         /// @note By default the directory is "./locales"
         ///
         /// @return std::string_view locales files directory.
-        static std::string_view getLocalesDirectory();
+        static const std::filesystem::path &getLocalesDirectory();
 
         /// Get the path of a locale file.
         ///
@@ -83,7 +82,7 @@ namespace localization
         static Localization _Instance;
         std::map<std::string, RessourceFile> _locales;
         std::string _locale;
-        std::string _localesDirectory;
+        std::filesystem::path _localesDirectory;
     };
 } // namespace localization
 #endif /* !LOCALIZATION_LOCALIZATION_HPP_ */
