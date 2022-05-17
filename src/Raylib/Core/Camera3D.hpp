@@ -15,11 +15,13 @@ extern "C"
 #include <raylib.h>
 }
 
+/// Raylib namespace
 namespace raylib
 {
-
+    /// Core namespace (inside of raylib)
     namespace core
     {
+        /// The Camera3D class that encapsulates the raylib 3D camera
         class Camera3D {
           public:
             /// @brief Default constructor
