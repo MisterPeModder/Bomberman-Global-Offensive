@@ -4,7 +4,6 @@ set(INCROOT ${PROJECT_SOURCE_DIR}/src)
 set(SRCROOT ${PROJECT_SOURCE_DIR}/src)
 
 set(SRC
-${SRCROOT}/dummy.cpp
 )
 
 set(INCDIRS ${INCROOT})
