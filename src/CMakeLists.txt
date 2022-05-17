@@ -4,28 +4,13 @@ set(INCROOT ${PROJECT_SOURCE_DIR}/src)
 set(SRCROOT ${PROJECT_SOURCE_DIR}/src)
 
 set(SRC
-    ${SRCROOT}/dummy.cpp
-    ${SRCROOT}/Raylib/Core/Camera3D.cpp
-    ${SRCROOT}/Raylib/Core/Camera3D.hpp
-    ${SRCROOT}/Raylib/Core/Vector2.cpp
-    ${SRCROOT}/Raylib/Core/Vector2.hpp
-    ${SRCROOT}/Raylib/Core/Vector3.cpp
-    ${SRCROOT}/Raylib/Core/Vector3.hpp
-    ${SRCROOT}/Raylib/Core/Window.cpp
-    ${SRCROOT}/Raylib/Core/Window.hpp
-    ${SRCROOT}/Raylib/Core/Mouse.hpp
-    ${SRCROOT}/Raylib/Core/Mouse.cpp
-    ${SRCROOT}/Raylib/Core/Cursor.hpp
-    ${SRCROOT}/Raylib/Core/Cursor.cpp
-    ${SRCROOT}/Raylib/Shapes/Rectangle.cpp
-    ${SRCROOT}/Raylib/Shapes/Rectangle.hpp
-    ${SRCROOT}/Raylib/Shapes/Pixel.cpp
-    ${SRCROOT}/Raylib/Shapes/Pixel.hpp
+${SRCROOT}/dummy.cpp
 )
 
 set(INCDIRS ${INCROOT})
 
 add_subdirectory(logger)
+add_subdirectory(Raylib)
 
 # Source groups are a feature in Visual Studio.
 source_group("" FILES ${SRC})
