@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Raylib/Camera3D.hpp"
-#include "Raylib/Window.hpp"
+#include "Raylib/Core/Camera3D.hpp"
+#include "Raylib/Core/Window.hpp"
 
 // int main()
 // {
@@ -36,18 +36,20 @@ constexpr int HEIGHT(500);
 
 static void drawFrame(void *arg)
 {
-    raylib::Camera3D *camera = reinterpret_cast<raylib::Camera3D *>(arg);
+    raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
 
-    raylib::Window::beginDrawing();
-    raylib::Window::clear();
+    raylib::core::Window::beginDrawing();
+    raylib::core::Window::clear();
+    camera->begin3D();
+    camera->end3D();
     DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
-    raylib::Window::endDrawing();
-    raylib::Window::drawFPS(10, 10);
+    raylib::core::Window::endDrawing();
+    raylib::core::Window::drawFPS(10, 10);
 }
 
 int main()
 {
-    raylib::Camera3D camera;
+    raylib::core::Camera3D camera;
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
@@ -58,20 +60,20 @@ int main()
     Logger::logger.log(Logger::Severity::Information, "End of program");
 
     // Basic placeholder window
-    raylib::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
+    raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
     // since there is no such thing as a window.
     emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
 #else
-    raylib::Window::setTargetFPS(60);
+    raylib::core::Window::setTargetFPS(60);
 
     while (!WindowShouldClose())
         drawFrame(&camera);
 #endif
 
-    raylib::Window::close();
+    raylib::core::Window::close();
 
     return 0;
 }
