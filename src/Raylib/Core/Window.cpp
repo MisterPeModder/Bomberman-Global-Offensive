@@ -18,29 +18,45 @@ namespace raylib
     namespace core
     {
 
-        Window &Window::getInstance()
+        void Window::open(int width, int height, const char *title)
         {
-            static Window instance;
-
-            return instance;
+            InitWindow(width, height, title);
         }
 
-        Window::~Window() {}
+        void Window::close()
+        {
+            CloseWindow();
+        }
 
-        void Window::open(float width, float height, const char *title) { InitWindow(width, height, title); }
+        void Window::clear()
+        {
+            ClearBackground(BLACK);
+        }
 
-        void Window::close() { CloseWindow(); }
+        bool Window::windowShouldClose()
+        {
+            return WindowShouldClose();
+        }
 
-        void Window::clear() { ClearBackground(BLACK); }
+        void Window::setTargetFPS(int fps)
+        {
+            SetTargetFPS(fps);
+        }
 
-        bool Window::windowShouldClose() { return WindowShouldClose(); }
+        void Window::drawFPS(int x, int y)
+        {
+            DrawFPS(x, y);
+        }
 
-        void Window::setTargetFPS(float fps) { SetTargetFPS(fps); }
+        void Window::beginDrawing()
+        {
+            BeginDrawing();
+        }
 
-        void Window::drawFPS(float x, float y) { DrawFPS(x, y); }
+        void Window::endDrawing()
+        {
+            EndDrawing();
+        }
 
-        void Window::beginDrawing() { BeginDrawing(); }
-
-        void Window::endDrawing() { EndDrawing(); }
     } // namespace core
 } // namespace raylib
