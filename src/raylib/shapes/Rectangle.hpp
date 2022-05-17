@@ -8,7 +8,7 @@
 #ifndef RECTANGLE_HPP_
 #define RECTANGLE_HPP_
 
-#include "Raylib/Core/Vector2.hpp"
+#include "raylib/core/Vector2.hpp"
 
 extern "C"
 {

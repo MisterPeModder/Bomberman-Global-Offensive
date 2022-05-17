@@ -8,7 +8,7 @@
 #ifndef PIXEL_HPP_
 #define PIXEL_HPP_
 
-#include "../Core/Vector2.hpp"
+#include "raylib/core/Vector2.hpp"
 
 extern "C"
 {

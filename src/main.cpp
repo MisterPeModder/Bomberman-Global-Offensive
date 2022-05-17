@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Raylib/Core/Camera3D.hpp"
-#include "Raylib/Core/Window.hpp"
+#include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Window.hpp"
 #include "logger/Logger.hpp"
 
 #if defined(PLATFORM_WEB)

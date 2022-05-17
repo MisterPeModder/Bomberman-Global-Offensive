@@ -1,5 +1,5 @@
-set(INCROOT ${INCROOT}/Shapes)
-set(SRCROOT ${SRCROOT}/Shapes)
+set(INCROOT ${INCROOT}/shapes)
+set(SRCROOT ${SRCROOT}/shapes)
 
 set(SRC
 	${SRC}
