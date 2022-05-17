@@ -1,4 +1,28 @@
 #include <iostream>
+#include "Raylib/Core/Camera3D.hpp"
+#include "Raylib/Core/Window.hpp"
+
+// int main()
+// {
+//     raylib::Camera3D camera;
+
+//     raylib::Window::setTargetFPS(60);
+//     raylib::Window::open(1200, 800, "hell oworld");
+
+//     while (!raylib::Window::windowShouldClose()) {
+//         raylib::Window::beginDrawing();
+
+//         raylib::Window::clear();
+//         camera.begin3D();
+
+//         // draw cube
+
+//         camera.end3D();
+//         raylib::Window::drawFPS(10, 10);
+
+//         raylib::Window::endDrawing();
+//     }
+//     raylib::Window::close();
 #include "logger/Logger.hpp"
 
 #include <raylib.h>
@@ -10,16 +34,22 @@
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
 
-static void drawFrame()
+static void drawFrame(void *arg)
 {
-    BeginDrawing();
-    ClearBackground(RAYWHITE);
+    raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
+
+    raylib::core::Window::beginDrawing();
+    raylib::core::Window::clear();
+    camera->begin3D();
+    camera->end3D();
     DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
-    EndDrawing();
+    raylib::core::Window::endDrawing();
+    raylib::core::Window::drawFPS(10, 10);
 }
 
 int main()
 {
+    raylib::core::Camera3D camera;
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
@@ -30,20 +60,20 @@ int main()
     Logger::logger.log(Logger::Severity::Information, "End of program");
 
     // Basic placeholder window
-    InitWindow(WIDTH, HEIGHT, "Bomberman: Global Offensive");
+    raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
     // since there is no such thing as a window.
-    emscripten_set_main_loop(&drawFrame, 0, 1);
+    emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
 #else
-    SetTargetFPS(60);
+    raylib::core::Window::setTargetFPS(60);
 
     while (!WindowShouldClose())
-        drawFrame();
+        drawFrame(&camera);
 #endif
 
-    CloseWindow();
+    raylib::core::Window::close();
 
     return 0;
 }
