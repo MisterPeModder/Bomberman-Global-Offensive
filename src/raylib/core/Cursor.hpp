@@ -5,8 +5,8 @@
 ** Cursor
 */
 
-#ifndef CURSOR_HPP_
-#define CURSOR_HPP_
+#ifndef RAYLIB_CORE_CURSOR_HPP_
+#define RAYLIB_CORE_CURSOR_HPP_
 
 extern "C"
 {
@@ -53,4 +53,4 @@ namespace raylib
     } // namespace core
 } // namespace raylib
 
-#endif /* !CURSOR_HPP_ */
+#endif /* !RAYLIB_CORE_CURSOR_HPP_ */

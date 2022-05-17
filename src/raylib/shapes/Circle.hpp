@@ -5,8 +5,8 @@
 ** Circle
 */
 
-#ifndef CIRCLE_HPP_
-#define CIRCLE_HPP_
+#ifndef RAYLIB_SHAPE_CIRCLE_HPP_
+#define RAYLIB_SHAPE_CIRCLE_HPP_
 
 #include "Vector2.hpp"
 #include "Vector3.hpp"
@@ -134,4 +134,4 @@ namespace raylib
 } // namespace raylib
 
 
-#endif /* !CIRCLE_HPP_ */
+#endif /* !RAYLIB_SHAPE_CIRCLE_HPP_ */

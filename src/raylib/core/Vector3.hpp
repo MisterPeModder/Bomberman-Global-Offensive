@@ -5,8 +5,8 @@
 ** Vector3
 */
 
-#ifndef VECTOR3_HPP_
-#define VECTOR3_HPP_
+#ifndef RAYLIB_CORE_VECTOR3_HPP_
+#define RAYLIB_CORE_VECTOR3_HPP_
 
 #include "Vector2.hpp"
 
@@ -94,4 +94,4 @@ namespace raylib
     } // namespace core
 } // namespace raylib
 
-#endif /* VECTOR3_HPP_ */
+#endif /* RAYLIB_CORE_VECTOR3_HPP_ */

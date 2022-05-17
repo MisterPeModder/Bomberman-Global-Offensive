@@ -5,8 +5,8 @@
 ** Camera3D
 */
 
-#ifndef CAMERA3D_HPP_
-#define CAMERA3D_HPP_
+#ifndef RAYLIB_CORE_CAMERA3D_HPP_
+#define RAYLIB_CORE_CAMERA3D_HPP_
 
 #include "Vector3.hpp"
 
@@ -110,4 +110,4 @@ namespace raylib
     } // namespace core
 } // namespace raylib
 
-#endif /* CAMERA3D_HPP_ */
+#endif /* RAYLIB_CORE_CAMERA3D_HPP_ */

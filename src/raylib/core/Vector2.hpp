@@ -5,8 +5,8 @@
 ** Vector2
 */
 
-#ifndef VECTOR2_HPP_
-#define VECTOR2_HPP_
+#ifndef RAYLIB_CORE_VECTOR2_HPP_
+#define RAYLIB_CORE_VECTOR2_HPP_
 
 extern "C"
 {
@@ -78,4 +78,4 @@ namespace raylib
     } // namespace core
 } // namespace raylib
 
-#endif /* VECTOR2_HPP_ */
+#endif /* RAYLIB_CORE_VECTOR2_HPP_ */

@@ -5,8 +5,8 @@
 ** Window
 */
 
-#ifndef WINDOW_HPP_
-#define WINDOW_HPP_
+#ifndef RAYLIB_CORE_WINDOW_HPP_
+#define RAYLIB_CORE_WINDOW_HPP_
 
 /// Raylib namespace
 namespace raylib
@@ -57,4 +57,4 @@ namespace raylib
     } // namespace core
 } // namespace raylib
 
-#endif /* WINDOW_HPP_ */
+#endif /* RAYLIB_CORE_WINDOW_HPP_ */

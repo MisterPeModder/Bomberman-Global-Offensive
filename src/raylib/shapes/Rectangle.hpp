@@ -5,8 +5,8 @@
 ** Rectangle
 */
 
-#ifndef RECTANGLE_HPP_
-#define RECTANGLE_HPP_
+#ifndef RAYLIB_SHAPE_RECTANGLE_HPP_
+#define RAYLIB_SHAPE_RECTANGLE_HPP_
 
 #include "raylib/core/Vector2.hpp"
 
@@ -164,4 +164,4 @@ namespace raylib
     } // namespace shapes
 } // namespace raylib
 
-#endif /* !RECTANGLE_HPP_ */
+#endif /* !RAYLIB_SHAPE_RECTANGLE_HPP_ */

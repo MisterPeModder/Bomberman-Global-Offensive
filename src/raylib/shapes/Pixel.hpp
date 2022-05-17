@@ -5,8 +5,8 @@
 ** Pixel
 */
 
-#ifndef PIXEL_HPP_
-#define PIXEL_HPP_
+#ifndef RAYLIB_SHAPE_PIXEL_HPP_
+#define RAYLIB_SHAPE_PIXEL_HPP_
 
 #include "raylib/core/Vector2.hpp"
 
@@ -76,4 +76,4 @@ namespace raylib
     } // namespace shapes
 } // namespace raylib
 
-#endif /* !PIXEL_HPP_ */
+#endif /* !RAYLIB_SHAPE_PIXEL_HPP_ */

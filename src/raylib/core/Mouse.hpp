@@ -5,8 +5,8 @@
 ** Mouse
 */
 
-#ifndef MOUSE_HPP_
-#define MOUSE_HPP_
+#ifndef RAYLIB_CORE_MOUSE_HPP_
+#define RAYLIB_CORE_MOUSE_HPP_
 
 #include "Vector2.hpp"
 
@@ -108,4 +108,4 @@ namespace raylib
     } // namespace core
 } // namespace raylib
 
-#endif /* !MOUSE_HPP_ */
+#endif /* !RAYLIB_CORE_MOUSE_HPP_ */
