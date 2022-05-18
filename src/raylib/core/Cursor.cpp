@@ -11,21 +11,16 @@ namespace raylib
 {
     namespace core
     {
+        void Cursor::show(void) { ShowCursor(); }
 
-        Cursor::Cursor() {}
+        void Cursor::hide(void) { HideCursor(); }
 
-        Cursor::~Cursor() {}
+        bool Cursor::isHidden(void) { return IsCursorHidden(); }
 
-        void Cursor::showCursor(void) { ShowCursor(); }
+        void Cursor::enable(void) { EnableCursor(); }
 
-        void Cursor::hideCursor(void) { HideCursor(); }
+        void Cursor::disable(void) { DisableCursor(); }
 
-        bool Cursor::isCursorHidden(void) { return IsCursorHidden(); }
-
-        void Cursor::enableCursor(void) { EnableCursor(); }
-
-        void Cursor::disableCursor(void) { DisableCursor(); }
-
-        bool Cursor::isCursorOnScreen(void) { return IsCursorOnScreen(); }
+        bool Cursor::isOnScreen(void) { return IsCursorOnScreen(); }
     } // namespace core
 } // namespace raylib
