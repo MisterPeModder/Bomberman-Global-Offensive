@@ -60,7 +60,7 @@ namespace localization
         /// @param locales list of country codes ("en", "fr"...)
         /// @throw RessourceFile::LocaleNotFoundError when a locale is not found in release mode.
         ///
-        static void loadLocales(const std::vector<std::string_view> &localese);
+        static void loadLocales(const std::vector<std::string_view> &locales);
 
         /// @copydoc RessourceFile::translate
         /// @note If no locale was set using @ref setLocale() @c msg will always be returned.

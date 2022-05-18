@@ -34,7 +34,7 @@ namespace localization
     void RessourceFile::loadLocale(std::string_view locale)
     {
         _locale = locale;
-        std::string filepath = Localization::getLocalePath(_locale);
+        std::filesystem::path filepath = Localization::getLocalePath(_locale);
         std::ifstream file(filepath);
         std::string line;
         TokensVector tokens;
