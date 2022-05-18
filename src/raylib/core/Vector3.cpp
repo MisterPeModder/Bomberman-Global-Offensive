@@ -24,9 +24,17 @@ namespace raylib
 
         Vector3 &Vector3::operator=(const Vector3 &vector)
         {
-            _x = vector._x;
-            _y = vector._y;
-            _z = vector._z;
+            _x = vector.getX();
+            _y = vector.getY();
+            _z = vector.getZ();
+            return *this;
+        }
+
+        Vector3 &Vector3::operator=(const Vector2 &vector)
+        {
+            _x = vector.getX();
+            _y = vector.getY();
+            _z = 0;
             return *this;
         }
 
@@ -37,9 +45,9 @@ namespace raylib
 
         Vector3 &Vector3::operator+=(const Vector3 &vector)
         {
-            this->_x += vector._x;
-            this->_y += vector._y;
-            this->_z += vector._z;
+            this->_x += vector.getX();
+            this->_y += vector.getY();
+            this->_z += vector.getZ();
             return *this;
         }
 

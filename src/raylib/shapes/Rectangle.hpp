@@ -9,6 +9,7 @@
 #define RAYLIB_SHAPE_RECTANGLE_HPP_
 
 #include "raylib/core/Vector2.hpp"
+#include "raylib/shapes/AShape.hpp"
 
 extern "C"
 {
@@ -19,22 +20,19 @@ namespace raylib
 {
     namespace shapes
     {
-        class Rectangle {
+        class Rectangle : public AShape {
           public:
-            /// This function creates a rectangle with a position, width, height, and
-            /// color
+            /// This function creates a rectangle from a position, a size and a color
             ///
-            /// @param posX The x position of the rectangle.
-            /// @param posY The Y position of the rectangle.
-            /// @param width The width of the rectangle.
-            /// @param height The height of the rectangle.
+            /// @param pos The position of the rectangle.
+            /// @param size The size of the rectangle.
             /// @param color The color of the rectangle.
-            Rectangle(float posX = 0, float posY = 0, float width = 0, float height = 0, Color color = {0, 0, 0, 0});
+            Rectangle(Vector2 pos = {}, Vector2 size = {}, Color color = {});
 
             /// A constructor that takes a Rectangle as a parameter.
             ///
             /// @param rec The rectangle to copy
-            Rectangle(Vector2 position, float width = 0, float height = 0, Color color = {0, 0, 0, 0});
+            Rectangle(Rectangle &other);
 
             /// This function creates a rectangle with a position, width, height, and
             /// color
@@ -58,7 +56,7 @@ namespace raylib
             /// passed to the constructor of the C++ Rectangle class
             ///
             /// @return A rectangle object.
-            ::Rectangle C_rectangle();
+            ::Rectangle getRaylibRectangle() const;
 
             /// `void Rectangle::draw() { DrawRectangleRec(this->C_rectangle(), _color);
             /// }`
@@ -70,7 +68,7 @@ namespace raylib
             /// a `Rectangle` and a `Color`. The first argument is the `Rectangle` that
             /// is a member of the class `Rectangle`. The second argument is the `Color`
             /// that is a member of the class `Rectangle`
-            void draw();
+            void draw() override;
 
             /// Draws a rectangle outline (or "wireframe") with the given color
             ///
@@ -114,52 +112,6 @@ namespace raylib
             /// @return A rectangle
             Rectangle getCollision(Rectangle other);
 
-            /// `Color Rectangle::getColor()`
-            ///
-            /// This function returns a `Color` object. It is a member of the
-            /// `Rectangle` class
-            ///
-            /// @return The color of the rectangle.
-
-            Color getColor();
-
-            /// This function returns the position of the rectangle
-            ///
-            /// @return The position of the rectangle.
-            Vector2 getPosition();
-
-            /// This function returns the width of the rectangle
-            ///
-            /// @return The width of the rectangle.
-            float getWidth();
-
-            /// `getHeight()` returns the height of the rectangle
-            ///
-            /// @return The height of the rectangle
-            float getHeight();
-
-            /// This function sets the position of the rectangle
-            ///
-            /// @param position The position of the rectangle.
-            void setPosition(Vector2 position);
-
-            /// Sets the color of the rectangle to the given color.
-            ///
-            /// @param color The color of the rectangle.
-            void setColor(Color color);
-
-            /// This function sets the width and height of the rectangle.
-            ///
-            /// @param width The width of the rectangle.
-            /// @param height The height of the rectangle.
-            void setSize(float width, float height);
-
-          protected:
-          private:
-            Vector2 _position;
-            float _width;
-            float _height;
-            Color _color;
         };
     } // namespace shapes
 } // namespace raylib

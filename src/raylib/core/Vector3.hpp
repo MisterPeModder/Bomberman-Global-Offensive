@@ -61,7 +61,10 @@ namespace raylib
             /// @brief The Vector3 copy operator
             /// @param vector the Vector3 to copy
             Vector3 &operator=(const Vector3 &vector);
-            /// @brief The Vector3 add operator
+            /// @brief The Vector3 copy operator
+            /// @param vector the Vector2 to copy
+            Vector3 &operator=(const Vector2 &vector);
+            /// @brief The Vector3 add operator from a Vector2
             /// @param vector the Vector3 to add
             Vector3 operator+(const Vector3 &vector);
             /// @brief The Vector3 assignment add operator
