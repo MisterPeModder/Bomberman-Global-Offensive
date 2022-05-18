@@ -51,9 +51,9 @@ namespace raylib
 
         void Camera3D::setUp(Vector3 up) { _camera.up = {up.getX(), up.getY(), up.getZ()}; }
 
-        float Camera3D::getFovy() const { return _camera.fovy; }
+        float Camera3D::getFovY() const { return _camera.fovy; }
 
-        void Camera3D::setFovy(float fovy) { _camera.fovy = fovy; }
+        void Camera3D::setFovY(float fovY) { _camera.fovy = fovY; }
 
         int Camera3D::getProjection() const { return _camera.projection; }
 

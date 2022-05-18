@@ -84,15 +84,15 @@ namespace raylib
                 /// @param up the new 'up' of the camera
                 void setUp(Vector3 up);
 
-                /// Get the fovy of the camera
+                /// Get the fovY of the camera
                 ///
-                /// @return the fovy of the camera
-                float getFovy() const;
+                /// @return the fovY of the camera
+                float getFovY() const;
 
-                /// Set the fovy of the camera
+                /// Set the fovY of the camera
                 ///
-                /// @param fovy the new fovy of the camera
-                void setFovy(float fovy);
+                /// @param fovY the new fovY of the camera
+                void setFovY(float fovY);
 
                 /// Get the projection of the camera
                 ///
