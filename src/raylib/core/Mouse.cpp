@@ -11,35 +11,30 @@ namespace raylib
 {
     namespace core
     {
+        bool Mouse::isButtonPressed(int button) { return IsMouseButtonPressed(button); }
 
-        Mouse::Mouse() {}
+        bool Mouse::isButtonDown(int button) { return IsMouseButtonDown(button); }
 
-        Mouse::~Mouse() {}
+        bool Mouse::isButtonReleased(int button) { return IsMouseButtonReleased(button); }
 
-        bool Mouse::isMouseButtonPressed(int button) { return IsMouseButtonPressed(button); }
+        bool Mouse::isButtonUp(int button) { return IsMouseButtonUp(button); }
 
-        bool Mouse::isMouseButtonDown(int button) { return IsMouseButtonDown(button); }
+        int Mouse::getX(void) { return GetMouseX(); }
 
-        bool Mouse::isMouseButtonReleased(int button) { return IsMouseButtonReleased(button); }
+        int Mouse::getY(void) { return GetMouseY(); }
 
-        bool Mouse::isMouseButtonUp(int button) { return IsMouseButtonUp(button); }
+        Vector2 Mouse::getPosition(void) { return GetMousePosition(); }
 
-        int Mouse::getMouseX(void) { return GetMouseX(); }
+        Vector2 Mouse::getDelta(void) { return GetMouseDelta(); }
 
-        int Mouse::getMouseY(void) { return GetMouseY(); }
+        void Mouse::setPosition(int x, int y) { SetMousePosition(x, y); }
 
-        Vector2 Mouse::getMousePosition(void) { return GetMousePosition(); }
+        void Mouse::setOffset(int offsetX, int offsetY) { SetMouseOffset(offsetX, offsetY); }
 
-        Vector2 Mouse::getMouseDelta(void) { return GetMouseDelta(); }
+        void Mouse::setScale(float scaleX, float scaleY) { SetMouseScale(scaleX, scaleY); }
 
-        void Mouse::setMousePosition(int x, int y) { SetMousePosition(x, y); }
+        float Mouse::getWheelMove(void) { return GetMouseWheelMove(); }
 
-        void Mouse::setMouseOffset(int offsetX, int offsetY) { SetMouseOffset(offsetX, offsetY); }
-
-        void Mouse::setMouseScale(float scaleX, float scaleY) { SetMouseScale(scaleX, scaleY); }
-
-        float Mouse::getMouseWheelMove(void) { return GetMouseWheelMove(); }
-
-        void Mouse::setMouseCursor(int cursor) { SetMouseCursor(cursor); }
+        void Mouse::setCursor(int cursor) { SetMouseCursor(cursor); }
     } // namespace core
 } // namespace raylib
