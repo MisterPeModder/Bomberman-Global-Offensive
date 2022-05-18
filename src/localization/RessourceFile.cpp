@@ -16,7 +16,8 @@
 namespace localization
 {
     RessourceFile::LocaleNotFoundError::LocaleNotFoundError(std::string_view locale)
-        : std::runtime_error(std::string("Locale file '") + Localization::getLocalePath(locale) + "' not found.")
+        : std::runtime_error(
+            std::string("Locale file '") + Localization::getLocalePath(locale).generic_string() + "' not found.")
     {
     }
 
@@ -25,6 +26,8 @@ namespace localization
             std::string("Message '") + message.data() + "' not found in locale '" + locale.data() + "'.")
     {
     }
+
+    RessourceFile::LocaleNotSetError::LocaleNotSetError() : std::logic_error("No locale set.") {}
 
     RessourceFile::RessourceFile(std::string_view locale) { loadLocale(locale); }
 
@@ -36,6 +39,7 @@ namespace localization
         std::string line;
         TokensVector tokens;
 
+        _ressources.clear();
         Logger::logger.log(Logger::Severity::Information, [&](std::ostream &writer) {
             writer << "Loading locale file '" << filepath << "' for locale '" << _locale << "'";
         });
@@ -44,9 +48,9 @@ namespace localization
             throw LocaleNotFoundError(_locale);
 #else
         {
-            std::ofstream newFile(filepath);
-
-            newFile.close();
+            Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
+                writer << "File not found, it will be created on save if messages are registered.";
+            });
             return;
         }
 #endif
@@ -58,9 +62,11 @@ namespace localization
 
     void RessourceFile::save()
     {
+        if (_locale == "")
+            throw LocaleNotSetError();
         if (_newRessources.size() == 0)
             return;
-        std::string filepath = Localization::getLocalePath(_locale);
+        std::filesystem::path filepath = Localization::getLocalePath(_locale);
         std::ofstream file;
 
         Logger::logger.log(Logger::Severity::Information, [&](std::ostream &writer) {
@@ -68,7 +74,7 @@ namespace localization
         });
         file.open(filepath, std::ios_base::app | std::ios_base::out);
         if (!file.is_open())
-            throw std::runtime_error("Unable to update locale file '" + filepath + "'.");
+            throw std::runtime_error("Unable to update locale file '" + filepath.generic_string() + "'.");
         for (auto iter = _newRessources.begin(); iter != _newRessources.end(); ++iter) {
             file << std::endl << "msgid ";
             writeMsg(file, iter->first);
@@ -80,10 +86,19 @@ namespace localization
 
     std::string_view RessourceFile::getLocale() const { return _locale; }
 
+    std::filesystem::path RessourceFile::getFilePath() const
+    {
+        if (_locale == "")
+            throw LocaleNotSetError();
+        return Localization::getLocalePath(_locale);
+    }
+
     std::string_view RessourceFile::translate(std::string_view msg)
     {
         std::string key(msg);
 
+        if (_locale == "")
+            throw LocaleNotSetError();
         if (_ressources.find(key) == _ressources.end())
 #ifdef BM_RELEASE
             throw MessageNotFoundError(_locale, msg);
@@ -97,9 +112,10 @@ namespace localization
 
     void RessourceFile::registerString(std::string_view msg, std::string_view translation)
     {
-        std::string_view res;
         std::string key(msg);
 
+        if (_locale == "")
+            throw LocaleNotSetError();
         if (_ressources.find(key) != _ressources.end() && (translation == "" || _ressources[key] == translation))
             return;
         _ressources[key] = translation;
@@ -110,9 +126,11 @@ namespace localization
     {
         TokensVector::const_iterator iter = tokens.begin();
 
+        consumeTokens({Token::EmptyLine, Token::Comment}, tokens, iter);
         while (iter != tokens.end()) {
             parseMessage(tokens, iter);
-            consumeTokens(Token::EmptyLine, tokens, ++iter);
+            if (iter != tokens.end())
+                consumeTokens({Token::EmptyLine, Token::Comment}, tokens, ++iter);
         }
     }
 
@@ -126,7 +144,6 @@ namespace localization
         std::string id;
         std::string str;
 
-        skipComments(tokens, iterator);
         if (iterator->first == Token::MsgId || iterator->first == Token::MsgIdEmpty) {
             readMsg(iterator->first == Token::MsgIdEmpty, id, tokens, iterator);
             if (id.size() > 0) {
@@ -154,6 +171,13 @@ namespace localization
     void RessourceFile::consumeTokens(Token token, const TokensVector &tokens, TokensVector::const_iterator &iterator)
     {
         while (iterator != tokens.end() && iterator->first == token)
+            ++iterator;
+    }
+
+    void RessourceFile::consumeTokens(
+        const std::vector<Token> token, const TokensVector &tokens, TokensVector::const_iterator &iterator)
+    {
+        while (iterator != tokens.end() && std::find(token.begin(), token.end(), iterator->first) != token.end())
             ++iterator;
     }
 

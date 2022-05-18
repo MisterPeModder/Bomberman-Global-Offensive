@@ -36,8 +36,8 @@ namespace localization
         /// Get the path of a locale file.
         ///
         /// @param locale locale id (country code).
-        /// @return std::string locale file path.
-        static std::string getLocalePath(std::string_view locale);
+        /// @return std::filesystem::path locale file path.
+        static std::filesystem::path getLocalePath(std::string_view locale);
 
         /// @copydoc RessourceFile::loadLocale
         static void setLocale(std::string_view locale);
@@ -49,16 +49,16 @@ namespace localization
         /// Get the loaded locale object
         /// @note By default the locale is not set (empty).
         ///
-        /// @return std::string_view
+        /// @return std::string_view current locale.
         ///
         static std::string_view getLocale();
 
         /// Load all the locales used by the project.
         /// @note All loaded locales will have new messages written in the corresponding file.
+        /// @note If the file can't be found in debug mode, it is created on save when new messages are registered.
         ///
         /// @param locales list of country codes ("en", "fr"...)
-        /// @throw RessourceFile::LocaleNotFoundError when a locale is not found in release mode, create the file in
-        /// debug.
+        /// @throw RessourceFile::LocaleNotFoundError when a locale is not found in release mode.
         ///
         static void loadLocales(const std::vector<std::string_view> &localese);
 

@@ -1,0 +1,25 @@
+# Some format errors
+
+
+msgid "first message"
+msgstr "premier message"
+
+msgid ""
+"multiple\n"
+"lines\n"
+"message\n"
+msgstr ""
+"Message en\n"
+"plusieurs\n"
+"lignes\n"
+
+idmsg "invalid"
+msgstr "msgid != idmsg"
+
+msgid: "invalid"
+msgstr: "':' are not needed"
+
+msgid "invalid"
+msgstr ""
+"multiline  messages"
+"must have espaced line feed"

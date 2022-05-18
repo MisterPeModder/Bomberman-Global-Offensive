@@ -8,8 +8,10 @@
 #ifndef LOCALIZATION_RESSOURCEFILE_HPP_
 #define LOCALIZATION_RESSOURCEFILE_HPP_
 
+#include <filesystem>
 #include <map>
 #include <stdexcept>
+#include <string>
 #include <vector>
 #include <string_view>
 
@@ -37,6 +39,13 @@ namespace localization
             MessageNotFoundError(std::string_view locale, std::string_view message);
         };
 
+        /// Exception thrown when the locale isn't set (unititialized) on translate/register operations.
+        class LocaleNotSetError : public std::logic_error {
+          public:
+            /// @brief Construct a new Locale Not Set Error object
+            LocaleNotSetError();
+        };
+
         /// Construct a new Ressource File object. The object is invalid until a successfull call to @ref
         /// loadLocale() is made.
         RessourceFile() = default;
@@ -52,12 +61,15 @@ namespace localization
         ~RessourceFile() = default;
 
         /// Load a locale file.
+        /// @note If the file can't be found in debug mode, it is created on save when new messages are registered.
         ///
         /// @param locale country code ("en", "fr"...)
-        /// @throw LocaleNotFoundError when the locale can't be found in release mode, in debug mode create the file.
+        /// @throw LocaleNotFoundError when the locale can't be found in release mode.
         void loadLocale(std::string_view locale);
 
         /// Save the locale file.
+        ///
+        /// @throw LocaleNotSetError when the locale isn't set.
         void save();
 
         /// Get the loaded locale.
@@ -66,13 +78,22 @@ namespace localization
         /// @return std::string_view loaded locale.
         std::string_view getLocale() const;
 
+        /// Get the path of the locale file.
+        /// @note The file might not exist if save() wasn't called yet.
+        ///
+        /// @return std::filesystem::path path of the locale file.
+        /// @throw LocaleNotSetError when the locale isn't set.
+        std::filesystem::path getFilePath() const;
+
         /// Translate a message in the loaded locale.
         /// @note If the translation is found but is empty, @c msg will be returned.
+        /// @note If no locale is set, @c msg will be returned.
         ///
         /// @param msg message to translate.
         /// @return std::string_view translated message.
         /// @throw MessageNotFoundError when the translation is not found in release mode, in debug mode create the
         /// message.
+        /// @throw LocaleNotSetError when the locale isn't set.
         std::string_view translate(std::string_view msg);
 
         /// Register a new string in the loaded locale.
@@ -81,6 +102,8 @@ namespace localization
         ///
         /// @param msg message id.
         /// @param translation message translation.
+        ///
+        /// @throw LocaleNotSetError when the locale isn't set.
         void registerString(std::string_view msg, std::string_view translation = "");
 
       private:
@@ -129,6 +152,14 @@ namespace localization
         /// @param tokens list of tokens corresponding to the locale file.
         /// @param iterator current iterator.
         static void consumeTokens(Token token, const TokensVector &tokens, TokensVector::const_iterator &iterator);
+
+        /// Skip all the @c token tokens.
+        ///
+        /// @param token list of token to consume.
+        /// @param tokens list of tokens corresponding to the locale file.
+        /// @param iterator current iterator.
+        static void consumeTokens(
+            const std::vector<Token> token, const TokensVector &tokens, TokensVector::const_iterator &iterator);
 
         /// Consume all the tokens until a @c token is found.
         ///

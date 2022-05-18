@@ -18,11 +18,9 @@ namespace localization
 
     const std::filesystem::path &Localization::getLocalesDirectory() { return _Instance._localesDirectory; }
 
-    std::string Localization::getLocalePath(std::string_view locale)
+    std::filesystem::path Localization::getLocalePath(std::string_view locale)
     {
-        return std::filesystem::path(getLocalesDirectory())
-            .append(std::string("locale_") + locale.data() + ".po")
-            .generic_string();
+        return std::filesystem::path(getLocalesDirectory()).append(std::string("locale_") + locale.data() + ".po");
     }
 
     void Localization::setLocale(std::string_view locale)

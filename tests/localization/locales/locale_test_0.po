@@ -1,0 +1,11 @@
+msgid "first message"
+msgstr "premier message"
+
+msgid ""
+"multiple\n"
+"lines\n"
+"message\n"
+msgstr ""
+"Message en\n"
+"plusieurs\n"
+"lignes\n"
