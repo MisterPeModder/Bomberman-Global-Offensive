@@ -31,3 +31,8 @@ elseif (COMPILER_TYPE MATCHES "clang")
         "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
     )
 endif()
+
+#enable BM_RELEASE define in release mode
+if (CMAKE_BUILD_TYPE MATCHES Release)
+    add_compile_definitions(BM_RELEASE=1)
+endif()

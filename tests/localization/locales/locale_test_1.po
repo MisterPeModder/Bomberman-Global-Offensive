@@ -1,0 +1,29 @@
+#Playing with comments
+
+#Simple message
+msgid "first message"
+msgstr "premier message"
+
+# Multiple lines message
+msgid ""
+"multiple\n"
+# Why put comments here ?
+"lines\n"
+"message\n"
+# Translation
+msgstr ""
+"Message en\n"
+"plusieurs\n"
+"lignes\n"
+
+#Random
+
+#
+ #
+  #
+   # Comments are great
+  #
+ #
+#
+
+#everywhere
