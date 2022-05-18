@@ -5,7 +5,6 @@
 ** test_ressource_file
 */
 
-#include "Utils.hpp"
 #include "localization/Localization.hpp"
 #include "localization/RessourceFile.hpp"
 
@@ -20,11 +19,11 @@ TEST(RessourceFile, uninitialized)
 {
     RessourceFile file;
 
-    ASSERT_TRUE(file.getLocale() == "");
-    ASSERT_TRUE(isException<RessourceFile::LocaleNotSetError>([&]() { file.translate("Who are you ??"); }));
-    ASSERT_TRUE(isException<RessourceFile::LocaleNotSetError>([&]() { file.save(); }));
-    ASSERT_TRUE(isException<RessourceFile::LocaleNotSetError>([&]() { file.registerString("Who are you ??"); }));
-    ASSERT_TRUE(isException<RessourceFile::LocaleNotSetError>([&]() { file.getFilePath(); }));
+    EXPECT_EQ(file.getLocale(), "");
+    EXPECT_THROW(file.translate("Who are you ??"), RessourceFile::LocaleNotSetError);
+    EXPECT_THROW(file.save(), RessourceFile::LocaleNotSetError);
+    EXPECT_THROW(file.registerString("Who are you ??"), RessourceFile::LocaleNotSetError);
+    EXPECT_THROW(file.getFilePath(), RessourceFile::LocaleNotSetError);
 }
 
 TEST(RessourceFile, unexisting_file)
@@ -33,9 +32,9 @@ TEST(RessourceFile, unexisting_file)
 
     RessourceFile file("unexisting");
 
-    ASSERT_TRUE(!std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
+    ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
     file.save();
-    ASSERT_TRUE(!std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
+    ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
 }
 
 TEST(RessourceFile, new_file)
@@ -45,7 +44,7 @@ TEST(RessourceFile, new_file)
     RessourceFile file("new");
 
     file.registerString("I am created!");
-    ASSERT_TRUE(!std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
+    ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
     file.save();
     ASSERT_TRUE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
     std::filesystem::remove(Localization::getLocalePath("new"));
@@ -57,7 +56,7 @@ TEST(RessourceFile, translated_message)
 
     RessourceFile file("hello");
 
-    ASSERT_TRUE(file.translate("translated") == "traduit");
+    ASSERT_EQ(file.translate("translated"), "traduit");
 }
 
 TEST(RessourceFile, untranslated_message)
@@ -66,7 +65,7 @@ TEST(RessourceFile, untranslated_message)
 
     RessourceFile file("hello");
 
-    ASSERT_TRUE(file.translate("not translated") == "not translated");
+    ASSERT_EQ(file.translate("not translated"), "not translated");
 }
 
 TEST(RessourceFile, unregistered_message)
@@ -75,7 +74,7 @@ TEST(RessourceFile, unregistered_message)
 
     RessourceFile file("hello");
 
-    ASSERT_TRUE(file.translate("????") == "????");
+    ASSERT_EQ(file.translate("????"), "????");
 }
 
 TEST(RessourceFile, switch_to_invalid_file)
@@ -84,10 +83,10 @@ TEST(RessourceFile, switch_to_invalid_file)
 
     RessourceFile file("hello");
 
-    ASSERT_TRUE(file.translate("translated") == "traduit");
+    ASSERT_EQ(file.translate("translated"), "traduit");
     file.loadLocale("unexisting");
-    ASSERT_TRUE(!std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
-    ASSERT_TRUE(file.translate("translated") == "translated");
+    ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
+    ASSERT_EQ(file.translate("translated"), "translated");
 }
 
 TEST(RessourceFile, loading_with_errors)
@@ -99,9 +98,9 @@ TEST(RessourceFile, loading_with_errors)
     for (size_t i = 0; i < count; i++) {
         RessourceFile file("test_" + std::to_string(i));
 
-        ASSERT_TRUE(file.translate("first message") == "premier message");
-        ASSERT_TRUE(file.translate("multiple\nlines\nmessage") == "Message en\nplusieurs\nlignes");
-        /// Invalid messages are ignored and so they are not translated.
-        ASSERT_TRUE(file.translate("invalid") == "invalid");
+        ASSERT_EQ(file.translate("first message"), "premier message");
+        ASSERT_EQ(file.translate("multiple\nlines\nmessage"), "Message en\nplusieurs\nlignes");
+        // Invalid messages are ignored and so they are not translated.
+        ASSERT_EQ(file.translate("invalid"), "invalid");
     }
 }
