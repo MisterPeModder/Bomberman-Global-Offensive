@@ -1,4 +1,6 @@
 #include <iostream>
+#include "localization/Localization.hpp"
+#include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
 
 #include <raylib.h>
@@ -51,9 +53,12 @@ int main()
 {
     setupLogger();
 
+    /// Setup the locales parameters
+    localization::Localization::loadLocales({"en", "fr"});
+    localization::Localization::setLocale("fr");
+
     Logger::logger.log(Logger::Severity::Information, "Start of program");
-    std::cout << "Hello, World!" << std::endl;
-    Logger::logger.log(Logger::Severity::Information, "End of program");
+    std::cout << localization::Ressources::rsHello << std::endl;
 
     // Basic placeholder window
     InitWindow(WIDTH, HEIGHT, "Bomberman: Global Offensive");
@@ -70,6 +75,7 @@ int main()
 #endif
 
     CloseWindow();
-
+    localization::Localization::saveLocales();
+    Logger::logger.log(Logger::Severity::Information, "End of program");
     return 0;
 }

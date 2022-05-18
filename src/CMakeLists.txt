@@ -9,6 +9,7 @@ set(SRC
 
 set(INCDIRS ${INCROOT})
 
+add_subdirectory(localization)
 add_subdirectory(logger)
 
 # Source groups are a feature in Visual Studio.
