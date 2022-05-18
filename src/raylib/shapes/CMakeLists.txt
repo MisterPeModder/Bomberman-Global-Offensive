@@ -7,6 +7,7 @@ set(SRC
     ${SRCROOT}/Rectangle.hpp
     ${SRCROOT}/Pixel.cpp
     ${SRCROOT}/Pixel.hpp
+    ${SRCROOT}/AShape.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS
