@@ -28,9 +28,6 @@ include(CompilerFlags)
 
 add_library(libbomberman ${SRC})
 
-get_target_property(RAYLIB_INCLUDES raylib INCLUDE_DIRECTORIES)
-
-
 target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
 target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
 target_link_libraries(${LIB_NAME} PUBLIC raylib)
