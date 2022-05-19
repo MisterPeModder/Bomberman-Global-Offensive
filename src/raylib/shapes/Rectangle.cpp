@@ -12,12 +12,11 @@ namespace raylib
 {
     namespace shapes
     {
-
         Rectangle::Rectangle(Vector2 pos, Vector2 size, Color color)
         {
             setPosition(pos);
+            setColor(color);
             _size = size;
-            _color = color;
         }
 
         Rectangle::Rectangle(::Rectangle rec)
@@ -40,31 +39,31 @@ namespace raylib
 
         ::Rectangle Rectangle::getRaylibRectangle() const { return {_position.x, _position.y, _size.x, _size.y}; }
 
-        void Rectangle::draw() { DrawRectangleRec(this->getRaylibRectangle(), _color); }
+        void Rectangle::draw() const { DrawRectangleRec(this->getRaylibRectangle(), _color); }
 
-        void Rectangle::drawLines() { DrawRectangleLines(_position.x, _position.y, _size.x, _size.y, _color); }
+        void Rectangle::drawLines() const { DrawRectangleLines(_position.x, _position.y, _size.x, _size.y, _color); }
 
-        void Rectangle::drawLinesEx(float lineThick)
+        void Rectangle::drawLinesEx(float lineThick) const
         {
             DrawRectangleLinesEx(this->getRaylibRectangle(), lineThick, _color);
         }
 
-        void Rectangle::drawRounded(float roundness, float segments)
+        void Rectangle::drawRounded(float roundness, float segments) const
         {
             DrawRectangleRounded(this->getRaylibRectangle(), roundness, segments, _color);
         }
 
-        void Rectangle::drawRoundedLines(float roundness, float segments, float lineThick)
+        void Rectangle::drawRoundedLines(float roundness, float segments, float lineThick) const
         {
             DrawRectangleRoundedLines(this->getRaylibRectangle(), roundness, segments, lineThick, _color);
         }
 
-        bool Rectangle::checkCollision(Rectangle other)
+        bool Rectangle::checkCollision(Rectangle &other) const
         {
             return CheckCollisionRecs(this->getRaylibRectangle(), other.getRaylibRectangle());
         }
 
-        Rectangle Rectangle::getCollision(Rectangle other)
+        Rectangle Rectangle::getCollision(Rectangle &other) const
         {
             return GetCollisionRec(this->getRaylibRectangle(), other.getRaylibRectangle());
         }

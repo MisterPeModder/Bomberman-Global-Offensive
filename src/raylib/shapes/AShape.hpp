@@ -21,10 +21,10 @@ namespace raylib
             virtual ~AShape();
 
             /// Draws the shape
-            virtual void draw();
+            virtual void draw() const;
 
             /// Checks if a shape is in collision with another
-            virtual bool checkCollision(AShape &);
+            virtual bool checkCollision(AShape &) const;
 
             /// Sets the position of the shape
             ///
