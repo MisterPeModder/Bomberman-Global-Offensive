@@ -36,7 +36,7 @@ namespace raylib
 
             /// Draw a circle at the given x, y coordinates with the given radius and
             /// color.
-            void draw() override const;
+            void draw() const override;
 
             /// Draws a sector of a circle
             ///

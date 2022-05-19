@@ -18,13 +18,10 @@ namespace raylib
         class AShape {
           public:
             /// Virtual destructor
-            virtual ~AShape();
+            virtual ~AShape() = default;
 
             /// Draws the shape
-            virtual void draw() const;
-
-            /// Checks if a shape is in collision with another
-            virtual bool checkCollision(AShape &) const;
+            virtual void draw() const = 0;
 
             /// Sets the position of the shape
             ///

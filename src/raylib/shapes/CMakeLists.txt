@@ -5,6 +5,10 @@ set(SRC
 	${SRC}
     ${SRCROOT}/Rectangle.cpp
     ${SRCROOT}/Rectangle.hpp
+    ${SRCROOT}/Circle.cpp
+    ${SRCROOT}/Circle.hpp
+    ${SRCROOT}/Cube.cpp
+    ${SRCROOT}/Cube.hpp
     ${SRCROOT}/Pixel.cpp
     ${SRCROOT}/Pixel.hpp
     ${SRCROOT}/AShape.hpp

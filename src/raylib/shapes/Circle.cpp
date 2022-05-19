@@ -41,12 +41,12 @@ namespace raylib
 
         bool Circle::checkCollisions(const Circle &other) const
         {
-            CheckCollisionCircles(getPosition2D(), _radius, other.getPosition2D(), other.getRadius());
+            return CheckCollisionCircles(getPosition2D(), _radius, other.getPosition2D(), other.getRadius());
         }
 
         bool Circle::checkCollisions(const Rectangle &other) const
         {
-            CheckCollisionCircleRec(getPosition2D(), _radius, other);
+            return CheckCollisionCircleRec(getPosition2D(), _radius, other);
         }
 
         void Circle::draw3D(Vector3 rotationAxis, float rotationAngle) const

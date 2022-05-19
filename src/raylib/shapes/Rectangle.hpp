@@ -31,16 +31,12 @@ namespace raylib
 
             /// A constructor that takes a Rectangle as a parameter.
             ///
-            /// @param rec The rectangle to copy
+            /// @param other The rectangle to copy
             Rectangle(Rectangle &other);
 
-            /// This function creates a rectangle with a position, width, height, and
-            /// color
+            /// This function creates a rectangle from a raylib Rectangle struct.
             ///
-            /// @param pos The position of the rectangle.
-            /// @param width The width of the rectangle.
-            /// @param height The height of the rectangle.
-            /// @param color The color of the rectangle.
+            /// @param rec raylib Rectangle.
             Rectangle(::Rectangle rec);
 
             /// The destructor for the Rectangle class.
