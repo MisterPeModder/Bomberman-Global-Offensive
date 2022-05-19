@@ -1,0 +1,30 @@
+# Playing with empty lines
+
+
+
+
+
+msgid "first message"
+msgstr "premier message"
+
+msgid ""
+"multiple\n"
+"lines\n"
+"message\n"
+msgstr ""
+"Message en\n"
+"plusieurs\n"
+"lignes\n"
+
+
+
+
+
+msgid "invalid"
+msgstr "messages must be separated by empty lines"
+msgid "invalid"
+msgstr "same here"
+
+
+msgid "invalid"
+msgstr "missing newline after this message"
