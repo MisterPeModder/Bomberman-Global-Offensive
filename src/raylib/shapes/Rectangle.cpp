@@ -15,8 +15,8 @@ namespace raylib
 
         Rectangle::Rectangle(Vector2 pos, Vector2 size, Color color)
         {
-            _position = {pos.x, pos.y, 0};
-            _size = {size.x, size.y, 0};
+            setPosition(pos);
+            _size = size;
             _color = color;
         }
 
@@ -42,21 +42,21 @@ namespace raylib
 
         void Rectangle::draw() { DrawRectangleRec(this->getRaylibRectangle(), _color); }
 
-        void Rectangle::drawLines(Color color) { DrawRectangleLines(_position.x, _position.y, _size.x, _size.y, color); }
+        void Rectangle::drawLines() { DrawRectangleLines(_position.x, _position.y, _size.x, _size.y, _color); }
 
-        void Rectangle::drawLinesEx(float lineThick, Color color)
+        void Rectangle::drawLinesEx(float lineThick)
         {
-            DrawRectangleLinesEx(this->getRaylibRectangle(), lineThick, color);
+            DrawRectangleLinesEx(this->getRaylibRectangle(), lineThick, _color);
         }
 
-        void Rectangle::drawRounded(float roundness, float segments, Color color)
+        void Rectangle::drawRounded(float roundness, float segments)
         {
-            DrawRectangleRounded(this->getRaylibRectangle(), roundness, segments, color);
+            DrawRectangleRounded(this->getRaylibRectangle(), roundness, segments, _color);
         }
 
-        void Rectangle::drawRoundedLines(float roundness, float segments, float lineThick, Color color)
+        void Rectangle::drawRoundedLines(float roundness, float segments, float lineThick)
         {
-            DrawRectangleRoundedLines(this->getRaylibRectangle(), roundness, segments, lineThick, color);
+            DrawRectangleRoundedLines(this->getRaylibRectangle(), roundness, segments, lineThick, _color);
         }
 
         bool Rectangle::checkCollision(Rectangle other)

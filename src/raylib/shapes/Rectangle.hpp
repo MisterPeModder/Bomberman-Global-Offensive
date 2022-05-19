@@ -73,13 +73,13 @@ namespace raylib
             /// Draws a rectangle outline (or "wireframe") with the given color
             ///
             /// @param color The color of the rectangle.
-            void drawLines(Color color);
+            void drawLines();
 
             /// Draws a rectangle outline (or line) with extended parameters
             ///
             /// @param lineThick Thickness of the lines (in pixels)
             /// @param color The color of the rectangle.
-            void drawLinesEx(float lineThick, Color color);
+            void drawLinesEx(float lineThick);
 
             /// Draws a rectangle with rounded edges
             ///
@@ -87,7 +87,7 @@ namespace raylib
             /// @param segments The number of segments to be used to draw the rounded
             /// edges (defaults to 30)
             /// @param color The color of the rectangle.
-            void drawRounded(float roundness, float segments, Color color);
+            void drawRounded(float roundness, float segments);
 
             /// Draws a rectangle with rounded corners outline
             ///
@@ -96,7 +96,7 @@ namespace raylib
             /// edges.
             /// @param lineThick The thickness of the lines.
             /// @param color The color of the lines
-            void drawRoundedLines(float roundness, float segments, float lineThick, Color color);
+            void drawRoundedLines(float roundness, float segments, float lineThick);
 
             /// It checks if the rectangle is colliding with another rectangle.
             ///
@@ -112,6 +112,8 @@ namespace raylib
             /// @return A rectangle
             Rectangle getCollision(Rectangle other);
 
+          private:
+            Vector2 _size;
         };
     } // namespace shapes
 } // namespace raylib
