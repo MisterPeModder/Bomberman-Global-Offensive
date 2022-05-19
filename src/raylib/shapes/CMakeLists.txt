@@ -11,6 +11,8 @@ set(SRC
     ${SRCROOT}/Cube.hpp
     ${SRCROOT}/Pixel.cpp
     ${SRCROOT}/Pixel.hpp
+    ${SRCROOT}/Sphere.cpp
+    ${SRCROOT}/Sphere.hpp
     ${SRCROOT}/AShape.hpp
 	PARENT_SCOPE)
 

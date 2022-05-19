@@ -5,6 +5,8 @@
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 
+#include "raylib/shapes/Sphere.hpp"
+
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
 #endif
@@ -19,10 +21,13 @@ static void drawFrame(void *arg)
     raylib::core::Window::beginDrawing();
     raylib::core::Window::clear();
     camera->begin3D();
+
+    raylib::shapes::Sphere sphere({0, 0, 0}, 3, {150, 0, 0, 255});
+    sphere.draw();
     camera->end3D();
     DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
-    raylib::core::Window::endDrawing();
     raylib::core::Window::drawFPS(10, 10);
+    raylib::core::Window::endDrawing();
 }
 
 int main()
