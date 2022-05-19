@@ -13,7 +13,7 @@ set(SRC
     ${SRCROOT}/Window.hpp
     ${SRCROOT}/Mouse.hpp
     ${SRCROOT}/Mouse.cpp
-    ${SRCROOT}/Scopes.hpp
+    ${SRCROOT}/scoped.hpp
     ${SRCROOT}/Cursor.hpp
     ${SRCROOT}/Cursor.cpp
     ${SRCROOT}/Color.hpp

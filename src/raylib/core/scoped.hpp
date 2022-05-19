@@ -18,7 +18,7 @@ namespace raylib
     namespace core
     {
         /// Use of RAII for the raylib Drawing related functions (with begin/end for each).
-        namespace scopes
+        namespace scoped
         {
             /// Setup/End a 3D mode with a custom camera
             class Mode3D {
@@ -41,7 +41,7 @@ namespace raylib
                 /// End the window drawing.
                 inline ~Drawing() { Window::endDrawing(); }
             };
-        } // namespace scopes
+        } // namespace scoped
 
     } // namespace core
 } // namespace raylib
