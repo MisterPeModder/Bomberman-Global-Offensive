@@ -52,7 +52,7 @@ namespace raylib
                 void begin3D();
 
                 /// End 3D mode (EndMode3D encapsulation)
-                void end3D();
+                static void end3D();
 
                 /// Get the position of the camera
                 ///

@@ -1,7 +1,8 @@
 #include <iostream>
-#include "raylib/core/Camera3D.hpp"
-#include "raylib/core/Window.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Scopes.hpp"
+#include "raylib/core/Window.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -14,12 +15,13 @@ static void drawFrame(void *arg)
 {
     raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
 
-    raylib::core::Window::beginDrawing();
+    raylib::core::scopes::Drawing drawing;
     raylib::core::Window::clear();
-    camera->begin3D();
-    camera->end3D();
+    {
+        raylib::core::scopes::Mode3D mode3D(*camera);
+    };
+
     DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
-    raylib::core::Window::endDrawing();
     raylib::core::Window::drawFPS(10, 10);
 }
 
