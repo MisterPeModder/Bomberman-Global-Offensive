@@ -11,6 +11,7 @@ set(SRC
     ${SRCROOT}/Cone.hpp
     ${SRCROOT}/Cube.cpp
     ${SRCROOT}/Cube.hpp
+    ${SRCROOT}/Cylinder.hpp
     ${SRCROOT}/Pixel.cpp
     ${SRCROOT}/Pixel.hpp
     ${SRCROOT}/Sphere.cpp

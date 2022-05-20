@@ -32,7 +32,7 @@ namespace raylib
             /// @param height The height of the cone.
             /// @param slices The number of slices of the cone, more slices mean more precise but more laggy.
             /// @param color The color of the cone.
-            Cone(Vector3 position, float radiusBase, float radiusTop, float height, int slices,
+            Cone(Vector3 position = {}, float radiusBase = 0, float radiusTop = 0, float height = 0, int slices = 0,
                 Color color = {0, 0, 0, 0});
 
             /// Destroy the cone
@@ -53,7 +53,7 @@ namespace raylib
             ///
             /// @param base new base radius.
             /// @param top new top radius.
-            void setRadius(float base, float top);
+            virtual void setRadius(float base, float top);
 
             /// Gets the base radius.
             ///

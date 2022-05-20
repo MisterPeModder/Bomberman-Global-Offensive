@@ -28,7 +28,7 @@ namespace raylib
             /// @param position The position of the center of the sphere.
             /// @param radius The radius of the sphere.
             /// @param color The color of the sphere.
-            Sphere(Vector3 position, float radius = 0, Color color = {0, 0, 0, 0});
+            Sphere(Vector3 position = {}, float radius = 0, Color color = {0, 0, 0, 0});
 
             /// Destroy the sphere.
             ~Sphere() = default;
