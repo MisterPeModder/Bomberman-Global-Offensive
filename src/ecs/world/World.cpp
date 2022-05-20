@@ -19,7 +19,7 @@ namespace ecs
     void World::runSystems()
     {
         EntityAccess tmpAccess; // TO REMOVE
-        for (auto &[type, system] : this->_tmpSystems)
+        for (auto &[type, system] : this->_systems)
             system->run(tmpAccess);
     }
 } // namespace ecs

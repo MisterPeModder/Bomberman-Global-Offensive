@@ -9,6 +9,8 @@
 #define ECS_WORLD_HPP_
 
 #include "ecs/System.hpp"
+#include "ecs/storage/Storage.hpp"
+#include "ecs/storage/TreeStorage.hpp"
 #include "ecs/world/Resource.hpp"
 
 #include <concepts>
@@ -83,13 +85,13 @@ namespace ecs
         {
             std::type_index key(typeid(S));
 
-            if (this->_tmpSystems.contains(key))
+            if (this->_systems.contains(key))
                 throw std::logic_error("tried to register same system type twice");
 
             std::unique_ptr<S> instance(std::make_unique<S, Args...>(std::forward<Args>(args)...));
             S *instancePtr(instance.get());
 
-            this->_tmpSystems.emplace(std::make_pair(key, std::move(instance)));
+            this->_systems.emplace(std::make_pair(key, std::move(instance)));
             return *instancePtr;
         }
 
@@ -136,8 +138,9 @@ namespace ecs
         }
 
       private:
-        std::unordered_map<std::type_index, std::unique_ptr<System>> _tmpSystems;
+        std::unordered_map<std::type_index, std::unique_ptr<System>> _systems;
         std::unordered_map<std::type_index, std::unique_ptr<Resource>> _resources;
+        std::unordered_map<std::type_index, std::unique_ptr<BaseStorage>> _storages;
 
         template <std::derived_from<Resource> R> R *getResourcePtr(const char *error) const
         {
@@ -150,9 +153,9 @@ namespace ecs
 
         template <std::derived_from<System> S> S *getSystemPtr(const char *error) const
         {
-            auto found = this->_tmpSystems.find(std::type_index(typeid(S)));
+            auto found = this->_systems.find(std::type_index(typeid(S)));
 
-            if (found == this->_tmpSystems.end())
+            if (found == this->_systems.end())
                 throw std::logic_error(error);
             return dynamic_cast<S *>(found->second.get());
         }

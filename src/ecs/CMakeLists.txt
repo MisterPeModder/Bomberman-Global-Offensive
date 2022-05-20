@@ -1,6 +1,7 @@
 set(INCROOT ${INCROOT}/ecs)
 set(SRCROOT ${SRCROOT}/ecs)
 
+add_subdirectory(storage)
 add_subdirectory(world)
 
 set(SRC
