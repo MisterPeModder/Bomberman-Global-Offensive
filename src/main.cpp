@@ -24,7 +24,7 @@ static void raylibLogger(int msgType, const char *text, va_list args)
 {
     static Logger raylibLogger("log_raylib.txt", true);
     Logger::Severity severity;
-    char buffer[1024];
+    std::array<char, 1024> buffer;
 
     switch (msgType) {
         case LOG_TRACE: severity = Logger::Severity::Debug; break;
@@ -35,8 +35,8 @@ static void raylibLogger(int msgType, const char *text, va_list args)
         case LOG_FATAL: severity = Logger::Severity::Error; break;
         default: return;
     }
-    vsprintf(buffer, text, args);
-    raylibLogger.log(severity, buffer);
+    vsnprintf(buffer.data(), 1024, text, args);
+    raylibLogger.log(severity, buffer.data());
 }
 
 static void setupLogger()
