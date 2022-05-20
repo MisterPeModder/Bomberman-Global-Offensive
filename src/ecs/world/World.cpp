@@ -5,11 +5,12 @@
 ** ECS - World
 */
 
-#include "World.hpp"
+#include "ecs/world/World.hpp"
+#include "ecs/world/Entities.hpp"
 
 namespace ecs
 {
-    World::World() {}
+    World::World() { this->addResource<Entities>(); }
 
     World::World(World const &) {}
 
