@@ -7,6 +7,8 @@ set(SRC
     ${SRCROOT}/Rectangle.hpp
     ${SRCROOT}/Circle.cpp
     ${SRCROOT}/Circle.hpp
+    ${SRCROOT}/Cone.cpp
+    ${SRCROOT}/Cone.hpp
     ${SRCROOT}/Cube.cpp
     ${SRCROOT}/Cube.hpp
     ${SRCROOT}/Pixel.cpp
