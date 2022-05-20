@@ -9,6 +9,7 @@ set(SRC
     ${INCROOT}/Component.hpp
     ${INCROOT}/Entity.hpp
     ${INCROOT}/System.hpp
+    ${INCROOT}/SystemData.hpp
     ${INCROOT}/Instances.hpp
 	PARENT_SCOPE
 )

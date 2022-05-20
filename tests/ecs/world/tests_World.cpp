@@ -6,6 +6,7 @@
 */
 
 #include "ecs/System.hpp"
+#include "ecs/SystemData.hpp"
 #include "ecs/world/Entities.hpp"
 #include "ecs/world/Resource.hpp"
 #include "ecs/world/World.hpp"
@@ -24,20 +25,20 @@ struct Data : public ecs::System, public ecs::Resource {
 
     Data(std::string s, int num, std::vector<std::string> &ref) : str(s), someNumber(num), nonTrivialRef(ref) {}
 
-    virtual void run(ecs::EntityAccess &) override final {}
+    virtual void run(ecs::SystemData) override final {}
+};
+
+struct Count : public ecs::Resource {
+    int count = 0;
 };
 
 struct CountingSystem : public ecs::System {
-    int runCount = 0;
-
-    virtual void run(ecs::EntityAccess &) override final { ++runCount; }
+    virtual void run(ecs::SystemData data) override final { data.getResource<Count>().count += 1; }
 };
 
 /// CountingSystem 2: Electric Boogaloo
 struct CountingSystem2 : public ecs::System {
-    int runCount = 0;
-
-    virtual void run(ecs::EntityAccess &) override final { runCount += 2; }
+    virtual void run(ecs::SystemData data) override final { data.getResource<Count>().count += 2; }
 };
 
 TEST(World, addResource)
@@ -58,56 +59,34 @@ TEST(World, addResource)
     ASSERT_THROW(world.addResource<ecs::Entities>(), std::logic_error);
 }
 
-TEST(World, addSystem)
-{
-    ecs::World world;
-    std::vector<std::string> strings{"This"s, "is"s, "a"s, "test"s};
-
-    Data &ds(world.addSystem<Data>("some string", 42, strings));
-
-    EXPECT_EQ(ds.str, "some string");
-    EXPECT_EQ(ds.someNumber, 42);
-    EXPECT_EQ(ds.nonTrivialRef, strings);
-
-    // May not register the same type twice
-    ASSERT_THROW(world.addSystem<Data>("???", -1, strings), std::logic_error);
-    ASSERT_NO_THROW(world.addSystem<CountingSystem>());
-
-    ASSERT_NO_THROW(world.addResource<Data>("???", -1, strings));
-}
-
 TEST(World, runSystem)
 {
     ecs::World world;
+    Count &count = world.addResource<Count>();
 
     // May not run unregistered systems
     ASSERT_THROW(world.runSystem<CountingSystem>(), std::logic_error);
 
-    // May not get unregistered systems instances
-    ASSERT_THROW(world.getSystem<CountingSystem>(), std::logic_error);
-
     world.addSystem<CountingSystem>();
 
-    EXPECT_EQ(world.getSystem<CountingSystem>().runCount, 0);
+    EXPECT_EQ(count.count, 0);
     world.runSystem<CountingSystem>();
-    EXPECT_EQ(world.getSystem<CountingSystem>().runCount, 1);
+    EXPECT_EQ(count.count, 1);
     world.runSystem<CountingSystem>();
-    EXPECT_EQ(world.getSystem<CountingSystem>().runCount, 2);
+    EXPECT_EQ(count.count, 2);
 }
 
 TEST(World, runSystems)
 {
     ecs::World world;
+    Count &count = world.addResource<Count>();
 
-    CountingSystem &counting(world.addSystem<CountingSystem>());
-    CountingSystem2 &counting2(world.addSystem<CountingSystem2>());
+    world.addSystem<CountingSystem>();
+    world.addSystem<CountingSystem2>();
 
-    EXPECT_EQ(counting.runCount, 0);
-    EXPECT_EQ(counting2.runCount, 0);
+    EXPECT_EQ(count.count, 0);
     world.runSystem<CountingSystem>();
-    EXPECT_EQ(counting.runCount, 1);
-    EXPECT_EQ(counting2.runCount, 0);
+    EXPECT_EQ(count.count, 1);
     world.runSystems();
-    EXPECT_EQ(counting.runCount, 2);
-    EXPECT_EQ(counting2.runCount, 2);
+    EXPECT_EQ(count.count, 4);
 }

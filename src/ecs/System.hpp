@@ -8,19 +8,19 @@
 #ifndef ECS_SYSTEM_HPP_
 #define ECS_SYSTEM_HPP_
 
+#include <concepts>
+
 namespace ecs
 {
-    /// TBD
-    class EntityAccess {
-    };
+    class SystemData;
 
     /// The base system type, all systems must inherit from System.
     class System {
       public:
         virtual ~System() = default;
 
-        /// Updates the provided entities.
-        virtual void run(EntityAccess &entities) = 0;
+        /// Run the system.
+        virtual void run(SystemData data) = 0;
     };
 } // namespace ecs
 

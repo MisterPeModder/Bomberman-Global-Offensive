@@ -8,15 +8,15 @@
 #ifndef ECS_WORLD_HPP_
 #define ECS_WORLD_HPP_
 
+#include "ecs/Component.hpp"
+#include "ecs/Instances.hpp"
 #include "ecs/System.hpp"
 #include "ecs/storage/Storage.hpp"
 #include "ecs/storage/TreeStorage.hpp"
 #include "ecs/world/Resource.hpp"
 
 #include <concepts>
-#include <memory>
 #include <stdexcept>
-#include <typeindex>
 #include <utility>
 #include <unordered_map>
 
@@ -33,12 +33,9 @@ namespace ecs
 
         explicit World();
 
-        explicit World(World const &);
+        World(World const &) = delete;
 
-        /// Implicit copy of World instances is disabled for performance reasons.
-        World &operator=(World const &) = delete;
-
-        ~World();
+        ~World() = default;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Populating
@@ -59,16 +56,8 @@ namespace ecs
         /// @throws std::logic_error If the resource @b R was already added to this world.
         template <std::derived_from<Resource> R, typename... Args> R &addResource(Args &&...args)
         {
-            std::type_index key(typeid(R));
-
-            if (this->_resources.contains(key))
-                throw std::logic_error("tried to register same resource type twice");
-
-            std::unique_ptr<R> instance(std::make_unique<R, Args...>(std::forward<Args>(args)...));
-            R *instancePtr(instance.get());
-
-            this->_resources.emplace(std::make_pair(key, std::move(instance)));
-            return *instancePtr;
+            return this->_resources.emplace<R>(
+                "tried to register same resource type twice", std::forward<Args>(args)...);
         }
 
         /// Creates a instance of the system @b S and adds it the active systems of this World.
@@ -78,21 +67,10 @@ namespace ecs
         ///
         /// @param args The arguments to pass to the constructor of @b S.
         ///
-        /// @returns A reference to the instance of @b S, lives as long as this world.
-        ///
         /// @throws std::logic_error If the system @b S was already added to this world.
-        template <std::derived_from<System> S, typename... Args> S &addSystem(Args &&...args)
+        template <std::derived_from<System> S, typename... Args> void addSystem(Args &&...args)
         {
-            std::type_index key(typeid(S));
-
-            if (this->_systems.contains(key))
-                throw std::logic_error("tried to register same system type twice");
-
-            std::unique_ptr<S> instance(std::make_unique<S, Args...>(std::forward<Args>(args)...));
-            S *instancePtr(instance.get());
-
-            this->_systems.emplace(std::make_pair(key, std::move(instance)));
-            return *instancePtr;
+            this->_systems.emplace<S>("tried to register same system type twice", std::forward<Args>(args)...);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -107,58 +85,68 @@ namespace ecs
         /// @throws std::logic_error If the system @b S was not added to this world.
         template <std::derived_from<System> S> void runSystem()
         {
-            S *system(this->getSystemPtr<S>("tried to run unregistered system"));
-            EntityAccess tmpAccess; // TO REMOVE
-
-            system->run(tmpAccess);
+            this->runSystem(this->_systems.get<S>("tried to run unregistered system"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Querying
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        /// Fetches a Resource from this world.
+        ///
+        /// @tparam Value The type of resource to fetch, must inherit from @b Resource.
+        ///
+        /// @returns A const reference to the instance of @b R.
+        ///
+        /// @throws std::logic_error If no instance of @b R is in the world.
         template <std::derived_from<Resource> R> R const &getResource() const
         {
-            return *this->getResourcePtr<R>("attempted to access unregietered resource instance");
+            return this->_resources.get<R>(("attempted to access unregietered resource instance"));
         }
 
+        /// Fetches a Resource from this world.
+        ///
+        /// @tparam R The type of resource to fetch, must inherit from @b Resource.
+        ///
+        /// @returns A reference to the instance of @b R.
+        ///
+        /// @throws std::logic_error If no instance of @b R is in the world.
         template <std::derived_from<Resource> R> R &getResource()
         {
-            return *this->getResourcePtr<R>("attempted to access unregietered resource instance");
+            return this->_resources.get<R>(("attempted to access unregietered resource instance"));
         }
 
-        template <std::derived_from<System> S> S const &getSystem() const
+        /// Fetches a component storage from this world.
+        ///
+        /// @tparam C The component type.
+        ///
+        /// @returns A const reference to the storage of components of type @b C.
+        ///
+        /// @throws std::logic_error If no storage for component @b C exists.
+        template <std::derived_from<BaseComponent> C> typename C::Storage const &getStorage() const
         {
-            return *this->getSystemPtr<S>("attempted to access unregietered system instance");
+            return this->_storages.get<C::Storage>("attempted to access unregietered storage");
         }
 
-        template <std::derived_from<System> S> S &getSystem()
+        /// Fetches a component storage from this world.
+        ///
+        /// @tparam C The component type.
+        ///
+        /// @returns A reference to the storage of components of type @b C.
+        ///
+        /// @throws std::logic_error If no storage for component @b C exists.
+        template <std::derived_from<BaseComponent> C> typename C::Storage &getStorage() const
         {
-            return *this->getSystemPtr<S>("attempted to access unregietered system instance");
+            return this->_storages.get<C::Storage>("attempted to access unregietered storage");
         }
 
       private:
-        std::unordered_map<std::type_index, std::unique_ptr<System>> _systems;
-        std::unordered_map<std::type_index, std::unique_ptr<Resource>> _resources;
-        std::unordered_map<std::type_index, std::unique_ptr<BaseStorage>> _storages;
+        Instances<Resource> _resources;
+        Instances<System> _systems;
+        Instances<BaseStorage> _storages;
 
-        template <std::derived_from<Resource> R> R *getResourcePtr(const char *error) const
-        {
-            auto found = this->_resources.find(std::type_index(typeid(R)));
-
-            if (found == this->_resources.end())
-                throw std::logic_error(error);
-            return dynamic_cast<R *>(found->second.get());
-        }
-
-        template <std::derived_from<System> S> S *getSystemPtr(const char *error) const
-        {
-            auto found = this->_systems.find(std::type_index(typeid(S)));
-
-            if (found == this->_systems.end())
-                throw std::logic_error(error);
-            return dynamic_cast<S *>(found->second.get());
-        }
+        /// non template version of runSystem.
+        void runSystem(System &system);
     };
 } // namespace ecs
 

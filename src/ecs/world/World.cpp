@@ -6,20 +6,18 @@
 */
 
 #include "ecs/world/World.hpp"
+#include "ecs/SystemData.hpp"
 #include "ecs/world/Entities.hpp"
 
 namespace ecs
 {
     World::World() { this->addResource<Entities>(); }
 
-    World::World(World const &) {}
-
-    World::~World() {}
-
     void World::runSystems()
     {
-        EntityAccess tmpAccess; // TO REMOVE
-        for (auto &[type, system] : this->_systems)
-            system->run(tmpAccess);
+        for (auto &[type, system] : this->_systems.getInner())
+            system->run(SystemData(*this));
     }
+
+    void World::runSystem(System &system) { system.run(SystemData(*this)); }
 } // namespace ecs
