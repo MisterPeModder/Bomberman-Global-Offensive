@@ -5,8 +5,6 @@
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 
-#include "raylib/shapes/Cylinder.hpp"
-
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
 #endif
