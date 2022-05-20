@@ -18,8 +18,8 @@ namespace ecs
     template <typename C> class TreeStorage : public BaseStorage {
       public:
         using Component = C;
-        using Iterator = std::map<Entity, Component>::iterator;
-        using ConstIterator = std::map<Entity, Component>::const_iterator;
+        using Iterator = typename std::map<Entity, Component>::iterator;
+        using ConstIterator = typename std::map<Entity, Component>::const_iterator;
 
         /// Default initialization of TreeStorage
         explicit TreeStorage() {}
