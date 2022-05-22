@@ -27,11 +27,11 @@ namespace raylib
             Model(std::string &modelPath);
             ~Model();
 
-            void draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint);
-            void draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint);
+            void draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const;
+            void draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint) const;
             
-            void drawWires(raylib::core::Vector3 position, float scale, raylib::core::Color tint);
-            void drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint);
+            void drawWires(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const;
+            void drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint) const;
             
             ::BoundingBox getBoundingBox() const;
 
