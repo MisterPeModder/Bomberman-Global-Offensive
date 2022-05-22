@@ -71,6 +71,10 @@ namespace raylib
                 /// @param a The alpha
                 void setAlpha(unsigned char a) { _color.a = a; }
 
+                /// @brief Gets the raylib Color
+                /// @return The raylib Color
+                inline ::Color toRaylib() { return _color; }
+
 
 
             protected:

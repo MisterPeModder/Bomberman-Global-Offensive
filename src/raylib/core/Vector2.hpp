@@ -70,6 +70,9 @@ namespace raylib
             /// @brief The Vector2 assignment divide operator
             /// @param vector the Vector2 to assignment divide
             Vector2 &operator/=(const Vector2 &vector);
+            /// @brief Gets the raylib Vector2
+            /// @return The raylib Vector2
+            inline ::Vector2 toRaylib() { return {_x, _y}; }
 
           private:
             float _x;
