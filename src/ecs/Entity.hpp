@@ -8,6 +8,7 @@
 #ifndef ECS_ENTITY_HPP_
 #define ECS_ENTITY_HPP_
 
+#include <compare>
 #include <cstddef>
 
 namespace ecs
@@ -23,11 +24,13 @@ namespace ecs
         constexpr Index getId() const noexcept { return this->_id; }
         constexpr Generation getGeneration() const noexcept { return this->_generation; }
 
+        auto operator<=>(Entity const &other) const { return this->_id <=> other._id; }
+
       private:
         Index _id;
         Generation _generation;
 
-        inline constexpr Entity(Index id, Generation generation = 0) : _id(id), _generation(generation) {}
+        inline constexpr Entity(Index id, Generation generation) : _id(id), _generation(generation) {}
 
         // Only the `Entities` World Resource may create entities.
         friend Entities;
