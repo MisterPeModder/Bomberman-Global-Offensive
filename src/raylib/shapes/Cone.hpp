@@ -39,7 +39,7 @@ namespace raylib
             ~Cone() = default;
 
             /// Draw the cone
-            void draw() const;
+            void draw() const override;
 
             /// Draw the cone wires
             void drawWires() const;

@@ -43,7 +43,7 @@ namespace raylib
             void draw() const override;
 
             /// Draw the wireframe of the cube.
-            void drawWires();
+            void drawWires() const;
 
             /// Set the Size of the cube.
             ///
@@ -53,7 +53,7 @@ namespace raylib
             /// Get the Size of the cube.
             ///
             /// @return Vector3 size of the cube.
-            Vector3 getSize();
+            Vector3 getSize() const;
 
           private:
             Vector3 _size;

@@ -27,7 +27,7 @@ namespace raylib
             DrawSphereWires(_position, _radius, rings, slices, _color);
         }
 
-        float Sphere::getRadius() { return _radius; }
+        float Sphere::getRadius() const { return _radius; }
 
         void Sphere::setRadius(float radius) { _radius = radius; }
     } // namespace shapes

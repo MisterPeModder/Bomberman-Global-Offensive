@@ -42,7 +42,7 @@ namespace raylib
 
             /// Draw a pixel at the position of the pixel object, using the color of the
             /// pixel object.
-            void draw() const;
+            void draw() const override;
         };
     } // namespace shapes
 } // namespace raylib

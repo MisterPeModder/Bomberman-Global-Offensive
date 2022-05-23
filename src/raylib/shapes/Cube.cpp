@@ -20,10 +20,10 @@ namespace raylib
 
         void Cube::draw() const { DrawCubeV(_position, _size, _color); }
 
-        void Cube::drawWires() { DrawCubeWiresV(_position, _size, _color); }
+        void Cube::drawWires() const { DrawCubeWiresV(_position, _size, _color); }
 
         void Cube::setSize(Vector3 size) { _size = size; }
 
-        Vector3 Cube::getSize() { return _size; }
+        Vector3 Cube::getSize() const { return _size; }
     } // namespace shapes
 } // namespace raylib

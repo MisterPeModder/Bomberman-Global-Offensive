@@ -34,7 +34,7 @@ namespace raylib
             ~Sphere() = default;
 
             /// Draw the sphere on the window.
-            void draw() const;
+            void draw() const override;
 
             /// Draw the sphere on the window with specified parameters.
             ///
@@ -49,7 +49,7 @@ namespace raylib
             void drawWires(int rings, int slices) const;
 
             /// Gets the radius of the sphere.
-            float getRadius();
+            float getRadius() const;
 
             /// Sets the radius of the sphere.
             ///
