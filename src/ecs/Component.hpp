@@ -12,22 +12,9 @@
 
 namespace ecs
 {
-    class BaseComponent {
-      public:
-        virtual ~BaseComponent() = default;
-
-      protected:
-        BaseComponent() = default;
-    };
-
     /// The base component type, all components must inherit from Component.
-    ///
-    /// @tparam S The backing storage type, any of SparseStorage, DenseStorage, or TreeStorage.
-    template <Storage S> class Component : public BaseComponent {
+    class Component {
       public:
-        /// The backing storage type.
-        using Storage = S;
-
         virtual ~Component() = default;
 
       protected:

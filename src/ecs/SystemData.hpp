@@ -8,6 +8,7 @@
 #ifndef ECS_SYSTEM_DATA_HPP_
 #define ECS_SYSTEM_DATA_HPP_
 
+#include "ecs/storage/Storage.hpp"
 #include "ecs/world/World.hpp"
 
 #include <concepts>
@@ -36,7 +37,7 @@ namespace ecs
         /// @returns A reference to the storage of components of type @b C.
         ///
         /// @throws std::logic_error If no storage for component @b C exists.
-        template <std::derived_from<BaseComponent> C> typename C::Storage &getStorage() const
+        template <std::derived_from<Component> C> get_storage_type<C> &getStorage() const
         {
             return this->_world.getStorage<C>();
         }

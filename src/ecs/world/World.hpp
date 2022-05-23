@@ -101,7 +101,7 @@ namespace ecs
         /// @throws std::logic_error If no instance of @b R is in the world.
         template <std::derived_from<Resource> R> R const &getResource() const
         {
-            return this->_resources.get<R>(("attempted to access unregietered resource instance"));
+            return this->_resources.get<R>(("attempted to access unregistered resource instance"));
         }
 
         /// Fetches a Resource from this world.
@@ -113,7 +113,7 @@ namespace ecs
         /// @throws std::logic_error If no instance of @b R is in the world.
         template <std::derived_from<Resource> R> R &getResource()
         {
-            return this->_resources.get<R>(("attempted to access unregietered resource instance"));
+            return this->_resources.get<R>(("attempted to access unregistered resource instance"));
         }
 
         /// Fetches a component storage from this world.
@@ -123,9 +123,9 @@ namespace ecs
         /// @returns A const reference to the storage of components of type @b C.
         ///
         /// @throws std::logic_error If no storage for component @b C exists.
-        template <std::derived_from<BaseComponent> C> typename C::Storage const &getStorage() const
+        template <std::derived_from<Component> C> get_storage_type<C> const &getStorage() const
         {
-            return this->_storages.get<C::Storage>("attempted to access unregietered storage");
+            return this->_storages.get<get_storage_type<C>>("attempted to access unregistered storage");
         }
 
         /// Fetches a component storage from this world.
@@ -135,9 +135,9 @@ namespace ecs
         /// @returns A reference to the storage of components of type @b C.
         ///
         /// @throws std::logic_error If no storage for component @b C exists.
-        template <std::derived_from<BaseComponent> C> typename C::Storage &getStorage() const
+        template <std::derived_from<Component> C> get_storage_type<C> &getStorage()
         {
-            return this->_storages.get<C::Storage>("attempted to access unregietered storage");
+            return this->_storages.get<get_storage_type<C>>("attempted to access unregistered storage");
         }
 
       private:
