@@ -11,9 +11,27 @@
 
 namespace ecs
 {
+    Entities::Builder::Builder(Entities &outer) : _outer(outer), _entity(outer.create(false)), _consumed(false) {}
+
+    Entity Entities::Builder::build()
+    {
+        this->checkConsumed();
+        this->_consumed = true;
+        this->_outer._alive[this->_entity.getId()] = true;
+        return this->_entity;
+    }
+
+    void Entities::Builder::checkConsumed()
+    {
+        if (this->_consumed)
+            throw std::logic_error("Attempted to used entity builder after a call to build()");
+    }
+
     Entities::Entities() {}
 
-    Entity Entities::create()
+    Entity Entities::create() { return this->create(true); }
+
+    Entity Entities::create(bool alive)
     {
         auto begin = this->_alive.cbegin();
         auto end = this->_alive.cend();
@@ -23,9 +41,9 @@ namespace ecs
             // If there is not empty slot, add one the end
             Entity::Index id = this->_alive.size();
 
-            this->_generations.push_back(0);
-            this->_alive.push_back(true);
-            return Entity(id);
+            this->_generations.push_back(1);
+            this->_alive.push_back(alive);
+            return Entity(id, 1);
         } else {
             // If there is a slot available, bump the generation count by one and use that slot.
             Entity::Index id = static_cast<Entity::Index>(firstDead - begin);
@@ -35,6 +53,8 @@ namespace ecs
             return Entity(id, this->_generations[id]);
         }
     }
+
+    Entities::Builder Entities::builder() { return Builder(*this); }
 
     bool Entities::erase(Entity entity) noexcept
     {
@@ -54,12 +74,12 @@ namespace ecs
     Entity Entities::get(Entity::Index id) noexcept
     {
         if (id >= this->_generations.size())
-            return Entity(id);
+            return Entity(id, 0);
         return Entity(id, this->_generations[id]);
     }
 
     bool Entities::isAlive(Entity entity) noexcept
     {
-        return entity.getId() < this->_generations.size() && this->_alive[entity.getId()];
+        return entity.getGeneration() > 0 && entity.getId() < this->_generations.size() && this->_alive[entity.getId()];
     }
 } // namespace ecs

@@ -56,6 +56,7 @@ namespace ecs
         { cstorage.contains(entity) } -> std::same_as<bool>;
         { storage[entity] } -> std::same_as<typename S::Component &>;
         { cstorage[entity] } -> std::same_as<typename S::Component const &>;
+        { cstorage.size() } noexcept -> std::same_as<std::size_t>;
 
         // the iterators must have a value type of pair<Entity, Component>
         requires std::same_as<typename S::Iterator::value_type, std::pair<const Entity, typename S::Component>>;

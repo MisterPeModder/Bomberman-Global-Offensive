@@ -13,6 +13,7 @@
 #include "ecs/System.hpp"
 #include "ecs/storage/Storage.hpp"
 #include "ecs/storage/TreeStorage.hpp"
+#include "ecs/world/Entities.hpp"
 #include "ecs/world/Resource.hpp"
 
 #include <concepts>
@@ -41,8 +42,48 @@ namespace ecs
         // Populating
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        /// Allows one to construct an entity component by component.
+        class EntityBuilder {
+          public:
+            /// Cannot copy entity builders.
+            EntityBuilder(EntityBuilder const &) = delete;
+
+            /// Attach a component to the entity.
+            ///
+            /// @tparam C The component to attach, must not already exist on the entity.
+            /// @tparam Args The type of arguments to pass to the constructor of @b C.
+            ///
+            /// @param args The arguments to pass to the constructor of @b C.
+            ///
+            /// @throws std::logic_error if @b C is already present on the entity,
+            /// or if this method is called after build().
+            template <std::derived_from<Component> C, typename... Args> EntityBuilder &with(Args &&...args)
+            {
+                if (!this->_outer._storages.contains<get_storage_type<C>>())
+                    this->_outer._storages.emplace<get_storage_type<C>>("failed to add entity component");
+                this->_builder.with<C>(this->_outer.getStorage<C>(), std::forward<Args>(args)...);
+                return *this;
+            }
+
+            /// Creates the entity, consuming the builder.
+            ///
+            /// @returns The newly created entity's handle.
+            ///
+            /// @throws std::logic_error If this method is called again.
+            Entity build();
+
+          private:
+            World &_outer;
+            Entities::Builder _builder;
+
+            explicit EntityBuilder(World &outer);
+
+            // Only World may create instances of EntityBuilder.
+            friend World;
+        };
+
         /// Creates a new entity
-        Entity &addEntity();
+        EntityBuilder addEntity();
 
         /// Adds a new world Resource instance.
         ///
@@ -147,6 +188,9 @@ namespace ecs
 
         /// non template version of runSystem.
         void runSystem(System &system);
+
+        // Allow EntityBuilder to access World internals.
+        friend EntityBuilder;
     };
 } // namespace ecs
 

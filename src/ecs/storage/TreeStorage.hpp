@@ -51,6 +51,9 @@ namespace ecs
         /// @throws std::exception if @b entity does not exist in this storage.
         Component const &operator[](Entity entity) const { return this->_components.at(entity); }
 
+        /// @returns The amount of entities in this storage.
+        std::size_t size() const noexcept { return this->_components.size(); }
+
         /// Iterator start.
         Iterator begin() noexcept { return this->_components.begin(); }
 

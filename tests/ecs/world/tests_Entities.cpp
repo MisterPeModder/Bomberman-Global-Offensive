@@ -21,9 +21,9 @@ TEST(Entities, base)
     EXPECT_EQ(e1.getId(), 0);
     EXPECT_EQ(e2.getId(), 1);
     EXPECT_EQ(e3.getId(), 2);
-    EXPECT_EQ(e1.getGeneration(), 0);
-    EXPECT_EQ(e2.getGeneration(), 0);
-    EXPECT_EQ(e3.getGeneration(), 0);
+    EXPECT_EQ(e1.getGeneration(), 1);
+    EXPECT_EQ(e2.getGeneration(), 1);
+    EXPECT_EQ(e3.getGeneration(), 1);
 
     entities.erase(e2);
     entities.erase(e3);
@@ -34,7 +34,7 @@ TEST(Entities, base)
     e2 = entities.create();
 
     EXPECT_EQ(e2.getId(), 1);
-    EXPECT_EQ(e2.getGeneration(), 1);
+    EXPECT_EQ(e2.getGeneration(), 2);
 
     e1 = entities.get(0);
     ecs::Entity e4 = entities.get(3);

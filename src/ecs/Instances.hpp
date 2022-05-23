@@ -20,6 +20,12 @@ namespace ecs
     /// @tparam Base The common parent class of all contained instances.
     template <typename Base> class Instances {
       public:
+        /// Default contructor.
+        Instances() = default;
+
+        /// May not copy Instances.
+        Instances(Instances const &) = delete;
+
         /// Constructs an instance of @b Value in-place.
         ///
         /// @tparam Value The type of instance to create, must inherit from @b Base.
