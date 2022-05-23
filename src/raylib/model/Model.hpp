@@ -98,7 +98,6 @@ namespace raylib
             /// @retval false if the model doesn't collide with the bounding box
             bool checkCollision(const BoundingBox &otherBox);
 
-          protected:
           private:
             ::Model _model;
         };
