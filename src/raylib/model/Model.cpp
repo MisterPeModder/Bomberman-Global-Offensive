@@ -6,12 +6,13 @@
 */
 
 #include "Model.hpp"
+#include "BoundingBox.hpp"
 
 namespace raylib
 {
     namespace model
     {
-        Model::Model(std::string &modelPath)
+        Model::Model(const std::string &modelPath)
         : _model(LoadModel(modelPath.c_str()))
         {
         }
@@ -41,9 +42,23 @@ namespace raylib
             DrawModelWiresEx(_model, position.toRaylib(), rotationAxis.toRaylib(), rotationAngle, scale.toRaylib(), tint.toRaylib());
         }
 
-        ::BoundingBox Model::getBoundingBox() const
+        BoundingBox Model::getBoundingBox() const
         {
-            return BoundingBox::getFromModel(_model);
+            return BoundingBox(_model);
+        }
+
+        bool Model::checkCollision(const Model& other)
+        {
+            return getBoundingBox().checkCollision(other.getBoundingBox());
+        }
+
+        bool Model::checkCollision(const BoundingBox& other)
+        {
+            return getBoundingBox().checkCollision(other);
+        }
+
+        ::Model Model::toRaylib() const {
+            return _model;
         }
 
     }

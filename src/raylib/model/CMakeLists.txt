@@ -5,6 +5,7 @@ set(SRC
 	${SRC}
     ${SRCROOT}/Model.cpp
     ${SRCROOT}/Model.hpp
+    ${SRCROOT}/BoundingBox.cpp
     ${SRCROOT}/BoundingBox.hpp
 	PARENT_SCOPE)
 

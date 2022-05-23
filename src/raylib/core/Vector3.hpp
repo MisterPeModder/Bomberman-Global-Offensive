@@ -90,7 +90,7 @@ namespace raylib
             Vector3 &operator/=(const Vector3 &vector);
             /// @brief Gets the raylib Vector3
             /// @return The raylib Vector3
-            inline ::Vector3 toRaylib() { return {_x, _y, _z}; }
+            inline ::Vector3 toRaylib() const { return {_x, _y, _z}; }
 
           private:
             float _x;

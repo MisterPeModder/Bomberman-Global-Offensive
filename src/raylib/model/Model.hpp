@@ -10,13 +10,13 @@
 
 extern "C"
 {
-#include "raylib.h"
+#include <raylib.h>
 }
 
 #include <string>
-#include "Vector3.hpp"
-#include "Color.hpp"
-#include "BoundingBox.hpp"
+#include "raylib/core/Vector3.hpp"
+#include "raylib/core/Color.hpp"
+#include "raylib/model/BoundingBox.hpp"
 
 namespace raylib
 {
@@ -24,16 +24,25 @@ namespace raylib
     {
         class Model {
           public:
-            Model(std::string &modelPath);
+            Model(const std::string &modelPath);
+
             ~Model();
 
             void draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const;
+
             void draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint) const;
-            
+
             void drawWires(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const;
+
             void drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint) const;
-            
-            ::BoundingBox getBoundingBox() const;
+
+            BoundingBox getBoundingBox() const;
+
+            ::Model toRaylib() const;
+
+            bool checkCollision(const Model &other);
+
+            bool checkCollision(const BoundingBox &other);
 
           protected:
           private:

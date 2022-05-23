@@ -8,7 +8,12 @@
 #ifndef RAYLIB_MODEL_BOUNDINGBOX_HPP_
 #define RAYLIB_MODEL_BOUNDINGBOX_HPP_
 
-#include "Model.hpp"
+extern "C"
+{
+#include <raylib.h>
+}
+
+#include "raylib/core/Vector3.hpp"
 
 namespace raylib
 {
@@ -16,17 +21,22 @@ namespace raylib
     {
         class BoundingBox {
           public:
-            // static inline getFromModel(const Model model)
-            // {
-            //   return GetModelBoundingBox(model.toRaylib());
-            // }
-            static inline ::BoundingBox getFromModel(const ::Model model)
-            {
-              return GetModelBoundingBox(model);
-            }
+            BoundingBox(const ::Model model);
+
+            ~BoundingBox();
+
+            raylib::core::Vector3 getMin() const;
+
+            raylib::core::Vector3 getMax() const;
+
+            bool checkCollision(const BoundingBox &other);
+
+            ::BoundingBox toRaylib() const;
 
           protected:
           private:
+            raylib::core::Vector3 _min;
+            raylib::core::Vector3 _max;
         };
     }
 }

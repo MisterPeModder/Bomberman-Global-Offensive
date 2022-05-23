@@ -72,7 +72,7 @@ namespace raylib
             Vector2 &operator/=(const Vector2 &vector);
             /// @brief Gets the raylib Vector2
             /// @return The raylib Vector2
-            inline ::Vector2 toRaylib() { return {_x, _y}; }
+            inline ::Vector2 toRaylib() const { return {_x, _y}; }
 
           private:
             float _x;
