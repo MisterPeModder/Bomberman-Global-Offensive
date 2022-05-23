@@ -14,20 +14,26 @@
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
 
-const std::string testObjectPath = "/home/aurele/Downloads/gas/gas.obj";
+
+static raylib::model::Model &getTestingModel()
+{
+    static const std::string testModelPath = "/home/aurele/Downloads/gas/gas.obj";
+    static raylib::model::Model model(testModelPath);
+
+    return model;
+}
 
 static void drawFrame(void *arg)
 {
     raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
-    raylib::model::Model model(testObjectPath);
-    raylib::core::Vector3 pos;
-    raylib::core::Color color;
+    raylib::core::Vector3 zero;
 
+    camera->update();
     raylib::core::scoped::Drawing drawing;
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
-        model.draw(pos, 50, color);
+        getTestingModel().draw(zero, 40);
     };
 
     DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
@@ -37,6 +43,7 @@ static void drawFrame(void *arg)
 int main()
 {
     raylib::core::Camera3D camera;
+    camera.setMode(CAMERA_ORBITAL);
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
