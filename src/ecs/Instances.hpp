@@ -94,6 +94,14 @@ namespace ecs
             return this->_inner;
         }
 
+        /// @tparam Value The type of instance to test, must inherit from @b Base.
+        ///
+        /// @returns Whether the given instance type is contained in the set.
+        template <std::derived_from<Base> Value> bool contains()
+        {
+            return this->_inner.contains(std::type_index(typeid(Value)));
+        }
+
       private:
         std::unordered_map<std::type_index, std::unique_ptr<Base>> _inner;
     };
