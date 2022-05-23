@@ -58,5 +58,15 @@ namespace raylib
         int Camera3D::getProjection() const { return _camera.projection; }
 
         void Camera3D::setProjection(int projection) { _camera.projection = projection; }
+
+        void Camera3D::setMode(::CameraMode mode)
+        {
+            SetCameraMode(_camera, mode);
+        }
+
+        void Camera3D::update()
+        {
+            UpdateCamera(&_camera);
+        }
     } // namespace core
 } // namespace raylib

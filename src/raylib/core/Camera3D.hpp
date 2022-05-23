@@ -104,6 +104,14 @@ namespace raylib
                 /// @param projection the new projection of the camera
                 void setProjection(int projection);
 
+                /// Sets the camera mode
+                ///
+                /// @param mode The new camera mode
+                void setMode(::CameraMode mode);
+
+                /// Update the camera
+                void update();
+
             private:
                 ::Camera3D _camera;
         };
