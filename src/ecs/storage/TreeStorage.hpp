@@ -24,6 +24,9 @@ namespace ecs
         /// Default initialization of TreeStorage
         explicit TreeStorage() {}
 
+        /// Cannot copy storage instances.
+        TreeStorage(TreeStorage const &) = delete;
+
         /// Constructs a component in-place for the given entity.
         ///
         /// @param entity The entity.
@@ -36,6 +39,17 @@ namespace ecs
 
         /// Removes the component instance for the supplied entity.
         void erase(Entity entity) { this->_components.erase(entity); }
+
+        /// @returns Whether the entity exists in this storage.
+        bool contains(Entity entity) const { return this->_components.contains(entity); }
+
+        /// @returns The component accociated with the given entity.
+        /// @throws std::exception if @b entity does not exist in this storage.
+        Component &operator[](Entity entity) { return this->_components.at(entity); }
+
+        /// @returns The component accociated with the given entity.
+        /// @throws std::exception if @b entity does not exist in this storage.
+        Component const &operator[](Entity entity) const { return this->_components.at(entity); }
 
         /// Iterator start.
         Iterator begin() noexcept { return this->_components.begin(); }
