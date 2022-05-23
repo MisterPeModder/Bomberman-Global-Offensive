@@ -5,6 +5,7 @@
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
+#include "raylib/model/Model.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -13,14 +14,20 @@
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
 
+const std::string testObjectPath = "/home/aurele/Downloads/gas/gas.obj";
+
 static void drawFrame(void *arg)
 {
     raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
+    raylib::model::Model model(testObjectPath);
+    raylib::core::Vector3 pos;
+    raylib::core::Color color;
 
     raylib::core::scoped::Drawing drawing;
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
+        model.draw(pos, 50, color);
     };
 
     DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
