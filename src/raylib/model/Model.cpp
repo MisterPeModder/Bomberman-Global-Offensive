@@ -52,9 +52,9 @@ namespace raylib
             return getBoundingBox().checkCollision(other.getBoundingBox());
         }
 
-        bool Model::checkCollision(const BoundingBox& other)
+        bool Model::checkCollision(const BoundingBox& otherBox)
         {
-            return getBoundingBox().checkCollision(other);
+            return getBoundingBox().checkCollision(otherBox);
         }
 
         ::Model Model::toRaylib() const {
