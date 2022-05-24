@@ -32,14 +32,14 @@ namespace raylib
             return _max;
         }
 
-        ::BoundingBox BoundingBox::toRaylib() const
+        ::BoundingBox BoundingBox::asRaylib() const
         {
-            return { _min.toRaylib(), _max.toRaylib() };
+            return { _min.asRaylib(), _max.asRaylib() };
         }
 
         bool BoundingBox::checkCollision(const BoundingBox &other)
         {
-            return CheckCollisionBoxes(this->toRaylib(), other.toRaylib());
+            return CheckCollisionBoxes(this->asRaylib(), other.asRaylib());
         }
     }
 }

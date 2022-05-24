@@ -80,7 +80,7 @@ namespace raylib
                 /// Gets the raylib Color
                 ///
                 /// @return The raylib Color
-                constexpr ::Color toRaylib() { return _color; }
+                constexpr ::Color asRaylib() { return _color; }
 
             private:
                 ::Color _color;

@@ -80,7 +80,7 @@ namespace raylib
             /// Gets the C Raylib version of the model
             ///
             /// @return The raylib version of the model
-            ::Model &toRaylib();
+            ::Model &asRaylib();
 
             /// Checks collision with another model
             ///

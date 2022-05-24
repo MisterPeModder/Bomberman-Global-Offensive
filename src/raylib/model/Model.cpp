@@ -24,22 +24,22 @@ namespace raylib
 
         void Model::draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const
         {
-            DrawModel(_model, position.toRaylib(), scale, tint.toRaylib());
+            DrawModel(_model, position.asRaylib(), scale, tint.asRaylib());
         }
 
         void Model::draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint) const
         {
-            DrawModelEx(_model, position.toRaylib(), rotationAxis.toRaylib(), rotationAngle, scale.toRaylib(), tint.toRaylib());
+            DrawModelEx(_model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
         }
 
         void Model::drawWires(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const
         {
-            DrawModelWires(_model, position.toRaylib(), scale, tint.toRaylib());
+            DrawModelWires(_model, position.asRaylib(), scale, tint.asRaylib());
         }
 
         void Model::drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint) const
         {
-            DrawModelWiresEx(_model, position.toRaylib(), rotationAxis.toRaylib(), rotationAngle, scale.toRaylib(), tint.toRaylib());
+            DrawModelWiresEx(_model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
         }
 
         BoundingBox Model::getBoundingBox() const
@@ -57,7 +57,7 @@ namespace raylib
             return getBoundingBox().checkCollision(otherBox);
         }
 
-        ::Model &Model::toRaylib() {
+        ::Model &Model::asRaylib() {
             return _model;
         }
 

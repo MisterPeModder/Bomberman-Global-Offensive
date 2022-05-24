@@ -60,7 +60,7 @@ namespace raylib
             /// Gets the C Raylib version of the bounding box
             ///
             /// @return The raylib version of the bounding box
-            ::BoundingBox toRaylib() const;
+            ::BoundingBox asRaylib() const;
 
           private:
             raylib::core::Vector3 _min;

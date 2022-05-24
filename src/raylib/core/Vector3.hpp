@@ -131,7 +131,7 @@ namespace raylib
             /// Gets the raylib Vector3
             ///
             /// @return The raylib Vector3
-            constexpr ::Vector3 toRaylib() const { return {_x, _y, _z}; }
+            constexpr ::Vector3 asRaylib() const { return {_x, _y, _z}; }
 
           private:
             float _x;
