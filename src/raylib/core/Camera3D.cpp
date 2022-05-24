@@ -59,7 +59,7 @@ namespace raylib
 
         void Camera3D::setProjection(int projection) { _camera.projection = projection; }
 
-        void Camera3D::setMode(::CameraMode mode)
+        void Camera3D::setMode(CameraMode mode)
         {
             SetCameraMode(_camera, mode);
         }

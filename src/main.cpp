@@ -58,7 +58,7 @@ static void drawFrame(void *arg)
 int main()
 {
     raylib::core::Camera3D camera;
-    camera.setMode(CAMERA_ORBITAL);
+    camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
