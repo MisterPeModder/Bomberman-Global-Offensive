@@ -68,5 +68,6 @@ namespace raylib
         {
             UpdateCamera(&_camera);
         }
+
     } // namespace core
 } // namespace raylib
