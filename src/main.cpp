@@ -18,7 +18,7 @@ constexpr int HEIGHT(500);
 
 static raylib::model::Model &getTestingModel()
 {
-    static const std::string testModelPath = "/home/aurele/Downloads/guy.iqm";
+    static const std::string testModelPath = "assets/models/player/raylibguy.iqm";
     static raylib::model::Model model(testModelPath);
 
     return model;
@@ -26,7 +26,7 @@ static raylib::model::Model &getTestingModel()
 
 static raylib::model::Animation &getTestingAnimation()
 {
-    static const std::string testAnimPath = "/home/aurele/Downloads/guyanim.iqm";
+    static const std::string testAnimPath = "assets/animations/raylibguy_anim.iqm";
     static raylib::model::Animation anim(testAnimPath);
 
     return anim;
