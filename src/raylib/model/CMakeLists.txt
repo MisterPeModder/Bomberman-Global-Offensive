@@ -8,9 +8,9 @@ set(SRC ${SRC}
     ${SRCROOT}/BoundingBox.hpp
     ${SRCROOT}/Animation.cpp
     ${SRCROOT}/Animation.hpp
-    PARENT_SCOPE)
+PARENT_SCOPE)
 
 set(INCDIRS
     ${INCDIRS}
     ${INCROOT}
-    PARENT_SCOPE)
+PARENT_SCOPE)
