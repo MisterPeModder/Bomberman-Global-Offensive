@@ -12,7 +12,6 @@ set(SRC
     ${SRCROOT}/Window.cpp
     ${SRCROOT}/Window.hpp
     ${SRCROOT}/Mouse.hpp
-    ${SRCROOT}/Mouse.cpp
     ${SRCROOT}/scoped.hpp
     ${SRCROOT}/Cursor.hpp
     ${SRCROOT}/Cursor.cpp

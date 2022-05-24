@@ -21,81 +21,93 @@ namespace raylib
     {
         /// The mouse static class that will manage the raylib mouse
         class Mouse {
-            public:
-                /// A wrapper function for the raylib function IsMouseButtonPressed.
-                ///
-                ///@param button The button to check.
-                ///
-                ///@return A boolean value.
-                bool isButtonPressed(int button);
+          public:
+            /// Gets if the button specified in argument has been pressed once or not
+            ///
+            /// @param button the button to check
+            ///
+            /// @return true if the button is pressed or false otherwise
+            static constexpr bool isButtonPressed(int &button) { return IsMouseButtonPressed(button); }
 
-                /// It returns a bool value.
-                ///
-                ///@param button The button to check.
-                ///
-                ///@return A boolean value.
-                bool isButtonDown(int button);
+            /// Gets if the button specified in argument is currently being pressed or not
+            ///
+            /// @param button the button to check
+            ///
+            /// @return true if the button is pressed or false otherwise
+            static constexpr bool isButtonDown(int &button) { return IsMouseButtonDown(button); }
 
-                /// A wrapper for the raylib function of the same name.
-                ///
-                ///@param button The mouse button to check.
-                ///
-                ///@return A boolean value.
-                bool isButtonReleased(int button);
+            /// Gets if the button specified in argument has been released once or not
+            ///
+            /// @param button the button to check
+            ///
+            /// @return true if the button is pressed or false otherwise
+            static constexpr bool isButtonReleased(int &button) { return IsMouseButtonReleased(button); }
 
-                /// It returns true if the mouse button is up.
-                ///
-                ///@param button The button to check.
-                ///
-                ///@return A boolean value.
-                bool isButtonUp(int button);
+            /// Gets if the button specified in argument is currently not being pressed or not
+            ///
+            /// @param button the button to check
+            ///
+            /// @return true if the button is not being pressed or false otherwise
+            static constexpr bool isButtonUp(int &button) { return IsMouseButtonUp(button); }
 
-                /// It returns the mouse's x position.
-                ///
-                ///@return The mouse's x position.
-                int getX(void);
+            /// Gets the mouse's x position.
+            ///
+            /// @return The mouse's x position.
+            static constexpr int getX(void) { return GetMouseX(); }
 
-                /// It returns the mouse's y position.
-                ///
-                ///@return The mouse's y position.
-                int getY(void);
+            /// Gets the mouse's y position.
+            ///
+            /// @return The mouse's y position.
+            static constexpr int getY(void) { return GetMouseY(); }
 
-                /// It returns the mouse position.
-                ///
-                ///@return A Vector2 object.
-                Vector2 getPosition(void);
+            /// Gets the mouse position.
+            ///
+            /// @return The mouse position.
+            static inline Vector2 getPosition(void) { return GetMousePosition(); }
 
-                /// It returns the mouse delta.
-                ///
-                ///@return A Vector2 object.
-                Vector2 getDelta(void);
+            /// Gets the mouse delta.
+            ///
+            /// @return The mouse delta.
+            static inline Vector2 getDelta(void) { return GetMouseDelta(); }
 
-                /// Sets the mouse position
-                ///
-                ///@param x The x position of the mouse
-                ///@param y The y position of the mouse.
-                void setPosition(int x, int y);
+            /// Sets the mouse position
+            ///
+            /// @param x The new x position of the mouse
+            /// @param y The new y position of the mouse
+            static constexpr void setPosition(float &x, float &y) { SetMousePosition(static_cast<int>(x), static_cast<int>(y)); }
 
-                /// Sets the mouse offset
-                ///
-                ///@param offsetX The X offset of the mouse.
-                ///@param offsetY The Y offset of the mouse.
-                void setOffset(int offsetX, int offsetY);
+            /// Sets the mouse position
+            ///
+            /// @param x The new x position of the mouse
+            /// @param y The new y position of the mouse
+            static constexpr void setPosition(Vector2 &pos) { SetMousePosition(static_cast<int>(pos.getX()), static_cast<int>(pos.getY())); }
 
-                /// Sets mouse scaling
-                ///
-                ///@param scaleX Horizontal mouse scaling factor
-                ///@param scaleY Vertical scaling factor for mouse input
-                void setScale(float scaleX, float scaleY);
+            /// Sets the mouse offset
+            ///
+            /// @param offsetX The X offset of the mouse.
+            /// @param offsetY The Y offset of the mouse.
+            static constexpr void setOffset(float &offsetX, float &offsetY)  { SetMouseOffset(static_cast<int>(offsetX), static_cast<int>(offsetY)); }
+            /// Sets the mouse offset
+            ///
+            /// @param offsetX The X offset of the mouse.
+            /// @param offsetY The Y offset of the mouse.
+            static constexpr void setOffset(Vector2 &offset)  { SetMouseOffset(static_cast<int>(offset.getX()), static_cast<int>(offset.getY())); }
 
-                /// It returns the mouse wheel movement Y.
-                ///
-                /// @return The mouse wheel movement.
-                float getWheelMove(void);
+            /// Sets mouse scaling
+            ///
+            /// @param scaleX Horizontal mouse scaling factor
+            /// @param scaleY Vertical scaling factor for mouse input
+            static constexpr void setScale(float scaleX, float scaleY) { SetMouseScale(scaleX, scaleY); }
 
-                /// Sets the mouse cursor icon
-                /// @param cursor The cursor to set.
-                void setCursor(int cursor);
+            /// Gets the mouse wheel Y movement.
+            ///
+            /// @return The mouse wheel movement.
+            static constexpr float getWheelMove(void) { return GetMouseWheelMove(); }
+
+            /// Sets the mouse cursor
+            ///
+            /// @param cursor The cursor to set.
+            static constexpr void setCursor(int cursor) { SetMouseCursor(cursor); }
 
         };
     } // namespace core
