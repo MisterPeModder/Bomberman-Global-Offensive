@@ -6,18 +6,17 @@
 */
 
 #include "Image.hpp"
-#include "raylib/core/Vector2.hpp"
 
 namespace raylib
 {
     namespace textures
     {
-        Image::Image(char *fileName, Vector2 position, Color *color) :_fileName(fileName), _position(position), _color(color)
+        Image::Image(std::string fileName, Vector2 position, Color *color) :_fileName(fileName), _position(position), _color(color)
         {
-            loadImage(_fileName);
+            loadImage();
         }
 
-        void Image::loadImage(const char *fileName) { _image = LoadImage(fileName); }
+        void Image::loadImage() { _image = LoadImage(_fileName.c_str()); }
 
         void Image::loadImageFromTexture(Texture2D &texture) { _image = LoadImageFromTexture(texture); }
 
@@ -25,7 +24,7 @@ namespace raylib
 
         void Image::unloadImage() { UnloadImage(_image); }
 
-        bool Image::exportImage(const char *fileName) { return ExportImage(_image, fileName); }
+        bool Image::exportImage(const std::string fileName) { return ExportImage(_image, fileName.c_str()); }
 
         void Image::imageFormat(int newFormat) { ImageFormat(&_image, newFormat); }
 

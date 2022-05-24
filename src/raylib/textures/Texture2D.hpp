@@ -5,12 +5,14 @@
 ** Textures
 */
 
-#ifndef TEXTURES_HPP_
-#define TEXTURES_HPP_
+#ifndef RAYLIB_TEXTURES_TEXTURE2D_HPP_
+#define RAYLIB_TEXTURES_TEXTURE2D_HPP_
 
-#include "raylib/core/Vector2.hpp"
-#include <span>
 #include <iostream>
+#include <span>
+#include <string>
+#include "raylib/core/Vector2.hpp"
+
 extern "C"
 {
 #include "raylib.h"
@@ -20,6 +22,7 @@ namespace raylib
 {
     namespace textures
     {
+        /// This is the class that is used to create a texture2D object.
         class Texture2D {
           public:
             /// This function takes in a position and a file name and sets the position
@@ -27,7 +30,7 @@ namespace raylib
             ///
             /// @param position The position of the texture on the screen.
             /// @param fileName The name of the file that contains the texture.
-            Texture2D(char *fileName, Vector2 position = {});
+            Texture2D(std::string fileName, Vector2 position = {});
 
             /// The destructor for the Texture2D class
             ~Texture2D() = default;
@@ -92,7 +95,7 @@ namespace raylib
             void drawTexture(Vector2 &position, float rotation, float scale, Color &tint);
 
           private:
-            char *_fileName;
+            std::string _fileName;
             Vector2 _position;
             ::Texture2D _texture;
         };
@@ -101,4 +104,4 @@ namespace raylib
 
 } // namespace raylib
 
-#endif /* !TEXTURES_HPP_ */
+#endif /* !RAYLIB_TEXTURES_TEXTURE2D_HPP_ */

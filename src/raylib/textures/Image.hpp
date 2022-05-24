@@ -5,8 +5,11 @@
 ** Image
 */
 
-#ifndef IMAGE_HPP_
-#define IMAGE_HPP_
+#ifndef RAYLIB_TEXTURES_IMAGE_HPP_
+#define RAYLIB_TEXTURES_IMAGE_HPP_
+
+#include <string>
+#include "raylib/core/Vector2.hpp"
 
 extern "C"
 {
@@ -17,6 +20,8 @@ namespace raylib
 {
     namespace textures
     {
+        /// This is the Image class. It is a wrapper for the raylib Image class. It has a constructor, a destructor, and
+        /// a bunch of functions that wrap the raylib Image functions.
         class Image {
           public:
             /// This function is a constructor for the Image class. It takes in a
@@ -27,7 +32,7 @@ namespace raylib
             /// @param position The position of the image on the screen.
             /// @param color The color of the image.
             /// @param fileName The name of the file to load.
-            Image(char *fileName, Vector2 position = {}, Color *color = {});
+            Image(std::string fileName, Vector2 position = {}, Color *color = {});
 
             Image(::Image image);
 
@@ -37,7 +42,7 @@ namespace raylib
             /// LoadImage loads an image from a file
             ///
             /// @param fileName The name of the file to load.
-            void loadImage(const char *fileName);
+            void loadImage();
 
             /// Loads an image from a texture
             ///
@@ -55,7 +60,7 @@ namespace raylib
             /// @param fileName The name of the file to export the image to.
             ///
             /// @return A boolean value.
-            bool exportImage(const char *fileName);
+            bool exportImage(const std::string fileName);
 
             /// It changes the format of the image.
             ///
@@ -124,13 +129,13 @@ namespace raylib
             /// @return A Color object.
             Color getImageColor(Image &image, int x, int y);
 
-            /// This function returns the color of the image
+            /// This function returns the color of the image (RGBA)
             ///
             /// @return The color of the image.
             Color *getColor();
 
           private:
-            char *_fileName;
+            std::string _fileName;
             Vector2 _position;
             Color *_color;
             ::Image _image;
@@ -139,4 +144,4 @@ namespace raylib
 
 } // namespace raylib
 
-#endif /* !IMAGE_HPP_ */
+#endif /* !RAYLIB_TEXTURES_IMAGE_HPP_ */

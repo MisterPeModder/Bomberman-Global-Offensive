@@ -12,14 +12,14 @@ namespace raylib
     namespace textures
     {
 
-        Texture2D::Texture2D(char *fileName, Vector2 position) : _fileName(fileName), _position(position)
+        Texture2D::Texture2D(std::string fileName, Vector2 position) : _fileName(fileName), _position(position)
         {
             loadTexture();
         }
 
         void Texture2D::setPosition(Vector2 &position) { _position = position; }
 
-        void Texture2D::loadTexture() { _texture = LoadTexture(_fileName); }
+        void Texture2D::loadTexture() { _texture = LoadTexture(_fileName.c_str()); }
 
         void Texture2D::loadTextureFromImage(Image &image) { _texture = LoadTextureFromImage(image); }
 
