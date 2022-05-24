@@ -173,6 +173,7 @@
         },
         {
             "name": "debug_msvc",
+            "configuration": "Debug",
             "displayName": "Test (debug MSVC)",
             "inherits": "common",
             "configurePreset": "debug_msvc"
@@ -185,6 +186,7 @@
         },
         {
             "name": "release_msvc",
+            "configuration": "Release",
             "displayName": "Test (release MSVC)",
             "inherits": "common",
             "configurePreset": "release_msvc"
