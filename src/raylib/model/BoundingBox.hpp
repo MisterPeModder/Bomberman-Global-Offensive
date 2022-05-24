@@ -58,12 +58,12 @@ namespace raylib
             /// @retval false if the two bounding boxes doesn't collide
             bool checkCollision(const BoundingBox &other);
 
+          private:
             /// Gets the C Raylib version of the bounding box
             ///
             /// @return The raylib version of the bounding box
-            ::BoundingBox asRaylib() const;
+            ::BoundingBox _asRaylib() const;
 
-          private:
             raylib::core::Vector3 _min;
             raylib::core::Vector3 _max;
         };
