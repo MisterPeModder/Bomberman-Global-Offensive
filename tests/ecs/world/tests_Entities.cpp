@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 
 #include "ecs/Entity.hpp"
-#include "ecs/world/Entities.hpp"
+#include "ecs/resource/Entities.hpp"
 
 TEST(Entities, base)
 {

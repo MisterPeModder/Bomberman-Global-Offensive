@@ -1,16 +1,16 @@
 set(INCROOT ${INCROOT}/ecs)
 set(SRCROOT ${SRCROOT}/ecs)
 
+add_subdirectory(resource)
 add_subdirectory(storage)
+add_subdirectory(system)
 add_subdirectory(world)
 
 set(SRC
 	${SRC}
     ${INCROOT}/Component.hpp
     ${INCROOT}/Entity.hpp
-    ${INCROOT}/System.hpp
-    ${INCROOT}/SystemData.hpp
-    ${INCROOT}/Instances.hpp
+    ${INCROOT}/World.hpp
 	PARENT_SCOPE
 )
 

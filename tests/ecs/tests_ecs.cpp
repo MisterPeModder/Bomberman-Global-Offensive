@@ -7,10 +7,10 @@
 
 #include "ecs/Component.hpp"
 #include "ecs/System.hpp"
-#include "ecs/SystemData.hpp"
+#include "ecs/World.hpp"
 #include "ecs/storage/TreeStorage.hpp"
-#include "ecs/world/World.hpp"
 
+#include <array>
 #include <gtest/gtest.h>
 
 struct Position : public ecs::Component {

@@ -5,13 +5,13 @@
 ** ECS - Entity Resource
 */
 
-#ifndef ECS_ENTITIES_HPP_
-#define ECS_ENTITIES_HPP_
+#ifndef ECS_RESOURCE_ENTITIES_HPP_
+#define ECS_RESOURCE_ENTITIES_HPP_
 
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
+#include "ecs/resource/Resource.hpp"
 #include "ecs/storage/Storage.hpp"
-#include "ecs/world/Resource.hpp"
 
 #include <concepts>
 #include <vector>
@@ -107,4 +107,4 @@ namespace ecs
     };
 } // namespace ecs
 
-#endif // !defined(ECS_ENTITIES_HPP_)
+#endif // !defined(ECS_RESOURCE_ENTITIES_HPP_)

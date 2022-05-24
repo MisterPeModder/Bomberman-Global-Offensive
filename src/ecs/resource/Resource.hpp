@@ -5,8 +5,8 @@
 ** ECS - World Resource
 */
 
-#ifndef ECS_RESOURCE_HPP_
-#define ECS_RESOURCE_HPP_
+#ifndef ECS_RESOURCE_RESOURCE_HPP_
+#define ECS_RESOURCE_RESOURCE_HPP_
 
 namespace ecs
 {
@@ -16,4 +16,4 @@ namespace ecs
     };
 } // namespace ecs
 
-#endif // !defined(ECS_RESOURCE_HPP_)
+#endif // !defined(ECS_RESOURCE_RESOURCE_HPP_)

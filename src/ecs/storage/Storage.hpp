@@ -5,8 +5,8 @@
 ** ECS - The Component Storage Trait
 */
 
-#ifndef ECS_STORAGE_HPP_
-#define ECS_STORAGE_HPP_
+#ifndef ECS_STORAGE_STORAGE_HPP_
+#define ECS_STORAGE_STORAGE_HPP_
 
 #include "ecs/Entity.hpp"
 
@@ -78,4 +78,4 @@ namespace ecs
     template <typename C> using get_storage_type = typename GetComponentStorageType<C>::Value;
 } // namespace ecs
 
-#endif // !defined(ECS_STORAGE_HPP_)
+#endif // !defined(ECS_STORAGE_STORAGE_HPP_)

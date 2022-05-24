@@ -6,10 +6,9 @@
 */
 
 #include "ecs/System.hpp"
-#include "ecs/SystemData.hpp"
-#include "ecs/world/Entities.hpp"
-#include "ecs/world/Resource.hpp"
-#include "ecs/world/World.hpp"
+#include "ecs/World.hpp"
+#include "ecs/resource/Entities.hpp"
+#include "ecs/resource/Resource.hpp"
 
 #include <gtest/gtest.h>
 #include <stdexcept>

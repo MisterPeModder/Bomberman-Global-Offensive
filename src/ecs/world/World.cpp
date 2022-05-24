@@ -6,8 +6,8 @@
 */
 
 #include "ecs/world/World.hpp"
-#include "ecs/SystemData.hpp"
-#include "ecs/world/Entities.hpp"
+#include "ecs/resource/Entities.hpp"
+#include "ecs/system/SystemData.hpp"
 
 namespace ecs
 {

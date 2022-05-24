@@ -5,7 +5,7 @@
 ** ECS - Entity Resource
 */
 
-#include "ecs/world/Entities.hpp"
+#include "ecs/resource/Entities.hpp"
 
 #include <algorithm>
 

@@ -5,8 +5,8 @@
 ** ECS - Data passed to systems
 */
 
-#ifndef ECS_SYSTEM_DATA_HPP_
-#define ECS_SYSTEM_DATA_HPP_
+#ifndef ECS_SYSTEM_SYSTEM_DATA_HPP_
+#define ECS_SYSTEM_SYSTEM_DATA_HPP_
 
 #include "ecs/storage/Storage.hpp"
 #include "ecs/world/World.hpp"
@@ -16,7 +16,7 @@
 namespace ecs
 {
     class Resource;
-    class BaseComponent;
+    class Component;
 
     /// A view on world data that provides access to Resource and Storage instances to systems.
     class SystemData {
@@ -52,4 +52,4 @@ namespace ecs
     };
 } // namespace ecs
 
-#endif // !defined(ECS_SYSTEM_DATA_HPP_)
+#endif // !defined(ECS_SYSTEM_SYSTEM_DATA_HPP_)

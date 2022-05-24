@@ -5,16 +5,16 @@
 ** ECS - World
 */
 
-#ifndef ECS_WORLD_HPP_
-#define ECS_WORLD_HPP_
+#ifndef ECS_WORLD_WORLD_HPP_
+#define ECS_WORLD_WORLD_HPP_
 
 #include "ecs/Component.hpp"
-#include "ecs/Instances.hpp"
-#include "ecs/System.hpp"
+#include "ecs/resource/Entities.hpp"
+#include "ecs/resource/Resource.hpp"
 #include "ecs/storage/Storage.hpp"
 #include "ecs/storage/TreeStorage.hpp"
-#include "ecs/world/Entities.hpp"
-#include "ecs/world/Resource.hpp"
+#include "ecs/system/System.hpp"
+#include "ecs/world/Instances.hpp"
 
 #include <concepts>
 #include <stdexcept>
@@ -24,6 +24,7 @@
 namespace ecs
 {
     class Entity;
+    class System;
 
     /// Contains all entities and systems.
     class World {
@@ -202,4 +203,4 @@ namespace ecs
     };
 } // namespace ecs
 
-#endif // !defined(ECS_WORLD_HPP_)
+#endif // !defined(ECS_WORLD_WORLD_HPP_)
