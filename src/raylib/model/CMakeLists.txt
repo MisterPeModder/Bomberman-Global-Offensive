@@ -7,6 +7,8 @@ set(SRC
     ${SRCROOT}/Model.hpp
     ${SRCROOT}/BoundingBox.cpp
     ${SRCROOT}/BoundingBox.hpp
+    ${SRCROOT}/Animation.cpp
+    ${SRCROOT}/Animation.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS

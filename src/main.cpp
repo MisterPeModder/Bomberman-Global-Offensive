@@ -6,6 +6,7 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/model/Model.hpp"
+#include "raylib/model/Animation.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -17,23 +18,37 @@ constexpr int HEIGHT(500);
 
 static raylib::model::Model &getTestingModel()
 {
-    static const std::string testModelPath = "/home/aurele/Downloads/gas/gas.obj";
+    static const std::string testModelPath = "/home/aurele/Downloads/guy.iqm";
     static raylib::model::Model model(testModelPath);
 
     return model;
 }
 
+static raylib::model::Animation &getTestingAnimation()
+{
+    static const std::string testAnimPath = "/home/aurele/Downloads/guyanim.iqm";
+    static raylib::model::Animation anim(testAnimPath);
+
+    return anim;
+}
+
 static void drawFrame(void *arg)
 {
     raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
-    raylib::core::Vector3 zero;
+    raylib::core::Vector3 pos(0, -5, 0);
+    raylib::core::Vector3 scale(1, 1, 1);
+    raylib::core::Vector3 rotationAxis(1, 0, 0);
 
+    raylib::model::Model &testingModel = getTestingModel();
+    raylib::model::Animation &testingAnimation = getTestingAnimation();
+
+    testingAnimation.updateModel(testingModel);
     camera->update();
     raylib::core::scoped::Drawing drawing;
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
-        getTestingModel().draw(zero, 40);
+        testingModel.draw(pos, rotationAxis, -90, scale);
     };
 
     DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
