@@ -48,10 +48,10 @@ static void drawFrame(void *arg)
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
-        testingModel.draw(pos, rotationAxis, -90, scale);
+        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
     };
 
-    DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
+    // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
     raylib::core::Window::drawFPS(10, 10);
 }
 
