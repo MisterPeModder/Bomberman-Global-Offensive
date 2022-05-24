@@ -1,0 +1,13 @@
+set(INCROOT ${INCROOT}/map)
+set(SRCROOT ${SRCROOT}/map)
+
+set(SRC
+	${SRC}
+	${SRCROOT}/Map.cpp
+	${SRCROOT}/Map.hpp
+	PARENT_SCOPE)
+
+set(INCDIRS 
+	${INCDIRS}
+	${INCROOT}
+	PARENT_SCOPE) 

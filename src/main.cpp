@@ -3,6 +3,8 @@
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
 
+#include "bomberman/map/Map.hpp"
+
 #include <raylib.h>
 
 #if defined(PLATFORM_WEB)
@@ -43,7 +45,7 @@ static void setupLogger()
 {
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
-    Logger::logger.setLogLevel(Logger::Severity::Information);
+    Logger::logger.setLogLevel(Logger::Severity::Debug);
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
     SetTraceLogCallback(raylibLogger);
     SetTraceLogLevel(LOG_INFO);
@@ -51,7 +53,11 @@ static void setupLogger()
 
 int main()
 {
+    bomberman::map::Map map;
+
     setupLogger();
+
+    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) { writer << '\n' << map; });
 
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
