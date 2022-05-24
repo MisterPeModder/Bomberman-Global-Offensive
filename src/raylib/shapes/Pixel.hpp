@@ -8,6 +8,7 @@
 #ifndef RAYLIB_SHAPE_PIXEL_HPP_
 #define RAYLIB_SHAPE_PIXEL_HPP_
 
+#include "AShape.hpp"
 #include "raylib/core/Vector2.hpp"
 
 extern "C"
@@ -19,7 +20,7 @@ namespace raylib
 {
     namespace shapes
     {
-        class Pixel {
+        class Pixel : public AShape {
           public:
             /// It creates a pixel with a position and a color.
             ///
@@ -41,37 +42,7 @@ namespace raylib
 
             /// Draw a pixel at the position of the pixel object, using the color of the
             /// pixel object.
-            void draw();
-
-            /// This function sets the color of the pixel to the given color.
-            ///
-            /// @param color The color to set the pixel to.
-            /// @param format The format of the pixel. This is a float value between 0
-            /// and 1.
-            void setColor(Color color, float format);
-
-            /// This function returns the color of the pixel.
-            ///
-            /// @param format The format of the image. This is a float value between 0
-            /// and 1.
-            ///
-            /// @return The color of the pixel.
-            Color getColor(float format);
-
-            /// This function sets the position of the pixel to the position passed in
-            ///
-            /// @param position The position of the pixel.
-            void setPosition(Vector2 position);
-
-            /// This function returns the position of the pixel
-            ///
-            /// @return The position of the pixel.
-            Vector2 getPosition();
-
-          protected:
-          private:
-            Vector2 _position;
-            Color _color;
+            void draw() const override;
         };
     } // namespace shapes
 } // namespace raylib

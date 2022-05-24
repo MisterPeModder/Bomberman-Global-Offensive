@@ -5,65 +5,56 @@
 ** Circle
 */
 
+#include "Circle.hpp"
+
 namespace raylib
 {
     namespace shapes
     {
-
-        Circle::Circle(float x, float y, float z, float radius, Color color)
+        Circle::Circle(Vector2 pos, float radius, Color color)
         {
-            _x = x;
-            _y = y;
+            setPosition(pos);
+            setColor(color);
             _radius = radius;
-            _color = color;
         }
 
         Circle::~Circle() {}
 
-        void Circle::draw() { DrawCircle(_x, _y, _radius, color); }
+        void Circle::draw() const { DrawCircle(_position.x, _position.y, _radius, _color); }
 
-        void Circle::drawSector(float startAngle, float endAngle, float segments, Color color)
+        void Circle::drawSector(float startAngle, float endAngle, int segments) const
         {
-            DrawCircleSector({_x, y}, _radius, startAngle, endAngle, segment, color);
+            DrawCircleSector(getPosition2D(), _radius, startAngle, endAngle, segments, _color);
         }
 
-        void Circle::drawSectorLines(float startAngle, float endAngle, float segments, Color color)
+        void Circle::drawSectorLines(float startAngle, float endAngle, int segments) const
         {
-            DrawCircleSectorLines({_x, _y}, _radius, startAngle, endAngle, segments, color);
+            DrawCircleSectorLines(getPosition2D(), _radius, startAngle, endAngle, segments, _color);
         }
 
-        void Circle::drawGradient(Color color1, Color color2) { DrawCircleGradient(_x, _y, _radius, color1, color2); }
-
-        void Circle::drawLines(Color color) { DrawCircleLines(_x, _y, _radius, Color color); }
-
-        bool Circle::checkCollisions(Cirlce other)
+        void Circle::drawGradient(Color color1, Color color2) const
         {
-            CheckCollisionCircles({_x, _y}, _radius, {other->_x, other->y}, other->_radius);
+            DrawCircleGradient(_position.x, _position.y, _radius, color1, color2);
         }
 
-        bool Circle::checkCollisions(Rectangle other) { CheckCollisionCircleRec({_x, _y}, _radius, other); }
+        void Circle::drawLines() const { DrawCircleLines(_position.x, _position.y, _radius, _color); }
 
-        void Circle::draw3D(Vector3 rotationAxis, float rotationAngle)
+        bool Circle::checkCollisions(const Circle &other) const
         {
-            DrawCircle3D({_x, _y, _z}, _radius, rotationAxis, rotationAngle, _color);
+            return CheckCollisionCircles(getPosition2D(), _radius, other.getPosition2D(), other.getRadius());
         }
 
-        void Circle::setPosition(float x, float y, float z)
+        bool Circle::checkCollisions(const Rectangle &other) const
         {
-            _x = x;
-            _y = y;
-            _z = z;
+            return CheckCollisionCircleRec(getPosition2D(), _radius, other);
+        }
+
+        void Circle::draw3D(Vector3 rotationAxis, float rotationAngle) const
+        {
+            DrawCircle3D(getPosition(), _radius, rotationAxis, rotationAngle, _color);
         }
 
         void Circle::setRadius(float radius) { _radius = radius; }
-
-        void Circle::setColor(Color color) { _color = color; }
-
-        Vector3 Circle::getPosition() { return {_x, _y, _z}; }
-
-        float Circle::getRadius() { return _radius; }
-
-        Color Circle::getColor() { return _color; }
     } // namespace shapes
 
 } // namespace raylib

@@ -31,16 +31,12 @@ namespace raylib
 
             /// A constructor that takes a Rectangle as a parameter.
             ///
-            /// @param rec The rectangle to copy
+            /// @param other The rectangle to copy
             Rectangle(Rectangle &other);
 
-            /// This function creates a rectangle with a position, width, height, and
-            /// color
+            /// This function creates a rectangle from a raylib Rectangle struct.
             ///
-            /// @param pos The position of the rectangle.
-            /// @param width The width of the rectangle.
-            /// @param height The height of the rectangle.
-            /// @param color The color of the rectangle.
+            /// @param rec raylib Rectangle.
             Rectangle(::Rectangle rec);
 
             /// The destructor for the Rectangle class.
@@ -68,18 +64,18 @@ namespace raylib
             /// a `Rectangle` and a `Color`. The first argument is the `Rectangle` that
             /// is a member of the class `Rectangle`. The second argument is the `Color`
             /// that is a member of the class `Rectangle`
-            void draw() override;
+            void draw() const override;
 
             /// Draws a rectangle outline (or "wireframe") with the given color
             ///
             /// @param color The color of the rectangle.
-            void drawLines(Color color);
+            void drawLines() const;
 
             /// Draws a rectangle outline (or line) with extended parameters
             ///
             /// @param lineThick Thickness of the lines (in pixels)
             /// @param color The color of the rectangle.
-            void drawLinesEx(float lineThick, Color color);
+            void drawLinesEx(float lineThick) const;
 
             /// Draws a rectangle with rounded edges
             ///
@@ -87,7 +83,7 @@ namespace raylib
             /// @param segments The number of segments to be used to draw the rounded
             /// edges (defaults to 30)
             /// @param color The color of the rectangle.
-            void drawRounded(float roundness, float segments, Color color);
+            void drawRounded(float roundness, float segments) const;
 
             /// Draws a rectangle with rounded corners outline
             ///
@@ -96,22 +92,24 @@ namespace raylib
             /// edges.
             /// @param lineThick The thickness of the lines.
             /// @param color The color of the lines
-            void drawRoundedLines(float roundness, float segments, float lineThick, Color color);
+            void drawRoundedLines(float roundness, float segments, float lineThick) const;
 
             /// It checks if the rectangle is colliding with another rectangle.
             ///
             /// @param other The other rectangle to check collision with.
             ///
             /// @return A boolean value.
-            bool checkCollision(Rectangle other);
+            bool checkCollision(Rectangle &other) const;
 
             /// It returns the collision rectangle between two rectangles.
             ///
             /// @param other The other rectangle to check collision with.
             ///
             /// @return A rectangle
-            Rectangle getCollision(Rectangle other);
+            Rectangle getCollision(Rectangle &other) const;
 
+          private:
+            Vector2 _size;
         };
     } // namespace shapes
 } // namespace raylib
