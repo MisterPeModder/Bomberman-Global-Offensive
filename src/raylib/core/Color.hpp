@@ -35,7 +35,7 @@ namespace raylib
                 }
 
                 /// Destructor
-                constexpr ~Color() {}
+                ~Color() = default;
 
                 /// Get the red amount in the color
                 ///
