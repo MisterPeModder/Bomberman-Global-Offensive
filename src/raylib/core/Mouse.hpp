@@ -87,6 +87,7 @@ namespace raylib
             /// @param offsetX The X offset of the mouse.
             /// @param offsetY The Y offset of the mouse.
             static constexpr void setOffset(float offsetX, float offsetY)  { SetMouseOffset(static_cast<int>(offsetX), static_cast<int>(offsetY)); }
+
             /// Sets the mouse offset
             ///
             /// @param offsetX The X offset of the mouse.
