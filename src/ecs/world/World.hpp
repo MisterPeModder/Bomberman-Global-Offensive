@@ -31,6 +31,7 @@ namespace ecs
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Instantiation
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma region ECS World Instantiation
 
         explicit World();
 
@@ -38,9 +39,11 @@ namespace ecs
 
         ~World() = default;
 
+#pragma endregion ECS World Instantiation
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Populating
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma region ECS World Populating
 
         /// Allows one to construct an entity component by component.
         class EntityBuilder {
@@ -114,9 +117,11 @@ namespace ecs
             this->_systems.emplace<S>("tried to register same system type twice", std::forward<Args>(args)...);
         }
 
+#pragma endregion ECS World Populating
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Running
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma region ECS World Running
 
         /// Runs all systems in this world.
         void runSystems();
@@ -129,9 +134,11 @@ namespace ecs
             this->runSystem(this->_systems.get<S>("tried to run unregistered system"));
         }
 
+#pragma endregion ECS World Running
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Querying
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma region ECS World Querying
 
         /// Fetches a Resource from this world.
         ///
@@ -181,6 +188,7 @@ namespace ecs
             return this->_storages.get<get_storage_type<C>>("attempted to access unregistered storage");
         }
 
+#pragma endregion ECS World Querying
       private:
         Instances<Resource> _resources;
         Instances<System> _systems;
