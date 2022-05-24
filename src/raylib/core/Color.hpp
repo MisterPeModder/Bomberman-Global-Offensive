@@ -79,10 +79,42 @@ namespace raylib
                 return *this;
             }
 
+            /// Constructor from an integer
+            ///
+            /// @param hexColor the hex integer representing the color
+            /// @param alpha the alpha (defaulted to 255)
+            constexpr Color(int hexColor, unsigned char alpha = 255)
+            :
+            r(((hexColor >> 16) & 0xFF)),
+            g(((hexColor >> 8) & 0xFF)),
+            b(((hexColor) & 0xFF)),
+            a(alpha)
+            {}
+
+            /// Copy assignment operator from an integer
+            ///
+            /// @param other the hex integer representing the color
+            ///
+            /// @return The new color
+            constexpr Color &operator=(int hexColor)
+            {
+                r = ((hexColor >> 16) & 0xFF);
+                g = ((hexColor >> 8) & 0xFF);
+                b = ((hexColor) & 0xFF);
+                a = 255;
+
+                return *this;
+            }
+
             /// Gets the raylib Color
             ///
             /// @return The raylib Color
             constexpr ::Color asRaylib() { return {.r = r, .g = g, .b = b, .a = a}; }
+
+            /// Gets the color as integer
+            ///
+            /// @return The color as integer
+            constexpr int asInteger() { return { ((r & 0xFF) << 16) + ((g & 0xFF) << 8) + (b & 0xFF) }; }
 
         };
     }
