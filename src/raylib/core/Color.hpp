@@ -17,74 +17,75 @@ namespace raylib
 {
     namespace core
     {
-        /// The Color class that encapsulates the raylib Color struct
-        class Color {
+        /// The Color struct that encapsulates the raylib Color struct
+        struct Color {
             public:
-                /// Constructor
+                unsigned char r;
+                unsigned char g;
+                unsigned char b;
+                unsigned char a;
+
+                /// Constructor with the red, green and blue values mandatory
                 ///
-                /// @param r the amount of red
-                /// @param g the amount of green
-                /// @param b the amount of blue
-                /// @param a the alpha
-                constexpr Color(unsigned char r = 255, unsigned char g = 255, unsigned char b = 255, unsigned char a = 255)
-                {
-                    _color.r = r;
-                    _color.g = g;
-                    _color.b = b;
-                    _color.a = a;
-                }
+                /// @param red the amount of red
+                /// @param green the amount of green
+                /// @param blue the amount of blue
+                /// @param alpha the alpha (defaulted to 255)
+                constexpr Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255) : r(red), g(green), b(blue), a(alpha) {}
+
+                /// Default constructor
+                /// Defaults everything to 255
+                constexpr Color() : r(255), g(255), b(255), a(255) {}
 
                 /// Destructor
                 ~Color() = default;
 
-                /// Get the red amount in the color
+                /// Copy constructor
                 ///
-                /// @return The red amount
-                constexpr unsigned char getRed() const { return _color.r; }
+                /// @param other The color to copy
+                constexpr Color(const Color &other) : r(other.r), g(other.g), b(other.b), a(other.a) {}
 
-                /// Set the red amount in the color
+                /// Copy assignment operator
                 ///
-                /// @param r The red amount
-                constexpr void setRed(unsigned char r) { _color.r = r; }
+                /// @param other The color to copy
+                ///
+                /// @return The new copied color
+                constexpr Color &operator=(const Color &other)
+                {
+                    r = other.r;
+                    g = other.g;
+                    b = other.b;
+                    a = other.a;
 
-                /// Get the green amount in the color
-                ///
-                /// @return The green amount
-                constexpr unsigned char getGreen() const { return _color.g; }
+                    return *this;
+                }
 
-                /// Set the green amount in the color
+                /// Constructor from the C Raylib Color struct
                 ///
-                /// @param g The green amount
-                constexpr void setGreen(unsigned char g) { _color.g = g; }
+                /// @param other The C Raylib color to copy
+                constexpr Color(const ::Color &other) : r(other.r), g(other.g), b(other.b), a(other.a) {}
 
-                /// Get the blue amount in the color
+                /// Copy assignment operator from a C Raylib Color struct
                 ///
-                /// @return The blue amount
-                constexpr unsigned char getBlue() const { return _color.b; }
+                /// @param other The C Raylib color to copy
+                ///
+                /// @return The new copied color
+                constexpr Color &operator=(const ::Color &other)
+                {
+                    r = other.r;
+                    g = other.g;
+                    b = other.b;
+                    a = other.a;
 
-                /// Set the blue amount in the color
-                ///
-                /// @param b The blue amount
-                constexpr void setBlue(unsigned char b) { _color.b = b; }
-
-                /// Get the alpha of the color
-                ///
-                /// @return The alpha
-                constexpr unsigned char getAlpha() const { return _color.a; }
-
-                /// Set the alpha of the color
-                ///
-                /// @param a The alpha
-                constexpr void setAlpha(unsigned char a) { _color.a = a; }
+                    return *this;
+                }
 
                 /// Gets the raylib Color
                 ///
                 /// @return The raylib Color
-                constexpr ::Color asRaylib() { return _color; }
+                constexpr ::Color asRaylib() { return {.r = r, .g = g, .b = b, .a = a}; }
 
-            private:
-                ::Color _color;
-};
+        };
     }
 }
 
