@@ -11,7 +11,7 @@ namespace raylib
 {
     namespace model
     {
-        Animation::Animation(const std::string_view &animPath)
+        Animation::Animation(const std::string_view animPath)
         : _animationPath(animPath), _animFrameCounter(0)
         {
             _animations = LoadModelAnimations(std::string(animPath.data()).c_str(), &_animsCount);

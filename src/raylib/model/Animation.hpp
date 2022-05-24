@@ -27,7 +27,7 @@ namespace raylib
             /// File format accepted: obj and probably some other
             ///
             /// @param animPath the relative path to the animation to import
-            Animation(const std::string_view &animPath);
+            Animation(const std::string_view animPath);
 
             /// Animation destructor
             ~Animation();
