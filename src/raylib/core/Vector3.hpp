@@ -23,74 +23,115 @@ namespace raylib
         /// The Vector3 class (compatible with the raylib Vector3)
         class Vector3 {
           public:
-            /// @brief Constructor of the vector
+            /// Constructor of the vector
+            ///
             /// @param x the X axis value of the vector
             /// @param y the Y axis value of the vector
             /// @param z the Z axis value of the vector
             Vector3(float x = 0.f, float y = 0.f, float z = 0.f);
-            /// @brief Constructor of the 3d vector from a 2d vector
+
+            /// Constructor of the 3d vector from a 2d vector
+            ///
             /// @param vector the 2d vector to convert
             /// @param z the Z axis value of the vector
             Vector3(const Vector2 &vector, float z = 0.f);
-            /// @brief The copy constructor
+
+            /// The copy constructor
+            ///
             /// @param vector the vector to copy
             Vector3(const Vector3 &vector);
-            /// @brief The copy constructor with vector 3 of raylib
+
+            /// The copy constructor with vector 3 of raylib
+            ///
             /// @param vector the vector to copy
             Vector3(::Vector3 vector);
-            /// @brief Destructor
+
+            /// Destructor
             ~Vector3();
-            /// @brief Get the X axis value of the vector
+
+            /// Get the X axis value of the vector
+            ///
             /// @return the X axis value of the vector
-            float getX() const { return _x; }
-            /// @brief Set the X acis value of the vector
+            constexpr float getX() const { return _x; }
+
+            /// Set the X acis value of the vector
+            ///
             /// @param x the new X axis value of the vector
-            void setX(float x) { _x = x; }
-            /// @brief Get the Y axis value of the vector
+            constexpr void setX(float x) { _x = x; }
+
+            /// Get the Y axis value of the vector
+            ///
             /// @return the Y axis value of the vector
-            float getY() const { return _y; }
-            /// @brief Set the Y acis value of the vector
+            constexpr float getY() const { return _y; }
+
+            /// Set the Y acis value of the vector
+            ///
             /// @param y the new Y axis value of the vector
-            void setY(float y) { _y = y; }
-            /// @brief Get the Z axis value of the vector
+            constexpr void setY(float y) { _y = y; }
+
+            /// Get the Z axis value of the vector
+            ///
             /// @return the Z axis value of the vector
-            float getZ() const { return _z; }
-            /// @brief Set the Z acis value of the vector
+            constexpr float getZ() const { return _z; }
+
+            /// Set the Z acis value of the vector
+            ///
             /// @param z the new Z axis value of the vector
-            void setZ(float z) { _z = z; }
-            /// @brief The Vector3 copy operator
+            constexpr void setZ(float z) { _z = z; }
+
+            /// The Vector3 copy operator
             /// @param vector the Vector3 to copy
             Vector3 &operator=(const Vector3 &vector);
-            /// @brief The Vector3 copy operator
+
+            /// The Vector3 copy operator
+            ///
             /// @param vector the Vector2 to copy
             Vector3 &operator=(const Vector2 &vector);
-            /// @brief The Vector3 add operator from a Vector2
+
+            /// The Vector3 add operator from a Vector2
+            ///
             /// @param vector the Vector3 to add
             Vector3 operator+(const Vector3 &vector);
-            /// @brief The Vector3 assignment add operator
+
+            /// The Vector3 assignment add operator
+            ///
             /// @param vector the Vector3 to assignment add
             Vector3 &operator+=(const Vector3 &vector);
-            /// @brief The Vector3 remove operator
+
+            /// The Vector3 remove operator
+            ///
             /// @param vector the Vector3 to remove
             Vector3 operator-(const Vector3 &vector);
-            /// @brief The Vector3 assignment remove operator
+
+            /// The Vector3 assignment remove operator
+            ///
             /// @param vector the Vector3 to assignment remove
             Vector3 &operator-=(const Vector3 &vector);
-            /// @brief The Vector3 multiply operator
+
+            /// The Vector3 multiply operator
+            ///
             /// @param vector the Vector3 to multiply
             Vector3 operator*(const Vector3 &vector);
-            /// @brief The Vector3 assignment multiply operator
+
+            /// The Vector3 assignment multiply operator
+            ///
             /// @param vector the Vector3 to assignment multiply
             Vector3 &operator*=(const Vector3 &vector);
-            /// @brief The Vector3 divide operator
+
+            /// The Vector3 divide operator
+            ///
             /// @param vector the Vector3 to divide
             Vector3 operator/(const Vector3 &vector);
-            /// @brief The Vector3 assignment divide operator
+
+            /// The Vector3 assignment divide operator
+            ///
             /// @param vector the Vector3 to assignment divide
             Vector3 &operator/=(const Vector3 &vector);
-            /// @brief Gets the raylib Vector3
+
+            /// Gets the raylib Vector3
+            ///
             /// @return The raylib Vector3
-            inline ::Vector3 toRaylib() const { return {_x, _y, _z}; }
+            constexpr ::Vector3 toRaylib() const { return {_x, _y, _z}; }
 
           private:
             float _x;
