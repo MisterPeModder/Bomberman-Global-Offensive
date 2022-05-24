@@ -13,6 +13,8 @@ extern "C"
 #include "raylib.h"
 }
 
+#pragma region Undefine C Raylib default color macros
+
 #undef LIGHTGRAY
 #undef GRAY
 #undef DARKGRAY
@@ -39,6 +41,8 @@ extern "C"
 #undef BLANK
 #undef MAGENTA
 #undef RAYWHITE
+
+#pragma endregion
 
 namespace raylib
 {
@@ -144,6 +148,8 @@ namespace raylib
             /// @return The color as integer
             constexpr int asInteger() { return { ((r & 0xFF) << 16) + ((g & 0xFF) << 8) + (b & 0xFF) }; }
 
+            #pragma region Default colors
+
             static const Color LIGHT_GRAY;
             static const Color GRAY;
             static const Color DARK_GRAY;
@@ -171,9 +177,13 @@ namespace raylib
             static const Color MAGENTA;
             static const Color RAY_WHITE;
 
+            #pragma endregion
+
         };
 
         /// The default colors (same as the ones from the raylib)
+        #pragma region Assingning values to the default colors
+
         constexpr Color Color::LIGHT_GRAY = Color(200, 200, 200, 255);
         constexpr Color Color::GRAY = Color(130, 130, 130, 255);
         constexpr Color Color::DARK_GRAY = Color(80, 80, 80, 255);
@@ -200,6 +210,9 @@ namespace raylib
         constexpr Color Color::BLANK = Color(0, 0, 0, 0);
         constexpr Color Color::MAGENTA = Color(255, 0, 255, 255);
         constexpr Color Color::RAY_WHITE = Color(245, 245, 245, 255);
+
+        #pragma endregion
+
     }
 }
 
