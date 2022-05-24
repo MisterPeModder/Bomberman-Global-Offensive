@@ -94,14 +94,14 @@ namespace raylib
             /// @param color The color of the lines
             void drawRoundedLines(float roundness, float segments, float lineThick) const;
 
-            /// It checks if the rectangle is colliding with another rectangle.
+            /// Checks if the rectangle is colliding with another rectangle.
             ///
             /// @param other The other rectangle to check collision with.
             ///
             /// @return A boolean value.
             bool checkCollision(Rectangle &other) const;
 
-            /// It returns the collision rectangle between two rectangles.
+            /// Returns the collision rectangle between two rectangles.
             ///
             /// @param other The other rectangle to check collision with.
             ///
