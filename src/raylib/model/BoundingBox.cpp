@@ -14,7 +14,7 @@ namespace raylib
     {
         BoundingBox::BoundingBox(const Model &model)
         {
-            ::BoundingBox box = GetModelBoundingBox(model.asConstRaylib());
+            ::BoundingBox box = GetModelBoundingBox(model.asRaylib());
             _min = box.min;
             _max = box.max;
         }
