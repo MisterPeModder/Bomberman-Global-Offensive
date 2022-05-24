@@ -27,7 +27,9 @@ namespace raylib
             /// @param position The position of the image on the screen.
             /// @param color The color of the image.
             /// @param fileName The name of the file to load.
-            Image(Vector2 position = {}, Color *color = {}, char *fileName);
+            Image(char *fileName, Vector2 position = {}, Color *color = {});
+
+            Image(::Image image);
 
             /// Destructor of Image class
             ~Image() = default;
@@ -40,7 +42,7 @@ namespace raylib
             /// Loads an image from a texture
             ///
             /// @param texture The texture to load the image from.
-            void loadImageFromTexture(Texture2D texture);
+            void loadImageFromTexture(Texture2D &texture);
 
             /// It loads an image from the screen
             void loadImageFromScreen(void);
@@ -54,13 +56,6 @@ namespace raylib
             ///
             /// @return A boolean value.
             bool exportImage(const char *fileName);
-
-            /// Returns a new image that is a sub-image of the current image
-            ///
-            /// @param rec The rectangle to get the image from.
-            ///
-            /// @return A new image object.
-            Image imageFromImage(Rectangle rec);
 
             /// It changes the format of the image.
             ///
@@ -104,13 +99,13 @@ namespace raylib
             ///
             /// @param image The image to modify
             /// @param brightness The brightness value.
-            void imageColorBrightness(Image *image, int brightness);
+            void imageColorBrightness(int brightness);
 
             /// Replaces all instances of a color in an image with another color.
             ///
             /// @param color The color to replace.
             /// @param replace The color to replace
-            void imageColorReplace(Color color, Color replace);
+            void imageColorReplace(Color &color, Color &replace);
 
             /// This function loads the color of the image
             ///
@@ -127,18 +122,18 @@ namespace raylib
             /// @param y The y coordinate of the pixel to get the color of.
             ///
             /// @return A Color object.
-            Color getImageColor(Image image, int x, int y);
+            Color getImageColor(Image &image, int x, int y);
 
             /// This function returns the color of the image
             ///
             /// @return The color of the image.
-            Color getColor();
+            Color *getColor();
 
           private:
-            ::Image _image;
-            char *fileName;
+            char *_fileName;
             Vector2 _position;
-            Color *color;
+            Color *_color;
+            ::Image _image;
         };
     } // namespace textures
 

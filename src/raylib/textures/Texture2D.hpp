@@ -8,8 +8,9 @@
 #ifndef TEXTURES_HPP_
 #define TEXTURES_HPP_
 
-#include "raylib/core/Vector2.h"
-
+#include "raylib/core/Vector2.hpp"
+#include <span>
+#include <iostream>
 extern "C"
 {
 #include "raylib.h"
@@ -26,7 +27,7 @@ namespace raylib
             ///
             /// @param position The position of the texture on the screen.
             /// @param fileName The name of the file that contains the texture.
-            Texture2D(Vector2 &position = {0, 0}, char *fileName);
+            Texture2D(char *fileName, Vector2 position = {});
 
             /// The destructor for the Texture2D class
             ~Texture2D() = default;
@@ -34,10 +35,10 @@ namespace raylib
             /// Sets the position of the texture
             ///
             /// @param position The position of the texture.
-            setPosition(Vector2 &position);
+            void setPosition(Vector2 &position);
 
             /// The function `loadTexture()` loads a texture from a file
-            Texture2D loadTexture();
+            void loadTexture();
 
             /// Loads a texture from an Image object
             ///

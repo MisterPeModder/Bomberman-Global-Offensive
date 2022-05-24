@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/raylib)
 
 add_subdirectory(shapes)
 add_subdirectory(core)
+add_subdirectory(textures)
 
 set(SRC
 ${SRC}

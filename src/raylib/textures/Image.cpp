@@ -6,60 +6,58 @@
 */
 
 #include "Image.hpp"
-#include "raylib/core/Vector2.h"
+#include "raylib/core/Vector2.hpp"
+
 namespace raylib
 {
     namespace textures
     {
-
-        Images::Image(Vector2 position, Color *color, char *fileName) : _position(position), _fileName(fileName)
+        Image::Image(char *fileName, Vector2 position, Color *color) :_fileName(fileName), _position(position), _color(color)
         {
             loadImage(_fileName);
         }
 
-        void Images::loadImage(const char *fileName) { _image = LoadImage(fileName); }
+        void Image::loadImage(const char *fileName) { _image = LoadImage(fileName); }
 
-        void Images::loadImageFromTexture(Texture2D &texture) { _image = LoadImageFromTexture(texture); }
+        void Image::loadImageFromTexture(Texture2D &texture) { _image = LoadImageFromTexture(texture); }
 
-        void Images::loadImageFromScreen(void) { _image = LoadImageFromScreen(); }
+        void Image::loadImageFromScreen(void) { _image = LoadImageFromScreen(); }
 
-        void Images::unloadImage() { UnloadImage(_image); }
+        void Image::unloadImage() { UnloadImage(_image); }
 
-        bool Images::exportImage(const char *fileName) { return ExportImage(_image, filename); }
+        bool Image::exportImage(const char *fileName) { return ExportImage(_image, fileName); }
 
-        Images::Image Images::imageFromImage(Rectangle &rec) { return ImageFromImage(_image, rec); }
+        void Image::imageFormat(int newFormat) { ImageFormat(&_image, newFormat); }
 
-        void Images::imageFormat(int newFormat) { Imageformat(_image, newFormat); }
+        void Image::imageResize(int newWidth, int newHeight) { ImageResize(&_image, newWidth, newHeight); }
 
-        void Images::imageResize(int newWidth, int newHeight) { ImageResize(_image, newWidth, newHeight); }
+        void Image::imageFlipVertical() { ImageFlipVertical(&_image); }
 
-        void Images::imageFlipVertical() { ImageFlipVertical(_image); }
+        void Image::imageFlipHorizontal() { ImageFlipHorizontal(&_image); }
 
-        void Images::imageFlipHorizontal() { ImageFlipHorizontal(_image); }
+        void Image::imageRotateCW() { ImageRotateCW(&_image); }
 
-        void Images::imageRotateCW() { ImageRotateCW(_image); }
+        void Image::imageRotateCCW() { ImageRotateCCW(&_image); }
 
-        void Images::imageRotateCCW() { ImageRotateCCW(_image); }
+        void Image::imageColorTint(Color color) { ImageColorTint(&_image, color); }
 
-        void Images::imageColorTint(Color color) { ImageColorTint(_image, color) }
+        void Image::imageColorInvert() { ImageColorInvert(&_image); }
 
-        void Images::imageColorInvert() { ImageColorInvert(_image); }
+        void Image::imageColorGrayscale() { ImageColorGrayscale(&_image); }
 
-        void Images::imageColorGrayscale() { ImageColorGrayscale(_image); }
+        void Image::imageColorContrast(float contrast) { ImageColorContrast(&_image, contrast); }
 
-        void Images::imageColorContrast(float contrast) { ImageColorContrast(_image, contrast); }
+        void Image::imageColorBrightness(int brightness) { ImageColorBrightness(&_image, brightness); }
 
-        void Images::imageColorBrightness(Image *image, int brightness) { ImageColorBrightness(_image, brightness); }
+        void Image::imageColorReplace(Color &color, Color &replace) { ImageColorReplace(&_image, color, replace); }
 
-        void Images::imageColorReplace(Color &color, Color &replace) { ImageColorReplace(_image, color, replace); }
+        void Image::loadImageColors(Color *color) { _color = color; }
 
-        void Images::loadImageColors(Color *color) { _color = color; }
+        void Image::unloadImageColors() { UnloadImageColors(_color); }
 
-        void Images::unloadImageColors() { UnloadImageColors(_color); }
+        Color Image::getImageColor(Image &image, int x, int y) { return getImageColor(image, x, y); }
 
-        Color Images::getImageColor(Image &image, int x, int y) { return getImageColor(_image, x, y); }
-
-        Color Images::getColor() { return _color; }
+        Color *Image::getColor() { return _color; }
 
     } // namespace textures
 
