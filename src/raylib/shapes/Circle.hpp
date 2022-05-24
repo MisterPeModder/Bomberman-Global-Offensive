@@ -21,6 +21,7 @@ namespace raylib
 {
     namespace shapes
     {
+        /// The Circle Class used to represent a 2d circle shape
         class Circle : public AShape {
           public:
             /// This function is a constructor for the Circle class. It takes in the position (2D), radius, and color of

@@ -20,6 +20,7 @@ namespace raylib
 {
     namespace shapes
     {
+        /// The Pixel Class used to represent a pixel
         class Pixel : public AShape {
           public:
             /// It creates a pixel with a position and a color.

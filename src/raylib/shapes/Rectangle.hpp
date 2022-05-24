@@ -20,6 +20,7 @@ namespace raylib
 {
     namespace shapes
     {
+        /// The Rectangle Class used to represent a 2d rectangle shape
         class Rectangle : public AShape {
           public:
             /// This function creates a rectangle from a position, a size and a color
