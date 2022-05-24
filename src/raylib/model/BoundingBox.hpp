@@ -19,6 +19,7 @@ namespace raylib
 {
     namespace model
     {
+        class Model;
         /// The BoundingBox Class
         class BoundingBox {
           public:
@@ -28,10 +29,10 @@ namespace raylib
             /// BoundingBox constructor from a 3D model
             ///
             /// @param model the model to get the BoundingBox from
-            BoundingBox(const ::Model model);
+            BoundingBox(const Model &model);
 
             // Destructor
-            ~BoundingBox();
+            ~BoundingBox() = default;
 
             /// Deleted copy constructor because it makes no sense
             BoundingBox(const BoundingBox &other) = delete;

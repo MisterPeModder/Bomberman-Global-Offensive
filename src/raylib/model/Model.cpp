@@ -44,7 +44,7 @@ namespace raylib
 
         BoundingBox Model::getBoundingBox() const
         {
-            return BoundingBox(_model);
+            return BoundingBox(*this);
         }
 
         bool Model::checkCollision(const Model& other)
@@ -58,6 +58,10 @@ namespace raylib
         }
 
         ::Model &Model::asRaylib() {
+            return _model;
+        }
+
+        ::Model Model::asConstRaylib() const {
             return _model;
         }
 

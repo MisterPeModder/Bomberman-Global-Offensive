@@ -77,10 +77,15 @@ namespace raylib
             /// @return The bounding box of the model
             BoundingBox getBoundingBox() const;
 
-            /// Gets the C Raylib version of the model
+            /// Gets the C Raylib modifiable version of the model
             ///
             /// @return The raylib version of the model
             ::Model &asRaylib();
+
+            /// Gets the C Raylib const version of the model
+            ///
+            /// @return The raylib version of the model
+            ::Model asConstRaylib() const;
 
             /// Checks collision with another model
             ///

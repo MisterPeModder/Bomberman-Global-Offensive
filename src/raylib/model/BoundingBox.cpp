@@ -6,20 +6,17 @@
 */
 
 #include "BoundingBox.hpp"
+#include "Model.hpp"
 
 namespace raylib
 {
     namespace model
     {
-        BoundingBox::BoundingBox(const ::Model model)
+        BoundingBox::BoundingBox(const Model &model)
         {
-            ::BoundingBox box = GetModelBoundingBox(model);
+            ::BoundingBox box = GetModelBoundingBox(model.asConstRaylib());
             _min = box.min;
             _max = box.max;
-        }
-
-        BoundingBox::~BoundingBox()
-        {
         }
 
         raylib::core::Vector3 BoundingBox::getMin() const
