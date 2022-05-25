@@ -67,7 +67,7 @@ namespace raylib
             raylib::core::Vector3 _min;
             raylib::core::Vector3 _max;
         };
-    }
-}
+    } // namespace model
+} // namespace raylib
 
 #endif /* !RAYLIB_MODEL_BOUNDINGBOX_HPP_ */

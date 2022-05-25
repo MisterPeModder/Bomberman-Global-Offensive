@@ -19,25 +19,15 @@ namespace raylib
             _max = box.max;
         }
 
-        raylib::core::Vector3 BoundingBox::getMin() const
-        {
-            return _min;
-        }
+        raylib::core::Vector3 BoundingBox::getMin() const { return _min; }
 
-        raylib::core::Vector3 BoundingBox::getMax() const
-        {
-            return _max;
-        }
+        raylib::core::Vector3 BoundingBox::getMax() const { return _max; }
 
-        ::BoundingBox BoundingBox::_asRaylib() const
-        {
-            return { _min.asRaylib(), _max.asRaylib() };
-        }
+        ::BoundingBox BoundingBox::_asRaylib() const { return {_min.asRaylib(), _max.asRaylib()}; }
 
         bool BoundingBox::checkCollision(const BoundingBox &other)
         {
             return CheckCollisionBoxes(this->_asRaylib(), other._asRaylib());
         }
-    }
-}
-
+    } // namespace model
+} // namespace raylib
