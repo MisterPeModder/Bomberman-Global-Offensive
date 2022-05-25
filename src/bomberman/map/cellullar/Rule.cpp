@@ -7,6 +7,7 @@
 
 #include "Rule.hpp"
 #include <ctype.h>
+#include <regex>
 #include <stdexcept>
 
 namespace bomberman
@@ -15,9 +16,9 @@ namespace bomberman
     {
         namespace cellular
         {
-            Rule::Rule(std::string_view rule) : _rule(rule) { parseRule(rule); }
+            Rule::Rule(std::string_view rule) { parseRule(rule); }
 
-            bool Rule::nextState(unsigned char neighbours, bool state)
+            bool Rule::nextState(unsigned char neighbours, bool state) const
             {
                 if (neighbours > 8)
                     throw std::logic_error("A cell cannot have more than 8 neighbours."); //// Replace later
@@ -27,24 +28,56 @@ namespace bomberman
                     return _survive[neighbours];
             }
 
+            std::string_view Rule::getRule() const { return _rule; }
+
+            void Rule::setRule(std::string_view rule) { parseRule(rule); }
+
             void Rule::parseRule(std::string_view rule)
             {
-                size_t i = 0;
-
-                if (rule.empty() || rule[0] != 'B')
-                    throw std::logic_error("Invalid rule.");
+                _rule = rule;
                 _birth.fill(false);
                 _survive.fill(false);
-                ++i;
-                while (i < rule.size() && isdigit(rule[i]))
-                    _birth[rule[i++] - '0'] = true;
-                if (i >= rule.size() || rule[i] != '/' || rule[++i] != 'S')
-                    throw std::logic_error("Invalid rule.");
-                ++i;
-                while (i < rule.size() && isdigit(rule[i]))
-                    _survive[rule[i++] - '0'] = true;
+                if (rule.empty())
+                    return;
+
+                size_t i = parseBirth(rule);
+                if (i == rule.size() - 1)
+                    return;
+                if (i < rule.size() && rule[i] != '/')
+                    throw std::logic_error("Missing separator between birth and survive rule parts.");
+                i += parseSurvive(rule.data() + i);
                 if (i >= rule.size())
                     throw std::logic_error("Invalid rule.");
+            }
+
+            size_t Rule::parseBirth(std::string_view birthRule)
+            {
+                std::regex re("B[0-9]+");
+
+                if (!std::regex_match(birthRule.data(), re)) {
+                    if (!birthRule.empty() && birthRule[0] == 'B')
+                        throw std::logic_error("Rule with empty birth.");
+                    return 0;
+                }
+                size_t i = 1;
+                while (i < birthRule.size() && isdigit(birthRule[i]))
+                    _birth[birthRule[i++] - '0'] = true;
+                return i;
+            }
+
+            size_t Rule::parseSurvive(std::string_view surviveRule)
+            {
+                std::regex re("S[0-9]+");
+
+                if (!std::regex_match(surviveRule.data(), re)) {
+                    if (!surviveRule.empty() && surviveRule[0] == 'S')
+                        throw std::logic_error("Rule with empty survive.");
+                    return 0;
+                }
+                size_t i = 1;
+                while (i < surviveRule.size() && isdigit(surviveRule[i]))
+                    _survive[surviveRule[i++] - '0'] = true;
+                return i;
             }
         } // namespace cellular
     }     // namespace map

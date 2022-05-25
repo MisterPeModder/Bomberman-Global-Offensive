@@ -19,13 +19,18 @@ namespace bomberman
         {
             class Rule {
               public:
-                Rule(std::string_view rule);
+                Rule(std::string_view rule = "");
                 ~Rule() = default;
 
-                bool nextState(unsigned char neighbours, bool state);
+                bool nextState(unsigned char neighbours, bool state) const;
+
+                std::string_view getRule() const;
+                void setRule(std::string_view rule);
 
               private:
                 void parseRule(std::string_view rule);
+                size_t parseBirth(std::string_view birthRule);
+                size_t parseSurvive(std::string_view surviveRule);
 
                 std::array<bool, 9> _birth;
                 std::array<bool, 9> _survive;
