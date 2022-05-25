@@ -7,7 +7,6 @@
 
 #include "Color.hpp"
 
-
 namespace raylib
 {
     namespace core
@@ -38,5 +37,5 @@ namespace raylib
         constexpr Color Color::BLANK = Color(0, 0, 0, 0);
         constexpr Color Color::MAGENTA = Color(255, 0, 255, 255);
         constexpr Color Color::RAY_WHITE = Color(245, 245, 245, 255);
-    }
-}
+    } // namespace core
+} // namespace raylib
