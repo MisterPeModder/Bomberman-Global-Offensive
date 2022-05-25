@@ -20,13 +20,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
     - name: Unit Tests
-      run: cd ${{github.workspace}} && ctest -C ${{env.BUILD_TYPE}}
+      run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure
 
   windows:
     runs-on: windows-latest
@@ -36,13 +36,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE
 
     - name: Build
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j
 
     - name: Unit Tests
-      run: cd ${{github.workspace}} && ctest -C ${{env.BUILD_TYPE}}
+      run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure
 
   lint-format:
     runs-on: ubuntu-latest
