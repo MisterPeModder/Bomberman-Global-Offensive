@@ -49,5 +49,5 @@ on Linux:
 doxygen
 
 # Open the genrated pages
-xdg-open doc/generated/html/index.html
+xdg-open doc/build/html/index.html
 ```
