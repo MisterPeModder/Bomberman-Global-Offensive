@@ -13,9 +13,9 @@ extern "C"
 #include <raylib.h>
 }
 
+#include <filesystem>
 #include <string>
 #include "Model.hpp"
-#include <filesystem>
 
 namespace raylib
 {
@@ -50,7 +50,7 @@ namespace raylib
             unsigned int _animsCount;
             int _animFrameCounter;
         };
-    }
-}
+    } // namespace model
+} // namespace raylib
 
 #endif /* !RAYLIB_MODEL_ANIMATION_HPP_ */
