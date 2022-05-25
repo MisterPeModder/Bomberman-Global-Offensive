@@ -48,7 +48,6 @@ static void raylibLogger(int msgType, const char *text, va_list args)
 
 static void setupLogger()
 {
-    raylib::core::Camera3D camera;
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
@@ -68,6 +67,7 @@ int main()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
 
+    raylib::core::Camera3D camera;
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
 
