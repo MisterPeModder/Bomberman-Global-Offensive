@@ -38,26 +38,6 @@ namespace raylib
             /// Destructor
             ~Vector2();
 
-            /// Get the X axis value of the vector
-            ///
-            /// @return the X axis value of the vector
-            constexpr float getX() const { return x; }
-
-            /// Set the X acis value of the vector
-            ///
-            /// @param xParam the new X axis value of the vector
-            constexpr void setX(float xParam) { x = xParam; }
-
-            /// Get the Y axis value of the vector
-            ///
-            /// @return the Y axis value of the vector
-            constexpr float getY() const { return y; }
-
-            /// Set the Y acis value of the vector
-            ///
-            /// @param yParam the new Y axis value of the vector
-            constexpr void setY(float yParam) { y = yParam; }
-
             /// The Vector2 copy operator
             ///
             /// @param vector the Vector2 to copy
@@ -106,7 +86,7 @@ namespace raylib
             /// Gets the raylib Vector2
             ///
             /// @return The raylib Vector2
-            constexpr const ::Vector2 &asRaylib() const { return {x, y}; }
+            constexpr ::Vector2 asRaylib() const { return {x, y}; }
 
             float x;
             float y;

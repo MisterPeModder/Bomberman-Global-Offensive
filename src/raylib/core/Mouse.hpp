@@ -85,7 +85,7 @@ namespace raylib
             /// @param y The new y position of the mouse
             static constexpr void setPosition(Vector2 &pos)
             {
-                SetMousePosition(static_cast<int>(pos.getX()), static_cast<int>(pos.getY()));
+                SetMousePosition(static_cast<int>(pos.x), static_cast<int>(pos.y));
             }
 
             /// Sets the mouse offset
@@ -103,7 +103,7 @@ namespace raylib
             /// @param offsetY The Y offset of the mouse.
             static constexpr void setOffset(Vector2 &offset)
             {
-                SetMouseOffset(static_cast<int>(offset.getX()), static_cast<int>(offset.getY()));
+                SetMouseOffset(static_cast<int>(offset.x), static_cast<int>(offset.y));
             }
 
             /// Sets mouse scaling
