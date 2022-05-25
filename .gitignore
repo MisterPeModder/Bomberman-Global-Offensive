@@ -6,6 +6,7 @@
 # Build Data
 *.o
 /build
+/doc/build/html
 
 # Executable
 /bomberman
