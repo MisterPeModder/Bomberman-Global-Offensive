@@ -17,14 +17,13 @@ namespace raylib
 {
     namespace core
     {
-        /// The Vector2 class (compatible with the raylib Vector2)
-        class Vector2 {
-          public:
+        /// The Vector2 struct (compatible with the raylib Vector2)
+        struct Vector2 {
             /// Constructor of the vector
             ///
-            /// @param x the X axis value of the vector
-            /// @param y the Y axis value of the vector
-            Vector2(float x = 0.f, float y = 0.f);
+            /// @param xParam the X axis value of the vector
+            /// @param yParam the Y axis value of the vector
+            Vector2(float xParam = 0.f, float yParam = 0.f);
 
             /// The copy constructor
             ///
@@ -42,22 +41,22 @@ namespace raylib
             /// Get the X axis value of the vector
             ///
             /// @return the X axis value of the vector
-            constexpr float getX() const { return _x; }
+            constexpr float getX() const { return x; }
 
             /// Set the X acis value of the vector
             ///
-            /// @param x the new X axis value of the vector
-            constexpr void setX(float x) { _x = x; }
+            /// @param xParam the new X axis value of the vector
+            constexpr void setX(float xParam) { x = xParam; }
 
             /// Get the Y axis value of the vector
             ///
             /// @return the Y axis value of the vector
-            constexpr float getY() const { return _y; }
+            constexpr float getY() const { return y; }
 
             /// Set the Y acis value of the vector
             ///
-            /// @param y the new Y axis value of the vector
-            constexpr void setY(float y) { _y = y; }
+            /// @param yParam the new Y axis value of the vector
+            constexpr void setY(float yParam) { y = yParam; }
 
             /// The Vector2 copy operator
             ///
@@ -107,11 +106,10 @@ namespace raylib
             /// Gets the raylib Vector2
             ///
             /// @return The raylib Vector2
-            constexpr ::Vector2 asRaylib() const { return {_x, _y}; }
+            constexpr const ::Vector2 &asRaylib() const { return {x, y}; }
 
-          private:
-            float _x;
-            float _y;
+            float x;
+            float y;
         };
     } // namespace core
 } // namespace raylib
