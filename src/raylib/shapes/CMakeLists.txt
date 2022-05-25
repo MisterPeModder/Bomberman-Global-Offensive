@@ -8,6 +8,8 @@ set(SRC
     ${SRCROOT}/Pixel.cpp
     ${SRCROOT}/Pixel.hpp
     ${SRCROOT}/AShape.hpp
+    ${SRCROOT}/Circle.hpp
+    ${SRCROOT}/Circle.cpp
 	PARENT_SCOPE)
 
 set(INCDIRS

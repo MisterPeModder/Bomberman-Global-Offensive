@@ -5,6 +5,8 @@
 ** Circle
 */
 
+#include "Circle.hpp"
+
 namespace raylib
 {
     namespace shapes
@@ -14,17 +16,16 @@ namespace raylib
         {
             _x = x;
             _y = y;
+            _z = z;
             _radius = radius;
             _color = color;
         }
 
-        Circle::~Circle() {}
-
-        void Circle::draw() { DrawCircle(_x, _y, _radius, color); }
+        void Circle::draw() { DrawCircle(_x, _y, _radius, _color); }
 
         void Circle::drawSector(float startAngle, float endAngle, float segments, Color color)
         {
-            DrawCircleSector({_x, y}, _radius, startAngle, endAngle, segment, color);
+            DrawCircleSector({_x, _y}, _radius, startAngle, endAngle, segments, color);
         }
 
         void Circle::drawSectorLines(float startAngle, float endAngle, float segments, Color color)
@@ -34,14 +35,14 @@ namespace raylib
 
         void Circle::drawGradient(Color color1, Color color2) { DrawCircleGradient(_x, _y, _radius, color1, color2); }
 
-        void Circle::drawLines(Color color) { DrawCircleLines(_x, _y, _radius, Color color); }
+        void Circle::drawLines(Color color) { DrawCircleLines(_x, _y, _radius, color); }
 
-        bool Circle::checkCollisions(Cirlce other)
+        bool Circle::checkCollisions(Circle *other)
         {
-            CheckCollisionCircles({_x, _y}, _radius, {other->_x, other->y}, other->_radius);
+            return CheckCollisionCircles({_x, _y}, _radius, {other->_x, other->_y}, other->_radius);
         }
 
-        bool Circle::checkCollisions(Rectangle other) { CheckCollisionCircleRec({_x, _y}, _radius, other); }
+        bool Circle::checkCollisions(Rectangle other) { return CheckCollisionCircleRec({_x, _y}, _radius, other); }
 
         void Circle::draw3D(Vector3 rotationAxis, float rotationAngle)
         {
