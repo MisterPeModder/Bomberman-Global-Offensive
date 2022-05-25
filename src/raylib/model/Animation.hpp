@@ -15,6 +15,7 @@ extern "C"
 
 #include <string>
 #include "Model.hpp"
+#include <filesystem>
 
 namespace raylib
 {
@@ -27,7 +28,7 @@ namespace raylib
             /// File format accepted: obj and probably some other
             ///
             /// @param animPath the relative path to the animation to import
-            Animation(const std::string_view animPath);
+            Animation(const std::filesystem::path &animPath);
 
             /// Animation destructor
             ~Animation();

@@ -17,6 +17,7 @@ extern "C"
 #include "raylib/core/Vector3.hpp"
 #include "raylib/core/Color.hpp"
 #include "raylib/model/BoundingBox.hpp"
+#include <filesystem>
 
 namespace raylib
 {
@@ -29,7 +30,7 @@ namespace raylib
             /// File format accepted: obj and probably some other
             ///
             /// @param modelPath the relative path to the 3D model to import
-            Model(const std::string &modelPath);
+            Model(const std::filesystem::path &modelPath);
 
             /// Model destructor
             ~Model();
