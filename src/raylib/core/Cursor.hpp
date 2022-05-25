@@ -19,30 +19,30 @@ namespace raylib
     {
         /// The cursor static class that will manage the raylib cursor
         class Cursor {
-            public:
-                /// Makes the mouse cursor visible
-                static void show(void);
+          public:
+            /// Makes the mouse cursor visible
+            static void show(void);
 
-                /// Makes the mouse cursor invisible
-                static void hide(void);
+            /// Makes the mouse cursor invisible
+            static void hide(void);
 
-                /// Returns if the cursor is hidden or not
-                ///
-                /// @retval true if the curser is hidden
-                /// @retval false if the curser is not hidden
-                static bool isHidden(void);
+            /// Returns if the cursor is hidden or not
+            ///
+            /// @retval true if the curser is hidden
+            /// @retval false if the curser is not hidden
+            static bool isHidden(void);
 
-                /// Enables the cursor
-                static void enable(void);
+            /// Enables the cursor
+            static void enable(void);
 
-                /// Disables the cursor
-                static void disable(void);
+            /// Disables the cursor
+            static void disable(void);
 
-                /// Returns if the cursor is on screen or not
-                ///
-                /// @retval true if the cursor is on screen
-                /// @retval false if the cursor is not on screen
-                static bool isOnScreen(void);
+            /// Returns if the cursor is on screen or not
+            ///
+            /// @retval true if the cursor is on screen
+            /// @retval false if the cursor is not on screen
+            static bool isOnScreen(void);
 
         };
     } // namespace core
