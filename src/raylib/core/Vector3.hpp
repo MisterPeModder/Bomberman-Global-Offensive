@@ -99,7 +99,7 @@ namespace raylib
             /// Gets the raylib Vector3
             ///
             /// @return The raylib Vector3
-            constexpr const ::Vector3 &asRaylib() const { return {x, y, z}; }
+            constexpr ::Vector3 asRaylib() const { return {x, y, z}; }
 
             float x;
             float y;

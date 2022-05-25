@@ -36,18 +36,15 @@ namespace raylib
 
         Vector3 Camera3D::getPosition() const { return {_camera.position.x, _camera.position.y, _camera.position.z}; }
 
-        void Camera3D::setPosition(Vector3 position)
-        {
-            _camera.position = {position.getX(), position.getY(), position.getZ()};
-        }
+        void Camera3D::setPosition(Vector3 position) { _camera.position = {position.x, position.y, position.z}; }
 
         Vector3 Camera3D::getTarget() const { return {_camera.target.x, _camera.target.y, _camera.target.z}; }
 
-        void Camera3D::setTarget(Vector3 target) { _camera.target = {target.getX(), target.getY(), target.getZ()}; }
+        void Camera3D::setTarget(Vector3 target) { _camera.target = {target.x, target.y, target.z}; }
 
         Vector3 Camera3D::getUp() const { return {_camera.up.x, _camera.up.y, _camera.up.z}; }
 
-        void Camera3D::setUp(Vector3 up) { _camera.up = {up.getX(), up.getY(), up.getZ()}; }
+        void Camera3D::setUp(Vector3 up) { _camera.up = {up.x, up.y, up.z}; }
 
         float Camera3D::getFovY() const { return _camera.fovy; }
 

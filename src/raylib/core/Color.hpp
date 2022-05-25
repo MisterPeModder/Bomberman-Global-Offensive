@@ -140,7 +140,7 @@ namespace raylib
             /// Gets the raylib Color
             ///
             /// @return The raylib Color
-            constexpr const ::Color &asRaylib() const { return {.r = r, .g = g, .b = b, .a = a}; }
+            constexpr ::Color asRaylib() const { return {.r = r, .g = g, .b = b, .a = a}; }
 
             /// Gets the color as integer
             ///
