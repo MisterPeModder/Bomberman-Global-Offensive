@@ -19,21 +19,20 @@ namespace raylib
 {
     namespace core
     {
-        /// The Vector3 class (compatible with the raylib Vector3)
-        class Vector3 {
-          public:
+        /// The Vector3 struct (compatible with the raylib Vector3)
+        struct Vector3 {
             /// Constructor of the vector
             ///
-            /// @param x the X axis value of the vector
-            /// @param y the Y axis value of the vector
-            /// @param z the Z axis value of the vector
-            Vector3(float x = 0.f, float y = 0.f, float z = 0.f);
+            /// @param xParam the X axis value of the vector
+            /// @param yParam the Y axis value of the vector
+            /// @param zParam the Z axis value of the vector
+            Vector3(float xParam = 0.f, float yParam = 0.f, float zParam = 0.f);
 
             /// Constructor of the 3d vector from a 2d vector
             ///
             /// @param vector the 2d vector to convert
-            /// @param z the Z axis value of the vector
-            Vector3(const Vector2 &vector, float z = 0.f);
+            /// @param zParam the Z axis value of the vector
+            Vector3(const Vector2 &vector, float zParam = 0.f);
 
             /// The copy constructor
             ///
@@ -47,36 +46,6 @@ namespace raylib
 
             /// Destructor
             ~Vector3();
-
-            /// Get the X axis value of the vector
-            ///
-            /// @return the X axis value of the vector
-            constexpr float getX() const { return _x; }
-
-            /// Set the X acis value of the vector
-            ///
-            /// @param x the new X axis value of the vector
-            constexpr void setX(float x) { _x = x; }
-
-            /// Get the Y axis value of the vector
-            ///
-            /// @return the Y axis value of the vector
-            constexpr float getY() const { return _y; }
-
-            /// Set the Y acis value of the vector
-            ///
-            /// @param y the new Y axis value of the vector
-            constexpr void setY(float y) { _y = y; }
-
-            /// Get the Z axis value of the vector
-            ///
-            /// @return the Z axis value of the vector
-            constexpr float getZ() const { return _z; }
-
-            /// Set the Z acis value of the vector
-            ///
-            /// @param z the new Z axis value of the vector
-            constexpr void setZ(float z) { _z = z; }
 
             /// The Vector3 copy operator
             /// @param vector the Vector3 to copy
@@ -130,12 +99,11 @@ namespace raylib
             /// Gets the raylib Vector3
             ///
             /// @return The raylib Vector3
-            constexpr ::Vector3 asRaylib() const { return {_x, _y, _z}; }
+            constexpr const ::Vector3 &asRaylib() const { return {x, y, z}; }
 
-          private:
-            float _x;
-            float _y;
-            float _z;
+            float x;
+            float y;
+            float z;
         };
     } // namespace core
 } // namespace raylib
