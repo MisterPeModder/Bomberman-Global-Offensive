@@ -16,12 +16,10 @@ add_subdirectory(src)
 
 # Unit testing
 if (BUILD_TEST_SUITE)
-    # Check for criterion
-    find_package(Criterion)
+    # Check for GoogleTest
+    find_package(googletest REQUIRED)
 
-    if (CRITERION_FOUND)
-        enable_testing()
+    enable_testing()
 
-        add_subdirectory(tests)
-    endif()
+    add_subdirectory(tests)
 endif()

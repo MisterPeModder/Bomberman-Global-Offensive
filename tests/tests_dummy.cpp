@@ -1,3 +1,3 @@
-#include <criterion/criterion.h>
+#include <gtest/gtest.h>
 
-Test(dummy, yes) { cr_assert(true); }
+TEST(dummy, yes) { ASSERT_TRUE(true); }

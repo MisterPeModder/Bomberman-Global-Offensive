@@ -15,6 +15,7 @@
 
 # Logs
 log.txt
+log_raylib.txt
 
 # Shame on you!
 vgcore.*
