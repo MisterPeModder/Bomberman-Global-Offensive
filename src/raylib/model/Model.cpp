@@ -12,24 +12,20 @@ namespace raylib
 {
     namespace model
     {
-        Model::Model(const std::filesystem::path &modelPath)
-        : _model(LoadModel(modelPath.c_str()))
-        {
-        }
+        Model::Model(const std::filesystem::path &modelPath) : _model(LoadModel(modelPath.c_str())) {}
 
-        Model::~Model()
-        {
-            UnloadModel(_model);
-        }
+        Model::~Model() { UnloadModel(_model); }
 
         void Model::draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const
         {
             DrawModel(_model, position.asRaylib(), scale, tint.asRaylib());
         }
 
-        void Model::draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint) const
+        void Model::draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle,
+            raylib::core::Vector3 scale, raylib::core::Color tint) const
         {
-            DrawModelEx(_model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
+            DrawModelEx(
+                _model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
         }
 
         void Model::drawWires(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const
@@ -37,33 +33,25 @@ namespace raylib
             DrawModelWires(_model, position.asRaylib(), scale, tint.asRaylib());
         }
 
-        void Model::drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle, raylib::core::Vector3 scale, raylib::core::Color tint) const
+        void Model::drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle,
+            raylib::core::Vector3 scale, raylib::core::Color tint) const
         {
-            DrawModelWiresEx(_model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
+            DrawModelWiresEx(
+                _model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
         }
 
-        BoundingBox Model::getBoundingBox() const
-        {
-            return BoundingBox(*this);
-        }
+        BoundingBox Model::getBoundingBox() const { return BoundingBox(*this); }
 
-        bool Model::checkCollision(const Model& other)
+        bool Model::checkCollision(const Model &other)
         {
             return getBoundingBox().checkCollision(other.getBoundingBox());
         }
 
-        bool Model::checkCollision(const BoundingBox& otherBox)
-        {
-            return getBoundingBox().checkCollision(otherBox);
-        }
+        bool Model::checkCollision(const BoundingBox &otherBox) { return getBoundingBox().checkCollision(otherBox); }
 
-        ::Model &Model::asRaylib() {
-            return _model;
-        }
+        ::Model &Model::asRaylib() { return _model; }
 
-        ::Model const &Model::asRaylib() const {
-            return _model;
-        }
+        ::Model const &Model::asRaylib() const { return _model; }
 
-    }
-}
+    } // namespace model
+} // namespace raylib
