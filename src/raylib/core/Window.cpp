@@ -14,10 +14,8 @@ extern "C"
 
 namespace raylib
 {
-
     namespace core
     {
-
         void Window::open(int width, int height, const char *title) { InitWindow(width, height, title); }
 
         void Window::close() { CloseWindow(); }
