@@ -11,7 +11,6 @@ namespace raylib
 {
     namespace core
     {
-
         Vector3::Vector3(float x, float y, float z) : _x(x), _y(y), _z(z) {}
 
         Vector3::Vector3(const Vector2 &vector, float z) : _x(vector.getX()), _y(vector.getY()), _z(z) {}
