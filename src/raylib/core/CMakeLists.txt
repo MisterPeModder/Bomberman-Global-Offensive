@@ -16,6 +16,7 @@ set(SRC
     ${SRCROOT}/Cursor.hpp
     ${SRCROOT}/Cursor.cpp
     ${SRCROOT}/Color.hpp
+    ${SRCROOT}/Color.cpp
 	PARENT_SCOPE)
 
 set(INCDIRS
