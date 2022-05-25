@@ -1,5 +1,5 @@
-set(INCROOT ${INCROOT}/cellullar)
-set(SRCROOT ${SRCROOT}/cellullar)
+set(INCROOT ${INCROOT}/cellular)
+set(SRCROOT ${SRCROOT}/cellular)
 
 set(SRC
 	${SRC}

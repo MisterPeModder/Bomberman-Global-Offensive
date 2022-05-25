@@ -1,7 +1,7 @@
 set(INCROOT ${INCROOT}/map)
 set(SRCROOT ${SRCROOT}/map)
 
-add_subdirectory(cellullar)
+add_subdirectory(cellular)
 
 set(SRC
 	${SRC}

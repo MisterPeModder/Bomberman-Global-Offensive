@@ -9,7 +9,7 @@
 #include <iostream>
 #include <random>
 #include <stdexcept>
-#include "cellullar/Grid.hpp"
+#include "cellular/Grid.hpp"
 
 namespace bomberman
 {
@@ -28,7 +28,7 @@ namespace bomberman
             _map.resize(_width * _height);
 
             cellular::Grid automata(width, height);
-            automata.generate(fillPercent);
+            automata.generate(cellular::Rule("B1357/S1357"), 5, fillPercent);
 
             std::fill(_map.begin(), _map.end(), Element::Empty);
             for (size_t x = 0; x < _width; x++) {

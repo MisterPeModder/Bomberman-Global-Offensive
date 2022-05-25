@@ -7,6 +7,7 @@
 
 #include "Rule.hpp"
 #include <ctype.h>
+#include <iostream>
 #include <regex>
 #include <stdexcept>
 
@@ -43,16 +44,16 @@ namespace bomberman
                 size_t i = parseBirth(rule);
                 if (i == rule.size() - 1)
                     return;
-                if (i < rule.size() && rule[i] != '/')
+                if (i < rule.size() && rule[i++] != '/')
                     throw std::logic_error("Missing separator between birth and survive rule parts.");
                 i += parseSurvive(rule.data() + i);
-                if (i >= rule.size())
+                if (i < rule.size())
                     throw std::logic_error("Invalid rule.");
             }
 
             size_t Rule::parseBirth(std::string_view birthRule)
             {
-                std::regex re("B[0-9]+");
+                std::regex re("B[0-9]+.*");
 
                 if (!std::regex_match(birthRule.data(), re)) {
                     if (!birthRule.empty() && birthRule[0] == 'B')
@@ -67,7 +68,7 @@ namespace bomberman
 
             size_t Rule::parseSurvive(std::string_view surviveRule)
             {
-                std::regex re("S[0-9]+");
+                std::regex re("S[0-9]+.*");
 
                 if (!std::regex_match(surviveRule.data(), re)) {
                     if (!surviveRule.empty() && surviveRule[0] == 'S')
