@@ -18,7 +18,8 @@ constexpr int HEIGHT(500);
 
 static raylib::model::Model &getTestingModel()
 {
-    static const std::filesystem::path testModelPath = "assets/models/player/raylibguy.iqm";
+    static const std::filesystem::path testModelPath =
+        std::filesystem::path("assets").append("models").append("player").append("raylibguy.iqm");
     static raylib::model::Model model(testModelPath);
 
     return model;
@@ -26,7 +27,8 @@ static raylib::model::Model &getTestingModel()
 
 static raylib::model::Animation &getTestingAnimation()
 {
-    static const std::filesystem::path testAnimPath = "assets/animations/raylibguy_anim.iqm";
+    static const std::filesystem::path testAnimPath =
+        std::filesystem::path("assets").append("models").append("player").append("raylibguy_anim.iqm");
     static raylib::model::Animation anim(testAnimPath);
 
     return anim;
@@ -76,8 +78,6 @@ static void raylibLogger(int msgType, const char *text, va_list args)
 
 static void setupLogger()
 {
-    raylib::core::Camera3D camera;
-    camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
@@ -97,9 +97,10 @@ int main()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
 
-    raylib::core::Camera3D camera;
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
+    raylib::core::Camera3D camera;
+    camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
