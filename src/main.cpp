@@ -5,6 +5,8 @@
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
+#include "raylib/model/Model.hpp"
+#include "raylib/model/Animation.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -13,17 +15,43 @@
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
 
+
+static raylib::model::Model &getTestingModel()
+{
+    static const std::string testModelPath = "assets/models/player/raylibguy.iqm";
+    static raylib::model::Model model(testModelPath);
+
+    return model;
+}
+
+static raylib::model::Animation &getTestingAnimation()
+{
+    static const std::string testAnimPath = "assets/animations/raylibguy_anim.iqm";
+    static raylib::model::Animation anim(testAnimPath);
+
+    return anim;
+}
+
 static void drawFrame(void *arg)
 {
     raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
+    raylib::core::Vector3 pos(0, -5, 0);
+    raylib::core::Vector3 scale(1, 1, 1);
+    raylib::core::Vector3 rotationAxis(1, 0, 0);
 
+    raylib::model::Model &testingModel = getTestingModel();
+    raylib::model::Animation &testingAnimation = getTestingAnimation();
+
+    testingAnimation.updateModel(testingModel);
+    camera->update();
     raylib::core::scoped::Drawing drawing;
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
+        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
     };
 
-    DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
+    // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
     raylib::core::Window::drawFPS(10, 10);
 }
 
@@ -48,6 +76,8 @@ static void raylibLogger(int msgType, const char *text, va_list args)
 
 static void setupLogger()
 {
+    raylib::core::Camera3D camera;
+    camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
