@@ -12,7 +12,7 @@ namespace raylib
 {
     namespace model
     {
-        Model::Model(const std::filesystem::path &modelPath) : _model(LoadModel(modelPath.c_str())) {}
+        Model::Model(const std::filesystem::path &modelPath) : _model(LoadModel(modelPath.generic_string().c_str())) {}
 
         Model::~Model() { UnloadModel(_model); }
 
