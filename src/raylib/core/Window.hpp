@@ -8,6 +8,8 @@
 #ifndef RAYLIB_CORE_WINDOW_HPP_
 #define RAYLIB_CORE_WINDOW_HPP_
 
+#include "Color.hpp"
+
 /// Raylib namespace
 namespace raylib
 {
@@ -28,7 +30,7 @@ namespace raylib
             static void close();
 
             /// Clear the window with a black background
-            static void clear();
+            static void clear(const Color &color = raylib::core::Color::BLACK);
 
             /// Returns if the window should close or not (when a close window event is received for example)
             ///

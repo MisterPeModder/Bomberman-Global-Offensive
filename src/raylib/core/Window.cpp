@@ -20,7 +20,7 @@ namespace raylib
 
         void Window::close() { CloseWindow(); }
 
-        void Window::clear() { ClearBackground(BLACK); }
+        void Window::clear(const Color &color) { ClearBackground(color.asRaylib()); }
 
         bool Window::windowShouldClose() { return WindowShouldClose(); }
 
