@@ -28,7 +28,7 @@ static raylib::model::Model &getTestingModel()
 static raylib::model::Animation &getTestingAnimation()
 {
     static const std::filesystem::path testAnimPath =
-        std::filesystem::path("assets").append("models").append("player").append("raylibguy_anim.iqm");
+        std::filesystem::path("assets").append("animations").append("player").append("raylibguy_anim.iqm");
     static raylib::model::Animation anim(testAnimPath);
 
     return anim;
