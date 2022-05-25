@@ -21,14 +21,14 @@ namespace raylib
         Animation::Animation(const Animation &other)
             : _animationPath(other._animationPath), _animFrameCounter(other._animFrameCounter)
         {
-            _animations = LoadModelAnimations(_animationPath.c_str(), &_animsCount);
+            _animations = LoadModelAnimations(_animationPath.generic_string().c_str(), &_animsCount);
         }
 
         Animation &Animation::operator=(const Animation &other)
         {
             _animFrameCounter = other._animFrameCounter;
             _animationPath = other._animationPath;
-            _animations = LoadModelAnimations(_animationPath.c_str(), &_animsCount);
+            _animations = LoadModelAnimations(_animationPath.generic_string().c_str(), &_animsCount);
 
             return *this;
         }

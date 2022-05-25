@@ -45,7 +45,7 @@ namespace raylib
             void updateModel(Model &model);
 
           private:
-            std::string _animationPath;
+            std::filesystem::path _animationPath;
             ::ModelAnimation *_animations;
             unsigned int _animsCount;
             int _animFrameCounter;
