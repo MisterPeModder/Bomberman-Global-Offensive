@@ -16,9 +16,9 @@ namespace bomberman
     {
         Map::MapSizeInvalid::MapSizeInvalid(std::string_view message) : std::logic_error(message.data()) {}
 
-        Map::Map(size_t fillPercent, size_t width, size_t height) { generate(fillPercent, width, height); }
+        Map::Map(size_t width, size_t height) { generate(width, height); }
 
-        void Map::generate(size_t fillPercent, size_t width, size_t height)
+        void Map::generate(size_t width, size_t height)
         {
             if (width % 2 == 0 || height % 2 == 0)
                 throw MapSizeInvalid("Map width and height must be odd.");
@@ -29,7 +29,7 @@ namespace bomberman
             _map.resize(_width * _height);
 
             cellular::Grid automata(width, height);
-            automata.generate(cellular::Rule("B1357/S1357"), 0, fillPercent);
+            automata.generate(cellular::Rule("B3/S012345678"), 15, 60);
 
             std::fill(_map.begin(), _map.end(), Element::Empty);
             for (size_t x = 0; x < _width; x++) {

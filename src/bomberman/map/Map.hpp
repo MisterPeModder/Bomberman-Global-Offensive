@@ -38,21 +38,19 @@ namespace bomberman
 
             /// Construct a new Map
             ///
-            /// @param fillPercent initial map cell fill, may change due to cellular automata.
             /// @param width width of the map
             /// @param height height of the map
-            Map(size_t fillPercent = 40, size_t width = 13, size_t height = 13);
+            Map(size_t width = 13, size_t height = 13);
 
             /// Destroy the map
             ~Map() = default;
 
             /// Generate the map.
             ///
-            /// @param fillPercent initial map cell fill, may change due to cellular automata.
             /// @param width width of the map
             /// @param height height of the map
             /// @throw MapSizeInvalid when the size is invalid (< 3 or even)
-            void generate(size_t fillPercent, size_t width, size_t height);
+            void generate(size_t width, size_t height);
 
             /// Get the Element at the position (x, y)
             ///
@@ -86,8 +84,6 @@ namespace bomberman
 
             size_t _width;
             size_t _height;
-            size_t _fillPercent;
-
             std::vector<Element> _map;
         };
     } // namespace map
