@@ -4,9 +4,13 @@ set(SRCROOT ${SRCROOT}/util)
 set(SRC
 	${SRC}
 	${INCROOT}/util.hpp
-	PARENT_SCOPE)
+	${SRCROOT}/BitSet.cpp
+	${INCROOT}/BitSet.hpp
+	PARENT_SCOPE
+)
 
 set(INCDIRS
 	${INCDIRS}
 	${INCROOT}
-	PARENT_SCOPE)
+	PARENT_SCOPE
+)
