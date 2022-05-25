@@ -43,7 +43,6 @@ namespace raylib
             /// @retval true if the cursor is on screen
             /// @retval false if the cursor is not on screen
             static bool isOnScreen(void);
-
         };
     } // namespace core
 } // namespace raylib
