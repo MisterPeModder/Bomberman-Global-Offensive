@@ -24,10 +24,10 @@ namespace bomberman
 
             };
 
-            Map(size_t width = 13, size_t height = 13);
+            Map(size_t fillPercent = 40, size_t width = 13, size_t height = 13);
             ~Map() = default;
 
-            void generate(size_t width, size_t height);
+            void generate(size_t fillPercent, size_t width, size_t height);
             void debugDisplay(std::ostream &stream) const;
 
             Element getElement(size_t x, size_t y) const;
@@ -37,8 +37,11 @@ namespace bomberman
             size_t getHeight() const;
 
           private:
+            void freeCorners();
+
             size_t _width;
             size_t _height;
+            size_t _fillPercent;
 
             std::vector<Element> _map;
         };

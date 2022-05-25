@@ -7,18 +7,26 @@
 
 #include "Map.hpp"
 #include <iostream>
+#include <random>
 #include <stdexcept>
 
 namespace bomberman
 {
     namespace map
     {
-        Map::Map(size_t width, size_t height) { generate(width, height); }
+        Map::Map(size_t fillPercent, size_t width, size_t height) { generate(fillPercent, width, height); }
 
-        void Map::generate(size_t width, size_t height)
+        void Map::generate(size_t fillPercent, size_t width, size_t height)
         {
             if (width % 2 == 0 || height % 2 == 0)
                 throw std::logic_error("Map must be odd."); /// Replace with custom exception
+            if (fillPercent > 100)
+                throw std::logic_error("Map cannot be filled more than 100%."); /// Replace with custom exception
+            if (width < 3 || height < 3)
+                throw std::logic_error("Map cannot be smaller than 3x3."); /// Replace with custom exception
+            std::random_device dev;
+            std::mt19937 rng(dev());
+            std::uniform_int_distribution<std::mt19937::result_type> dist100(0, 99);
             _width = width;
             _height = height;
 
@@ -28,8 +36,11 @@ namespace bomberman
                 for (size_t y = 0; y < _height; y++) {
                     if (x % 2 && y % 2)
                         getElement(x, y) = Element::Wall;
+                    else if (dist100(rng) < fillPercent)
+                        getElement(x, y) = Element::Crate;
                 }
             }
+            freeCorners();
         }
 
         Map::Element Map::getElement(size_t x, size_t y) const
@@ -49,6 +60,17 @@ namespace bomberman
         size_t Map::getWidth() const { return _width; }
 
         size_t Map::getHeight() const { return _height; }
+
+        void Map::freeCorners()
+        {
+            for (size_t y = 0; y < _height; y += _height - 1) {
+                for (size_t x = 0; x < _width; x += _width - 1) {
+                    getElement(x, y) = Element::Empty;
+                    getElement(x + ((x == 0) ? 1 : -1), y) = Element::Empty;
+                    getElement(x, y + ((y == 0) ? 1 : -1)) = Element::Empty;
+                }
+            }
+        }
     } // namespace map
 } // namespace bomberman
 
