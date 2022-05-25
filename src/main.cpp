@@ -7,6 +7,7 @@
 #include "raylib/core/scoped.hpp"
 #include "raylib/model/Model.hpp"
 #include "raylib/model/Animation.hpp"
+#include <filesystem>
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -18,7 +19,7 @@ constexpr int HEIGHT(500);
 
 static raylib::model::Model &getTestingModel()
 {
-    static const std::string testModelPath = "assets/models/player/raylibguy.iqm";
+    static const std::filesystem::path testModelPath = "assets/models/player/raylibguy.iqm";
     static raylib::model::Model model(testModelPath);
 
     return model;
@@ -26,7 +27,7 @@ static raylib::model::Model &getTestingModel()
 
 static raylib::model::Animation &getTestingAnimation()
 {
-    static const std::string testAnimPath = "assets/animations/raylibguy_anim.iqm";
+    static const std::filesystem::path testAnimPath = "assets/animations/raylibguy_anim.iqm";
     static raylib::model::Animation anim(testAnimPath);
 
     return anim;
