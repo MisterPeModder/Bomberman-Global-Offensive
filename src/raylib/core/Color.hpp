@@ -50,7 +50,6 @@ namespace raylib
     {
         /// The Color struct that encapsulates the raylib Color struct
         struct Color {
-
             unsigned char r;
             unsigned char g;
             unsigned char b;
@@ -62,7 +61,10 @@ namespace raylib
             /// @param green the amount of green
             /// @param blue the amount of blue
             /// @param alpha the alpha (defaulted to 255)
-            constexpr Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255) : r(red), g(green), b(blue), a(alpha) {}
+            constexpr Color(unsigned char red, unsigned char green, unsigned char blue, unsigned char alpha = 255)
+                : r(red), g(green), b(blue), a(alpha)
+            {
+            }
 
             /// Default constructor
             /// Defaults everything to 255
@@ -116,12 +118,9 @@ namespace raylib
             /// @param hexColor the hex integer representing the color
             /// @param alpha the alpha (defaulted to 255)
             constexpr Color(int hexColor, unsigned char alpha = 255)
-            :
-            r(((hexColor >> 16) & 0xFF)),
-            g(((hexColor >> 8) & 0xFF)),
-            b(((hexColor) & 0xFF)),
-            a(alpha)
-            {}
+                : r(((hexColor >> 16) & 0xFF)), g(((hexColor >> 8) & 0xFF)), b(((hexColor)&0xFF)), a(alpha)
+            {
+            }
 
             /// Copy assignment operator from an integer
             ///
@@ -132,7 +131,7 @@ namespace raylib
             {
                 r = ((hexColor >> 16) & 0xFF);
                 g = ((hexColor >> 8) & 0xFF);
-                b = ((hexColor) & 0xFF);
+                b = ((hexColor)&0xFF);
                 a = 255;
 
                 return *this;
@@ -146,9 +145,9 @@ namespace raylib
             /// Gets the color as integer
             ///
             /// @return The color as integer
-            constexpr int asInteger() { return { ((r & 0xFF) << 16) + ((g & 0xFF) << 8) + (b & 0xFF) }; }
+            constexpr int asInteger() { return {((r & 0xFF) << 16) + ((g & 0xFF) << 8) + (b & 0xFF)}; }
 
-            #pragma region Default colors
+#pragma region Default colors
 
             static const Color LIGHT_GRAY;
             static const Color GRAY;
@@ -177,12 +176,11 @@ namespace raylib
             static const Color MAGENTA;
             static const Color RAY_WHITE;
 
-            #pragma endregion
-
+#pragma endregion
         };
 
-        /// The default colors (same as the ones from the raylib)
-        #pragma region Assigning values to the default colors
+/// The default colors (same as the ones from the raylib)
+#pragma region Assigning values to the default colors
 
         constexpr Color Color::LIGHT_GRAY = Color(200, 200, 200, 255);
         constexpr Color Color::GRAY = Color(130, 130, 130, 255);
@@ -211,9 +209,9 @@ namespace raylib
         constexpr Color Color::MAGENTA = Color(255, 0, 255, 255);
         constexpr Color Color::RAY_WHITE = Color(245, 245, 245, 255);
 
-        #pragma endregion
+#pragma endregion
 
-    }
-}
+    } // namespace core
+} // namespace raylib
 
 #endif /* !RAYLIB_CORE_COLOR_HPP_ */
