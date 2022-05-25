@@ -9,10 +9,8 @@
 
 namespace raylib
 {
-
     namespace core
     {
-
         Camera3D::Camera3D()
         {
             _camera.position = {0.f, 10.f, 10.f};
