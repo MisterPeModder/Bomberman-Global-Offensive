@@ -74,25 +74,37 @@ namespace raylib
             ///
             /// @param x The new x position of the mouse
             /// @param y The new y position of the mouse
-            static constexpr void setPosition(float x, float y) { SetMousePosition(static_cast<int>(x), static_cast<int>(y)); }
+            static constexpr void setPosition(float x, float y)
+            {
+                SetMousePosition(static_cast<int>(x), static_cast<int>(y));
+            }
 
             /// Sets the mouse position
             ///
             /// @param x The new x position of the mouse
             /// @param y The new y position of the mouse
-            static constexpr void setPosition(Vector2 &pos) { SetMousePosition(static_cast<int>(pos.getX()), static_cast<int>(pos.getY())); }
+            static constexpr void setPosition(Vector2 &pos)
+            {
+                SetMousePosition(static_cast<int>(pos.getX()), static_cast<int>(pos.getY()));
+            }
 
             /// Sets the mouse offset
             ///
             /// @param offsetX The X offset of the mouse.
             /// @param offsetY The Y offset of the mouse.
-            static constexpr void setOffset(float offsetX, float offsetY)  { SetMouseOffset(static_cast<int>(offsetX), static_cast<int>(offsetY)); }
+            static constexpr void setOffset(float offsetX, float offsetY)
+            {
+                SetMouseOffset(static_cast<int>(offsetX), static_cast<int>(offsetY));
+            }
 
             /// Sets the mouse offset
             ///
             /// @param offsetX The X offset of the mouse.
             /// @param offsetY The Y offset of the mouse.
-            static constexpr void setOffset(Vector2 &offset)  { SetMouseOffset(static_cast<int>(offset.getX()), static_cast<int>(offset.getY())); }
+            static constexpr void setOffset(Vector2 &offset)
+            {
+                SetMouseOffset(static_cast<int>(offset.getX()), static_cast<int>(offset.getY()));
+            }
 
             /// Sets mouse scaling
             ///
@@ -109,7 +121,6 @@ namespace raylib
             ///
             /// @param cursor The cursor to set.
             static constexpr void setCursor(int cursor) { SetMouseCursor(cursor); }
-
         };
     } // namespace core
 } // namespace raylib
