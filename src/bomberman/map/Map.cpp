@@ -14,7 +14,7 @@ namespace bomberman
 {
     namespace map
     {
-        Map::MapSizeInvalid::MapSizeInvalid(std::string_view message) : std::logic_error(message) {}
+        Map::MapSizeInvalid::MapSizeInvalid(std::string_view message) : std::logic_error(message.data()) {}
 
         Map::Map(size_t fillPercent, size_t width, size_t height) { generate(fillPercent, width, height); }
 
@@ -29,14 +29,14 @@ namespace bomberman
             _map.resize(_width * _height);
 
             cellular::Grid automata(width, height);
-            automata.generate(cellular::Rule("B1357/S1357"), 5, fillPercent);
+            automata.generate(cellular::Rule("B1357/S1357"), 0, fillPercent);
 
             std::fill(_map.begin(), _map.end(), Element::Empty);
             for (size_t x = 0; x < _width; x++) {
                 for (size_t y = 0; y < _height; y++) {
                     if (x % 2 && y % 2)
                         getElement(x, y) = Element::Wall;
-                    else if (automata.at(x, y))
+                    else if (automata.isFilled(x, y))
                         getElement(x, y) = Element::Crate;
                 }
             }
@@ -67,7 +67,9 @@ namespace bomberman
                 for (size_t x = 0; x < _width; x += _width - 1) {
                     getElement(x, y) = Element::Empty;
                     getElement(x + ((x == 0) ? 1 : -1), y) = Element::Empty;
+                    getElement(x + ((x == 0) ? 2 : -2), y) = Element::Crate;
                     getElement(x, y + ((y == 0) ? 1 : -1)) = Element::Empty;
+                    getElement(x, y + ((y == 0) ? 2 : -2)) = Element::Crate;
                 }
             }
         }

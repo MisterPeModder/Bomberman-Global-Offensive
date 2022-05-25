@@ -50,7 +50,7 @@ namespace bomberman
 
                 for (size_t x = 0; x < _width; x++)
                     for (size_t y = 0; y < _height; y++)
-                        newState[x + y * _width] = _rule.nextState(getNeighbours(x, y), at(x, y));
+                        newState[x + y * _width] = _rule.nextState(getNeighbours(x, y), isFilled(x, y));
                 _cells = newState;
             }
 
