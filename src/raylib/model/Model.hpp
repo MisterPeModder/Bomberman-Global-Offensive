@@ -86,7 +86,7 @@ namespace raylib
             /// Gets the C Raylib const version of the model
             ///
             /// @return The raylib version of the model
-            ::Model asRaylib() const;
+            ::Model const &asRaylib() const;
 
             /// Checks collision with another model
             ///

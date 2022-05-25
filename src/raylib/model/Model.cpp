@@ -61,7 +61,7 @@ namespace raylib
             return _model;
         }
 
-        ::Model Model::asRaylib() const {
+        ::Model const &Model::asRaylib() const {
             return _model;
         }
 
