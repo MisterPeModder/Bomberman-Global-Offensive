@@ -15,7 +15,6 @@ extern "C"
 
 namespace raylib
 {
-
     namespace core
     {
         /// The Vector2 class (compatible with the raylib Vector2)
