@@ -83,6 +83,7 @@ namespace bomberman
                 /// @param y y position of the cell.
                 /// @return true If the cell is filled.
                 /// @return false If the cell is empty.
+                /// @throw std::out_of_bounds when the position is out of the grid bounds
                 bool isFilled(size_t x, size_t y) const;
 
                 /// Change the size of the grid

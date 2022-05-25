@@ -9,6 +9,7 @@
 #define GAME_MAP_HPP_
 
 #include <ostream>
+#include <stdexcept>
 #include <vector>
 
 namespace bomberman
@@ -18,6 +19,15 @@ namespace bomberman
         /// Bomberman Map
         class Map {
           public:
+            /// Exception thrown when the map size is invalid.
+            class MapSizeInvalid : public std::logic_error {
+              public:
+                /// Construct a new MapSizeInvalid object
+                ///
+                /// @param message what message.
+                MapSizeInvalid(std::string_view message);
+            };
+
             /// Map element
             enum class Element {
                 Wall,  /// Indestructible wall
@@ -41,6 +51,7 @@ namespace bomberman
             /// @param fillPercent initial map cell fill, may change due to cellular automata.
             /// @param width width of the map
             /// @param height height of the map
+            /// @throw MapSizeInvalid when the size is invalid (< 3 or even)
             void generate(size_t fillPercent, size_t width, size_t height);
 
             /// Get the Element at the position (x, y)
@@ -48,6 +59,7 @@ namespace bomberman
             /// @param x x position
             /// @param y y position
             /// @return Element element at the position (x, y)
+            /// @throw std::out_of_bounds when the position is out of the map bounds
             Element getElement(size_t x, size_t y) const;
 
             /// Get the Element at the position (x, y)
@@ -55,6 +67,7 @@ namespace bomberman
             /// @param x x position
             /// @param y y position
             /// @return Element& element at the position (x, y)
+            /// @throw std::out_of_bounds when the position is out of the map bounds
             Element &getElement(size_t x, size_t y);
 
             /// Get the Width of the map

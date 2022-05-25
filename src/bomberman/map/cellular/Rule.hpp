@@ -9,6 +9,7 @@
 #define BOMBERMAN_MAP_CELLULAR_RULE_HPP_
 
 #include <array>
+#include <stdexcept>
 #include <string_view>
 
 namespace bomberman
@@ -22,6 +23,15 @@ namespace bomberman
             /// See https://en.wikipedia.org/wiki/Life-like_cellular_automaton
             class Rule {
               public:
+                /// Exception thrown when an error occured in the rule parsing.
+                class RuleInvalid : public std::runtime_error {
+                  public:
+                    /// Construct a new RuleInvalid object
+                    ///
+                    /// @param what what.
+                    RuleInvalid(std::string_view what);
+                };
+
                 /// Create a new Rule from its notation.
                 /// Empty rule will result in rule with no birth neither survive (all cells die in a single iteration)
                 Rule(std::string_view rule = "");
@@ -34,6 +44,7 @@ namespace bomberman
                 /// @param neighbours number of filled neighbours (the 8 adjacent blocks)
                 /// @param state current state, true for filled.
                 /// @return Next state of the cell following the loaded rule.
+                /// @throw std::logic_error when neighbours is greater than 8
                 bool nextState(unsigned char neighbours, bool state) const;
 
                 /// Get the Rule notation
@@ -50,19 +61,21 @@ namespace bomberman
                 /// Parse a rule.
                 ///
                 /// @param rule rule to parse.
+                /// @throw InvalidRule when a parsing error occured
                 void parseRule(std::string_view rule);
 
                 /// Parse a birth rule
                 ///
                 /// @param birthRule rule matching the regex "B[0-9]+"
                 /// @return std::size_t end id of the birth rule part
+                /// @throw InvalidRule when a parsing error occured
                 size_t parseBirth(std::string_view birthRule);
 
                 /// Parse a survive rule
                 ///
                 /// @param surviveRule rule matching the regex S[0-9]+
                 /// @return size_t end id of the survive rule part
-                ///
+                /// @throw InvalidRule when a parsing error occured
                 size_t parseSurvive(std::string_view surviveRule);
 
                 std::array<bool, 9> _birth;

@@ -8,21 +8,22 @@
 #include "Map.hpp"
 #include <iostream>
 #include <random>
-#include <stdexcept>
 #include "cellular/Grid.hpp"
 
 namespace bomberman
 {
     namespace map
     {
+        Map::MapSizeInvalid::MapSizeInvalid(std::string_view message) : std::logic_error(message) {}
+
         Map::Map(size_t fillPercent, size_t width, size_t height) { generate(fillPercent, width, height); }
 
         void Map::generate(size_t fillPercent, size_t width, size_t height)
         {
             if (width % 2 == 0 || height % 2 == 0)
-                throw std::logic_error("Map must be odd."); /// Replace with custom exception
+                throw MapSizeInvalid("Map width and height must be odd.");
             if (width < 3 || height < 3)
-                throw std::logic_error("Map cannot be smaller than 3x3."); /// Replace with custom exception
+                throw MapSizeInvalid("Map cannot be smaller than 3x3.");
             _width = width;
             _height = height;
             _map.resize(_width * _height);
@@ -45,14 +46,14 @@ namespace bomberman
         Map::Element Map::getElement(size_t x, size_t y) const
         {
             if (x >= _width || y >= _height)
-                throw std::out_of_range("Accessing out of bounds map element."); /// Replace with custom exception
+                throw std::out_of_range("Accessing out of bounds map element.");
             return _map[y * _width + x];
         }
 
         Map::Element &Map::getElement(size_t x, size_t y)
         {
             if (x >= _width || y >= _height)
-                throw std::out_of_range("Accessing out of bounds map element."); /// Replace with custom exception
+                throw std::out_of_range("Accessing out of bounds map element.");
             return _map[y * _width + x];
         }
 

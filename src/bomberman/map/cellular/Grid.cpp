@@ -35,8 +35,6 @@ namespace bomberman
 
             void Grid::randomFill(size_t fillPercent)
             {
-                if (fillPercent > 100)
-                    throw std::logic_error("Grid cannot be filled more than 100%."); /// Replace with custom exception
                 std::random_device dev;
                 std::mt19937 rng(dev());
                 std::uniform_int_distribution<std::mt19937::result_type> dist100(0, 99);
@@ -65,7 +63,7 @@ namespace bomberman
             bool Grid::isFilled(size_t x, size_t y) const
             {
                 if (x >= _width || y >= _height)
-                    throw std::out_of_range("Accessing out of bounds map element."); /// Replace with custom exception
+                    throw std::out_of_range("Accessing out of bounds map element.");
                 return _cells[x + y * _width];
             }
 
