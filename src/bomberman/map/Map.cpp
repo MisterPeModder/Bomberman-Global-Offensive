@@ -9,6 +9,7 @@
 #include <iostream>
 #include <random>
 #include <stdexcept>
+#include "cellullar/Grid.hpp"
 
 namespace bomberman
 {
@@ -20,23 +21,21 @@ namespace bomberman
         {
             if (width % 2 == 0 || height % 2 == 0)
                 throw std::logic_error("Map must be odd."); /// Replace with custom exception
-            if (fillPercent > 100)
-                throw std::logic_error("Map cannot be filled more than 100%."); /// Replace with custom exception
             if (width < 3 || height < 3)
                 throw std::logic_error("Map cannot be smaller than 3x3."); /// Replace with custom exception
-            std::random_device dev;
-            std::mt19937 rng(dev());
-            std::uniform_int_distribution<std::mt19937::result_type> dist100(0, 99);
             _width = width;
             _height = height;
-
             _map.resize(_width * _height);
+
+            cellular::Grid automata(width, height);
+            automata.generate(fillPercent);
+
             std::fill(_map.begin(), _map.end(), Element::Empty);
             for (size_t x = 0; x < _width; x++) {
                 for (size_t y = 0; y < _height; y++) {
                     if (x % 2 && y % 2)
                         getElement(x, y) = Element::Wall;
-                    else if (dist100(rng) < fillPercent)
+                    else if (automata.at(x, y))
                         getElement(x, y) = Element::Crate;
                 }
             }

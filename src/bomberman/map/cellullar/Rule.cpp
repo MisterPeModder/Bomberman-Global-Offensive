@@ -24,7 +24,7 @@ namespace bomberman
                     throw std::logic_error("A cell cannot have more than 8 neighbours."); //// Replace later
                 if (!state)
                     return _birth[neighbours];
-                if (state)
+                else
                     return _survive[neighbours];
             }
 

@@ -1,6 +1,8 @@
 set(INCROOT ${INCROOT}/map)
 set(SRCROOT ${SRCROOT}/map)
 
+add_subdirectory(cellullar)
+
 set(SRC
 	${SRC}
 	${SRCROOT}/Map.cpp
