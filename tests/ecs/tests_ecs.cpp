@@ -8,7 +8,7 @@
 #include "ecs/Component.hpp"
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
-#include "ecs/storage/TreeStorage.hpp"
+#include "ecs/storage/MapStorage.hpp"
 
 #include <array>
 #include <gtest/gtest.h>
@@ -19,13 +19,13 @@ struct Position : public ecs::Component {
 
     Position(float px, float py) : x(px), y(py) {}
 };
-SET_COMPONENT_STORAGE(Position, ecs::TreeStorage);
+SET_COMPONENT_STORAGE(Position, ecs::MapStorage);
 
 // struct Velocity : public ecs::Component {
 //     float x;
 //     float y;
 // };
-// SET_COMPONENT_STORAGE(Velocity, ecs::TreeStorage);
+// SET_COMPONENT_STORAGE(Velocity, ecs::MapStorage);
 
 // struct Movement : public ecs::System {
 //     void run(ecs::SystemData data) override final {

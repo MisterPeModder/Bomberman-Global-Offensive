@@ -12,7 +12,6 @@
 #include "ecs/resource/Entities.hpp"
 #include "ecs/resource/Resource.hpp"
 #include "ecs/storage/Storage.hpp"
-#include "ecs/storage/TreeStorage.hpp"
 #include "ecs/system/System.hpp"
 #include "ecs/world/Instances.hpp"
 

@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman: Global Offensive
 ** File description:
-** ECS - Tree Component Storage
+** ECS - Map Component Storage
 */
 
-#ifndef ECS_STORAGE_TREE_STORAGE_HPP_
-#define ECS_STORAGE_TREE_STORAGE_HPP_
+#ifndef ECS_STORAGE_MAP_STORAGE_HPP_
+#define ECS_STORAGE_MAP_STORAGE_HPP_
 
 #include "ecs/Entity.hpp"
 #include "ecs/storage/Storage.hpp"
@@ -15,17 +15,17 @@
 
 namespace ecs
 {
-    template <typename C> class TreeStorage : public BaseStorage {
+    template <typename C> class MapStorage : public BaseStorage {
       public:
         using Component = C;
         using Iterator = typename std::map<Entity, Component>::iterator;
         using ConstIterator = typename std::map<Entity, Component>::const_iterator;
 
-        /// Default initialization of TreeStorage
-        explicit TreeStorage() {}
+        /// Default initialization of MapStorage
+        explicit MapStorage() {}
 
         /// Cannot copy storage instances.
-        TreeStorage(TreeStorage const &) = delete;
+        MapStorage(MapStorage const &) = delete;
 
         /// Constructs a component in-place for the given entity.
         ///
@@ -71,7 +71,7 @@ namespace ecs
         std::map<Entity, Component> _components;
     };
 
-    static_assert(Storage<TreeStorage<std::nullptr_t>>);
+    static_assert(Storage<MapStorage<std::nullptr_t>>);
 } // namespace ecs
 
-#endif //! defined(ECS_STORAGE_TREE_STORAGE_HPP_)
+#endif //! defined(ECS_STORAGE_MAP_STORAGE_HPP_)

@@ -13,18 +13,18 @@
 #include <concepts>
 #include <iterator>
 
-// forward declaration of TreeStorage for use as default storage type.
+// forward declaration of MapStorage for use as default storage type.
 namespace ecs
 {
-    template <typename C> class TreeStorage;
+    template <typename C> class MapStorage;
 }
 
 /// @note Use ecs::get_storage_type instead.
 template <typename C> struct GetComponentStorageType {
-    using Value = ecs::TreeStorage<C>;
+    using Value = ecs::MapStorage<C>;
 };
 
-/// Sets the storage type to use for @b ComponentType, if not called @b TreeStorage is used by default.
+/// Sets the storage type to use for @b ComponentType, if not called @b MapStorage is used by default.
 #define SET_COMPONENT_STORAGE(ComponentType, StorageType)       \
     template <> struct GetComponentStorageType<ComponentType> { \
         using Value = StorageType<ComponentType>;               \
@@ -74,7 +74,7 @@ namespace ecs
         // clang-format on
     };
 
-    /// Get the storage type of a component, returns TreeStorage by default.
+    /// Get the storage type of a component, returns MapStorage by default.
     template <typename C> using get_storage_type = typename GetComponentStorageType<C>::Value;
 } // namespace ecs
 
