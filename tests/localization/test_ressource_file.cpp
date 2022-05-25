@@ -30,7 +30,13 @@ TEST(RessourceFile, unexisting_file)
 {
     init_locales();
 
-    RessourceFile file("unexisting");
+    RessourceFile file;
+
+#ifdef BM_RELEASE
+    EXPECT_THROW(file.loadLocale("unexisting"), RessourceFile::LocaleNotFoundError);
+#else
+    file.loadLocale("unexisting");
+#endif
 
     ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
     file.save();
@@ -41,13 +47,19 @@ TEST(RessourceFile, new_file)
 {
     init_locales();
 
-    RessourceFile file("new");
+    RessourceFile file;
 
+#ifdef BM_RELEASE
+    EXPECT_THROW(file.loadLocale("new"), RessourceFile::LocaleNotFoundError);
+    ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
+#else
+    file.loadLocale("new");
     file.registerString("I am created!");
     ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
     file.save();
     ASSERT_TRUE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
     std::filesystem::remove(Localization::getLocalePath("new"));
+#endif
 }
 
 TEST(RessourceFile, translated_message)
@@ -74,7 +86,11 @@ TEST(RessourceFile, unregistered_message)
 
     RessourceFile file("hello");
 
+#ifdef BM_RELEASE
+    EXPECT_THROW(file.translate("????"), RessourceFile::MessageNotFoundError);
+#else
     ASSERT_EQ(file.translate("????"), "????");
+#endif
 }
 
 TEST(RessourceFile, switch_to_invalid_file)
@@ -84,9 +100,15 @@ TEST(RessourceFile, switch_to_invalid_file)
     RessourceFile file("hello");
 
     ASSERT_EQ(file.translate("translated"), "traduit");
+#ifdef BM_RELEASE
+    EXPECT_THROW(file.loadLocale("unexisting"), RessourceFile::LocaleNotFoundError);
+    ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
+    EXPECT_THROW(file.translate("translated"), RessourceFile::MessageNotFoundError);
+#else
     file.loadLocale("unexisting");
     ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
     ASSERT_EQ(file.translate("translated"), "translated");
+#endif
 }
 
 TEST(RessourceFile, loading_with_errors)
@@ -100,7 +122,11 @@ TEST(RessourceFile, loading_with_errors)
 
         ASSERT_EQ(file.translate("first message"), "premier message");
         ASSERT_EQ(file.translate("multiple\nlines\nmessage"), "Message en\nplusieurs\nlignes");
-        // Invalid messages are ignored and so they are not translated.
+// Invalid messages are ignored and so they are not translated.
+#ifdef BM_RELEASE
+        EXPECT_THROW(file.translate("invalid"), RessourceFile::MessageNotFoundError);
+#else
         ASSERT_EQ(file.translate("invalid"), "invalid");
+#endif
     }
 }
