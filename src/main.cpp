@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <iostream>
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
@@ -5,9 +6,8 @@
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
-#include "raylib/model/Model.hpp"
 #include "raylib/model/Animation.hpp"
-#include <filesystem>
+#include "raylib/model/Model.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -15,7 +15,6 @@
 
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
-
 
 static raylib::model::Model &getTestingModel()
 {
