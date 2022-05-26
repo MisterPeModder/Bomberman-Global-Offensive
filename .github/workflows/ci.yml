@@ -11,11 +11,15 @@ env:
 
 jobs:
   build-linux:
-    # Run within the official Epitech test image
-    container: epitechcontent/epitest-docker:devel
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake
+        sudo apt-get install -y libasound2-dev mesa-common-dev libx11-dev libxrandr-dev libxi-dev xorg-dev libgl1-mesa-dev libglu1-mesa-dev
+
     - name: Checkout repository
       uses: actions/checkout@v2
 
@@ -46,7 +50,7 @@ jobs:
 
   build-web:
     container: emscripten/emsdk
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Install Dependencies
@@ -65,7 +69,7 @@ jobs:
       run: cmake --build ${{github.workspace}}/build  --config ${{env.BUILD_TYPE}} -j
 
   lint-format:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v2
