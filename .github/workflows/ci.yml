@@ -10,7 +10,7 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  build:
+  build-linux:
     # Run within the official Epitech test image
     container: epitechcontent/epitest-docker:devel
     runs-on: ubuntu-latest
@@ -23,12 +23,12 @@ jobs:
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE
 
     - name: Build
-      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} -j
 
     - name: Unit Tests
       run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure
 
-  windows:
+  build-windows:
     runs-on: windows-latest
 
     steps:
@@ -43,6 +43,26 @@ jobs:
 
     - name: Unit Tests
       run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure
+
+  build-web:
+    container: emscripten/emsdk
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake
+        sudo apt-get install -y libasound2-dev mesa-common-dev libx11-dev libxrandr-dev libxi-dev xorg-dev libgl1-mesa-dev libglu1-mesa-dev
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_TEST_SUITE=TRUE
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build  --config ${{env.BUILD_TYPE}} -j
 
   lint-format:
     runs-on: ubuntu-latest
