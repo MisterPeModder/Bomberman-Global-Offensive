@@ -78,3 +78,6 @@ jobs:
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build  --config ${{env.BUILD_TYPE}} -j
+
+    - name: Run Unit Tests
+      run: cd ${{github.workspace}}/build && ctest -C ${{env.BUILD_TYPE}} --output-on-failure

@@ -33,7 +33,15 @@ elseif (COMPILER_TYPE MATCHES "clang")
         "-Wall" "-Wextra" "-Wshadow"
         "$<$<CONFIG:RELEASE>:-O3;-Werror>"
         "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
+        "-sNO_DISABLE_EXCEPTION_CATCHING"
     )
+
+    if (EMSCRIPTEN)
+        message(STATUS "Enabling Emscripten-specific options")
+
+        add_compile_options("-sNO_DISABLE_EXCEPTION_CATCHING")
+        add_link_options("-sNO_DISABLE_EXCEPTION_CATCHING")
+    endif()
 endif()
 
 #enable BM_RELEASE define in release mode
