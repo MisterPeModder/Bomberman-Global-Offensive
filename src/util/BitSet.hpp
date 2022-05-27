@@ -94,11 +94,10 @@ namespace util
         /// Assigns a value to the  bit at @b pos.
         BIT_SET_CONSTEXPR BitSet &set(std::size_t pos, bool value = true) noexcept
         {
-            std::uint64_t m = mask(pos);
             if (value)
-                this->_store[pos >> 6] |= m;
+                this->_store[pos >> 6] |= mask(pos);
             else
-                this->_store[pos >> 6] &= ~m;
+                this->_store[pos >> 6] &= ~mask(pos);
             return *this;
         }
 
@@ -177,7 +176,17 @@ namespace util
         std::size_t _size;
         std::vector<std::uint64_t> _store;
 
+        /// @returns The bit mask for the requested bit position.
         static constexpr std::uint64_t mask(std::size_t pos) { return std::uint64_t(1) << (pos & 0b111111); }
+
+        /// @returns The number of 64-bit words needed to store @b bitCount amount of bits.
+        static constexpr std::size_t getStoreWordCount(std::size_t bitCount)
+        {
+            if ((bitCount & (~0b111111)) == bitCount)
+                return bitCount >> 6; // if bitCount is a multiple of 64, return bitCount / 64
+            else
+                return (bitCount >> 6) + 1; // or else, add one word to contain the extra bits
+        }
 
         /// Unset the trailing bits.
         void normalize() noexcept;
@@ -186,6 +195,8 @@ namespace util
         void _resize(std::size_t size);
 
         friend Reference;
+        /// Used by unit tests to access BitSet internals.
+        friend class BitSetTester;
     };
 
     /// Prints the contents of @b set into @b output.

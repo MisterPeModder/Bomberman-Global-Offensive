@@ -9,6 +9,15 @@
 
 #include "util/BitSet.hpp"
 
+namespace util
+{
+    /// Used to access BitSet internals in testing.
+    class BitSetTester {
+      public:
+        static std::size_t getStoreSize(BitSet const &set) { return set._store.size(); }
+    };
+} // namespace util
+
 TEST(BitSet, init)
 {
     util::BitSet empty;
@@ -18,6 +27,13 @@ TEST(BitSet, init)
 
     EXPECT_EQ(empty.size(), 0);
     EXPECT_EQ(word.size(), 64);
+    EXPECT_EQ(beeg.size(), 420);
+    EXPECT_EQ(fromStr.size(), 7);
+
+    EXPECT_EQ(util::BitSetTester::getStoreSize(empty), 0);
+    EXPECT_EQ(util::BitSetTester::getStoreSize(word), 1);
+    EXPECT_EQ(util::BitSetTester::getStoreSize(beeg), 7);
+    EXPECT_EQ(util::BitSetTester::getStoreSize(fromStr), 1);
 
     for (std::size_t i = 0; i < 64; ++i)
         EXPECT_FALSE(word[i]) << "index was " << i;
@@ -97,9 +113,34 @@ TEST(BitSet, operations)
     EXPECT_EQ(set3, util::BitSet("011"));
 }
 
+TEST(BitSet, resize)
+{
+    util::BitSet set("101110");
+
+    set.resize(420);
+    set[419] = true;
+
+    EXPECT_EQ(util::BitSetTester::getStoreSize(set), 7);
+
+    EXPECT_FALSE(set[0]);
+    EXPECT_TRUE(set[1]);
+    EXPECT_TRUE(set[2]);
+    EXPECT_TRUE(set[3]);
+    EXPECT_FALSE(set[4]);
+    EXPECT_TRUE(set[5]);
+
+    EXPECT_FALSE(set[413]);
+    EXPECT_FALSE(set[414]);
+    EXPECT_FALSE(set[415]);
+    EXPECT_FALSE(set[416]);
+    EXPECT_FALSE(set[417]);
+    EXPECT_TRUE(set[419]);
+}
+
 TEST(BitSet, pushPop)
 {
     util::BitSet set;
+    util::BitSet wordSized(64);
 
     set.push(1);
     set.push(0);
@@ -114,4 +155,8 @@ TEST(BitSet, pushPop)
     EXPECT_TRUE(set.pop());
 
     EXPECT_EQ(set, util::BitSet("01"));
+
+    EXPECT_EQ(util::BitSetTester::getStoreSize(wordSized), 1);
+    wordSized.push(1);
+    EXPECT_EQ(util::BitSetTester::getStoreSize(wordSized), 2);
 }
