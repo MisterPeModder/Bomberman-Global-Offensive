@@ -6,6 +6,9 @@
 # Build Data
 *.o
 /build
+/doc/build/html
+*.gcno
+*.gcda
 
 # Executable
 /bomberman

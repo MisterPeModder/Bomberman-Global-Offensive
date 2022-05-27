@@ -17,7 +17,7 @@ namespace localization
     {
         /// Simple hello world.
         constexpr RessourceString rsHello("Hello, World!");
-    }; // namespace Ressources
+    } // namespace Ressources
 } // namespace localization
 
 #endif /* !LOCALIZATION_RESSOURCES_HPP_ */
