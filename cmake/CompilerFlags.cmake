@@ -22,6 +22,10 @@ elseif (COMPILER_TYPE MATCHES "gcc")
         "$<$<CONFIG:RELEASE>:-O3;-Werror>"
         "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
     )
+    if (ENABLE_TEST_COVERAGE)
+        add_compile_options("--coverage" "-fprofile-arcs" "-ftest-coverage")
+        add_link_options("--coverage" "-fprofile-arcs" "-ftest-coverage")
+    endif()
 elseif (COMPILER_TYPE MATCHES "clang")
     message(STATUS "Enabling Clang-specific options")
 
