@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['matched_5522',['matched',['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::csub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::ssub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::sub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::wcsub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::wssub_match::matched()']]],
-  ['max_5fblocks_5fper_5fchunk_5523',['max_blocks_per_chunk',['http://en.cppreference.com/w/cpp/memory/pool_options.html',1,'std::pmr::pool_options']]]
+  ['matched_5523',['matched',['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::csub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::ssub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::sub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::wcsub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::wssub_match::matched()']]],
+  ['max_5fblocks_5fper_5fchunk_5524',['max_blocks_per_chunk',['http://en.cppreference.com/w/cpp/memory/pool_options.html',1,'std::pmr::pool_options']]]
 ];

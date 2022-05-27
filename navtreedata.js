@@ -23,13 +23,14 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Bomberman:GlobalOffensive", "index.html", [
-    [ "<a href=\"https://codecov.io/gh/MisterPeModder/Bomberman-Global-Offensive\"><img src=\"https://codecov.io/gh/MisterPeModder/Bomberman-Global-Offensive/branch/master/graph/badge.svg\" alt=\"Codecov\"/></a>", "index.html#autotoc_md0", null ],
-    [ "Building", "index.html#autotoc_md1", [
-      [ "Command Line", "index.html#autotoc_md2", null ],
-      [ "IDEs", "index.html#autotoc_md3", null ]
-    ] ],
-    [ "Documentation", "index.html#autotoc_md4", [
-      [ "Local", "index.html#autotoc_md5", null ]
+    [ "Bomberman: Global Offensive", "index.html", [
+      [ "Building", "index.html#autotoc_md2", [
+        [ "Command Line", "index.html#autotoc_md3", null ],
+        [ "IDEs", "index.html#autotoc_md4", null ]
+      ] ],
+      [ "Documentation", "index.html#autotoc_md5", [
+        [ "Local", "index.html#autotoc_md6", null ]
+      ] ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
