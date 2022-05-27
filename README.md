@@ -1,6 +1,7 @@
 Bomberman
 [![Build](https://img.shields.io/github/workflow/status/MisterPeModder/Bomberman-Global-Offensive/Build-Testing)](https://github.com/MisterPeModder/Bomberman-Global-Offensive/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/MisterPeModder/Bomberman-Global-Offensive)](https://github.com/MisterPeModder/Bomberman-Global-Offensive)
+[![Codecov](https://codecov.io/gh/MisterPeModder/Bomberman-Global-Offensive/branch/master/graph/badge.svg)](https://codecov.io/gh/MisterPeModder/Bomberman-Global-Offensive)
 ====
 
 # Building
