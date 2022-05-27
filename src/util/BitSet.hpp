@@ -26,7 +26,7 @@
 
 namespace util
 {
-    /// Mimimics the API of std::bitset but with the dynamic properties of std::vector<bool>
+    /// Mimics the API of std::bitset but with the dynamic properties of std::vector<bool>
     class BitSet {
       public:
         class Reference {
