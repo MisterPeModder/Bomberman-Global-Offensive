@@ -33,9 +33,9 @@ template <typename C> struct GetComponentStorageType {
 namespace ecs
 {
     /// used to declare a virtual destructor on all Storage implementations.
-    class BaseStorage {
+    class Storage {
       public:
-        virtual ~BaseStorage() = default;
+        virtual ~Storage() = default;
     };
 
     /// The Compoonent storage trait.
@@ -43,7 +43,7 @@ namespace ecs
     /// @note The iterators supplied by storages @b must yield their entity-component pair in increasing order of entity
     /// index.
     template <typename S>
-    concept Storage = std::default_initializable<S> && std::derived_from<S, BaseStorage> && requires(
+    concept IsStorage = std::default_initializable<S> && std::derived_from<S, Storage> && requires(
         S &storage, S const &cstorage, Entity entity)
     {
         // clang-format off

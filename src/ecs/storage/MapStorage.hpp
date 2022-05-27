@@ -71,7 +71,7 @@ namespace ecs
         std::map<Entity, Component> _components;
     };
 
-    static_assert(Storage<MapStorage<std::nullptr_t>>);
+    static_assert(IsStorage<MapStorage<std::nullptr_t>>);
 } // namespace ecs
 
 #endif //! defined(ECS_STORAGE_MAP_STORAGE_HPP_)

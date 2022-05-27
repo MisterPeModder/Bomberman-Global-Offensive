@@ -192,7 +192,7 @@ namespace ecs
       private:
         Instances<Resource> _resources;
         Instances<System> _systems;
-        Instances<BaseStorage> _storages;
+        Instances<Storage> _storages;
 
         /// non template version of runSystem.
         void runSystem(System &system);
