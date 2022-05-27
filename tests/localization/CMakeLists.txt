@@ -1,7 +1,12 @@
 set(SRCROOT ${SRCROOT}/localization)
 
 set(SRC
-    ${SRC}
     ${SRCROOT}/test_ressource_file.cpp
-    PARENT_SCOPE
+)
+
+add_bomberman_test(
+    NAME bm_test_localization
+    DISPLAY_NAME "Bomberman-Localization-Tests"
+    WORKING_DIRECTORY "${SRCROOT}/.."
+    SOURCES ${SRC}
 )
