@@ -17,7 +17,7 @@
 namespace util
 {
     BitSet::BitSet(std::size_t initialSize)
-        : _size(initialSize), _store(initialSize == 0 ? 0 : std::max(std::size_t(1), initialSize >> 6), 0)
+        : _size(initialSize), _store(initialSize == 0 ? 0 : (initialSize >> 6) + 1, 0)
     {
     }
 
@@ -36,6 +36,8 @@ namespace util
     }
 
     bool BitSet::operator==(BitSet const &other) const noexcept { return this->_store == other._store; }
+
+    bool BitSet::operator!=(BitSet const &other) const noexcept { return this->_store != other._store; }
 
     BitSet &BitSet::flip() noexcept
     {

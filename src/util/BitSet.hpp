@@ -14,6 +14,16 @@
 #include <vector>
 #include <string_view>
 
+// As of 2022, C++20 is still considered "experimental" by G++, `constexpr` for std::vector was only added in G++ 12.1.
+// So we need to disable `constexpr` on most BitSet functions in G++ versions below 12.1.
+//
+// For G++ 12.1 and above, em++, and MSVC, constexpr support is enabled.
+#if !defined(__clang__) && defined(__GNUG__) && (__GNUG__ < 12 || __GNUC_MINOR__ < 1)
+    #define BIT_SET_CONSTEXPR inline
+#else
+    #define BIT_SET_CONSTEXPR constexpr
+#endif // !defined(__clang__) && defined(__GNUG__) && (__GNUG__ < 12 || __GNUC_MINOR__ < 1)
+
 namespace util
 {
     /// Mimimics the API of std::bitset but with the dynamic properties of std::vector<bool>
@@ -22,20 +32,23 @@ namespace util
         class Reference {
           public:
             /// Assigns a value to the refenced bit.
-            constexpr Reference &operator=(bool value) noexcept
+            BIT_SET_CONSTEXPR Reference &operator=(bool value) noexcept
             {
                 this->_set.set(this->_pos, value);
                 return *this;
             }
 
             /// @returns The value of the referenced bit.
-            constexpr operator bool() const noexcept { return const_cast<BitSet const &>(this->_set)[this->_pos]; }
+            BIT_SET_CONSTEXPR operator bool() const noexcept
+            {
+                return const_cast<BitSet const &>(this->_set)[this->_pos];
+            }
 
             /// @returns The inverse of the referenced bit.
-            constexpr bool operator~() const noexcept { return !bool(*this); }
+            BIT_SET_CONSTEXPR bool operator~() const noexcept { return !bool(*this); }
 
             /// Inverts the referenced bit.
-            constexpr Reference &flip() noexcept
+            BIT_SET_CONSTEXPR Reference &flip() noexcept
             {
                 *this = ~(*this);
                 return *this;
@@ -66,17 +79,20 @@ namespace util
         /// @note This function does not perform bounds-checking.
         ///
         /// @returns The value of the bit at @b pos.
-        constexpr bool test(std::size_t pos) const noexcept { return (this->_store[pos >> 6] & mask(pos)) != 0; }
+        BIT_SET_CONSTEXPR bool test(std::size_t pos) const noexcept
+        {
+            return (this->_store[pos >> 6] & mask(pos)) != 0;
+        }
 
         /// @note This function does not perform bounds-checking.
         ///
         /// @returns The value of the bit at @b pos.
-        constexpr bool operator[](std::size_t pos) const noexcept { return this->test(pos); }
+        BIT_SET_CONSTEXPR bool operator[](std::size_t pos) const noexcept { return this->test(pos); }
 
         /// @note This function does not perform bounds-checking.
         ///
         /// Assigns a value to the  bit at @b pos.
-        constexpr BitSet &set(std::size_t pos, bool value = true) noexcept
+        BIT_SET_CONSTEXPR BitSet &set(std::size_t pos, bool value = true) noexcept
         {
             std::uint64_t m = mask(pos);
             if (value)
@@ -98,7 +114,7 @@ namespace util
         bool operator==(BitSet const &other) const noexcept;
 
         /// @returns Whether the bit sets are not equal, both sets must have the same size.
-        bool operator!=(BitSet const &other) const noexcept = default;
+        bool operator!=(BitSet const &other) const noexcept;
 
         /// Flips all the bits in the set.
         ///
