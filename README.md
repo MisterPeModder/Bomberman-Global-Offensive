@@ -39,6 +39,8 @@ Note that for the web platform, the presets assume that the emscripten toolchain
 
 # Documentation
 
+The documentation is available [online](https://misterpemodder.github.io/Bomberman-Global-Offensive/).
+
 ## Local
 
 Required tools:
@@ -50,5 +52,5 @@ on Linux:
 doxygen
 
 # Open the genrated pages
-xdg-open doc/generated/html/index.html
+xdg-open doc/build/html/index.html
 ```
