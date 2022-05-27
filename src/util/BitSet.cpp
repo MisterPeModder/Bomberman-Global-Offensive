@@ -16,10 +16,7 @@
 
 namespace util
 {
-    BitSet::BitSet(std::size_t initialSize)
-        : _size(initialSize), _store(initialSize == 0 ? 0 : (initialSize >> 6) + 1, 0)
-    {
-    }
+    BitSet::BitSet(std::size_t initialSize) : _size(initialSize), _store(getStoreWordCount(initialSize)) {}
 
     BitSet::BitSet(std::string_view bitString) : BitSet(bitString.size())
     {
@@ -123,7 +120,7 @@ namespace util
 
     void BitSet::_resize(std::size_t size)
     {
-        this->_store.resize(size == 0 ? 0 : std::max(std::size_t(1), size >> 6));
+        this->_store.resize(getStoreWordCount(size));
         this->_size = size;
     }
 
