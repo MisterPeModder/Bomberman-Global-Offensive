@@ -145,7 +145,7 @@ namespace raylib
             /// Gets the color as integer
             ///
             /// @return The color as integer
-            constexpr int asInteger() { return {((r & 0xFF) << 16) + ((g & 0xFF) << 8) + (b & 0xFF)}; }
+            constexpr int asInteger() { return ((r & 0xFF) << 16) + ((g & 0xFF) << 8) + (b & 0xFF); }
 
 #pragma region Default colors
 
