@@ -55,7 +55,7 @@
                     "type": "BOOL",
                     "value": "TRUE"
                 },
-                "USE_GCOV": {
+                "ENABLE_TEST_COVERAGE": {
                     "type": "BOOL",
                     "value": "TRUE"
                 }
