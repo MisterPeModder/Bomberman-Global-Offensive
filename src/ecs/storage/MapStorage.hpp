@@ -10,16 +10,16 @@
 
 #include "ecs/Entity.hpp"
 #include "ecs/storage/Storage.hpp"
+#include "util/BitSet.hpp"
 
 #include <map>
 
 namespace ecs
 {
-    template <typename C> class MapStorage : public BaseStorage {
+    /// Map-based component storage.
+    template <typename C> class MapStorage : public Storage {
       public:
         using Component = C;
-        using Iterator = typename std::map<Entity, Component>::iterator;
-        using ConstIterator = typename std::map<Entity, Component>::const_iterator;
 
         /// Default initialization of MapStorage
         explicit MapStorage() {}
@@ -31,44 +31,45 @@ namespace ecs
         ///
         /// @param entity The entity.
         /// @param args The arguments that will be passed to the component's constructor.
-        template <typename... Args> void emplace(Entity entity, Args &&...args)
+        template <typename... Args> void emplace(Entity::Index entity, Args &&...args)
         {
             this->_components.emplace(std::piecewise_construct, std::forward_as_tuple(entity),
                 std::forward_as_tuple(std::forward<Args>(args)...));
+            this->_mask.resize(std::max(this->_mask.size(), entity + 1));
+            this->_mask[entity] = true;
         }
 
         /// Removes the component instance for the supplied entity.
-        void erase(Entity entity) { this->_components.erase(entity); }
+        void erase(Entity::Index entity)
+        {
+            this->_components.erase(entity);
+            this->_mask[entity] = false;
+        }
 
         /// @returns Whether the entity exists in this storage.
-        bool contains(Entity entity) const { return this->_components.contains(entity); }
+        bool contains(Entity::Index entity) const { return this->_components.contains(entity); }
 
         /// @returns The component accociated with the given entity.
         /// @throws std::exception if @b entity does not exist in this storage.
-        Component &operator[](Entity entity) { return this->_components.at(entity); }
+        Component &operator[](Entity::Index entity) { return this->_components.at(entity); }
 
         /// @returns The component accociated with the given entity.
         /// @throws std::exception if @b entity does not exist in this storage.
-        Component const &operator[](Entity entity) const { return this->_components.at(entity); }
+        Component const &operator[](Entity::Index entity) const { return this->_components.at(entity); }
 
         /// @returns The amount of entities in this storage.
         std::size_t size() const noexcept { return this->_components.size(); }
 
-        /// Iterator start.
-        Iterator begin() noexcept { return this->_components.begin(); }
-
-        /// Constant iterator start.
-        ConstIterator cbegin() const noexcept { return this->_components.cbegin(); }
-
-        /// Iterator end.
-        Iterator end() noexcept { return this->_components.end(); }
-
-        /// Constant iterator end.
-        ConstIterator cend() const noexcept { return this->_components.cend(); }
+        /// Fetches a bit set where each set bit corresponds to an entity that possesses a component of type @b
+        /// Component in this storage.
+        ///
+        /// @return The component mask.
+        constexpr util::BitSet const &getMask() const noexcept { return this->_mask; }
 
       private:
         /// backing map storage.
-        std::map<Entity, Component> _components;
+        std::map<Entity::Index, Component> _components;
+        util::BitSet _mask;
     };
 
     static_assert(IsStorage<MapStorage<std::nullptr_t>>);

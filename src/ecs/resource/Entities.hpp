@@ -41,9 +41,9 @@ namespace ecs
             Builder &with(get_storage_type<C> &storage, Args &&...args)
             {
                 this->checkConsumed();
-                if (storage.contains(this->_entity))
+                if (storage.contains(this->_entity.getId()))
                     throw std::logic_error("attempted to add same component to an entity twice");
-                storage.emplace(this->_entity, std::forward<Args>(args)...);
+                storage.emplace(this->_entity.getId(), std::forward<Args>(args)...);
                 return *this;
             }
 

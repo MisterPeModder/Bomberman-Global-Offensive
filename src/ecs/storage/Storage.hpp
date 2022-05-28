@@ -30,6 +30,11 @@ template <typename C> struct GetComponentStorageType {
         using Value = StorageType<ComponentType>;               \
     };
 
+namespace util
+{
+    class BitSet;
+}
+
 namespace ecs
 {
     /// used to declare a virtual destructor on all Storage implementations.
@@ -44,12 +49,10 @@ namespace ecs
     /// index.
     template <typename S>
     concept IsStorage = std::default_initializable<S> && std::derived_from<S, Storage> && requires(
-        S &storage, S const &cstorage, Entity entity)
+        S &storage, S const &cstorage, Entity::Index entity)
     {
         // clang-format off
         typename S::Component;
-        typename S::Iterator;
-        typename S::ConstIterator;
 
         // required methods, we cannot test for emplace()
         storage.erase(entity);
@@ -57,20 +60,7 @@ namespace ecs
         { storage[entity] } -> std::same_as<typename S::Component &>;
         { cstorage[entity] } -> std::same_as<typename S::Component const &>;
         { cstorage.size() } noexcept -> std::same_as<std::size_t>;
-
-        // the iterators must have a value type of pair<Entity, Component>
-        requires std::same_as<typename S::Iterator::value_type, std::pair<const Entity, typename S::Component>>;
-        requires std::same_as<typename S::ConstIterator::value_type, std::pair<const Entity, typename S::Component>>;
-
-        // the iterators must satisfy `LegacyForwardIterator`.
-        requires std::forward_iterator<typename S::Iterator>;
-        requires std::forward_iterator<typename S::ConstIterator>;
-
-        { storage.begin() } noexcept -> std::same_as<typename S::Iterator>;
-        { cstorage.cbegin() } noexcept -> std::same_as<typename S::ConstIterator>;
-
-        { storage.end() } noexcept -> std::same_as<typename S::Iterator>;
-        { cstorage.cend() } noexcept -> std::same_as<typename S::ConstIterator>;
+        { cstorage.getMask() } noexcept -> std::same_as<util::BitSet const &>;
         // clang-format on
     };
 
