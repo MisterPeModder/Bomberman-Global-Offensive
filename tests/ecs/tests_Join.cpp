@@ -38,6 +38,9 @@ static_assert(std::input_iterator<ecs::JoinIter<ecs::MapStorage<Position>, ecs::
 static_assert(std::ranges::range<ecs::Join<ecs::MapStorage<Position>>>);
 static_assert(std::ranges::range<ecs::Join<ecs::MapStorage<Position>, ecs::MarkerStorage<Marker>>>);
 
+static_assert(ecs::Joinable<ecs::MapStorage<Position>>);
+static_assert(ecs::Joinable<ecs::MarkerStorage<Marker>>);
+
 class TestSystem : public ecs::System {
   public:
     TestSystem(std::function<void(ecs::SystemData)> &&func) : _func(func) {}
@@ -118,6 +121,35 @@ TEST(Join, positionsOnly)
             ++i;
         }
         EXPECT_EQ(i, 250);
+    });
+    world.runSystem<TestSystem>();
+}
+
+TEST(Join, optionalPositionsWithMarkers)
+{
+    ecs::World world;
+
+    createWorld(world);
+    world.addSystem<TestSystem>([](ecs::SystemData data) {
+        auto optional_positions = ecs::maybe(data.getStorage<Position>());
+        auto &markers = data.getStorage<Marker>();
+
+        std::size_t withPos = 0;
+        std::size_t withoutPos = 0;
+
+        for (auto [pos, _] : ecs::join(optional_positions, markers)) {
+            if (pos) {
+                if (withPos < 100) {
+                    EXPECT_FLOAT_EQ(pos->x, 21.0f) << "x coordinate for entity " << withPos << " is invalid";
+                    EXPECT_FLOAT_EQ(pos->y, 42.0f) << "y coordinate for entity " << withPos << " is invalid";
+                }
+                ++withPos;
+            } else {
+                ++withoutPos;
+            }
+        }
+        EXPECT_EQ(withPos, 150);
+        EXPECT_EQ(withoutPos, 150);
     });
     world.runSystem<TestSystem>();
 }
