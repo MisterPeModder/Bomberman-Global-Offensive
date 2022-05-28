@@ -6,72 +6,101 @@
 */
 
 #include "ecs/Component.hpp"
+#include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/join.hpp"
-#include "ecs/storage/MapStorage.hpp"
-#include "ecs/storage/MarkerStorage.hpp"
+#include "ecs/resource/Timer.hpp"
 
-#include <array>
+#include <chrono>
 #include <gtest/gtest.h>
+#include <thread>
+
+using namespace std::chrono_literals;
 
 struct Position : public ecs::Component {
-    float x;
-    float y;
+    float x, y;
 
     Position(float px, float py) : x(px), y(py) {}
 };
 
-struct Marker : public ecs::Component {
+struct Velocity : public ecs::Component {
+    float x, y;
+
+    Velocity(float vx, float vy) : x(vx), y(vy) {}
 };
-SET_COMPONENT_STORAGE(Marker, ecs::MarkerStorage);
 
-// struct Velocity : public ecs::Component {
-//     float x;
-//     float y;
-// };
-// SET_COMPONENT_STORAGE(Velocity, ecs::MapStorage);
-
-// struct Movement : public ecs::System {
-//     void run(ecs::SystemData data) override final {
-
-//     }
-// };
-
-struct Gravity : public ecs::System {
-    float g;
-
-    Gravity(float force) : g(force) {}
-
+struct Movement : public ecs::System {
     void run(ecs::SystemData data) override final
     {
-        auto &positions = data.getStorage<Position>();
+        float seconds = data.getResource<ecs::Timer>().elapsed();
 
-        for (auto [pos] : ecs::join(positions)) {
-            pos.y -= 1.0f;
+        for (auto [pos, vel] : ecs::join(data.getStorage<Position>(), data.getStorage<Velocity>())) {
+            // no friction here, just plain old perpertual motion
+            pos.x += vel.x * seconds;
+            pos.y += vel.y * seconds;
         }
     }
 };
 
-TEST(ecs, gravity)
+struct Gravity : public ecs::System {
+    void run(ecs::SystemData data) override final
+    {
+        for (auto [vel] : ecs::join(data.getStorage<Velocity>()))
+            vel.y = 9.8;
+    }
+};
+
+TEST(ecs, motionWithoutGravity)
 {
     ecs::World world;
 
-    world.addSystem<Gravity>(9.1f);
+    world.addResource<ecs::Timer>();
+    world.addSystem<Movement>();
 
-    std::array<ecs::Entity, 3> entities{
-        world.addEntity().with<Position>(2.0f, 1.0f).build(),
-        world.addEntity().with<Position>(89.0f, 9.0f).with<Marker>().build(),
-        world.addEntity().with<Position>(21.0f, 42.0f).with<Marker>().build(),
-    };
+    auto immovable = world.addEntity().with<Position>(42.f, 42.f).build();
+    auto movable = world.addEntity().with<Position>(0.f, 100.f).with<Velocity>(-400.f, 200.f).build();
 
-    EXPECT_EQ(world.getStorage<Position>().size(), 3);
+    // Without gravity
 
-    ASSERT_NO_THROW(world.getStorage<Position>()[entities[0].getId()]);
+    std::this_thread::sleep_for(50ms);
+    double elapsed = world.getResource<ecs::Timer>().elapsed();
 
     world.runSystems();
 
-    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[0].getId()].y, 0);
-    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[1].getId()].y, 8);
-    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[2].getId()].y, 41);
+    EXPECT_FLOAT_EQ(world.getStorage<Position>()[immovable.getId()].x, 42.f);
+    EXPECT_FLOAT_EQ(world.getStorage<Position>()[immovable.getId()].y, 42.f);
+
+    EXPECT_NEAR(world.getStorage<Position>()[movable.getId()].x, -400.f * elapsed, 1);
+    EXPECT_NEAR(world.getStorage<Position>()[movable.getId()].y, 100.f + 200.f * elapsed, 1);
+}
+
+TEST(ecs, motionWithGravity)
+{
+    ecs::World world;
+
+    world.addResource<ecs::Timer>();
+    world.addSystem<Movement>();
+    world.addSystem<Gravity>();
+
+    auto immovable = world.addEntity().with<Position>(42.f, 42.f).build();
+    auto movable = world.addEntity().with<Position>(0.f, 100.f).with<Velocity>(-400.f, 200.f).build();
+
+    // Without gravity
+
+    std::this_thread::sleep_for(50ms);
+    double elapsed = world.getResource<ecs::Timer>().elapsed();
+
+    // The gravity system must run before the movement system
+    world.runSystem<Gravity>();
+    world.runSystem<Movement>();
+
+    EXPECT_FLOAT_EQ(world.getStorage<Position>()[immovable.getId()].x, 42.f);
+    EXPECT_FLOAT_EQ(world.getStorage<Position>()[immovable.getId()].y, 42.f);
+
+    EXPECT_NEAR(world.getStorage<Position>()[movable.getId()].x, -400.f * elapsed, 1);
+    EXPECT_NEAR(world.getStorage<Position>()[movable.getId()].y, 100.f + 9.8f * elapsed, 1);
+
+    EXPECT_FLOAT_EQ(world.getStorage<Velocity>()[movable.getId()].x, -400.f);
+    EXPECT_FLOAT_EQ(world.getStorage<Velocity>()[movable.getId()].y, 9.8f);
 }
