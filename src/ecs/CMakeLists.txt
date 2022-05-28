@@ -12,6 +12,7 @@ set(SRC
     ${INCROOT}/Component.hpp
     ${INCROOT}/Entity.hpp
     ${INCROOT}/join.hpp
+    ${INCROOT}/Storage.hpp
     ${INCROOT}/World.hpp
 	PARENT_SCOPE
 )
