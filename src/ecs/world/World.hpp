@@ -62,8 +62,8 @@ namespace ecs
             /// or if this method is called after build().
             template <std::derived_from<Component> C, typename... Args> EntityBuilder &with(Args &&...args)
             {
-                if (!this->_outer._storages.contains<get_storage_type<C>>())
-                    this->_outer._storages.emplace<get_storage_type<C>>("failed to add entity component");
+                if (!this->_outer._storages.contains<getStorageType<C>>())
+                    this->_outer._storages.emplace<getStorageType<C>>("failed to add entity component");
                 this->_builder.with<C>(this->_outer.getStorage<C>(), std::forward<Args>(args)...);
                 return *this;
             }
@@ -171,9 +171,9 @@ namespace ecs
         /// @returns A const reference to the storage of components of type @b C.
         ///
         /// @throws std::logic_error If no storage for component @b C exists.
-        template <std::derived_from<Component> C> get_storage_type<C> const &getStorage() const
+        template <std::derived_from<Component> C> getStorageType<C> const &getStorage() const
         {
-            return this->_storages.get<get_storage_type<C>>("attempted to access unregistered storage");
+            return this->_storages.get<getStorageType<C>>("attempted to access unregistered storage");
         }
 
         /// Fetches a component storage from this world.
@@ -183,9 +183,9 @@ namespace ecs
         /// @returns A reference to the storage of components of type @b C.
         ///
         /// @throws std::logic_error If no storage for component @b C exists.
-        template <std::derived_from<Component> C> get_storage_type<C> &getStorage()
+        template <std::derived_from<Component> C> getStorageType<C> &getStorage()
         {
-            return this->_storages.get<get_storage_type<C>>("attempted to access unregistered storage");
+            return this->_storages.get<getStorageType<C>>("attempted to access unregistered storage");
         }
 
 #pragma endregion ECS World Querying

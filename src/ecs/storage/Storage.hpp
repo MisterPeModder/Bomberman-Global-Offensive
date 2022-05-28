@@ -65,7 +65,7 @@ namespace ecs
     };
 
     /// Get the storage type of a component, returns MapStorage by default.
-    template <typename C> using get_storage_type = typename GetComponentStorageType<C>::Value;
+    template <typename C> using getStorageType = typename GetComponentStorageType<C>::Value;
 } // namespace ecs
 
 #endif // !defined(ECS_STORAGE_STORAGE_HPP_)

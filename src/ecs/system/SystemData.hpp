@@ -37,7 +37,7 @@ namespace ecs
         /// @returns A reference to the storage of components of type @b C.
         ///
         /// @throws std::logic_error If no storage for component @b C exists.
-        template <std::derived_from<Component> C> get_storage_type<C> &getStorage() const
+        template <std::derived_from<Component> C> getStorageType<C> &getStorage() const
         {
             return this->_world.getStorage<C>();
         }
