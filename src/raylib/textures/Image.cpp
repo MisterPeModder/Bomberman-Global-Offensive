@@ -11,12 +11,12 @@ namespace raylib
 {
     namespace textures
     {
-        Image::Image(std::string fileName, Vector2 position, Color *color) :_fileName(fileName), _position(position), _color(color)
+        Image::Image(std::filesystem::path &filePath , Vector2 position, Color *color) :_filePath(filePath), _position(position), _color(color)
         {
             loadImage();
         }
 
-        void Image::loadImage() { _image = LoadImage(_fileName.c_str()); }
+        void Image::loadImage() { _image = LoadImage(_filePath.c_str()); }
 
         void Image::loadImageFromTexture(Texture2D &texture) { _image = LoadImageFromTexture(texture); }
 
@@ -24,7 +24,7 @@ namespace raylib
 
         void Image::unloadImage() { UnloadImage(_image); }
 
-        bool Image::exportImage(const std::string fileName) { return ExportImage(_image, fileName.c_str()); }
+        bool Image::exportImage(const std::filesystem::path &filePath ) { return ExportImage(_image, filePath.c_str()); }
 
         void Image::imageFormat(int newFormat) { ImageFormat(&_image, newFormat); }
 

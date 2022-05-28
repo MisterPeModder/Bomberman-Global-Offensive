@@ -9,6 +9,7 @@
 #define RAYLIB_TEXTURES_IMAGE_HPP_
 
 #include <string>
+#include <filesystem>
 #include "raylib/core/Vector2.hpp"
 
 extern "C"
@@ -26,14 +27,20 @@ namespace raylib
           public:
             /// This function is a constructor for the Image class. It takes in a
             /// Vector2 position, a Color pointer, and a char pointer. It sets the
-            /// position to the position passed in, sets the fileName to the fileName
+            /// position to the position passed in, sets the filePath to the filePath
             /// passed in, and then calls the loadImage function
             ///
             /// @param position The position of the image on the screen.
             /// @param color The color of the image.
-            /// @param fileName The name of the file to load.
-            Image(std::string fileName, Vector2 position = {}, Color *color = {});
+            /// @param filePath The name of the file to load.
+            Image(std::filesystem::path &filePath , Vector2 position = {}, Color *color = {});
 
+            /// This function is a constructor for the Image class. It takes in a
+            /// Image of raylib. It sets the
+            /// position to the position passed in, sets the filePath to the filePath
+            /// passed in, and then calls the loadImage function
+            ///
+            /// @param image class of the raylib
             Image(::Image image);
 
             /// Destructor of Image class
@@ -41,7 +48,7 @@ namespace raylib
 
             /// LoadImage loads an image from a file
             ///
-            /// @param fileName The name of the file to load.
+            /// @param filePath The name of the file to load.
             void loadImage();
 
             /// Loads an image from a texture
@@ -57,10 +64,10 @@ namespace raylib
 
             /// It exports the image to a file.
             ///
-            /// @param fileName The name of the file to export the image to.
+            /// @param filePath The name of the file to export the image to.
             ///
             /// @return A boolean value.
-            bool exportImage(const std::string fileName);
+            bool exportImage(const std::filesystem::path &filePath );
 
             /// It changes the format of the image.
             ///
@@ -135,7 +142,7 @@ namespace raylib
             Color *getColor();
 
           private:
-            std::string _fileName;
+            std::filesystem::path _filePath;
             Vector2 _position;
             Color *_color;
             ::Image _image;
