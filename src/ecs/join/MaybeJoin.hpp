@@ -29,7 +29,7 @@ namespace ecs
     /// @note Do not have a join of only MaybeJoins. Otherwise the join will iterate over every single index of the
     /// bitset. If you want a join with all MaybeJoins, add an @ref Entities resource to the join as well to bound the
     /// join to all entities that are alive.
-    template <typename J> class MaybeJoin {
+    template <typename J> class MaybeJoin final {
       public:
         MaybeJoin(J &inner) : _inner(inner), _nonMask(JoinTraits<J>::getMask(inner).size()) { this->_nonMask.setAll(); }
 

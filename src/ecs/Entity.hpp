@@ -16,7 +16,7 @@ namespace ecs
     class Entities;
 
     /// A holder of components.
-    class Entity {
+    class Entity final {
       public:
         using Index = std::size_t;
         using Generation = std::size_t;

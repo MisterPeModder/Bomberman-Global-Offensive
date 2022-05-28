@@ -26,7 +26,7 @@ namespace ecs
     class System;
 
     /// Contains all entities and systems.
-    class World {
+    class World final {
       public:
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Instantiation

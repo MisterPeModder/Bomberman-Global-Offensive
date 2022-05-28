@@ -19,7 +19,7 @@ namespace ecs
     /// "Storage" for marker-like components, does not store any data except for which entities have the marker.
     ///
     /// @tparam C The component type, must be default-constructible.
-    template <std::default_initializable C> class MarkerStorage : public Storage {
+    template <std::default_initializable C> class MarkerStorage final : public Storage {
       public:
         using Component = C;
 

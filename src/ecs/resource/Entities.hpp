@@ -21,7 +21,7 @@
 namespace ecs
 {
     /// The entities world resource.
-    class Entities : public Resource {
+    class Entities final : public Resource {
       public:
         /// Allows one to construct an entity component by component.
         class Builder {

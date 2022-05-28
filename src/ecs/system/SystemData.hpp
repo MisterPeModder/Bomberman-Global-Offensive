@@ -19,7 +19,7 @@ namespace ecs
     class Component;
 
     /// A view on world data that provides access to Resource and Storage instances to systems.
-    class SystemData {
+    class SystemData final {
       public:
         /// Fetches a Resource from the attached world.
         ///

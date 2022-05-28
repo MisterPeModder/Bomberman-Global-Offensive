@@ -30,7 +30,7 @@ namespace ecs
     /// The iterator type used by @ref Join.
     ///
     /// This type satisfies @ref std::forward_iterator.
-    template <Joinable First, Joinable... Rest> class JoinIter {
+    template <Joinable First, Joinable... Rest> class JoinIter final {
       public:
         using value_type = std::tuple<typename JoinTraits<First>::Data, typename JoinTraits<Rest>::Data...>;
         using difference_type = std::ptrdiff_t;
@@ -109,7 +109,7 @@ namespace ecs
     /// Container of joined values.
     ///
     /// Created via the @ref join() utility function.
-    template <Joinable First, Joinable... Rest> class Join {
+    template <Joinable First, Joinable... Rest> class Join final {
       public:
         /// Joins values.
         ///

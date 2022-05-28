@@ -17,7 +17,7 @@
 namespace ecs
 {
     /// Map-based component storage.
-    template <typename C> class MapStorage : public Storage {
+    template <typename C> class MapStorage final : public Storage {
       public:
         using Component = C;
 

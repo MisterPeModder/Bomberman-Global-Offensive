@@ -18,7 +18,7 @@ namespace ecs
     /// A set with values identified by their type, all values must inherit from @b Base.
     ///
     /// @tparam Base The common parent class of all contained instances.
-    template <typename Base> class Instances {
+    template <typename Base> class Instances final {
       public:
         /// Default contructor.
         Instances() = default;
