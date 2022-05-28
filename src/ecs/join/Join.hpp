@@ -5,16 +5,17 @@
 ** ECS - Component & Resource iteration
 */
 
-#ifndef ECS_JOIN_HPP_
-#define ECS_JOIN_HPP_
-
 /// @file
+/// @internal
 ///
-/// Provides the @ref join() function that allows one to iterate over multiple components and resources at once.
+/// Join Iterator Support.
 ///
 /// Powered by black magic™
 
-#include "ecs/storage/Storage.hpp"
+#ifndef ECS_JOIN_JOIN_HPP_
+#define ECS_JOIN_JOIN_HPP_
+
+#include "ecs/join/Joinable.hpp"
 #include "util/BitSet.hpp"
 
 #include <concepts>
@@ -22,81 +23,10 @@
 #include <functional>
 #include <iterator>
 #include <tuple>
-#include <type_traits>
 
 /// Entity-Component-System namespace.
 namespace ecs
 {
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Joinable Types
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma region ECS Joinable Types
-
-    /// @internal
-    /// Used to access properties of @ref Joinable types.
-    template <typename Storage> struct JoinTraits {
-        using Data = typename Storage::Component &;
-
-        static util::BitSet const &getMask(Storage const &storage) { return storage.getMask(); }
-
-        static Data getData(Storage &storage, std::size_t index) { return storage[index]; }
-    };
-
-    /// Implemented by types that can be joined.
-    template <typename J>
-    concept Joinable = requires(J &joinable, J const &cjoinable, std::size_t index)
-    {
-        typename JoinTraits<J>::Data;
-
-        // clang-format off
-        { JoinTraits<J>::getMask(cjoinable) } -> std::same_as<util::BitSet const &>;
-        { JoinTraits<J>::getData(joinable, index) } -> std::same_as<typename JoinTraits<J>::Data>;
-        // clang-format on
-    };
-
-    /// A @ref Joinable structure that yields all indices, returning @b nullptr for all missing elements and pointers
-    /// to the elements otherwise.
-    ///
-    /// For usage, see @ref maybe().
-    ///
-    /// @note Do not have a join of only MaybeJoins. Otherwise the join will iterate over every single index of the
-    /// bitset. If you want a join with all MaybeJoins, add an @ref Entities resource to the join as well to bound the
-    /// join to all entities that are alive.
-    template <typename J> class MaybeJoin {
-      public:
-        MaybeJoin(J &inner) : _inner(inner), _nonMask(JoinTraits<J>::getMask(inner).size()) { this->_nonMask.setAll(); }
-
-        constexpr J &getInner() noexcept { return this->_inner; }
-
-        constexpr util::BitSet const &getMask() const noexcept { return this->_nonMask; }
-
-      private:
-        J &_inner;
-        /// all ones!
-        util::BitSet _nonMask;
-    };
-
-    /// @internal
-    /// Used to access properties of optional @ref Joinable types.
-    template <Joinable J> struct JoinTraits<MaybeJoin<J>> {
-        using Data = std::add_pointer_t<typename JoinTraits<J>::Data>;
-
-        constexpr static util::BitSet const &getMask(MaybeJoin<J> const &joinable) { return joinable.getMask(); }
-
-        constexpr static Data getData(MaybeJoin<J> &joinable, std::size_t index)
-        {
-            if (JoinTraits<J>::getMask(joinable.getInner())[index])
-                return &JoinTraits<J>::getData(joinable.getInner(), index);
-            return nullptr;
-        }
-    };
-
-#pragma endregion ECS Joinable Types
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Iterator Support
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-#pragma region ECS Join Iterator Support
-
     /// The iterator type used by @ref Join.
     ///
     /// This type satisfies @ref std::forward_iterator.
@@ -209,36 +139,6 @@ namespace ecs
         /// The position of the first set bit
         std::size_t _begin;
     };
-
-#pragma endregion ECS Join Iterator Support
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Main join utility functions
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /// Combines multiple Joinable values into a single iterable container.
-    ///
-    /// @param first The fist joinable value.
-    /// @param rest The other joinable values, optional.
-    ///
-    /// @return The joined values.
-    template <Joinable First, Joinable... Rest> Join<First, Rest...> join(First &first, Rest &...rest)
-    {
-        return Join<First, Rest...>(first, rest...);
-    }
-
-    /// Creates A @ref Joinable structure that yields all indices, returning @b nullptr for all missing elements and
-    /// pointers to the elements otherwise.
-    ///
-    /// @note Do not have a join of only MaybeJoins. Otherwise the join will iterate over every single index of the
-    /// bitset. If you want a join with all MaybeJoins, add an @ref Entities resource to the join as well to bound the
-    /// join to all entities that are alive.
-    ///
-    /// @tparam J A @ref Joinable type, such as @ref MapStorage, @ref Entities, and more.
-    ///
-    /// @param joinable A joinable value.
-    ///
-    /// @returns An optional version of @b joinable.
-    template <Joinable J> MaybeJoin<J> maybe(J &joinable) { return MaybeJoin<J>(joinable); }
 } // namespace ecs
 
-#endif // !defined(ECS_JOIN_HPP_)
+#endif // !defined(ECS_JOIN_JOIN_HPP_)

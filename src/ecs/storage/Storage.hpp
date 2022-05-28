@@ -9,6 +9,7 @@
 #define ECS_STORAGE_STORAGE_HPP_
 
 #include "ecs/Entity.hpp"
+#include "ecs/join/Joinable.hpp"
 
 #include <concepts>
 #include <iterator>
@@ -66,6 +67,15 @@ namespace ecs
 
     /// Get the storage type of a component, returns MapStorage by default.
     template <typename C> using getStorageType = typename GetComponentStorageType<C>::Value;
+
+    /// All instances of IsStorage are joinable.
+    template <IsStorage Storage> struct JoinTraits<Storage> {
+        using Data = typename Storage::Component &;
+
+        static util::BitSet const &getMask(Storage const &storage) { return storage.getMask(); }
+
+        static Data getData(Storage &storage, std::size_t index) { return storage[index]; }
+    };
 } // namespace ecs
 
 #endif // !defined(ECS_STORAGE_STORAGE_HPP_)

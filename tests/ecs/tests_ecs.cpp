@@ -6,9 +6,9 @@
 */
 
 #include "ecs/Component.hpp"
-#include "ecs/Join.hpp"
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
+#include "ecs/join.hpp"
 #include "ecs/storage/MapStorage.hpp"
 #include "ecs/storage/MarkerStorage.hpp"
 

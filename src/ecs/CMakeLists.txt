@@ -1,6 +1,7 @@
 set(INCROOT ${INCROOT}/ecs)
 set(SRCROOT ${SRCROOT}/ecs)
 
+add_subdirectory(join)
 add_subdirectory(resource)
 add_subdirectory(storage)
 add_subdirectory(system)
@@ -10,7 +11,7 @@ set(SRC
 	${SRC}
     ${INCROOT}/Component.hpp
     ${INCROOT}/Entity.hpp
-    ${INCROOT}/Join.hpp
+    ${INCROOT}/join.hpp
     ${INCROOT}/World.hpp
 	PARENT_SCOPE
 )
