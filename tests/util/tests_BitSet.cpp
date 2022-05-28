@@ -175,3 +175,19 @@ TEST(BitSet, firstSet)
     EXPECT_EQ(big.firstSet(600), 681);
     EXPECT_EQ(big.firstSet(681), 681);
 }
+
+TEST(BitSet, firstUnset)
+{
+    EXPECT_EQ(util::BitSet("0").firstUnset(), 0);
+    EXPECT_EQ(util::BitSet("011").firstUnset(), 2);
+    EXPECT_EQ(util::BitSet("010").firstUnset(1), 2);
+    EXPECT_EQ(util::BitSet("000").firstUnset(1), 1);
+
+    util::BitSet big(1678);
+
+    big.setAll();
+    big[681] = false;
+    EXPECT_EQ(big.firstUnset(), 681);
+    EXPECT_EQ(big.firstUnset(600), 681);
+    EXPECT_EQ(big.firstUnset(681), 681);
+}

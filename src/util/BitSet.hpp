@@ -173,7 +173,7 @@ namespace util
         /// @returns The value of the removed bit.
         bool pop();
 
-        /// Finds the first bit set to one in the set, starting from (and including) @b start.
+        /// Finds the first set bit in the set, starting from (and including) @b start.
         ///
         /// @note The behavior is undefined if the set does not contain a single 'one' bit from @b start.
         ///
@@ -191,6 +191,26 @@ namespace util
                 word = this->_store[word_pos];
             }
             return (word_pos << 6) + std::countr_zero(word);
+        }
+
+        /// Finds the first unset bit in the set, starting from (and including) @b start.
+        ///
+        /// @note The behavior is undefined if the set does not contain a single 'zero' bit from @b start.
+        ///
+        /// @param start The bit position of where to start the search for an unset bit.
+        ///
+        /// @returns The position of the first unset bit.
+        BIT_SET_CONSTEXPR std::size_t firstUnset(std::size_t start = 0) const
+        {
+            std::uint64_t mask = (~std::uint64_t(0)) << (start & 0b111111);
+            std::size_t word_pos = start >> 6;
+            std::uint64_t word = this->_store[word_pos] | (~mask);
+
+            while (word == (~std::uint64_t(0))) {
+                ++word_pos;
+                word = this->_store[word_pos];
+            }
+            return (word_pos << 6) + std::countr_one(word);
         }
 
       private:
