@@ -10,6 +10,7 @@ set(SRC
 	${SRC}
     ${INCROOT}/Component.hpp
     ${INCROOT}/Entity.hpp
+    ${INCROOT}/Join.hpp
     ${INCROOT}/World.hpp
 	PARENT_SCOPE
 )

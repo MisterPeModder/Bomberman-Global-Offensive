@@ -6,6 +6,7 @@
 */
 
 #include "ecs/Component.hpp"
+#include "ecs/Join.hpp"
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/storage/MapStorage.hpp"
@@ -20,6 +21,9 @@ struct Position : public ecs::Component {
     Position(float px, float py) : x(px), y(py) {}
 };
 SET_COMPONENT_STORAGE(Position, ecs::MapStorage);
+
+struct Marker : public ecs::Component {
+};
 
 // struct Velocity : public ecs::Component {
 //     float x;
@@ -42,7 +46,7 @@ struct Gravity : public ecs::System {
     {
         auto &positions = data.getStorage<Position>();
 
-        for (auto &[entity, pos] : positions) {
+        for (auto [pos] : ecs::join(positions)) {
             pos.y -= 1.0f;
         }
     }
@@ -56,17 +60,17 @@ TEST(ecs, gravity)
 
     std::array<ecs::Entity, 3> entities{
         world.addEntity().with<Position>(2.0f, 1.0f).build(),
-        world.addEntity().with<Position>(89.0f, 9.0f).build(),
-        world.addEntity().with<Position>(21.0f, 42.0f).build(),
+        world.addEntity().with<Position>(89.0f, 9.0f).with<Marker>().build(),
+        world.addEntity().with<Position>(21.0f, 42.0f).with<Marker>().build(),
     };
 
     EXPECT_EQ(world.getStorage<Position>().size(), 3);
 
-    ASSERT_NO_THROW(world.getStorage<Position>()[entities[0]]);
+    ASSERT_NO_THROW(world.getStorage<Position>()[entities[0].getId()]);
 
     world.runSystems();
 
-    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[0]].y, 0);
-    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[1]].y, 8);
-    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[2]].y, 41);
+    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[0].getId()].y, 0);
+    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[1].getId()].y, 8);
+    ASSERT_FLOAT_EQ(world.getStorage<Position>()[entities[2].getId()].y, 41);
 }
