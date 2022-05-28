@@ -60,11 +60,12 @@ namespace ecs
             ///
             /// @throws std::logic_error if @b C is already present on the entity,
             /// or if this method is called after build().
-            template <std::derived_from<Component> C, typename... Args> EntityBuilder &with(Args &&...args)
+            template <std::derived_from<Component> C, typename... Args>
+            [[nodiscard]] EntityBuilder &with(Args &&...args)
             {
                 if (!this->_outer._storages.contains<getStorageType<C>>())
                     this->_outer._storages.emplace<getStorageType<C>>("failed to add entity component");
-                this->_builder.with<C>(this->_outer.getStorage<C>(), std::forward<Args>(args)...);
+                static_cast<void>(this->_builder.with<C>(this->_outer.getStorage<C>(), std::forward<Args>(args)...));
                 return *this;
             }
 
@@ -86,7 +87,7 @@ namespace ecs
         };
 
         /// Creates a new entity
-        EntityBuilder addEntity();
+        [[nodiscard]] EntityBuilder addEntity();
 
         /// Adds a new world Resource instance.
         ///

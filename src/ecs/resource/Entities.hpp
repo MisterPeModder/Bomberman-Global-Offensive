@@ -38,7 +38,7 @@ namespace ecs
             /// @throws std::logic_error if @b C is already present on the entity,
             /// or if this method is called after build().
             template <std::derived_from<Component> C, typename... Args>
-            Builder &with(getStorageType<C> &storage, Args &&...args)
+            [[nodiscard]] Builder &with(getStorageType<C> &storage, Args &&...args)
             {
                 this->checkConsumed();
                 if (storage.contains(this->_entity.getId()))
