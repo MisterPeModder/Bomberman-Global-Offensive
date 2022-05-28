@@ -27,30 +27,26 @@ namespace ecs
             throw std::logic_error("Attempted to used entity builder after a call to build()");
     }
 
-    Entities::Entities() {}
+    Entities::Entities() : _alive(0) { this->_alive.push(false); }
 
     Entity Entities::create() { return this->create(true); }
 
     Entity Entities::create(bool alive)
     {
-        auto begin = this->_alive.cbegin();
-        auto end = this->_alive.cend();
-        auto firstDead = std::find(begin, end, false);
+        // SAFETY: firstUnset works because there is always a sentinel zero bit at the end of the 'alive' set.
+        std::size_t firstDead = this->_alive.firstUnset();
 
-        if (firstDead == end) {
-            // If there is not empty slot, add one the end
-            Entity::Index id = this->_alive.size();
-
+        if (firstDead == this->_generations.size()) {
+            // If there is not empty slot (apart from the sentinel), add one to the end
             this->_generations.push_back(1);
-            this->_alive.push_back(alive);
-            return Entity(id, 1);
+            this->_alive[firstDead] = alive;
+            this->_alive.push(false);
+            return Entity(firstDead, 1);
         } else {
             // If there is a slot available, bump the generation count by one and use that slot.
-            Entity::Index id = static_cast<Entity::Index>(firstDead - begin);
-
-            this->_generations[id] += 1;
-            this->_alive[id] = true;
-            return Entity(id, this->_generations[id]);
+            this->_generations[firstDead] += 1;
+            this->_alive[firstDead] = alive;
+            return Entity(firstDead, this->_generations[firstDead]);
         }
     }
 
@@ -63,11 +59,10 @@ namespace ecs
         if (this->_generations[entity.getId()] != entity.getGeneration())
             return false;
         if (entity.getId() + 1 == this->_generations.size()) {
-            this->_alive.pop_back();
+            this->_alive.pop();
             this->_generations.pop_back();
-        } else {
-            this->_alive[entity.getId()] = false;
         }
+        this->_alive[entity.getId()] = false;
         return true;
     }
 

@@ -12,6 +12,7 @@
 #include "ecs/Entity.hpp"
 #include "ecs/resource/Resource.hpp"
 #include "ecs/storage/Storage.hpp"
+#include "util/BitSet.hpp"
 
 #include <concepts>
 #include <vector>
@@ -98,7 +99,7 @@ namespace ecs
 
       private:
         std::vector<Entity::Generation> _generations;
-        std::vector<bool> _alive;
+        util::BitSet _alive;
 
         Entity create(bool alive);
 
