@@ -3,8 +3,10 @@ set(SRCROOT ${SRCROOT}/resource)
 
 set(SRC
 	${SRC}
-    ${INCROOT}/Entities.cpp
+    ${SRCROOT}/Entities.cpp
     ${INCROOT}/Entities.hpp
     ${INCROOT}/Resource.hpp
+    ${SRCROOT}/Timer.cpp
+    ${INCROOT}/Timer.hpp
 	PARENT_SCOPE
 )
