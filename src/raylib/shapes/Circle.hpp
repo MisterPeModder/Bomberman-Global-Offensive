@@ -33,6 +33,8 @@ namespace raylib
             /// @param color The color of the circle.
             Circle(float x = 0, float y = 0, float z = 0, float radius = 0, Color color = {0, 0, 0, 0});
 
+            Circle(Vector3 position = {0, 0, 0}, float radius = 0, Color color = {0, 0, 0, 0});
+
             /// The destructor is called when the object is destroyed
             ~Circle() = default;
 
@@ -94,6 +96,8 @@ namespace raylib
             /// @param z The z-coordinate of the circle.
             void setPosition(float x, float y, float z = 0);
 
+            void setPosition(Vector3 position);
+
             /// `setRadius` is a function that takes a float as an argument and sets the
             /// value of the private variable `_radius` to the value of the argument
             ///
@@ -121,9 +125,7 @@ namespace raylib
             Color getColor();
 
           private:
-            float _x;
-            float _y;
-            float _z;
+            Vector3 _position;
             float _radius;
             Color _color;
         };

@@ -14,53 +14,69 @@ namespace raylib
 
         Circle::Circle(float x, float y, float z, float radius, Color color)
         {
-            _x = x;
-            _y = y;
-            _z = z;
+            _position.x = x;
+            _position.y = y;
+            _position.z = z;
             _radius = radius;
             _color = color;
         }
 
-        void Circle::draw() { DrawCircle(_x, _y, _radius, _color); }
+        Circle::Circle(Vector3 position, float radius, Color color)
+        {
+            _position.x = position.x;
+            _position.y = position.y;
+            _position.z = position.z;
+            _radius = radius;
+            _color = color;
+        }
+
+        void Circle::draw() { DrawCircle(_position.x, _position.y, _radius, _color); }
 
         void Circle::drawSector(float startAngle, float endAngle, float segments, Color color)
         {
-            DrawCircleSector({_x, _y}, _radius, startAngle, endAngle, segments, color);
+            DrawCircleSector({_position.x, _position.y}, _radius, startAngle, endAngle, segments, color);
         }
 
         void Circle::drawSectorLines(float startAngle, float endAngle, float segments, Color color)
         {
-            DrawCircleSectorLines({_x, _y}, _radius, startAngle, endAngle, segments, color);
+            DrawCircleSectorLines({_position.x, _position.y}, _radius, startAngle, endAngle, segments, color);
         }
 
-        void Circle::drawGradient(Color color1, Color color2) { DrawCircleGradient(_x, _y, _radius, color1, color2); }
+        void Circle::drawGradient(Color color1, Color color2) { DrawCircleGradient(_position.x, _position.y, _radius, color1, color2); }
 
-        void Circle::drawLines(Color color) { DrawCircleLines(_x, _y, _radius, color); }
+        void Circle::drawLines(Color color) { DrawCircleLines(_position.x, _position.y, _radius, color); }
 
         bool Circle::checkCollisions(Circle *other)
         {
-            return CheckCollisionCircles({_x, _y}, _radius, {other->_x, other->_y}, other->_radius);
+            return CheckCollisionCircles({_position.x, _position.y}, _radius, {other->_position.x, other->_position.y}, other->_radius);
         }
 
-        bool Circle::checkCollisions(Rectangle other) { return CheckCollisionCircleRec({_x, _y}, _radius, other); }
+        bool Circle::checkCollisions(Rectangle other) { return CheckCollisionCircleRec({_position.x, _position.y}, _radius, other); }
 
         void Circle::draw3D(Vector3 rotationAxis, float rotationAngle)
         {
-            DrawCircle3D({_x, _y, _z}, _radius, rotationAxis, rotationAngle, _color);
+            DrawCircle3D(_position, _radius, rotationAxis, rotationAngle, _color);
         }
 
         void Circle::setPosition(float x, float y, float z)
         {
-            _x = x;
-            _y = y;
-            _z = z;
+            _position.x = x;
+            _position.y = y;
+            _position.z = z;
+        }
+
+        void Circle::setPosition(Vector3 position)
+        {
+            _position.x = position.x;
+            _position.y = position.y;
+            _position.z = position.z;
         }
 
         void Circle::setRadius(float radius) { _radius = radius; }
 
         void Circle::setColor(Color color) { _color = color; }
 
-        Vector3 Circle::getPosition() { return {_x, _y, _z}; }
+        Vector3 Circle::getPosition() { return _position; }
 
         float Circle::getRadius() { return _radius; }
 
