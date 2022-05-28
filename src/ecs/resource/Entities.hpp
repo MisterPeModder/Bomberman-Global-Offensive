@@ -10,6 +10,7 @@
 
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
+#include "ecs/join/Joinable.hpp"
 #include "ecs/resource/Resource.hpp"
 #include "ecs/storage/Storage.hpp"
 #include "util/BitSet.hpp"
@@ -105,7 +106,18 @@ namespace ecs
 
         // Allow Entities::Builder to access Entities internals.
         friend Builder;
+        friend struct JoinTraits<Entities>;
     };
+
+    /// Joinable implementation for the Entities resource.
+    template <> struct JoinTraits<Entities> {
+        using Data = Entity;
+
+        static constexpr util::BitSet const &getMask(Entities const &entities) { return entities._alive; }
+
+        static Data getData(Entities &entities, std::size_t index) { return entities.get(index); }
+    };
+    static_assert(Joinable<Entities>);
 } // namespace ecs
 
 #endif // !defined(ECS_RESOURCE_ENTITIES_HPP_)

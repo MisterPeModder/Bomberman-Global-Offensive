@@ -9,15 +9,21 @@
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/join.hpp"
+#include "ecs/resource/Entities.hpp"
 #include "ecs/storage/MapStorage.hpp"
 #include "ecs/storage/MarkerStorage.hpp"
 
+#include <array>
 #include <concepts>
 #include <functional>
+#include <gmock/gmock.h>
 #include <gtest/gtest.h>
 #include <iostream>
 #include <iterator>
 #include <ranges>
+
+using ::testing::Contains;
+using ::testing::Not;
 
 struct Position : public ecs::Component {
     float x;
@@ -150,6 +156,32 @@ TEST(Join, optionalPositionsWithMarkers)
         }
         EXPECT_EQ(withPos, 150);
         EXPECT_EQ(withoutPos, 150);
+    });
+    world.runSystem<TestSystem>();
+}
+
+TEST(Join, optionalSkipDead)
+{
+    ecs::World world;
+
+    createWorld(world);
+
+    std::array<ecs::Entity::Index, 5> blacklist{1, 2, 42, 128, 84};
+
+    // remove some entities
+    {
+        auto &entities = world.getResource<ecs::Entities>();
+
+        for (auto id : blacklist)
+            entities.erase(entities.get(id));
+    }
+    world.addSystem<TestSystem>([&blacklist](ecs::SystemData data) {
+        auto optional_positions = ecs::maybe(data.getStorage<Position>());
+        auto &entities = data.getResource<ecs::Entities>();
+
+        for (auto [pos, entity] : ecs::join(optional_positions, entities)) {
+            EXPECT_THAT(blacklist, Not(Contains(entity.getId())));
+        }
     });
     world.runSystem<TestSystem>();
 }
