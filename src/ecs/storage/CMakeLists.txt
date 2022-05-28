@@ -5,5 +5,6 @@ set(SRC
 	${SRC}
     ${SRCROOT}/Storage.hpp
     ${SRCROOT}/MapStorage.hpp
+    ${SRCROOT}/MarkerStorage.hpp
 	PARENT_SCOPE
 )

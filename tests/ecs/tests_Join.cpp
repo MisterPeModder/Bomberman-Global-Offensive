@@ -10,6 +10,7 @@
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/storage/MapStorage.hpp"
+#include "ecs/storage/MarkerStorage.hpp"
 
 #include <concepts>
 #include <functional>
@@ -27,14 +28,15 @@ struct Position : public ecs::Component {
 
 struct Marker : public ecs::Component {
 };
+SET_COMPONENT_STORAGE(Marker, ecs::MarkerStorage);
 
 // JoinIter must be an input iterator
 static_assert(std::input_iterator<ecs::JoinIter<ecs::MapStorage<Position>>>);
-static_assert(std::input_iterator<ecs::JoinIter<ecs::MapStorage<Position>, ecs::MapStorage<Marker>>>);
+static_assert(std::input_iterator<ecs::JoinIter<ecs::MapStorage<Position>, ecs::MarkerStorage<Marker>>>);
 
 // Join must be iterable
 static_assert(std::ranges::range<ecs::Join<ecs::MapStorage<Position>>>);
-static_assert(std::ranges::range<ecs::Join<ecs::MapStorage<Position>, ecs::MapStorage<Marker>>>);
+static_assert(std::ranges::range<ecs::Join<ecs::MapStorage<Position>, ecs::MarkerStorage<Marker>>>);
 
 class TestSystem : public ecs::System {
   public:
@@ -72,9 +74,9 @@ TEST(Join, positionsAndMarkers)
         // use of 'auto' is fine (and recommended) in normal code.
 
         ecs::MapStorage<Position> &positions = data.getStorage<Position>();
-        ecs::MapStorage<Marker> &markers = data.getStorage<Marker>();
+        ecs::MarkerStorage<Marker> &markers = data.getStorage<Marker>();
 
-        ecs::Join<ecs::MapStorage<Position>, ecs::MapStorage<Marker>> both = ecs::join(positions, markers);
+        ecs::Join<ecs::MapStorage<Position>, ecs::MarkerStorage<Marker>> both = ecs::join(positions, markers);
 
         std::size_t i = 0;
 

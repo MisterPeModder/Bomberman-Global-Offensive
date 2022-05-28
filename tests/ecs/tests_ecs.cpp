@@ -10,6 +10,7 @@
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/storage/MapStorage.hpp"
+#include "ecs/storage/MarkerStorage.hpp"
 
 #include <array>
 #include <gtest/gtest.h>
@@ -20,10 +21,10 @@ struct Position : public ecs::Component {
 
     Position(float px, float py) : x(px), y(py) {}
 };
-SET_COMPONENT_STORAGE(Position, ecs::MapStorage);
 
 struct Marker : public ecs::Component {
 };
+SET_COMPONENT_STORAGE(Marker, ecs::MarkerStorage);
 
 // struct Velocity : public ecs::Component {
 //     float x;

@@ -22,7 +22,7 @@ namespace ecs
         using Component = C;
 
         /// Default initialization of MapStorage
-        explicit MapStorage() {}
+        explicit MapStorage() : _mask(0) {}
 
         /// Cannot copy storage instances.
         MapStorage(MapStorage const &) = delete;
