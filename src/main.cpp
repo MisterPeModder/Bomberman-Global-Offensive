@@ -4,6 +4,7 @@
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Color.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/model/Animation.hpp"
