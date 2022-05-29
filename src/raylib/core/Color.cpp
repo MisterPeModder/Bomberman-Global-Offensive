@@ -37,5 +37,7 @@ namespace raylib
         constexpr Color Color::BLANK = Color(0, 0, 0, 0);
         constexpr Color Color::MAGENTA = Color(255, 0, 255, 255);
         constexpr Color Color::RAY_WHITE = Color(245, 245, 245, 255);
+
+        constexpr Color Color::DEFAULT_COLOR = BLACK;
     } // namespace core
 } // namespace raylib

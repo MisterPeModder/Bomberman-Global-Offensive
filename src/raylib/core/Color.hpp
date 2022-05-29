@@ -176,6 +176,8 @@ namespace raylib
             static const Color MAGENTA;
             static const Color RAY_WHITE;
 
+            static const Color DEFAULT_COLOR;
+
 #pragma endregion
         };
     } // namespace core
