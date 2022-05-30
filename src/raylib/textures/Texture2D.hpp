@@ -49,7 +49,7 @@ namespace raylib
             /// Loads a texture from an Image object
             ///
             /// @param image The image to load the texture from.
-            void loadFromImage(Image &image);
+            void loadFromImage(const Image &image);
 
             /// UnloadTexture() is a function that unloads a texture from GPU memory
             void unload();

@@ -48,7 +48,7 @@ namespace raylib
             /// Loads an image from a texture
             ///
             /// @param texture The texture to load the image from.
-            void loadFromTexture(Texture2D &texture);
+            void loadFromTexture(const Texture2D &texture);
 
             /// It loads an image from the screen
             void loadFromScreen(void);
@@ -60,7 +60,7 @@ namespace raylib
             ///
             /// @param fileName The name of the file to export the image to.
             ///
-            /// @return A boolean value.
+            /// @return A boolean value true if export is good false if ti's not export.
             bool exportTo(const std::string fileName);
 
             /// It changes the format of the image.

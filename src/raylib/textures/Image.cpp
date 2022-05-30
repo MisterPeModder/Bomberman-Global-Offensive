@@ -18,7 +18,7 @@ namespace raylib
 
         void Image::load() { _image = LoadImage(_fileName.c_str()); }
 
-        void Image::loadFromTexture(Texture2D &texture) { _image = LoadImageFromTexture(texture); }
+        void Image::loadFromTexture(const Texture2D &texture) { _image = LoadImageFromTexture(texture); }
 
         void Image::loadFromScreen(void) { _image = LoadImageFromScreen(); }
 
