@@ -8,8 +8,9 @@
 #ifndef RAYLIB_TEXTURES_IMAGE_HPP_
 #define RAYLIB_TEXTURES_IMAGE_HPP_
 
-#include <string>
+#include <filesystem>
 #include "raylib/core/Vector2.hpp"
+#include "raylib/core/Color.hpp"
 
 extern "C"
 {
@@ -32,7 +33,7 @@ namespace raylib
             /// @param position The position of the image on the screen.
             /// @param color The color of the image.
             /// @param fileName The name of the file to load.
-            Image(std::string fileName, Vector2 position = {}, Color *color = {});
+            Image(const std::filesystem::path &fileName, raylib::core::Vector2 position = {}, const raylib::core::Color &color = raylib::core::Color::DEFAULT_COLOR);
 
             Image(::Image image);
 
@@ -87,7 +88,7 @@ namespace raylib
 
             /// Tinting the image with the color passed in.
             /// @param color
-            void colorTint(Color color);
+            void colorTint(const raylib::core::Color &color);
 
             /// It inverts the colors of the image.
             void colorInvert();
@@ -110,25 +111,12 @@ namespace raylib
             ///
             /// @param color The color to replace.
             /// @param replace The color to replace
-            void colorReplace(Color &color, Color &replace);
-
-            /// This function loads the color of the image
-            ///
-            /// @param color The color of the image.
-            void loadColors(Color *color);
-
-            /// UnloadImageColors() unloads the image colors from the CPU memory (RAM)
-            void unloadColors();
-
-            /// This function returns the color of the image (RGBA)
-            ///
-            /// @return The color of the image.
-            Color *getColor();
+            void colorReplace(const raylib::core::Color &color, const raylib::core::Color &replace);
 
           private:
-            std::string _fileName;
-            Vector2 _position;
-            Color *_color;
+            std::filesystem::path _fileName;
+            raylib::core::Vector2 _position;
+            raylib::core::Color _color;
             ::Image _image;
         };
     } // namespace textures

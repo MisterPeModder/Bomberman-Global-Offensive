@@ -11,7 +11,7 @@ namespace raylib
 {
     namespace textures
     {
-        Image::Image(std::string fileName, Vector2 position, Color *color) :_fileName(fileName), _position(position), _color(color)
+        Image::Image(const std::filesystem::path &fileName, raylib::core::Vector2 position, const raylib::core::Color &color) :_fileName(fileName), _position(position), _color(color)
         {
             load();
         }
@@ -38,7 +38,7 @@ namespace raylib
 
         void Image::rotateCCW() { ImageRotateCCW(&_image); }
 
-        void Image::colorTint(Color color) { ImageColorTint(&_image, color); }
+        void Image::colorTint(const raylib::core::Color &color) { ImageColorTint(&_image, color.asRaylib()); }
 
         void Image::colorInvert() { ImageColorInvert(&_image); }
 
@@ -48,13 +48,7 @@ namespace raylib
 
         void Image::colorBrightness(int brightness) { ImageColorBrightness(&_image, brightness); }
 
-        void Image::colorReplace(Color &color, Color &replace) { ImageColorReplace(&_image, color, replace); }
-
-        void Image::loadColors(Color *color) { _color = color; }
-
-        void Image::unloadColors() { UnloadImageColors(_color); }
-
-        Color *Image::getColor() { return _color; }
+        void Image::colorReplace(const raylib::core::Color &color, const raylib::core::Color &replace) { ImageColorReplace(&_image, color.asRaylib(), replace.asRaylib()); }
 
     } // namespace textures
 
