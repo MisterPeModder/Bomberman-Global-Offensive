@@ -43,4 +43,10 @@ endfunction()
 set(INCROOT "${PROJECT_SOURCE_DIR}/tests")
 set(SRCROOT "${PROJECT_SOURCE_DIR}/tests")
 
-add_subdirectory(localization)
+add_subdirectory(ecs)
+add_subdirectory(util)
+
+# FIXME: #55 Re-enable localization tests on the web once we figure out how to bundle files
+if (NOT EMSCRIPTEN)
+    add_subdirectory(localization)
+endif()

@@ -17,7 +17,7 @@ elseif (COMPILER_TYPE MATCHES "gcc")
     message(STATUS "Enabling GCC-specific options")
 
     add_compile_options(
-        "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith" 
+        "-Wall" "-Wextra" "-Wshadow" "-pedantic" "-Wpointer-arith"
         "-Wsuggest-final-methods" "-Wsuggest-final-types" "-Wsuggest-override"
         "-Wno-unknown-pragmas"
         "$<$<CONFIG:RELEASE>:-O3;-Werror>"
