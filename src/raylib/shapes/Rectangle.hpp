@@ -76,7 +76,7 @@ namespace raylib
             ///
             /// @param lineThick Thickness of the lines (in pixels)
             /// @param color The color of the rectangle.
-            void drawLinesEx(float lineThick) const;
+            void drawLines(float lineThick) const;
 
             /// Draws a rectangle with rounded edges
             ///

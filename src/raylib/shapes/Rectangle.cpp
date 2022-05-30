@@ -43,7 +43,7 @@ namespace raylib
 
         void Rectangle::drawLines() const { DrawRectangleLines(_position.x, _position.y, _size.x, _size.y, _color); }
 
-        void Rectangle::drawLinesEx(float lineThick) const
+        void Rectangle::drawLines(float lineThick) const
         {
             DrawRectangleLinesEx(this->getRaylibRectangle(), lineThick, _color);
         }
