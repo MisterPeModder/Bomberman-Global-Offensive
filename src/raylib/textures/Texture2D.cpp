@@ -12,7 +12,7 @@ namespace raylib
     namespace textures
     {
 
-        Texture2D::Texture2D(std::string fileName, Vector2 position) : _fileName(fileName), _position(position)
+        Texture2D::Texture2D(const std::filesystem::path &fileName, Vector2 position) : _fileName(fileName), _position(position)
         {
             load();
         }
@@ -38,11 +38,11 @@ namespace raylib
 
         void Texture2D::draw(Color &tint) { DrawTexture(_texture, _position.x, _position.y, tint); }
 
-        void Texture2D::draw(Vector2 &position, Color &tint) { DrawTextureV(_texture, position, tint); }
+        void Texture2D::draw(Vector2 &position, Color &tint) { DrawTextureV(_texture, position.asRaylib(), tint); }
 
         void Texture2D::draw(Vector2 &position, float rotation, float scale, Color &tint)
         {
-            DrawTextureEx(_texture, position, rotation, scale, tint);
+            DrawTextureEx(_texture, position.asRaylib(), rotation, scale, tint);
         }
 
     } // namespace textures
