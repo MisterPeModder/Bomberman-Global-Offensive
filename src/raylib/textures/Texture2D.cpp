@@ -21,7 +21,7 @@ namespace raylib
 
         void Texture2D::setPosition(Vector2 &position) { _position = position; }
 
-        void Texture2D::load() { _texture = LoadTexture(_fileName.c_str()); }
+        void Texture2D::load() { _texture = LoadTexture(_fileName.generic_string().c_str()); }
 
         void Texture2D::loadFromImage(const Image &image) { _texture = LoadTextureFromImage(image); }
 
