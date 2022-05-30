@@ -5,8 +5,8 @@
 ** Logger
 */
 
-#ifndef LOGGER_HPP_
-#define LOGGER_HPP_
+#ifndef RAYLIB_LOGGER_LOGGER_HPP_
+#define RAYLIB_LOGGER_LOGGER_HPP_
 
 #include <array>
 #include <filesystem>
@@ -157,4 +157,4 @@ class Logger {
     std::ofstream _fileStream;
 };
 
-#endif /* !LOGGER_HPP_ */
+#endif /* !RAYLIB_LOGGER_LOGGER_HPP_ */

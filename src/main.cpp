@@ -1,9 +1,14 @@
+#include <filesystem>
 #include <iostream>
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
-
-#include <raylib.h>
+#include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Color.hpp"
+#include "raylib/core/Window.hpp"
+#include "raylib/core/scoped.hpp"
+#include "raylib/model/Animation.hpp"
+#include "raylib/model/Model.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -12,12 +17,45 @@
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
 
-static void drawFrame()
+static raylib::model::Model &getTestingModel()
 {
-    BeginDrawing();
-    ClearBackground(RAYWHITE);
-    DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
-    EndDrawing();
+    static const std::filesystem::path testModelPath =
+        std::filesystem::path("assets").append("models").append("player").append("raylibguy.iqm");
+    static raylib::model::Model model(testModelPath);
+
+    return model;
+}
+
+static raylib::model::Animation &getTestingAnimation()
+{
+    static const std::filesystem::path testAnimPath =
+        std::filesystem::path("assets").append("animations").append("player").append("raylibguy_anim.iqm");
+    static raylib::model::Animation anim(testAnimPath);
+
+    return anim;
+}
+
+static void drawFrame(void *arg)
+{
+    raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
+    raylib::core::Vector3 pos(0, -5, 0);
+    raylib::core::Vector3 scale(1, 1, 1);
+    raylib::core::Vector3 rotationAxis(1, 0, 0);
+
+    raylib::model::Model &testingModel = getTestingModel();
+    raylib::model::Animation &testingAnimation = getTestingAnimation();
+
+    testingAnimation.updateModel(testingModel);
+    camera->update();
+    raylib::core::scoped::Drawing drawing;
+    raylib::core::Window::clear();
+    {
+        raylib::core::scoped::Mode3D mode3D(*camera);
+        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+    };
+
+    // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
+    raylib::core::Window::drawFPS(10, 10);
 }
 
 static void raylibLogger(int msgType, const char *text, va_list args)
@@ -61,17 +99,19 @@ int main()
     std::cout << localization::Ressources::rsHello << std::endl;
 
     // Basic placeholder window
-    InitWindow(WIDTH, HEIGHT, "Bomberman: Global Offensive");
+    raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
+    raylib::core::Camera3D camera;
+    camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
     // since there is no such thing as a window.
-    emscripten_set_main_loop(&drawFrame, 0, 1);
+    emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
 #else
-    SetTargetFPS(60);
+    raylib::core::Window::setTargetFPS(60);
 
     while (!WindowShouldClose())
-        drawFrame();
+        drawFrame(&camera);
 #endif
 
     CloseWindow();
