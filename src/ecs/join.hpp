@@ -2,87 +2,55 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman: Global Offensive
 ** File description:
-** ECS
+** ECS - Component & Resource iteration
 */
 
 #ifndef ECS_JOIN_HPP_
 #define ECS_JOIN_HPP_
 
-#include <iostream>
-#include "util/BitSet.hpp"
+#include "ecs/join/Join.hpp"
+#include "ecs/join/Joinable.hpp"
+#include "ecs/join/MaybeJoin.hpp"
 
-#include <cstdint>
-#include <iterator>
-#include <tuple>
+/// @file
+///
+/// Provides the @ref join() function that allows one to iterate over multiple components and resources at once.
+///
+/// The @ref join() function currenly accepts:
+/// - @ref Entities: fetched from @ref SystemData::getResource<Entities>().
+/// - @ref MapStorage: fetched from @ref SystemData::getStorage().
+/// - @ref MarkerStorage: fetched from @ref SystemData::getStorage().
+/// - @ref MaybeJoin: created by @ref maybe().
+///
+/// Powered by black magic™
 
+/// Entity-Component-System namespace.
 namespace ecs
 {
-    template <typename Storage, typename... Storages> class JoinIter {
-      public:
-        using value_type = std::tuple<typename Storage::Component &, typename Storages::Component &...>;
-        using difference_type = std::ptrdiff_t;
-        using reference = value_type &;
-        using iterator_category = std::input_iterator_tag;
-
-        explicit JoinIter(
-            util::BitSet const &mask, std::tuple<Storage &, Storages &...> const &storages, std::size_t pos)
-            : _mask(mask), _storages(storages), _pos(pos)
-        {
-        }
-
-        JoinIter(JoinIter<Storage, Storages...> const &) = default;
-        JoinIter<Storage, Storages...> &operator=(JoinIter<Storage, Storages...> const &) = default;
-
-        constexpr bool operator==(JoinIter<Storage, Storages...> const &other) const
-        {
-            return this->_pos == other._pos;
-        }
-
-        constexpr bool operator!=(JoinIter<Storage, Storages...> const &other) const
-        {
-            return this->_pos != other._pos;
-        }
-
-        value_type operator*() const
-        {
-            return this->get_components(std::make_index_sequence<(sizeof...(Storages)) + 1>());
-        }
-
-      private:
-        util::BitSet const &_mask;
-        std::tuple<Storage &, Storages &...> const &_storages;
-        std::size_t _pos;
-
-        template <size_t... Indices> value_type get_components(std::index_sequence<Indices...>) const
-        {
-            ecs::Entity entity(this->_pos, 0);
-            return {std::get<Indices>(this->_storages)[entity]...};
-        }
-    };
-
-    template <typename Storage, typename... Storages> class Join {
-      public:
-        explicit Join(Storage &first, Storages &...rest)
-            : _mask((util::BitSet(first.getMask()) &= ... &= rest.getMask())), _storages(first, rest...)
-        {
-            for (size_t i = 0; i < this->_mask.size(); ++i) {
-                std::cout << "entity #" << i << ": " << (this->_mask[i] ? "present" : "absent") << "\n";
-            }
-            std::cout.flush();
-        }
-
-        JoinIter<Storage, Storages...> begin() noexcept { JoinIter(this->_mask, this->_storages, 0); }
-        JoinIter<Storage, Storages...> end() noexcept { JoinIter(this->_mask, this->_storages, this->_mask.size()); }
-
-      private:
-        util::BitSet _mask;
-        std::tuple<Storage &, Storages &...> _storages;
-    };
-
-    template <typename First, typename... Rest> void join(First &first, Rest &...rest)
+    /// Combines multiple Joinable values into a single iterable container.
+    ///
+    /// @param first The first joinable value.
+    /// @param rest The other joinable values, optional.
+    ///
+    /// @return The joined values.
+    template <Joinable First, Joinable... Rest> Join<First, Rest...> join(First &first, Rest &...rest)
     {
-        Join<First, Rest...>(first, rest...);
+        return Join<First, Rest...>(first, rest...);
     }
+
+    /// Creates A @ref Joinable structure that yields all indices, returning @b nullptr for all missing elements and
+    /// pointers to the elements otherwise.
+    ///
+    /// @note Do not have a join of only MaybeJoins. Otherwise the join will iterate over every single index of the
+    /// bitset. If you want a join with all MaybeJoins, add an @ref Entities resource to the join as well to bound the
+    /// join to all entities that are alive.
+    ///
+    /// @tparam J A @ref Joinable type, such as @ref MapStorage, @ref Entities, and more.
+    ///
+    /// @param joinable A joinable value.
+    ///
+    /// @returns An optional version of @b joinable.
+    template <Joinable J> MaybeJoin<J> maybe(J &joinable) { return MaybeJoin<J>(joinable); }
 } // namespace ecs
 
 #endif // !defined(ECS_JOIN_HPP_)

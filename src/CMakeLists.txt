@@ -9,6 +9,7 @@ set(SRC
 
 set(INCDIRS ${INCROOT})
 
+add_subdirectory(ecs)
 add_subdirectory(localization)
 add_subdirectory(logger)
 add_subdirectory(util)

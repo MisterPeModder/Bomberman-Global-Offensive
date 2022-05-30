@@ -160,3 +160,34 @@ TEST(BitSet, pushPop)
     wordSized.push(1);
     EXPECT_EQ(util::BitSetTester::getStoreSize(wordSized), 2);
 }
+
+TEST(BitSet, firstSet)
+{
+    EXPECT_EQ(util::BitSet("1").firstSet(), 0);
+    EXPECT_EQ(util::BitSet("100").firstSet(), 2);
+    EXPECT_EQ(util::BitSet("101").firstSet(1), 2);
+    EXPECT_EQ(util::BitSet("111").firstSet(1), 1);
+
+    util::BitSet big(1678);
+
+    big[681] = true;
+    EXPECT_EQ(big.firstSet(), 681);
+    EXPECT_EQ(big.firstSet(600), 681);
+    EXPECT_EQ(big.firstSet(681), 681);
+}
+
+TEST(BitSet, firstUnset)
+{
+    EXPECT_EQ(util::BitSet("0").firstUnset(), 0);
+    EXPECT_EQ(util::BitSet("011").firstUnset(), 2);
+    EXPECT_EQ(util::BitSet("010").firstUnset(1), 2);
+    EXPECT_EQ(util::BitSet("000").firstUnset(1), 1);
+
+    util::BitSet big(1678);
+
+    big.setAll();
+    big[681] = false;
+    EXPECT_EQ(big.firstUnset(), 681);
+    EXPECT_EQ(big.firstUnset(600), 681);
+    EXPECT_EQ(big.firstUnset(681), 681);
+}
