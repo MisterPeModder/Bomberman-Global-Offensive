@@ -24,7 +24,7 @@ namespace raylib
 
         void Image::unload() { UnloadImage(_image); }
 
-        bool Image::exportTo(const std::string fileName) { return ExportImage(_image, fileName.c_str()); }
+        bool Image::exportTo(const std::filesystem::path &fileName) { return ExportImage(_image, fileName.c_str()); }
 
         void Image::format(int newFormat) { ImageFormat(&_image, newFormat); }
 

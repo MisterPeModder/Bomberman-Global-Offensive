@@ -61,7 +61,7 @@ namespace raylib
             /// @param fileName The name of the file to export the image to.
             ///
             /// @return A boolean value true if export is good false if ti's not export.
-            bool exportTo(const std::string fileName);
+            bool exportTo(const std::filesystem::path &fileName);
 
             /// It changes the format of the image.
             ///
