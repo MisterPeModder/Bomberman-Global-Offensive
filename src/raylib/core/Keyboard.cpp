@@ -11,18 +11,18 @@ namespace raylib
 {
     namespace core
     {
-        bool Keyboard::IsKeyPressed(Key key) { return ::IsKeyPressed(static_cast<int>(key)); }
+        bool Keyboard::isKeyPressed(Key key) { return ::IsKeyPressed(static_cast<int>(key)); }
 
-        bool Keyboard::IsKeyDown(Key key) { return ::IsKeyDown(static_cast<int>(key)); }
+        bool Keyboard::isKeyDown(Key key) { return ::IsKeyDown(static_cast<int>(key)); }
 
-        bool Keyboard::IsKeyReleased(Key key) { return ::IsKeyReleased(static_cast<int>(key)); }
+        bool Keyboard::isKeyReleased(Key key) { return ::IsKeyReleased(static_cast<int>(key)); }
 
-        bool Keyboard::IsKeyUp(Key key) { return ::IsKeyUp(static_cast<int>(key)); }
+        bool Keyboard::isKeyUp(Key key) { return ::IsKeyUp(static_cast<int>(key)); }
 
-        void Keyboard::SetExitKey(Key key) { ::SetExitKey(static_cast<int>(key)); }
+        void Keyboard::setExitKey(Key key) { ::SetExitKey(static_cast<int>(key)); }
 
-        Keyboard::Key Keyboard::GetKeyPressed(void) { return static_cast<Key>(::GetKeyPressed()); }
+        Keyboard::Key Keyboard::getKeyPressed() { return static_cast<Key>(::GetKeyPressed()); }
 
-        int Keyboard::GetCharPressed(void) { return ::GetCharPressed(); }
+        int Keyboard::getCharPressed() { return ::GetCharPressed(); }
     } // namespace core
 } // namespace raylib

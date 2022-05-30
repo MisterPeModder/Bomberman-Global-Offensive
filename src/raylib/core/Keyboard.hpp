@@ -5,8 +5,8 @@
 ** Keyboard
 */
 
-#ifndef KEYBOARD_HPP_
-#define KEYBOARD_HPP_
+#ifndef RAYLIB_CORE_KEYBOARD_HPP_
+#define RAYLIB_CORE_KEYBOARD_HPP_
 
 extern "C"
 {
@@ -140,47 +140,47 @@ namespace raylib
             ///
             /// @param key key to check.
             /// @return true If the key has been pressed.
-            static bool IsKeyPressed(Key key);
+            static bool isKeyPressed(Key key);
 
             /// Check if a key is being pressed.
             ///
             /// @param key key to check.
             /// @return true If the key is pressed.
-            static bool IsKeyDown(Key key);
+            static bool isKeyDown(Key key);
 
             /// Check if a key has been released once.
             ///
             /// @param key key to check.
             /// @return true If the key has been released.
-            static bool IsKeyReleased(Key key);
+            static bool isKeyReleased(Key key);
 
             /// Check if a key is NOT being pressed.
             ///
             /// @param key key to check.
             /// @return true If the key is not pressed.
-            static bool IsKeyUp(Key key);
+            static bool isKeyUp(Key key);
 
             /// Set a custom key to exit program (default is ESC)
             ///
             /// @param key key bind to the exit of the program.
-            static void SetExitKey(Key key);
+            static void setExitKey(Key key);
 
             /// Get key pressed, call it multiple times for keys queued, returns Key::NONE when the queue is empty
             ///
             /// @return Key key pressed
             ///
-            static Key GetKeyPressed(void);
+            static Key getKeyPressed();
 
             /// Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
             ///
             /// @return int unicode character pressed, 0 when the queue is empty.
-            static int GetCharPressed(void);
+            static int getCharPressed();
 
           private:
-            Keyboard() = delete;
+            Keyboard();
             ~Keyboard();
         };
     } // namespace core
 } // namespace raylib
 
-#endif /* !KEYBOARD_HPP_ */
+#endif /* !RAYLIB_CORE_KEYBOARD_HPP_ */

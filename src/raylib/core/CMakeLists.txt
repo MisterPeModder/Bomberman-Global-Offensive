@@ -19,6 +19,8 @@ set(SRC
     ${SRCROOT}/Color.cpp
     ${SRCROOT}/Keyboard.hpp
     ${SRCROOT}/Keyboard.cpp
+    ${SRCROOT}/Gamepad.hpp
+    ${SRCROOT}/Gamepad.cpp
     PARENT_SCOPE)
 
 set(INCDIRS
