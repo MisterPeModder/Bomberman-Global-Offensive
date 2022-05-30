@@ -18,6 +18,8 @@ set(SRC
     ${SRCROOT}/Cursor.cpp
     ${SRCROOT}/Color.hpp
     ${SRCROOT}/Color.cpp
+    ${SRCROOT}/Audio.cpp
+    ${SRCROOT}/Audio.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS
