@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['unordered_5fmap_3515',['unordered_map',['http://en.cppreference.com/w/cpp/header/unordered_map.html',1,'']]],
-  ['unordered_5fset_3516',['unordered_set',['http://en.cppreference.com/w/cpp/header/unordered_set.html',1,'']]],
-  ['util_2ehpp_3517',['util.hpp',['../util_8hpp.html',1,'']]],
-  ['utility_3518',['utility',['http://en.cppreference.com/w/cpp/header/utility.html',1,'']]]
+  ['thread_3544',['thread',['http://en.cppreference.com/w/cpp/header/thread.html',1,'']]],
+  ['tuple_3545',['tuple',['http://en.cppreference.com/w/cpp/header/tuple.html',1,'']]],
+  ['type_5ftraits_3546',['type_traits',['http://en.cppreference.com/w/cpp/header/type_traits.html',1,'']]],
+  ['typeindex_3547',['typeindex',['http://en.cppreference.com/w/cpp/header/typeindex.html',1,'']]],
+  ['typeinfo_3548',['typeinfo',['http://en.cppreference.com/w/cpp/header/typeinfo.html',1,'']]]
 ];

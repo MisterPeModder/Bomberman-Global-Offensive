@@ -1,10 +1,14 @@
 var hierarchy =
 [
+    [ "util::BitSet", "classutil_1_1_bit_set.html", null ],
+    [ "ecs::Join< Storage, Storages >", "classecs_1_1_join.html", null ],
+    [ "ecs::JoinIter< Storage, Storages >", "classecs_1_1_join_iter.html", null ],
     [ "localization::Localization", "classlocalization_1_1_localization.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "std::logic_error", "http://en.cppreference.com/w/cpp/error/logic_error.html", [
       [ "localization::RessourceFile::LocaleNotSetError", "classlocalization_1_1_ressource_file_1_1_locale_not_set_error.html", null ]
     ] ],
+    [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "localization::RessourceFile", "classlocalization_1_1_ressource_file.html", null ],
     [ "localization::RessourceString", "classlocalization_1_1_ressource_string.html", null ],
     [ "std::runtime_error", "http://en.cppreference.com/w/cpp/error/runtime_error.html", [

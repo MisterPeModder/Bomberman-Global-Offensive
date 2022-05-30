@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['main_2ecpp_3477',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['map_3478',['map',['http://en.cppreference.com/w/cpp/header/map.html',1,'']]],
-  ['memory_3479',['memory',['http://en.cppreference.com/w/cpp/header/memory.html',1,'']]],
-  ['memory_5fresource_3480',['memory_resource',['http://en.cppreference.com/w/cpp/header/memory_resource.html',1,'']]],
-  ['mutex_3481',['mutex',['http://en.cppreference.com/w/cpp/header/mutex.html',1,'']]]
+  ['limits_3504',['limits',['http://en.cppreference.com/w/cpp/header/limits.html',1,'']]],
+  ['list_3505',['list',['http://en.cppreference.com/w/cpp/header/list.html',1,'']]],
+  ['locale_3506',['locale',['http://en.cppreference.com/w/cpp/header/locale.html',1,'']]],
+  ['localization_2ecpp_3507',['Localization.cpp',['../_localization_8cpp.html',1,'']]],
+  ['localization_2ehpp_3508',['Localization.hpp',['../_localization_8hpp.html',1,'']]],
+  ['logger_2ecpp_3509',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
+  ['logger_2ehpp_3510',['Logger.hpp',['../_logger_8hpp.html',1,'']]]
 ];

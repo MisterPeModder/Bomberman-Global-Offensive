@@ -84,14 +84,24 @@ $(document).ready(function(){initNavTree('namespaceutil.html',''); initResizable
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">util Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classutil_1_1_bit_set.html">BitSet</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mimics the API of <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/bitset.html">std::bitset</a> but with the dynamic properties of std::vector&lt;bool&gt;  <a href="classutil_1_1_bit_set.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a61516938bebca76c22e965e24066591e"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a61516938bebca76c22e965e24066591e">operator&lt;&lt;</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;output, <a class="el" href="classutil_1_1_bit_set.html">BitSet</a> const &amp;set)</td></tr>
+<tr class="memdesc:a61516938bebca76c22e965e24066591e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of <b>set</b> into <b>output</b>.  <a href="namespaceutil.html#a61516938bebca76c22e965e24066591e">More...</a><br /></td></tr>
+<tr class="separator:a61516938bebca76c22e965e24066591e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05454346e6b75a324321c23f7afc5727"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">makePath</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> path)</td></tr>
 <tr class="memdesc:a05454346e6b75a324321c23f7afc5727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenate multiple directories in a single path.  <a href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">More...</a><br /></td></tr>
 <tr class="separator:a05454346e6b75a324321c23f7afc5727"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,10 +208,48 @@ template&lt;class... Args&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a61516938bebca76c22e965e24066591e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61516938bebca76c22e965e24066591e">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp; util::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classutil_1_1_bit_set.html">BitSet</a> const &amp;&#160;</td>
+          <td class="paramname"><em>set</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints the contents of <b>set</b> into <b>output</b>. </p>
+
+<p class="definition">Definition at line <a class="el" href="_bit_set_8cpp_source.html#l00141">141</a> of file <a class="el" href="_bit_set_8cpp_source.html">BitSet.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    {</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">for</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> s = set.size(), i = s; i &gt; 0; --i)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            output &lt;&lt; (set.test(i - 1) ? <span class="charliteral">&#39;1&#39;</span> : <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">return</span> output;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespaceutil_html_a242a9ab3d7ed4cf8f348a27f5b47c36d"><div class="ttname"><a href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path, std::string_view nextDir, Args... args)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00030">util.hpp:30</a></div></div>
 <div class="ttc" id="aappend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">std::filesystem::path::append</a></div><div class="ttdeci">T append(T... args)</div></div>
+<div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

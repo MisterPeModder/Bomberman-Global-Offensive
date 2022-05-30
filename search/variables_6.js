@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['has_5funique_5fobject_5frepresentations_5fv_5433',['has_unique_object_representations_v',['http://en.cppreference.com/w/cpp/types/has_unique_object_representations.html',1,'std']]],
-  ['has_5fvirtual_5fdestructor_5fv_5434',['has_virtual_destructor_v',['http://en.cppreference.com/w/cpp/types/has_virtual_destructor.html',1,'std::has_virtual_destructor_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::has_virtual_destructor_v()']]]
+  ['first_5483',['first',['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::csub_match::first()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::pair::first()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::ssub_match::first()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::sub_match::first()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::wcsub_match::first()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::wssub_match::first()']]],
+  ['free_5484',['free',['http://en.cppreference.com/w/cpp/experimental/fs/space_info.html',1,'std::experimental::filesystem::space_info::free()'],['http://en.cppreference.com/w/cpp/filesystem/space_info.html',1,'std::filesystem::space_info::free()']]]
 ];
