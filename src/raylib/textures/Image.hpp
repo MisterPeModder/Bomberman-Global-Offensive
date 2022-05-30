@@ -9,7 +9,6 @@
 #define RAYLIB_TEXTURES_IMAGE_HPP_
 
 #include <string>
-#include <filesystem>
 #include "raylib/core/Vector2.hpp"
 
 extern "C"
@@ -27,20 +26,14 @@ namespace raylib
           public:
             /// This function is a constructor for the Image class. It takes in a
             /// Vector2 position, a Color pointer, and a char pointer. It sets the
-            /// position to the position passed in, sets the filePath to the filePath
+            /// position to the position passed in, sets the fileName to the fileName
             /// passed in, and then calls the loadImage function
             ///
             /// @param position The position of the image on the screen.
             /// @param color The color of the image.
-            /// @param filePath The name of the file to load.
-            Image(std::filesystem::path &filePath , Vector2 position = {}, Color *color = {});
+            /// @param fileName The name of the file to load.
+            Image(std::string fileName, Vector2 position = {}, Color *color = {});
 
-            /// This function is a constructor for the Image class. It takes in a
-            /// Image of raylib. It sets the
-            /// position to the position passed in, sets the filePath to the filePath
-            /// passed in, and then calls the loadImage function
-            ///
-            /// @param image class of the raylib
             Image(::Image image);
 
             /// Destructor of Image class
@@ -48,93 +41,84 @@ namespace raylib
 
             /// LoadImage loads an image from a file
             ///
-            /// @param filePath The name of the file to load.
-            void loadImage();
+            /// @param fileName The name of the file to load.
+            void load();
 
             /// Loads an image from a texture
             ///
             /// @param texture The texture to load the image from.
-            void loadImageFromTexture(Texture2D &texture);
+            void loadFromTexture(Texture2D &texture);
 
             /// It loads an image from the screen
-            void loadImageFromScreen(void);
+            void loadFromScreen(void);
 
             /// UnloadImage() unloads the image from memory
-            void unloadImage();
+            void unload();
 
             /// It exports the image to a file.
             ///
-            /// @param filePath The name of the file to export the image to.
+            /// @param fileName The name of the file to export the image to.
             ///
             /// @return A boolean value.
-            bool exportImage(const std::filesystem::path &filePath );
+            bool exportTo(const std::string fileName);
 
             /// It changes the format of the image.
             ///
             /// @param newFormat The new format for the image.
-            void imageFormat(int newFormat);
+            void format(int newFormat);
 
             /// It resizes the image to the new width and height.
             ///
             /// @param newWidth The new width of the image.
             /// @param newHeight The new height of the image.
-            void imageResize(int newWidth, int newHeight);
+            void resize(int newWidth, int newHeight);
 
             /// Flips the image vertically
-            void imageFlipVertical();
+            void flipVertical();
 
             /// Flips the image horizontally
-            void imageFlipHorizontal();
+            void flipHorizontal();
 
             /// This function rotates the image clockwise by 90 degrees
-            void imageRotateCW();
+            void rotateCW();
 
             /// It rotates the image counter clockwise.
-            void imageRotateCCW();
+            void rotateCCW();
 
             /// Tinting the image with the color passed in.
             /// @param color
-            void imageColorTint(Color color);
+            void colorTint(Color color);
 
             /// It inverts the colors of the image.
-            void imageColorInvert();
+            void colorInvert();
 
             /// This function converts an image to grayscale
-            void imageColorGrayscale();
+            void colorGrayscale();
 
             /// This function changes the contrast of an image.
             ///
             /// @param contrast The contrast to apply to the image.
-            void imageColorContrast(float contrast);
+            void colorContrast(float contrast);
 
             /// It changes the brightness of the image.
             ///
             /// @param image The image to modify
             /// @param brightness The brightness value.
-            void imageColorBrightness(int brightness);
+            void colorBrightness(int brightness);
 
             /// Replaces all instances of a color in an image with another color.
             ///
             /// @param color The color to replace.
             /// @param replace The color to replace
-            void imageColorReplace(Color &color, Color &replace);
+            void colorReplace(Color &color, Color &replace);
 
             /// This function loads the color of the image
             ///
             /// @param color The color of the image.
-            void loadImageColors(Color *color);
+            void loadColors(Color *color);
 
             /// UnloadImageColors() unloads the image colors from the CPU memory (RAM)
-            void unloadImageColors();
-
-            /// It returns the color of the pixel at the given coordinates.
-            ///
-            /// @param image The image to get the color from.
-            /// @param x The x coordinate of the pixel to get the color of.
-            /// @param y The y coordinate of the pixel to get the color of.
-            ///
-            /// @return A Color object.
-            Color getImageColor(Image &image, int x, int y);
+            void unloadColors();
 
             /// This function returns the color of the image (RGBA)
             ///
@@ -142,7 +126,7 @@ namespace raylib
             Color *getColor();
 
           private:
-            std::filesystem::path _filePath;
+            std::string _fileName;
             Vector2 _position;
             Color *_color;
             ::Image _image;

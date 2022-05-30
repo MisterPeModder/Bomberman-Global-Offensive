@@ -41,31 +41,31 @@ namespace raylib
             void setPosition(Vector2 &position);
 
             /// The function `loadTexture()` loads a texture from a file
-            void loadTexture();
+            void load();
 
             /// Loads a texture from an Image object
             ///
             /// @param image The image to load the texture from.
-            void loadTextureFromImage(Image &image);
+            void loadFromImage(Image &image);
 
             /// UnloadTexture() is a function that unloads a texture from GPU memory
-            void unloadTexture();
+            void unload();
 
             /// It updates the texture with the given pixels.
             ///
             /// @param pixels The pixel data to update the texture with.
-            void updateTexture(std::span<uint32_t> *pixels);
+            void update(std::span<uint32_t> pixels);
 
             /// It updates the texture with new pixel data.
             ///
             /// @param rec The rectangle to update.
             /// @param pixels The pixel data to be uploaded to the GPU.
-            void updateTextureRec(Rectangle &rec, std::span<uint32_t> *pixels);
+            void updateRec(Rectangle &rec, std::span<uint32_t> pixels);
 
             /// It sets the texture filter.
             ///
             /// @param filter
-            void setTextureFilter(int filter);
+            void setFilter(int filter);
 
             /// Sets the texture wrap mode,
             /// Set texture scaling filter mode
@@ -73,18 +73,18 @@ namespace raylib
             ///
             /// @param wrap GL_REPEAT, GL_MIRRORED_REPEAT, GL_CLAMP_TO_EDGE,
             /// GL_CLAMP_TO_BORDER
-            void setTextureWrap(int wrap);
+            void setWrap(int wrap);
 
             /// Draws the texture2D at the position specified by the position variable
             ///
             /// @param tint The color you want to tint the texture2D.
-            void drawTexture(Color &tint);
+            void draw(Color &tint);
 
             /// Draws a texture2D at a given position with a given tint
             ///
             /// @param position The position of the texture2D on the screen.
             /// @param tint The color you want to tint the texture2D.
-            void drawTexture(Vector2 &position, Color &tint);
+            void draw(Vector2 &position, Color &tint);
 
             /// Draws a Texture2D with extended parameters
             ///
@@ -92,7 +92,7 @@ namespace raylib
             /// @param rotation The rotation of the texture2D in radians.
             /// @param scale The scale of the texture2D.
             /// @param tint The color to tint the texture2D with.
-            void drawTexture(Vector2 &position, float rotation, float scale, Color &tint);
+            void draw(Vector2 &position, float rotation, float scale, Color &tint);
 
           private:
             std::string _fileName;
