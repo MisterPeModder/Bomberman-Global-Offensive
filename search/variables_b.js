@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['matched_5778',['matched',['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::csub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::ssub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::sub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::wcsub_match::matched()'],['http://en.cppreference.com/w/cpp/regex/sub_match.html',1,'std::wssub_match::matched()']]],
-  ['max_5fblocks_5fper_5fchunk_5779',['max_blocks_per_chunk',['http://en.cppreference.com/w/cpp/memory/pool_options.html',1,'std::pmr::pool_options']]]
+  ['largest_5frequired_5fpool_5fblock_6230',['largest_required_pool_block',['http://en.cppreference.com/w/cpp/memory/pool_options.html',1,'std::pmr::pool_options']]],
+  ['light_5fgray_6231',['LIGHT_GRAY',['../structraylib_1_1core_1_1_color.html#a863434c90d4ff8e318d95fb8f87faef5',1,'raylib::core::Color']]],
+  ['lime_6232',['LIME',['../structraylib_1_1core_1_1_color.html#ac11a16cd225ff43b63148077f23e6e00',1,'raylib::core::Color']]],
+  ['logger_6233',['logger',['../class_logger.html#acd16ad0295ca5210a961ff09326b4d7c',1,'Logger']]]
 ];

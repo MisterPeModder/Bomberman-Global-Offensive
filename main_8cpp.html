@@ -89,11 +89,17 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/iostream.html">iostream</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/filesystem.html">filesystem</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/iostream.html">iostream</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="_localization_8hpp_source.html">localization/Localization.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_ressources_8hpp_source.html">localization/Ressources.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_logger_8hpp_source.html">logger/Logger.hpp</a>&quot;</code><br />
-<code>#include &lt;raylib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_camera3_d_8hpp_source.html">raylib/core/Camera3D.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_color_8hpp_source.html">raylib/core/Color.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_window_8hpp_source.html">raylib/core/Window.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scoped_8hpp_source.html">raylib/core/scoped.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_animation_8hpp_source.html">raylib/model/Animation.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_model_8hpp_source.html">raylib/model/Model.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
@@ -108,8 +114,12 @@ Functions</h2></td></tr>
 <tr class="separator:a448fa5749d028cd5918eeaf4bd090971"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ab1c943694a627c3fe5923f4ca25b62"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9ab1c943694a627c3fe5923f4ca25b62">HEIGHT</a> (500)</td></tr>
 <tr class="separator:a9ab1c943694a627c3fe5923f4ca25b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af864212900cf0cf827f696a03db6e09b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af864212900cf0cf827f696a03db6e09b">drawFrame</a> ()</td></tr>
-<tr class="separator:af864212900cf0cf827f696a03db6e09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155c7e8f491b2440ddec53b51f021e5a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classraylib_1_1model_1_1_model.html">raylib::model::Model</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a155c7e8f491b2440ddec53b51f021e5a">getTestingModel</a> ()</td></tr>
+<tr class="separator:a155c7e8f491b2440ddec53b51f021e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0179e9d31d7b06f0c25c17e2120363df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classraylib_1_1model_1_1_animation.html">raylib::model::Animation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0179e9d31d7b06f0c25c17e2120363df">getTestingAnimation</a> ()</td></tr>
+<tr class="separator:a0179e9d31d7b06f0c25c17e2120363df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c02b07fc5492c490a4262a1097293f1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4c02b07fc5492c490a4262a1097293f1">drawFrame</a> (void *arg)</td></tr>
+<tr class="separator:a4c02b07fc5492c490a4262a1097293f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad82904bd31eda73a5c4d10f732d16015"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a> (int msgType, const char *text, <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/variadic/va_list.html">va_list</a> args)</td></tr>
 <tr class="separator:ad82904bd31eda73a5c4d10f732d16015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a738d65e5bb235cd4a2b0e5152341b20b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a> ()</td></tr>
@@ -118,8 +128,8 @@ Functions</h2></td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af864212900cf0cf827f696a03db6e09b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af864212900cf0cf827f696a03db6e09b">&#9670;&nbsp;</a></span>drawFrame()</h2>
+<a id="a4c02b07fc5492c490a4262a1097293f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c02b07fc5492c490a4262a1097293f1">&#9670;&nbsp;</a></span>drawFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -129,6 +139,55 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">static void drawFrame </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00038">38</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a> *camera = <span class="keyword">reinterpret_cast&lt;</span><a class="code" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a> *<span class="keyword">&gt;</span>(arg);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3</a> pos(0, -5, 0);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3</a> scale(1, 1, 1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3</a> rotationAxis(1, 0, 0);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classraylib_1_1model_1_1_model.html">raylib::model::Model</a> &amp;testingModel = <a class="code" href="main_8cpp.html#a155c7e8f491b2440ddec53b51f021e5a">getTestingModel</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classraylib_1_1model_1_1_animation.html">raylib::model::Animation</a> &amp;testingAnimation = <a class="code" href="main_8cpp.html#a0179e9d31d7b06f0c25c17e2120363df">getTestingAnimation</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    testingAnimation.<a class="code" href="classraylib_1_1model_1_1_animation.html#a7fd383b3c2df603ae1c12c5378fc09f8">updateModel</a>(testingModel);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    camera-&gt;<a class="code" href="classraylib_1_1core_1_1_camera3_d.html#a423134d8b59c7ec155b9d52ac26d2f98">update</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classraylib_1_1core_1_1scoped_1_1_drawing.html">raylib::core::scoped::Drawing</a> drawing;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">raylib::core::Window::clear</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classraylib_1_1core_1_1scoped_1_1_mode3_d.html">raylib::core::scoped::Mode3D</a> mode3D(*camera);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        testingModel.<a class="code" href="classraylib_1_1model_1_1_model.html#aea2f58348dbb113335676f01006657a3">draw</a>(pos, rotationAxis, -90, scale, <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// DrawText(&quot;&lt;insert great game here&gt;&quot;, WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a>(10, 10);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0179e9d31d7b06f0c25c17e2120363df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0179e9d31d7b06f0c25c17e2120363df">&#9670;&nbsp;</a></span>getTestingAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classraylib_1_1model_1_1_animation.html">raylib::model::Animation</a>&amp; getTestingAnimation </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -141,13 +200,48 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00015">15</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    BeginDrawing();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ClearBackground(RAYWHITE);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    DrawText(<span class="stringliteral">&quot;&lt;insert great game here&gt;&quot;</span>, <a class="code" href="main_8cpp.html#a448fa5749d028cd5918eeaf4bd090971">WIDTH</a> / 2 - 120, <a class="code" href="main_8cpp.html#a9ab1c943694a627c3fe5923f4ca25b62">HEIGHT</a> / 2 - 1, 20, LIGHTGRAY);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    EndDrawing();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00029">29</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> testAnimPath =</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a>(<span class="stringliteral">&quot;assets&quot;</span>).<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">append</a>(<span class="stringliteral">&quot;animations&quot;</span>).append(<span class="stringliteral">&quot;player&quot;</span>).append(<span class="stringliteral">&quot;raylibguy_anim.iqm&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1model_1_1_animation.html">raylib::model::Animation</a> anim(testAnimPath);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> anim;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a155c7e8f491b2440ddec53b51f021e5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a155c7e8f491b2440ddec53b51f021e5a">&#9670;&nbsp;</a></span>getTestingModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classraylib_1_1model_1_1_model.html">raylib::model::Model</a>&amp; getTestingModel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00020">20</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> testModelPath =</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a>(<span class="stringliteral">&quot;assets&quot;</span>).<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">append</a>(<span class="stringliteral">&quot;models&quot;</span>).append(<span class="stringliteral">&quot;player&quot;</span>).append(<span class="stringliteral">&quot;raylibguy.iqm&quot;</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> <a class="code" href="classraylib_1_1model_1_1_model.html">raylib::model::Model</a> model(testModelPath);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> model;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -193,35 +287,37 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Setup the locales parameters</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00052">52</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a>();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a8f00a5713bb962e7faf242e57d339c8c">localization::Localization::loadLocales</a>({<span class="stringliteral">&quot;en&quot;</span>, <span class="stringliteral">&quot;fr&quot;</span>});</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a>(<span class="stringliteral">&quot;fr&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, <span class="stringliteral">&quot;Start of program&quot;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/cout.html">std::cout</a> &lt;&lt; <a class="code" href="namespacelocalization_1_1_ressources.html#a7937cea71411695f0535d02b5012e9f1">localization::Ressources::rsHello</a> &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Basic placeholder window</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    InitWindow(<a class="code" href="main_8cpp.html#a448fa5749d028cd5918eeaf4bd090971">WIDTH</a>, <a class="code" href="main_8cpp.html#a9ab1c943694a627c3fe5923f4ca25b62">HEIGHT</a>, <span class="stringliteral">&quot;Bomberman: Global Offensive&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#if defined(PLATFORM_WEB)</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// We cannot use the WindowShouldClose() loop on the web,</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// since there is no such thing as a window.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    emscripten_set_main_loop(&amp;<a class="code" href="main_8cpp.html#af864212900cf0cf827f696a03db6e09b">drawFrame</a>, 0, 1);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    SetTargetFPS(60);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">while</span> (!WindowShouldClose())</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="main_8cpp.html#af864212900cf0cf827f696a03db6e09b">drawFrame</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    CloseWindow();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a21b107ce84909ff70792bff85e4fa7fb">localization::Localization::saveLocales</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, <span class="stringliteral">&quot;End of program&quot;</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00090">90</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a8f00a5713bb962e7faf242e57d339c8c">localization::Localization::loadLocales</a>({<span class="stringliteral">&quot;en&quot;</span>, <span class="stringliteral">&quot;fr&quot;</span>});</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a>(<span class="stringliteral">&quot;fr&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, <span class="stringliteral">&quot;Start of program&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/cout.html">std::cout</a> &lt;&lt; <a class="code" href="namespacelocalization_1_1_ressources.html#a7937cea71411695f0535d02b5012e9f1">localization::Ressources::rsHello</a> &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Basic placeholder window</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4888ad6d11dc3ce6a44500dd775c3228">raylib::core::Window::open</a>(<a class="code" href="main_8cpp.html#a448fa5749d028cd5918eeaf4bd090971">WIDTH</a>, <a class="code" href="main_8cpp.html#a9ab1c943694a627c3fe5923f4ca25b62">HEIGHT</a>, <span class="stringliteral">&quot;Bomberman: Global Offensive&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a> camera;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    camera.<a class="code" href="classraylib_1_1core_1_1_camera3_d.html#ac3fb3fd911672e83a8d5ecdae63d0f5b">setMode</a>(raylib::core::Camera3D::CameraMode::ORBITAL);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#if defined(PLATFORM_WEB)</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// We cannot use the WindowShouldClose() loop on the web,</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// since there is no such thing as a window.</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    emscripten_set_main_loop_arg(&amp;<a class="code" href="main_8cpp.html#a4c02b07fc5492c490a4262a1097293f1">drawFrame</a>, &amp;camera, 0, 1);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a>(60);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">while</span> (!WindowShouldClose())</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="main_8cpp.html#a4c02b07fc5492c490a4262a1097293f1">drawFrame</a>(&amp;camera);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    CloseWindow();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a21b107ce84909ff70792bff85e4fa7fb">localization::Localization::saveLocales</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, <span class="stringliteral">&quot;End of program&quot;</span>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -265,24 +361,24 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00023">23</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_logger.html">Logger</a> <a class="code" href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a>(<span class="stringliteral">&quot;log_raylib.txt&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15">Logger::Severity</a> severity;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/array.html">std::array&lt;char, 1024&gt;</a> buffer;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">switch</span> (msgType) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">case</span> LOG_TRACE: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">case</span> LOG_DEBUG: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">case</span> LOG_INFO: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">case</span> LOG_WARNING: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">case</span> LOG_ERROR: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">case</span> LOG_FATAL: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">default</span>: <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/c/vfprintf.html">vsnprintf</a>(buffer.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/array/data.html">data</a>(), 1024, text, args);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a>.log(severity, buffer.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/array/data.html">data</a>());</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00061">61</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">static</span> <a class="code" href="class_logger.html">Logger</a> <a class="code" href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a>(<span class="stringliteral">&quot;log_raylib.txt&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15">Logger::Severity</a> severity;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/array.html">std::array&lt;char, 1024&gt;</a> buffer;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">switch</span> (msgType) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">case</span> LOG_TRACE: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">case</span> LOG_DEBUG: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">case</span> LOG_INFO: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">case</span> LOG_WARNING: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">case</span> LOG_ERROR: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">case</span> LOG_FATAL: severity = <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">default</span>: <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/c/vfprintf.html">vsnprintf</a>(buffer.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/array/data.html">data</a>(), 1024, text, args);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a>.log(severity, buffer.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/array/data.html">data</a>());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -309,15 +405,15 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00042">42</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Setup the logger parameters</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#aa4baec5861a2573adf4942bf374657bd">setOutputFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#a36215575ad071720cbef8f6ea5542c7d">setLogLevel</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ab6e8022952d15d8784dc022587d14b09">setLogInfo</a>(<a class="code" href="class_logger.html#a22a74b19c09c18f007ad0a93b65d8cceaa76d4ef5f3f6a672bbfab2865563e530">Logger::LogInfo::Time</a>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    SetTraceLogCallback(<a class="code" href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    SetTraceLogLevel(LOG_INFO);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Setup the logger parameters</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#aa4baec5861a2573adf4942bf374657bd">setOutputFile</a>(<span class="stringliteral">&quot;log.txt&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#a36215575ad071720cbef8f6ea5542c7d">setLogLevel</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ab6e8022952d15d8784dc022587d14b09">setLogInfo</a>(<a class="code" href="class_logger.html#a22a74b19c09c18f007ad0a93b65d8cceaa76d4ef5f3f6a672bbfab2865563e530">Logger::LogInfo::Time</a>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    SetTraceLogCallback(<a class="code" href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    SetTraceLogLevel(LOG_INFO);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -351,29 +447,48 @@ Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="amain_8cpp_html_a9ab1c943694a627c3fe5923f4ca25b62"><div class="ttname"><a href="main_8cpp.html#a9ab1c943694a627c3fe5923f4ca25b62">HEIGHT</a></div><div class="ttdeci">constexpr int HEIGHT(500)</div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdoc">Non critical error / Unexpected behavior.</div></div>
-<div class="ttc" id="amain_8cpp_html_ad82904bd31eda73a5c4d10f732d16015"><div class="ttname"><a href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a></div><div class="ttdeci">static void raylibLogger(int msgType, const char *text, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00023">main.cpp:23</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_ad1c374c6137284e3f570a6cbfca5369c"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a></div><div class="ttdeci">static void setTargetFPS(int fps)</div><div class="ttdoc">Set the max FPS the game should run at.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00027">Window.cpp:27</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ad82904bd31eda73a5c4d10f732d16015"><div class="ttname"><a href="main_8cpp.html#ad82904bd31eda73a5c4d10f732d16015">raylibLogger</a></div><div class="ttdeci">static void raylibLogger(int msgType, const char *text, va_list args)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00061">main.cpp:61</a></div></div>
 <div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00042">Logger.hpp:42</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3</a></div><div class="ttdoc">The Vector3 struct (compatible with the raylib Vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00023">Vector3.hpp:23</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_camera3_d_html_ac3fb3fd911672e83a8d5ecdae63d0f5b"><div class="ttname"><a href="classraylib_1_1core_1_1_camera3_d.html#ac3fb3fd911672e83a8d5ecdae63d0f5b">raylib::core::Camera3D::setMode</a></div><div class="ttdeci">void setMode(CameraMode mode)</div><div class="ttdoc">Sets the camera mode.</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8cpp_source.html#l00057">Camera3D.cpp:57</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html">raylib::model::Animation</a></div><div class="ttdoc">The Animation class.</div><div class="ttdef"><b>Definition:</b> <a href="_animation_8hpp_source.html#l00025">Animation.hpp:25</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdoc">Random informations.</div></div>
-<div class="ttc" id="amain_8cpp_html_af864212900cf0cf827f696a03db6e09b"><div class="ttname"><a href="main_8cpp.html#af864212900cf0cf827f696a03db6e09b">drawFrame</a></div><div class="ttdeci">static void drawFrame()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00015">main.cpp:15</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a4c02b07fc5492c490a4262a1097293f1"><div class="ttname"><a href="main_8cpp.html#a4c02b07fc5492c490a4262a1097293f1">drawFrame</a></div><div class="ttdeci">static void drawFrame(void *arg)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00038">main.cpp:38</a></div></div>
 <div class="ttc" id="aclasslocalization_1_1_localization_html_a1a818ebbf478503b554160495ca14cd6"><div class="ttname"><a href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a></div><div class="ttdeci">static void setLocale(std::string_view locale)</div><div class="ttdoc">Load a locale file.</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8cpp_source.html#l00026">Localization.cpp:26</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a0ccf99b83d00909119f26d25334772fc"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a></div><div class="ttdeci">static void drawFPS(int x, int y)</div><div class="ttdoc">Displays the number of frames per seconds of the game on screen.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00029">Window.cpp:29</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a1d83f6221942a2b79fac49a6e1e79f53"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">raylib::core::Window::clear</a></div><div class="ttdeci">static void clear(const Color &amp;color=raylib::core::Color::BLACK)</div><div class="ttdoc">Clear the window with a black background.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00023">Window.cpp:23</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a></div><div class="ttdeci">@ Information</div><div class="ttdoc">Debug messages.</div></div>
 <div class="ttc" id="amain_8cpp_html_a448fa5749d028cd5918eeaf4bd090971"><div class="ttname"><a href="main_8cpp.html#a448fa5749d028cd5918eeaf4bd090971">WIDTH</a></div><div class="ttdeci">constexpr int WIDTH(500)</div></div>
 <div class="ttc" id="aclass_logger_html_aa4baec5861a2573adf4942bf374657bd"><div class="ttname"><a href="class_logger.html#aa4baec5861a2573adf4942bf374657bd">Logger::setOutputFile</a></div><div class="ttdeci">void setOutputFile(const std::filesystem::path &amp;filepath, bool clear=false)</div><div class="ttdoc">Change the linked stream to be the input of filepath.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00112">Logger.cpp:112</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_a7fd383b3c2df603ae1c12c5378fc09f8"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#a7fd383b3c2df603ae1c12c5378fc09f8">raylib::model::Animation::updateModel</a></div><div class="ttdeci">void updateModel(Model &amp;model)</div><div class="ttdoc">Update a model with this animation.</div><div class="ttdef"><b>Definition:</b> <a href="_animation_8cpp_source.html#l00036">Animation.cpp:36</a></div></div>
 <div class="ttc" id="aclass_logger_html_a36215575ad071720cbef8f6ea5542c7d"><div class="ttname"><a href="class_logger.html#a36215575ad071720cbef8f6ea5542c7d">Logger::setLogLevel</a></div><div class="ttdeci">void setLogLevel(Severity logLevel)</div><div class="ttdoc">Set the Log Level.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00127">Logger.cpp:127</a></div></div>
+<div class="ttc" id="apath_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a0179e9d31d7b06f0c25c17e2120363df"><div class="ttname"><a href="main_8cpp.html#a0179e9d31d7b06f0c25c17e2120363df">getTestingAnimation</a></div><div class="ttdeci">static raylib::model::Animation &amp; getTestingAnimation()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00029">main.cpp:29</a></div></div>
 <div class="ttc" id="acout_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/cout.html">std::cout</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_camera3_d_html"><div class="ttname"><a href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a></div><div class="ttdoc">The Camera3D class that encapsulates the raylib 3D camera.</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00025">Camera3D.hpp:25</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a4888ad6d11dc3ce6a44500dd775c3228"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a4888ad6d11dc3ce6a44500dd775c3228">raylib::core::Window::open</a></div><div class="ttdeci">static void open(int width=1920, int height=1080, std::string_view title=&quot;BM:GO&quot;)</div><div class="ttdoc">Open the window (may cause problems if the window is already open)</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00019">Window.cpp:19</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_camera3_d_html_a423134d8b59c7ec155b9d52ac26d2f98"><div class="ttname"><a href="classraylib_1_1core_1_1_camera3_d.html#a423134d8b59c7ec155b9d52ac26d2f98">raylib::core::Camera3D::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Update the camera.</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8cpp_source.html#l00059">Camera3D.cpp:59</a></div></div>
+<div class="ttc" id="amain_8cpp_html_a155c7e8f491b2440ddec53b51f021e5a"><div class="ttname"><a href="main_8cpp.html#a155c7e8f491b2440ddec53b51f021e5a">getTestingModel</a></div><div class="ttdeci">static raylib::model::Model &amp; getTestingModel()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00020">main.cpp:20</a></div></div>
 <div class="ttc" id="aarray_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a></div></div>
 <div class="ttc" id="aclass_logger_html_a22a74b19c09c18f007ad0a93b65d8cceaa76d4ef5f3f6a672bbfab2865563e530"><div class="ttname"><a href="class_logger.html#a22a74b19c09c18f007ad0a93b65d8cceaa76d4ef5f3f6a672bbfab2865563e530">Logger::LogInfo::Time</a></div><div class="ttdeci">@ Time</div><div class="ttdoc">Current Date.</div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_drawing_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_drawing.html">raylib::core::scoped::Drawing</a></div><div class="ttdoc">Setup/End window drawing.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00036">scoped.hpp:36</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
-<div class="ttc" id="amain_8cpp_html_a738d65e5bb235cd4a2b0e5152341b20b"><div class="ttname"><a href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a></div><div class="ttdeci">static void setupLogger()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00042">main.cpp:42</a></div></div>
+<div class="ttc" id="aappend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">std::filesystem::path::append</a></div><div class="ttdeci">T append(T... args)</div></div>
+<div class="ttc" id="amain_8cpp_html_a738d65e5bb235cd4a2b0e5152341b20b"><div class="ttname"><a href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a></div><div class="ttdeci">static void setupLogger()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00080">main.cpp:80</a></div></div>
 <div class="ttc" id="aendl_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a></div><div class="ttdeci">T endl(T... args)</div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_mode3_d_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_mode3_d.html">raylib::core::scoped::Mode3D</a></div><div class="ttdoc">Setup/End a 3D mode with a custom camera.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00024">scoped.hpp:24</a></div></div>
 <div class="ttc" id="avfprintf_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/c/vfprintf.html">std::vsnprintf</a></div><div class="ttdeci">T vsnprintf(T... args)</div></div>
 <div class="ttc" id="aclass_logger_html_ab6e8022952d15d8784dc022587d14b09"><div class="ttname"><a href="class_logger.html#ab6e8022952d15d8784dc022587d14b09">Logger::setLogInfo</a></div><div class="ttdeci">void setLogInfo(LogInfo info, Args... args)</div><div class="ttdoc">Set the exclusive LogInfo enabled (all infos not specified will be disabled).</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00144">Logger.hpp:144</a></div></div>
 <div class="ttc" id="anamespacelocalization_1_1_ressources_html_a7937cea71411695f0535d02b5012e9f1"><div class="ttname"><a href="namespacelocalization_1_1_ressources.html#a7937cea71411695f0535d02b5012e9f1">localization::Ressources::rsHello</a></div><div class="ttdeci">constexpr RessourceString rsHello(&quot;Hello, World!&quot;)</div><div class="ttdoc">Simple hello world.</div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_model_html_aea2f58348dbb113335676f01006657a3"><div class="ttname"><a href="classraylib_1_1model_1_1_model.html#aea2f58348dbb113335676f01006657a3">raylib::model::Model::draw</a></div><div class="ttdeci">void draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint=raylib::core::Color::DEFAULT_COLOR) const</div><div class="ttdoc">Draw the model the basic way.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00019">Model.cpp:19</a></div></div>
 <div class="ttc" id="aclasslocalization_1_1_localization_html_a21b107ce84909ff70792bff85e4fa7fb"><div class="ttname"><a href="classlocalization_1_1_localization.html#a21b107ce84909ff70792bff85e4fa7fb">localization::Localization::saveLocales</a></div><div class="ttdeci">static void saveLocales()</div><div class="ttdoc">Save the loaded locale files.</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8cpp_source.html#l00035">Localization.cpp:35</a></div></div>
 <div class="ttc" id="aclass_logger_html"><div class="ttname"><a href="class_logger.html">Logger</a></div><div class="ttdoc">Basic logger class.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00020">Logger.hpp:20</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15">Logger::Severity</a></div><div class="ttdeci">Severity</div><div class="ttdoc">Severity of a log or logLevel of a Logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00023">Logger.hpp:23</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_model_html"><div class="ttname"><a href="classraylib_1_1model_1_1_model.html">raylib::model::Model</a></div><div class="ttdoc">The Model class ; it shouldn't be created multiple times for the same file.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8hpp_source.html#l00027">Model.hpp:27</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/array/data.html">std::array::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <div class="ttc" id="aclasslocalization_1_1_localization_html_a8f00a5713bb962e7faf242e57d339c8c"><div class="ttname"><a href="classlocalization_1_1_localization.html#a8f00a5713bb962e7faf242e57d339c8c">localization::Localization::loadLocales</a></div><div class="ttdeci">static void loadLocales(const std::vector&lt; std::string_view &gt; &amp;locales)</div><div class="ttdoc">Load all the locales used by the project.</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8cpp_source.html#l00043">Localization.cpp:43</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_color_html_ad88a895e4beaec89b19ad46221d0c35b"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a></div><div class="ttdeci">static const Color RED</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00159">Color.hpp:159</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8cpp_source.html#l00098">Logger.cpp:98</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

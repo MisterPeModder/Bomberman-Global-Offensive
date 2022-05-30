@@ -1,0 +1,27 @@
+var classraylib_1_1textures_1_1_image =
+[
+    [ "Image", "classraylib_1_1textures_1_1_image.html#aad6a8ab90d9368da75012be55e124938", null ],
+    [ "Image", "classraylib_1_1textures_1_1_image.html#a80c08a8b64009110c6585bf5f880287b", null ],
+    [ "~Image", "classraylib_1_1textures_1_1_image.html#adcb388881233cdca7c8d4b8c0b5509fc", null ],
+    [ "colorBrightness", "classraylib_1_1textures_1_1_image.html#a4b45ddfd538b51fe2b171a6653636af1", null ],
+    [ "colorContrast", "classraylib_1_1textures_1_1_image.html#a348070ebc65989736e902049ca46e2f6", null ],
+    [ "colorGrayscale", "classraylib_1_1textures_1_1_image.html#abe7f6bca7dd2c3f9486927d3f938b0d4", null ],
+    [ "colorInvert", "classraylib_1_1textures_1_1_image.html#abd86b6b249e8cd397c83f124b69d8c49", null ],
+    [ "colorReplace", "classraylib_1_1textures_1_1_image.html#ad2341567dfc7448524750a5cc8e7d8cc", null ],
+    [ "colorTint", "classraylib_1_1textures_1_1_image.html#ade38f73508c0f0ec21dff1fea46369da", null ],
+    [ "exportTo", "classraylib_1_1textures_1_1_image.html#ac9c34ee6bd1805fb7a6c4100d2f7cf52", null ],
+    [ "flipHorizontal", "classraylib_1_1textures_1_1_image.html#ab92e6c783e34b2bad21e814717c3376e", null ],
+    [ "flipVertical", "classraylib_1_1textures_1_1_image.html#a2a08ae91ebee2b2cce9a2af308e051c6", null ],
+    [ "format", "classraylib_1_1textures_1_1_image.html#a3d303816e0b40f133dfd2a728483a804", null ],
+    [ "load", "classraylib_1_1textures_1_1_image.html#afd93efee65954ae910eccfb903f32876", null ],
+    [ "loadFromScreen", "classraylib_1_1textures_1_1_image.html#a35ad95e6ffff0dc2f2273e9a902e82bc", null ],
+    [ "loadFromTexture", "classraylib_1_1textures_1_1_image.html#af9aa77980732d325aeb143937a29af59", null ],
+    [ "resize", "classraylib_1_1textures_1_1_image.html#ab6c39deafef27c4be66ab2879a17c0bd", null ],
+    [ "rotateCCW", "classraylib_1_1textures_1_1_image.html#a4a0617efe394c5261396b0499ff183a8", null ],
+    [ "rotateCW", "classraylib_1_1textures_1_1_image.html#a50628a36ed89533416a27bc6c9895f3b", null ],
+    [ "unload", "classraylib_1_1textures_1_1_image.html#aadd279c033b2e588d6091704173daa90", null ],
+    [ "_color", "classraylib_1_1textures_1_1_image.html#a048ed677d281061f15016b82d2be7365", null ],
+    [ "_fileName", "classraylib_1_1textures_1_1_image.html#a6393aa95ede908ec03b20eb3cffbee85", null ],
+    [ "_image", "classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204", null ],
+    [ "_position", "classraylib_1_1textures_1_1_image.html#a9a5a9ec6c4b1bd13e4f8e78469fe4e73", null ]
+];

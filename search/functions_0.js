@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['_5fexit_3699',['_Exit',['http://en.cppreference.com/w/cpp/utility/program/_Exit.html',1,'std']]],
-  ['_5fresize_3700',['_resize',['../classutil_1_1_bit_set.html#aa316ef8b94084b11c22856c0981c0e03',1,'util::BitSet']]]
+  ['_5fasraylib_3992',['_asRaylib',['../classraylib_1_1model_1_1_bounding_box.html#aa1531cba38ccc3692366442a8e6cbed8',1,'raylib::model::BoundingBox']]],
+  ['_5fexit_3993',['_Exit',['http://en.cppreference.com/w/cpp/utility/program/_Exit.html',1,'std']]],
+  ['_5fresize_3994',['_resize',['../classutil_1_1_bit_set.html#aa316ef8b94084b11c22856c0981c0e03',1,'util::BitSet']]]
 ];

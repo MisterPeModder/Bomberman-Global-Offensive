@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uses_5fallocator_5fv_5795',['uses_allocator_v',['http://en.cppreference.com/w/cpp/memory/uses_allocator.html',1,'std::uses_allocator_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::uses_allocator_v()']]]
+  ['second_6256',['second',['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::csub_match::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::pair::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::ssub_match::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::sub_match::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::wcsub_match::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::wssub_match::second()']]],
+  ['sky_5fblue_6257',['SKY_BLUE',['../structraylib_1_1core_1_1_color.html#a1a40286a32b9936527d21bd57671e236',1,'raylib::core::Color']]]
 ];

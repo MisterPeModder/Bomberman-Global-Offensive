@@ -1,0 +1,11 @@
+digraph "src/raylib/textures" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d4cc5f0b3cfddd1b0952a9e00053f649 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="raylib" fontname="Helvetica", fontsize="10", URL="dir_d4cc5f0b3cfddd1b0952a9e00053f649.html"]
+  dir_21bb1922019bb3d52d5ae9abdf0a2a00 [shape=box, label="textures", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_21bb1922019bb3d52d5ae9abdf0a2a00.html"];
+  }
+  dir_8eb5564b7954c35d70c55c3a33ff6f37 [shape=box label="core" URL="dir_8eb5564b7954c35d70c55c3a33ff6f37.html"];
+  dir_21bb1922019bb3d52d5ae9abdf0a2a00->dir_8eb5564b7954c35d70c55c3a33ff6f37 [headlabel="4", labeldistance=1.5 headhref="dir_000013_000010.html"];
+}

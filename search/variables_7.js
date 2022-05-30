@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['has_5funique_5fobject_5frepresentations_5fv_5686',['has_unique_object_representations_v',['http://en.cppreference.com/w/cpp/types/has_unique_object_representations.html',1,'std']]],
-  ['has_5fvirtual_5fdestructor_5fv_5687',['has_virtual_destructor_v',['http://en.cppreference.com/w/cpp/types/has_virtual_destructor.html',1,'std::has_virtual_destructor_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::has_virtual_destructor_v()']]]
+  ['g_6136',['g',['../structraylib_1_1core_1_1_color.html#a33aa39f405f8cba92982ae86681a64ac',1,'raylib::core::Color']]],
+  ['gold_6137',['GOLD',['../structraylib_1_1core_1_1_color.html#a79cd83222b755f8de9fbff47b55ace5f',1,'raylib::core::Color']]],
+  ['gray_6138',['GRAY',['../structraylib_1_1core_1_1_color.html#a0f049c8c9514f788064a1c45e9058773',1,'raylib::core::Color']]],
+  ['green_6139',['GREEN',['../structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba',1,'raylib::core::Color']]]
 ];

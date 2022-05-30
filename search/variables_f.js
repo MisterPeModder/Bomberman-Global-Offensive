@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['rank_5fv_5783',['rank_v',['http://en.cppreference.com/w/cpp/types/rank.html',1,'std::rank_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::rank_v()']]],
-  ['ratio_5fequal_5fv_5784',['ratio_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_equal.html',1,'std::ratio_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_equal_v()']]],
-  ['ratio_5fgreater_5fequal_5fv_5785',['ratio_greater_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_greater_equal.html',1,'std::ratio_greater_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_greater_equal_v()']]],
-  ['ratio_5fgreater_5fv_5786',['ratio_greater_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_greater.html',1,'std::ratio_greater_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_greater_v()']]],
-  ['ratio_5fless_5fequal_5fv_5787',['ratio_less_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_less_equal.html',1,'std::ratio_less_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_less_equal_v()']]],
-  ['ratio_5fless_5fv_5788',['ratio_less_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_less.html',1,'std::ratio_less_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_less_v()']]],
-  ['ratio_5fnot_5fequal_5fv_5789',['ratio_not_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_not_equal.html',1,'std::ratio_not_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_not_equal_v()']]],
-  ['reference_5790',['Reference',['../classutil_1_1_bit_set.html#adbc690e56987545c1ffef321f4bfc8cf',1,'util::BitSet']]],
-  ['rem_5791',['rem',['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::div_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::imaxdiv_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::ldiv_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::lldiv_t::rem()']]]
+  ['piecewise_5fconstruct_6240',['piecewise_construct',['http://en.cppreference.com/w/cpp/utility/piecewise_construct.html',1,'std']]],
+  ['pink_6241',['PINK',['../structraylib_1_1core_1_1_color.html#a19bde3c4ff8676200970b93b93e90d40',1,'raylib::core::Color']]],
+  ['purple_6242',['PURPLE',['../structraylib_1_1core_1_1_color.html#ad97abd743d5285924402c6b91343c64a',1,'raylib::core::Color']]]
 ];

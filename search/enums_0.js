@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loginfo_5809',['LogInfo',['../class_logger.html#a22a74b19c09c18f007ad0a93b65d8cce',1,'Logger']]]
+  ['cameramode_6282',['CameraMode',['../classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5',1,'raylib::core::Camera3D']]]
 ];
