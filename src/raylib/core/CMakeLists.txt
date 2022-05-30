@@ -17,6 +17,8 @@ set(SRC
     ${SRCROOT}/Cursor.cpp
     ${SRCROOT}/Color.hpp
     ${SRCROOT}/Color.cpp
+    ${SRCROOT}/Keyboard.hpp
+    ${SRCROOT}/Keyboard.cpp
     PARENT_SCOPE)
 
 set(INCDIRS
