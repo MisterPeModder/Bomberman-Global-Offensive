@@ -32,6 +32,7 @@ namespace ecs
     /// This type satisfies @ref std::forward_iterator.
     template <Joinable First, Joinable... Rest> class JoinIter final {
       public:
+        // Types required to support standard iterator functions
         using value_type = std::tuple<typename JoinTraits<First>::Data, typename JoinTraits<Rest>::Data...>;
         using difference_type = std::ptrdiff_t;
         using reference = value_type &;

@@ -54,7 +54,7 @@ TEST(World, addResource)
     // May not register the same type twice
     ASSERT_THROW(world.addResource<Data>("???", -1, strings), std::logic_error);
 
-    // The Entities ressource is always registered
+    // The Entities resource is always registered
     ASSERT_THROW(world.addResource<ecs::Entities>(), std::logic_error);
 }
 

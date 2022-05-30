@@ -20,6 +20,7 @@ namespace ecs
     template <typename C> class MapStorage;
 }
 
+/// @internal
 /// @note Use ecs::get_storage_type instead.
 template <typename C> struct GetComponentStorageType {
     using Value = ecs::MapStorage<C>;

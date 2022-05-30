@@ -29,7 +29,7 @@ namespace ecs
 {
     /// Combines multiple Joinable values into a single iterable container.
     ///
-    /// @param first The fist joinable value.
+    /// @param first The first joinable value.
     /// @param rest The other joinable values, optional.
     ///
     /// @return The joined values.
