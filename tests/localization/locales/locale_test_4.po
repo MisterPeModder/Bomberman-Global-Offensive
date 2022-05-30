@@ -1,0 +1,58 @@
+# Apocalypse
+
+
+
+
+########
+
+#
+
+msgid "first message"
+# #
+###
+# #
+msgstr "premier message"
+
+
+
+msgid ""
+#still valid
+"multiple\n"
+"lines\n"
+"message\n"
+                         # Comment far away
+msgstr ""
+"Message en\n"
+"plusieurs\n"
+"lignes\n"
+
+
+#Below, nothing will work but all must be skipped and warned in the logger instead (no crash)
+
+
+
+
+
+idmsg "invalid"
+msgstr "msgid != idmsg"
+
+
+
+msgid: "invalid"
+msgstr: "':' are not needed"
+
+msgid "invalid"
+msgstr "messages must be separated by empty lines"
+msgid "invalid"
+msgstr "same here"
+
+
+# random comment
+
+msgid "invalid"
+msgstr ""
+"multiline  messages"
+"must have espaced line feed"
+
+msgid "invalid"
+msgstr "missing newline after this message"

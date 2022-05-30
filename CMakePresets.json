@@ -55,7 +55,7 @@
                     "type": "BOOL",
                     "value": "TRUE"
                 },
-                "USE_GCOV": {
+                "ENABLE_TEST_COVERAGE": {
                     "type": "BOOL",
                     "value": "TRUE"
                 }
@@ -160,16 +160,42 @@
             }
         },
         {
-            "name": "debug",
-            "displayName": "Unit Tests (debug mode)",
+            "name": "debug_unix",
+            "displayName": "Test (debug Unix)",
             "inherits": "common",
-            "configurePreset": "debug"
+            "configurePreset": "debug_unix"
         },
         {
-            "name": "release",
-            "displayName": "Unit Tests (release mode)",
+            "name": "debug_web",
+            "displayName": "Test (Debug Web)",
             "inherits": "common",
-            "configurePreset": "release"
+            "configurePreset": "debug_web"
+        },
+        {
+            "name": "debug_msvc",
+            "configuration": "Debug",
+            "displayName": "Test (debug MSVC)",
+            "inherits": "common",
+            "configurePreset": "debug_msvc"
+        },
+        {
+            "name": "release_web",
+            "displayName": "Test (release web)",
+            "inherits": "common",
+            "configurePreset": "release_web"
+        },
+        {
+            "name": "release_msvc",
+            "configuration": "Release",
+            "displayName": "Test (release MSVC)",
+            "inherits": "common",
+            "configurePreset": "release_msvc"
+        },
+        {
+            "name": "release_unix",
+            "displayName": "Test (release Unix)",
+            "inherits": "common",
+            "configurePreset": "release_unix"
         }
     ]
 }

@@ -1,0 +1,12 @@
+set(INCROOT ${INCROOT}/util)
+set(SRCROOT ${SRCROOT}/util)
+
+set(SRC
+	${SRC}
+	${INCROOT}/util.hpp
+	PARENT_SCOPE)
+
+set(INCDIRS
+	${INCDIRS}
+	${INCROOT}
+	PARENT_SCOPE)

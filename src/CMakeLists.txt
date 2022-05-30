@@ -8,8 +8,10 @@ set(SRC
 
 set(INCDIRS ${INCROOT})
 
+add_subdirectory(localization)
 add_subdirectory(logger)
 add_subdirectory(raylib)
+add_subdirectory(util)
 
 # Source groups are a feature in Visual Studio.
 source_group("" FILES ${SRC})

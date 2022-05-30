@@ -27,9 +27,9 @@ Logger::Logger(std::ostream &stream)
     setLogInfo(LogInfo::Time);
 }
 
-Logger::Logger(std::string_view filename)
+Logger::Logger(const std::filesystem::path &filepath, bool clear)
 {
-    setOutputFile(filename);
+    setOutputFile(filepath, clear);
     setLogInfo(LogInfo::Time);
 }
 
@@ -109,11 +109,14 @@ void Logger::setStream(std::ostream &stream)
     _streamPointer = &stream;
 }
 
-void Logger::setOutputFile(std::string_view filename)
+void Logger::setOutputFile(const std::filesystem::path &filepath, bool clear)
 {
     if (_fileStream.is_open())
         _fileStream.close();
-    _fileStream.open(filename.data(), std::ios_base::app | std::ios_base::out);
+    if (!clear)
+        _fileStream.open(filepath, std::ios_base::app | std::ios_base::out);
+    else
+        _fileStream.open(filepath, std::ios_base::out);
     if (!_fileStream.is_open()) {
         _streamPointer = &std::cerr;
         throw std::runtime_error("Invalid logger output file.");

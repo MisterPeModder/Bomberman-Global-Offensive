@@ -1,6 +1,7 @@
 Bomberman
-[![Build](https://img.shields.io/github/workflow/status/MisterPeModder/Bomberman-Global-Offensive/CI)](https://github.com/MisterPeModder/Bomberman-Global-Offensive/actions/workflows/ci.yml)
+[![Build](https://img.shields.io/github/workflow/status/MisterPeModder/Bomberman-Global-Offensive/Build-Testing)](https://github.com/MisterPeModder/Bomberman-Global-Offensive/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/MisterPeModder/Bomberman-Global-Offensive)](https://github.com/MisterPeModder/Bomberman-Global-Offensive)
+[![Codecov](https://codecov.io/gh/MisterPeModder/Bomberman-Global-Offensive/branch/master/graph/badge.svg)](https://codecov.io/gh/MisterPeModder/Bomberman-Global-Offensive)
 ====
 
 # Building
@@ -38,6 +39,8 @@ Note that for the web platform, the presets assume that the emscripten toolchain
 
 # Documentation
 
+The documentation is available [online](https://misterpemodder.github.io/Bomberman-Global-Offensive/).
+
 ## Local
 
 Required tools:
@@ -49,5 +52,5 @@ on Linux:
 doxygen
 
 # Open the genrated pages
-xdg-open doc/generated/html/index.html
+xdg-open doc/build/html/index.html
 ```

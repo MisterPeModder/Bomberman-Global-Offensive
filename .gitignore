@@ -6,6 +6,9 @@
 # Build Data
 *.o
 /build
+/doc/build/html
+*.gcno
+*.gcda
 
 # Executable
 /bomberman
@@ -15,6 +18,7 @@
 
 # Logs
 log.txt
+log_raylib.txt
 
 # Shame on you!
 vgcore.*
