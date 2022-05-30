@@ -36,13 +36,13 @@ namespace raylib
 
         void Texture2D::setWrap(int wrap) { SetTextureWrap(_texture, wrap); }
 
-        void Texture2D::draw(Color &tint) { DrawTexture(_texture, _position.x, _position.y, tint); }
+        void Texture2D::draw(const Color &tint) { DrawTexture(_texture, _position.x, _position.y, tint.asRaylib()); }
 
-        void Texture2D::draw(Vector2 &position, Color &tint) { DrawTextureV(_texture, position.asRaylib(), tint); }
+        void Texture2D::draw(const Vector2 &position, const Color &tint) { DrawTextureV(_texture, position.asRaylib(), tint.asRaylib()); }
 
-        void Texture2D::draw(Vector2 &position, float rotation, float scale, Color &tint)
+        void Texture2D::draw(const Vector2 &position, float rotation, float scale, const Color &tint)
         {
-            DrawTextureEx(_texture, position.asRaylib(), rotation, scale, tint);
+            DrawTextureEx(_texture, position.asRaylib(), rotation, scale, tint.asRaylib());
         }
 
     } // namespace textures

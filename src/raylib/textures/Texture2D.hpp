@@ -12,6 +12,7 @@
 #include <iostream>
 #include <span>
 #include "raylib/core/Vector2.hpp"
+#include "raylib/core/Color.hpp"
 
 extern "C"
 {
@@ -26,6 +27,7 @@ namespace raylib
         class Texture2D {
           private:
             using Vector2 = raylib::core::Vector2;
+            using Color = raylib::core::Color;
 
           public:
             /// This function takes in a position and a file name and sets the position
@@ -81,13 +83,13 @@ namespace raylib
             /// Draws the texture2D at the position specified by the position variable
             ///
             /// @param tint The color you want to tint the texture2D.
-            void draw(Color &tint);
+            void draw(const Color &tint);
 
             /// Draws a texture2D at a given position with a given tint
             ///
             /// @param position The position of the texture2D on the screen.
             /// @param tint The color you want to tint the texture2D.
-            void draw(Vector2 &position, Color &tint);
+            void draw(const Vector2 &position, const Color &tint);
 
             /// Draws a Texture2D with extended parameters
             ///
@@ -95,7 +97,7 @@ namespace raylib
             /// @param rotation The rotation of the texture2D in radians.
             /// @param scale The scale of the texture2D.
             /// @param tint The color to tint the texture2D with.
-            void draw(Vector2 &position, float rotation, float scale, Color &tint);
+            void draw(const Vector2 &position, float rotation, float scale, const Color &tint);
 
           private:
             std::filesystem::path _fileName;
