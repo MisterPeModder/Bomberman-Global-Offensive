@@ -46,4 +46,5 @@ set(SRCROOT "${PROJECT_SOURCE_DIR}/tests")
 # FIXME: #55 Re-enable localization tests on the web once we figure out how to bundle files
 if (NOT EMSCRIPTEN)
     add_subdirectory(localization)
+    add_subdirectory(util)
 endif()
