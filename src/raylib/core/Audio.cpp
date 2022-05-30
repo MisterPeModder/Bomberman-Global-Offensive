@@ -19,11 +19,15 @@ namespace raylib {
     namespace core {
         Sound Audio::loadSound(const std::string fileName) { return LoadSound(fileName.c_str());}
 
-        void Audio::unloadWave(Wave wave) {return UnloadWave(wave);}
+        void Audio::unloadWave(Wave wave) {UnloadWave(wave);}
 
-        void Audio::setMasterVolume(float volume) {return setMasterVolume(volume);}
+        void Audio::setMasterVolume(float volume) {setMasterVolume(volume);}
 
         bool Audio::isAudioDeviceReady(void) {return IsAudioDeviceReady();}
+
+        void Audio::closeAudioDevice(void) {CloseAudioDevice();}
+
+        void Audio::initAudioDevice(void) {initAudioDevice();}
 
     }
 }
