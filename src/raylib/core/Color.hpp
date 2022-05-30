@@ -118,7 +118,7 @@ namespace raylib
             /// @param hexColor the hex integer representing the color
             /// @param alpha the alpha (defaulted to 255)
             constexpr Color(int hexColor, unsigned char alpha = 255)
-                : r(((hexColor >> 16) & 0xFF)), g(((hexColor >> 8) & 0xFF)), b(((hexColor)&0xFF)), a(alpha)
+                : r(((hexColor >> 16) & 0xFF)), g(((hexColor >> 8) & 0xFF)), b((hexColor & 0xFF)), a(alpha)
             {
             }
 
