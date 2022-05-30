@@ -131,7 +131,7 @@ namespace raylib
             {
                 r = ((hexColor >> 16) & 0xFF);
                 g = ((hexColor >> 8) & 0xFF);
-                b = ((hexColor)&0xFF);
+                b = (hexColor & 0xFF);
                 a = 255;
 
                 return *this;
