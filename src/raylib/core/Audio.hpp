@@ -28,7 +28,7 @@ namespace raylib
                 void playSound(Sound sound);
                 void stopSound(Sound sound);
                 void pauseSound(Sound sound);
-                void resumeSound(Sound sound);
+                //void resumeSound(Sound sound);
                 bool isSoundPlaying(Sound sound);
                 void setSoundVolume(Sound sound, float volume);
 

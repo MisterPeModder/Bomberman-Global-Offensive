@@ -29,6 +29,14 @@ namespace raylib {
 
         void Audio::initAudioDevice(void) {initAudioDevice();}
 
+        void Audio::playSound(Sound sound) {PlaySound(sound);}
+
+        void Audio::stopSound(Sound sound) {StopSound(sound);}
+
+        void Audio::pauseSound(Sound sound) {PauseSound(sound);}
+
+        bool Audio::isSoundPlaying(Sound sound) {return isSoundPlaying(sound);}
+
     }
 }
 
