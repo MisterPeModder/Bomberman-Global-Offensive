@@ -9,6 +9,7 @@
 #define RAYLIB_CORE_WINDOW_HPP_
 
 #include "Color.hpp"
+#include <string_view>
 
 /// Raylib namespace
 namespace raylib
@@ -24,7 +25,7 @@ namespace raylib
             /// @param width The width of the window
             /// @param height The height of the window
             /// @param title The title of the window
-            static void open(int width = 1920, int height = 1080, const char *title = "BM:GO");
+            static void open(int width = 1920, int height = 1080, std::string_view title = "BM:GO");
 
             /// Close the window
             static void close();
