@@ -11,7 +11,6 @@ namespace raylib
 {
     namespace textures
     {
-
         Texture2D::Texture2D(const std::filesystem::path &fileName, Vector2 position)
             : _fileName(fileName), _position(position)
         {
