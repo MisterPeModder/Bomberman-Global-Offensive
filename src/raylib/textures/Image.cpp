@@ -11,10 +11,14 @@ namespace raylib
 {
     namespace textures
     {
-        Image::Image(const std::filesystem::path &fileName, raylib::core::Vector2 position, const raylib::core::Color &color) :_fileName(fileName), _position(position), _color(color)
+        Image::Image(
+            const std::filesystem::path &fileName, raylib::core::Vector2 position, const raylib::core::Color &color)
+            : _fileName(fileName), _position(position), _color(color)
         {
             load();
         }
+
+        Image::~Image() { unload(); }
 
         void Image::load() { _image = LoadImage(_fileName.c_str()); }
 
@@ -48,7 +52,10 @@ namespace raylib
 
         void Image::colorBrightness(int brightness) { ImageColorBrightness(&_image, brightness); }
 
-        void Image::colorReplace(const raylib::core::Color &color, const raylib::core::Color &replace) { ImageColorReplace(&_image, color.asRaylib(), replace.asRaylib()); }
+        void Image::colorReplace(const raylib::core::Color &color, const raylib::core::Color &replace)
+        {
+            ImageColorReplace(&_image, color.asRaylib(), replace.asRaylib());
+        }
 
     } // namespace textures
 

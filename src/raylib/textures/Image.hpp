@@ -9,8 +9,8 @@
 #define RAYLIB_TEXTURES_IMAGE_HPP_
 
 #include <filesystem>
-#include "raylib/core/Vector2.hpp"
 #include "raylib/core/Color.hpp"
+#include "raylib/core/Vector2.hpp"
 
 extern "C"
 {
@@ -33,12 +33,13 @@ namespace raylib
             /// @param position The position of the image on the screen.
             /// @param color The color of the image.
             /// @param fileName The name of the file to load.
-            Image(const std::filesystem::path &fileName, raylib::core::Vector2 position = {}, const raylib::core::Color &color = raylib::core::Color::DEFAULT_COLOR);
+            Image(const std::filesystem::path &fileName, raylib::core::Vector2 position = {},
+                const raylib::core::Color &color = raylib::core::Color::DEFAULT_COLOR);
 
             Image(::Image image);
 
             /// Destructor of Image class
-            ~Image() = default;
+            ~Image();
 
             /// LoadImage loads an image from a file
             ///

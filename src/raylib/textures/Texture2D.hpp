@@ -11,8 +11,8 @@
 #include <filesystem>
 #include <iostream>
 #include <span>
-#include "raylib/core/Vector2.hpp"
 #include "raylib/core/Color.hpp"
+#include "raylib/core/Vector2.hpp"
 
 extern "C"
 {
@@ -38,7 +38,7 @@ namespace raylib
             Texture2D(const std::filesystem::path &fileName, Vector2 position = {});
 
             /// The destructor for the Texture2D class
-            ~Texture2D() = default;
+            ~Texture2D();
 
             /// Sets the position of the texture
             ///
