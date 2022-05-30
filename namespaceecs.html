@@ -85,36 +85,138 @@ $(document).ready(function(){initNavTree('namespaceecs.html',''); initResizable(
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">ecs Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Entity-Component-System namespace.  
+<a href="namespaceecs.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_component.html">Component</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base component type, all components must inherit from <a class="el" href="classecs_1_1_component.html" title="The base component type, all components must inherit from Component.">Component</a>.  <a href="classecs_1_1_component.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_entities.html">Entities</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entities world resource.  <a href="classecs_1_1_entities.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_entity.html">Entity</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates a index to an entity that may or may not exist.  <a href="classecs_1_1_entity.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_instances.html">Instances</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A set with values identified by their type, all values must inherit from <b>Base</b>.  <a href="classecs_1_1_instances.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join.html">Join</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of joined values.  <a href="classecs_1_1_join.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The iterator type used by <a class="el" href="classecs_1_1_join.html">Join</a>.  <a href="classecs_1_1_join_iter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecs_1_1_join_traits.html">JoinTraits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base case for non-implenting types.  <a href="structecs_1_1_join_traits.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecs_1_1_join_traits_3_01_entities_01_4.html">JoinTraits&lt; Entities &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Joinable implementation for the <a class="el" href="classecs_1_1_entities.html" title="The entities world resource.">Entities</a> resource.  <a href="structecs_1_1_join_traits_3_01_entities_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html">JoinTraits&lt; MaybeJoin&lt; J &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecs_1_1_join_traits_3_01_storage_01_4.html">JoinTraits&lt; Storage &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">All instances of IsStorage are joinable.  <a href="structecs_1_1_join_traits_3_01_storage_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_map_storage.html">MapStorage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map-based component storage.  <a href="classecs_1_1_map_storage.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_marker_storage.html">MarkerStorage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">"Storage" for marker-like components, does not store any data except for which entities have the marker.  <a href="classecs_1_1_marker_storage.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_maybe_join.html">MaybeJoin</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">Joinable</a> structure that yields all indices, returning <b>nullptr</b> for all missing elements and pointers to the elements otherwise.  <a href="classecs_1_1_maybe_join.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_resource.html">Resource</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_storage.html">Storage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">used to declare a virtual destructor on all <a class="el" href="classecs_1_1_storage.html" title="used to declare a virtual destructor on all Storage implementations.">Storage</a> implementations.  <a href="classecs_1_1_storage.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_system.html">System</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The base system type, all systems must inherit from <a class="el" href="classecs_1_1_system.html" title="The base system type, all systems must inherit from System.">System</a>.  <a href="classecs_1_1_system.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_system_data.html">SystemData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A view on world data that provides access to <a class="el" href="classecs_1_1_resource.html">Resource</a> and <a class="el" href="classecs_1_1_storage.html" title="used to declare a virtual destructor on all Storage implementations.">Storage</a> instances to systems.  <a href="classecs_1_1_system_data.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_timer.html">Timer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple timer resource.  <a href="classecs_1_1_timer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_world.html">World</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all entities and systems.  <a href="classecs_1_1_world.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ab50f8e89b62b0793f0e907d669876a0d"><td class="memTemplParams" colspan="2">template&lt;typename C &gt; </td></tr>
+<tr class="memitem:ab50f8e89b62b0793f0e907d669876a0d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecs.html#ab50f8e89b62b0793f0e907d669876a0d">getStorageType</a> = typename <a class="el" href="struct_get_component_storage_type.html">GetComponentStorageType</a>&lt; C &gt;::Value</td></tr>
+<tr class="memdesc:ab50f8e89b62b0793f0e907d669876a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the storage type of a component, returns <a class="el" href="classecs_1_1_map_storage.html" title="Map-based component storage.">MapStorage</a> by default.  <a href="namespaceecs.html#ab50f8e89b62b0793f0e907d669876a0d">More...</a><br /></td></tr>
+<tr class="separator:ab50f8e89b62b0793f0e907d669876a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3d4668f192577a015459a01210da3638"><td class="memTemplParams" colspan="2">template&lt;typename First , typename... Rest&gt; </td></tr>
-<tr class="memitem:a3d4668f192577a015459a01210da3638"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecs.html#a3d4668f192577a015459a01210da3638">join</a> (First &amp;first, Rest &amp;...rest)</td></tr>
-<tr class="separator:a3d4668f192577a015459a01210da3638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f1840d64435ba74cd587b12787b2bba"><td class="memTemplParams" colspan="2">template&lt;Joinable First, Joinable... Rest&gt; </td></tr>
+<tr class="memitem:a1f1840d64435ba74cd587b12787b2bba"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join.html">Join</a>&lt; First, Rest... &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">join</a> (First &amp;first, Rest &amp;...rest)</td></tr>
+<tr class="memdesc:a1f1840d64435ba74cd587b12787b2bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines multiple Joinable values into a single iterable container.  <a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">More...</a><br /></td></tr>
+<tr class="separator:a1f1840d64435ba74cd587b12787b2bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36bbcee819473693f3869f528beb7bca"><td class="memTemplParams" colspan="2">template&lt;Joinable J&gt; </td></tr>
+<tr class="memitem:a36bbcee819473693f3869f528beb7bca"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_maybe_join.html">MaybeJoin</a>&lt; J &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">maybe</a> (J &amp;joinable)</td></tr>
+<tr class="memdesc:a36bbcee819473693f3869f528beb7bca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates A <a class="el" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">Joinable</a> structure that yields all indices, returning <b>nullptr</b> for all missing elements and pointers to the elements otherwise.  <a href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">More...</a><br /></td></tr>
+<tr class="separator:a36bbcee819473693f3869f528beb7bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abdc7eeb6f093daafc5a2d9013cd98518"><td class="memTemplParams" colspan="2">template&lt;typename J &gt; </td></tr>
+<tr class="memitem:abdc7eeb6f093daafc5a2d9013cd98518"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">Joinable</a></td></tr>
+<tr class="memdesc:abdc7eeb6f093daafc5a2d9013cd98518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implemented by types that can be joined.  <a href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">More...</a><br /></td></tr>
+<tr class="separator:abdc7eeb6f093daafc5a2d9013cd98518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adedda4627cdd9e569979a7d60d21bbcc"><td class="memTemplParams" colspan="2">template&lt;typename S &gt; </td></tr>
+<tr class="memitem:adedda4627cdd9e569979a7d60d21bbcc"><td class="memTemplItemLeft" align="right" valign="top">concept&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceecs.html#adedda4627cdd9e569979a7d60d21bbcc">IsStorage</a></td></tr>
+<tr class="memdesc:adedda4627cdd9e569979a7d60d21bbcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Compoonent storage trait.  <a href="namespaceecs.html#adedda4627cdd9e569979a7d60d21bbcc">More...</a><br /></td></tr>
+<tr class="separator:adedda4627cdd9e569979a7d60d21bbcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a3d4668f192577a015459a01210da3638"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d4668f192577a015459a01210da3638">&#9670;&nbsp;</a></span>join()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Entity-Component-System namespace. </p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ab50f8e89b62b0793f0e907d669876a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab50f8e89b62b0793f0e907d669876a0d">&#9670;&nbsp;</a></span>getStorageType</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename First , typename... Rest&gt; </div>
+template&lt;typename C &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void ecs::join </td>
+          <td class="memname">using <a class="el" href="namespaceecs.html#ab50f8e89b62b0793f0e907d669876a0d">ecs::getStorageType</a> = typedef typename <a class="el" href="struct_get_component_storage_type.html">GetComponentStorageType</a>&lt;C&gt;::Value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the storage type of a component, returns <a class="el" href="classecs_1_1_map_storage.html" title="Map-based component storage.">MapStorage</a> by default. </p>
+
+<p class="definition">Definition at line <a class="el" href="storage_2_storage_8hpp_source.html#l00070">70</a> of file <a class="el" href="storage_2_storage_8hpp_source.html">Storage.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a1f1840d64435ba74cd587b12787b2bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1840d64435ba74cd587b12787b2bba">&#9670;&nbsp;</a></span>join()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Joinable First, Joinable... Rest&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_join.html">Join</a>&lt;First, Rest...&gt; ecs::join </td>
           <td>(</td>
           <td class="paramtype">First &amp;&#160;</td>
           <td class="paramname"><em>first</em>, </td>
@@ -133,15 +235,131 @@ template&lt;typename First , typename... Rest&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00082">82</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        Join&lt;First, Rest...&gt;(first, rest...);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<p>Combines multiple Joinable values into a single iterable container. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The first joinable value. </td></tr>
+    <tr><td class="paramname">rest</td><td>The other joinable values, optional.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The joined values. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_join_8hpp_source.html#l00036">36</a> of file <a class="el" href="_join_8hpp_source.html">join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> Join&lt;First, Rest...&gt;(first, rest...);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a36bbcee819473693f3869f528beb7bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36bbcee819473693f3869f528beb7bca">&#9670;&nbsp;</a></span>maybe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Joinable J&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_maybe_join.html">MaybeJoin</a>&lt;J&gt; ecs::maybe </td>
+          <td>(</td>
+          <td class="paramtype">J &amp;&#160;</td>
+          <td class="paramname"><em>joinable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates A <a class="el" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">Joinable</a> structure that yields all indices, returning <b>nullptr</b> for all missing elements and pointers to the elements otherwise. </p>
+<dl class="section note"><dt>Note</dt><dd>Do not have a join of only MaybeJoins. Otherwise the join will iterate over every single index of the bitset. If you want a join with all MaybeJoins, add an <a class="el" href="classecs_1_1_entities.html">Entities</a> resource to the join as well to bound the join to all entities that are alive.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">J</td><td>A <a class="el" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">Joinable</a> type, such as <a class="el" href="classecs_1_1_map_storage.html">MapStorage</a>, <a class="el" href="classecs_1_1_entities.html">Entities</a>, and more.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">joinable</td><td>A joinable value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An optional version of <b>joinable</b>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_join_8hpp_source.html#l00053">53</a> of file <a class="el" href="_join_8hpp_source.html">join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <span class="keywordflow">return</span> MaybeJoin&lt;J&gt;(joinable); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="adedda4627cdd9e569979a7d60d21bbcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adedda4627cdd9e569979a7d60d21bbcc">&#9670;&nbsp;</a></span>IsStorage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept ecs::IsStorage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= std::default_initializable&lt;S&gt; &amp;&amp; std::derived_from&lt;S, Storage&gt; &amp;&amp; requires(</div>
+<div class="line">        S &amp;storage, S <span class="keyword">const</span> &amp;cstorage, Entity::Index entity)</div>
+<div class="line">    {</div>
+<div class="line">        </div>
+<div class="line">        <span class="keyword">typename</span> S::Component;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        storage.erase(entity);</div>
+<div class="line">        { cstorage.contains(entity) } -&gt; std::same_as&lt;bool&gt;;</div>
+<div class="line">        { storage[entity] } -&gt; std::same_as&lt;typename S::Component &amp;&gt;;</div>
+<div class="line">        { cstorage[entity] } -&gt; std::same_as&lt;typename S::Component const &amp;&gt;;</div>
+<div class="line">        { cstorage.size() } noexcept -&gt; std::same_as&lt;std::size_t&gt;;</div>
+<div class="line">        { cstorage.getMask() } noexcept -&gt; std::same_as&lt;util::BitSet const &amp;&gt;;</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>The Compoonent storage trait. </p>
+<dl class="section note"><dt>Note</dt><dd>The iterators supplied by storages <b>must</b> yield their entity-component pair in increasing order of entity index. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_2_storage_8hpp_source.html#l00053">53</a> of file <a class="el" href="storage_2_storage_8hpp_source.html">Storage.hpp</a>.</p>
+
+</div>
+</div>
+<a id="abdc7eeb6f093daafc5a2d9013cd98518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdc7eeb6f093daafc5a2d9013cd98518">&#9670;&nbsp;</a></span>Joinable</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename J &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">concept ecs::Joinable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= requires(J &amp;joinable, J <span class="keyword">const</span> &amp;cjoinable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keyword">typename</span> JoinTraits&lt;J&gt;::Data;</div>
+<div class="line"> </div>
+<div class="line">        </div>
+<div class="line">        { JoinTraits&lt;J&gt;::getMask(cjoinable) } -&gt; std::same_as&lt;util::BitSet const &amp;&gt;;</div>
+<div class="line">        { JoinTraits&lt;J&gt;::getData(joinable, index) } -&gt; std::same_as&lt;typename JoinTraits&lt;J&gt;::Data&gt;;</div>
+<div class="line">        </div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p>Implemented by types that can be joined. </p>
+
+<p class="definition">Definition at line <a class="el" href="_joinable_8hpp_source.html#l00030">30</a> of file <a class="el" href="_joinable_8hpp_source.html">Joinable.hpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

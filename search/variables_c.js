@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['piecewise_5fconstruct_5578',['piecewise_construct',['http://en.cppreference.com/w/cpp/utility/piecewise_construct.html',1,'std']]]
+  ['negation_5fv_5780',['negation_v',['http://en.cppreference.com/w/cpp/types/negation.html',1,'std']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['difference_5ftype_5594',['difference_type',['../classecs_1_1_join_iter.html#a646338e0e14d0b7b77fb0c79c02a1d10',1,'ecs::JoinIter']]]
+  ['component_5798',['Component',['../classecs_1_1_map_storage.html#acae6fb5f02572e29c1219dc65aa35020',1,'ecs::MapStorage::Component()'],['../classecs_1_1_marker_storage.html#a3e9079ffcdff14ab763b1bff40b8c581',1,'ecs::MarkerStorage::Component()']]]
 ];

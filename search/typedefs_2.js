@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['reference_5596',['reference',['../classecs_1_1_join_iter.html#a3c55f816228bf4de3a286d2781aa7489',1,'ecs::JoinIter']]]
+  ['generation_5801',['Generation',['../classecs_1_1_entity.html#add068dba83095b7f5d7ad957259caee2',1,'ecs::Entity']]],
+  ['getstoragetype_5802',['getStorageType',['../namespaceecs.html#ab50f8e89b62b0793f0e907d669876a0d',1,'ecs']]]
 ];

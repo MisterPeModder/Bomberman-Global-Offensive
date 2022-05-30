@@ -4,6 +4,8 @@ var classutil_1_1_bit_set =
     [ "BitSet", "classutil_1_1_bit_set.html#a245462458522570585a95bdc61fe2039", null ],
     [ "BitSet", "classutil_1_1_bit_set.html#a31955c86d58bf84207c5c5aa412cd892", null ],
     [ "_resize", "classutil_1_1_bit_set.html#aa316ef8b94084b11c22856c0981c0e03", null ],
+    [ "firstSet", "classutil_1_1_bit_set.html#a90f9991829f5f5cb4d24c5213b6ba829", null ],
+    [ "firstUnset", "classutil_1_1_bit_set.html#a034726ec31b4e4ad0b2c7a82cbfad3e4", null ],
     [ "flip", "classutil_1_1_bit_set.html#affeb7b19f28f56c803f223d1dc96b85c", null ],
     [ "getStoreWordCount", "classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba", null ],
     [ "mask", "classutil_1_1_bit_set.html#a349731228e9b8c79618360b357be3735", null ],

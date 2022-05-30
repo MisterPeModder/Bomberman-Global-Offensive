@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Bomberman:GlobalOffensive: ecs::JoinIter&lt; Storage, Storages &gt; Class Template Reference</title>
+<title>Bomberman:GlobalOffensive: ecs::JoinIter&lt; First, Rest &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,151 +90,204 @@ $(document).ready(function(){initNavTree('classecs_1_1_join_iter.html',''); init
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classecs_1_1_join_iter-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ecs::JoinIter&lt; Storage, Storages &gt; Class Template Reference</div>  </div>
+<div class="title">ecs::JoinIter&lt; First, Rest &gt; Class Template Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="join_8hpp_source.html">join.hpp</a>&gt;</code></p>
+<p>The iterator type used by <a class="el" href="classecs_1_1_join.html">Join</a>.  
+ <a href="classecs_1_1_join_iter.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>&gt;</code></p>
 <div class="dynheader">
-Collaboration diagram for ecs::JoinIter&lt; Storage, Storages &gt;:</div>
+Collaboration diagram for ecs::JoinIter&lt; First, Rest &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classecs_1_1_join_iter__coll__graph.png" border="0" usemap="#ecs_1_1_join_iter_3_01_storage_00_01_storages_01_4_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="classecs_1_1_join_iter__coll__graph.png" border="0" usemap="#ecs_1_1_join_iter_3_01_first_00_01_rest_01_4_coll__map" alt="Collaboration graph"/></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a9851efc9f570c68312beec1705c0a72c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a9851efc9f570c68312beec1705c0a72c">value_type</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; typename Storage::Component &amp;, typename Storages::Component &amp;... &gt;</td></tr>
-<tr class="separator:a9851efc9f570c68312beec1705c0a72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a646338e0e14d0b7b77fb0c79c02a1d10"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a646338e0e14d0b7b77fb0c79c02a1d10">difference_type</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a></td></tr>
-<tr class="separator:a646338e0e14d0b7b77fb0c79c02a1d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c55f816228bf4de3a286d2781aa7489"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a3c55f816228bf4de3a286d2781aa7489">reference</a> = <a class="el" href="classecs_1_1_join_iter.html#a9851efc9f570c68312beec1705c0a72c">value_type</a> &amp;</td></tr>
-<tr class="separator:a3c55f816228bf4de3a286d2781aa7489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c76b338dde5e3e43e41bc12aaf7ad03"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a4c76b338dde5e3e43e41bc12aaf7ad03">iterator_category</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/iterator/iterator_tags.html">std::input_iterator_tag</a></td></tr>
-<tr class="separator:a4c76b338dde5e3e43e41bc12aaf7ad03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2d935a3d248623fcf05ce2aeebfe1d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; typename <a class="el" href="structecs_1_1_join_traits.html">JoinTraits</a>&lt; First &gt;::Data, typename <a class="el" href="structecs_1_1_join_traits.html">JoinTraits</a>&lt; Rest &gt;::Data... &gt;</td></tr>
+<tr class="separator:a7a2d935a3d248623fcf05ce2aeebfe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bf03bf0484f57f351315be9c3b74031"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a0bf03bf0484f57f351315be9c3b74031">difference_type</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a></td></tr>
+<tr class="separator:a0bf03bf0484f57f351315be9c3b74031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a168db81fc027ba47874e5e5a442929f4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a168db81fc027ba47874e5e5a442929f4">reference</a> = <a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a> &amp;</td></tr>
+<tr class="separator:a168db81fc027ba47874e5e5a442929f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af965facb7aecef468f980009dc073cc5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#af965facb7aecef468f980009dc073cc5">iterator_category</a> = <a class="elRef" href="http://en.cppreference.com/w/cpp/iterator/iterator_tags.html">std::input_iterator_tag</a></td></tr>
+<tr class="separator:af965facb7aecef468f980009dc073cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1e2cb1a42921429ed79cfeeaccd33c6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a1e2cb1a42921429ed79cfeeaccd33c6a">JoinIter</a> (<a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> const &amp;mask, <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Storage &amp;, Storages &amp;... &gt; const &amp;storages, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> pos)</td></tr>
-<tr class="separator:a1e2cb1a42921429ed79cfeeaccd33c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18a8438027e2eba56429be042ea43921"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a18a8438027e2eba56429be042ea43921">JoinIter</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; const &amp;)=default</td></tr>
-<tr class="separator:a18a8438027e2eba56429be042ea43921"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a322d83a255cb385dd188970c2deabf4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a322d83a255cb385dd188970c2deabf4a">operator=</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; const &amp;)=default</td></tr>
-<tr class="separator:a322d83a255cb385dd188970c2deabf4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b94b16de3cc4ff23ec60435a96079b"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#ae6b94b16de3cc4ff23ec60435a96079b">operator==</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; const &amp;other) const</td></tr>
-<tr class="separator:ae6b94b16de3cc4ff23ec60435a96079b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9adb41a68cdfeb08805914d890b7465"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#aa9adb41a68cdfeb08805914d890b7465">operator!=</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; const &amp;other) const</td></tr>
-<tr class="separator:aa9adb41a68cdfeb08805914d890b7465"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3f05bd91225b1dc253be70f654c9246"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html#a9851efc9f570c68312beec1705c0a72c">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#ab3f05bd91225b1dc253be70f654c9246">operator*</a> () const</td></tr>
-<tr class="separator:ab3f05bd91225b1dc253be70f654c9246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe68836f05d7ebcd8f12d7e945d10d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a5fe68836f05d7ebcd8f12d7e945d10d0">JoinIter</a> ()</td></tr>
+<tr class="memdesc:a5fe68836f05d7ebcd8f12d7e945d10d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default (uninitialized) contructor.  <a href="classecs_1_1_join_iter.html#a5fe68836f05d7ebcd8f12d7e945d10d0">More...</a><br /></td></tr>
+<tr class="separator:a5fe68836f05d7ebcd8f12d7e945d10d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a808239ce2dfa08cf3a724c1a5f111245"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a808239ce2dfa08cf3a724c1a5f111245">JoinIter</a> (<a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> const &amp;mask, <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; First &amp;, Rest &amp;... &gt; const &amp;storages, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> pos)</td></tr>
+<tr class="separator:a808239ce2dfa08cf3a724c1a5f111245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee2b635de4e489d221be92f8404957f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#abee2b635de4e489d221be92f8404957f">JoinIter</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; const &amp;)=default</td></tr>
+<tr class="separator:abee2b635de4e489d221be92f8404957f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1dc5789cbad4624f5c1c9aae972f46b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#aa1dc5789cbad4624f5c1c9aae972f46b">operator=</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; const &amp;)=default</td></tr>
+<tr class="separator:aa1dc5789cbad4624f5c1c9aae972f46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135fdb88dd34633bc67f3d3acfe01688"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a135fdb88dd34633bc67f3d3acfe01688">JoinIter</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; &amp;&amp;)=default</td></tr>
+<tr class="separator:a135fdb88dd34633bc67f3d3acfe01688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462442a4ea2c6a459f43b5a94075169c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a462442a4ea2c6a459f43b5a94075169c">operator=</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; &amp;&amp;other)=default</td></tr>
+<tr class="separator:a462442a4ea2c6a459f43b5a94075169c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b0c258b1f53e5d9abfb4e186e2549b"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a24b0c258b1f53e5d9abfb4e186e2549b">operator==</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; const &amp;other) const</td></tr>
+<tr class="separator:a24b0c258b1f53e5d9abfb4e186e2549b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad09ddb3d4ae598070422da82e7ff6e4c"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#ad09ddb3d4ae598070422da82e7ff6e4c">operator!=</a> (<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; const &amp;other) const</td></tr>
+<tr class="separator:ad09ddb3d4ae598070422da82e7ff6e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab007d25bcc0ca0919ac63c40f9e233c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#ab007d25bcc0ca0919ac63c40f9e233c9">operator*</a> () const</td></tr>
+<tr class="separator:ab007d25bcc0ca0919ac63c40f9e233c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0899a9948400fc68d44008566c9691"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#afd0899a9948400fc68d44008566c9691">operator-&gt;</a> () const</td></tr>
+<tr class="separator:afd0899a9948400fc68d44008566c9691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7246bc938d9bdbf1aed3bfedca9d364b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a7246bc938d9bdbf1aed3bfedca9d364b">operator++</a> ()</td></tr>
+<tr class="memdesc:a7246bc938d9bdbf1aed3bfedca9d364b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments the iterator.  <a href="classecs_1_1_join_iter.html#a7246bc938d9bdbf1aed3bfedca9d364b">More...</a><br /></td></tr>
+<tr class="separator:a7246bc938d9bdbf1aed3bfedca9d364b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a814ca62be6274862bbbc489e5721da3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a814ca62be6274862bbbc489e5721da3b">operator++</a> (int)</td></tr>
+<tr class="memdesc:a814ca62be6274862bbbc489e5721da3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the iterator and increments the copy, please use pre-incrementation instead.  <a href="classecs_1_1_join_iter.html#a814ca62be6274862bbbc489e5721da3b">More...</a><br /></td></tr>
+<tr class="separator:a814ca62be6274862bbbc489e5721da3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a4ae2329cd36847e2fe6ad6d4b7461284"><td class="memTemplParams" colspan="2">template&lt;size_t... Indices&gt; </td></tr>
-<tr class="memitem:a4ae2329cd36847e2fe6ad6d4b7461284"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html#a9851efc9f570c68312beec1705c0a72c">value_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a4ae2329cd36847e2fe6ad6d4b7461284">get_components</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::index_sequence</a>&lt; Indices... &gt;) const</td></tr>
-<tr class="separator:a4ae2329cd36847e2fe6ad6d4b7461284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb322cb974000f29eaaf5fb6a355557b"><td class="memTemplParams" colspan="2">template&lt;size_t... Indices&gt; </td></tr>
+<tr class="memitem:acb322cb974000f29eaaf5fb6a355557b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#acb322cb974000f29eaaf5fb6a355557b">get_components</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::index_sequence</a>&lt; Indices... &gt;) const</td></tr>
+<tr class="memdesc:acb322cb974000f29eaaf5fb6a355557b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Black magic™ that allows one to get the components in the storages.  <a href="classecs_1_1_join_iter.html#acb322cb974000f29eaaf5fb6a355557b">More...</a><br /></td></tr>
+<tr class="separator:acb322cb974000f29eaaf5fb6a355557b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a924a3abd76eedb6c6d0f10f5e98f6275"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a924a3abd76eedb6c6d0f10f5e98f6275">_mask</a></td></tr>
-<tr class="separator:a924a3abd76eedb6c6d0f10f5e98f6275"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27b28b11c052c6cef72bbe7e537a9733"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Storage &amp;, Storages &amp;... &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a27b28b11c052c6cef72bbe7e537a9733">_storages</a></td></tr>
-<tr class="separator:a27b28b11c052c6cef72bbe7e537a9733"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd655509abf1f6bdcf37b83da5e3927d"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#afd655509abf1f6bdcf37b83da5e3927d">_pos</a></td></tr>
-<tr class="separator:afd655509abf1f6bdcf37b83da5e3927d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c6d04f0f58a36c4ec8080a74c8ecca"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt; const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a43c6d04f0f58a36c4ec8080a74c8ecca">_mask</a></td></tr>
+<tr class="separator:a43c6d04f0f58a36c4ec8080a74c8ecca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a479d31e8dd53551696493ee96fb9d8"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt; const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; First &amp;, Rest &amp;... &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a5a479d31e8dd53551696493ee96fb9d8">_storages</a></td></tr>
+<tr class="separator:a5a479d31e8dd53551696493ee96fb9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87ef682f3dfe72e4b32039ce1f8f2870"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">_pos</a></td></tr>
+<tr class="separator:a87ef682f3dfe72e4b32039ce1f8f2870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename Storage, typename... Storages&gt;<br />
-class ecs::JoinIter&lt; Storage, Storages &gt;</h3>
+<div class="textblock"><h3>template&lt;Joinable First, Joinable... Rest&gt;<br />
+class ecs::JoinIter&lt; First, Rest &gt;</h3>
 
+<p>The iterator type used by <a class="el" href="classecs_1_1_join.html">Join</a>. </p>
+<p>This type satisfies std::forward_iterator. </p>
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00020">20</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00033">33</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a646338e0e14d0b7b77fb0c79c02a1d10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a646338e0e14d0b7b77fb0c79c02a1d10">&#9670;&nbsp;</a></span>difference_type</h2>
+<a id="a0bf03bf0484f57f351315be9c3b74031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bf03bf0484f57f351315be9c3b74031">&#9670;&nbsp;</a></span>difference_type</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::<a class="el" href="classecs_1_1_join_iter.html#a646338e0e14d0b7b77fb0c79c02a1d10">difference_type</a> =  <a class="elRef" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a></td>
+          <td class="memname">using <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::<a class="el" href="classecs_1_1_join_iter.html#a0bf03bf0484f57f351315be9c3b74031">difference_type</a> =  <a class="elRef" href="http://en.cppreference.com/w/cpp/types/ptrdiff_t.html">std::ptrdiff_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00023">23</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00037">37</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a4c76b338dde5e3e43e41bc12aaf7ad03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c76b338dde5e3e43e41bc12aaf7ad03">&#9670;&nbsp;</a></span>iterator_category</h2>
+<a id="af965facb7aecef468f980009dc073cc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af965facb7aecef468f980009dc073cc5">&#9670;&nbsp;</a></span>iterator_category</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::<a class="el" href="classecs_1_1_join_iter.html#a4c76b338dde5e3e43e41bc12aaf7ad03">iterator_category</a> =  <a class="elRef" href="http://en.cppreference.com/w/cpp/iterator/iterator_tags.html">std::input_iterator_tag</a></td>
+          <td class="memname">using <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::<a class="el" href="classecs_1_1_join_iter.html#af965facb7aecef468f980009dc073cc5">iterator_category</a> =  <a class="elRef" href="http://en.cppreference.com/w/cpp/iterator/iterator_tags.html">std::input_iterator_tag</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00025">25</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00039">39</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a3c55f816228bf4de3a286d2781aa7489"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c55f816228bf4de3a286d2781aa7489">&#9670;&nbsp;</a></span>reference</h2>
+<a id="a168db81fc027ba47874e5e5a442929f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a168db81fc027ba47874e5e5a442929f4">&#9670;&nbsp;</a></span>reference</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::<a class="el" href="classecs_1_1_join_iter.html#a3c55f816228bf4de3a286d2781aa7489">reference</a> =  <a class="el" href="classecs_1_1_join_iter.html#a9851efc9f570c68312beec1705c0a72c">value_type</a> &amp;</td>
+          <td class="memname">using <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::<a class="el" href="classecs_1_1_join_iter.html#a168db81fc027ba47874e5e5a442929f4">reference</a> =  <a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00024">24</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00038">38</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9851efc9f570c68312beec1705c0a72c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9851efc9f570c68312beec1705c0a72c">&#9670;&nbsp;</a></span>value_type</h2>
+<a id="a7a2d935a3d248623fcf05ce2aeebfe1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2d935a3d248623fcf05ce2aeebfe1d">&#9670;&nbsp;</a></span>value_type</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::<a class="el" href="classecs_1_1_join_iter.html#a9851efc9f570c68312beec1705c0a72c">value_type</a> =  <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;typename Storage::Component &amp;, typename Storages::Component &amp;...&gt;</td>
+          <td class="memname">using <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::<a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a> =  <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;typename <a class="el" href="structecs_1_1_join_traits.html">JoinTraits</a>&lt;First&gt;::Data, typename <a class="el" href="structecs_1_1_join_traits.html">JoinTraits</a>&lt;Rest&gt;::Data...&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00022">22</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00036">36</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1e2cb1a42921429ed79cfeeaccd33c6a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e2cb1a42921429ed79cfeeaccd33c6a">&#9670;&nbsp;</a></span>JoinIter() <span class="overload">[1/2]</span></h2>
+<a id="a5fe68836f05d7ebcd8f12d7e945d10d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe68836f05d7ebcd8f12d7e945d10d0">&#9670;&nbsp;</a></span>JoinIter() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a> </td>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default (uninitialized) contructor. </p>
+
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00042">42</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a808239ce2dfa08cf3a724c1a5f111245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a808239ce2dfa08cf3a724c1a5f111245">&#9670;&nbsp;</a></span>JoinIter() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Joinable First, Joinable... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> const &amp;&#160;</td>
           <td class="paramname"><em>mask</em>, </td>
@@ -242,7 +295,7 @@ template&lt;typename Storage , typename... Storages&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; Storage &amp;, Storages &amp;... &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt; First &amp;, Rest &amp;... &gt; const &amp;&#160;</td>
           <td class="paramname"><em>storages</em>, </td>
         </tr>
         <tr>
@@ -264,28 +317,56 @@ template&lt;typename Storage , typename... Storages&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00027">27</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            : <a class="code" href="classecs_1_1_join_iter.html#a924a3abd76eedb6c6d0f10f5e98f6275">_mask</a>(mask), <a class="code" href="classecs_1_1_join_iter.html#a27b28b11c052c6cef72bbe7e537a9733">_storages</a>(storages), <a class="code" href="classecs_1_1_join_iter.html#afd655509abf1f6bdcf37b83da5e3927d">_pos</a>(pos)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00044">44</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            : <a class="code" href="classecs_1_1_join_iter.html#a43c6d04f0f58a36c4ec8080a74c8ecca">_mask</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/ref.html">std::cref</a>(mask)), <a class="code" href="classecs_1_1_join_iter.html#a5a479d31e8dd53551696493ee96fb9d8">_storages</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/ref.html">std::cref</a>(storages)), <a class="code" href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">_pos</a>(pos)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a18a8438027e2eba56429be042ea43921"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18a8438027e2eba56429be042ea43921">&#9670;&nbsp;</a></span>JoinIter() <span class="overload">[2/2]</span></h2>
+<a id="abee2b635de4e489d221be92f8404957f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abee2b635de4e489d221be92f8404957f">&#9670;&nbsp;</a></span>JoinIter() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a> </td>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a135fdb88dd34633bc67f3d3acfe01688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135fdb88dd34633bc67f3d3acfe01688">&#9670;&nbsp;</a></span>JoinIter() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Joinable First, Joinable... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::<a class="el" href="classecs_1_1_join_iter.html">JoinIter</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; &amp;&amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -300,13 +381,13 @@ template&lt;typename Storage , typename... Storages&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4ae2329cd36847e2fe6ad6d4b7461284"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ae2329cd36847e2fe6ad6d4b7461284">&#9670;&nbsp;</a></span>get_components()</h2>
+<a id="acb322cb974000f29eaaf5fb6a355557b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb322cb974000f29eaaf5fb6a355557b">&#9670;&nbsp;</a></span>get_components()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <div class="memtemplate">
 template&lt;size_t... Indices&gt; </div>
 <table class="mlabels">
@@ -314,7 +395,7 @@ template&lt;size_t... Indices&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html#a9851efc9f570c68312beec1705c0a72c">value_type</a> <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::get_components </td>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a> <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::get_components </td>
           <td>(</td>
           <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::index_sequence</a>&lt; Indices... &gt;&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -328,29 +409,32 @@ template&lt;size_t... Indices&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00056">56</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            ecs::Entity entity(this-&gt;<a class="code" href="classecs_1_1_join_iter.html#afd655509abf1f6bdcf37b83da5e3927d">_pos</a>, 0);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> {std::get&lt;Indices&gt;(this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a27b28b11c052c6cef72bbe7e537a9733">_storages</a>)[entity]...};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<p>Black magic™ that allows one to get the components in the storages. </p>
+
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00102">102</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="comment">// If someone understands this, kudos. Because I sure don&#39;t.</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">return</span> {JoinTraits&lt;std::remove_reference_t&lt;decltype(std::get&lt;Indices&gt;(this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a5a479d31e8dd53551696493ee96fb9d8">_storages</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper/get.html">get</a>()))&gt;&gt;::getData(</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                std::get&lt;Indices&gt;(this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a5a479d31e8dd53551696493ee96fb9d8">_storages</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper/get.html">get</a>()), this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">_pos</a>)...};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa9adb41a68cdfeb08805914d890b7465"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9adb41a68cdfeb08805914d890b7465">&#9670;&nbsp;</a></span>operator!=()</h2>
+<a id="ad09ddb3d4ae598070422da82e7ff6e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad09ddb3d4ae598070422da82e7ff6e4c">&#9670;&nbsp;</a></span>operator!=()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::operator!= </td>
+          <td class="memname">constexpr bool <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::operator!= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; const &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -361,27 +445,27 @@ template&lt;typename Storage , typename... Storages&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>It is Undefined Behavior to compare two iterators that do not belong to the same container.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two iterators are not equal. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00041">41</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_join_iter.html#afd655509abf1f6bdcf37b83da5e3927d">_pos</a> != other._pos;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00063">63</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">_pos</a> != other._pos; }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab3f05bd91225b1dc253be70f654c9246"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3f05bd91225b1dc253be70f654c9246">&#9670;&nbsp;</a></span>operator*()</h2>
+<a id="ab007d25bcc0ca0919ac63c40f9e233c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab007d25bcc0ca0919ac63c40f9e233c9">&#9670;&nbsp;</a></span>operator*()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html#a9851efc9f570c68312beec1705c0a72c">value_type</a> <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::operator* </td>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a> <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::operator* </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -393,29 +477,166 @@ template&lt;typename Storage , typename... Storages&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The components and/or resources corresponding the entity at the current position. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00046">46</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a4ae2329cd36847e2fe6ad6d4b7461284">get_components</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence</a>&lt;(<span class="keyword">sizeof</span>...(Storages)) + 1&gt;());</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00066">66</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_join_iter.html#acb322cb974000f29eaaf5fb6a355557b">get_components</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence</a>&lt;(<span class="keyword">sizeof</span>...(Rest)) + 1&gt;()); }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a322d83a255cb385dd188970c2deabf4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a322d83a255cb385dd188970c2deabf4a">&#9670;&nbsp;</a></span>operator=()</h2>
+<a id="a7246bc938d9bdbf1aed3bfedca9d364b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7246bc938d9bdbf1aed3bfedca9d364b">&#9670;&nbsp;</a></span>operator++() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt;Storage, Storages...&gt;&amp; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt;First, Rest...&gt;&amp; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::operator++ </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Increments the iterator. </p>
+<dl class="section note"><dt>Note</dt><dd>It is Undefined Behavior to increment the iterator past the end sentinel.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to this iterator. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00076">76</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">_pos</a> = this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a43c6d04f0f58a36c4ec8080a74c8ecca">_mask</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper/get.html">get</a>().firstSet(this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">_pos</a> + 1);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a814ca62be6274862bbbc489e5721da3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a814ca62be6274862bbbc489e5721da3b">&#9670;&nbsp;</a></span>operator++() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Joinable First, Joinable... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt;First, Rest...&gt; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copies the iterator and increments the copy, please use pre-incrementation instead. </p>
+<dl class="section note"><dt>Note</dt><dd>It is Undefined Behavior to increment the iterator past the end sentinel. </dd>
+<dd>
+This creates a copy of the iterator!</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The incremented copy. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00088">88</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="classecs_1_1_join_iter.html#a5fe68836f05d7ebcd8f12d7e945d10d0">JoinIter</a>&lt;First, Rest...&gt; result = *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            ++result-&gt;_pos;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afd0899a9948400fc68d44008566c9691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd0899a9948400fc68d44008566c9691">&#9670;&nbsp;</a></span>operator-&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Joinable First, Joinable... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html#a7a2d935a3d248623fcf05ce2aeebfe1d">value_type</a> <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The components and/or resources corresponding the entity at the current position. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00069">69</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{ <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a462442a4ea2c6a459f43b5a94075169c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a462442a4ea2c6a459f43b5a94075169c">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Joinable First, Joinable... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt;First, Rest...&gt;&amp; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1dc5789cbad4624f5c1c9aae972f46b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1dc5789cbad4624f5c1c9aae972f46b">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;Joinable First, Joinable... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt;First, Rest...&gt;&amp; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; const &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -429,21 +650,21 @@ template&lt;typename Storage , typename... Storages&gt; </div>
 
 </div>
 </div>
-<a id="ae6b94b16de3cc4ff23ec60435a96079b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6b94b16de3cc4ff23ec60435a96079b">&#9670;&nbsp;</a></span>operator==()</h2>
+<a id="a24b0c258b1f53e5d9abfb4e186e2549b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b0c258b1f53e5d9abfb4e186e2549b">&#9670;&nbsp;</a></span>operator==()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::operator== </td>
+          <td class="memname">constexpr bool <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::operator== </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; Storage, Storages... &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_join_iter.html">JoinIter</a>&lt; First, Rest... &gt; const &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -454,28 +675,28 @@ template&lt;typename Storage , typename... Storages&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>It is Undefined Behavior to compare two iterators that do not belong to the same container.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the two iterators are equal. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00036">36</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_join_iter.html#afd655509abf1f6bdcf37b83da5e3927d">_pos</a> == other._pos;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00058">58</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">_pos</a> == other._pos; }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a924a3abd76eedb6c6d0f10f5e98f6275"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a924a3abd76eedb6c6d0f10f5e98f6275">&#9670;&nbsp;</a></span>_mask</h2>
+<a id="a43c6d04f0f58a36c4ec8080a74c8ecca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c6d04f0f58a36c4ec8080a74c8ecca">&#9670;&nbsp;</a></span>_mask</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&amp; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::_mask</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt;const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a>&gt; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::_mask</td>
         </tr>
       </table>
   </td>
@@ -485,23 +706,23 @@ template&lt;typename Storage , typename... Storages&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00052">52</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00097">97</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
 
 </div>
 </div>
-<a id="afd655509abf1f6bdcf37b83da5e3927d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd655509abf1f6bdcf37b83da5e3927d">&#9670;&nbsp;</a></span>_pos</h2>
+<a id="a87ef682f3dfe72e4b32039ce1f8f2870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87ef682f3dfe72e4b32039ce1f8f2870">&#9670;&nbsp;</a></span>_pos</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::_pos</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::_pos</td>
         </tr>
       </table>
   </td>
@@ -511,23 +732,23 @@ template&lt;typename Storage , typename... Storages&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00054">54</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00099">99</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a27b28b11c052c6cef72bbe7e537a9733"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27b28b11c052c6cef72bbe7e537a9733">&#9670;&nbsp;</a></span>_storages</h2>
+<a id="a5a479d31e8dd53551696493ee96fb9d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a479d31e8dd53551696493ee96fb9d8">&#9670;&nbsp;</a></span>_storages</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename Storage , typename... Storages&gt; </div>
+template&lt;Joinable First, Joinable... Rest&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;Storage &amp;, Storages &amp;...&gt;&amp; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; Storage, Storages &gt;::_storages</td>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper.html">std::reference_wrapper</a>&lt;const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/tuple.html">std::tuple</a>&lt;First &amp;, Rest &amp;...&gt; &gt; <a class="el" href="classecs_1_1_join_iter.html">ecs::JoinIter</a>&lt; First, Rest &gt;::_storages</td>
         </tr>
       </table>
   </td>
@@ -537,20 +758,23 @@ template&lt;typename Storage , typename... Storages&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="join_8hpp_source.html#l00053">53</a> of file <a class="el" href="join_8hpp_source.html">join.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="join_2_join_8hpp_source.html#l00098">98</a> of file <a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/ecs/<a class="el" href="join_8hpp_source.html">join.hpp</a></li>
+<li>src/ecs/join/<a class="el" href="join_2_join_8hpp_source.html">Join.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecs_1_1_join_iter_html_afd655509abf1f6bdcf37b83da5e3927d"><div class="ttname"><a href="classecs_1_1_join_iter.html#afd655509abf1f6bdcf37b83da5e3927d">ecs::JoinIter::_pos</a></div><div class="ttdeci">std::size_t _pos</div><div class="ttdef"><b>Definition:</b> <a href="join_8hpp_source.html#l00054">join.hpp:54</a></div></div>
 <div class="ttc" id="ainteger_sequence_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/integer_sequence.html">std::make_index_sequence</a></div></div>
-<div class="ttc" id="aclassecs_1_1_join_iter_html_a924a3abd76eedb6c6d0f10f5e98f6275"><div class="ttname"><a href="classecs_1_1_join_iter.html#a924a3abd76eedb6c6d0f10f5e98f6275">ecs::JoinIter::_mask</a></div><div class="ttdeci">const util::BitSet &amp; _mask</div><div class="ttdef"><b>Definition:</b> <a href="join_8hpp_source.html#l00052">join.hpp:52</a></div></div>
-<div class="ttc" id="aclassecs_1_1_join_iter_html_a4ae2329cd36847e2fe6ad6d4b7461284"><div class="ttname"><a href="classecs_1_1_join_iter.html#a4ae2329cd36847e2fe6ad6d4b7461284">ecs::JoinIter::get_components</a></div><div class="ttdeci">value_type get_components(std::index_sequence&lt; Indices... &gt;) const</div><div class="ttdef"><b>Definition:</b> <a href="join_8hpp_source.html#l00056">join.hpp:56</a></div></div>
-<div class="ttc" id="aclassecs_1_1_join_iter_html_a27b28b11c052c6cef72bbe7e537a9733"><div class="ttname"><a href="classecs_1_1_join_iter.html#a27b28b11c052c6cef72bbe7e537a9733">ecs::JoinIter::_storages</a></div><div class="ttdeci">const std::tuple&lt; Storage &amp;, Storages &amp;... &gt; &amp; _storages</div><div class="ttdef"><b>Definition:</b> <a href="join_8hpp_source.html#l00053">join.hpp:53</a></div></div>
+<div class="ttc" id="aget_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/functional/reference_wrapper/get.html">std::reference_wrapper::get</a></div><div class="ttdeci">T get(T... args)</div></div>
+<div class="ttc" id="aclassecs_1_1_join_iter_html_a43c6d04f0f58a36c4ec8080a74c8ecca"><div class="ttname"><a href="classecs_1_1_join_iter.html#a43c6d04f0f58a36c4ec8080a74c8ecca">ecs::JoinIter::_mask</a></div><div class="ttdeci">std::reference_wrapper&lt; const util::BitSet &gt; _mask</div><div class="ttdef"><b>Definition:</b> <a href="join_2_join_8hpp_source.html#l00097">Join.hpp:97</a></div></div>
+<div class="ttc" id="aclassecs_1_1_join_iter_html_acb322cb974000f29eaaf5fb6a355557b"><div class="ttname"><a href="classecs_1_1_join_iter.html#acb322cb974000f29eaaf5fb6a355557b">ecs::JoinIter::get_components</a></div><div class="ttdeci">value_type get_components(std::index_sequence&lt; Indices... &gt;) const</div><div class="ttdoc">Black magic™ that allows one to get the components in the storages.</div><div class="ttdef"><b>Definition:</b> <a href="join_2_join_8hpp_source.html#l00102">Join.hpp:102</a></div></div>
+<div class="ttc" id="aclassecs_1_1_join_iter_html_a5a479d31e8dd53551696493ee96fb9d8"><div class="ttname"><a href="classecs_1_1_join_iter.html#a5a479d31e8dd53551696493ee96fb9d8">ecs::JoinIter::_storages</a></div><div class="ttdeci">std::reference_wrapper&lt; const std::tuple&lt; First &amp;, Rest &amp;... &gt; &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="join_2_join_8hpp_source.html#l00098">Join.hpp:98</a></div></div>
+<div class="ttc" id="aclassecs_1_1_join_iter_html_a87ef682f3dfe72e4b32039ce1f8f2870"><div class="ttname"><a href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">ecs::JoinIter::_pos</a></div><div class="ttdeci">std::size_t _pos</div><div class="ttdef"><b>Definition:</b> <a href="join_2_join_8hpp_source.html#l00099">Join.hpp:99</a></div></div>
+<div class="ttc" id="aclassecs_1_1_join_iter_html_a5fe68836f05d7ebcd8f12d7e945d10d0"><div class="ttname"><a href="classecs_1_1_join_iter.html#a5fe68836f05d7ebcd8f12d7e945d10d0">ecs::JoinIter::JoinIter</a></div><div class="ttdeci">JoinIter()</div><div class="ttdoc">Default (uninitialized) contructor.</div><div class="ttdef"><b>Definition:</b> <a href="join_2_join_8hpp_source.html#l00042">Join.hpp:42</a></div></div>
+<div class="ttc" id="aref_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/functional/ref.html">std::cref</a></div><div class="ttdeci">T cref(T... args)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
