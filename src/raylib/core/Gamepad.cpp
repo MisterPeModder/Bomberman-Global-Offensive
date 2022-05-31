@@ -13,7 +13,11 @@ namespace raylib
     {
         Gamepad::Gamepad(int id) : _id(id) {}
 
-        Gamepad &Gamepad::operator=(int id) { _id = id; }
+        Gamepad &Gamepad::operator=(int id)
+        {
+            _id = id;
+            return *this;
+        }
 
         bool Gamepad::isAvailable() const { return IsGamepadAvailable(_id); }
 
