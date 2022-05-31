@@ -6,6 +6,7 @@
 */
 
 #include "Grid.hpp"
+#include <algorithm>
 #include <iterator>
 #include <random>
 #include <stdexcept>
@@ -50,7 +51,7 @@ namespace bomberman
 
                 for (size_t x = 0; x < _width; x++)
                     for (size_t y = 0; y < _height; y++)
-                        newState[x + y * _width] = _rule.nextState(getNeighbours(x, y), isFilled(x, y));
+                        newState[x + y * _width] = _rule.nextState(getNeighbors(x, y), isFilled(x, y));
                 _cells = newState;
             }
 
@@ -81,7 +82,7 @@ namespace bomberman
                 return isFilled(x, y);
             }
 
-            unsigned char Grid::getNeighbours(size_t x, size_t y) const
+            unsigned char Grid::getNeighbors(size_t x, size_t y) const
             {
                 unsigned char nbNeighbours = 0;
 

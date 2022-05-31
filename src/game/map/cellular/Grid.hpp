@@ -81,8 +81,8 @@ namespace bomberman
                 ///
                 /// @param x x position of the cell.
                 /// @param y y position of the cell.
-                /// @return true If the cell is filled.
-                /// @return false If the cell is empty.
+                /// @retval true If the cell is filled.
+                /// @retval false If the cell is empty.
                 /// @throw std::out_of_bounds when the position is out of the grid bounds
                 bool isFilled(size_t x, size_t y) const;
 
@@ -99,8 +99,8 @@ namespace bomberman
                 ///
                 /// @param x x position of the cell.
                 /// @param y y position of the cell.
-                /// @return true If the cell is filled.
-                /// @return false If the cell is empty.
+                /// @retval true If the cell is filled.
+                /// @retval false If the cell is empty.
                 bool borderIsFilled(int x, int y) const;
 
                 /// Get the number of filled neighbours of the cell at the position (x, y)
@@ -108,7 +108,7 @@ namespace bomberman
                 /// @param x x position of the cell.
                 /// @param y y position of the cell.
                 /// @return unsigned char number of filled neighbours (0-8)
-                unsigned char getNeighbours(size_t x, size_t y) const;
+                unsigned char getNeighbors(size_t x, size_t y) const;
 
                 size_t _width;
                 size_t _height;
