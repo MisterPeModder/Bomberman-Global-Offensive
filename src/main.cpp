@@ -81,7 +81,7 @@ static void setupLogger()
 {
     // Setup the logger parameters
     Logger::logger.setOutputFile("log.txt");
-    Logger::logger.setLogLevel(Logger::Severity::Debug);
+    Logger::logger.setLogLevel(Logger::Severity::Information);
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
     SetTraceLogCallback(raylibLogger);
     SetTraceLogLevel(LOG_INFO);
