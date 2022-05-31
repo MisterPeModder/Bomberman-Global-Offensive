@@ -1,5 +1,5 @@
-set(INCROOT ${INCROOT}/bomberman)
-set(SRCROOT ${SRCROOT}/bomberman)
+set(INCROOT ${INCROOT}/game)
+set(SRCROOT ${SRCROOT}/game)
 
 add_subdirectory(map)
 
