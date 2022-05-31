@@ -25,12 +25,12 @@ namespace bomberman
             class Rule {
               public:
                 /// Exception thrown when an error occured in the rule parsing.
-                class RuleInvalid : public std::runtime_error {
+                class InvalidRule : public std::runtime_error {
                   public:
-                    /// Construct a new RuleInvalid object
+                    /// Construct a new InvalidRule object
                     ///
                     /// @param what what.
-                    RuleInvalid(std::string_view what);
+                    InvalidRule(std::string_view what);
                 };
 
                 /// Create a new Rule from its notation.

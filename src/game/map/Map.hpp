@@ -20,12 +20,12 @@ namespace bomberman
         class Map {
           public:
             /// Exception thrown when the map size is invalid.
-            class MapSizeInvalid : public std::logic_error {
+            class InvalidMapSize : public std::logic_error {
               public:
-                /// Construct a new MapSizeInvalid object
+                /// Construct a new InvalidMapSize object
                 ///
                 /// @param message what message.
-                MapSizeInvalid(std::string_view message);
+                InvalidMapSize(std::string_view message);
             };
 
             /// Map element
@@ -49,7 +49,7 @@ namespace bomberman
             ///
             /// @param width width of the map
             /// @param height height of the map
-            /// @throw MapSizeInvalid when the size is invalid (< 3 or even)
+            /// @throw InvalidMapSize when the size is invalid (< 3 or even)
             void generate(size_t width, size_t height);
 
             /// Get the Element at the position (x, y)

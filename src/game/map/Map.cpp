@@ -14,16 +14,16 @@ namespace bomberman
 {
     namespace map
     {
-        Map::MapSizeInvalid::MapSizeInvalid(std::string_view message) : std::logic_error(message.data()) {}
+        Map::InvalidMapSize::InvalidMapSize(std::string_view message) : std::logic_error(message.data()) {}
 
         Map::Map(size_t width, size_t height) { generate(width, height); }
 
         void Map::generate(size_t width, size_t height)
         {
             if (width % 2 == 0 || height % 2 == 0)
-                throw MapSizeInvalid("Map width and height must be odd.");
+                throw InvalidMapSize("Map width and height must be odd.");
             if (width < 3 || height < 3)
-                throw MapSizeInvalid("Map cannot be smaller than 3x3.");
+                throw InvalidMapSize("Map cannot be smaller than 3x3.");
             _width = width;
             _height = height;
             _map.resize(_width * _height);

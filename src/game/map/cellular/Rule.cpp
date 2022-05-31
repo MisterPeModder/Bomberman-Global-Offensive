@@ -15,7 +15,7 @@ namespace bomberman
     {
         namespace cellular
         {
-            Rule::RuleInvalid::RuleInvalid(std::string_view what) : std::runtime_error(what.data()) {}
+            Rule::InvalidRule::InvalidRule(std::string_view what) : std::runtime_error(what.data()) {}
 
             Rule::Rule(std::string_view rule) { parseRule(rule); }
 
@@ -45,10 +45,10 @@ namespace bomberman
                 if (i == rule.size() - 1)
                     return;
                 if (i < rule.size() && rule[i++] != '/')
-                    throw RuleInvalid("Missing separator between birth and survive rule parts.");
+                    throw InvalidRule("Missing separator between birth and survive rule parts.");
                 i += parseSurvive(rule.data() + i);
                 if (i < rule.size())
-                    throw RuleInvalid("Invalid rule.");
+                    throw InvalidRule("Invalid rule.");
             }
 
             size_t Rule::parseBirth(std::string_view birthRule)
@@ -57,7 +57,7 @@ namespace bomberman
 
                 if (!std::regex_match(birthRule.data(), re)) {
                     if (!birthRule.empty() && birthRule[0] == 'B')
-                        throw RuleInvalid("Rule with empty birth.");
+                        throw InvalidRule("Rule with empty birth.");
                     return 0;
                 }
                 size_t i = 1;
@@ -72,7 +72,7 @@ namespace bomberman
 
                 if (!std::regex_match(surviveRule.data(), re)) {
                     if (!surviveRule.empty() && surviveRule[0] == 'S')
-                        throw RuleInvalid("Rule with empty survive.");
+                        throw InvalidRule("Rule with empty survive.");
                     return 0;
                 }
                 size_t i = 1;
