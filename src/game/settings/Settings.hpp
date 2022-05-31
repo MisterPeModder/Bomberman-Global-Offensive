@@ -8,6 +8,7 @@
 #ifndef GAME_PROFILE_HPP_
 #define GAME_PROFILE_HPP_
 
+#include <filesystem>
 #include <stdexcept>
 #include <string>
 #include "raylib/core/Vector2.hpp"
@@ -50,9 +51,20 @@ namespace game
             /// Reset the settings with the default values.
             void loadDefaults();
 
-            /// Save the settings in the file "settings/settings.cfg"
+            /// Get the Settings File Path.
+            /// @note The path is settings/settings.cfg.
+            ///
+            /// @return std::filesystem::path settings file path.
+            static std::filesystem::path getSettingsFilePath();
+
+            /// Save the settings at @ref getSettingsFilePath().
+            ///
             /// @throw std::runtime_error if the file can't be opened (or created).
             void save() const;
+
+            /// Load the settings from @ref getSettingsFilePath().
+            /// @note Unknown values will be ignored. Invalid values will be replaced by default ones.
+            void load();
 
             /// Set the sound effects Volume
             ///
@@ -107,6 +119,12 @@ namespace game
             bool isFullscreen() const;
 
           private:
+            /// Load a value from its string representation.
+            ///
+            /// @param key value name.
+            /// @param value value data.
+            void loadValue(std::string_view key, std::string_view value);
+
             float _sfxVolume;
             float _musicVolume;
             unsigned int _targetFramerate;
@@ -115,5 +133,14 @@ namespace game
         };
     } // namespace settings
 } // namespace game
+
+/// Output stream operator overload.
+/// @note This function is used for the settings save in the file.
+///
+/// @param stream output stream.
+/// @param settings settings to export.
+/// @return std::ostream& output stream.
+///
+std::ostream &operator<<(std::ostream &stream, const game::settings::Settings &settings);
 
 #endif /* !GAME_PROFILE_HPP_ */

@@ -6,8 +6,10 @@
 */
 
 #include "Settings.hpp"
-#include <filesystem>
 #include <fstream>
+#include <sstream>
+#include <string>
+#include "logger/Logger.hpp"
 #include "util/util.hpp"
 
 namespace game
@@ -30,9 +32,11 @@ namespace game
             _fullscreen = false;
         }
 
+        std::filesystem::path Settings::getSettingsFilePath() { return util::makePath("settings", "settings.cfg"); }
+
         void Settings::save() const
         {
-            std::filesystem::path path = util::makePath("settings", "settings.cfg");
+            std::filesystem::path path = getSettingsFilePath();
             std::ofstream file;
 
             if (!std::filesystem::is_directory("settings") || !std::filesystem::exists("settings"))
@@ -40,13 +44,67 @@ namespace game
             file.open(path, std::ios_base::out);
             if (!file.is_open())
                 throw std::runtime_error("Unable to save the settings file '" + path.generic_string() + "'");
-            file << "# Bomberman settings" << std::endl << std::endl;
-            file << "sfx_volume=" << _sfxVolume << std::endl;
-            file << "music_volume=" << _musicVolume << std::endl;
-            file << "target_framerate=" << _targetFramerate << std::endl;
-            file << "resolution=" << _resolution.x << "x" << _resolution.y << std::endl;
-            file << "fullscreen=" << _fullscreen << std::endl;
+            file << *this;
             file.close();
+        }
+
+        void Settings::loadValue(std::string_view key, std::string_view value)
+        {
+            if (key == "sfx_volume")
+                setSfxVolume(std::stof(value.data()));
+            else if (key == "music_volume")
+                setMusicVolume(std::stof(value.data()));
+            else if (key == "target_framerate")
+                setTargetFramerate(std::stoul(value.data()));
+            else if (key == "resolution") {
+                float width;
+                float height;
+
+                if (value.find('x') == std::string::npos)
+                    throw InvalidSettingsValue("Resolution must be of form '[width]x[height]'");
+                width = std::stof(value.data());
+                height = std::stof(value.data() + value.find('x') + 1);
+                setResolution({width, height});
+            } else if (key == "fullscreen") {
+                bool fullscreen;
+                std::istringstream(value.data()) >> fullscreen;
+                setFullscreen(fullscreen || value == "true");
+            } else {
+                Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
+                    writer << "Unknown settings key '" << key << "' with value '" << value << "'";
+                });
+            }
+        }
+
+        void Settings::load()
+        {
+            std::ifstream file(getSettingsFilePath());
+            std::string line;
+            std::stringstream ss;
+            std::string key;
+            std::string value;
+
+            loadDefaults();
+            if (!file.is_open())
+                return;
+            while (std::getline(file, line)) {
+                if (line.empty() || line[0] == '#')
+                    continue;
+                ss.str(line);
+                std::getline(ss, key, '=');
+                value = ss.str().substr(ss.tellg());
+                try {
+                    loadValue(key, value);
+                } catch (std::exception &e) {
+                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                        writer << "Exception occured when loading a setting value: '" << e.what() << "'";
+                    });
+                    Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
+                        writer << "Unable to load setting '" << key << "' with value '" << value
+                               << "'. Default value will be used.";
+                    });
+                }
+            }
         }
 
         void Settings::setSfxVolume(float volume)
@@ -81,3 +139,13 @@ namespace game
 
     } // namespace settings
 } // namespace game
+
+std::ostream &operator<<(std::ostream &stream, const game::settings::Settings &settings)
+{
+    stream << "# Bomberman settings" << std::endl << std::endl;
+    stream << "sfx_volume=" << settings.getSfxVolume() << std::endl;
+    stream << "music_volume=" << settings.getMusicVolume() << std::endl;
+    stream << "target_framerate=" << settings.getTargetFramerate() << std::endl;
+    stream << "resolution=" << settings.getResolution().x << "x" << settings.getResolution().y << std::endl;
+    return stream << "fullscreen=" << std::boolalpha << settings.isFullscreen() << std::endl;
+}
