@@ -13,6 +13,8 @@ namespace raylib
     {
         Gamepad::Gamepad(int id) : _id(id) {}
 
+        Gamepad &Gamepad::operator=(int id) { _id = id; }
+
         bool Gamepad::isAvailable() const { return IsGamepadAvailable(_id); }
 
         std::string_view Gamepad::getName() const { return GetGamepadName(_id); }
@@ -36,6 +38,14 @@ namespace raylib
         int Gamepad::getAxisCount() const { return GetGamepadAxisCount(_id); }
 
         float Gamepad::getAxisMovement(Axis axis) const { return GetGamepadAxisMovement(_id, static_cast<int>(axis)); }
+
+        Vector2 Gamepad::getJoystickDirection(Joystick joystick) const
+        {
+            if (joystick == Joystick::LEFT)
+                return {getAxisMovement(Axis::LEFT_X), getAxisMovement(Axis::LEFT_Y)};
+            else
+                return {getAxisMovement(Axis::RIGHT_X), getAxisMovement(Axis::RIGHT_Y)};
+        }
 
         int Gamepad::setMappings(std::string_view mappings) const { return SetGamepadMappings(mappings.data()); }
     } // namespace core

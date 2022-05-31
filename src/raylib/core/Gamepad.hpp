@@ -8,6 +8,7 @@
 #ifndef RAYLIB_CORE_GAMEPAD_HPP_
 #define RAYLIB_CORE_GAMEPAD_HPP_
 
+#include "Vector2.hpp"
 #include <string_view>
 
 extern "C"
@@ -21,6 +22,7 @@ namespace raylib
     {
         class Gamepad {
           public:
+            /// Gamepad buttons
             enum class Button {
                 UNKNOWN = 0, // Unknown button, just for error checking
                 /// D-Pad
@@ -39,28 +41,54 @@ namespace raylib
                 RIGHT_BUMPER,  // Gamepad right bumper
                 RIGHT_TRIGGER, // Gamepad right trigger
                 /// Middle buttons
-                MIDDLE_LEFT,  // Gamepad center buttons, left one (i.e. PS3: Select)
+                MIDDLE_LEFT,  // Gamepad center buttons, left one (i.e. PS3: Select, Xbox: back)
                 MIDDLE,       // Gamepad center buttons, middle one (i.e. PS3: PS, Xbox: XBOX)
-                MIDDLE_RIGHT, // Gamepad center buttons, right one (i.e. PS3: Start)
+                MIDDLE_RIGHT, // Gamepad center buttons, right one (i.e. PS3: Start, Xbox: Start)
                 /// Joystick buttons
                 LEFT_THUMB, // Gamepad joystick pressed button left
                 RIGHT_THUMB // Gamepad joystick pressed button right
             };
 
+            /// Gamepad axis, all in range [-1, 1]
             enum class Axis {
-                LEFT_X = 0,       // Gamepad left stick X axis
-                LEFT_Y = 1,       // Gamepad left stick Y axis
-                RIGHT_X = 2,      // Gamepad right stick X axis
-                RIGHT_Y = 3,      // Gamepad right stick Y axis
-                LEFT_TRIGGER = 4, // Gamepad back trigger left, pressure level: [1..-1]
-                RIGHT_TRIGGER = 5 // Gamepad back trigger right, pressure level: [1..-1]
+                LEFT_X = 0,       // Gamepad left joystick X axis, default value is 0
+                LEFT_Y = 1,       // Gamepad left joystick Y axis, default value is 0
+                RIGHT_X = 2,      // Gamepad right joystick X axis, default value is 0
+                RIGHT_Y = 3,      // Gamepad right joystick Y axis, default value is 0
+                LEFT_TRIGGER = 4, // Gamepad back trigger left, default value is -1
+                RIGHT_TRIGGER = 5 // Gamepad back trigger right, default value is -1
             };
 
+            /// Gamepad joysticks (two axis combined)
+            enum class Joystick {
+                LEFT,  // Left joystick
+                RIGHT, // Right joystick
+            };
+
+            /// Construct a new Gamepad object.
+            ///
+            /// @param id id of the gamepad.
             Gamepad(int id = 0);
+
+            /// Default copy constructor.
+            ///
+            /// @param other gamepad to copy.
             Gamepad(const Gamepad &other) = default;
+
+            /// Destroy the gamepad object.
             ~Gamepad() = default;
 
+            /// Default assignement operator.
+            ///
+            /// @param other gamepad to copy.
+            /// @return Gamepad& @b this.
             Gamepad &operator=(const Gamepad &other) = default;
+
+            /// Assignement operator with a new gamepad ID.
+            /// @note The Gamepad class only store the id of the gamepad, and can be considered as an int.
+            ///
+            /// @return Gamepad& @b this.
+            Gamepad &operator=(int id);
 
             /// Check if a gamepad is available.
             ///
@@ -99,23 +127,26 @@ namespace raylib
             /// Get the last gamepad button pressed.
             ///
             /// @return Button last button pressed.
-            ///
             static Button getButtonPressed();
 
             /// Get the number of axis of the gamepad.
             ///
             /// @return int number of axis of the gamepad.
-            ///
             int getAxisCount() const;
 
             /// Get the movement of an axis.
             ///
             /// @param axis axis to check.
             /// @return float movement of the axis.
-            ///
             float getAxisMovement(Axis axis) const;
 
-            /// Set internal gamepad mappings(SDL_GameControllerDB)
+            /// Get the movement of the two axis of a joystick.
+            ///
+            /// @param joystick joystick to check.
+            /// @return Vector2 direction of the joystick (x, y) in range [-1, 1].
+            Vector2 getJoystickDirection(Joystick joystick) const;
+
+            /// Set internal gamepad mappings (SDL_GameControllerDB)
             ///
             /// @param mappings new mapping to apply
             /// @return int maybe 0 on succeed and -1 on failure, didn't found it in the raylib documentation
