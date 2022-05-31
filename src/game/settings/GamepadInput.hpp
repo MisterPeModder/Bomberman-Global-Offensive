@@ -28,6 +28,8 @@ namespace game
 
             bool isButton() const;
 
+            std::string toString() const;
+
             bool operator<(const GamepadInput &other) const;
             bool operator==(const GamepadInput &other) const;
 

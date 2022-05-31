@@ -6,6 +6,7 @@
 */
 
 #include "GamepadInput.hpp"
+#include <string>
 
 namespace game
 {
@@ -19,6 +20,14 @@ namespace game
         }
 
         bool GamepadInput::isButton() const { return _button != raylib::core::Gamepad::Button::UNKNOWN; }
+
+        std::string GamepadInput::toString() const
+        {
+            if (isButton())
+                return std::to_string(static_cast<int>(_button));
+            else
+                return std::to_string(static_cast<int>(_axis)) + ':' + std::to_string(static_cast<int>(_axisDirection));
+        }
 
         bool GamepadInput::operator<(const GamepadInput &other) const
         {

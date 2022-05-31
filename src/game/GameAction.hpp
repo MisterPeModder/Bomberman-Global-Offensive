@@ -11,6 +11,7 @@
 namespace game
 {
     enum class GameAction {
+        NONE,
         MOVE_LEFT,
         MOVE_UP,
         MOVE_RIGHT,

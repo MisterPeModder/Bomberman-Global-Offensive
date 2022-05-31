@@ -60,9 +60,34 @@ namespace game
             _keyboardBindings[key] = action;
         }
 
-        void Keybinds::setGamepadBinding(GamepadInput gamepadInput, GameAction action)
+        void Keybinds::unbindKey(Key key) { _keyboardBindings.erase(key); }
+
+        void Keybinds::setGamepadBinding(const GamepadInput &gamepadInput, GameAction action)
         {
             _gamepadBindings[gamepadInput] = action;
         }
+
+        void Keybinds::unbindGamepadInput(const GamepadInput &gamepadInput) { _gamepadBindings.erase(gamepadInput); }
+
+        const std::map<Key, GameAction> &Keybinds::getKeyboardBindings() const { return _keyboardBindings; }
+
+        const std::map<GamepadInput, GameAction> &Keybinds::getGamepadBindings() const { return _gamepadBindings; }
+
+        const Keybinds &Keybinds::operator>>(std::ostream &stream) const
+        {
+            stream << "# Keyboard bindings" << std::endl;
+            for (auto iter : _keyboardBindings)
+                stream << static_cast<int>(iter.first) << "=" << static_cast<int>(iter.second) << std::endl;
+            stream << std::endl << "# Gamepad bindings" << std::endl;
+            for (auto iter : _gamepadBindings)
+                stream << iter.first.toString() << "=" << static_cast<int>(iter.second) << std::endl;
+            return *this;
+        }
     } // namespace settings
 } // namespace game
+
+std::ostream &operator<<(std::ostream &stream, const game::settings::Keybinds keybinds)
+{
+    keybinds >> stream;
+    return stream;
+}
