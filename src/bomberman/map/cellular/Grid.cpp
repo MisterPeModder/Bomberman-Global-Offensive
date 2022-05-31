@@ -76,7 +76,7 @@ namespace bomberman
 
             bool Grid::borderIsFilled(int x, int y) const
             {
-                if (x == -1 || y == -1 || x == _width || y == _width)
+                if (x == -1 || y == -1 || static_cast<size_t>(x) == _width || static_cast<size_t>(y) == _height)
                     return false;
                 return isFilled(x, y);
             }
@@ -85,9 +85,9 @@ namespace bomberman
             {
                 unsigned char nbNeighbours = 0;
 
-                for (int tempX = static_cast<int>(x) - 1; tempX < x + 2; tempX++)
-                    for (int tempY = static_cast<int>(y) - 1; tempY < y + 2; tempY++) {
-                        if (tempX == x && tempY == y)
+                for (int tempX = static_cast<int>(x) - 1; tempX < static_cast<int>(x) + 2; tempX++)
+                    for (int tempY = static_cast<int>(y) - 1; tempY < static_cast<int>(y) + 2; tempY++) {
+                        if (tempX == static_cast<int>(x) && tempY == static_cast<int>(y))
                             continue;
                         nbNeighbours += borderIsFilled(tempX, tempY);
                     }
