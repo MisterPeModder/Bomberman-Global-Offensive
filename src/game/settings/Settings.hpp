@@ -47,6 +47,13 @@ namespace game
             ///
             Settings &operator=(const Settings &other) = default;
 
+            /// Reset the settings with the default values.
+            void loadDefaults();
+
+            /// Save the settings in the file "settings/settings.cfg"
+            /// @throw std::runtime_error if the file can't be opened (or created).
+            void save() const;
+
             /// Set the sound effects Volume
             ///
             /// @param volume new volume to set ([0-100]).

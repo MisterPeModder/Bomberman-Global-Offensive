@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/settings)
 
 set(SRC
 	${SRC}
+	${SRCROOT}/Settings.cpp
 	${INCROOT}/Settings.hpp
 	PARENT_SCOPE
 )

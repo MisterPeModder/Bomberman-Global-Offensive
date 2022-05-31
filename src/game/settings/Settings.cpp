@@ -6,6 +6,9 @@
 */
 
 #include "Settings.hpp"
+#include <filesystem>
+#include <fstream>
+#include "util/util.hpp"
 
 namespace game
 {
@@ -16,9 +19,34 @@ namespace game
         {
         }
 
-        Settings::Settings()
-            : _sfxVolume(100), _musicVolume(100), _targetFramerate(60), _resolution(1280, 720), _fullscreen(false)
+        Settings::Settings() { loadDefaults(); }
+
+        void Settings::loadDefaults()
         {
+            _sfxVolume = 100;
+            _musicVolume = 100;
+            _targetFramerate = 60;
+            _resolution = {1280, 720};
+            _fullscreen = false;
+        }
+
+        void Settings::save() const
+        {
+            std::filesystem::path path = util::makePath("settings", "settings.cfg");
+            std::ofstream file;
+
+            if (!std::filesystem::is_directory("settings") || !std::filesystem::exists("settings"))
+                std::filesystem::create_directory("settings");
+            file.open(path, std::ios_base::out);
+            if (!file.is_open())
+                throw std::runtime_error("Unable to save the settings file '" + path.generic_string() + "'");
+            file << "# Bomberman settings" << std::endl << std::endl;
+            file << "sfx_volume=" << _sfxVolume << std::endl;
+            file << "music_volume=" << _musicVolume << std::endl;
+            file << "target_framerate=" << _targetFramerate << std::endl;
+            file << "resolution=" << _resolution.x << "x" << _resolution.y << std::endl;
+            file << "fullscreen=" << _fullscreen << std::endl;
+            file.close();
         }
 
         void Settings::setSfxVolume(float volume)
@@ -50,5 +78,6 @@ namespace game
         void Settings::setFullscreen(bool fullscreen) { _fullscreen = fullscreen; }
 
         bool Settings::isFullscreen() const { return _fullscreen; }
+
     } // namespace settings
 } // namespace game
