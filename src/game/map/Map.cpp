@@ -10,7 +10,7 @@
 #include <random>
 #include "cellular/Grid.hpp"
 
-namespace bomberman
+namespace game
 {
     namespace map
     {
@@ -74,9 +74,9 @@ namespace bomberman
             }
         }
     } // namespace map
-} // namespace bomberman
+} // namespace game
 
-std::ostream &operator<<(std::ostream &stream, const bomberman::map::Map &map)
+std::ostream &operator<<(std::ostream &stream, const game::map::Map &map)
 {
     for (size_t x = 0; x < map.getWidth() + 1; x++)
         stream << '_';
@@ -85,9 +85,9 @@ std::ostream &operator<<(std::ostream &stream, const bomberman::map::Map &map)
         stream << '|';
         for (size_t x = 0; x < map.getWidth(); x++) {
             switch (map.getElement(x, y)) {
-                case bomberman::map::Map::Element::Wall: stream << 'X'; break;
-                case bomberman::map::Map::Element::Crate: stream << 'c'; break;
-                case bomberman::map::Map::Element::Empty: stream << ' '; break;
+                case game::map::Map::Element::Wall: stream << 'X'; break;
+                case game::map::Map::Element::Crate: stream << 'c'; break;
+                case game::map::Map::Element::Empty: stream << ' '; break;
                 default: break;
             }
         }

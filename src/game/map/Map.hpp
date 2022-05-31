@@ -12,7 +12,7 @@
 #include <stdexcept>
 #include <vector>
 
-namespace bomberman
+namespace game
 {
     namespace map
     {
@@ -86,13 +86,13 @@ namespace bomberman
             std::vector<Element> _map;
         };
     } // namespace map
-} // namespace bomberman
+} // namespace game
 
 /// Output stream operator overload to allow displaying the map.
 ///
 /// @param stream output stream.
 /// @param map map to output in the stream (used for debug in @ref std::cout)
 /// @return std::ostream& output stream modified.
-std::ostream &operator<<(std::ostream &stream, const bomberman::map::Map &map);
+std::ostream &operator<<(std::ostream &stream, const game::map::Map &map);
 
 #endif /* !GAME_MAP_HPP_ */
