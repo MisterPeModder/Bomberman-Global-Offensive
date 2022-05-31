@@ -1,0 +1,32 @@
+name: Doxygen-Build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install doxygen -y
+
+    - name: Build documentation
+      run: doxygen
+
+    - name: Add .nojekyll
+      run: |
+        touch ${{github.workspace}}/doc/build/html/.nojekyll
+
+    - name: Deploy documentation
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        github_token: ${{ inputs.github_token }}
+        folder: doc/build/html
+        message: "Update generated documentation"
+        branch: gh-pages

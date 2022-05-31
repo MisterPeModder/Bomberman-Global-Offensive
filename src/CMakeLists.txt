@@ -4,14 +4,16 @@ set(INCROOT ${PROJECT_SOURCE_DIR}/src)
 set(SRCROOT ${PROJECT_SOURCE_DIR}/src)
 
 set(SRC
-    ${SRCROOT}/dummy.cpp
 )
 
 set(INCDIRS ${INCROOT})
 
+add_subdirectory(ecs)
 add_subdirectory(localization)
 add_subdirectory(logger)
 add_subdirectory(bomberman)
+add_subdirectory(raylib)
+add_subdirectory(util)
 
 # Source groups are a feature in Visual Studio.
 source_group("" FILES ${SRC})
@@ -32,6 +34,8 @@ add_library(libbomberman ${SRC})
 
 target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
 target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
+target_link_libraries(${LIB_NAME} PUBLIC raylib)
+
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
 target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} raylib)
