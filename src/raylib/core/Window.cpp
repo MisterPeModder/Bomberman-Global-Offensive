@@ -16,7 +16,7 @@ namespace raylib
 {
     namespace core
     {
-        void Window::open(int width, int height, const char *title) { InitWindow(width, height, title); }
+        void Window::open(int width, int height, std::string_view title) { InitWindow(width, height, title.data()); }
 
         void Window::close() { CloseWindow(); }
 

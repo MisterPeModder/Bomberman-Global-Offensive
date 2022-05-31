@@ -17,6 +17,8 @@ set(SRC
     ${SRCROOT}/Sphere.cpp
     ${SRCROOT}/Sphere.hpp
     ${SRCROOT}/AShape.hpp
+    ${SRCROOT}/Circle.hpp
+    ${SRCROOT}/Circle.cpp
 	PARENT_SCOPE)
 
 set(INCDIRS
