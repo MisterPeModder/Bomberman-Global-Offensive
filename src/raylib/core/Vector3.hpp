@@ -105,6 +105,22 @@ namespace raylib
             float y;
             float z;
         };
+
+        /// Gets if the two Vector3 are equals or not
+        ///
+        /// @param first The first vector to check
+        /// @param second The second vector to check
+        ///
+        /// @return true if the vectors are equal or false otherwise
+        bool operator==(const Vector3 &first, const Vector3 &second);
+
+        /// Gets if the two Vector3 are equals or not
+        ///
+        /// @param first The first vector to check
+        /// @param second The second vector to check
+        ///
+        /// @return true if the vectors are not equal or false otherwise
+        bool operator!=(const Vector3 &first, const Vector3 &second);
     } // namespace core
 } // namespace raylib
 
