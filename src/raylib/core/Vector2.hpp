@@ -88,25 +88,23 @@ namespace raylib
             /// @return The raylib Vector2
             constexpr ::Vector2 asRaylib() const { return {x, y}; }
 
+            /// Gets if the two Vector2 are equals or not
+            ///
+            /// @param second The second vector to check
+            ///
+            /// @return true if the vectors are equal or false otherwise
+            bool operator==(const Vector2 &second);
+
+            /// Gets if the two Vector2 are equals or not
+            ///
+            /// @param second The second vector to check
+            ///
+            /// @return true if the vectors are not equal or false otherwise
+            bool operator!=(const Vector2 &second);
+
             float x;
             float y;
         };
-
-        /// Gets if the two Vector2 are equals or not
-        ///
-        /// @param first The first vector to check
-        /// @param second The second vector to check
-        ///
-        /// @return true if the vectors are equal or false otherwise
-        bool operator==(const Vector2 &first, const Vector2 &second);
-
-        /// Gets if the two Vector2 are equals or not
-        ///
-        /// @param first The first vector to check
-        /// @param second The second vector to check
-        ///
-        /// @return true if the vectors are not equal or false otherwise
-        bool operator!=(const Vector2 &first, const Vector2 &second);
     } // namespace core
 } // namespace raylib
 
