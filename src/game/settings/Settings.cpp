@@ -77,21 +77,9 @@ namespace game
 
         void Settings::load()
         {
-            std::ifstream file(getSettingsFilePath());
-            std::string line;
-            std::stringstream ss;
-            std::string key;
-            std::string value;
-
             loadDefaults();
-            if (!file.is_open())
-                return;
-            while (std::getline(file, line)) {
-                if (line.empty() || line[0] == '#')
-                    continue;
-                ss.str(line);
-                std::getline(ss, key, '=');
-                value = ss.str().substr(ss.tellg());
+
+            util::loadConfigFile(getSettingsFilePath(), [this](std::string_view key, std::string_view value) {
                 try {
                     loadValue(key, value);
                 } catch (std::exception &e) {
@@ -103,7 +91,8 @@ namespace game
                                << "'. Default value will be used.";
                     });
                 }
-            }
+                return true;
+            });
         }
 
         void Settings::setSfxVolume(float volume)

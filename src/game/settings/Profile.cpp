@@ -7,13 +7,15 @@
 
 #include "Profile.hpp"
 #include <fstream>
+#include <regex>
+#include "Logger.hpp"
 #include "util/util.hpp"
 
 namespace game
 {
     namespace settings
     {
-        Profile::Profile(size_t id) : _id(id) { _name = "Player " + std::to_string(id + 1); }
+        Profile::Profile(size_t id) : _id(id) { loadDefaults(); }
 
         void Profile::save() const
         {
@@ -26,6 +28,34 @@ namespace game
                 throw std::runtime_error("Unable to save the profile file '" + path.generic_string() + "'");
             file << *this;
             file.close();
+        }
+
+        void Profile::load()
+        {
+            loadDefaults();
+
+            std::cout << "Loading profile" << std::endl;
+
+            util::loadConfigFile(getFilepath(), [this](std::string_view key, std::string_view value) {
+                try {
+                    loadValue(key, value);
+                } catch (std::exception &e) {
+                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                        writer << "Exception occured when loading a profile value: '" << e.what() << "'";
+                    });
+                    Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
+                        writer << "Unable to load profile attribute '" << key << "' with value '" << value
+                               << "'. Default value will be used.";
+                    });
+                }
+                return true;
+            });
+        }
+
+        void Profile::loadDefaults()
+        {
+            _name = "Player " + std::to_string(_id + 1);
+            _keybinds.loadDefaults();
         }
 
         std::filesystem::path Profile::getFilesDirectory() { return util::makePath("settings", "profiles"); }
@@ -46,6 +76,38 @@ namespace game
         Keybinds &Profile::getKeybinds() { return _keybinds; }
 
         const Keybinds &Profile::getKeybinds() const { return _keybinds; }
+
+        void Profile::loadValue(std::string_view key, std::string_view value)
+        {
+            static std::regex keyBind("key:[0-9]+");
+            static std::regex gamepadBind("gamepad:[0-9]+(:[0-9])?");
+            static std::regex gamepadAxisBind("gamepad:[0-9]+:[0-9]");
+
+            if (key == "name")
+                setName(value);
+            else if (std::regex_match(key.data(), keyBind)) {
+                _keybinds.setKeyboardBinding(
+                    static_cast<raylib::core::Keyboard::Key>(std::stoi(key.data() + key.find(':') + 1)),
+                    static_cast<GameAction>(std::stoi(value.data())));
+            } else if (std::regex_match(key.data(), gamepadBind)) {
+                if (std::regex_match(key.data(), gamepadAxisBind)) {
+                    size_t off = key.find(':') + 1;
+                    _keybinds.setGamepadBinding(
+                        GamepadInput(static_cast<raylib::core::Gamepad::Axis>(std::stoi(key.data() + off)),
+                            static_cast<GamepadInput::AxisDirection>(std::stoi(key.data() + key.find(':', off) + 1))),
+                        static_cast<GameAction>(std::stoi(value.data())));
+                } else {
+                    _keybinds.setGamepadBinding(
+                        static_cast<raylib::core::Gamepad::Button>(std::stoi(key.data() + key.find(':') + 1)),
+                        static_cast<GameAction>(std::stoi(value.data())));
+                }
+            } else {
+                Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
+                    writer << "Unknown settings key '" << key << "' with value '" << value << "'";
+                });
+            }
+        }
+
     } // namespace settings
 } // namespace game
 

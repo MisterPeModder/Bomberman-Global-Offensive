@@ -54,11 +54,7 @@ namespace game
             setGamepadBinding(Gamepad::Button::MIDDLE_RIGHT, GameAction::PAUSE);
         }
 
-        void Keybinds::setKeyboardBinding(Key key, GameAction action)
-        {
-            // if (key ==Key::NONE) -> throw
-            _keyboardBindings[key] = action;
-        }
+        void Keybinds::setKeyboardBinding(Key key, GameAction action) { _keyboardBindings[key] = action; }
 
         void Keybinds::unbindKey(Key key) { _keyboardBindings.erase(key); }
 
@@ -77,10 +73,10 @@ namespace game
         {
             stream << "# Keyboard bindings" << std::endl;
             for (auto iter : _keyboardBindings)
-                stream << static_cast<int>(iter.first) << "=" << static_cast<int>(iter.second) << std::endl;
+                stream << "key:" << static_cast<int>(iter.first) << "=" << static_cast<int>(iter.second) << std::endl;
             stream << std::endl << "# Gamepad bindings" << std::endl;
             for (auto iter : _gamepadBindings)
-                stream << iter.first.toString() << "=" << static_cast<int>(iter.second) << std::endl;
+                stream << "gamepad:" << iter.first.toString() << "=" << static_cast<int>(iter.second) << std::endl;
             return *this;
         }
     } // namespace settings

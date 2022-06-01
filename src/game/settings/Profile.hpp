@@ -23,6 +23,9 @@ namespace game
             ~Profile() = default;
 
             void save() const;
+            void load();
+
+            void loadDefaults();
 
             static std::filesystem::path getFilesDirectory();
             std::filesystem::path getFilepath() const;
@@ -37,6 +40,8 @@ namespace game
             const Keybinds &getKeybinds() const;
 
           private:
+            void loadValue(std::string_view key, std::string_view value);
+
             Keybinds _keybinds;
             std::string _name;
             size_t _id;

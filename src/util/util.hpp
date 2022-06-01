@@ -9,6 +9,8 @@
 #define BOMBERMAN_UTILS_HPP_
 
 #include <filesystem>
+#include <functional>
+#include <string_view>
 
 namespace util
 {
@@ -31,6 +33,10 @@ namespace util
     {
         return makePath(path.append(nextDir), args...);
     }
+
+    bool loadConfigFile(
+        const std::filesystem::path &path, const std::function<bool(std::string_view, std::string_view)> &handleValue);
+
 } // namespace util
 
 #endif /* !BOMBERMAN_UTILS_HPP_ */
