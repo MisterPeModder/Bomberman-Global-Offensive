@@ -7,6 +7,8 @@ set(SRC
 	${INCROOT}/GamepadInput.hpp
 	${SRCROOT}/Keybinds.cpp
 	${INCROOT}/Keybinds.hpp
+	${SRCROOT}/Profile.cpp
+	${INCROOT}/Profile.hpp
 	${SRCROOT}/Settings.cpp
 	${INCROOT}/Settings.hpp
 	PARENT_SCOPE

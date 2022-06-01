@@ -39,8 +39,7 @@ namespace game
             std::filesystem::path path = getSettingsFilePath();
             std::ofstream file;
 
-            if (!std::filesystem::is_directory("settings") || !std::filesystem::exists("settings"))
-                std::filesystem::create_directory("settings");
+            std::filesystem::create_directory("settings");
             file.open(path, std::ios_base::out);
             if (!file.is_open())
                 throw std::runtime_error("Unable to save the settings file '" + path.generic_string() + "'");
