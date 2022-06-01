@@ -144,6 +144,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aadc0eb9b5c5a9f5115023b0cbaf59b63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structraylib_1_1core_1_1_vector3.html">Vector3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraylib_1_1core_1_1_vector3.html#aadc0eb9b5c5a9f5115023b0cbaf59b63">operator/=</a> (const <a class="el" href="structraylib_1_1core_1_1_vector3.html">Vector3</a> &amp;vector)</td></tr>
 <tr class="memdesc:aadc0eb9b5c5a9f5115023b0cbaf59b63"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a> assignment divide operator.  <a href="structraylib_1_1core_1_1_vector3.html#aadc0eb9b5c5a9f5115023b0cbaf59b63">More...</a><br /></td></tr>
 <tr class="separator:aadc0eb9b5c5a9f5115023b0cbaf59b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a4ec9bc08be5f4c4884da98244eae14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraylib_1_1core_1_1_vector3.html#a4a4ec9bc08be5f4c4884da98244eae14">operator==</a> (const <a class="el" href="structraylib_1_1core_1_1_vector3.html">Vector3</a> &amp;second)</td></tr>
+<tr class="memdesc:a4a4ec9bc08be5f4c4884da98244eae14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets if the two <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a> are equals or not.  <a href="structraylib_1_1core_1_1_vector3.html#a4a4ec9bc08be5f4c4884da98244eae14">More...</a><br /></td></tr>
+<tr class="separator:a4a4ec9bc08be5f4c4884da98244eae14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8290399f0773d435ce1620706358cae3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraylib_1_1core_1_1_vector3.html#a8290399f0773d435ce1620706358cae3">operator!=</a> (const <a class="el" href="structraylib_1_1core_1_1_vector3.html">Vector3</a> &amp;second)</td></tr>
+<tr class="memdesc:a8290399f0773d435ce1620706358cae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets if the two <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a> are equals or not.  <a href="structraylib_1_1core_1_1_vector3.html#a8290399f0773d435ce1620706358cae3">More...</a><br /></td></tr>
+<tr class="separator:a8290399f0773d435ce1620706358cae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95eb6c7e81b3ca2bf1ea41c00e6165c4"><td class="memItemLeft" align="right" valign="top">constexpr ::<a class="el" href="structraylib_1_1core_1_1_vector3.html">Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraylib_1_1core_1_1_vector3.html#a95eb6c7e81b3ca2bf1ea41c00e6165c4">asRaylib</a> () const</td></tr>
 <tr class="memdesc:a95eb6c7e81b3ca2bf1ea41c00e6165c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the raylib <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a>.  <a href="structraylib_1_1core_1_1_vector3.html#a95eb6c7e81b3ca2bf1ea41c00e6165c4">More...</a><br /></td></tr>
 <tr class="separator:a95eb6c7e81b3ca2bf1ea41c00e6165c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -356,8 +362,38 @@ Public Attributes</h2></td></tr>
 <p>Gets the raylib <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The raylib <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00102">102</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{ <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#a7fd179cc93432e30944d8df637278c97">x</a>, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a1d6a35b17570275d9a5aa842ff1c8103">y</a>, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a1ffacf8c342a2da3ba6587bbdcfffa9b">z</a>}; }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00116">116</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{ <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#a7fd179cc93432e30944d8df637278c97">x</a>, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a1d6a35b17570275d9a5aa842ff1c8103">y</a>, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a1ffacf8c342a2da3ba6587bbdcfffa9b">z</a>}; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8290399f0773d435ce1620706358cae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8290399f0773d435ce1620706358cae3">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool raylib::core::Vector3::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structraylib_1_1core_1_1_vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>second</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets if the two <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a> are equals or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">second</td><td>The second vector to check</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the vectors are not equal or false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_vector3_8cpp_source.html#l00097">97</a> of file <a class="el" href="_vector3_8cpp_source.html">Vector3.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == second); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -689,6 +725,38 @@ Public Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a4a4ec9bc08be5f4c4884da98244eae14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a4ec9bc08be5f4c4884da98244eae14">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool raylib::core::Vector3::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structraylib_1_1core_1_1_vector3.html">Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>second</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets if the two <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a> are equals or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">second</td><td>The second vector to check</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the vectors are equal or false otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_vector3_8cpp_source.html#l00092">92</a> of file <a class="el" href="_vector3_8cpp_source.html">Vector3.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">return</span> (this-&gt;<a class="code" href="structraylib_1_1core_1_1_vector3.html#a7fd179cc93432e30944d8df637278c97">x</a> == second.x &amp;&amp; this-&gt;y == second.y &amp;&amp; this-&gt;z == second.z);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a7fd179cc93432e30944d8df637278c97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7fd179cc93432e30944d8df637278c97">&#9670;&nbsp;</a></span>x</h2>
@@ -702,7 +770,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00104">104</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00118">118</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
 
 </div>
 </div>
@@ -718,7 +786,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00105">105</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00119">119</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
 
 </div>
 </div>
@@ -734,7 +802,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00106">106</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00120">120</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
 
 </div>
 </div>
@@ -744,9 +812,9 @@ Public Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a7fd179cc93432e30944d8df637278c97"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a7fd179cc93432e30944d8df637278c97">raylib::core::Vector3::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00104">Vector3.hpp:104</a></div></div>
-<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a1ffacf8c342a2da3ba6587bbdcfffa9b"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a1ffacf8c342a2da3ba6587bbdcfffa9b">raylib::core::Vector3::z</a></div><div class="ttdeci">float z</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00106">Vector3.hpp:106</a></div></div>
-<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a1d6a35b17570275d9a5aa842ff1c8103"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a1d6a35b17570275d9a5aa842ff1c8103">raylib::core::Vector3::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00105">Vector3.hpp:105</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a7fd179cc93432e30944d8df637278c97"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a7fd179cc93432e30944d8df637278c97">raylib::core::Vector3::x</a></div><div class="ttdeci">float x</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00118">Vector3.hpp:118</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a1ffacf8c342a2da3ba6587bbdcfffa9b"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a1ffacf8c342a2da3ba6587bbdcfffa9b">raylib::core::Vector3::z</a></div><div class="ttdeci">float z</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00120">Vector3.hpp:120</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a1d6a35b17570275d9a5aa842ff1c8103"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a1d6a35b17570275d9a5aa842ff1c8103">raylib::core::Vector3::y</a></div><div class="ttdeci">float y</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00119">Vector3.hpp:119</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
