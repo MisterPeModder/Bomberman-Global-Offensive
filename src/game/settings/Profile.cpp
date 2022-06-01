@@ -15,7 +15,7 @@ namespace game
 {
     namespace settings
     {
-        Profile::Profile(size_t id) : _id(id) { loadDefaults(); }
+        Profile::Profile(size_t id) : _id(id) { load(); }
 
         void Profile::save() const
         {
@@ -52,6 +52,12 @@ namespace game
             });
         }
 
+        void Profile::load(size_t id)
+        {
+            _id = id;
+            load();
+        }
+
         void Profile::loadDefaults()
         {
             _name = "Player " + std::to_string(_id + 1);
@@ -62,7 +68,7 @@ namespace game
 
         std::filesystem::path Profile::getFilepath() const
         {
-            return util::makePath("settings", "profiles", getFilename());
+            return util::makePath(getFilesDirectory(), getFilename());
         }
 
         std::string Profile::getFilename() const { return "player_" + std::to_string(_id) + ".cfg"; }
