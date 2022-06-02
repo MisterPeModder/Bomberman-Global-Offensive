@@ -30,7 +30,7 @@ namespace game::map
                 iterate();
         }
 
-        void Grid::clear() { std::fill(_cells.begin(), _cells.end(), false); }
+        void Grid::clear() { _cells.setAll(false); }
 
         void Grid::randomFill(size_t fillPercent)
         {
@@ -40,12 +40,13 @@ namespace game::map
 
             clear();
             if (fillPercent > 0)
-                std::for_each(_cells.begin(), _cells.end(), [&](auto cell) { cell = dist100(rng) < fillPercent; });
+                for (size_t i = 0; i < _cells.size(); i++)
+                    _cells[i] = dist100(rng) < fillPercent;
         }
 
         void Grid::iterate()
         {
-            std::vector<bool> newState = _cells;
+            util::BitSet newState = _cells;
 
             for (size_t x = 0; x < _width; x++)
                 for (size_t y = 0; y < _height; y++)
@@ -53,7 +54,7 @@ namespace game::map
             _cells = newState;
         }
 
-        const std::vector<bool> &Grid::getGrid() const { return _cells; }
+        const util::BitSet &Grid::getGrid() const { return _cells; }
 
         void Grid::setRule(const Rule &rule) { _rule = rule; }
 

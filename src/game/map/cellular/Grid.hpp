@@ -10,6 +10,7 @@
 
 #include <vector>
 #include "Rule.hpp"
+#include "util/BitSet.hpp"
 
 namespace game::map
 {
@@ -61,9 +62,9 @@ namespace game::map
             /// Get the internal grid.
             /// @note The index of the position (x, y) is [x + y * width]
             ///
-            /// @return const std::vector<bool>& internal grid, filled cells have the value true.
+            /// @return const util::BitSet& internal grid, filled cells have the value true.
             ///
-            const std::vector<bool> &getGrid() const;
+            const util::BitSet &getGrid() const;
 
             /// Set the Rule
             ///
@@ -110,7 +111,7 @@ namespace game::map
 
             size_t _width;
             size_t _height;
-            std::vector<bool> _cells;
+            util::BitSet _cells;
             Rule _rule;
         };
     } // namespace cellular
