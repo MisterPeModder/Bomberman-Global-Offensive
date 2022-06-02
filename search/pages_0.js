@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bomberman_3a_20global_20offensive_6312',['Bomberman: Global Offensive',['../index.html',1,'']]]
+  ['bomberman_3a_20global_20offensive_6399',['Bomberman: Global Offensive',['../index.html',1,'']]]
 ];

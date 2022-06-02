@@ -22,6 +22,7 @@ var hierarchy =
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "ecs::World::EntityBuilder", "classecs_1_1_world_1_1_entity_builder.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
+    [ "game::map::cellular::Grid", "classgame_1_1map_1_1cellular_1_1_grid.html", null ],
     [ "raylib::textures::Image", "classraylib_1_1textures_1_1_image.html", null ],
     [ "ecs::Instances< Base >", "classecs_1_1_instances.html", null ],
     [ "ecs::Instances< ecs::Resource >", "classecs_1_1_instances.html", null ],
@@ -36,8 +37,10 @@ var hierarchy =
     [ "localization::Localization", "classlocalization_1_1_localization.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "std::logic_error", "http://en.cppreference.com/w/cpp/error/logic_error.html", [
+      [ "game::map::Map::InvalidMapSize", "classgame_1_1map_1_1_map_1_1_invalid_map_size.html", null ],
       [ "localization::RessourceFile::LocaleNotSetError", "classlocalization_1_1_ressource_file_1_1_locale_not_set_error.html", null ]
     ] ],
+    [ "game::map::Map", "classgame_1_1map_1_1_map.html", null ],
     [ "ecs::MaybeJoin< J >", "classecs_1_1_maybe_join.html", null ],
     [ "raylib::core::scoped::Mode3D", "classraylib_1_1core_1_1scoped_1_1_mode3_d.html", null ],
     [ "raylib::model::Model", "classraylib_1_1model_1_1_model.html", null ],
@@ -49,7 +52,9 @@ var hierarchy =
     ] ],
     [ "localization::RessourceFile", "classlocalization_1_1_ressource_file.html", null ],
     [ "localization::RessourceString", "classlocalization_1_1_ressource_string.html", null ],
+    [ "game::map::cellular::Rule", "classgame_1_1map_1_1cellular_1_1_rule.html", null ],
     [ "std::runtime_error", "http://en.cppreference.com/w/cpp/error/runtime_error.html", [
+      [ "game::map::cellular::Rule::InvalidRule", "classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html", null ],
       [ "localization::RessourceFile::LocaleNotFoundError", "classlocalization_1_1_ressource_file_1_1_locale_not_found_error.html", null ],
       [ "localization::RessourceFile::MessageNotFoundError", "classlocalization_1_1_ressource_file_1_1_message_not_found_error.html", null ]
     ] ],

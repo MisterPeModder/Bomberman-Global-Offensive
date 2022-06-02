@@ -1,6 +1,7 @@
 var annotated_dup =
 [
     [ "ecs", "namespaceecs.html", "namespaceecs" ],
+    [ "game", "namespacegame.html", "namespacegame" ],
     [ "localization", "namespacelocalization.html", "namespacelocalization" ],
     [ "raylib", "namespaceraylib.html", "namespaceraylib" ],
     [ "util", "namespaceutil.html", "namespaceutil" ],

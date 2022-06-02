@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['token_6285',['Token',['../classlocalization_1_1_ressource_file.html#a0f62717a3c6dd85a27ca53afc4bf8619',1,'localization::RessourceFile']]]
+  ['severity_6368',['Severity',['../class_logger.html#a4cc16315b37eb0265c2d199880464a15',1,'Logger']]]
 ];
