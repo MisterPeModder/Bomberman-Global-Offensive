@@ -88,5 +88,12 @@ namespace raylib
             this->z /= vector.z;
             return *this;
         }
+
+        bool Vector3::operator==(const Vector3 &second)
+        {
+            return (this->x == second.x && this->y == second.y && this->z == second.z);
+        }
+
+        bool Vector3::operator!=(const Vector3 &second) { return !(*this == second); }
     } // namespace core
 } // namespace raylib
