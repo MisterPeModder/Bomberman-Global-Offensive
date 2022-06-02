@@ -2,7 +2,7 @@ set(INCROOT ${INCROOT}/core)
 set(SRCROOT ${SRCROOT}/core)
 
 set(SRC
-	${SRC}
+    ${SRC}
     ${SRCROOT}/Camera3D.cpp
     ${SRCROOT}/Camera3D.hpp
     ${SRCROOT}/Vector2.cpp
@@ -12,7 +12,6 @@ set(SRC
     ${SRCROOT}/Window.cpp
     ${SRCROOT}/Window.hpp
     ${SRCROOT}/Mouse.hpp
-    ${SRCROOT}/Mouse.cpp
     ${SRCROOT}/scoped.hpp
     ${SRCROOT}/Cursor.hpp
     ${SRCROOT}/Cursor.cpp
@@ -22,9 +21,13 @@ set(SRC
     ${INCROOT}/Audio.hpp
     ${SRCROOT}/Sound.cpp
     ${INCROOT}/Sound.hpp
-	PARENT_SCOPE)
+    ${SRCROOT}/Keyboard.hpp
+    ${SRCROOT}/Keyboard.cpp
+    ${SRCROOT}/Gamepad.hpp
+    ${SRCROOT}/Gamepad.cpp
+    PARENT_SCOPE)
 
 set(INCDIRS
-	${INCDIRS}
-	${INCROOT}
-	PARENT_SCOPE)
+    ${INCDIRS}
+    ${INCROOT}
+    PARENT_SCOPE)

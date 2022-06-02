@@ -20,6 +20,7 @@ namespace raylib
 {
     namespace shapes
     {
+        /// The Rectangle Class used to represent a 2d rectangle shape
         class Rectangle : public AShape {
           public:
             /// This function creates a rectangle from a position, a size and a color
@@ -74,8 +75,7 @@ namespace raylib
             /// Draws a rectangle outline (or line) with extended parameters
             ///
             /// @param lineThick Thickness of the lines (in pixels)
-            /// @param color The color of the rectangle.
-            void drawLinesEx(float lineThick) const;
+            void drawLines(float lineThick) const;
 
             /// Draws a rectangle with rounded edges
             ///
@@ -94,14 +94,14 @@ namespace raylib
             /// @param color The color of the lines
             void drawRoundedLines(float roundness, float segments, float lineThick) const;
 
-            /// It checks if the rectangle is colliding with another rectangle.
+            /// Checks if the rectangle is colliding with another rectangle.
             ///
             /// @param other The other rectangle to check collision with.
             ///
             /// @return A boolean value.
             bool checkCollision(Rectangle &other) const;
 
-            /// It returns the collision rectangle between two rectangles.
+            /// Returns the collision rectangle between two rectangles.
             ///
             /// @param other The other rectangle to check collision with.
             ///

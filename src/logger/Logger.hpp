@@ -9,6 +9,7 @@
 #define RAYLIB_LOGGER_LOGGER_HPP_
 
 #include <array>
+#include <filesystem>
 #include <fstream>
 #include <functional>
 #include <iostream>
@@ -47,9 +48,10 @@ class Logger {
 
     /// Construct a new Logger object linked to a logfile.
     ///
-    /// @param[in] filename path to the logfile.
-    /// @throw std::runtime_error if the @ref std::ofstream cannot be created from the @c filename.
-    Logger(std::string_view filename);
+    /// @param[in] filepath path to the logfile.
+    /// @param[in] clear Whether or not the logfile must be cleared.
+    /// @throw std::runtime_error if the @ref std::ofstream cannot be created from the @c filepath.
+    Logger(const std::filesystem::path &filepath, bool clear = false);
 
     /// Cannot copy loggers, because of the arbitrary output stream, which is not copiable.
     Logger(const Logger &other) = delete;
@@ -83,10 +85,11 @@ class Logger {
     /// @param[in] stream new output of the logger.
     void setStream(std::ostream &stream);
 
-    /// Change the linked stream to be the input of @c filename.
+    /// Change the linked stream to be the input of @c filepath.
     ///
-    /// @param[in] filename filepath to the new logfile.
-    void setOutputFile(std::string_view filename);
+    /// @param[in] filepath filepath to the new logfile.
+    /// @param[in] clear Whether or not the logfile must be cleared.
+    void setOutputFile(const std::filesystem::path &filepath, bool clear = false);
 
     /// Set the Log Level.
     /// @note The log level define which logs must be printed in the stream.

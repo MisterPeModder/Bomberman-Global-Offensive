@@ -14,49 +14,23 @@ extern "C"
 
 namespace raylib
 {
-
     namespace core
     {
+        void Window::open(int width, int height, std::string_view title) { InitWindow(width, height, title.data()); }
 
-        void Window::open(int width, int height, const char *title)
-        {
-            InitWindow(width, height, title);
-        }
+        void Window::close() { CloseWindow(); }
 
-        void Window::close()
-        {
-            CloseWindow();
-        }
+        void Window::clear(const Color &color) { ClearBackground(color.asRaylib()); }
 
-        void Window::clear()
-        {
-            ClearBackground(BLACK);
-        }
+        bool Window::windowShouldClose() { return WindowShouldClose(); }
 
-        bool Window::windowShouldClose()
-        {
-            return WindowShouldClose();
-        }
+        void Window::setTargetFPS(int fps) { SetTargetFPS(fps); }
 
-        void Window::setTargetFPS(int fps)
-        {
-            SetTargetFPS(fps);
-        }
+        void Window::drawFPS(int x, int y) { DrawFPS(x, y); }
 
-        void Window::drawFPS(int x, int y)
-        {
-            DrawFPS(x, y);
-        }
+        void Window::beginDrawing() { BeginDrawing(); }
 
-        void Window::beginDrawing()
-        {
-            BeginDrawing();
-        }
-
-        void Window::endDrawing()
-        {
-            EndDrawing();
-        }
+        void Window::endDrawing() { EndDrawing(); }
 
     } // namespace core
 } // namespace raylib
