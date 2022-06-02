@@ -21,7 +21,7 @@ var searchData=
   ['_5fgeneration_18',['_generation',['../classecs_1_1_entity.html#ae2d6c4269079ef01262372fa127c6b11',1,'ecs::Entity']]],
   ['_5fgenerations_19',['_generations',['../classecs_1_1_entities.html#a7241af36068b7a5d5bca94b5d6393d29',1,'ecs::Entities']]],
   ['_5fheight_20',['_height',['../classgame_1_1map_1_1cellular_1_1_grid.html#a59fd71cbcbae3345ff036bc6742140c9',1,'game::map::cellular::Grid::_height()'],['../classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906',1,'game::map::Map::_height()'],['../classraylib_1_1shapes_1_1_cone.html#a5c238f7936a4ec33571181ff3d95b4dc',1,'raylib::shapes::Cone::_height()']]],
-  ['_5fid_21',['_id',['../classecs_1_1_entity.html#ad0c2071cbc8dbdc132b24474f0914b20',1,'ecs::Entity']]],
+  ['_5fid_21',['_id',['../classecs_1_1_entity.html#ad0c2071cbc8dbdc132b24474f0914b20',1,'ecs::Entity::_id()'],['../classraylib_1_1core_1_1_gamepad.html#a54ec3205dbf62d8a592d36d7e11dfbc9',1,'raylib::core::Gamepad::_id()']]],
   ['_5fimage_22',['_image',['../classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204',1,'raylib::textures::Image']]],
   ['_5finfos_23',['_infos',['../class_logger.html#a2c4fb7c94548c4f375839d07ffa207b8',1,'Logger']]],
   ['_5finner_24',['_inner',['../classecs_1_1_maybe_join.html#a0c52d7c77dd90324246e0b131d1a2ce5',1,'ecs::MaybeJoin::_inner()'],['../classecs_1_1_instances.html#a02f13c11c88ae2672bb9c70cc0ede987',1,'ecs::Instances::_inner()']]],

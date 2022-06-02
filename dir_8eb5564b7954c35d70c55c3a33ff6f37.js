@@ -12,6 +12,14 @@ var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
     [ "Cursor.hpp", "_cursor_8hpp.html", [
       [ "Cursor", "classraylib_1_1core_1_1_cursor.html", "classraylib_1_1core_1_1_cursor" ]
     ] ],
+    [ "Gamepad.cpp", "_gamepad_8cpp.html", null ],
+    [ "Gamepad.hpp", "_gamepad_8hpp.html", [
+      [ "Gamepad", "classraylib_1_1core_1_1_gamepad.html", "classraylib_1_1core_1_1_gamepad" ]
+    ] ],
+    [ "Keyboard.cpp", "_keyboard_8cpp.html", null ],
+    [ "Keyboard.hpp", "_keyboard_8hpp.html", [
+      [ "Keyboard", "classraylib_1_1core_1_1_keyboard.html", "classraylib_1_1core_1_1_keyboard" ]
+    ] ],
     [ "Mouse.hpp", "_mouse_8hpp.html", [
       [ "Mouse", "classraylib_1_1core_1_1_mouse.html", "classraylib_1_1core_1_1_mouse" ]
     ] ],

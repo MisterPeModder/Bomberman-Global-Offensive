@@ -21,6 +21,7 @@ var hierarchy =
     [ "raylib::core::scoped::Drawing", "classraylib_1_1core_1_1scoped_1_1_drawing.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "ecs::World::EntityBuilder", "classecs_1_1_world_1_1_entity_builder.html", null ],
+    [ "raylib::core::Gamepad", "classraylib_1_1core_1_1_gamepad.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "game::map::cellular::Grid", "classgame_1_1map_1_1cellular_1_1_grid.html", null ],
     [ "raylib::textures::Image", "classraylib_1_1textures_1_1_image.html", null ],
@@ -34,6 +35,7 @@ var hierarchy =
     [ "ecs::JoinTraits< Entities >", "structecs_1_1_join_traits_3_01_entities_01_4.html", null ],
     [ "ecs::JoinTraits< MaybeJoin< J > >", "structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html", null ],
     [ "ecs::JoinTraits< Storage >", "structecs_1_1_join_traits_3_01_storage_01_4.html", null ],
+    [ "raylib::core::Keyboard", "classraylib_1_1core_1_1_keyboard.html", null ],
     [ "localization::Localization", "classlocalization_1_1_localization.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "std::logic_error", "http://en.cppreference.com/w/cpp/error/logic_error.html", [

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cameramode_6365',['CameraMode',['../classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5',1,'raylib::core::Camera3D']]]
+  ['axis_6523',['Axis',['../classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5',1,'raylib::core::Gamepad']]]
 ];

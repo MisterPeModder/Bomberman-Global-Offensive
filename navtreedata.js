@@ -69,9 +69,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_shape_8hpp.html",
-"classecs_1_1_join_iter.html#a24b0c258b1f53e5d9abfb4e186e2549b",
-"classraylib_1_1core_1_1_mouse.html#a9709c93207369d3603ab49b6431459a3",
-"functions.html"
+"classecs_1_1_join.html#a614f0caeeb8bee33a17080c625a0ff15",
+"classraylib_1_1core_1_1_gamepad.html#a05b5ccb0e5e03cc2de4814a5c1bfd15b",
+"classraylib_1_1shapes_1_1_circle.html#a4ae5a6018159cb31d7a593d9233af7f7",
+"main_8cpp.html#a4c02b07fc5492c490a4262a1097293f1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

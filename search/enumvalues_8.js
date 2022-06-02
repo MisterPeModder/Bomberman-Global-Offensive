@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['third_5fperson_6389',['THIRD_PERSON',['../classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5a74a662b9532a2b1e816fddb09ab42fce',1,'raylib::core::Camera3D']]],
-  ['threadid_6390',['ThreadId',['../class_logger.html#a22a74b19c09c18f007ad0a93b65d8ccea693e7589872f7acd3e69d831d022d6ea',1,'Logger']]],
-  ['time_6391',['Time',['../class_logger.html#a22a74b19c09c18f007ad0a93b65d8cceaa76d4ef5f3f6a672bbfab2865563e530',1,'Logger']]]
+  ['i_6588',['I',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90add7536794b63bf90eccfd37f9b147d7f',1,'raylib::core::Keyboard']]],
+  ['information_6589',['Information',['../class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf',1,'Logger']]],
+  ['insert_6590',['INSERT',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a61ee777e7f71dc466c3b2c685d8d313b',1,'raylib::core::Keyboard']]]
 ];

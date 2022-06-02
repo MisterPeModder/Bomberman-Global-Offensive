@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['severity_6368',['Severity',['../class_logger.html#a4cc16315b37eb0265c2d199880464a15',1,'Logger']]]
+  ['element_6526',['Element',['../classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295d',1,'game::map::Map']]]
 ];
