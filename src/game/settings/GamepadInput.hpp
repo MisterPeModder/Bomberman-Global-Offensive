@@ -26,9 +26,10 @@ namespace game
             };
 
             /// Construct a new GamepadInput from a simple button.
+            /// @warning Setting UNKNOWN button will result in a undefined behavior for latter usage.
             ///
             /// @param button button to check.
-            GamepadInput(raylib::core::Gamepad::Button button);
+            GamepadInput(raylib::core::Gamepad::Button button = raylib::core::Gamepad::Button::UNKNOWN);
 
             /// Construct a new GamepadInput from an axis direction.
             ///
@@ -51,6 +52,21 @@ namespace game
             /// @return GamepadInput& @b this.
             ///
             GamepadInput &operator=(const GamepadInput &other) = default;
+
+            /// Get the Button stored.
+            ///
+            /// @return raylib::core::Gamepad::Button button stored.
+            raylib::core::Gamepad::Button getButton() const;
+
+            /// Get the axis stored.
+            ///
+            /// @return raylib::core::Gamepad::Axis axis stored.
+            raylib::core::Gamepad::Axis getAxis() const;
+
+            /// Get the axis direction.
+            ///
+            /// @return AxisDirection axis direction stored.
+            AxisDirection getAxisDirection() const;
 
             /// Test if the input stored is a button.
             ///

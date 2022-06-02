@@ -19,6 +19,12 @@ namespace game
         {
         }
 
+        raylib::core::Gamepad::Button GamepadInput::getButton() const { return _button; }
+
+        raylib::core::Gamepad::Axis GamepadInput::getAxis() const { return _axis; }
+
+        GamepadInput::AxisDirection GamepadInput::getAxisDirection() const { return _axisDirection; }
+
         bool GamepadInput::isButton() const { return _button != raylib::core::Gamepad::Button::UNKNOWN; }
 
         std::string GamepadInput::toString() const
