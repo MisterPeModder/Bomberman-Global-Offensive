@@ -101,6 +101,8 @@ namespace game
             /// Set the new resolution of the window.
             ///
             /// @param resolution new resolution.
+            /// @todo Define valid/invalid resolutions for the game and throw @ef InvalidSettingsValue for invalid
+            /// resolutions.
             void setResolution(raylib::core::Vector2 resolution);
 
             /// Get the target resolution of the window.

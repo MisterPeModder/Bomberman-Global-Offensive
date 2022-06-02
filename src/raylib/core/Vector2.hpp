@@ -93,14 +93,14 @@ namespace raylib
             /// @param second The second vector to check
             ///
             /// @return true if the vectors are equal or false otherwise
-            bool operator==(const Vector2 &second);
+            bool operator==(const Vector2 &second) const;
 
             /// Gets if the two Vector2 are equals or not
             ///
             /// @param second The second vector to check
             ///
             /// @return true if the vectors are not equal or false otherwise
-            bool operator!=(const Vector2 &second);
+            bool operator!=(const Vector2 &second) const;
 
             float x;
             float y;

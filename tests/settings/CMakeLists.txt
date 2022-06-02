@@ -2,6 +2,7 @@ set(SRCROOT ${SRCROOT}/settings)
 
 set(SRC
     ${SRCROOT}/test_GamepadInput.cpp
+    ${SRCROOT}/test_Settings.cpp
 )
 
 add_bomberman_test(
