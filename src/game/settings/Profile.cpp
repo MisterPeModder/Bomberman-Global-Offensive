@@ -34,8 +34,6 @@ namespace game
         {
             loadDefaults();
 
-            std::cout << "Loading profile" << std::endl;
-
             util::loadConfigFile(getFilepath(), [this](std::string_view key, std::string_view value) {
                 try {
                     loadValue(key, value);
