@@ -9,14 +9,12 @@
 
 namespace raylib {
     namespace core {
-        Audio::Audio()
-        {
-        }
-        Audio::~Audio()
-        {
-        }
-        void Audio::initAudioDevice(void) {return InitAudioDevice();}
+        void Audio::initAudioDevice(void) { InitAudioDevice(); }
 
-        void Audio::closeAudioDevice(void) {return CloseAudioDevice();}
+        void Audio::closeAudioDevice(void) { CloseAudioDevice(); }
+
+        bool Audio::isAudioDeviceReady() {return IsAudioDeviceReady(); }
+
+        void Audio::setMasterVolume(float volume) { SetMasterVolume(volume); }
     }
 }
