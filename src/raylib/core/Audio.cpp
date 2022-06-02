@@ -7,37 +7,16 @@
 
 #include "Audio.hpp"
 
-raylib::core::Audio::Audio()
-{
-}
-
-raylib::core::Audio::Audio::~Audio()
-{
-}
-
 namespace raylib {
     namespace core {
-        Sound Audio::loadSound(const std::string fileName) { return LoadSound(fileName.c_str());}
-
-        void Audio::unloadWave(Wave wave) {UnloadWave(wave);}
-
-        void Audio::setMasterVolume(float volume) {setMasterVolume(volume);}
-
-        bool Audio::isAudioDeviceReady(void) {return IsAudioDeviceReady();}
-
-        void Audio::closeAudioDevice(void) {CloseAudioDevice();}
-
+        Audio::Audio()
+        {
+        }
+        Audio::~Audio()
+        {
+        }
         void Audio::initAudioDevice(void) {initAudioDevice();}
 
-        void Audio::playSound(Sound sound) {PlaySound(sound);}
-
-        void Audio::stopSound(Sound sound) {StopSound(sound);}
-
-        void Audio::pauseSound(Sound sound) {PauseSound(sound);}
-
-        bool Audio::isSoundPlaying(Sound sound) {return isSoundPlaying(sound);}
-
+        void Audio::closeAudioDevice(void) {CloseAudioDevice();}
     }
 }
-
-

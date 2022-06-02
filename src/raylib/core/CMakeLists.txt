@@ -19,7 +19,9 @@ set(SRC
     ${SRCROOT}/Color.hpp
     ${SRCROOT}/Color.cpp
     ${SRCROOT}/Audio.cpp
-    ${SRCROOT}/Audio.hpp
+    ${INCROOT}/Audio.hpp
+    ${SRCROOT}/Sound.cpp
+    ${INCROOT}/Sound.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS

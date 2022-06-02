@@ -5,6 +5,8 @@
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
+#include "raylib/core/Audio.hpp"
+#include "raylib/core/Sound.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -41,6 +43,10 @@ int main()
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
+    raylib::core::Audio audio;
+    raylib::core::Sound muse("witcher.ogg");
+    audio.initAudioDevice();
+    //muse.playSound();
 
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
@@ -56,6 +62,7 @@ int main()
         drawFrame(&camera);
 #endif
 
+    audio.closeAudioDevice();
     CloseWindow();
     localization::Localization::saveLocales();
     Logger::logger.log(Logger::Severity::Information, "End of program");
