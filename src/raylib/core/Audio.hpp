@@ -15,8 +15,6 @@ namespace raylib
     namespace core {
         class Audio {
             public:
-                Audio();
-                ~Audio();
                 static void initAudioDevice(void);
                 static void closeAudioDevice(void);
                 static bool isAudioDeviceReady(void);

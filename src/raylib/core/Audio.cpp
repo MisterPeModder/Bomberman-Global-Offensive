@@ -15,8 +15,8 @@ namespace raylib {
         Audio::~Audio()
         {
         }
-        void Audio::initAudioDevice(void) {initAudioDevice();}
+        void Audio::initAudioDevice(void) {return InitAudioDevice();}
 
-        void Audio::closeAudioDevice(void) {CloseAudioDevice();}
+        void Audio::closeAudioDevice(void) {return CloseAudioDevice();}
     }
 }

@@ -43,10 +43,10 @@ int main()
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
+
+    ///setup audio for program
     raylib::core::Audio audio;
-    raylib::core::Sound muse("witcher.ogg");
     audio.initAudioDevice();
-    //muse.playSound();
 
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
