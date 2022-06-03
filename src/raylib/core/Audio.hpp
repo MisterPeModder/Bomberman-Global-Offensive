@@ -38,6 +38,12 @@ namespace raylib
             ///
             ///@param volume set master volume between 0 and 100
             static void setMasterVolume(float volume);
+
+            /// Get master volume of the program
+            static float getMasterVolume();
+
+          private:
+            static float _volume;
         };
     } // namespace core
 } // namespace raylib

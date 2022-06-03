@@ -25,7 +25,7 @@ namespace raylib
 
         void Sound::resume() { ResumeSound(_music); }
 
-        void Sound::setVolume(float volume) { SetSoundVolume(_music, volume); }
+        void Sound::setVolume(float volume) { SetSoundVolume(_music, volume), _volume = volume; }
 
         float Sound::getvolume() { return _volume; }
     } // namespace core

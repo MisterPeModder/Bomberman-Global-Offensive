@@ -17,6 +17,12 @@ namespace raylib
 
         bool Audio::isDeviceReady() { return IsAudioDeviceReady(); }
 
-        void Audio::setMasterVolume(float volume) { SetMasterVolume(volume); }
+        void Audio::setMasterVolume(float volume)
+        {
+            SetMasterVolume(volume);
+            _volume = volume;
+        }
+
+        float Audio::getMasterVolume() { return _volume; }
     } // namespace core
 } // namespace raylib
