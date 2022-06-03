@@ -16,27 +16,28 @@ extern "C"
 /// RayLib namespace
 namespace raylib
 {
-    ///Core namespace inside of raylib
-    namespace core {
+    /// Core namespace inside of raylib
+    namespace core
+    {
         /// The Audio static class that will initialize audio and manage it
         class Audio {
-            public:
-                ///Instant audio device
-                static void initAudioDevice();
+          public:
+            /// Instant audio device
+            static void initAudioDevice();
 
-                /// Close audio device
-                static void closeAudioDevice();
+            /// Close audio device
+            static void closeAudioDevice();
 
-                /// Return if audio device is ready or not
-                ///
-                /// @retval true in case if audio device is ready
-                /// @retval false in case if audio device is not ready
-                static bool isAudioDeviceReady();
+            /// Return if audio device is ready or not
+            ///
+            /// @retval true in case if audio device is ready
+            /// @retval false in case if audio device is not ready
+            static bool isAudioDeviceReady();
 
-                /// Set the global volume of the program
-                ///
-                ///@param volume set master volume between 0 and 100
-                static void setMasterVolume(float volume);
+            /// Set the global volume of the program
+            ///
+            ///@param volume set master volume between 0 and 100
+            static void setMasterVolume(float volume);
         };
     } // namespace core
 } // namespace raylib
