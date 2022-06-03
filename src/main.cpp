@@ -102,7 +102,7 @@ int main()
 
     /// setup audio for program
     raylib::core::Audio audio;
-    audio.initAudioDevice();
+    audio.initDevice();
 
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
@@ -120,7 +120,7 @@ int main()
         drawFrame(&camera);
 #endif
 
-    audio.closeAudioDevice();
+    audio.closeDevice();
     CloseWindow();
     localization::Localization::saveLocales();
     Logger::logger.log(Logger::Severity::Information, "End of program");

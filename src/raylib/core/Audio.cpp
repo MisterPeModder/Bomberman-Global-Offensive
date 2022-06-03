@@ -11,11 +11,11 @@ namespace raylib
 {
     namespace core
     {
-        void Audio::initAudioDevice(void) { InitAudioDevice(); }
+        void Audio::initDevice(void) { InitAudioDevice(); }
 
-        void Audio::closeAudioDevice(void) { CloseAudioDevice(); }
+        void Audio::closeDevice(void) { CloseAudioDevice(); }
 
-        bool Audio::isAudioDeviceReady() { return IsAudioDeviceReady(); }
+        bool Audio::isDeviceReady() { return IsAudioDeviceReady(); }
 
         void Audio::setMasterVolume(float volume) { SetMasterVolume(volume); }
     } // namespace core

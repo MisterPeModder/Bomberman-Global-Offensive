@@ -23,16 +23,16 @@ namespace raylib
         class Audio {
           public:
             /// Instant audio device
-            static void initAudioDevice();
+            static void initDevice();
 
             /// Close audio device
-            static void closeAudioDevice();
+            static void closeDevice();
 
             /// Return if audio device is ready or not
             ///
             /// @retval true in case if audio device is ready
             /// @retval false in case if audio device is not ready
-            static bool isAudioDeviceReady();
+            static bool isDeviceReady();
 
             /// Set the global volume of the program
             ///

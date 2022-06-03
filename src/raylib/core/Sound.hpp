@@ -33,27 +33,28 @@ namespace raylib
             ///
             /// @retval true if the sound is currently playing
             /// @retval false if the sound is not currently playing
-            bool isSoundPlaying();
-
-            /// Unload Sound
-            void unloadSound();
+            bool isPlaying();
 
             /// plays the sound that has been changed
-            void playSound();
+            void play();
 
             /// Stop the sound currently played
-            void stopSound();
+            void stop();
 
             /// Pause the sound currently played
-            void pauseSound();
+            void pause();
 
             /// Resumes where the sound was paused
-            void resumeSound();
+            void resume();
 
             /// Set the volume of the sound
-            void setSoundVolume(float volume);
+            void setVolume(float volume);
+
+            /// Get volume of the sound
+            float getvolume();
 
           private:
+            float _volume;
             ::Sound _music;
         };
     } // namespace core
