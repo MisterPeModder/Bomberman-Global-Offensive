@@ -22,7 +22,7 @@ namespace game
         class Settings {
           public:
             /// Exception for invalid values in settings.
-            class InvalidSettingsValue : public std::logic_error {
+            class InvalidSettingsValue : public std::runtime_error {
               public:
                 /// Construct a new Invalid Settings Value exception.
                 ///

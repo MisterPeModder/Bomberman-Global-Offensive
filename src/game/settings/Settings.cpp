@@ -17,7 +17,7 @@ namespace game
     namespace settings
     {
         Settings::InvalidSettingsValue::InvalidSettingsValue(std::string_view message)
-            : std::logic_error(message.data())
+            : std::runtime_error(message.data())
         {
         }
 
@@ -61,8 +61,8 @@ namespace game
 
                 if (value.find('x') == std::string::npos)
                     throw InvalidSettingsValue("Resolution must be of form '[width]x[height]'");
-                width = std::stof(value.data());
-                height = std::stof(value.data() + value.find('x') + 1);
+                width = static_cast<float>(std::stoi(value.data()));
+                height = static_cast<float>(std::stoi(value.data() + value.find('x') + 1));
                 setResolution({width, height});
             } else if (key == "fullscreen") {
                 bool fullscreen;
