@@ -3,12 +3,12 @@
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/core/Audio.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Color.hpp"
+#include "raylib/core/Sound.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
-#include "raylib/core/Audio.hpp"
-#include "raylib/core/Sound.hpp"
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
 
@@ -100,7 +100,7 @@ int main()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
 
-    ///setup audio for program
+    /// setup audio for program
     raylib::core::Audio audio;
     audio.initAudioDevice();
 
