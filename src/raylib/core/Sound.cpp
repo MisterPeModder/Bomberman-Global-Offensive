@@ -7,18 +7,21 @@
 
 #include "Sound.hpp"
 
-namespace raylib {
-    namespace core {
-        Sound::Sound(std::string filepath)
+///raylib namespace
+namespace raylib 
+{
+    namespace core 
+    {
+        Sound::Sound(const std::filesystem::path &fileName)
         {
-            _music = LoadSound(filepath.c_str());
+            _music = LoadSound(fileName.generic_string().c_str());
         }
         Sound::~Sound()
         {
+            this->unloadSound();
         }
-        //bool Sound::isSoundPlaying(Sound sound) {return IsSoundPlaying(_music);}
-                
-        ::Sound Sound::loadSound(const std::string fileName) { return LoadSound(fileName.c_str());}
+
+        bool Sound::isSoundPlaying() {return IsSoundPlaying(_music);}
 
         void Sound::unloadSound() {UnloadSound(_music);}
 

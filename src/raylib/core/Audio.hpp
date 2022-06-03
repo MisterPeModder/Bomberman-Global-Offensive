@@ -38,7 +38,7 @@ namespace raylib
                 ///@param volume set master volume between 0 and 100
                 static void setMasterVolume(float volume);
         };
-    }
-}
+    } // namespace core
+} // namespace raylib
 
 #endif /*RAYLIB_CORE_AUDIO_HPP_*/

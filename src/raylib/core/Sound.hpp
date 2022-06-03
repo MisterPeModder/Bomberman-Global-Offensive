@@ -12,21 +12,45 @@ extern "C"
 {
 #include <raylib.h>
 }
-#include <string>
 
-namespace raylib {
-    namespace core {
+#include <string>
+#include <filesystem>
+
+///raylib namespace
+namespace raylib 
+{
+    namespace core 
+    { /// Core namespace (inside of raylib)
         class Sound {
             public:
-                Sound(std::string filepath);
+                /// Consutructor of Sound wich create the sounds
+                ///
+                /// @param filename Sound path
+                Sound(const std::filesystem::path &fileName);
                 ~Sound();
-                ::Sound loadSound(const std::string fileName);
-                bool isSoundPlaying(Music music);
+
+                /// Check if sound is playing now
+                ///
+                /// @retval true if the sound is currently playing
+                /// @retval false if the sound is not currently playing
+                bool isSoundPlaying();
+
+                /// Unload Sound
                 void unloadSound();
+
+                /// plays the sound that has been changed
                 void playSound();
+
+                /// Stop the sound currently played
                 void stopSound();
+
+                /// Pause the sound currently played
                 void pauseSound();
+
+                ///Resumes where the sound was paused
                 void resumeSound();
+
+                /// Set the volume of the sound
                 void setSoundVolume(float volume);
             private:
                 ::Sound _music;
