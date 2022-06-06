@@ -10,6 +10,15 @@
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
 
+#include "raylib/shapes/Cube.hpp"
+#include "raylib/core/Vector3.hpp"
+#include "ecs/Component.hpp"
+#include "ecs/Storage.hpp"
+#include "ecs/System.hpp"
+#include "ecs/World.hpp"
+#include "ecs/join.hpp"
+#include "ecs/resource/Timer.hpp"
+
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
 #endif
@@ -38,9 +47,9 @@ static raylib::model::Animation &getTestingAnimation()
 static void drawFrame(void *arg)
 {
     raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
-    raylib::core::Vector3 pos(0, -5, 0);
-    raylib::core::Vector3 scale(1, 1, 1);
-    raylib::core::Vector3 rotationAxis(1, 0, 0);
+    Vector3 pos(0, -5, 0);
+    Vector3 scale(1, 1, 1);
+    Vector3 rotationAxis(1, 0, 0);
 
     raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();
@@ -87,6 +96,102 @@ static void setupLogger()
     SetTraceLogLevel(LOG_INFO);
 }
 
+///
+///
+///
+///
+///
+///
+
+struct Position : public ecs::Component {
+    Vector3 vector;
+
+    Position(float x, float y, float z) : vector({x, y, z}) {}
+    Position(Vector3 &other) : vector(other) {}
+};
+
+struct Size : public ecs::Component {
+    Vector3 vector;
+
+    Size(float x, float y, float z) : vector({x, y, z}) {}
+    Size(Vector3 &other) : vector(other) {}
+};
+
+
+struct CubeColor : public ecs::Component {
+    Color color;
+
+    CubeColor(unsigned char r, unsigned char g, unsigned char b, unsigned char a) : color(r, g, b, a) {}
+};
+
+
+struct Cube : public ecs::Component {
+    raylib::shapes::Cube cube;
+
+    Cube() :cube() {}
+    Cube(Vector3 position, Vector3 size, Color color) :cube(position, size, color) {}
+};
+
+struct ChangeCube : public ecs::System {
+    void run(ecs::SystemData data) override final
+    {
+        for (auto [cube, pos, col, size] : ecs::join(data.getStorage<Cube>(), data.getStorage<Position>(), data.getStorage<CubeColor>(), data.getStorage<Size>())) {
+            cube.cube.setPosition(pos.vector);
+            cube.cube.setColor(col.color);
+            cube.cube.setSize(size.vector);
+        }
+    }
+};
+
+struct DrawingCube : public ecs::System {
+    void run(ecs::SystemData data) override final
+    {
+        for (auto [cube] : ecs::join(data.getStorage<Cube>()))
+            cube.cube.draw();
+    }
+};
+
+
+void game_loop(void *arg)
+{
+    raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
+    ecs::World world;
+
+    Logger::logger.log(Logger::Severity::Debug, "Start loop");
+
+    world.addResource<ecs::Timer>();
+    world.addSystem<DrawingCube>();
+    world.addSystem<ChangeCube>();
+
+    auto ourCube =  world.addEntity()
+                    .with<Position>(0.f, 0.f, 0.f)
+                    .with<Size>(50.f, 50.f, 50.f)
+                    .with<CubeColor>(255, 120, 50, 0)
+                    .with<Cube>()
+                    .build();
+    Logger::logger.log(Logger::Severity::Debug, "initialized");
+
+    while (1) {
+        camera->update();
+        raylib::core::Window::clear();
+        {
+            raylib::core::scoped::Mode3D mode3D(*camera);
+            world.runSystems();
+        };
+        raylib::core::Window::drawFPS(10, 10);
+    }
+
+    Logger::logger.log(Logger::Severity::Debug, "End loop");
+
+
+}
+
+///
+///
+///
+///
+///
+
 int main()
 {
     setupLogger();
@@ -109,9 +214,9 @@ int main()
     emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
 #else
     raylib::core::Window::setTargetFPS(60);
+    Logger::logger.log(Logger::Severity::Information, "Before game loop");
 
-    while (!WindowShouldClose())
-        drawFrame(&camera);
+    game_loop(&camera);
 #endif
 
     CloseWindow();
