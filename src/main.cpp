@@ -1,5 +1,19 @@
 #include <filesystem>
 #include <iostream>
+#include <memory>
+#include "ecs/Component.hpp"
+#include "ecs/Storage.hpp"
+#include "ecs/System.hpp"
+#include "ecs/World.hpp"
+#include "ecs/join.hpp"
+#include "ecs/resource/Timer.hpp"
+#include "game/components/Animation.hpp"
+#include "game/components/Color.hpp"
+#include "game/components/Model.hpp"
+#include "game/components/Position.hpp"
+#include "game/components/Size.hpp"
+#include "game/systems/Animation.hpp"
+#include "game/systems/Model.hpp"
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
@@ -26,14 +40,14 @@ static raylib::model::Model &getTestingModel()
     return model;
 }
 
-static raylib::model::Animation &getTestingAnimation()
-{
-    static const std::filesystem::path testAnimPath =
-        std::filesystem::path("assets").append("animations").append("player").append("raylibguy_anim.iqm");
-    static raylib::model::Animation anim(testAnimPath);
+// static raylib::model::Animation &getTestingAnimation()
+// {
+//     static const std::filesystem::path testAnimPath =
+//         std::filesystem::path("assets").append("animations").append("player").append("raylibguy_anim.iqm");
+//     static raylib::model::Animation anim(testAnimPath);
 
-    return anim;
-}
+//     return anim;
+// }
 
 static void drawFrame(void *arg)
 {
@@ -41,17 +55,29 @@ static void drawFrame(void *arg)
     raylib::core::Vector3 pos(0, -5, 0);
     raylib::core::Vector3 scale(1, 1, 1);
     raylib::core::Vector3 rotationAxis(1, 0, 0);
+                    float rotationAngle = 90;
 
     raylib::model::Model &testingModel = getTestingModel();
-    raylib::model::Animation &testingAnimation = getTestingAnimation();
+    // raylib::model::Animation &testingAnimation = getTestingAnimation();
+    ecs::World world;
+    world.addSystem<game::systems::ModelsDrawEX>();
+    world.addEntity()
+        .with<game::components::Model>(testingModel)
+        .with<game::components::Position>(pos)
+        .with<game::components::Scale>(scale)
+        .with<game::components::RotationAngle>(rotationAngle)
+        .with<game::components::RotationAxis>(rotationAxis)
+        .build()
+    ;
 
-    testingAnimation.updateModel(testingModel);
+    // testingAnimation.updateModel(testingModel);
     camera->update();
     raylib::core::scoped::Drawing drawing;
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
-        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+        // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+        // world.runSystems();
     };
 
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
