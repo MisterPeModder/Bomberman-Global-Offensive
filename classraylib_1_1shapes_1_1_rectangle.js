@@ -1,6 +1,6 @@
 var classraylib_1_1shapes_1_1_rectangle =
 [
-    [ "Rectangle", "classraylib_1_1shapes_1_1_rectangle.html#a6423fccb775cd0580304f67e21cd1007", null ],
+    [ "Rectangle", "classraylib_1_1shapes_1_1_rectangle.html#aafc5f1fd31d20bb97f7923a25364f08d", null ],
     [ "Rectangle", "classraylib_1_1shapes_1_1_rectangle.html#a5a11c76aafe63cbf557447ba4e133a1e", null ],
     [ "Rectangle", "classraylib_1_1shapes_1_1_rectangle.html#aa9de9a2a85e075150072e7e8b20997ea", null ],
     [ "~Rectangle", "classraylib_1_1shapes_1_1_rectangle.html#a6730b3432ec1932a1d3986a31a071804", null ],
@@ -12,5 +12,5 @@ var classraylib_1_1shapes_1_1_rectangle =
     [ "drawRoundedLines", "classraylib_1_1shapes_1_1_rectangle.html#ad161334b7d7931bbbda3cb9c7c885b3a", null ],
     [ "getCollision", "classraylib_1_1shapes_1_1_rectangle.html#a7ea4c4fc61334875ef4ac0b166bad223", null ],
     [ "getRaylibRectangle", "classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71", null ],
-    [ "_size", "classraylib_1_1shapes_1_1_rectangle.html#a4b9639cd67201ed8963c1959da5a2ef1", null ]
+    [ "_size", "classraylib_1_1shapes_1_1_rectangle.html#abf8ab7af506957a575e805b9bf9df621", null ]
 ];
