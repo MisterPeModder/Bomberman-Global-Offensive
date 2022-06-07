@@ -98,11 +98,7 @@ int main()
     localization::Localization::setLocale("fr");
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
-    std::cout << localization::Ressources::rsHello << std::endl;
-
-    /// setup audio for program
-    raylib::core::Audio audio;
-    audio.initDevice();
+    std::cout << localization::Ressources::rsHello << std::endl; 
 
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
@@ -120,7 +116,6 @@ int main()
         drawFrame(&camera);
 #endif
 
-    audio.closeDevice();
     CloseWindow();
     localization::Localization::saveLocales();
     Logger::logger.log(Logger::Severity::Information, "End of program");
