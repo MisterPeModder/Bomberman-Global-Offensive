@@ -12,6 +12,7 @@
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
 #include "raylib/raylib.hpp"
+#include "scripting/scripting.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -74,7 +75,10 @@ int main()
 {
     setupLogger();
 
-    /// Setup the locales parameters
+    // Temporary
+    scriptingHelloWorld();
+
+    // Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
     localization::Localization::setLocale("fr");
 

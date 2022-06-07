@@ -14,6 +14,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 include(DetectCompiler)
 
 find_package(raylib REQUIRED)
+find_package(mujs REQUIRED)
 
 add_subdirectory(src)
 

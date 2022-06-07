@@ -12,6 +12,7 @@ add_subdirectory(ecs)
 add_subdirectory(localization)
 add_subdirectory(logger)
 add_subdirectory(raylib)
+add_subdirectory(scripting)
 add_subdirectory(util)
 add_subdirectory(game)
 
@@ -34,11 +35,11 @@ add_library(libbomberman ${SRC})
 
 target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
 target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
-target_link_libraries(${LIB_NAME} PUBLIC raylib)
+target_link_libraries(${LIB_NAME} PUBLIC raylib mujs)
 
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
-target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} raylib)
+target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} raylib mujs)
 
 # Copy the executable to the root.
 # There is no executable in the web build, so it is disabled there.
