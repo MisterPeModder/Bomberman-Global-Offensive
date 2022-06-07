@@ -20,5 +20,8 @@
 log.txt
 log_raylib.txt
 
+# Game settings
+/settings
+
 # Shame on you!
 vgcore.*

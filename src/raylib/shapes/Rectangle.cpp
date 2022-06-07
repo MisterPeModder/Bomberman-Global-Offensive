@@ -12,7 +12,7 @@ namespace raylib
 {
     namespace shapes
     {
-        Rectangle::Rectangle(Vector2 pos, Vector2 size, Color color)
+        Rectangle::Rectangle(raylib::core::Vector2 pos, raylib::core::Vector2 size, raylib::core::Color color)
         {
             setPosition(pos);
             setColor(color);
@@ -25,7 +25,7 @@ namespace raylib
             _position.y = rec.y;
             _size.x = rec.height;
             _size.y = rec.width;
-            _color = {0, 0, 0, 0};
+            _color = raylib::core::Color::DEFAULT_COLOR;
         }
 
         Rectangle::Rectangle(Rectangle &other)
@@ -39,23 +39,26 @@ namespace raylib
 
         ::Rectangle Rectangle::getRaylibRectangle() const { return {_position.x, _position.y, _size.x, _size.y}; }
 
-        void Rectangle::draw() const { DrawRectangleRec(this->getRaylibRectangle(), _color); }
+        void Rectangle::draw() const { DrawRectangleRec(this->getRaylibRectangle(), _color.asRaylib()); }
 
-        void Rectangle::drawLines() const { DrawRectangleLines(_position.x, _position.y, _size.x, _size.y, _color); }
+        void Rectangle::drawLines() const
+        {
+            DrawRectangleLines(_position.x, _position.y, _size.x, _size.y, _color.asRaylib());
+        }
 
         void Rectangle::drawLines(float lineThick) const
         {
-            DrawRectangleLinesEx(this->getRaylibRectangle(), lineThick, _color);
+            DrawRectangleLinesEx(this->getRaylibRectangle(), lineThick, _color.asRaylib());
         }
 
         void Rectangle::drawRounded(float roundness, float segments) const
         {
-            DrawRectangleRounded(this->getRaylibRectangle(), roundness, segments, _color);
+            DrawRectangleRounded(this->getRaylibRectangle(), roundness, segments, _color.asRaylib());
         }
 
         void Rectangle::drawRoundedLines(float roundness, float segments, float lineThick) const
         {
-            DrawRectangleRoundedLines(this->getRaylibRectangle(), roundness, segments, lineThick, _color);
+            DrawRectangleRoundedLines(this->getRaylibRectangle(), roundness, segments, lineThick, _color.asRaylib());
         }
 
         bool Rectangle::checkCollision(Rectangle &other) const

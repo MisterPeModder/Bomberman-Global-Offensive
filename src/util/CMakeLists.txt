@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/util)
 
 set(SRC
 	${SRC}
+	${INCROOT}/util.cpp
 	${INCROOT}/util.hpp
 	${SRCROOT}/BitSet.cpp
 	${INCROOT}/BitSet.hpp
