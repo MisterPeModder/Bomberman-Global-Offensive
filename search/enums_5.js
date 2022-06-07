@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['key_6528',['Key',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90',1,'raylib::core::Keyboard']]]
+  ['joystick_6674',['Joystick',['../classraylib_1_1core_1_1_gamepad.html#ad166743ab5675edf9e2613f2918288c0',1,'raylib::core::Gamepad']]]
 ];

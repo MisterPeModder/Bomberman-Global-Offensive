@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loginfo_6529',['LogInfo',['../class_logger.html#a22a74b19c09c18f007ad0a93b65d8cce',1,'Logger']]]
+  ['key_6675',['Key',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90',1,'raylib::core::Keyboard']]]
 ];

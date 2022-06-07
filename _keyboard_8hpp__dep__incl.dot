@@ -5,5 +5,13 @@ digraph "src/raylib/core/Keyboard.hpp"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="src/raylib/core/Keyboard.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="src/raylib/core/Keyboard.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keyboard_8cpp.html",tooltip=" "];
+  Node2 [label="src/game/settings/Keybinds.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keybinds_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/game/settings/Keybinds.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keybinds_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/game/settings/Profile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_profile_8hpp.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/game/settings/Profile.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_profile_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/raylib/core/Keyboard.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keyboard_8cpp.html",tooltip=" "];
 }

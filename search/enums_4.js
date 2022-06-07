@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['joystick_6527',['Joystick',['../classraylib_1_1core_1_1_gamepad.html#ad166743ab5675edf9e2613f2918288c0',1,'raylib::core::Gamepad']]]
+  ['gameaction_6673',['GameAction',['../namespacegame.html#a8483766bb6895afd4bba8290587dd663',1,'game']]]
 ];

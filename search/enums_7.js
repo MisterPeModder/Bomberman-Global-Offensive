@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['severity_6530',['Severity',['../class_logger.html#a4cc16315b37eb0265c2d199880464a15',1,'Logger']]]
+  ['loginfo_6676',['LogInfo',['../class_logger.html#a22a74b19c09c18f007ad0a93b65d8cce',1,'Logger']]]
 ];

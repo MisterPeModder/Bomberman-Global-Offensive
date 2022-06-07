@@ -102,6 +102,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a61516938bebca76c22e965e24066591e"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a61516938bebca76c22e965e24066591e">operator&lt;&lt;</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;output, <a class="el" href="classutil_1_1_bit_set.html">BitSet</a> const &amp;set)</td></tr>
 <tr class="memdesc:a61516938bebca76c22e965e24066591e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the contents of <b>set</b> into <b>output</b>.  <a href="namespaceutil.html#a61516938bebca76c22e965e24066591e">More...</a><br /></td></tr>
 <tr class="separator:a61516938bebca76c22e965e24066591e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">loadConfigFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;path, const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; bool(<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>)&gt; &amp;handleValue)</td></tr>
+<tr class="memdesc:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a configuration file with a form of [key]=[value] for each line.  <a href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">More...</a><br /></td></tr>
+<tr class="separator:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05454346e6b75a324321c23f7afc5727"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">makePath</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> path)</td></tr>
 <tr class="memdesc:a05454346e6b75a324321c23f7afc5727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenate multiple directories in a single path.  <a href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">More...</a><br /></td></tr>
 <tr class="separator:a05454346e6b75a324321c23f7afc5727"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,6 +114,73 @@ Functions</h2></td></tr>
 <tr class="separator:a242a9ab3d7ed4cf8f348a27f5b47c36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ac6097fd1cedb28a3dbba6a8a241860aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6097fd1cedb28a3dbba6a8a241860aa">&#9670;&nbsp;</a></span>loadConfigFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool util::loadConfigFile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; bool(<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>handleValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load a configuration file with a form of [key]=[value] for each line. </p>
+<dl class="section note"><dt>Note</dt><dd>Empty lines and lines starting with a '#' are skipped.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>filepath. </td></tr>
+    <tr><td class="paramname">handleValue</td><td>function called with each key value pair. If it returns false, the function doesn't read the next lines and close the file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the file was entirely loaded. </dd>
+<dd>
+false If the file couldn't be opened or if the <code>handleValue</code> function returned false for an element. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00014">14</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ifstream.html">std::ifstream</a> file(path);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> line;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a> ss;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> key;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> value;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">bool</span> res = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (!file.is_open())</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">while</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/getline.html">std::getline</a>(file, line)) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (line.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">empty</a>() || line[0] == <span class="charliteral">&#39;#&#39;</span>)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">str</a>(line);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/getline.html">std::getline</a>(ss, key, <span class="charliteral">&#39;=&#39;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            value = ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">str</a>().substr(ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_istream/tellg.html">tellg</a>());</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (!handleValue(key, value)) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                res = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        file.close();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a05454346e6b75a324321c23f7afc5727"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05454346e6b75a324321c23f7afc5727">&#9670;&nbsp;</a></span>makePath() <span class="overload">[1/2]</span></h2>
 
@@ -145,8 +215,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> The path send in input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00020">20</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ <span class="keywordflow">return</span> path; }</div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00022">22</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{ <span class="keywordflow">return</span> path; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -201,10 +271,10 @@ template&lt;class... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> concatenated path of all the directories </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00030">30</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">makePath</a>(path.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">append</a>(nextDir), args...);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00032">32</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">makePath</a>(path.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">append</a>(nextDir), args...);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -247,9 +317,16 @@ template&lt;class... Args&gt; </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespaceutil_html_a242a9ab3d7ed4cf8f348a27f5b47c36d"><div class="ttname"><a href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path, std::string_view nextDir, Args... args)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00030">util.hpp:30</a></div></div>
+<div class="ttc" id="abasic_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a></div></div>
+<div class="ttc" id="atellg_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_istream/tellg.html">std::stringstream::tellg</a></div><div class="ttdeci">T tellg(T... args)</div></div>
+<div class="ttc" id="abasic_stringstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a></div></div>
+<div class="ttc" id="anamespaceutil_html_a242a9ab3d7ed4cf8f348a27f5b47c36d"><div class="ttname"><a href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path, std::string_view nextDir, Args... args)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00032">util.hpp:32</a></div></div>
 <div class="ttc" id="aappend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">std::filesystem::path::append</a></div><div class="ttdeci">T append(T... args)</div></div>
+<div class="ttc" id="agetline_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/getline.html">std::getline</a></div><div class="ttdeci">T getline(T... args)</div></div>
+<div class="ttc" id="aempty_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">std::string::empty</a></div><div class="ttdeci">T empty(T... args)</div></div>
+<div class="ttc" id="astr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">std::stringstream::str</a></div><div class="ttdeci">T str(T... args)</div></div>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
+<div class="ttc" id="abasic_ifstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ifstream.html">std::ifstream</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -7,5 +7,5 @@ digraph "src/raylib/model" {
   dir_db37c42d313def05fbfe463294e4c39f [shape=box, label="model", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_db37c42d313def05fbfe463294e4c39f.html"];
   }
   dir_8eb5564b7954c35d70c55c3a33ff6f37 [shape=box label="core" URL="dir_8eb5564b7954c35d70c55c3a33ff6f37.html"];
-  dir_db37c42d313def05fbfe463294e4c39f->dir_8eb5564b7954c35d70c55c3a33ff6f37 [headlabel="3", labeldistance=1.5 headhref="dir_000014_000013.html"];
+  dir_db37c42d313def05fbfe463294e4c39f->dir_8eb5564b7954c35d70c55c3a33ff6f37 [headlabel="3", labeldistance=1.5 headhref="dir_000015_000014.html"];
 }

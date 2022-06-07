@@ -6,7 +6,7 @@ var structraylib_1_1core_1_1_vector3 =
     [ "Vector3", "structraylib_1_1core_1_1_vector3.html#aeea468fe1acd150ae2dfcbfa6a02a545", null ],
     [ "~Vector3", "structraylib_1_1core_1_1_vector3.html#a0f3aac5d4bb0132906547cb7272ffa53", null ],
     [ "asRaylib", "structraylib_1_1core_1_1_vector3.html#a95eb6c7e81b3ca2bf1ea41c00e6165c4", null ],
-    [ "operator!=", "structraylib_1_1core_1_1_vector3.html#a8290399f0773d435ce1620706358cae3", null ],
+    [ "operator!=", "structraylib_1_1core_1_1_vector3.html#a2f43c3ed0a918629476908e920bceedc", null ],
     [ "operator*", "structraylib_1_1core_1_1_vector3.html#a5a0d39ffeeae86c42da025bfbc4c2cd1", null ],
     [ "operator*=", "structraylib_1_1core_1_1_vector3.html#a222a1ffad88a7bc1e61adba76f79e9de", null ],
     [ "operator+", "structraylib_1_1core_1_1_vector3.html#a623b2fb59a6f4634ffb80005d55aa5f1", null ],
@@ -17,7 +17,7 @@ var structraylib_1_1core_1_1_vector3 =
     [ "operator/=", "structraylib_1_1core_1_1_vector3.html#aadc0eb9b5c5a9f5115023b0cbaf59b63", null ],
     [ "operator=", "structraylib_1_1core_1_1_vector3.html#af4bc75544783db85afe636586d307fd8", null ],
     [ "operator=", "structraylib_1_1core_1_1_vector3.html#a8a752e8b2cae5b88db58725772ebb8f6", null ],
-    [ "operator==", "structraylib_1_1core_1_1_vector3.html#a4a4ec9bc08be5f4c4884da98244eae14", null ],
+    [ "operator==", "structraylib_1_1core_1_1_vector3.html#ae360f674d8bd23aec461aa24e1e20c8f", null ],
     [ "x", "structraylib_1_1core_1_1_vector3.html#a7fd179cc93432e30944d8df637278c97", null ],
     [ "y", "structraylib_1_1core_1_1_vector3.html#a1d6a35b17570275d9a5aa842ff1c8103", null ],
     [ "z", "structraylib_1_1core_1_1_vector3.html#a1ffacf8c342a2da3ba6587bbdcfffa9b", null ]

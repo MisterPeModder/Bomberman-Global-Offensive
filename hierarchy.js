@@ -22,6 +22,7 @@ var hierarchy =
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "ecs::World::EntityBuilder", "classecs_1_1_world_1_1_entity_builder.html", null ],
     [ "raylib::core::Gamepad", "classraylib_1_1core_1_1_gamepad.html", null ],
+    [ "game::settings::GamepadInput", "classgame_1_1settings_1_1_gamepad_input.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "game::map::cellular::Grid", "classgame_1_1map_1_1cellular_1_1_grid.html", null ],
     [ "raylib::textures::Image", "classraylib_1_1textures_1_1_image.html", null ],
@@ -35,6 +36,7 @@ var hierarchy =
     [ "ecs::JoinTraits< Entities >", "structecs_1_1_join_traits_3_01_entities_01_4.html", null ],
     [ "ecs::JoinTraits< MaybeJoin< J > >", "structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html", null ],
     [ "ecs::JoinTraits< Storage >", "structecs_1_1_join_traits_3_01_storage_01_4.html", null ],
+    [ "game::settings::Keybinds", "classgame_1_1settings_1_1_keybinds.html", null ],
     [ "raylib::core::Keyboard", "classraylib_1_1core_1_1_keyboard.html", null ],
     [ "localization::Localization", "classlocalization_1_1_localization.html", null ],
     [ "Logger", "class_logger.html", null ],
@@ -47,6 +49,7 @@ var hierarchy =
     [ "raylib::core::scoped::Mode3D", "classraylib_1_1core_1_1scoped_1_1_mode3_d.html", null ],
     [ "raylib::model::Model", "classraylib_1_1model_1_1_model.html", null ],
     [ "raylib::core::Mouse", "classraylib_1_1core_1_1_mouse.html", null ],
+    [ "game::settings::Profile", "classgame_1_1settings_1_1_profile.html", null ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "ecs::Resource", "classecs_1_1_resource.html", [
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
@@ -57,9 +60,11 @@ var hierarchy =
     [ "game::map::cellular::Rule", "classgame_1_1map_1_1cellular_1_1_rule.html", null ],
     [ "std::runtime_error", "http://en.cppreference.com/w/cpp/error/runtime_error.html", [
       [ "game::map::cellular::Rule::InvalidRule", "classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html", null ],
+      [ "game::settings::Settings::InvalidSettingsValue", "classgame_1_1settings_1_1_settings_1_1_invalid_settings_value.html", null ],
       [ "localization::RessourceFile::LocaleNotFoundError", "classlocalization_1_1_ressource_file_1_1_locale_not_found_error.html", null ],
       [ "localization::RessourceFile::MessageNotFoundError", "classlocalization_1_1_ressource_file_1_1_message_not_found_error.html", null ]
     ] ],
+    [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
     [ "ecs::Storage", "classecs_1_1_storage.html", [
       [ "ecs::MapStorage< C >", "classecs_1_1_map_storage.html", null ],
       [ "ecs::MarkerStorage< C >", "classecs_1_1_marker_storage.html", null ]

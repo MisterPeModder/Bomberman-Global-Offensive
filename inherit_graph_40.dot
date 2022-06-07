@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="raylib::model::BoundingBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1model_1_1_bounding_box.html",tooltip="The BoundingBox Class."];
+  Node0 [label="raylib::core::Vector2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector2.html",tooltip="The Vector2 struct (compatible with the raylib Vector2)"];
 }

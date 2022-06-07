@@ -38,7 +38,8 @@ var NAVTREE =
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -60,6 +61,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -69,10 +71,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_shape_8hpp.html",
-"classecs_1_1_join.html#a614f0caeeb8bee33a17080c625a0ff15",
-"classraylib_1_1core_1_1_gamepad.html#a05b5ccb0e5e03cc2de4814a5c1bfd15b",
-"classraylib_1_1shapes_1_1_circle.html#a4ae5a6018159cb31d7a593d9233af7f7",
-"main_8cpp.html#a4c02b07fc5492c490a4262a1097293f1"
+"classecs_1_1_entities.html#a95faac8374ad228e9cef5aa5fd4cded8",
+"classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ad20caec3b48a1eef164cb4ca81ba2587",
+"classutil_1_1_bit_set.html#a525fd88fa272c30f62ad21df180493d3",
+"structraylib_1_1core_1_1_vector3.html#a222a1ffad88a7bc1e61adba76f79e9de"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

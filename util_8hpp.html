@@ -91,10 +91,17 @@ $(document).ready(function(){initNavTree('util_8hpp.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/filesystem.html">filesystem</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/functional.html">functional</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/string_view.html">string_view</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for util.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="util_8hpp__incl.png" border="0" usemap="#src_2util_2util_8hpp" alt=""/></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="util_8hpp__dep__incl.png" border="0" usemap="#src_2util_2util_8hppdep" alt=""/></div>
 </div>
 </div>
 <p><a href="util_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -113,6 +120,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a242a9ab3d7ed4cf8f348a27f5b47c36d"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">util::makePath</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> path, <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> nextDir, Args... args)</td></tr>
 <tr class="memdesc:a242a9ab3d7ed4cf8f348a27f5b47c36d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenate multiple directories in a single path.  <a href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">More...</a><br /></td></tr>
 <tr class="separator:a242a9ab3d7ed4cf8f348a27f5b47c36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">util::loadConfigFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;path, const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; bool(<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>)&gt; &amp;handleValue)</td></tr>
+<tr class="memdesc:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a configuration file with a form of [key]=[value] for each line.  <a href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">More...</a><br /></td></tr>
+<tr class="separator:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
