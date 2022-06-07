@@ -11,6 +11,8 @@ namespace raylib
 {
     namespace core
     {
+        float Audio::_volume = 0;
+
         void Audio::initDevice(void) { InitAudioDevice(); }
 
         void Audio::closeDevice(void) { CloseAudioDevice(); }
@@ -23,6 +25,6 @@ namespace raylib
             _volume = volume;
         }
 
-        float Audio::getMasterVolume() { return _volume; }
+        float Audio::getMasterVolume() { return (_volume); }
     } // namespace core
 } // namespace raylib
