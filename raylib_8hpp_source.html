@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Bomberman:GlobalOffensive: src/logger/Logger.cpp File Reference</title>
+<title>Bomberman:GlobalOffensive: src/raylib/raylib.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('_logger_8cpp.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('raylib_8hpp_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,29 +84,34 @@ $(document).ready(function(){initNavTree('_logger_8cpp.html',''); initResizable(
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Logger.cpp File Reference</div>  </div>
+<div class="title">raylib.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>&quot;</code><br />
-<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/ctime.html">ctime</a>&gt;</code><br />
-<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/iomanip.html">iomanip</a>&gt;</code><br />
-<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/map.html">map</a>&gt;</code><br />
-<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/sstream.html">sstream</a>&gt;</code><br />
-<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/thread.html">thread</a>&gt;</code><br />
-<code>#include &lt;unistd.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for Logger.cpp:</div>
-<div class="dyncontent">
-<div class="center"><img src="_logger_8cpp__incl.png" border="0" usemap="#src_2logger_2_logger_8cpp" alt=""/></div>
-</div>
-</div>
-<p><a href="_logger_8cpp_source.html">Go to the source code of this file.</a></p>
-</div><!-- contents -->
+<a href="raylib_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2022</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** Bomberman</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** raylib</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef RAYLIB_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define RAYLIB_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceraylib.html">raylib</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceraylib.html#a5dc68016fbc13caad670072e7802ac94">initLogger</a>(<span class="keywordtype">int</span> logLevel);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;} <span class="comment">// namespace raylib</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !RAYLIB_HPP_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">Raylib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8cpp_source.html#l00010">Camera3D.cpp:10</a></div></div>
+<div class="ttc" id="anamespaceraylib_html_a5dc68016fbc13caad670072e7802ac94"><div class="ttname"><a href="namespaceraylib.html#a5dc68016fbc13caad670072e7802ac94">raylib::initLogger</a></div><div class="ttdeci">void initLogger(int logLevel)</div><div class="ttdoc">Redirect the raylib logger in log_raylib.txt.</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2_logger_8cpp_source.html#l00038">logger.cpp:38</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html">logger</a></li><li class="navelem"><a class="el" href="_logger_8cpp.html">Logger.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d4cc5f0b3cfddd1b0952a9e00053f649.html">raylib</a></li><li class="navelem"><a class="el" href="raylib_8hpp.html">raylib.hpp</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

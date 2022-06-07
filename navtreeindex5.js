@@ -1,5 +1,11 @@
 var NAVTREEINDEX5 =
 {
+"structraylib_1_1core_1_1_vector2.html#af3b360f81fd43b4e354a9d38436f97ea":[2,0,3,0,7,12],
+"structraylib_1_1core_1_1_vector2.html#aff2d015afbd28f76f1e3b558677088a1":[2,0,3,0,7,0],
+"structraylib_1_1core_1_1_vector3.html":[2,0,3,0,8],
+"structraylib_1_1core_1_1_vector3.html#a0f3aac5d4bb0132906547cb7272ffa53":[2,0,3,0,8,4],
+"structraylib_1_1core_1_1_vector3.html#a1d6a35b17570275d9a5aa842ff1c8103":[2,0,3,0,8,19],
+"structraylib_1_1core_1_1_vector3.html#a1ffacf8c342a2da3ba6587bbdcfffa9b":[2,0,3,0,8,20],
 "structraylib_1_1core_1_1_vector3.html#a222a1ffad88a7bc1e61adba76f79e9de":[2,0,3,0,8,8],
 "structraylib_1_1core_1_1_vector3.html#a2f43c3ed0a918629476908e920bceedc":[2,0,3,0,8,6],
 "structraylib_1_1core_1_1_vector3.html#a35712ff065334c4310a3322b44798c96":[2,0,3,0,8,0],
