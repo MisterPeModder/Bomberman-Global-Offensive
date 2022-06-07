@@ -32,7 +32,8 @@ namespace game
 
         void Profile::load()
         {
-            loadDefaults();
+            _name = "Player " + std::to_string(_id + 1);
+            clearBindings();
 
             util::loadConfigFile(getFilepath(), [this](std::string_view key, std::string_view value) {
                 try {
@@ -43,8 +44,10 @@ namespace game
                     });
                     Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
                         writer << "Unable to load profile attribute '" << key << "' with value '" << value
-                               << "'. Default value will be used.";
+                               << "'. Default values will be used for the profile.";
                     });
+                    loadDefaults();
+                    return false;
                 }
                 return true;
             });
@@ -61,6 +64,8 @@ namespace game
             _name = "Player " + std::to_string(_id + 1);
             _keybinds.loadDefaults();
         }
+
+        void Profile::clearBindings() { _keybinds.clear(); }
 
         std::filesystem::path Profile::getFilesDirectory() { return util::makePath("settings", "profiles"); }
 

@@ -18,6 +18,8 @@ namespace game
         MOVE_DOWN,
         PLACE_BOMB,
         PAUSE,
+        ACTION,
+        BACK,
     };
 }
 

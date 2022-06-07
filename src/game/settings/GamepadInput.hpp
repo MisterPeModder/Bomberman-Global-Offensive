@@ -8,6 +8,7 @@
 #ifndef GAME_SETTINGS_GAMEPADINPUT_HPP_
 #define GAME_SETTINGS_GAMEPADINPUT_HPP_
 
+#include <compare>
 #include "raylib/core/Gamepad.hpp"
 
 namespace game
@@ -85,22 +86,14 @@ namespace game
             /// @return std::string string representation of @b this.
             std::string toString() const;
 
-            /// Lower than comparison operator overload.
+            /// Spaceship comparator operator overload.
             ///
             /// @note This overload is required to store @ref GamepadInput objects as key in @ref std::map.
-            /// @note It doesn't make sense to test if an input is lower than an other except for sorting.
+            /// @note It doesn't make sense to compare inputs except for sorting.
             ///
             /// @param other object to compare with.
-            /// @retval true If @b this is considered lower than @c other.
-            /// @retval false Otherwise.
-            bool operator<(const GamepadInput &other) const;
-
-            /// Equality comparison operator overload.
-            ///
-            /// @param other object to compare with.
-            /// @retval true If @b this and @c other are equals.
-            /// @retval false otherwise.
-            bool operator==(const GamepadInput &other) const;
+            /// @return The result of the comparison (less, equal or greater)
+            std::strong_ordering operator<=>(const GamepadInput &other) const;
 
           private:
             raylib::core::Gamepad::Button _button;

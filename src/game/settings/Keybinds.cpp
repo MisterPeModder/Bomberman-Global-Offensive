@@ -32,6 +32,9 @@ namespace game
             /// Actions
             setKeyboardBinding(Key::E, GameAction::PLACE_BOMB);
             setKeyboardBinding(Key::P, GameAction::PAUSE);
+            /// Menus
+            setKeyboardBinding(Key::ENTER, GameAction::ACTION);
+            setKeyboardBinding(Key::BACK, GameAction::BACK);
 
             /////// Gamepad keybinds
             /// Movements
@@ -52,6 +55,15 @@ namespace game
             setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::PAUSE);
             setGamepadBinding(Gamepad::Button::MIDDLE, GameAction::PAUSE);
             setGamepadBinding(Gamepad::Button::MIDDLE_RIGHT, GameAction::PAUSE);
+            /// Menus
+            setGamepadBinding(Gamepad::Button::FACE_DOWN, GameAction::ACTION); /// A on Xbox
+            setGamepadBinding(Gamepad::Button::FACE_RIGHT, GameAction::BACK);  /// B on Xbox
+        }
+
+        void Keybinds::clear()
+        {
+            _keyboardBindings.clear();
+            _gamepadBindings.clear();
         }
 
         void Keybinds::setKeyboardBinding(Key key, GameAction action) { _keyboardBindings[key] = action; }
