@@ -10,26 +10,42 @@
 
 #include <array>
 #include "User.hpp"
+#include "ecs/resource/Resource.hpp"
 
 namespace game
 {
-    class Users {
+    /// Resource allowing to get users actions using the keybinds.
+    class Users : public ecs::Resource {
       public:
+        /// Event send by @ref getNextAction() when an action changed.
         struct ActionEvent {
-            User::UserId user;
-            GameAction action;
-            /// 0 -> 1
-            /// 0 means released
-            /// 1 means pressed
-            /// intermediate values are for axis
-            float value;
+            User::UserId user; ///  User Id of the user whose action changed.
+            GameAction action; /// Action changed.
+            float value;       /// New value of the action. 0 means released, 1 means pressed.
+                               /// Intermediate values are for gamepad axis.
         };
+
+        /// Create a new Users object.
         Users();
+
+        /// Destroys the users object.
         ~Users() = default;
 
+        /// Get the User with the matching UserId.
+        ///
+        /// @param UserId user id.
+        /// @return User& user.
         User &operator[](User::UserId id);
+
+        /// Get the User with the matching UserId.
+        ///
+        /// @param UserId user id.
+        /// @return const User& user.
         const User &operator[](User::UserId id) const;
 
+        /// Get the Next Action event.
+        ///
+        /// @return ActionEvent next action event. action is set to None if there is no more actions.
         ActionEvent getNextAction();
 
       private:
