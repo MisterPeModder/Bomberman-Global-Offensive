@@ -55,7 +55,7 @@ namespace raylib
 
           private:
             float _volume;
-            ::Sound _music;
+            ::Sound _sound;
         };
     } // namespace core
 } // namespace raylib
