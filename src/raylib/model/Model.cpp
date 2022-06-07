@@ -53,5 +53,13 @@ namespace raylib
 
         ::Model const &Model::asRaylib() const { return _model; }
 
+        Model::Model(const Model &other) : _model(other._model) {}
+
+        Model &Model::operator=(const Model &other)
+        {
+            _model = other._model;
+            return *this;
+        }
+
     } // namespace model
 } // namespace raylib
