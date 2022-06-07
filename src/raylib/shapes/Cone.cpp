@@ -11,7 +11,8 @@ namespace raylib
 {
     namespace shapes
     {
-        Cone::Cone(Vector3 position, float radiusBase, float radiusTop, float height, int slices, Color color)
+        Cone::Cone(raylib::core::Vector3 position, float radiusBase, float radiusTop, float height, int slices,
+            raylib::core::Color color)
         {
             setPosition(position);
             setColor(color);
@@ -20,11 +21,14 @@ namespace raylib
             setSlices(slices);
         }
 
-        void Cone::draw() const { DrawCylinder(_position, _radiusTop, _radiusTop, _height, _slices, _color); }
+        void Cone::draw() const
+        {
+            DrawCylinder(_position.asRaylib(), _radiusTop, _radiusTop, _height, _slices, _color.asRaylib());
+        }
 
         void Cone::drawWires() const
         {
-            DrawCylinderWires(_position, _radiusTop, _radiusBase, _height, _slices, _color);
+            DrawCylinderWires(_position.asRaylib(), _radiusTop, _radiusBase, _height, _slices, _color.asRaylib());
         }
 
         void Cone::setRadius(float radius)

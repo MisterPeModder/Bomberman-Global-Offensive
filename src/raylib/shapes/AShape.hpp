@@ -8,6 +8,7 @@
 #ifndef RAYLIB_SHAPES_ASHAPE_HPP_
 #define RAYLIB_SHAPES_ASHAPE_HPP_
 
+#include "raylib/core/Color.hpp"
 #include "raylib/core/Vector2.hpp"
 #include "raylib/core/Vector3.hpp"
 
@@ -26,36 +27,36 @@ namespace raylib
             /// Sets the position of the shape
             ///
             /// @param position The new position of the shape
-            inline void setPosition(Vector3 position) { _position = position; }
+            inline void setPosition(raylib::core::Vector3 position) { _position = position; }
 
             /// Sets the position of the shape
             ///
             /// @param position The new position of the shape
-            inline void setPosition(Vector2 position) { _position = {position.x, position.y, 0}; }
+            inline void setPosition(raylib::core::Vector2 position) { _position = {position.x, position.y, 0}; }
 
             /// Gets the position of the shape
             ///
             /// @return The position of the shape
-            inline Vector3 getPosition() const { return _position; }
+            inline raylib::core::Vector3 getPosition() const { return _position; }
 
             /// Gets the position of the shape
             ///
             /// @return The position of the shape (2D)
-            inline Vector2 getPosition2D() const { return {_position.x, _position.y}; }
+            inline raylib::core::Vector2 getPosition2D() const { return {_position.x, _position.y}; }
 
             /// Sets the color of the shape
             ///
             /// @param color The new color of the shape
-            inline void setColor(Color color) { _color = color; }
+            inline void setColor(raylib::core::Color color) { _color = color; }
 
             /// Gets the color of the shape
             ///
             /// @return The color of the shape
-            inline Color getColor() const { return _color; }
+            inline raylib::core::Color getColor() const { return _color; }
 
           protected:
-            Vector3 _position;
-            Color _color;
+            raylib::core::Vector3 _position;
+            raylib::core::Color _color;
         };
     } // namespace shapes
 
