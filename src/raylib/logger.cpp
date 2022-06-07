@@ -7,6 +7,7 @@
 
 #include "logger/Logger.hpp"
 #include <array>
+#include <cstdarg>
 
 extern "C"
 {
