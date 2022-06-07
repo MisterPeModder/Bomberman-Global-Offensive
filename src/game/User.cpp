@@ -9,7 +9,7 @@
 
 namespace game
 {
-    User::User(UserId id, int gamepadId) : _profile(static_cast<size_t>(id)), _gamepadId(gamepadId)
+    User::User(UserId id, int gamepadId) : _gamepadId(gamepadId), _profile(static_cast<size_t>(id))
     {
         setAvailable(false);
         _lastActions.fill(0);
