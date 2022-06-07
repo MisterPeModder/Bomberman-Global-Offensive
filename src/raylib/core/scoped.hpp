@@ -8,6 +8,7 @@
 #ifndef RAYLIB_CORE_SCOPED3D_HPP_
 #define RAYLIB_CORE_SCOPED3D_HPP_
 
+#include "Audio.hpp"
 #include "Camera3D.hpp"
 #include "Window.hpp"
 
@@ -40,6 +41,16 @@ namespace raylib
 
                 /// End the window drawing.
                 inline ~Drawing() { Window::endDrawing(); }
+            };
+
+            /// Setup/End audio device
+            class AudioDevice {
+              public:
+                /// Begin the audio device.
+                inline AudioDevice() { Audio::initDevice(); }
+
+                /// End the audio device.
+                inline ~AudioDevice() { Audio::closeDevice(); }
             };
         } // namespace scoped
 
