@@ -35,22 +35,23 @@ namespace game
             _name = "Player " + std::to_string(_id + 1);
             clearBindings();
 
-            util::loadConfigFile(getFilepath(), [this](std::string_view key, std::string_view value) {
-                try {
-                    loadValue(key, value);
-                } catch (std::exception &e) {
-                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
-                        writer << "Exception occured when loading a profile value: '" << e.what() << "'";
-                    });
-                    Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
-                        writer << "Unable to load profile attribute '" << key << "' with value '" << value
-                               << "'. Default values will be used for the profile.";
-                    });
-                    loadDefaults();
-                    return false;
-                }
-                return true;
-            });
+            if (!util::loadConfigFile(getFilepath(), [this](std::string_view key, std::string_view value) {
+                    try {
+                        loadValue(key, value);
+                    } catch (std::exception &e) {
+                        Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                            writer << "Exception occured when loading a profile value: '" << e.what() << "'";
+                        });
+                        Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
+                            writer << "Unable to load profile attribute '" << key << "' with value '" << value
+                                   << "'. Default values will be used for the profile.";
+                        });
+                        loadDefaults();
+                        return false;
+                    }
+                    return true;
+                }))
+                loadDefaults();
         }
 
         void Profile::load(size_t id)
