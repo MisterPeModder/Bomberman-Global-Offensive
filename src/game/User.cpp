@@ -9,7 +9,7 @@
 
 namespace game
 {
-    User::User(size_t id, int gamepadId) : _profile(id), _gamepadId(gamepadId)
+    User::User(UserId id, int gamepadId) : _profile(static_cast<size_t>(id)), _gamepadId(gamepadId)
     {
         setAvailable(false);
         _lastActions.fill(0);
@@ -23,9 +23,9 @@ namespace game
 
     int User::getGamepadId() const { return _gamepadId; }
 
-    void User::setId(size_t id) { _profile.load(id); }
+    void User::setId(UserId id) { _profile.load(static_cast<size_t>(id)); }
 
-    size_t User::getId() const { return _profile.getId(); }
+    User::UserId User::getId() const { return static_cast<UserId>(_profile.getId()); }
 
     void User::setAvailable(bool available) { _available = available; }
 
@@ -38,7 +38,7 @@ namespace game
 
         _changedActions.swap(empty);
         for (size_t i = 0; i < _lastActions.size(); i++) {
-            actionValue = getActionValue(static_cast<GameAction>(i + 1));
+            actionValue = getActionValue(static_cast<GameAction>(i + 1), true);
 
             if (actionValue != _lastActions[i]) {
                 _changedActions.push(static_cast<GameAction>(i + 1));
@@ -47,8 +47,22 @@ namespace game
         }
     }
 
-    float User::getActionValue(GameAction action)
+    GameAction User::getChangedAction()
     {
+        if (_changedActions.empty())
+            fillActions();
+        if (_changedActions.empty())
+            return GameAction::NONE;
+
+        GameAction action = _changedActions.front();
+        _changedActions.pop();
+        return action;
+    }
+
+    float User::getActionValue(GameAction action, bool update)
+    {
+        if (!update)
+            return _lastActions[static_cast<size_t>(action) - 1];
         float res = 0.f;
 
         if (isKeyboard()) {
@@ -76,17 +90,5 @@ namespace game
             }
         }
         return res;
-    }
-
-    GameAction User::getChangedAction()
-    {
-        if (_changedActions.empty())
-            fillActions();
-        if (_changedActions.empty())
-            return GameAction::NONE;
-
-        GameAction action = _changedActions.front();
-        _changedActions.pop();
-        return action;
     }
 } // namespace game

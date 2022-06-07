@@ -8,16 +8,15 @@
 #ifndef USERS_HPP_
 #define USERS_HPP_
 
+#include <array>
 #include "User.hpp"
 
 namespace game
 {
-
     class Users {
       public:
-        enum UserId { Player1, Player2, Player3, Player4, PlayerCount };
         struct ActionEvent {
-            UserId user;
+            User::UserId user;
             GameAction action;
             /// 0 -> 1
             /// 0 means released
@@ -28,13 +27,13 @@ namespace game
         Users();
         ~Users() = default;
 
-        User &operator[](UserId id);
-        const User &operator[](UserId id) const;
+        User &operator[](User::UserId id);
+        const User &operator[](User::UserId id) const;
 
         ActionEvent getNextAction();
 
       private:
-        User _users[UserId::PlayerCount];
+        std::array<User, static_cast<size_t>(User::UserId::UserCount)> _users;
     };
 } // namespace game
 
