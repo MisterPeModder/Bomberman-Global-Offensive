@@ -11,20 +11,23 @@ namespace raylib
 {
     namespace shapes
     {
-        Sphere::Sphere(Vector3 position, float radius, Color color)
+        Sphere::Sphere(raylib::core::Vector3 position, float radius, raylib::core::Color color)
         {
             setPosition(position);
             setColor(color);
             setRadius(radius);
         }
 
-        void Sphere::draw() const { DrawSphere(_position, _radius, _color); }
+        void Sphere::draw() const { DrawSphere(_position.asRaylib(), _radius, _color.asRaylib()); }
 
-        void Sphere::draw(int rings, int slices) const { DrawSphereEx(_position, _radius, rings, slices, _color); }
+        void Sphere::draw(int rings, int slices) const
+        {
+            DrawSphereEx(_position.asRaylib(), _radius, rings, slices, _color.asRaylib());
+        }
 
         void Sphere::drawWires(int rings, int slices) const
         {
-            DrawSphereWires(_position, _radius, rings, slices, _color);
+            DrawSphereWires(_position.asRaylib(), _radius, rings, slices, _color.asRaylib());
         }
 
         float Sphere::getRadius() const { return _radius; }
