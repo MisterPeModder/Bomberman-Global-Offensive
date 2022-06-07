@@ -39,7 +39,7 @@ namespace raylib
             Model(const Model &other);
 
             /// Deleted copy operator because it makes no sense to load the same file multiple simes
-            Model &operator=(const Model &other);
+            Model &operator=(const Model &other) = delete;
 
             /// Draw the model the basic way
             ///
@@ -110,6 +110,7 @@ namespace raylib
 
           private:
             ::Model _model;
+            std::filesystem::path _path;
         };
     } // namespace model
 } // namespace raylib

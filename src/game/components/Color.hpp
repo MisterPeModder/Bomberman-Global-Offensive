@@ -11,7 +11,7 @@ namespace game
         struct Color : public ecs::Component {
             raylib::core::Color color;
 
-            Color(raylib::core::Color &pcolor) : color(pcolor) {}
+            Color(const raylib::core::Color &pcolor) : color(pcolor) {}
             Color(float pr, float pg, float pb, float pa = 0) : color(pr, pg, pb, pa) {}
         };
     } // namespace components

@@ -55,7 +55,7 @@ static void drawFrame(void *arg)
     raylib::core::Vector3 pos(0, -5, 0);
     raylib::core::Vector3 scale(1, 1, 1);
     raylib::core::Vector3 rotationAxis(1, 0, 0);
-                    float rotationAngle = 90;
+                    float rotationAngle = -90;
 
     raylib::model::Model &testingModel = getTestingModel();
     // raylib::model::Animation &testingAnimation = getTestingAnimation();
@@ -67,6 +67,7 @@ static void drawFrame(void *arg)
         .with<game::components::Scale>(scale)
         .with<game::components::RotationAngle>(rotationAngle)
         .with<game::components::RotationAxis>(rotationAxis)
+        .with<game::components::Color>(raylib::core::Color::RED)
         .build()
     ;
 
@@ -77,7 +78,7 @@ static void drawFrame(void *arg)
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
         // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
-        // world.runSystems();
+        world.runSystems();
     };
 
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
