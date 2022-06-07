@@ -8,6 +8,7 @@
 #ifndef GAME_USER_HPP_
 #define GAME_USER_HPP_
 
+#include <array>
 #include <queue>
 #include "settings/Profile.hpp"
 
@@ -30,17 +31,18 @@ namespace game
         void setAvailable(bool available);
         bool isAvailable() const;
 
-        bool keyToQueuedAction(raylib::core::Keyboard::Key key);
-        void fillActions();
-        bool isActionUsed(GameAction action);
-        GameAction getNextAction();
+        float getActionValue(GameAction action);
+        GameAction getChangedAction();
 
       private:
+        void fillActions();
+
         int _gamepadId;
         bool _available;
         settings::Profile _profile;
 
-        std::queue<GameAction> _actions;
+        std::queue<GameAction> _changedActions;
+        std::array<float, static_cast<size_t>(GameAction::BACK)> _lastActions;
     };
 } // namespace game
 

@@ -9,7 +9,11 @@
 
 namespace game
 {
-    User::User(size_t id, int gamepadId) : _profile(id), _gamepadId(gamepadId) { setAvailable(false); }
+    User::User(size_t id, int gamepadId) : _profile(id), _gamepadId(gamepadId)
+    {
+        setAvailable(false);
+        _lastActions.fill(0);
+    }
 
     void User::setKeyboard() { _gamepadId = -1; }
 
@@ -30,24 +34,23 @@ namespace game
     void User::fillActions()
     {
         std::queue<GameAction> empty;
+        float actionValue;
 
-        _actions.swap(empty);
-        if (!isKeyboard()) {
-            auto gamepadBinds = _profile.getKeybinds().getGamepadBindings();
-            raylib::core::Gamepad gamepad(_gamepadId);
+        _changedActions.swap(empty);
+        for (size_t i = 0; i < _lastActions.size(); i++) {
+            actionValue = getActionValue(static_cast<GameAction>(i + 1));
 
-            for (auto iter = gamepadBinds.begin(); iter != gamepadBinds.end(); ++iter) {
-                if (iter->first.isButton()) {
-                    if (gamepad.isButtonPressed(iter->first.getButton()))
-                        _actions.push(iter->second);
-                } else if (iter->first.getAxisAbsoluteValue(gamepad.getAxisMovement(iter->first.getAxis())) > 0.f)
-                    _actions.push(iter->second);
+            if (actionValue != _lastActions[i]) {
+                _changedActions.push(static_cast<GameAction>(i + 1));
+                _lastActions[i] = actionValue;
             }
         }
     }
 
-    bool User::isActionUsed(GameAction action)
+    float User::getActionValue(GameAction action)
     {
+        float res = 0.f;
+
         if (isKeyboard()) {
             auto binds = _profile.getKeybinds().getKeyboardBindings();
 
@@ -58,35 +61,32 @@ namespace game
             auto binds = _profile.getKeybinds().getGamepadBindings();
             raylib::core::Gamepad gamepad(_gamepadId);
 
-            if (binds.end() != std::find_if(binds.begin(), binds.end(), [&](auto iter) {
-                    if (iter.second != action)
-                        return false;
-                    return ((iter.first.isButton() && gamepad.isButtonDown(iter.first.getButton()))
-                        || (!iter.first.isButton()
-                            && iter.first.getAxisAbsoluteValue(gamepad.getAxisMovement(iter.first.getAxis())) > 0.f));
-                }))
-                return true;
+            for (auto iter = binds.begin(); iter != binds.end(); ++iter) {
+                if (iter->second != action)
+                    continue;
+                if (iter->first.isButton()) {
+                    if (gamepad.isButtonDown(iter->first.getButton()))
+                        return 1;
+                } else {
+                    float axisValue = iter->first.getAxisAbsoluteValue(gamepad.getAxisMovement(iter->first.getAxis()));
+
+                    if (axisValue > res)
+                        res = axisValue;
+                }
+            }
         }
-        return false;
+        return res;
     }
 
-    GameAction User::getNextAction()
+    GameAction User::getChangedAction()
     {
-        if (_actions.empty())
+        if (_changedActions.empty())
+            fillActions();
+        if (_changedActions.empty())
             return GameAction::NONE;
 
-        GameAction action = _actions.front();
-        _actions.pop();
+        GameAction action = _changedActions.front();
+        _changedActions.pop();
         return action;
-    }
-
-    bool User::keyToQueuedAction(raylib::core::Keyboard::Key key)
-    {
-        auto keyboardBinds = _profile.getKeybinds().getKeyboardBindings();
-
-        if (keyboardBinds.find(key) == keyboardBinds.end())
-            return false;
-        _actions.push(keyboardBinds.at(key));
-        return true;
     }
 } // namespace game

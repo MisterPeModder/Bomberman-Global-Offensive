@@ -15,31 +15,18 @@ namespace game
             _users[i].setId(i);
     }
 
-    User &Users::getUser(UserId id) { return _users[id]; }
+    const User &Users::operator[](UserId id) const { return _users[id]; }
 
-    void Users::fillActions()
-    {
-        /// Clear queue + Gamepad Inputs
-        for (size_t i = 0; i < PlayerCount; i++)
-            _users[i].fillActions();
+    User &Users::operator[](UserId id) { return _users[id]; }
 
-        /// Keyboards Inputs
-        raylib::core::Keyboard::Key key;
-        while ((key = raylib::core::Keyboard::getKeyPressed()) != raylib::core::Keyboard::Key::NONE) {
-            for (size_t i = 0; i < PlayerCount; i++)
-                if (_users[i].keyToQueuedAction(key))
-                    break;
-        }
-    }
-
-    std::pair<Users::UserId, GameAction> Users::getNextAction()
+    Users::ActionEvent Users::getNextAction()
     {
         for (size_t i = 0; i < PlayerCount; i++) {
-            GameAction action = _users[i].getNextAction();
+            GameAction action = _users[i].getChangedAction();
 
             if (action != GameAction::NONE)
-                return {static_cast<UserId>(i), action};
+                return ActionEvent{static_cast<UserId>(i), action, _users[i].getActionValue(action)};
         }
-        return {PlayerCount, GameAction::NONE};
+        return {PlayerCount, GameAction::NONE, 0};
     }
 } // namespace game
