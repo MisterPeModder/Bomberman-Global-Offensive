@@ -23,12 +23,14 @@ Logger Logger::logger;
 
 Logger::Logger(std::ostream &stream)
 {
+    setDefaultColors();
     setStream(stream);
     setLogInfo(LogInfo::Time);
 }
 
 Logger::Logger(const std::filesystem::path &filepath, bool clear)
 {
+    setDefaultColors();
     setOutputFile(filepath, clear);
     setLogInfo(LogInfo::Time);
 }
@@ -88,9 +90,15 @@ void Logger::log(Severity severity, std::function<void(std::ostream &)> writer)
         {Severity::Information, "INFO"}, {Severity::Warning, "WARN"}, {Severity::Error, "ERROR"}};
     std::stringstream ss;
 
+    if (_streamPointer == &std::cout || _streamPointer == &std::cerr)
+        ss << "\033[" << 30 + static_cast<size_t>(_colors[static_cast<size_t>(severity)].first) << ";"
+           << 40 + static_cast<size_t>(_colors[static_cast<size_t>(severity)].second) << "m";
+
     displayInformations(ss);
     ss << "[" << severityNames[severity] << "] : ";
     writer(ss);
+    if (_streamPointer == &std::cout || _streamPointer == &std::cerr)
+        ss << "\033[0m";
     ss << std::endl;
     (*_streamPointer) << ss.str();
 }
@@ -135,3 +143,16 @@ void Logger::enableLogInfo(bool enabled, LogInfo info) { (*this)[info] = enabled
 bool Logger::operator[](LogInfo logInfo) const { return _infos[static_cast<size_t>(logInfo)]; }
 
 bool &Logger::operator[](LogInfo logInfo) { return _infos[static_cast<size_t>(logInfo)]; }
+
+void Logger::setDefaultColors()
+{
+    setSeverityColor(Severity::Debug, Color::Blue);
+    setSeverityColor(Severity::Information, Color::Green);
+    setSeverityColor(Severity::Warning, Color::Yellow);
+    setSeverityColor(Severity::Error, Color::Red);
+}
+
+void Logger::setSeverityColor(Severity severity, Color foreground, Color background)
+{
+    _colors[static_cast<size_t>(severity)] = {foreground, background};
+}

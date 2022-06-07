@@ -80,7 +80,6 @@ static void raylibLogger(int msgType, const char *text, va_list args)
 static void setupLogger()
 {
     // Setup the logger parameters
-    Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
     SetTraceLogCallback(raylibLogger);

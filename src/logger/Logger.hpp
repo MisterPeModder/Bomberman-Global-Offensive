@@ -37,6 +37,21 @@ class Logger {
         Count,    /// Number of available displays
     };
 
+    /// Available colors in terminals (when using stdout/stderr).
+    enum class Color {
+        Black,   /// Black color, not used by default
+        Red,     /// Red color, default to Error logs
+        Green,   /// Green color, default to Information logs
+        Yellow,  /// Yellow color, default to Warning logs
+        Blue,    /// Blue color, default to Debug logs
+        Magenta, /// Magenta color, not used by default
+        Cyan,    /// Cyan color, not used by default
+        White,   /// White color, default for all uncolored texts
+    };
+
+    /// Color pairs are used to associate foreground and background colors together
+    using ColorPair = std::pair<Color, Color>;
+
     /// Default global logger.
     /// @note You need to flush it before forking processes to avoid cache data duplication.
     static Logger logger;
@@ -147,6 +162,18 @@ class Logger {
         enableLogInfo(true, info, args...);
     }
 
+    /// Reset the default colors.
+    /// @note Colors are only used when the logger prints on stdout/stderr.
+    void setDefaultColors();
+
+    /// Set the color of a severity.
+    /// @note Multiple severities can have the same color but it isn't recommended for readability.
+    ///
+    /// @param severity severity to affect.
+    /// @param foreground foreground color.
+    /// @param background background color.
+    void setSeverityColor(Severity severity, Color foreground, Color background = Color::Black);
+
   private:
     void displayInformations(std::stringstream &ss);
     void displayTime(std::stringstream &ss, std::string_view format);
@@ -155,6 +182,7 @@ class Logger {
     Severity _logLevel = Severity::Information;
     std::ostream *_streamPointer;
     std::ofstream _fileStream;
+    std::array<ColorPair, static_cast<size_t>(Severity::Count)> _colors;
 };
 
 #endif /* !RAYLIB_LOGGER_LOGGER_HPP_ */
