@@ -32,8 +32,19 @@ namespace game
         /// @param gamepadId id of the gamepad. -1 for keyboard inputs.
         User(UserId id = UserId::User1, int gamepadId = -1);
 
+        /// Construct a copy of a User object.
+        ///
+        /// @param other user to copy.
+        User(const User &other) = default;
+
         /// Destroy the user.
         ~User() = default;
+
+        /// Copy a User object.
+        ///
+        /// @param other user to copy.
+        /// @return @b this.
+        User &operator=(const User &other) = default;
 
         /// Set the user in keyboard mode.
         void setKeyboard();

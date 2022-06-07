@@ -28,8 +28,19 @@ namespace game
         /// Create a new Users object.
         Users();
 
+        /// Construct a copy of a Users object.
+        ///
+        /// @param other users to copy.
+        Users(const Users &other) = default;
+
         /// Destroys the users object.
         ~Users() = default;
+
+        /// Copy a Users object.
+        ///
+        /// @param other object to copy.
+        /// @return Users& @b this.
+        Users &operator=(const Users &other) = default;
 
         /// Get the User with the matching UserId.
         ///
