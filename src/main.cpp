@@ -104,39 +104,26 @@ static void setupLogger()
 ///
 ///
 ///
-
-struct Position : public ecs::Component , public Vector3 {
-
-    Position(float x, float y, float z) : Vector3({x, y, z}) {}
-    Position(Vector3 &other) : Vector3(other) {}
+struct Position : public ecs::Component , public raylib::core::Vector3 {
+    Position(float px, float py, float pz) : raylib::core::Vector3(px, py, pz) {}
+    Position(raylib::core::Vector3 &other) : raylib::core::Vector3(other) {}
 };
 
-struct Size : public ecs::Component {
-    Vector3 vector;
-
-    Size(float x, float y, float z) : vector({x, y, z}) {}
-    Size(Vector3 &other) : vector(other) {}
+struct Size : public ecs::Component, public raylib::core::Vector3 {
+    Size(float sx, float sy, float sz) : raylib::core::Vector3(sx, sy, sz) {}
+    Size(raylib::core::Vector3 &other) : raylib::core::Vector3(other) {}
 };
 
-
-struct CubeColor : public ecs::Component {
-    Color color;
-
-    CubeColor(unsigned char r, unsigned char g, unsigned char b, unsigned char a) : color(r, g, b, a) {}
+struct CubeColor : public ecs::Component, public raylib::core::Color {
+    CubeColor(unsigned char cr, unsigned char cg, unsigned char cb, unsigned char ca) : raylib::core::Color(cr, cg, cb, ca) {}
+    CubeColor(raylib::core::Color &other) : raylib::core::Color(other) {}
 };
-
 
 struct Cube : public ecs::Component {
     raylib::shapes::Cube cube;
 
     Cube() :cube() {}
-    Cube(Vector3 position, Vector3 size, Color color) :cube(position, size, color) {}
-};
-
-struct OurModel : public ecs::Component {
-    raylib::model::Model model;
-
-    OurModel() :model(util::makePath("assets", "models", "player", "raylibguy.iqm")) {}
+    Cube(raylib::core::Vector3 position, raylib::core::Vector3 size, Color color) :cube(position, size, color) {}
 };
 
 struct ChangeCube : public ecs::System {
@@ -144,8 +131,8 @@ struct ChangeCube : public ecs::System {
     {
         for (auto [cube, pos, col, size] : ecs::join(data.getStorage<Cube>(), data.getStorage<Position>(), data.getStorage<CubeColor>(), data.getStorage<Size>())) {
             cube.cube.setPosition(pos);
-            cube.cube.setColor(col.color);
-            cube.cube.setSize(size.vector);
+            cube.cube.setColor(col);
+            cube.cube.setSize(size);
         }
     }
 };
@@ -159,51 +146,29 @@ struct DrawingCube : public ecs::System {
     }
 };
 
-
-struct DrawingModel : public ecs::System {
-    void run(ecs::SystemData data) override final
-    {
-        for (auto [model, pos, col] : ecs::join(data.getStorage<OurModel>(), data.getStorage<Position>(), data.getStorage<CubeColor>())) {
-            model.model.draw(pos, 1, col.color);
-        }
-    }
-};
-
 void game_loop()
 {
-
     raylib::core::Camera3D camera;
     camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
     ecs::World world;
 
-    Vector3 pos(0, -5, 0);
-    Vector3 scale(1, 1, 1);
-    Vector3 rotationAxis(1, 0, 0);
-
-    raylib::model::Model &testingModel = getTestingModel();
-
-    Logger::logger.log(Logger::Severity::Debug, "Start loop");
-
     world.addResource<ecs::Timer>();
+    world.addSystem<ChangeCube>();
     world.addSystem<DrawingCube>();
-    world.addSystem<DrawingModel>();
 
-    auto ourCube =  world.addEntity()
-                    .with<Position>(0.f, 0.f, 0.f)
-                    .with<Size>(5.f, 5.f, 5.f)
-                    .with<CubeColor>(255, 120, 50, 80)
-                    .with<Cube>()
-                    .build();
-    auto ourModel =  world.addEntity()
-                    .with<Position>(0.f, 0.f, 0.f)
-                    .with<CubeColor>(0, 0, 250, 255)
-                    .with<OurModel>()
-                    .build();
-    Logger::logger.log(Logger::Severity::Debug, "initialized");
+    auto c1 = world.addEntity()
+        .with<Position>(1.f, 3.f, 7.f)
+        .with<Size>(5.f, 5.f, 5.f)
+        .with<CubeColor>(250, 0, 0, 255)
+        .with<Cube>()
+        .build();
 
-    raylib::shapes::Cone cone;
-    cone.setRadius(1, 1);
-    cone.setColor((raylib::core::Color::BLUE).asRaylib());
+    auto c2 = world.addEntity()
+        .with<Position>(0.f, 0.f, 0.f)
+        .with<Size>(2.f, 2.f, 2.f)
+        .with<CubeColor>(0, 0, 255, 255)
+        .with<Cube>()
+        .build();
 
     while (1) {
         camera.update();
@@ -212,13 +177,9 @@ void game_loop()
         {
             raylib::core::scoped::Mode3D mode3D(camera);
             world.runSystems();
-            cone.draw();
-            testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
         };
         raylib::core::Window::drawFPS(10, 10);
     }
-
-    Logger::logger.log(Logger::Severity::Debug, "End loop");
 
 }
 
@@ -247,7 +208,7 @@ int main()
     // since there is no such thing as a window.
     emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
 #else
-    raylib::core::Window::setTargetFPS(999);
+    raylib::core::Window::setTargetFPS(60);
     Logger::logger.log(Logger::Severity::Information, "Before game loop");
 
     game_loop();
