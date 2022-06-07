@@ -43,6 +43,9 @@ namespace game
             /// @todo Add some documentation for the default keybinds and link it here.
             void loadDefaults();
 
+            /// Delete all the bindings.
+            void clear();
+
             /// Bind a keyboard key to a game action.
             /// @note Multiple key can be bound to the same action.
             /// @note Binding a key that was previously bind to an action will override the bind.

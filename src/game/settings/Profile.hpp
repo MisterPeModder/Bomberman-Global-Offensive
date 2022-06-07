@@ -53,6 +53,9 @@ namespace game
             /// Load the default profile parameters.
             void loadDefaults();
 
+            /// Delete all the bindings.
+            void clearBindings();
+
             /// Get the profile files directory.
             ///
             /// @retval std::filesystem::path "settings/profiles"

@@ -60,6 +60,12 @@ namespace game
             setGamepadBinding(Gamepad::Button::FACE_RIGHT, GameAction::BACK);  /// B on Xbox
         }
 
+        void Keybinds::clear()
+        {
+            _keyboardBindings.clear();
+            _gamepadBindings.clear();
+        }
+
         void Keybinds::setKeyboardBinding(Key key, GameAction action) { _keyboardBindings[key] = action; }
 
         void Keybinds::unbindKey(Key key) { _keyboardBindings.erase(key); }
