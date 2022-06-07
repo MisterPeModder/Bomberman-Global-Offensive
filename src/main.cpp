@@ -10,7 +10,9 @@
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
 
+#include "util/util.hpp"
 #include "raylib/shapes/Cube.hpp"
+#include "raylib/shapes/Cone.hpp"
 #include "raylib/core/Vector3.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
@@ -103,11 +105,10 @@ static void setupLogger()
 ///
 ///
 
-struct Position : public ecs::Component {
-    Vector3 vector;
+struct Position : public ecs::Component , public Vector3 {
 
-    Position(float x, float y, float z) : vector({x, y, z}) {}
-    Position(Vector3 &other) : vector(other) {}
+    Position(float x, float y, float z) : Vector3({x, y, z}) {}
+    Position(Vector3 &other) : Vector3(other) {}
 };
 
 struct Size : public ecs::Component {
@@ -132,11 +133,17 @@ struct Cube : public ecs::Component {
     Cube(Vector3 position, Vector3 size, Color color) :cube(position, size, color) {}
 };
 
+struct OurModel : public ecs::Component {
+    raylib::model::Model model;
+
+    OurModel() :model(util::makePath("assets", "models", "player", "raylibguy.iqm")) {}
+};
+
 struct ChangeCube : public ecs::System {
     void run(ecs::SystemData data) override final
     {
         for (auto [cube, pos, col, size] : ecs::join(data.getStorage<Cube>(), data.getStorage<Position>(), data.getStorage<CubeColor>(), data.getStorage<Size>())) {
-            cube.cube.setPosition(pos.vector);
+            cube.cube.setPosition(pos);
             cube.cube.setColor(col.color);
             cube.cube.setSize(size.vector);
         }
@@ -146,43 +153,72 @@ struct ChangeCube : public ecs::System {
 struct DrawingCube : public ecs::System {
     void run(ecs::SystemData data) override final
     {
-        for (auto [cube] : ecs::join(data.getStorage<Cube>()))
+        for (auto [cube] : ecs::join(data.getStorage<Cube>())) {
             cube.cube.draw();
+        }
     }
 };
 
 
-void game_loop(void *arg)
+struct DrawingModel : public ecs::System {
+    void run(ecs::SystemData data) override final
+    {
+        for (auto [model, pos, col] : ecs::join(data.getStorage<OurModel>(), data.getStorage<Position>(), data.getStorage<CubeColor>())) {
+            model.model.draw(pos, 1, col.color);
+        }
+    }
+};
+
+void game_loop()
 {
-    raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
+
+    raylib::core::Camera3D camera;
+    camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
     ecs::World world;
+
+    Vector3 pos(0, -5, 0);
+    Vector3 scale(1, 1, 1);
+    Vector3 rotationAxis(1, 0, 0);
+
+    raylib::model::Model &testingModel = getTestingModel();
 
     Logger::logger.log(Logger::Severity::Debug, "Start loop");
 
     world.addResource<ecs::Timer>();
     world.addSystem<DrawingCube>();
-    world.addSystem<ChangeCube>();
+    world.addSystem<DrawingModel>();
 
     auto ourCube =  world.addEntity()
                     .with<Position>(0.f, 0.f, 0.f)
-                    .with<Size>(50.f, 50.f, 50.f)
-                    .with<CubeColor>(255, 120, 50, 0)
+                    .with<Size>(5.f, 5.f, 5.f)
+                    .with<CubeColor>(255, 120, 50, 80)
                     .with<Cube>()
+                    .build();
+    auto ourModel =  world.addEntity()
+                    .with<Position>(0.f, 0.f, 0.f)
+                    .with<CubeColor>(0, 0, 250, 255)
+                    .with<OurModel>()
                     .build();
     Logger::logger.log(Logger::Severity::Debug, "initialized");
 
+    raylib::shapes::Cone cone;
+    cone.setRadius(1, 1);
+    cone.setColor((raylib::core::Color::BLUE).asRaylib());
+
     while (1) {
-        camera->update();
-        raylib::core::Window::clear();
+        camera.update();
+        raylib::core::scoped::Drawing drawing;
+        raylib::core::Window::clear(raylib::core::Color::GREEN);
         {
-            raylib::core::scoped::Mode3D mode3D(*camera);
+            raylib::core::scoped::Mode3D mode3D(camera);
             world.runSystems();
+            cone.draw();
+            testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
         };
         raylib::core::Window::drawFPS(10, 10);
     }
 
     Logger::logger.log(Logger::Severity::Debug, "End loop");
-
 
 }
 
@@ -205,18 +241,16 @@ int main()
 
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
-    raylib::core::Camera3D camera;
-    camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
     // since there is no such thing as a window.
     emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
 #else
-    raylib::core::Window::setTargetFPS(60);
+    raylib::core::Window::setTargetFPS(999);
     Logger::logger.log(Logger::Severity::Information, "Before game loop");
 
-    game_loop(&camera);
+    game_loop();
 #endif
 
     CloseWindow();
