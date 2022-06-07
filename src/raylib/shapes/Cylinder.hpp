@@ -31,8 +31,8 @@ namespace raylib
             /// @param height The height of the cylinder.
             /// @param slices The number of slices of the cylinder, more slices mean more precise but more laggy.
             /// @param color The color of the cylinder.
-            inline Cylinder(
-                Vector3 position = {}, float radius = 0, float height = 0, int slices = 10, Color color = {0, 0, 0, 0})
+            inline Cylinder(raylib::core::Vector3 position = {}, float radius = 1, float height = 1, int slices = 10,
+                raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR)
                 : Cone(position, radius, radius, height, slices, color){};
 
             /// Destroy the cylinder

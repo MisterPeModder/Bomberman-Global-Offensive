@@ -11,19 +11,19 @@ namespace raylib
 {
     namespace shapes
     {
-        Cube::Cube(Vector3 position, Vector3 size, Color color)
+        Cube::Cube(raylib::core::Vector3 position, raylib::core::Vector3 size, raylib::core::Color color)
         {
             setPosition(position);
             setColor(color);
             setSize(size);
         }
 
-        void Cube::draw() const { DrawCubeV(_position, _size, _color); }
+        void Cube::draw() const { DrawCubeV(_position.asRaylib(), _size.asRaylib(), _color.asRaylib()); }
 
-        void Cube::drawWires() const { DrawCubeWiresV(_position, _size, _color); }
+        void Cube::drawWires() const { DrawCubeWiresV(_position.asRaylib(), _size.asRaylib(), _color.asRaylib()); }
 
-        void Cube::setSize(Vector3 size) { _size = size; }
+        void Cube::setSize(raylib::core::Vector3 size) { _size = size; }
 
-        Vector3 Cube::getSize() const { return _size; }
+        raylib::core::Vector3 Cube::getSize() const { return _size; }
     } // namespace shapes
 } // namespace raylib

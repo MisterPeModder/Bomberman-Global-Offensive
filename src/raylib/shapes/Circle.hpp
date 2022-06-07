@@ -21,6 +21,8 @@ namespace raylib
 {
     namespace shapes
     {
+        class Rectangle;
+
         /// The Circle Class used to represent a 2d circle shape
         class Circle : public AShape {
           public:
@@ -30,7 +32,8 @@ namespace raylib
             /// @param pos The position of the center of the circle.
             /// @param radius The radius of the circle.
             /// @param color The color of the circle.
-            Circle(Vector2 pos, float radius = 0, Color color = Color{0, 0, 0, 0});
+            Circle(raylib::core::Vector2 pos, float radius = 1,
+                raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// The destructor is called when the object is destroyed
             ~Circle();
@@ -61,7 +64,7 @@ namespace raylib
             ///
             /// @param color1 The color of the circle's center
             /// @param color2 The color of the outer circle
-            void drawGradient(Color color1, Color color2) const;
+            void drawGradient(raylib::core::Color color1, raylib::core::Color color2) const;
 
             /// DrawCircleLines draws a circle with the given parameters
             ///
@@ -78,13 +81,13 @@ namespace raylib
             /// sum of their radii, the circles are colliding
             ///
             /// @param other The other rectangle to check against.
-            bool checkCollisions(const Rectangle &other) const;
+            bool checkCollisions(const raylib::shapes::Rectangle &other) const;
 
             /// Draw a circle in 3D space with a given rotation axis and angle
             ///
             /// @param rotationAxis The axis of rotation.
             /// @param rotationAngle The angle of rotation in degrees.
-            void draw3D(Vector3 rotationAxis, float rotationAngle) const;
+            void draw3D(raylib::core::Vector3 rotationAxis, float rotationAngle) const;
 
             /// `setRadius` is a function that takes a float as an argument and sets the
             /// value of the private variable `_radius` to the value of the argument

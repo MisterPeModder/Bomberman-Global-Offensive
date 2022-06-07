@@ -11,9 +11,9 @@ set(INCDIRS ${INCROOT})
 add_subdirectory(ecs)
 add_subdirectory(localization)
 add_subdirectory(logger)
-add_subdirectory(game)
 add_subdirectory(raylib)
 add_subdirectory(util)
+add_subdirectory(game)
 
 # Source groups are a feature in Visual Studio.
 source_group("" FILES ${SRC})

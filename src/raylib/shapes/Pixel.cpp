@@ -11,13 +11,13 @@ namespace raylib
 {
     namespace shapes
     {
-        Pixel::Pixel(float x, float y, Color color)
+        Pixel::Pixel(float x, float y, raylib::core::Color color)
         {
-            setPosition(Vector2{x, y});
+            setPosition(raylib::core::Vector2{x, y});
             setColor(color);
         }
 
-        Pixel::Pixel(Vector2 position, Color color)
+        Pixel::Pixel(raylib::core::Vector2 position, raylib::core::Color color)
         {
             setPosition(position);
             setColor(color);
@@ -25,7 +25,7 @@ namespace raylib
 
         Pixel::~Pixel() {}
 
-        void Pixel::draw() const { DrawPixel(_position.x, _position.y, _color); }
+        void Pixel::draw() const { DrawPixel(_position.x, _position.y, _color.asRaylib()); }
     } // namespace shapes
 
 } // namespace raylib
