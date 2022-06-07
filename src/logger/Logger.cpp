@@ -21,7 +21,7 @@
 
 Logger Logger::logger;
 
-Logger::Logger(std::ostream &stream)
+Logger::Logger(std::ostream &stream, std::string_view name) : _name(name)
 {
     setDefaultColors();
     setStream(stream);
@@ -63,6 +63,9 @@ void Logger::displayInformations(std::stringstream &ss)
             writeInfo();
         firstInfo = false;
     };
+
+    if (!_name.empty())
+        ss << "[" << _name << "] ";
 
     if ((*this)[LogInfo::PID])
         add_info("PID", [&]() {
@@ -156,3 +159,7 @@ void Logger::setSeverityColor(Severity severity, Color foreground, Color backgro
 {
     _colors[static_cast<size_t>(severity)] = {foreground, background};
 }
+
+void Logger::setName(std::string_view name) { _name = name; }
+
+std::string_view Logger::getName() const { return _name; }

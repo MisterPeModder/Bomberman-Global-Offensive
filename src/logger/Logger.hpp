@@ -59,7 +59,7 @@ class Logger {
     /// Construct a new Logger object linked to a given output stream.
     ///
     /// @param[in] stream stream in which the logger will write.
-    Logger(std::ostream &stream = std::cerr);
+    Logger(std::ostream &stream = std::cerr, std::string_view name = "");
 
     /// Construct a new Logger object linked to a logfile.
     ///
@@ -174,6 +174,16 @@ class Logger {
     /// @param background background color.
     void setSeverityColor(Severity severity, Color foreground, Color background = Color::Black);
 
+    /// Set the Name of the logger.
+    /// @note If empty the name isn't printed.
+    ///
+    /// @param name name of the logger.
+    void setName(std::string_view name);
+
+    /// Get the name of the logger.
+    /// @return std::string_view name of the logger, might be empty.
+    std::string_view getName() const;
+
   private:
     void displayInformations(std::stringstream &ss);
     void displayTime(std::stringstream &ss, std::string_view format);
@@ -183,6 +193,7 @@ class Logger {
     std::ostream *_streamPointer;
     std::ofstream _fileStream;
     std::array<ColorPair, static_cast<size_t>(Severity::Count)> _colors;
+    std::string _name;
 };
 
 #endif /* !RAYLIB_LOGGER_LOGGER_HPP_ */
