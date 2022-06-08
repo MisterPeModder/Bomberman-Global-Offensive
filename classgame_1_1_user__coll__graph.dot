@@ -1,0 +1,20 @@
+digraph "game::User"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="game::User",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="User with specific profile/gamepad attributed."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _changedActions" ,fontname="Helvetica"];
+  Node2 [label="std::queue\< GameAction \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/queue.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _profile" ,fontname="Helvetica"];
+  Node3 [label="game::settings::Profile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1settings_1_1_profile.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _name" ,fontname="Helvetica"];
+  Node4 [label="std::string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _keybinds" ,fontname="Helvetica"];
+  Node5 [label="game::settings::Keybinds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1settings_1_1_keybinds.html",tooltip="Bindings of keyboards/gamepad inputs to game actions."];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _gamepadBindings" ,fontname="Helvetica"];
+  Node6 [label="std::map\< game::settings\l::GamepadInput, GameAction \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/map.html",tooltip=" "];
+  Node7 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _keyboardBindings" ,fontname="Helvetica"];
+  Node7 [label="std::map\< raylib::core\l::Keyboard::Key, GameAction \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/map.html",tooltip=" "];
+}

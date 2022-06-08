@@ -9,4 +9,6 @@ digraph "Graphical Class Hierarchy"
   Node1 [label="ecs::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_entities.html",tooltip="The entities world resource."];
   Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="ecs::Timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_timer.html",tooltip="Simple timer resource."];
+  Node0 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="game::Users",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1_users.html",tooltip="Resource allowing to get users actions using the keybinds."];
 }

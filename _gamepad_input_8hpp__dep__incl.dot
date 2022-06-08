@@ -14,4 +14,12 @@ digraph "src/game/settings/GamepadInput.hpp"
   Node5 [label="src/game/settings/Profile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_profile_8hpp.html",tooltip=" "];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="src/game/settings/Profile.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_profile_8cpp.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/game/User.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_user_8hpp.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/game/User.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_user_8cpp.html",tooltip=" "];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/game/Users.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_users_8hpp.html",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="src/game/Users.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_users_8cpp.html",tooltip=" "];
 }

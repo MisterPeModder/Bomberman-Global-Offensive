@@ -10,6 +10,7 @@ var classgame_1_1settings_1_1_gamepad_input =
     [ "GamepadInput", "classgame_1_1settings_1_1_gamepad_input.html#a9003a94dc79d2a320683bdba2b3b8899", null ],
     [ "~GamepadInput", "classgame_1_1settings_1_1_gamepad_input.html#a0e24500a49fb4989dc3ad71ba0aae822", null ],
     [ "getAxis", "classgame_1_1settings_1_1_gamepad_input.html#a26318ea09122c207c2063a6c025be517", null ],
+    [ "getAxisAbsoluteValue", "classgame_1_1settings_1_1_gamepad_input.html#a5cec1da9ded8819ed245ab7a89f4bb9f", null ],
     [ "getAxisDirection", "classgame_1_1settings_1_1_gamepad_input.html#ac76c068cc2b626eacfdf2d17befde940", null ],
     [ "getButton", "classgame_1_1settings_1_1_gamepad_input.html#ab80a13fbfcc8f81c8702aefdeca47bdd", null ],
     [ "isButton", "classgame_1_1settings_1_1_gamepad_input.html#a417357d63d7b6e5c4f2023ce2c4ce7f8", null ],

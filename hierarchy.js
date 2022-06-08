@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "game::Users::ActionEvent", "structgame_1_1_users_1_1_action_event.html", null ],
     [ "raylib::model::Animation", "classraylib_1_1model_1_1_animation.html", null ],
     [ "raylib::shapes::AShape", "classraylib_1_1shapes_1_1_a_shape.html", [
       [ "raylib::shapes::Circle", "classraylib_1_1shapes_1_1_circle.html", null ],
@@ -55,7 +56,8 @@ var hierarchy =
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "ecs::Resource", "classecs_1_1_resource.html", [
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
-      [ "ecs::Timer", "classecs_1_1_timer.html", null ]
+      [ "ecs::Timer", "classecs_1_1_timer.html", null ],
+      [ "game::Users", "classgame_1_1_users.html", null ]
     ] ],
     [ "localization::RessourceFile", "classlocalization_1_1_ressource_file.html", null ],
     [ "localization::RessourceString", "classlocalization_1_1_ressource_string.html", null ],
@@ -75,6 +77,7 @@ var hierarchy =
     [ "ecs::System", "classecs_1_1_system.html", null ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
+    [ "game::User", "classgame_1_1_user.html", null ],
     [ "raylib::core::Vector2", "structraylib_1_1core_1_1_vector2.html", null ],
     [ "raylib::core::Vector3", "structraylib_1_1core_1_1_vector3.html", null ],
     [ "raylib::core::Window", "classraylib_1_1core_1_1_window.html", null ],
