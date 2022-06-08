@@ -3,8 +3,10 @@
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/core/Audio.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Color.hpp"
+#include "raylib/core/Sound.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/model/Animation.hpp"
@@ -78,6 +80,9 @@ int main()
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
+
+    /// Setup Audio for the program
+    raylib::core::scoped::AudioDevice audioDevice;
 
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
