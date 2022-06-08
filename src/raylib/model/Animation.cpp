@@ -35,6 +35,8 @@ namespace raylib
 
         void Animation::updateModel(Model &model)
         {
+            if (!_animations)
+                return;
             _animFrameCounter++;
             UpdateModelAnimation(model.asRaylib(), _animations[0], _animFrameCounter);
             if (_animFrameCounter >= _animations[0].frameCount)

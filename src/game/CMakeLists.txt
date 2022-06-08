@@ -7,6 +7,10 @@ add_subdirectory(settings)
 set (SRC
 	${SRC}
 	${SRCROOT}/GameAction.hpp
+	${SRCROOT}/User.cpp
+	${SRCROOT}/User.hpp
+	${SRCROOT}/Users.cpp
+	${SRCROOT}/Users.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS 
