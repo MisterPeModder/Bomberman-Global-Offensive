@@ -114,6 +114,8 @@ namespace raylib
             /// @param replace The color to replace
             void colorReplace(const raylib::core::Color &color, const raylib::core::Color &replace);
 
+            const ::Image asRaylib() const;
+
           private:
             std::filesystem::path _fileName;
             raylib::core::Vector2 _position;

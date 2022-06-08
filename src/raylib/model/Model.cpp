@@ -14,6 +14,8 @@ namespace raylib
     {
         Model::Model(const std::filesystem::path &modelPath) : _model(LoadModel(modelPath.generic_string().c_str())) {}
 
+        Model::Model(const raylib::model::Mesh &mesh) : _model(LoadModelFromMesh(mesh.asRaylib())) {}
+
         Model::~Model() { UnloadModel(_model); }
 
         void Model::draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const

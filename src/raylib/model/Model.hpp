@@ -18,6 +18,7 @@ extern "C"
 #include "raylib/core/Color.hpp"
 #include "raylib/core/Vector3.hpp"
 #include "raylib/model/BoundingBox.hpp"
+#include "raylib/model/Mesh.hpp"
 
 namespace raylib
 {
@@ -31,6 +32,8 @@ namespace raylib
             ///
             /// @param modelPath the relative path to the 3D model to import
             Model(const std::filesystem::path &modelPath);
+
+            Model(const raylib::model::Mesh &mesh);
 
             /// Model destructor
             ~Model();

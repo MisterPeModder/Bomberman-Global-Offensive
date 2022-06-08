@@ -12,6 +12,7 @@
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
 #include "raylib/raylib.hpp"
+#include "raylib/model/Mesh.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -44,6 +45,8 @@ static void drawFrame(void *arg)
     raylib::core::Vector3 pos(0, -5, 0);
     raylib::core::Vector3 scale(1, 1, 1);
     raylib::core::Vector3 rotationAxis(1, 0, 0);
+
+    raylib::model::Mesh mesh = raylib::model::Mesh::genCube(1, 1, 1);
 
     raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();
