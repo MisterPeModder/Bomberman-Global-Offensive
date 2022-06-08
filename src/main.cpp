@@ -10,9 +10,9 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/model/Animation.hpp"
+#include "raylib/model/Mesh.hpp"
 #include "raylib/model/Model.hpp"
 #include "raylib/raylib.hpp"
-#include "raylib/model/Mesh.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>

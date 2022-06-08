@@ -59,7 +59,6 @@ namespace raylib
             /// @return The created cubic mesh
             static Mesh genCube(const raylib::core::Vector3 &size);
 
-
             /// Generates a cubic map mesh from an image
             ///
             /// @param image the image used to generate the mesh
