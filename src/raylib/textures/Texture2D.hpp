@@ -99,6 +99,8 @@ namespace raylib
             /// @param tint The color to tint the texture2D with.
             void draw(const Vector2 &position, float rotation, float scale, const Color &tint);
 
+            const ::Texture2D asRaylib() const;
+
           private:
             std::filesystem::path _fileName;
             Vector2 _position;

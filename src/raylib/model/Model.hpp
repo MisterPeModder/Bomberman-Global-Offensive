@@ -19,6 +19,7 @@ extern "C"
 #include "raylib/core/Vector3.hpp"
 #include "raylib/model/BoundingBox.hpp"
 #include "raylib/model/Mesh.hpp"
+#include "raylib/textures/Texture2D.hpp"
 
 namespace raylib
 {
@@ -110,6 +111,8 @@ namespace raylib
             /// @retval true if the model collides with the bounding box
             /// @retval false if the model doesn't collide with the bounding box
             bool checkCollision(const BoundingBox &otherBox);
+
+            void setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapId);
 
           private:
             ::Model _model;
