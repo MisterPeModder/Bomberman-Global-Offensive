@@ -11,6 +11,8 @@ var hierarchy =
       [ "raylib::shapes::Rectangle", "classraylib_1_1shapes_1_1_rectangle.html", null ],
       [ "raylib::shapes::Sphere", "classraylib_1_1shapes_1_1_sphere.html", null ]
     ] ],
+    [ "raylib::core::Audio", "classraylib_1_1core_1_1_audio.html", null ],
+    [ "raylib::core::scoped::AudioDevice", "classraylib_1_1core_1_1scoped_1_1_audio_device.html", null ],
     [ "util::BitSet", "classutil_1_1_bit_set.html", null ],
     [ "raylib::model::BoundingBox", "classraylib_1_1model_1_1_bounding_box.html", null ],
     [ "ecs::Entities::Builder", "classecs_1_1_entities_1_1_builder.html", null ],
@@ -65,6 +67,7 @@ var hierarchy =
       [ "localization::RessourceFile::MessageNotFoundError", "classlocalization_1_1_ressource_file_1_1_message_not_found_error.html", null ]
     ] ],
     [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
+    [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", null ],
     [ "ecs::Storage", "classecs_1_1_storage.html", [
       [ "ecs::MapStorage< C >", "classecs_1_1_map_storage.html", null ],
       [ "ecs::MarkerStorage< C >", "classecs_1_1_marker_storage.html", null ]

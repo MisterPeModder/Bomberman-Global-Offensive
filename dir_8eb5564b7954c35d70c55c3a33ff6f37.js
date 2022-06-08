@@ -1,5 +1,9 @@
 var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
 [
+    [ "Audio.cpp", "_audio_8cpp.html", null ],
+    [ "Audio.hpp", "_audio_8hpp.html", [
+      [ "Audio", "classraylib_1_1core_1_1_audio.html", "classraylib_1_1core_1_1_audio" ]
+    ] ],
     [ "Camera3D.cpp", "_camera3_d_8cpp.html", null ],
     [ "Camera3D.hpp", "_camera3_d_8hpp.html", [
       [ "Camera3D", "classraylib_1_1core_1_1_camera3_d.html", "classraylib_1_1core_1_1_camera3_d" ]
@@ -25,7 +29,12 @@ var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
     ] ],
     [ "scoped.hpp", "scoped_8hpp.html", [
       [ "Mode3D", "classraylib_1_1core_1_1scoped_1_1_mode3_d.html", "classraylib_1_1core_1_1scoped_1_1_mode3_d" ],
-      [ "Drawing", "classraylib_1_1core_1_1scoped_1_1_drawing.html", "classraylib_1_1core_1_1scoped_1_1_drawing" ]
+      [ "Drawing", "classraylib_1_1core_1_1scoped_1_1_drawing.html", "classraylib_1_1core_1_1scoped_1_1_drawing" ],
+      [ "AudioDevice", "classraylib_1_1core_1_1scoped_1_1_audio_device.html", "classraylib_1_1core_1_1scoped_1_1_audio_device" ]
+    ] ],
+    [ "Sound.cpp", "_sound_8cpp.html", null ],
+    [ "Sound.hpp", "_sound_8hpp.html", [
+      [ "Sound", "classraylib_1_1core_1_1_sound.html", "classraylib_1_1core_1_1_sound" ]
     ] ],
     [ "Vector2.cpp", "_vector2_8cpp.html", null ],
     [ "Vector2.hpp", "_vector2_8hpp.html", [
