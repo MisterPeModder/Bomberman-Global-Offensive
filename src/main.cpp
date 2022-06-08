@@ -3,12 +3,15 @@
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/core/Audio.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Color.hpp"
+#include "raylib/core/Sound.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
+#include "raylib/raylib.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -58,33 +61,13 @@ static void drawFrame(void *arg)
     raylib::core::Window::drawFPS(10, 10);
 }
 
-static void raylibLogger(int msgType, const char *text, va_list args)
-{
-    static Logger raylibLogger("log_raylib.txt", true);
-    Logger::Severity severity;
-    std::array<char, 1024> buffer;
-
-    switch (msgType) {
-        case LOG_TRACE: severity = Logger::Severity::Debug; break;
-        case LOG_DEBUG: severity = Logger::Severity::Debug; break;
-        case LOG_INFO: severity = Logger::Severity::Information; break;
-        case LOG_WARNING: severity = Logger::Severity::Warning; break;
-        case LOG_ERROR: severity = Logger::Severity::Error; break;
-        case LOG_FATAL: severity = Logger::Severity::Error; break;
-        default: return;
-    }
-    vsnprintf(buffer.data(), 1024, text, args);
-    raylibLogger.log(severity, buffer.data());
-}
-
 static void setupLogger()
 {
     // Setup the logger parameters
-    Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
-    SetTraceLogCallback(raylibLogger);
-    SetTraceLogLevel(LOG_INFO);
+    Logger::logger.setName("main");
+    raylib::initLogger(LOG_INFO);
 }
 
 int main()
@@ -97,6 +80,9 @@ int main()
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
+
+    /// Setup Audio for the program
+    raylib::core::scoped::AudioDevice audioDevice;
 
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");

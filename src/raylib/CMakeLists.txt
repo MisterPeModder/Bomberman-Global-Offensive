@@ -8,6 +8,8 @@ add_subdirectory(model)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/logger.cpp
+    ${SRCROOT}/raylib.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
