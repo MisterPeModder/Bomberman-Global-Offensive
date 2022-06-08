@@ -29,11 +29,14 @@ namespace raylib
         class Model {
           public:
             /// Model constructor. Used to initialize a 3D model from a file
-            /// File format accepted: obj and probably some other
+            /// File format accepted: iqm
             ///
             /// @param modelPath the relative path to the 3D model to import
             Model(const std::filesystem::path &modelPath);
 
+            /// Model constructor. Used to initialize a 3D model from a mesh
+            ///
+            /// @param mesh the mesh from which to create the 3d model
             Model(const raylib::model::Mesh &mesh);
 
             /// Model destructor
@@ -112,7 +115,12 @@ namespace raylib
             /// @retval false if the model doesn't collide with the bounding box
             bool checkCollision(const BoundingBox &otherBox);
 
-            void setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapId);
+            /// Sets the texture of a material
+            ///
+            /// @param texture the texture to use
+            /// @param materialId the material id to replace the texture
+            /// @param mapType the map type to replace the texture
+            void setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapType);
 
           private:
             ::Model _model;

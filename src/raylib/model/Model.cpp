@@ -55,9 +55,9 @@ namespace raylib
 
         ::Model const &Model::asRaylib() const { return _model; }
 
-        void Model::setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapId)
+        void Model::setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapType)
         {
-            _model.materials[materialId].maps[mapId].texture = texture.asRaylib();
+            SetMaterialTexture(&_model.materials[materialId], mapType, texture.asRaylib());
         }
 
     } // namespace model
