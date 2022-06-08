@@ -68,7 +68,6 @@ static void drawFrame(void *arg)
 
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
     raylib::core::Window::drawFPS(10, 10);
-
 }
 
 static void raylibLogger(int msgType, const char *text, va_list args)
@@ -119,7 +118,7 @@ int main()
     raylib::core::Vector3 pos(0, -5, 0);
     raylib::core::Vector3 scale(1, 1, 1);
     raylib::core::Vector3 rotationAxis(1, 0, 0);
-                    float rotationAngle = -90;
+    float rotationAngle = -90;
 
     raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();
