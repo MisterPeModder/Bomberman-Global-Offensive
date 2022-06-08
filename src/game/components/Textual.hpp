@@ -9,17 +9,21 @@
 #define GAME_GUI_COMPONENTS_TEXTUAL_HPP_
 
 #include "ecs/Component.hpp"
+#include "raylib/core/Color.hpp"
 
 namespace game
 {
-    namespace gui
-    {
-        struct Textual : public ecs::Component {
-            std::string text;
+    struct Textual : public ecs::Component {
+        std::string text;
+        size_t fontSize;
+        raylib::core::Color color;
 
-            Textual(std::string_view ptext) : text(ptext) {}
-        };
-    } // namespace gui
+        Textual(
+            std::string_view ptext, size_t pfontSize = 20, raylib::core::Color pcolor = raylib::core::Color::LIGHT_GRAY)
+            : text(ptext), fontSize(pfontSize), color(pcolor)
+        {
+        }
+    };
 } // namespace game
 
 #endif /* !GAME_GUI_COMPONENTS_TEXTUAL_HPP_ */

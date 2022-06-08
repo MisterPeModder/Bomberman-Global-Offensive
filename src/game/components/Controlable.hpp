@@ -8,8 +8,8 @@
 #ifndef GAME_COMPONENTS_CONTROLABLE_HPP_
 #define GAME_COMPONENTS_CONTROLABLE_HPP_
 
-#include "User.hpp"
 #include "ecs/Component.hpp"
+#include "game/User.hpp"
 
 namespace game
 {

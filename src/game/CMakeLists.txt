@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/game)
 
 add_subdirectory(map)
 add_subdirectory(settings)
+add_subdirectory(systems)
 add_subdirectory(components)
 add_subdirectory(gui)
 
