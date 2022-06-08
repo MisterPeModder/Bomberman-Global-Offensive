@@ -1,10 +1,5 @@
 # Platform-specific compilation options
 
-if (EMSCRIPTEN)
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -s USE_GLFW=3 -s ASSERTIONS=1 -s WASM=1 -s ASYNCIFY")
-    set(CMAKE_EXECUTABLE_SUFFIX ".html") # Directly build the emscriptem HTML template.
-endif()
-
 # Enable Warnings
 if (COMPILER_TYPE MATCHES "msvc")
     message(STATUS "Enabling MSVC-specific options")
@@ -35,14 +30,13 @@ elseif (COMPILER_TYPE MATCHES "clang")
         "-Wno-unknown-pragmas"
         "$<$<CONFIG:RELEASE>:-O3;-Werror>"
         "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
-        "-sNO_DISABLE_EXCEPTION_CATCHING"
     )
 
     if (EMSCRIPTEN)
         message(STATUS "Enabling Emscripten-specific options")
 
-        add_compile_options("-sNO_DISABLE_EXCEPTION_CATCHING")
-        add_link_options("-sNO_DISABLE_EXCEPTION_CATCHING")
+        add_link_options(-sNO_DISABLE_EXCEPTION_CATCHING -sUSE_GLFW=3 -sASSERTIONS=1 -sWASM=1 -sASYNCIFY -sEXPORTED_RUNTIME_METHODS=ccall,cwrap)
+        set(CMAKE_EXECUTABLE_SUFFIX ".html") # Build using a HTML shell template
     endif()
 endif()
 

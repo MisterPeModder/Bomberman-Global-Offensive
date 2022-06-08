@@ -41,9 +41,14 @@ target_link_libraries(${LIB_NAME} PUBLIC raylib mujs)
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
 target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} raylib mujs)
 
+# Use our HTML shell instead of the default one provided by Emscripten
+if (EMSCRIPTEN)
+    target_link_options(${TARGET_NAME} PUBLIC --shell-file ${SRCROOT}/shell.html)
+endif()
+
 # Copy the executable to the root.
 # There is no executable in the web build, so it is disabled there.
-if (NOT EMPSCRIPTEN)
+if (NOT EMSCRIPTEN)
     add_custom_command(TARGET ${TARGET_NAME} 
     	POST_BUILD
     	COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${TARGET_NAME}> ${PROJECT_SOURCE_DIR})
