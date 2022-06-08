@@ -98,7 +98,7 @@ int main()
     localization::Localization::setLocale("fr");
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
-    std::cout << localization::Ressources::rsHello << std::endl; 
+    std::cout << localization::Ressources::rsHello << std::endl;
 
     /// Setup Audio for the program
     raylib::core::scoped::AudioDevice audioDevice;
