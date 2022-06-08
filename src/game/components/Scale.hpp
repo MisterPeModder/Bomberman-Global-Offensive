@@ -12,7 +12,7 @@ namespace game
             raylib::core::Vector3 scale;
 
             Scale(raylib::core::Vector3 &pscale) : scale(pscale) {}
-            Scale(float px, float py, float pz = 0) : scale(px, py, pz) {}
+            Scale(float px, float py, float pz = 1) : scale(px, py, pz) {}
         };
     } // namespace components
 } // namespace game
