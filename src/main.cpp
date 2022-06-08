@@ -49,9 +49,11 @@ static raylib::model::Animation &getTestingAnimation()
     return anim;
 }
 
-static void drawFrame(void *arg)
+static void gameLoop()
 {
-    raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
+    raylib::core::Camera3D camera;
+    camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
+
     raylib::core::Vector3 pos(0, -5, 0);
     raylib::core::Vector3 scale(1, 1, 1);
     raylib::core::Vector3 rotationAxis(1, 0, 0);
@@ -59,6 +61,7 @@ static void drawFrame(void *arg)
 
     raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();
+
     ecs::World world;
     world.addSystem<game::systems::ModelsDrawEX>();
     world.addSystem<game::systems::RunAnimation>();
@@ -72,18 +75,22 @@ static void drawFrame(void *arg)
         .with<game::components::Animation>(testingAnimation)
         .build();
 
-    // testingAnimation.updateModel(testingModel);
-    camera->update();
-    raylib::core::scoped::Drawing drawing;
-    raylib::core::Window::clear();
-    {
-        raylib::core::scoped::Mode3D mode3D(*camera);
-        // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
-        world.runSystems();
-    };
+    while (!raylib::core::Window::windowShouldClose()) {
 
-    // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
-    raylib::core::Window::drawFPS(10, 10);
+        // testingAnimation.updateModel(testingModel);
+        camera.update();
+        raylib::core::scoped::Drawing drawing;
+        raylib::core::Window::clear();
+        {
+            raylib::core::scoped::Mode3D mode3D(camera);
+            // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+            world.runSystems();
+        };
+
+        // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
+        raylib::core::Window::drawFPS(10, 10);
+
+    }
 }
 
 static void raylibLogger(int msgType, const char *text, va_list args)
@@ -138,8 +145,7 @@ int main()
 #else
     raylib::core::Window::setTargetFPS(60);
 
-    while (!WindowShouldClose())
-        drawFrame(&camera);
+    gameLoop();
 #endif
 
     CloseWindow();

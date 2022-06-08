@@ -5,12 +5,14 @@ set(SRC
     ${SRC}
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Color.hpp
+    ${INCROOT}/Image.hpp
     ${INCROOT}/Model.hpp
     ${INCROOT}/Position.hpp
     ${INCROOT}/RotationAngle.hpp
     ${INCROOT}/RotationAxis.hpp
     ${INCROOT}/Scale.hpp
     ${INCROOT}/Size.hpp
+    ${INCROOT}/Texture2D.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
