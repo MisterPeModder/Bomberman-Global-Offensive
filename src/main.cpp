@@ -40,14 +40,14 @@ static raylib::model::Model &getTestingModel()
     return model;
 }
 
-// static raylib::model::Animation &getTestingAnimation()
-// {
-//     static const std::filesystem::path testAnimPath =
-//         std::filesystem::path("assets").append("animations").append("player").append("raylibguy_anim.iqm");
-//     static raylib::model::Animation anim(testAnimPath);
+static raylib::model::Animation &getTestingAnimation()
+{
+    static const std::filesystem::path testAnimPath =
+        std::filesystem::path("assets").append("animations").append("player").append("raylibguy_anim.iqm");
+    static raylib::model::Animation anim(testAnimPath);
 
-//     return anim;
-// }
+    return anim;
+}
 
 static void drawFrame(void *arg)
 {
@@ -58,9 +58,10 @@ static void drawFrame(void *arg)
                     float rotationAngle = -90;
 
     raylib::model::Model &testingModel = getTestingModel();
-    // raylib::model::Animation &testingAnimation = getTestingAnimation();
+    raylib::model::Animation &testingAnimation = getTestingAnimation();
     ecs::World world;
     world.addSystem<game::systems::ModelsDrawEX>();
+    world.addSystem<game::systems::RunAnimation>();
     world.addEntity()
         .with<game::components::Model>(testingModel)
         .with<game::components::Position>(pos)
@@ -68,8 +69,8 @@ static void drawFrame(void *arg)
         .with<game::components::RotationAngle>(rotationAngle)
         .with<game::components::RotationAxis>(rotationAxis)
         .with<game::components::Color>(raylib::core::Color::RED)
-        .build()
-    ;
+        .with<game::components::Animation>(testingAnimation)
+        .build();
 
     // testingAnimation.updateModel(testingModel);
     camera->update();
