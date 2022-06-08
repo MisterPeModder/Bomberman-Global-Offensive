@@ -12,7 +12,7 @@ add_subdirectory(ecs)
 add_subdirectory(localization)
 add_subdirectory(logger)
 add_subdirectory(raylib)
-add_subdirectory(scripting)
+add_subdirectory(script)
 add_subdirectory(util)
 add_subdirectory(game)
 

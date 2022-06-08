@@ -12,7 +12,7 @@
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
 #include "raylib/raylib.hpp"
-#include "scripting/scripting.hpp"
+#include "script/Engine.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -75,8 +75,7 @@ int main()
 {
     setupLogger();
 
-    // Temporary
-    scriptingHelloWorld();
+    bmjs::Engine jsEngine;
 
     // Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
