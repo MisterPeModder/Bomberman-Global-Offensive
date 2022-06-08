@@ -1,5 +1,16 @@
 var class_logger =
 [
+    [ "ColorPair", "class_logger.html#a9a16778f258ac44b8053f00421f2db24", null ],
+    [ "Color", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5", [
+      [ "Black", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5ae90dfb84e30edf611e326eeb04d680de", null ],
+      [ "Red", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5aee38e4d5dd68c4e440825018d549cb47", null ],
+      [ "Green", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5ad382816a3cbeed082c9e216e7392eed1", null ],
+      [ "Yellow", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5a51e6cd92b6c45f9affdc158ecca2b8b8", null ],
+      [ "Blue", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5a9594eec95be70e7b1710f730fdda33d9", null ],
+      [ "Magenta", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5ab91cc2c1416fcca942b61c7ac5b1a9ac", null ],
+      [ "Cyan", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5a023c239d2f2538f140a20e72c7b73f20", null ],
+      [ "White", "class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5a25a81701fbfa4a1efdf660a950c1d006", null ]
+    ] ],
     [ "LogInfo", "class_logger.html#a22a74b19c09c18f007ad0a93b65d8cce", [
       [ "PID", "class_logger.html#a22a74b19c09c18f007ad0a93b65d8ccea2d73559f294204a42bda2e926d094612", null ],
       [ "ThreadId", "class_logger.html#a22a74b19c09c18f007ad0a93b65d8ccea693e7589872f7acd3e69d831d022d6ea", null ],
@@ -14,7 +25,7 @@ var class_logger =
       [ "Error", "class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd", null ],
       [ "Count", "class_logger.html#a4cc16315b37eb0265c2d199880464a15ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
-    [ "Logger", "class_logger.html#a472b30aaade9ca42e246d9df86200a19", null ],
+    [ "Logger", "class_logger.html#a740834905a831155be140a4c69a6d1a3", null ],
     [ "Logger", "class_logger.html#aeeefe4e4594b8aed3003a9dbbc47c7b8", null ],
     [ "Logger", "class_logger.html#a0fff2adc419d9659f166b24ba03eaf22", null ],
     [ "~Logger", "class_logger.html#a81414467aac1f8740c5bd13624f3aa0b", null ],
@@ -25,18 +36,24 @@ var class_logger =
     [ "enableLogInfo", "class_logger.html#a0518c6a78523ae64363302f49d12afa5", null ],
     [ "flush", "class_logger.html#a5cc08473729523bb4bde48459f2ac468", null ],
     [ "getLogLevel", "class_logger.html#a197813c315e2ba04833ec35e1aeb79f8", null ],
+    [ "getName", "class_logger.html#a634bbc141ec2f19350b4a20dc9153555", null ],
     [ "log", "class_logger.html#ab5b2c93b1cedc547d53d054932a656f9", null ],
     [ "log", "class_logger.html#ae82dbfb3d2aa251921e5de89a725187b", null ],
     [ "operator=", "class_logger.html#ad56a181baaab4559bd52b5d0ff915839", null ],
     [ "operator[]", "class_logger.html#a3db50f440bc8832ece999e5d0b077d17", null ],
     [ "operator[]", "class_logger.html#a2c22d004d2db456dca72a94bdf5e8c00", null ],
+    [ "setDefaultColors", "class_logger.html#a7d6c04c6db61738366715ec171d21ec1", null ],
     [ "setLogInfo", "class_logger.html#ab6e8022952d15d8784dc022587d14b09", null ],
     [ "setLogLevel", "class_logger.html#a36215575ad071720cbef8f6ea5542c7d", null ],
+    [ "setName", "class_logger.html#ae517a1d70da20c4c9ce3b4dff2dea1ff", null ],
     [ "setOutputFile", "class_logger.html#aa4baec5861a2573adf4942bf374657bd", null ],
+    [ "setSeverityColor", "class_logger.html#a30c250dca8a2989ffefab01bbcf962aa", null ],
     [ "setStream", "class_logger.html#aec195417f67cc95b9e9b690e2cbe1d7c", null ],
+    [ "_colors", "class_logger.html#aed5137c2edb42caa97be029cf5c920eb", null ],
     [ "_fileStream", "class_logger.html#ada940e19e24444d377ae9523fda2201a", null ],
     [ "_infos", "class_logger.html#a2c4fb7c94548c4f375839d07ffa207b8", null ],
     [ "_logLevel", "class_logger.html#ae88bc2d35d36241c1eb8cfbd1a51a43a", null ],
+    [ "_name", "class_logger.html#af050fc8c757429af3e17f336339af136", null ],
     [ "_streamPointer", "class_logger.html#a834d7bc402c0eb4d8d8d689e5aa8bccc", null ],
     [ "logger", "class_logger.html#acd16ad0295ca5210a961ff09326b4d7c", null ]
 ];
