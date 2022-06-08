@@ -64,9 +64,9 @@ static void drawFrame(void *arg)
 static void setupLogger()
 {
     // Setup the logger parameters
-    Logger::logger.setOutputFile("log.txt");
     Logger::logger.setLogLevel(Logger::Severity::Information);
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
+    Logger::logger.setName("main");
     raylib::initLogger(LOG_INFO);
 }
 
