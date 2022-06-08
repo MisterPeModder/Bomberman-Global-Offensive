@@ -273,11 +273,13 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00036">36</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>++;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            UpdateModelAnimation(model.asRaylib(), <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>[0], <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> &gt;= <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>[0].frameCount)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>++;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            UpdateModelAnimation(model.asRaylib(), <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>[0], <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> &gt;= <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>[0].frameCount)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
