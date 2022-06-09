@@ -34,5 +34,5 @@ namespace game
                 }
             }
         };
-    }
+    } // namespace systems
 } // namespace game
