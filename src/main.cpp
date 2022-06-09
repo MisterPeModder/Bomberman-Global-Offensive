@@ -77,6 +77,9 @@ int main()
 
     bmjs::Engine jsEngine;
 
+    jsEngine.loadApi();
+    jsEngine.loadMod("hello");
+
     // Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
     localization::Localization::setLocale("fr");

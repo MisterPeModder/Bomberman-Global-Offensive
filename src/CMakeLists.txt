@@ -41,9 +41,18 @@ target_link_libraries(${LIB_NAME} PUBLIC raylib mujs)
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
 target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} raylib mujs)
 
-# Use our HTML shell instead of the default one provided by Emscripten
 if (EMSCRIPTEN)
+    # Use our HTML shell instead of the default one provided by Emscripten
     target_link_options(${TARGET_NAME} PUBLIC --shell-file ${SRCROOT}/shell.html)
+
+    # Embed the browser JS API bindings
+    target_link_options(${TARGET_NAME} PUBLIC "SHELL:--post-js ${SRCROOT}/script/bindings.js")
+    
+    # Preload the API
+    target_link_options(${TARGET_NAME} PUBLIC "SHELL:--post-js ${PROJECT_SOURCE_DIR}/mods/api.js")
+
+    # Make the contents of the mods directory available at the root of the site
+    target_link_options(${TARGET_NAME} PUBLIC "SHELL:--preload-file ${PROJECT_SOURCE_DIR}/mods@mods")
 endif()
 
 # Copy the executable to the root.
