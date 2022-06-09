@@ -23,12 +23,15 @@ namespace game
             static constexpr WidgetTag NullTag = -1;
             WidgetTag tag;
 
-            WidgetTag previous;
-            WidgetTag next;
+            WidgetTag left;
+            WidgetTag right;
+            WidgetTag up;
+            WidgetTag down;
             bool selected;
 
-            Widget(WidgetTag ptag, WidgetTag pprevious = NullTag, WidgetTag pnext = NullTag, bool pselected = false)
-                : tag(ptag), previous(pprevious), next(pnext), selected(pselected)
+            Widget(WidgetTag ptag, WidgetTag pleft = NullTag, WidgetTag pright = NullTag, WidgetTag pup = NullTag,
+                WidgetTag pdown = NullTag, bool pselected = false)
+                : tag(ptag), left(pleft), right(pright), up(pup), down(pdown), selected(pselected)
             {
             }
 
@@ -49,6 +52,8 @@ namespace game
                     return false;
                 }
             }
+
+            bool updateSelection(ecs::SystemData data, const Users::ActionEvent &event);
         };
     } // namespace gui
 } // namespace game

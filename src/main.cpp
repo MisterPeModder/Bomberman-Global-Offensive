@@ -21,6 +21,7 @@
 #include "game/systems/DrawText.hpp"
 #include "game/systems/InputManager.hpp"
 
+#include "game/gui/components/Checkable.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
@@ -67,7 +68,7 @@ static void drawFrame(void *arg)
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
-        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+        // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
     };
 
     world.runSystems();
@@ -109,10 +110,11 @@ int main()
     world.addSystem<game::InputManager>();
 
     auto widget1 = world.addEntity()
-                       .with<game::Position>(0.f, 20.f)
-                       .with<game::Textual>("I'm the ECS button", 40, raylib::core::Color::RED)
+                       .with<game::Position>(0.f, 0.f)
+                       .with<game::Textual>("I'm the ECS button", 20, raylib::core::Color::RED)
                        .with<game::Controlable>(game::User::UserId::User1)
-                       .with<game::gui::Widget>(0, game::gui::Widget::NullTag, 1, true)
+                       .with<game::gui::Widget>(0, game::gui::Widget::NullTag, 1, game::gui::Widget::NullTag,
+                           game::gui::Widget::NullTag, true)
                        .with<game::gui::Clickable>(
                            [](ecs::Entity _) { Logger::logger.log(Logger::Severity::Debug, "On click event!"); },
                            [&](ecs::Entity btn, game::gui::Clickable::State state) {
@@ -123,7 +125,7 @@ int main()
                        .build();
 
     auto text = world.addEntity()
-                    .with<game::Position>(0.f, 0.f)
+                    .with<game::Position>(0.f, 100.f)
                     .with<game::Textual>("Hello ECS", 40, raylib::core::Color::RED)
                     .with<game::Controlable>(game::User::UserId::User1,
                         [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
@@ -138,10 +140,14 @@ int main()
                     .build();
 
     auto widget2 = world.addEntity()
-                       .with<game::Position>(0.f, 0.f)
-                       .with<game::Textual>("Hello Widgets", 40, raylib::core::Color::RED)
+                       .with<game::Position>(250.f, 0.f)
+                       .with<game::Textual>("I'm the ECS Checkbox!", 20, raylib::core::Color::RED)
                        .with<game::Controlable>(game::User::UserId::User1)
-                       .with<game::gui::Widget>(1, 0)
+                       .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+                       .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
+                           world.getStorage<game::Textual>()[checkbox.getId()].color =
+                               (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
+                       })
                        .build();
 
 #if defined(PLATFORM_WEB)
