@@ -11,7 +11,7 @@ namespace game
 {
     namespace systems
     {
-        struct ModelsDraw : public ecs::System {
+        struct DrawModel : public ecs::System {
             void run(ecs::SystemData data) override final
             {
                 for (auto [model, pos, scale, color] :
@@ -22,7 +22,7 @@ namespace game
             }
         };
 
-        struct ModelsDrawEX : public ecs::System {
+        struct DrawRotatedModel : public ecs::System {
             void run(ecs::SystemData data) override final
             {
                 for (auto [model, pos, rAxis, rAngle, size, color] :
