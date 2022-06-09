@@ -13,6 +13,7 @@ namespace game
     {
         bool Checkable::update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
         {
+            (void)data;
             if (event.action != GameAction::ACTION)
                 return false;
 

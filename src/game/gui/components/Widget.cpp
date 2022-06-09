@@ -40,11 +40,12 @@ namespace game
                 case GameAction::MOVE_RIGHT: newSelected = right; break;
                 case GameAction::MOVE_UP: newSelected = up; break;
                 case GameAction::MOVE_DOWN: newSelected = down; break;
+                default: return false;
             }
 
             /// If the new widget to select isn't found, the current widget keep the selection.
             for (auto [widget] : ecs::join(data.getStorage<Widget>())) {
-                if (widget.tag == newSelected) {
+                if (widget.id == newSelected) {
                     selected = false;
                     widget.selected = true;
                     return true;
