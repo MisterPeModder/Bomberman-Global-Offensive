@@ -7,6 +7,8 @@
 
 #include "Widget.hpp"
 
+#include "Clickable.hpp"
+
 #include "logger/Logger.hpp"
 
 namespace game
@@ -15,12 +17,8 @@ namespace game
     {
         bool Widget::update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
         {
-            (void)self;
-            (void)data;
-            (void)event;
-
-            Logger::logger.log(Logger::Severity::Debug, "Update widget");
-
+            if (tryUpdate<Clickable>(self, data, event))
+                return true;
             return false;
         }
     } // namespace gui

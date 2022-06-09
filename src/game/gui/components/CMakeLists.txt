@@ -4,6 +4,7 @@ set(SRCROOT ${SRCROOT}/components)
 set (SRC
 	${SRC}
 	${SRCROOT}/Checkable.hpp
+	${SRCROOT}/Clickable.cpp
 	${SRCROOT}/Clickable.hpp
 	${SRCROOT}/Widget.cpp
 	${SRCROOT}/Widget.hpp

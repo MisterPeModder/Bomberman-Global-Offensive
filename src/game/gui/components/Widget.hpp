@@ -10,8 +10,9 @@
 
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
-#include "ecs/World.hpp"
-#include "game/components/Controlable.hpp"
+#include "ecs/Storage.hpp"
+#include "ecs/System.hpp"
+#include "game/Users.hpp"
 
 namespace game
 {
@@ -32,6 +33,22 @@ namespace game
             }
 
             bool update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
+
+          private:
+            template <typename T>
+            static bool tryUpdate(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
+            {
+                try {
+                    auto &storage = data.getStorage<T>();
+
+                    if (!storage.contains(self.getId()))
+                        return false;
+                    return storage[self.getId()].update(self, data, event);
+                } catch (std::logic_error &) {
+                    /// No storage for requested component
+                    return false;
+                }
+            }
         };
     } // namespace gui
 } // namespace game

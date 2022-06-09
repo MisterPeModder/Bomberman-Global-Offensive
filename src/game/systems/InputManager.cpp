@@ -24,10 +24,6 @@ namespace game
         Users::ActionEvent event = users.getNextAction();
 
         while (event.action != GameAction::NONE) {
-            Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
-                writer << "Action " << static_cast<size_t>(event.action) << " with value " << event.value
-                       << " from user " << static_cast<size_t>(event.user);
-            });
             handleEvent(event, data);
             event = users.getNextAction();
         }

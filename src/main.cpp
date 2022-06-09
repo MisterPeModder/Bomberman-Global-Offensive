@@ -21,6 +21,7 @@
 #include "game/systems/DrawText.hpp"
 #include "game/systems/InputManager.hpp"
 
+#include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
 #if defined(PLATFORM_WEB)
@@ -108,10 +109,17 @@ int main()
     world.addSystem<game::InputManager>();
 
     auto widget1 = world.addEntity()
-                       .with<game::Position>(0.f, 0.f)
-                       .with<game::Textual>("Hello ECS", 40, raylib::core::Color::RED)
+                       .with<game::Position>(0.f, 20.f)
+                       .with<game::Textual>("I'm the ECS button", 40, raylib::core::Color::RED)
                        .with<game::Controlable>(game::User::UserId::User1)
                        .with<game::gui::Widget>(0, game::gui::Widget::NullTag, 1, true)
+                       .with<game::gui::Clickable>(
+                           [](ecs::Entity _) { Logger::logger.log(Logger::Severity::Debug, "On click event!"); },
+                           [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                               world.getStorage<game::Textual>()[btn.getId()].color =
+                                   (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::BLUE
+                                                                                   : raylib::core::Color::RED;
+                           })
                        .build();
 
     auto text = world.addEntity()
