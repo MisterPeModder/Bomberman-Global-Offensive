@@ -111,21 +111,16 @@ int main()
                        .with<game::Position>(0.f, 0.f)
                        .with<game::Textual>("Hello ECS", 40, raylib::core::Color::RED)
                        .with<game::Controlable>(game::User::UserId::User1)
-                       .with<game::gui::Widget>(0, game::gui::Widget::NullTag, 1)
-                       .build();
-
-    auto widget2 = world.addEntity()
-                       .with<game::Position>(0.f, 0.f)
-                       .with<game::Textual>("Hello Widgets", 40, raylib::core::Color::RED)
-                       .with<game::Controlable>(game::User::UserId::User1)
-                       .with<game::gui::Widget>(1, 0)
+                       .with<game::gui::Widget>(0, game::gui::Widget::NullTag, 1, true)
                        .build();
 
     auto text = world.addEntity()
                     .with<game::Position>(0.f, 0.f)
                     .with<game::Textual>("Hello ECS", 40, raylib::core::Color::RED)
                     .with<game::Controlable>(game::User::UserId::User1,
-                        [](const game::Users::ActionEvent &event) {
+                        [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                            (void)self;
+                            (void)data;
                             (void)event;
                             Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
                                 writer << "Text control! " << event.value << ", " << static_cast<size_t>(event.action);
@@ -133,6 +128,13 @@ int main()
                             return false;
                         })
                     .build();
+
+    auto widget2 = world.addEntity()
+                       .with<game::Position>(0.f, 0.f)
+                       .with<game::Textual>("Hello Widgets", 40, raylib::core::Color::RED)
+                       .with<game::Controlable>(game::User::UserId::User1)
+                       .with<game::gui::Widget>(1, 0)
+                       .build();
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,

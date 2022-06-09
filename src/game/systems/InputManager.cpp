@@ -37,17 +37,18 @@ namespace game
     {
         auto optionnalWidgets = ecs::maybe(data.getStorage<gui::Widget>());
 
-        for (auto [widget, controlable, _] :
+        for (auto [widget, controlable, entity] :
             ecs::join(optionnalWidgets, data.getStorage<Controlable>(), data.getResource<ecs::Entities>())) {
+            /// This entity doesn't listen the sender of the event.
             if (controlable.userId != event.user)
                 continue;
-            if (!widget) {
-                Logger::logger.log(Logger::Severity::Debug, "non Widget event");
-                if (controlable.callback && controlable.callback(event))
-                    return;
-            } else {
-                Logger::logger.log(Logger::Severity::Debug, "Widget event");
-            }
+            /// The widget consumed the event.
+            if (widget && widget->selected && widget->update(entity, data, event))
+                return;
+            /// The entity isn't a widget (or hasn't consumed the event) and has a custom callback.
+            if (controlable.callback && controlable.callback(entity, data, event))
+                return;
         }
     }
+
 } // namespace game

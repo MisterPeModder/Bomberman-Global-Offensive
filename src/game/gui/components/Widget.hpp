@@ -24,11 +24,14 @@ namespace game
 
             WidgetTag previous;
             WidgetTag next;
+            bool selected;
 
-            Widget(WidgetTag ptag, WidgetTag pprevious = NullTag, WidgetTag pnext = NullTag)
-                : tag(ptag), previous(pprevious), next(pnext)
+            Widget(WidgetTag ptag, WidgetTag pprevious = NullTag, WidgetTag pnext = NullTag, bool pselected = false)
+                : tag(ptag), previous(pprevious), next(pnext), selected(pselected)
             {
             }
+
+            bool update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
         };
     } // namespace gui
 } // namespace game
