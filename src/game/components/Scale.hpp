@@ -8,11 +8,9 @@ namespace game
 {
     namespace components
     {
-        struct Scale : public ecs::Component {
-            raylib::core::Vector3 scale;
-
-            Scale(raylib::core::Vector3 &pscale) : scale(pscale) {}
-            Scale(float px, float py, float pz = 1) : scale(px, py, pz) {}
+        struct Scale : public ecs::Component, public raylib::core::Vector3 {
+            Scale(raylib::core::Vector3 &pscale) : raylib::core::Vector3(pscale) {}
+            Scale(float px, float py, float pz = 1) : raylib::core::Vector3(px, py, pz) {}
         };
     } // namespace components
 } // namespace game

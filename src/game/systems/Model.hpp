@@ -17,7 +17,7 @@ namespace game
                 for (auto [model, pos, size, color] :
                     ecs::join(data.getStorage<game::components::Model>(), data.getStorage<game::components::Position>(),
                         data.getStorage<game::components::Size>(), data.getStorage<game::components::Color>())) {
-                    model.model.draw(pos.position, size.size, color.color);
+                    model.draw(pos, size.size, color);
                 }
             }
         };
@@ -30,9 +30,9 @@ namespace game
                         data.getStorage<game::components::RotationAxis>(),
                         data.getStorage<game::components::RotationAngle>(), data.getStorage<game::components::Scale>(),
                         data.getStorage<game::components::Color>())) {
-                    model.model.draw(pos.position, rAxis.rotationAxis, rAngle.rotationAngle, scale.scale, color.color);
+                    model.draw(pos, rAxis, rAngle.rotationAngle, scale, color);
                 }
             }
         };
-    } // namespace systems
+    }
 } // namespace game

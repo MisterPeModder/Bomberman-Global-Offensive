@@ -8,11 +8,9 @@ namespace game
 {
     namespace components
     {
-        struct Color : public ecs::Component {
-            raylib::core::Color color;
-
-            Color(const raylib::core::Color &pcolor) : color(pcolor) {}
-            Color(float pr, float pg, float pb, float pa = 0) : color(pr, pg, pb, pa) {}
+        struct Color : public ecs::Component, public raylib::core::Color {
+            Color(const raylib::core::Color &pcolor) : raylib::core::Color(pcolor) {}
+            Color(float pr, float pg, float pb, float pa = 0) : raylib::core::Color(pr, pg, pb, pa) {}
         };
     } // namespace components
 } // namespace game

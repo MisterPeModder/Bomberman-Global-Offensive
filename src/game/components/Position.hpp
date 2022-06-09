@@ -8,11 +8,9 @@ namespace game
 {
     namespace components
     {
-        struct Position : public ecs::Component {
-            raylib::core::Vector3 position;
-
-            Position(raylib::core::Vector3 &pposition) : position(pposition) {}
-            Position(float px, float py, float pz = 0) : position(px, py, pz) {}
+        struct Position : public ecs::Component, public raylib::core::Vector3 {
+            Position(raylib::core::Vector3 &pposition) : raylib::core::Vector3(pposition) {}
+            Position(float px, float py, float pz = 0) : raylib::core::Vector3(px, py, pz) {}
         };
     } // namespace components
 } // namespace game
