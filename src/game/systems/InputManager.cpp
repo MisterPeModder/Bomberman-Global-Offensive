@@ -12,6 +12,7 @@
 #include "ecs/join.hpp"
 #include "ecs/system/SystemData.hpp"
 #include "game/Users.hpp"
+#include "game/gui/components/Widget.hpp"
 
 #include "logger/Logger.hpp"
 
@@ -34,8 +35,19 @@ namespace game
 
     void InputManager::handleEvent(const Users::ActionEvent &event, ecs::SystemData data)
     {
-        for (auto [controlable] : ecs::join(data.getStorage<Controlable>()))
-            if (controlable.userId == event.user && controlable.callback && controlable.callback(event))
-                return;
+        auto optionnalWidgets = ecs::maybe(data.getStorage<gui::Widget>());
+
+        for (auto [widget, controlable, _] :
+            ecs::join(optionnalWidgets, data.getStorage<Controlable>(), data.getResource<ecs::Entities>())) {
+            if (controlable.userId != event.user)
+                continue;
+            if (!widget) {
+                Logger::logger.log(Logger::Severity::Debug, "non Widget event");
+                if (controlable.callback && controlable.callback(event))
+                    return;
+            } else {
+                Logger::logger.log(Logger::Severity::Debug, "Widget event");
+            }
+        }
     }
 } // namespace game

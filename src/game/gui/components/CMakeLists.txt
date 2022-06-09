@@ -5,6 +5,7 @@ set (SRC
 	${SRC}
 	${SRCROOT}/Checkable.hpp
 	${SRCROOT}/Clickable.hpp
+	${SRCROOT}/Selectable.hpp
 	${SRCROOT}/Widget.hpp
 	PARENT_SCOPE)
 

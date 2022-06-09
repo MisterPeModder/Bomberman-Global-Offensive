@@ -10,16 +10,25 @@
 
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
+#include "ecs/World.hpp"
+#include "game/components/Controlable.hpp"
 
 namespace game
 {
     namespace gui
     {
         struct Widget : public ecs::Component {
-            ecs::Entity::Index previous;
-            bool selected;
+            using WidgetTag = size_t;
+            static constexpr WidgetTag NullTag = -1;
+            WidgetTag tag;
 
-            Widget(ecs::Entity::Index previousWidget) : previous(previousWidget) { selected = false; }
+            WidgetTag previous;
+            WidgetTag next;
+
+            Widget(WidgetTag ptag, WidgetTag pprevious = NullTag, WidgetTag pnext = NullTag)
+                : tag(ptag), previous(pprevious), next(pnext)
+            {
+            }
         };
     } // namespace gui
 } // namespace game
