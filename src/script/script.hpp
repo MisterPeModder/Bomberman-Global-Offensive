@@ -5,14 +5,39 @@
 ** Main scripting header
 */
 
+/// @file
+///
+/// Scripting interface utilities.
+
 #ifndef SCRIPT_SCRIPT_HPP_
 #define SCRIPT_SCRIPT_HPP_
+
+// Supported Javascript types.
+namespace bmjs
+{
+    /// Javascript string.
+    using String = char const *;
+
+    /// Javascript number.
+    using Number = double;
+} // namespace bmjs
 
 /// Define the existence of an API group.
 #define BMJS_DECLARE_API(name) void _bmjsKeepAlive_##name();
 
 #ifdef __EMSCRIPTEN__
     #include <emscripten/emscripten.h>
+
+namespace bmjs
+{
+    /// JavaScript function reference.
+    ///
+    /// May throw instances of bmjs::JsException.
+    ///
+    /// @tparam R The return type.
+    /// @tparam Args The argument types.
+    template <typename R, typename... Args> using Function = R (*)(Args...);
+} // namespace bmjs
 
     // clang-format off
 
@@ -30,15 +55,27 @@
 
     // clang-format on
 #else
+    #include <functional>
     #include <mujs.h>
+
+namespace bmjs
+{
+    /// JavaScript function reference.
+    ///
+    /// May throw instances of bmjs::JsException.
+    ///
+    /// @tparam R The return type.
+    /// @tparam Args The argument types.
+    template <typename R, typename... Args> using Function = std::function<R(Args...)>;
+} // namespace bmjs
 
     // clang-format off
 
     /// Start of API group declarations.
-    #define BMJS_API_START(name) extern "C" {
+    #define BMJS_API_START(name)
 
     /// End of API group declarations.
-    #define BMJS_API_END }
+    #define BMJS_API_END
 
     /// Call this to prevent the api group @c name from being excluded from the binary.
     #define BMJS_USE_API(name)
@@ -48,15 +85,5 @@
 
     // clang-format on
 #endif // defined(__EMSCRIPTEN__)
-
-// Supported Javascript types.
-namespace bmjs
-{
-    /// Javascript string.
-    using String = char const *;
-
-    /// Javascript number.
-    using Number = double;
-} // namespace bmjs
 
 #endif // !defined(SCRIPT_SCRIPT_HPP_)

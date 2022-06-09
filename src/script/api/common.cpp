@@ -10,6 +10,7 @@
 #include <unordered_map>
 
 #include "logger/Logger.hpp"
+#include "script/JsException.hpp"
 #include "script/script.hpp"
 
 /// Source Engine styled CVARS. Just for testing, of course.
@@ -38,5 +39,16 @@ BMJS_DEFINE bmjs::Number common_getCVar(bmjs::String name)
 }
 
 BMJS_DEFINE void common_log(bmjs::String message) { Logger::logger.log(Logger::Severity::Information, message); }
+
+BMJS_DEFINE void common_callMeBack(bmjs::Function<bmjs::Number, bmjs::Number> callback)
+{
+    try {
+        auto res = callback(42.0);
+
+        Logger::logger.log(Logger::Severity::Information, [res](auto &out) { out << "Callback returned: " << res; });
+    } catch (bmjs::JsException const &error) {
+        Logger::logger.log(Logger::Severity::Error, [&](auto &out) { out << "Callback has thrown: " << error.what(); });
+    }
+}
 
 BMJS_API_END

@@ -6,6 +6,9 @@ var bm;
 
 (function (bm) {
     bm.common = {
+        callMeBack: function (callback) {
+            return ccall('common_callMeBack', 'undefined', ['number'], [addFunction(callback, 'dd')]);
+        },
         getCVar: cwrap('common_getCVar', 'number', ['string']),
         log: cwrap('common_log', 'undefined', ['string']),
         setCVar: cwrap('common_setCVar', 'number', ['string', 'number'])

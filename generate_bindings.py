@@ -15,9 +15,72 @@ Example:
 
 from collections import OrderedDict
 from dataclasses import dataclass
+import re
 import sys
 import os
 from typing import Iterator, TextIO
+
+
+class JsType:
+    def c_repr(self, name: str) -> str:
+        return f"{self} {name}"
+
+    def js_repr(self) -> str:
+        return str(self)
+
+
+@dataclass
+class JsArg:
+    type: JsType
+    name: str
+
+    def __str__(self) -> str:
+        return self.type.c_repr(self.name)
+
+
+@dataclass
+class JsVoid(JsType):
+    def __str__(self) -> str:
+        return 'void'
+
+    def js_repr(self) -> str:
+        return 'undefined'
+
+
+@dataclass
+class JsNumber(JsType):
+    def __str__(self) -> str:
+        return 'bmjs::Number'
+
+    def js_repr(self) -> str:
+        return 'number'
+
+
+@dataclass
+class JsString(JsType):
+    def __str__(self) -> str:
+        return 'bmjs::String'
+
+    def js_repr(self) -> str:
+        return 'string'
+
+
+@dataclass
+class JsFunction(JsType):
+    args: list[JsType]
+    returns: JsType
+
+    def __str__(self) -> str:
+        args = ', '.join([str(arg) for arg in self.args])
+        return f"bmjs::Function<{', '.join([str(self.returns), args])}>"
+
+    def js_repr(self) -> str:
+        return 'number'
+
+    def llvm_sig(self) -> str:
+        if isinstance(self.returns, JsVoid):
+            return 'v' + 'd' * len(self.args)
+        return 'd' * (len(self.args) + 1)
 
 
 @dataclass(eq=True, order=True)
@@ -26,9 +89,45 @@ class Prototype:
 
     name: str
     raw_name: str
-    args: list[tuple[str, str]]
-    returns: str
+    args: list[JsArg]
+    returns: JsType
     scope: str
+
+
+def parse_type(input: str) -> tuple[JsType, str]:
+    input = input.lstrip()
+    if input.startswith('void'):
+        return (JsVoid(), input[4:])
+    elif input.startswith('bmjs::Number'):
+        return (JsNumber(), input[12:])
+    elif input.startswith('bmjs::String'):
+        return (JsString(), input[12:])
+    elif input.startswith('bmjs::Function<'):
+        return (JsFunction([], JsVoid()), input[15:])
+    raise Exception(f"Unsupported type: {input}")
+
+
+def parse_arg(input: str) -> tuple[JsArg, str]:
+    [type, input] = parse_type(input)
+    input = input.lstrip()
+
+    if isinstance(type, JsFunction):
+        [template_params, input] = input.split('>', maxsplit=1)
+        input = input.lstrip()
+        args_str = template_params.split(',')
+
+        type.returns, _ = parse_type(args_str[0])
+
+        for arg_str in args_str[1:]:
+            arg_type, _ = parse_type(arg_str)
+            type.args.append(arg_type)
+
+    name1 = input.split(',', maxsplit=1)[0]
+    name2 = input.split(')', maxsplit=1)[0]
+    if len(name1) < len(name2):
+        return (JsArg(type, name1), input[len(name1) + 1:])
+    else:
+        return (JsArg(type, name2), input[len(name2):])
 
 
 def read_prototype(line: str, lines: Iterator[str], scope: str) -> Prototype | None:
@@ -42,16 +141,15 @@ def read_prototype(line: str, lines: Iterator[str], scope: str) -> Prototype | N
             break
         line += next_line.strip()
     prototype = line.removeprefix('BMJS_DEFINE').split('{')[0].strip()
-    [returns, rest] = prototype.split(maxsplit=1)
+    [returns_str, rest] = prototype.split(maxsplit=1)
     [raw_name, args_str] = rest.split(sep='(', maxsplit=1)
-    args_str = args_str[:-1]
 
-    args: list[tuple[str, str]] = []
+    returns, _ = parse_type(returns_str)
 
-    if args_str != '':
-        for arg_str in args_str.split(','):
-            type_and_name = arg_str.split()
-            args.append((type_and_name[0], type_and_name[1]))
+    args: list[JsArg] = []
+    while args_str != ')':
+        arg, args_str = parse_arg(args_str)
+        args.append(arg)
 
     [function_scope, name] = raw_name.split('_', maxsplit=1)
 
@@ -108,42 +206,66 @@ def read_dir_prototypes(path: str) -> list[Prototype]:
 
 
 def emit_function_prototype(out: TextIO, prototype: Prototype) -> None:
-    args_str = ', '.join([f"{name} {type}" for (name, type) in prototype.args])
-    print(
-        f"    {prototype.returns} {prototype.raw_name}({args_str});", file=out)
+    args_str = ', '.join([str(arg) for arg in prototype.args])
+    print(f"{prototype.returns} {prototype.raw_name}({args_str});", file=out)
 
 
 def emit_function_prototypes(out: TextIO, prototypes: list[Prototype]) -> None:
-    print('extern "C"', file=out)
-    print('{', file=out)
-
     for prototype in prototypes:
         emit_function_prototype(out, prototype)
-
-    print('}', file=out)
     print(file=out)
 
 
-def emit_function_arg(out: TextIO, index: int, type: str, name: str) -> None:
-    print(f"        {type} {name} = ", end='', file=out)
-    match (type):
-        case 'bmjs::Number':
-            print(f"js_tonumber(state, {index});", file=out)
-        case 'bmjs::String':
-            print(f"js_tostring(state, {index});", file=out)
+def emit_function_arg(out: TextIO, index: int, arg: JsArg, prototype: Prototype) -> None:
+    if isinstance(arg.type, JsNumber):
+        print(f"        {arg} = js_tonumber(state, {index});", file=out)
+    elif isinstance(arg.type, JsString):
+        print(f"        {arg} = js_tostring(state, {index});", file=out)
+    elif isinstance(arg.type, JsFunction):
+        registry_name = f"\"{prototype.scope}_{prototype.name}_callback\""
+        lambda_args = ', '.join(
+            [f"bmjs::Number {arg.name}_param_{i}" for i in range(len(arg.type.args))])
+
+        print(f"""        js_copy(state, {index});
+        js_setregistry(state, {registry_name});
+        {arg} = [state]({lambda_args}) {{
+            js_getregistry(state, {registry_name});
+            js_pushundefined(state);""", file=out)
+
+        for i in range(len(arg.type.args)):
+            print(
+                f"            js_pushnumber(state, {arg.name}_param_{i});", file=out)
+
+        print(f"""
+            if (js_pcall(state, 1)) {{
+                bmjs::JsException error(js_tostring(state, -1));
+                js_pop(state, 1);
+                throw error;
+            }}""", file=out)
+
+        if isinstance(arg.type.returns, JsNumber):
+            print(f"""
+            {arg.type.returns.c_repr('result')} = js_tonumber(state, -1);
+            js_pop(state, 1);
+            return result;
+        }};""", file=out)
+        else:
+            print(f"""
+            js_pop(state, 1);
+        }};""", file=out)
 
 
 def emit_function_args(out: TextIO, prototype: Prototype) -> None:
-    for i, (type, name) in enumerate(prototype.args):
-        emit_function_arg(out, i + 1, type, name)
+    for i, arg in enumerate(prototype.args):
+        emit_function_arg(out, i + 1, arg, prototype)
     if prototype.args != []:
         print(file=out)
 
 
 def emit_function_call(out: TextIO, prototype: Prototype) -> None:
-    args_str = ', '.join([name for (_, name) in prototype.args])
+    args_str = ', '.join([arg.name for arg in prototype.args])
 
-    if prototype.returns == 'void':
+    if isinstance(prototype.returns, JsVoid):
         print(f"        ::{prototype.raw_name}({args_str});", file=out)
     else:
         print(
@@ -151,13 +273,12 @@ def emit_function_call(out: TextIO, prototype: Prototype) -> None:
 
 
 def emit_function_result(out: TextIO, prototype: Prototype) -> None:
-    match (prototype.returns):
-        case 'void':
-            print("        js_pushundefined(state);", file=out)
-        case 'bmjs::Number':
-            print("        js_pushnumber(state, result);", file=out)
-        case 'bmjs::String':
-            print("        js_pushstring(state, result);", file=out)
+    if isinstance(prototype.returns, JsVoid):
+        print("        js_pushundefined(state);", file=out)
+    elif isinstance(prototype.returns, JsNumber):
+        print("        js_pushnumber(state, result);", file=out)
+    elif isinstance(prototype.returns, JsString):
+        print("        js_pushstring(state, result);", file=out)
 
 
 def emit_function(out: TextIO, prototype: Prototype) -> None:
@@ -253,6 +374,7 @@ def emit_cxx_bindings(out: TextIO, prototypes: list[Prototype], scopes: OrderedD
 
     print("""
 #ifndef __EMSCRIPTEN__
+    #include "script/JsException.hpp"
     #include "script/script.hpp"
 """, file=out)
 
@@ -263,17 +385,29 @@ def emit_cxx_bindings(out: TextIO, prototypes: list[Prototype], scopes: OrderedD
     print("""#endif // !defined(__EMSCRIPTEN__)""", file=out)
 
 
-def to_js_type(type: str) -> str:
-    match (type):
-        case 'bmjs::Number': return "'number'"
-        case 'bmjs::String': return "'string'"
-        case _: return "'undefined'"
-
-
 def emit_js_scope_binding(out: TextIO, prototype: Prototype, terminator: str = '') -> None:
-    args = ", ".join([to_js_type(type) for type, _ in prototype.args])
-    print(
-        f"        {prototype.name}: cwrap('{prototype.raw_name}', {to_js_type(prototype.returns)}, [{args}]){terminator}", file=out)
+    arg_types = ', '.join(
+        [f"'{arg.type.js_repr()}'" for arg in prototype.args])
+    definition = f"'{prototype.raw_name}', '{prototype.returns.js_repr()}', [{arg_types}]"
+
+    print(f"        {prototype.name}: ", file=out, end='')
+
+    if any([isinstance(arg.type, JsFunction) for arg in prototype.args]):
+        params = ', '.join([arg.name for arg in prototype.args])
+        call_args: list[str] = []
+
+        for arg in prototype.args:
+            if isinstance(arg.type, JsFunction):
+                call_args.append(
+                    f"addFunction({arg.name}, '{arg.type.llvm_sig()}')")
+            else:
+                call_args.append(arg.name)
+
+        print(f"""function ({params}) {{
+            return ccall({definition}, [{', '.join(call_args)}]);
+        }}{terminator}""", file=out)
+    else:
+        print(f"cwrap({definition}){terminator}", file=out)
 
 
 def emit_js_scope_bindings(out: TextIO, scope: str, prototypes: list[Prototype]) -> None:
@@ -285,7 +419,6 @@ def emit_js_scope_bindings(out: TextIO, scope: str, prototypes: list[Prototype])
         emit_js_scope_binding(out, prototypes[-1])
 
     print('    };', file=out)
-    pass
 
 
 def emit_js_bindings(out: TextIO, scopes: OrderedDict[str, list[Prototype]]) -> None:

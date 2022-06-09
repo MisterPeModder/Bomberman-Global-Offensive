@@ -12,20 +12,43 @@
 /// DO NOT EDIT!
 ///
 /// Available groups:
-/// - common (3 functions)
+/// - common (4 functions)
 
 #ifndef __EMSCRIPTEN__
+    #include "script/JsException.hpp"
     #include "script/script.hpp"
 
-extern "C"
-{
-    bmjs::Number common_getCVar(bmjs::String name);
-    void common_log(bmjs::String message);
-    bmjs::Number common_setCVar(bmjs::String name, bmjs::Number value);
-}
+void common_callMeBack(bmjs::Function<bmjs::Number, bmjs::Number> callback);
+bmjs::Number common_getCVar(bmjs::String name);
+void common_log(bmjs::String message);
+bmjs::Number common_setCVar(bmjs::String name, bmjs::Number value);
 
 extern "C"
 {
+    static void common_callMeBack_mujs(js_State *state)
+    {
+        js_copy(state, 1);
+        js_setregistry(state, "common_callMeBack_callback");
+        bmjs::Function<bmjs::Number, bmjs::Number> callback = [state](bmjs::Number callback_param_0) {
+            js_getregistry(state, "common_callMeBack_callback");
+            js_pushundefined(state);
+            js_pushnumber(state, callback_param_0);
+
+            if (js_pcall(state, 1)) {
+                bmjs::JsException error(js_tostring(state, -1));
+                js_pop(state, 1);
+                throw error;
+            }
+
+            bmjs::Number result = js_tonumber(state, -1);
+            js_pop(state, 1);
+            return result;
+        };
+
+        ::common_callMeBack(callback);
+        js_pushundefined(state);
+    }
+
     static void common_getCVar_mujs(js_State *state)
     {
         bmjs::String name = js_tostring(state, 1);
@@ -58,6 +81,9 @@ namespace bmjs
     static void registerMuJSBindings_common(js_State *state)
     {
         js_newobject(state);
+
+        js_newcfunction(state, &::common_callMeBack_mujs, "callMeBack", 1);
+        js_setproperty(state, -2, "callMeBack");
 
         js_newcfunction(state, &::common_getCVar_mujs, "getCVar", 1);
         js_setproperty(state, -2, "getCVar");

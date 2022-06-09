@@ -18,4 +18,6 @@ var game;
     });
 
     game.log = bm.common.log
+
+    game.callMeBack = bm.common.callMeBack;
 })(game || (game = {}));

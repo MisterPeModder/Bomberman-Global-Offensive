@@ -8,6 +8,8 @@ set(SRC
 	${SRCROOT}/bindings.cpp
 	${SRCROOT}/Engine.cpp
 	${INCROOT}/Engine.hpp
+	${SRCROOT}/JsException.cpp
+	${INCROOT}/JsException.hpp
 	${INCROOT}/script.hpp
 	PARENT_SCOPE)
 
