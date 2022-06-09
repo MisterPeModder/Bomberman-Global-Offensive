@@ -7,11 +7,7 @@
 
 #include "InputManager.hpp"
 #include "components/Controlable.hpp"
-#include "ecs/Storage.hpp"
-#include "ecs/World.hpp"
 #include "ecs/join.hpp"
-#include "ecs/system/SystemData.hpp"
-#include "game/Users.hpp"
 #include "game/gui/components/Widget.hpp"
 
 namespace game

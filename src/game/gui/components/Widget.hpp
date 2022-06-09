@@ -8,36 +8,62 @@
 #ifndef GAME_GUI_COMPONENTS_WIDGET_HPP_
 #define GAME_GUI_COMPONENTS_WIDGET_HPP_
 
-#include "ecs/Component.hpp"
-#include "ecs/Entity.hpp"
+#include "IWidgetComponent.hpp"
 #include "ecs/Storage.hpp"
-#include "ecs/System.hpp"
-#include "game/Users.hpp"
 
 namespace game
 {
     namespace gui
     {
-        struct Widget : public ecs::Component {
-            using WidgetTag = size_t;
-            static constexpr WidgetTag NullTag = -1;
-            WidgetTag tag;
+        /// Widget component.
+        struct Widget final : public IWidgetComponent {
+            /// Widget Id, mandatory to link widgets together.
+            using WidgetId = size_t;
+            /// Id meaning none.
+            static constexpr WidgetId NullTag = -1;
+            /// Id of the widget
+            WidgetId id;
 
-            WidgetTag left;
-            WidgetTag right;
-            WidgetTag up;
-            WidgetTag down;
+            /// Id of the left widget
+            WidgetId left;
+            /// Id of the right widget
+            WidgetId right;
+            /// Id of the top widget
+            WidgetId up;
+            /// Id of the bottom widget
+            WidgetId down;
+            /// If the widget is the one selected
             bool selected;
 
-            Widget(WidgetTag ptag, WidgetTag pleft = NullTag, WidgetTag pright = NullTag, WidgetTag pup = NullTag,
-                WidgetTag pdown = NullTag, bool pselected = false)
-                : tag(ptag), left(pleft), right(pright), up(pup), down(pdown), selected(pselected)
+            /// Construct a new Widget component
+            /// @warning Only one widget should be selected, multiple widgets selected may lead to undefined behavior.
+            ///
+            /// @param pid id of the widget.
+            /// @param pleft id of the left widget.
+            /// @param pright id of the right widget.
+            /// @param pup id of the top widget.
+            /// @param pdown id of the bottom widget.
+            /// @param pselected if the widget is selected.
+            ///
+            Widget(WidgetId pid, WidgetId pleft = NullTag, WidgetId pright = NullTag, WidgetId pup = NullTag,
+                WidgetId pdown = NullTag, bool pselected = false)
+                : id(pid), left(pleft), right(pright), up(pup), down(pdown), selected(pselected)
             {
             }
 
-            bool update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
+            /// @copydoc IWidgetComponent::update
+            bool update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) override final;
 
           private:
+            /// Try to update a widget as a given component.
+            ///
+            /// @tparam T widget component to test.
+            /// @param self entity @a owning the component.
+            /// @param data view on the world.
+            /// @param event action event.
+            /// @return true if the component consumed the event
+            /// @return false if the event wasn't used.
+            ///
             template <typename T>
             static bool tryUpdate(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
             {
@@ -53,6 +79,13 @@ namespace game
                 }
             }
 
+            /// Update the selected widget.
+            ///
+            /// @param data view on the world.
+            /// @param event action event.
+            /// @return true if the selection changed
+            /// @return false if the selected widget hasn't changed.
+            ///
             bool updateSelection(ecs::SystemData data, const Users::ActionEvent &event);
         };
     } // namespace gui

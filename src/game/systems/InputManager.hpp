@@ -13,7 +13,14 @@
 
 namespace game
 {
+    /// System managing all the users inputs.
     struct InputManager : public ecs::System {
+        /// Retreive all the users @ref Users::ActionEvent and send them to the controlable entities matching the
+        /// UserId.
+        ///
+        /// @note Widgets will receive the events only if they are selected.
+        ///
+        /// @param data view on the world.
         void run(ecs::SystemData data) override final;
 
       private:

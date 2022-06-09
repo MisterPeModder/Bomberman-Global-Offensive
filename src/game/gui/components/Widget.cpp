@@ -33,7 +33,7 @@ namespace game
                     && (event.action != GameAction::MOVE_UP || up == NullTag)
                     && (event.action != GameAction::MOVE_DOWN || down == NullTag)))
                 return false;
-            WidgetTag newSelected;
+            WidgetId newSelected;
 
             switch (event.action) {
                 case GameAction::MOVE_LEFT: newSelected = left; break;

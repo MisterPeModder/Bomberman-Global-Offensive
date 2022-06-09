@@ -12,7 +12,11 @@
 
 namespace game
 {
+    /// Draw text system.
     struct DrawText : public ecs::System {
+        /// Draw all the entities with the components Position and Textual.
+        ///
+        /// @param data view on the world.
         void run(ecs::SystemData data) override final;
     };
 } // namespace game

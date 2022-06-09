@@ -26,11 +26,20 @@ namespace game
         /// @retval false otherwise.
         using ActionCallback = std::function<bool(ecs::Entity, ecs::SystemData, const Users::ActionEvent &)>;
 
-        /// Id of the user controlling the widget
+        /// Id of the user controlling the widget.
         User::UserId userId;
+        /// Callback called when an action is detected for the user @c userId.
         ActionCallback callback;
 
+        /// Construct a new Controlable component.
+        ///
+        /// @param id id of the user controling the component.
         Controlable(User::UserId id) : userId(id) {}
+
+        /// Construct a new Controlable component.
+        ///
+        /// @param id id of the user controling the component.
+        /// @param pcallback callback called when an action of the listened user is detected.
         Controlable(User::UserId id, ActionCallback pcallback) : userId(id), callback(pcallback) {}
     };
 } // namespace game
