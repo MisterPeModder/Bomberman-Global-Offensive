@@ -5,6 +5,8 @@ set (SRC
 	${SRC}
 	${SRCROOT}/DrawText.hpp
 	${SRCROOT}/DrawText.cpp
+	${SRCROOT}/InputManager.hpp
+	${SRCROOT}/InputManager.cpp
 	PARENT_SCOPE)
 
 set(INCDIRS 
