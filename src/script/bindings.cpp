@@ -12,67 +12,73 @@
 /// DO NOT EDIT!
 ///
 /// Available groups:
-/// - common (4 functions)
+/// - common (3 functions)
 
 #ifndef __EMSCRIPTEN__
     #include "script/script.hpp"
 
 extern "C"
 {
-    bmjs::Number bmjs_common_setCVar(bmjs::String name, bmjs::Number value);
-    bmjs::Number bmjs_common_getCVar(bmjs::String name);
-    void bmjs_common_doNothing();
-    int bmjs_common_helloWorld();
+    bmjs::Number common_getCVar(bmjs::String name);
+    void common_log(bmjs::String message);
+    bmjs::Number common_setCVar(bmjs::String name, bmjs::Number value);
 }
 
 extern "C"
 {
-    static void bmjs_common_setCVar_mujs(js_State *state)
+    static void common_getCVar_mujs(js_State *state)
+    {
+        bmjs::String name = js_tostring(state, 1);
+
+        bmjs::Number result = ::common_getCVar(name);
+        js_pushnumber(state, result);
+    }
+
+    static void common_log_mujs(js_State *state)
+    {
+        bmjs::String message = js_tostring(state, 1);
+
+        ::common_log(message);
+        js_pushundefined(state);
+    }
+
+    static void common_setCVar_mujs(js_State *state)
     {
         bmjs::String name = js_tostring(state, 1);
         bmjs::Number value = js_tonumber(state, 2);
 
-        bmjs::Number result = ::bmjs_common_setCVar(name, value);
+        bmjs::Number result = ::common_setCVar(name, value);
         js_pushnumber(state, result);
-    }
-
-    static void bmjs_common_getCVar_mujs(js_State *state)
-    {
-        bmjs::String name = js_tostring(state, 1);
-
-        bmjs::Number result = ::bmjs_common_getCVar(name);
-        js_pushnumber(state, result);
-    }
-
-    static void bmjs_common_doNothing_mujs(js_State *state)
-    {
-        ::bmjs_common_doNothing();
-        js_pushundefined(state);
-    }
-
-    static void bmjs_common_helloWorld_mujs(js_State *state)
-    {
-        int result = ::bmjs_common_helloWorld();
     }
 }
 
 namespace bmjs
 {
+    /// Registers the functions in the common group.
+    static void registerMuJSBindings_common(js_State *state)
+    {
+        js_newobject(state);
+
+        js_newcfunction(state, &::common_getCVar_mujs, "getCVar", 1);
+        js_setproperty(state, -2, "getCVar");
+
+        js_newcfunction(state, &::common_log_mujs, "log", 1);
+        js_setproperty(state, -2, "log");
+
+        js_newcfunction(state, &::common_setCVar_mujs, "setCVar", 2);
+        js_setproperty(state, -2, "setCVar");
+
+        js_setproperty(state, -2, "common");
+    }
+
+    /// Registers the JS bindings in the 'bm' global object.
     void registerMuJSBindings(js_State *state)
     {
-        // register all bound functions as globals
+        js_newobject(state);
 
-        js_newcfunction(state, &::bmjs_common_setCVar_mujs, "bmjs_common_setCVar", 2);
-        js_setglobal(state, "bmjs_common_setCVar");
+        registerMuJSBindings_common(state);
 
-        js_newcfunction(state, &::bmjs_common_getCVar_mujs, "bmjs_common_getCVar", 1);
-        js_setglobal(state, "bmjs_common_getCVar");
-
-        js_newcfunction(state, &::bmjs_common_doNothing_mujs, "bmjs_common_doNothing", 0);
-        js_setglobal(state, "bmjs_common_doNothing");
-
-        js_newcfunction(state, &::bmjs_common_helloWorld_mujs, "bmjs_common_helloWorld", 0);
-        js_setglobal(state, "bmjs_common_helloWorld");
+        js_setglobal(state, "bm");
     }
 } // namespace bmjs
 
