@@ -116,7 +116,7 @@ int main()
     camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
 
     raylib::core::Vector3 pos(0, -5, 0);
-    raylib::core::Vector3 scale(1, 1, 1);
+    raylib::core::Vector3 size(1, 1, 1);
     raylib::core::Vector3 rotationAxis(1, 0, 0);
     float rotationAngle = -90;
 
@@ -129,7 +129,7 @@ int main()
     world.addEntity()
         .with<game::components::Model>(testingModel)
         .with<game::components::Position>(pos)
-        .with<game::components::Scale>(scale)
+        .with<game::components::Size>(size)
         .with<game::components::RotationAngle>(rotationAngle)
         .with<game::components::RotationAxis>(rotationAxis)
         .with<game::components::Color>(raylib::core::Color::RED)
