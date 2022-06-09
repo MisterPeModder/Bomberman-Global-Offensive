@@ -35,11 +35,19 @@ add_library(libbomberman ${SRC})
 
 target_include_directories(${LIB_NAME} PRIVATE ${INCDIRS})
 target_include_directories(${LIB_NAME} PUBLIC ${INCROOT})
-target_link_libraries(${LIB_NAME} PUBLIC raylib mujs)
+
+target_link_libraries(${LIB_NAME} PUBLIC raylib)
 
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
-target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} raylib mujs)
+target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} raylib)
+
+if (NOT EMSCRIPTEN)
+    find_package(mujs REQUIRED)
+
+    target_link_libraries(${LIB_NAME} PUBLIC mujs)
+    target_link_libraries(${TARGET_NAME} PRIVATE ${LIB_NAME} mujs)
+endif()
 
 if (EMSCRIPTEN)
     # Use our HTML shell instead of the default one provided by Emscripten
