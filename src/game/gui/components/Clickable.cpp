@@ -27,9 +27,8 @@ namespace game
                     onStateChanged(self, state);
                 if (newState == State::Default && onClick)
                     onClick(self);
-                return true;
-            } else
-                return false;
+            }
+            return true;
         };
     } // namespace gui
 } // namespace game

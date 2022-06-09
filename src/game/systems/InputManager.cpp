@@ -14,8 +14,6 @@
 #include "game/Users.hpp"
 #include "game/gui/components/Widget.hpp"
 
-#include "logger/Logger.hpp"
-
 namespace game
 {
     void InputManager::run(ecs::SystemData data)

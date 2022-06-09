@@ -9,16 +9,13 @@
 #define GAME_GUI_COMPONENTS_CLICKABLE_HPP_
 
 #include <functional>
-#include "ecs/Component.hpp"
-#include "ecs/Entity.hpp"
-#include "ecs/System.hpp"
-#include "game/Users.hpp"
+#include "IWidgetComponent.hpp"
 
 namespace game
 {
     namespace gui
     {
-        struct Clickable : public ecs::Component {
+        struct Clickable final : public IWidgetComponent {
             enum class State { Default, Pressed };
 
             using OnClick = std::function<void(ecs::Entity)>;
@@ -34,7 +31,7 @@ namespace game
             {
             }
 
-            bool update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
+            bool update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) override final;
         };
     } // namespace gui
 } // namespace game

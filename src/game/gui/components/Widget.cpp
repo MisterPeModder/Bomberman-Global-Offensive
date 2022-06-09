@@ -7,9 +7,8 @@
 
 #include "Widget.hpp"
 
+#include "Checkable.hpp"
 #include "Clickable.hpp"
-
-#include "logger/Logger.hpp"
 
 namespace game
 {
@@ -18,6 +17,8 @@ namespace game
         bool Widget::update(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
         {
             if (tryUpdate<Clickable>(self, data, event))
+                return true;
+            if (tryUpdate<Checkable>(self, data, event))
                 return true;
             return false;
         }
