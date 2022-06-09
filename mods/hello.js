@@ -1,4 +1,10 @@
-// Very basic mod example
+"use strict"
+
+/**
+ * @file Very basic mod example.
+ */
+
+/// <reference path="api.d.ts" />
 
 game.log('The basic mod is loading...');
 

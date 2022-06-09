@@ -1,12 +1,12 @@
 "use strict"
 
 /**
- * @file Bomberman Modding API
+ * @file Bomberman Modding API (ES5-compatible).
  * 
  * Refer to the 'api.d.ts' file for more information.
  */
 
-/// <reference types="api.d.ts" />
+/// <reference path="api.d.ts" />
 
 /** @type {Game} */
 var game;

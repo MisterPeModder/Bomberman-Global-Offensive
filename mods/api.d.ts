@@ -1,5 +1,5 @@
 /**
- * @file Bomberman Modding API Definitions.
+ * @file Bomberman Modding API Definitions (ES5-compatible).
  */
 
 interface Game {
