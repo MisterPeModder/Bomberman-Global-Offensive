@@ -53,6 +53,9 @@ if (EMSCRIPTEN)
 
     # Make the contents of the mods directory available at the root of the site
     target_link_options(${TARGET_NAME} PUBLIC "SHELL:--preload-file ${PROJECT_SOURCE_DIR}/mods@mods")
+
+    # Make the contents of the assets directory available at the root of the site
+    target_link_options(${TARGET_NAME} PUBLIC "SHELL:--preload-file ${PROJECT_SOURCE_DIR}/assets@assets")
 endif()
 
 # Copy the executable to the root.
