@@ -5,6 +5,7 @@ set (SRC
 	${SRC}
 	${SRCROOT}/Controlable.hpp
 	${SRCROOT}/Textual.hpp
+	${SRCROOT}/Color.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS 
