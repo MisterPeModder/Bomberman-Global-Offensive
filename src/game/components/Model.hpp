@@ -7,9 +7,9 @@
 
 namespace game
 {
-    struct Model : public ecs::Component, public raylib::model::Model {
-        Model(raylib::model::Model &pmodel) : raylib::model::Model(pmodel) {}
-        Model(std::filesystem::path &path) : raylib::model::Model(path) {}
+    struct Model : public ecs::Component {
+        raylib::model::Model &model;
+        Model(raylib::model::Model &pmodel) : model(pmodel) {}
     };
 } // namespace game
 

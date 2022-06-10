@@ -17,6 +17,8 @@
 #include "game/components/Size.hpp"
 #include "raylib/model/Model.hpp"
 
+#include "logger/Logger.hpp"
+
 namespace game
 {
     namespace systems
@@ -27,8 +29,7 @@ namespace game
                 for (auto [model, pos, scale, color] :
                     ecs::join(data.getStorage<game::Model>(), data.getStorage<game::Position>(),
                         data.getStorage<game::Scale>(), data.getStorage<game::Color>())) {
-                    std::cout << "draw" << std::endl;
-                    model.draw(pos, scale.scale, color);
+                    model.model.draw(pos, scale.scale, color);
                 }
             }
         };
@@ -40,7 +41,7 @@ namespace game
                     ecs::join(data.getStorage<game::Model>(), data.getStorage<game::Position>(),
                         data.getStorage<game::RotationAxis>(), data.getStorage<game::RotationAngle>(),
                         data.getStorage<game::Size>(), data.getStorage<game::Color>())) {
-                    model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
+                    model.model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
                 }
             }
         };

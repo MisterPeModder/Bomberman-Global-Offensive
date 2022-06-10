@@ -17,10 +17,7 @@ namespace raylib
             load();
         }
 
-        Texture2D::Texture2D(raylib::textures::Image &image)
-        {
-            loadFromImage(image.asRaylib());
-        }
+        Texture2D::Texture2D(raylib::textures::Image &image) { loadFromImage(image.asRaylib()); }
 
         Texture2D::~Texture2D() { unload(); }
 
@@ -55,7 +52,8 @@ namespace raylib
             DrawTextureEx(_texture, position.asRaylib(), rotation, scale, tint.asRaylib());
         }
 
-        const ::Texture2D Texture2D::asRaylib() const { return _texture; }
+        const ::Texture2D &Texture2D::asRaylib() const { return _texture; }
+        ::Texture2D &Texture2D::asRaylib() { return _texture; }
 
     } // namespace textures
 

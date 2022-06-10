@@ -17,7 +17,7 @@ namespace game
             {
                 for (auto [model, animation] :
                     ecs::join(data.getStorage<game::Model>(), data.getStorage<game::Animation>())) {
-                    animation.updateModel(model);
+                    animation.updateModel(model.model);
                 }
             }
         };

@@ -121,6 +121,7 @@ namespace raylib
             raylib::core::Vector2 _position;
             raylib::core::Color _color;
             ::Image _image;
+            bool _loaded;
         };
     } // namespace textures
 
