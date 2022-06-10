@@ -10,6 +10,7 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/model/Animation.hpp"
+#include "raylib/model/Mesh.hpp"
 #include "raylib/model/Model.hpp"
 #include "raylib/raylib.hpp"
 
@@ -55,6 +56,8 @@ static void drawFrame(void *arg)
     Vector3 pos(0, -5, 0);
     Vector3 scale(1, 1, 1);
     Vector3 rotationAxis(1, 0, 0);
+
+    raylib::model::Mesh mesh = raylib::model::Mesh::genCube(1, 1, 1);
 
     raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();

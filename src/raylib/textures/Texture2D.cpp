@@ -50,6 +50,8 @@ namespace raylib
             DrawTextureEx(_texture, position.asRaylib(), rotation, scale, tint.asRaylib());
         }
 
+        const ::Texture2D Texture2D::asRaylib() const { return _texture; }
+
     } // namespace textures
 
 } // namespace raylib
