@@ -359,6 +359,8 @@ def emit_cxx_bindings(out: TextIO, prototypes: list[Prototype], scopes: OrderedD
 ** Generated File
 */
 
+// clang-format on
+
 /// @file
 /// @internal
 ///
@@ -382,7 +384,9 @@ def emit_cxx_bindings(out: TextIO, prototypes: list[Prototype], scopes: OrderedD
     emit_functions(out, prototypes)
     emit_register_functions(out, scopes)
 
-    print("""#endif // !defined(__EMSCRIPTEN__)""", file=out)
+    print("""#endif // !defined(__EMSCRIPTEN__)
+
+// clang-format off""", file=out)
 
 
 def emit_js_scope_binding(out: TextIO, prototype: Prototype, terminator: str = '') -> None:
