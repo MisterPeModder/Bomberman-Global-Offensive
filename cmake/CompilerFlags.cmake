@@ -35,7 +35,8 @@ elseif (COMPILER_TYPE MATCHES "clang")
     if (EMSCRIPTEN)
         message(STATUS "Enabling Emscripten-specific options")
 
-        add_link_options(-sNO_DISABLE_EXCEPTION_CATCHING -sUSE_GLFW=3 -sASSERTIONS=1 -sWASM=1 -sASYNCIFY -sEXPORTED_RUNTIME_METHODS=ccall,cwrap -sALLOW_TABLE_GROWTH)
+        add_compile_options(-fexceptions -sDISABLE_EXCEPTION_CATCHING=0)
+        add_link_options(-fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sUSE_GLFW=3 -sASSERTIONS=1 -sWASM=1 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap -sALLOW_TABLE_GROWTH)
         set(CMAKE_EXECUTABLE_SUFFIX ".html") # Build using a HTML shell template
     endif()
 endif()

@@ -25,6 +25,7 @@ if (BUILD_TEST_SUITE)
     # Disable error on Linux release builds
     if (COMPILER_TYPE MATCHES "gcc")
         target_compile_options(gtest PRIVATE "-Wno-error=restrict")
+        target_compile_options(gmock PRIVATE "-Wno-error=restrict")
     endif()
 
     enable_testing()
