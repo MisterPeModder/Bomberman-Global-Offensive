@@ -14,16 +14,16 @@
 #include "raylib/model/Model.hpp"
 #include "raylib/raylib.hpp"
 
-#include "util/util.hpp"
-#include "raylib/shapes/Cube.hpp"
-#include "raylib/shapes/Cone.hpp"
-#include "raylib/core/Vector3.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/join.hpp"
 #include "ecs/resource/Timer.hpp"
+#include "raylib/core/Vector3.hpp"
+#include "raylib/shapes/Cone.hpp"
+#include "raylib/shapes/Cube.hpp"
+#include "util/util.hpp"
 
 #include "game/map/Map.hpp"
 
@@ -147,7 +147,7 @@ static void setupLogger()
 ///
 ///
 ///
-struct Position : public ecs::Component , public raylib::core::Vector3 {
+struct Position : public ecs::Component, public raylib::core::Vector3 {
     Position(float px, float py, float pz) : raylib::core::Vector3(px, py, pz) {}
     Position(raylib::core::Vector3 &other) : raylib::core::Vector3(other) {}
 };
@@ -158,28 +158,31 @@ struct Size : public ecs::Component, public raylib::core::Vector3 {
 };
 
 struct CubeColor : public ecs::Component, public raylib::core::Color {
-    CubeColor(unsigned char cr, unsigned char cg, unsigned char cb, unsigned char ca) : raylib::core::Color(cr, cg, cb, ca) {}
+    CubeColor(unsigned char cr, unsigned char cg, unsigned char cb, unsigned char ca)
+        : raylib::core::Color(cr, cg, cb, ca)
+    {
+    }
     CubeColor(raylib::core::Color &other) : raylib::core::Color(other) {}
 };
 
 struct Cube : public ecs::Component {
     raylib::shapes::Cube cube;
 
-    Cube() :cube() {}
-    Cube(raylib::core::Vector3 position, raylib::core::Vector3 size, Color color) :cube(position, size, color) {}
+    Cube() : cube() {}
+    Cube(raylib::core::Vector3 position, raylib::core::Vector3 size, Color color) : cube(position, size, color) {}
 };
 
 struct ChangeCube : public ecs::System {
     void run(ecs::SystemData data) override final
     {
-        for (auto [cube, pos, col, size] : ecs::join(data.getStorage<Cube>(), data.getStorage<Position>(), data.getStorage<CubeColor>(), data.getStorage<Size>())) {
+        for (auto [cube, pos, col, size] : ecs::join(data.getStorage<Cube>(), data.getStorage<Position>(),
+                 data.getStorage<CubeColor>(), data.getStorage<Size>())) {
             cube.cube.setPosition(pos);
             cube.cube.setColor(col);
             cube.cube.setSize(size);
         }
     }
 };
-
 
 struct DrawingCube : public ecs::System {
     void run(ecs::SystemData data) override final
@@ -263,7 +266,6 @@ struct DrawingCube : public ecs::System {
 ///
 ///
 
-
 struct Map : public ecs::Component, public game::map::Map {
     Map(size_t width, size_t height);
 };
@@ -276,7 +278,6 @@ struct MakeMap : public ecs::System {
         }
     }
 };
-
 
 ///
 ///
@@ -293,10 +294,8 @@ void game_loop()
 {
     raylib::core::Camera3D camera;
     ecs::World world;
-    game::map::Map map;
+    game::map::Map map(23, 23);
     raylib::textures::Image image("download.jpeg");
-
-
 
     // raylib::model::Mesh mesh = mesh.genCubicMap(image, (Vector3){ 1.0f, 1.0f, 1.0f });
 
@@ -306,10 +305,10 @@ void game_loop()
 
     // std::cout << "test\n" << std::endl;
 
-    camera.setPosition({ 13.0f, 10.0f, 0 });  // Camera position
-    camera.setTarget({ (0 + (map.getWidth() / 2)), 0.0f, (map.getHeight() / 2) });      // Camera looking at point
-    camera.setUp({ 0.0f, 10.0f, 0.0f });          // Camera up vector (rotation towards target)
-    camera.setFovY(75.0f);                                // Camera field-of-view Y
+    camera.setPosition({20.0f, 20.0f, map.getWidth() / 2.f});             // Camera position
+    camera.setTarget({map.getWidth() / 2.f, 0.f, map.getHeight() / 2.f}); // Camera looking at point
+    camera.setUp({0.0f, 1.0f, 0.0f});                                     // Camera up vector (rotation towards target)
+    camera.setFovY(75.0f);                                                // Camera field-of-view Y
     camera.setProjection(CAMERA_PERSPECTIVE);
 
     world.addResource<ecs::Timer>();
@@ -318,20 +317,20 @@ void game_loop()
 
     std::cout << "test03\n" << std::endl;
 
-// create ground
-    auto wall = world.addEntity()
-            .with<Position>(0 + (map.getWidth() / 2), -0.5, 0 + (map.getHeight() / 2))
-            .with<Size>(map.getWidth(), 0.1, map.getHeight())
-            .with<CubeColor>(0, 228, 48, 255)
-            .with<Cube>()
-            .build();
+    // create ground
+    world.addEntity()
+        .with<Position>(0 + (map.getWidth() / 2.f), -0.5f, 0 + (map.getHeight() / 2.f))
+        .with<Size>(static_cast<float>(map.getWidth()), 0.1f, static_cast<float>(map.getHeight()))
+        .with<CubeColor>(0, 228, 48, 255)
+        .with<Cube>()
+        .build();
 
-// create border
-    for (int y = -1; y <= ((int) map.getHeight()); y++) {
-        for (int x = -1; x <= ((int) map.getWidth()); x++) {
-            if (x == -1 || x == ((int) map.getWidth()) || y == -1 || y == ((int) map.getHeight()))
-                auto wall = world.addEntity()
-                    .with<Position>(x, 0, y)
+    // create border
+    for (int y = -1; y <= ((int)map.getHeight()); y++) {
+        for (int x = -1; x <= ((int)map.getWidth()); x++) {
+            if (x == -1 || x == ((int)map.getWidth()) || y == -1 || y == ((int)map.getHeight()))
+                world.addEntity()
+                    .with<Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
                     .with<Size>(1.f, 1.f, 1.f)
                     .with<CubeColor>(0, 0, 250, 255)
                     .with<Cube>()
@@ -339,20 +338,20 @@ void game_loop()
         }
     }
 
-// create map
-    for (int y = 0; y != (int) map.getHeight(); y++) {
-        for (int x = 0; x != (int) map.getWidth(); x++) {
+    // create map
+    for (int y = 0; y != (int)map.getHeight(); y++) {
+        for (int x = 0; x != (int)map.getWidth(); x++) {
             if (map.getElement(x, y) == game::map::Map::Element::Crate) {
-                auto crate = world.addEntity()
-                    .with<Position>(x, 0, y)
+                world.addEntity()
+                    .with<Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
                     .with<Size>(1.f, 1.f, 1.f)
                     .with<CubeColor>(250, 0, 0, 255)
                     .with<Cube>()
                     .build();
             }
             if (map.getElement(x, y) == game::map::Map::Element::Wall) {
-                auto wall = world.addEntity()
-                    .with<Position>(x, 0, y)
+                world.addEntity()
+                    .with<Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
                     .with<Size>(1.f, 1.f, 1.f)
                     .with<CubeColor>(0, 0, 250, 255)
                     .with<Cube>()
@@ -371,7 +370,6 @@ void game_loop()
         };
         raylib::core::Window::drawFPS(10, 10);
     }
-
 }
 
 ///
