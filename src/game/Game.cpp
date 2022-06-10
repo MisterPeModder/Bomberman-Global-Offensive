@@ -34,10 +34,11 @@ namespace game
         size_t width = _map.getWidth();
         size_t depth = _map.getHeight();
 
-        camera.setPosition({width / 2.f, static_cast<float>(width), static_cast<float>(depth)}); // Camera position
-        camera.setTarget({width / 2.f, 0.f, depth / 2.f}); // Camera looking at point
-        camera.setUp({0.0f, 1.0f, 0.0f});                  // Camera up vector (rotation towards target)
-        camera.setFovY(75.0f);                             // Camera field-of-view Y
+        camera.setPosition(
+            {width / 2.f, 8 /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
+        camera.setTarget({width / 2.f, 0.f, depth / 2.f});                              // Camera looking at point
+        camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
+        camera.setFovY(75.0f);            // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);
 
         /// Add world ressources
@@ -48,19 +49,65 @@ namespace game
         _world.addSystem<ChangeCube>();
         _world.addSystem<DrawingCube>();
         _world.addSystem<Movement>();
+        _world.addSystem<Collisions>();
+
+        /// Ground
+        _world.addEntity()
+            .with<Position>(width / 2.f - 0.5f, 0.f, depth / 2.f - 0.5f)
+            .with<Size>(static_cast<float>(width), 0.1f, static_cast<float>(depth))
+            .with<CubeColor>(raylib::core::Color::RAY_WHITE)
+            .with<Cube>()
+            .build();
+
+        /// Walls, crates
+        for (float z = -1; static_cast<float>(z) < depth + 1; z++) {
+            for (float x = -1; static_cast<float>(x) < width + 1; x++) {
+                bool wall = false;
+                bool destructible = false;
+                raylib::core::Color color = raylib::core::Color(40, 40, 40);
+
+                if (z == -1 || x == -1 || z == depth || x == width)
+                    wall = true;
+                else {
+                    switch (_map.getElement(x, z)) {
+                        case map::Map::Element::Crate:
+                            // wall = true;
+                            destructible = true;
+                            color = raylib::core::Color(110, 85, 70);
+                            break;
+                        case map::Map::Element::Wall: wall = true; break;
+                        default: break;
+                    }
+                    wall = false;
+                }
+                if (wall) {
+                    auto &builder = _world.addEntity()
+                                        .with<Position>(x, 0.5f, z)
+                                        .with<Collidable>()
+                                        .with<Wall>()
+                                        .with<Cube>()
+                                        .with<Size>(1.f, 1.f, 1.f)
+                                        .with<CubeColor>(color);
+                    if (destructible)
+                        builder.with<Destructible>().build();
+                    else
+                        builder.build();
+                }
+            }
+        }
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
             Vector2 cell = _map.getPlayerStartingPosition(owner);
 
             _world.addEntity()
-                .with<Position>(cell.x, 0.5f, cell.y)
+                .with<Position>(cell.x, 1.f, cell.y)
                 .with<Velocity>()
                 .with<Living>(_params.livesCount)
                 .with<Collidable>()
                 .with<Player>()
                 .with<Cube>()
-                .with<Size>(1.f, 1.f, 1.f)
+                .with<Size>(0.7f, 2.f, 0.7f)
                 .with<CubeColor>(raylib::core::Color::RED)
                 .with<Controlable>(owner,
                     [this](ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) {
@@ -93,49 +140,6 @@ namespace game
                         return false;
                     })
                 .build();
-        }
-
-        /// Ground
-        _world.addEntity()
-            .with<Position>(width / 2.f - 0.5f, -0.5f, depth / 2.f - 0.5f)
-            .with<Size>(static_cast<float>(width), 0.1f, static_cast<float>(depth))
-            .with<CubeColor>(raylib::core::Color::RAY_WHITE)
-            .with<Cube>()
-            .build();
-
-        /// Walls, crates
-        for (float z = -1; static_cast<float>(z) < depth + 1; z++) {
-            for (float x = -1; static_cast<float>(x) < width + 1; x++) {
-                bool wall = false;
-                bool destructible = false;
-                raylib::core::Color color = raylib::core::Color(40, 40, 40);
-
-                if (z == -1 || x == -1 || z == depth || x == width)
-                    wall = true;
-                else
-                    switch (_map.getElement(x, z)) {
-                        case map::Map::Element::Crate:
-                            wall = true;
-                            destructible = true;
-                            color = raylib::core::Color(110, 85, 70);
-                            break;
-                        case map::Map::Element::Wall: wall = true; break;
-                        default: break;
-                    }
-                if (wall) {
-                    auto &builder = _world.addEntity()
-                                        .with<Position>(x, 0.f, z)
-                                        .with<Collidable>()
-                                        .with<Wall>()
-                                        .with<Cube>()
-                                        .with<Size>(1.f, 1.f, 1.f)
-                                        .with<CubeColor>(color);
-                    if (destructible)
-                        builder.with<Destructible>().build();
-                    else
-                        builder.build();
-                }
-            }
         }
     }
 

@@ -7,8 +7,7 @@ set (SRC
 	${SRCROOT}/Controlable.hpp
 	${SRCROOT}/Destructible.hpp
 	${SRCROOT}/Living.hpp
-	${SRCROOT}/Movable.hpp
-	${SRCROOT}/Player.hpp
+	${SRCROOT}/Velocity.hpp
 	${SRCROOT}/Position.hpp
 	${SRCROOT}/Size.hpp
 	${SRCROOT}/Textual.hpp
