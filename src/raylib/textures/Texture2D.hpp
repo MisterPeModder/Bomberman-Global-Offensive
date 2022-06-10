@@ -35,7 +35,7 @@ namespace raylib
             ///
             /// @param position The position of the texture on the screen.
             /// @param fileName The name of the file that contains the texture.
-            Texture2D(const std::filesystem::path &fileName, Vector2 position = {});
+            Texture2D(const std::filesystem::path &fileName = {}, Vector2 position = {});
 
             /// The destructor for the Texture2D class
             ~Texture2D();
