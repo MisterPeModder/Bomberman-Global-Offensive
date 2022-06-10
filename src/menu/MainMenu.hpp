@@ -23,15 +23,13 @@ namespace Menu
         ~MainMenu();
         /// Use it to run & display the main menu
         void run();
-        struct Position : public ecs::Component {
-            float x, y;
-
-            Position(float px, float py) : x(px), y(py) {}
-        };
+        /// Create all buttons needed in the manu
+        void createsButtons();
 
       protected:
+
       private:
-        ecs::World world;
+        ecs::World menu;
         struct ButtonMenu : public ecs::System {};
     };
 } // namespace Menu

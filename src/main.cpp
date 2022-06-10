@@ -26,6 +26,8 @@
 #include "game/gui/components/Rectangle.hpp"
 #include "game/gui/components/Widget.hpp"
 
+#include "menu/MainMenu.hpp"
+
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
 #endif
@@ -59,6 +61,7 @@ static void drawFrame(void *arg)
     raylib::core::Vector3 pos(0, -5, 0);
     raylib::core::Vector3 scale(1, 1, 1);
     raylib::core::Vector3 rotationAxis(1, 0, 0);
+    Menu::MainMenu menu;
 
     raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();
@@ -73,6 +76,7 @@ static void drawFrame(void *arg)
     };
 
     world.runSystems();
+    //menu.run();
 
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
     raylib::core::Window::drawFPS(10, 10);
