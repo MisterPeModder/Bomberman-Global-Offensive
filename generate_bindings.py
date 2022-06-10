@@ -13,12 +13,10 @@ Example:
   ./generate_bindings.py src/script/api/ src/script/bindings.cpp src/script/bindings.js
 """
 
-from collections import OrderedDict
 from dataclasses import dataclass
-import re
 import sys
 import os
-from typing import Iterator, TextIO
+from typing import Iterator, List, Optional, TextIO, Tuple, OrderedDict
 
 
 class JsType:
@@ -67,7 +65,7 @@ class JsString(JsType):
 
 @dataclass
 class JsFunction(JsType):
-    args: list[JsType]
+    args: List[JsType]
     returns: JsType
 
     def __str__(self) -> str:
@@ -92,11 +90,11 @@ class Prototype:
     scope: str
     name: str
     raw_name: str
-    args: list[JsArg]
+    args: List[JsArg]
     returns: JsType
 
 
-def parse_type(input: str) -> tuple[JsType, str]:
+def parse_type(input: str) -> Tuple[JsType, str]:
     input = input.lstrip()
     if input.startswith('void'):
         return (JsVoid(), input[4:])
@@ -109,7 +107,7 @@ def parse_type(input: str) -> tuple[JsType, str]:
     raise Exception(f"Unsupported type: {input}")
 
 
-def parse_arg(input: str) -> tuple[JsArg, str]:
+def parse_arg(input: str) -> Tuple[JsArg, str]:
     [type, input] = parse_type(input)
     input = input.lstrip()
 
@@ -132,7 +130,7 @@ def parse_arg(input: str) -> tuple[JsArg, str]:
         return (JsArg(type, name2), input[len(name2):])
 
 
-def read_prototype(line: str, lines: Iterator[str], scope: str) -> Prototype | None:
+def read_prototype(line: str, lines: Iterator[str], scope: str) -> Optional[Prototype]:
     """Reads a function prototypes starting with BMJS_DEFINE."""
 
     if not line.startswith('BMJS_DEFINE'):
@@ -142,13 +140,13 @@ def read_prototype(line: str, lines: Iterator[str], scope: str) -> Prototype | N
         if next_line is None:
             break
         line += next_line.strip()
-    prototype = line.removeprefix('BMJS_DEFINE').split('{')[0].strip()
+    prototype = line[11:].split('{')[0].strip()
     [returns_str, rest] = prototype.split(maxsplit=1)
     [raw_name, args_str] = rest.split(sep='(', maxsplit=1)
 
     returns, _ = parse_type(returns_str)
 
-    args: list[JsArg] = []
+    args: List[JsArg] = []
     while args_str != ')':
         arg, args_str = parse_arg(args_str)
         args.append(arg)
@@ -162,10 +160,10 @@ def read_prototype(line: str, lines: Iterator[str], scope: str) -> Prototype | N
     return Prototype(scope, name, raw_name, args, returns)
 
 
-def read_prototypes(lines: Iterator[str]) -> list[Prototype]:
+def read_prototypes(lines: Iterator[str]) -> List[Prototype]:
     """Reads all functions prototypes starting with BMJS_DEFINE."""
 
-    prototypes: list[Prototype] = []
+    prototypes: List[Prototype] = []
     api_scope: str | None = None
 
     try:
@@ -191,10 +189,10 @@ def read_prototypes(lines: Iterator[str]) -> list[Prototype]:
     return prototypes
 
 
-def read_dir_prototypes(path: str) -> list[Prototype]:
+def read_dir_prototypes(path: str) -> List[Prototype]:
     """Recursively reads all API prototypes in the given directory path"""
 
-    prototypes: list[Prototype] = []
+    prototypes: List[Prototype] = []
 
     for file in os.listdir(path):
         sub_path = os.path.join(path, file)
@@ -212,7 +210,7 @@ def emit_function_prototype(out: TextIO, prototype: Prototype) -> None:
     print(f"{prototype.returns} {prototype.raw_name}({args_str});", file=out)
 
 
-def emit_function_prototypes(out: TextIO, prototypes: list[Prototype]) -> None:
+def emit_function_prototypes(out: TextIO, prototypes: List[Prototype]) -> None:
     for prototype in prototypes:
         emit_function_prototype(out, prototype)
     print(file=out)
@@ -293,7 +291,7 @@ def emit_function(out: TextIO, prototype: Prototype) -> None:
     print('    }', file=out)
 
 
-def emit_functions(out: TextIO, prototypes: list[Prototype]) -> None:
+def emit_functions(out: TextIO, prototypes: List[Prototype]) -> None:
     print('extern "C"', file=out)
     print('{', file=out)
 
@@ -313,7 +311,7 @@ def emit_scope(out: TextIO, prototype: Prototype) -> None:
         js_setglobal(state, \"{prototype.name}\");""", file=out)
 
 
-def emit_scope_registration(out: TextIO, scope: str, prototypes: list[Prototype]) -> None:
+def emit_scope_registration(out: TextIO, scope: str, prototypes: List[Prototype]) -> None:
     print(f"""    /// Registers the functions in the {scope} group.
     static void registerMuJSBindings_{scope}(js_State *state)
     {{
@@ -329,7 +327,7 @@ def emit_scope_registration(out: TextIO, scope: str, prototypes: list[Prototype]
 """, file=out)
 
 
-def emit_register_functions(out: TextIO, scopes: OrderedDict[str, list[Prototype]]) -> None:
+def emit_register_functions(out: TextIO, scopes: OrderedDict[str, List[Prototype]]) -> None:
     print("""namespace bmjs
 {""", file=out)
 
@@ -352,7 +350,7 @@ def emit_register_functions(out: TextIO, scopes: OrderedDict[str, list[Prototype
 """, file=out)
 
 
-def emit_cxx_bindings(out: TextIO, prototypes: list[Prototype], scopes: OrderedDict[str, list[Prototype]]) -> None:
+def emit_cxx_bindings(out: TextIO, prototypes: List[Prototype], scopes: OrderedDict[str, List[Prototype]]) -> None:
 
     print("""/*
 ** EPITECH PROJECT, 2022
@@ -400,7 +398,7 @@ def emit_js_scope_binding(out: TextIO, prototype: Prototype, terminator: str = '
 
     if any([isinstance(arg.type, JsFunction) for arg in prototype.args]):
         params = ', '.join([arg.name for arg in prototype.args])
-        call_args: list[str] = []
+        call_args: List[str] = []
 
         for arg in prototype.args:
             if isinstance(arg.type, JsFunction):
@@ -416,7 +414,7 @@ def emit_js_scope_binding(out: TextIO, prototype: Prototype, terminator: str = '
         print(f"cwrap({definition}){terminator}", file=out)
 
 
-def emit_js_scope_bindings(out: TextIO, scope: str, prototypes: list[Prototype]) -> None:
+def emit_js_scope_bindings(out: TextIO, scope: str, prototypes: List[Prototype]) -> None:
     print(f"    bm.{scope} = {{", file=out)
 
     for prototype in prototypes[:-1]:
@@ -427,7 +425,7 @@ def emit_js_scope_bindings(out: TextIO, scope: str, prototypes: list[Prototype])
     print('    };', file=out)
 
 
-def emit_js_bindings(out: TextIO, scopes: OrderedDict[str, list[Prototype]]) -> None:
+def emit_js_bindings(out: TextIO, scopes: OrderedDict[str, List[Prototype]]) -> None:
     print("""/**
  * @file Browser bindings generated by 'generate_bindings.py', DO NOT EDIT!
  */
@@ -442,7 +440,7 @@ var bm;
     print('})(bm || (bm = {}));', file=out)
 
 
-def main(args: list[str]) -> None:
+def main(args: List[str]) -> None:
     if len(args) != 4:
         message = f"USAGE: {args[0]} API_DIRECTORY CXX_OUTPUT_FILE JS_OUTPUT_FILE"
         if len(args) == 2 and (args[1] == '-h' or args[1] == '--help'):
@@ -456,7 +454,7 @@ def main(args: list[str]) -> None:
     prototypes = read_dir_prototypes(args[1])
     prototypes.sort()
 
-    scopes: OrderedDict[str, list[Prototype]] = OrderedDict()
+    scopes: OrderedDict[str, List[Prototype]] = OrderedDict()
     for prototype in prototypes:
         if prototype.scope in scopes:
             scopes[prototype.scope].append(prototype)
