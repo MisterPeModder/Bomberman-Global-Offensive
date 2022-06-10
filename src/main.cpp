@@ -13,12 +13,26 @@
 #include "raylib/model/Model.hpp"
 #include "raylib/raylib.hpp"
 
+#include "ecs/Storage.hpp"
+#include "game/Users.hpp"
+#include "game/components/Controlable.hpp"
+#include "game/components/Position.hpp"
+#include "game/components/Textual.hpp"
+#include "game/systems/DrawText.hpp"
+#include "game/systems/InputManager.hpp"
+
+#include "game/gui/components/Checkable.hpp"
+#include "game/gui/components/Clickable.hpp"
+#include "game/gui/components/Widget.hpp"
+
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
 #endif
 
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
+
+ecs::World world;
 
 static raylib::model::Model &getTestingModel()
 {
@@ -54,8 +68,10 @@ static void drawFrame(void *arg)
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
-        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+        // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
     };
+
+    world.runSystems();
 
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
     raylib::core::Window::drawFPS(10, 10);
@@ -64,10 +80,57 @@ static void drawFrame(void *arg)
 static void setupLogger()
 {
     // Setup the logger parameters
-    Logger::logger.setLogLevel(Logger::Severity::Information);
+    Logger::logger.setLogLevel(Logger::Severity::Debug);
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
     Logger::logger.setName("main");
     raylib::initLogger(LOG_INFO);
+}
+
+static void addTestWidgets()
+{
+    world.addEntity()
+        .with<game::Position>(0.f, 0.f)
+        .with<game::Textual>("I'm the ECS button", 20, raylib::core::Color::RED)
+        .with<game::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(
+            0, game::gui::Widget::NullTag, 1, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
+        .with<game::gui::Clickable>(
+            [](ecs::Entity _) {
+                (void)_;
+                Logger::logger.log(Logger::Severity::Debug, "On click event!");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::Textual>()[btn.getId()].color = (state == game::gui::Clickable::State::Pressed)
+                    ? raylib::core::Color::BLUE
+                    : raylib::core::Color::RED;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::Position>(0.f, 100.f)
+        .with<game::Textual>("Hello ECS", 40, raylib::core::Color::RED)
+        .with<game::Controlable>(game::User::UserId::User1,
+            [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                (void)self;
+                (void)data;
+                (void)event;
+                Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                    writer << "Text control! " << event.value << ", " << static_cast<size_t>(event.action);
+                });
+                return false;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::Position>(250.f, 0.f)
+        .with<game::Textual>("I'm the ECS Checkbox!", 20, raylib::core::Color::RED)
+        .with<game::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+        .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
+            world.getStorage<game::Textual>()[checkbox.getId()].color =
+                (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
+        })
+        .build();
 }
 
 int main()
@@ -88,6 +151,12 @@ int main()
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
     raylib::core::Camera3D camera;
     camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
+
+    addTestWidgets();
+
+    world.addResource<game::Users>();
+    world.addSystem<game::DrawText>();
+    world.addSystem<game::InputManager>();
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
