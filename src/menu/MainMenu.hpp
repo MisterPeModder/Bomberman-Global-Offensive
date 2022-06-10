@@ -5,7 +5,8 @@
 ** Menu
 */
 
-#pragma once
+#ifndef MAINMENU_HPP_
+#define MAINMENU_HPP_
 
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
@@ -21,15 +22,14 @@ namespace Menu
       public:
         MainMenu();
         ~MainMenu();
-        /// Use it to run & display the main menu
-        void run();
         /// Create all buttons needed in the manu
-        void createsButtons();
+        void createsButtons(ecs::World &world);
 
       protected:
-
       private:
         ecs::World menu;
         struct ButtonMenu : public ecs::System {};
     };
 } // namespace Menu
+
+#endif /* !MAINMENU_HPP_ */
