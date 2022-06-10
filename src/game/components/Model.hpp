@@ -8,8 +8,8 @@
 namespace game
 {
     struct Model : public ecs::Component, public raylib::model::Model {
-        Model(raylib::model::Model &pmodel) : raylib::model::Model(pmodel) {}
-        Model(std::filesystem::path &path) : raylib::model::Model(path) {}
+        Model(const raylib::model::Model &pmodel) : raylib::model::Model(pmodel) {}
+        Model(const std::filesystem::path &path) : raylib::model::Model(path) {}
     };
 } // namespace game
 

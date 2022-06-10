@@ -16,6 +16,7 @@ set(SRC
     ${INCROOT}/Size.hpp
     ${INCROOT}/Texture2D.hpp
 	${INCROOT}/Rectangle.hpp
+    ${INCROOT}/Cube.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
