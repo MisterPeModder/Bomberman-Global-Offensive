@@ -14,7 +14,9 @@
 
 namespace game::systems
 {
+    /// Drawing cube system
     struct DrawingCube : public ecs::System {
+        /// Draws all the cubes.
         void run(ecs::SystemData data) override final
         {
             for (auto [cube] : ecs::join(data.getStorage<game::components::Cube>())) {

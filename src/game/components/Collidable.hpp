@@ -13,12 +13,17 @@
 
 namespace game::components
 {
+    /// Collidable marker.
+    /// @note Entities without a velocity components are considered statics and will not be moved when performing
+    /// collision resolution.
     struct Collidable : public ecs::Component {};
     SET_COMPONENT_STORAGE(Collidable, ecs::MarkerStorage);
 
+    /// Wall marker.
     struct Wall : public ecs::Component {};
     SET_COMPONENT_STORAGE(Wall, ecs::MarkerStorage);
 
+    /// Player marker.
     struct Player : public ecs::Component {};
     SET_COMPONENT_STORAGE(Player, ecs::MarkerStorage);
 } // namespace game::components

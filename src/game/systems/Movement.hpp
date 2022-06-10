@@ -12,7 +12,9 @@
 
 namespace game::systems
 {
+    /// Movement system
     struct Movement : public ecs::System {
+        /// Apply all the velocities on the positions.
         void run(ecs::SystemData data) override final;
     };
 } // namespace game::systems

@@ -22,6 +22,11 @@ namespace game
         BACK,
     };
 
+    /// Test if a specified action is a move action.
+    ///
+    /// @param action action to test.
+    /// @return true if the action is a MOVE_* action.
+    /// @return false if the action is an other action.
     constexpr bool isMoveAction(GameAction action)
     {
         return (action == GameAction::MOVE_LEFT || action == GameAction::MOVE_DOWN || action == GameAction::MOVE_RIGHT

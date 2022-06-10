@@ -12,9 +12,14 @@
 
 namespace game::components
 {
+    /// Destructible component
     struct Destructible final : public ecs::Component {
+        /// If the component is destroyed.
         bool destructed;
 
+        /// Construct a new Destructible component.
+        ///
+        /// @param pdestructed @ref destructed.
         Destructible(bool pdestructed = false) : destructed(pdestructed){};
     };
 } // namespace game::components

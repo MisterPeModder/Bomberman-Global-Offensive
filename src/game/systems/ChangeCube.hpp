@@ -17,7 +17,9 @@
 
 namespace game::systems
 {
+    /// ChangeCube system
     struct ChangeCube : public ecs::System {
+        /// Apply changes on the cubes.
         void run(ecs::SystemData data) override final
         {
             for (auto [cube, pos, col, size] :

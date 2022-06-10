@@ -13,12 +13,23 @@
 
 namespace game::components
 {
+    /// Cube color component
     struct CubeColor : public ecs::Component, public raylib::core::Color {
+        /// Construct a new Cube Color component.
+        ///
+        /// @param cr red component.
+        /// @param cg green component.
+        /// @param cb blue component.
+        /// @param ca alpha component.
         CubeColor(unsigned char cr, unsigned char cg, unsigned char cb, unsigned char ca)
             : raylib::core::Color(cr, cg, cb, ca)
         {
         }
-        CubeColor(const raylib::core::Color &other) : raylib::core::Color(other) {}
+
+        /// Construct a new Cube Color component
+        ///
+        /// @param color color.
+        CubeColor(const raylib::core::Color &color) : raylib::core::Color(color) {}
     };
 } // namespace game::components
 

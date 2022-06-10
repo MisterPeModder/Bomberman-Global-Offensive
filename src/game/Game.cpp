@@ -6,23 +6,24 @@
 */
 
 #include "Game.hpp"
+#include "ecs/resource/Timer.hpp"
+#include "logger/Logger.hpp"
+#include "raylib/core/scoped.hpp"
+
 #include "components/Collidable.hpp"
 #include "components/Controlable.hpp"
+#include "components/Cube.hpp"
+#include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Living.hpp"
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
-#include "ecs/resource/Timer.hpp"
-#include "game/systems/InputManager.hpp"
 
-#include "game/components/Cube.hpp"
-#include "game/components/CubeColor.hpp"
-#include "game/systems/ChangeCube.hpp"
-#include "game/systems/Collision.hpp"
-#include "game/systems/DrawingCube.hpp"
-#include "game/systems/Movement.hpp"
-#include "logger/Logger.hpp"
-#include "raylib/core/scoped.hpp"
+#include "systems/ChangeCube.hpp"
+#include "systems/Collision.hpp"
+#include "systems/DrawingCube.hpp"
+#include "systems/InputManager.hpp"
+#include "systems/Movement.hpp"
 
 namespace game
 {

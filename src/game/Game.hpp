@@ -15,25 +15,52 @@
 
 namespace game
 {
+    /// Game class
     class Game {
       public:
+        /// Game parameters
         struct Parameters {
+            /// Number of players (users/AI)
             size_t playerCount;
+            /// Number of lives for each player
             size_t livesCount;
+            /// Size of the map
             raylib::core::Vector2 mapSize;
 
+            /// Construct a new game Parameters object
+            ///
+            /// @param pplayerCount @ref playerCount
+            /// @param plivesCount @ref livesCount
+            /// @param pmapSize @ref mapSize
             Parameters(size_t pplayerCount = 1, size_t plivesCount = 1, raylib::core::Vector2 pmapSize = {13.f, 13.f})
                 : playerCount(pplayerCount), livesCount(plivesCount), mapSize(pmapSize)
             {
             }
         };
 
+        /// Construct a new Game.
+        ///
+        /// @param world world in which the game takes place.
+        /// @param params parameters if the game.
         Game(ecs::World &world, Parameters params = Parameters());
+
+        /// Destroy the game.
         ~Game() = default;
 
+        /// Get the loaded Map.
+        ///
+        /// @return const map::Map& loaded map.
         const map::Map &getMap() const;
 
+        /// Setup the world entities and the camera position.
+        ///
+        /// @param camera camera to use for drawing purposes.
         void setup(raylib::core::Camera3D &camera);
+
+        /// Draw a single frame of the game.
+        ///
+        /// @param camera camera looking at the map.
+        ///
         void drawFrame(const raylib::core::Camera3D &camera);
 
       private:

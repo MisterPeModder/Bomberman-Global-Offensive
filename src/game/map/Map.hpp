@@ -78,6 +78,10 @@ namespace game
             /// @return size_t height
             size_t getHeight() const;
 
+            /// Get the Player Starting Position based on its id.
+            ///
+            /// @param playerId player ID.
+            /// @return Vector2 starting position of the player in the map.
             Vector2 getPlayerStartingPosition(game::User::UserId playerId);
 
           private:
