@@ -72,6 +72,7 @@ namespace game
                 .with<components::CubeColor>(raylib::core::Color::RED)
                 .with<components::Controlable>(owner,
                     [this](ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) {
+                        (void)data;
                         if (isMoveAction(event.action)) {
                             auto &velocity = _world.getStorage<components::Velocity>()[self.getId()];
                             auto &user = _world.getResource<Users>()[event.user];
@@ -79,9 +80,9 @@ namespace game
                             float value = 0.f;
                             float speed = 4.f;
 
-                            for (size_t i = static_cast<size_t>(GameAction::MOVE_LEFT);
-                                 i <= static_cast<size_t>(GameAction::MOVE_DOWN); i++) {
-                                GameAction current = static_cast<GameAction>(i);
+                            for (size_t j = static_cast<size_t>(GameAction::MOVE_LEFT);
+                                 j <= static_cast<size_t>(GameAction::MOVE_DOWN); j++) {
+                                GameAction current = static_cast<GameAction>(j);
                                 if (user.getActionValue(current) > value) {
                                     bestAction = current;
                                     value = user.getActionValue(current);
@@ -95,6 +96,7 @@ namespace game
                                     case GameAction::MOVE_UP: velocity = {0.f, 0.f, -speed}; break;
                                     case GameAction::MOVE_RIGHT: velocity = {speed, 0.f, 0.f}; break;
                                     case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, speed}; break;
+                                    default: break;
                                 }
                             return true;
                         }

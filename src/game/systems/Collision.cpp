@@ -35,8 +35,10 @@ namespace game::systems
                 if (abs(pos1.x - pos2.x) * 2 > (size1.x + size2.x) && abs(pos1.z - pos2.z) * 2 > (size1.z + size2.z))
                     continue;
 
-                raylib::shapes::Rectangle rect1({pos1.x - size1.x / 2.f, pos1.z - size1.z / 2.f}, {size1.x, size1.z});
-                raylib::shapes::Rectangle rect2({pos2.x - size2.x / 2.f, pos2.z - size2.z / 2.f}, {size2.x, size2.z});
+                raylib::shapes::Rectangle rect1(raylib::core::Vector2(pos1.x - size1.x / 2.f, pos1.z - size1.z / 2.f),
+                    raylib::core::Vector2(size1.x, size1.z));
+                raylib::shapes::Rectangle rect2(raylib::core::Vector2(pos2.x - size2.x / 2.f, pos2.z - size2.z / 2.f),
+                    raylib::core::Vector2(size2.x, size2.z));
 
                 if (!rect1.checkCollision(rect2))
                     continue;
