@@ -17,19 +17,20 @@ namespace game::systems
 {
     void Collision::run(ecs::SystemData data)
     {
-        auto optionnalVelocity = ecs::maybe(data.getStorage<Velocity>());
         auto &positions = data.getStorage<Position>();
         auto &sizes = data.getStorage<Size>();
         auto &entities = data.getResource<ecs::Entities>();
         auto &collidable = data.getStorage<Collidable>();
+        auto &velocities = data.getStorage<Velocity>();
+        auto optionnalVelocity = ecs::maybe(velocities);
 
-        for (auto [pos1, size1, vel1, id1, c1] : ecs::join(positions, sizes, optionnalVelocity, entities, collidable)) {
+        for (auto [pos1, size1, vel1, id1, c1] : ecs::join(positions, sizes, velocities, entities, collidable)) {
             for (auto [pos2, size2, vel2, id2, c2] :
                 ecs::join(positions, sizes, optionnalVelocity, entities, collidable)) {
                 (void)c1;
                 (void)c2;
-                /// Do not collide entities with themselves or two static entities
-                if (id1.getId() == id2.getId() || !(vel1 || vel2))
+                /// Do not collide entities with themselves
+                if (id1.getId() == id2.getId())
                     continue;
                 /// Do not make further check because entities are too far to collide
                 if (abs(pos1.x - pos2.x) * 2 > (size1.x + size2.x) && abs(pos1.z - pos2.z) * 2 > (size1.z + size2.z))
@@ -44,7 +45,7 @@ namespace game::systems
                     continue;
                 ::Rectangle collideRect = rect1.getCollision(rect2).getRaylibRectangle();
 
-                float firstMovePercent = (vel1 && vel2) ? 0.5f : (vel1) ? 1.f : 0.f;
+                float firstMovePercent = (vel2) ? 0.5f : 1.f;
                 resolveCollision(collideRect, firstMovePercent, pos1);
                 resolveCollision(collideRect, (1 - firstMovePercent), pos2);
             }
