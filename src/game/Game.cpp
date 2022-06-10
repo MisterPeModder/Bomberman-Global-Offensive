@@ -76,7 +76,7 @@ namespace game
                         if (isMoveAction(event.action)) {
                             auto &velocity = _world.getStorage<components::Velocity>()[self.getId()];
                             auto &user = _world.getResource<Users>()[event.user];
-                            GameAction bestAction;
+                            GameAction bestAction = GameAction::NONE;
                             float value = 0.f;
                             float speed = 4.f;
 
