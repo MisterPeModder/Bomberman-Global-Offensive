@@ -125,7 +125,12 @@ namespace bmjs
         registerMuJSBindings(this->_state);
     }
 
-    void Engine::_load(std::filesystem::path const &path) { js_dofile(this->_state, path.c_str()); }
+    void Engine::_load(std::filesystem::path const &path)
+    {
+        std::string pathStr = path.generic_string();
+
+        js_dofile(this->_state, pathStr.c_str());
+    }
 
     void Engine::_loadApi()
     {
