@@ -61,6 +61,12 @@ namespace game
 
         size_t Map::getHeight() const { return _height; }
 
+        Vector2 Map::getPlayerStartingPosition(game::User::UserId playerId)
+        {
+            return {static_cast<float>((static_cast<size_t>(playerId) % 2) * getWidth() - 1),
+                static_cast<float>((static_cast<size_t>(playerId) / 2) * getHeight() - 1)};
+        }
+
         void Map::freeCorners()
         {
             for (size_t y = 0; y < _height; y += _height - 1) {

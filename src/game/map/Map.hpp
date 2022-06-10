@@ -11,6 +11,7 @@
 #include <ostream>
 #include <stdexcept>
 #include <vector>
+#include "game/User.hpp"
 
 namespace game
 {
@@ -76,6 +77,8 @@ namespace game
             ///
             /// @return size_t height
             size_t getHeight() const;
+
+            Vector2 getPlayerStartingPosition(game::User::UserId playerId);
 
           private:
             /// Ensure the corners to be empty to avoid invalid player spawn

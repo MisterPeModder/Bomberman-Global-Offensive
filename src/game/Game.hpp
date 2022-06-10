@@ -8,6 +8,7 @@
 #ifndef GAME_GAME_HPP_
 #define GAME_GAME_HPP_
 
+#include "ecs/World.hpp"
 #include "map/Map.hpp"
 #include "raylib/core/Vector2.hpp"
 
@@ -26,13 +27,13 @@ namespace game
             }
         };
 
-        Game(Parameters params = Parameters());
+        Game(ecs::World &world, Parameters params = Parameters());
         ~Game() = default;
 
-        void update(float dt);
-        const map::Map &getMap() const;
+        void run();
 
       private:
+        ecs::World &_world;
         map::Map _map;
         Parameters _params;
     };
