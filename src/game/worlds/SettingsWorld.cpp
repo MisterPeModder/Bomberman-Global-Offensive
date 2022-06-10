@@ -27,7 +27,7 @@ namespace game
         world.addEntity()
             .with<game::components::Model>(testModelPath)
             .with<game::components::Position>(0, -2, 0)
-            .with<game::components::Size>(2, 0.5, 0.5)
+            .with<game::components::Size>(2.f, 0.5f, 0.5f)
             .with<game::components::RotationAngle>(-90)
             .with<game::components::RotationAxis>(1, 0, 0)
             .with<game::components::Color>(raylib::core::Color::BLUE)

@@ -119,7 +119,7 @@ namespace game
             .build();
 
         raylib::core::Vector3 pos(0, -5, 0);
-        raylib::core::Vector3 size(0.5, 0.5, 0.5);
+        raylib::core::Vector3 size(0.5f, 0.5f, 0.5f);
         raylib::core::Vector3 rotationAxis(1, 0, 0);
         float rotationAngle = -90;
 
