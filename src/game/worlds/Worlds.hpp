@@ -28,7 +28,7 @@ namespace game
         // static void leave(ecs::World &world, WORLDS_TYPE type);
         // static void clear(ecs::World &world);
 
-      // private:
+        // private:
         static void loadSplashWorld(ecs::World &world);
         static void loadMainWorld(ecs::World &world);
         static void loadSettingsWorld(ecs::World &world);

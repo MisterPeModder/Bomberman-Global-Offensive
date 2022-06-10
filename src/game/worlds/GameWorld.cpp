@@ -9,11 +9,11 @@
 #include "ecs/Storage.hpp"
 #include "game/components/Cube.hpp"
 #include "game/components/Rectangle.hpp"
-#include "game/systems/Cube.hpp"
-#include "raylib/core/Color.hpp"
 #include "game/components/RotationAngle.hpp"
 #include "game/components/RotationAxis.hpp"
+#include "game/systems/Cube.hpp"
 #include "game/systems/Model.hpp"
+#include "raylib/core/Color.hpp"
 
 namespace game
 {

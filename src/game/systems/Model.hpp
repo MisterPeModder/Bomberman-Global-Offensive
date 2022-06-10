@@ -30,8 +30,9 @@ namespace game
             {
                 for (auto [model, pos, rAxis, rAngle, size, color] :
                     ecs::join(data.getStorage<game::components::Model>(), data.getStorage<game::components::Position>(),
-                        data.getStorage<game::components::RotationAxis>(), data.getStorage<game::components::RotationAngle>(),
-                        data.getStorage<game::components::Size>(), data.getStorage<game::components::Color>())) {
+                        data.getStorage<game::components::RotationAxis>(),
+                        data.getStorage<game::components::RotationAngle>(), data.getStorage<game::components::Size>(),
+                        data.getStorage<game::components::Color>())) {
                     model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
                 }
             }

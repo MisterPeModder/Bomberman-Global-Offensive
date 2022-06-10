@@ -2,6 +2,7 @@
 #include <iostream>
 #include <memory>
 #include "ecs/World.hpp"
+#include "game/worlds/Worlds.hpp"
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
@@ -9,7 +10,6 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/raylib.hpp"
-#include "game/worlds/Worlds.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
