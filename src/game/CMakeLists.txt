@@ -6,6 +6,8 @@ add_subdirectory(settings)
 
 set (SRC
 	${SRC}
+	${SRCROOT}/Game.cpp
+	${SRCROOT}/Game.hpp
 	${SRCROOT}/GameAction.hpp
 	${SRCROOT}/User.cpp
 	${SRCROOT}/User.hpp
