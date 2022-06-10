@@ -79,8 +79,7 @@ static void runGame()
     // #else
     // #endif
 
-    world.getResource<ecs::Entities>().erase(
-        world.addEntity().with<game::gui::Widget>(game::gui::Widget::NullTag).build());
+    world.addStorage<game::gui::Widget>();
 
     game.setup(camera);
     while (!WindowShouldClose()) {
