@@ -72,7 +72,9 @@ class JsFunction(JsType):
 
     def __str__(self) -> str:
         args = ', '.join([str(arg) for arg in self.args])
-        return f"bmjs::Function<{', '.join([str(self.returns), args])}>"
+        template_params = f"{self.returns}, {args}" if args != '' else str(
+            self.returns)
+        return f"bmjs::Function<{template_params}>"
 
     def js_repr(self) -> str:
         return 'number'
@@ -83,15 +85,15 @@ class JsFunction(JsType):
         return 'd' * (len(self.args) + 1)
 
 
-@dataclass(eq=True, order=True)
+@ dataclass(eq=True, order=True)
 class Prototype:
     """JS C function prototype"""
 
+    scope: str
     name: str
     raw_name: str
     args: list[JsArg]
     returns: JsType
-    scope: str
 
 
 def parse_type(input: str) -> tuple[JsType, str]:
@@ -157,7 +159,7 @@ def read_prototype(line: str, lines: Iterator[str], scope: str) -> Prototype | N
         print(
             f"warning: function {raw_name} is defined in the wrong scope {scope}", file=sys.stderr)
 
-    return Prototype(name, raw_name, args, returns, scope)
+    return Prototype(scope, name, raw_name, args, returns)
 
 
 def read_prototypes(lines: Iterator[str]) -> list[Prototype]:
@@ -323,7 +325,8 @@ def emit_scope_registration(out: TextIO, scope: str, prototypes: list[Prototype]
         js_setproperty(state, -2, \"{prototype.name}\");""", file=out)
     print(f"""
         js_setproperty(state, -2, \"{scope}\");
-    }}""", file=out)
+    }}
+""", file=out)
 
 
 def emit_register_functions(out: TextIO, scopes: OrderedDict[str, list[Prototype]]) -> None:
@@ -333,8 +336,7 @@ def emit_register_functions(out: TextIO, scopes: OrderedDict[str, list[Prototype
     for scope, prototypes in scopes.items():
         emit_scope_registration(out, scope, prototypes)
 
-    print("""
-    /// Registers the JS bindings in the 'bm' global object.
+    print("""    /// Registers the JS bindings in the 'bm' global object.
     void registerMuJSBindings(js_State *state)
     {
         js_newobject(state);
@@ -375,9 +377,9 @@ def emit_cxx_bindings(out: TextIO, prototypes: list[Prototype], scopes: OrderedD
         print(f"/// - {scope} ({len(protos)} functions)", file=out)
 
     print("""
-#ifndef __EMSCRIPTEN__
-    #include "script/JsException.hpp"
-    #include "script/script.hpp"
+# ifndef __EMSCRIPTEN__
+    # include "script/JsException.hpp"
+    # include "script/script.hpp"
 """, file=out)
 
     emit_function_prototypes(out, prototypes)
