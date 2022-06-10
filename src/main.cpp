@@ -40,8 +40,10 @@
 
 #include "ecs/Storage.hpp"
 #include "game/Users.hpp"
+#include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
 #include "game/components/Position.hpp"
+#include "game/components/Scale.hpp"
 #include "game/components/Textual.hpp"
 #include "game/map/Map.hpp"
 #include "game/systems/DrawText.hpp"
@@ -54,6 +56,11 @@
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
 #endif
+
+struct params_s {
+    ecs::World *world;
+    raylib::core::Camera3D *camera;
+};
 
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
@@ -76,21 +83,25 @@ static raylib::model::Animation &getTestingAnimation()
     return anim;
 }
 
-struct params_s {
-    raylib::core::Camera3D *camera;
-    ecs::World *world;
-};
-
 static void drawFrame(void *arg)
 {
     params_s *params = reinterpret_cast<params_s *>(arg);
+    Vector3 pos(0, -5, 0);
+    Vector3 scale(1, 1, 1);
+    Vector3 rotationAxis(1, 0, 0);
 
+    raylib::model::Mesh mesh = raylib::model::Mesh::genCube(1, 1, 1);
+
+    raylib::model::Model &testingModel = getTestingModel();
+    raylib::model::Animation &testingAnimation = getTestingAnimation();
+
+    testingAnimation.updateModel(testingModel);
     params->camera->update();
     raylib::core::scoped::Drawing drawing;
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*params->camera);
-        params->world->runSystems();
+        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
     };
 
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
@@ -217,184 +228,6 @@ struct DrawingCube : public ecs::System {
 ///
 ///
 ///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-///
-
-///
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-///
-
-struct Map : public ecs::Component, public game::map::Map {
-    Map(size_t width, size_t height);
-};
-
-struct MakeMap : public ecs::System {
-    void run(ecs::SystemData data) override final
-    {
-        for (auto [map] : ecs::join(data.getStorage<Map>())) {
-            map.getElement(20, 20);
-        }
-    }
-};
-
-///
-///
-///
-///
-///
-//////
-///
-///
-///
-///
-
-void game_loop()
-{
-    raylib::core::Camera3D camera;
-    ecs::World world;
-    game::map::Map map;
-    raylib::textures::Image image("/download.jpeg");
-    raylib::textures::Texture2D cubimap(image);
-    raylib::model::Mesh mesh = mesh.genCubicMap(image, {1.0f, 1.0f, 1.0f});
-    raylib::model::Model model(mesh);
-
-    std::cout << "test\n" << std::endl;
-
-    camera.setPosition({13.0f, 10.0f, map.getHeight() / 2.f});                                       // Camera position
-    camera.setTarget({(0 + (map.getWidth() / 2.f)), 0.0f, (map.getHeight() / 2.f)}); // Camera looking at point
-    camera.setUp({0.0f, 10.0f, 0.0f}); // Camera up vector (rotation towards target)
-    camera.setFovY(75.0f);             // Camera field-of-view Y
-    camera.setProjection(CAMERA_PERSPECTIVE);
-
-    world.addResource<ecs::Timer>();
-    world.addSystem<ChangeCube>();
-    world.addSystem<DrawingCube>();
-
-    std::cout << "test03\n" << std::endl;
-
-    // create ground
-    world.addEntity()
-                    .with<Position>(0 + (map.getWidth() / 2), -0.5, 0 + (map.getHeight() / 2))
-                    .with<Size>(map.getWidth(), 0.1, map.getHeight())
-                    .with<CubeColor>(0, 228, 48, 255)
-                    .with<Cube>()
-                    .build();
-
-    // create border
-    for (int y = -1; y <= ((int)map.getHeight()); y++) {
-        for (int x = -1; x <= ((int)map.getWidth()); x++) {
-            if (x == -1 || x == ((int)map.getWidth()) || y == -1 || y == ((int)map.getHeight()))
-                world.addEntity()
-                                .with<Position>(x, 0, y)
-                                .with<Size>(1.f, 1.f, 1.f)
-                                .with<CubeColor>(0, 0, 250, 255)
-                                .with<Cube>()
-                                .build();
-        }
-    }
-
-    // create map
-    for (int y = 0; y != (int)map.getHeight(); y++) {
-        for (int x = 0; x != (int)map.getWidth(); x++) {
-            if (map.getElement(x, y) == game::map::Map::Element::Crate) {
-                world.addEntity()
-                                 .with<Position>(x, 0, y)
-                                 .with<Size>(1.f, 1.f, 1.f)
-                                 .with<CubeColor>(250, 0, 0, 255)
-                                 .with<Cube>()
-                                 .build();
-            }
-            if (map.getElement(x, y) == game::map::Map::Element::Wall) {
-                world.addEntity()
-                                .with<Position>(x, 0, y)
-                                .with<Size>(1.f, 1.f, 1.f)
-                                .with<CubeColor>(0, 0, 250, 255)
-                                .with<Cube>()
-                                .build();
-            }
-        }
-    }
-
-    while (!raylib::core::Window::windowShouldClose()) {
-        camera.update();
-        raylib::core::scoped::Drawing drawing;
-        raylib::core::Window::clear();
-        {
-            raylib::core::scoped::Mode3D mode3D(camera);
-            world.runSystems();
-        };
-        raylib::core::Window::drawFPS(10, 10);
-    }
-}
-
-///
-///
-///
-///
-///
-
 static void addTestWidgets(ecs::World &world)
 {
     world.addEntity()
@@ -487,6 +320,85 @@ int main()
     world.addResource<game::Users>();
     world.addSystem<game::DrawText>();
     world.addSystem<game::InputManager>();
+
+    game::map::Map map(23, 23);
+
+    raylib::textures::Image image("src/cubicmap_atlas.png");
+    raylib::textures::Texture2D cubimap(image);
+    raylib::model::Mesh mesh = mesh.genCubicMap(image, {1.0f, 1.0f, 1.0f});
+    raylib::model::Model model(mesh);
+
+    raylib::textures::Texture2D texture("src/cubicmap_atlas.png");
+    model.setMaterialMapTexture(texture, 0, MATERIAL_MAP_DIFFUSE);
+
+    camera.setPosition({20.0f, 20.0f, map.getWidth() / 2.f});             // Camera position
+    camera.setTarget({map.getWidth() / 2.f, 0.f, map.getHeight() / 2.f}); // Camera looking at point
+    camera.setUp({0.0f, 1.0f, 0.0f});                                     // Camera up vector (rotation towards target)
+    camera.setFovY(75.0f);                                                // Camera field-of-view Y
+    camera.setProjection(CAMERA_PERSPECTIVE);
+
+    world.addResource<ecs::Timer>();
+    world.addSystem<ChangeCube>();
+    world.addSystem<DrawingCube>();
+    world.addSystem<game::systems::DrawModel>();
+
+    std::cout << "test03\n" << std::endl;
+
+    // create ground
+    world.addEntity()
+        .with<game::Position>(0 + (map.getWidth() / 2.f), -0.5f, 0 + (map.getHeight() / 2.f))
+        .with<game::Scale>(1)
+        .with<game::Color>(0, 228, 48, 255)
+        .with<game::Model>()
+        .build();
+
+    // create border
+    for (int y = -1; y <= ((int)map.getHeight()); y++) {
+        for (int x = -1; x <= ((int)map.getWidth()); x++) {
+            if (x == -1 || x == ((int)map.getWidth()) || y == -1 || y == ((int)map.getHeight()))
+                world.addEntity()
+                    .with<game::Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
+                    .with<game::Scale>(1.f)
+                    .with<game::Color>(0, 0, 250, 255)
+                    .with<game::Model>(model)
+                    .build();
+        }
+    }
+
+    // create border
+    for (int y = -1; y <= ((int)map.getHeight()); y++) {
+        for (int x = -1; x <= ((int)map.getWidth()); x++) {
+            if (x == -1 || x == ((int)map.getWidth()) || y == -1 || y == ((int)map.getHeight()))
+                world.addEntity()
+                    .with<game::Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
+                    .with<game::Scale>(1.f)
+                    .with<game::Color>(0, 0, 250, 255)
+                    .with<game::Model>(model)
+                    .build();
+        }
+    }
+
+    // create map
+    for (int y = 0; y != (int)map.getHeight(); y++) {
+        for (int x = 0; x != (int)map.getWidth(); x++) {
+            if (map.getElement(x, y) == game::map::Map::Element::Crate) {
+                world.addEntity()
+                    .with<game::Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
+                    .with<game::Scale>(1.f)
+                    .with<game::Color>(250, 0, 0, 255)
+                    .with<game::Model>(model)
+                    .build();
+            }
+            if (map.getElement(x, y) == game::map::Map::Element::Wall) {
+                world.addEntity()
+                    .with<game::Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
+                    .with<game::Scale>(1.f)
+                    .with<game::Color>(0, 0, 250, 255)
+                    .with<game::Model>(model)
+                    .build();
+            }
+        }
+    }
 
     params_s params;
     params.camera = &camera;

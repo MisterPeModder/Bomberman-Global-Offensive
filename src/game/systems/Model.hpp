@@ -1,3 +1,13 @@
+/*
+** EPITECH PROJECT, 2022
+** Bomberman-Global-Offensive
+** File description:
+** Model
+*/
+
+#ifndef GAME_SYSTEMS_MODEL_HPP_
+#define GAME_SYSTEMS_MODEL_HPP_
+
 #include "ecs/System.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
@@ -17,6 +27,7 @@ namespace game
                 for (auto [model, pos, scale, color] :
                     ecs::join(data.getStorage<game::Model>(), data.getStorage<game::Position>(),
                         data.getStorage<game::Scale>(), data.getStorage<game::Color>())) {
+                    std::cout << "draw" << std::endl;
                     model.draw(pos, scale.scale, color);
                 }
             }
@@ -35,3 +46,5 @@ namespace game
         };
     } // namespace systems
 } // namespace game
+
+#endif /* ! GAME_SYSTEMS_MODEL_HPP_ */
