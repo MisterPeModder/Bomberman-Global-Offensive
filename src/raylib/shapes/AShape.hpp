@@ -32,7 +32,7 @@ namespace raylib
             /// Sets the position of the shape
             ///
             /// @param position The new position of the shape
-            inline void setPosition(raylib::core::Vector2 position) { _position = {position.x, position.y, 0}; }
+            inline void setPosition(raylib::core::Vector2 position) { _position = {position.x, position.y, 0.f}; }
 
             /// Gets the position of the shape
             ///

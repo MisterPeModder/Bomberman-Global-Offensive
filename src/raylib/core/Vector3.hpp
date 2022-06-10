@@ -27,6 +27,13 @@ namespace raylib
             /// @param yParam the Y axis value of the vector
             /// @param zParam the Z axis value of the vector
             Vector3(float xParam = 0.f, float yParam = 0.f, float zParam = 0.f);
+            
+            /// Constructor of the vector using integers
+            ///
+            /// @param xParam the X axis value of the vector
+            /// @param yParam the Y axis value of the vector
+            /// @param zParam the Z axis value of the vector
+            Vector3(int xParam, int yParam, int zParam);
 
             /// Constructor of the 3d vector from a 2d vector
             ///

@@ -13,6 +13,11 @@ namespace raylib
     {
         Vector3::Vector3(float xParam, float yParam, float zParam) : x(xParam), y(yParam), z(zParam) {}
 
+        Vector3::Vector3(int xParam, int yParam, int zParam)
+            : x(static_cast<float>(xParam)), y(static_cast<float>(yParam)), z(static_cast<float>(zParam))
+        {
+        }
+
         Vector3::Vector3(const Vector2 &vector, float zParam) : x(vector.x), y(vector.y), z(zParam) {}
 
         Vector3::~Vector3() {}

@@ -9,6 +9,7 @@ namespace game::components
         float rotationAngle;
 
         RotationAngle(float protationAngle) : rotationAngle(protationAngle) {}
+        RotationAngle(int protationAngle) : rotationAngle(static_cast<float>(protationAngle)) {}
     };
 } // namespace game::components
 

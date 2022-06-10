@@ -32,7 +32,7 @@ namespace raylib
             /// @param pos The position of the center of the circle.
             /// @param radius The radius of the circle.
             /// @param color The color of the circle.
-            Circle(raylib::core::Vector2 pos, float radius = 1,
+            Circle(raylib::core::Vector2 pos, float radius = 1.f,
                 raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// The destructor is called when the object is destroyed

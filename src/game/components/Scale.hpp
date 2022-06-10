@@ -9,6 +9,7 @@ namespace game::components
         float scale;
 
         Scale(float pscale) : scale(pscale) {}
+        Scale(int pscale) : scale(static_cast<float>(pscale)) {}
     };
 } // namespace game::components
 

@@ -29,7 +29,7 @@ namespace raylib
             /// @param position The position of the cube.
             /// @param size The size of the cube.
             /// @param color The color of the cube.
-            Cube(raylib::core::Vector3 position = {}, raylib::core::Vector3 size = {1, 1, 1},
+            Cube(raylib::core::Vector3 position = {0.f, 0.f, 0.f}, raylib::core::Vector3 size = {1.f, 1.f, 1.f},
                 raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// A constructor that takes a Cube as a parameter.
