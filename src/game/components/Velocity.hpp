@@ -13,9 +13,9 @@
 
 namespace game
 {
-    struct Movable : public ecs::Component, public raylib::core::Vector2 {
-        Movable(float px = 0, float py = 0) : Vector2(px, py) {}
-        Movable(Vector2 vector) : Vector2(vector) {}
+    struct Velocity : public ecs::Component, public raylib::core::Vector3 {
+        Velocity(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
+        Velocity(Vector3 vector) : Vector3(vector) {}
     };
 } // namespace game
 

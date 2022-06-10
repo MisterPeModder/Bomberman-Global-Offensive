@@ -21,9 +21,9 @@ namespace game
         {
             //////// Keyboards keybinds
             /// Movements
-            setKeyboardBinding(Key::Q, GameAction::MOVE_LEFT);
+            setKeyboardBinding(Key::A, GameAction::MOVE_LEFT);
             setKeyboardBinding(Key::LEFT, GameAction::MOVE_LEFT);
-            setKeyboardBinding(Key::Z, GameAction::MOVE_UP);
+            setKeyboardBinding(Key::W, GameAction::MOVE_UP);
             setKeyboardBinding(Key::UP, GameAction::MOVE_UP);
             setKeyboardBinding(Key::D, GameAction::MOVE_RIGHT);
             setKeyboardBinding(Key::RIGHT, GameAction::MOVE_RIGHT);

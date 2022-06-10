@@ -21,6 +21,12 @@ namespace game
         ACTION,
         BACK,
     };
-}
+
+    constexpr bool isMoveAction(GameAction action)
+    {
+        return (action == GameAction::MOVE_LEFT || action == GameAction::MOVE_DOWN || action == GameAction::MOVE_RIGHT
+            || action == GameAction::MOVE_UP);
+    }
+} // namespace game
 
 #endif /* !GAME_GAMEACTION_HPP_ */

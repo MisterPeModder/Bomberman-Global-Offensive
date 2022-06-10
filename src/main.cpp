@@ -12,6 +12,7 @@
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
 
+#include "game/gui/components/Widget.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
@@ -77,6 +78,9 @@ static void runGame()
     //     emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
     // #else
     // #endif
+
+    world.getResource<ecs::Entities>().erase(
+        world.addEntity().with<game::gui::Widget>(game::gui::Widget::NullTag).build());
 
     game.setup(camera);
     while (!WindowShouldClose()) {

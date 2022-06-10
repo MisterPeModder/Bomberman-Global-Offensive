@@ -18,6 +18,9 @@ namespace game
 
     struct Wall : public ecs::Component {};
     SET_COMPONENT_STORAGE(Wall, ecs::MarkerStorage);
+
+    struct Player : public ecs::Component {};
+    SET_COMPONENT_STORAGE(Player, ecs::MarkerStorage);
 } // namespace game
 
 #endif /* !GAME_COMPONENTS_COLLIDABLE_HPP_ */

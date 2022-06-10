@@ -7,10 +7,13 @@
 
 #include "Game.hpp"
 #include "components/Collidable.hpp"
+#include "components/Controlable.hpp"
 #include "components/Destructible.hpp"
 #include "components/Living.hpp"
-#include "components/Movable.hpp"
 #include "components/Position.hpp"
+#include "components/Velocity.hpp"
+#include "ecs/resource/Timer.hpp"
+#include "game/systems/InputManager.hpp"
 
 #include "components/Temp.hpp"
 #include "logger/Logger.hpp"
@@ -37,20 +40,45 @@ namespace game
         camera.setFovY(75.0f);                             // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);
 
+        /// Add world ressources
+        _world.addResource<game::Users>();
+        _world.addResource<ecs::Timer>();
+        /// Add world systems
+        _world.addSystem<game::InputManager>();
         _world.addSystem<ChangeCube>();
         _world.addSystem<DrawingCube>();
+        _world.addSystem<Movement>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
-            Vector2 cell = _map.getPlayerStartingPosition(static_cast<User::UserId>(i));
+            User::UserId owner = static_cast<User::UserId>(i);
+            Vector2 cell = _map.getPlayerStartingPosition(owner);
 
             _world.addEntity()
-                .with<Position>(cell.x, -0.5f, cell.y)
-                .with<Movable>()
+                .with<Position>(cell.x, 0.5f, cell.y)
+                .with<Velocity>()
                 .with<Living>(_params.livesCount)
                 .with<Collidable>()
+                .with<Player>()
                 .with<Cube>()
                 .with<Size>(1.f, 1.f, 1.f)
                 .with<CubeColor>(raylib::core::Color::RED)
+                .with<Controlable>(owner,
+                    [this](ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) {
+                        if (isMoveAction(event.action)) {
+                            auto &velocity = _world.getStorage<Velocity>()[self.getId()];
+                            bool moving = event.value > 0.2f;
+                            float speed = 4.f;
+
+                            switch (event.action) {
+                                case GameAction::MOVE_LEFT: velocity.x = -speed * moving; break;
+                                case GameAction::MOVE_UP: velocity.z = -speed * moving; break;
+                                case GameAction::MOVE_RIGHT: velocity.x = speed * moving; break;
+                                case GameAction::MOVE_DOWN: velocity.z = speed * moving; break;
+                            }
+                            return true;
+                        }
+                        return false;
+                    })
                 .build();
         }
 
@@ -107,6 +135,7 @@ namespace game
             _world.runSystems();
         };
         raylib::core::Window::drawFPS(10, 10);
+        _world.getResource<ecs::Timer>().reset();
     }
 
 } // namespace game

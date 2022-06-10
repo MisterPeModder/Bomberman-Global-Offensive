@@ -10,9 +10,11 @@
 
 #include "Position.hpp"
 #include "Size.hpp"
+#include "Velocity.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
+#include "ecs/resource/Timer.hpp"
 #include "raylib/core/Color.hpp"
 #include "raylib/shapes/Cube.hpp"
 
@@ -50,6 +52,20 @@ namespace game
         {
             for (auto [cube] : ecs::join(data.getStorage<Cube>())) {
                 cube.cube.draw();
+            }
+        }
+    };
+
+    struct Movement : public ecs::System {
+        void run(ecs::SystemData data) override final
+        {
+            float seconds = data.getResource<ecs::Timer>().elapsed();
+
+            for (auto [pos, vel] : ecs::join(data.getStorage<Position>(), data.getStorage<Velocity>())) {
+                // no friction here, just plain old perpertual motion
+                pos.x += vel.x * seconds;
+                pos.y += vel.y * seconds;
+                pos.z += vel.z * seconds;
             }
         }
     };
