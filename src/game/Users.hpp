@@ -15,7 +15,7 @@
 namespace game
 {
     /// Resource allowing to get users actions using the keybinds.
-    class Users : public ecs::Resource {
+    class Users final : public ecs::Resource {
       public:
         /// Event send by @ref getNextAction() when an action changed.
         struct ActionEvent {
