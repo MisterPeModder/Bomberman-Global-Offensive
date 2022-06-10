@@ -37,6 +37,14 @@ namespace ecs
 
         constexpr util::BitSet const &getMask() const noexcept { return this->_nonMask; }
 
+        void adjustMask(std::size_t maxSize)
+        {
+            if (maxSize > this->_nonMask.size()) {
+                this->_nonMask.resize(maxSize);
+                this->_nonMask.setAll();
+            }
+        }
+
       private:
         J &_inner;
         /// all ones!
@@ -56,6 +64,12 @@ namespace ecs
                 return &JoinTraits<J>::getData(joinable.getInner(), index);
             return nullptr;
         }
+    };
+
+    /// @internal
+    /// Used to resize the "non"-mask to the largest size.
+    template <Joinable J> struct JoinTraitsExt<MaybeJoin<J>> {
+        constexpr static void adjustMask(MaybeJoin<J> &joinable, std::size_t maxSize) { joinable.adjustMask(maxSize); }
     };
 } // namespace ecs
 
