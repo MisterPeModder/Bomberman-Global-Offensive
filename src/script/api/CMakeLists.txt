@@ -5,6 +5,7 @@ set(SRC
 	${SRC}
 	${INCROOT}/api.hpp
 	${SRCROOT}/common.cpp
+	${SRCROOT}/mods.cpp
 	PARENT_SCOPE)
 
 set(INCDIRS 

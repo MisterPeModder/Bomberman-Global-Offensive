@@ -9,6 +9,8 @@ set(SRC
 	${INCROOT}/Engine.hpp
 	${SRCROOT}/JsException.cpp
 	${INCROOT}/JsException.hpp
+	${SRCROOT}/Mod.cpp
+	${INCROOT}/Mod.hpp
 	${INCROOT}/script.hpp
 	PARENT_SCOPE)
 
