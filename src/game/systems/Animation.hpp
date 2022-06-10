@@ -1,5 +1,9 @@
+#ifndef GAME_SYSTEMS_ANIMATION_HPP_
+#define GAME_SYSTEMS_ANIMATION_HPP_
+
 #include <iostream>
 #include "ecs/System.hpp"
+#include "ecs/join.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
@@ -23,3 +27,5 @@ namespace game
         };
     } // namespace systems
 } // namespace game
+
+#endif

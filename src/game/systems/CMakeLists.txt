@@ -5,6 +5,7 @@ set(SRC
     ${SRC}
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Model.hpp
+    ${SRCROOT}/Cube.hpp
     ${SRCROOT}/DrawText.hpp
     ${SRCROOT}/DrawText.cpp
     ${SRCROOT}/InputManager.hpp

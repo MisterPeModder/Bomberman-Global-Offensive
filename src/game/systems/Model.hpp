@@ -1,3 +1,6 @@
+#ifndef GAME_SYSTEMS_MODEL_HPP_
+#define GAME_SYSTEMS_MODEL_HPP_
+
 #include "ecs/System.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
@@ -35,3 +38,5 @@ namespace game
         };
     } // namespace systems
 } // namespace game
+
+#endif
