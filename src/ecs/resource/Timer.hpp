@@ -5,8 +5,8 @@
 ** ECS - Timer World Resource
 */
 
-#ifndef ECS_RESOURCES_TIMER_HPP_
-#define ECS_RESOURCES_TIMER_HPP_
+#ifndef ECS_RESOURCE_TIMER_HPP_
+#define ECS_RESOURCE_TIMER_HPP_
 
 #include "ecs/resource/Resource.hpp"
 
@@ -32,4 +32,4 @@ namespace ecs
     };
 } // namespace ecs
 
-#endif
+#endif // !defined(ECS_RESOURCE_TIMER_HPP_)
