@@ -9,12 +9,9 @@
 
 namespace Menu
 {
-    MainMenu::MainMenu()
-    {
-    }
+    MainMenu::MainMenu() {}
+    MainMenu::~MainMenu() {}
 
-    MainMenu::~MainMenu()
-    {
-    }
-    
-}
+    void MainMenu::run() {}
+
+} // namespace Menu
