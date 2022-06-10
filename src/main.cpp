@@ -20,37 +20,26 @@
 
 #include "game/Game.hpp"
 
-// #if defined(PLATFORM_WEB)
-//     #include <emscripten/emscripten.h>
-// #endif
+#if defined(PLATFORM_WEB)
+    #include <emscripten/emscripten.h>
+#endif
 
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
 
-// static void drawFrame(void *arg)
-// {
-//     raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
-//     raylib::core::Vector3 pos(0, -5, 0);
-//     raylib::core::Vector3 scale(1, 1, 1);
-//     raylib::core::Vector3 rotationAxis(1, 0, 0);
+struct Params {
+    ecs::World &world;
+    raylib::core::Camera3D &camera;
+    game::Game &game;
+};
 
-//     raylib::model::Model &testingModel = getTestingModel();
-//     raylib::model::Animation &testingAnimation = getTestingAnimation();
+static void drawFrame(void *args)
+{
+    Params *params = reinterpret_cast<Params *>(args);
 
-//     testingAnimation.updateModel(testingModel);
-//     camera->update();
-//     raylib::core::scoped::Drawing drawing;
-//     raylib::core::Window::clear();
-//     {
-//         raylib::core::scoped::Mode3D mode3D(*camera);
-//         // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
-//     };
-
-//     world.runSystems();
-
-//     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
-//     raylib::core::Window::drawFPS(10, 10);
-// }
+    params->camera.update();
+    params->game.drawFrame(params->camera);
+}
 
 static void setupLogger()
 {
@@ -67,27 +56,20 @@ static void runGame()
     ecs::World world;
     raylib::core::Camera3D camera;
     game::Game game(world, game::Game::Parameters(1));
-
-    // world.addResource<game::Users>();
-    // world.addSystem<game::DrawText>();
-    // world.addSystem<game::InputManager>();
-
-    // #if defined(PLATFORM_WEB)
-    //     // We cannot use the WindowShouldClose() loop on the web,
-    //     // since there is no such thing as a window.
-    //     emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
-    // #else
-    // #endif
+    Params params = {world, camera, game};
 
     world.addStorage<game::gui::Widget>();
-
     game.setup(camera);
-    while (!WindowShouldClose()) {
-        camera.update();
-        game.drawFrame(camera);
-    }
 
+#if defined(PLATFORM_WEB)
+    // We cannot use the WindowShouldClose() loop on the web,
+    // since there is no such thing as a window.
+    emscripten_set_main_loop_arg(&drawFrame, &params, 0, 1);
+#else
+    while (!WindowShouldClose())
+        drawFrame(&params);
     CloseWindow();
+#endif
 }
 
 int main()
