@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a180bb5e381e316e2246b88c92770ee75":[2,0,3,0,6,0,11],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1a9c94725005bc4759507db8acc8da33":[2,0,3,0,6,0,99],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1dd26f1f1790f0b56d5752fb0fbecef0":[2,0,3,0,6,0,106],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1faf42f2823f184eb2c9f0dffe5d73f2":[2,0,3,0,6,0,73],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classraylib_1_1shapes_1_1_cube.html#afcfbb9639804114a3a1e5bf217e65092":[2,0,3,2,3,7],
 "classraylib_1_1shapes_1_1_cylinder.html":[2,0,3,2,4],
 "classraylib_1_1shapes_1_1_cylinder.html#a228e48c03f069dff6ee42817fddb42b8":[2,0,3,2,4,0],
-"classraylib_1_1shapes_1_1_cylinder.html#a2c0dccbff599a3adb44ba72427ae84e3":[2,0,3,2,4,1],
-"classraylib_1_1shapes_1_1_cylinder.html#a5025ea394ac0fd09966370c982e058b4":[2,0,3,2,4,3]
+"classraylib_1_1shapes_1_1_cylinder.html#a2c0dccbff599a3adb44ba72427ae84e3":[2,0,3,2,4,1]
 };

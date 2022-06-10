@@ -90,7 +90,7 @@ var NAVTREEINDEX0 =
 "_join_8hpp.html#a36bbcee819473693f3869f528beb7bca":[3,0,0,0,7,1],
 "_join_8hpp_source.html":[3,0,0,0,7],
 "_joinable_8hpp.html":[3,0,0,0,0,1],
-"_joinable_8hpp.html#abdc7eeb6f093daafc5a2d9013cd98518":[3,0,0,0,0,1,1],
+"_joinable_8hpp.html#abdc7eeb6f093daafc5a2d9013cd98518":[3,0,0,0,0,1,2],
 "_joinable_8hpp_source.html":[3,0,0,0,0,1],
 "_keybinds_8cpp.html":[3,0,0,1,1,2],
 "_keybinds_8cpp.html#a5c768169f19ce8909ac6bd2174fd3432":[3,0,0,1,1,2,2],

@@ -266,12 +266,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00012">12</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                                       : <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a>(gamepadId), <a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<span class="keywordtype">id</span>))</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classgame_1_1_user.html#ada2d0b9932887a001c279a74a7a7ca81">setAvailable</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>.fill(0);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00014">14</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                       : <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a>(gamepadId), <a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<span class="keywordtype">id</span>))</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classgame_1_1_user.html#ada2d0b9932887a001c279a74a7a7ca81">setAvailable</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>.fill(0);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,21 +360,21 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00034">34</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue.html">std::queue&lt;GameAction&gt;</a> <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/empty.html">empty</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">float</span> actionValue;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/swap.html">swap</a>(empty);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>.size(); i++) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            actionValue = <a class="code" href="classgame_1_1_user.html#a1f5023545e1612b03c918c944a7c9c7b">getActionValue</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a><span class="keyword">&gt;</span>(i + 1), <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (actionValue != <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>[i]) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/push.html">push</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a><span class="keyword">&gt;</span>(i + 1));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>[i] = actionValue;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00036">36</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue.html">std::queue&lt;GameAction&gt;</a> <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/empty.html">empty</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">float</span> actionValue;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/swap.html">swap</a>(empty);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>.size(); i++) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            actionValue = <a class="code" href="classgame_1_1_user.html#a1f5023545e1612b03c918c944a7c9c7b">getActionValue</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a><span class="keyword">&gt;</span>(i + 1), <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (actionValue != <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>[i]) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/push.html">push</a>(<span class="keyword">static_cast&lt;</span><a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a><span class="keyword">&gt;</span>(i + 1));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>[i] = actionValue;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -414,38 +414,38 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>float value between [0, 1]. See <a class="el" href="structgame_1_1_users_1_1_action_event.html#abb055ce0c8e638108b9d6d2744e93f2e">Users::ActionEvent::value</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00062">62</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">if</span> (!update)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(action) - 1];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">float</span> res = 0.f;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_user.html#aae6864404e1d953ed996e9bd4d30f635">isKeyboard</a>()) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keyword">auto</span> binds = <a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>.<a class="code" href="classgame_1_1settings_1_1_profile.html#a543aee644cd66fa704b06cefde7108f8">getKeybinds</a>().<a class="code" href="classgame_1_1settings_1_1_keybinds.html#aed85738c3128023418ad0e9849dc5a70">getKeyboardBindings</a>();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> (binds.end() != <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find_if</a>(binds.begin(), binds.end(), [&amp;](<span class="keyword">auto</span> iter) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                return (iter.second == action &amp;&amp; raylib::core::Keyboard::isKeyDown(iter.first));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keyword">auto</span> binds = <a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>.<a class="code" href="classgame_1_1settings_1_1_profile.html#a543aee644cd66fa704b06cefde7108f8">getKeybinds</a>().<a class="code" href="classgame_1_1settings_1_1_keybinds.html#aeffffe1846abcdc45e8a2c018581a289">getGamepadBindings</a>();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_gamepad.html">raylib::core::Gamepad</a> gamepad(<a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = binds.begin(); iter != binds.end(); ++iter) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">if</span> (iter-&gt;second != action)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> (iter-&gt;first.isButton()) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="keywordflow">if</span> (gamepad.isButtonDown(iter-&gt;first.getButton()))</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    <span class="keywordtype">float</span> axisValue = iter-&gt;first.getAxisAbsoluteValue(gamepad.getAxisMovement(iter-&gt;first.getAxis()));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keywordflow">if</span> (axisValue &gt; res)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                        res = axisValue;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00064">64</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (!update)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e">_lastActions</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(action) - 1];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordtype">float</span> res = 0.f;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_user.html#aae6864404e1d953ed996e9bd4d30f635">isKeyboard</a>()) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keyword">auto</span> binds = <a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>.<a class="code" href="classgame_1_1settings_1_1_profile.html#a543aee644cd66fa704b06cefde7108f8">getKeybinds</a>().<a class="code" href="classgame_1_1settings_1_1_keybinds.html#aed85738c3128023418ad0e9849dc5a70">getKeyboardBindings</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">return</span> (binds.end() != <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find_if</a>(binds.begin(), binds.end(), [&amp;](<span class="keyword">auto</span> iter) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                return (iter.second == action &amp;&amp; raylib::core::Keyboard::isKeyDown(iter.first));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }));</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keyword">auto</span> binds = <a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>.<a class="code" href="classgame_1_1settings_1_1_profile.html#a543aee644cd66fa704b06cefde7108f8">getKeybinds</a>().<a class="code" href="classgame_1_1settings_1_1_keybinds.html#aeffffe1846abcdc45e8a2c018581a289">getGamepadBindings</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_gamepad.html">raylib::core::Gamepad</a> gamepad(<a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = binds.begin(); iter != binds.end(); ++iter) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">if</span> (iter-&gt;second != action)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordflow">if</span> (iter-&gt;first.isButton()) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <span class="keywordflow">if</span> (gamepad.isButtonDown(iter-&gt;first.getButton()))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <span class="keywordtype">float</span> axisValue = iter-&gt;first.getAxisAbsoluteValue(gamepad.getAxisMovement(iter-&gt;first.getAxis()));</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <span class="keywordflow">if</span> (axisValue &gt; res)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        res = axisValue;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -468,17 +468,17 @@ Private Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The action value can be retreived using <a class="el" href="classgame_1_1_user.html#a1f5023545e1612b03c918c944a7c9c7b">getActionValue()</a>.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>action changed since last queue check. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00050">50</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/empty.html">empty</a>())</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classgame_1_1_user.html#a8d2365bb032289402eb23d4e79b5a31a">fillActions</a>();</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00052">52</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/empty.html">empty</a>())</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693">GameAction::NONE</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a> action = <a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/front.html">front</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/pop.html">pop</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> action;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classgame_1_1_user.html#a8d2365bb032289402eb23d4e79b5a31a">fillActions</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/empty.html">empty</a>())</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693">GameAction::NONE</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a> action = <a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/front.html">front</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">_changedActions</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/queue/pop.html">pop</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> action;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -500,8 +500,8 @@ Private Attributes</h2></td></tr>
 <p>Get the Gamepad Id of the user. </p>
 <dl class="section return"><dt>Returns</dt><dd>int gamepad id. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00024">24</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00026">26</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -523,8 +523,8 @@ Private Attributes</h2></td></tr>
 <p>Get the user id. </p>
 <dl class="section return"><dt>Returns</dt><dd>UserId user id. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00028">28</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734ed">UserId</a><span class="keyword">&gt;</span>(<a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>.<a class="code" href="classgame_1_1settings_1_1_profile.html#a7d7f3ce72335479fa20a1f32c0db3ffc">getId</a>()); }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00030">30</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734ed">UserId</a><span class="keyword">&gt;</span>(<a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>.<a class="code" href="classgame_1_1settings_1_1_profile.html#a7d7f3ce72335479fa20a1f32c0db3ffc">getId</a>()); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -552,8 +552,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00032">32</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_user.html#a13f760054351dd21b6469030c4387248">_available</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00034">34</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_user.html#a13f760054351dd21b6469030c4387248">_available</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -581,8 +581,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00020">20</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a> &lt; 0; }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00022">22</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a> &lt; 0; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -645,8 +645,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00030">30</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ <a class="code" href="classgame_1_1_user.html#a13f760054351dd21b6469030c4387248">_available</a> = available; }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00032">32</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ <a class="code" href="classgame_1_1_user.html#a13f760054351dd21b6469030c4387248">_available</a> = available; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -676,8 +676,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00022">22</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{ <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a> = id; }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00024">24</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{ <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a> = id; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -699,8 +699,8 @@ Private Attributes</h2></td></tr>
 
 <p>Set the user id. </p>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00026">26</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{ <a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>.<a class="code" href="classgame_1_1settings_1_1_profile.html#a90cb85eaf8a211d01364a199e4ec15d7">load</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<span class="keywordtype">id</span>)); }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00028">28</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{ <a class="code" href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">_profile</a>.<a class="code" href="classgame_1_1settings_1_1_profile.html#a90cb85eaf8a211d01364a199e4ec15d7">load</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<span class="keywordtype">id</span>)); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -721,8 +721,8 @@ Private Attributes</h2></td></tr>
 
 <p>Set the user in keyboard mode. </p>
 
-<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00018">18</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{ <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a> = -1; }</div>
+<p class="definition">Definition at line <a class="el" href="_user_8cpp_source.html#l00020">20</a> of file <a class="el" href="_user_8cpp_source.html">User.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ <a class="code" href="classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463">_gamepadId</a> = -1; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -853,7 +853,7 @@ Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassgame_1_1_user_html_aae6864404e1d953ed996e9bd4d30f635"><div class="ttname"><a href="classgame_1_1_user.html#aae6864404e1d953ed996e9bd4d30f635">game::User::isKeyboard</a></div><div class="ttdeci">bool isKeyboard() const</div><div class="ttdoc">Test if the user is in keyboard mode.</div><div class="ttdef"><b>Definition:</b> <a href="_user_8cpp_source.html#l00020">User.cpp:20</a></div></div>
+<div class="ttc" id="aclassgame_1_1_user_html_aae6864404e1d953ed996e9bd4d30f635"><div class="ttname"><a href="classgame_1_1_user.html#aae6864404e1d953ed996e9bd4d30f635">game::User::isKeyboard</a></div><div class="ttdeci">bool isKeyboard() const</div><div class="ttdoc">Test if the user is in keyboard mode.</div><div class="ttdef"><b>Definition:</b> <a href="_user_8cpp_source.html#l00022">User.cpp:22</a></div></div>
 <div class="ttc" id="aclassgame_1_1_user_html_a654a8b5fd3e914c3144df2fcb50e548f"><div class="ttname"><a href="classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f">game::User::_changedActions</a></div><div class="ttdeci">std::queue&lt; GameAction &gt; _changedActions</div><div class="ttdef"><b>Definition:</b> <a href="_user_8hpp_source.html#l00111">User.hpp:111</a></div></div>
 <div class="ttc" id="aclassgame_1_1_user_html_a95dae16765e383a69b835b7916c734ed"><div class="ttname"><a href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734ed">game::User::UserId</a></div><div class="ttdeci">UserId</div><div class="ttdoc">Id of a user.</div><div class="ttdef"><b>Definition:</b> <a href="_user_8hpp_source.html#l00021">User.hpp:21</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693">game::GameAction::NONE</a></div><div class="ttdeci">@ NONE</div></div>
@@ -866,13 +866,13 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassgame_1_1_user_html_a47b2f231e1263708da76f1ef7676bf49"><div class="ttname"><a href="classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49">game::User::_profile</a></div><div class="ttdeci">settings::Profile _profile</div><div class="ttdef"><b>Definition:</b> <a href="_user_8hpp_source.html#l00109">User.hpp:109</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">game::GameAction</a></div><div class="ttdeci">GameAction</div><div class="ttdef"><b>Definition:</b> <a href="_game_action_8hpp_source.html#l00013">GameAction.hpp:13</a></div></div>
 <div class="ttc" id="apop_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/queue/pop.html">std::queue::pop</a></div><div class="ttdeci">T pop(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1_user_html_ada2d0b9932887a001c279a74a7a7ca81"><div class="ttname"><a href="classgame_1_1_user.html#ada2d0b9932887a001c279a74a7a7ca81">game::User::setAvailable</a></div><div class="ttdeci">void setAvailable(bool available)</div><div class="ttdoc">Set the user available (connected)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8cpp_source.html#l00030">User.cpp:30</a></div></div>
+<div class="ttc" id="aclassgame_1_1_user_html_ada2d0b9932887a001c279a74a7a7ca81"><div class="ttname"><a href="classgame_1_1_user.html#ada2d0b9932887a001c279a74a7a7ca81">game::User::setAvailable</a></div><div class="ttdeci">void setAvailable(bool available)</div><div class="ttdoc">Set the user available (connected)</div><div class="ttdef"><b>Definition:</b> <a href="_user_8cpp_source.html#l00032">User.cpp:32</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_profile_html_a543aee644cd66fa704b06cefde7108f8"><div class="ttname"><a href="classgame_1_1settings_1_1_profile.html#a543aee644cd66fa704b06cefde7108f8">game::settings::Profile::getKeybinds</a></div><div class="ttdeci">Keybinds &amp; getKeybinds()</div><div class="ttdoc">Get the Keybinds.</div><div class="ttdef"><b>Definition:</b> <a href="_profile_8cpp_source.html#l00086">Profile.cpp:86</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_gamepad_html"><div class="ttname"><a href="classraylib_1_1core_1_1_gamepad.html">raylib::core::Gamepad</a></div><div class="ttdef"><b>Definition:</b> <a href="_gamepad_8hpp_source.html#l00023">Gamepad.hpp:23</a></div></div>
 <div class="ttc" id="aswap_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/queue/swap.html">std::queue::swap</a></div><div class="ttdeci">T swap(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1_user_html_a1f5023545e1612b03c918c944a7c9c7b"><div class="ttname"><a href="classgame_1_1_user.html#a1f5023545e1612b03c918c944a7c9c7b">game::User::getActionValue</a></div><div class="ttdeci">float getActionValue(GameAction action, bool update=false)</div><div class="ttdoc">Get the Action value of a GameAction.</div><div class="ttdef"><b>Definition:</b> <a href="_user_8cpp_source.html#l00062">User.cpp:62</a></div></div>
+<div class="ttc" id="aclassgame_1_1_user_html_a1f5023545e1612b03c918c944a7c9c7b"><div class="ttname"><a href="classgame_1_1_user.html#a1f5023545e1612b03c918c944a7c9c7b">game::User::getActionValue</a></div><div class="ttdeci">float getActionValue(GameAction action, bool update=false)</div><div class="ttdoc">Get the Action value of a GameAction.</div><div class="ttdef"><b>Definition:</b> <a href="_user_8cpp_source.html#l00064">User.cpp:64</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_profile_html_a90cb85eaf8a211d01364a199e4ec15d7"><div class="ttname"><a href="classgame_1_1settings_1_1_profile.html#a90cb85eaf8a211d01364a199e4ec15d7">game::settings::Profile::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">Load the profile from the file getFilepath().</div><div class="ttdef"><b>Definition:</b> <a href="_profile_8cpp_source.html#l00033">Profile.cpp:33</a></div></div>
-<div class="ttc" id="aclassgame_1_1_user_html_a8d2365bb032289402eb23d4e79b5a31a"><div class="ttname"><a href="classgame_1_1_user.html#a8d2365bb032289402eb23d4e79b5a31a">game::User::fillActions</a></div><div class="ttdeci">void fillActions()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8cpp_source.html#l00034">User.cpp:34</a></div></div>
+<div class="ttc" id="aclassgame_1_1_user_html_a8d2365bb032289402eb23d4e79b5a31a"><div class="ttname"><a href="classgame_1_1_user.html#a8d2365bb032289402eb23d4e79b5a31a">game::User::fillActions</a></div><div class="ttdeci">void fillActions()</div><div class="ttdef"><b>Definition:</b> <a href="_user_8cpp_source.html#l00036">User.cpp:36</a></div></div>
 <div class="ttc" id="aempty_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/empty.html">std::empty</a></div><div class="ttdeci">T empty(T... args)</div></div>
 <div class="ttc" id="apush_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/queue/push.html">std::queue::push</a></div><div class="ttdeci">T push(T... args)</div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_keybinds_html_aed85738c3128023418ad0e9849dc5a70"><div class="ttname"><a href="classgame_1_1settings_1_1_keybinds.html#aed85738c3128023418ad0e9849dc5a70">game::settings::Keybinds::getKeyboardBindings</a></div><div class="ttdeci">const std::map&lt; raylib::core::Keyboard::Key, GameAction &gt; &amp; getKeyboardBindings() const</div><div class="ttdoc">Get the map of the keyboard bindings.</div><div class="ttdef"><b>Definition:</b> <a href="_keybinds_8cpp_source.html#l00080">Keybinds.cpp:80</a></div></div>

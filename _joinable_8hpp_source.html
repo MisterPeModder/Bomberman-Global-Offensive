@@ -109,28 +109,35 @@ $(document).ready(function(){initNavTree('_joinable_8hpp_source.html',''); initR
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">// empty, only specializations of JoinTraits contain data here.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> J&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">   30</a></span>&#160;    concept <a class="code" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">Joinable</a> = requires(J &amp;joinable, J <span class="keyword">const</span> &amp;cjoinable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">typename</span> <a class="code" href="structecs_1_1_join_traits.html">JoinTraits&lt;J&gt;::Data</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// clang-format off</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        { <a class="code" href="structecs_1_1_join_traits.html">JoinTraits&lt;J&gt;::getMask</a>(cjoinable) } -&gt; std::same_as&lt;util::BitSet const &amp;&gt;;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        { <a class="code" href="structecs_1_1_join_traits.html">JoinTraits&lt;J&gt;::getData</a>(joinable, index) } -&gt; std::same_as&lt;typename JoinTraits&lt;J&gt;::Data&gt;;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// clang-format on</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <span class="comment">// namespace ecs</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // !defined(ECS_JOIN_JOINABLE_HPP_)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structecs_1_1_join_traits_ext.html">   29</a></span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> J&gt; <span class="keyword">struct </span><a class="code" href="structecs_1_1_join_traits_ext.html">JoinTraitsExt</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structecs_1_1_join_traits_ext.html#aadec28db6f60883b4e9fd90bbbcf22c7">   30</a></span>&#160;        constexpr <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structecs_1_1_join_traits_ext.html#aadec28db6f60883b4e9fd90bbbcf22c7">adjustMask</a>([[maybe_unused]] J &amp;joinable, [[maybe_unused]] <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> maxSize) {}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    };</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> J&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">   35</a></span>&#160;    concept <a class="code" href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">Joinable</a> = requires(J &amp;joinable, J <span class="keyword">const</span> &amp;cjoinable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> maxSize)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">typename</span> <a class="code" href="structecs_1_1_join_traits.html">JoinTraits&lt;J&gt;::Data</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">// clang-format off</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        { <a class="code" href="structecs_1_1_join_traits_ext.html#aadec28db6f60883b4e9fd90bbbcf22c7">JoinTraitsExt&lt;J&gt;::adjustMask</a>(joinable, maxSize) } -&gt; std::same_as&lt;void&gt; ;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        { <a class="code" href="structecs_1_1_join_traits.html">JoinTraits&lt;J&gt;::getMask</a>(cjoinable) } -&gt; std::same_as&lt;util::BitSet const &amp;&gt;;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        { <a class="code" href="structecs_1_1_join_traits.html">JoinTraits&lt;J&gt;::getData</a>(joinable, index) } -&gt; std::same_as&lt;typename JoinTraits&lt;J&gt;::Data&gt;;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// clang-format on</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <span class="comment">// namespace ecs</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif // !defined(ECS_JOIN_JOINABLE_HPP_)</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_bit_set_8hpp_html"><div class="ttname"><a href="_bit_set_8hpp.html">BitSet.hpp</a></div></div>
+<div class="ttc" id="astructecs_1_1_join_traits_ext_html_aadec28db6f60883b4e9fd90bbbcf22c7"><div class="ttname"><a href="structecs_1_1_join_traits_ext.html#aadec28db6f60883b4e9fd90bbbcf22c7">ecs::JoinTraitsExt::adjustMask</a></div><div class="ttdeci">constexpr static void adjustMask([[maybe_unused]] J &amp;joinable, [[maybe_unused]] std::size_t maxSize)</div><div class="ttdef"><b>Definition:</b> <a href="_joinable_8hpp_source.html#l00030">Joinable.hpp:30</a></div></div>
 <div class="ttc" id="aconcepts_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/concepts.html">concepts</a></div></div>
 <div class="ttc" id="acstdint_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/cstdint.html">cstdint</a></div></div>
 <div class="ttc" id="astructecs_1_1_join_traits_html"><div class="ttname"><a href="structecs_1_1_join_traits.html">ecs::JoinTraits</a></div><div class="ttdoc">Base case for non-implenting types.</div><div class="ttdef"><b>Definition:</b> <a href="_joinable_8hpp_source.html#l00024">Joinable.hpp:24</a></div></div>
+<div class="ttc" id="astructecs_1_1_join_traits_ext_html"><div class="ttname"><a href="structecs_1_1_join_traits_ext.html">ecs::JoinTraitsExt</a></div><div class="ttdoc">Optional Join traits.</div><div class="ttdef"><b>Definition:</b> <a href="_joinable_8hpp_source.html#l00029">Joinable.hpp:29</a></div></div>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
 <div class="ttc" id="anamespaceecs_html"><div class="ttname"><a href="namespaceecs.html">ecs</a></div><div class="ttdoc">Entity-Component-System namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_component_8hpp_source.html#l00013">Component.hpp:13</a></div></div>
-<div class="ttc" id="anamespaceecs_html_abdc7eeb6f093daafc5a2d9013cd98518"><div class="ttname"><a href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">ecs::Joinable</a></div><div class="ttdeci">concept Joinable</div><div class="ttdoc">Implemented by types that can be joined.</div><div class="ttdef"><b>Definition:</b> <a href="_joinable_8hpp_source.html#l00030">Joinable.hpp:30</a></div></div>
+<div class="ttc" id="anamespaceecs_html_abdc7eeb6f093daafc5a2d9013cd98518"><div class="ttname"><a href="namespaceecs.html#abdc7eeb6f093daafc5a2d9013cd98518">ecs::Joinable</a></div><div class="ttdeci">concept Joinable</div><div class="ttdoc">Implemented by types that can be joined.</div><div class="ttdef"><b>Definition:</b> <a href="_joinable_8hpp_source.html#l00035">Joinable.hpp:35</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

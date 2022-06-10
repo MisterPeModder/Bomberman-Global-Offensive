@@ -127,6 +127,11 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecs_1_1_join_traits_3_01_storage_01_4.html">JoinTraits&lt; Storage &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">All instances of IsStorage are joinable.  <a href="structecs_1_1_join_traits_3_01_storage_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecs_1_1_join_traits_ext.html">JoinTraitsExt</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional <a class="el" href="classecs_1_1_join.html" title="Container of joined values.">Join</a> traits.  <a href="structecs_1_1_join_traits_ext.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structecs_1_1_join_traits_ext_3_01_maybe_join_3_01_j_01_4_01_4.html">JoinTraitsExt&lt; MaybeJoin&lt; J &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_map_storage.html">MapStorage</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map-based component storage.  <a href="classecs_1_1_map_storage.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -341,11 +346,12 @@ template&lt;typename J &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= requires(J &amp;joinable, J <span class="keyword">const</span> &amp;cjoinable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index)</div>
+<b>Initial value:</b><div class="fragment"><div class="line">= requires(J &amp;joinable, J <span class="keyword">const</span> &amp;cjoinable, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index, <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> maxSize)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="keyword">typename</span> JoinTraits&lt;J&gt;::Data;</div>
 <div class="line"> </div>
 <div class="line">        </div>
+<div class="line">        { JoinTraitsExt&lt;J&gt;::adjustMask(joinable, maxSize) } -&gt; std::same_as&lt;void&gt; ;</div>
 <div class="line">        { JoinTraits&lt;J&gt;::getMask(cjoinable) } -&gt; std::same_as&lt;util::BitSet const &amp;&gt;;</div>
 <div class="line">        { JoinTraits&lt;J&gt;::getData(joinable, index) } -&gt; std::same_as&lt;typename JoinTraits&lt;J&gt;::Data&gt;;</div>
 <div class="line">        </div>
@@ -353,7 +359,7 @@ template&lt;typename J &gt; </div>
 </div><!-- fragment -->
 <p>Implemented by types that can be joined. </p>
 
-<p class="definition">Definition at line <a class="el" href="_joinable_8hpp_source.html#l00030">30</a> of file <a class="el" href="_joinable_8hpp_source.html">Joinable.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_joinable_8hpp_source.html#l00035">35</a> of file <a class="el" href="_joinable_8hpp_source.html">Joinable.hpp</a>.</p>
 
 </div>
 </div>

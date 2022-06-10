@@ -39,6 +39,8 @@ var hierarchy =
     [ "ecs::JoinTraits< Entities >", "structecs_1_1_join_traits_3_01_entities_01_4.html", null ],
     [ "ecs::JoinTraits< MaybeJoin< J > >", "structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html", null ],
     [ "ecs::JoinTraits< Storage >", "structecs_1_1_join_traits_3_01_storage_01_4.html", null ],
+    [ "ecs::JoinTraitsExt< J >", "structecs_1_1_join_traits_ext.html", null ],
+    [ "ecs::JoinTraitsExt< MaybeJoin< J > >", "structecs_1_1_join_traits_ext_3_01_maybe_join_3_01_j_01_4_01_4.html", null ],
     [ "game::settings::Keybinds", "classgame_1_1settings_1_1_keybinds.html", null ],
     [ "raylib::core::Keyboard", "classraylib_1_1core_1_1_keyboard.html", null ],
     [ "localization::Localization", "classlocalization_1_1_localization.html", null ],

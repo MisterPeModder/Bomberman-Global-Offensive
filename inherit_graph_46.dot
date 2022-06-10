@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="raylib::core::Vector3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector3.html",tooltip="The Vector3 struct (compatible with the raylib Vector3)"];
+  Node0 [label="raylib::core::Sound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1core_1_1_sound.html",tooltip="Core namespace (inside of raylib)"];
 }

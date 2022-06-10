@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classgame_1_1map_1_1cellular_1_1_rule.html#aae91d1e6f16e42d07611b2226d87caf8":[2,0,1,0,0,1,2],
 "classgame_1_1map_1_1cellular_1_1_rule.html#aaf9c642523a83250eebe7b4b753988d2":[2,0,1,0,0,1,1],
 "classgame_1_1map_1_1cellular_1_1_rule.html#aec7ce2595fb437ceb7dd91e648aafaff":[2,0,1,0,0,1,9],
 "classgame_1_1map_1_1cellular_1_1_rule.html#afbc4807d1e31408ef1f7b1b4a0130b38":[2,0,1,0,0,1,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0c2629e56daed25c9df918961d0cc03f":[2,0,3,0,6,0,44],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0d61f8370cad1d412f80b84d143e1257":[2,0,3,0,6,0,20],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0f82d86afa0f5dc965c5c15aca58dcfb":[2,0,3,0,6,0,8],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a17de1e647789892e1fb512bf04db4866":[2,0,3,0,6,0,102],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a180bb5e381e316e2246b88c92770ee75":[2,0,3,0,6,0,11]
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a17de1e647789892e1fb512bf04db4866":[2,0,3,0,6,0,102]
 };

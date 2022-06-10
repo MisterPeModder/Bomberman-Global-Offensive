@@ -1,6 +1,7 @@
 var NAVTREEINDEX5 =
 {
 "namespaceutil.html":[2,0,4],
+"namespaceutil.html":[1,0,4],
 "pages.html":[],
 "raylib_2_logger_8cpp.html":[3,0,0,4,4],
 "raylib_2_logger_8cpp.html#a41c1173f01e4505c526d7cdfa848d2fa":[3,0,0,4,4,1],
@@ -31,6 +32,10 @@ var NAVTREEINDEX5 =
 "structecs_1_1_join_traits_3_01_storage_01_4.html#a2280092d27261f1f2a2ac39aaf6cd857":[2,0,0,9,1],
 "structecs_1_1_join_traits_3_01_storage_01_4.html#a45865b285090c5163a32665c19cb2147":[2,0,0,9,0],
 "structecs_1_1_join_traits_3_01_storage_01_4.html#ab5c671c381e6124e8950b58287642f40":[2,0,0,9,2],
+"structecs_1_1_join_traits_ext.html":[2,0,0,10],
+"structecs_1_1_join_traits_ext.html#aadec28db6f60883b4e9fd90bbbcf22c7":[2,0,0,10,0],
+"structecs_1_1_join_traits_ext_3_01_maybe_join_3_01_j_01_4_01_4.html":[2,0,0,11],
+"structecs_1_1_join_traits_ext_3_01_maybe_join_3_01_j_01_4_01_4.html#aa9c73615998bc70a045370f5b3127d4b":[2,0,0,11,0],
 "structgame_1_1_users_1_1_action_event.html":[2,0,1,3,0],
 "structgame_1_1_users_1_1_action_event.html#ab9dc50f310df1dfcb6c073492f260192":[2,0,1,3,0,0],
 "structgame_1_1_users_1_1_action_event.html#abb055ce0c8e638108b9d6d2744e93f2e":[2,0,1,3,0,2],
