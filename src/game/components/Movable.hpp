@@ -16,7 +16,6 @@ namespace game
     struct Movable : public ecs::Component, public raylib::core::Vector2 {
         Movable(float px = 0, float py = 0) : Vector2(px, py) {}
         Movable(Vector2 vector) : Vector2(vector) {}
-        Movable(Vector2 vector) : Vector2(vector) {}
     };
 } // namespace game
 

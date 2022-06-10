@@ -10,6 +10,7 @@
 
 #include "ecs/World.hpp"
 #include "map/Map.hpp"
+#include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Vector2.hpp"
 
 namespace game
@@ -30,7 +31,10 @@ namespace game
         Game(ecs::World &world, Parameters params = Parameters());
         ~Game() = default;
 
-        void run();
+        const map::Map &getMap() const;
+
+        void setup(raylib::core::Camera3D &camera);
+        void drawFrame(const raylib::core::Camera3D &camera);
 
       private:
         ecs::World &_world;

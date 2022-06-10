@@ -30,7 +30,7 @@ namespace raylib
             return *this;
         }
 
-        void Camera3D::begin3D() { BeginMode3D(_camera); }
+        void Camera3D::begin3D() const { BeginMode3D(_camera); }
 
         void Camera3D::end3D() { EndMode3D(); }
 

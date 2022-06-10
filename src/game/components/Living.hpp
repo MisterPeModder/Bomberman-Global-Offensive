@@ -15,7 +15,7 @@ namespace game
     struct Living : public ecs::Component {
         size_t hp;
         size_t hpMax;
-        Living(size_t php = 1, size_t phpMax = 1) : hp(php), hpMax(phpMax) {}
+        Living(size_t php, size_t phpMax) : hp(php), hpMax(phpMax) {}
         Living(size_t php = 1) : hp(php), hpMax(php) {}
     };
 } // namespace game

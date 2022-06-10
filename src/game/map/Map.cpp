@@ -63,8 +63,8 @@ namespace game
 
         Vector2 Map::getPlayerStartingPosition(game::User::UserId playerId)
         {
-            return {static_cast<float>((static_cast<size_t>(playerId) % 2) * getWidth() - 1),
-                static_cast<float>((static_cast<size_t>(playerId) / 2) * getHeight() - 1)};
+            return {static_cast<float>((static_cast<size_t>(playerId) % 2) * (getWidth() - 1)),
+                static_cast<float>((static_cast<size_t>(playerId) / 2) * (getHeight() - 1))};
         }
 
         void Map::freeCorners()

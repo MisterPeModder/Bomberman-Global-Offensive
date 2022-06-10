@@ -15,7 +15,7 @@ namespace game
     struct Destructible final : public ecs::Component {
         bool destructed;
 
-        Destructible(bool pdestructed) : destructed(pdestructed){};
+        Destructible(bool pdestructed = false) : destructed(pdestructed){};
     };
 } // namespace game
 

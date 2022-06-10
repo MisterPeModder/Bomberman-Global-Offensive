@@ -14,10 +14,10 @@
 namespace game
 {
     struct Collidable : public ecs::Component {};
-    SET_COMPONENT_STORAGE(Marker, ecs::MarkerStorage);
+    SET_COMPONENT_STORAGE(Collidable, ecs::MarkerStorage);
 
     struct Wall : public ecs::Component {};
-    SET_COMPONENT_STORAGE(Marker, ecs::MarkerStorage);
+    SET_COMPONENT_STORAGE(Wall, ecs::MarkerStorage);
 } // namespace game
 
 #endif /* !GAME_COMPONENTS_COLLIDABLE_HPP_ */
