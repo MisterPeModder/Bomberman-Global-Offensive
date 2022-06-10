@@ -43,6 +43,15 @@ namespace raylib
             /// Draw the cube.
             void draw() const override;
 
+            /// Draw the cube at a particular location and with a particular size, ignoring the cube's position and size
+            /// (and color) members
+            ///
+            /// @param position the position where the cube will be drawn
+            /// @param size the size of the drawn cube
+            /// @param color the color the the drawn cube
+            void draw(raylib::core::Vector3 position, raylib::core::Vector3 size,
+                raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR) const;
+
             /// Draw the wireframe of the cube.
             void drawWires() const;
 
