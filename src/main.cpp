@@ -75,10 +75,10 @@ int main()
 {
     setupLogger();
 
-    bmjs::Engine jsEngine;
+    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
 
-    jsEngine.loadApi();
-    jsEngine.loadMod("hello");
+    jsEngine->loadApi();
+    jsEngine->loadMod("hello");
 
     // Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});

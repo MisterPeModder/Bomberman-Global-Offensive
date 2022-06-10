@@ -11,10 +11,33 @@
 
 #include <filesystem>
 #include <fstream>
+#include <memory>
 #include <string>
 
 namespace bmjs
 {
+    std::weak_ptr<Engine> Engine::_instance = std::weak_ptr<Engine>();
+
+    std::shared_ptr<Engine> Engine::create()
+    {
+        if (Engine::_instance.expired()) {
+            // using 'new' because Engine's constructor is private
+            std::shared_ptr<Engine> newInstance(new Engine());
+            Engine::_instance = newInstance;
+            return newInstance;
+        }
+        return Engine::_instance.lock();
+    }
+
+    std::weak_ptr<Engine> Engine::instance() { return Engine::_instance; }
+
+    void Engine::loadMod(std::string_view name)
+    {
+        auto modPath = util::makePath(std::filesystem::path("mods"), name);
+        modPath += ".js";
+        this->load(modPath);
+    }
+
 #ifdef __EMSCRIPTEN__
     Engine::Engine() { BMJS_USE_API(common); }
 
@@ -56,11 +79,4 @@ namespace bmjs
     }
 
 #endif // !defined(__EMSCRIPTEN__)
-
-    void Engine::loadMod(std::string_view name)
-    {
-        auto modPath = util::makePath(std::filesystem::path("mods"), name);
-        modPath += ".js";
-        this->load(modPath);
-    }
 } // namespace bmjs

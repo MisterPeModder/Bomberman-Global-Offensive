@@ -13,6 +13,7 @@
 #define SCRIPT_ENGINE_HPP_
 
 #include <filesystem>
+#include <memory>
 
 #ifndef __EMSCRIPTEN__
     #include <mujs.h>
@@ -21,13 +22,21 @@
 namespace bmjs
 {
     /// Javascript Engine Wrapper.
+    ///
+    /// Only one instance of Engine may exist at any given time.
     class Engine {
       public:
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Instantiation
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        Engine();
+        /// Creates the instance of Engine, if it does not already exist.
+        ///
+        /// @returns The Engine instance.
+        static std::shared_ptr<Engine> create();
+
+        /// @returns The Engine instance, may not exist.
+        static std::weak_ptr<Engine> instance();
 
         /// Cannot copy.
         Engine(Engine const &) = delete;
@@ -52,6 +61,10 @@ namespace bmjs
         void loadMod(std::string_view name);
 
       private:
+        static std::weak_ptr<Engine> _instance;
+
+        Engine();
+
 #ifndef __EMSCRIPTEN__
         js_State *_state;
 #endif // !defined(__EMSCRIPTEN__)
