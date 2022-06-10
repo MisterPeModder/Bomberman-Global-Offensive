@@ -11,7 +11,7 @@
 #include "ecs/Component.hpp"
 #include "raylib/core/Color.hpp"
 
-namespace game
+namespace game::components
 {
     struct CubeColor : public ecs::Component, public raylib::core::Color {
         CubeColor(unsigned char cr, unsigned char cg, unsigned char cb, unsigned char ca)
@@ -20,6 +20,6 @@ namespace game
         }
         CubeColor(const raylib::core::Color &other) : raylib::core::Color(other) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif /* !GAME_COMPONENTS_CUBECOLOR_HPP_ */

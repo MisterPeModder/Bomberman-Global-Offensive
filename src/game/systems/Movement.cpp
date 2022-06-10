@@ -12,7 +12,9 @@
 #include "game/components/Position.hpp"
 #include "game/components/Velocity.hpp"
 
-namespace game
+using namespace game::components;
+
+namespace game::systems
 {
     void Movement::run(ecs::SystemData data)
     {
@@ -26,4 +28,4 @@ namespace game
         }
         data.getResource<ecs::Timer>().reset();
     }
-} // namespace game
+} // namespace game::systems

@@ -12,14 +12,14 @@
 #include "game/components/Position.hpp"
 #include "raylib/shapes/Rectangle.hpp"
 
-namespace game
+namespace game::systems
 {
     struct Collision : public ecs::System {
         void run(ecs::SystemData data) override final;
 
       private:
-        void resolveCollision(const ::Rectangle collideRectangle, float scale, Position &pos) const;
+        void resolveCollision(const ::Rectangle collideRectangle, float scale, game::components::Position &pos) const;
     };
-} // namespace game
+} // namespace game::systems
 
 #endif /* !GAME_SYSTEMS_COLLISION_HPP_ */

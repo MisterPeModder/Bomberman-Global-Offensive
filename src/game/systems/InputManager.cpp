@@ -10,7 +10,9 @@
 #include "ecs/join.hpp"
 #include "game/gui/components/Widget.hpp"
 
-namespace game
+using namespace game::components;
+
+namespace game::systems
 {
     void InputManager::run(ecs::SystemData data)
     {
@@ -41,4 +43,4 @@ namespace game
         }
     }
 
-} // namespace game
+} // namespace game::systems

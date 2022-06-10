@@ -50,29 +50,29 @@ namespace game
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
         /// Add world systems
-        _world.addSystem<game::InputManager>();
-        _world.addSystem<ChangeCube>();
-        _world.addSystem<DrawingCube>();
-        _world.addSystem<Movement>();
-        _world.addSystem<Collision>();
+        _world.addSystem<systems::InputManager>();
+        _world.addSystem<systems::ChangeCube>();
+        _world.addSystem<systems::DrawingCube>();
+        _world.addSystem<systems::Movement>();
+        _world.addSystem<systems::Collision>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
             Vector2 cell = _map.getPlayerStartingPosition(owner);
 
             _world.addEntity()
-                .with<Position>(cell.x, 1.f, cell.y)
-                .with<Velocity>()
-                .with<Living>(_params.livesCount)
-                .with<Collidable>()
-                .with<Player>()
-                .with<Cube>()
-                .with<Size>(0.7f, 2.f, 0.7f)
-                .with<CubeColor>(raylib::core::Color::RED)
-                .with<Controlable>(owner,
+                .with<components::Position>(cell.x, 1.f, cell.y)
+                .with<components::Velocity>()
+                .with<components::Living>(_params.livesCount)
+                .with<components::Collidable>()
+                .with<components::Player>()
+                .with<components::Cube>()
+                .with<components::Size>(0.7f, 2.f, 0.7f)
+                .with<components::CubeColor>(raylib::core::Color::RED)
+                .with<components::Controlable>(owner,
                     [this](ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) {
                         if (isMoveAction(event.action)) {
-                            auto &velocity = _world.getStorage<Velocity>()[self.getId()];
+                            auto &velocity = _world.getStorage<components::Velocity>()[self.getId()];
                             auto &user = _world.getResource<Users>()[event.user];
                             GameAction bestAction;
                             float value = 0.f;
@@ -104,10 +104,10 @@ namespace game
 
         /// Ground
         _world.addEntity()
-            .with<Position>(width / 2.f - 0.5f, 0.f, depth / 2.f - 0.5f)
-            .with<Size>(static_cast<float>(width), 0.1f, static_cast<float>(depth))
-            .with<CubeColor>(raylib::core::Color::RAY_WHITE)
-            .with<Cube>()
+            .with<components::Position>(width / 2.f - 0.5f, 0.f, depth / 2.f - 0.5f)
+            .with<components::Size>(static_cast<float>(width), 0.1f, static_cast<float>(depth))
+            .with<components::CubeColor>(raylib::core::Color::RAY_WHITE)
+            .with<components::Cube>()
             .build();
 
         /// Walls, crates
@@ -132,14 +132,14 @@ namespace game
                 }
                 if (wall) {
                     auto &builder = _world.addEntity()
-                                        .with<Position>(x, 0.5f, z)
-                                        .with<Collidable>()
-                                        .with<Wall>()
-                                        .with<Cube>()
-                                        .with<Size>(1.f, 1.f, 1.f)
-                                        .with<CubeColor>(color);
+                                        .with<components::Position>(x, 0.5f, z)
+                                        .with<components::Collidable>()
+                                        .with<components::Wall>()
+                                        .with<components::Cube>()
+                                        .with<components::Size>(1.f, 1.f, 1.f)
+                                        .with<components::CubeColor>(color);
                     if (destructible)
-                        builder.with<Destructible>().build();
+                        builder.with<components::Destructible>().build();
                     else
                         builder.build();
                 }

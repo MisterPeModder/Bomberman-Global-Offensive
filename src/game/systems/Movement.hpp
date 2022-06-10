@@ -10,11 +10,11 @@
 
 #include "ecs/System.hpp"
 
-namespace game
+namespace game::systems
 {
     struct Movement : public ecs::System {
         void run(ecs::SystemData data) override final;
     };
-} // namespace game
+} // namespace game::systems
 
 #endif /* !GAME_SYSTEMS_MOVEMENT_HPP_ */

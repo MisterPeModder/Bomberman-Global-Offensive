@@ -10,7 +10,7 @@
 
 #include "ecs/System.hpp"
 
-namespace game
+namespace game::systems
 {
     /// Draw text system.
     struct DrawText : public ecs::System {
@@ -19,6 +19,6 @@ namespace game
         /// @param data view on the world.
         void run(ecs::SystemData data) override final;
     };
-} // namespace game
+} // namespace game::systems
 
 #endif /* !GAME_SYSTEMS_DRAWTEXT_HPP_ */

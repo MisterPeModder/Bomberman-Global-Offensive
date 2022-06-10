@@ -10,13 +10,13 @@
 
 #include "ecs/Component.hpp"
 
-namespace game
+namespace game::components
 {
     struct Destructible final : public ecs::Component {
         bool destructed;
 
         Destructible(bool pdestructed = false) : destructed(pdestructed){};
     };
-} // namespace game
+} // namespace game::components
 
 #endif /* !GAME_COMPONENTS_DESTRUCTIBLE_HPP_ */

@@ -11,13 +11,13 @@
 #include "ecs/Component.hpp"
 #include "raylib/core/Vector3.hpp"
 
-namespace game
+namespace game::components
 {
     struct Size : public ecs::Component, public raylib::core::Vector3 {
         Size(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
         Size(Vector3 vector) : Vector3(vector) {}
         Size(Vector2 vector) : Vector3(vector) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif /* !GAME_COMPONENTS_SIZE_HPP_ */

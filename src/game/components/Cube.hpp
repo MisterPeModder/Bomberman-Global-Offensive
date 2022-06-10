@@ -11,7 +11,7 @@
 #include "ecs/Component.hpp"
 #include "raylib/shapes/Cube.hpp"
 
-namespace game
+namespace game::components
 {
     struct Cube : public ecs::Component {
         raylib::shapes::Cube cube;
@@ -19,6 +19,6 @@ namespace game
         Cube() : cube() {}
         Cube(raylib::core::Vector3 position, raylib::core::Vector3 size, Color color) : cube(position, size, color) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif /* !GAME_COMPONENTS_CUBE_HPP_ */

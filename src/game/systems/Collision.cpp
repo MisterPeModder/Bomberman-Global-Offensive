@@ -11,7 +11,9 @@
 #include "game/components/Size.hpp"
 #include "game/components/Velocity.hpp"
 
-namespace game
+using namespace game::components;
+
+namespace game::systems
 {
     void Collision::run(ecs::SystemData data)
     {
@@ -57,4 +59,4 @@ namespace game
             pos.z += collideRectangle.width * scale * ((collideRectangle.y < pos.z) ? 1 : -1);
     }
 
-} // namespace game
+} // namespace game::systems

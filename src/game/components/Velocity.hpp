@@ -11,12 +11,12 @@
 #include "ecs/Component.hpp"
 #include "raylib/core/Vector3.hpp"
 
-namespace game
+namespace game::components
 {
     struct Velocity : public ecs::Component, public raylib::core::Vector3 {
         Velocity(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
         Velocity(Vector3 vector) : Vector3(vector) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif /* !GAME_COMPONENTS_VELOCITY_HPP_ */
