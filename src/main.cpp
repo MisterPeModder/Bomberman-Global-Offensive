@@ -169,7 +169,7 @@ int main()
     raylib::model::Animation &testingAnimation = getTestingAnimation();
 
     ecs::World world;
-    world.addSystem<game::systems::DrawRotatedModel>();
+    world.addSystem<game::systems::DrawModel>();
     world.addSystem<game::systems::RunAnimation>();
     world.addEntity()
         .with<game::Model>(testingModel)
