@@ -6,6 +6,7 @@ var classecs_1_1_world =
     [ "~World", "classecs_1_1_world.html#abb584dc747242c4d99ea4ec16067b774", null ],
     [ "addEntity", "classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518", null ],
     [ "addResource", "classecs_1_1_world.html#a35d2aabad3acb861b98122430c89d52e", null ],
+    [ "addStorage", "classecs_1_1_world.html#aa1222e462fa0cfa6944cc92c0238afe7", null ],
     [ "addSystem", "classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781", null ],
     [ "getResource", "classecs_1_1_world.html#ad2291354377f36b17edca160ce05d749", null ],
     [ "getResource", "classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a", null ],

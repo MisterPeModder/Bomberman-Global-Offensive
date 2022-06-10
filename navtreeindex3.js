@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a69c2a230341825590a52280cb01b3785":[2,0,3,0,5,1,3],
+"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a72cfc591ef9d92882300ab7408822f3d":[2,0,3,0,5,1,2],
 "classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a87a77fb30e508725d35683af9611e146":[2,0,3,0,5,1,5],
 "classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a87cefa1bf6e203cee834747ea138e766":[2,0,3,0,5,1,10],
 "classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a9d4989e254422a15442ed8c59c600f1a":[2,0,3,0,5,1,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "classraylib_1_1shapes_1_1_circle.html#a6e7425e6906bd6e575f47468a733d650":[2,0,3,2,1,2],
 "classraylib_1_1shapes_1_1_circle.html#a85e6b45f7dcab41cab0006eaec5ed9f9":[2,0,3,2,1,9],
 "classraylib_1_1shapes_1_1_circle.html#aa41e23b2830ccd7e98b51da0ef50cc58":[2,0,3,2,1,1],
-"classraylib_1_1shapes_1_1_circle.html#ae93b284aca398836326bae8587bb13c3":[2,0,3,2,1,12],
-"classraylib_1_1shapes_1_1_circle.html#aed0d6c3f251dd1728379f8c72f6551fa":[2,0,3,2,1,4],
-"classraylib_1_1shapes_1_1_circle.html#afaaca92d0cd508dbe62afe4b6955babb":[2,0,3,2,1,0]
+"classraylib_1_1shapes_1_1_circle.html#ae93b284aca398836326bae8587bb13c3":[2,0,3,2,1,12]
 };

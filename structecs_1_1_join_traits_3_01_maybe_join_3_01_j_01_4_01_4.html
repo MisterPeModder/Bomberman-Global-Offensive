@@ -111,7 +111,7 @@ Static Public Member Functions</h2></td></tr>
 struct ecs::JoinTraits&lt; MaybeJoin&lt; J &gt; &gt;</h3>
 
 
-<p class="definition">Definition at line <a class="el" href="_maybe_join_8hpp_source.html#l00056">56</a> of file <a class="el" href="_maybe_join_8hpp_source.html">MaybeJoin.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_maybe_join_8hpp_source.html#l00065">65</a> of file <a class="el" href="_maybe_join_8hpp_source.html">MaybeJoin.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="adc7f8542465f9b05bf8162df6d9e523a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc7f8542465f9b05bf8162df6d9e523a">&#9670;&nbsp;</a></span>Data</h2>
@@ -127,7 +127,7 @@ template&lt;Joinable J&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_maybe_join_8hpp_source.html#l00057">57</a> of file <a class="el" href="_maybe_join_8hpp_source.html">MaybeJoin.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_maybe_join_8hpp_source.html#l00066">66</a> of file <a class="el" href="_maybe_join_8hpp_source.html">MaybeJoin.hpp</a>.</p>
 
 </div>
 </div>
@@ -168,12 +168,8 @@ template&lt;Joinable J&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_maybe_join_8hpp_source.html#l00061">61</a> of file <a class="el" href="_maybe_join_8hpp_source.html">MaybeJoin.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span> (JoinTraits&lt;J&gt;::getMask(joinable.getInner())[index])</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> &amp;JoinTraits&lt;J&gt;::getData(joinable.getInner(), index);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_maybe_join_8hpp_source.html#l00070">70</a> of file <a class="el" href="_maybe_join_8hpp_source.html">MaybeJoin.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keywordflow">return</span> joinable.getData(index); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -203,8 +199,8 @@ template&lt;Joinable J&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_maybe_join_8hpp_source.html#l00059">59</a> of file <a class="el" href="_maybe_join_8hpp_source.html">MaybeJoin.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ <span class="keywordflow">return</span> joinable.getMask(); }</div>
+<p class="definition">Definition at line <a class="el" href="_maybe_join_8hpp_source.html#l00068">68</a> of file <a class="el" href="_maybe_join_8hpp_source.html">MaybeJoin.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{ <span class="keywordflow">return</span> joinable.getMask(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
