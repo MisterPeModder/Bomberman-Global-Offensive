@@ -43,8 +43,8 @@
     #include <emscripten/emscripten.h>
 #endif
 
-constexpr int WIDTH(500);
-constexpr int HEIGHT(500);
+constexpr int WIDTH(1080);
+constexpr int HEIGHT(720);
 
 static raylib::model::Model &getTestingModel()
 {
@@ -92,6 +92,13 @@ static void setupLogger()
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
     Logger::logger.setName("main");
     raylib::initLogger(LOG_INFO);
+}
+
+static void addSettingsMenu(ecs::World &world)
+{
+    world.addEntity()
+        .with<game::Position>(0, 0)
+        .with<game::Size>()
 }
 
 static void addTestWidgets(ecs::World &world)
@@ -182,6 +189,7 @@ int main()
         .build();
 
     addTestWidgets(world);
+    addSettingsMenu(world);
 
     world.addResource<game::Users>();
     world.addSystem<game::DrawText>();

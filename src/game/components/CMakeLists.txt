@@ -3,8 +3,8 @@ set(SRCROOT ${SRCROOT}/components)
 
 set(SRC
     ${SRC}
-	  ${SRCROOT}/Controlable.hpp
-	  ${SRCROOT}/Textual.hpp
+    ${SRCROOT}/Controlable.hpp
+    ${SRCROOT}/Textual.hpp
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Color.hpp
     ${INCROOT}/Image.hpp
@@ -15,6 +15,7 @@ set(SRC
     ${INCROOT}/Scale.hpp
     ${INCROOT}/Size.hpp
     ${INCROOT}/Texture2D.hpp
+	${INCROOT}/Rectangle.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
