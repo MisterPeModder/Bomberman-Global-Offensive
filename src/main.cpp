@@ -17,12 +17,27 @@
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/core/Audio.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Color.hpp"
+#include "raylib/core/Sound.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
+#include "raylib/raylib.hpp"
+
+#include "ecs/Storage.hpp"
+#include "game/Users.hpp"
+#include "game/components/Controlable.hpp"
+#include "game/components/Position.hpp"
+#include "game/components/Textual.hpp"
+#include "game/systems/DrawText.hpp"
+#include "game/systems/InputManager.hpp"
+
+#include "game/gui/components/Checkable.hpp"
+#include "game/gui/components/Clickable.hpp"
+#include "game/gui/components/Widget.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -30,6 +45,8 @@
 
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
+
+ecs::World world;
 
 static raylib::model::Model &getTestingModel()
 {
@@ -66,37 +83,66 @@ static void drawFrame(void *arg)
         params->world->runSystems();
     };
 
+    world.runSystems();
+
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
     raylib::core::Window::drawFPS(10, 10);
-}
-
-static void raylibLogger(int msgType, const char *text, va_list args)
-{
-    static Logger raylibLogger("log_raylib.txt", true);
-    Logger::Severity severity;
-    std::array<char, 1024> buffer;
-
-    switch (msgType) {
-        case LOG_TRACE: severity = Logger::Severity::Debug; break;
-        case LOG_DEBUG: severity = Logger::Severity::Debug; break;
-        case LOG_INFO: severity = Logger::Severity::Information; break;
-        case LOG_WARNING: severity = Logger::Severity::Warning; break;
-        case LOG_ERROR: severity = Logger::Severity::Error; break;
-        case LOG_FATAL: severity = Logger::Severity::Error; break;
-        default: return;
-    }
-    vsnprintf(buffer.data(), 1024, text, args);
-    raylibLogger.log(severity, buffer.data());
 }
 
 static void setupLogger()
 {
     // Setup the logger parameters
-    Logger::logger.setOutputFile("log.txt");
-    Logger::logger.setLogLevel(Logger::Severity::Information);
+    Logger::logger.setLogLevel(Logger::Severity::Debug);
     Logger::logger.setLogInfo(Logger::LogInfo::Time);
-    SetTraceLogCallback(raylibLogger);
-    SetTraceLogLevel(LOG_INFO);
+    Logger::logger.setName("main");
+    raylib::initLogger(LOG_INFO);
+}
+
+static void addTestWidgets()
+{
+    world.addEntity()
+        .with<game::Position>(0.f, 0.f)
+        .with<game::Textual>("I'm the ECS button", 20, raylib::core::Color::RED)
+        .with<game::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(
+            0, game::gui::Widget::NullTag, 1, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
+        .with<game::gui::Clickable>(
+            [](ecs::Entity _) {
+                (void)_;
+                Logger::logger.log(Logger::Severity::Debug, "On click event!");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::Textual>()[btn.getId()].color = (state == game::gui::Clickable::State::Pressed)
+                    ? raylib::core::Color::BLUE
+                    : raylib::core::Color::RED;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::Position>(0.f, 100.f)
+        .with<game::Textual>("Hello ECS", 40, raylib::core::Color::RED)
+        .with<game::Controlable>(game::User::UserId::User1,
+            [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                (void)self;
+                (void)data;
+                (void)event;
+                Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                    writer << "Text control! " << event.value << ", " << static_cast<size_t>(event.action);
+                });
+                return false;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::Position>(250.f, 0.f)
+        .with<game::Textual>("I'm the ECS Checkbox!", 20, raylib::core::Color::RED)
+        .with<game::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+        .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
+            world.getStorage<game::Textual>()[checkbox.getId()].color =
+                (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
+        })
+        .build();
 }
 
 int main()
@@ -109,6 +155,9 @@ int main()
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
+
+    /// Setup Audio for the program
+    raylib::core::scoped::AudioDevice audioDevice;
 
     // Basic placeholder window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
@@ -135,6 +184,12 @@ int main()
         .with<game::components::Color>(raylib::core::Color::RED)
         .with<game::components::Animation>(testingAnimation)
         .build();
+
+    addTestWidgets();
+
+    world.addResource<game::Users>();
+    world.addSystem<game::DrawText>();
+    world.addSystem<game::InputManager>();
 
     params_s params;
     params.camera = &camera;

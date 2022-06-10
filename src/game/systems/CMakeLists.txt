@@ -5,6 +5,10 @@ set(SRC
     ${SRC}
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Model.hpp
+    ${SRCROOT}/DrawText.hpp
+    ${SRCROOT}/DrawText.cpp
+    ${SRCROOT}/InputManager.hpp
+    ${SRCROOT}/InputManager.cpp
     PARENT_SCOPE)
 
 set(INCDIRS

@@ -6,6 +6,7 @@
 */
 
 #include "GamepadInput.hpp"
+#include <algorithm>
 #include <string>
 
 namespace game
@@ -24,6 +25,16 @@ namespace game
         raylib::core::Gamepad::Axis GamepadInput::getAxis() const { return _axis; }
 
         GamepadInput::AxisDirection GamepadInput::getAxisDirection() const { return _axisDirection; }
+
+        float GamepadInput::getAxisAbsoluteValue(float value) const
+        {
+            if (_axisDirection == AxisDirection::None)
+                return 0;
+            if (_axisDirection == AxisDirection::Negative)
+                return abs(std::min(value, 0.f));
+            else
+                return std::max(0.f, value);
+        }
 
         bool GamepadInput::isButton() const { return _button != raylib::core::Gamepad::Button::UNKNOWN; }
 

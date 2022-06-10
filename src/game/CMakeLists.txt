@@ -5,10 +5,16 @@ add_subdirectory(components)
 add_subdirectory(map)
 add_subdirectory(settings)
 add_subdirectory(systems)
+add_subdirectory(components)
+add_subdirectory(gui)
 
 set (SRC
 	${SRC}
 	${SRCROOT}/GameAction.hpp
+	${SRCROOT}/User.cpp
+	${SRCROOT}/User.hpp
+	${SRCROOT}/Users.cpp
+	${SRCROOT}/Users.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS

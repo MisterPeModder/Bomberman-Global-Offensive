@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** Bomberman
+** File description:
+** Position
+*/
+
 #ifndef GAME_COMPONENTS_POSITION_HPP_
 #define GAME_COMPONENTS_POSITION_HPP_
 
@@ -11,9 +18,9 @@ namespace game
         struct Position : public ecs::Component, public raylib::core::Vector3 {
             Position(raylib::core::Vector2 &pposition) : raylib::core::Vector3(pposition) {}
             Position(raylib::core::Vector3 &pposition) : raylib::core::Vector3(pposition) {}
-            Position(float px, float py, float pz = 0) : raylib::core::Vector3(px, py, pz) {}
+            Position(float px = 0, float py = 0, float pz = 0) : raylib::core::Vector3(px, py, pz) {}
         };
     } // namespace components
 } // namespace game
 
-#endif
+#endif /* !GAME_COMPONENTS_POSITION_HPP_ */
