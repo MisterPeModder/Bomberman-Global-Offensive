@@ -294,17 +294,12 @@ void game_loop()
     raylib::core::Camera3D camera;
     ecs::World world;
     game::map::Map map;
-    raylib::textures::Image image("download.jpeg");
+    raylib::textures::Image image("/download.jpeg");
+    raylib::textures::Texture2D cubimap(image);
+    raylib::model::Mesh mesh = mesh.genCubicMap(image, (Vector3){ 1.0f, 1.0f, 1.0f });
+    raylib::model::Model model(mesh);
 
-
-
-    // raylib::model::Mesh mesh = mesh.genCubicMap(image, (Vector3){ 1.0f, 1.0f, 1.0f });
-
-    // raylib::textures::Texture2D cubimap = cubimap.loadFromImage(image);
-
-    // raylib::model::Model model = model.loadFromMesh(mesh);
-
-    // std::cout << "test\n" << std::endl;
+    std::cout << "test\n" << std::endl;
 
     camera.setPosition({ 13.0f, 10.0f, 0 });  // Camera position
     camera.setTarget({ (0 + (map.getWidth() / 2)), 0.0f, (map.getHeight() / 2) });      // Camera looking at point

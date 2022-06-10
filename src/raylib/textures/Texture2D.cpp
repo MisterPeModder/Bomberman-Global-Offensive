@@ -17,13 +17,18 @@ namespace raylib
             load();
         }
 
+        Texture2D::Texture2D(raylib::textures::Image &image)
+        {
+            loadFromImage(image.asRaylib());
+        }
+
         Texture2D::~Texture2D() { unload(); }
 
         void Texture2D::setPosition(Vector2 &position) { _position = position; }
 
         void Texture2D::load() { _texture = LoadTexture(_fileName.generic_string().c_str()); }
 
-        void Texture2D::loadFromImage(const Image &image) { _texture = LoadTextureFromImage(image); }
+        void Texture2D::loadFromImage(const ::Image &image) { _texture = LoadTextureFromImage(image); }
 
         void Texture2D::unload() { UnloadTexture(_texture); }
 

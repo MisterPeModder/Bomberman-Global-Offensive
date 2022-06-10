@@ -13,6 +13,7 @@
 #include <span>
 #include "raylib/core/Color.hpp"
 #include "raylib/core/Vector2.hpp"
+#include "raylib/textures/Image.hpp"
 
 extern "C"
 {
@@ -37,6 +38,8 @@ namespace raylib
             /// @param fileName The name of the file that contains the texture.
             Texture2D(const std::filesystem::path &fileName = {}, Vector2 position = {});
 
+            Texture2D(raylib::textures::Image &image);
+
             /// The destructor for the Texture2D class
             ~Texture2D();
 
@@ -51,7 +54,7 @@ namespace raylib
             /// Loads a texture from an Image object
             ///
             /// @param image The image to load the texture from.
-            void loadFromImage(const Image &image);
+            void loadFromImage(const ::Image &image);
 
             /// UnloadTexture() is a function that unloads a texture from GPU memory
             void unload();

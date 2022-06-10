@@ -14,7 +14,12 @@ namespace raylib
     {
         Model::Model(const std::filesystem::path &modelPath) : _model(LoadModel(modelPath.generic_string().c_str())) {}
 
-        Model::Model(const raylib::model::Mesh &mesh) : _model(LoadModelFromMesh(mesh.asRaylib())) {}
+        Model::Model(const raylib::model::Mesh &mesh) : _model(loadFromMesh(mesh)) {}
+
+        Model::Model(const ::Mesh &mesh)
+        {
+            _model = loadFromMesh(mesh);
+        }
 
         Model::~Model() { UnloadModel(_model); }
 
@@ -49,15 +54,15 @@ namespace raylib
             return getBoundingBox().checkCollision(other.getBoundingBox());
         }
 
-        // ::Model loadFromMesh(::Mesh mesh)
-        // {
-        //     return LoadModelFromMesh(mesh);
-        // }
+        ::Model loadFromMesh(::Mesh mesh)
+        {
+            return LoadModelFromMesh(mesh);
+        }
 
-        // ::Model loadFromMesh(raylib::model::Mesh mesh)
-        // {
-        //     return LoadModelFromMesh(mesh.asRaylib());
-        // }
+        ::Model loadFromMesh(raylib::model::Mesh mesh)
+        {
+            return LoadModelFromMesh(mesh.asRaylib());
+        }
 
         bool Model::checkCollision(const BoundingBox &otherBox) { return getBoundingBox().checkCollision(otherBox); }
 

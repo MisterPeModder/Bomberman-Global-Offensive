@@ -39,6 +39,8 @@ namespace raylib
             /// @param mesh the mesh from which to create the 3d model
             Model(const raylib::model::Mesh &mesh);
 
+            Model(const ::Mesh &mesh);
+
             /// Model destructor
             ~Model();
 
@@ -99,9 +101,9 @@ namespace raylib
             /// @return The raylib version of the model
             ::Model const &asRaylib() const;
 
-            // ::Model loadFromMesh(::Mesh mesh);
+            ::Model loadFromMesh(::Mesh mesh);
 
-            // ::Model loadFromMesh(raylib::model::Mesh mesh);
+            ::Model loadFromMesh(raylib::model::Mesh mesh);
 
             /// Checks collision with another model
             ///
