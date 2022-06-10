@@ -10,3 +10,7 @@ set(SRC ${SRCROOT}/one.c)
 
 add_library(mujs STATIC ${SRC})
 target_include_directories(mujs PUBLIC ${SRCROOT})
+
+if (COMPILER_TYPE MATCHES "gcc")
+    target_compile_options(mujs PRIVATE "-Wno-error")
+endif()

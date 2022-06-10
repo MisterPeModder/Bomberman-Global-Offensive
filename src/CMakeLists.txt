@@ -7,7 +7,7 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src)
 set(GENERATED_SRC ${SRCROOT}/bindings.cpp ${SRCROOT}/bindings.js)
 add_custom_command(
     OUTPUT ${GENERATED_SRC}
-    COMMAND python ${PROJECT_SOURCE_DIR}/generate_bindings.py ${SRCROOT}/script/api ${GENERATED_SRC}
+    COMMAND python3 ${PROJECT_SOURCE_DIR}/generate_bindings.py ${SRCROOT}/script/api ${GENERATED_SRC}
     VERBATIM
 )
 

@@ -66,7 +66,7 @@ namespace bmjs
         this->load(modPath);
     }
 
-    void Engine::_loadApi() { this->_loadApi(); }
+    void Engine::loadApi() { this->_loadApi(); }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Modding

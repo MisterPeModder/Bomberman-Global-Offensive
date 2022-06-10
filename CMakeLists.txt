@@ -22,6 +22,11 @@ if (BUILD_TEST_SUITE)
     # Check for GoogleTest
     find_package(googletest REQUIRED)
 
+    # Disable error on Linux release builds
+    if (COMPILER_TYPE MATCHES "gcc")
+        target_compile_options(gtest PRIVATE "-Wno-error=restrict")
+    endif()
+
     enable_testing()
 
     add_subdirectory(tests)
