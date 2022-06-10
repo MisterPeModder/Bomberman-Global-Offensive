@@ -11,15 +11,15 @@
 #include "ecs/Component.hpp"
 #include "raylib/shapes/Cube.hpp"
 
-namespace game
+namespace game::components
 {
     struct Cube : public ecs::Component, public raylib::shapes::Cube {
-        Cube(raylib::core::Vector2 ppos = {}, raylib::core::Vector2 psize = {1, 1},
-            raylib::core::Color pcolor = raylib::core::Color::DEFAULT_COLOR)
+        Cube(const raylib::core::Vector2 &ppos = {}, const raylib::core::Vector2 &psize = {1, 1},
+            const raylib::core::Color &pcolor = raylib::core::Color::DEFAULT_COLOR)
             : raylib::shapes::Cube(ppos, psize, pcolor)
         {
         }
     };
-} // namespace game
+} // namespace game::components
 
 #endif

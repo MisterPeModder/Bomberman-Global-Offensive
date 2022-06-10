@@ -28,12 +28,12 @@ namespace game
         world.addSystem<game::systems::DrawRotatedModel>();
 
         world.addEntity()
-            .with<game::Model>(testModelPath)
-            .with<game::Position>(0, -2, 0)
-            .with<game::Size>(0.5, 0.5, 0.5)
-            .with<game::RotationAngle>(-90)
-            .with<game::RotationAxis>(1, 0, 0)
-            .with<game::Color>(raylib::core::Color::GREEN)
+            .with<game::components::Model>(testModelPath)
+            .with<game::components::Position>(0, -2, 0)
+            .with<game::components::Size>(0.5, 0.5, 0.5)
+            .with<game::components::RotationAngle>(-90)
+            .with<game::components::RotationAxis>(1, 0, 0)
+            .with<game::components::Color>(raylib::core::Color::GREEN)
             .build();
     }
 } // namespace game

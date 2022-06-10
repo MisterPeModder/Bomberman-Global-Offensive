@@ -58,7 +58,7 @@ static raylib::model::Animation &getTestingAnimation()
 static void addTestWidgets(ecs::World &world)
 {
     world.addEntity()
-        .with<game::Position>(0.f, 0.f)
+        .with<game::components::Position>(0.f, 0.f)
         .with<game::Textual>("I'm the ECS button", 20, raylib::core::Color::RED)
         .with<game::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(
@@ -76,7 +76,7 @@ static void addTestWidgets(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::Position>(0.f, 100.f)
+        .with<game::components::Position>(0.f, 100.f)
         .with<game::Textual>("Hello ECS", 40, raylib::core::Color::RED)
         .with<game::Controlable>(game::User::UserId::User1,
             [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
@@ -91,7 +91,7 @@ static void addTestWidgets(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::Position>(250.f, 0.f)
+        .with<game::components::Position>(250.f, 0.f)
         .with<game::Textual>("I'm the ECS Checkbox!", 20, raylib::core::Color::RED)
         .with<game::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
@@ -112,10 +112,10 @@ namespace game
     {
         world.addSystem<game::systems::DrawCube>();
         world.addEntity()
-            .with<game::Cube>()
-            .with<game::Position>(0, 0, 0)
-            .with<game::Scale>(10)
-            .with<game::Color>(raylib::core::Color::YELLOW)
+            .with<game::components::Cube>()
+            .with<game::components::Position>(0, 0, 0)
+            .with<game::components::Scale>(10)
+            .with<game::components::Color>(raylib::core::Color::YELLOW)
             .build();
 
         raylib::core::Vector3 pos(0, -5, 0);
@@ -129,13 +129,13 @@ namespace game
         world.addSystem<game::systems::DrawRotatedModel>();
         world.addSystem<game::systems::RunAnimation>();
         world.addEntity()
-            .with<game::Model>(testingModel)
-            .with<game::Position>(pos)
-            .with<game::Size>(size)
-            .with<game::RotationAngle>(rotationAngle)
-            .with<game::RotationAxis>(rotationAxis)
-            .with<game::Color>(raylib::core::Color::YELLOW)
-            .with<game::Animation>(testingAnimation)
+            .with<game::components::Model>(testingModel)
+            .with<game::components::Position>(pos)
+            .with<game::components::Size>(size)
+            .with<game::components::RotationAngle>(rotationAngle)
+            .with<game::components::RotationAxis>(rotationAxis)
+            .with<game::components::Color>(raylib::core::Color::YELLOW)
+            .with<game::components::Animation>(testingAnimation)
             .build();
 
         addTestWidgets(world);

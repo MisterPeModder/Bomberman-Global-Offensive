@@ -3,13 +3,13 @@
 
 #include "ecs/Component.hpp"
 
-namespace game
+namespace game::components
 {
     struct RotationAngle : public ecs::Component {
         float rotationAngle;
 
         RotationAngle(float protationAngle) : rotationAngle(protationAngle) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif

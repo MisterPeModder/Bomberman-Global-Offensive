@@ -5,12 +5,12 @@
 #include "ecs/Component.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
-namespace game
+namespace game::components
 {
     struct Texture2D : public ecs::Component, public raylib::model::Texture2D {
-        Texture2D(raylib::model::Texture2D &ptexture) : raylib::model::Texture2D(ptexture) {}
-        Texture2D(std::filesystem::path &path) : raylib::model::Texture2D(path) {}
+        Texture2D(const raylib::model::Texture2D &ptexture) : raylib::model::Texture2D(ptexture) {}
+        Texture2D(const std::filesystem::path &path) : raylib::model::Texture2D(path) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif

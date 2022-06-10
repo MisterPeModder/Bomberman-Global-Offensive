@@ -3,13 +3,13 @@
 
 #include "ecs/Component.hpp"
 
-namespace game
+namespace game::components
 {
     struct Scale : public ecs::Component {
         float scale;
 
         Scale(float pscale) : scale(pscale) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif

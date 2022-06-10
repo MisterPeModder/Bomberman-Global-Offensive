@@ -18,8 +18,8 @@ namespace game
             void run(ecs::SystemData data) override final
             {
                 for (auto [model, pos, scale, color] :
-                    ecs::join(data.getStorage<game::Model>(), data.getStorage<game::Position>(),
-                        data.getStorage<game::Scale>(), data.getStorage<game::Color>())) {
+                    ecs::join(data.getStorage<game::components::Model>(), data.getStorage<game::components::Position>(),
+                        data.getStorage<game::components::Scale>(), data.getStorage<game::components::Color>())) {
                     model.draw(pos, scale.scale, color);
                 }
             }
@@ -29,9 +29,9 @@ namespace game
             void run(ecs::SystemData data) override final
             {
                 for (auto [model, pos, rAxis, rAngle, size, color] :
-                    ecs::join(data.getStorage<game::Model>(), data.getStorage<game::Position>(),
-                        data.getStorage<game::RotationAxis>(), data.getStorage<game::RotationAngle>(),
-                        data.getStorage<game::Size>(), data.getStorage<game::Color>())) {
+                    ecs::join(data.getStorage<game::components::Model>(), data.getStorage<game::components::Position>(),
+                        data.getStorage<game::components::RotationAxis>(), data.getStorage<game::components::RotationAngle>(),
+                        data.getStorage<game::components::Size>(), data.getStorage<game::components::Color>())) {
                     model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
                 }
             }

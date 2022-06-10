@@ -10,13 +10,13 @@
 
 #pragma once
 
-namespace game
+namespace game::components
 {
     struct Rectangle : public ecs::Component, public raylib::shapes::Rectangle {
-        Rectangle(raylib::core::Vector2 ppos = {}, raylib::core::Vector2 psize = {1, 1},
-            raylib::core::Color pcolor = raylib::core::Color::DEFAULT_COLOR)
+        Rectangle(const raylib::core::Vector2 &ppos = {}, const raylib::core::Vector2 &psize = {1, 1},
+            const raylib::core::Color &pcolor = raylib::core::Color::DEFAULT_COLOR)
             : raylib::shapes::Rectangle(ppos, psize, pcolor)
         {
         }
     };
-} // namespace game
+} // namespace game::components

@@ -5,12 +5,12 @@
 #include "ecs/Component.hpp"
 #include "raylib/images/Image.hpp"
 
-namespace game
+namespace game::components
 {
     struct Image : public ecs::Component, public raylib::model::Image {
-        Image(raylib::model::Image &pimage) : raylib::model::Image(pimage) {}
-        Image(std::filesystem::path &path) : raylib::model::Image(path) {}
+        Image(const raylib::model::Image &pimage) : raylib::model::Image(pimage) {}
+        Image(const std::filesystem::path &path) : raylib::model::Image(path) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif
