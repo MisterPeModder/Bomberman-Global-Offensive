@@ -66,15 +66,28 @@ namespace game
                     [this](ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) {
                         if (isMoveAction(event.action)) {
                             auto &velocity = _world.getStorage<Velocity>()[self.getId()];
-                            bool moving = event.value > 0.2f;
+                            auto &user = _world.getResource<Users>()[event.user];
+                            GameAction bestAction;
+                            float value = 0.f;
                             float speed = 4.f;
 
-                            switch (event.action) {
-                                case GameAction::MOVE_LEFT: velocity.x = -speed * moving; break;
-                                case GameAction::MOVE_UP: velocity.z = -speed * moving; break;
-                                case GameAction::MOVE_RIGHT: velocity.x = speed * moving; break;
-                                case GameAction::MOVE_DOWN: velocity.z = speed * moving; break;
+                            for (size_t i = static_cast<size_t>(GameAction::MOVE_LEFT);
+                                 i <= static_cast<size_t>(GameAction::MOVE_DOWN); i++) {
+                                GameAction current = static_cast<GameAction>(i);
+                                if (user.getActionValue(current) > value) {
+                                    bestAction = current;
+                                    value = user.getActionValue(current);
+                                }
                             }
+                            if (value < 0.2f)
+                                velocity = {0.f, 0.f};
+                            else
+                                switch (bestAction) {
+                                    case GameAction::MOVE_LEFT: velocity = {-speed, 0.f, 0.f}; break;
+                                    case GameAction::MOVE_UP: velocity = {0.f, 0.f, -speed}; break;
+                                    case GameAction::MOVE_RIGHT: velocity = {speed, 0.f, 0.f}; break;
+                                    case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, speed}; break;
+                                }
                             return true;
                         }
                         return false;
