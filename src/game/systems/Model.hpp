@@ -14,20 +14,20 @@ namespace game
         struct DrawModel : public ecs::System {
             void run(ecs::SystemData data) override final
             {
-                auto &model = data.getStorage<game::Model>();
-                auto &pos = data.getStorage<game::Position>();
-                auto &scale = data.getStorage<game::Scale>();
-                auto &color = data.getStorage<game::Color>();
-                auto &size = data.getStorage<game::Size>();
-                auto &rAxis = data.getStorage<game::RotationAxis>();
-                auto &rAngle = data.getStorage<game::RotationAngle>();
+                auto &models = data.getStorage<game::Model>();
+                auto &poses = data.getStorage<game::Position>();
+                auto &scales = data.getStorage<game::Scale>();
+                auto &colors = data.getStorage<game::Color>();
+                auto &sizes = data.getStorage<game::Size>();
+                auto &rAxises = data.getStorage<game::RotationAxis>();
+                auto &rAngles = data.getStorage<game::RotationAngle>();
 
-                for (auto [model1, pos1, scale1, color1] : ecs::join(model, pos, scale, color)) {
-                    model1.draw(pos1, scale1.scale, color1);
+                for (auto [model, pos, scale, color] : ecs::join(models, poses, scales, colors)) {
+                    model.draw(pos, scale.scale, color);
                 }
-                for (auto [model1, pos1, rAxis1, rAngle1, size1, color1] :
-                    ecs::join(model, pos, rAxis, rAngle, size, color)) {
-                    model1.draw(pos1, rAxis1, rAngle1.rotationAngle, size1, color1);
+                for (auto [model, pos, rAxis, rAngle, size, color] :
+                    ecs::join(models, poses, rAxises, rAngles, sizes, colors)) {
+                    model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
                 }
             }
         };
