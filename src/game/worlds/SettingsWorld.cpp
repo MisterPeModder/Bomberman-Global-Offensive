@@ -14,13 +14,14 @@
 #include "game/systems/Cube.hpp"
 #include "game/systems/Model.hpp"
 #include "raylib/core/Color.hpp"
+#include "util/util.hpp"
 
 namespace game
 {
     void Worlds::loadSettingsWorld(ecs::World &world)
     {
         static const std::filesystem::path testModelPath =
-            std::filesystem::path("assets").append("models").append("player").append("raylibguy.iqm");
+            util::makePath("assets", "models", "player", "raylibguy.iqm");
 
         world.addSystem<game::systems::DrawRotatedModel>();
 

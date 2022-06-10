@@ -36,11 +36,11 @@
 #include "raylib/core/Sound.hpp"
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
+#include "util/util.hpp"
 
 static raylib::model::Model &getTestingModel()
 {
-    static const std::filesystem::path testModelPath =
-        std::filesystem::path("assets").append("models").append("player").append("raylibguy.iqm");
+    static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
     static raylib::model::Model model(testModelPath);
 
     return model;
