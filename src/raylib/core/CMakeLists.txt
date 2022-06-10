@@ -17,6 +17,10 @@ set(SRC
     ${SRCROOT}/Cursor.cpp
     ${SRCROOT}/Color.hpp
     ${SRCROOT}/Color.cpp
+    ${SRCROOT}/Audio.cpp
+    ${INCROOT}/Audio.hpp
+    ${SRCROOT}/Sound.cpp
+    ${INCROOT}/Sound.hpp
     ${SRCROOT}/Keyboard.hpp
     ${SRCROOT}/Keyboard.cpp
     ${SRCROOT}/Gamepad.hpp

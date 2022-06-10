@@ -69,6 +69,8 @@ namespace game
             /// @return AxisDirection axis direction stored.
             AxisDirection getAxisDirection() const;
 
+            float getAxisAbsoluteValue(float value) const;
+
             /// Test if the input stored is a button.
             ///
             /// @retval true when the input stored is a valid button.

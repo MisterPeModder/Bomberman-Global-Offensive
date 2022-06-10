@@ -37,6 +37,21 @@ class Logger {
         Count,    /// Number of available displays
     };
 
+    /// Available colors in terminals (when using stdout/stderr).
+    enum class Color {
+        Black,   /// Black color, not used by default
+        Red,     /// Red color, default to Error logs
+        Green,   /// Green color, default to Information logs
+        Yellow,  /// Yellow color, default to Warning logs
+        Blue,    /// Blue color, default to Debug logs
+        Magenta, /// Magenta color, not used by default
+        Cyan,    /// Cyan color, not used by default
+        White,   /// White color, default for all uncolored texts
+    };
+
+    /// Color pairs are used to associate foreground and background colors together
+    using ColorPair = std::pair<Color, Color>;
+
     /// Default global logger.
     /// @note You need to flush it before forking processes to avoid cache data duplication.
     static Logger logger;
@@ -44,7 +59,7 @@ class Logger {
     /// Construct a new Logger object linked to a given output stream.
     ///
     /// @param[in] stream stream in which the logger will write.
-    Logger(std::ostream &stream = std::cerr);
+    Logger(std::ostream &stream = std::cerr, std::string_view name = "");
 
     /// Construct a new Logger object linked to a logfile.
     ///
@@ -147,6 +162,28 @@ class Logger {
         enableLogInfo(true, info, args...);
     }
 
+    /// Reset the default colors.
+    /// @note Colors are only used when the logger prints on stdout/stderr.
+    void setDefaultColors();
+
+    /// Set the color of a severity.
+    /// @note Multiple severities can have the same color but it isn't recommended for readability.
+    ///
+    /// @param severity severity to affect.
+    /// @param foreground foreground color.
+    /// @param background background color.
+    void setSeverityColor(Severity severity, Color foreground, Color background = Color::Black);
+
+    /// Set the Name of the logger.
+    /// @note If empty the name isn't printed.
+    ///
+    /// @param name name of the logger.
+    void setName(std::string_view name);
+
+    /// Get the name of the logger.
+    /// @return std::string_view name of the logger, might be empty.
+    std::string_view getName() const;
+
   private:
     void displayInformations(std::stringstream &ss);
     void displayTime(std::stringstream &ss, std::string_view format);
@@ -155,6 +192,8 @@ class Logger {
     Severity _logLevel = Severity::Information;
     std::ostream *_streamPointer;
     std::ofstream _fileStream;
+    std::array<ColorPair, static_cast<size_t>(Severity::Count)> _colors;
+    std::string _name;
 };
 
 #endif /* !RAYLIB_LOGGER_LOGGER_HPP_ */
