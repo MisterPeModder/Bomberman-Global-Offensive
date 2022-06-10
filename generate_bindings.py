@@ -239,7 +239,7 @@ def emit_function_arg(out: TextIO, index: int, arg: JsArg, prototype: Prototype)
                 f"            js_pushnumber(state, {arg.name}_param_{i});", file=out)
 
         print(f"""
-            if (js_pcall(state, 1)) {{
+            if (js_pcall(state, {len(arg.type.args)})) {{
                 bmjs::JsException error(js_tostring(state, -1));
                 js_pop(state, 1);
                 throw error;
