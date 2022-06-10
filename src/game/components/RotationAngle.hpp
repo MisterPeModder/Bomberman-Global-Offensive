@@ -5,14 +5,11 @@
 
 namespace game
 {
-    namespace components
-    {
-        struct RotationAngle : public ecs::Component {
-            float rotationAngle;
+    struct RotationAngle : public ecs::Component {
+        float rotationAngle;
 
-            RotationAngle(float protationAngle) : rotationAngle(protationAngle) {}
-        };
-    } // namespace components
+        RotationAngle(float protationAngle) : rotationAngle(protationAngle) {}
+    };
 } // namespace game
 
 #endif

@@ -46,8 +46,6 @@
 constexpr int WIDTH(500);
 constexpr int HEIGHT(500);
 
-ecs::World world;
-
 static raylib::model::Model &getTestingModel()
 {
     static const std::filesystem::path testModelPath =
@@ -83,8 +81,6 @@ static void drawFrame(void *arg)
         params->world->runSystems();
     };
 
-    world.runSystems();
-
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
     raylib::core::Window::drawFPS(10, 10);
 }
@@ -98,7 +94,7 @@ static void setupLogger()
     raylib::initLogger(LOG_INFO);
 }
 
-static void addTestWidgets()
+static void addTestWidgets(ecs::World &world)
 {
     world.addEntity()
         .with<game::Position>(0.f, 0.f)
@@ -176,16 +172,16 @@ int main()
     world.addSystem<game::systems::DrawRotatedModel>();
     world.addSystem<game::systems::RunAnimation>();
     world.addEntity()
-        .with<game::components::Model>(testingModel)
-        .with<game::components::Position>(pos)
-        .with<game::components::Size>(size)
-        .with<game::components::RotationAngle>(rotationAngle)
-        .with<game::components::RotationAxis>(rotationAxis)
-        .with<game::components::Color>(raylib::core::Color::RED)
-        .with<game::components::Animation>(testingAnimation)
+        .with<game::Model>(testingModel)
+        .with<game::Position>(pos)
+        .with<game::Size>(size)
+        .with<game::RotationAngle>(rotationAngle)
+        .with<game::RotationAxis>(rotationAxis)
+        .with<game::Color>(raylib::core::Color::RED)
+        .with<game::Animation>(testingAnimation)
         .build();
 
-    addTestWidgets();
+    addTestWidgets(world);
 
     world.addResource<game::Users>();
     world.addSystem<game::DrawText>();

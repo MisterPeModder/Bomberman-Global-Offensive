@@ -6,13 +6,10 @@
 
 namespace game
 {
-    namespace components
-    {
-        struct RotationAxis : public ecs::Component, public raylib::core::Vector3 {
-            RotationAxis(raylib::core::Vector3 &protationAxis) : raylib::core::Vector3(protationAxis) {}
-            RotationAxis(float px, float py, float pz) : raylib::core::Vector3(px, py, pz) {}
-        };
-    } // namespace components
+    struct RotationAxis : public ecs::Component, public raylib::core::Vector3 {
+        RotationAxis(raylib::core::Vector3 &protationAxis) : raylib::core::Vector3(protationAxis) {}
+        RotationAxis(float px, float py, float pz) : raylib::core::Vector3(px, py, pz) {}
+    };
 } // namespace game
 
 #endif

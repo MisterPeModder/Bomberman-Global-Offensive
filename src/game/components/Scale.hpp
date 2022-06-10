@@ -5,14 +5,11 @@
 
 namespace game
 {
-    namespace components
-    {
-        struct Scale : public ecs::Component {
-            float scale;
+    struct Scale : public ecs::Component {
+        float scale;
 
-            Scale(float pscale) : scale(pscale) {}
-        };
-    } // namespace components
+        Scale(float pscale) : scale(pscale) {}
+    };
 } // namespace game
 
 #endif

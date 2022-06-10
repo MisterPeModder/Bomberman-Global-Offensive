@@ -13,14 +13,11 @@
 
 namespace game
 {
-    namespace components
-    {
-        struct Position : public ecs::Component, public raylib::core::Vector3 {
-            Position(raylib::core::Vector2 &pposition) : raylib::core::Vector3(pposition) {}
-            Position(raylib::core::Vector3 &pposition) : raylib::core::Vector3(pposition) {}
-            Position(float px = 0, float py = 0, float pz = 0) : raylib::core::Vector3(px, py, pz) {}
-        };
-    } // namespace components
+    struct Position : public ecs::Component, public raylib::core::Vector3 {
+        Position(raylib::core::Vector2 &pposition) : raylib::core::Vector3(pposition) {}
+        Position(raylib::core::Vector3 &pposition) : raylib::core::Vector3(pposition) {}
+        Position(float px = 0, float py = 0, float pz = 0) : raylib::core::Vector3(px, py, pz) {}
+    };
 } // namespace game
 
 #endif /* !GAME_COMPONENTS_POSITION_HPP_ */

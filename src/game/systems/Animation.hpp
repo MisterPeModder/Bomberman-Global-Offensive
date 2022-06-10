@@ -16,7 +16,7 @@ namespace game
             void run(ecs::SystemData data) override final
             {
                 for (auto [model, animation] : ecs::join(
-                         data.getStorage<game::components::Model>(), data.getStorage<game::components::Animation>())) {
+                         data.getStorage<game::Model>(), data.getStorage<game::Animation>())) {
                     animation.updateModel(model);
                 }
             }
