@@ -5,12 +5,14 @@ set (SRC
 	${SRC}
 	${SRCROOT}/Collidable.hpp
 	${SRCROOT}/Controlable.hpp
+	${SRCROOT}/Cube.hpp
+	${SRCROOT}/CubeColor.hpp
 	${SRCROOT}/Destructible.hpp
 	${SRCROOT}/Living.hpp
-	${SRCROOT}/Velocity.hpp
 	${SRCROOT}/Position.hpp
 	${SRCROOT}/Size.hpp
 	${SRCROOT}/Textual.hpp
+	${SRCROOT}/Velocity.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS 

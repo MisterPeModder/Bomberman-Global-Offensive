@@ -5,8 +5,8 @@
 ** Movable
 */
 
-#ifndef GAME_COMPONENTS_MOVABLE_HPP_
-#define GAME_COMPONENTS_MOVABLE_HPP_
+#ifndef GAME_COMPONENTS_VELOCITY_HPP_
+#define GAME_COMPONENTS_VELOCITY_HPP_
 
 #include "ecs/Component.hpp"
 #include "raylib/core/Vector3.hpp"
@@ -19,4 +19,4 @@ namespace game
     };
 } // namespace game
 
-#endif /* !GAME_COMPONENTS_MOVABLE_HPP_ */
+#endif /* !GAME_COMPONENTS_VELOCITY_HPP_ */

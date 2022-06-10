@@ -15,7 +15,12 @@
 #include "ecs/resource/Timer.hpp"
 #include "game/systems/InputManager.hpp"
 
-#include "components/Temp.hpp"
+#include "game/components/Cube.hpp"
+#include "game/components/CubeColor.hpp"
+#include "game/systems/ChangeCube.hpp"
+#include "game/systems/Collision.hpp"
+#include "game/systems/DrawingCube.hpp"
+#include "game/systems/Movement.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/scoped.hpp"
 
@@ -49,7 +54,7 @@ namespace game
         _world.addSystem<ChangeCube>();
         _world.addSystem<DrawingCube>();
         _world.addSystem<Movement>();
-        _world.addSystem<Collisions>();
+        _world.addSystem<Collision>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
