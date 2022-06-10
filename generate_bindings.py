@@ -174,8 +174,7 @@ def read_prototypes(lines: Iterator[str]) -> List[Prototype]:
                 if api_scope is not None:
                     print(
                         'warning: succesive BMJS_API_START without BMJS_API_END', file=sys.stderr)
-                api_scope = line.removeprefix(
-                    'BMJS_API_START(').split(')', maxsplit=1)[0]
+                api_scope = line[15:].split(')', maxsplit=1)[0]
             elif line == 'BMJS_API_END':
                 if api_scope is None:
                     print(
