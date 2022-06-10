@@ -3,8 +3,15 @@
 set(INCROOT ${PROJECT_SOURCE_DIR}/src)
 set(SRCROOT ${PROJECT_SOURCE_DIR}/src)
 
-set(SRC
+# Generate the JS to C++ bindings
+set(GENERATED_SRC ${SRCROOT}/bindings.cpp ${SRCROOT}/bindings.js)
+add_custom_command(
+    OUTPUT ${GENERATED_SRC}
+    COMMAND python ${PROJECT_SOURCE_DIR}/generate_bindings.py ${SRCROOT}/script/api ${GENERATED_SRC}
+    VERBATIM
 )
+
+set(SRC ${SRCROOT}/bindings.cpp)
 
 set(INCDIRS ${INCROOT})
 
@@ -54,7 +61,7 @@ if (EMSCRIPTEN)
     target_link_options(${TARGET_NAME} PUBLIC --shell-file ${SRCROOT}/shell.html)
 
     # Embed the browser JS API bindings
-    target_link_options(${TARGET_NAME} PUBLIC "SHELL:--post-js ${SRCROOT}/script/bindings.js")
+    target_link_options(${TARGET_NAME} PUBLIC "SHELL:--post-js ${SRCROOT}/bindings.js")
     
     # Preload the API
     target_link_options(${TARGET_NAME} PUBLIC "SHELL:--post-js ${PROJECT_SOURCE_DIR}/mods/api.js")

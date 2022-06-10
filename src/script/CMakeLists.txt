@@ -5,7 +5,6 @@ add_subdirectory(api)
 
 set(SRC
 	${SRC}
-	${SRCROOT}/bindings.cpp
 	${SRCROOT}/Engine.cpp
 	${INCROOT}/Engine.hpp
 	${SRCROOT}/JsException.cpp
