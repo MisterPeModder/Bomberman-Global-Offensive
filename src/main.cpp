@@ -33,7 +33,6 @@
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/join.hpp"
-#include "ecs/resource/Timer.hpp"
 #include "raylib/core/Vector3.hpp"
 #include "raylib/shapes/Cone.hpp"
 #include "raylib/shapes/Cube.hpp"
@@ -318,13 +317,13 @@ void game_loop()
     game::map::Map map;
     raylib::textures::Image image("/download.jpeg");
     raylib::textures::Texture2D cubimap(image);
-    raylib::model::Mesh mesh = mesh.genCubicMap(image, (Vector3){1.0f, 1.0f, 1.0f});
+    raylib::model::Mesh mesh = mesh.genCubicMap(image, {1.0f, 1.0f, 1.0f});
     raylib::model::Model model(mesh);
 
     std::cout << "test\n" << std::endl;
 
-    camera.setPosition({13.0f, 10.0f, 0});                                       // Camera position
-    camera.setTarget({(0 + (map.getWidth() / 2)), 0.0f, (map.getHeight() / 2)}); // Camera looking at point
+    camera.setPosition({13.0f, 10.0f, map.getHeight() / 2.f});                                       // Camera position
+    camera.setTarget({(0 + (map.getWidth() / 2.f)), 0.0f, (map.getHeight() / 2.f)}); // Camera looking at point
     camera.setUp({0.0f, 10.0f, 0.0f}); // Camera up vector (rotation towards target)
     camera.setFovY(75.0f);             // Camera field-of-view Y
     camera.setProjection(CAMERA_PERSPECTIVE);
@@ -336,7 +335,7 @@ void game_loop()
     std::cout << "test03\n" << std::endl;
 
     // create ground
-    auto wall = world.addEntity()
+    world.addEntity()
                     .with<Position>(0 + (map.getWidth() / 2), -0.5, 0 + (map.getHeight() / 2))
                     .with<Size>(map.getWidth(), 0.1, map.getHeight())
                     .with<CubeColor>(0, 228, 48, 255)
@@ -347,7 +346,7 @@ void game_loop()
     for (int y = -1; y <= ((int)map.getHeight()); y++) {
         for (int x = -1; x <= ((int)map.getWidth()); x++) {
             if (x == -1 || x == ((int)map.getWidth()) || y == -1 || y == ((int)map.getHeight()))
-                auto wall = world.addEntity()
+                world.addEntity()
                                 .with<Position>(x, 0, y)
                                 .with<Size>(1.f, 1.f, 1.f)
                                 .with<CubeColor>(0, 0, 250, 255)
@@ -360,7 +359,7 @@ void game_loop()
     for (int y = 0; y != (int)map.getHeight(); y++) {
         for (int x = 0; x != (int)map.getWidth(); x++) {
             if (map.getElement(x, y) == game::map::Map::Element::Crate) {
-                auto crate = world.addEntity()
+                world.addEntity()
                                  .with<Position>(x, 0, y)
                                  .with<Size>(1.f, 1.f, 1.f)
                                  .with<CubeColor>(250, 0, 0, 255)
@@ -368,7 +367,7 @@ void game_loop()
                                  .build();
             }
             if (map.getElement(x, y) == game::map::Map::Element::Wall) {
-                auto wall = world.addEntity()
+                world.addEntity()
                                 .with<Position>(x, 0, y)
                                 .with<Size>(1.f, 1.f, 1.f)
                                 .with<CubeColor>(0, 0, 250, 255)
@@ -446,6 +445,8 @@ static void addTestWidgets(ecs::World &world)
 int main()
 {
     setupLogger();
+
+    raylib::core::Camera3D camera;
 
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
