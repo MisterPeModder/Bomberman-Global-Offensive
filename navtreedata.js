@@ -61,6 +61,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -71,11 +72,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_shape_8hpp.html",
-"class_logger.html#a81414467aac1f8740c5bd13624f3aa0b",
-"classgame_1_1map_1_1cellular_1_1_rule.html#aae91d1e6f16e42d07611b2226d87caf8",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a180bb5e381e316e2246b88c92770ee75",
-"classraylib_1_1shapes_1_1_cylinder.html#a5025ea394ac0fd09966370c982e058b4",
-"namespaceutil.html"
+"class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5a023c239d2f2538f140a20e72c7b73f20",
+"classgame_1_1map_1_1_map.html#ac017e033f3370dcad60cc581f200965c",
+"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a87a77fb30e508725d35683af9611e146",
+"classraylib_1_1shapes_1_1_circle.html#afe75ead1aa270ac6a9204e8c7bc41170",
+"main_8cpp.html#a448fa5749d028cd5918eeaf4bd090971"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

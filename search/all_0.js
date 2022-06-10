@@ -34,7 +34,7 @@ var searchData=
   ['_5fimage_31',['_image',['../classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204',1,'raylib::textures::Image']]],
   ['_5finfos_32',['_infos',['../class_logger.html#a2c4fb7c94548c4f375839d07ffa207b8',1,'Logger']]],
   ['_5finner_33',['_inner',['../classecs_1_1_maybe_join.html#a0c52d7c77dd90324246e0b131d1a2ce5',1,'ecs::MaybeJoin::_inner()'],['../classecs_1_1_instances.html#a02f13c11c88ae2672bb9c70cc0ede987',1,'ecs::Instances::_inner()']]],
-  ['_5finstance_34',['_Instance',['../classlocalization_1_1_localization.html#af96ee478fa57f54dec4b59f29bc259cb',1,'localization::Localization::_Instance()'],['../classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e',1,'ecs::MarkerStorage::_instance()']]],
+  ['_5finstance_34',['_instance',['../classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e',1,'ecs::MarkerStorage::_instance()'],['../classlocalization_1_1_localization.html#af96ee478fa57f54dec4b59f29bc259cb',1,'localization::Localization::_Instance()']]],
   ['_5fkeybinds_35',['_keybinds',['../classgame_1_1settings_1_1_profile.html#a05a79e4f3f3e048ed98e75fb9b365a5d',1,'game::settings::Profile']]],
   ['_5fkeyboardbindings_36',['_keyboardBindings',['../classgame_1_1settings_1_1_keybinds.html#a4d96b44207b1e887d6b193836da67dac',1,'game::settings::Keybinds']]],
   ['_5flastactions_37',['_lastActions',['../classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e',1,'game::User']]],

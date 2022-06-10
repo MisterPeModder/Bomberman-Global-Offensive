@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecs::System",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_system.html",tooltip="The base system type, all systems must inherit from System."];
+  Node0 [label="ecs::SystemData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_system_data.html",tooltip="A view on world data that provides access to Resource and Storage instances to systems."];
 }

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tokensvector_6793',['TokensVector',['../classlocalization_1_1_ressource_file.html#abc5aa254d08371bf15f606b5562a1fd9',1,'localization::RessourceFile']]]
+  ['onclick_6891',['OnClick',['../structgame_1_1gui_1_1_clickable.html#abdaba52f87e598452f12981c7a3adb60',1,'game::gui::Clickable']]],
+  ['onstatechanged_6892',['OnStateChanged',['../structgame_1_1gui_1_1_checkable.html#af6b0660f0d2647ed47817aa5a33525c7',1,'game::gui::Checkable::OnStateChanged()'],['../structgame_1_1gui_1_1_clickable.html#a1ad301d9e35b8adaeecfa9eb0f0ebea0',1,'game::gui::Clickable::OnStateChanged()']]]
 ];

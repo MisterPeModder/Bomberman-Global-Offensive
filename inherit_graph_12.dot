@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecs::JoinTraits\< Storage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecs_1_1_join_traits_3_01_storage_01_4.html",tooltip="All instances of IsStorage are joinable."];
+  Node0 [label="ecs::JoinTraitsExt\< J \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecs_1_1_join_traits_ext.html",tooltip="Optional Join traits."];
 }

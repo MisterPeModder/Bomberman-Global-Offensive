@@ -4,9 +4,9 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecs::Storage",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_storage.html",tooltip="used to declare a virtual destructor on all Storage implementations."];
+  Node0 [label="ecs::System",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_system.html",tooltip="The base system type, all systems must inherit from System."];
   Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="ecs::MapStorage\< C \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_map_storage.html",tooltip="Map-based component storage."];
+  Node1 [label="game::DrawText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1_draw_text.html",tooltip="Draw text system."];
   Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="ecs::MarkerStorage\< C \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_marker_storage.html",tooltip="\"Storage\" for marker-like components, does not store any data except for which entities have the mark..."];
+  Node2 [label="game::InputManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1_input_manager.html",tooltip="System managing all the users inputs."];
 }

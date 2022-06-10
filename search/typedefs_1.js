@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['data_6784',['Data',['../structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html#adc7f8542465f9b05bf8162df6d9e523a',1,'ecs::JoinTraits&lt; MaybeJoin&lt; J &gt; &gt;::Data()'],['../structecs_1_1_join_traits_3_01_entities_01_4.html#a0b5e03ba4ea9f08a567e47e3beee6833',1,'ecs::JoinTraits&lt; Entities &gt;::Data()'],['../structecs_1_1_join_traits_3_01_storage_01_4.html#a45865b285090c5163a32665c19cb2147',1,'ecs::JoinTraits&lt; Storage &gt;::Data()']]],
-  ['difference_5ftype_6785',['difference_type',['../classecs_1_1_join_iter.html#a0bf03bf0484f57f351315be9c3b74031',1,'ecs::JoinIter']]]
+  ['color_6880',['Color',['../classraylib_1_1textures_1_1_texture2_d.html#af456a89dab2929075a4627f4fe4f652d',1,'raylib::textures::Texture2D']]],
+  ['colorpair_6881',['ColorPair',['../class_logger.html#a9a16778f258ac44b8053f00421f2db24',1,'Logger']]],
+  ['component_6882',['Component',['../classecs_1_1_map_storage.html#acae6fb5f02572e29c1219dc65aa35020',1,'ecs::MapStorage::Component()'],['../classecs_1_1_marker_storage.html#a3e9079ffcdff14ab763b1bff40b8c581',1,'ecs::MarkerStorage::Component()']]]
 ];

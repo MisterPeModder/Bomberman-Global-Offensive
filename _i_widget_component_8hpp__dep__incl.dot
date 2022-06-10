@@ -1,0 +1,27 @@
+digraph "src/game/gui/components/IWidgetComponent.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/game/gui/components\l/IWidgetComponent.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/game/gui/components\l/Checkable.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_checkable_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/game/gui/components\l/Checkable.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_checkable_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/game/gui/components\l/Widget.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_widget_8cpp.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/game/gui/components\l/Clickable.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_clickable_8hpp.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/game/gui/components\l/Clickable.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_clickable_8cpp.html",tooltip=" "];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/game/gui/components\l/Widget.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_widget_8hpp.html",tooltip=" "];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/game/systems/InputManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_input_manager_8cpp.html",tooltip=" "];
+  Node8 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

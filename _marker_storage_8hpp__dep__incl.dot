@@ -6,4 +6,15 @@ digraph "src/ecs/storage/MarkerStorage.hpp"
   Node1 [label="src/ecs/storage/MarkerStorage.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="src/ecs/Storage.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_storage_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/game/gui/components\l/Widget.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_widget_8hpp.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/game/gui/components\l/Widget.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_widget_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/game/systems/InputManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_input_manager_8cpp.html",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/game/systems/DrawText.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_draw_text_8cpp.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

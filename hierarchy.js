@@ -19,7 +19,17 @@ var hierarchy =
     [ "ecs::Entities::Builder", "classecs_1_1_entities_1_1_builder.html", null ],
     [ "raylib::core::Camera3D", "classraylib_1_1core_1_1_camera3_d.html", null ],
     [ "raylib::core::Color", "structraylib_1_1core_1_1_color.html", null ],
-    [ "ecs::Component", "classecs_1_1_component.html", null ],
+    [ "ecs::Component", "classecs_1_1_component.html", [
+      [ "game::Controlable", "structgame_1_1_controlable.html", null ],
+      [ "game::gui::IWidgetComponent", "classgame_1_1gui_1_1_i_widget_component.html", [
+        [ "game::gui::Checkable", "structgame_1_1gui_1_1_checkable.html", null ],
+        [ "game::gui::Clickable", "structgame_1_1gui_1_1_clickable.html", null ],
+        [ "game::gui::Widget", "structgame_1_1gui_1_1_widget.html", null ]
+      ] ],
+      [ "game::Position", "structgame_1_1_position.html", null ],
+      [ "game::Size", "structgame_1_1_size.html", null ],
+      [ "game::Textual", "structgame_1_1_textual.html", null ]
+    ] ],
     [ "raylib::core::Cursor", "classraylib_1_1core_1_1_cursor.html", null ],
     [ "raylib::core::scoped::Drawing", "classraylib_1_1core_1_1scoped_1_1_drawing.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
@@ -76,12 +86,18 @@ var hierarchy =
       [ "ecs::MapStorage< C >", "classecs_1_1_map_storage.html", null ],
       [ "ecs::MarkerStorage< C >", "classecs_1_1_marker_storage.html", null ]
     ] ],
-    [ "ecs::System", "classecs_1_1_system.html", null ],
+    [ "ecs::System", "classecs_1_1_system.html", [
+      [ "game::DrawText", "structgame_1_1_draw_text.html", null ],
+      [ "game::InputManager", "structgame_1_1_input_manager.html", null ]
+    ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "game::User", "classgame_1_1_user.html", null ],
     [ "raylib::core::Vector2", "structraylib_1_1core_1_1_vector2.html", null ],
-    [ "raylib::core::Vector3", "structraylib_1_1core_1_1_vector3.html", null ],
+    [ "raylib::core::Vector3", "structraylib_1_1core_1_1_vector3.html", [
+      [ "game::Position", "structgame_1_1_position.html", null ],
+      [ "game::Size", "structgame_1_1_size.html", null ]
+    ] ],
     [ "raylib::core::Window", "classraylib_1_1core_1_1_window.html", null ],
     [ "ecs::World", "classecs_1_1_world.html", null ]
 ];
