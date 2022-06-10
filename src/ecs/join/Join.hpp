@@ -115,10 +115,16 @@ namespace ecs
         /// Joins values.
         ///
         /// @note Consider using @ref join() instead, it doesn't require callers to specify the template parameters.
-        explicit Join(First &first, Rest &...rest)
-            : _mask((util::BitSet(JoinTraits<First>::getMask(first)) &= ... &= JoinTraits<Rest>::getMask(rest))),
-              _storages(first, rest...)
+        explicit Join(First &first, Rest &...rest) : _storages(first, rest...)
         {
+            size_t maxSize =
+                std::max({JoinTraits<First>::getMask(first).size(), JoinTraits<Rest>::getMask(rest).size()...});
+
+            JoinTraitsExt<First>::adjustMask(first, maxSize);
+            (JoinTraitsExt<Rest>::adjustMask(rest, maxSize), ...);
+
+            this->_mask = (util::BitSet(JoinTraits<First>::getMask(first)) &= ... &= JoinTraits<Rest>::getMask(rest));
+
             // push a sentinel bit at the end.
             this->_mask.push(true);
             this->_begin = this->_mask.firstSet();

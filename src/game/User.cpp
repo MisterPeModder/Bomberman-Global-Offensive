@@ -8,6 +8,8 @@
 #include "User.hpp"
 #include <algorithm>
 
+#include <algorithm>
+
 namespace game
 {
     User::User(UserId id, int gamepadId) : _gamepadId(gamepadId), _profile(static_cast<size_t>(id))

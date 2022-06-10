@@ -45,7 +45,7 @@ namespace raylib
             ~Model();
 
             /// Deleted copy constructor because it makes no sense to load the same file multiple simes
-            Model(const Model &other) = delete;
+            Model(const Model &other);
 
             /// Deleted copy operator because it makes no sense to load the same file multiple simes
             Model &operator=(const Model &other) = delete;
@@ -130,6 +130,7 @@ namespace raylib
 
           private:
             ::Model _model;
+            std::filesystem::path _path;
         };
     } // namespace model
 } // namespace raylib
