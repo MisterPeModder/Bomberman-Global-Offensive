@@ -32,8 +32,8 @@
     #include <emscripten/emscripten.h>
 #endif
 
-constexpr int WIDTH(500);
-constexpr int HEIGHT(500);
+constexpr int WIDTH(1920);  // default value 500
+constexpr int HEIGHT(1000); // default value 500
 
 ecs::World world;
 
@@ -61,7 +61,6 @@ static void drawFrame(void *arg)
     raylib::core::Vector3 pos(0, -5, 0);
     raylib::core::Vector3 scale(1, 1, 1);
     raylib::core::Vector3 rotationAxis(1, 0, 0);
-    Menu::MainMenu menu;
 
     raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();
@@ -76,7 +75,6 @@ static void drawFrame(void *arg)
     };
 
     world.runSystems();
-    //menu.run();
 
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
     raylib::core::Window::drawFPS(10, 10);
@@ -91,7 +89,7 @@ static void setupLogger()
     raylib::initLogger(LOG_INFO);
 }
 
-static void addTestWidgets()
+/* static void addTestWidgets()
 {
     world.addEntity()
         .with<game::Position>(0.f, 0.f)
@@ -137,6 +135,7 @@ static void addTestWidgets()
         })
         .build();
 }
+ */
 
 int main()
 {
@@ -145,6 +144,9 @@ int main()
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
     localization::Localization::setLocale("fr");
+
+    /// setup menu
+    Menu::MainMenu mainMenu;
 
     Logger::logger.log(Logger::Severity::Information, "Start of program");
     std::cout << localization::Ressources::rsHello << std::endl;
@@ -157,7 +159,7 @@ int main()
     raylib::core::Camera3D camera;
     camera.setMode(raylib::core::Camera3D::CameraMode::ORBITAL);
 
-    addTestWidgets();
+    // addTestWidgets();
 
     world.addResource<game::Users>();
     world.addSystem<game::DrawText>();
@@ -169,9 +171,11 @@ int main()
     emscripten_set_main_loop_arg(&drawFrame, &camera, 0, 1);
 #else
     raylib::core::Window::setTargetFPS(60);
+    mainMenu.createsButtons(world);
 
-    while (!WindowShouldClose())
+    while (!WindowShouldClose()) {
         drawFrame(&camera);
+    }
 #endif
 
     CloseWindow();
