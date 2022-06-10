@@ -5,10 +5,11 @@
 ** Rectangle
 */
 
+#ifndef RECTANGLE_COMPONENTS_
+#define RECTANGLE_COMPONENTS_
+
 #include "ecs/Component.hpp"
 #include "raylib/shapes/Rectangle.hpp"
-
-#pragma once
 
 namespace game
 {
@@ -20,3 +21,5 @@ namespace game
         }
     };
 } // namespace game
+
+#endif /* RECTANGLE_COMPONENTS_ */
