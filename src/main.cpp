@@ -23,6 +23,7 @@
 
 #include "game/gui/components/Checkable.hpp"
 #include "game/gui/components/Clickable.hpp"
+#include "game/gui/components/Rectangle.hpp"
 #include "game/gui/components/Widget.hpp"
 
 #if defined(PLATFORM_WEB)
