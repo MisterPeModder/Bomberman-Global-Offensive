@@ -38,7 +38,7 @@ var classraylib_1_1core_1_1_gamepad =
     [ "getAxisCount", "classraylib_1_1core_1_1_gamepad.html#a10d3dca5346c61156142122177ea298f", null ],
     [ "getAxisMovement", "classraylib_1_1core_1_1_gamepad.html#afba88a8847febfafcb4b1340b2445ea4", null ],
     [ "getButtonPressed", "classraylib_1_1core_1_1_gamepad.html#a8bd9addbf160511aebbee4d700689da8", null ],
-    [ "getJoystickDirection", "classraylib_1_1core_1_1_gamepad.html#a794984840f9a3eb1576296fd877915d3", null ],
+    [ "getJoystickDirection", "classraylib_1_1core_1_1_gamepad.html#a6a2a234c3ab0263d9a14db2ccd5e5af7", null ],
     [ "getName", "classraylib_1_1core_1_1_gamepad.html#a4ea1d376e277cc9db5d211715ae74ec7", null ],
     [ "isAvailable", "classraylib_1_1core_1_1_gamepad.html#ab32ec0730f087b680457fc61c52ea5dc", null ],
     [ "isButtonDown", "classraylib_1_1core_1_1_gamepad.html#a0e851f349e6c3898d3b1fa0c8676df6a", null ],

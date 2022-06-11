@@ -122,6 +122,7 @@ digraph "src/game/systems/DrawText.cpp"
   Node41 [label="raylib/core/Vector3.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_vector3_8hpp.html",tooltip=" "];
   Node41 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node42 [label="Vector2.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_vector2_8hpp.html",tooltip=" "];
+  Node42 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node42 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node43 [label="raylib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node41 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

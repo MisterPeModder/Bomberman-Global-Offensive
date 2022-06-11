@@ -36,14 +36,8 @@ var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
     [ "Sound.hpp", "_sound_8hpp.html", [
       [ "Sound", "classraylib_1_1core_1_1_sound.html", "classraylib_1_1core_1_1_sound" ]
     ] ],
-    [ "Vector2.cpp", "_vector2_8cpp.html", null ],
-    [ "Vector2.hpp", "_vector2_8hpp.html", [
-      [ "Vector2", "structraylib_1_1core_1_1_vector2.html", "structraylib_1_1core_1_1_vector2" ]
-    ] ],
-    [ "Vector3.cpp", "_vector3_8cpp.html", null ],
-    [ "Vector3.hpp", "_vector3_8hpp.html", [
-      [ "Vector3", "structraylib_1_1core_1_1_vector3.html", "structraylib_1_1core_1_1_vector3" ]
-    ] ],
+    [ "Vector2.hpp", "_vector2_8hpp.html", "_vector2_8hpp" ],
+    [ "Vector3.hpp", "_vector3_8hpp.html", "_vector3_8hpp" ],
     [ "Window.cpp", "_window_8cpp.html", null ],
     [ "Window.hpp", "_window_8hpp.html", [
       [ "Window", "classraylib_1_1core_1_1_window.html", "classraylib_1_1core_1_1_window" ]

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['optional_4356',['optional',['http://en.cppreference.com/w/cpp/header/optional.html',1,'']]],
-  ['ostream_4357',['ostream',['http://en.cppreference.com/w/cpp/header/ostream.html',1,'']]]
+  ['optional_4360',['optional',['http://en.cppreference.com/w/cpp/header/optional.html',1,'']]],
+  ['ostream_4361',['ostream',['http://en.cppreference.com/w/cpp/header/ostream.html',1,'']]]
 ];

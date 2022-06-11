@@ -5,7 +5,7 @@ var classgame_1_1settings_1_1_settings =
     [ "Settings", "classgame_1_1settings_1_1_settings.html#a87fb8617851fdc9f44db342113fda8db", null ],
     [ "~Settings", "classgame_1_1settings_1_1_settings.html#aaaff24d59278304d4993cb6d1dac7638", null ],
     [ "getMusicVolume", "classgame_1_1settings_1_1_settings.html#ac0a51dce66823474077b80fbbc8b1479", null ],
-    [ "getResolution", "classgame_1_1settings_1_1_settings.html#aebb6d70a6ea521cb5cee18abe0389410", null ],
+    [ "getResolution", "classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b", null ],
     [ "getSettingsFilePath", "classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0", null ],
     [ "getSfxVolume", "classgame_1_1settings_1_1_settings.html#a446a8ebe27f654823f28fb2da0c76108", null ],
     [ "getTargetFramerate", "classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd", null ],
@@ -17,12 +17,12 @@ var classgame_1_1settings_1_1_settings =
     [ "save", "classgame_1_1settings_1_1_settings.html#adb873e4708998349aec6a2cb626fd653", null ],
     [ "setFullscreen", "classgame_1_1settings_1_1_settings.html#a338819ef128061c878a5deb2aa0aa587", null ],
     [ "setMusicVolume", "classgame_1_1settings_1_1_settings.html#a075e6f12793a8d9cffc8bdd558ff2474", null ],
-    [ "setResolution", "classgame_1_1settings_1_1_settings.html#a60665406949d3b6d1ed6fe47939df9bf", null ],
+    [ "setResolution", "classgame_1_1settings_1_1_settings.html#a3559d0dc3bd3956bbd76948a85a15a26", null ],
     [ "setSfxVolume", "classgame_1_1settings_1_1_settings.html#a4d54b3a0b95d809b69388d488db60851", null ],
     [ "setTargetFramerate", "classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4", null ],
     [ "_fullscreen", "classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58", null ],
     [ "_musicVolume", "classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a", null ],
-    [ "_resolution", "classgame_1_1settings_1_1_settings.html#a9705c7ce12e535df8ae45f8c0587a1a0", null ],
+    [ "_resolution", "classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603", null ],
     [ "_sfxVolume", "classgame_1_1settings_1_1_settings.html#af2b96d665bb862ccb88ee8d57c2d9e4e", null ],
     [ "_targetFramerate", "classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee", null ]
 ];

@@ -110,13 +110,15 @@ digraph "src/game/gui/components/Checkable.hpp"
   Node40 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node41 [label="Vector2.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_vector2_8hpp.html",tooltip=" "];
   Node41 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node42 [label="raylib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node42 [label="type_traits",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/type_traits.html",tooltip=" "];
+  Node41 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 [label="raylib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node40 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node40 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node37 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node43 [label="game/GameAction.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_action_8hpp.html",tooltip=" "];
+  Node40 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node37 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node44 [label="raylib/core/Keyboard.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keyboard_8hpp.html",tooltip=" "];
-  Node44 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node44 [label="game/GameAction.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_action_8hpp.html",tooltip=" "];
+  Node37 -> Node45 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node45 [label="raylib/core/Keyboard.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keyboard_8hpp.html",tooltip=" "];
+  Node45 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node30 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

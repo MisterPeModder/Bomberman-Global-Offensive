@@ -7,5 +7,5 @@ digraph "game::Size"
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="ecs::Component",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_component.html",tooltip="The base component type, all components must inherit from Component."];
   Node3 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="raylib::core::Vector3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector3.html",tooltip="The Vector3 struct (compatible with the raylib Vector3)"];
+  Node3 [label="raylib::core::Vector3f",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector3.html",tooltip="The Vector3 struct (compatible with the raylib Vector3)"];
 }

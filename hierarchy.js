@@ -93,8 +93,8 @@ var hierarchy =
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "game::User", "classgame_1_1_user.html", null ],
-    [ "raylib::core::Vector2", "structraylib_1_1core_1_1_vector2.html", null ],
-    [ "raylib::core::Vector3", "structraylib_1_1core_1_1_vector3.html", [
+    [ "raylib::core::Vector2< T >", "structraylib_1_1core_1_1_vector2.html", null ],
+    [ "raylib::core::Vector3< T >", "structraylib_1_1core_1_1_vector3.html", [
       [ "game::Position", "structgame_1_1_position.html", null ],
       [ "game::Size", "structgame_1_1_size.html", null ]
     ] ],

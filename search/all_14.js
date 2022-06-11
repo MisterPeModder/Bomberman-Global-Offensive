@@ -20,7 +20,7 @@ var searchData=
   ['text_2695',['text',['../structgame_1_1_textual.html#a77eb7b1d019f03788da4dbb3b8c0ee72',1,'game::Textual']]],
   ['textual_2696',['Textual',['../structgame_1_1_textual.html',1,'game::Textual'],['../structgame_1_1_textual.html#a8a6268c55b727bc0db6e170c7474d97e',1,'game::Textual::Textual()']]],
   ['textual_2ehpp_2697',['Textual.hpp',['../_textual_8hpp.html',1,'']]],
-  ['texture2d_2698',['Texture2D',['../classraylib_1_1textures_1_1_texture2_d.html',1,'raylib::textures::Texture2D'],['../classraylib_1_1textures_1_1_texture2_d.html#a1c294803f64d0267f5802dc8396bfeb1',1,'raylib::textures::Texture2D::Texture2D()']]],
+  ['texture2d_2698',['Texture2D',['../classraylib_1_1textures_1_1_texture2_d.html',1,'raylib::textures::Texture2D'],['../classraylib_1_1textures_1_1_texture2_d.html#aa6139a031d23d4c90388136ca7174f2b',1,'raylib::textures::Texture2D::Texture2D()']]],
   ['texture2d_2ecpp_2699',['Texture2D.cpp',['../_texture2_d_8cpp.html',1,'']]],
   ['texture2d_2ehpp_2700',['Texture2D.hpp',['../_texture2_d_8hpp.html',1,'']]],
   ['tgamma_2701',['tgamma',['http://en.cppreference.com/w/cpp/numeric/math/tgamma.html',1,'std']]],

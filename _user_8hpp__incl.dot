@@ -30,13 +30,15 @@ digraph "src/game/User.hpp"
   Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node13 [label="Vector2.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_vector2_8hpp.html",tooltip=" "];
   Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node14 [label="raylib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node14 [label="type_traits",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/type_traits.html",tooltip=" "];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="raylib.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node12 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="string_view",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html",tooltip=" "];
   Node12 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node15 [label="string_view",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html",tooltip=" "];
-  Node12 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 [label="game/GameAction.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_action_8hpp.html",tooltip=" "];
   Node8 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node17 [label="raylib/core/Keyboard.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keyboard_8hpp.html",tooltip=" "];
-  Node17 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="game/GameAction.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_action_8hpp.html",tooltip=" "];
+  Node8 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="raylib/core/Keyboard.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keyboard_8hpp.html",tooltip=" "];
+  Node18 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

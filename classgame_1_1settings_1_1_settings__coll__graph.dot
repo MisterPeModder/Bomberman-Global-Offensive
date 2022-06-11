@@ -1,9 +1,0 @@
-digraph "game::settings::Settings"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="game::settings::Settings",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Settings common to the game."];
-  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _resolution" ,fontname="Helvetica"];
-  Node2 [label="raylib::core::Vector2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector2.html",tooltip="The Vector2 struct (compatible with the raylib Vector2)"];
-}

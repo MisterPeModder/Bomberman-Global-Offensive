@@ -8,5 +8,5 @@ digraph "raylib::textures::Texture2D"
   Node2 [label="std::filesystem::path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/filesystem/path.html",tooltip=" "];
   Node1 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _texture" ,fontname="Helvetica"];
   Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _position" ,fontname="Helvetica"];
-  Node3 [label="raylib::core::Vector2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector2.html",tooltip="The Vector2 struct (compatible with the raylib Vector2)"];
+  Node3 [label="raylib::core::Vector2\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector2.html",tooltip="The Vector2 struct (compatible with the raylib Vector2)"];
 }
