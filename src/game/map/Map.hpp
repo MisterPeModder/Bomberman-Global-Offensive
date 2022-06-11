@@ -77,7 +77,7 @@ namespace game
             ///
             /// @param playerId player ID.
             /// @return Vector2 starting position of the player in the map.
-            Vector2 getPlayerStartingPosition(game::User::UserId playerId);
+            Vector2u getPlayerStartingPosition(game::User::UserId playerId);
 
             /// Get the exploded positions from an explosion position and its radius.
             /// @note Explosion will stop at indestructible walls and borders.

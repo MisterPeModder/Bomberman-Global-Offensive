@@ -58,10 +58,10 @@ namespace game
 
         raylib::core::Vector2u Map::getSize() const { return _size; }
 
-        Vector2 Map::getPlayerStartingPosition(game::User::UserId playerId)
+        raylib::core::Vector2u Map::getPlayerStartingPosition(game::User::UserId playerId)
         {
-            return {static_cast<float>((static_cast<size_t>(playerId) % 2) * (_size.x - 1)),
-                static_cast<float>((static_cast<size_t>(playerId) / 2) * (_size.y - 1))};
+            return {(static_cast<unsigned int>(playerId) % 2) * (_size.x - 1),
+                (static_cast<unsigned int>(playerId) / 2) * (_size.y - 1)};
         }
 
         void Map::fillExplodedPositions(std::vector<Vector2u> &explodePositions, Vector2u center, size_t radius)

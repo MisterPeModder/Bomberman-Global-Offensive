@@ -67,10 +67,10 @@ namespace game
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
-            Vector2 cell = _map.getPlayerStartingPosition(owner);
+            raylib::core::Vector2u cell = _map.getPlayerStartingPosition(owner);
 
             _world.addEntity()
-                .with<components::Position>(cell.x, 1.f, cell.y)
+                .with<components::Position>(static_cast<float>(cell.x), 1.f, static_cast<float>(cell.y))
                 .with<components::Velocity>()
                 .with<components::Living>(_params.livesCount)
                 .with<components::Collidable>()
@@ -139,7 +139,7 @@ namespace game
                 if (z == -1 || x == -1 || z == depth || x == width)
                     wall = true;
                 else {
-                    switch (_map.getElement(static_cast<raylib::core::Vector2u>(raylib::core::Vector2f(x, z)))) {
+                    switch (_map.getElement({static_cast<unsigned int>(x), static_cast<unsigned int>(z)})) {
                         case map::Map::Element::Crate:
                             wall = true;
                             destructible = true;

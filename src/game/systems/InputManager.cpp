@@ -27,10 +27,10 @@ namespace game::systems
 
     void InputManager::handleEvent(const Users::ActionEvent &event, ecs::SystemData data)
     {
-        auto optionnalWidgets = ecs::maybe(data.getStorage<gui::Widget>());
+        auto optionalWidgets = ecs::maybe(data.getStorage<gui::Widget>());
 
         for (auto [widget, controlable, entity] :
-            ecs::join(optionnalWidgets, data.getStorage<Controlable>(), data.getResource<ecs::Entities>())) {
+            ecs::join(optionalWidgets, data.getStorage<Controlable>(), data.getResource<ecs::Entities>())) {
             /// This entity doesn't listen the sender of the event.
             if (controlable.userId != event.user)
                 continue;

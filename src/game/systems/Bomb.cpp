@@ -55,7 +55,7 @@ namespace game::systems
             //         out << "Add pos (" << explodablePositions[i].x << ", " << explodablePositions[i].y << ")";
             //     });
             for (auto [pos, destructible, living] : ecs::join(positions, maybeDestructible, maybeLiving)) {
-                if ((!destructible && !living) || (destructible && destructible->destructed)
+                if ((!destructible && !living) || (destructible && destructible->destroyed)
                     || (living && living->hp == 0))
                     continue;
 
@@ -67,7 +67,7 @@ namespace game::systems
                     == explodablePositions.end())
                     continue;
                 if (destructible)
-                    destructible->destructed = true;
+                    destructible->destroyed = true;
                 if (living)
                     Logger::logger.log(Logger::Severity::Debug, "Die");
                 // living->hp--;

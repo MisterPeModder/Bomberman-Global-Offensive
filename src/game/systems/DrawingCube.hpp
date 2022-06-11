@@ -27,7 +27,7 @@ namespace game::systems
 
             for (auto [cube, destructible, living] :
                 ecs::join(data.getStorage<game::components::Cube>(), maybeDestructible, maybeLiving)) {
-                if ((destructible && destructible->destructed) || (living && living->hp == 0))
+                if ((destructible && destructible->destroyed) || (living && living->hp == 0))
                     continue;
                 cube.cube.draw();
             }
