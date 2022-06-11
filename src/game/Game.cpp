@@ -44,7 +44,6 @@ namespace game
         camera.setProjection(CAMERA_PERSPECTIVE);
 
         game::Worlds::loadTestWorld(_world);
-
     }
 
     void Game::drawFrame(const raylib::core::Camera3D &camera)

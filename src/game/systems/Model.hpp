@@ -1,14 +1,14 @@
 #ifndef GAME_SYSTEMS_MODEL_HPP_
-#define GAME_SYSTEMS_MODEL_HPP_
+    #define GAME_SYSTEMS_MODEL_HPP_
 
-#include "ecs/System.hpp"
-#include "game/components/Model.hpp"
-#include "game/components/Position.hpp"
-#include "game/components/RotationAngle.hpp"
-#include "game/components/RotationAxis.hpp"
-#include "game/components/Scale.hpp"
-#include "game/components/Size.hpp"
-#include "raylib/model/Model.hpp"
+    #include "ecs/System.hpp"
+    #include "game/components/Model.hpp"
+    #include "game/components/Position.hpp"
+    #include "game/components/RotationAngle.hpp"
+    #include "game/components/RotationAxis.hpp"
+    #include "game/components/Scale.hpp"
+    #include "game/components/Size.hpp"
+    #include "raylib/model/Model.hpp"
 
 namespace game::systems
 {
@@ -32,4 +32,4 @@ namespace game::systems
             }
         }
     };
-} // namespace game::namespacesystems
+} // namespace game::systems
