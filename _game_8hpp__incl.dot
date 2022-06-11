@@ -111,6 +111,7 @@ digraph "src/game/Game.hpp"
   Node34 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node42 [label="raylib/core/Keyboard.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_keyboard_8hpp.html",tooltip=" "];
   Node42 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 -> Node38 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node43 [label="raylib/core/Camera3D.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_camera3_d_8hpp.html",tooltip=" "];
   Node43 -> Node44 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

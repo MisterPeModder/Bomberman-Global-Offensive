@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"classraylib_1_1model_1_1_bounding_box.html#a1873931617e184c77374b560b70a9069":[2,0,3,1,1,7],
 "classraylib_1_1model_1_1_bounding_box.html#a21f6f555a6f96101e156e261767a2241":[2,0,3,1,1,8],
 "classraylib_1_1model_1_1_bounding_box.html#a378fd69fed8992b36db4aad849d7bc55":[2,0,3,1,1,6],
 "classraylib_1_1model_1_1_bounding_box.html#a629e04ccf8237864112a496d52b69d8a":[2,0,3,1,1,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,6],
-"functions_func.html":[2,3,1]
+"functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0]
 };
