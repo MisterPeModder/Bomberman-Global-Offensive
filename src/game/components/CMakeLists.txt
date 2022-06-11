@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/components)
 
 set (SRC
 	${SRC}
+	${SRCROOT}/Bomb.cpp
 	${SRCROOT}/Bomb.hpp
 	${SRCROOT}/Collidable.hpp
 	${SRCROOT}/Controlable.hpp

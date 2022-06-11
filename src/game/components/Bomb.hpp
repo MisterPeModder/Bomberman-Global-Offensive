@@ -9,7 +9,9 @@
 #define GAME_COMPONENTS_BOMB_HPP_
 
 #include <chrono>
+#include "Position.hpp"
 #include "ecs/Component.hpp"
+#include "ecs/System.hpp"
 
 namespace game::components
 {
@@ -22,6 +24,8 @@ namespace game::components
         Bomb(size_t pRadius = 1, std::chrono::milliseconds pExplosionDelay = std::chrono::milliseconds(2000))
             : placedTime(std::chrono::steady_clock::now()), radius(pRadius), explosionDelay(pExplosionDelay),
               exploded(false){};
+
+        void explode(ecs::Entity id, const Position &pos, ecs::SystemData data);
     };
 } // namespace game::components
 
