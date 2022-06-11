@@ -16,7 +16,9 @@ extern "C"
 #include "raylib.h"
 }
 
-namespace game
+using namespace game::components;
+
+namespace game::systems
 {
     void DrawText::run(ecs::SystemData data)
     {
@@ -24,4 +26,4 @@ namespace game
             ::DrawText(text.text.c_str(), pos.x, pos.y, text.fontSize, text.color.asRaylib());
         }
     }
-} // namespace game
+} // namespace game::systems

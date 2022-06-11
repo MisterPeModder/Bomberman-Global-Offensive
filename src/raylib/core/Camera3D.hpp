@@ -58,7 +58,7 @@ namespace raylib
             Camera3D &operator=(Camera3D &&camera);
 
             /// Start 3D mode (BeginMode3D encapsulation)
-            void begin3D();
+            void begin3D() const;
 
             /// End 3D mode (EndMode3D encapsulation)
             static void end3D();
