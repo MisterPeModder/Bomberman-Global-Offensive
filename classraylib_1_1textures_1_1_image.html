@@ -163,6 +163,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad2341567dfc7448524750a5cc8e7d8cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1textures_1_1_image.html#ad2341567dfc7448524750a5cc8e7d8cc">colorReplace</a> (const <a class="el" href="structraylib_1_1core_1_1_color.html">raylib::core::Color</a> &amp;color, const <a class="el" href="structraylib_1_1core_1_1_color.html">raylib::core::Color</a> &amp;replace)</td></tr>
 <tr class="memdesc:ad2341567dfc7448524750a5cc8e7d8cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces all instances of a color in an image with another color.  <a href="classraylib_1_1textures_1_1_image.html#ad2341567dfc7448524750a5cc8e7d8cc">More...</a><br /></td></tr>
 <tr class="separator:ad2341567dfc7448524750a5cc8e7d8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af67c920b2d2a705125f705f722f49716"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1textures_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716">asRaylib</a> ()</td></tr>
+<tr class="memdesc:af67c920b2d2a705125f705f722f49716"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the C Raylib mutable version of the image.  <a href="classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716">More...</a><br /></td></tr>
+<tr class="separator:af67c920b2d2a705125f705f722f49716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab68a11b5677f0897c8f65883619b872a"><td class="memItemLeft" align="right" valign="top">const ::<a class="el" href="classraylib_1_1textures_1_1_image.html">Image</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1textures_1_1_image.html#ab68a11b5677f0897c8f65883619b872a">asRaylib</a> () const</td></tr>
+<tr class="memdesc:ab68a11b5677f0897c8f65883619b872a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the C Raylib const version of the image.  <a href="classraylib_1_1textures_1_1_image.html#ab68a11b5677f0897c8f65883619b872a">More...</a><br /></td></tr>
+<tr class="separator:ab68a11b5677f0897c8f65883619b872a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -273,6 +279,49 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af67c920b2d2a705125f705f722f49716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67c920b2d2a705125f705f722f49716">&#9670;&nbsp;</a></span>asRaylib() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1textures_1_1_image.html">Image</a> &amp; raylib::textures::Image::asRaylib </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the C Raylib mutable version of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The raylib version of the image </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_image_8cpp_source.html#l00063">63</a> of file <a class="el" href="_image_8cpp_source.html">Image.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204">_image</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab68a11b5677f0897c8f65883619b872a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab68a11b5677f0897c8f65883619b872a">&#9670;&nbsp;</a></span>asRaylib() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ::<a class="el" href="classraylib_1_1textures_1_1_image.html">Image</a>&amp; raylib::textures::Image::asRaylib </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the C Raylib const version of the image. </p>
+<dl class="section return"><dt>Returns</dt><dd>The raylib version of the image </dd></dl>
+
+</div>
+</div>
 <a id="a4b45ddfd538b51fe2b171a6653636af1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b45ddfd538b51fe2b171a6653636af1">&#9670;&nbsp;</a></span>colorBrightness()</h2>
 
@@ -759,7 +808,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00120">120</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00130">130</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -783,7 +832,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00118">118</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00128">128</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -807,7 +856,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00121">121</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00131">131</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -831,7 +880,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00119">119</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_8hpp_source.html#l00129">129</a> of file <a class="el" href="_image_8hpp_source.html">Image.hpp</a>.</p>
 
 </div>
 </div>
@@ -841,14 +890,14 @@ Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_ae30fe6629a8f1372d689ca9ee9580204"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204">raylib::textures::Image::_image</a></div><div class="ttdeci">::Image _image</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00121">Image.hpp:121</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_ae30fe6629a8f1372d689ca9ee9580204"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204">raylib::textures::Image::_image</a></div><div class="ttdeci">::Image _image</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00131">Image.hpp:131</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_a242ab45ef12f929ed0e11ea990af79f9"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">raylib::core::Color::asRaylib</a></div><div class="ttdeci">constexpr ::Color asRaylib() const</div><div class="ttdoc">Gets the raylib Color.</div><div class="ttdef"><b>Definition:</b> <a href="_color_8hpp_source.html#l00143">Color.hpp:143</a></div></div>
 <div class="ttc" id="ageneric_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">std::filesystem::path::generic_string</a></div><div class="ttdeci">T generic_string(T... args)</div></div>
 <div class="ttc" id="areplace_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/replace.html">std::replace</a></div><div class="ttdeci">T replace(T... args)</div></div>
-<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_a6393aa95ede908ec03b20eb3cffbee85"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#a6393aa95ede908ec03b20eb3cffbee85">raylib::textures::Image::_fileName</a></div><div class="ttdeci">std::filesystem::path _fileName</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00118">Image.hpp:118</a></div></div>
-<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_a048ed677d281061f15016b82d2be7365"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#a048ed677d281061f15016b82d2be7365">raylib::textures::Image::_color</a></div><div class="ttdeci">raylib::core::Color _color</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00120">Image.hpp:120</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_a6393aa95ede908ec03b20eb3cffbee85"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#a6393aa95ede908ec03b20eb3cffbee85">raylib::textures::Image::_fileName</a></div><div class="ttdeci">std::filesystem::path _fileName</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00128">Image.hpp:128</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_a048ed677d281061f15016b82d2be7365"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#a048ed677d281061f15016b82d2be7365">raylib::textures::Image::_color</a></div><div class="ttdeci">raylib::core::Color _color</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00130">Image.hpp:130</a></div></div>
 <div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_afd93efee65954ae910eccfb903f32876"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#afd93efee65954ae910eccfb903f32876">raylib::textures::Image::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">LoadImage loads an image from a file.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8cpp_source.html#l00023">Image.cpp:23</a></div></div>
-<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_a510cea64e79454996f30acc66f74ad9e"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#a510cea64e79454996f30acc66f74ad9e">raylib::textures::Image::_position</a></div><div class="ttdeci">raylib::core::Vector2f _position</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00119">Image.hpp:119</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_a510cea64e79454996f30acc66f74ad9e"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#a510cea64e79454996f30acc66f74ad9e">raylib::textures::Image::_position</a></div><div class="ttdeci">raylib::core::Vector2f _position</div><div class="ttdef"><b>Definition:</b> <a href="_image_8hpp_source.html#l00129">Image.hpp:129</a></div></div>
 <div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_aadd279c033b2e588d6091704173daa90"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#aadd279c033b2e588d6091704173daa90">raylib::textures::Image::unload</a></div><div class="ttdeci">void unload()</div><div class="ttdoc">UnloadImage() unloads the image from memory.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8cpp_source.html#l00029">Image.cpp:29</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

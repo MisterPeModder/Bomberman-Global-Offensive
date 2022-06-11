@@ -1,5 +1,11 @@
 var NAVTREEINDEX2 =
 {
+"classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5":[2,0,1,1,1,1,1],
+"classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da94e8a499539d1a472f3b5dbbb85508c0":[2,0,1,1,1,1,0],
+"classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07":[2,0,1,1,1,1,2],
+"classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962":[2,0,1,1,1,7],
+"classgame_1_1map_1_1_map.html#a52e904919b3378d594f900ea377e0a78":[2,0,1,1,1,11],
+"classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72":[2,0,1,1,1,9],
 "classgame_1_1map_1_1_map.html#a7f21cb4bfdb618a4c83522217fda992c":[2,0,1,1,1,4],
 "classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906":[2,0,1,1,1,10],
 "classgame_1_1map_1_1_map.html#ab0c5cea074a22e60da33b1d25121da66":[2,0,1,1,1,12],
@@ -243,11 +249,5 @@ var NAVTREEINDEX2 =
 "classraylib_1_1core_1_1_gamepad.html#a54ec3205dbf62d8a592d36d7e11dfbc9":[2,0,3,0,5,19],
 "classraylib_1_1core_1_1_gamepad.html#a6a2a234c3ab0263d9a14db2ccd5e5af7":[2,0,3,0,5,9],
 "classraylib_1_1core_1_1_gamepad.html#a8bd9addbf160511aebbee4d700689da8":[2,0,3,0,5,8],
-"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159":[2,0,3,0,5,1],
-"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a08974a7bb4195c7efba52c159c5696ec":[2,0,3,0,5,1,4],
-"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a0a22e84ed1c4062d7ac11d80bbed3876":[2,0,3,0,5,1,15],
-"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a0ef6059af1705935886889a499a8b668":[2,0,3,0,5,1,9],
-"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a1c6f9e180caaad13119136f0193b64e0":[2,0,3,0,5,1,12],
-"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a24f304f1ec302267ccbd025dc1c340c0":[2,0,3,0,5,1,8],
-"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a43eedd8685eb86592022f8da962e3474":[2,0,3,0,5,1,14]
+"classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159":[2,0,3,0,5,1]
 };

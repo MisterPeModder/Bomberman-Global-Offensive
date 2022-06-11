@@ -61,6 +61,7 @@ var hierarchy =
     ] ],
     [ "game::map::Map", "classgame_1_1map_1_1_map.html", null ],
     [ "ecs::MaybeJoin< J >", "classecs_1_1_maybe_join.html", null ],
+    [ "raylib::model::Mesh", "classraylib_1_1model_1_1_mesh.html", null ],
     [ "raylib::core::scoped::Mode3D", "classraylib_1_1core_1_1scoped_1_1_mode3_d.html", null ],
     [ "raylib::model::Model", "classraylib_1_1model_1_1_model.html", null ],
     [ "raylib::core::Mouse", "classraylib_1_1core_1_1_mouse.html", null ],

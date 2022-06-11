@@ -3,6 +3,8 @@ var classraylib_1_1textures_1_1_image =
     [ "Image", "classraylib_1_1textures_1_1_image.html#aa53eeec71d70060d5cc33a14a4f494ab", null ],
     [ "Image", "classraylib_1_1textures_1_1_image.html#a80c08a8b64009110c6585bf5f880287b", null ],
     [ "~Image", "classraylib_1_1textures_1_1_image.html#adcb388881233cdca7c8d4b8c0b5509fc", null ],
+    [ "asRaylib", "classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716", null ],
+    [ "asRaylib", "classraylib_1_1textures_1_1_image.html#ab68a11b5677f0897c8f65883619b872a", null ],
     [ "colorBrightness", "classraylib_1_1textures_1_1_image.html#a4b45ddfd538b51fe2b171a6653636af1", null ],
     [ "colorContrast", "classraylib_1_1textures_1_1_image.html#a348070ebc65989736e902049ca46e2f6", null ],
     [ "colorGrayscale", "classraylib_1_1textures_1_1_image.html#abe7f6bca7dd2c3f9486927d3f938b0d4", null ],

@@ -65,9 +65,16 @@ digraph "src/raylib/core/Color.hpp"
   Node1 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node28 [label="src/raylib/textures\l/Image.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_image_8hpp.html",tooltip=" "];
   Node28 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node29 [label="src/raylib/textures\l/Image.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_image_8cpp.html",tooltip=" "];
-  Node1 -> Node30 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node30 [label="src/raylib/textures\l/Texture2D.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_texture2_d_8hpp.html",tooltip=" "];
-  Node30 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node31 [label="src/raylib/textures\l/Texture2D.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_texture2_d_8cpp.html",tooltip=" "];
+  Node29 [label="src/raylib/model/Mesh.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_mesh_8hpp.html",tooltip=" "];
+  Node29 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node29 -> Node30 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node30 [label="src/raylib/model/Mesh.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_mesh_8cpp.html",tooltip=" "];
+  Node28 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node31 [label="src/raylib/textures\l/Image.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_image_8cpp.html",tooltip=" "];
+  Node1 -> Node32 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node32 [label="src/raylib/textures\l/Texture2D.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_texture2_d_8hpp.html",tooltip=" "];
+  Node32 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node32 -> Node33 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node33 [label="src/raylib/textures\l/Texture2D.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_texture2_d_8cpp.html",tooltip=" "];
 }

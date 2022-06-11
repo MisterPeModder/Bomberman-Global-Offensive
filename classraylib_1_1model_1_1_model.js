@@ -1,6 +1,7 @@
 var classraylib_1_1model_1_1_model =
 [
     [ "Model", "classraylib_1_1model_1_1_model.html#ad0d604b8af05060c8daf0e962649ee28", null ],
+    [ "Model", "classraylib_1_1model_1_1_model.html#ac1b12393a371f53c23dedb02e041ba9f", null ],
     [ "~Model", "classraylib_1_1model_1_1_model.html#af0e3be54ce251183115d6bb0bd025350", null ],
     [ "Model", "classraylib_1_1model_1_1_model.html#a725c2557c0d277df1b4cf406be1d7202", null ],
     [ "asRaylib", "classraylib_1_1model_1_1_model.html#ab212bfa2310990f2589b297349a5962e", null ],
@@ -13,5 +14,6 @@ var classraylib_1_1model_1_1_model =
     [ "drawWires", "classraylib_1_1model_1_1_model.html#aef09526782379ce2db1ddb2b2552daa4", null ],
     [ "getBoundingBox", "classraylib_1_1model_1_1_model.html#ae8213c42a56c8cd7902144541ed3b593", null ],
     [ "operator=", "classraylib_1_1model_1_1_model.html#ac6c00c54b48464160227978e633b0dc1", null ],
+    [ "setMaterialMapTexture", "classraylib_1_1model_1_1_model.html#ab4aaf0323486bd0eefd6fa6881dbb77d", null ],
     [ "_model", "classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa", null ]
 ];

@@ -144,6 +144,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa3f5a673a508393e976a2e0afe604bfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1textures_1_1_texture2_d.html#aa3f5a673a508393e976a2e0afe604bfd">draw</a> (const <a class="el" href="classraylib_1_1textures_1_1_texture2_d.html#a4f423b500b4d995e262b51813f088b64">Vector2f</a> &amp;position, float rotation, float scale, const <a class="el" href="classraylib_1_1textures_1_1_texture2_d.html#af456a89dab2929075a4627f4fe4f652d">Color</a> &amp;tint)</td></tr>
 <tr class="memdesc:aa3f5a673a508393e976a2e0afe604bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a <a class="el" href="classraylib_1_1textures_1_1_texture2_d.html" title="This is the class that is used to create a texture2D object.">Texture2D</a> with extended parameters.  <a href="classraylib_1_1textures_1_1_texture2_d.html#aa3f5a673a508393e976a2e0afe604bfd">More...</a><br /></td></tr>
 <tr class="separator:aa3f5a673a508393e976a2e0afe604bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a281777f3cd027d776c3fbe96efa57a36"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1textures_1_1_texture2_d.html">Texture2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">asRaylib</a> ()</td></tr>
+<tr class="memdesc:a281777f3cd027d776c3fbe96efa57a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the C Raylib mutable version of the 2d texture.  <a href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">More...</a><br /></td></tr>
+<tr class="separator:a281777f3cd027d776c3fbe96efa57a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96114bca2ee3804d78d3ab43e046aded"><td class="memItemLeft" align="right" valign="top">const ::<a class="el" href="classraylib_1_1textures_1_1_texture2_d.html">Texture2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1textures_1_1_texture2_d.html#a96114bca2ee3804d78d3ab43e046aded">asRaylib</a> () const</td></tr>
+<tr class="memdesc:a96114bca2ee3804d78d3ab43e046aded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the C Raylib const version of the 2d texture.  <a href="classraylib_1_1textures_1_1_texture2_d.html#a96114bca2ee3804d78d3ab43e046aded">More...</a><br /></td></tr>
+<tr class="separator:a96114bca2ee3804d78d3ab43e046aded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
@@ -281,6 +287,49 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a281777f3cd027d776c3fbe96efa57a36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a281777f3cd027d776c3fbe96efa57a36">&#9670;&nbsp;</a></span>asRaylib() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ::<a class="el" href="classraylib_1_1textures_1_1_texture2_d.html">Texture2D</a> &amp; raylib::textures::Texture2D::asRaylib </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the C Raylib mutable version of the 2d texture. </p>
+<dl class="section return"><dt>Returns</dt><dd>The raylib version of the 2d texture </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00053">53</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#accf2cccccf6671a9482102350f9dca63">_texture</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a96114bca2ee3804d78d3ab43e046aded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96114bca2ee3804d78d3ab43e046aded">&#9670;&nbsp;</a></span>asRaylib() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const ::<a class="el" href="classraylib_1_1textures_1_1_texture2_d.html">Texture2D</a>&amp; raylib::textures::Texture2D::asRaylib </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the C Raylib const version of the 2d texture. </p>
+<dl class="section return"><dt>Returns</dt><dd>The raylib version of the 2d texture </dd></dl>
+
+</div>
+</div>
 <a id="ada0f9c31160c37462fe59f9979a86142"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada0f9c31160c37462fe59f9979a86142">&#9670;&nbsp;</a></span>draw() <span class="overload">[1/3]</span></h2>
 
@@ -347,7 +396,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00043">43</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            DrawTextureV(<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#accf2cccccf6671a9482102350f9dca63">_texture</a>, position.asRaylib(), tint.asRaylib());</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            DrawTextureV(<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#accf2cccccf6671a9482102350f9dca63">_texture</a>, position.<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">asRaylib</a>(), tint.<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">asRaylib</a>());</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -403,7 +452,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_texture2_d_8cpp_source.html#l00048">48</a> of file <a class="el" href="_texture2_d_8cpp_source.html">Texture2D.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            DrawTextureEx(<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#accf2cccccf6671a9482102350f9dca63">_texture</a>, position.asRaylib(), rotation, scale, tint.asRaylib());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            DrawTextureEx(<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#accf2cccccf6671a9482102350f9dca63">_texture</a>, position.<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">asRaylib</a>(), rotation, scale, tint.<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">asRaylib</a>());</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
@@ -660,7 +709,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00103">103</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00113">113</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
 </div>
 </div>
@@ -684,7 +733,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00104">104</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00114">114</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
 </div>
 </div>
@@ -708,7 +757,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00105">105</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_texture2_d_8hpp_source.html#l00115">115</a> of file <a class="el" href="_texture2_d_8hpp_source.html">Texture2D.hpp</a>.</p>
 
 </div>
 </div>
@@ -718,11 +767,12 @@ Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_a424cb7ba4fb43348a14c57cafbcc7747"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#a424cb7ba4fb43348a14c57cafbcc7747">raylib::textures::Texture2D::_position</a></div><div class="ttdeci">Vector2f _position</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8hpp_source.html#l00104">Texture2D.hpp:104</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_a424cb7ba4fb43348a14c57cafbcc7747"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#a424cb7ba4fb43348a14c57cafbcc7747">raylib::textures::Texture2D::_position</a></div><div class="ttdeci">Vector2f _position</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8hpp_source.html#l00114">Texture2D.hpp:114</a></div></div>
 <div class="ttc" id="ageneric_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">std::filesystem::path::generic_string</a></div><div class="ttdeci">T generic_string(T... args)</div></div>
 <div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_ab869591445974b6046f8d9d4f3666ae1"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#ab869591445974b6046f8d9d4f3666ae1">raylib::textures::Texture2D::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">The function loadTexture() loads a texture from a file.</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8cpp_source.html#l00024">Texture2D.cpp:24</a></div></div>
-<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_a2b8a08fab4484639ca7d669e799b48f6"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#a2b8a08fab4484639ca7d669e799b48f6">raylib::textures::Texture2D::_fileName</a></div><div class="ttdeci">std::filesystem::path _fileName</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8hpp_source.html#l00103">Texture2D.hpp:103</a></div></div>
-<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_accf2cccccf6671a9482102350f9dca63"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#accf2cccccf6671a9482102350f9dca63">raylib::textures::Texture2D::_texture</a></div><div class="ttdeci">::Texture2D _texture</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8hpp_source.html#l00105">Texture2D.hpp:105</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_a281777f3cd027d776c3fbe96efa57a36"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">raylib::textures::Texture2D::asRaylib</a></div><div class="ttdeci">::Texture2D &amp; asRaylib()</div><div class="ttdoc">Gets the C Raylib mutable version of the 2d texture.</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8cpp_source.html#l00053">Texture2D.cpp:53</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_a2b8a08fab4484639ca7d669e799b48f6"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#a2b8a08fab4484639ca7d669e799b48f6">raylib::textures::Texture2D::_fileName</a></div><div class="ttdeci">std::filesystem::path _fileName</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8hpp_source.html#l00113">Texture2D.hpp:113</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_accf2cccccf6671a9482102350f9dca63"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#accf2cccccf6671a9482102350f9dca63">raylib::textures::Texture2D::_texture</a></div><div class="ttdeci">::Texture2D _texture</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8hpp_source.html#l00115">Texture2D.hpp:115</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_a000198d5814b224f892bc9ae317015c6"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">raylib::core::Vector2::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00139">Vector2.hpp:139</a></div></div>
 <div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_a24a5b2fce5bed22bde7314081189c64f"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#a24a5b2fce5bed22bde7314081189c64f">raylib::textures::Texture2D::unload</a></div><div class="ttdeci">void unload()</div><div class="ttdoc">UnloadTexture() is a function that unloads a texture from GPU memory.</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8cpp_source.html#l00028">Texture2D.cpp:28</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/span/data.html">std::span::data</a></div><div class="ttdeci">T data(T... args)</div></div>

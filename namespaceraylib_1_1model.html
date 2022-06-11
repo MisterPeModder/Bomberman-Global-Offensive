@@ -84,7 +84,8 @@ $(document).ready(function(){initNavTree('namespaceraylib_1_1model.html',''); in
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::model Namespace Reference</div>  </div>
 </div><!--header-->
@@ -98,12 +99,103 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_bounding_box.html">BoundingBox</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classraylib_1_1model_1_1_bounding_box.html" title="The BoundingBox Class.">BoundingBox</a> Class.  <a href="classraylib_1_1model_1_1_bounding_box.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_mesh.html">Mesh</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classraylib_1_1model_1_1_mesh.html" title="Mesh class.">Mesh</a> class.  <a href="classraylib_1_1model_1_1_mesh.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_model.html">Model</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classraylib_1_1model_1_1_model.html" title="The Model class ; it shouldn&#39;t be created multiple times for the same file.">Model</a> class ; it shouldn't be created multiple times for the same file.  <a href="classraylib_1_1model_1_1_model.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af5efbf2d3c1f2fc16e8c8209e30cfcc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1model_1_1_mesh.html">Mesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib_1_1model.html#af5efbf2d3c1f2fc16e8c8209e30cfcc8">genCubicMap</a> (const <a class="el" href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a> &amp;image, float width, float height, float length)</td></tr>
+<tr class="separator:af5efbf2d3c1f2fc16e8c8209e30cfcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad78f96ce633aab4f52b458544e393b28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1model_1_1_mesh.html">Mesh</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceraylib_1_1model.html#ad78f96ce633aab4f52b458544e393b28">genCubicMap</a> (const <a class="el" href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a> &amp;image, const <a class="el" href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3</a> &amp;vector)</td></tr>
+<tr class="separator:ad78f96ce633aab4f52b458544e393b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ad78f96ce633aab4f52b458544e393b28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78f96ce633aab4f52b458544e393b28">&#9670;&nbsp;</a></span>genCubicMap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1model_1_1_mesh.html">Mesh</a> raylib::model::genCubicMap </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3</a> &amp;&#160;</td>
+          <td class="paramname"><em>vector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00029">29</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">return</span> Mesh(GenMeshCubicmap(image.<a class="code" href="classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716">asRaylib</a>(), vector.<a class="code" href="structraylib_1_1core_1_1_vector3.html#ad7da110906fdfe25cdd37029288b3d7f">asRaylib</a>()));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af5efbf2d3c1f2fc16e8c8209e30cfcc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5efbf2d3c1f2fc16e8c8209e30cfcc8">&#9670;&nbsp;</a></span>genCubicMap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1model_1_1_mesh.html">Mesh</a> raylib::model::genCubicMap </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a> &amp;&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00024">24</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> Mesh(GenMeshCubicmap(image.<a class="code" href="classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716">asRaylib</a>(), {.x = width, .y = height, .z = length}));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_af67c920b2d2a705125f705f722f49716"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716">raylib::textures::Image::asRaylib</a></div><div class="ttdeci">::Image &amp; asRaylib()</div><div class="ttdoc">Gets the C Raylib mutable version of the image.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8cpp_source.html#l00063">Image.cpp:63</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_ad7da110906fdfe25cdd37029288b3d7f"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#ad7da110906fdfe25cdd37029288b3d7f">raylib::core::Vector3::asRaylib</a></div><div class="ttdeci">constexpr ::Vector3 asRaylib() const</div><div class="ttdoc">Gets the raylib Vector3.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00175">Vector3.hpp:175</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
