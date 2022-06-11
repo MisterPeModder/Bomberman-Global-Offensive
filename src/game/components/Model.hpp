@@ -3,8 +3,8 @@
 
 #include <filesystem>
 #include "ecs/Component.hpp"
-#include "raylib/model/Model.hpp"
 #include "raylib/model/Mesh.hpp"
+#include "raylib/model/Model.hpp"
 
 namespace game
 {
