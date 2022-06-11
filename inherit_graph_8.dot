@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecs::JoinTraits\< Entities \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structecs_1_1_join_traits_3_01_entities_01_4.html",tooltip="Joinable implementation for the Entities resource."];
+  Node0 [label="ecs::Instances\< ecs\l::System \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_instances.html",tooltip=" "];
 }

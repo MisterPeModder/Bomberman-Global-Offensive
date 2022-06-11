@@ -1,6 +1,7 @@
 var struct_params =
 [
-    [ "camera", "struct_params.html#a1ab22c58ff86a9163995dcc8e0ffe438", null ],
-    [ "game", "struct_params.html#a99813412fa423227942982d040ac5c80", null ],
-    [ "world", "struct_params.html#a540e858cd21466c5d28fcd89c765c825", null ]
+    [ "Params", "struct_params.html#a1c0d445a3ea36e3b4d8696c55217fdd2", null ],
+    [ "camera", "struct_params.html#a4e46d2ff96807908c6feec7bea398630", null ],
+    [ "game", "struct_params.html#af6d6536aecd75efaacffbd3ce21abcfa", null ],
+    [ "world", "struct_params.html#ad139ed32aa20b0f2105970cf0102980d", null ]
 ];

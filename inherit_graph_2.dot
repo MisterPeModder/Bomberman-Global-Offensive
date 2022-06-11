@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="ecs::Instances\< Base \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_instances.html",tooltip="A set with values identified by their type, all values must inherit from Base."];
+  Node0 [label="bmjs::RegistryGuard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbmjs_1_1_registry_guard.html",tooltip="Watches a value stored in the MuJS registry."];
 }

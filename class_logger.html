@@ -158,6 +158,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0fff2adc419d9659f166b24ba03eaf22"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a0fff2adc419d9659f166b24ba03eaf22">Logger</a> (const <a class="el" href="class_logger.html">Logger</a> &amp;other)=delete</td></tr>
 <tr class="memdesc:a0fff2adc419d9659f166b24ba03eaf22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cannot copy loggers, because of the arbitrary output stream, which is not copiable.  <a href="class_logger.html#a0fff2adc419d9659f166b24ba03eaf22">More...</a><br /></td></tr>
 <tr class="separator:a0fff2adc419d9659f166b24ba03eaf22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3674e708a24cb8d76b38f70aca669695"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a3674e708a24cb8d76b38f70aca669695">Logger</a> (<a class="el" href="class_logger.html">Logger</a> &amp;&amp;other)=default</td></tr>
+<tr class="memdesc:a3674e708a24cb8d76b38f70aca669695"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor.  <a href="class_logger.html#a3674e708a24cb8d76b38f70aca669695">More...</a><br /></td></tr>
+<tr class="separator:a3674e708a24cb8d76b38f70aca669695"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81414467aac1f8740c5bd13624f3aa0b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a81414467aac1f8740c5bd13624f3aa0b">~Logger</a> ()=default</td></tr>
 <tr class="memdesc:a81414467aac1f8740c5bd13624f3aa0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="class_logger.html" title="Basic logger class.">Logger</a> object.  <a href="class_logger.html#a81414467aac1f8740c5bd13624f3aa0b">More...</a><br /></td></tr>
 <tr class="separator:a81414467aac1f8740c5bd13624f3aa0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -413,7 +416,7 @@ Private Attributes</h2></td></tr>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a740834905a831155be140a4c69a6d1a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a740834905a831155be140a4c69a6d1a3">&#9670;&nbsp;</a></span>Logger() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a740834905a831155be140a4c69a6d1a3">&#9670;&nbsp;</a></span>Logger() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -457,7 +460,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="aeeefe4e4594b8aed3003a9dbbc47c7b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeeefe4e4594b8aed3003a9dbbc47c7b8">&#9670;&nbsp;</a></span>Logger() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeefe4e4594b8aed3003a9dbbc47c7b8">&#9670;&nbsp;</a></span>Logger() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -507,7 +510,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a0fff2adc419d9659f166b24ba03eaf22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fff2adc419d9659f166b24ba03eaf22">&#9670;&nbsp;</a></span>Logger() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fff2adc419d9659f166b24ba03eaf22">&#9670;&nbsp;</a></span>Logger() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -531,6 +534,34 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cannot copy loggers, because of the arbitrary output stream, which is not copiable. </p>
+
+</div>
+</div>
+<a id="a3674e708a24cb8d76b38f70aca669695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3674e708a24cb8d76b38f70aca669695">&#9670;&nbsp;</a></span>Logger() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Logger::Logger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_logger.html">Logger</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move constructor. </p>
 
 </div>
 </div>
@@ -794,11 +825,11 @@ template&lt;class... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00148">148</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        (*this)[info] = enabled;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="class_logger.html#a17c395e5dbb5f98b1ea5bc4f23939fb9">enableLogInfo</a>(enabled, args...);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00151">151</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        (*this)[info] = enabled;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="class_logger.html#a17c395e5dbb5f98b1ea5bc4f23939fb9">enableLogInfo</a>(enabled, args...);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1142,11 +1173,11 @@ template&lt;class... Args&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00159">159</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="class_logger.html#af22710e08240baee5d5853e11f9efa32">clearLogInfo</a>();</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="class_logger.html#a17c395e5dbb5f98b1ea5bc4f23939fb9">enableLogInfo</a>(<span class="keyword">true</span>, info, args...);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00162">162</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="class_logger.html#af22710e08240baee5d5853e11f9efa32">clearLogInfo</a>();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="class_logger.html#a17c395e5dbb5f98b1ea5bc4f23939fb9">enableLogInfo</a>(<span class="keyword">true</span>, info, args...);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1366,7 +1397,7 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00195">195</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00198">198</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -1390,7 +1421,7 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00194">194</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00197">197</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -1414,7 +1445,7 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00191">191</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00194">194</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -1438,7 +1469,7 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00192">192</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00195">195</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -1462,7 +1493,7 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00196">196</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00199">199</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -1486,7 +1517,7 @@ template&lt;class... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00193">193</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_logger_8hpp_source.html#l00196">196</a> of file <a class="el" href="_logger_8hpp_source.html">Logger.hpp</a>.</p>
 
 </div>
 </div>
@@ -1525,7 +1556,7 @@ template&lt;class... Args&gt; </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_logger_html_aec195417f67cc95b9e9b690e2cbe1d7c"><div class="ttname"><a href="class_logger.html#aec195417f67cc95b9e9b690e2cbe1d7c">Logger::setStream</a></div><div class="ttdeci">void setStream(std::ostream &amp;stream)</div><div class="ttdoc">Change the linked stream.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00116">Logger.cpp:116</a></div></div>
-<div class="ttc" id="aclass_logger_html_aed5137c2edb42caa97be029cf5c920eb"><div class="ttname"><a href="class_logger.html#aed5137c2edb42caa97be029cf5c920eb">Logger::_colors</a></div><div class="ttdeci">std::array&lt; ColorPair, static_cast&lt; size_t &gt;Severity::Count)&gt; _colors</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00195">Logger.hpp:195</a></div></div>
+<div class="ttc" id="aclass_logger_html_aed5137c2edb42caa97be029cf5c920eb"><div class="ttname"><a href="class_logger.html#aed5137c2edb42caa97be029cf5c920eb">Logger::_colors</a></div><div class="ttdeci">std::array&lt; ColorPair, static_cast&lt; size_t &gt;Severity::Count)&gt; _colors</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00198">Logger.hpp:198</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdoc">Non critical error / Unexpected behavior.</div></div>
 <div class="ttc" id="aclass_logger_html_a7d6c04c6db61738366715ec171d21ec1"><div class="ttname"><a href="class_logger.html#a7d6c04c6db61738366715ec171d21ec1">Logger::setDefaultColors</a></div><div class="ttdeci">void setDefaultColors()</div><div class="ttdoc">Reset the default colors.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00150">Logger.cpp:150</a></div></div>
 <div class="ttc" id="abasic_string_view_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a></div></div>
@@ -1540,12 +1571,12 @@ template&lt;class... Args&gt; </div>
 <div class="ttc" id="acerr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/cerr.html">std::cerr</a></div></div>
 <div class="ttc" id="afunction_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a></div></div>
 <div class="ttc" id="aclass_logger_html_a1da14c6b2b82634176a9bb92ca2806a5aee38e4d5dd68c4e440825018d549cb47"><div class="ttname"><a href="class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5aee38e4d5dd68c4e440825018d549cb47">Logger::Color::Red</a></div><div class="ttdeci">@ Red</div><div class="ttdoc">Black color, not used by default.</div></div>
-<div class="ttc" id="aclass_logger_html_a2c4fb7c94548c4f375839d07ffa207b8"><div class="ttname"><a href="class_logger.html#a2c4fb7c94548c4f375839d07ffa207b8">Logger::_infos</a></div><div class="ttdeci">std::array&lt; bool, static_cast&lt; size_t &gt;LogInfo::Count)&gt; _infos</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00191">Logger.hpp:191</a></div></div>
-<div class="ttc" id="aclass_logger_html_a834d7bc402c0eb4d8d8d689e5aa8bccc"><div class="ttname"><a href="class_logger.html#a834d7bc402c0eb4d8d8d689e5aa8bccc">Logger::_streamPointer</a></div><div class="ttdeci">std::ostream * _streamPointer</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00193">Logger.hpp:193</a></div></div>
+<div class="ttc" id="aclass_logger_html_a2c4fb7c94548c4f375839d07ffa207b8"><div class="ttname"><a href="class_logger.html#a2c4fb7c94548c4f375839d07ffa207b8">Logger::_infos</a></div><div class="ttdeci">std::array&lt; bool, static_cast&lt; size_t &gt;LogInfo::Count)&gt; _infos</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00194">Logger.hpp:194</a></div></div>
+<div class="ttc" id="aclass_logger_html_a834d7bc402c0eb4d8d8d689e5aa8bccc"><div class="ttname"><a href="class_logger.html#a834d7bc402c0eb4d8d8d689e5aa8bccc">Logger::_streamPointer</a></div><div class="ttdeci">std::ostream * _streamPointer</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00196">Logger.hpp:196</a></div></div>
 <div class="ttc" id="aget_id_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/thread/get_id.html">std::this_thread::get_id</a></div><div class="ttdeci">T get_id(T... args)</div></div>
 <div class="ttc" id="acout_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/cout.html">std::cout</a></div></div>
 <div class="ttc" id="aclass_logger_html_a30c250dca8a2989ffefab01bbcf962aa"><div class="ttname"><a href="class_logger.html#a30c250dca8a2989ffefab01bbcf962aa">Logger::setSeverityColor</a></div><div class="ttdeci">void setSeverityColor(Severity severity, Color foreground, Color background=Color::Black)</div><div class="ttdoc">Set the color of a severity.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00158">Logger.cpp:158</a></div></div>
-<div class="ttc" id="aclass_logger_html_af050fc8c757429af3e17f336339af136"><div class="ttname"><a href="class_logger.html#af050fc8c757429af3e17f336339af136">Logger::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00196">Logger.hpp:196</a></div></div>
+<div class="ttc" id="aclass_logger_html_af050fc8c757429af3e17f336339af136"><div class="ttname"><a href="class_logger.html#af050fc8c757429af3e17f336339af136">Logger::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00199">Logger.hpp:199</a></div></div>
 <div class="ttc" id="aclass_logger_html_a22a74b19c09c18f007ad0a93b65d8ccea2d73559f294204a42bda2e926d094612"><div class="ttname"><a href="class_logger.html#a22a74b19c09c18f007ad0a93b65d8ccea2d73559f294204a42bda2e926d094612">Logger::LogInfo::PID</a></div><div class="ttdeci">@ PID</div></div>
 <div class="ttc" id="aclass_logger_html_a1da14c6b2b82634176a9bb92ca2806a5a51e6cd92b6c45f9affdc158ecca2b8b8"><div class="ttname"><a href="class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5a51e6cd92b6c45f9affdc158ecca2b8b8">Logger::Color::Yellow</a></div><div class="ttdeci">@ Yellow</div><div class="ttdoc">Green color, default to Information logs.</div></div>
 <div class="ttc" id="abasic_ostream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a></div></div>
@@ -1561,9 +1592,9 @@ template&lt;class... Args&gt; </div>
 <div class="ttc" id="aclass_logger_html_af22710e08240baee5d5853e11f9efa32"><div class="ttname"><a href="class_logger.html#af22710e08240baee5d5853e11f9efa32">Logger::clearLogInfo</a></div><div class="ttdeci">void clearLogInfo()</div><div class="ttdoc">Remove all the LogInfo set.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00142">Logger.cpp:142</a></div></div>
 <div class="ttc" id="atime_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/c/time_t.html">std::time_t</a></div></div>
 <div class="ttc" id="aendl_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a></div><div class="ttdeci">T endl(T... args)</div></div>
-<div class="ttc" id="aclass_logger_html_ada940e19e24444d377ae9523fda2201a"><div class="ttname"><a href="class_logger.html#ada940e19e24444d377ae9523fda2201a">Logger::_fileStream</a></div><div class="ttdeci">std::ofstream _fileStream</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00194">Logger.hpp:194</a></div></div>
-<div class="ttc" id="aclass_logger_html_ab6e8022952d15d8784dc022587d14b09"><div class="ttname"><a href="class_logger.html#ab6e8022952d15d8784dc022587d14b09">Logger::setLogInfo</a></div><div class="ttdeci">void setLogInfo(LogInfo info, Args... args)</div><div class="ttdoc">Set the exclusive LogInfo enabled (all infos not specified will be disabled).</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00159">Logger.hpp:159</a></div></div>
-<div class="ttc" id="aclass_logger_html_ae88bc2d35d36241c1eb8cfbd1a51a43a"><div class="ttname"><a href="class_logger.html#ae88bc2d35d36241c1eb8cfbd1a51a43a">Logger::_logLevel</a></div><div class="ttdeci">Severity _logLevel</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00192">Logger.hpp:192</a></div></div>
+<div class="ttc" id="aclass_logger_html_ada940e19e24444d377ae9523fda2201a"><div class="ttname"><a href="class_logger.html#ada940e19e24444d377ae9523fda2201a">Logger::_fileStream</a></div><div class="ttdeci">std::ofstream _fileStream</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00197">Logger.hpp:197</a></div></div>
+<div class="ttc" id="aclass_logger_html_ab6e8022952d15d8784dc022587d14b09"><div class="ttname"><a href="class_logger.html#ab6e8022952d15d8784dc022587d14b09">Logger::setLogInfo</a></div><div class="ttdeci">void setLogInfo(LogInfo info, Args... args)</div><div class="ttdoc">Set the exclusive LogInfo enabled (all infos not specified will be disabled).</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00162">Logger.hpp:162</a></div></div>
+<div class="ttc" id="aclass_logger_html_ae88bc2d35d36241c1eb8cfbd1a51a43a"><div class="ttname"><a href="class_logger.html#ae88bc2d35d36241c1eb8cfbd1a51a43a">Logger::_logLevel</a></div><div class="ttdeci">Severity _logLevel</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00195">Logger.hpp:195</a></div></div>
 <div class="ttc" id="aput_time_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/put_time.html">std::put_time</a></div><div class="ttdeci">T put_time(T... args)</div></div>
 <div class="ttc" id="aempty_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">std::string::empty</a></div><div class="ttdeci">T empty(T... args)</div></div>
 <div class="ttc" id="astr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">std::stringstream::str</a></div><div class="ttdeci">T str(T... args)</div></div>

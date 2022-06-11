@@ -1,21 +1,9 @@
 var searchData=
 [
-  ['chrono_4274',['chrono',['http://en.cppreference.com/w/namespacestd_1_1chrono.html',1,'std']]],
-  ['chrono_5fliterals_4275',['chrono_literals',['http://en.cppreference.com/w/namespacestd_1_1literals_1_1chrono__literals.html',1,'std::literals']]],
-  ['complex_5fliterals_4276',['complex_literals',['http://en.cppreference.com/w/namespacestd_1_1literals_1_1complex__literals.html',1,'std::literals']]],
-  ['erase_28std_4277',['erase(std',['http://en.cppreference.com/w/namespacestd_1_1experimental_1_1erase_07std.html',1,'std::experimental']]],
-  ['erase_5fif_28std_4278',['erase_if(std',['http://en.cppreference.com/w/namespacestd_1_1experimental_1_1erase__if_07std.html',1,'std::experimental']]],
-  ['execution_4279',['execution',['http://en.cppreference.com/w/namespacestd_1_1execution.html',1,'std']]],
-  ['experimental_4280',['experimental',['http://en.cppreference.com/w/namespacestd_1_1experimental.html',1,'std']]],
-  ['filesystem_4281',['filesystem',['http://en.cppreference.com/w/namespacestd_1_1experimental_1_1filesystem.html',1,'std::experimental::filesystem'],['http://en.cppreference.com/w/namespacestd_1_1filesystem.html',1,'std::filesystem']]],
-  ['literals_4282',['literals',['http://en.cppreference.com/w/namespacestd_1_1literals.html',1,'std']]],
-  ['parallel_4283',['parallel',['http://en.cppreference.com/w/namespacestd_1_1experimental_1_1parallel.html',1,'std::experimental']]],
-  ['pmr_4284',['pmr',['http://en.cppreference.com/w/namespacestd_1_1experimental_1_1pmr.html',1,'std::experimental::pmr'],['http://en.cppreference.com/w/namespacestd_1_1pmr.html',1,'std::pmr']]],
-  ['ranges_4285',['ranges',['http://en.cppreference.com/w/namespacestd_1_1ranges.html',1,'std']]],
-  ['regex_5fconstants_4286',['regex_constants',['http://en.cppreference.com/w/namespacestd_1_1regex__constants.html',1,'std']]],
-  ['rel_5fops_4287',['rel_ops',['http://en.cppreference.com/w/namespacestd_1_1rel__ops.html',1,'std']]],
-  ['std_4288',['std',['http://en.cppreference.com/w/namespacestd.html',1,'']]],
-  ['string_5fliterals_4289',['string_literals',['http://en.cppreference.com/w/namespacestd_1_1literals_1_1string__literals.html',1,'std::literals']]],
-  ['string_5fview_5fliterals_4290',['string_view_literals',['http://en.cppreference.com/w/namespacestd_1_1literals_1_1string__view__literals.html',1,'std::literals']]],
-  ['this_5fthread_4291',['this_thread',['http://en.cppreference.com/w/namespacestd_1_1this__thread.html',1,'std']]]
+  ['core_4342',['core',['../namespaceraylib_1_1core.html',1,'raylib']]],
+  ['model_4343',['model',['../namespaceraylib_1_1model.html',1,'raylib']]],
+  ['raylib_4344',['raylib',['../namespaceraylib.html',1,'']]],
+  ['scoped_4345',['scoped',['../namespaceraylib_1_1core_1_1scoped.html',1,'raylib::core']]],
+  ['shapes_4346',['shapes',['../namespaceraylib_1_1shapes.html',1,'raylib']]],
+  ['textures_4347',['textures',['../namespaceraylib_1_1textures.html',1,'raylib']]]
 ];

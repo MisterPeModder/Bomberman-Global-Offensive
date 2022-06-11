@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "bmjs", "namespacebmjs.html", "namespacebmjs" ],
     [ "ecs", "namespaceecs.html", "namespaceecs" ],
     [ "game", "namespacegame.html", "namespacegame" ],
     [ "localization", "namespacelocalization.html", "namespacelocalization" ],

@@ -28,6 +28,7 @@ var class_logger =
     [ "Logger", "class_logger.html#a740834905a831155be140a4c69a6d1a3", null ],
     [ "Logger", "class_logger.html#aeeefe4e4594b8aed3003a9dbbc47c7b8", null ],
     [ "Logger", "class_logger.html#a0fff2adc419d9659f166b24ba03eaf22", null ],
+    [ "Logger", "class_logger.html#a3674e708a24cb8d76b38f70aca669695", null ],
     [ "~Logger", "class_logger.html#a81414467aac1f8740c5bd13624f3aa0b", null ],
     [ "clearLogInfo", "class_logger.html#af22710e08240baee5d5853e11f9efa32", null ],
     [ "displayInformations", "class_logger.html#ad236f369c0c2f5182b6f0775c2d51ae6", null ],

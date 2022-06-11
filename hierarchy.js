@@ -42,6 +42,7 @@ var hierarchy =
     ] ],
     [ "raylib::core::Cursor", "classraylib_1_1core_1_1_cursor.html", null ],
     [ "raylib::core::scoped::Drawing", "classraylib_1_1core_1_1scoped_1_1_drawing.html", null ],
+    [ "bmjs::Engine", "classbmjs_1_1_engine.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "ecs::World::EntityBuilder", "classecs_1_1_world_1_1_entity_builder.html", null ],
     [ "game::Game", "classgame_1_1_game.html", null ],
@@ -73,6 +74,7 @@ var hierarchy =
     [ "game::map::Map", "classgame_1_1map_1_1_map.html", null ],
     [ "ecs::MaybeJoin< J >", "classecs_1_1_maybe_join.html", null ],
     [ "raylib::model::Mesh", "classraylib_1_1model_1_1_mesh.html", null ],
+    [ "bmjs::Mod", "classbmjs_1_1_mod.html", null ],
     [ "raylib::core::scoped::Mode3D", "classraylib_1_1core_1_1scoped_1_1_mode3_d.html", null ],
     [ "raylib::model::Model", "classraylib_1_1model_1_1_model.html", null ],
     [ "raylib::core::Mouse", "classraylib_1_1core_1_1_mouse.html", null ],
@@ -80,6 +82,7 @@ var hierarchy =
     [ "Params", "struct_params.html", null ],
     [ "game::settings::Profile", "classgame_1_1settings_1_1_profile.html", null ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
+    [ "bmjs::RegistryGuard", "classbmjs_1_1_registry_guard.html", null ],
     [ "ecs::Resource", "classecs_1_1_resource.html", [
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
       [ "ecs::Timer", "classecs_1_1_timer.html", null ],
@@ -89,6 +92,7 @@ var hierarchy =
     [ "localization::RessourceString", "classlocalization_1_1_ressource_string.html", null ],
     [ "game::map::cellular::Rule", "classgame_1_1map_1_1cellular_1_1_rule.html", null ],
     [ "std::runtime_error", "http://en.cppreference.com/w/cpp/error/runtime_error.html", [
+      [ "bmjs::JsException", "classbmjs_1_1_js_exception.html", null ],
       [ "game::map::cellular::Rule::InvalidRule", "classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html", null ],
       [ "game::settings::Settings::InvalidSettingsValue", "classgame_1_1settings_1_1_settings_1_1_invalid_settings_value.html", null ],
       [ "localization::RessourceFile::LocaleNotFoundError", "classlocalization_1_1_ressource_file_1_1_locale_not_found_error.html", null ],
