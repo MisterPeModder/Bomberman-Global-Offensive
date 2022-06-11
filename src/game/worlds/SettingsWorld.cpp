@@ -23,7 +23,7 @@ namespace game
         static const std::filesystem::path testModelPath =
             util::makePath("assets", "models", "player", "raylibguy.iqm");
 
-        world.addSystem<game::systems::DrawRotatedModel>();
+        world.addSystem<game::systems::DrawModel>();
 
         world.addEntity()
             .with<game::components::Model>(testModelPath)

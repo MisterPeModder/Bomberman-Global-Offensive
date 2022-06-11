@@ -59,8 +59,8 @@ static void addTestWidgets(ecs::World &world)
 {
     world.addEntity()
         .with<game::components::Position>(0.f, 0.f)
-        .with<game::Textual>("I'm the ECS button", 20, raylib::core::Color::RED)
-        .with<game::Controlable>(game::User::UserId::User1)
+        .with<game::components::Textual>("I'm the ECS button", 20, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(
             0, game::gui::Widget::NullTag, 1, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
         .with<game::gui::Clickable>(
@@ -69,7 +69,7 @@ static void addTestWidgets(ecs::World &world)
                 Logger::logger.log(Logger::Severity::Debug, "On click event!");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::Textual>()[btn.getId()].color = (state == game::gui::Clickable::State::Pressed)
+                world.getStorage<game::components::Textual>()[btn.getId()].color = (state == game::gui::Clickable::State::Pressed)
                     ? raylib::core::Color::BLUE
                     : raylib::core::Color::RED;
             })
@@ -77,8 +77,8 @@ static void addTestWidgets(ecs::World &world)
 
     world.addEntity()
         .with<game::components::Position>(0.f, 100.f)
-        .with<game::Textual>("Hello ECS", 40, raylib::core::Color::RED)
-        .with<game::Controlable>(game::User::UserId::User1,
+        .with<game::components::Textual>("Hello ECS", 40, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1,
             [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
                 (void)self;
                 (void)data;
@@ -92,18 +92,18 @@ static void addTestWidgets(ecs::World &world)
 
     world.addEntity()
         .with<game::components::Position>(250.f, 0.f)
-        .with<game::Textual>("I'm the ECS Checkbox!", 20, raylib::core::Color::RED)
-        .with<game::Controlable>(game::User::UserId::User1)
+        .with<game::components::Textual>("I'm the ECS Checkbox!", 20, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
         .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
-            world.getStorage<game::Textual>()[checkbox.getId()].color =
+            world.getStorage<game::components::Textual>()[checkbox.getId()].color =
                 (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
         })
         .build();
 
     world.addResource<game::Users>();
-    world.addSystem<game::DrawText>();
-    world.addSystem<game::InputManager>();
+    world.addSystem<game::systems::DrawText>();
+    world.addSystem<game::systems::InputManager>();
 }
 
 namespace game
@@ -126,7 +126,7 @@ namespace game
         raylib::model::Model &testingModel = getTestingModel();
         raylib::model::Animation &testingAnimation = getTestingAnimation();
 
-        world.addSystem<game::systems::DrawRotatedModel>();
+        world.addSystem<game::systems::DrawModel>();
         world.addSystem<game::systems::RunAnimation>();
         world.addEntity()
             .with<game::components::Model>(testingModel)
