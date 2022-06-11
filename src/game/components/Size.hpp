@@ -14,8 +14,8 @@
 namespace game::components
 {
     struct Size : public ecs::Component, public raylib::core::Vector3f {
-        Size(float px = 0, float py = 0, float pz = 0) : raylib::core::Vector3f(px, py, pz) {}
-        Size(int px = 0, int py = 0, int pz = 0) : raylib::core::Vector3f(px, py, pz) {}
+        Size(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
+        Size(int px = 0, int py = 0, int pz = 0) : Vector3(px, py, pz) {}
         Size(raylib::core::Vector3f vector) : raylib::core::Vector3f(vector) {}
         Size(raylib::core::Vector2f vector) : raylib::core::Vector3f(vector) {}
     };

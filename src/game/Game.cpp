@@ -6,7 +6,6 @@
 */
 
 #include "Game.hpp"
-#include "game/worlds/Worlds.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/scoped.hpp"
@@ -30,7 +29,7 @@ namespace game
         camera.setFovY(75.0f);            // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);
 
-        loadGameWorld();
+        loadTestWorld();
     }
 
     void Game::drawFrame(const raylib::core::Camera3D &camera)

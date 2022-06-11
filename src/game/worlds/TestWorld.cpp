@@ -5,12 +5,12 @@
 ** TestWorld
 */
 
-#include "Worlds.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
 #include "ecs/resource/Timer.hpp"
+#include "game/Game.hpp"
 #include "game/User.hpp"
 #include "game/Users.hpp"
 #include "game/components/Animation.hpp"
@@ -69,9 +69,9 @@ static void addTestWidgets(ecs::World &world)
                 Logger::logger.log(Logger::Severity::Debug, "On click event!");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color = (state == game::gui::Clickable::State::Pressed)
-                    ? raylib::core::Color::BLUE
-                    : raylib::core::Color::RED;
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::BLUE
+                                                                    : raylib::core::Color::RED;
             })
         .build();
 
@@ -108,27 +108,27 @@ static void addTestWidgets(ecs::World &world)
 
 namespace game
 {
-    void Worlds::loadTestWorld(ecs::World &world)
+    void Game::loadTestWorld()
     {
-        world.addSystem<game::systems::DrawCube>();
-        world.addEntity()
+        _world.addSystem<game::systems::DrawCube>();
+        _world.addEntity()
             .with<game::components::Cube>()
-            .with<game::components::Position>(0, 0, 0)
+            .with<game::components::Position>(0.f, 0.f, 0.f)
             .with<game::components::Scale>(10)
             .with<game::components::Color>(raylib::core::Color::YELLOW)
             .build();
 
-        raylib::core::Vector3 pos(0, -5, 0);
+        raylib::core::Vector3 pos(0.f, -5.f, 0.f);
         raylib::core::Vector3 size(0.5f, 0.5f, 0.5f);
-        raylib::core::Vector3 rotationAxis(1, 0, 0);
+        raylib::core::Vector3 rotationAxis(1.f, 0.f, 0.f);
         float rotationAngle = -90;
 
         raylib::model::Model &testingModel = getTestingModel();
         raylib::model::Animation &testingAnimation = getTestingAnimation();
 
-        world.addSystem<game::systems::DrawModel>();
-        world.addSystem<game::systems::RunAnimation>();
-        world.addEntity()
+        _world.addSystem<game::systems::DrawModel>();
+        _world.addSystem<game::systems::RunAnimation>();
+        _world.addEntity()
             .with<game::components::Model>(testingModel)
             .with<game::components::Position>(pos)
             .with<game::components::Size>(size)
@@ -138,6 +138,6 @@ namespace game
             .with<game::components::Animation>(testingAnimation)
             .build();
 
-        addTestWidgets(world);
+        addTestWidgets(_world);
     }
 } // namespace game

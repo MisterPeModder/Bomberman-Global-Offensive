@@ -8,8 +8,6 @@ set (SRC
 	${SRCROOT}/SplashWorld.cpp
 	${SRCROOT}/TestWorld.cpp
 	${SRCROOT}/GameWorld.cpp
-	${INCROOT}/Worlds.cpp
-	${INCROOT}/Worlds.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS

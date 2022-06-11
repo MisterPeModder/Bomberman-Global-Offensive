@@ -7,9 +7,9 @@
 namespace game::components
 {
     struct RotationAxis : public ecs::Component, public raylib::core::Vector3f {
-        RotationAxis(raylib::core::Vector3f pRotationAxis) : raylib::core::Vector3f(pRotationAxis) {}
-        RotationAxis(float px, float py, float pz) : raylib::core::Vector3f(px, py, pz) {}
-        RotationAxis(int px, int py, int pz) : raylib::core::Vector3f(px, py, pz) {}
+        RotationAxis(raylib::core::Vector3f pRotationAxis) : Vector3(pRotationAxis) {}
+        RotationAxis(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
+        RotationAxis(int px = 0, int py = 0, int pz = 0) : Vector3(px, py, pz) {}
     };
 } // namespace game::components
 

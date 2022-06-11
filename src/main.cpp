@@ -9,7 +9,6 @@
 #include <iostream>
 #include <memory>
 #include "ecs/World.hpp"
-#include "game/worlds/Worlds.hpp"
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
 #include "logger/Logger.hpp"
