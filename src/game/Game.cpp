@@ -6,24 +6,11 @@
 */
 
 #include "Game.hpp"
-#include "ecs/resource/Timer.hpp"
+#include "game/worlds/Worlds.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/core/Camera3D.hpp"
 #include "raylib/core/scoped.hpp"
-
-#include "components/Collidable.hpp"
-#include "components/Controlable.hpp"
-#include "components/Cube.hpp"
-#include "components/CubeColor.hpp"
-#include "components/Destructible.hpp"
-#include "components/Living.hpp"
-#include "components/Position.hpp"
-#include "components/Velocity.hpp"
-
-#include "systems/ChangeCube.hpp"
-#include "systems/Collision.hpp"
-#include "systems/DrawingCube.hpp"
-#include "systems/InputManager.hpp"
-#include "systems/Movement.hpp"
+#include "raylib/core/Vector3.hpp"
 
 namespace game
 {
@@ -37,13 +24,13 @@ namespace game
         size_t depth = _map.getSize().y;
 
         camera.setPosition(
-            {width / 2.f, 8 /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
+            {width / 2.f, 8.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
         camera.setTarget({width / 2.f, 0.f, depth / 2.f});                              // Camera looking at point
         camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         camera.setFovY(75.0f);            // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);
 
-        game::Worlds::loadTestWorld(_world);
+        loadGameWorld();
     }
 
     void Game::drawFrame(const raylib::core::Camera3D &camera)
