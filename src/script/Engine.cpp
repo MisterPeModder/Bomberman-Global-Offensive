@@ -61,7 +61,7 @@ namespace bmjs
 
     void Engine::loadScript(std::string_view name)
     {
-        auto modPath = util::makePath(std::filesystem::path("mods"), name);
+        auto modPath = util::makePath("mods", name);
         modPath += ".js";
         this->load(modPath);
     }
@@ -134,7 +134,7 @@ namespace bmjs
 
     void Engine::_loadApi()
     {
-        auto apiPath = util::makePath(std::filesystem::path("mods"), "api.js");
+        auto apiPath = util::makePath("mods", "api.js");
         this->load(apiPath);
     }
 
