@@ -12,7 +12,7 @@ namespace raylib
     namespace textures
     {
         Image::Image(
-            const std::filesystem::path &fileName, raylib::core::Vector2 position, const raylib::core::Color &color)
+            const std::filesystem::path &fileName, raylib::core::Vector2f position, const raylib::core::Color &color)
             : _fileName(fileName), _position(position), _color(color)
         {
             load();

@@ -103,12 +103,12 @@ namespace game
             /// @param resolution new resolution.
             /// @todo Define valid/invalid resolutions for the game and throw @ef InvalidSettingsValue for invalid
             /// resolutions.
-            void setResolution(raylib::core::Vector2 resolution);
+            void setResolution(raylib::core::Vector2f resolution);
 
             /// Get the target resolution of the window.
             ///
             /// @return the target resolution of the window.
-            raylib::core::Vector2 getResolution() const;
+            raylib::core::Vector2f getResolution() const;
 
             /// Enable/disable the fullscreen mode.
             ///
@@ -130,7 +130,7 @@ namespace game
             float _sfxVolume;
             float _musicVolume;
             unsigned int _targetFramerate;
-            raylib::core::Vector2 _resolution;
+            raylib::core::Vector2f _resolution;
             bool _fullscreen;
         };
     } // namespace settings

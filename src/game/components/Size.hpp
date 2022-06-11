@@ -13,10 +13,10 @@
 
 namespace game::components
 {
-    struct Size : public ecs::Component, public raylib::core::Vector3 {
-        Size(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
-        Size(Vector3 vector) : Vector3(vector) {}
-        Size(Vector2 vector) : Vector3(vector) {}
+    struct Size : public ecs::Component, public raylib::core::Vector3f {
+        Size(float px = 0, float py = 0, float pz = 0) : raylib::core::Vector3f(px, py, pz) {}
+        Size(raylib::core::Vector3f vector) : raylib::core::Vector3f(vector) {}
+        Size(raylib::core::Vector2f vector) : raylib::core::Vector3f(vector) {}
     };
 } // namespace game::components
 

@@ -16,25 +16,25 @@ namespace raylib
 
         Model::~Model() { UnloadModel(_model); }
 
-        void Model::draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const
+        void Model::draw(raylib::core::Vector3f position, float scale, raylib::core::Color tint) const
         {
             DrawModel(_model, position.asRaylib(), scale, tint.asRaylib());
         }
 
-        void Model::draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle,
-            raylib::core::Vector3 scale, raylib::core::Color tint) const
+        void Model::draw(raylib::core::Vector3f position, raylib::core::Vector3f rotationAxis, float rotationAngle,
+            raylib::core::Vector3f scale, raylib::core::Color tint) const
         {
             DrawModelEx(
                 _model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
         }
 
-        void Model::drawWires(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const
+        void Model::drawWires(raylib::core::Vector3f position, float scale, raylib::core::Color tint) const
         {
             DrawModelWires(_model, position.asRaylib(), scale, tint.asRaylib());
         }
 
-        void Model::drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle,
-            raylib::core::Vector3 scale, raylib::core::Color tint) const
+        void Model::drawWires(raylib::core::Vector3f position, raylib::core::Vector3f rotationAxis, float rotationAngle,
+            raylib::core::Vector3f scale, raylib::core::Color tint) const
         {
             DrawModelWiresEx(
                 _model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());

@@ -28,7 +28,7 @@ namespace raylib
             /// @param pos The position of the rectangle.
             /// @param size The size of the rectangle.
             /// @param color The color of the rectangle.
-            Rectangle(raylib::core::Vector2 pos = {}, raylib::core::Vector2 size = {1, 1},
+            Rectangle(raylib::core::Vector2f pos = {}, raylib::core::Vector2f size = {1, 1},
                 raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// A constructor that takes a Rectangle as a parameter.
@@ -110,7 +110,7 @@ namespace raylib
             Rectangle getCollision(Rectangle &other) const;
 
           private:
-            raylib::core::Vector2 _size;
+            raylib::core::Vector2f _size;
         };
     } // namespace shapes
 } // namespace raylib

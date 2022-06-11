@@ -32,18 +32,14 @@
 
 namespace game
 {
-    Game::Game(ecs::World &world, Parameters params)
-        : _world(world), _map(static_cast<size_t>(params.mapSize.x), static_cast<size_t>(params.mapSize.y)),
-          _params(params)
-    {
-    }
+    Game::Game(ecs::World &world, Parameters params) : _world(world), _map(params.mapSize), _params(params) {}
 
     const map::Map &Game::getMap() const { return _map; }
 
     void Game::setup(raylib::core::Camera3D &camera)
     {
-        size_t width = _map.getWidth();
-        size_t depth = _map.getHeight();
+        size_t width = _map.getSize().x;
+        size_t depth = _map.getSize().y;
 
         camera.setPosition(
             {width / 2.f, 8 /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
@@ -142,7 +138,7 @@ namespace game
                 if (z == -1 || x == -1 || z == depth || x == width)
                     wall = true;
                 else {
-                    switch (_map.getElement(x, z)) {
+                    switch (_map.getElement(static_cast<raylib::core::Vector2u>(raylib::core::Vector2f(x, z)))) {
                         case map::Map::Element::Crate:
                             wall = true;
                             destructible = true;

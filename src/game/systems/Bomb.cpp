@@ -43,9 +43,11 @@ namespace game::systems
         for (auto [bombPos, bomb, id] : ecs::join(positions, data.getStorage<game::components::Bomb>(), entities)) {
             if (bomb.exploded || now - bomb.placedTime < bomb.explosionDelay)
                 continue;
-            std::vector<raylib::core::Vector2> explodablePositions;
+            std::vector<raylib::core::Vector2u> explodablePositions;
 
-            map.fillExplodedPositions(explodablePositions, {bombPos.x, bombPos.z}, bomb.radius);
+            map.fillExplodedPositions(explodablePositions,
+                raylib::core::Vector2u(static_cast<unsigned int>(bombPos.x), static_cast<unsigned int>(bombPos.z)),
+                bomb.radius);
             if (explodablePositions.empty())
                 continue;
             // for (size_t i = 0; i < explodablePositions.size(); i++)
@@ -57,8 +59,7 @@ namespace game::systems
                     || (living && living->hp == 0))
                     continue;
 
-                raylib::core::Vector2 pos2D = {
-                    static_cast<float>(static_cast<size_t>(pos.x)), static_cast<float>(static_cast<size_t>(pos.z))};
+                raylib::core::Vector2u pos2D = {static_cast<unsigned int>(pos.x), static_cast<unsigned int>(pos.z)};
 
                 // Logger::logger.log(Logger::Severity::Debug,
                 //     [&](auto &out) { out << "Test pos (" << pos2D.x << ", " << pos2D.y << ")"; });
@@ -70,7 +71,7 @@ namespace game::systems
                 if (living)
                     Logger::logger.log(Logger::Severity::Debug, "Die");
                 // living->hp--;
-                map.getElement(pos2D.x, pos2D.y) = game::map::Map::Element::Empty;
+                map.getElement(pos2D) = game::map::Map::Element::Empty;
             }
             bomb.exploded = true;
             // entities.erase(id);

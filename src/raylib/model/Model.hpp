@@ -46,7 +46,7 @@ namespace raylib
             /// @param position Where the model will be drawn
             /// @param scale The scale to apply to the model when drawing it
             /// @param tint The color tint to apply to the model (leave the default value to disable)
-            void draw(raylib::core::Vector3 position, float scale,
+            void draw(raylib::core::Vector3f position, float scale,
                 raylib::core::Color tint = raylib::core::Color::DEFAULT_COLOR) const;
 
             /// Draw the model the advanced way
@@ -56,15 +56,15 @@ namespace raylib
             /// @param rotationAngle the rotation angle
             /// @param scale The scale to apply to the model when drawing it
             /// @param tint The color tint to apply to the model (leave the default value to disable)
-            void draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle,
-                raylib::core::Vector3 scale, raylib::core::Color tint = raylib::core::Color::DEFAULT_COLOR) const;
+            void draw(raylib::core::Vector3f position, raylib::core::Vector3f rotationAxis, float rotationAngle,
+                raylib::core::Vector3f scale, raylib::core::Color tint = raylib::core::Color::DEFAULT_COLOR) const;
 
             /// Draw the model's wires the basic way
             ///
             /// @param position Where the wires will be drawn
             /// @param scale The scale to apply to the wires when drawing it
             /// @param tint The color tint to apply to the wires (leave the default value to disable)
-            void drawWires(raylib::core::Vector3 position, float scale,
+            void drawWires(raylib::core::Vector3f position, float scale,
                 raylib::core::Color tint = raylib::core::Color::DEFAULT_COLOR) const;
 
             /// Draw the model's wires the advanced way
@@ -74,8 +74,8 @@ namespace raylib
             /// @param rotationAngle the rotation angle
             /// @param scale The scale to apply to the wires when drawing it
             /// @param tint The color tint to apply to the wires (leave the default value to disable)
-            void drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle,
-                raylib::core::Vector3 scale, raylib::core::Color tint = raylib::core::Color::DEFAULT_COLOR) const;
+            void drawWires(raylib::core::Vector3f position, raylib::core::Vector3f rotationAxis, float rotationAngle,
+                raylib::core::Vector3f scale, raylib::core::Color tint = raylib::core::Color::DEFAULT_COLOR) const;
 
             /// Gets the bounding box of the model
             ///
