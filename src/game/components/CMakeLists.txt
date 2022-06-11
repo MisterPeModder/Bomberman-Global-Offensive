@@ -3,7 +3,7 @@ set(SRCROOT ${SRCROOT}/components)
 
 set(SRC
     ${SRC}
-	${SRCROOT}/Collidable.hpp
+    ${SRCROOT}/Collidable.hpp
     ${SRCROOT}/Controlable.hpp
     ${SRCROOT}/Textual.hpp
     ${INCROOT}/Animation.hpp
@@ -16,11 +16,11 @@ set(SRC
     ${INCROOT}/Scale.hpp
     ${INCROOT}/Size.hpp
     ${INCROOT}/Texture2D.hpp
-	${SRCROOT}/Velocity.hpp
-	${SRCROOT}/Living.hpp
-	${SRCROOT}/Destructible.hpp
-	${SRCROOT}/Cube.hpp
-	${SRCROOT}/CubeColor.hpp
+    ${SRCROOT}/Velocity.hpp
+    ${SRCROOT}/Living.hpp
+    ${SRCROOT}/Destructible.hpp
+    ${SRCROOT}/Cube.hpp
+    ${SRCROOT}/CubeColor.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
