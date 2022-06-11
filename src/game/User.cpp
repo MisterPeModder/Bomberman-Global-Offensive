@@ -6,6 +6,7 @@
 */
 
 #include "User.hpp"
+#include <algorithm>
 
 #include <algorithm>
 

@@ -11,7 +11,7 @@ namespace raylib
 {
     namespace shapes
     {
-        Sphere::Sphere(raylib::core::Vector3 position, float radius, raylib::core::Color color)
+        Sphere::Sphere(raylib::core::Vector3f position, float radius, raylib::core::Color color)
         {
             setPosition(position);
             setColor(color);

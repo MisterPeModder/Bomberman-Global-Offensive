@@ -18,6 +18,7 @@
 #include "ecs/join/Joinable.hpp"
 #include "util/BitSet.hpp"
 
+#include <algorithm>
 #include <concepts>
 #include <cstdint>
 #include <functional>

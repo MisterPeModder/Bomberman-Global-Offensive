@@ -225,3 +225,33 @@ TEST(Join, optionalAlternativeOrdering)
     });
     world.runSystem<TestSystem>();
 }
+
+TEST(Join, optionalMissingComponent)
+{
+    ecs::World world;
+
+    world.addStorage<Marker>();
+
+    world.addEntity().with<Position>(5.0f, 6.0f).build();
+    world.addEntity().with<Position>(7.0f, 8.0f).build();
+
+    world.addSystem<TestSystem>([](ecs::SystemData data) {
+        auto optionalMarkers = ecs::maybe(data.getStorage<Marker>());
+        auto &positions = data.getStorage<Position>();
+
+        auto join = ecs::join(optionalMarkers, positions);
+        auto iter = join.begin();
+
+        auto [m1, p1] = *iter;
+        auto [m2, p2] = *(++iter);
+
+        EXPECT_TRUE(m1 == nullptr);
+        EXPECT_FLOAT_EQ(p1.x, 5.0f);
+        EXPECT_FLOAT_EQ(p1.y, 6.0f);
+
+        EXPECT_TRUE(m2 == nullptr);
+        EXPECT_FLOAT_EQ(p2.x, 7.0f);
+        EXPECT_FLOAT_EQ(p2.y, 8.0f);
+    });
+    world.runSystem<TestSystem>();
+}

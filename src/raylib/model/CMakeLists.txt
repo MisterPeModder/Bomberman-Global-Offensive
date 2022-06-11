@@ -8,6 +8,8 @@ set(SRC ${SRC}
     ${SRCROOT}/BoundingBox.hpp
     ${SRCROOT}/Animation.cpp
     ${SRCROOT}/Animation.hpp
+    ${SRCROOT}/Mesh.cpp
+    ${SRCROOT}/Mesh.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
