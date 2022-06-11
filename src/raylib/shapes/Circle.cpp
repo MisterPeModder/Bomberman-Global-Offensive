@@ -12,7 +12,7 @@ namespace raylib
 {
     namespace shapes
     {
-        Circle::Circle(raylib::core::Vector2 pos, float radius, raylib::core::Color color)
+        Circle::Circle(raylib::core::Vector2f pos, float radius, raylib::core::Color color)
         {
             setPosition(pos);
             setColor(color);
@@ -52,7 +52,7 @@ namespace raylib
             return CheckCollisionCircleRec(getPosition2D().asRaylib(), _radius, other.getRaylibRectangle());
         }
 
-        void Circle::draw3D(raylib::core::Vector3 rotationAxis, float rotationAngle) const
+        void Circle::draw3D(raylib::core::Vector3f rotationAxis, float rotationAngle) const
         {
             DrawCircle3D(getPosition().asRaylib(), _radius, rotationAxis.asRaylib(), rotationAngle, _color.asRaylib());
         }

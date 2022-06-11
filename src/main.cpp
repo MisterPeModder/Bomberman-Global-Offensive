@@ -55,9 +55,9 @@ static raylib::model::Animation &getTestingAnimation()
 static void drawFrame(void *arg)
 {
     raylib::core::Camera3D *camera = reinterpret_cast<raylib::core::Camera3D *>(arg);
-    raylib::core::Vector3 pos(0, -5, 0);
-    raylib::core::Vector3 scale(1, 1, 1);
-    raylib::core::Vector3 rotationAxis(1, 0, 0);
+    raylib::core::Vector3f pos(0, -5, 0);
+    raylib::core::Vector3f scale(1, 1, 1);
+    raylib::core::Vector3f rotationAxis(1, 0, 0);
 
     raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();
@@ -68,7 +68,7 @@ static void drawFrame(void *arg)
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
-        // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
     };
 
     world.runSystems();

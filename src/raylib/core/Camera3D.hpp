@@ -66,32 +66,32 @@ namespace raylib
             /// Get the position of the camera
             ///
             /// @return the position of the camera
-            Vector3 getPosition() const;
+            Vector3f getPosition() const;
 
             /// Set the position of the camera
             ///
             /// @param position the new position of the camera
-            void setPosition(Vector3 position);
+            void setPosition(Vector3f position);
 
             /// Get the target of the camera
             ///
             /// @return the target of the camera
-            Vector3 getTarget() const;
+            Vector3f getTarget() const;
 
             /// Set the target of the camera
             ///
             /// @param target the new target of the camera
-            void setTarget(Vector3 target);
+            void setTarget(Vector3f target);
 
             /// Get the 'up' of the camera
             ///
             /// @return the 'up' of the camera
-            Vector3 getUp() const;
+            Vector3f getUp() const;
 
             /// Set the 'up' of the camera
             ///
             /// @param up the new 'up' of the camera
-            void setUp(Vector3 up);
+            void setUp(Vector3f up);
 
             /// Get the fovY of the camera
             ///
