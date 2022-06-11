@@ -33,10 +33,6 @@
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/join.hpp"
-<<<<<<< HEAD
-=======
-#include "ecs/resource/Timer.hpp"
->>>>>>> ed34599a9028207610242345192a119aa93e1430
 #include "raylib/core/Vector3.hpp"
 #include "raylib/shapes/Cone.hpp"
 #include "raylib/shapes/Cube.hpp"
@@ -106,6 +102,7 @@ static void drawFrame(void *arg)
     {
         raylib::core::scoped::Mode3D mode3D(*params->camera);
         testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+        params->world->runSystems();
     };
 
     // DrawText("<insert great game here>", WIDTH / 2 - 120, HEIGHT / 2 - 1, 20, LIGHTGRAY);
@@ -327,7 +324,7 @@ int main()
 
     game::map::Map map(23, 23);
 
-    raylib::textures::Image image("src/cubicmap_atlas.png");
+    raylib::textures::Image image("src/cubicmap.png");
     raylib::textures::Texture2D cubimap(image);
     raylib::model::Mesh mesh = mesh.genCubicMap(image, {1.0f, 1.0f, 1.0f});
     raylib::model::Model model(mesh);
@@ -342,8 +339,8 @@ int main()
     camera.setProjection(CAMERA_PERSPECTIVE);
 
     world.addResource<ecs::Timer>();
-    world.addSystem<ChangeCube>();
-    world.addSystem<DrawingCube>();
+    // world.addSystem<ChangeCube>();
+    // world.addSystem<DrawingCube>();
     world.addSystem<game::systems::DrawModel>();
 
     std::cout << "test03\n" << std::endl;
@@ -351,9 +348,9 @@ int main()
     // create ground
     world.addEntity()
         .with<game::Position>(0 + (map.getWidth() / 2.f), -0.5f, 0 + (map.getHeight() / 2.f))
-        .with<game::Scale>(1)
-        .with<game::Color>(0, 228, 48, 255)
-        .with<game::Model>()
+        .with<game::Scale>(1.f)
+        .with<game::Color>(raylib::core::Color::WHITE) // raylib::core::Color(0, 228, 48, 255))
+        .with<game::Model>(model)
         .build();
 
     // create border
@@ -363,7 +360,7 @@ int main()
                 world.addEntity()
                     .with<game::Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
                     .with<game::Scale>(1.f)
-                    .with<game::Color>(0, 0, 250, 255)
+                    .with<game::Color>(raylib::core::Color::WHITE) // 0, 0, 250, 255)
                     .with<game::Model>(model)
                     .build();
         }
@@ -376,7 +373,7 @@ int main()
                 world.addEntity()
                     .with<game::Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
                     .with<game::Scale>(1.f)
-                    .with<game::Color>(0, 0, 250, 255)
+                    .with<game::Color>(raylib::core::Color::WHITE) // 0, 0, 250, 255)
                     .with<game::Model>(model)
                     .build();
         }
@@ -389,7 +386,7 @@ int main()
                 world.addEntity()
                     .with<game::Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
                     .with<game::Scale>(1.f)
-                    .with<game::Color>(250, 0, 0, 255)
+                    .with<game::Color>(raylib::core::Color::WHITE) // 250, 0, 0, 255)
                     .with<game::Model>(model)
                     .build();
             }
@@ -397,7 +394,7 @@ int main()
                 world.addEntity()
                     .with<game::Position>(static_cast<float>(x), 0.f, static_cast<float>(y))
                     .with<game::Scale>(1.f)
-                    .with<game::Color>(0, 0, 250, 255)
+                    .with<game::Color>(raylib::core::Color::WHITE) // 0, 0, 250, 255)
                     .with<game::Model>(model)
                     .build();
             }
