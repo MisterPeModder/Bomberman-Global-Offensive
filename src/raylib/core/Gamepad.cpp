@@ -43,7 +43,7 @@ namespace raylib
 
         float Gamepad::getAxisMovement(Axis axis) const { return GetGamepadAxisMovement(_id, static_cast<int>(axis)); }
 
-        Vector2 Gamepad::getJoystickDirection(Joystick joystick) const
+        Vector2f Gamepad::getJoystickDirection(Joystick joystick) const
         {
             if (joystick == Joystick::LEFT)
                 return {getAxisMovement(Axis::LEFT_X), getAxisMovement(Axis::LEFT_Y)};

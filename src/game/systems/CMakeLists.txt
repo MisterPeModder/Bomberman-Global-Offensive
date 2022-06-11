@@ -6,10 +6,16 @@ set(SRC
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Model.hpp
     ${SRCROOT}/Cube.hpp
+    ${SRCROOT}/ChangeCube.hpp
+    ${SRCROOT}/Collision.hpp
+    ${SRCROOT}/Collision.cpp
+    ${SRCROOT}/DrawingCube.hpp
     ${SRCROOT}/DrawText.hpp
     ${SRCROOT}/DrawText.cpp
     ${SRCROOT}/InputManager.hpp
     ${SRCROOT}/InputManager.cpp
+    ${SRCROOT}/Movement.hpp
+    ${SRCROOT}/Movement.cpp
     PARENT_SCOPE)
 
 set(INCDIRS

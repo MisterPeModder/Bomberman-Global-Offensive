@@ -17,7 +17,7 @@ namespace raylib
             setColor(color);
         }
 
-        Pixel::Pixel(raylib::core::Vector2 position, raylib::core::Color color)
+        Pixel::Pixel(raylib::core::Vector2f position, raylib::core::Color color)
         {
             setPosition(position);
             setColor(color);

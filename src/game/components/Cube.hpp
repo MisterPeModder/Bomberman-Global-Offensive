@@ -13,13 +13,21 @@
 
 namespace game::components
 {
-    struct Cube : public ecs::Component, public raylib::shapes::Cube {
-        Cube(const raylib::core::Vector2 &ppos = {}, const raylib::core::Vector2 &psize = {1, 1},
-            const raylib::core::Color &pcolor = raylib::core::Color::DEFAULT_COLOR)
-            : raylib::shapes::Cube(ppos, psize, pcolor)
-        {
-        }
+    /// Cube component
+    struct Cube : public ecs::Component {
+        /// Stored cube.
+        raylib::shapes::Cube cube;
+
+        /// Create a default cube component.
+        Cube() : cube() {}
+
+        /// Construct a new Cube component with parameters.
+        ///
+        /// @param position position.
+        /// @param size size.
+        /// @param color color.
+        Cube(raylib::core::Vector3f position, raylib::core::Vector3f size, Color color) : cube(position, size, color) {}
     };
 } // namespace game::components
 
-#endif
+#endif /* !GAME_COMPONENTS_CUBE_HPP_ */

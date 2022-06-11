@@ -16,7 +16,12 @@ if (NOT raylib_FOUND)
     set(CMAKE_POLICY_DEFAULT_CMP0072 NEW)
     cmake_policy(SET CMP0072 NEW)
 
-    FetchContent_Declare(raylib URL https://github.com/raysan5/raylib/archive/refs/tags/4.0.0.tar.gz)
+    FetchContent_Declare(
+        raylib
+        URL https://github.com/raysan5/raylib/archive/refs/tags/4.0.0.tar.gz
+        URL_HASH MD5=7b4ffb9d3b6a01806be21a7cd93e2c53
+    )
+
     FetchContent_GetProperties(raylib)
     if (NOT raylib_POPULATED)
         SET(FETCHCONTENT_QUIET NO)

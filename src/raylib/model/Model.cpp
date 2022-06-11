@@ -17,27 +17,29 @@ namespace raylib
         {
         }
 
+        Model::Model(const raylib::model::Mesh &mesh) : _model(LoadModelFromMesh(mesh.asRaylib())) {}
+
         Model::~Model() { UnloadModel(_model); }
 
-        void Model::draw(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const
+        void Model::draw(raylib::core::Vector3f position, float scale, raylib::core::Color tint) const
         {
             DrawModel(_model, position.asRaylib(), scale, tint.asRaylib());
         }
 
-        void Model::draw(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle,
-            raylib::core::Vector3 scale, raylib::core::Color tint) const
+        void Model::draw(raylib::core::Vector3f position, raylib::core::Vector3f rotationAxis, float rotationAngle,
+            raylib::core::Vector3f scale, raylib::core::Color tint) const
         {
             DrawModelEx(
                 _model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
         }
 
-        void Model::drawWires(raylib::core::Vector3 position, float scale, raylib::core::Color tint) const
+        void Model::drawWires(raylib::core::Vector3f position, float scale, raylib::core::Color tint) const
         {
             DrawModelWires(_model, position.asRaylib(), scale, tint.asRaylib());
         }
 
-        void Model::drawWires(raylib::core::Vector3 position, raylib::core::Vector3 rotationAxis, float rotationAngle,
-            raylib::core::Vector3 scale, raylib::core::Color tint) const
+        void Model::drawWires(raylib::core::Vector3f position, raylib::core::Vector3f rotationAxis, float rotationAngle,
+            raylib::core::Vector3f scale, raylib::core::Color tint) const
         {
             DrawModelWiresEx(
                 _model, position.asRaylib(), rotationAxis.asRaylib(), rotationAngle, scale.asRaylib(), tint.asRaylib());
@@ -57,6 +59,11 @@ namespace raylib
         ::Model const &Model::asRaylib() const { return _model; }
 
         Model::Model(const Model &other) : _path(other._path) { _model = LoadModel(_path.generic_string().c_str()); }
+
+        void Model::setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapType)
+        {
+            SetMaterialTexture(&_model.materials[materialId], mapType, texture.asRaylib());
+        }
 
     } // namespace model
 } // namespace raylib
