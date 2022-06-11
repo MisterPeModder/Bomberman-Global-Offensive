@@ -68,7 +68,7 @@ static void drawFrame(void *arg)
     raylib::core::Window::clear();
     {
         raylib::core::scoped::Mode3D mode3D(*camera);
-        // testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
+        testingModel.draw(pos, rotationAxis, -90, scale, raylib::core::Color::RED);
     };
 
     world.runSystems();
