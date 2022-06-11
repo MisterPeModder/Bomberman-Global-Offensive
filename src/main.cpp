@@ -11,7 +11,7 @@
 
 #include "ecs/World.hpp"
 #include "localization/Localization.hpp"
-#include "localization/Ressources.hpp"
+#include "localization/Resources.hpp"
 #include "logger/Logger.hpp"
 
 #include "game/gui/components/Widget.hpp"

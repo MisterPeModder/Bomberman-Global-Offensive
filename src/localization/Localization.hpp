@@ -10,12 +10,12 @@
 
 #include <filesystem>
 #include <vector>
-#include "RessourceFile.hpp"
+#include "ResourceFile.hpp"
 
 /// Namespace regrouping all the i18n related classes.
 namespace localization
 {
-    /// Singleton class to manage locales in ressources.
+    /// Singleton class to manage locales in resources.
     class Localization {
       public:
         /// Destroy the Localization object.
@@ -39,7 +39,7 @@ namespace localization
         /// @return std::filesystem::path locale file path.
         static std::filesystem::path getLocalePath(std::string_view locale);
 
-        /// @copydoc RessourceFile::loadLocale
+        /// @copydoc ResourceFile::loadLocale
         static void setLocale(std::string_view locale);
 
         /// Save the loaded locale files.
@@ -58,11 +58,11 @@ namespace localization
         /// @note If the file can't be found in debug mode, it is created on save when new messages are registered.
         ///
         /// @param locales list of country codes ("en", "fr"...)
-        /// @throw RessourceFile::LocaleNotFoundError when a locale is not found in release mode.
+        /// @throw ResourceFile::LocaleNotFoundError when a locale is not found in release mode.
         ///
         static void loadLocales(const std::vector<std::string_view> &locales);
 
-        /// @copydoc RessourceFile::translate
+        /// @copydoc ResourceFile::translate
         /// @note If no locale was set using @ref setLocale() @c msg will always be returned.
         static std::string_view translate(std::string_view msg);
 
@@ -79,7 +79,7 @@ namespace localization
         Localization();
 
         static Localization _Instance;
-        std::map<std::string, RessourceFile> _locales;
+        std::map<std::string, ResourceFile> _locales;
         std::string _locale;
         std::filesystem::path _localesDirectory;
     };

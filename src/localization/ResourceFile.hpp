@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman
 ** File description:
-** RessourceFile
+** ResourceFile
 */
 
-#ifndef LOCALIZATION_RESSOURCEFILE_HPP_
-#define LOCALIZATION_RESSOURCEFILE_HPP_
+#ifndef LOCALIZATION_RESOURCEFILE_HPP_
+#define LOCALIZATION_RESOURCEFILE_HPP_
 
 #include <filesystem>
 #include <map>
@@ -17,8 +17,8 @@
 
 namespace localization
 {
-    /// File regrouping multiple @ref RessourceString in the same locale.
-    class RessourceFile {
+    /// File regrouping multiple @ref ResourceString in the same locale.
+    class ResourceFile {
       public:
         /// Exception thrown when the locale file can't be found.
         class LocaleNotFoundError : public std::runtime_error {
@@ -46,19 +46,19 @@ namespace localization
             LocaleNotSetError();
         };
 
-        /// Construct a new Ressource File object. The object is invalid until a successfull call to @ref
+        /// Construct a new Resource File object. The object is invalid until a successfull call to @ref
         /// loadLocale() is made.
-        RessourceFile() = default;
+        ResourceFile() = default;
 
-        /// Construct a new Ressource File object with a given locale.
+        /// Construct a new Resource File object with a given locale.
         /// @note The file will be searched in the path given by @ref Localization::getLocalesDirectory().
         ///
         /// @param locale locale to load.
         /// @throw LocaleNotFoundError when the locale can't be found in release mode, in debug mode create the file.
-        RessourceFile(std::string_view locale);
+        ResourceFile(std::string_view locale);
 
-        /// Destroy the Ressource File object.
-        ~RessourceFile() = default;
+        /// Destroy the Resource File object.
+        ~ResourceFile() = default;
 
         /// Load a locale file.
         /// @note If the file can't be found in debug mode, it is created on save when new messages are registered.
@@ -133,7 +133,7 @@ namespace localization
         /// @param tokens list of tokens corresponding to the locale file.
         void parseTokens(const TokensVector &tokens);
 
-        /// Parse a message (msgid - msgstr) and register it to the known ressources.
+        /// Parse a message (msgid - msgstr) and register it to the known resources.
         /// @note Messages must be separated by empty lines.
         ///
         /// @param tokens list of tokens corresponding to the locale file.
@@ -188,11 +188,11 @@ namespace localization
         /// Current locale.
         std::string _locale;
         /// Loaded messages.
-        std::map<std::string, std::string> _ressources;
+        std::map<std::string, std::string> _resources;
         /// New messages (to save).
-        std::map<std::string, std::string> _newRessources;
+        std::map<std::string, std::string> _newResources;
     };
 
 } // namespace localization
 
-#endif /* !LOCALIZATION_RESSOURCEFILE_HPP_ */
+#endif /* !LOCALIZATION_RESOURCEFILE_HPP_ */
