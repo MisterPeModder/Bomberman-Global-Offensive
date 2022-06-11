@@ -6,20 +6,42 @@
 */
 
 #include "Worlds.hpp"
+#include "ecs/Entity.hpp"
 #include "ecs/Storage.hpp"
+#include "ecs/System.hpp"
+#include "ecs/resource/Timer.hpp"
+#include "game/Game.hpp"
+#include "raylib/core/Color.hpp"
+#include "util/util.hpp"
+
+#include "components/Collidable.hpp"
+#include "components/Controlable.hpp"
+#include "components/Cube.hpp"
+#include "components/CubeColor.hpp"
+#include "components/Destructible.hpp"
+#include "components/Living.hpp"
+#include "components/Position.hpp"
+#include "components/Velocity.hpp"
 #include "game/components/Cube.hpp"
 #include "game/components/Rectangle.hpp"
 #include "game/components/RotationAngle.hpp"
 #include "game/components/RotationAxis.hpp"
+
 #include "game/systems/Cube.hpp"
 #include "game/systems/Model.hpp"
-#include "raylib/core/Color.hpp"
-#include "util/util.hpp"
+#include "systems/ChangeCube.hpp"
+#include "systems/Collision.hpp"
+#include "systems/DrawingCube.hpp"
+#include "systems/InputManager.hpp"
+#include "systems/Movement.hpp"
 
 namespace game
 {
-    void Worlds::loadGameWorld(ecs::World &world)
+    void Game::loadGameWorld()
     {
+        size_t width = _map.getSize().x;
+        size_t depth = _map.getSize().y;
+
         /// Add world ressources
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();

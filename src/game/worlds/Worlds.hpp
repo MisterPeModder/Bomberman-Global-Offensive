@@ -33,7 +33,7 @@ namespace game
         static void loadMainWorld(ecs::World &world);
         static void loadSettingsWorld(ecs::World &world);
         static void loadTestWorld(ecs::World &world);
-        static void loadGameWorld(ecs::World &world);
+        // static void loadGameWorld(ecs::World &world, map::Map &map, game::Game::Parameters &params);
         // static bool worldsJoined[WORLDS_TYPE_SIZE];
     };
 } // namespace game
