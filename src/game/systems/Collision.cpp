@@ -22,11 +22,11 @@ namespace game::systems
         auto &entities = data.getResource<ecs::Entities>();
         auto &collidable = data.getStorage<Collidable>();
         auto &velocities = data.getStorage<Velocity>();
-        auto optionnalVelocity = ecs::maybe(velocities);
+        auto optionalVelocity = ecs::maybe(velocities);
 
         for (auto [pos1, size1, vel1, id1, c1] : ecs::join(positions, sizes, velocities, entities, collidable)) {
             for (auto [pos2, size2, vel2, id2, c2] :
-                ecs::join(positions, sizes, optionnalVelocity, entities, collidable)) {
+                ecs::join(positions, sizes, optionalVelocity, entities, collidable)) {
                 (void)c1;
                 (void)c2;
                 /// Do not collide entities with themselves
