@@ -16,7 +16,6 @@
 #include "script/script.hpp"
 
 #include <cstddef>
-#include <memory>
 #include <optional>
 #include <string>
 #include <string_view>
@@ -36,7 +35,7 @@ namespace bmjs
         Mod(std::size_t id, std::string_view name, std::string_view description);
 
         /// Move constructor.
-        Mod(Mod &&) = default;
+        Mod(Mod &&);
 
         /// Cannot copy instances of Mod.
         Mod(Mod const &) = delete;
@@ -86,8 +85,9 @@ namespace bmjs
         std::size_t _id;
         std::string _name;
         std::string _description;
+        bool _loaded;
 
-        std::unique_ptr<Logger> _logger;
+        Logger _logger;
 
         std::optional<Function<void>> _onLoad;
         std::optional<Function<void>> _onUnload;
