@@ -9,7 +9,7 @@ var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
       [ "Camera3D", "classraylib_1_1core_1_1_camera3_d.html", "classraylib_1_1core_1_1_camera3_d" ]
     ] ],
     [ "Color.cpp", "_color_8cpp.html", null ],
-    [ "Color.hpp", "_color_8hpp.html", [
+    [ "Color.hpp", "raylib_2core_2_color_8hpp.html", [
       [ "Color", "structraylib_1_1core_1_1_color.html", "structraylib_1_1core_1_1_color" ]
     ] ],
     [ "Cursor.cpp", "_cursor_8cpp.html", null ],

@@ -1,5 +1,8 @@
 var dir_46fb37fa78f646487908f22377b88dd8 =
 [
+    [ "Animation.hpp", "game_2systems_2_animation_8hpp.html", [
+      [ "RunAnimation", "structgame_1_1systems_1_1_run_animation.html", "structgame_1_1systems_1_1_run_animation" ]
+    ] ],
     [ "ChangeCube.hpp", "_change_cube_8hpp.html", [
       [ "ChangeCube", "structgame_1_1systems_1_1_change_cube.html", "structgame_1_1systems_1_1_change_cube" ]
     ] ],
@@ -17,6 +20,9 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "InputManager.cpp", "_input_manager_8cpp.html", null ],
     [ "InputManager.hpp", "_input_manager_8hpp.html", [
       [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ]
+    ] ],
+    [ "Model.hpp", "game_2systems_2_model_8hpp.html", [
+      [ "DrawModel", "structsystems_1_1_draw_model.html", "structsystems_1_1_draw_model" ]
     ] ],
     [ "Movement.cpp", "_movement_8cpp.html", null ],
     [ "Movement.hpp", "_movement_8hpp.html", [

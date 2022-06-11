@@ -156,10 +156,11 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_draw_text_8cpp_source.html#l00023">23</a> of file <a class="el" href="_draw_text_8cpp_source.html">DrawText.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, text] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">Position</a>&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">Textual</a>&gt;())) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            ::DrawText(text.text.c_str(), pos.x, pos.y, text.fontSize, text.color.asRaylib());</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, text] :</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;())) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            ::DrawText(text.text.c_str(), pos.x, pos.y, text.fontSize, text.color.asRaylib());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

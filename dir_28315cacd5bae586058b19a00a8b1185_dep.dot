@@ -9,8 +9,8 @@ digraph "src/game/settings" {
   dir_b7878ad5ecbf2506f4125b9d34c97e45 [shape=box label="util" URL="dir_b7878ad5ecbf2506f4125b9d34c97e45.html"];
   dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [shape=box label="logger" URL="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html"];
   dir_d4cc5f0b3cfddd1b0952a9e00053f649 [shape=box label="raylib" fillcolor="white" style="filled" color="red" URL="dir_d4cc5f0b3cfddd1b0952a9e00053f649.html"];
-  dir_d4cc5f0b3cfddd1b0952a9e00053f649->dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [headlabel="1", labeldistance=1.5 headhref="dir_000009_000018.html"];
-  dir_28315cacd5bae586058b19a00a8b1185->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="2", labeldistance=1.5 headhref="dir_000015_000024.html"];
-  dir_28315cacd5bae586058b19a00a8b1185->dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [headlabel="2", labeldistance=1.5 headhref="dir_000015_000018.html"];
-  dir_28315cacd5bae586058b19a00a8b1185->dir_d4cc5f0b3cfddd1b0952a9e00053f649 [headlabel="3", labeldistance=1.5 headhref="dir_000015_000009.html"];
+  dir_d4cc5f0b3cfddd1b0952a9e00053f649->dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [headlabel="1", labeldistance=1.5 headhref="dir_000010_000021.html"];
+  dir_28315cacd5bae586058b19a00a8b1185->dir_b7878ad5ecbf2506f4125b9d34c97e45 [headlabel="2", labeldistance=1.5 headhref="dir_000019_000024.html"];
+  dir_28315cacd5bae586058b19a00a8b1185->dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [headlabel="2", labeldistance=1.5 headhref="dir_000019_000021.html"];
+  dir_28315cacd5bae586058b19a00a8b1185->dir_d4cc5f0b3cfddd1b0952a9e00053f649 [headlabel="3", labeldistance=1.5 headhref="dir_000019_000010.html"];
 }

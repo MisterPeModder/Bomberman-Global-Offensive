@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="raylib::model::Model",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1model_1_1_model.html",tooltip="The Model class ; it shouldn't be created multiple times for the same file."];
+  Node0 [label="raylib::textures::Image",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1textures_1_1_image.html",tooltip="This is the Image class."];
 }

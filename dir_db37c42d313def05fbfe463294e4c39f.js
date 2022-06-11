@@ -1,7 +1,7 @@
 var dir_db37c42d313def05fbfe463294e4c39f =
 [
     [ "Animation.cpp", "_animation_8cpp.html", null ],
-    [ "Animation.hpp", "_animation_8hpp.html", [
+    [ "Animation.hpp", "raylib_2model_2_animation_8hpp.html", [
       [ "Animation", "classraylib_1_1model_1_1_animation.html", "classraylib_1_1model_1_1_animation" ]
     ] ],
     [ "BoundingBox.cpp", "_bounding_box_8cpp.html", null ],
@@ -13,7 +13,7 @@ var dir_db37c42d313def05fbfe463294e4c39f =
       [ "Mesh", "classraylib_1_1model_1_1_mesh.html", "classraylib_1_1model_1_1_mesh" ]
     ] ],
     [ "Model.cpp", "_model_8cpp.html", null ],
-    [ "Model.hpp", "_model_8hpp.html", [
+    [ "Model.hpp", "raylib_2model_2_model_8hpp.html", [
       [ "Model", "classraylib_1_1model_1_1_model.html", "classraylib_1_1model_1_1_model" ]
     ] ]
 ];

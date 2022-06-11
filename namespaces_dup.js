@@ -5,5 +5,6 @@ var namespaces_dup =
     [ "game", "namespacegame.html", "namespacegame" ],
     [ "localization", "namespacelocalization.html", "namespacelocalization" ],
     [ "raylib", "namespaceraylib.html", "namespaceraylib" ],
+    [ "systems", "namespacesystems.html", null ],
     [ "util", "namespaceutil.html", null ]
 ];

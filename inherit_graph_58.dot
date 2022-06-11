@@ -4,19 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="raylib::shapes::AShape",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_a_shape.html",tooltip=" "];
-  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 [label="raylib::shapes::Circle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_circle.html",tooltip="The Circle Class used to represent a 2d circle shape."];
-  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="raylib::shapes::Cone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_cone.html",tooltip="3D Cone shape. Can be used as a cylinder when base and top radius are equal (See Cylinder shape)."];
-  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="raylib::shapes::Cylinder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_cylinder.html",tooltip="3D Cylinder shape, basically just a Cone with the same base and top radius"];
-  Node0 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="raylib::shapes::Cube",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_cube.html",tooltip="3D shape representing a cube."];
-  Node0 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="raylib::shapes::Pixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_pixel.html",tooltip="The Pixel Class used to represent a pixel."];
-  Node0 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="raylib::shapes::Rectangle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_rectangle.html",tooltip="The Rectangle Class used to represent a 2d rectangle shape."];
-  Node0 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="raylib::shapes::Sphere",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_sphere.html",tooltip="3D shape representing a sphere."];
+  Node0 [label="raylib::textures::Texture2D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1textures_1_1_texture2_d.html",tooltip="This is the class that is used to create a texture2D object."];
 }

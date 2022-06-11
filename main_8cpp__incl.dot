@@ -116,7 +116,7 @@ digraph "src/main.cpp"
   Node1 -> Node60 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node60 [label="raylib/core/Window.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_window_8hpp.html",tooltip=" "];
   Node60 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node61 [label="Color.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_color_8hpp.html",tooltip=" "];
+  Node61 [label="Color.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$raylib_2core_2_color_8hpp.html",tooltip=" "];
   Node61 -> Node52 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node60 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

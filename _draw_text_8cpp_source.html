@@ -111,11 +111,12 @@ $(document).ready(function(){initNavTree('_draw_text_8cpp_source.html',''); init
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structgame_1_1systems_1_1_draw_text.html#a18abb8a15b01b44ce3e7109a7b72137d">   23</a></span>&#160;    <span class="keywordtype">void</span> DrawText::run(<a class="code" href="classecs_1_1_system_data.html">ecs::SystemData</a> data)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, text] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">Position</a>&gt;(), data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">Textual</a>&gt;())) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="structgame_1_1systems_1_1_draw_text.html">::DrawText</a>(text.text.c_str(), pos.x, pos.y, text.fontSize, text.color.asRaylib());</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;} <span class="comment">// namespace game::systems</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, text] :</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(), data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;())) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="structgame_1_1systems_1_1_draw_text.html">::DrawText</a>(text.text.c_str(), pos.x, pos.y, text.fontSize, text.color.asRaylib());</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <span class="comment">// namespace game::systems</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_join_8hpp_html"><div class="ttname"><a href="_join_8hpp.html">join.hpp</a></div></div>
@@ -127,7 +128,7 @@ $(document).ready(function(){initNavTree('_draw_text_8cpp_source.html',''); init
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_textual_html"><div class="ttname"><a href="structgame_1_1components_1_1_textual.html">game::components::Textual</a></div><div class="ttdoc">Textual element.</div><div class="ttdef"><b>Definition:</b> <a href="_textual_8hpp_source.html#l00017">Textual.hpp:17</a></div></div>
 <div class="ttc" id="a_draw_text_8hpp_html"><div class="ttname"><a href="_draw_text_8hpp.html">DrawText.hpp</a></div></div>
-<div class="ttc" id="anamespacegame_1_1systems_html"><div class="ttname"><a href="namespacegame_1_1systems.html">game::systems</a></div><div class="ttdef"><b>Definition:</b> <a href="_change_cube_8hpp_source.html#l00018">ChangeCube.hpp:18</a></div></div>
+<div class="ttc" id="anamespacegame_1_1systems_html"><div class="ttname"><a href="namespacegame_1_1systems.html">game::systems</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2systems_2_animation_8hpp_source.html#l00013">Animation.hpp:13</a></div></div>
 <div class="ttc" id="a_textual_8hpp_html"><div class="ttname"><a href="_textual_8hpp.html">Textual.hpp</a></div></div>
 <div class="ttc" id="aclassecs_1_1_system_data_html"><div class="ttname"><a href="classecs_1_1_system_data.html">ecs::SystemData</a></div><div class="ttdoc">A view on world data that provides access to Resource and Storage instances to systems.</div><div class="ttdef"><b>Definition:</b> <a href="_system_data_8hpp_source.html#l00022">SystemData.hpp:22</a></div></div>
 <!-- start footer part -->
