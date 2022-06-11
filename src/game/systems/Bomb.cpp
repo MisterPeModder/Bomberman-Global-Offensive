@@ -30,10 +30,10 @@ namespace game::systems
     {
         auto now = std::chrono::steady_clock::now();
 
-        for (auto [pos, bomb, id] : ecs::join(data.getStorage<game::components::Position>(),
-                 data.getStorage<game::components::Bomb>(), data.getResource<ecs::Entities>())) {
+        for (auto [pos, bomb] :
+            ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::components::Bomb>())) {
             if (now - bomb.placedTime >= bomb.explosionDelay)
-                bomb.explode(id, pos, data);
+                bomb.explode(pos, data);
         }
     }
 } // namespace game::systems

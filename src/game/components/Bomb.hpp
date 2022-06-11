@@ -25,7 +25,7 @@ namespace game::components
             : placedTime(std::chrono::steady_clock::now()), radius(pRadius), explosionDelay(pExplosionDelay),
               exploded(false){};
 
-        void explode(ecs::Entity id, const Position &pos, ecs::SystemData data);
+        void explode(const Position &pos, ecs::SystemData data);
     };
 } // namespace game::components
 
