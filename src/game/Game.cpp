@@ -8,8 +8,8 @@
 #include "Game.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Camera3D.hpp"
-#include "raylib/core/scoped.hpp"
 #include "raylib/core/Vector3.hpp"
+#include "raylib/core/scoped.hpp"
 
 namespace game
 {
@@ -24,7 +24,7 @@ namespace game
 
         camera.setPosition(
             {width / 2.f, 8.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
-        camera.setTarget({width / 2.f, 0.f, depth / 2.f});                              // Camera looking at point
+        camera.setTarget({width / 2.f, 0.f, depth / 2.f});                                // Camera looking at point
         camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         camera.setFovY(75.0f);            // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);

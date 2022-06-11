@@ -32,8 +32,8 @@ namespace raylib
             /// @param height The height of the cone.
             /// @param slices The number of slices of the cone, more slices mean more precise but more laggy.
             /// @param color The color of the cone.
-            Cone(raylib::core::Vector3f position = {}, float radiusBase = 1.f, float radiusTop = 0.f, float height = 1.f,
-                int slices = 10, raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
+            Cone(raylib::core::Vector3f position = {}, float radiusBase = 1.f, float radiusTop = 0.f,
+                float height = 1.f, int slices = 10, raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// Destroy the cone
             ~Cone() = default;

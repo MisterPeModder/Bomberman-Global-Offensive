@@ -23,7 +23,10 @@ namespace game::components
         /// @param position position.
         /// @param size size.
         /// @param color color.
-        Cube(raylib::core::Vector3f position, raylib::core::Vector3f size, Color color) : raylib::shapes::Cube(position, size, color) {}
+        Cube(raylib::core::Vector3f position, raylib::core::Vector3f size, Color color)
+            : raylib::shapes::Cube(position, size, color)
+        {
+        }
     };
 } // namespace game::components
 

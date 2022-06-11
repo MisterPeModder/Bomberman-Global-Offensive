@@ -5,11 +5,11 @@
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
 #include "game/components/Color.hpp"
+#include "game/components/Cube.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Scale.hpp"
 #include "game/components/Size.hpp"
-#include "game/components/Cube.hpp"
 #include "raylib/shapes/Cube.hpp"
 
 namespace game
