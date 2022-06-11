@@ -15,6 +15,7 @@ namespace game::components
 {
     struct Position : public ecs::Component, public raylib::core::Vector3f {
         Position(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
+        Position(int px = 0, int py = 0, int pz = 0) : Vector3(px, py, pz) {}
         Position(raylib::core::Vector3f vector) : raylib::core::Vector3f(vector) {}
         Position(raylib::core::Vector2f vector) : raylib::core::Vector3f(vector) {}
     };
