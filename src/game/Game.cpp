@@ -20,6 +20,7 @@
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Living.hpp"
+#include "components/Player.hpp"
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
 #include "gui/components/Widget.hpp"
@@ -78,46 +79,7 @@ namespace game
                 .with<components::Cube>()
                 .with<components::Size>(0.7f, 2.f, 0.7f)
                 .with<components::CubeColor>(raylib::core::Color::RED)
-                .with<components::Controlable>(owner,
-                    [this](ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) {
-                        (void)data;
-                        if (isMoveAction(event.action)) {
-                            auto &velocity = _world.getStorage<components::Velocity>()[self.getId()];
-                            auto &user = _world.getResource<Users>()[event.user];
-                            GameAction bestAction = GameAction::NONE;
-                            float value = 0.f;
-                            float speed = 4.f;
-
-                            for (size_t j = static_cast<size_t>(GameAction::MOVE_LEFT);
-                                 j <= static_cast<size_t>(GameAction::MOVE_DOWN); j++) {
-                                GameAction current = static_cast<GameAction>(j);
-                                if (user.getActionValue(current) > value) {
-                                    bestAction = current;
-                                    value = user.getActionValue(current);
-                                }
-                            }
-                            if (value < 0.2f)
-                                velocity = {0.f, 0.f};
-                            else
-                                switch (bestAction) {
-                                    case GameAction::MOVE_LEFT: velocity = {-speed, 0.f, 0.f}; break;
-                                    case GameAction::MOVE_UP: velocity = {0.f, 0.f, -speed}; break;
-                                    case GameAction::MOVE_RIGHT: velocity = {speed, 0.f, 0.f}; break;
-                                    case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, speed}; break;
-                                    default: break;
-                                }
-                            return true;
-                        } else if (event.action == GameAction::PLACE_BOMB && event.value > 0.9f) {
-                            auto &pos = _world.getStorage<components::Position>()[self.getId()];
-
-                            _world.addEntity()
-                                .with<components::Bomb>(2)
-                                .with<components::Position>(std::round(pos.x), 0.5f, std::round(pos.z))
-                                .with<components::Size>(0.5f, 0.f, 0.5f)
-                                .build();
-                        }
-                        return false;
-                    })
+                .with<components::Controlable>(owner, components::Player::handleActionEvent)
                 .build();
         }
 

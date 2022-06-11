@@ -10,6 +10,8 @@ set (SRC
 	${SRCROOT}/CubeColor.hpp
 	${SRCROOT}/Destructible.hpp
 	${SRCROOT}/Living.hpp
+	${SRCROOT}/Player.cpp
+	${SRCROOT}/Player.hpp
 	${SRCROOT}/Position.hpp
 	${SRCROOT}/Size.hpp
 	${SRCROOT}/Textual.hpp
