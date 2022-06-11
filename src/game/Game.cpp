@@ -10,6 +10,7 @@
 #include "logger/Logger.hpp"
 #include "raylib/core/scoped.hpp"
 
+#include "components/Bomb.hpp"
 #include "components/Collidable.hpp"
 #include "components/Controlable.hpp"
 #include "components/Cube.hpp"
@@ -18,7 +19,9 @@
 #include "components/Living.hpp"
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
+#include "gui/components/Widget.hpp"
 
+#include "systems/Bomb.hpp"
 #include "systems/ChangeCube.hpp"
 #include "systems/Collision.hpp"
 #include "systems/DrawingCube.hpp"
@@ -50,12 +53,17 @@ namespace game
         /// Add world ressources
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
+        /// Add world storages
+        _world.addStorage<components::Bomb>();
+        _world.addStorage<game::gui::Widget>();
         /// Add world systems
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::ChangeCube>();
         _world.addSystem<systems::DrawingCube>();
         _world.addSystem<systems::Movement>();
         _world.addSystem<systems::Collision>();
+        _world.addSystem<systems::DrawBomb>();
+        _world.addSystem<systems::ExplodeBomb>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
@@ -99,6 +107,14 @@ namespace game
                                     default: break;
                                 }
                             return true;
+                        } else if (event.action == GameAction::PLACE_BOMB && event.value > 0.9f) {
+                            auto &pos = _world.getStorage<components::Position>()[self.getId()];
+
+                            _world.addEntity()
+                                .with<components::Bomb>()
+                                .with<components::Position>(pos)
+                                .with<components::Size>(0.5f, 0.f, 0.5f)
+                                .build();
                         }
                         return false;
                     })

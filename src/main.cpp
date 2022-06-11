@@ -58,7 +58,6 @@ static void runGame()
     game::Game game(world, game::Game::Parameters(1));
     Params params = {world, camera, game};
 
-    world.addStorage<game::gui::Widget>();
     game.setup(camera);
 
 #if defined(PLATFORM_WEB)

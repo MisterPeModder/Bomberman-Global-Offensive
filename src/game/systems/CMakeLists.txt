@@ -3,6 +3,8 @@ set(SRCROOT ${SRCROOT}/systems)
 
 set (SRC
 	${SRC}
+	${SRCROOT}/Bomb.hpp
+	${SRCROOT}/Bomb.cpp
 	${SRCROOT}/ChangeCube.hpp
 	${SRCROOT}/Collision.hpp
 	${SRCROOT}/Collision.cpp
