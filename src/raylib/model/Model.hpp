@@ -42,7 +42,9 @@ namespace raylib
             /// Model destructor
             ~Model();
 
-            /// Deleted copy constructor because it makes no sense to load the same file multiple simes
+            /// Copy constructor
+            ///
+            /// @param other the model to copy
             Model(const Model &other);
 
             /// Deleted copy operator because it makes no sense to load the same file multiple simes
