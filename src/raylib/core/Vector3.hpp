@@ -183,6 +183,8 @@ namespace raylib
         };
 
         using Vector3f = Vector3<float>;
+        using Vector3u = Vector3<unsigned int>;
+        using Vector3i = Vector3<int>;
     } // namespace core
 } // namespace raylib
 

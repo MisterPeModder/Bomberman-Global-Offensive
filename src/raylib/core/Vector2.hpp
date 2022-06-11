@@ -141,6 +141,8 @@ namespace raylib
         };
 
         using Vector2f = Vector2<float>;
+        using Vector2u = Vector2<unsigned int>;
+        using Vector2i = Vector2<int>;
     } // namespace core
 } // namespace raylib
 
