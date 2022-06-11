@@ -19,9 +19,9 @@ namespace raylib
             _max = box.max;
         }
 
-        raylib::core::Vector3 BoundingBox::getMin() const { return _min; }
+        raylib::core::Vector3f BoundingBox::getMin() const { return _min; }
 
-        raylib::core::Vector3 BoundingBox::getMax() const { return _max; }
+        raylib::core::Vector3f BoundingBox::getMax() const { return _max; }
 
         ::BoundingBox BoundingBox::_asRaylib() const { return {_min.asRaylib(), _max.asRaylib()}; }
 

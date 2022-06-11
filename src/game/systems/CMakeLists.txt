@@ -3,10 +3,16 @@ set(SRCROOT ${SRCROOT}/systems)
 
 set (SRC
 	${SRC}
+	${SRCROOT}/ChangeCube.hpp
+	${SRCROOT}/Collision.hpp
+	${SRCROOT}/Collision.cpp
+	${SRCROOT}/DrawingCube.hpp
 	${SRCROOT}/DrawText.hpp
 	${SRCROOT}/DrawText.cpp
 	${SRCROOT}/InputManager.hpp
 	${SRCROOT}/InputManager.cpp
+	${SRCROOT}/Movement.hpp
+	${SRCROOT}/Movement.cpp
 	PARENT_SCOPE)
 
 set(INCDIRS 

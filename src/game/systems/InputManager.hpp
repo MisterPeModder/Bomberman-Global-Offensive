@@ -11,7 +11,7 @@
 #include "ecs/System.hpp"
 #include "game/Users.hpp"
 
-namespace game
+namespace game::systems
 {
     /// System managing all the users inputs.
     struct InputManager : public ecs::System {
@@ -26,6 +26,6 @@ namespace game
       private:
         void handleEvent(const Users::ActionEvent &event, ecs::SystemData data);
     };
-} // namespace game
+} // namespace game::systems
 
 #endif /* !GAME_SYSTEMS_INPUTMANAGER_HPP_ */

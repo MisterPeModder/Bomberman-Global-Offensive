@@ -43,12 +43,12 @@ namespace raylib
             /// Gets the min point of the bounding box
             ///
             /// @return The min point of the bounding box
-            raylib::core::Vector3 getMin() const;
+            raylib::core::Vector3f getMin() const;
 
             /// Gets the max point of the bounding box
             ///
             /// @return The max point of the bounding box
-            raylib::core::Vector3 getMax() const;
+            raylib::core::Vector3f getMax() const;
 
             /// Checks collision with another bounding box
             ///
@@ -64,8 +64,8 @@ namespace raylib
             /// @return The raylib version of the bounding box
             ::BoundingBox _asRaylib() const;
 
-            raylib::core::Vector3 _min;
-            raylib::core::Vector3 _max;
+            raylib::core::Vector3f _min;
+            raylib::core::Vector3f _max;
         };
     } // namespace model
 } // namespace raylib

@@ -143,8 +143,8 @@ namespace raylib
             /// Get the movement of the two axis of a joystick.
             ///
             /// @param joystick joystick to check.
-            /// @return Vector2 direction of the joystick (x, y) in range [-1, 1].
-            Vector2 getJoystickDirection(Joystick joystick) const;
+            /// @return Vector2f direction of the joystick (x, y) in range [-1, 1].
+            Vector2f getJoystickDirection(Joystick joystick) const;
 
             /// Set internal gamepad mappings (SDL_GameControllerDB)
             ///

@@ -26,14 +26,14 @@ namespace raylib
         class Image {
           public:
             /// This function is a constructor for the Image class. It takes in a
-            /// Vector2 position, a Color pointer, and a char pointer. It sets the
+            /// Vector2f position, a Color pointer, and a char pointer. It sets the
             /// position to the position passed in, sets the fileName to the fileName
             /// passed in, and then calls the loadImage function
             ///
             /// @param position The position of the image on the screen.
             /// @param color The color of the image.
             /// @param fileName The name of the file to load.
-            Image(const std::filesystem::path &fileName, raylib::core::Vector2 position = {},
+            Image(const std::filesystem::path &fileName, raylib::core::Vector2f position = {},
                 const raylib::core::Color &color = raylib::core::Color::DEFAULT_COLOR);
 
             Image(::Image image);
@@ -114,9 +114,19 @@ namespace raylib
             /// @param replace The color to replace
             void colorReplace(const raylib::core::Color &color, const raylib::core::Color &replace);
 
+            /// Gets the C Raylib mutable version of the image
+            ///
+            /// @return The raylib version of the image
+            ::Image &asRaylib();
+
+            /// Gets the C Raylib const version of the image
+            ///
+            /// @return The raylib version of the image
+            const ::Image &asRaylib() const;
+
           private:
             std::filesystem::path _fileName;
-            raylib::core::Vector2 _position;
+            raylib::core::Vector2f _position;
             raylib::core::Color _color;
             ::Image _image;
         };

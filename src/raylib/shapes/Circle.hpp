@@ -32,7 +32,7 @@ namespace raylib
             /// @param pos The position of the center of the circle.
             /// @param radius The radius of the circle.
             /// @param color The color of the circle.
-            Circle(raylib::core::Vector2 pos, float radius = 1,
+            Circle(raylib::core::Vector2f pos, float radius = 1,
                 raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// The destructor is called when the object is destroyed
@@ -87,7 +87,7 @@ namespace raylib
             ///
             /// @param rotationAxis The axis of rotation.
             /// @param rotationAngle The angle of rotation in degrees.
-            void draw3D(raylib::core::Vector3 rotationAxis, float rotationAngle) const;
+            void draw3D(raylib::core::Vector3f rotationAxis, float rotationAngle) const;
 
             /// `setRadius` is a function that takes a float as an argument and sets the
             /// value of the private variable `_radius` to the value of the argument
