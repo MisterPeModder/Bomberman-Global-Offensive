@@ -6,7 +6,7 @@
 */
 
 #include "Player.hpp"
-
+#include <cmath>
 #include "Bomb.hpp"
 #include "Position.hpp"
 #include "Size.hpp"
@@ -19,7 +19,7 @@ namespace game::components
         if (isMoveAction(event.action))
             move(self, data, event);
         else if (event.action == GameAction::PLACE_BOMB && event.value > 0.9f)
-            placeBomb(self, data, event);
+            placeBomb(self, data);
         else
             return false;
         return true;
@@ -52,7 +52,7 @@ namespace game::components
             }
     }
 
-    void Player::placeBomb(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
+    void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
         auto &pos = data.getStorage<Position>()[self.getId()];
 

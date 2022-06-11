@@ -41,10 +41,9 @@ namespace game::components
         ///
         /// @param self player entity
         /// @param data world data
-        /// @param event action event
         /// @return true If the action was consumed.
         /// @return false If the action wasn't consumed.
-        static void placeBomb(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
+        static void placeBomb(ecs::Entity self, ecs::SystemData data);
     };
 } // namespace game::components
 
