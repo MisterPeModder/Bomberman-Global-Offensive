@@ -114,7 +114,15 @@ namespace raylib
             /// @param replace The color to replace
             void colorReplace(const raylib::core::Color &color, const raylib::core::Color &replace);
 
-            const ::Image asRaylib() const;
+            /// Gets the C Raylib mutable version of the image
+            ///
+            /// @return The raylib version of the image
+            ::Image &asRaylib();
+
+            /// Gets the C Raylib const version of the image
+            ///
+            /// @return The raylib version of the image
+            const ::Image &asRaylib() const;
 
           private:
             std::filesystem::path _fileName;

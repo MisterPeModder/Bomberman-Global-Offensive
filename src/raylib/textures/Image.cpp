@@ -60,7 +60,9 @@ namespace raylib
             ImageColorReplace(&_image, color.asRaylib(), replace.asRaylib());
         }
 
-        const ::Image Image::asRaylib() const { return _image; }
+        const ::Image &Image::asRaylib() const { return _image; }
+
+        ::Image &Image::asRaylib() { return _image; }
 
     } // namespace textures
 
