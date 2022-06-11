@@ -7,6 +7,8 @@
 
 #include <filesystem>
 #include <iostream>
+#include <memory>
+
 #include "ecs/World.hpp"
 #include "localization/Localization.hpp"
 #include "localization/Ressources.hpp"
@@ -17,6 +19,7 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/raylib.hpp"
+#include "script/Engine.hpp"
 
 #include "game/Game.hpp"
 
@@ -24,13 +27,15 @@
     #include <emscripten/emscripten.h>
 #endif
 
-constexpr int WIDTH(500);
-constexpr int HEIGHT(500);
+constexpr int WIDTH(1080);
+constexpr int HEIGHT(720);
 
 struct Params {
-    ecs::World &world;
-    raylib::core::Camera3D &camera;
-    game::Game &game;
+    ecs::World world;
+    raylib::core::Camera3D camera;
+    game::Game game;
+
+    Params() : world(), camera(), game(this->world, game::Game::Parameters(1)) {}
 };
 
 static void drawFrame(void *args)
@@ -53,28 +58,34 @@ static void setupLogger()
 
 static void runGame()
 {
-    ecs::World world;
-    raylib::core::Camera3D camera;
-    game::Game game(world, game::Game::Parameters(1));
-    Params params = {world, camera, game};
+    auto params = new Params();
 
-    world.addStorage<game::gui::Widget>();
-    game.setup(camera);
+    params->world.addStorage<game::gui::Widget>();
+    params->game.setup(params->camera);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
     // since there is no such thing as a window.
-    emscripten_set_main_loop_arg(&drawFrame, &params, 0, 1);
+    emscripten_set_main_loop_arg(&drawFrame, params, 0, 1);
 #else
     while (!WindowShouldClose())
-        drawFrame(&params);
+        drawFrame(params);
     CloseWindow();
+
+    // Manual delete on purpose, we don't want params to be freed on the web
+    delete params;
 #endif
 }
 
 int main()
 {
     setupLogger();
+
+    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
+
+    jsEngine->loadApi();
+    jsEngine->loadScript("hello");
+
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
     localization::Localization::setLocale("fr");
