@@ -70,8 +70,9 @@ namespace game
         void Map::fillExplodedPositions(
             std::vector<raylib::core::Vector2> &explodePositions, raylib::core::Vector2 position, size_t radius)
         {
-            position = {std::clamp(position.x, 0.f, static_cast<float>(_width - 1)),
-                std::clamp(position.y, 0.f, static_cast<float>(_height - 1))};
+            position = {
+                std::clamp(static_cast<float>(static_cast<int>(position.x)), 0.f, static_cast<float>(_width - 1)),
+                std::clamp(static_cast<float>(static_cast<int>(position.y)), 0.f, static_cast<float>(_height - 1))};
             std::array<bool, 4> blocked;
             raylib::core::Vector2 current;
             int validWays = 4;

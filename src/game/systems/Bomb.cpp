@@ -9,6 +9,8 @@
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
 #include "game/components/Bomb.hpp"
+#include "game/components/Destructible.hpp"
+#include "game/components/Living.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Size.hpp"
 #include "game/resources/Map.hpp"
@@ -32,16 +34,44 @@ namespace game::systems
     void ExplodeBomb::run(ecs::SystemData data)
     {
         auto &entities = data.getResource<ecs::Entities>();
+        auto &positions = data.getStorage<game::components::Position>();
+        auto maybeDestructible = ecs::maybe(data.getStorage<game::components::Destructible>());
+        auto maybeLiving = ecs::maybe(data.getStorage<game::components::Living>());
         auto now = std::chrono::steady_clock::now();
+        game::map::Map &map = data.getResource<game::resources::Map>().map;
 
-        for (auto [pos, bomb, id] : ecs::join(
-                 data.getStorage<game::components::Position>(), data.getStorage<game::components::Bomb>(), entities)) {
+        for (auto [bombPos, bomb, id] : ecs::join(positions, data.getStorage<game::components::Bomb>(), entities)) {
             if (bomb.exploded || now - bomb.placedTime < bomb.explosionDelay)
                 continue;
             std::vector<raylib::core::Vector2> explodablePositions;
 
-            data.getResource<game::resources::Map>().map.fillExplodedPositions(
-                explodablePositions, {pos.x, pos.z}, bomb.radius);
+            map.fillExplodedPositions(explodablePositions, {bombPos.x, bombPos.z}, bomb.radius);
+            if (explodablePositions.empty())
+                continue;
+            // for (size_t i = 0; i < explodablePositions.size(); i++)
+            //     Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
+            //         out << "Add pos (" << explodablePositions[i].x << ", " << explodablePositions[i].y << ")";
+            //     });
+            for (auto [pos, destructible, living] : ecs::join(positions, maybeDestructible, maybeLiving)) {
+                if ((!destructible && !living) || (destructible && destructible->destructed)
+                    || (living && living->hp == 0))
+                    continue;
+
+                raylib::core::Vector2 pos2D = {
+                    static_cast<float>(static_cast<size_t>(pos.x)), static_cast<float>(static_cast<size_t>(pos.z))};
+
+                // Logger::logger.log(Logger::Severity::Debug,
+                //     [&](auto &out) { out << "Test pos (" << pos2D.x << ", " << pos2D.y << ")"; });
+                if (std::find(explodablePositions.begin(), explodablePositions.end(), pos2D)
+                    == explodablePositions.end())
+                    continue;
+                if (destructible)
+                    destructible->destructed = true;
+                if (living)
+                    Logger::logger.log(Logger::Severity::Debug, "Die");
+                // living->hp--;
+                map.getElement(pos2D.x, pos2D.y) = game::map::Map::Element::Empty;
+            }
             bomb.exploded = true;
             // entities.erase(id);
         }

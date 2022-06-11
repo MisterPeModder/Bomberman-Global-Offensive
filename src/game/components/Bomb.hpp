@@ -19,7 +19,7 @@ namespace game::components
         std::chrono::milliseconds explosionDelay;
         bool exploded;
 
-        Bomb(size_t pRadius = 1, std::chrono::milliseconds pExplosionDelay = std::chrono::milliseconds(1000))
+        Bomb(size_t pRadius = 1, std::chrono::milliseconds pExplosionDelay = std::chrono::milliseconds(2000))
             : placedTime(std::chrono::steady_clock::now()), radius(pRadius), explosionDelay(pExplosionDelay),
               exploded(false){};
     };
