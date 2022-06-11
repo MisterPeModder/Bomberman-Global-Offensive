@@ -6,6 +6,7 @@
 */
 
 #include "Game.hpp"
+#include <cmath>
 #include "ecs/resource/Timer.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/scoped.hpp"
@@ -111,7 +112,7 @@ namespace game
 
                             _world.addEntity()
                                 .with<components::Bomb>(2)
-                                .with<components::Position>(pos)
+                                .with<components::Position>(std::round(pos.x), 0.5f, std::round(pos.z))
                                 .with<components::Size>(0.5f, 0.f, 0.5f)
                                 .build();
                         }
