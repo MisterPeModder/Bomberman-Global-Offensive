@@ -11,7 +11,7 @@ var classraylib_1_1core_1_1_camera3_d =
     [ "~Camera3D", "classraylib_1_1core_1_1_camera3_d.html#a8836da0346d90af4a7496faafcd7a967", null ],
     [ "Camera3D", "classraylib_1_1core_1_1_camera3_d.html#a5439e11e30e93c54b42b2d12c0869199", null ],
     [ "Camera3D", "classraylib_1_1core_1_1_camera3_d.html#a436b465b02ab57d9b00541830b149d6a", null ],
-    [ "begin3D", "classraylib_1_1core_1_1_camera3_d.html#a878fb9216d827775f26b31fb6fd407fa", null ],
+    [ "begin3D", "classraylib_1_1core_1_1_camera3_d.html#a69c450c313f153a76de5abd0223e06cb", null ],
     [ "end3D", "classraylib_1_1core_1_1_camera3_d.html#a89b8d0d2624a27c00771901199df5d57", null ],
     [ "getFovY", "classraylib_1_1core_1_1_camera3_d.html#adc4c39d0308ab1a0a7688ffba23ef528", null ],
     [ "getPosition", "classraylib_1_1core_1_1_camera3_d.html#aee661482534e8580623fce499ec4f41c", null ],

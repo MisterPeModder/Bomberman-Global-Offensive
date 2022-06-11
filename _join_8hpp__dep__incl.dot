@@ -5,9 +5,20 @@ digraph "src/ecs/join.hpp"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="src/ecs/join.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="src/game/gui/components\l/Widget.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_widget_8cpp.html",tooltip=" "];
-  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="src/game/systems/DrawText.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_draw_text_8cpp.html",tooltip=" "];
+  Node2 [label="src/game/systems/ChangeCube.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_change_cube_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/game/Game.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_8cpp.html",tooltip=" "];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="src/game/systems/InputManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_input_manager_8cpp.html",tooltip=" "];
+  Node4 [label="src/game/systems/Drawing\lCube.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_drawing_cube_8hpp.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/game/gui/components\l/Widget.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_widget_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/game/systems/Collision.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_collision_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/game/systems/DrawText.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_draw_text_8cpp.html",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/game/systems/InputManager.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_input_manager_8cpp.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/game/systems/Movement.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_movement_8cpp.html",tooltip=" "];
 }

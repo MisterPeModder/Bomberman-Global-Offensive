@@ -1,0 +1,13 @@
+digraph "src/game/components/Size.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/game/components\l/Size.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/game/systems/ChangeCube.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_change_cube_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/game/Game.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_game_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/game/systems/Collision.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_collision_8cpp.html",tooltip=" "];
+}

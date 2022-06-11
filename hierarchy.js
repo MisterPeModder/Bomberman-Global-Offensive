@@ -18,22 +18,33 @@ var hierarchy =
     [ "raylib::model::BoundingBox", "classraylib_1_1model_1_1_bounding_box.html", null ],
     [ "ecs::Entities::Builder", "classecs_1_1_entities_1_1_builder.html", null ],
     [ "raylib::core::Camera3D", "classraylib_1_1core_1_1_camera3_d.html", null ],
-    [ "raylib::core::Color", "structraylib_1_1core_1_1_color.html", null ],
+    [ "raylib::core::Color", "structraylib_1_1core_1_1_color.html", [
+      [ "game::components::CubeColor", "structgame_1_1components_1_1_cube_color.html", null ]
+    ] ],
     [ "ecs::Component", "classecs_1_1_component.html", [
-      [ "game::Controlable", "structgame_1_1_controlable.html", null ],
+      [ "game::components::Collidable", "structgame_1_1components_1_1_collidable.html", null ],
+      [ "game::components::Controlable", "structgame_1_1components_1_1_controlable.html", null ],
+      [ "game::components::Cube", "structgame_1_1components_1_1_cube.html", null ],
+      [ "game::components::CubeColor", "structgame_1_1components_1_1_cube_color.html", null ],
+      [ "game::components::Destructible", "structgame_1_1components_1_1_destructible.html", null ],
+      [ "game::components::Living", "structgame_1_1components_1_1_living.html", null ],
+      [ "game::components::Player", "structgame_1_1components_1_1_player.html", null ],
+      [ "game::components::Position", "structgame_1_1components_1_1_position.html", null ],
+      [ "game::components::Size", "structgame_1_1components_1_1_size.html", null ],
+      [ "game::components::Textual", "structgame_1_1components_1_1_textual.html", null ],
+      [ "game::components::Velocity", "structgame_1_1components_1_1_velocity.html", null ],
+      [ "game::components::Wall", "structgame_1_1components_1_1_wall.html", null ],
       [ "game::gui::IWidgetComponent", "classgame_1_1gui_1_1_i_widget_component.html", [
         [ "game::gui::Checkable", "structgame_1_1gui_1_1_checkable.html", null ],
         [ "game::gui::Clickable", "structgame_1_1gui_1_1_clickable.html", null ],
         [ "game::gui::Widget", "structgame_1_1gui_1_1_widget.html", null ]
-      ] ],
-      [ "game::Position", "structgame_1_1_position.html", null ],
-      [ "game::Size", "structgame_1_1_size.html", null ],
-      [ "game::Textual", "structgame_1_1_textual.html", null ]
+      ] ]
     ] ],
     [ "raylib::core::Cursor", "classraylib_1_1core_1_1_cursor.html", null ],
     [ "raylib::core::scoped::Drawing", "classraylib_1_1core_1_1scoped_1_1_drawing.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "ecs::World::EntityBuilder", "classecs_1_1_world_1_1_entity_builder.html", null ],
+    [ "game::Game", "classgame_1_1_game.html", null ],
     [ "raylib::core::Gamepad", "classraylib_1_1core_1_1_gamepad.html", null ],
     [ "game::settings::GamepadInput", "classgame_1_1settings_1_1_gamepad_input.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
@@ -65,6 +76,8 @@ var hierarchy =
     [ "raylib::core::scoped::Mode3D", "classraylib_1_1core_1_1scoped_1_1_mode3_d.html", null ],
     [ "raylib::model::Model", "classraylib_1_1model_1_1_model.html", null ],
     [ "raylib::core::Mouse", "classraylib_1_1core_1_1_mouse.html", null ],
+    [ "game::Game::Parameters", "structgame_1_1_game_1_1_parameters.html", null ],
+    [ "Params", "struct_params.html", null ],
     [ "game::settings::Profile", "classgame_1_1settings_1_1_profile.html", null ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "ecs::Resource", "classecs_1_1_resource.html", [
@@ -88,16 +101,21 @@ var hierarchy =
       [ "ecs::MarkerStorage< C >", "classecs_1_1_marker_storage.html", null ]
     ] ],
     [ "ecs::System", "classecs_1_1_system.html", [
-      [ "game::DrawText", "structgame_1_1_draw_text.html", null ],
-      [ "game::InputManager", "structgame_1_1_input_manager.html", null ]
+      [ "game::systems::ChangeCube", "structgame_1_1systems_1_1_change_cube.html", null ],
+      [ "game::systems::Collision", "structgame_1_1systems_1_1_collision.html", null ],
+      [ "game::systems::DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", null ],
+      [ "game::systems::DrawText", "structgame_1_1systems_1_1_draw_text.html", null ],
+      [ "game::systems::InputManager", "structgame_1_1systems_1_1_input_manager.html", null ],
+      [ "game::systems::Movement", "structgame_1_1systems_1_1_movement.html", null ]
     ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "game::User", "classgame_1_1_user.html", null ],
     [ "raylib::core::Vector2< T >", "structraylib_1_1core_1_1_vector2.html", null ],
     [ "raylib::core::Vector3< T >", "structraylib_1_1core_1_1_vector3.html", [
-      [ "game::Position", "structgame_1_1_position.html", null ],
-      [ "game::Size", "structgame_1_1_size.html", null ]
+      [ "game::components::Position", "structgame_1_1components_1_1_position.html", null ],
+      [ "game::components::Size", "structgame_1_1components_1_1_size.html", null ],
+      [ "game::components::Velocity", "structgame_1_1components_1_1_velocity.html", null ]
     ] ],
     [ "raylib::core::Window", "classraylib_1_1core_1_1_window.html", null ],
     [ "ecs::World", "classecs_1_1_world.html", null ]

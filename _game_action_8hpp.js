@@ -10,5 +10,6 @@ var _game_action_8hpp =
       [ "PAUSE", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a291554596c183e837f0a6bec3767c891", null ],
       [ "ACTION", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663ae58a1b00942e66d8b4abc960da7877ab", null ],
       [ "BACK", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0", null ]
-    ] ]
+    ] ],
+    [ "isMoveAction", "_game_action_8hpp.html#a85afa01575b11b63bb973480cc6972e4", null ]
 ];

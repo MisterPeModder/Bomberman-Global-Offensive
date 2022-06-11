@@ -13,6 +13,7 @@ var classgame_1_1map_1_1_map =
     [ "getElement", "classgame_1_1map_1_1_map.html#ac62f79a59647fc342e01d4e026e23d84", null ],
     [ "getElement", "classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962", null ],
     [ "getHeight", "classgame_1_1map_1_1_map.html#afc63db334f8ca03ff4d801730a8519cf", null ],
+    [ "getPlayerStartingPosition", "classgame_1_1map_1_1_map.html#a0070ad2fbd890dc2fc7a278ae761e330", null ],
     [ "getWidth", "classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72", null ],
     [ "_height", "classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906", null ],
     [ "_map", "classgame_1_1map_1_1_map.html#a52e904919b3378d594f900ea377e0a78", null ],

@@ -143,6 +143,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afc63db334f8ca03ff4d801730a8519cf"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1map_1_1_map.html#afc63db334f8ca03ff4d801730a8519cf">getHeight</a> () const</td></tr>
 <tr class="memdesc:afc63db334f8ca03ff4d801730a8519cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the height of the map.  <a href="classgame_1_1map_1_1_map.html#afc63db334f8ca03ff4d801730a8519cf">More...</a><br /></td></tr>
 <tr class="separator:afc63db334f8ca03ff4d801730a8519cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0070ad2fbd890dc2fc7a278ae761e330"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1map_1_1_map.html#a0070ad2fbd890dc2fc7a278ae761e330">getPlayerStartingPosition</a> (<a class="el" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734ed">game::User::UserId</a> playerId)</td></tr>
+<tr class="memdesc:a0070ad2fbd890dc2fc7a278ae761e330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Player Starting Position based on its id.  <a href="classgame_1_1map_1_1_map.html#a0070ad2fbd890dc2fc7a278ae761e330">More...</a><br /></td></tr>
+<tr class="separator:a0070ad2fbd890dc2fc7a278ae761e330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -162,7 +165,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Bomberman <a class="el" href="classgame_1_1map_1_1_map.html" title="Bomberman Map.">Map</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00020">20</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00021">21</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a2939a90c92402ffa4d9c443742a6295d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2939a90c92402ffa4d9c443742a6295d">&#9670;&nbsp;</a></span>Element</h2>
@@ -193,12 +196,12 @@ Private Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00032">32</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                               {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                Wall,  </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                Crate, </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                Empty, </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            };</div>
+<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00033">33</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                               {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                Wall,  </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                Crate, </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                Empty, </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -296,18 +299,18 @@ Private Attributes</h2></td></tr>
 
 <p>Ensure the corners to be empty to avoid invalid player spawn. </p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00064">64</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> y = 0; y &lt; <a class="code" href="classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906">_height</a>; y += <a class="code" href="classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906">_height</a> - 1) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; x &lt; <a class="code" href="classgame_1_1map_1_1_map.html#ab0c5cea074a22e60da33b1d25121da66">_width</a>; x += <a class="code" href="classgame_1_1map_1_1_map.html#ab0c5cea074a22e60da33b1d25121da66">_width</a> - 1) {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x, y) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">Element::Empty</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x + ((x == 0) ? 1 : -1), y) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">Element::Empty</a>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x + ((x == 0) ? 2 : -2), y) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5">Element::Crate</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x, y + ((y == 0) ? 1 : -1)) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">Element::Empty</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x, y + ((y == 0) ? 2 : -2)) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5">Element::Crate</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00070">70</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> y = 0; y &lt; <a class="code" href="classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906">_height</a>; y += <a class="code" href="classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906">_height</a> - 1) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; x &lt; <a class="code" href="classgame_1_1map_1_1_map.html#ab0c5cea074a22e60da33b1d25121da66">_width</a>; x += <a class="code" href="classgame_1_1map_1_1_map.html#ab0c5cea074a22e60da33b1d25121da66">_width</a> - 1) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x, y) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">Element::Empty</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x + ((x == 0) ? 1 : -1), y) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">Element::Empty</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x + ((x == 0) ? 2 : -2), y) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5">Element::Crate</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x, y + ((y == 0) ? 1 : -1)) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">Element::Empty</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    <a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x, y + ((y == 0) ? 2 : -2)) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5">Element::Crate</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -504,6 +507,39 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a0070ad2fbd890dc2fc7a278ae761e330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0070ad2fbd890dc2fc7a278ae761e330">&#9670;&nbsp;</a></span>getPlayerStartingPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector2 game::map::Map::getPlayerStartingPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734ed">game::User::UserId</a>&#160;</td>
+          <td class="paramname"><em>playerId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Player Starting Position based on its id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">playerId</td><td>player ID. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector2 starting position of the player in the map. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00064">64</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>((<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(playerId) % 2) * (<a class="code" href="classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72">getWidth</a>() - 1)),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>((<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(playerId) / 2) * (<a class="code" href="classgame_1_1map_1_1_map.html#afc63db334f8ca03ff4d801730a8519cf">getHeight</a>() - 1))};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a7e225fd593fb3e628d14d7cc7e7b1a72"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e225fd593fb3e628d14d7cc7e7b1a72">&#9670;&nbsp;</a></span>getWidth()</h2>
 
@@ -548,7 +584,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00085">85</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00092">92</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
 
 </div>
 </div>
@@ -572,7 +608,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00086">86</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00093">93</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
 
 </div>
 </div>
@@ -596,7 +632,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00084">84</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8hpp_source.html#l00091">91</a> of file <a class="el" href="_map_8hpp_source.html">Map.hpp</a>.</p>
 
 </div>
 </div>
@@ -606,20 +642,22 @@ Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassgame_1_1map_1_1_map_html_a7f21cb4bfdb618a4c83522217fda992c"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a7f21cb4bfdb618a4c83522217fda992c">game::map::Map::freeCorners</a></div><div class="ttdeci">void freeCorners()</div><div class="ttdoc">Ensure the corners to be empty to avoid invalid player spawn.</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00064">Map.cpp:64</a></div></div>
+<div class="ttc" id="aclassgame_1_1map_1_1_map_html_a7f21cb4bfdb618a4c83522217fda992c"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a7f21cb4bfdb618a4c83522217fda992c">game::map::Map::freeCorners</a></div><div class="ttdeci">void freeCorners()</div><div class="ttdoc">Ensure the corners to be empty to avoid invalid player spawn.</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00070">Map.cpp:70</a></div></div>
 <div class="ttc" id="aresize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/resize.html">std::vector::resize</a></div><div class="ttdeci">T resize(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1map_1_1_map_html_a52e904919b3378d594f900ea377e0a78"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a52e904919b3378d594f900ea377e0a78">game::map::Map::_map</a></div><div class="ttdeci">std::vector&lt; Element &gt; _map</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00086">Map.hpp:86</a></div></div>
+<div class="ttc" id="aclassgame_1_1map_1_1_map_html_a52e904919b3378d594f900ea377e0a78"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a52e904919b3378d594f900ea377e0a78">game::map::Map::_map</a></div><div class="ttdeci">std::vector&lt; Element &gt; _map</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00093">Map.hpp:93</a></div></div>
 <div class="ttc" id="aclassgame_1_1map_1_1_map_html_a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5">game::map::Map::Element::Crate</a></div><div class="ttdeci">@ Crate</div><div class="ttdoc">Indestructible wall.</div></div>
 <div class="ttc" id="aclassgame_1_1map_1_1_map_html_a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">game::map::Map::Element::Empty</a></div><div class="ttdeci">@ Empty</div><div class="ttdoc">Destructible crate.</div></div>
+<div class="ttc" id="aclassgame_1_1map_1_1_map_html_afc63db334f8ca03ff4d801730a8519cf"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#afc63db334f8ca03ff4d801730a8519cf">game::map::Map::getHeight</a></div><div class="ttdeci">size_t getHeight() const</div><div class="ttdoc">Get the height of the map.</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00062">Map.cpp:62</a></div></div>
 <div class="ttc" id="aclassgame_1_1map_1_1_map_html_ac017e033f3370dcad60cc581f200965c"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#ac017e033f3370dcad60cc581f200965c">game::map::Map::generate</a></div><div class="ttdeci">void generate(size_t width, size_t height)</div><div class="ttdoc">Generate the map.</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00021">Map.cpp:21</a></div></div>
 <div class="ttc" id="afill_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/fill.html">std::fill</a></div><div class="ttdeci">T fill(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1map_1_1_map_html_ab0a10bd7a779a360c18199e27aeac906"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906">game::map::Map::_height</a></div><div class="ttdeci">size_t _height</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00085">Map.hpp:85</a></div></div>
-<div class="ttc" id="aclassgame_1_1map_1_1_map_html_ab0c5cea074a22e60da33b1d25121da66"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#ab0c5cea074a22e60da33b1d25121da66">game::map::Map::_width</a></div><div class="ttdeci">size_t _width</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00084">Map.hpp:84</a></div></div>
+<div class="ttc" id="aclassgame_1_1map_1_1_map_html_ab0a10bd7a779a360c18199e27aeac906"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#ab0a10bd7a779a360c18199e27aeac906">game::map::Map::_height</a></div><div class="ttdeci">size_t _height</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00092">Map.hpp:92</a></div></div>
+<div class="ttc" id="aclassgame_1_1map_1_1_map_html_ab0c5cea074a22e60da33b1d25121da66"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#ab0c5cea074a22e60da33b1d25121da66">game::map::Map::_width</a></div><div class="ttdeci">size_t _width</div><div class="ttdef"><b>Definition:</b> <a href="_map_8hpp_source.html#l00091">Map.hpp:91</a></div></div>
 <div class="ttc" id="abegin_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/begin.html">std::vector::begin</a></div><div class="ttdeci">T begin(T... args)</div></div>
 <div class="ttc" id="aclassgame_1_1map_1_1_map_html_a2939a90c92402ffa4d9c443742a6295da94e8a499539d1a472f3b5dbbb85508c0"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da94e8a499539d1a472f3b5dbbb85508c0">game::map::Map::Element::Wall</a></div><div class="ttdeci">@ Wall</div></div>
 <div class="ttc" id="aout_of_range_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/out_of_range.html">std::out_of_range</a></div></div>
 <div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/end.html">std::vector::end</a></div><div class="ttdeci">T end(T... args)</div></div>
 <div class="ttc" id="aclassgame_1_1map_1_1_map_html_a394723ca59c6ef79e7b19bbf7382a962"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">game::map::Map::getElement</a></div><div class="ttdeci">Element getElement(size_t x, size_t y) const</div><div class="ttdoc">Get the Element at the position (x, y)</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00046">Map.cpp:46</a></div></div>
+<div class="ttc" id="aclassgame_1_1map_1_1_map_html_a7e225fd593fb3e628d14d7cc7e7b1a72"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72">game::map::Map::getWidth</a></div><div class="ttdeci">size_t getWidth() const</div><div class="ttdoc">Get the Width of the map.</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00060">Map.cpp:60</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

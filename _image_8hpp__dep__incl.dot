@@ -11,17 +11,13 @@ digraph "src/raylib/textures/Image.hpp"
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="src/raylib/model/Animation.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_animation_8hpp.html",tooltip=" "];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
-  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="src/raylib/model/Animation.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_animation_8cpp.html",tooltip=" "];
-  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/raylib/model/Animation.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_animation_8cpp.html",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/raylib/model/Bounding\lBox.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_bounding_box_8cpp.html",tooltip=" "];
   Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="src/raylib/model/Bounding\lBox.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_bounding_box_8cpp.html",tooltip=" "];
-  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="src/raylib/model/Model.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_model_8cpp.html",tooltip=" "];
-  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="src/raylib/model/Mesh.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_mesh_8cpp.html",tooltip=" "];
-  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="src/raylib/textures\l/Image.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_image_8cpp.html",tooltip=" "];
+  Node7 [label="src/raylib/model/Model.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_model_8cpp.html",tooltip=" "];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/raylib/model/Mesh.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_mesh_8cpp.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/raylib/textures\l/Image.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_image_8cpp.html",tooltip=" "];
 }

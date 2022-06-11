@@ -221,7 +221,8 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="class_logger.html#ae88bc2d35d36241c1eb8cfbd1a51a43a">Logger</a>
 </li>
 <li>_map
-: <a class="el" href="classgame_1_1map_1_1_map.html#a52e904919b3378d594f900ea377e0a78">game::map::Map</a>
+: <a class="el" href="classgame_1_1_game.html#a66b00f7ca8b772db6befe4069d00804c">game::Game</a>
+, <a class="el" href="classgame_1_1map_1_1_map.html#a52e904919b3378d594f900ea377e0a78">game::map::Map</a>
 </li>
 <li>_mask
 : <a class="el" href="classecs_1_1_join.html#ac27386cfc54d5115de50605354f0f813">ecs::Join&lt; First, Rest &gt;</a>
@@ -260,6 +261,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>_outer
 : <a class="el" href="classecs_1_1_entities_1_1_builder.html#a10c3c44afdbd6a5411d7ff787aa74cc9">ecs::Entities::Builder</a>
 , <a class="el" href="classecs_1_1_world_1_1_entity_builder.html#a88e4212ad39f5ca0634771d28c6a4a52">ecs::World::EntityBuilder</a>
+</li>
+<li>_params
+: <a class="el" href="classgame_1_1_game.html#a747a80e1e314f5cf1da37bfa8c4e92ee">game::Game</a>
 </li>
 <li>_pos
 : <a class="el" href="classecs_1_1_join_iter.html#a87ef682f3dfe72e4b32039ce1f8f2870">ecs::JoinIter&lt; First, Rest &gt;</a>
@@ -350,6 +354,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>_world
 : <a class="el" href="classecs_1_1_system_data.html#a41574fd12f99abd9d29b3ad4c85d3e12">ecs::SystemData</a>
+, <a class="el" href="classgame_1_1_game.html#ade7db3e019d79ad205d94c9c6e96be55">game::Game</a>
 </li>
 </ul>
 
@@ -394,13 +399,19 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>callback
-: <a class="el" href="structgame_1_1_controlable.html#a673b1ce4ead5df7ce3ed6c5b249131b2">game::Controlable</a>
+: <a class="el" href="structgame_1_1components_1_1_controlable.html#a9ea2e0a7727b7e8f0ef03a66cb862ebe">game::components::Controlable</a>
+</li>
+<li>camera
+: <a class="el" href="struct_params.html#a1ab22c58ff86a9163995dcc8e0ffe438">Params</a>
 </li>
 <li>checked
 : <a class="el" href="structgame_1_1gui_1_1_checkable.html#a8e088a682ca2ca65f0a25bc3d292f02f">game::gui::Checkable</a>
 </li>
 <li>color
-: <a class="el" href="structgame_1_1_textual.html#ad6e3150ee771ecf5e4f662ba9cee3399">game::Textual</a>
+: <a class="el" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">game::components::Textual</a>
+</li>
+<li>cube
+: <a class="el" href="structgame_1_1components_1_1_cube.html#a1b2c0c0acf6c929db985e5b411762bf5">game::components::Cube</a>
 </li>
 </ul>
 
@@ -424,6 +435,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>DEFAULT_COLOR
 : <a class="el" href="structraylib_1_1core_1_1_color.html#a2e0d5ab5cb54364d40d71b6bd2347006">raylib::core::Color</a>
 </li>
+<li>destroyed
+: <a class="el" href="structgame_1_1components_1_1_destructible.html#a849f24fb9a61a887465ea654860d402a">game::components::Destructible</a>
+</li>
 <li>down
 : <a class="el" href="structgame_1_1gui_1_1_widget.html#ad1a14b844c8380edef215c8a0ca70720">game::gui::Widget</a>
 </li>
@@ -443,7 +457,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>fontSize
-: <a class="el" href="structgame_1_1_textual.html#a200ad6211bee5195535dcb3d600d670b">game::Textual</a>
+: <a class="el" href="structgame_1_1components_1_1_textual.html#a05855656d1e729405ee18946ccde1186">game::components::Textual</a>
 </li>
 </ul>
 
@@ -451,6 +465,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>g
 : <a class="el" href="structraylib_1_1core_1_1_color.html#a33aa39f405f8cba92982ae86681a64ac">raylib::core::Color</a>
+</li>
+<li>game
+: <a class="el" href="struct_params.html#a99813412fa423227942982d040ac5c80">Params</a>
 </li>
 <li>GOLD
 : <a class="el" href="structraylib_1_1core_1_1_color.html#a79cd83222b755f8de9fbff47b55ace5f">raylib::core::Color</a>
@@ -460,6 +477,16 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 </li>
 <li>GREEN
 : <a class="el" href="structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba">raylib::core::Color</a>
+</li>
+</ul>
+
+
+<h3><a id="index_h"></a>- h -</h3><ul>
+<li>hp
+: <a class="el" href="structgame_1_1components_1_1_living.html#ae5b198b3d8d02a2d2b93d6c9b43480a3">game::components::Living</a>
+</li>
+<li>hpMax
+: <a class="el" href="structgame_1_1components_1_1_living.html#a2f8c6ba3e157ba4d879de7580f9808ba">game::components::Living</a>
 </li>
 </ul>
 
@@ -481,6 +508,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>LIME
 : <a class="el" href="structraylib_1_1core_1_1_color.html#ac11a16cd225ff43b63148077f23e6e00">raylib::core::Color</a>
 </li>
+<li>livesCount
+: <a class="el" href="structgame_1_1_game_1_1_parameters.html#ad8d09adeaeacc3705609595f9a8f1fb1">game::Game::Parameters</a>
+</li>
 <li>logger
 : <a class="el" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger</a>
 </li>
@@ -490,6 +520,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>MAGENTA
 : <a class="el" href="structraylib_1_1core_1_1_color.html#a5667968ac1c3ee55fea10fe44c5574c9">raylib::core::Color</a>
+</li>
+<li>mapSize
+: <a class="el" href="structgame_1_1_game_1_1_parameters.html#a53dcbcfd11421a158021b9b97602c0e8">game::Game::Parameters</a>
 </li>
 <li>MAROON
 : <a class="el" href="structraylib_1_1core_1_1_color.html#a84b0c8235e04a8bad7709babe2ca7416">raylib::core::Color</a>
@@ -521,6 +554,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <h3><a id="index_p"></a>- p -</h3><ul>
 <li>PINK
 : <a class="el" href="structraylib_1_1core_1_1_color.html#a19bde3c4ff8676200970b93b93e90d40">raylib::core::Color</a>
+</li>
+<li>playerCount
+: <a class="el" href="structgame_1_1_game_1_1_parameters.html#a6119a29272826c88bf8d202ec3c2a6d2">game::Game::Parameters</a>
 </li>
 <li>PURPLE
 : <a class="el" href="structraylib_1_1core_1_1_color.html#ad97abd743d5285924402c6b91343c64a">raylib::core::Color</a>
@@ -562,7 +598,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>text
-: <a class="el" href="structgame_1_1_textual.html#a77eb7b1d019f03788da4dbb3b8c0ee72">game::Textual</a>
+: <a class="el" href="structgame_1_1components_1_1_textual.html#a7005791dfec099ef5e4fcc80cb4c01d8">game::components::Textual</a>
 </li>
 </ul>
 
@@ -575,7 +611,7 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 : <a class="el" href="structgame_1_1_users_1_1_action_event.html#ad730ac65f3efc2fde4eca587a525ae73">game::Users::ActionEvent</a>
 </li>
 <li>userId
-: <a class="el" href="structgame_1_1_controlable.html#aa5ed9d72f9649c6d6106284fe1ecce2c">game::Controlable</a>
+: <a class="el" href="structgame_1_1components_1_1_controlable.html#a0b7475a968b66f87c81800e9e1ac7e66">game::components::Controlable</a>
 </li>
 </ul>
 
@@ -597,6 +633,9 @@ $(document).ready(function(){initNavTree('functions_vars.html',''); initResizabl
 <li>World
 : <a class="el" href="classecs_1_1_system_data.html#aa71fa1121576a6f9336a59a4163c9753">ecs::SystemData</a>
 , <a class="el" href="classecs_1_1_world_1_1_entity_builder.html#a79bcd1e0d4d92820e5840801821682f6">ecs::World::EntityBuilder</a>
+</li>
+<li>world
+: <a class="el" href="struct_params.html#a540e858cd21466c5d28fcd89c765c825">Params</a>
 </li>
 </ul>
 

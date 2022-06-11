@@ -152,27 +152,27 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a>&amp; output stream modified. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00079">79</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; x &lt; map.<a class="code" href="classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72">getWidth</a>() + 1; x++)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        stream &lt;&lt; <span class="charliteral">&#39;_&#39;</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    stream &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> y = 0; y &lt; map.<a class="code" href="classgame_1_1map_1_1_map.html#afc63db334f8ca03ff4d801730a8519cf">getHeight</a>(); y++) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        stream &lt;&lt; <span class="charliteral">&#39;|&#39;</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; x &lt; map.<a class="code" href="classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72">getWidth</a>(); x++) {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">switch</span> (map.<a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x, y)) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da94e8a499539d1a472f3b5dbbb85508c0">game::map::Map::Element::Wall</a>: stream &lt;&lt; <span class="charliteral">&#39;X&#39;</span>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5">game::map::Map::Element::Crate</a>: stream &lt;&lt; <span class="charliteral">&#39;c&#39;</span>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">game::map::Map::Element::Empty</a>: stream &lt;&lt; <span class="charliteral">&#39; &#39;</span>; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        stream &lt;&lt; <span class="stringliteral">&quot;|\n&quot;</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; x &lt; map.<a class="code" href="classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72">getWidth</a>() + 1; x++)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        stream &lt;&lt; <span class="charliteral">&#39;_&#39;</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> stream &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00085">85</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; x &lt; map.<a class="code" href="classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72">getWidth</a>() + 1; x++)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        stream &lt;&lt; <span class="charliteral">&#39;_&#39;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    stream &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> y = 0; y &lt; map.<a class="code" href="classgame_1_1map_1_1_map.html#afc63db334f8ca03ff4d801730a8519cf">getHeight</a>(); y++) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        stream &lt;&lt; <span class="charliteral">&#39;|&#39;</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; x &lt; map.<a class="code" href="classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72">getWidth</a>(); x++) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">switch</span> (map.<a class="code" href="classgame_1_1map_1_1_map.html#a394723ca59c6ef79e7b19bbf7382a962">getElement</a>(x, y)) {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da94e8a499539d1a472f3b5dbbb85508c0">game::map::Map::Element::Wall</a>: stream &lt;&lt; <span class="charliteral">&#39;X&#39;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295da007f02e6c93f2be268b88351c16843c5">game::map::Map::Element::Crate</a>: stream &lt;&lt; <span class="charliteral">&#39;c&#39;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">game::map::Map::Element::Empty</a>: stream &lt;&lt; <span class="charliteral">&#39; &#39;</span>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        stream &lt;&lt; <span class="stringliteral">&quot;|\n&quot;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> x = 0; x &lt; map.<a class="code" href="classgame_1_1map_1_1_map.html#a7e225fd593fb3e628d14d7cc7e7b1a72">getWidth</a>() + 1; x++)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        stream &lt;&lt; <span class="charliteral">&#39;_&#39;</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> stream &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

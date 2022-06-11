@@ -9,9 +9,12 @@ digraph "src/game/systems" {
   dir_a5f74f5d785ec5e5a721a58d25c88c44 [shape=box label="components" URL="dir_a5f74f5d785ec5e5a721a58d25c88c44.html"];
   dir_0eb5bc4df32830927d4599d5e42d522d [shape=box label="gui" fillcolor="white" style="filled" color="red" URL="dir_0eb5bc4df32830927d4599d5e42d522d.html"];
   dir_ddca5f149c4ce13074f28b270e950ba9 [shape=box label="ecs" fillcolor="white" style="filled" color="red" URL="dir_ddca5f149c4ce13074f28b270e950ba9.html"];
-  dir_a5f74f5d785ec5e5a721a58d25c88c44->dir_ddca5f149c4ce13074f28b270e950ba9 [headlabel="5", labeldistance=1.5 headhref="dir_000008_000001.html"];
-  dir_46fb37fa78f646487908f22377b88dd8->dir_a5f74f5d785ec5e5a721a58d25c88c44 [headlabel="3", labeldistance=1.5 headhref="dir_000014_000008.html"];
-  dir_46fb37fa78f646487908f22377b88dd8->dir_0eb5bc4df32830927d4599d5e42d522d [headlabel="1", labeldistance=1.5 headhref="dir_000014_000009.html"];
-  dir_46fb37fa78f646487908f22377b88dd8->dir_ddca5f149c4ce13074f28b270e950ba9 [headlabel="5", labeldistance=1.5 headhref="dir_000014_000001.html"];
-  dir_0eb5bc4df32830927d4599d5e42d522d->dir_ddca5f149c4ce13074f28b270e950ba9 [headlabel="5", labeldistance=1.5 headhref="dir_000009_000001.html"];
+  dir_d4cc5f0b3cfddd1b0952a9e00053f649 [shape=box label="raylib" fillcolor="white" style="filled" color="red" URL="dir_d4cc5f0b3cfddd1b0952a9e00053f649.html"];
+  dir_a5f74f5d785ec5e5a721a58d25c88c44->dir_ddca5f149c4ce13074f28b270e950ba9 [headlabel="12", labeldistance=1.5 headhref="dir_000008_000001.html"];
+  dir_a5f74f5d785ec5e5a721a58d25c88c44->dir_d4cc5f0b3cfddd1b0952a9e00053f649 [headlabel="6", labeldistance=1.5 headhref="dir_000008_000009.html"];
+  dir_46fb37fa78f646487908f22377b88dd8->dir_a5f74f5d785ec5e5a721a58d25c88c44 [headlabel="14", labeldistance=1.5 headhref="dir_000016_000008.html"];
+  dir_46fb37fa78f646487908f22377b88dd8->dir_0eb5bc4df32830927d4599d5e42d522d [headlabel="1", labeldistance=1.5 headhref="dir_000016_000011.html"];
+  dir_46fb37fa78f646487908f22377b88dd8->dir_ddca5f149c4ce13074f28b270e950ba9 [headlabel="15", labeldistance=1.5 headhref="dir_000016_000001.html"];
+  dir_46fb37fa78f646487908f22377b88dd8->dir_d4cc5f0b3cfddd1b0952a9e00053f649 [headlabel="1", labeldistance=1.5 headhref="dir_000016_000009.html"];
+  dir_0eb5bc4df32830927d4599d5e42d522d->dir_ddca5f149c4ce13074f28b270e950ba9 [headlabel="5", labeldistance=1.5 headhref="dir_000011_000001.html"];
 }

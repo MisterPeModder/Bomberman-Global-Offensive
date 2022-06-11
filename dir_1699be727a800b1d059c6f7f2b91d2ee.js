@@ -5,6 +5,11 @@ var dir_1699be727a800b1d059c6f7f2b91d2ee =
     [ "map", "dir_982fd39ee1731a8b580daaa875541184.html", "dir_982fd39ee1731a8b580daaa875541184" ],
     [ "settings", "dir_28315cacd5bae586058b19a00a8b1185.html", "dir_28315cacd5bae586058b19a00a8b1185" ],
     [ "systems", "dir_46fb37fa78f646487908f22377b88dd8.html", "dir_46fb37fa78f646487908f22377b88dd8" ],
+    [ "Game.cpp", "_game_8cpp.html", null ],
+    [ "Game.hpp", "_game_8hpp.html", [
+      [ "Game", "classgame_1_1_game.html", "classgame_1_1_game" ],
+      [ "Parameters", "structgame_1_1_game_1_1_parameters.html", "structgame_1_1_game_1_1_parameters" ]
+    ] ],
     [ "GameAction.hpp", "_game_action_8hpp.html", "_game_action_8hpp" ],
     [ "User.cpp", "_user_8cpp.html", null ],
     [ "User.hpp", "_user_8hpp.html", [

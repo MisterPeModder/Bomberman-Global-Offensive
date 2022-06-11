@@ -12,7 +12,7 @@ var dir_48eb514e7bef1868756ef3b7ae541534 =
       [ "Cone", "classraylib_1_1shapes_1_1_cone.html", "classraylib_1_1shapes_1_1_cone" ]
     ] ],
     [ "Cube.cpp", "_cube_8cpp.html", null ],
-    [ "Cube.hpp", "_cube_8hpp.html", [
+    [ "Cube.hpp", "raylib_2shapes_2_cube_8hpp.html", [
       [ "Cube", "classraylib_1_1shapes_1_1_cube.html", "classraylib_1_1shapes_1_1_cube" ]
     ] ],
     [ "Cylinder.hpp", "_cylinder_8hpp.html", [
