@@ -13,10 +13,10 @@
 
 namespace game
 {
-    struct Position : public ecs::Component, public raylib::core::Vector3 {
+    struct Position : public ecs::Component, public raylib::core::Vector3f {
         Position(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
-        Position(Vector3 vector) : Vector3(vector) {}
-        Position(Vector2 vector) : Vector3(vector) {}
+        Position(raylib::core::Vector3f vector) : raylib::core::Vector3f(vector) {}
+        Position(raylib::core::Vector2f vector) : raylib::core::Vector3f(vector) {}
     };
 } // namespace game
 

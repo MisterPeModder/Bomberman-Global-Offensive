@@ -11,7 +11,7 @@ namespace raylib
 {
     namespace textures
     {
-        Texture2D::Texture2D(const std::filesystem::path &fileName, Vector2 position)
+        Texture2D::Texture2D(const std::filesystem::path &fileName, Vector2f position)
             : _fileName(fileName), _position(position)
         {
             load();
@@ -19,7 +19,7 @@ namespace raylib
 
         Texture2D::~Texture2D() { unload(); }
 
-        void Texture2D::setPosition(Vector2 &position) { _position = position; }
+        void Texture2D::setPosition(Vector2f &position) { _position = position; }
 
         void Texture2D::load() { _texture = LoadTexture(_fileName.generic_string().c_str()); }
 
@@ -40,12 +40,12 @@ namespace raylib
 
         void Texture2D::draw(const Color &tint) { DrawTexture(_texture, _position.x, _position.y, tint.asRaylib()); }
 
-        void Texture2D::draw(const Vector2 &position, const Color &tint)
+        void Texture2D::draw(const Vector2f &position, const Color &tint)
         {
             DrawTextureV(_texture, position.asRaylib(), tint.asRaylib());
         }
 
-        void Texture2D::draw(const Vector2 &position, float rotation, float scale, const Color &tint)
+        void Texture2D::draw(const Vector2f &position, float rotation, float scale, const Color &tint)
         {
             DrawTextureEx(_texture, position.asRaylib(), rotation, scale, tint.asRaylib());
         }

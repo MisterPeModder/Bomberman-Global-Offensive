@@ -117,9 +117,9 @@ namespace game
 
         unsigned int Settings::getTargetFramerate() const { return _targetFramerate; }
 
-        void Settings::setResolution(raylib::core::Vector2 resolution) { _resolution = resolution; }
+        void Settings::setResolution(raylib::core::Vector2f resolution) { _resolution = resolution; }
 
-        raylib::core::Vector2 Settings::getResolution() const { return _resolution; }
+        raylib::core::Vector2f Settings::getResolution() const { return _resolution; }
 
         void Settings::setFullscreen(bool fullscreen) { _fullscreen = fullscreen; }
 

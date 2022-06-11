@@ -13,10 +13,10 @@
 
 namespace game
 {
-    struct Size : public ecs::Component, public raylib::core::Vector3 {
+    struct Size : public ecs::Component, public raylib::core::Vector3f {
         Size(float px = 0, float py = 0, float pz = 0) : Vector3(px, py, pz) {}
-        Size(Vector3 vector) : Vector3(vector) {}
-        Size(Vector2 vector) : Vector3(vector) {}
+        Size(Vector3f vector) : Vector3(vector) {}
+        Size(Vector2f vector) : Vector3(vector) {}
     };
 } // namespace game
 
