@@ -29,7 +29,7 @@ namespace game
         camera.setFovY(75.0f);            // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);
 
-        loadTestWorld();
+        loadGameWorld();
     }
 
     void Game::drawFrame(const raylib::core::Camera3D &camera)
