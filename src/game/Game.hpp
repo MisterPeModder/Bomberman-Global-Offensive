@@ -25,14 +25,14 @@ namespace game
             /// Number of lives for each player
             size_t livesCount;
             /// Size of the map
-            raylib::core::Vector2 mapSize;
+            raylib::core::Vector2u mapSize;
 
             /// Construct a new game Parameters object
             ///
             /// @param pplayerCount @ref playerCount
             /// @param plivesCount @ref livesCount
             /// @param pmapSize @ref mapSize
-            Parameters(size_t pplayerCount = 1, size_t plivesCount = 1, raylib::core::Vector2 pmapSize = {13.f, 13.f})
+            Parameters(size_t pplayerCount = 1, size_t plivesCount = 1, raylib::core::Vector2u pmapSize = {13, 13})
                 : playerCount(pplayerCount), livesCount(plivesCount), mapSize(pmapSize)
             {
             }

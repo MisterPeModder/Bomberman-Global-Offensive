@@ -34,17 +34,17 @@ namespace raylib
 
         void Camera3D::end3D() { EndMode3D(); }
 
-        Vector3 Camera3D::getPosition() const { return {_camera.position.x, _camera.position.y, _camera.position.z}; }
+        Vector3f Camera3D::getPosition() const { return {_camera.position.x, _camera.position.y, _camera.position.z}; }
 
-        void Camera3D::setPosition(Vector3 position) { _camera.position = {position.x, position.y, position.z}; }
+        void Camera3D::setPosition(Vector3f position) { _camera.position = {position.x, position.y, position.z}; }
 
-        Vector3 Camera3D::getTarget() const { return {_camera.target.x, _camera.target.y, _camera.target.z}; }
+        Vector3f Camera3D::getTarget() const { return {_camera.target.x, _camera.target.y, _camera.target.z}; }
 
-        void Camera3D::setTarget(Vector3 target) { _camera.target = {target.x, target.y, target.z}; }
+        void Camera3D::setTarget(Vector3f target) { _camera.target = {target.x, target.y, target.z}; }
 
-        Vector3 Camera3D::getUp() const { return {_camera.up.x, _camera.up.y, _camera.up.z}; }
+        Vector3f Camera3D::getUp() const { return {_camera.up.x, _camera.up.y, _camera.up.z}; }
 
-        void Camera3D::setUp(Vector3 up) { _camera.up = {up.x, up.y, up.z}; }
+        void Camera3D::setUp(Vector3f up) { _camera.up = {up.x, up.y, up.z}; }
 
         float Camera3D::getFovY() const { return _camera.fovy; }
 

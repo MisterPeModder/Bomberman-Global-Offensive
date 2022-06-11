@@ -26,7 +26,7 @@ namespace raylib
         /// This is the class that is used to create a texture2D object.
         class Texture2D {
           private:
-            using Vector2 = raylib::core::Vector2;
+            using Vector2f = raylib::core::Vector2f;
             using Color = raylib::core::Color;
 
           public:
@@ -35,7 +35,7 @@ namespace raylib
             ///
             /// @param position The position of the texture on the screen.
             /// @param fileName The name of the file that contains the texture.
-            Texture2D(const std::filesystem::path &fileName, Vector2 position = {});
+            Texture2D(const std::filesystem::path &fileName, Vector2f position = {});
 
             /// The destructor for the Texture2D class
             ~Texture2D();
@@ -43,7 +43,7 @@ namespace raylib
             /// Sets the position of the texture
             ///
             /// @param position The position of the texture.
-            void setPosition(Vector2 &position);
+            void setPosition(Vector2f &position);
 
             /// The function `loadTexture()` loads a texture from a file
             void load();
@@ -89,7 +89,7 @@ namespace raylib
             ///
             /// @param position The position of the texture2D on the screen.
             /// @param tint The color you want to tint the texture2D.
-            void draw(const Vector2 &position, const Color &tint);
+            void draw(const Vector2f &position, const Color &tint);
 
             /// Draws a Texture2D with extended parameters
             ///
@@ -97,11 +97,21 @@ namespace raylib
             /// @param rotation The rotation of the texture2D in radians.
             /// @param scale The scale of the texture2D.
             /// @param tint The color to tint the texture2D with.
-            void draw(const Vector2 &position, float rotation, float scale, const Color &tint);
+            void draw(const Vector2f &position, float rotation, float scale, const Color &tint);
+
+            /// Gets the C Raylib mutable version of the 2d texture
+            ///
+            /// @return The raylib version of the 2d texture
+            ::Texture2D &asRaylib();
+
+            /// Gets the C Raylib const version of the 2d texture
+            ///
+            /// @return The raylib version of the 2d texture
+            const ::Texture2D &asRaylib() const;
 
           private:
             std::filesystem::path _fileName;
-            Vector2 _position;
+            Vector2f _position;
             ::Texture2D _texture;
         };
 
