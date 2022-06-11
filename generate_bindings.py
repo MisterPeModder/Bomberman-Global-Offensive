@@ -221,14 +221,14 @@ def emit_function_arg(out: TextIO, index: int, arg: JsArg, prototype: Prototype)
     elif isinstance(arg.type, JsString):
         print(f"        {arg} = js_tostring(state, {index});", file=out)
     elif isinstance(arg.type, JsFunction):
-        registry_name = f"\"{prototype.scope}_{prototype.name}_callback\""
+        guard_name = f"{arg.name}_guard"
         lambda_args = ', '.join(
             [f"bmjs::Number {arg.name}_param_{i}" for i in range(len(arg.type.args))])
 
         print(f"""        js_copy(state, {index});
-        js_setregistry(state, {registry_name});
-        {arg} = [state]({lambda_args}) {{
-            js_getregistry(state, {registry_name});
+        auto {guard_name} = std::make_shared<bmjs::RegistryGuard>(state);
+        {arg} = [state, {guard_name}]({lambda_args}) {{
+            js_getregistry(state, {guard_name}->getKey().c_str());
             js_pushundefined(state);""", file=out)
 
         for i in range(len(arg.type.args)):
@@ -374,9 +374,12 @@ def emit_cxx_bindings(out: TextIO, prototypes: List[Prototype], scopes: OrderedD
         print(f"/// - {scope} ({len(protos)} functions)", file=out)
 
     print("""
-# ifndef __EMSCRIPTEN__
-    # include "script/JsException.hpp"
-    # include "script/script.hpp"
+#ifndef __EMSCRIPTEN__
+    #include "script/JsException.hpp"
+    #include "script/RegistryGuard.hpp"
+    #include "script/script.hpp"
+
+    #include <memory>
 """, file=out)
 
     emit_function_prototypes(out, prototypes)

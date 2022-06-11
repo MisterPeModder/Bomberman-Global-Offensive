@@ -23,3 +23,14 @@ game.addMod({
     }
 });
 
+game.addMod({
+    name: 'Secondary',
+    description: 'The second mod, for testing',
+
+    onLoad: function (mod) {
+        mod.log('Loading mod #' + mod.id);
+    },
+    onUnload: function (mod) {
+        mod.log('Unloading mod #' + mod.id);
+    }
+});

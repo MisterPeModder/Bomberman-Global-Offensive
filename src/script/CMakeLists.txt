@@ -11,6 +11,8 @@ set(SRC
 	${INCROOT}/JsException.hpp
 	${SRCROOT}/Mod.cpp
 	${INCROOT}/Mod.hpp
+	${SRCROOT}/RegistryGuard.cpp
+	${INCROOT}/RegistryGuard.hpp
 	${INCROOT}/script.hpp
 	PARENT_SCOPE)
 
