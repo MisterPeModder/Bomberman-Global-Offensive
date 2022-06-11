@@ -11,6 +11,7 @@
 #include <ostream>
 #include <stdexcept>
 #include <vector>
+#include "game/User.hpp"
 #include "raylib/core/Vector2.hpp"
 
 namespace game
@@ -71,6 +72,12 @@ namespace game
             ///
             /// @return Vector2u mapSize;
             Vector2u getSize() const;
+
+            /// Get the Player Starting Position based on its id.
+            ///
+            /// @param playerId player ID.
+            /// @return Vector2 starting position of the player in the map.
+            Vector2u getPlayerStartingPosition(game::User::UserId playerId);
 
           private:
             /// Ensure the corners to be empty to avoid invalid player spawn

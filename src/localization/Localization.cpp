@@ -34,6 +34,7 @@ namespace localization
 
     void Localization::saveLocales()
     {
+        std::filesystem::create_directories(Localization::getLocalesDirectory());
         for (auto it : _Instance._locales)
             it.second.save();
     }

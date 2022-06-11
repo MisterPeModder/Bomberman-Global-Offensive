@@ -58,6 +58,12 @@ namespace game
 
         raylib::core::Vector2u Map::getSize() const { return _size; }
 
+        raylib::core::Vector2u Map::getPlayerStartingPosition(game::User::UserId playerId)
+        {
+            return {(static_cast<size_t>(playerId) % 2) * (_size.x - 1),
+                (static_cast<size_t>(playerId) / 2) * (_size.y - 1)};
+        }
+
         void Map::freeCorners()
         {
             for (unsigned int y = 0; y < _size.y; y += _size.y - 1) {
