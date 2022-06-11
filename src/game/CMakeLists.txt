@@ -1,10 +1,10 @@
 set(INCROOT ${INCROOT}/game)
 set(SRCROOT ${SRCROOT}/game)
 
+add_subdirectory(components)
 add_subdirectory(map)
 add_subdirectory(settings)
 add_subdirectory(systems)
-add_subdirectory(components)
 add_subdirectory(gui)
 
 set (SRC
@@ -18,7 +18,7 @@ set (SRC
 	${SRCROOT}/Users.hpp
 	PARENT_SCOPE)
 
-set(INCDIRS 
+set(INCDIRS
 	${INCDIRS}
 	${INCROOT}
-	PARENT_SCOPE) 
+	PARENT_SCOPE)

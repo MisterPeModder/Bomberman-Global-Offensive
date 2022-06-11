@@ -12,7 +12,10 @@ namespace raylib
 {
     namespace model
     {
-        Model::Model(const std::filesystem::path &modelPath) : _model(LoadModel(modelPath.generic_string().c_str())) {}
+        Model::Model(const std::filesystem::path &modelPath)
+            : _model(LoadModel(modelPath.generic_string().c_str())), _path(modelPath)
+        {
+        }
 
         Model::Model(const raylib::model::Mesh &mesh) : _model(LoadModelFromMesh(mesh.asRaylib())) {}
 
@@ -54,6 +57,8 @@ namespace raylib
         ::Model &Model::asRaylib() { return _model; }
 
         ::Model const &Model::asRaylib() const { return _model; }
+
+        Model::Model(const Model &other) : _path(other._path) { _model = LoadModel(_path.generic_string().c_str()); }
 
         void Model::setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapType)
         {
