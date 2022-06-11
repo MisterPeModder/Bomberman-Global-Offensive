@@ -49,7 +49,7 @@ namespace raylib
             /// @param position the position where the cube will be drawn
             /// @param size the size of the drawn cube
             /// @param color the color the the drawn cube
-            void draw(raylib::core::Vector3 position, raylib::core::Vector3 size,
+            void draw(raylib::core::Vector3f position, raylib::core::Vector3f size,
                 raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR) const;
 
             /// Draw the wireframe of the cube.

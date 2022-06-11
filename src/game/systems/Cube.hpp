@@ -9,6 +9,7 @@
 #include "game/components/Position.hpp"
 #include "game/components/Scale.hpp"
 #include "game/components/Size.hpp"
+#include "game/components/Cube.hpp"
 #include "raylib/shapes/Cube.hpp"
 
 namespace game

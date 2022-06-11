@@ -20,7 +20,7 @@ namespace game::systems
         void run(ecs::SystemData data) override final
         {
             for (auto [cube] : ecs::join(data.getStorage<game::components::Cube>())) {
-                cube.cube.draw();
+                cube.draw();
             }
         }
     };
