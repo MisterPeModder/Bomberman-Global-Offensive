@@ -8,8 +8,8 @@
 namespace game
 {
     struct Texture2D : public ecs::Component, public raylib::model::Texture2D {
-        Texture2D(raylib::model::Texture2D &ptexture) : raylib::model::Texture2D(ptexture) {}
-        Texture2D(std::filesystem::path &path) : raylib::model::Texture2D(path) {}
+        Texture2D(raylib::model::Texture2D &pTexture) : raylib::model::Texture2D(pTexture) {}
+        Texture2D(std::filesystem::path &pPath) : raylib::model::Texture2D(pPath) {}
     };
 } // namespace game
 

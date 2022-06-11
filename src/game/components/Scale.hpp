@@ -8,7 +8,7 @@ namespace game
     struct Scale : public ecs::Component {
         float scale;
 
-        Scale(float pscale) : scale(pscale) {}
+        Scale(float pScale) : scale(pScale) {}
     };
 } // namespace game
 
