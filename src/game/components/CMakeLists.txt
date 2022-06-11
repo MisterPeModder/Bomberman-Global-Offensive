@@ -1,25 +1,32 @@
 set(INCROOT ${INCROOT}/components)
 set(SRCROOT ${SRCROOT}/components)
 
-set (SRC
-	${SRC}
-	${SRCROOT}/Bomb.cpp
-	${SRCROOT}/Bomb.hpp
-	${SRCROOT}/Collidable.hpp
-	${SRCROOT}/Controlable.hpp
-	${SRCROOT}/Cube.hpp
-	${SRCROOT}/CubeColor.hpp
-	${SRCROOT}/Destructible.hpp
-	${SRCROOT}/Living.hpp
-	${SRCROOT}/Player.cpp
-	${SRCROOT}/Player.hpp
-	${SRCROOT}/Position.hpp
-	${SRCROOT}/Size.hpp
-	${SRCROOT}/Textual.hpp
-	${SRCROOT}/Velocity.hpp
-	PARENT_SCOPE)
+set(SRC
+    ${SRC}
+    ${SRCROOT}/Bomb.cpp
+    ${SRCROOT}/Bomb.hpp
+    ${SRCROOT}/Collidable.hpp
+    ${SRCROOT}/Controlable.hpp
+    ${SRCROOT}/Textual.hpp
+    ${INCROOT}/Animation.hpp
+    ${INCROOT}/Color.hpp
+    ${INCROOT}/Image.hpp
+    ${INCROOT}/Model.hpp
+    ${INCROOT}/Position.hpp
+    ${INCROOT}/RotationAngle.hpp
+    ${INCROOT}/RotationAxis.hpp
+    ${INCROOT}/Scale.hpp
+    ${INCROOT}/Size.hpp
+    ${INCROOT}/Texture2D.hpp
+    ${SRCROOT}/Velocity.hpp
+    ${SRCROOT}/Living.hpp
+    ${SRCROOT}/Player.cpp
+    ${SRCROOT}/Destructible.hpp
+    ${SRCROOT}/Cube.hpp
+    ${SRCROOT}/CubeColor.hpp
+    PARENT_SCOPE)
 
-set(INCDIRS 
-	${INCDIRS}
-	${INCROOT}
-	PARENT_SCOPE) 
+set(INCDIRS
+    ${INCDIRS}
+    ${INCROOT}
+    PARENT_SCOPE)

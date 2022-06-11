@@ -16,7 +16,11 @@ namespace raylib
             _animations = LoadModelAnimations(animPath.generic_string().c_str(), &_animsCount);
         }
 
-        Animation::~Animation() { UnloadModelAnimations(_animations, _animsCount); }
+        Animation::~Animation()
+        {
+            if (_animations)
+                UnloadModelAnimations(_animations, _animsCount);
+        }
 
         Animation::Animation(const Animation &other)
             : _animationPath(other._animationPath), _animFrameCounter(other._animFrameCounter)
