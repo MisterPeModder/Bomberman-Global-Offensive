@@ -12,6 +12,7 @@
 #include <stdexcept>
 #include <vector>
 #include "game/User.hpp"
+#include "raylib/core/Vector2.hpp"
 
 namespace game
 {
@@ -19,6 +20,9 @@ namespace game
     {
         /// Bomberman Map
         class Map {
+          private:
+            using Vector2u = raylib::core::Vector2u;
+
           public:
             /// Exception thrown when the map size is invalid.
             class InvalidMapSize : public std::logic_error {
@@ -38,58 +42,48 @@ namespace game
 
             /// Construct a new Map
             ///
-            /// @param width width of the map
-            /// @param height height of the map
-            Map(size_t width = 13, size_t height = 13);
+            /// @param size size of the map
+            Map(Vector2u size = {13, 13});
 
             /// Destroy the map
             ~Map() = default;
 
             /// Generate the map.
             ///
-            /// @param width width of the map
-            /// @param height height of the map
+            /// @param size size of the map
             /// @throw InvalidMapSize when the size is invalid (< 3 or even)
-            void generate(size_t width, size_t height);
+            void generate(Vector2u size);
 
-            /// Get the Element at the position (x, y)
+            /// Get the Element at the requested position.
             ///
-            /// @param x x position
-            /// @param y y position
-            /// @return Element element at the position (x, y)
+            /// @param position element position
+            /// @return Element element at the requested position
             /// @throw std::out_of_bounds when the position is out of the map bounds
-            Element getElement(size_t x, size_t y) const;
+            Element getElement(Vector2u position) const;
 
-            /// Get the Element at the position (x, y)
+            /// Get the Element at the requested position.
             ///
-            /// @param x x position
-            /// @param y y position
-            /// @return Element& element at the position (x, y)
+            /// @param position element position
+            /// @return Element& element at the requested position
             /// @throw std::out_of_bounds when the position is out of the map bounds
-            Element &getElement(size_t x, size_t y);
+            Element &getElement(Vector2u position);
 
-            /// Get the Width of the map
+            /// Get the Size of the map.
             ///
-            /// @return size_t width
-            size_t getWidth() const;
-
-            /// Get the height of the map
-            ///
-            /// @return size_t height
-            size_t getHeight() const;
+            /// @return Vector2u mapSize;
+            Vector2u getSize() const;
 
             /// Get the Player Starting Position based on its id.
             ///
             /// @param playerId player ID.
             /// @return Vector2 starting position of the player in the map.
-            Vector2 getPlayerStartingPosition(game::User::UserId playerId);
+            Vector2u getPlayerStartingPosition(game::User::UserId playerId);
 
           private:
             /// Ensure the corners to be empty to avoid invalid player spawn
             void freeCorners();
 
-            size_t _width;
-            size_t _height;
+            Vector2u _size;
             std::vector<Element> _map;
         };
     } // namespace map
