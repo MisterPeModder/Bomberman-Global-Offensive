@@ -108,6 +108,9 @@ namespace ecs
             return this->_inner.contains(std::type_index(typeid(Value)));
         }
 
+        /// Removes all stored instances.
+        void clear() { return this->_inner.clear(); }
+
       private:
         std::unordered_map<std::type_index, std::unique_ptr<Base>> _inner;
     };
