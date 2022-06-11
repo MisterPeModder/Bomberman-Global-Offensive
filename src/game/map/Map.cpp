@@ -6,7 +6,7 @@
 */
 
 #include "Map.hpp"
-#include <iostream>
+#include <algorithm>
 #include <random>
 #include "cellular/Grid.hpp"
 
@@ -65,6 +65,54 @@ namespace game
         {
             return {static_cast<float>((static_cast<size_t>(playerId) % 2) * (getWidth() - 1)),
                 static_cast<float>((static_cast<size_t>(playerId) / 2) * (getHeight() - 1))};
+        }
+
+        void Map::fillExplodedPositions(
+            std::vector<raylib::core::Vector2> &explodePositions, raylib::core::Vector2 position, size_t radius)
+        {
+            position = {std::clamp(position.x, 0.f, static_cast<float>(_width - 1)),
+                std::clamp(position.y, 0.f, static_cast<float>(_height - 1))};
+            std::array<bool, 4> blocked;
+            raylib::core::Vector2 current;
+            int validWays = 4;
+
+            blocked.fill(false);
+            explodePositions.push_back(position);
+            for (size_t i = 1; i < radius + 1 && validWays > 0; i++) {
+                for (size_t j = 0; j < 4; j++) {
+                    if (blocked[j])
+                        continue;
+                    bool valid = false;
+
+                    switch (j) {
+                        case 0:
+                            current = {position.x - i, position.y};
+                            valid = current.x >= 0.f;
+                            break;
+                        case 1:
+                            current = {position.x + i, position.y};
+                            valid = current.x < _width;
+                            break;
+                        case 2:
+                            current = {position.x, position.y - i};
+                            valid = current.y >= 0.f;
+                            break;
+                        case 3:
+                            current = {position.x, position.y + i};
+                            valid = current.y < _height;
+                            break;
+                        default: break;
+                    }
+                    /// Out of bounds or indestructible wall
+                    if (!valid
+                        || getElement(static_cast<size_t>(current.x), static_cast<size_t>(current.y))
+                            == Element::Wall) {
+                        blocked[j] = true;
+                        validWays--;
+                    } else
+                        explodePositions.push_back(current);
+                }
+            }
         }
 
         void Map::freeCorners()

@@ -10,6 +10,8 @@
 #include "logger/Logger.hpp"
 #include "raylib/core/scoped.hpp"
 
+#include "resources/Map.hpp"
+
 #include "components/Bomb.hpp"
 #include "components/Collidable.hpp"
 #include "components/Controlable.hpp"
@@ -53,6 +55,7 @@ namespace game
         /// Add world ressources
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
+        _world.addResource<resources::Map>(_map);
         /// Add world storages
         _world.addStorage<components::Bomb>();
         _world.addStorage<game::gui::Widget>();
@@ -111,7 +114,7 @@ namespace game
                             auto &pos = _world.getStorage<components::Position>()[self.getId()];
 
                             _world.addEntity()
-                                .with<components::Bomb>()
+                                .with<components::Bomb>(2)
                                 .with<components::Position>(pos)
                                 .with<components::Size>(0.5f, 0.f, 0.5f)
                                 .build();
