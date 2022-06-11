@@ -22,7 +22,7 @@ namespace game::systems
 {
     void DrawText::run(ecs::SystemData data)
     {
-        for (auto [pos, text] : ecs::join(data.getStorage<game::Position>(), data.getStorage<game::Textual>())) {
+        for (auto [pos, text] : ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::components::Textual>())) {
             ::DrawText(text.text.c_str(), pos.x, pos.y, text.fontSize, text.color.asRaylib());
         }
     }
