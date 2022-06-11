@@ -12,11 +12,15 @@
 
 namespace game::systems
 {
+    /// Draw bomb system
     struct DrawBomb : public ecs::System {
+        /// Draw the bombs
         void run(ecs::SystemData data) override final;
     };
 
+    /// Explode bomb system
     struct ExplodeBomb : public ecs::System {
+        /// Explode the bombs if needed
         void run(ecs::SystemData data) override final;
     };
 } // namespace game::systems

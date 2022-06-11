@@ -13,9 +13,14 @@
 
 namespace game::resources
 {
+    /// Game map resource.
     struct Map : public ecs::Resource {
+        /// Reference to the map wrapped.
         game::map::Map &map;
 
+        /// Construct a new Map resource.
+        ///
+        /// @param pMap @ref map.
         explicit Map(game::map::Map &pMap) : map(pMap) {}
     };
 } // namespace game::resources
