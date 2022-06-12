@@ -10,5 +10,6 @@
 
 #include "ecs/system/System.hpp"
 #include "ecs/system/SystemData.hpp"
+#include "ecs/system/SystemTag.hpp"
 
 #endif // !defined(ECS_SYSTEM_HPP_)

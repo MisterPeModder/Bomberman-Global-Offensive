@@ -62,6 +62,16 @@ namespace ecs
         /// @throws std::logic_error If no instance of @b Value is in the set.
         template <std::derived_from<Base> Value> Value &get(char const *error) { return *this->getPtr<Value>(error); }
 
+        /// Fetches the contained instance identified by @b type.
+        ///
+        /// @param type The instance type.
+        /// @param error The content of the error to throw if @b Base is not in the set.
+        ///
+        /// @returns A reference to the instance of @b Base contained within.
+        ///
+        /// @throws std::logic_error If no instance matching @b type is in the set.
+        Base &get(std::type_index const &type, char const *error) { return *this->getPtr(type, error); }
+
         /// Fetches the contained instance of @b Value.
         ///
         /// @tparam Value The type of instance to fetch, must inherit from @b Base.
@@ -76,6 +86,16 @@ namespace ecs
             return *this->getPtr<Value>(error);
         }
 
+        /// Fetches the contained instance identified by @b type.
+        ///
+        /// @param type The instance type.
+        /// @param error The content of the error to throw if @b Base is not in the set.
+        ///
+        /// @returns A const reference to the instance of @b Base contained within.
+        ///
+        /// @throws std::logic_error If no instance matching @b type is in the set.
+        Base const &get(std::type_index const &type, char const *error) const { return *this->getPtr(type, error); }
+
         /// Fetches the contained instance of @b Value.
         ///
         /// @tparam Value The type of instance to fetch, must inherit from @b Base.
@@ -87,11 +107,24 @@ namespace ecs
         /// @throws std::logic_error If no instance of @b Value is in the set.
         template <std::derived_from<Base> Value> Value *getPtr(char const *error) const
         {
-            auto found = this->_inner.find(std::type_index(typeid(Value)));
+            return dynamic_cast<Value *>(this->getPtr(std::type_index(typeid(Value)), error));
+        }
+
+        /// Fetches the contained instance identified by @b type.
+        ///
+        /// @param type The instance type.
+        /// @param error The content of the error to throw if @b Base is not in the set.
+        ///
+        /// @returns A pointer to the instance of @b Base contained within.
+        ///
+        /// @throws std::logic_error If no instance matching @b type is in the set.
+        Base *getPtr(std::type_index const &type, char const *error) const
+        {
+            auto found = this->_inner.find(type);
 
             if (found == this->_inner.end())
                 throw std::logic_error(error);
-            return dynamic_cast<Value *>(found->second.get());
+            return found->second.get();
         }
 
         /// @returns The backing storage.
