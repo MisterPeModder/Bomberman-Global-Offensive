@@ -35,7 +35,10 @@ namespace raylib
             /// @param xParam the X axis value of the vector
             /// @param yParam the Y axis value of the vector
             /// @param zParam the Z axis value of the vector
-            constexpr Vector3(int xParam, int yParam, int zParam) : x(static_cast<float>(xParam)), y(static_cast<float>(yParam)), z(static_cast<float>(zParam)) {}
+            constexpr Vector3(int xParam, int yParam, int zParam)
+                : x(static_cast<float>(xParam)), y(static_cast<float>(yParam)), z(static_cast<float>(zParam))
+            {
+            }
 
             /// Constructor of the 3d vector from a 2d vector
             ///
