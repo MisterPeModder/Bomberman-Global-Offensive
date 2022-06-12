@@ -50,7 +50,7 @@ namespace game
         camera.setFovY(75.0f);            // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);
 
-        /// Add world ressources
+        /// Add world resources
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);

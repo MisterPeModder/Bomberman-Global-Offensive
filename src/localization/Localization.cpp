@@ -28,7 +28,7 @@ namespace localization
         std::string key(locale);
 
         if (_Instance._locales.find(key) == _Instance._locales.end())
-            _Instance._locales.insert({key, RessourceFile(locale)});
+            _Instance._locales.insert({key, ResourceFile(locale)});
         _Instance._locale = key;
     }
 
@@ -44,7 +44,7 @@ namespace localization
     void Localization::loadLocales(const std::vector<std::string_view> &locales)
     {
         for (const std::string_view &loc : locales)
-            _Instance._locales[std::string(loc)] = RessourceFile(loc);
+            _Instance._locales[std::string(loc)] = ResourceFile(loc);
     }
 
     std::string_view Localization::translate(std::string_view msg)

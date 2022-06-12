@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman
 ** File description:
-** RessourceString
+** ResourceString
 */
 
-#ifndef LOCALIZATION_RESSOURCESTRING_HPP_
-#define LOCALIZATION_RESSOURCESTRING_HPP_
+#ifndef LOCALIZATION_RESOURCESTRING_HPP_
+#define LOCALIZATION_RESOURCESTRING_HPP_
 
 #include <ostream>
 #include <string_view>
@@ -14,15 +14,15 @@
 namespace localization
 {
     /// Translatable string. Will register itself in the loaded locales.
-    class RessourceString {
+    class ResourceString {
       public:
-        /// Construct a new Ressource String object.
+        /// Construct a new Resource String object.
         ///
         /// @param msgid id of the message, also the message used when no translation is set.
-        constexpr RessourceString(std::string_view msgid) : _msgid(msgid) {}
+        constexpr ResourceString(std::string_view msgid) : _msgid(msgid) {}
 
-        /// Destroy the Ressource String object.
-        ~RessourceString() = default;
+        /// Destroy the Resource String object.
+        ~ResourceString() = default;
 
         /// Get the Msg Id wrapped.
         ///
@@ -47,9 +47,9 @@ namespace localization
 /// Overload of output stream operator to allow writing translated string to streams.
 ///
 /// @param stream output stream.
-/// @param rs ressource string.
+/// @param rs resource string.
 /// @return std::ostream& output stream.
 ///
-std::ostream &operator<<(std::ostream &stream, const localization::RessourceString &rs);
+std::ostream &operator<<(std::ostream &stream, const localization::ResourceString &rs);
 
-#endif /* !LOCALIZATION_RESSOURCESTRING_HPP_ */
+#endif /* !LOCALIZATION_RESOURCESTRING_HPP_ */
