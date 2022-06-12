@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tokensvector_7158',['TokensVector',['../classlocalization_1_1_ressource_file.html#abc5aa254d08371bf15f606b5562a1fd9',1,'localization::RessourceFile']]]
+  ['tokensvector_7156',['TokensVector',['../classlocalization_1_1_resource_file.html#a0f453ffb7f0d53d17410d134866aa8bd',1,'localization::ResourceFile']]]
 ];

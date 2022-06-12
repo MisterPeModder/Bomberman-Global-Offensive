@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['s_7327',['S',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a5dbc98dcc983a70728bd082d1a47546e',1,'raylib::core::Keyboard']]],
-  ['scroll_5flock_7328',['SCROLL_LOCK',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a324bf1f059b99e2882bc1d567080d8ed',1,'raylib::core::Keyboard']]],
-  ['semicolon_7329',['SEMICOLON',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90abaaceccc27b1d4e0968c999583f97de5',1,'raylib::core::Keyboard']]],
-  ['seven_7330',['SEVEN',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90aebcf71d9bbc715c43f24a10cce77dab4',1,'raylib::core::Keyboard']]],
-  ['six_7331',['SIX',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a48041ef8474caedcbcf2fe8996056b7f',1,'raylib::core::Keyboard']]],
-  ['slash_7332',['SLASH',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a646da671ca01bb5d84dbb5fb2238dc8e',1,'raylib::core::Keyboard']]],
-  ['space_7333',['SPACE',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a6506ae39fdca9845e3a6de3865183e57',1,'raylib::core::Keyboard']]]
+  ['s_7325',['S',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a5dbc98dcc983a70728bd082d1a47546e',1,'raylib::core::Keyboard']]],
+  ['scroll_5flock_7326',['SCROLL_LOCK',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a324bf1f059b99e2882bc1d567080d8ed',1,'raylib::core::Keyboard']]],
+  ['semicolon_7327',['SEMICOLON',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90abaaceccc27b1d4e0968c999583f97de5',1,'raylib::core::Keyboard']]],
+  ['seven_7328',['SEVEN',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90aebcf71d9bbc715c43f24a10cce77dab4',1,'raylib::core::Keyboard']]],
+  ['six_7329',['SIX',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a48041ef8474caedcbcf2fe8996056b7f',1,'raylib::core::Keyboard']]],
+  ['slash_7330',['SLASH',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a646da671ca01bb5d84dbb5fb2238dc8e',1,'raylib::core::Keyboard']]],
+  ['space_7331',['SPACE',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a6506ae39fdca9845e3a6de3865183e57',1,'raylib::core::Keyboard']]]
 ];

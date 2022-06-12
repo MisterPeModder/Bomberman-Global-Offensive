@@ -8,5 +8,5 @@ digraph "Graphical Class Hierarchy"
   Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 [label="game::map::Map::InvalidMapSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1map_1_1_map_1_1_invalid_map_size.html",tooltip="Exception thrown when the map size is invalid."];
   Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="localization::RessourceFile\l::LocaleNotSetError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlocalization_1_1_ressource_file_1_1_locale_not_set_error.html",tooltip="Exception thrown when the locale isn't set (unititialized) on translate/register operations."];
+  Node2 [label="localization::ResourceFile\l::LocaleNotSetError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classlocalization_1_1_resource_file_1_1_locale_not_set_error.html",tooltip="Exception thrown when the locale isn't set (unititialized) on translate/register operations."];
 }

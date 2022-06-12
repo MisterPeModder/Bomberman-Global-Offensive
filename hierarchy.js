@@ -83,7 +83,7 @@ var hierarchy =
     [ "Logger", "class_logger.html", null ],
     [ "std::logic_error", "http://en.cppreference.com/w/cpp/error/logic_error.html", [
       [ "game::map::Map::InvalidMapSize", "classgame_1_1map_1_1_map_1_1_invalid_map_size.html", null ],
-      [ "localization::RessourceFile::LocaleNotSetError", "classlocalization_1_1_ressource_file_1_1_locale_not_set_error.html", null ]
+      [ "localization::ResourceFile::LocaleNotSetError", "classlocalization_1_1_resource_file_1_1_locale_not_set_error.html", null ]
     ] ],
     [ "game::map::Map", "classgame_1_1map_1_1_map.html", null ],
     [ "ecs::MaybeJoin< J >", "classecs_1_1_maybe_join.html", null ],
@@ -104,15 +104,15 @@ var hierarchy =
       [ "ecs::Timer", "classecs_1_1_timer.html", null ],
       [ "game::Users", "classgame_1_1_users.html", null ]
     ] ],
-    [ "localization::RessourceFile", "classlocalization_1_1_ressource_file.html", null ],
-    [ "localization::RessourceString", "classlocalization_1_1_ressource_string.html", null ],
+    [ "localization::ResourceFile", "classlocalization_1_1_resource_file.html", null ],
+    [ "localization::ResourceString", "classlocalization_1_1_resource_string.html", null ],
     [ "game::map::cellular::Rule", "classgame_1_1map_1_1cellular_1_1_rule.html", null ],
     [ "std::runtime_error", "http://en.cppreference.com/w/cpp/error/runtime_error.html", [
       [ "bmjs::JsException", "classbmjs_1_1_js_exception.html", null ],
       [ "game::map::cellular::Rule::InvalidRule", "classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html", null ],
       [ "game::settings::Settings::InvalidSettingsValue", "classgame_1_1settings_1_1_settings_1_1_invalid_settings_value.html", null ],
-      [ "localization::RessourceFile::LocaleNotFoundError", "classlocalization_1_1_ressource_file_1_1_locale_not_found_error.html", null ],
-      [ "localization::RessourceFile::MessageNotFoundError", "classlocalization_1_1_ressource_file_1_1_message_not_found_error.html", null ]
+      [ "localization::ResourceFile::LocaleNotFoundError", "classlocalization_1_1_resource_file_1_1_locale_not_found_error.html", null ],
+      [ "localization::ResourceFile::MessageNotFoundError", "classlocalization_1_1_resource_file_1_1_message_not_found_error.html", null ]
     ] ],
     [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
     [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", null ],

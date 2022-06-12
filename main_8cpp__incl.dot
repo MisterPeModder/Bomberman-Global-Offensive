@@ -53,7 +53,7 @@ digraph "src/main.cpp"
   Node29 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node29 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node29 -> Node30 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node30 [label="RessourceFile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_ressource_file_8hpp.html",tooltip=" "];
+  Node30 [label="ResourceFile.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resource_file_8hpp.html",tooltip=" "];
   Node30 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node30 -> Node31 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node31 [label="map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/map.html",tooltip=" "];
@@ -64,9 +64,9 @@ digraph "src/main.cpp"
   Node30 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node18 [label="string_view",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html",tooltip=" "];
   Node1 -> Node33 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node33 [label="localization/Ressources.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_ressources_8hpp.html",tooltip=" "];
+  Node33 [label="localization/Resources.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resources_8hpp.html",tooltip=" "];
   Node33 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node34 [label="RessourceString.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_ressource_string_8hpp.html",tooltip=" "];
+  Node34 [label="ResourceString.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_resource_string_8hpp.html",tooltip=" "];
   Node34 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 [label="ostream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/ostream.html",tooltip=" "];
   Node34 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -13,6 +13,6 @@ var classlocalization_1_1_localization =
     [ "translate", "classlocalization_1_1_localization.html#aa8e7b270e303757240935e3c0e30132c", null ],
     [ "_Instance", "classlocalization_1_1_localization.html#af96ee478fa57f54dec4b59f29bc259cb", null ],
     [ "_locale", "classlocalization_1_1_localization.html#aa6c6a85cc4353301e3a140f8062c0a0a", null ],
-    [ "_locales", "classlocalization_1_1_localization.html#a9b6ab110ba436bd69509a2dd9e222e06", null ],
+    [ "_locales", "classlocalization_1_1_localization.html#aa8829c90355002f929fa2afea26b2ae2", null ],
     [ "_localesDirectory", "classlocalization_1_1_localization.html#a35d694844b2d9f5022f195b671501022", null ]
 ];

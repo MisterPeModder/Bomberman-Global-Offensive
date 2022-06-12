@@ -195,7 +195,7 @@ var NAVTREEINDEX5 =
 "namespacegame_1_1systems.html":[1,0,2,4],
 "namespacelocalization.html":[2,0,3],
 "namespacelocalization.html":[1,0,3],
-"namespacelocalization_1_1_ressources.html":[1,0,3,0],
+"namespacelocalization_1_1_resources.html":[1,0,3,0],
 "namespacemembers.html":[1,1,0],
 "namespacemembers_enum.html":[1,1,4],
 "namespacemembers_func.html":[1,1,1],
