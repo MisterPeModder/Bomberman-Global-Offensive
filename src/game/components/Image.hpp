@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** Image
+*/
+
 #ifndef GAME_COMPONENTS_IMAGE_HPP_
 #define GAME_COMPONENTS_IMAGE_HPP_
 

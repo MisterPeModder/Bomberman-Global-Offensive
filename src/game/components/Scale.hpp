@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** Scale
+*/
+
 #ifndef GAME_COMPONENTS_SCALE_HPP_
 #define GAME_COMPONENTS_SCALE_HPP_
 

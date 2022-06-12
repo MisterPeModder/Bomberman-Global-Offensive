@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** Model
+*/
+
 #ifndef GAME_SYSTEMS_MODEL_HPP_
 #define GAME_SYSTEMS_MODEL_HPP_
 

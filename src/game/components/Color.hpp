@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** Color
+*/
+
 #ifndef GAME_COMPONENTS_COLOR_HPP_
 #define GAME_COMPONENTS_COLOR_HPP_
 

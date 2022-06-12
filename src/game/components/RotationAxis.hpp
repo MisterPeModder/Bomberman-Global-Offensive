@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** RotationAxis
+*/
+
 #ifndef GAME_COMPONENTS_ROTATIONAXIS_HPP_
 #define GAME_COMPONENTS_ROTATIONAXIS_HPP_
 

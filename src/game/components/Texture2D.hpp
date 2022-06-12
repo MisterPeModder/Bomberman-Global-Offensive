@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** Texture2D
+*/
+
 #ifndef GAME_COMPONENTS_TEXTURE2D_HPP_
 #define GAME_COMPONENTS_TEXTURE2D_HPP_
 
