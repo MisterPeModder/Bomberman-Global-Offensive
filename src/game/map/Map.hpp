@@ -79,6 +79,14 @@ namespace game
             /// @return Vector2 starting position of the player in the map.
             Vector2u getPlayerStartingPosition(game::User::UserId playerId);
 
+            /// Get the exploded positions from an explosion position and its radius.
+            /// @note Explosion will stop at indestructible walls and borders.
+            ///
+            /// @param explodePositions vector of exploded position to fill.
+            /// @param center explosion center.
+            /// @param radius explosion radius.
+            void fillExplodedPositions(std::vector<Vector2u> &explodePositions, Vector2u center, size_t radius);
+
           private:
             /// Ensure the corners to be empty to avoid invalid player spawn
             void freeCorners();

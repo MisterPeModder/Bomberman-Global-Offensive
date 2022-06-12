@@ -5,6 +5,8 @@
 ** Basic tests for the Entity Component System
 */
 
+#include "ecs/Component.hpp"
+#include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "ecs/resource/Entities.hpp"
@@ -43,6 +45,11 @@ struct CountingSystem2 : public ecs::System {
 struct ThrowingSystem : public ecs::System {
     virtual void run(ecs::SystemData) override final { throw std::logic_error("ThrowingSystem was run"); }
 };
+
+struct SampleComponent : public ecs::Component {
+    //
+};
+SET_COMPONENT_STORAGE(SampleComponent, ecs::MarkerStorage);
 
 TEST(World, addResource)
 {
@@ -113,4 +120,19 @@ TEST(World, runSystemsTag)
     world.runSystems(counting);
     EXPECT_EQ(count.count, 3);
     EXPECT_THROW(world.runSystems(all), std::logic_error);
+}
+
+TEST(World, clear)
+{
+    ecs::World world;
+
+    world.addResource<Count>();
+    world.addSystem<CountingSystem>();
+    world.addEntity().with<SampleComponent>().build();
+
+    world.clear();
+
+    ASSERT_THROW(world.getResource<Count>(), std::logic_error);
+    ASSERT_THROW(world.getStorage<SampleComponent>(), std::logic_error);
+    ASSERT_NO_THROW(world.getResource<ecs::Entities>());
 }

@@ -138,6 +138,9 @@ namespace ecs
             return this->_storages.get<getStorageType<C>>("failed to fetch storage");
         }
 
+        /// Removes all registered resources, systems, and entities.
+        void clear();
+
 #pragma endregion ECS World Populating
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Running
