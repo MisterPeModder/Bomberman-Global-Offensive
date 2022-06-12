@@ -16,7 +16,7 @@ set(SRC
     ${INCROOT}/Scale.hpp
     ${INCROOT}/Size.hpp
     ${INCROOT}/Texture2D.hpp
-	${INCROOT}/Rectangle.hpp
+    ${INCROOT}/Rectangle.hpp
     ${SRCROOT}/Velocity.hpp
     ${SRCROOT}/Living.hpp
     ${SRCROOT}/Destructible.hpp
