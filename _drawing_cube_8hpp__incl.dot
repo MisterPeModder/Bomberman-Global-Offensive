@@ -119,4 +119,10 @@ digraph "src/game/systems/DrawingCube.hpp"
   Node36 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node36 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node36 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node42 [label="game/components/Destructible.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_destructible_8hpp.html",tooltip=" "];
+  Node42 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node43 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node43 [label="game/components/Living.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_living_8hpp.html",tooltip=" "];
+  Node43 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

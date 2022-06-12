@@ -36,7 +36,7 @@ var searchData=
   ['_5fimage_33',['_image',['../classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204',1,'raylib::textures::Image']]],
   ['_5finfos_34',['_infos',['../class_logger.html#a2c4fb7c94548c4f375839d07ffa207b8',1,'Logger']]],
   ['_5finner_35',['_inner',['../classecs_1_1_maybe_join.html#a0c52d7c77dd90324246e0b131d1a2ce5',1,'ecs::MaybeJoin::_inner()'],['../classecs_1_1_instances.html#a02f13c11c88ae2672bb9c70cc0ede987',1,'ecs::Instances::_inner()']]],
-  ['_5finstance_36',['_instance',['../classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e',1,'ecs::MarkerStorage::_instance()'],['../classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2',1,'bmjs::Engine::_instance()'],['../classlocalization_1_1_localization.html#af96ee478fa57f54dec4b59f29bc259cb',1,'localization::Localization::_Instance()']]],
+  ['_5finstance_36',['_Instance',['../classlocalization_1_1_localization.html#af96ee478fa57f54dec4b59f29bc259cb',1,'localization::Localization::_Instance()'],['../classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e',1,'ecs::MarkerStorage::_instance()'],['../classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2',1,'bmjs::Engine::_instance()']]],
   ['_5fkey_37',['_key',['../classbmjs_1_1_registry_guard.html#a9a7469cf25b5c787dc11019ff6c46dd9',1,'bmjs::RegistryGuard']]],
   ['_5fkeybinds_38',['_keybinds',['../classgame_1_1settings_1_1_profile.html#a05a79e4f3f3e048ed98e75fb9b365a5d',1,'game::settings::Profile']]],
   ['_5fkeyboardbindings_39',['_keyboardBindings',['../classgame_1_1settings_1_1_keybinds.html#a4d96b44207b1e887d6b193836da67dac',1,'game::settings::Keybinds']]],

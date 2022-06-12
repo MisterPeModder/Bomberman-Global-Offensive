@@ -49,7 +49,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Enumerator", "functions_eval.html", null ],
@@ -72,12 +72,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_shape_8hpp.html",
-"_system_8hpp_source.html",
-"classecs_1_1_marker_storage.html#a50d8bbc83c6e40060a24453c2cbf37cf",
-"classlocalization_1_1_localization.html#a8f00a5713bb962e7faf242e57d339c8c",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90afe5c3684dce76cdd9f7f42430868aa74",
-"classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918",
-"storage_2_storage_8hpp.html"
+"_system_8hpp.html",
+"classecs_1_1_marker_storage.html#a4ce16bc4dd22be586360b38667afcce9",
+"classlocalization_1_1_localization.html#a74f7735ca40b0c5ac6de566bcae0aa0b",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90afd816cf0346d4939b4cf3bed78dd7fde",
+"classutil_1_1_bit_set.html#a034726ec31b4e4ad0b2c7a82cbfad3e4",
+"namespacesystems.html",
+"structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

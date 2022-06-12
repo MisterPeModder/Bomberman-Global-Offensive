@@ -9,5 +9,7 @@ digraph "ecs::Resource"
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="ecs::Timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_timer.html",tooltip="Simple timer resource."];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="game::Users",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1_users.html",tooltip="Resource allowing to get users actions using the keybinds."];
+  Node4 [label="game::resources::Map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1resources_1_1_map.html",tooltip="Game map resource."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="game::Users",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1_users.html",tooltip="Resource allowing to get users actions using the keybinds."];
 }

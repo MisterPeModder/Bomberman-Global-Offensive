@@ -27,6 +27,7 @@ var hierarchy =
     [ "ecs::Component", "classecs_1_1_component.html", [
       [ "game::Animation", "structgame_1_1_animation.html", null ],
       [ "game::Color", "structgame_1_1_color.html", null ],
+      [ "game::components::Bomb", "structgame_1_1components_1_1_bomb.html", null ],
       [ "game::components::Collidable", "structgame_1_1components_1_1_collidable.html", null ],
       [ "game::components::Controlable", "structgame_1_1components_1_1_controlable.html", null ],
       [ "game::components::Cube", "structgame_1_1components_1_1_cube.html", null ],
@@ -102,6 +103,7 @@ var hierarchy =
     [ "ecs::Resource", "classecs_1_1_resource.html", [
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
       [ "ecs::Timer", "classecs_1_1_timer.html", null ],
+      [ "game::resources::Map", "structgame_1_1resources_1_1_map.html", null ],
       [ "game::Users", "classgame_1_1_users.html", null ]
     ] ],
     [ "localization::ResourceFile", "classlocalization_1_1_resource_file.html", null ],
@@ -123,18 +125,20 @@ var hierarchy =
     [ "ecs::System", "classecs_1_1_system.html", [
       [ "game::systems::ChangeCube", "structgame_1_1systems_1_1_change_cube.html", null ],
       [ "game::systems::Collision", "structgame_1_1systems_1_1_collision.html", null ],
+      [ "game::systems::DrawBomb", "structgame_1_1systems_1_1_draw_bomb.html", null ],
       [ "game::systems::DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", null ],
       [ "game::systems::DrawText", "structgame_1_1systems_1_1_draw_text.html", null ],
+      [ "game::systems::ExplodeBomb", "structgame_1_1systems_1_1_explode_bomb.html", null ],
       [ "game::systems::InputManager", "structgame_1_1systems_1_1_input_manager.html", null ],
       [ "game::systems::Movement", "structgame_1_1systems_1_1_movement.html", null ],
       [ "game::systems::RunAnimation", "structgame_1_1systems_1_1_run_animation.html", null ],
       [ "systems::DrawModel", "structsystems_1_1_draw_model.html", null ]
     ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
+    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "Texture2D", null, [
       [ "game::Texture2D", "structgame_1_1_texture2_d.html", null ]
     ] ],
-    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "game::User", "classgame_1_1_user.html", null ],
     [ "raylib::core::Vector2< T >", "structraylib_1_1core_1_1_vector2.html", null ],
     [ "raylib::core::Vector3< T >", "structraylib_1_1core_1_1_vector3.html", [

@@ -3,6 +3,10 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Animation.hpp", "game_2components_2_animation_8hpp.html", [
       [ "Animation", "structgame_1_1_animation.html", "structgame_1_1_animation" ]
     ] ],
+    [ "Bomb.cpp", "components_2_bomb_8cpp.html", null ],
+    [ "Bomb.hpp", "components_2_bomb_8hpp.html", [
+      [ "Bomb", "structgame_1_1components_1_1_bomb.html", "structgame_1_1components_1_1_bomb" ]
+    ] ],
     [ "Collidable.hpp", "_collidable_8hpp.html", "_collidable_8hpp" ],
     [ "Color.hpp", "game_2components_2_color_8hpp.html", [
       [ "Color", "structgame_1_1_color.html", "structgame_1_1_color" ]
@@ -28,6 +32,8 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Model.hpp", "game_2components_2_model_8hpp.html", [
       [ "Model", "structgame_1_1_model.html", "structgame_1_1_model" ]
     ] ],
+    [ "Player.cpp", "_player_8cpp.html", null ],
+    [ "Player.hpp", "_player_8hpp.html", "_player_8hpp" ],
     [ "Position.hpp", "_position_8hpp.html", [
       [ "Position", "structgame_1_1components_1_1_position.html", "structgame_1_1components_1_1_position" ]
     ] ],

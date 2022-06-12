@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bmjs_4345',['bmjs',['../namespacebmjs.html',1,'']]]
+  ['bmjs_4365',['bmjs',['../namespacebmjs.html',1,'']]]
 ];

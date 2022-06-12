@@ -9,6 +9,7 @@ var classgame_1_1map_1_1_map =
     ] ],
     [ "Map", "classgame_1_1map_1_1_map.html#a511e38962f57c10cee565e16df0bf55d", null ],
     [ "~Map", "classgame_1_1map_1_1_map.html#ab22153cd794d76fc8c8aca3d286c9fc9", null ],
+    [ "fillExplodedPositions", "classgame_1_1map_1_1_map.html#a468f81b8dd24899d7f141d6bf9a27570", null ],
     [ "freeCorners", "classgame_1_1map_1_1_map.html#a7f21cb4bfdb618a4c83522217fda992c", null ],
     [ "generate", "classgame_1_1map_1_1_map.html#aa5f215506cf51991d79f23808f120985", null ],
     [ "getElement", "classgame_1_1map_1_1_map.html#abf0d7ddc318cd48905bc36f7483f7699", null ],

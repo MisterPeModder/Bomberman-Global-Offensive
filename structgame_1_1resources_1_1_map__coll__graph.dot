@@ -1,0 +1,15 @@
+digraph "game::resources::Map"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="game::resources::Map",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Game map resource."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="ecs::Resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_resource.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" map" ,fontname="Helvetica"];
+  Node3 [label="game::map::Map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1map_1_1_map.html",tooltip="Bomberman Map."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _map" ,fontname="Helvetica"];
+  Node4 [label="std::vector\< Element \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _size" ,fontname="Helvetica"];
+  Node5 [label="raylib::core::Vector2\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector2.html",tooltip="The Vector2 struct (compatible with the raylib Vector2)"];
+}

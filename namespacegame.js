@@ -3,6 +3,7 @@ var namespacegame =
     [ "components", "namespacegame_1_1components.html", "namespacegame_1_1components" ],
     [ "gui", "namespacegame_1_1gui.html", "namespacegame_1_1gui" ],
     [ "map", "namespacegame_1_1map.html", "namespacegame_1_1map" ],
+    [ "resources", "namespacegame_1_1resources.html", "namespacegame_1_1resources" ],
     [ "settings", "namespacegame_1_1settings.html", "namespacegame_1_1settings" ],
     [ "systems", "namespacegame_1_1systems.html", "namespacegame_1_1systems" ],
     [ "Animation", "structgame_1_1_animation.html", "structgame_1_1_animation" ],

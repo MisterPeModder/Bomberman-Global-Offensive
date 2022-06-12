@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['q_2258',['Q',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90af09564c9ca56850d4cd6b3319e541aee',1,'raylib::core::Keyboard']]],
-  ['qsort_2259',['qsort',['http://en.cppreference.com/w/cpp/algorithm/qsort.html',1,'std']]],
-  ['queue_2260',['queue',['http://en.cppreference.com/w/cpp/container/queue.html',1,'std::queue'],['http://en.cppreference.com/w/cpp/header/queue.html',1,'(Global Namespace)'],['http://en.cppreference.com/w/cpp/container/queue/queue.html',1,'std::queue::queue()']]],
-  ['queue_3c_20gameaction_20_3e_2261',['queue&lt; GameAction &gt;',['http://en.cppreference.com/w/cpp/container/queue.html',1,'std']]],
-  ['quick_5fexit_2262',['quick_exit',['http://en.cppreference.com/w/cpp/utility/program/quick_exit.html',1,'std']]],
-  ['quiet_5fnan_2263',['quiet_NaN',['http://en.cppreference.com/w/cpp/types/numeric_limits/quiet_NaN.html',1,'std::numeric_limits']]],
-  ['quot_2264',['quot',['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::div_t::quot()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::imaxdiv_t::quot()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::ldiv_t::quot()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::lldiv_t::quot()']]],
-  ['quoted_2265',['quoted',['http://en.cppreference.com/w/cpp/io/manip/quoted.html',1,'std']]]
+  ['q_2274',['Q',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90af09564c9ca56850d4cd6b3319e541aee',1,'raylib::core::Keyboard']]],
+  ['qsort_2275',['qsort',['http://en.cppreference.com/w/cpp/algorithm/qsort.html',1,'std']]],
+  ['queue_2276',['queue',['http://en.cppreference.com/w/cpp/container/queue.html',1,'std::queue'],['http://en.cppreference.com/w/cpp/header/queue.html',1,'(Global Namespace)'],['http://en.cppreference.com/w/cpp/container/queue/queue.html',1,'std::queue::queue()']]],
+  ['queue_3c_20gameaction_20_3e_2277',['queue&lt; GameAction &gt;',['http://en.cppreference.com/w/cpp/container/queue.html',1,'std']]],
+  ['quick_5fexit_2278',['quick_exit',['http://en.cppreference.com/w/cpp/utility/program/quick_exit.html',1,'std']]],
+  ['quiet_5fnan_2279',['quiet_NaN',['http://en.cppreference.com/w/cpp/types/numeric_limits/quiet_NaN.html',1,'std::numeric_limits']]],
+  ['quot_2280',['quot',['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::div_t::quot()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::imaxdiv_t::quot()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::ldiv_t::quot()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::lldiv_t::quot()']]],
+  ['quoted_2281',['quoted',['http://en.cppreference.com/w/cpp/io/manip/quoted.html',1,'std']]]
 ];

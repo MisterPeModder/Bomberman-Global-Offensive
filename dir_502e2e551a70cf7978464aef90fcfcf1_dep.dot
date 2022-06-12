@@ -7,5 +7,5 @@ digraph "src/localization" {
   dir_502e2e551a70cf7978464aef90fcfcf1 [shape=box, label="localization", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_502e2e551a70cf7978464aef90fcfcf1.html"];
   }
   dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [shape=box label="logger" URL="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html"];
-  dir_502e2e551a70cf7978464aef90fcfcf1->dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [headlabel="1", labeldistance=1.5 headhref="dir_000020_000021.html"];
+  dir_502e2e551a70cf7978464aef90fcfcf1->dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [headlabel="1", labeldistance=1.5 headhref="dir_000021_000022.html"];
 }

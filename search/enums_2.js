@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cameramode_7169',['CameraMode',['../classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5',1,'raylib::core::Camera3D']]],
-  ['color_7170',['Color',['../class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5',1,'Logger']]]
+  ['cameramode_7205',['CameraMode',['../classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5',1,'raylib::core::Camera3D']]],
+  ['color_7206',['Color',['../class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5',1,'Logger']]]
 ];

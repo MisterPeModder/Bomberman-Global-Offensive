@@ -45,5 +45,7 @@ digraph "src/raylib/shapes/AShape.hpp"
   Node1 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node19 [label="src/raylib/shapes/Sphere.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sphere_8hpp.html",tooltip=" "];
   Node19 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node20 [label="src/raylib/shapes/Sphere.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sphere_8cpp.html",tooltip=" "];
+  Node20 [label="src/game/systems/Bomb.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$systems_2_bomb_8cpp.html",tooltip=" "];
+  Node19 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="src/raylib/shapes/Sphere.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_sphere_8cpp.html",tooltip=" "];
 }
