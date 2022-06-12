@@ -56,7 +56,6 @@ namespace game::components
                 continue;
 
             if (living) {
-                explodeLiving(pos, size, roundedPos2D, explodedPositions);
                 Logger::logger.log(Logger::Severity::Debug, "Living entity hit by a bomb"); // living->hp--;
             }
             if (destructible) {
@@ -71,31 +70,36 @@ namespace game::components
     bool Bomb::explodeLiving(raylib::core::Vector3f pos, raylib::core::Vector3f size,
         raylib::core::Vector2u roundedPos2D, const std::vector<raylib::core::Vector2u> &explodedPositions) const
     {
-        static float limit = 0.45f;
+        /// Signed delta between the entity position and its main cell center.
         raylib::core::Vector2f centerDelta = {
             pos.x - static_cast<float>(roundedPos2D.x), pos.z - static_cast<float>(roundedPos2D.y)};
-        raylib::core::Vector2f overtake = {abs(centerDelta.x) + size.x * 0.5f, abs(centerDelta.y) + size.z * 0.5f};
+        /// Unsigned distance from the cell center to the opposite side of the entity (furthest from the center)
+        raylib::core::Vector2f centerDistance = {
+            abs(centerDelta.x) + size.x * 0.5f, abs(centerDelta.y) + size.z * 0.5f};
 
+        ///// Allow debug logs to adjust the limit
+        // if (centerDistance.x < 0.5f && centerDistance.y < 0.5f)
+        //     return false;
         // Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
-        //     out << "Living delta  (" << roundedPos2D.x << ", " << roundedPos2D.y << ") - (" << pos.x << ", " << pos.z
-        //         << ") = (" << centerDelta.x << ", " << centerDelta.y << ") : overtake of (" << overtake.x << ", "
-        //         << overtake.y << ")";
+        //     out << "Living overtake an adjacent cell of (" << (centerDistance.x - 0.5f) / size.x << "%, "
+        //         << (centerDistance.y - 0.5f) / size.z << "%)";
         // });
 
-        if (overtake.x < 0.5f && overtake.y < 0.5f)
+        /// (centerDistance.x - 0.5f) is the distance overtaking on the next cell since the distance from the center of
+        /// the cell to the start of an other is 0.5f (all cells are of size {1, 1})
+        /// We compare it with a % of the entity size to detect wether it is on the cell or not.
+        if ((centerDistance.x - 0.5f) < size.x * LivingEntityExplodeLimit
+            && (centerDistance.y - 0.5f) < size.z * LivingEntityExplodeLimit)
             return false;
-        // Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
-        //     out << "Living overtake the cell (" << (overtake.x - 0.5f) / size.x << "%, " << (overtake.y - 0.5f) /
-        //     size.z
-        //         << ")";
-        // });
 
-        if ((overtake.x - 0.5f) < size.x * limit && (overtake.y - 0.5f) < size.z * limit)
-            return false;
-        // raylib::core::Vector2u otherPos;
+        /// Other cell pos
+        raylib::core::Vector2u adjacentCell = roundedPos2D;
 
-        Logger::logger.log(Logger::Severity::Debug, [&](auto &out) { out << "Living might be in an other cell"; });
+        if (abs(centerDelta.x) > abs(centerDelta.y))
+            adjacentCell.x += std::copysign(1, centerDelta.x);
+        else
+            adjacentCell.y += std::copysign(1, centerDelta.y);
 
-        return false;
+        return std::find(explodedPositions.begin(), explodedPositions.end(), adjacentCell) != explodedPositions.end();
     }
 } // namespace game::components
