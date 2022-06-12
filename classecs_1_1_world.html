@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa1222e462fa0cfa6944cc92c0238afe7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceecs.html#ab50f8e89b62b0793f0e907d669876a0d">getStorageType</a>&lt; C &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_world.html#aa1222e462fa0cfa6944cc92c0238afe7">addStorage</a> ()</td></tr>
 <tr class="memdesc:aa1222e462fa0cfa6944cc92c0238afe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a component's storage.  <a href="classecs_1_1_world.html#aa1222e462fa0cfa6944cc92c0238afe7">More...</a><br /></td></tr>
 <tr class="separator:aa1222e462fa0cfa6944cc92c0238afe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a032c3a0397ba8e1b46ccec9cc0ef56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_world.html#a7a032c3a0397ba8e1b46ccec9cc0ef56">clear</a> ()</td></tr>
+<tr class="memdesc:a7a032c3a0397ba8e1b46ccec9cc0ef56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all registered resources, systems, and entities.  <a href="classecs_1_1_world.html#a7a032c3a0397ba8e1b46ccec9cc0ef56">More...</a><br /></td></tr>
+<tr class="separator:a7a032c3a0397ba8e1b46ccec9cc0ef56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0015fa0624f4eeaa5178d189bf5e233b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_world.html#a0015fa0624f4eeaa5178d189bf5e233b">runSystems</a> ()</td></tr>
 <tr class="memdesc:a0015fa0624f4eeaa5178d189bf5e233b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs all systems in this world.  <a href="classecs_1_1_world.html#a0015fa0624f4eeaa5178d189bf5e233b">More...</a><br /></td></tr>
 <tr class="separator:a0015fa0624f4eeaa5178d189bf5e233b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -436,6 +439,33 @@ template&lt;std::derived_from&lt; System &gt; S, typename... Args&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a7a032c3a0397ba8e1b46ccec9cc0ef56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a032c3a0397ba8e1b46ccec9cc0ef56">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::World::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes all registered resources, systems, and entities. </p>
+
+<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00032">32</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        this-&gt;<a class="code" href="classecs_1_1_world.html#acd28a7d7011938f2aac2cb39d14dc999">_resources</a>.clear();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        this-&gt;<a class="code" href="classecs_1_1_world.html#aa94905344ab439fcf73009c5e82791fd">_systems</a>.clear();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        this-&gt;<a class="code" href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">_storages</a>.clear();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        this-&gt;addResource&lt;Entities&gt;();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ad2291354377f36b17edca160ce05d749"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2291354377f36b17edca160ce05d749">&#9670;&nbsp;</a></span>getResource() <span class="overload">[1/2]</span></h2>
 
@@ -476,10 +506,10 @@ template&lt;std::derived_from&lt; Resource &gt; R&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00182">182</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        {</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world.html#acd28a7d7011938f2aac2cb39d14dc999">_resources</a>.get&lt;R&gt;((<span class="stringliteral">&quot;attempted to access unregistered resource instance&quot;</span>));</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00185">185</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world.html#acd28a7d7011938f2aac2cb39d14dc999">_resources</a>.get&lt;R&gt;((<span class="stringliteral">&quot;attempted to access unregistered resource instance&quot;</span>));</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -523,10 +553,10 @@ template&lt;std::derived_from&lt; Resource &gt; R&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00170">170</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world.html#acd28a7d7011938f2aac2cb39d14dc999">_resources</a>.get&lt;R&gt;((<span class="stringliteral">&quot;attempted to access unregistered resource instance&quot;</span>));</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00173">173</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world.html#acd28a7d7011938f2aac2cb39d14dc999">_resources</a>.get&lt;R&gt;((<span class="stringliteral">&quot;attempted to access unregistered resource instance&quot;</span>));</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -570,10 +600,10 @@ template&lt;std::derived_from&lt; Component &gt; C&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00206">206</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        {</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;(<span class="stringliteral">&quot;attempted to access unregistered storage&quot;</span>);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00209">209</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;(<span class="stringliteral">&quot;attempted to access unregistered storage&quot;</span>);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -617,10 +647,10 @@ template&lt;std::derived_from&lt; Component &gt; C&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00194">194</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;(<span class="stringliteral">&quot;attempted to access unregistered storage&quot;</span>);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00197">197</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">_storages</a>.get&lt;getStorageType&lt;C&gt;&gt;(<span class="stringliteral">&quot;attempted to access unregistered storage&quot;</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -657,10 +687,10 @@ template&lt;std::derived_from&lt; System &gt; S&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00152">152</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            this-&gt;<a class="code" href="classecs_1_1_world.html#ade5f2efe02c5b1473f2559131e8b433d">runSystem</a>(this-&gt;<a class="code" href="classecs_1_1_world.html#aa94905344ab439fcf73009c5e82791fd">_systems</a>.get&lt;S&gt;(<span class="stringliteral">&quot;tried to run unregistered system&quot;</span>));</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00155">155</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            this-&gt;<a class="code" href="classecs_1_1_world.html#ade5f2efe02c5b1473f2559131e8b433d">runSystem</a>(this-&gt;<a class="code" href="classecs_1_1_world.html#aa94905344ab439fcf73009c5e82791fd">_systems</a>.get&lt;S&gt;(<span class="stringliteral">&quot;tried to run unregistered system&quot;</span>));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -690,8 +720,8 @@ template&lt;std::derived_from&lt; System &gt; S&gt; </div>
 
 <p>non template version of runSystem. </p>
 
-<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00042">42</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{ <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>.run(SystemData(*<span class="keyword">this</span>)); }</div>
+<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00050">50</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{ <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>.run(SystemData(*<span class="keyword">this</span>)); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -712,11 +742,11 @@ template&lt;std::derived_from&lt; System &gt; S&gt; </div>
 
 <p>Runs all systems in this world. </p>
 
-<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00036">36</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[type, system] : this-&gt;<a class="code" href="classecs_1_1_world.html#aa94905344ab439fcf73009c5e82791fd">_systems</a>.getInner())</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>-&gt;run(SystemData(*<span class="keyword">this</span>));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00044">44</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[type, system] : this-&gt;<a class="code" href="classecs_1_1_world.html#aa94905344ab439fcf73009c5e82791fd">_systems</a>.getInner())</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/program/system.html">system</a>-&gt;run(SystemData(*<span class="keyword">this</span>));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -741,7 +771,7 @@ template&lt;std::derived_from&lt; System &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00213">213</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00216">216</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
 
 </div>
 </div>
@@ -765,7 +795,7 @@ template&lt;std::derived_from&lt; System &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00215">215</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00218">218</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
 
 </div>
 </div>
@@ -789,7 +819,7 @@ template&lt;std::derived_from&lt; System &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00214">214</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00217">217</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
 
 </div>
 </div>
@@ -813,7 +843,7 @@ template&lt;std::derived_from&lt; System &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00221">221</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="world_2_world_8hpp_source.html#l00224">224</a> of file <a class="el" href="world_2_world_8hpp_source.html">World.hpp</a>.</p>
 
 </div>
 </div>
@@ -823,12 +853,12 @@ template&lt;std::derived_from&lt; System &gt; S&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecs_1_1_world_html_a6918998039c133eda650f8873065b528"><div class="ttname"><a href="classecs_1_1_world.html#a6918998039c133eda650f8873065b528">ecs::World::EntityBuilder</a></div><div class="ttdeci">friend EntityBuilder</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00221">World.hpp:221</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_a6918998039c133eda650f8873065b528"><div class="ttname"><a href="classecs_1_1_world.html#a6918998039c133eda650f8873065b528">ecs::World::EntityBuilder</a></div><div class="ttdeci">friend EntityBuilder</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00224">World.hpp:224</a></div></div>
 <div class="ttc" id="asystem_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/program/system.html">std::system</a></div><div class="ttdeci">T system(T... args)</div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_a81375a1a8089f51f56205c44cd13fb0b"><div class="ttname"><a href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">ecs::World::_storages</a></div><div class="ttdeci">Instances&lt; Storage &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00215">World.hpp:215</a></div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_ade5f2efe02c5b1473f2559131e8b433d"><div class="ttname"><a href="classecs_1_1_world.html#ade5f2efe02c5b1473f2559131e8b433d">ecs::World::runSystem</a></div><div class="ttdeci">void runSystem()</div><div class="ttdoc">Run a specific system, useful if you want to run to time/resource-intensive system separately.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00152">World.hpp:152</a></div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_acd28a7d7011938f2aac2cb39d14dc999"><div class="ttname"><a href="classecs_1_1_world.html#acd28a7d7011938f2aac2cb39d14dc999">ecs::World::_resources</a></div><div class="ttdeci">Instances&lt; Resource &gt; _resources</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00213">World.hpp:213</a></div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_aa94905344ab439fcf73009c5e82791fd"><div class="ttname"><a href="classecs_1_1_world.html#aa94905344ab439fcf73009c5e82791fd">ecs::World::_systems</a></div><div class="ttdeci">Instances&lt; System &gt; _systems</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00214">World.hpp:214</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_a81375a1a8089f51f56205c44cd13fb0b"><div class="ttname"><a href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">ecs::World::_storages</a></div><div class="ttdeci">Instances&lt; Storage &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00218">World.hpp:218</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_ade5f2efe02c5b1473f2559131e8b433d"><div class="ttname"><a href="classecs_1_1_world.html#ade5f2efe02c5b1473f2559131e8b433d">ecs::World::runSystem</a></div><div class="ttdeci">void runSystem()</div><div class="ttdoc">Run a specific system, useful if you want to run to time/resource-intensive system separately.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00155">World.hpp:155</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_acd28a7d7011938f2aac2cb39d14dc999"><div class="ttname"><a href="classecs_1_1_world.html#acd28a7d7011938f2aac2cb39d14dc999">ecs::World::_resources</a></div><div class="ttdeci">Instances&lt; Resource &gt; _resources</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00216">World.hpp:216</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_aa94905344ab439fcf73009c5e82791fd"><div class="ttname"><a href="classecs_1_1_world.html#aa94905344ab439fcf73009c5e82791fd">ecs::World::_systems</a></div><div class="ttdeci">Instances&lt; System &gt; _systems</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00217">World.hpp:217</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

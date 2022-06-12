@@ -131,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9c5a4b528b540f1a0ea021eb3509e2a4"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; Base &gt; Value&gt; </td></tr>
 <tr class="memitem:a9c5a4b528b540f1a0ea021eb3509e2a4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_instances.html#a9c5a4b528b540f1a0ea021eb3509e2a4">contains</a> ()</td></tr>
 <tr class="separator:a9c5a4b528b540f1a0ea021eb3509e2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a9f0cf806d3323822f2d0df08a7f64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_instances.html#a96a9f0cf806d3323822f2d0df08a7f64">clear</a> ()</td></tr>
+<tr class="memdesc:a96a9f0cf806d3323822f2d0df08a7f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all stored instances.  <a href="classecs_1_1_instances.html#a96a9f0cf806d3323822f2d0df08a7f64">More...</a><br /></td></tr>
+<tr class="separator:a96a9f0cf806d3323822f2d0df08a7f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -211,6 +214,38 @@ template&lt;typename Base &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a96a9f0cf806d3323822f2d0df08a7f64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a9f0cf806d3323822f2d0df08a7f64">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classecs_1_1_instances.html">ecs::Instances</a>&lt; Base &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes all stored instances. </p>
+
+<p class="definition">Definition at line <a class="el" href="_instances_8hpp_source.html#l00112">112</a> of file <a class="el" href="_instances_8hpp_source.html">Instances.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_instances.html#a02f13c11c88ae2672bb9c70cc0ede987">_inner</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/unordered_map/clear.html">clear</a>(); }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a9c5a4b528b540f1a0ea021eb3509e2a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9c5a4b528b540f1a0ea021eb3509e2a4">&#9670;&nbsp;</a></span>contains()</h2>
 
@@ -555,7 +590,7 @@ template&lt;typename Base &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_instances_8hpp_source.html#l00112">112</a> of file <a class="el" href="_instances_8hpp_source.html">Instances.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_instances_8hpp_source.html#l00115">115</a> of file <a class="el" href="_instances_8hpp_source.html">Instances.hpp</a>.</p>
 
 </div>
 </div>
@@ -567,11 +602,12 @@ template&lt;typename Base &gt; </div>
 <div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/find.html">std::unordered_map::find</a></div><div class="ttdeci">T find(T... args)</div></div>
 <div class="ttc" id="aemplace_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/emplace.html">std::unordered_map::emplace</a></div><div class="ttdeci">T emplace(T... args)</div></div>
 <div class="ttc" id="atype_index_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/type_index.html">std::type_index</a></div></div>
+<div class="ttc" id="aclear_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/clear.html">std::unordered_map::clear</a></div><div class="ttdeci">T clear(T... args)</div></div>
 <div class="ttc" id="acontains_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/contains.html">std::unordered_map::contains</a></div><div class="ttdeci">T contains(T... args)</div></div>
 <div class="ttc" id="alogic_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></div></div>
 <div class="ttc" id="amake_pair_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a></div><div class="ttdeci">T make_pair(T... args)</div></div>
 <div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/unordered_map/end.html">std::unordered_map::end</a></div><div class="ttdeci">T end(T... args)</div></div>
-<div class="ttc" id="aclassecs_1_1_instances_html_a02f13c11c88ae2672bb9c70cc0ede987"><div class="ttname"><a href="classecs_1_1_instances.html#a02f13c11c88ae2672bb9c70cc0ede987">ecs::Instances::_inner</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::unique_ptr&lt; Base &gt; &gt; _inner</div><div class="ttdef"><b>Definition:</b> <a href="_instances_8hpp_source.html#l00112">Instances.hpp:112</a></div></div>
+<div class="ttc" id="aclassecs_1_1_instances_html_a02f13c11c88ae2672bb9c70cc0ede987"><div class="ttname"><a href="classecs_1_1_instances.html#a02f13c11c88ae2672bb9c70cc0ede987">ecs::Instances::_inner</a></div><div class="ttdeci">std::unordered_map&lt; std::type_index, std::unique_ptr&lt; Base &gt; &gt; _inner</div><div class="ttdef"><b>Definition:</b> <a href="_instances_8hpp_source.html#l00115">Instances.hpp:115</a></div></div>
 <div class="ttc" id="aunique_ptr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

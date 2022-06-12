@@ -8,6 +8,7 @@ var classecs_1_1_world =
     [ "addResource", "classecs_1_1_world.html#a35d2aabad3acb861b98122430c89d52e", null ],
     [ "addStorage", "classecs_1_1_world.html#aa1222e462fa0cfa6944cc92c0238afe7", null ],
     [ "addSystem", "classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781", null ],
+    [ "clear", "classecs_1_1_world.html#a7a032c3a0397ba8e1b46ccec9cc0ef56", null ],
     [ "getResource", "classecs_1_1_world.html#ad2291354377f36b17edca160ce05d749", null ],
     [ "getResource", "classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a", null ],
     [ "getStorage", "classecs_1_1_world.html#ac134d76d91d87b31b1aa87b2755d16e3", null ],

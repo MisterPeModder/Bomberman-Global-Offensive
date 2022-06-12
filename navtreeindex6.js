@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"storage_2_storage_8hpp.html":[3,0,0,0,2,2],
+"storage_2_storage_8hpp.html#a5081c2ba8fc64b28d27cdf3d74ffa960":[3,0,0,0,2,2,4],
 "storage_2_storage_8hpp.html#ab50f8e89b62b0793f0e907d669876a0d":[3,0,0,0,2,2,5],
 "storage_2_storage_8hpp.html#adedda4627cdd9e569979a7d60d21bbcc":[3,0,0,0,2,2,6],
 "storage_2_storage_8hpp_source.html":[3,0,0,0,2,2],
