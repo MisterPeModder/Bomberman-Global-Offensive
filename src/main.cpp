@@ -10,7 +10,7 @@
 #include <memory>
 #include "ecs/World.hpp"
 #include "localization/Localization.hpp"
-#include "localization/Ressources.hpp"
+#include "localization/Resources.hpp"
 #include "logger/Logger.hpp"
 
 #include "game/gui/components/Widget.hpp"
@@ -60,7 +60,6 @@ static void runGame()
 {
     auto params = new Params();
 
-    params->world.addStorage<game::gui::Widget>();
     // params->game.setup(params->camera);
     game::Worlds::loadGameWorld(params->game, params->camera);
 

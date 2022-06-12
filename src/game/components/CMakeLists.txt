@@ -3,6 +3,8 @@ set(SRCROOT ${SRCROOT}/components)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/Bomb.cpp
+    ${SRCROOT}/Bomb.hpp
     ${SRCROOT}/Collidable.hpp
     ${SRCROOT}/Controlable.hpp
     ${SRCROOT}/Textual.hpp
@@ -19,6 +21,7 @@ set(SRC
     ${INCROOT}/Rectangle.hpp
     ${SRCROOT}/Velocity.hpp
     ${SRCROOT}/Living.hpp
+    ${SRCROOT}/Player.cpp
     ${SRCROOT}/Destructible.hpp
     ${SRCROOT}/Cube.hpp
     ${SRCROOT}/CubeColor.hpp

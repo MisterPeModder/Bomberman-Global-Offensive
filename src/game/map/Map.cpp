@@ -6,7 +6,7 @@
 */
 
 #include "Map.hpp"
-#include <iostream>
+#include <algorithm>
 #include <random>
 #include "cellular/Grid.hpp"
 
@@ -62,6 +62,50 @@ namespace game
         {
             return {(static_cast<unsigned int>(playerId) % 2) * (_size.x - 1),
                 (static_cast<unsigned int>(playerId) / 2) * (_size.y - 1)};
+        }
+
+        void Map::fillExplodedPositions(std::vector<Vector2u> &explodePositions, Vector2u center, size_t radius)
+        {
+            center = {std::clamp(center.x, 0u, _size.x - 1), std::clamp(center.y, 0u, _size.y - 1)};
+            std::array<bool, 4> blocked;
+            Vector2u current;
+            int validWays = 4;
+
+            blocked.fill(false);
+            explodePositions.push_back(center);
+            for (unsigned int i = 1; i < radius + 1 && validWays > 0; i++) {
+                for (size_t j = 0; j < 4; j++) {
+                    if (blocked[j])
+                        continue;
+                    bool valid = false;
+
+                    switch (j) {
+                        case 0:
+                            current = {center.x - i, center.y};
+                            valid = current.x < _size.x;
+                            break;
+                        case 1:
+                            current = {center.x + i, center.y};
+                            valid = current.x < _size.x;
+                            break;
+                        case 2:
+                            current = {center.x, center.y - i};
+                            valid = current.y < _size.y;
+                            break;
+                        case 3:
+                            current = {center.x, center.y + i};
+                            valid = current.y < _size.y;
+                            break;
+                        default: break;
+                    }
+                    /// Out of bounds or indestructible wall
+                    if (!valid || getElement(current) == Element::Wall) {
+                        blocked[j] = true;
+                        validWays--;
+                    } else
+                        explodePositions.push_back(current);
+                }
+            }
         }
 
         void Map::freeCorners()

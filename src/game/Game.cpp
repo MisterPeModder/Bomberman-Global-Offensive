@@ -6,33 +6,33 @@
 */
 
 #include "Game.hpp"
+#include <cmath>
 #include "ecs/resource/Timer.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Vector3.hpp"
 #include "raylib/core/scoped.hpp"
-#include "game/worlds/Worlds.hpp"
 
-#include "game/components/Collidable.hpp"
-#include "game/components/Controlable.hpp"
-#include "game/components/Cube.hpp"
-#include "game/components/CubeColor.hpp"
-#include "game/components/Destructible.hpp"
-#include "game/components/Living.hpp"
-#include "game/components/Position.hpp"
-#include "game/components/Velocity.hpp"
-#include "game/components/Cube.hpp"
-#include "game/components/Rectangle.hpp"
-#include "game/components/RotationAngle.hpp"
-#include "game/components/RotationAxis.hpp"
+#include "resources/Map.hpp"
 
-#include "game/systems/Cube.hpp"
-#include "game/systems/Model.hpp"
-#include "game/systems/ChangeCube.hpp"
-#include "game/systems/Collision.hpp"
-#include "game/systems/DrawingCube.hpp"
-#include "game/systems/InputManager.hpp"
-#include "game/systems/Movement.hpp"
+#include "components/Bomb.hpp"
+#include "components/Collidable.hpp"
+#include "components/Controlable.hpp"
+#include "components/Cube.hpp"
+#include "components/CubeColor.hpp"
+#include "components/Destructible.hpp"
+#include "components/Living.hpp"
+#include "components/Player.hpp"
+#include "components/Position.hpp"
+#include "components/Velocity.hpp"
+#include "gui/components/Widget.hpp"
+
+#include "systems/Bomb.hpp"
+#include "systems/ChangeCube.hpp"
+#include "systems/Collision.hpp"
+#include "systems/DrawingCube.hpp"
+#include "systems/InputManager.hpp"
+#include "systems/Movement.hpp"
 
 namespace game
 {
@@ -52,15 +52,21 @@ namespace game
         camera.setFovY(75.0f);            // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);
 
-        /// Add world ressources
+        /// Add world resources
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
+        _world.addResource<resources::Map>(_map);
+        /// Add world storages
+        _world.addStorage<components::Bomb>();
+        _world.addStorage<game::gui::Widget>();
         /// Add world systems
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::ChangeCube>();
         _world.addSystem<systems::DrawingCube>();
         _world.addSystem<systems::Movement>();
         _world.addSystem<systems::Collision>();
+        _world.addSystem<systems::DrawBomb>();
+        _world.addSystem<systems::ExplodeBomb>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
@@ -75,38 +81,7 @@ namespace game
                 .with<components::Cube>()
                 .with<components::Size>(0.7f, 2.f, 0.7f)
                 .with<components::CubeColor>(raylib::core::Color::RED)
-                .with<components::Controlable>(owner,
-                    [this](ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event) {
-                        (void)data;
-                        if (isMoveAction(event.action)) {
-                            auto &velocity = _world.getStorage<components::Velocity>()[self.getId()];
-                            auto &user = _world.getResource<Users>()[event.user];
-                            GameAction bestAction = GameAction::NONE;
-                            float value = 0.f;
-                            float speed = 4.f;
-
-                            for (size_t j = static_cast<size_t>(GameAction::MOVE_LEFT);
-                                 j <= static_cast<size_t>(GameAction::MOVE_DOWN); j++) {
-                                GameAction current = static_cast<GameAction>(j);
-                                if (user.getActionValue(current) > value) {
-                                    bestAction = current;
-                                    value = user.getActionValue(current);
-                                }
-                            }
-                            if (value < 0.2f)
-                                velocity = {0.f, 0.f};
-                            else
-                                switch (bestAction) {
-                                    case GameAction::MOVE_LEFT: velocity = {-speed, 0.f, 0.f}; break;
-                                    case GameAction::MOVE_UP: velocity = {0.f, 0.f, -speed}; break;
-                                    case GameAction::MOVE_RIGHT: velocity = {speed, 0.f, 0.f}; break;
-                                    case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, speed}; break;
-                                    default: break;
-                                }
-                            return true;
-                        }
-                        return false;
-                    })
+                .with<components::Controlable>(owner, components::Player::handleActionEvent)
                 .build();
         }
 

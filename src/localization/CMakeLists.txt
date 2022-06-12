@@ -5,11 +5,11 @@ set(SRC
 	${SRC}
 	${SRCROOT}/Localization.cpp
 	${SRCROOT}/Localization.hpp
-	${SRCROOT}/RessourceFile.cpp
-	${SRCROOT}/RessourceFile.hpp
-	${SRCROOT}/Ressources.hpp
-	${SRCROOT}/RessourceString.cpp
-	${SRCROOT}/RessourceString.hpp
+	${SRCROOT}/ResourceFile.cpp
+	${SRCROOT}/ResourceFile.hpp
+	${SRCROOT}/Resources.hpp
+	${SRCROOT}/ResourceString.cpp
+	${SRCROOT}/ResourceString.hpp
 	PARENT_SCOPE
 )
 

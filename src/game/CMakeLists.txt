@@ -5,6 +5,7 @@ add_subdirectory(components)
 add_subdirectory(map)
 add_subdirectory(settings)
 add_subdirectory(systems)
+add_subdirectory(resources)
 add_subdirectory(gui)
 add_subdirectory(worlds)
 
