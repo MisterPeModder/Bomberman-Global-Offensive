@@ -3,12 +3,12 @@ set(SRCROOT ${SRCROOT}/worlds)
 
 set (SRC
 	${SRC}
-	${SRCROOT}/GameWorld.cpp
-	${SRCROOT}/MainWorld.cpp
-	${SRCROOT}/SettingsWorld.cpp
-	${SRCROOT}/SplashWorld.cpp
-	${SRCROOT}/TestWorld.cpp
-	${SRCROOT}/Worlds.hpp
+	${SRCROOT}/GameWorld.hpp
+	# ${SRCROOT}/MainWorld.hpp
+	# ${SRCROOT}/SettingsWorld.hpp
+	# ${SRCROOT}/SplashWorld.hpp
+	# ${SRCROOT}/TestWorld.hpp
+	${SRCROOT}/IWorld.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS

@@ -21,7 +21,8 @@
 #include "script/Engine.hpp"
 
 #include "game/Game.hpp"
-#include "game/worlds/Worlds.hpp"
+#include "game/worlds/IWorld.hpp"
+#include "game/worlds/GameWorld.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -43,7 +44,15 @@ static void drawFrame(void *args)
     Params *params = reinterpret_cast<Params *>(args);
 
     params->camera.update();
-    params->game.drawFrame(params->camera);
+    
+    raylib::core::scoped::Drawing drawing;
+    raylib::core::Window::clear();
+    {
+        raylib::core::scoped::Mode3D mode3D(params->camera);
+        params->world.runSystems();
+    };
+    raylib::core::Window::drawFPS(10, 10);
+    // params->game.drawFrame(params->camera);
 }
 
 static void setupLogger()
@@ -60,8 +69,11 @@ static void runGame()
 {
     auto params = new Params();
 
+    game::GameWorld gameWorld(params->world);
+    gameWorld.setCamera(params->camera);
+
     // params->game.setup(params->camera);
-    game::Worlds::loadGameWorld(params->game, params->camera);
+    // game::Worlds::loadGameWorld(params->game, params->camera);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
