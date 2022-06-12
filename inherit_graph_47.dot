@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="raylib::core::scoped\l::AudioDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1core_1_1scoped_1_1_audio_device.html",tooltip="Setup/End audio device."];
+  Node0 [label="raylib::core::Mouse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1core_1_1_mouse.html",tooltip="The mouse static class that will manage the raylib mouse."];
 }

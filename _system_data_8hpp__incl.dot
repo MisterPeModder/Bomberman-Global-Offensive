@@ -53,7 +53,6 @@ digraph "src/ecs/system/SystemData.hpp"
   Node15 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node19 [label="ecs/system/System.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$system_2_system_8hpp.html",tooltip=" "];
-  Node19 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node20 [label="ecs/world/Instances.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_instances_8hpp.html",tooltip=" "];
   Node20 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -135,6 +135,7 @@ var hierarchy =
       [ "systems::DrawModel", "structsystems_1_1_draw_model.html", null ]
     ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
+    [ "ecs::SystemTag", "classecs_1_1_system_tag.html", null ],
     [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "Texture2D", null, [
       [ "game::Texture2D", "structgame_1_1_texture2_d.html", null ]

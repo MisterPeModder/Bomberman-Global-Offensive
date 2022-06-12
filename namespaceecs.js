@@ -19,6 +19,7 @@ var namespaceecs =
     [ "Storage", "classecs_1_1_storage.html", "classecs_1_1_storage" ],
     [ "System", "classecs_1_1_system.html", "classecs_1_1_system" ],
     [ "SystemData", "classecs_1_1_system_data.html", "classecs_1_1_system_data" ],
+    [ "SystemTag", "classecs_1_1_system_tag.html", "classecs_1_1_system_tag" ],
     [ "Timer", "classecs_1_1_timer.html", "classecs_1_1_timer" ],
     [ "World", "classecs_1_1_world.html", "classecs_1_1_world" ]
 ];
