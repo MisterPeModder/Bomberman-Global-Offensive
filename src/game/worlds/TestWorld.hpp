@@ -10,15 +10,13 @@
 
 #include "ecs/World.hpp"
 #include "game/worlds/AWorld.hpp"
-#include "raylib/core/Camera3D.hpp"
 
 namespace game
 {
     class TestWorld : public AWorld {
       public:
         TestWorld(ecs::World &world);
-        ~TestWorld();
     };
 } // namespace game
 
-#endif /* !TESTWORLD_HPP_ */
+#endif /* !GAME_WORLD_TESTWORLD_HPP_ */
