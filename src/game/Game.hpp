@@ -8,6 +8,7 @@
 #ifndef GAME_GAME_HPP_
 #define GAME_GAME_HPP_
 
+#include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "map/Map.hpp"
 #include "raylib/core/Camera3D.hpp"
@@ -64,6 +65,10 @@ namespace game
         void drawFrame(const raylib::core::Camera3D &camera);
 
       private:
+        ecs::SystemTag _drawing;
+        ecs::SystemTag _handleInputs;
+        ecs::SystemTag _update;
+        ecs::SystemTag _resolveCollisions;
         ecs::World &_world;
         map::Map _map;
         Parameters _params;
