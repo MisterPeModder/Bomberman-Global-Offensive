@@ -15,20 +15,21 @@
 #include "game/systems/Cube.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/Model.hpp"
+#include "game/worlds/Worlds.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Color.hpp"
 #include "util/util.hpp"
 
 namespace game
 {
-    void Game::loadSplashWorld()
+    void Worlds::loadSplashWorld(ecs::World &world)
     {
         static const std::filesystem::path testModelPath =
             util::makePath("assets", "models", "player", "raylibguy.iqm");
 
-        _world.addSystem<game::systems::DrawModel>();
+        world.addSystem<game::systems::DrawModel>();
 
-        _world.addEntity()
+        world.addEntity()
             .with<game::components::Model>(testModelPath)
             .with<game::components::Position>(-5.f, -2.f, -5.f)
             .with<game::components::Size>(1.f, 0.5f, 0.5f)
@@ -36,7 +37,7 @@ namespace game
             .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
             .with<game::components::Color>(raylib::core::Color::PURPLE)
             .build();
-        _world.addEntity()
+        world.addEntity()
             .with<game::components::Model>(testModelPath)
             .with<game::components::Position>(-5.f, -2.f, 5.f)
             .with<game::components::Size>(1.f, 0.5f, 0.5f)
@@ -44,7 +45,7 @@ namespace game
             .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
             .with<game::components::Color>(raylib::core::Color::BROWN)
             .build();
-        _world.addEntity()
+        world.addEntity()
             .with<game::components::Model>(testModelPath)
             .with<game::components::Position>(5.f, -2.f, -5.f)
             .with<game::components::Size>(1.f, 0.5f, 0.5f)
@@ -52,7 +53,7 @@ namespace game
             .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
             .with<game::components::Color>(raylib::core::Color::DARK_GREEN)
             .build();
-        _world.addEntity()
+        world.addEntity()
             .with<game::components::Model>(testModelPath)
             .with<game::components::Position>(5.f, -2.f, 5.f)
             .with<game::components::Size>(1.f, 0.5f, 0.5f)

@@ -63,12 +63,6 @@ namespace game
         ///
         void drawFrame(const raylib::core::Camera3D &camera);
 
-        void loadGameWorld();
-        void loadSplashWorld();
-        void loadMainWorld();
-        void loadSettingsWorld();
-        void loadTestWorld();
-
       private:
         ecs::World &_world;
         map::Map _map;

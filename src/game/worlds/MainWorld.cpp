@@ -15,20 +15,21 @@
 #include "game/systems/Cube.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/Model.hpp"
+#include "game/worlds/Worlds.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Color.hpp"
 #include "util/util.hpp"
 
 namespace game
 {
-    void Game::loadMainWorld()
+    void Worlds::loadMainWorld(ecs::World &world)
     {
         static const std::filesystem::path testModelPath =
             util::makePath("assets", "models", "player", "raylibguy.iqm");
 
-        _world.addSystem<game::systems::DrawModel>();
+        world.addSystem<game::systems::DrawModel>();
 
-        _world.addEntity()
+        world.addEntity()
             .with<game::components::Model>(testModelPath)
             .with<game::components::Position>(0, -2, 0)
             .with<game::components::Size>(0.5f, 0.5f, 0.5f)

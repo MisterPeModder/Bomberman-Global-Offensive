@@ -30,6 +30,7 @@
 #include "game/systems/DrawText.hpp"
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
+#include "game/worlds/Worlds.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Audio.hpp"
 #include "raylib/core/Color.hpp"
@@ -108,10 +109,10 @@ static void addTestWidgets(ecs::World &world)
 
 namespace game
 {
-    void Game::loadTestWorld()
+    void Worlds::loadTestWorld(ecs::World &world)
     {
-        _world.addSystem<game::systems::DrawCube>();
-        _world.addEntity()
+        world.addSystem<game::systems::DrawCube>();
+        world.addEntity()
             .with<game::components::Cube>()
             .with<game::components::Position>(0.f, 0.f, 0.f)
             .with<game::components::Scale>(10)
@@ -126,9 +127,9 @@ namespace game
         raylib::model::Model &testingModel = getTestingModel();
         raylib::model::Animation &testingAnimation = getTestingAnimation();
 
-        _world.addSystem<game::systems::DrawModel>();
-        _world.addSystem<game::systems::RunAnimation>();
-        _world.addEntity()
+        world.addSystem<game::systems::DrawModel>();
+        world.addSystem<game::systems::RunAnimation>();
+        world.addEntity()
             .with<game::components::Model>(testingModel)
             .with<game::components::Position>(pos)
             .with<game::components::Size>(size)
@@ -138,6 +139,6 @@ namespace game
             .with<game::components::Animation>(testingAnimation)
             .build();
 
-        addTestWidgets(_world);
+        addTestWidgets(world);
     }
 } // namespace game

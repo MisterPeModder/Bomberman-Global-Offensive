@@ -15,17 +15,18 @@
 #include "game/systems/Model.hpp"
 #include "raylib/core/Color.hpp"
 #include "util/util.hpp"
+#include "game/worlds/Worlds.hpp"
 
 namespace game
 {
-    void Game::loadSettingsWorld()
+    void Worlds::loadSettingsWorld(ecs::World &world)
     {
         static const std::filesystem::path testModelPath =
             util::makePath("assets", "models", "player", "raylibguy.iqm");
 
-        _world.addSystem<game::systems::DrawModel>();
+        world.addSystem<game::systems::DrawModel>();
 
-        _world.addEntity()
+        world.addEntity()
             .with<game::components::Model>(testModelPath)
             .with<game::components::Position>(0, -2, 0)
             .with<game::components::Size>(2.f, 0.5f, 0.5f)
