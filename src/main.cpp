@@ -60,7 +60,6 @@ static void runGame()
 {
     auto params = new Params();
 
-    params->world.addStorage<game::gui::Widget>();
     params->game.setup(params->camera);
 
 #if defined(PLATFORM_WEB)
