@@ -12,6 +12,7 @@
 #include "Position.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/System.hpp"
+#include "game/map/Map.hpp"
 
 namespace game::components
 {
@@ -30,7 +31,7 @@ namespace game::components
         ///
         /// @param pRadius @ref radius
         /// @param pExplosionDelay @ref explosionDelay
-        Bomb(size_t pRadius = 1, std::chrono::milliseconds pExplosionDelay = std::chrono::milliseconds(2000))
+        Bomb(size_t pRadius = 1, std::chrono::milliseconds pExplosionDelay = std::chrono::milliseconds(200))
             : placedTime(std::chrono::steady_clock::now()), radius(pRadius), explosionDelay(pExplosionDelay),
               exploded(false){};
 
@@ -39,6 +40,10 @@ namespace game::components
         /// @param pos position of the bomb.
         /// @param data world data.
         void explode(const Position &pos, ecs::SystemData data);
+
+      private:
+        bool explodeLiving(raylib::core::Vector3f pos, raylib::core::Vector3f size, raylib::core::Vector2u roundedPos2D,
+            const std::vector<raylib::core::Vector2u> &explodedPositions) const;
     };
 } // namespace game::components
 
