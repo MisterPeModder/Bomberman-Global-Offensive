@@ -23,6 +23,7 @@
 #include "game/Game.hpp"
 #include "game/worlds/IWorld.hpp"
 #include "game/worlds/GameWorld.hpp"
+#include "game/worlds/TestWorld.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -39,21 +40,21 @@ struct Params {
     Params() : world(), camera(), game(this->world, game::Game::Parameters(1)) {}
 };
 
-static void drawFrame(void *args)
-{
-    Params *params = reinterpret_cast<Params *>(args);
+// static void drawFrame(void *args)
+// {
+//     Params *params = reinterpret_cast<Params *>(args);
 
-    params->camera.update();
+//     params->camera.update();
     
-    raylib::core::scoped::Drawing drawing;
-    raylib::core::Window::clear();
-    {
-        raylib::core::scoped::Mode3D mode3D(params->camera);
-        params->world.runSystems();
-    };
-    raylib::core::Window::drawFPS(10, 10);
-    // params->game.drawFrame(params->camera);
-}
+//     raylib::core::scoped::Drawing drawing;
+//     raylib::core::Window::clear();
+//     {
+//         raylib::core::scoped::Mode3D mode3D(params->camera);
+//         params->world.runSystems();
+//     };
+//     raylib::core::Window::drawFPS(10, 10);
+//     // params->game.drawFrame(params->camera);
+// }
 
 static void setupLogger()
 {
@@ -81,7 +82,7 @@ static void runGame()
     emscripten_set_main_loop_arg(&drawFrame, params, 0, 1);
 #else
     while (!WindowShouldClose())
-        drawFrame(params);
+        gameWorld.drawFrame(params->camera);
     CloseWindow();
 
     // Manual delete on purpose, we don't want params to be freed on the web

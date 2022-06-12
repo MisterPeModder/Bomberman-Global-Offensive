@@ -5,25 +5,29 @@
 ** GameWorld
 */
 
+#ifndef GAME_WORLD_GAMEWORLD_HPP_
+#define GAME_WORLD_GAMEWORLD_HPP_
+
 #include "ecs/World.hpp"
 #include "game/Game.hpp"
-#include "game/worlds/IWorld.hpp"
+#include "game/worlds/AWorld.hpp"
 #include "raylib/core/Camera3D.hpp"
 
 namespace game
 {
-    class GameWorld : public IWorld {
+    class GameWorld : public AWorld {
       public:
-        GameWorld(ecs::World &world) : _world(world), _game(world) { _game.setup(); }
+        GameWorld(ecs::World &world) : AWorld(world), _game(world) { _game.setup(); }
 
-        ~GameWorld() { _world.clear(); }
+        ~GameWorld() = default;
 
-        void setCamera(raylib::core::Camera3D &camera) { _game.setCamera(camera); }
+        void setCamera(raylib::core::Camera3D &camera) override final { _game.setCamera(camera); }
 
-        void drawFrame(const raylib::core::Camera3D &camera) { _game.drawFrame(camera); }
+        void drawFrame(const raylib::core::Camera3D &camera) override final { _game.drawFrame(camera); }
 
       private:
         Game _game;
-        ecs::World &_world;
     };
 } // namespace game
+
+#endif
