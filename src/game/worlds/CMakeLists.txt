@@ -6,7 +6,8 @@ set (SRC
 	${SRCROOT}/AWorld.cpp
 	${INCROOT}/AWorld.hpp
 	${INCROOT}/GameWorld.hpp
-	# ${INCROOT}/MainWorld.hpp
+	${SRCROOT}/MainWorld.cpp
+	${INCROOT}/MainWorld.hpp
 	# ${INCROOT}/SettingsWorld.hpp
 	# ${INCROOT}/SplashWorld.hpp
 	${SRCROOT}/TestWorld.cpp
