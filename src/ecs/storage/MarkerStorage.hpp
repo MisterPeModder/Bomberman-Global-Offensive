@@ -64,6 +64,12 @@ namespace ecs
         /// @return The component mask.
         constexpr util::BitSet const &getMask() const noexcept { return this->_mask; }
 
+        void maintain(std::span<Entity> toRemove) override final
+        {
+            for (auto entity : toRemove)
+                this->erase(entity.getId());
+        }
+
       private:
         std::size_t _size;
         util::BitSet _mask;

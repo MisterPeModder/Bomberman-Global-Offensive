@@ -137,6 +137,24 @@ TEST(BitSet, resize)
     EXPECT_TRUE(set[419]);
 }
 
+TEST(BitSet, resizeSentinel)
+{
+    util::BitSet set;
+
+    set.resizeSentinel(0, true);
+    EXPECT_EQ(set.size(), 1);
+    EXPECT_TRUE(set[0]);
+
+    set.resizeSentinel(4, true);
+    EXPECT_EQ(set.size(), 5);
+
+    EXPECT_FALSE(set[0]);
+    EXPECT_FALSE(set[1]);
+    EXPECT_FALSE(set[2]);
+    EXPECT_FALSE(set[3]);
+    EXPECT_TRUE(set[4]);
+}
+
 TEST(BitSet, pushPop)
 {
     util::BitSet set;

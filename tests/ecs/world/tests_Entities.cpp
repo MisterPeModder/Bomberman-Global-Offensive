@@ -25,8 +25,10 @@ TEST(Entities, base)
     EXPECT_EQ(e2.getGeneration(), 1);
     EXPECT_EQ(e3.getGeneration(), 1);
 
-    entities.erase(e2);
-    entities.erase(e3);
+    entities.kill(e2);
+    entities.kill(e3);
+
+    entities.maintain();
 
     EXPECT_FALSE(entities.isAlive(e2));
     EXPECT_FALSE(entities.isAlive(e3));
