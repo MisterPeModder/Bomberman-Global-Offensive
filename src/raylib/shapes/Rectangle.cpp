@@ -28,7 +28,7 @@ namespace raylib
             _color = raylib::core::Color::DEFAULT_COLOR;
         }
 
-        Rectangle::Rectangle(Rectangle &other)
+        Rectangle::Rectangle(const Rectangle &other)
         {
             _position = other._position;
             _size = other._size;

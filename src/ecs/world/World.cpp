@@ -6,8 +6,10 @@
 */
 
 #include "ecs/world/World.hpp"
+#include "ecs/join.hpp"
 #include "ecs/resource/Entities.hpp"
 #include "ecs/system/SystemData.hpp"
+#include "ecs/system/SystemTag.hpp"
 
 namespace ecs
 {
@@ -37,6 +39,14 @@ namespace ecs
         this->addResource<Entities>();
     }
 
+    void World::maintain()
+    {
+        std::vector<Entity> toRemove = this->getResource<Entities>().maintain();
+
+        for (auto &[type, system] : this->_storages.getInner())
+            system->maintain(toRemove);
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Running
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,6 +55,12 @@ namespace ecs
     {
         for (auto &[type, system] : this->_systems.getInner())
             system->run(SystemData(*this));
+    }
+
+    void World::runSystems(SystemTag const &tag)
+    {
+        for (auto &type : tag._types)
+            this->_systems.get(type, "tried to run unregistered system").run(SystemData(*this));
     }
 
     void World::runSystem(System &system) { system.run(SystemData(*this)); }

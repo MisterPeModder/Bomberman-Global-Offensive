@@ -42,6 +42,10 @@ struct CountingSystem2 : public ecs::System {
     virtual void run(ecs::SystemData data) override final { data.getResource<Count>().count += 2; }
 };
 
+struct ThrowingSystem : public ecs::System {
+    virtual void run(ecs::SystemData) override final { throw std::logic_error("ThrowingSystem was run"); }
+};
+
 struct SampleComponent : public ecs::Component {
     //
 };
@@ -95,6 +99,27 @@ TEST(World, runSystems)
     EXPECT_EQ(count.count, 1);
     world.runSystems();
     EXPECT_EQ(count.count, 4);
+}
+
+TEST(World, runSystemsTag)
+{
+    ecs::World world;
+
+    ecs::SystemTag counting;
+    ecs::SystemTag all;
+
+    counting.add<CountingSystem, CountingSystem2>();
+    all.add(counting).add<ThrowingSystem>();
+
+    Count &count = world.addResource<Count>();
+
+    world.addSystem<CountingSystem>();
+    world.addSystem<CountingSystem2>();
+    world.addSystem<ThrowingSystem>();
+
+    world.runSystems(counting);
+    EXPECT_EQ(count.count, 3);
+    EXPECT_THROW(world.runSystems(all), std::logic_error);
 }
 
 TEST(World, clear)
