@@ -63,7 +63,7 @@ struct RemovingSystem : public ecs::System {
 
         for (auto [entity] : ecs::join(entities)) {
             if (entity.getId() % 2 != 0)
-                entities.erase(entity);
+                entities.kill(entity);
         }
     }
 };
@@ -184,7 +184,7 @@ TEST(Join, optionalSkipDead)
         auto &entities = world.getResource<ecs::Entities>();
 
         for (auto id : blacklist)
-            entities.erase(entities.get(id));
+            entities.kill(entities.get(id));
     }
     world.maintain();
     world.addSystem<TestSystem>([&blacklist](ecs::SystemData data) {

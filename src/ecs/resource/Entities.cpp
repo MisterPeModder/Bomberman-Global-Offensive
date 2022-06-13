@@ -27,10 +27,10 @@ namespace ecs
             throw std::logic_error("Attempted to used entity builder after a call to build()");
     }
 
-    Entities::Entities() : _alive(0), _erased(0)
+    Entities::Entities() : _alive(0), _killed(0)
     {
         this->_alive.push(false);
-        this->_erased.push(true);
+        this->_killed.push(true);
     }
 
     Entity Entities::create() { return this->create(true); }
@@ -52,23 +52,23 @@ namespace ecs
             this->_alive[firstDead] = alive;
 
             // If the entity was marked for deletion, remove the mark.
-            if (firstDead < this->_erased.size() - 1)
-                this->_erased.set(firstDead);
+            if (firstDead < this->_killed.size() - 1)
+                this->_killed.set(firstDead);
             return Entity(firstDead, this->_generations[firstDead]);
         }
     }
 
     Entities::Builder Entities::builder() { return Builder(*this); }
 
-    bool Entities::erase(Entity entity) noexcept
+    bool Entities::kill(Entity entity) noexcept
     {
         if (entity.getId() >= this->_generations.size())
             return true;
         if (this->_generations[entity.getId()] != entity.getGeneration())
             return false;
-        if (entity.getId() + 1 >= this->_erased.size())
-            this->_erased.resizeSentinel(entity.getId() + 1, true);
-        this->_erased.set(entity.getId());
+        if (entity.getId() + 1 >= this->_killed.size())
+            this->_killed.resizeSentinel(entity.getId() + 1, true);
+        this->_killed.set(entity.getId());
         return true;
     }
 
@@ -87,13 +87,13 @@ namespace ecs
     std::vector<Entity> Entities::maintain()
     {
         std::vector<Entity> removed;
-        std::size_t id = this->_erased.firstSet();
+        std::size_t id = this->_killed.firstSet();
 
-        while (id != this->_erased.size() - 1) {
-            this->_erased.set(id, false);
+        while (id != this->_killed.size() - 1) {
+            this->_killed.set(id, false);
             this->_alive.set(id, false);
             removed.push_back(Entity(id, this->_generations[id]));
-            id = this->_erased.firstSet(id);
+            id = this->_killed.firstSet(id);
         }
         return removed;
     }
