@@ -12,7 +12,7 @@ digraph "ecs::Entities::Builder"
   Node4 [label="ecs::Entities",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_entities.html",tooltip="The entities world resource."];
   Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="ecs::Resource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_resource.html",tooltip=" "];
-  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _alive" ,fontname="Helvetica"];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _killed\n_alive" ,fontname="Helvetica"];
   Node6 [label="util::BitSet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classutil_1_1_bit_set.html",tooltip="Mimics the API of std::bitset but with the dynamic properties of std::vector<bool>"];
   Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _store" ,fontname="Helvetica"];
   Node7 [label="std::vector\< std::uint64_t \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];

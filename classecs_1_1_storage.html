@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('classecs_1_1_storage.html',''); initRe
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classecs_1_1_storage-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ecs::Storage Class Reference</div>  </div>
+<div class="title">ecs::Storage Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -105,11 +105,14 @@ Inheritance diagram for ecs::Storage:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a28eeb201fdc14183f041aef9a3eb8271"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_storage.html#a28eeb201fdc14183f041aef9a3eb8271">~Storage</a> ()=default</td></tr>
 <tr class="separator:a28eeb201fdc14183f041aef9a3eb8271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6ee5165ddb8d4879e8e52eda9561b6e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_storage.html#af6ee5165ddb8d4879e8e52eda9561b6e">maintain</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/container/span.html">std::span</a>&lt; <a class="el" href="classecs_1_1_entity.html">Entity</a> &gt; toRemove)=0</td></tr>
+<tr class="memdesc:af6ee5165ddb8d4879e8e52eda9561b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all components belonging to the entities in <b>toRemove</b>.  <a href="classecs_1_1_storage.html#af6ee5165ddb8d4879e8e52eda9561b6e">More...</a><br /></td></tr>
+<tr class="separator:af6ee5165ddb8d4879e8e52eda9561b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>used to declare a virtual destructor on all <a class="el" href="classecs_1_1_storage.html" title="used to declare a virtual destructor on all Storage implementations.">Storage</a> implementations. </p>
 
-<p class="definition">Definition at line <a class="el" href="storage_2_storage_8hpp_source.html#l00043">43</a> of file <a class="el" href="storage_2_storage_8hpp_source.html">Storage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storage_2_storage_8hpp_source.html#l00044">44</a> of file <a class="el" href="storage_2_storage_8hpp_source.html">Storage.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a28eeb201fdc14183f041aef9a3eb8271"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28eeb201fdc14183f041aef9a3eb8271">&#9670;&nbsp;</a></span>~Storage()</h2>
@@ -133,6 +136,43 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af6ee5165ddb8d4879e8e52eda9561b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6ee5165ddb8d4879e8e52eda9561b6e">&#9670;&nbsp;</a></span>maintain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ecs::Storage::maintain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/span.html">std::span</a>&lt; <a class="el" href="classecs_1_1_entity.html">Entity</a> &gt;&#160;</td>
+          <td class="paramname"><em>toRemove</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes all components belonging to the entities in <b>toRemove</b>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toRemove</td><td>The set of entities to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classecs_1_1_map_storage.html#ad02032f0c54f592ecf004500857acc91">ecs::MapStorage&lt; C &gt;</a>, and <a class="el" href="classecs_1_1_marker_storage.html#a93c3e0c6c4d0fd4c8b68b11a584caed2">ecs::MarkerStorage&lt; C &gt;</a>.</p>
 
 </div>
 </div>

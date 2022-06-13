@@ -136,6 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0ffcb093baaa82043e1adb5dde59b924"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="classutil_1_1_bit_set.html">util::BitSet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_marker_storage.html#a0ffcb093baaa82043e1adb5dde59b924">getMask</a> () const noexcept</td></tr>
 <tr class="memdesc:a0ffcb093baaa82043e1adb5dde59b924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches a bit set where each set bit corresponds to an entity that possesses a component of type <b><a class="el" href="classecs_1_1_component.html" title="The base component type, all components must inherit from Component.">Component</a></b> in this storage.  <a href="classecs_1_1_marker_storage.html#a0ffcb093baaa82043e1adb5dde59b924">More...</a><br /></td></tr>
 <tr class="separator:a0ffcb093baaa82043e1adb5dde59b924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c3e0c6c4d0fd4c8b68b11a584caed2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_marker_storage.html#a93c3e0c6c4d0fd4c8b68b11a584caed2">maintain</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/container/span.html">std::span</a>&lt; <a class="el" href="classecs_1_1_entity.html">Entity</a> &gt; toRemove) override final</td></tr>
+<tr class="memdesc:a93c3e0c6c4d0fd4c8b68b11a584caed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all components belonging to the entities in <b>toRemove</b>.  <a href="classecs_1_1_marker_storage.html#a93c3e0c6c4d0fd4c8b68b11a584caed2">More...</a><br /></td></tr>
+<tr class="separator:a93c3e0c6c4d0fd4c8b68b11a584caed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecs_1_1_storage"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecs_1_1_storage')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecs_1_1_storage.html">ecs::Storage</a></td></tr>
 <tr class="memitem:a28eeb201fdc14183f041aef9a3eb8271 inherit pub_methods_classecs_1_1_storage"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_storage.html#a28eeb201fdc14183f041aef9a3eb8271">~Storage</a> ()=default</td></tr>
 <tr class="separator:a28eeb201fdc14183f041aef9a3eb8271 inherit pub_methods_classecs_1_1_storage"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -363,6 +366,50 @@ template&lt;std::default_initializable C&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a93c3e0c6c4d0fd4c8b68b11a584caed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c3e0c6c4d0fd4c8b68b11a584caed2">&#9670;&nbsp;</a></span>maintain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::default_initializable C&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classecs_1_1_marker_storage.html">ecs::MarkerStorage</a>&lt; C &gt;::maintain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/span.html">std::span</a>&lt; <a class="el" href="classecs_1_1_entity.html">Entity</a> &gt;&#160;</td>
+          <td class="paramname"><em>toRemove</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes all components belonging to the entities in <b>toRemove</b>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">toRemove</td><td>The set of entities to be removed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classecs_1_1_storage.html#af6ee5165ddb8d4879e8e52eda9561b6e">ecs::Storage</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00067">67</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> entity : toRemove)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a50d8bbc83c6e40060a24453c2cbf37cf">erase</a>(entity.getId());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a4b7147a204406abe6b6107b4bcd71884"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b7147a204406abe6b6107b4bcd71884">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
@@ -481,7 +528,7 @@ template&lt;std::default_initializable C&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00070">70</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00076">76</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -507,7 +554,7 @@ template&lt;std::default_initializable C&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00069">69</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00075">75</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -533,7 +580,7 @@ template&lt;std::default_initializable C&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00068">68</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00074">74</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -542,12 +589,13 @@ template&lt;std::default_initializable C&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecs_1_1_marker_storage_html_ac978bc8d2c394d33796380097c329a4e"><div class="ttname"><a href="classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e">ecs::MarkerStorage::_instance</a></div><div class="ttdeci">Component _instance</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00070">MarkerStorage.hpp:70</a></div></div>
+<div class="ttc" id="aclassecs_1_1_marker_storage_html_ac978bc8d2c394d33796380097c329a4e"><div class="ttname"><a href="classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e">ecs::MarkerStorage::_instance</a></div><div class="ttdeci">Component _instance</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00076">MarkerStorage.hpp:76</a></div></div>
+<div class="ttc" id="aclassecs_1_1_marker_storage_html_a50d8bbc83c6e40060a24453c2cbf37cf"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a50d8bbc83c6e40060a24453c2cbf37cf">ecs::MarkerStorage::erase</a></div><div class="ttdeci">constexpr void erase(Entity::Index entity)</div><div class="ttdoc">Removes the component instance for the supplied entity.</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00040">MarkerStorage.hpp:40</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1b7940aa2d91fd658b573692239866c0"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">util::BitSet::size</a></div><div class="ttdeci">constexpr std::size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00078">BitSet.hpp:78</a></div></div>
-<div class="ttc" id="aclassecs_1_1_marker_storage_html_a32a726c9ad0e3e6f5686e3e90dfb82b6"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">ecs::MarkerStorage::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00069">MarkerStorage.hpp:69</a></div></div>
+<div class="ttc" id="aclassecs_1_1_marker_storage_html_a32a726c9ad0e3e6f5686e3e90dfb82b6"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">ecs::MarkerStorage::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00075">MarkerStorage.hpp:75</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0a1be7ead3223ab02838a9e95b761918"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">util::BitSet::resize</a></div><div class="ttdeci">void resize(std::size_t size)</div><div class="ttdoc">Changes the number of bits stored in this set.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00160">BitSet.hpp:160</a></div></div>
 <div class="ttc" id="amax_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a></div><div class="ttdeci">T max(T... args)</div></div>
-<div class="ttc" id="aclassecs_1_1_marker_storage_html_a59b56bbabe39a8b17183fca6eef968cc"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">ecs::MarkerStorage::_size</a></div><div class="ttdeci">std::size_t _size</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00068">MarkerStorage.hpp:68</a></div></div>
+<div class="ttc" id="aclassecs_1_1_marker_storage_html_a59b56bbabe39a8b17183fca6eef968cc"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">ecs::MarkerStorage::_size</a></div><div class="ttdeci">std::size_t _size</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00074">MarkerStorage.hpp:74</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

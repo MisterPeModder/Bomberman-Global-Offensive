@@ -7,6 +7,7 @@ var classecs_1_1_map_storage =
     [ "emplace", "classecs_1_1_map_storage.html#ab823088b9df412753b1ab3f08d8b4906", null ],
     [ "erase", "classecs_1_1_map_storage.html#ac11ba1f7f50e82e6581bf6f5eeca0359", null ],
     [ "getMask", "classecs_1_1_map_storage.html#a9078df7b68ab55177f696e1959849d10", null ],
+    [ "maintain", "classecs_1_1_map_storage.html#ad02032f0c54f592ecf004500857acc91", null ],
     [ "operator[]", "classecs_1_1_map_storage.html#a4d835428f0f241629ccf4c0cca9267a6", null ],
     [ "operator[]", "classecs_1_1_map_storage.html#af5217bcadaea08cde5b3f5785feb3eaf", null ],
     [ "size", "classecs_1_1_map_storage.html#aaaccf2e6c171295510d95973bac61e42", null ],

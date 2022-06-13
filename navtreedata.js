@@ -73,12 +73,12 @@ var NAVTREEINDEX =
 [
 "_a_shape_8hpp.html",
 "_system_8hpp.html",
-"classecs_1_1_marker_storage.html#a0ffcb093baaa82043e1adb5dde59b924",
-"classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90adc271d081ca9fcbefdc42998313398d8",
-"classraylib_1_1textures_1_1_texture2_d.html#a24a5b2fce5bed22bde7314081189c64f",
-"namespacelocalization.html",
-"structraylib_1_1core_1_1_color.html#a679a1e758fbfb55e246a976c253f1c3e"
+"classecs_1_1_map_storage.html#aefb4b2f0a175e0fa8dc262c0b1475caf",
+"classgame_1_1settings_1_1_settings.html#a42d9384d0856663e97a4793a4287a9e6",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90abc21e6484530fc9d0313cb816b733396",
+"classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204",
+"namespacegame_1_1map_1_1cellular.html",
+"structraylib_1_1core_1_1_color.html#a33aa39f405f8cba92982ae86681a64ac"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

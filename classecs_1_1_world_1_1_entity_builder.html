@@ -187,10 +187,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00025">25</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                  : <a class="code" href="classecs_1_1_world_1_1_entity_builder.html#a88e4212ad39f5ca0634771d28c6a4a52">_outer</a>(outer), <a class="code" href="classecs_1_1_world_1_1_entity_builder.html#a6b9b14ad4ab6279c20c96d826126c4fb">_builder</a>(outer.getResource&lt;Entities&gt;().builder())</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00026">26</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                                  : <a class="code" href="classecs_1_1_world_1_1_entity_builder.html#a88e4212ad39f5ca0634771d28c6a4a52">_outer</a>(outer), <a class="code" href="classecs_1_1_world_1_1_entity_builder.html#a6b9b14ad4ab6279c20c96d826126c4fb">_builder</a>(outer.getResource&lt;Entities&gt;().builder())</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -219,8 +219,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00029">29</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#a6b9b14ad4ab6279c20c96d826126c4fb">_builder</a>.<a class="code" href="classecs_1_1_entities_1_1_builder.html#ae9430ce65ed98b6bb711a51517f2274f">build</a>(); }</div>
+<p class="definition">Definition at line <a class="el" href="_world_8cpp_source.html#l00030">30</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#a6b9b14ad4ab6279c20c96d826126c4fb">_builder</a>.<a class="code" href="classecs_1_1_entities_1_1_builder.html#ae9430ce65ed98b6bb711a51517f2274f">build</a>(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -362,8 +362,8 @@ template&lt;std::derived_from&lt; Component &gt; C, typename... Args&gt; </div>
 </div><!-- doc-content -->
 <div class="ttc" id="aclassecs_1_1_world_1_1_entity_builder_html_a6b9b14ad4ab6279c20c96d826126c4fb"><div class="ttname"><a href="classecs_1_1_world_1_1_entity_builder.html#a6b9b14ad4ab6279c20c96d826126c4fb">ecs::World::EntityBuilder::_builder</a></div><div class="ttdeci">Entities::Builder _builder</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00082">World.hpp:82</a></div></div>
 <div class="ttc" id="aclassecs_1_1_entities_1_1_builder_html_ae9430ce65ed98b6bb711a51517f2274f"><div class="ttname"><a href="classecs_1_1_entities_1_1_builder.html#ae9430ce65ed98b6bb711a51517f2274f">ecs::Entities::Builder::build</a></div><div class="ttdeci">Entity build()</div><div class="ttdoc">Creates the entity, consuming the builder.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8cpp_source.html#l00016">Entities.cpp:16</a></div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_aab1ea951ba59262e6808ace66f709e40"><div class="ttname"><a href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">ecs::World::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Fetches a component storage from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00203">World.hpp:203</a></div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_a81375a1a8089f51f56205c44cd13fb0b"><div class="ttname"><a href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">ecs::World::_storages</a></div><div class="ttdeci">Instances&lt; Storage &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00224">World.hpp:224</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_aab1ea951ba59262e6808ace66f709e40"><div class="ttname"><a href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">ecs::World::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Fetches a component storage from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00206">World.hpp:206</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_a81375a1a8089f51f56205c44cd13fb0b"><div class="ttname"><a href="classecs_1_1_world.html#a81375a1a8089f51f56205c44cd13fb0b">ecs::World::_storages</a></div><div class="ttdeci">Instances&lt; Storage &gt; _storages</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00227">World.hpp:227</a></div></div>
 <div class="ttc" id="aclassecs_1_1_entities_1_1_builder_html_a34f74fbf94beb5d2d980de38c9877d10"><div class="ttname"><a href="classecs_1_1_entities_1_1_builder.html#a34f74fbf94beb5d2d980de38c9877d10">ecs::Entities::Builder::with</a></div><div class="ttdeci">Builder &amp; with(getStorageType&lt; C &gt; &amp;storage, Args &amp;&amp;...args)</div><div class="ttdoc">Attach a component to the entity.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8hpp_source.html#l00043">Entities.hpp:43</a></div></div>
 <div class="ttc" id="aclassecs_1_1_world_1_1_entity_builder_html_a88e4212ad39f5ca0634771d28c6a4a52"><div class="ttname"><a href="classecs_1_1_world_1_1_entity_builder.html#a88e4212ad39f5ca0634771d28c6a4a52">ecs::World::EntityBuilder::_outer</a></div><div class="ttdeci">World &amp; _outer</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00081">World.hpp:81</a></div></div>
 <!-- start footer part -->

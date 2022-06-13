@@ -1,7 +1,14 @@
 var NAVTREEINDEX6 =
 {
-"namespacelocalization.html":[1,0,3],
+"namespacegame_1_1map_1_1cellular.html":[1,0,2,2,0],
+"namespacegame_1_1resources.html":[2,0,2,3],
+"namespacegame_1_1resources.html":[1,0,2,3],
+"namespacegame_1_1settings.html":[1,0,2,4],
+"namespacegame_1_1settings.html":[2,0,2,4],
+"namespacegame_1_1systems.html":[2,0,2,5],
+"namespacegame_1_1systems.html":[1,0,2,5],
 "namespacelocalization.html":[2,0,3],
+"namespacelocalization.html":[1,0,3],
 "namespacelocalization_1_1_resources.html":[1,0,3,0],
 "namespacemembers.html":[1,1,0],
 "namespacemembers_enum.html":[1,1,4],
@@ -16,8 +23,8 @@ var NAVTREEINDEX6 =
 "namespaceraylib_1_1core_1_1scoped.html":[1,0,4,0,0],
 "namespaceraylib_1_1model.html":[2,0,4,1],
 "namespaceraylib_1_1model.html":[1,0,4,1],
-"namespaceraylib_1_1shapes.html":[1,0,4,2],
 "namespaceraylib_1_1shapes.html":[2,0,4,2],
+"namespaceraylib_1_1shapes.html":[1,0,4,2],
 "namespaceraylib_1_1textures.html":[2,0,4,3],
 "namespaceraylib_1_1textures.html":[1,0,4,3],
 "namespaces.html":[1,0],
@@ -242,12 +249,5 @@ var NAVTREEINDEX6 =
 "structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9":[2,0,4,0,3,7],
 "structraylib_1_1core_1_1_color.html#a28dd40ec5862b038d3b38bee678602fe":[2,0,4,0,3,1],
 "structraylib_1_1core_1_1_color.html#a2e0d5ab5cb54364d40d71b6bd2347006":[2,0,4,0,3,23],
-"structraylib_1_1core_1_1_color.html#a32368efe61278e660c858a7aeb30615f":[2,0,4,0,3,14],
-"structraylib_1_1core_1_1_color.html#a33aa39f405f8cba92982ae86681a64ac":[2,0,4,0,3,24],
-"structraylib_1_1core_1_1_color.html#a39aa6a49cc04b27171ff7c530031ffc4":[2,0,4,0,3,5],
-"structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba":[2,0,4,0,3,27],
-"structraylib_1_1core_1_1_color.html#a4719267b62f527f51395019c13767011":[2,0,4,0,3,20],
-"structraylib_1_1core_1_1_color.html#a492f3e9b471af8e807a04df8a0b2cb06":[2,0,4,0,3,0],
-"structraylib_1_1core_1_1_color.html#a5667968ac1c3ee55fea10fe44c5574c9":[2,0,4,0,3,30],
-"structraylib_1_1core_1_1_color.html#a5bf560d2d23ba1753feb6b23f41c0a0a":[2,0,4,0,3,12]
+"structraylib_1_1core_1_1_color.html#a32368efe61278e660c858a7aeb30615f":[2,0,4,0,3,14]
 };

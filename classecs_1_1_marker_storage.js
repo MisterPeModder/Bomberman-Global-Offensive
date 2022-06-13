@@ -6,6 +6,7 @@ var classecs_1_1_marker_storage =
     [ "emplace", "classecs_1_1_marker_storage.html#abd8d21ab8e0336248fccce4b89259568", null ],
     [ "erase", "classecs_1_1_marker_storage.html#a50d8bbc83c6e40060a24453c2cbf37cf", null ],
     [ "getMask", "classecs_1_1_marker_storage.html#a0ffcb093baaa82043e1adb5dde59b924", null ],
+    [ "maintain", "classecs_1_1_marker_storage.html#a93c3e0c6c4d0fd4c8b68b11a584caed2", null ],
     [ "operator[]", "classecs_1_1_marker_storage.html#a4b7147a204406abe6b6107b4bcd71884", null ],
     [ "operator[]", "classecs_1_1_marker_storage.html#a2982c2a45e35c6493169fad147589f85", null ],
     [ "size", "classecs_1_1_marker_storage.html#a4ce16bc4dd22be586360b38667afcce9", null ],
