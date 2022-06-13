@@ -14,6 +14,7 @@
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
 #include "game/components/RotationAxis.hpp"
+#include "game/components/Scale.hpp"
 #include "game/components/Size.hpp"
 #include "game/systems/Model.hpp"
 
@@ -22,6 +23,7 @@ static void loadMainWorld(ecs::World &world)
     static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
 
     world.addSystem<game::systems::DrawModel>();
+    world.addStorage<game::components::Scale>();
 
     world.addEntity()
         .with<game::components::Model>(testModelPath)

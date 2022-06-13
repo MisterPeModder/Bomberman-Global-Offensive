@@ -21,8 +21,9 @@
 #include "script/Engine.hpp"
 
 #include "game/Game.hpp"
-#include "game/worlds/IWorld.hpp"
 #include "game/worlds/GameWorld.hpp"
+#include "game/worlds/IWorld.hpp"
+#include "game/worlds/MainWorld.hpp"
 #include "game/worlds/TestWorld.hpp"
 
 #if defined(PLATFORM_WEB)
@@ -45,7 +46,7 @@ struct Params {
 //     Params *params = reinterpret_cast<Params *>(args);
 
 //     params->camera.update();
-    
+
 //     raylib::core::scoped::Drawing drawing;
 //     raylib::core::Window::clear();
 //     {
@@ -70,7 +71,7 @@ static void runGame()
 {
     auto params = new Params();
 
-    game::GameWorld gameWorld(params->world);
+    game::MainWorld gameWorld(params->world);
     gameWorld.setCamera(params->camera);
 
     // params->game.setup(params->camera);
