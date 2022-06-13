@@ -25,7 +25,7 @@ var class_logger =
       [ "Error", "class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd", null ],
       [ "Count", "class_logger.html#a4cc16315b37eb0265c2d199880464a15ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
-    [ "Logger", "class_logger.html#a740834905a831155be140a4c69a6d1a3", null ],
+    [ "Logger", "class_logger.html#adc0e7f0c1b7fab2afb8e22c6956f3fcb", null ],
     [ "Logger", "class_logger.html#aeeefe4e4594b8aed3003a9dbbc47c7b8", null ],
     [ "Logger", "class_logger.html#a0fff2adc419d9659f166b24ba03eaf22", null ],
     [ "Logger", "class_logger.html#a3674e708a24cb8d76b38f70aca669695", null ],
