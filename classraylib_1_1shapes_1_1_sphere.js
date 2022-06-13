@@ -1,6 +1,6 @@
 var classraylib_1_1shapes_1_1_sphere =
 [
-    [ "Sphere", "classraylib_1_1shapes_1_1_sphere.html#abfa223a52d730e6d7f5d8f6bbf511f76", null ],
+    [ "Sphere", "classraylib_1_1shapes_1_1_sphere.html#a9523b011e2974ed626f310a1bf5ccb6b", null ],
     [ "~Sphere", "classraylib_1_1shapes_1_1_sphere.html#a34a219f69b47632f3897b62535a7d8af", null ],
     [ "draw", "classraylib_1_1shapes_1_1_sphere.html#a511b32a6ac1d57b0b00830551ad89b61", null ],
     [ "draw", "classraylib_1_1shapes_1_1_sphere.html#af6517f3f4c11757c231ad97d52024b65", null ],

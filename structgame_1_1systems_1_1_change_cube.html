@@ -153,9 +153,9 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [cube, pos, col, size] :</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_cube.html">game::components::Cube</a>&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(),</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_cube_color.html">game::components::CubeColor</a>&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_size.html">game::components::Size</a>&gt;())) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                cube.cube.setPosition(pos);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                cube.cube.setColor(col);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                cube.cube.setSize(size);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                cube.setPosition(pos);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                cube.setColor(col);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                cube.setSize(size);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 </div><!-- fragment -->

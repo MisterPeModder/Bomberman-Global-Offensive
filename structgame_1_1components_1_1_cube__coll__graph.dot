@@ -6,7 +6,7 @@ digraph "game::components::Cube"
   Node1 [label="game::components::Cube",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Cube component."];
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="ecs::Component",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_component.html",tooltip="The base component type, all components must inherit from Component."];
-  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cube" ,fontname="Helvetica"];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="raylib::shapes::Cube",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_cube.html",tooltip="3D shape representing a cube."];
   Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="raylib::shapes::AShape",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1shapes_1_1_a_shape.html",tooltip=" "];

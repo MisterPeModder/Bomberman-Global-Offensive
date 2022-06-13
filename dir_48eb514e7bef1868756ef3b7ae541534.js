@@ -23,7 +23,7 @@ var dir_48eb514e7bef1868756ef3b7ae541534 =
       [ "Pixel", "classraylib_1_1shapes_1_1_pixel.html", "classraylib_1_1shapes_1_1_pixel" ]
     ] ],
     [ "Rectangle.cpp", "_rectangle_8cpp.html", null ],
-    [ "Rectangle.hpp", "_rectangle_8hpp.html", [
+    [ "Rectangle.hpp", "raylib_2shapes_2_rectangle_8hpp.html", [
       [ "Rectangle", "classraylib_1_1shapes_1_1_rectangle.html", "classraylib_1_1shapes_1_1_rectangle" ]
     ] ],
     [ "Sphere.cpp", "_sphere_8cpp.html", null ],

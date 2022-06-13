@@ -1,6 +1,7 @@
 var structraylib_1_1core_1_1_vector3 =
 [
     [ "Vector3", "structraylib_1_1core_1_1_vector3.html#ac8bee0f1b845b9acfdc1107e8e57ce51", null ],
+    [ "Vector3", "structraylib_1_1core_1_1_vector3.html#aadba9ce7c58775d7ad81cef65a39472c", null ],
     [ "Vector3", "structraylib_1_1core_1_1_vector3.html#a1cda55349e7f5acc14fe4e33f97ec7ac", null ],
     [ "Vector3", "structraylib_1_1core_1_1_vector3.html#a10ba2b5a5cff0e3c22d6cd9ff6044d74", null ],
     [ "Vector3", "structraylib_1_1core_1_1_vector3.html#a40106e1378d0e85e5f8cdccb669c4aa8", null ],

@@ -15,6 +15,9 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "Collision.hpp", "_collision_8hpp.html", [
       [ "Collision", "structgame_1_1systems_1_1_collision.html", "structgame_1_1systems_1_1_collision" ]
     ] ],
+    [ "Cube.hpp", "game_2systems_2_cube_8hpp.html", [
+      [ "DrawCube", "structgame_1_1systems_1_1_draw_cube.html", "structgame_1_1systems_1_1_draw_cube" ]
+    ] ],
     [ "DrawingCube.hpp", "_drawing_cube_8hpp.html", [
       [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ]
     ] ],
@@ -27,7 +30,7 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
       [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ]
     ] ],
     [ "Model.hpp", "game_2systems_2_model_8hpp.html", [
-      [ "DrawModel", "structsystems_1_1_draw_model.html", "structsystems_1_1_draw_model" ]
+      [ "DrawModel", "structgame_1_1systems_1_1_draw_model.html", "structgame_1_1systems_1_1_draw_model" ]
     ] ],
     [ "Movement.cpp", "_movement_8cpp.html", null ],
     [ "Movement.hpp", "_movement_8hpp.html", [

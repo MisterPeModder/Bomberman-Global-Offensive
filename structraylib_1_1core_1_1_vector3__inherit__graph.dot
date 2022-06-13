@@ -8,9 +8,9 @@ digraph "raylib::core::Vector3&lt; T &gt;"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="game::components::Position\l\< float \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1components_1_1_position.html",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="game::components::Size\l\< float \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1components_1_1_size.html",tooltip=" "];
+  Node3 [label="game::components::Rotation\lAxis\< float \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1components_1_1_rotation_axis.html",tooltip=" "];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="game::components::Velocity\l\< float \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1components_1_1_velocity.html",tooltip="Velocity component."];
+  Node4 [label="game::components::Size\l\< float \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1components_1_1_size.html",tooltip=" "];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="game::RotationAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1_rotation_axis.html",tooltip=" "];
+  Node5 [label="game::components::Velocity\l\< float \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1components_1_1_velocity.html",tooltip="Velocity component."];
 }

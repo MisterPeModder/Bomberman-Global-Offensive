@@ -5,7 +5,6 @@ var annotated_dup =
     [ "game", "namespacegame.html", "namespacegame" ],
     [ "localization", "namespacelocalization.html", "namespacelocalization" ],
     [ "raylib", "namespaceraylib.html", "namespaceraylib" ],
-    [ "systems", "namespacesystems.html", "namespacesystems" ],
     [ "util", "namespaceutil.html", "namespaceutil" ],
     [ "GetComponentStorageType", "struct_get_component_storage_type.html", "struct_get_component_storage_type" ],
     [ "Logger", "class_logger.html", "class_logger" ],

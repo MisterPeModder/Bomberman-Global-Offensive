@@ -107,6 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8bee0f1b845b9acfdc1107e8e57ce51"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraylib_1_1core_1_1_vector3.html#ac8bee0f1b845b9acfdc1107e8e57ce51">Vector3</a> (T xParam=0.f, T yParam=0.f, T zParam=0.f)</td></tr>
 <tr class="memdesc:ac8bee0f1b845b9acfdc1107e8e57ce51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the vector.  <a href="structraylib_1_1core_1_1_vector3.html#ac8bee0f1b845b9acfdc1107e8e57ce51">More...</a><br /></td></tr>
 <tr class="separator:ac8bee0f1b845b9acfdc1107e8e57ce51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadba9ce7c58775d7ad81cef65a39472c"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraylib_1_1core_1_1_vector3.html#aadba9ce7c58775d7ad81cef65a39472c">Vector3</a> (int xParam, int yParam, int zParam)</td></tr>
+<tr class="memdesc:aadba9ce7c58775d7ad81cef65a39472c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the vector using integers.  <a href="structraylib_1_1core_1_1_vector3.html#aadba9ce7c58775d7ad81cef65a39472c">More...</a><br /></td></tr>
+<tr class="separator:aadba9ce7c58775d7ad81cef65a39472c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cda55349e7f5acc14fe4e33f97ec7ac"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structraylib_1_1core_1_1_vector3.html#a1cda55349e7f5acc14fe4e33f97ec7ac">Vector3</a> (const <a class="el" href="structraylib_1_1core_1_1_vector2.html">Vector2</a>&lt; T &gt; &amp;vector, T zParam=0.f)</td></tr>
 <tr class="memdesc:a1cda55349e7f5acc14fe4e33f97ec7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the 3d vector from a 2d vector.  <a href="structraylib_1_1core_1_1_vector3.html#a1cda55349e7f5acc14fe4e33f97ec7ac">More...</a><br /></td></tr>
 <tr class="separator:a1cda55349e7f5acc14fe4e33f97ec7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,7 +184,7 @@ struct raylib::core::Vector3&lt; T &gt;</h3>
 <p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00025">25</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac8bee0f1b845b9acfdc1107e8e57ce51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8bee0f1b845b9acfdc1107e8e57ce51">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8bee0f1b845b9acfdc1107e8e57ce51">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,8 +240,67 @@ template&lt;typename T  = float&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="aadba9ce7c58775d7ad81cef65a39472c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadba9ce7c58775d7ad81cef65a39472c">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = float&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3</a>&lt; T &gt;::<a class="el" href="structraylib_1_1core_1_1_vector3.html">Vector3</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>yParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor of the vector using integers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xParam</td><td>the X axis value of the vector </td></tr>
+    <tr><td class="paramname">yParam</td><td>the Y axis value of the vector </td></tr>
+    <tr><td class="paramname">zParam</td><td>the Z axis value of the vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00038">38</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                : <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(xParam)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(yParam)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(zParam))</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a1cda55349e7f5acc14fe4e33f97ec7ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cda55349e7f5acc14fe4e33f97ec7ac">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cda55349e7f5acc14fe4e33f97ec7ac">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[3/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,13 +344,13 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00037">37</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;: <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>(vector.x), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>(vector.y), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>(zParam) {}</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00047">47</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;: <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>(vector.x), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>(vector.y), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>(zParam) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a10ba2b5a5cff0e3c22d6cd9ff6044d74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10ba2b5a5cff0e3c22d6cd9ff6044d74">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ba2b5a5cff0e3c22d6cd9ff6044d74">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,7 +386,7 @@ template&lt;typename T  = float&gt; </div>
 </div>
 </div>
 <a id="a40106e1378d0e85e5f8cdccb669c4aa8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40106e1378d0e85e5f8cdccb669c4aa8">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a40106e1378d0e85e5f8cdccb669c4aa8">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,15 +427,15 @@ template&lt;typename U &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00049">49</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                : <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.x)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.y)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.z))</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00059">59</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                : <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.x)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.y)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.z))</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <a id="a2ff1c5199b1cd0e5ed6d262e022cf843"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ff1c5199b1cd0e5ed6d262e022cf843">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff1c5199b1cd0e5ed6d262e022cf843">&#9670;&nbsp;</a></span>Vector3() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -406,10 +468,10 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00057">57</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                : <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.x)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.y)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.z))</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00067">67</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                : <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.x)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.y)), <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(vector.z))</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -471,10 +533,10 @@ template&lt;typename T  = float&gt; </div>
 <p>Gets the raylib <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The raylib <a class="el" href="structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)">Vector3</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00175">175</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>)};</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00185">185</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                <span class="keywordflow">return</span> {<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a>), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a>), <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a>)};</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -513,8 +575,8 @@ template&lt;typename T  = float&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the vectors are not equal or false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00170">170</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == vector); }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00180">180</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == vector); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -552,10 +614,10 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00120">120</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> * vector.x, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> * vector.y, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> * vector.z};</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00130">130</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> * vector.x, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> * vector.y, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> * vector.z};</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -593,13 +655,13 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00128">128</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> *= vector.x;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> *= vector.y;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> *= vector.z;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00138">138</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> *= vector.x;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> *= vector.y;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> *= vector.z;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -637,10 +699,10 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00082">82</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> + vector.x, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> + vector.y, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> + vector.z};</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00092">92</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> + vector.x, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> + vector.y, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> + vector.z};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -678,13 +740,13 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00090">90</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> += vector.x;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> += vector.y;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> += vector.z;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00100">100</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> += vector.x;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> += vector.y;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> += vector.z;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -722,10 +784,10 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00101">101</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> - vector.x, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> - vector.y, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> - vector.z};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00111">111</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> - vector.x, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> - vector.y, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> - vector.z};</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -763,13 +825,13 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00109">109</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> -= vector.x;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> -= vector.y;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> -= vector.z;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00119">119</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> -= vector.x;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> -= vector.y;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> -= vector.z;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -807,10 +869,10 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00139">139</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> / vector.x, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> / vector.y, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> / vector.z};</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00149">149</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordflow">return</span> {<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> / vector.x, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> / vector.y, <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> / vector.z};</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -848,13 +910,13 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00147">147</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> /= vector.x;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> /= vector.y;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> /= vector.z;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00157">157</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> /= vector.x;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> /= vector.y;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> /= vector.z;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -892,12 +954,12 @@ template&lt;typename T  = float&gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00072">72</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> = vector.x;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> = vector.y;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00082">82</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> = vector.x;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> = vector.y;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -972,10 +1034,10 @@ template&lt;typename T  = float&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the vectors are equal or false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00160">160</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> == vector.x &amp;&amp; <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> == vector.y &amp;&amp; <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> == vector.z;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00170">170</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> == vector.x &amp;&amp; <a class="code" href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">y</a> == vector.y &amp;&amp; <a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> == vector.z;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -994,7 +1056,7 @@ template&lt;typename T  = float&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00180">180</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00190">190</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1012,7 +1074,7 @@ template&lt;typename T  = float&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00181">181</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00191">191</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1030,7 +1092,7 @@ template&lt;typename T  = float&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00182">182</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_vector3_8hpp_source.html#l00192">192</a> of file <a class="el" href="_vector3_8hpp_source.html">Vector3.hpp</a>.</p>
 
 </div>
 </div>
@@ -1039,9 +1101,9 @@ template&lt;typename T  = float&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a9da72810fb429cabcddd8123f37b8557"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">raylib::core::Vector3::z</a></div><div class="ttdeci">T z</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00182">Vector3.hpp:182</a></div></div>
-<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_add73a20dbe53b2f80ae4e892df036980"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">raylib::core::Vector3::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00180">Vector3.hpp:180</a></div></div>
-<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a6a5b1fd14372deafb711429f63b3d93d"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">raylib::core::Vector3::y</a></div><div class="ttdeci">T y</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00181">Vector3.hpp:181</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a9da72810fb429cabcddd8123f37b8557"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">raylib::core::Vector3::z</a></div><div class="ttdeci">T z</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00192">Vector3.hpp:192</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_add73a20dbe53b2f80ae4e892df036980"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">raylib::core::Vector3::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00190">Vector3.hpp:190</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a6a5b1fd14372deafb711429f63b3d93d"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a6a5b1fd14372deafb711429f63b3d93d">raylib::core::Vector3::y</a></div><div class="ttdeci">T y</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00191">Vector3.hpp:191</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -87,33 +87,40 @@ $(document).ready(function(){initNavTree('game_2components_2_image_8hpp_source.h
 <div class="title">Image.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="game_2components_2_image_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GAME_COMPONENTS_IMAGE_HPP_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GAME_COMPONENTS_IMAGE_HPP_</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/filesystem.html">filesystem</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_component_8hpp.html">ecs/Component.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;raylib/images/Image.hpp&quot;</span></div>
+<a href="game_2components_2_image_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2022</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** BMGO</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** Image</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegame.html">game</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="structgame_1_1_image.html">   10</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structgame_1_1_image.html">Image</a> : <span class="keyword">public</span> <a class="code" href="classecs_1_1_component.html">ecs::Component</a>, <span class="keyword">public</span> raylib::model::Image {</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structgame_1_1_image.html#a63c9f78213969b05a0b2e907665b8c69">   11</a></span>&#160;        <a class="code" href="structgame_1_1_image.html#a63c9f78213969b05a0b2e907665b8c69">Image</a>(raylib::model::Image &amp;pimage) : <a class="code" href="namespaceraylib.html">raylib</a>::model::<a class="code" href="structgame_1_1_image.html">Image</a>(pimage) {}</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structgame_1_1_image.html#a7486cede5234704630290cec05e5c522">   12</a></span>&#160;        <a class="code" href="structgame_1_1_image.html#a7486cede5234704630290cec05e5c522">Image</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;path) : <a class="code" href="namespaceraylib.html">raylib</a>::model::<a class="code" href="structgame_1_1_image.html">Image</a>(path) {}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    };</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;} <span class="comment">// namespace game</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef GAME_COMPONENTS_IMAGE_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define GAME_COMPONENTS_IMAGE_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/filesystem.html">filesystem</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_component_8hpp.html">ecs/Component.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;raylib/images/Image.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegame_1_1components.html">game::components</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structgame_1_1components_1_1_image.html">   17</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structgame_1_1components_1_1_image.html">Image</a> : <span class="keyword">public</span> <a class="code" href="classecs_1_1_component.html">ecs::Component</a>, <span class="keyword">public</span> raylib::model::Image {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structgame_1_1components_1_1_image.html#a938f70d95ef5593d16f9331a644835cc">   18</a></span>&#160;        <a class="code" href="structgame_1_1components_1_1_image.html#a938f70d95ef5593d16f9331a644835cc">Image</a>(<span class="keyword">const</span> raylib::model::Image &amp;pimage) : <a class="code" href="namespaceraylib.html">raylib</a>::model::<a class="code" href="structgame_1_1components_1_1_image.html">Image</a>(pimage) {}</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structgame_1_1components_1_1_image.html#a1dc58b8cb2bf3e485158ecf03d039f5a">   19</a></span>&#160;        <a class="code" href="structgame_1_1components_1_1_image.html#a1dc58b8cb2bf3e485158ecf03d039f5a">Image</a>(<span class="keyword">const</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;path) : <a class="code" href="namespaceraylib.html">raylib</a>::model::<a class="code" href="structgame_1_1components_1_1_image.html">Image</a>(path) {}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    };</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;} <span class="comment">// namespace game::components</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespaceraylib_html"><div class="ttname"><a href="namespaceraylib.html">raylib</a></div><div class="ttdoc">RayLib namespace.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_8cpp_source.html#l00010">Audio.cpp:10</a></div></div>
-<div class="ttc" id="astructgame_1_1_image_html_a7486cede5234704630290cec05e5c522"><div class="ttname"><a href="structgame_1_1_image.html#a7486cede5234704630290cec05e5c522">game::Image::Image</a></div><div class="ttdeci">Image(std::filesystem::path &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_image_8hpp_source.html#l00012">Image.hpp:12</a></div></div>
+<div class="ttc" id="anamespacegame_1_1components_html"><div class="ttname"><a href="namespacegame_1_1components.html">game::components</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_animation_8hpp_source.html#l00015">Animation.hpp:15</a></div></div>
 <div class="ttc" id="afilesystem_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/filesystem.html">filesystem</a></div></div>
 <div class="ttc" id="apath_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a></div></div>
-<div class="ttc" id="anamespacegame_html"><div class="ttname"><a href="namespacegame.html">game</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_animation_8hpp_source.html#l00008">Animation.hpp:8</a></div></div>
 <div class="ttc" id="a_component_8hpp_html"><div class="ttname"><a href="_component_8hpp.html">Component.hpp</a></div></div>
-<div class="ttc" id="astructgame_1_1_image_html_a63c9f78213969b05a0b2e907665b8c69"><div class="ttname"><a href="structgame_1_1_image.html#a63c9f78213969b05a0b2e907665b8c69">game::Image::Image</a></div><div class="ttdeci">Image(raylib::model::Image &amp;pimage)</div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_image_8hpp_source.html#l00011">Image.hpp:11</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_image_html"><div class="ttname"><a href="structgame_1_1components_1_1_image.html">game::components::Image</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_image_8hpp_source.html#l00017">Image.hpp:17</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_image_html_a938f70d95ef5593d16f9331a644835cc"><div class="ttname"><a href="structgame_1_1components_1_1_image.html#a938f70d95ef5593d16f9331a644835cc">game::components::Image::Image</a></div><div class="ttdeci">Image(const raylib::model::Image &amp;pimage)</div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_image_8hpp_source.html#l00018">Image.hpp:18</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_image_html_a1dc58b8cb2bf3e485158ecf03d039f5a"><div class="ttname"><a href="structgame_1_1components_1_1_image.html#a1dc58b8cb2bf3e485158ecf03d039f5a">game::components::Image::Image</a></div><div class="ttdeci">Image(const std::filesystem::path &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_image_8hpp_source.html#l00019">Image.hpp:19</a></div></div>
 <div class="ttc" id="aclassecs_1_1_component_html"><div class="ttname"><a href="classecs_1_1_component.html">ecs::Component</a></div><div class="ttdoc">The base component type, all components must inherit from Component.</div><div class="ttdef"><b>Definition:</b> <a href="_component_8hpp_source.html#l00016">Component.hpp:16</a></div></div>
-<div class="ttc" id="astructgame_1_1_image_html"><div class="ttname"><a href="structgame_1_1_image.html">game::Image</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_image_8hpp_source.html#l00010">Image.hpp:10</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
