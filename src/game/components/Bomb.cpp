@@ -18,8 +18,9 @@
 
 namespace game::components
 {
-    void Bomb::explode(const Position &bombPos, ecs::SystemData data)
+    void Bomb::explode(const Position &bombPos, ecs::SystemData data, ecs::Entity self)
     {
+        /// Need to keep this check to avoid infinity loop with chained explosions
         if (this->exploded)
             return;
         this->exploded = true;
@@ -29,7 +30,9 @@ namespace game::components
         auto maybeDestructible = ecs::maybe(data.getStorage<Destructible>());
         auto maybeLiving = ecs::maybe(data.getStorage<Living>());
         auto maybeBomb = ecs::maybe(data.getStorage<Bomb>());
+        auto &entities = data.getResource<ecs::Entities>();
 
+        entities.kill(self);
         /// Retrieve exploded cells
         game::map::Map &map = data.getResource<game::resources::Map>().map;
         std::vector<raylib::core::Vector2u> explodedPositions;
@@ -41,11 +44,10 @@ namespace game::components
             return;
 
         /// Test for destructible and living entities if they are in an exploded cell.
-        for (auto [pos, size, destructible, living, bomb] :
-            ecs::join(positions, sizes, maybeDestructible, maybeLiving, maybeBomb)) {
-            /// Do not care about dead, destroyed or exploded entities
-            if ((!destructible && !living && !bomb) || (destructible && destructible->destroyed)
-                || (living && living->hp == 0) || (bomb && bomb->exploded))
+        for (auto [pos, size, destructible, living, bomb, id] :
+            ecs::join(positions, sizes, maybeDestructible, maybeLiving, maybeBomb, entities)) {
+            /// Do not care about dead entities
+            if ((!destructible && !living && !bomb) || (living && living->hp == 0))
                 continue;
 
             raylib::core::Vector2u roundedPos2D = {
@@ -59,11 +61,11 @@ namespace game::components
                 Logger::logger.log(Logger::Severity::Debug, "Living entity hit by a bomb"); // living->hp--;
             }
             if (destructible) {
+                entities.kill(id);
                 map.getElement(roundedPos2D) = game::map::Map::Element::Empty;
-                destructible->destroyed = true;
             }
             if (bomb)
-                bomb->explode(pos, data);
+                bomb->explode(pos, data, id);
         }
     }
 

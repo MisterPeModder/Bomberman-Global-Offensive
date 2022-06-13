@@ -8,7 +8,6 @@
 #include "Collision.hpp"
 #include "ecs/join.hpp"
 #include "game/components/Collidable.hpp"
-#include "game/components/Destructible.hpp"
 #include "game/components/Size.hpp"
 #include "game/components/Velocity.hpp"
 
@@ -24,16 +23,15 @@ namespace game::systems
         auto &collidable = data.getStorage<Collidable>();
         auto &velocities = data.getStorage<Velocity>();
         auto optionalVelocity = ecs::maybe(velocities);
-        auto maybeDestructible = ecs::maybe(data.getStorage<Destructible>());
         raylib::shapes::Rectangle collideRect;
 
         for (auto [pos1, size1, vel1, id1, c1] : ecs::join(positions, sizes, velocities, entities, collidable)) {
-            for (auto [pos2, size2, vel2, id2, c2, destructible] :
-                ecs::join(positions, sizes, optionalVelocity, entities, collidable, maybeDestructible)) {
+            for (auto [pos2, size2, vel2, id2, c2] :
+                ecs::join(positions, sizes, optionalVelocity, entities, collidable)) {
                 (void)c1;
                 (void)c2;
                 /// Do not collide entities with themselves
-                if (id1.getId() == id2.getId() || (destructible && destructible->destroyed))
+                if (id1.getId() == id2.getId())
                     continue;
                 if (!getCollideRect(collideRect, pos1, size1, pos2, size2))
                     continue;

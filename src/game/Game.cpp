@@ -125,9 +125,8 @@ namespace game
                                         .with<components::Size>(1.f, 1.f, 1.f)
                                         .with<components::CubeColor>(color);
                     if (destructible)
-                        builder.with<components::Destructible>().build();
-                    else
-                        builder.build();
+                        (void)builder.with<components::Destructible>();
+                    builder.build();
                 }
             }
         }
@@ -146,6 +145,7 @@ namespace game
             _world.runSystems(_drawing);
         };
         raylib::core::Window::drawFPS(10, 10);
+        _world.maintain();
     }
 
 } // namespace game
