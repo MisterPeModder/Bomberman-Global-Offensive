@@ -38,6 +38,11 @@ namespace raylib
             /// @param fileName The name of the file that contains the texture.
             Texture2D(const std::filesystem::path &fileName, Vector2f position = {});
 
+            /// Constructor for create a texture2D with a image
+            ///
+            /// @param image The image to load the texture from.
+            Texture2D(raylib::textures::Image &image);
+
             /// The destructor for the Texture2D class
             ~Texture2D();
 

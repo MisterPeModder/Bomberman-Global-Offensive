@@ -17,6 +17,7 @@ namespace raylib
             load();
         }
 
+
         Texture2D::Texture2D(raylib::textures::Image &image) { loadFromImage(image.asRaylib()); }
 
         Texture2D::~Texture2D() { unload(); }
