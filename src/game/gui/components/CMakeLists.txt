@@ -10,7 +10,6 @@ set (SRC
 	${SRCROOT}/IWidgetComponent.hpp
 	${SRCROOT}/Widget.cpp
 	${SRCROOT}/Widget.hpp
-	${SRCROOT}/Rectangle.hpp
 	PARENT_SCOPE)
 
 set(INCDIRS 

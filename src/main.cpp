@@ -13,6 +13,7 @@
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
 #include "logger/Logger.hpp"
+#include "menu/MainMenu.hpp"
 
 #include "game/gui/components/Widget.hpp"
 #include "raylib/core/Camera3D.hpp"
@@ -61,6 +62,8 @@ static void setupLogger()
 static void runGame()
 {
     auto params = new Params();
+    Menu::MainMenu menu;
+    menu.createsButtons(params->world);
 
     params->game.setup(params->camera);
 

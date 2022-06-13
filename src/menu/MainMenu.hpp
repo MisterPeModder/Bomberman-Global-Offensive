@@ -8,13 +8,8 @@
 #ifndef MAINMENU_HPP_
 #define MAINMENU_HPP_
 
-#include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
-#include "ecs/System.hpp"
 #include "ecs/World.hpp"
-#include "ecs/join.hpp"
-#include "ecs/resource/Timer.hpp"
-#include "raylib/textures/Image.hpp"
 
 namespace Menu
 {
@@ -27,8 +22,6 @@ namespace Menu
 
       protected:
       private:
-        ecs::World menu;
-        struct ButtonMenu : public ecs::System {};
     };
 } // namespace Menu
 
