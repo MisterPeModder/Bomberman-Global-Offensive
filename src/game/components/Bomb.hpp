@@ -12,6 +12,7 @@
 #include "Position.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/System.hpp"
+#include "game/map/Map.hpp"
 
 namespace game::components
 {
@@ -39,6 +40,21 @@ namespace game::components
         /// @param pos position of the bomb.
         /// @param data world data.
         void explode(const Position &pos, ecs::SystemData data);
+
+      private:
+        /// Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell)
+        static constexpr float LivingEntityExplodeLimit = 0.4f;
+
+        /// Test if at least @ref LivingEntityExplodeLimit % of a living entity size is on an adjacent exploded cell.
+        ///
+        /// @param pos entity position
+        /// @param size entity size
+        /// @param roundedPos2D entity main cell
+        /// @param explodedPositions exploded positions
+        /// @return true if the entity is on an adjacent exploded cell
+        /// @return false if the entity isn't exploded on adjacent cells
+        bool explodeLiving(raylib::core::Vector3f pos, raylib::core::Vector3f size, raylib::core::Vector2u roundedPos2D,
+            const std::vector<raylib::core::Vector2u> &explodedPositions) const;
     };
 } // namespace game::components
 
