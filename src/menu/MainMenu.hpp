@@ -10,18 +10,26 @@
 
 #include "ecs/Storage.hpp"
 #include "ecs/World.hpp"
+#include "raylib/core/Camera3D.hpp"
 
 namespace Menu
 {
     class MainMenu {
       public:
-        MainMenu();
+        MainMenu(ecs::World &world);
         ~MainMenu();
+        void setup();
         /// Create all buttons needed in the manu
-        void createsButtons(ecs::World &world);
+        void createsButtons();
+        void modulePlayerFirst();
+        void modulePlayerSecond();
+        void modulePlayerThird();
+        void modulePlayerFourth();
+        void drawFrame(const raylib::core::Camera3D &camera);
 
       protected:
       private:
+        ecs::World &_world;
     };
 } // namespace Menu
 
