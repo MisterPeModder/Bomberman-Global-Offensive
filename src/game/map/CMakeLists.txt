@@ -7,9 +7,10 @@ set(SRC
 	${SRC}
 	${SRCROOT}/Map.cpp
 	${SRCROOT}/Map.hpp
+	${SRCROOT}/CreateMap.cpp
 	PARENT_SCOPE)
 
-set(INCDIRS 
+set(INCDIRS
 	${INCDIRS}
 	${INCROOT}
-	PARENT_SCOPE) 
+	PARENT_SCOPE)
