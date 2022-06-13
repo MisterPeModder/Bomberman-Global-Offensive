@@ -76,9 +76,9 @@ var NAVTREEINDEX =
 "classecs_1_1_marker_storage.html#a0ffcb093baaa82043e1adb5dde59b924",
 "classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b",
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90adc271d081ca9fcbefdc42998313398d8",
-"classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36",
+"classraylib_1_1textures_1_1_texture2_d.html#a24a5b2fce5bed22bde7314081189c64f",
 "namespacelocalization.html",
-"structraylib_1_1core_1_1_color.html#a7486d780fd0e4a5203b8d2acb2c2ec6b"
+"structraylib_1_1core_1_1_color.html#a679a1e758fbfb55e246a976c253f1c3e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

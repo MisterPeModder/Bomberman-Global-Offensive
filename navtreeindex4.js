@@ -199,15 +199,16 @@ var NAVTREEINDEX4 =
 "classraylib_1_1shapes_1_1_pixel.html#ae8048febca9e25c7a8160247253d927b":[2,0,4,2,5,2],
 "classraylib_1_1shapes_1_1_rectangle.html":[2,0,4,2,6],
 "classraylib_1_1shapes_1_1_rectangle.html#a2a80a196f86ade3d5a4ced84bf9dcb61":[2,0,4,2,6,5],
-"classraylib_1_1shapes_1_1_rectangle.html#a5a11c76aafe63cbf557447ba4e133a1e":[2,0,4,2,6,1],
 "classraylib_1_1shapes_1_1_rectangle.html#a6730b3432ec1932a1d3986a31a071804":[2,0,4,2,6,3],
 "classraylib_1_1shapes_1_1_rectangle.html#a7ea4c4fc61334875ef4ac0b166bad223":[2,0,4,2,6,10],
 "classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71":[2,0,4,2,6,11],
-"classraylib_1_1shapes_1_1_rectangle.html#a8ccee08f97ac6efe47b3104b1928174c":[2,0,4,2,6,12],
+"classraylib_1_1shapes_1_1_rectangle.html#a8ccee08f97ac6efe47b3104b1928174c":[2,0,4,2,6,13],
 "classraylib_1_1shapes_1_1_rectangle.html#a8e069d544c5df0b9914d24cdf41384e8":[2,0,4,2,6,7],
 "classraylib_1_1shapes_1_1_rectangle.html#aa9de9a2a85e075150072e7e8b20997ea":[2,0,4,2,6,2],
 "classraylib_1_1shapes_1_1_rectangle.html#aaac44ab40988b7e125057580c9c05536":[2,0,4,2,6,8],
 "classraylib_1_1shapes_1_1_rectangle.html#ab435485147667ebca875fd05b34bc8c7":[2,0,4,2,6,6],
+"classraylib_1_1shapes_1_1_rectangle.html#ab888b55be8a0a992f9991623f662a18c":[2,0,4,2,6,1],
+"classraylib_1_1shapes_1_1_rectangle.html#ac345ac0e37907d153fa6476922e43c2d":[2,0,4,2,6,12],
 "classraylib_1_1shapes_1_1_rectangle.html#acd489a0455d50aaf9f2071195b842bd1":[2,0,4,2,6,4],
 "classraylib_1_1shapes_1_1_rectangle.html#ad161334b7d7931bbbda3cb9c7c885b3a":[2,0,4,2,6,9],
 "classraylib_1_1shapes_1_1_rectangle.html#af573afa9cd6ed8a690cb8b1ba3ddee17":[2,0,4,2,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "classraylib_1_1textures_1_1_image.html#af9aa77980732d325aeb143937a29af59":[2,0,4,3,0,17],
 "classraylib_1_1textures_1_1_image.html#afd93efee65954ae910eccfb903f32876":[2,0,4,3,0,15],
 "classraylib_1_1textures_1_1_texture2_d.html":[2,0,4,3,1],
-"classraylib_1_1textures_1_1_texture2_d.html#a031445d37b9b8ef9ed801ff30eff24d7":[2,0,4,3,1,16],
-"classraylib_1_1textures_1_1_texture2_d.html#a24a5b2fce5bed22bde7314081189c64f":[2,0,4,3,1,14]
+"classraylib_1_1textures_1_1_texture2_d.html#a031445d37b9b8ef9ed801ff30eff24d7":[2,0,4,3,1,16]
 };

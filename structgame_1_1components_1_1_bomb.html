@@ -86,6 +86,8 @@ $(document).ready(function(){initNavTree('structgame_1_1components_1_1_bomb.html
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="structgame_1_1components_1_1_bomb-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">game::components::Bomb Struct Reference</div>  </div>
@@ -134,6 +136,18 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:ae0e2d1d993b02d2688dd3e9778ad9aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the bomb has already exploded.  <a href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">More...</a><br /></td></tr>
 <tr class="separator:ae0e2d1d993b02d2688dd3e9778ad9aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aad24108cd02e2ad93c1f603808ed1b46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_bomb.html#aad24108cd02e2ad93c1f603808ed1b46">explodeLiving</a> (<a class="el" href="namespaceraylib_1_1core.html#aa81802a8f01218950beeb9d0bcf907fe">raylib::core::Vector3f</a> pos, <a class="el" href="namespaceraylib_1_1core.html#aa81802a8f01218950beeb9d0bcf907fe">raylib::core::Vector3f</a> size, <a class="el" href="namespaceraylib_1_1core.html#ada7b1c20ae9940e02232a44f49fb0e26">raylib::core::Vector2u</a> roundedPos2D, const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="namespaceraylib_1_1core.html#ada7b1c20ae9940e02232a44f49fb0e26">raylib::core::Vector2u</a> &gt; &amp;explodedPositions) const</td></tr>
+<tr class="memdesc:aad24108cd02e2ad93c1f603808ed1b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if at least <a class="el" href="structgame_1_1components_1_1_bomb.html#af458eac35d043429914208f480e6ee8e">LivingEntityExplodeLimit</a> % of a living entity size is on an adjacent exploded cell.  <a href="structgame_1_1components_1_1_bomb.html#aad24108cd02e2ad93c1f603808ed1b46">More...</a><br /></td></tr>
+<tr class="separator:aad24108cd02e2ad93c1f603808ed1b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:af458eac35d043429914208f480e6ee8e"><td class="memItemLeft" align="right" valign="top">static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_bomb.html#af458eac35d043429914208f480e6ee8e">LivingEntityExplodeLimit</a> = 0.4f</td></tr>
+<tr class="memdesc:af458eac35d043429914208f480e6ee8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell)  <a href="structgame_1_1components_1_1_bomb.html#af458eac35d043429914208f480e6ee8e">More...</a><br /></td></tr>
+<tr class="separator:af458eac35d043429914208f480e6ee8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classecs_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classecs_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classecs_1_1_component.html">ecs::Component</a></td></tr>
@@ -143,7 +157,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structgame_1_1components_1_1_bomb.html" title="Bomb component.">Bomb</a> component. </p>
 
-<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00019">19</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00020">20</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7f45fdfe0dc2d2f7de5c637c8f3194c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7f45fdfe0dc2d2f7de5c637c8f3194c">&#9670;&nbsp;</a></span>Bomb()</h2>
@@ -188,9 +202,9 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00033">33</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            : <a class="code" href="structgame_1_1components_1_1_bomb.html#af399796812c0364660e3e07f4819b904">placedTime</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>()), <a class="code" href="structgame_1_1components_1_1_bomb.html#adc7a222bada558562bf25673536d53a9">radius</a>(pRadius), <a class="code" href="structgame_1_1components_1_1_bomb.html#ad643c446b16377198fcd9fe4152750d9">explosionDelay</a>(pExplosionDelay),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;              <a class="code" href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">exploded</a>(<span class="keyword">false</span>){};</div>
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00034">34</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            : <a class="code" href="structgame_1_1components_1_1_bomb.html#af399796812c0364660e3e07f4819b904">placedTime</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>()), <a class="code" href="structgame_1_1components_1_1_bomb.html#adc7a222bada558562bf25673536d53a9">radius</a>(pRadius), <a class="code" href="structgame_1_1components_1_1_bomb.html#ad643c446b16377198fcd9fe4152750d9">explosionDelay</a>(pExplosionDelay),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;              <a class="code" href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">exploded</a>(<span class="keyword">false</span>){};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -234,43 +248,144 @@ Additional Inherited Members</h2></td></tr>
 <p>Test for destructible and living entities if they are in an exploded cell.</p>
 <p>Do not care about dead, destroyed or exploded entities</p>
 
-<p class="definition">Definition at line <a class="el" href="components_2_bomb_8cpp_source.html#l00020">20</a> of file <a class="el" href="components_2_bomb_8cpp_source.html">Bomb.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">exploded</a>)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        this-&gt;<a class="code" href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">exploded</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">auto</span> &amp;positions = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Position&gt;();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">auto</span> maybeDestructible = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Destructible&gt;());</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">auto</span> maybeLiving = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Living&gt;());</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">auto</span> maybeBomb = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_bomb.html#aa7f45fdfe0dc2d2f7de5c637c8f3194c">Bomb</a>&gt;());</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classgame_1_1map_1_1_map.html">game::map::Map</a> &amp;map = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="structgame_1_1resources_1_1_map.html">game::resources::Map</a>&gt;().map;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector&lt;raylib::core::Vector2u&gt;</a> explodedPositions;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        map.<a class="code" href="classgame_1_1map_1_1_map.html#a468f81b8dd24899d7f141d6bf9a27570">fillExplodedPositions</a>(explodedPositions,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(bombPos.x), <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(bombPos.z)),</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            this-&gt;<a class="code" href="structgame_1_1components_1_1_bomb.html#adc7a222bada558562bf25673536d53a9">radius</a>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (explodedPositions.empty())</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, destructible, living, bomb] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(positions, maybeDestructible, maybeLiving, maybeBomb)) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> ((!destructible &amp;&amp; !living &amp;&amp; !bomb) || (destructible &amp;&amp; destructible-&gt;destroyed)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                || (living &amp;&amp; living-&gt;hp == 0) || (bomb &amp;&amp; bomb-&gt;exploded))</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a> pos2D = {<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(pos.x), <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(pos.z)};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a>(explodedPositions.begin(), explodedPositions.end(), pos2D) == explodedPositions.end())</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            map.<a class="code" href="classgame_1_1map_1_1_map.html#a68220cf80606f979a3888fbfa0a9f1d0">getElement</a>(pos2D) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">game::map::Map::Element::Empty</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (destructible)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                destructible-&gt;destroyed = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (living)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Living entity hit by a bomb&quot;</span>); <span class="comment">// living-&gt;hp--;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span> (bomb)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                bomb-&gt;explode(pos, data);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8cpp_source.html#l00021">21</a> of file <a class="el" href="components_2_bomb_8cpp_source.html">Bomb.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">exploded</a>)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        this-&gt;<a class="code" href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">exploded</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">auto</span> &amp;positions = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Position&gt;();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">auto</span> &amp;sizes = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Size&gt;();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">auto</span> maybeDestructible = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Destructible&gt;());</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">auto</span> maybeLiving = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Living&gt;());</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">auto</span> maybeBomb = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_bomb.html#aa7f45fdfe0dc2d2f7de5c637c8f3194c">Bomb</a>&gt;());</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classgame_1_1map_1_1_map.html">game::map::Map</a> &amp;map = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="structgame_1_1resources_1_1_map.html">game::resources::Map</a>&gt;().map;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector&lt;raylib::core::Vector2u&gt;</a> explodedPositions;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        map.<a class="code" href="classgame_1_1map_1_1_map.html#a468f81b8dd24899d7f141d6bf9a27570">fillExplodedPositions</a>(explodedPositions,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(bombPos.x), <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(bombPos.z)),</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            this-&gt;<a class="code" href="structgame_1_1components_1_1_bomb.html#adc7a222bada558562bf25673536d53a9">radius</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (explodedPositions.empty())</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, size, destructible, living, bomb] :</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(positions, sizes, maybeDestructible, maybeLiving, maybeBomb)) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">if</span> ((!destructible &amp;&amp; !living &amp;&amp; !bomb) || (destructible &amp;&amp; destructible-&gt;destroyed)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                || (living &amp;&amp; living-&gt;hp == 0) || (bomb &amp;&amp; bomb-&gt;exploded))</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a> roundedPos2D = {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/numeric/math/round.html">std::round</a>(pos.x)), <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/numeric/math/round.html">std::round</a>(pos.z))};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a>(explodedPositions.begin(), explodedPositions.end(), roundedPos2D) == explodedPositions.end()</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                &amp;&amp; (!living || !<a class="code" href="structgame_1_1components_1_1_bomb.html#aad24108cd02e2ad93c1f603808ed1b46">explodeLiving</a>(pos, size, roundedPos2D, explodedPositions)))</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (living) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Living entity hit by a bomb&quot;</span>); <span class="comment">// living-&gt;hp--;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (destructible) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                map.<a class="code" href="classgame_1_1map_1_1_map.html#a68220cf80606f979a3888fbfa0a9f1d0">getElement</a>(roundedPos2D) = <a class="code" href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">game::map::Map::Element::Empty</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                destructible-&gt;destroyed = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (bomb)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                bomb-&gt;explode(pos, data);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aad24108cd02e2ad93c1f603808ed1b46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad24108cd02e2ad93c1f603808ed1b46">&#9670;&nbsp;</a></span>explodeLiving()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool game::components::Bomb::explodeLiving </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceraylib_1_1core.html#aa81802a8f01218950beeb9d0bcf907fe">raylib::core::Vector3f</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceraylib_1_1core.html#aa81802a8f01218950beeb9d0bcf907fe">raylib::core::Vector3f</a>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceraylib_1_1core.html#ada7b1c20ae9940e02232a44f49fb0e26">raylib::core::Vector2u</a>&#160;</td>
+          <td class="paramname"><em>roundedPos2D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="el" href="namespaceraylib_1_1core.html#ada7b1c20ae9940e02232a44f49fb0e26">raylib::core::Vector2u</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>explodedPositions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test if at least <a class="el" href="structgame_1_1components_1_1_bomb.html#af458eac35d043429914208f480e6ee8e">LivingEntityExplodeLimit</a> % of a living entity size is on an adjacent exploded cell. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>entity position </td></tr>
+    <tr><td class="paramname">size</td><td>entity size </td></tr>
+    <tr><td class="paramname">roundedPos2D</td><td>entity main cell </td></tr>
+    <tr><td class="paramname">explodedPositions</td><td>exploded positions </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the entity is on an adjacent exploded cell </dd>
+<dd>
+false if the entity isn't exploded on adjacent cells </dd></dl>
+<p>Signed delta between the entity position and its main cell center.</p>
+<p>Unsigned distance from the cell center to the opposite side of the entity (furthest from the center)</p>
+<p>(centerDistance.x - 0.5f) is the distance overtaking on the next cell since the distance from the center of the cell to the start of an other is 0.5f (all cells are of size {1, 1}) We compare it with a % of the entity size to detect wether it is on the cell or not.</p>
+<p>Other cell pos</p>
+
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8cpp_source.html#l00070">70</a> of file <a class="el" href="components_2_bomb_8cpp_source.html">Bomb.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2f</a> centerDelta = {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            pos.<a class="code" href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">x</a> - <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(roundedPos2D.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>), pos.<a class="code" href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">z</a> - <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(roundedPos2D.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>)};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2f</a> centerDistance = {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            abs(centerDelta.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>) + <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>.x * 0.5f, abs(centerDelta.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>) + <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>.z * 0.5f};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// if (centerDistance.x &lt; 0.5f &amp;&amp; centerDistance.y &lt; 0.5f)</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">//     return false;</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// Logger::logger.log(Logger::Severity::Debug, [&amp;](auto &amp;out) {</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">//     out &lt;&lt; &quot;Living overtake an adjacent cell of (&quot; &lt;&lt; (centerDistance.x - 0.5f) / size.x &lt;&lt; &quot;%, &quot;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">//         &lt;&lt; (centerDistance.y - 0.5f) / size.z &lt;&lt; &quot;%)&quot;;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// });</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> ((centerDistance.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a> - 0.5f) &lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>.x * <a class="code" href="structgame_1_1components_1_1_bomb.html#af458eac35d043429914208f480e6ee8e">LivingEntityExplodeLimit</a></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            &amp;&amp; (centerDistance.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a> - 0.5f) &lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>.z * <a class="code" href="structgame_1_1components_1_1_bomb.html#af458eac35d043429914208f480e6ee8e">LivingEntityExplodeLimit</a>)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a> adjacentCell = roundedPos2D;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (abs(centerDelta.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>) &gt; abs(centerDelta.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>))</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            adjacentCell.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a> += <a class="codeRef" href="http://en.cppreference.com/w/cpp/numeric/math/copysign.html">std::copysign</a>(1, centerDelta.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            adjacentCell.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a> += <a class="codeRef" href="http://en.cppreference.com/w/cpp/numeric/math/copysign.html">std::copysign</a>(1, centerDelta.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a>(explodedPositions.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/begin.html">begin</a>(), explodedPositions.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/end.html">end</a>(), adjacentCell) != explodedPositions.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/end.html">end</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -289,7 +404,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>If the bomb has already exploded. </p>
 
-<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00027">27</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00028">28</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
 
 </div>
 </div>
@@ -307,7 +422,33 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Delay before the explosion. </p>
 
-<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00025">25</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00026">26</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af458eac35d043429914208f480e6ee8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af458eac35d043429914208f480e6ee8e">&#9670;&nbsp;</a></span>LivingEntityExplodeLimit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float game::components::Bomb::LivingEntityExplodeLimit = 0.4f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell) </p>
+
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00046">46</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +466,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Time when the bomb was placed. </p>
 
-<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00021">21</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00022">22</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
 
 </div>
 </div>
@@ -343,7 +484,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Radius of the bomb explosion. </p>
 
-<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00023">23</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="components_2_bomb_8hpp_source.html#l00024">24</a> of file <a class="el" href="components_2_bomb_8hpp_source.html">Bomb.hpp</a>.</p>
 
 </div>
 </div>
@@ -358,19 +499,30 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="astructgame_1_1resources_1_1_map_html"><div class="ttname"><a href="structgame_1_1resources_1_1_map.html">game::resources::Map</a></div><div class="ttdoc">Game map resource.</div><div class="ttdef"><b>Definition:</b> <a href="resources_2_map_8hpp_source.html#l00017">Map.hpp:17</a></div></div>
 <div class="ttc" id="avector_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a></div></div>
 <div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a></div><div class="ttdeci">T find(T... args)</div></div>
+<div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/size.html">std::size</a></div><div class="ttdeci">T size(T... args)</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_aad24108cd02e2ad93c1f603808ed1b46"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#aad24108cd02e2ad93c1f603808ed1b46">game::components::Bomb::explodeLiving</a></div><div class="ttdeci">bool explodeLiving(raylib::core::Vector3f pos, raylib::core::Vector3f size, raylib::core::Vector2u roundedPos2D, const std::vector&lt; raylib::core::Vector2u &gt; &amp;explodedPositions) const</div><div class="ttdoc">Test if at least LivingEntityExplodeLimit % of a living entity size is on an adjacent exploded cell.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8cpp_source.html#l00070">Bomb.cpp:70</a></div></div>
 <div class="ttc" id="aclassgame_1_1map_1_1_map_html_a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a2939a90c92402ffa4d9c443742a6295dace2c8aed9c2fa0cfbed56cbda4d8bf07">game::map::Map::Element::Empty</a></div><div class="ttdeci">@ Empty</div><div class="ttdoc">Destructible crate.</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_ae0e2d1d993b02d2688dd3e9778ad9aa1"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">game::components::Bomb::exploded</a></div><div class="ttdeci">bool exploded</div><div class="ttdoc">If the bomb has already exploded.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00027">Bomb.hpp:27</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_aa7f45fdfe0dc2d2f7de5c637c8f3194c"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#aa7f45fdfe0dc2d2f7de5c637c8f3194c">game::components::Bomb::Bomb</a></div><div class="ttdeci">Bomb(size_t pRadius=1, std::chrono::milliseconds pExplosionDelay=std::chrono::milliseconds(2000))</div><div class="ttdoc">Construct a new Bomb component.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00033">Bomb.hpp:33</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_ae0e2d1d993b02d2688dd3e9778ad9aa1"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#ae0e2d1d993b02d2688dd3e9778ad9aa1">game::components::Bomb::exploded</a></div><div class="ttdeci">bool exploded</div><div class="ttdoc">If the bomb has already exploded.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00028">Bomb.hpp:28</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_aa7f45fdfe0dc2d2f7de5c637c8f3194c"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#aa7f45fdfe0dc2d2f7de5c637c8f3194c">game::components::Bomb::Bomb</a></div><div class="ttdeci">Bomb(size_t pRadius=1, std::chrono::milliseconds pExplosionDelay=std::chrono::milliseconds(2000))</div><div class="ttdoc">Construct a new Bomb component.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00034">Bomb.hpp:34</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_af458eac35d043429914208f480e6ee8e"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#af458eac35d043429914208f480e6ee8e">game::components::Bomb::LivingEntityExplodeLimit</a></div><div class="ttdeci">static constexpr float LivingEntityExplodeLimit</div><div class="ttdoc">Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell...</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00046">Bomb.hpp:46</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a36bbcee819473693f3869f528beb7bca"><div class="ttname"><a href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a></div><div class="ttdeci">MaybeJoin&lt; J &gt; maybe(J &amp;joinable)</div><div class="ttdoc">Creates A Joinable structure that yields all indices, returning nullptr for all missing elements and ...</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00053">join.hpp:53</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
+<div class="ttc" id="acopysign_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/math/copysign.html">std::copysign</a></div><div class="ttdeci">T copysign(T... args)</div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a9da72810fb429cabcddd8123f37b8557"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">raylib::core::Vector3::z</a></div><div class="ttdeci">T z</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00182">Vector3.hpp:182</a></div></div>
 <div class="ttc" id="aclassgame_1_1map_1_1_map_html_a468f81b8dd24899d7f141d6bf9a27570"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a468f81b8dd24899d7f141d6bf9a27570">game::map::Map::fillExplodedPositions</a></div><div class="ttdeci">void fillExplodedPositions(std::vector&lt; Vector2u &gt; &amp;explodePositions, Vector2u center, size_t radius)</div><div class="ttdoc">Get the exploded positions from an explosion position and its radius.</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00067">Map.cpp:67</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_ad643c446b16377198fcd9fe4152750d9"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#ad643c446b16377198fcd9fe4152750d9">game::components::Bomb::explosionDelay</a></div><div class="ttdeci">std::chrono::milliseconds explosionDelay</div><div class="ttdoc">Delay before the explosion.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00025">Bomb.hpp:25</a></div></div>
+<div class="ttc" id="around_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/math/round.html">std::round</a></div><div class="ttdeci">T round(T... args)</div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_add73a20dbe53b2f80ae4e892df036980"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">raylib::core::Vector3::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00180">Vector3.hpp:180</a></div></div>
+<div class="ttc" id="abegin_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/begin.html">std::vector::begin</a></div><div class="ttdeci">T begin(T... args)</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_ad643c446b16377198fcd9fe4152750d9"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#ad643c446b16377198fcd9fe4152750d9">game::components::Bomb::explosionDelay</a></div><div class="ttdeci">std::chrono::milliseconds explosionDelay</div><div class="ttdoc">Delay before the explosion.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00026">Bomb.hpp:26</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2</a></div><div class="ttdoc">The Vector2 struct (compatible with the raylib Vector2)</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00025">Vector2.hpp:25</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_adc7a222bada558562bf25673536d53a9"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#adc7a222bada558562bf25673536d53a9">game::components::Bomb::radius</a></div><div class="ttdeci">size_t radius</div><div class="ttdoc">Radius of the bomb explosion.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00023">Bomb.hpp:23</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_adc7a222bada558562bf25673536d53a9"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#adc7a222bada558562bf25673536d53a9">game::components::Bomb::radius</a></div><div class="ttdeci">size_t radius</div><div class="ttdoc">Radius of the bomb explosion.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00024">Bomb.hpp:24</a></div></div>
 <div class="ttc" id="aclassgame_1_1map_1_1_map_html_a68220cf80606f979a3888fbfa0a9f1d0"><div class="ttname"><a href="classgame_1_1map_1_1_map.html#a68220cf80606f979a3888fbfa0a9f1d0">game::map::Map::getElement</a></div><div class="ttdeci">Element getElement(Vector2u position) const</div><div class="ttdoc">Get the Element at the requested position.</div><div class="ttdef"><b>Definition:</b> <a href="_map_8cpp_source.html#l00045">Map.cpp:45</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_af399796812c0364660e3e07f4819b904"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#af399796812c0364660e3e07f4819b904">game::components::Bomb::placedTime</a></div><div class="ttdeci">std::chrono::steady_clock::time_point placedTime</div><div class="ttdoc">Time when the bomb was placed.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00021">Bomb.hpp:21</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_a000198d5814b224f892bc9ae317015c6"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">raylib::core::Vector2::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00139">Vector2.hpp:139</a></div></div>
+<div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/end.html">std::vector::end</a></div><div class="ttdeci">T end(T... args)</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_af399796812c0364660e3e07f4819b904"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#af399796812c0364660e3e07f4819b904">game::components::Bomb::placedTime</a></div><div class="ttdeci">std::chrono::steady_clock::time_point placedTime</div><div class="ttdoc">Time when the bomb was placed.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00022">Bomb.hpp:22</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/data.html">std::data</a></div><div class="ttdeci">T data(T... args)</div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_af286ae0d4dd1908cf3668c651a509c47"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">raylib::core::Vector2::y</a></div><div class="ttdeci">T y</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00140">Vector2.hpp:140</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>
 <div class="ttc" id="anow_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a></div><div class="ttdeci">T now(T... args)</div></div>
 <!-- start footer part -->
