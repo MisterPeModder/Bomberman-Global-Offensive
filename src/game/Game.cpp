@@ -7,6 +7,7 @@
 
 #include "Game.hpp"
 #include <cmath>
+#include "ecs/Storage.hpp"
 #include "ecs/resource/Timer.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/scoped.hpp"
@@ -117,17 +118,17 @@ namespace game
                     }
                 }
                 if (wall) {
-                    auto &builder = _world.addEntity()
-                                        .with<components::Position>(x, 0.5f, z)
-                                        .with<components::Collidable>()
-                                        .with<components::Wall>()
-                                        .with<components::Cube>()
-                                        .with<components::Size>(1.f, 1.f, 1.f)
-                                        .with<components::CubeColor>(color);
+                    auto builder = _world.addEntity();
+
+                    (void)builder.with<components::Position>(x, 0.5f, z)
+                        .with<components::Collidable>()
+                        .with<components::Wall>()
+                        .with<components::Cube>()
+                        .with<components::Size>(1.f, 1.f, 1.f)
+                        .with<components::CubeColor>(color);
                     if (destructible)
-                        builder.with<components::Destructible>().build();
-                    else
-                        builder.build();
+                        (void)builder.with<components::Destructible>();
+                    builder.build();
                 }
             }
         }
