@@ -32,8 +32,18 @@ struct Position : public ecs::Component {
     Position(float px, float py) : x(px), y(py) {}
 };
 
+struct Velocity : public ecs::Component {
+    float x;
+    float y;
+
+    Velocity(float px, float py) : x(px), y(py) {}
+};
+
 struct Marker : public ecs::Component {};
 SET_COMPONENT_STORAGE(Marker, ecs::MarkerStorage);
+
+struct Marker2 : public ecs::Component {};
+SET_COMPONENT_STORAGE(Marker2, ecs::MarkerStorage);
 
 // JoinIter must be an input iterator
 static_assert(std::input_iterator<ecs::JoinIter<ecs::MapStorage<Position>>>);
@@ -274,6 +284,7 @@ TEST(Join, midLoopRemovals)
     ecs::World world;
 
     createWorld(world);
+    world.addEntity().with<Marker2>().with<Velocity>(0.f, 0.f).build();
 
     world.addSystem<RemovingSystem>();
     world.runSystems();
