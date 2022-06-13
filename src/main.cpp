@@ -73,7 +73,7 @@ static void runGame()
 {
     auto params = new Params();
 
-    game::SplashWorld gameWorld(params->world);
+    game::GameWorld gameWorld(params->world);
     gameWorld.setCamera(params->camera);
 
     // params->game.setup(params->camera);
