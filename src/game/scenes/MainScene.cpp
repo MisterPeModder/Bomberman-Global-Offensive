@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2022
 ** BMGO
 ** File description:
-** MainWorld
+** MainScene
 */
 
-#include "MainWorld.hpp"
+#include "MainScene.hpp"
 
 #include "util/util.hpp"
 
@@ -18,7 +18,7 @@
 #include "game/components/Size.hpp"
 #include "game/systems/Model.hpp"
 
-static void loadMainWorld(ecs::World &world)
+static void loadMainScene(ecs::World &world)
 {
     static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
 
@@ -37,5 +37,5 @@ static void loadMainWorld(ecs::World &world)
 
 namespace game
 {
-    MainWorld::MainWorld() { loadMainWorld(_world); }
+    MainScene::MainScene() { loadMainScene(_world); }
 } // namespace game

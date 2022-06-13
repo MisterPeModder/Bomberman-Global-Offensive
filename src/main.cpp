@@ -21,12 +21,12 @@
 #include "script/Engine.hpp"
 
 #include "game/Game.hpp"
-#include "game/worlds/GameWorld.hpp"
-#include "game/worlds/IWorld.hpp"
-#include "game/worlds/MainWorld.hpp"
-#include "game/worlds/SettingsWorld.hpp"
-#include "game/worlds/SplashWorld.hpp"
-#include "game/worlds/TestWorld.hpp"
+#include "game/scenes/GameScene.hpp"
+#include "game/scenes/IScene.hpp"
+#include "game/scenes/MainScene.hpp"
+#include "game/scenes/SettingsScene.hpp"
+#include "game/scenes/SplashScene.hpp"
+#include "game/scenes/TestScene.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -36,10 +36,10 @@ constexpr int WIDTH(1080);
 constexpr int HEIGHT(720);
 
 struct Params {
-    std::unique_ptr<game::IWorld> world;
+    std::unique_ptr<game::IScene> scene;
     raylib::core::Camera3D camera;
 
-    Params() : world(new game::GameWorld()), camera() {}
+    Params() : scene(new game::GameScene()), camera() {}
 };
 
 static void setupLogger()
@@ -57,14 +57,14 @@ static void drawFrame(void *args)
     Params *params = reinterpret_cast<Params *>(args);
 
     params->camera.update();
-    params->world.get()->drawFrame(params->camera);
+    params->scene.get()->drawFrame(params->camera);
 }
 
 static void runGame()
 {
     auto params = new Params();
 
-    params->world.get()->setCamera(params->camera);
+    params->scene.get()->setCamera(params->camera);
 
     // params->game.setup(params->camera);
     // game::Worlds::loadGameWorld(params->game, params->camera);

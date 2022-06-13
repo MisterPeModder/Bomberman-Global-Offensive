@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman-Global-Offensive
 ** File description:
-** SplashWorld
+** SplashScene
 */
 
-#include "SplashWorld.hpp"
+#include "SplashScene.hpp"
 
 #include "util/util.hpp"
 
@@ -61,5 +61,5 @@ static void loadSplashWorld(ecs::World &world)
 
 namespace game
 {
-    SplashWorld::SplashWorld() { loadSplashWorld(_world); }
+    SplashScene::SplashScene() { loadSplashWorld(_world); }
 } // namespace game

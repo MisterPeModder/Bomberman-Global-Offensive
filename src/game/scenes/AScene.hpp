@@ -2,21 +2,21 @@
 ** EPITECH PROJECT, 2022
 ** BMGO
 ** File description:
-** AWorld
+** AScene
 */
 
-#ifndef GAME_WORLDS_AWORLD_HPP_
-#define GAME_WORLDS_AWORLD_HPP_
+#ifndef GAME_WORLDS_ASCENES_HPP_
+#define GAME_WORLDS_ASCENES_HPP_
 
 #include "ecs/World.hpp"
-#include "game/worlds/IWorld.hpp"
+#include "game/scenes/IScene.hpp"
 
 namespace game
 {
-    class AWorld : public game::IWorld {
+    class AScene : public game::IScene {
       public:
-        AWorld();
-        ~AWorld();
+        AScene();
+        ~AScene();
         void setCamera(raylib::core::Camera3D &camera) override;
         void drawFrame(const raylib::core::Camera3D &camera) override;
 
@@ -25,4 +25,4 @@ namespace game
     };
 } // namespace game
 
-#endif /* !GAME_WORLDS_AWORLD_HPP_ */
+#endif /* !GAME_WORLDS_ASCENES_HPP_ */

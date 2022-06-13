@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2022
 ** BMGO
 ** File description:
-** SettingsWorld
+** SettingsScene
 */
 
-#include "SettingsWorld.hpp"
+#include "SettingsScene.hpp"
 
 #include "util/util.hpp"
 
@@ -37,5 +37,5 @@ static void loadSettingsWorld(ecs::World &world)
 
 namespace game
 {
-    SettingsWorld::SettingsWorld() { loadSettingsWorld(_world); }
+    SettingsScene::SettingsScene() { loadSettingsWorld(_world); }
 } // namespace game

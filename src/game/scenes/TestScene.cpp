@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman-Global-Offensive
 ** File description:
-** TestWorld
+** TestScene
 */
 
-#include "game/worlds/TestWorld.hpp"
+#include "game/scenes/TestScene.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
@@ -146,5 +146,5 @@ static void loadTestWorld(ecs::World &world)
 
 namespace game
 {
-    TestWorld::TestWorld() { loadTestWorld(_world); }
+    TestScene::TestScene() { loadTestWorld(_world); }
 } // namespace game

@@ -2,24 +2,24 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman-Global-Offensive
 ** File description:
-** GameWorld
+** GameScene
 */
 
-#ifndef GAME_WORLD_GAMEWORLD_HPP_
-#define GAME_WORLD_GAMEWORLD_HPP_
+#ifndef GAME_SCENES_GAMESCENES_HPP_
+#define GAME_SCENES_GAMESCENES_HPP_
 
 #include "ecs/World.hpp"
 #include "game/Game.hpp"
-#include "game/worlds/AWorld.hpp"
+#include "game/scenes/AScene.hpp"
 #include "raylib/core/Camera3D.hpp"
 
 namespace game
 {
-    class GameWorld : public AWorld {
+    class GameScene : public AScene {
       public:
-        GameWorld() : _game(_world) { _game.setup(); }
+        GameScene() : _game(_world) { _game.setup(); }
 
-        ~GameWorld() = default;
+        ~GameScene() = default;
 
         void setCamera(raylib::core::Camera3D &camera) override final { _game.setCamera(camera); }
 

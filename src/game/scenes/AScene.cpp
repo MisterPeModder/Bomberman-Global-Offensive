@@ -2,28 +2,28 @@
 ** EPITECH PROJECT, 2022
 ** BMGO
 ** File description:
-** AWorld
+** AScene
 */
 
-#include "game/worlds/AWorld.hpp"
+#include "game/scenes/AScene.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 
 namespace game
 {
-    AWorld::AWorld() {}
+    AScene::AScene() {}
 
-    AWorld::~AWorld()
+    AScene::~AScene()
     { /* _world.clear(); */
     }
 
-    void AWorld::setCamera(raylib::core::Camera3D &camera)
+    void AScene::setCamera(raylib::core::Camera3D &camera)
     {
         camera.setMode(raylib::core::Camera3D::CameraMode::CUSTOM);
     }
 
-    void AWorld::drawFrame(const raylib::core::Camera3D &camera)
+    void AScene::drawFrame(const raylib::core::Camera3D &camera)
     {
         raylib::core::scoped::Drawing drawing;
         raylib::core::Window::clear();

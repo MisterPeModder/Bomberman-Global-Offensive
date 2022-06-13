@@ -2,23 +2,23 @@
 ** EPITECH PROJECT, 2022
 ** BMGO
 ** File description:
-** Worlds
+** IScene
 */
 
-#ifndef GAME_WORLDS_WORLDS_HPP_
-#define GAME_WORLDS_WORLDS_HPP_
+#ifndef GAME_SCENES_ISCENE_HPP_
+#define GAME_SCENES_ISCENE_HPP_
 
 #include "game/Game.hpp"
 #include "raylib/core/Camera3D.hpp"
 
 namespace game
 {
-    class IWorld {
+    class IScene {
       public:
-        virtual ~IWorld() = default;
+        virtual ~IScene() = default;
         virtual void setCamera(raylib::core::Camera3D &camera) = 0;
         virtual void drawFrame(const raylib::core::Camera3D &camera) = 0;
     };
 } // namespace game
 
-#endif /* !WORLDS_HPP_ */
+#endif /* !GAME_SCENES_ISCENE_HPP_ */
