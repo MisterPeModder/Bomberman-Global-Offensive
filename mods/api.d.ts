@@ -14,6 +14,27 @@ interface Game {
     log(message: string): void
 
     /**
+     * Prints a message to the error output.
+     * 
+     * @param message The message to print.
+     */
+    error(message: string): void
+
+    /**
+     * Prints a message to the warning output.
+     * 
+     * @param message The message to print.
+     */
+    warn(message: string): void
+
+    /**
+     * Prints a message to the debug output.
+     * 
+     * @param message The message to print.
+     */
+    debug(message: string): void
+
+    /**
      * Registers a new mod.
      * 
      * @param mod The mod to register.
@@ -49,4 +70,25 @@ interface Mod {
      * @param message The message to print.
      */
     log(message: string): void
+
+    /**
+     * Prints a message in the mod's error logger.
+     * 
+     * @param message The message to print.
+     */
+    error(message: string): void
+
+    /**
+     * Prints a message in the mod's warning logger.
+     * 
+     * @param message The message to print.
+     */
+    warn(message: string): void
+
+    /**
+     * Prints a message in the mod's debug logger.
+     * 
+     * @param message The message to print.
+     */
+    debug(message: string): void
 }

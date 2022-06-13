@@ -19,7 +19,7 @@ game.addMod({
         mod.log('The basic mod has loaded, enjoy!');
     },
     onUnload: function (mod) {
-        mod.log('The basic mod has unloaded :(');
+        mod.warn('The basic mod has unloaded :(');
     }
 });
 

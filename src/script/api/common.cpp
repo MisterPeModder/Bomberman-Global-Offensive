@@ -40,4 +40,9 @@ BMJS_DEFINE bmjs::Number common_getCVar(bmjs::String name)
 
 BMJS_DEFINE void common_log(bmjs::String message) { Logger::logger.log(Logger::Severity::Information, message); }
 
+BMJS_DEFINE void common_error(bmjs::String message) { Logger::logger.log(Logger::Severity::Error, message); }
+
+BMJS_DEFINE void common_warn(bmjs::String message) { Logger::logger.log(Logger::Severity::Warning, message); }
+
+BMJS_DEFINE void common_debug(bmjs::String message) { Logger::logger.log(Logger::Severity::Debug, message); }
 BMJS_API_END
