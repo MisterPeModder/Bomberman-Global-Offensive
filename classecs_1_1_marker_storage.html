@@ -245,10 +245,10 @@ template&lt;std::default_initializable C&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Whether the entity exists in this storage. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00047">47</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> entity &lt; this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">_size</a> &amp;&amp; this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">_mask</a>[entity];</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00049">49</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> entity &lt; this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">_size</a> &amp;&amp; this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">_mask</a>[entity];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -327,9 +327,11 @@ template&lt;std::default_initializable C&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00040">40</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">_mask</a>[entity] = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            --this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">_size</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (entity &lt; this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">_mask</a>.<a class="code" href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">size</a>()) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">_mask</a>[entity] = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                --this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">_size</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -361,8 +363,8 @@ template&lt;std::default_initializable C&gt; </div>
 <p>Fetches a bit set where each set bit corresponds to an entity that possesses a component of type <b><a class="el" href="classecs_1_1_component.html" title="The base component type, all components must inherit from Component.">Component</a></b> in this storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>The component mask. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00065">65</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">_mask</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00067">67</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">_mask</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -402,11 +404,11 @@ template&lt;std::default_initializable C&gt; </div>
 
 <p>Implements <a class="el" href="classecs_1_1_storage.html#af6ee5165ddb8d4879e8e52eda9561b6e">ecs::Storage</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00067">67</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> entity : toRemove)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a50d8bbc83c6e40060a24453c2cbf37cf">erase</a>(entity.getId());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00069">69</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> entity : toRemove)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a50d8bbc83c6e40060a24453c2cbf37cf">erase</a>(entity.getId());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -437,8 +439,8 @@ template&lt;std::default_initializable C&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The component instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00053">53</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e">_instance</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00055">55</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e">_instance</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -469,8 +471,8 @@ template&lt;std::default_initializable C&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The component instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00056">56</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e">_instance</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00058">58</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e">_instance</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -500,8 +502,8 @@ template&lt;std::default_initializable C&gt; </div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The amount of marked entities. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00059">59</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">_size</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00061">61</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">_size</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -528,7 +530,7 @@ template&lt;std::default_initializable C&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00076">76</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00078">78</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -554,7 +556,7 @@ template&lt;std::default_initializable C&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00075">75</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00077">77</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -580,7 +582,7 @@ template&lt;std::default_initializable C&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00074">74</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_marker_storage_8hpp_source.html#l00076">76</a> of file <a class="el" href="_marker_storage_8hpp_source.html">MarkerStorage.hpp</a>.</p>
 
 </div>
 </div>
@@ -589,13 +591,13 @@ template&lt;std::default_initializable C&gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecs_1_1_marker_storage_html_ac978bc8d2c394d33796380097c329a4e"><div class="ttname"><a href="classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e">ecs::MarkerStorage::_instance</a></div><div class="ttdeci">Component _instance</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00076">MarkerStorage.hpp:76</a></div></div>
+<div class="ttc" id="aclassecs_1_1_marker_storage_html_ac978bc8d2c394d33796380097c329a4e"><div class="ttname"><a href="classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e">ecs::MarkerStorage::_instance</a></div><div class="ttdeci">Component _instance</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00078">MarkerStorage.hpp:78</a></div></div>
 <div class="ttc" id="aclassecs_1_1_marker_storage_html_a50d8bbc83c6e40060a24453c2cbf37cf"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a50d8bbc83c6e40060a24453c2cbf37cf">ecs::MarkerStorage::erase</a></div><div class="ttdeci">constexpr void erase(Entity::Index entity)</div><div class="ttdoc">Removes the component instance for the supplied entity.</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00040">MarkerStorage.hpp:40</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a1b7940aa2d91fd658b573692239866c0"><div class="ttname"><a href="classutil_1_1_bit_set.html#a1b7940aa2d91fd658b573692239866c0">util::BitSet::size</a></div><div class="ttdeci">constexpr std::size_t size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00078">BitSet.hpp:78</a></div></div>
-<div class="ttc" id="aclassecs_1_1_marker_storage_html_a32a726c9ad0e3e6f5686e3e90dfb82b6"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">ecs::MarkerStorage::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00075">MarkerStorage.hpp:75</a></div></div>
+<div class="ttc" id="aclassecs_1_1_marker_storage_html_a32a726c9ad0e3e6f5686e3e90dfb82b6"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a32a726c9ad0e3e6f5686e3e90dfb82b6">ecs::MarkerStorage::_mask</a></div><div class="ttdeci">util::BitSet _mask</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00077">MarkerStorage.hpp:77</a></div></div>
 <div class="ttc" id="aclassutil_1_1_bit_set_html_a0a1be7ead3223ab02838a9e95b761918"><div class="ttname"><a href="classutil_1_1_bit_set.html#a0a1be7ead3223ab02838a9e95b761918">util::BitSet::resize</a></div><div class="ttdeci">void resize(std::size_t size)</div><div class="ttdoc">Changes the number of bits stored in this set.</div><div class="ttdef"><b>Definition:</b> <a href="_bit_set_8hpp_source.html#l00160">BitSet.hpp:160</a></div></div>
 <div class="ttc" id="amax_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a></div><div class="ttdeci">T max(T... args)</div></div>
-<div class="ttc" id="aclassecs_1_1_marker_storage_html_a59b56bbabe39a8b17183fca6eef968cc"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">ecs::MarkerStorage::_size</a></div><div class="ttdeci">std::size_t _size</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00074">MarkerStorage.hpp:74</a></div></div>
+<div class="ttc" id="aclassecs_1_1_marker_storage_html_a59b56bbabe39a8b17183fca6eef968cc"><div class="ttname"><a href="classecs_1_1_marker_storage.html#a59b56bbabe39a8b17183fca6eef968cc">ecs::MarkerStorage::_size</a></div><div class="ttdeci">std::size_t _size</div><div class="ttdef"><b>Definition:</b> <a href="_marker_storage_8hpp_source.html#l00076">MarkerStorage.hpp:76</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
