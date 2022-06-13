@@ -1,38 +1,22 @@
 /*
 ** EPITECH PROJECT, 2022
-** Bomberman-Global-Offensive
+** BMGO
 ** File description:
 ** SettingsWorld
 */
 
-#include "ecs/Storage.hpp"
-#include "game/Game.hpp"
-#include "game/components/Cube.hpp"
-#include "game/components/Rectangle.hpp"
-#include "game/components/RotationAngle.hpp"
-#include "game/components/RotationAxis.hpp"
-#include "game/systems/Cube.hpp"
-#include "game/systems/Model.hpp"
-#include "game/worlds/Worlds.hpp"
-#include "raylib/core/Color.hpp"
-#include "util/util.hpp"
+#ifndef GAME_WORLD_SETTINGSWORLD_HPP_
+#define GAME_WORLD_SETTINGSWORLD_HPP_
+
+#include "ecs/World.hpp"
+#include "game/worlds/AWorld.hpp"
 
 namespace game
 {
-    void Worlds::loadSettingsWorld(ecs::World &world)
-    {
-        static const std::filesystem::path testModelPath =
-            util::makePath("assets", "models", "player", "raylibguy.iqm");
-
-        world.addSystem<game::systems::DrawModel>();
-
-        world.addEntity()
-            .with<game::components::Model>(testModelPath)
-            .with<game::components::Position>(0, -2, 0)
-            .with<game::components::Size>(2.f, 0.5f, 0.5f)
-            .with<game::components::RotationAngle>(-90)
-            .with<game::components::RotationAxis>(1, 0, 0)
-            .with<game::components::Color>(raylib::core::Color::BLUE)
-            .build();
-    }
+    class SettingsWorld : public AWorld {
+      public:
+        SettingsWorld(ecs::World &world);
+    };
 } // namespace game
+
+#endif /* !GAME_WORLD_SETTINGSWORLD_HPP_ */

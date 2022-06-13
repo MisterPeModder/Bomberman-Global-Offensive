@@ -14,7 +14,9 @@ namespace game
 {
     AWorld::AWorld(ecs::World &world) : _world(world) {}
 
-    AWorld::~AWorld() { _world.clear(); }
+    AWorld::~AWorld()
+    { /* _world.clear(); */
+    }
 
     void AWorld::setCamera(raylib::core::Camera3D &camera)
     {
