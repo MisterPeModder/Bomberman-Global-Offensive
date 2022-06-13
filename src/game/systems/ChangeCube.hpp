@@ -25,9 +25,9 @@ namespace game::systems
             for (auto [cube, pos, col, size] :
                 ecs::join(data.getStorage<game::components::Cube>(), data.getStorage<game::components::Position>(),
                     data.getStorage<game::components::CubeColor>(), data.getStorage<game::components::Size>())) {
-                cube.cube.setPosition(pos);
-                cube.cube.setColor(col);
-                cube.cube.setSize(size);
+                cube.setPosition(pos);
+                cube.setColor(col);
+                cube.setSize(size);
             }
         }
     };
