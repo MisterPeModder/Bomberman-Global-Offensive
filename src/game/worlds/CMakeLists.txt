@@ -10,7 +10,8 @@ set (SRC
 	${INCROOT}/MainWorld.hpp
 	${INCROOT}/SettingsWorld.cpp
 	${INCROOT}/SettingsWorld.hpp
-	# ${INCROOT}/SplashWorld.hpp
+	${INCROOT}/SplashWorld.cpp
+	${INCROOT}/SplashWorld.hpp
 	${SRCROOT}/TestWorld.cpp
 	${INCROOT}/TestWorld.hpp
 	${INCROOT}/IWorld.hpp

@@ -25,6 +25,7 @@
 #include "game/worlds/IWorld.hpp"
 #include "game/worlds/MainWorld.hpp"
 #include "game/worlds/SettingsWorld.hpp"
+#include "game/worlds/SplashWorld.hpp"
 #include "game/worlds/TestWorld.hpp"
 
 #if defined(PLATFORM_WEB)
@@ -72,7 +73,7 @@ static void runGame()
 {
     auto params = new Params();
 
-    game::SettingsWorld gameWorld(params->world);
+    game::SplashWorld gameWorld(params->world);
     gameWorld.setCamera(params->camera);
 
     // params->game.setup(params->camera);
