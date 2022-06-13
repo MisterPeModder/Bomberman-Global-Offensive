@@ -17,8 +17,8 @@ namespace game
       public:
         AWorld(ecs::World &world);
         ~AWorld();
-        void setCamera(raylib::core::Camera3D &camera);
-        void drawFrame(const raylib::core::Camera3D &camera);
+        void setCamera(raylib::core::Camera3D &camera) override;
+        void drawFrame(const raylib::core::Camera3D &camera) override;
 
       protected:
         ecs::World &_world;

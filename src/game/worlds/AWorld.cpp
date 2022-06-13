@@ -16,7 +16,10 @@ namespace game
 
     AWorld::~AWorld() { _world.clear(); }
 
-    void AWorld::setCamera(raylib::core::Camera3D &camera) {}
+    void AWorld::setCamera(raylib::core::Camera3D &camera)
+    {
+        camera.setMode(raylib::core::Camera3D::CameraMode::CUSTOM);
+    }
 
     void AWorld::drawFrame(const raylib::core::Camera3D &camera)
     {
