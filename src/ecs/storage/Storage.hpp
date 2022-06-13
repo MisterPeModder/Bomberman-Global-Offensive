@@ -13,6 +13,7 @@
 
 #include <concepts>
 #include <iterator>
+#include <span>
 
 // forward declaration of MapStorage for use as default storage type.
 namespace ecs
@@ -43,9 +44,13 @@ namespace ecs
     class Storage {
       public:
         virtual ~Storage() = default;
+
+        /// Removes all components beloging to the entities in @b toRemove.
+        ///
+        /// @param toRemove The set of entities to removed.
+        virtual void maintain(std::span<Entity> toRemove) = 0;
     };
 
-    /// The Compoonent storage trait.
     ///
     /// @note The iterators supplied by storages @b must yield their entity-component pair in increasing order of entity
     /// index.

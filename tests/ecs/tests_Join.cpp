@@ -56,6 +56,18 @@ class TestSystem : public ecs::System {
     std::function<void(ecs::SystemData)> _func;
 };
 
+struct RemovingSystem : public ecs::System {
+    void run(ecs::SystemData data) override final
+    {
+        auto &entities = data.getResource<ecs::Entities>();
+
+        for (auto [entity] : ecs::join(entities)) {
+            if (entity.getId() % 2 != 0)
+                entities.erase(entity);
+        }
+    }
+};
+
 static void createWorld(ecs::World &world)
 {
     for (std::size_t i = 0; i < 100; ++i)
@@ -174,6 +186,7 @@ TEST(Join, optionalSkipDead)
         for (auto id : blacklist)
             entities.erase(entities.get(id));
     }
+    world.maintain();
     world.addSystem<TestSystem>([&blacklist](ecs::SystemData data) {
         auto optionalPositions = ecs::maybe(data.getStorage<Position>());
         auto &entities = data.getResource<ecs::Entities>();
@@ -254,4 +267,31 @@ TEST(Join, optionalMissingComponent)
         EXPECT_FLOAT_EQ(p2.y, 8.0f);
     });
     world.runSystem<TestSystem>();
+}
+
+TEST(Join, midLoopRemovals)
+{
+    ecs::World world;
+
+    createWorld(world);
+
+    world.addSystem<RemovingSystem>();
+    world.runSystems();
+    world.maintain();
+
+    auto &entities = world.getResource<ecs::Entities>();
+    auto &markers = world.getStorage<Marker>();
+
+    EXPECT_TRUE(entities.isAlive(entities.get(0)));
+    EXPECT_FALSE(entities.isAlive(entities.get(1)));
+    EXPECT_TRUE(entities.isAlive(entities.get(2)));
+    EXPECT_FALSE(entities.isAlive(entities.get(3)));
+    EXPECT_TRUE(entities.isAlive(entities.get(4)));
+    EXPECT_FALSE(entities.isAlive(entities.get(5)));
+
+    EXPECT_TRUE(markers.contains(entities.get(0).getId()));
+    EXPECT_FALSE(markers.contains(entities.get(1).getId()));
+
+    EXPECT_EQ(world.addEntity().build().getId(), 1);
+    EXPECT_EQ(world.addEntity().build().getId(), 3);
 }

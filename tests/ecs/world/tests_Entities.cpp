@@ -28,6 +28,8 @@ TEST(Entities, base)
     entities.erase(e2);
     entities.erase(e3);
 
+    entities.maintain();
+
     EXPECT_FALSE(entities.isAlive(e2));
     EXPECT_FALSE(entities.isAlive(e3));
 

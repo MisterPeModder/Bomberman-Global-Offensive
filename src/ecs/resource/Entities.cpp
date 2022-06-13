@@ -27,7 +27,11 @@ namespace ecs
             throw std::logic_error("Attempted to used entity builder after a call to build()");
     }
 
-    Entities::Entities() : _alive(0) { this->_alive.push(false); }
+    Entities::Entities() : _alive(0), _erased(0)
+    {
+        this->_alive.push(false);
+        this->_erased.push(true);
+    }
 
     Entity Entities::create() { return this->create(true); }
 
@@ -46,6 +50,10 @@ namespace ecs
             // If there is a slot available, bump the generation count by one and use that slot.
             this->_generations[firstDead] += 1;
             this->_alive[firstDead] = alive;
+
+            // If the entity was marked for deletion, remove the mark.
+            if (firstDead < this->_erased.size() - 1)
+                this->_erased.set(firstDead);
             return Entity(firstDead, this->_generations[firstDead]);
         }
     }
@@ -58,11 +66,9 @@ namespace ecs
             return true;
         if (this->_generations[entity.getId()] != entity.getGeneration())
             return false;
-        if (entity.getId() + 1 == this->_generations.size()) {
-            this->_alive.pop();
-            this->_generations.pop_back();
-        }
-        this->_alive[entity.getId()] = false;
+        if (entity.getId() + 1 >= this->_erased.size())
+            this->_erased.resizeSentinel(entity.getId() + 1, true);
+        this->_erased.set(entity.getId());
         return true;
     }
 
@@ -76,5 +82,19 @@ namespace ecs
     bool Entities::isAlive(Entity entity) noexcept
     {
         return entity.getGeneration() > 0 && entity.getId() < this->_generations.size() && this->_alive[entity.getId()];
+    }
+
+    std::vector<Entity> Entities::maintain()
+    {
+        std::vector<Entity> removed;
+        std::size_t id = this->_erased.firstSet();
+
+        while (id != this->_erased.size() - 1) {
+            this->_erased.set(id, false);
+            this->_alive.set(id, false);
+            removed.push_back(Entity(id, this->_generations[id]));
+            id = this->_erased.firstSet(id);
+        }
+        return removed;
     }
 } // namespace ecs
