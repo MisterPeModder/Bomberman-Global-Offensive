@@ -5,6 +5,9 @@
 ** ECS - Timer World Resource
 */
 
+#ifndef ECS_RESOURCE_TIMER_HPP_
+#define ECS_RESOURCE_TIMER_HPP_
+
 #include "ecs/resource/Resource.hpp"
 
 #include <chrono>
@@ -28,3 +31,5 @@ namespace ecs
         std::chrono::steady_clock::time_point _lastReset;
     };
 } // namespace ecs
+
+#endif // !defined(ECS_RESOURCE_TIMER_HPP_)

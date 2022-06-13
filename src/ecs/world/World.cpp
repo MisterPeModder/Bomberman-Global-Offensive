@@ -8,6 +8,7 @@
 #include "ecs/world/World.hpp"
 #include "ecs/resource/Entities.hpp"
 #include "ecs/system/SystemData.hpp"
+#include "ecs/system/SystemTag.hpp"
 
 namespace ecs
 {
@@ -29,6 +30,14 @@ namespace ecs
 
     World::EntityBuilder World::addEntity() { return EntityBuilder(*this); }
 
+    void World::clear()
+    {
+        this->_resources.clear();
+        this->_systems.clear();
+        this->_storages.clear();
+        this->addResource<Entities>();
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Running
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +46,12 @@ namespace ecs
     {
         for (auto &[type, system] : this->_systems.getInner())
             system->run(SystemData(*this));
+    }
+
+    void World::runSystems(SystemTag const &tag)
+    {
+        for (auto &type : tag._types)
+            this->_systems.get(type, "tried to run unregistered system").run(SystemData(*this));
     }
 
     void World::runSystem(System &system) { system.run(SystemData(*this)); }

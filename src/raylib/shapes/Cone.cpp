@@ -11,7 +11,7 @@ namespace raylib
 {
     namespace shapes
     {
-        Cone::Cone(raylib::core::Vector3 position, float radiusBase, float radiusTop, float height, int slices,
+        Cone::Cone(raylib::core::Vector3f position, float radiusBase, float radiusTop, float height, int slices,
             raylib::core::Color color)
         {
             setPosition(position);

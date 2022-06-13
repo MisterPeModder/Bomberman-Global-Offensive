@@ -71,6 +71,9 @@ class Logger {
     /// Cannot copy loggers, because of the arbitrary output stream, which is not copiable.
     Logger(const Logger &other) = delete;
 
+    /// Move constructor.
+    Logger(Logger &&other) = default;
+
     /// Destroy the Logger object.
     ~Logger() = default;
 

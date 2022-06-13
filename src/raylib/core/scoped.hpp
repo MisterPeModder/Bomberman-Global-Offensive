@@ -27,7 +27,7 @@ namespace raylib
                 /// Begin the Mode3D with the given camera.
                 ///
                 /// @param camera custom camera.
-                inline Mode3D(Camera3D &camera) { camera.begin3D(); };
+                inline Mode3D(const Camera3D &camera) { camera.begin3D(); };
 
                 /// End the Mode3D
                 inline ~Mode3D() { Camera3D::end3D(); };

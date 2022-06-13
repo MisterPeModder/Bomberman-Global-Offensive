@@ -3,12 +3,13 @@
 [![License](https://img.shields.io/github/license/MisterPeModder/Bomberman-Global-Offensive)](https://github.com/MisterPeModder/Bomberman-Global-Offensive)
 [![Codecov](https://codecov.io/gh/MisterPeModder/Bomberman-Global-Offensive/branch/master/graph/badge.svg)](https://codecov.io/gh/MisterPeModder/Bomberman-Global-Offensive)
 
-====
+---
 
 # Building
 
 Required tools:
-- CMake 3.17 (minimum)
+- CMake 3.16 (minimum)
+- Python 3.8 (minimum)
 
 ## Command Line
 

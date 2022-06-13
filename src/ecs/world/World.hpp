@@ -24,6 +24,7 @@ namespace ecs
 {
     class Entity;
     class System;
+    class SystemTag;
 
     /// Contains all entities and systems.
     class World final {
@@ -118,6 +119,28 @@ namespace ecs
             this->_systems.emplace<S>("tried to register same system type twice", std::forward<Args>(args)...);
         }
 
+        /// Registers a component's storage.
+        ///
+        /// Normally, component storages are auto-registered when the @ref EntityBuilder::with() method is called.
+        /// But you wouldn't be able to use @ref ecs::maybe() with a Component that is not used by any entity in the
+        /// world.
+        ///
+        /// Use this function when you want to perform optional joins with the component @b C that might not be present
+        /// in the current entities.
+        ///
+        /// @tparam C The component type to register.
+        ///
+        /// @returns A reference to the Component's storage.
+        template <std::derived_from<Component> C> getStorageType<C> &addStorage()
+        {
+            if (!this->_storages.contains<getStorageType<C>>())
+                return this->_storages.emplace<getStorageType<C>>("failed to add entity component");
+            return this->_storages.get<getStorageType<C>>("failed to fetch storage");
+        }
+
+        /// Removes all registered resources, systems, and entities.
+        void clear();
+
 #pragma endregion ECS World Populating
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Running
@@ -126,6 +149,11 @@ namespace ecs
 
         /// Runs all systems in this world.
         void runSystems();
+
+        /// Runs all the systems registered by the given tag.
+        ///
+        /// @param tag The system types, all the types in @c tag must be added with World::addSystem() beforehand.
+        void runSystems(SystemTag const &tag);
 
         /// Run a specific system, useful if you want to run to time/resource-intensive system separately.
         ///

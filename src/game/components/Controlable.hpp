@@ -13,7 +13,7 @@
 #include "ecs/System.hpp"
 #include "game/Users.hpp"
 
-namespace game
+namespace game::components
 {
     /// Controlable entity, may be a widget or a player
     struct Controlable : public ecs::Component {
@@ -42,6 +42,6 @@ namespace game
         /// @param pcallback callback called when an action of the listened user is detected.
         Controlable(User::UserId id, ActionCallback pcallback) : userId(id), callback(pcallback) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif /* !GAME_COMPONENTS_CONTROLABLE_HPP_ */

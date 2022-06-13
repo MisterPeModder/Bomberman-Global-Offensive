@@ -6,7 +6,7 @@
 */
 
 #include "Map.hpp"
-#include <iostream>
+#include <algorithm>
 #include <random>
 #include "cellular/Grid.hpp"
 
@@ -16,60 +16,107 @@ namespace game
     {
         Map::InvalidMapSize::InvalidMapSize(std::string_view message) : std::logic_error(message.data()) {}
 
-        Map::Map(size_t width, size_t height) { generate(width, height); }
+        Map::Map(Vector2u size) { generate(size); }
 
-        void Map::generate(size_t width, size_t height)
+        void Map::generate(Vector2u size)
         {
-            if (width % 2 == 0 || height % 2 == 0)
+            if (size.x % 2 == 0 || size.y % 2 == 0)
                 throw InvalidMapSize("Map width and height must be odd.");
-            if (width < 3 || height < 3)
+            if (size.x < 3 || size.y < 3)
                 throw InvalidMapSize("Map cannot be smaller than 3x3.");
-            _width = width;
-            _height = height;
-            _map.resize(_width * _height);
+            _size = size;
+            _map.resize(size.x * size.y);
 
-            cellular::Grid automata(width, height);
+            cellular::Grid automata(size.x, size.y);
             automata.generate(cellular::Rule("B3/S012345678"), 15, 60);
 
             std::fill(_map.begin(), _map.end(), Element::Empty);
-            for (size_t x = 0; x < _width; x++) {
-                for (size_t y = 0; y < _height; y++) {
+            for (unsigned int x = 0; x < _size.x; x++) {
+                for (unsigned int y = 0; y < _size.y; y++) {
                     if (x % 2 && y % 2)
-                        getElement(x, y) = Element::Wall;
+                        getElement({x, y}) = Element::Wall;
                     else if (automata.isFilled(x, y))
-                        getElement(x, y) = Element::Crate;
+                        getElement({x, y}) = Element::Crate;
                 }
             }
             freeCorners();
         }
 
-        Map::Element Map::getElement(size_t x, size_t y) const
+        Map::Element Map::getElement(Vector2u size) const
         {
-            if (x >= _width || y >= _height)
+            if (size.x >= _size.x || size.y >= _size.y)
                 throw std::out_of_range("Accessing out of bounds map element.");
-            return _map[y * _width + x];
+            return _map[size.y * _size.x + size.x];
         }
 
-        Map::Element &Map::getElement(size_t x, size_t y)
+        Map::Element &Map::getElement(Vector2u size)
         {
-            if (x >= _width || y >= _height)
+            if (size.x >= _size.x || size.y >= _size.y)
                 throw std::out_of_range("Accessing out of bounds map element.");
-            return _map[y * _width + x];
+            return _map[size.y * _size.x + size.x];
         }
 
-        size_t Map::getWidth() const { return _width; }
+        raylib::core::Vector2u Map::getSize() const { return _size; }
 
-        size_t Map::getHeight() const { return _height; }
+        raylib::core::Vector2u Map::getPlayerStartingPosition(game::User::UserId playerId)
+        {
+            return {(static_cast<unsigned int>(playerId) % 2) * (_size.x - 1),
+                (static_cast<unsigned int>(playerId) / 2) * (_size.y - 1)};
+        }
+
+        void Map::fillExplodedPositions(std::vector<Vector2u> &explodePositions, Vector2u center, size_t radius)
+        {
+            center = {std::clamp(center.x, 0u, _size.x - 1), std::clamp(center.y, 0u, _size.y - 1)};
+            std::array<bool, 4> blocked;
+            Vector2u current;
+            int validWays = 4;
+
+            blocked.fill(false);
+            explodePositions.push_back(center);
+            for (unsigned int i = 1; i < radius + 1 && validWays > 0; i++) {
+                for (size_t j = 0; j < 4; j++) {
+                    if (blocked[j])
+                        continue;
+                    bool valid = false;
+
+                    switch (j) {
+                        case 0:
+                            current = {center.x - i, center.y};
+                            valid = current.x < _size.x;
+                            break;
+                        case 1:
+                            current = {center.x + i, center.y};
+                            valid = current.x < _size.x;
+                            break;
+                        case 2:
+                            current = {center.x, center.y - i};
+                            valid = current.y < _size.y;
+                            break;
+                        case 3:
+                            current = {center.x, center.y + i};
+                            valid = current.y < _size.y;
+                            break;
+                        default: break;
+                    }
+                    /// Out of bounds or indestructible wall
+                    if (!valid || getElement(current) == Element::Wall) {
+                        blocked[j] = true;
+                        validWays--;
+                    } else
+                        explodePositions.push_back(current);
+                }
+            }
+        }
 
         void Map::freeCorners()
         {
-            for (size_t y = 0; y < _height; y += _height - 1) {
-                for (size_t x = 0; x < _width; x += _width - 1) {
-                    getElement(x, y) = Element::Empty;
-                    getElement(x + ((x == 0) ? 1 : -1), y) = Element::Empty;
-                    getElement(x + ((x == 0) ? 2 : -2), y) = Element::Crate;
-                    getElement(x, y + ((y == 0) ? 1 : -1)) = Element::Empty;
-                    getElement(x, y + ((y == 0) ? 2 : -2)) = Element::Crate;
+            for (unsigned int y = 0; y < _size.y; y += _size.y - 1) {
+                for (unsigned int x = 0; x < _size.x; x += _size.x - 1) {
+                    getElement({x, y}) = Element::Empty;
+                    getElement({x + ((x == 0) ? 1 : -1), y}) = Element::Empty;
+                    getElement({x + ((x == 0) ? 2 : -2), y}) = Element::Crate;
+                    getElement({x, y + ((y == 0) ? 1 : -1)}) = Element::Empty;
+                    getElement({x, y + ((y == 0) ? 2 : -2)}) = Element::Crate;
                 }
             }
         }
@@ -78,13 +125,13 @@ namespace game
 
 std::ostream &operator<<(std::ostream &stream, const game::map::Map &map)
 {
-    for (size_t x = 0; x < map.getWidth() + 1; x++)
+    for (size_t x = 0; x < map.getSize().x + 1; x++)
         stream << '_';
     stream << '\n';
-    for (size_t y = 0; y < map.getHeight(); y++) {
+    for (unsigned int y = 0; y < map.getSize().y; y++) {
         stream << '|';
-        for (size_t x = 0; x < map.getWidth(); x++) {
-            switch (map.getElement(x, y)) {
+        for (unsigned int x = 0; x < map.getSize().x; x++) {
+            switch (map.getElement({x, y})) {
                 case game::map::Map::Element::Wall: stream << 'X'; break;
                 case game::map::Map::Element::Crate: stream << 'c'; break;
                 case game::map::Map::Element::Empty: stream << ' '; break;
@@ -93,7 +140,7 @@ std::ostream &operator<<(std::ostream &stream, const game::map::Map &map)
         }
         stream << "|\n";
     }
-    for (size_t x = 0; x < map.getWidth() + 1; x++)
+    for (size_t x = 0; x < map.getSize().x + 1; x++)
         stream << '_';
     return stream << '\n';
 }

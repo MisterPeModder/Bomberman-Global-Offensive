@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman
 ** File description:
-** RessourceFile
+** ResourceFile
 */
 
-#include "RessourceFile.hpp"
+#include "ResourceFile.hpp"
 #include <fstream>
 #include <iostream>
 #include <regex>
@@ -15,23 +15,23 @@
 
 namespace localization
 {
-    RessourceFile::LocaleNotFoundError::LocaleNotFoundError(std::string_view locale)
+    ResourceFile::LocaleNotFoundError::LocaleNotFoundError(std::string_view locale)
         : std::runtime_error(
             std::string("Locale file '") + Localization::getLocalePath(locale).generic_string() + "' not found.")
     {
     }
 
-    RessourceFile::MessageNotFoundError::MessageNotFoundError(std::string_view locale, std::string_view message)
+    ResourceFile::MessageNotFoundError::MessageNotFoundError(std::string_view locale, std::string_view message)
         : std::runtime_error(
             std::string("Message '") + message.data() + "' not found in locale '" + locale.data() + "'.")
     {
     }
 
-    RessourceFile::LocaleNotSetError::LocaleNotSetError() : std::logic_error("No locale set.") {}
+    ResourceFile::LocaleNotSetError::LocaleNotSetError() : std::logic_error("No locale set.") {}
 
-    RessourceFile::RessourceFile(std::string_view locale) { loadLocale(locale); }
+    ResourceFile::ResourceFile(std::string_view locale) { loadLocale(locale); }
 
-    void RessourceFile::loadLocale(std::string_view locale)
+    void ResourceFile::loadLocale(std::string_view locale)
     {
         _locale = locale;
         std::filesystem::path filepath = Localization::getLocalePath(_locale);
@@ -39,7 +39,7 @@ namespace localization
         std::string line;
         TokensVector tokens;
 
-        _ressources.clear();
+        _resources.clear();
         Logger::logger.log(Logger::Severity::Information, [&](std::ostream &writer) {
             writer << "Loading locale file '" << filepath << "' for locale '" << _locale << "'";
         });
@@ -60,11 +60,11 @@ namespace localization
         parseTokens(tokens);
     }
 
-    void RessourceFile::save()
+    void ResourceFile::save()
     {
         if (_locale == "")
             throw LocaleNotSetError();
-        if (_newRessources.size() == 0)
+        if (_newResources.size() == 0)
             return;
         std::filesystem::path filepath = Localization::getLocalePath(_locale);
         std::ofstream file;
@@ -75,54 +75,54 @@ namespace localization
         file.open(filepath, std::ios_base::app | std::ios_base::out);
         if (!file.is_open())
             throw std::runtime_error("Unable to update locale file '" + filepath.generic_string() + "'.");
-        for (auto iter = _newRessources.begin(); iter != _newRessources.end(); ++iter) {
+        for (auto iter = _newResources.begin(); iter != _newResources.end(); ++iter) {
             file << std::endl << "msgid ";
             writeMsg(file, iter->first);
             file << "msgstr ";
             writeMsg(file, iter->second);
         }
-        _newRessources.clear();
+        _newResources.clear();
     }
 
-    std::string_view RessourceFile::getLocale() const { return _locale; }
+    std::string_view ResourceFile::getLocale() const { return _locale; }
 
-    std::filesystem::path RessourceFile::getFilePath() const
+    std::filesystem::path ResourceFile::getFilePath() const
     {
         if (_locale == "")
             throw LocaleNotSetError();
         return Localization::getLocalePath(_locale);
     }
 
-    std::string_view RessourceFile::translate(std::string_view msg)
+    std::string_view ResourceFile::translate(std::string_view msg)
     {
         std::string key(msg);
 
         if (_locale == "")
             throw LocaleNotSetError();
-        if (_ressources.find(key) == _ressources.end())
+        if (_resources.find(key) == _resources.end())
 #ifdef BM_RELEASE
             throw MessageNotFoundError(_locale, msg);
 #else
             registerString(msg);
 #endif
-        if (_ressources[key] == "")
+        if (_resources[key] == "")
             return msg;
-        return _ressources[key];
+        return _resources[key];
     }
 
-    void RessourceFile::registerString(std::string_view msg, std::string_view translation)
+    void ResourceFile::registerString(std::string_view msg, std::string_view translation)
     {
         std::string key(msg);
 
         if (_locale == "")
             throw LocaleNotSetError();
-        if (_ressources.find(key) != _ressources.end() && (translation == "" || _ressources[key] == translation))
+        if (_resources.find(key) != _resources.end() && (translation == "" || _resources[key] == translation))
             return;
-        _ressources[key] = translation;
-        _newRessources[key] = translation;
+        _resources[key] = translation;
+        _newResources[key] = translation;
     }
 
-    void RessourceFile::parseTokens(const TokensVector &tokens)
+    void ResourceFile::parseTokens(const TokensVector &tokens)
     {
         TokensVector::const_iterator iter = tokens.begin();
 
@@ -134,7 +134,7 @@ namespace localization
         }
     }
 
-    void RessourceFile::parseMessage(const TokensVector &tokens, TokensVector::const_iterator &iterator)
+    void ResourceFile::parseMessage(const TokensVector &tokens, TokensVector::const_iterator &iterator)
     {
         static auto logWarning = [&](std::string_view msg) {
             Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
@@ -150,7 +150,7 @@ namespace localization
                 if (iterator->first == Token::MsgStr || iterator->first == Token::MsgStrEmpty) {
                     readMsg(iterator->first == Token::MsgStrEmpty, str, tokens, iterator);
                     if (iterator->first == Token::EmptyLine)
-                        _ressources[id] = str;
+                        _resources[id] = str;
                     else
                         logWarning("Messages must be separated by an empty line.");
                 } else
@@ -163,31 +163,31 @@ namespace localization
         return;
     }
 
-    void RessourceFile::skipComments(const TokensVector &tokens, TokensVector::const_iterator &iterator)
+    void ResourceFile::skipComments(const TokensVector &tokens, TokensVector::const_iterator &iterator)
     {
         consumeTokens(Token::Comment, tokens, iterator);
     }
 
-    void RessourceFile::consumeTokens(Token token, const TokensVector &tokens, TokensVector::const_iterator &iterator)
+    void ResourceFile::consumeTokens(Token token, const TokensVector &tokens, TokensVector::const_iterator &iterator)
     {
         while (iterator != tokens.end() && iterator->first == token)
             ++iterator;
     }
 
-    void RessourceFile::consumeTokens(
+    void ResourceFile::consumeTokens(
         const std::vector<Token> token, const TokensVector &tokens, TokensVector::const_iterator &iterator)
     {
         while (iterator != tokens.end() && std::find(token.begin(), token.end(), iterator->first) != token.end())
             ++iterator;
     }
 
-    void RessourceFile::consumeUntil(Token token, const TokensVector &tokens, TokensVector::const_iterator &iterator)
+    void ResourceFile::consumeUntil(Token token, const TokensVector &tokens, TokensVector::const_iterator &iterator)
     {
         while (iterator != tokens.end() && iterator->first != token)
             ++iterator;
     }
 
-    void RessourceFile::readMsg(
+    void ResourceFile::readMsg(
         bool multiline, std::string &out, const TokensVector &tokens, TokensVector::const_iterator &iterator)
     {
         static std::regex singleLine("msg.+[ \t]+\"(.+)\"");
@@ -210,7 +210,7 @@ namespace localization
         }
     }
 
-    void RessourceFile::writeMsg(std::ostream &stream, std::string_view msg)
+    void ResourceFile::writeMsg(std::ostream &stream, std::string_view msg)
     {
         if (msg.find('\n') == std::string::npos) {
             stream << "\"" << msg << "\"" << std::endl;
@@ -229,7 +229,7 @@ namespace localization
         }
     }
 
-    RessourceFile::Token RessourceFile::getToken(const std::string &line)
+    ResourceFile::Token ResourceFile::getToken(const std::string &line)
     {
         static std::regex comment("[ \t]*#.*");
         static std::regex msgId("msgid[ \t]+\".+\"");
