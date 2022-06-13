@@ -146,5 +146,5 @@ static void loadTestWorld(ecs::World &world)
 
 namespace game
 {
-    TestWorld::TestWorld(ecs::World &world) : AWorld(world) { loadTestWorld(_world); }
+    TestWorld::TestWorld() { loadTestWorld(_world); }
 } // namespace game

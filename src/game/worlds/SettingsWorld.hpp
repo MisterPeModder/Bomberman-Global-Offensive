@@ -15,7 +15,7 @@ namespace game
 {
     class SettingsWorld : public AWorld {
       public:
-        SettingsWorld(ecs::World &world);
+        SettingsWorld();
     };
 } // namespace game
 

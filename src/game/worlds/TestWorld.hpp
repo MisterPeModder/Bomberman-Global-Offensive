@@ -15,7 +15,7 @@ namespace game
 {
     class TestWorld : public AWorld {
       public:
-        TestWorld(ecs::World &world);
+        TestWorld();
     };
 } // namespace game
 

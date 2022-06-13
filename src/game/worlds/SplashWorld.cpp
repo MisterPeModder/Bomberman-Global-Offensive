@@ -61,5 +61,5 @@ static void loadSplashWorld(ecs::World &world)
 
 namespace game
 {
-    SplashWorld::SplashWorld(ecs::World &world) : AWorld(world) { loadSplashWorld(_world); }
+    SplashWorld::SplashWorld() { loadSplashWorld(_world); }
 } // namespace game

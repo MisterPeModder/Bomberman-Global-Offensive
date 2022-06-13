@@ -17,7 +17,7 @@ namespace game
 {
     class GameWorld : public AWorld {
       public:
-        GameWorld(ecs::World &world) : AWorld(world), _game(world) { _game.setup(); }
+        GameWorld() : _game(_world) { _game.setup(); }
 
         ~GameWorld() = default;
 

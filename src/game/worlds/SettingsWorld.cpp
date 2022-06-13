@@ -37,5 +37,5 @@ static void loadSettingsWorld(ecs::World &world)
 
 namespace game
 {
-    SettingsWorld::SettingsWorld(ecs::World &world) : AWorld(world) { loadSettingsWorld(_world); }
+    SettingsWorld::SettingsWorld() { loadSettingsWorld(_world); }
 } // namespace game

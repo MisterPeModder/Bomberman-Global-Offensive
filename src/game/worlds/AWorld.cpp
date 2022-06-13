@@ -12,7 +12,7 @@
 
 namespace game
 {
-    AWorld::AWorld(ecs::World &world) : _world(world) {}
+    AWorld::AWorld() {}
 
     AWorld::~AWorld()
     { /* _world.clear(); */

@@ -36,11 +36,10 @@ constexpr int WIDTH(1080);
 constexpr int HEIGHT(720);
 
 struct Params {
-    ecs::World world;
+    std::unique_ptr<game::IWorld> world;
     raylib::core::Camera3D camera;
-    game::Game game;
 
-    Params() : world(), camera(), game(this->world, game::Game::Parameters(1)) {}
+    Params() : world(new game::GameWorld()), camera() {}
 };
 
 static void setupLogger()
@@ -53,20 +52,30 @@ static void setupLogger()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
 }
 
+static void drawFrame(void *args)
+{
+    Params *params = reinterpret_cast<Params *>(args);
+
+    params->camera.update();
+    params->world.get()->drawFrame(params->camera);
+}
+
 static void runGame()
 {
     auto params = new Params();
 
-    game::GameWorld gameWorld(params->world);
-    gameWorld.setCamera(params->camera);
+    params->world.get()->setCamera(params->camera);
+
+    // params->game.setup(params->camera);
+    // game::Worlds::loadGameWorld(params->game, params->camera);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
     // since there is no such thing as a window.
-    emscripten_set_main_loop_arg(&drawFrame, params, 0, 1);
+    emscripten_set_main_loop_arg(drawFrame, params, 0, 1);
 #else
     while (!WindowShouldClose())
-        gameWorld.drawFrame(params->camera);
+        drawFrame(params);
     CloseWindow();
 
     // Manual delete on purpose, we don't want params to be freed on the web

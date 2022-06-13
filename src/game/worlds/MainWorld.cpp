@@ -37,5 +37,5 @@ static void loadMainWorld(ecs::World &world)
 
 namespace game
 {
-    MainWorld::MainWorld(ecs::World &world) : AWorld(world) { loadMainWorld(_world); }
+    MainWorld::MainWorld() { loadMainWorld(_world); }
 } // namespace game

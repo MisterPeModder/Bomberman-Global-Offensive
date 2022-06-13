@@ -15,13 +15,13 @@ namespace game
 {
     class AWorld : public game::IWorld {
       public:
-        AWorld(ecs::World &world);
+        AWorld();
         ~AWorld();
         void setCamera(raylib::core::Camera3D &camera) override;
         void drawFrame(const raylib::core::Camera3D &camera) override;
 
       protected:
-        ecs::World &_world;
+        ecs::World _world;
     };
 } // namespace game
 
