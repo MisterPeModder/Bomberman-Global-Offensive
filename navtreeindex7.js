@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"structraylib_1_1core_1_1_color.html#a7486d780fd0e4a5203b8d2acb2c2ec6b":[2,0,4,0,3,32],
+"structraylib_1_1core_1_1_color.html#a79cd83222b755f8de9fbff47b55ace5f":[2,0,4,0,3,25],
+"structraylib_1_1core_1_1_color.html#a7bcf9027b8ca053af32b043ac0f311c8":[2,0,4,0,3,35],
+"structraylib_1_1core_1_1_color.html#a7f2bd385843ae2f39fd6b81d644f3ec6":[2,0,4,0,3,4],
 "structraylib_1_1core_1_1_color.html#a84b0c8235e04a8bad7709babe2ca7416":[2,0,4,0,3,31],
 "structraylib_1_1core_1_1_color.html#a863434c90d4ff8e318d95fb8f87faef5":[2,0,4,0,3,28],
 "structraylib_1_1core_1_1_color.html#a864af0d169faa89a2664b01e9060774b":[2,0,4,0,3,19],
