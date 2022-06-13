@@ -6,12 +6,10 @@
 */
 
 #include "Game.hpp"
-#include <cmath>
 #include "ecs/resource/Timer.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
-
-#include "resources/Map.hpp"
 
 #include "components/Bomb.hpp"
 #include "components/Collidable.hpp"
@@ -23,7 +21,10 @@
 #include "components/Player.hpp"
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
+
 #include "gui/components/Widget.hpp"
+
+#include "resources/Map.hpp"
 
 #include "systems/Bomb.hpp"
 #include "systems/ChangeCube.hpp"
@@ -32,23 +33,49 @@
 #include "systems/InputManager.hpp"
 #include "systems/Movement.hpp"
 
+#include <cmath>
+
+#pragma region Browser Events
+#ifdef __EMSCRIPTEN__
+
+    #include <emscripten/emscripten.h>
+
+extern "C"
+{
+    /// Emscripten main loop callback
+    static void Game_drawFrame(void *userData)
+    {
+        game::Game *game = reinterpret_cast<game::Game *>(userData);
+        game->drawFrame();
+    }
+}
+
+#endif // !defined(__EMSCRIPTEN__)
+#pragma endregion Browser Events
+
 namespace game
 {
-    Game::Game(ecs::World &world, Parameters params) : _world(world), _map(params.mapSize), _params(params) {}
+    Game::Game(Parameters params) : _world(), _map(params.mapSize), _params(params), _camera() {}
 
     const map::Map &Game::getMap() const { return _map; }
 
-    void Game::setup(raylib::core::Camera3D &camera)
+    raylib::core::Camera3D const &Game::getCamera() const { return this->_camera; }
+
+    raylib::core::Camera3D &Game::getCamera() { return this->_camera; }
+
+    void Game::setCamera(raylib::core::Camera3D &&camera) { this->_camera = std::move(camera); }
+
+    void Game::setup()
     {
         size_t width = _map.getSize().x;
         size_t depth = _map.getSize().y;
 
-        camera.setPosition(
+        _camera.setPosition(
             {width / 2.f, 8 /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
-        camera.setTarget({width / 2.f, 0.f, depth / 2.f});                              // Camera looking at point
-        camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
-        camera.setFovY(75.0f);            // Camera field-of-view Y
-        camera.setProjection(CAMERA_PERSPECTIVE);
+        _camera.setTarget({width / 2.f, 0.f, depth / 2.f});                             // Camera looking at point
+        _camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
+        _camera.setFovY(75.0f);            // Camera field-of-view Y
+        _camera.setProjection(CAMERA_PERSPECTIVE);
 
         /// Add world resources
         _world.addResource<game::Users>();
@@ -133,8 +160,10 @@ namespace game
         }
     }
 
-    void Game::drawFrame(const raylib::core::Camera3D &camera)
+    void Game::drawFrame()
     {
+        _camera.update();
+
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);
@@ -142,10 +171,21 @@ namespace game
         raylib::core::scoped::Drawing drawing;
         raylib::core::Window::clear();
         {
-            raylib::core::scoped::Mode3D mode3D(camera);
+            raylib::core::scoped::Mode3D mode3D(_camera);
             _world.runSystems(_drawing);
         };
         raylib::core::Window::drawFPS(10, 10);
     }
 
+    void Game::run()
+    {
+#ifdef __EMSCRIPTEN__
+        // We cannot use the WindowShouldClose() loop on the web,
+        // since there is no such thing as a window.
+        emscripten_set_main_loop_arg(&Game_drawFrame, reinterpret_cast<void *>(this), 0, 1);
+#else
+        while (!raylib::core::Window::shouldClose())
+            this->drawFrame();
+#endif // !defined(__EMSCRIPTEN__)
+    }
 } // namespace game

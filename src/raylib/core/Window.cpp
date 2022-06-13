@@ -25,7 +25,7 @@ namespace raylib
 
         void Window::clear(const Color &color) { ClearBackground(color.asRaylib()); }
 
-        bool Window::windowShouldClose() { return WindowShouldClose(); }
+        bool Window::shouldClose() { return WindowShouldClose(); }
 
         void Window::setTargetFPS(int fps) { SetTargetFPS(fps); }
 

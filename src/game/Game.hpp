@@ -41,9 +41,8 @@ namespace game
 
         /// Construct a new Game.
         ///
-        /// @param world world in which the game takes place.
         /// @param params parameters if the game.
-        Game(ecs::World &world, Parameters params = Parameters());
+        Game(Parameters params = Parameters());
 
         /// Destroy the game.
         ~Game() = default;
@@ -53,25 +52,35 @@ namespace game
         /// @return const map::Map& loaded map.
         const map::Map &getMap() const;
 
-        /// Setup the world entities and the camera position.
+        /// @returns A constant reference to the game's camera.
+        raylib::core::Camera3D const &getCamera() const;
+
+        /// @returns A reference to the game's camera.
+        raylib::core::Camera3D &getCamera();
+
+        /// Set the active gamera.
         ///
-        /// @param camera camera to use for drawing purposes.
-        void setup(raylib::core::Camera3D &camera);
+        /// @param camera The camera.
+        void setCamera(raylib::core::Camera3D &&camera);
+
+        /// Setup the world entities and the camera position.
+        void setup();
 
         /// Draw a single frame of the game.
-        ///
-        /// @param camera camera looking at the map.
-        ///
-        void drawFrame(const raylib::core::Camera3D &camera);
+        void drawFrame();
+
+        /// Start of the main event loop.
+        void run();
 
       private:
         ecs::SystemTag _drawing;
         ecs::SystemTag _handleInputs;
         ecs::SystemTag _update;
         ecs::SystemTag _resolveCollisions;
-        ecs::World &_world;
+        ecs::World _world;
         map::Map _map;
         Parameters _params;
+        raylib::core::Camera3D _camera;
     };
 } // namespace game
 
