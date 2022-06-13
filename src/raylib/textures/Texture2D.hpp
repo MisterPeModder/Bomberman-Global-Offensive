@@ -100,10 +100,6 @@ namespace raylib
             /// @param tint The color to tint the texture2D with.
             void draw(const Vector2f &position, float rotation, float scale, const Color &tint);
 
-<<<<<<< HEAD
-            const ::Texture2D &asRaylib() const;
-            ::Texture2D &asRaylib();
-=======
             /// Gets the C Raylib mutable version of the 2d texture
             ///
             /// @return The raylib version of the 2d texture
@@ -113,7 +109,6 @@ namespace raylib
             ///
             /// @return The raylib version of the 2d texture
             const ::Texture2D &asRaylib() const;
->>>>>>> master
 
           private:
             std::filesystem::path _fileName;
