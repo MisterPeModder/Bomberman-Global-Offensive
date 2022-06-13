@@ -63,12 +63,12 @@ namespace raylib
             /// Gets the mouse position.
             ///
             /// @return The mouse position.
-            static inline Vector2 getPosition() { return GetMousePosition(); }
+            static inline Vector2f getPosition() { return GetMousePosition(); }
 
             /// Gets the mouse delta.
             ///
             /// @return The mouse delta.
-            static inline Vector2 getDelta() { return GetMouseDelta(); }
+            static inline Vector2f getDelta() { return GetMouseDelta(); }
 
             /// Sets the mouse position
             ///
@@ -83,7 +83,7 @@ namespace raylib
             ///
             /// @param x The new x position of the mouse
             /// @param y The new y position of the mouse
-            static constexpr void setPosition(Vector2 &pos)
+            static constexpr void setPosition(Vector2f &pos)
             {
                 SetMousePosition(static_cast<int>(pos.x), static_cast<int>(pos.y));
             }
@@ -101,7 +101,7 @@ namespace raylib
             ///
             /// @param offsetX The X offset of the mouse.
             /// @param offsetY The Y offset of the mouse.
-            static constexpr void setOffset(Vector2 &offset)
+            static constexpr void setOffset(Vector2f &offset)
             {
                 SetMouseOffset(static_cast<int>(offset.x), static_cast<int>(offset.y));
             }

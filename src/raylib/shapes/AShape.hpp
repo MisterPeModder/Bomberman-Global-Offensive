@@ -27,22 +27,22 @@ namespace raylib
             /// Sets the position of the shape
             ///
             /// @param position The new position of the shape
-            inline void setPosition(raylib::core::Vector3 position) { _position = position; }
+            inline void setPosition(raylib::core::Vector3f position) { _position = position; }
 
             /// Sets the position of the shape
             ///
             /// @param position The new position of the shape
-            inline void setPosition(raylib::core::Vector2 position) { _position = {position.x, position.y, 0}; }
+            inline void setPosition(raylib::core::Vector2f position) { _position = {position.x, position.y, 0.f}; }
 
             /// Gets the position of the shape
             ///
             /// @return The position of the shape
-            inline raylib::core::Vector3 getPosition() const { return _position; }
+            inline raylib::core::Vector3f getPosition() const { return _position; }
 
             /// Gets the position of the shape
             ///
             /// @return The position of the shape (2D)
-            inline raylib::core::Vector2 getPosition2D() const { return {_position.x, _position.y}; }
+            inline raylib::core::Vector2f getPosition2D() const { return {_position.x, _position.y}; }
 
             /// Sets the color of the shape
             ///
@@ -55,7 +55,7 @@ namespace raylib
             inline raylib::core::Color getColor() const { return _color; }
 
           protected:
-            raylib::core::Vector3 _position;
+            raylib::core::Vector3f _position;
             raylib::core::Color _color;
         };
     } // namespace shapes

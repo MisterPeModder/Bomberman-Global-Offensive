@@ -11,7 +11,7 @@ namespace raylib
 {
     namespace shapes
     {
-        Cube::Cube(raylib::core::Vector3 position, raylib::core::Vector3 size, raylib::core::Color color)
+        Cube::Cube(raylib::core::Vector3f position, raylib::core::Vector3f size, raylib::core::Color color)
         {
             setPosition(position);
             setColor(color);
@@ -20,10 +20,15 @@ namespace raylib
 
         void Cube::draw() const { DrawCubeV(_position.asRaylib(), _size.asRaylib(), _color.asRaylib()); }
 
+        void Cube::draw(raylib::core::Vector3f position, raylib::core::Vector3f size, raylib::core::Color color)
+        {
+            DrawCubeV(position.asRaylib(), size.asRaylib(), color.asRaylib());
+        }
+
         void Cube::drawWires() const { DrawCubeWiresV(_position.asRaylib(), _size.asRaylib(), _color.asRaylib()); }
 
-        void Cube::setSize(raylib::core::Vector3 size) { _size = size; }
+        void Cube::setSize(raylib::core::Vector3f size) { _size = size; }
 
-        raylib::core::Vector3 Cube::getSize() const { return _size; }
+        raylib::core::Vector3f Cube::getSize() const { return _size; }
     } // namespace shapes
 } // namespace raylib

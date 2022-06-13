@@ -12,7 +12,7 @@ namespace raylib
 {
     namespace shapes
     {
-        Rectangle::Rectangle(raylib::core::Vector2 pos, raylib::core::Vector2 size, raylib::core::Color color)
+        Rectangle::Rectangle(raylib::core::Vector2f pos, raylib::core::Vector2f size, raylib::core::Color color)
         {
             setPosition(pos);
             setColor(color);
@@ -28,7 +28,7 @@ namespace raylib
             _color = raylib::core::Color::DEFAULT_COLOR;
         }
 
-        Rectangle::Rectangle(Rectangle &other)
+        Rectangle::Rectangle(const Rectangle &other)
         {
             _position = other._position;
             _size = other._size;

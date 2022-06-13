@@ -2,11 +2,11 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman
 ** File description:
-** test_ressource_file
+** test_resource_file
 */
 
 #include "localization/Localization.hpp"
-#include "localization/RessourceFile.hpp"
+#include "localization/ResourceFile.hpp"
 
 #include <gtest/gtest.h>
 #include <iostream>
@@ -15,25 +15,25 @@ using namespace localization;
 
 static void init_locales() { Localization::setLocalesDirectory("localization/locales"); }
 
-TEST(RessourceFile, uninitialized)
+TEST(ResourceFile, uninitialized)
 {
-    RessourceFile file;
+    ResourceFile file;
 
     EXPECT_EQ(file.getLocale(), "");
-    EXPECT_THROW(file.translate("Who are you ??"), RessourceFile::LocaleNotSetError);
-    EXPECT_THROW(file.save(), RessourceFile::LocaleNotSetError);
-    EXPECT_THROW(file.registerString("Who are you ??"), RessourceFile::LocaleNotSetError);
-    EXPECT_THROW(file.getFilePath(), RessourceFile::LocaleNotSetError);
+    EXPECT_THROW(file.translate("Who are you ??"), ResourceFile::LocaleNotSetError);
+    EXPECT_THROW(file.save(), ResourceFile::LocaleNotSetError);
+    EXPECT_THROW(file.registerString("Who are you ??"), ResourceFile::LocaleNotSetError);
+    EXPECT_THROW(file.getFilePath(), ResourceFile::LocaleNotSetError);
 }
 
-TEST(RessourceFile, unexisting_file)
+TEST(ResourceFile, unexisting_file)
 {
     init_locales();
 
-    RessourceFile file;
+    ResourceFile file;
 
 #ifdef BM_RELEASE
-    EXPECT_THROW(file.loadLocale("unexisting"), RessourceFile::LocaleNotFoundError);
+    EXPECT_THROW(file.loadLocale("unexisting"), ResourceFile::LocaleNotFoundError);
 #else
     file.loadLocale("unexisting");
 #endif
@@ -43,14 +43,14 @@ TEST(RessourceFile, unexisting_file)
     ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
 }
 
-TEST(RessourceFile, new_file)
+TEST(ResourceFile, new_file)
 {
     init_locales();
 
-    RessourceFile file;
+    ResourceFile file;
 
 #ifdef BM_RELEASE
-    EXPECT_THROW(file.loadLocale("new"), RessourceFile::LocaleNotFoundError);
+    EXPECT_THROW(file.loadLocale("new"), ResourceFile::LocaleNotFoundError);
     ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
 #else
     file.loadLocale("new");
@@ -62,48 +62,48 @@ TEST(RessourceFile, new_file)
 #endif
 }
 
-TEST(RessourceFile, translated_message)
+TEST(ResourceFile, translated_message)
 {
     init_locales();
 
-    RessourceFile file("hello");
+    ResourceFile file("hello");
 
     ASSERT_EQ(file.translate("translated"), "traduit");
 }
 
-TEST(RessourceFile, untranslated_message)
+TEST(ResourceFile, untranslated_message)
 {
     init_locales();
 
-    RessourceFile file("hello");
+    ResourceFile file("hello");
 
     ASSERT_EQ(file.translate("not translated"), "not translated");
 }
 
-TEST(RessourceFile, unregistered_message)
+TEST(ResourceFile, unregistered_message)
 {
     init_locales();
 
-    RessourceFile file("hello");
+    ResourceFile file("hello");
 
 #ifdef BM_RELEASE
-    EXPECT_THROW(file.translate("????"), RessourceFile::MessageNotFoundError);
+    EXPECT_THROW(file.translate("????"), ResourceFile::MessageNotFoundError);
 #else
     ASSERT_EQ(file.translate("????"), "????");
 #endif
 }
 
-TEST(RessourceFile, switch_to_invalid_file)
+TEST(ResourceFile, switch_to_invalid_file)
 {
     init_locales();
 
-    RessourceFile file("hello");
+    ResourceFile file("hello");
 
     ASSERT_EQ(file.translate("translated"), "traduit");
 #ifdef BM_RELEASE
-    EXPECT_THROW(file.loadLocale("unexisting"), RessourceFile::LocaleNotFoundError);
+    EXPECT_THROW(file.loadLocale("unexisting"), ResourceFile::LocaleNotFoundError);
     ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
-    EXPECT_THROW(file.translate("translated"), RessourceFile::MessageNotFoundError);
+    EXPECT_THROW(file.translate("translated"), ResourceFile::MessageNotFoundError);
 #else
     file.loadLocale("unexisting");
     ASSERT_FALSE(std::filesystem::exists(Localization::getLocalePath(file.getLocale())));
@@ -111,20 +111,20 @@ TEST(RessourceFile, switch_to_invalid_file)
 #endif
 }
 
-TEST(RessourceFile, loading_with_errors)
+TEST(ResourceFile, loading_with_errors)
 {
     init_locales();
 
     size_t count = 5;
 
     for (size_t i = 0; i < count; i++) {
-        RessourceFile file("test_" + std::to_string(i));
+        ResourceFile file("test_" + std::to_string(i));
 
         ASSERT_EQ(file.translate("first message"), "premier message");
         ASSERT_EQ(file.translate("multiple\nlines\nmessage"), "Message en\nplusieurs\nlignes");
 // Invalid messages are ignored and so they are not translated.
 #ifdef BM_RELEASE
-        EXPECT_THROW(file.translate("invalid"), RessourceFile::MessageNotFoundError);
+        EXPECT_THROW(file.translate("invalid"), ResourceFile::MessageNotFoundError);
 #else
         ASSERT_EQ(file.translate("invalid"), "invalid");
 #endif

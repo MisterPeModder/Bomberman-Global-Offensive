@@ -11,7 +11,7 @@
 #include "ecs/Component.hpp"
 #include "raylib/core/Color.hpp"
 
-namespace game
+namespace game::components
 {
     /// Textual element.
     struct Textual : public ecs::Component {
@@ -33,6 +33,6 @@ namespace game
         {
         }
     };
-} // namespace game
+} // namespace game::components
 
 #endif /* !GAME_GUI_COMPONENTS_TEXTUAL_HPP_ */

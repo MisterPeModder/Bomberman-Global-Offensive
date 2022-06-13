@@ -17,35 +17,28 @@
 #include "game/components/Size.hpp"
 #include "raylib/model/Model.hpp"
 
-#include "logger/Logger.hpp"
-
-namespace game
+namespace game::systems
 {
-    namespace systems
-    {
-        struct DrawModel : public ecs::System {
-            void run(ecs::SystemData data) override final
-            {
-                for (auto [model, pos, scale, color] :
-                    ecs::join(data.getStorage<game::Model>(), data.getStorage<game::Position>(),
-                        data.getStorage<game::Scale>(), data.getStorage<game::Color>())) {
-                    model.model.draw(pos, scale.scale, color);
-                }
-            }
-        };
+    struct DrawModel : public ecs::System {
+        void run(ecs::SystemData data) override final
+        {
+            auto &models = data.getStorage<game::components::Model>();
+            auto &poses = data.getStorage<game::components::Position>();
+            auto &scales = data.getStorage<game::components::Scale>();
+            auto &colors = data.getStorage<game::components::Color>();
+            auto &sizes = data.getStorage<game::components::Size>();
+            auto &rAxises = data.getStorage<game::components::RotationAxis>();
+            auto &rAngles = data.getStorage<game::components::RotationAngle>();
 
-        struct DrawRotatedModel : public ecs::System {
-            void run(ecs::SystemData data) override final
-            {
-                for (auto [model, pos, rAxis, rAngle, size, color] :
-                    ecs::join(data.getStorage<game::Model>(), data.getStorage<game::Position>(),
-                        data.getStorage<game::RotationAxis>(), data.getStorage<game::RotationAngle>(),
-                        data.getStorage<game::Size>(), data.getStorage<game::Color>())) {
-                    model.model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
-                }
+            for (auto [model, pos, scale, color] : ecs::join(models, poses, scales, colors)) {
+                model.draw(pos, scale.scale, color);
             }
-        };
-    } // namespace systems
-} // namespace game
+            for (auto [model, pos, rAxis, rAngle, size, color] :
+                ecs::join(models, poses, rAxises, rAngles, sizes, colors)) {
+                model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
+            }
+        }
+    };
+} // namespace game::systems
 
-#endif /* ! GAME_SYSTEMS_MODEL_HPP_ */
+#endif

@@ -19,14 +19,14 @@ namespace raylib
 
         Mesh Mesh::genCube(float width, float height, float length) { return Mesh(GenMeshCube(width, height, length)); }
 
-        Mesh Mesh::genCube(const raylib::core::Vector3 &size) { return Mesh(GenMeshCube(size.x, size.y, size.z)); }
+        Mesh Mesh::genCube(const raylib::core::Vector3f &size) { return Mesh(GenMeshCube(size.x, size.y, size.z)); }
 
         Mesh Mesh::genCubicMap(const raylib::textures::Image &image, float width, float height, float length)
         {
             return Mesh(GenMeshCubicmap(image.asRaylib(), {.x = width, .y = height, .z = length}));
         }
 
-        Mesh Mesh::genCubicMap(const raylib::textures::Image &image, const raylib::core::Vector3 &vector)
+        Mesh genCubicMap(const raylib::textures::Image &image, const raylib::core::Vector3f &vector)
         {
             return Mesh(GenMeshCubicmap(image.asRaylib(), vector.asRaylib()));
         }

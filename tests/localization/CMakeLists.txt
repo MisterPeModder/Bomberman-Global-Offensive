@@ -1,7 +1,7 @@
 set(SRCROOT ${SRCROOT}/localization)
 
 set(SRC
-    ${SRCROOT}/test_ressource_file.cpp
+    ${SRCROOT}/test_resource_file.cpp
 )
 
 add_bomberman_test(

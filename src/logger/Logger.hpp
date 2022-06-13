@@ -59,7 +59,7 @@ class Logger {
     /// Construct a new Logger object linked to a given output stream.
     ///
     /// @param[in] stream stream in which the logger will write.
-    Logger(std::ostream &stream = std::cerr, std::string_view name = "");
+    Logger(std::ostream &stream = std::cout, std::string_view name = "");
 
     /// Construct a new Logger object linked to a logfile.
     ///
@@ -70,6 +70,9 @@ class Logger {
 
     /// Cannot copy loggers, because of the arbitrary output stream, which is not copiable.
     Logger(const Logger &other) = delete;
+
+    /// Move constructor.
+    Logger(Logger &&other) = default;
 
     /// Destroy the Logger object.
     ~Logger() = default;

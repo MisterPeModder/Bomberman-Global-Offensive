@@ -5,10 +5,14 @@ add_subdirectory(components)
 add_subdirectory(map)
 add_subdirectory(settings)
 add_subdirectory(systems)
+add_subdirectory(resources)
 add_subdirectory(gui)
+add_subdirectory(worlds)
 
 set (SRC
 	${SRC}
+	${SRCROOT}/Game.cpp
+	${SRCROOT}/Game.hpp
 	${SRCROOT}/GameAction.hpp
 	${SRCROOT}/User.cpp
 	${SRCROOT}/User.hpp

@@ -8,8 +8,6 @@
 #ifndef ECS_SYSTEM_SYSTEM_HPP_
 #define ECS_SYSTEM_SYSTEM_HPP_
 
-#include <concepts>
-
 namespace ecs
 {
     class SystemData;

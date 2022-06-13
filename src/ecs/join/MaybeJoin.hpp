@@ -31,11 +31,20 @@ namespace ecs
     /// join to all entities that are alive.
     template <typename J> class MaybeJoin final {
       public:
+        using Data = std::add_pointer_t<typename JoinTraits<J>::Data>;
+
         MaybeJoin(J &inner) : _inner(inner), _nonMask(JoinTraits<J>::getMask(inner).size()) { this->_nonMask.setAll(); }
 
-        constexpr J &getInner() noexcept { return this->_inner; }
-
         constexpr util::BitSet const &getMask() const noexcept { return this->_nonMask; }
+
+        constexpr Data getData(std::size_t index) const
+        {
+            util::BitSet const &innerMask = JoinTraits<J>::getMask(this->_inner);
+
+            if (index < innerMask.size() && innerMask[index])
+                return &JoinTraits<J>::getData(this->_inner, index);
+            return nullptr;
+        }
 
         void adjustMask(std::size_t maxSize)
         {
@@ -58,12 +67,7 @@ namespace ecs
 
         constexpr static util::BitSet const &getMask(MaybeJoin<J> const &joinable) { return joinable.getMask(); }
 
-        constexpr static Data getData(MaybeJoin<J> &joinable, std::size_t index)
-        {
-            if (JoinTraits<J>::getMask(joinable.getInner())[index])
-                return &JoinTraits<J>::getData(joinable.getInner(), index);
-            return nullptr;
-        }
+        constexpr static Data getData(MaybeJoin<J> &joinable, std::size_t index) { return joinable.getData(index); }
     };
 
     /// @internal

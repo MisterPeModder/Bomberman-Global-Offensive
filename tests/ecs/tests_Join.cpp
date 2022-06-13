@@ -32,8 +32,18 @@ struct Position : public ecs::Component {
     Position(float px, float py) : x(px), y(py) {}
 };
 
+struct Velocity : public ecs::Component {
+    float x;
+    float y;
+
+    Velocity(float px, float py) : x(px), y(py) {}
+};
+
 struct Marker : public ecs::Component {};
 SET_COMPONENT_STORAGE(Marker, ecs::MarkerStorage);
+
+struct Marker2 : public ecs::Component {};
+SET_COMPONENT_STORAGE(Marker2, ecs::MarkerStorage);
 
 // JoinIter must be an input iterator
 static_assert(std::input_iterator<ecs::JoinIter<ecs::MapStorage<Position>>>);
@@ -54,6 +64,18 @@ class TestSystem : public ecs::System {
 
   private:
     std::function<void(ecs::SystemData)> _func;
+};
+
+struct RemovingSystem : public ecs::System {
+    void run(ecs::SystemData data) override final
+    {
+        auto &entities = data.getResource<ecs::Entities>();
+
+        for (auto [entity] : ecs::join(entities)) {
+            if (entity.getId() % 2 != 0)
+                entities.kill(entity);
+        }
+    }
 };
 
 static void createWorld(ecs::World &world)
@@ -172,8 +194,9 @@ TEST(Join, optionalSkipDead)
         auto &entities = world.getResource<ecs::Entities>();
 
         for (auto id : blacklist)
-            entities.erase(entities.get(id));
+            entities.kill(entities.get(id));
     }
+    world.maintain();
     world.addSystem<TestSystem>([&blacklist](ecs::SystemData data) {
         auto optionalPositions = ecs::maybe(data.getStorage<Position>());
         auto &entities = data.getResource<ecs::Entities>();
@@ -224,4 +247,62 @@ TEST(Join, optionalAlternativeOrdering)
         EXPECT_FLOAT_EQ(p4.y, 8.0f);
     });
     world.runSystem<TestSystem>();
+}
+
+TEST(Join, optionalMissingComponent)
+{
+    ecs::World world;
+
+    world.addStorage<Marker>();
+
+    world.addEntity().with<Position>(5.0f, 6.0f).build();
+    world.addEntity().with<Position>(7.0f, 8.0f).build();
+
+    world.addSystem<TestSystem>([](ecs::SystemData data) {
+        auto optionalMarkers = ecs::maybe(data.getStorage<Marker>());
+        auto &positions = data.getStorage<Position>();
+
+        auto join = ecs::join(optionalMarkers, positions);
+        auto iter = join.begin();
+
+        auto [m1, p1] = *iter;
+        auto [m2, p2] = *(++iter);
+
+        EXPECT_TRUE(m1 == nullptr);
+        EXPECT_FLOAT_EQ(p1.x, 5.0f);
+        EXPECT_FLOAT_EQ(p1.y, 6.0f);
+
+        EXPECT_TRUE(m2 == nullptr);
+        EXPECT_FLOAT_EQ(p2.x, 7.0f);
+        EXPECT_FLOAT_EQ(p2.y, 8.0f);
+    });
+    world.runSystem<TestSystem>();
+}
+
+TEST(Join, midLoopRemovals)
+{
+    ecs::World world;
+
+    createWorld(world);
+    world.addEntity().with<Marker2>().with<Velocity>(0.f, 0.f).build();
+
+    world.addSystem<RemovingSystem>();
+    world.runSystems();
+    world.maintain();
+
+    auto &entities = world.getResource<ecs::Entities>();
+    auto &markers = world.getStorage<Marker>();
+
+    EXPECT_TRUE(entities.isAlive(entities.get(0)));
+    EXPECT_FALSE(entities.isAlive(entities.get(1)));
+    EXPECT_TRUE(entities.isAlive(entities.get(2)));
+    EXPECT_FALSE(entities.isAlive(entities.get(3)));
+    EXPECT_TRUE(entities.isAlive(entities.get(4)));
+    EXPECT_FALSE(entities.isAlive(entities.get(5)));
+
+    EXPECT_TRUE(markers.contains(entities.get(0).getId()));
+    EXPECT_FALSE(markers.contains(entities.get(1).getId()));
+
+    EXPECT_EQ(world.addEntity().build().getId(), 1);
+    EXPECT_EQ(world.addEntity().build().getId(), 3);
 }

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman
 ** File description:
-** test_ressource_file
+** test Gamepad Input
 */
 
 #include "game/settings/GamepadInput.hpp"

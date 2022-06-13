@@ -53,7 +53,7 @@ namespace raylib::model
         /// @param size the size of the cube
         ///
         /// @return The created cubic mesh
-        static Mesh genCube(const raylib::core::Vector3 &size);
+        static Mesh genCube(const raylib::core::Vector3f &size);
 
         /// Generates a cubic map mesh from an image
         ///
@@ -71,7 +71,7 @@ namespace raylib::model
         /// @param size the size of the cube
         ///
         /// @return The created cubic mesh
-        static Mesh genCubicMap(const raylib::textures::Image &image, const raylib::core::Vector3 &vector);
+        static Mesh genCubicMap(const raylib::textures::Image &image, const raylib::core::Vector3f &vector);
 
         /// Gets the C Raylib immutable version of the mesh
         ///
