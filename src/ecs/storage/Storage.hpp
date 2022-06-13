@@ -45,12 +45,13 @@ namespace ecs
       public:
         virtual ~Storage() = default;
 
-        /// Removes all components beloging to the entities in @b toRemove.
+        /// Removes all components belonging to the entities in @b toRemove.
         ///
-        /// @param toRemove The set of entities to removed.
+        /// @param toRemove The set of entities to be removed.
         virtual void maintain(std::span<Entity> toRemove) = 0;
     };
 
+    /// The Compoonent storage trait.
     ///
     /// @note The iterators supplied by storages @b must yield their entity-component pair in increasing order of entity
     /// index.
