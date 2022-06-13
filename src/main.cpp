@@ -8,7 +8,6 @@
 #include <filesystem>
 #include <iostream>
 #include <memory>
-
 #include "ecs/World.hpp"
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
@@ -22,6 +21,7 @@
 #include "script/Engine.hpp"
 
 #include "game/Game.hpp"
+#include "game/worlds/Worlds.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -60,7 +60,8 @@ static void runGame()
 {
     auto params = new Params();
 
-    params->game.setup(params->camera);
+    // params->game.setup(params->camera);
+    game::Worlds::loadGameWorld(params->game, params->camera);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,

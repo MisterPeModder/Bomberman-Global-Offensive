@@ -19,9 +19,8 @@ namespace game::systems
         /// Draws all the cubes.
         void run(ecs::SystemData data) override final
         {
-            for (auto [cube] : ecs::join(data.getStorage<game::components::Cube>())) {
-                cube.cube.draw();
-            }
+            for (auto [cube] : ecs::join(data.getStorage<game::components::Cube>()))
+                cube.draw();
         }
     };
 } // namespace game::systems

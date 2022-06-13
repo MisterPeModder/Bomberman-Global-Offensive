@@ -7,6 +7,7 @@ add_subdirectory(settings)
 add_subdirectory(systems)
 add_subdirectory(resources)
 add_subdirectory(gui)
+add_subdirectory(worlds)
 
 set (SRC
 	${SRC}

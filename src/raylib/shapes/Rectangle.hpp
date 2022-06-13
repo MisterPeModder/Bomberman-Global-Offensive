@@ -28,7 +28,7 @@ namespace raylib
             /// @param pos The position of the rectangle.
             /// @param size The size of the rectangle.
             /// @param color The color of the rectangle.
-            Rectangle(raylib::core::Vector2f pos = {}, raylib::core::Vector2f size = {1, 1},
+            Rectangle(raylib::core::Vector2f pos = {}, raylib::core::Vector2f size = {1.f, 1.f},
                 raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// A constructor that takes a Rectangle as a parameter.
