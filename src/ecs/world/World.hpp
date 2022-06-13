@@ -24,6 +24,7 @@ namespace ecs
 {
     class Entity;
     class System;
+    class SystemTag;
 
     /// Contains all entities and systems.
     class World final {
@@ -140,6 +141,9 @@ namespace ecs
         /// Removes all registered resources, systems, and entities.
         void clear();
 
+        /// Remove all entities marked for deletion and their associated components.
+        void maintain();
+
 #pragma endregion ECS World Populating
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Running
@@ -148,6 +152,11 @@ namespace ecs
 
         /// Runs all systems in this world.
         void runSystems();
+
+        /// Runs all the systems registered by the given tag.
+        ///
+        /// @param tag The system types, all the types in @c tag must be added with World::addSystem() beforehand.
+        void runSystems(SystemTag const &tag);
 
         /// Run a specific system, useful if you want to run to time/resource-intensive system separately.
         ///

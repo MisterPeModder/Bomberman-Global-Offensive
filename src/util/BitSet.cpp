@@ -124,6 +124,14 @@ namespace util
         this->_size = size;
     }
 
+    void BitSet::resizeSentinel(std::size_t size, bool sentinelValue)
+    {
+        if (this->_size > 0)
+            this->set(this->_size - 1, !sentinelValue);
+        this->resize(size + 1);
+        this->set(this->_size - 1, sentinelValue);
+    }
+
     BitSet &BitSet::push(bool value)
     {
         this->resize(this->_size + 1);

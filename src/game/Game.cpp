@@ -7,6 +7,7 @@
 
 #include "Game.hpp"
 #include <cmath>
+#include "ecs/Storage.hpp"
 #include "ecs/resource/Timer.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Camera3D.hpp"
@@ -73,6 +74,11 @@ namespace game
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
+        /// Setup world systems tags
+        _handleInputs.add<systems::InputManager>();
+        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb>();
+        _resolveCollisions.add<systems::Collision>();
+        _drawing.add<systems::DrawingCube, systems::DrawBomb>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
@@ -120,17 +126,17 @@ namespace game
                     }
                 }
                 if (wall) {
-                    auto &builder = _world.addEntity()
-                                        .with<components::Position>(x, 0.5f, z)
-                                        .with<components::Collidable>()
-                                        .with<components::Wall>()
-                                        .with<components::Cube>()
-                                        .with<components::Size>(1.f, 1.f, 1.f)
-                                        .with<components::CubeColor>(color);
+                    auto builder = _world.addEntity();
+
+                    (void)builder.with<components::Position>(x, 0.5f, z)
+                        .with<components::Collidable>()
+                        .with<components::Wall>()
+                        .with<components::Cube>()
+                        .with<components::Size>(1.f, 1.f, 1.f)
+                        .with<components::CubeColor>(color);
                     if (destructible)
-                        builder.with<components::Destructible>().build();
-                    else
-                        builder.build();
+                        (void)builder.with<components::Destructible>();
+                    builder.build();
                 }
             }
         }
@@ -138,11 +144,15 @@ namespace game
 
     void Game::drawFrame(const raylib::core::Camera3D &camera)
     {
+        _world.runSystems(_handleInputs);
+        _world.runSystems(_update);
+        _world.runSystems(_resolveCollisions);
+
         raylib::core::scoped::Drawing drawing;
         raylib::core::Window::clear();
         {
             raylib::core::scoped::Mode3D mode3D(camera);
-            _world.runSystems();
+            _world.runSystems(_drawing);
         };
         raylib::core::Window::drawFPS(10, 10);
     }

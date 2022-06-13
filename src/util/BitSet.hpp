@@ -163,6 +163,13 @@ namespace util
             this->normalize();
         }
 
+        /// Changes the number of bits stored in this set, and sets the final bit past @b size to the value of
+        /// @b sentinelValue.
+        ///
+        /// @param size The new number of non-sentinel bits, may be smaller or greater than the current size, or zero.
+        /// @param sentinelValue The value of the sentinel bit.
+        void resizeSentinel(std::size_t size, bool sentinelValue);
+
         /// Adds the given bit to the end of the set.
         BitSet &push(bool value);
 

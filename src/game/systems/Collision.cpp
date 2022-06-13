@@ -25,6 +25,7 @@ namespace game::systems
         auto &velocities = data.getStorage<Velocity>();
         auto optionalVelocity = ecs::maybe(velocities);
         auto maybeDestructible = ecs::maybe(data.getStorage<Destructible>());
+        raylib::shapes::Rectangle collideRect;
 
         for (auto [pos1, size1, vel1, id1, c1] : ecs::join(positions, sizes, velocities, entities, collidable)) {
             for (auto [pos2, size2, vel2, id2, c2, destructible] :
@@ -34,24 +35,32 @@ namespace game::systems
                 /// Do not collide entities with themselves
                 if (id1.getId() == id2.getId() || (destructible && destructible->destroyed))
                     continue;
-                /// Do not make further check because entities are too far to collide
-                if (abs(pos1.x - pos2.x) * 2 > (size1.x + size2.x) && abs(pos1.z - pos2.z) * 2 > (size1.z + size2.z))
+                if (!getCollideRect(collideRect, pos1, size1, pos2, size2))
                     continue;
-
-                raylib::shapes::Rectangle rect1(raylib::core::Vector2(pos1.x - size1.x / 2.f, pos1.z - size1.z / 2.f),
-                    raylib::core::Vector2(size1.x, size1.z));
-                raylib::shapes::Rectangle rect2(raylib::core::Vector2(pos2.x - size2.x / 2.f, pos2.z - size2.z / 2.f),
-                    raylib::core::Vector2(size2.x, size2.z));
-
-                if (!rect1.checkCollision(rect2))
-                    continue;
-                ::Rectangle collideRect = rect1.getCollision(rect2).getRaylibRectangle();
 
                 float firstMovePercent = (vel2) ? 0.5f : 1.f;
-                resolveCollision(collideRect, firstMovePercent, pos1);
-                resolveCollision(collideRect, (1 - firstMovePercent), pos2);
+                resolveCollision(collideRect.getRaylibRectangle(), firstMovePercent, pos1);
+                resolveCollision(collideRect.getRaylibRectangle(), (1 - firstMovePercent), pos2);
             }
         }
+    }
+
+    bool Collision::getCollideRect(raylib::shapes::Rectangle &collideRect, raylib::core::Vector3f pos1,
+        raylib::core::Vector3f size1, raylib::core::Vector3f pos2, raylib::core::Vector3f size2)
+    {
+        /// Do not make further check because entities are too far to collide
+        if (abs(pos1.x - pos2.x) * 2 > (size1.x + size2.x) && abs(pos1.z - pos2.z) * 2 > (size1.z + size2.z))
+            return false;
+
+        raylib::shapes::Rectangle rect1(raylib::core::Vector2(pos1.x - size1.x / 2.f, pos1.z - size1.z / 2.f),
+            raylib::core::Vector2(size1.x, size1.z));
+        raylib::shapes::Rectangle rect2(raylib::core::Vector2(pos2.x - size2.x / 2.f, pos2.z - size2.z / 2.f),
+            raylib::core::Vector2(size2.x, size2.z));
+
+        if (!rect1.checkCollision(rect2))
+            return false;
+        collideRect = rect1.getCollision(rect2);
+        return true;
     }
 
     void Collision::resolveCollision(const ::Rectangle collideRectangle, float scale, Position &pos) const

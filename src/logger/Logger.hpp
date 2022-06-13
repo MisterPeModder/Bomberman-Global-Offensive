@@ -59,7 +59,7 @@ class Logger {
     /// Construct a new Logger object linked to a given output stream.
     ///
     /// @param[in] stream stream in which the logger will write.
-    Logger(std::ostream &stream = std::cerr, std::string_view name = "");
+    Logger(std::ostream &stream = std::cout, std::string_view name = "");
 
     /// Construct a new Logger object linked to a logfile.
     ///
