@@ -80,11 +80,6 @@ int main()
 {
     setupLogger();
 
-    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
-
-    jsEngine->loadApi();
-    jsEngine->loadScript("hello");
-
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
     localization::Localization::setLocale("fr");
@@ -93,6 +88,12 @@ int main()
     /// Setup the Window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
     raylib::core::Window::setTargetFPS(60);
+
+    /// Start the Javascript engine
+    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
+
+    jsEngine->loadApi();
+    jsEngine->loadScript("hello");
 
     try {
         runGame();

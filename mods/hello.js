@@ -15,6 +15,8 @@ game.addMod({
 
         // :see_no_evil:
         game.sv_cheats = 1;
+        game.width = 1890;
+        game.height = 800;
 
         mod.log('The basic mod has loaded, enjoy!');
     },

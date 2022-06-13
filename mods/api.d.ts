@@ -6,6 +6,12 @@ interface Game {
     /** Set this to a non-zero value to enable cheat mode. */
     sv_cheats: number
 
+    /** The game screen width, in pixels. */
+    width: number
+
+    /** The game screen height, in pixels. */
+    height: number
+
     /**
      * Prints a message using the game's logging facility.
      * 

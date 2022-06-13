@@ -6,11 +6,14 @@
 */
 
 #include "Window.hpp"
+#include "logger/Logger.hpp"
 
 extern "C"
 {
 #include "raylib.h"
 }
+
+#include <algorithm>
 
 namespace raylib
 {
@@ -31,6 +34,17 @@ namespace raylib
         void Window::beginDrawing() { BeginDrawing(); }
 
         void Window::endDrawing() { EndDrawing(); }
+
+        void Window::setSize(int width, int height)
+        {
+            Logger::logger.log(
+                Logger::Severity::Information, [=](auto &out) { out << "Resized to " << width << 'x' << height; });
+            SetWindowSize(std::max(0, width), std::max(0, height));
+        }
+
+        int Window::getWidth() { return GetScreenWidth(); }
+
+        int Window::getHeight() { return GetScreenHeight(); }
 
     } // namespace core
 } // namespace raylib

@@ -55,6 +55,15 @@ namespace raylib
 
             /// Block the draw functions
             static void endDrawing();
+
+            /// Set the window size.
+            static void setSize(int width, int height);
+
+            /// @return The width of the window.
+            static int getWidth();
+
+            /// @return The height of the window.
+            static int getHeight();
         };
     } // namespace core
 } // namespace raylib

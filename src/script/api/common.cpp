@@ -10,6 +10,7 @@
 #include <unordered_map>
 
 #include "logger/Logger.hpp"
+#include "raylib/core/Window.hpp"
 #include "script/JsException.hpp"
 #include "script/script.hpp"
 
@@ -45,4 +46,19 @@ BMJS_DEFINE void common_error(bmjs::String message) { Logger::logger.log(Logger:
 BMJS_DEFINE void common_warn(bmjs::String message) { Logger::logger.log(Logger::Severity::Warning, message); }
 
 BMJS_DEFINE void common_debug(bmjs::String message) { Logger::logger.log(Logger::Severity::Debug, message); }
+
+BMJS_DEFINE void common_setWidth(bmjs::Number width)
+{
+    raylib::core::Window::setSize(static_cast<int>(width), raylib::core::Window::getHeight());
+}
+
+BMJS_DEFINE void common_setHeight(bmjs::Number height)
+{
+    raylib::core::Window::setSize(raylib::core::Window::getWidth(), static_cast<int>(height));
+}
+
+BMJS_DEFINE bmjs::Number common_getWidth() { return raylib::core::Window::getWidth(); }
+
+BMJS_DEFINE bmjs::Number common_getHeight() { return raylib::core::Window::getHeight(); }
+
 BMJS_API_END

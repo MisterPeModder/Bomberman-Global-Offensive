@@ -53,11 +53,25 @@ var game;
         set: function (value) { bm.common.setCVar('sv_cheats', Number(value)); }
     });
 
+    Object.defineProperty(game, 'width', {
+        get: function () { return bm.common.getWidth(); },
+        set: function (value) {
+            checkArg('game.width', 0, 'number', value);
+            bm.common.setWidth(Number(value));
+        }
+    });
+    Object.defineProperty(game, 'height', {
+        get: function () { return bm.common.getHeight(); },
+        set: function (value) {
+            checkArg('game.height', 0, 'number', value);
+            bm.common.setHeight(Number(value));
+        }
+    });
+
     readOnly(game, 'log', function (msg) { bm.common.log(String(msg)); });
     readOnly(game, 'error', function (msg) { bm.common.error(String(msg)); });
     readOnly(game, 'warn', function (msg) { bm.common.warn(String(msg)); });
     readOnly(game, 'debug', function (msg) { bm.common.debug(String(msg)); });
-
 
     game.addMod = function (/** @type {ModDefinition} */ modDef) {
         /** @type {Mod} */
