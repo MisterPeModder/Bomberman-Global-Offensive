@@ -16,7 +16,8 @@
 
 namespace game::systems
 {
-    struct RemovesBombNoClip : public ecs::System {
+    /// Disables the bomb no clip when the player walk off of the bomb position.
+    struct DisableBombNoClip : public ecs::System {
         void run(ecs::SystemData data) override final
         {
             for (auto [position, bombNoClip] : ecs::join(

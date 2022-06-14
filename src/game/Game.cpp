@@ -123,10 +123,10 @@ namespace game
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
-        _world.addSystem<systems::RemovesBombNoClip>();
+        _world.addSystem<systems::DisableBombNoClip>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::RemovesBombNoClip>();
+        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::DisableBombNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawingCube, systems::DrawBomb>();
 

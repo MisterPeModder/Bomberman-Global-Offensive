@@ -5,6 +5,7 @@ set(SRC
     ${SRC}
     ${SRCROOT}/Bomb.cpp
     ${SRCROOT}/Bomb.hpp
+    ${SRCROOT}/BombNoClip.cpp
     ${SRCROOT}/BombNoClip.hpp
     ${SRCROOT}/Collidable.hpp
     ${SRCROOT}/Controlable.hpp

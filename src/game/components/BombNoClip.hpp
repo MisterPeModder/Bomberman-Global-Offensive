@@ -15,23 +15,26 @@
 namespace game::components
 {
     struct BombNoClip : public ecs::Component {
+        /// Current target bomb position (cell in map).
         raylib::core::Vector2u bombPos;
+        /// If the bomb mustn't collide with the entity owning this component.
         bool enabled;
 
-        BombNoClip() : bombPos(0, 0), enabled(false) {}
-        BombNoClip(raylib::core::Vector2u pBombPos) : bombPos(pBombPos), enabled(false) {}
+        /// Construct a new Bomb No Clip component
+        BombNoClip();
 
-        void setBombPosition(raylib::core::Vector2u pBombPos)
-        {
-            bombPos = pBombPos;
-            enabled = true;
-        }
+        /// Change the target bomb position.
+        ///
+        /// @param pBombPos target bomb position.
+        void setBombPosition(raylib::core::Vector2u pBombPos);
 
-        bool matchEntityPosition(raylib::core::Vector3f entityPosition)
-        {
-            return enabled && bombPos.x == static_cast<unsigned int>(std::round(entityPosition.x))
-                && bombPos.y == static_cast<unsigned int>(std::round(entityPosition.z));
-        }
+        /// Test if an entity position match the target bomb position.
+        /// @note This is used to test rounded Vector3f with Vector2u more easily.
+        ///
+        /// @param entityPosition tested entity position.
+        /// @return true If the entity is on the same cell than the targeted bomb.
+        /// @return false If the entity is on another cell.
+        bool matchEntityPosition(raylib::core::Vector3f entityPosition);
     };
 } // namespace game::components
 
