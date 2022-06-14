@@ -8,6 +8,7 @@
 #ifndef GAME_SCENES_ISCENE_HPP_
 #define GAME_SCENES_ISCENE_HPP_
 
+#include "ecs/World.hpp"
 #include "game/Game.hpp"
 #include "raylib/core/Camera3D.hpp"
 
@@ -16,8 +17,15 @@ namespace game
     class IScene {
       public:
         virtual ~IScene() = default;
-        virtual void setCamera(raylib::core::Camera3D &camera) = 0;
-        virtual void drawFrame(const raylib::core::Camera3D &camera) = 0;
+
+        /// Call the scene's drawFrame function
+        virtual void drawFrame() = 0;
+
+        /// Gets the scene's mutable world object
+        virtual ecs::World &getWorld() = 0;
+
+        /// Gets the scene's immutable world object
+        virtual const ecs::World &getWorld() const = 0;
     };
 } // namespace game
 

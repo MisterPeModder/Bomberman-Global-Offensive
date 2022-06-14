@@ -21,9 +21,7 @@ namespace game
 
         ~GameScene() = default;
 
-        void setCamera(raylib::core::Camera3D &camera) override final { _game.setCamera(camera); }
-
-        void drawFrame(const raylib::core::Camera3D &camera) override final { _game.drawFrame(camera); }
+        void drawFrame() override final { _game.drawFrame(); }
 
       private:
         Game _game;
