@@ -23,8 +23,8 @@
 #include "game/Game.hpp"
 #include "game/scenes/GameScene.hpp"
 #include "game/scenes/IScene.hpp"
-#include "game/scenes/MainScene.hpp"
-#include "game/scenes/SettingsScene.hpp"
+#include "game/scenes/MainMenuScene.hpp"
+#include "game/scenes/SettingsMenuScene.hpp"
 #include "game/scenes/SplashScene.hpp"
 #include "game/scenes/TestScene.hpp"
 

@@ -18,7 +18,7 @@
 #include "game/components/Size.hpp"
 #include "game/systems/Model.hpp"
 
-static void loadSplashWorld(ecs::World &world)
+static void loadSplashScene(ecs::World &world)
 {
     static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
 
@@ -61,5 +61,5 @@ static void loadSplashWorld(ecs::World &world)
 
 namespace game
 {
-    SplashScene::SplashScene() { loadSplashWorld(_world); }
+    SplashScene::SplashScene() { loadSplashScene(_world); }
 } // namespace game

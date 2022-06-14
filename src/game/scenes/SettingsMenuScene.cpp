@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2022
 ** BMGO
 ** File description:
-** MainScene
+** SettingsMenuScene
 */
 
-#include "MainScene.hpp"
+#include "SettingsMenuScene.hpp"
 
 #include "util/util.hpp"
 
@@ -18,7 +18,7 @@
 #include "game/components/Size.hpp"
 #include "game/systems/Model.hpp"
 
-static void loadMainScene(ecs::World &world)
+static void loadSettingsMenuScene(ecs::World &world)
 {
     static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
 
@@ -28,14 +28,14 @@ static void loadMainScene(ecs::World &world)
     world.addEntity()
         .with<game::components::Model>(testModelPath)
         .with<game::components::Position>(0, -2, 0)
-        .with<game::components::Size>(0.5f, 0.5f, 0.5f)
+        .with<game::components::Size>(2.f, 0.5f, 0.5f)
         .with<game::components::RotationAngle>(-90)
         .with<game::components::RotationAxis>(1, 0, 0)
-        .with<game::components::Color>(raylib::core::Color::GREEN)
+        .with<game::components::Color>(raylib::core::Color::BLUE)
         .build();
 }
 
 namespace game
 {
-    MainScene::MainScene() { loadMainScene(_world); }
+    SettingsMenuScene::SettingsMenuScene() { loadSettingsMenuScene(_world); }
 } // namespace game

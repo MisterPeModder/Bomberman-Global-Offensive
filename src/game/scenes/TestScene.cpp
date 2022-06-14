@@ -111,7 +111,7 @@ static void addTestWidgets(ecs::World &world)
     world.addSystem<game::systems::InputManager>();
 }
 
-static void loadTestWorld(ecs::World &world)
+static void loadTestScene(ecs::World &world)
 {
     world.addSystem<game::systems::DrawCube>();
     world.addEntity()
@@ -146,5 +146,5 @@ static void loadTestWorld(ecs::World &world)
 
 namespace game
 {
-    TestScene::TestScene() { loadTestWorld(_world); }
+    TestScene::TestScene() { loadTestScene(_world); }
 } // namespace game

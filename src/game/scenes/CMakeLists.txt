@@ -7,10 +7,10 @@ ${SRC}
 	${SRCROOT}/AScene.cpp
 	${INCROOT}/AScene.hpp
 	${INCROOT}/GameScene.hpp
-	${SRCROOT}/MainScene.cpp
-	${INCROOT}/MainScene.hpp
-	${INCROOT}/SettingsScene.cpp
-	${INCROOT}/SettingsScene.hpp
+	${SRCROOT}/MainMenuScene.cpp
+	${INCROOT}/MainMenuScene.hpp
+	${INCROOT}/SettingsMenuScene.cpp
+	${INCROOT}/SettingsMenuScene.hpp
 	${INCROOT}/SplashScene.cpp
 	${INCROOT}/SplashScene.hpp
 	${SRCROOT}/TestScene.cpp
