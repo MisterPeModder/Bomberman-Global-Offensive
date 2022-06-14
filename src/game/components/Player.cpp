@@ -72,5 +72,5 @@ namespace game::components
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .build();
-    } // namespace game::components
+    }
 } // namespace game::components
