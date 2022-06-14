@@ -18,6 +18,7 @@ set(SRC
     ${SRCROOT}/InputManager.cpp
     ${SRCROOT}/Movement.hpp
     ${SRCROOT}/Movement.cpp
+    ${SRCROOT}/Rectangle.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
