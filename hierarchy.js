@@ -75,6 +75,15 @@ var hierarchy =
     [ "ecs::Instances< ecs::Resource >", "classecs_1_1_instances.html", null ],
     [ "ecs::Instances< ecs::Storage >", "classecs_1_1_instances.html", null ],
     [ "ecs::Instances< ecs::System >", "classecs_1_1_instances.html", null ],
+    [ "game::IScene", "classgame_1_1_i_scene.html", [
+      [ "game::AScene", "classgame_1_1_a_scene.html", [
+        [ "game::GameScene", "classgame_1_1_game_scene.html", null ],
+        [ "game::MainMenuScene", "classgame_1_1_main_menu_scene.html", null ],
+        [ "game::SettingsMenuScene", "classgame_1_1_settings_menu_scene.html", null ],
+        [ "game::SplashScene", "classgame_1_1_splash_scene.html", null ],
+        [ "game::TestScene", "classgame_1_1_test_scene.html", null ]
+      ] ]
+    ] ],
     [ "ecs::Join< First, Rest >", "classecs_1_1_join.html", null ],
     [ "ecs::JoinIter< First, Rest >", "classecs_1_1_join_iter.html", null ],
     [ "ecs::JoinTraits< J >", "structecs_1_1_join_traits.html", null ],
@@ -154,6 +163,5 @@ var hierarchy =
       [ "game::components::Velocity", "structgame_1_1components_1_1_velocity.html", null ]
     ] ],
     [ "raylib::core::Window", "classraylib_1_1core_1_1_window.html", null ],
-    [ "ecs::World", "classecs_1_1_world.html", null ],
-    [ "game::Worlds", "classgame_1_1_worlds.html", null ]
+    [ "ecs::World", "classecs_1_1_world.html", null ]
 ];

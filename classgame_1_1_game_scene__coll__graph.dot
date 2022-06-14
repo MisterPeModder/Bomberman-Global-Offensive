@@ -1,0 +1,44 @@
+digraph "game::GameScene"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="game::GameScene",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="game::AScene",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1_a_scene.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="game::IScene",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1_i_scene.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _world" ,fontname="Helvetica"];
+  Node4 [label="ecs::World",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_world.html",tooltip="Contains all entities and systems."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _systems" ,fontname="Helvetica"];
+  Node5 [label="ecs::Instances\< ecs\l::System \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_instances.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _inner" ,fontname="Helvetica"];
+  Node6 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecs::System \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+  Node7 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _resources" ,fontname="Helvetica"];
+  Node7 [label="ecs::Instances\< ecs\l::Resource \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_instances.html",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _inner" ,fontname="Helvetica"];
+  Node8 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecs::Resource \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+  Node9 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _storages" ,fontname="Helvetica"];
+  Node9 [label="ecs::Instances\< ecs\l::Storage \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_instances.html",tooltip=" "];
+  Node10 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _inner" ,fontname="Helvetica"];
+  Node10 [label="std::unordered_map\l\< std::type_index, std\l::unique_ptr\< ecs::Storage \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html",tooltip=" "];
+  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _game" ,fontname="Helvetica"];
+  Node11 [label="game::Game",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1_game.html",tooltip="Game class."];
+  Node4 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _world" ,fontname="Helvetica"];
+  Node12 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _resolveCollisions\n_update\n_drawing\n_handleInputs" ,fontname="Helvetica"];
+  Node12 [label="ecs::SystemTag",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_system_tag.html",tooltip="A group of System types."];
+  Node13 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _types" ,fontname="Helvetica"];
+  Node13 [label="std::vector\< std::type\l_index \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
+  Node14 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _map" ,fontname="Helvetica"];
+  Node14 [label="game::map::Map",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1map_1_1_map.html",tooltip="Bomberman Map."];
+  Node15 -> Node14 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _map" ,fontname="Helvetica"];
+  Node15 [label="std::vector\< Element \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
+  Node16 -> Node14 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _size" ,fontname="Helvetica"];
+  Node16 [label="raylib::core::Vector2\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector2.html",tooltip="The Vector2 struct (compatible with the raylib Vector2)"];
+  Node17 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _camera" ,fontname="Helvetica"];
+  Node17 [label="raylib::core::Camera3D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1core_1_1_camera3_d.html",tooltip="The Camera3D class that encapsulates the raylib 3D camera."];
+  Node17 -> Node17 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _camera" ,fontname="Helvetica"];
+  Node18 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _params" ,fontname="Helvetica"];
+  Node18 [label="game::Game::Parameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1_game_1_1_parameters.html",tooltip="Game parameters."];
+}

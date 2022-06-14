@@ -5,7 +5,5 @@ digraph "src/game/components/Rectangle.hpp"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="src/game/components\l/Rectangle.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="src/game/worlds/Settings\lWorld.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_settings_world_8cpp.html",tooltip=" "];
-  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="src/game/worlds/TestWorld.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_test_world_8cpp.html",tooltip=" "];
+  Node2 [label="src/game/scenes/TestScene.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_test_scene_8cpp.html",tooltip=" "];
 }
