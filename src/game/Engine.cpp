@@ -55,7 +55,6 @@ namespace game
 {
     Engine::Engine()
     {
-        std::cout << "eeee" << std::endl;
         setScene<game::GameScene>();
     }
 
