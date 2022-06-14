@@ -17,11 +17,9 @@ namespace game::systems
 {
     void DrawBomb::run(ecs::SystemData data)
     {
-        for (auto [pos, size, bomb, id] :
-            ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::components::Size>(),
-                data.getStorage<game::components::Bomb>(), data.getResource<ecs::Entities>())) {
-            if (bomb.exploded)
-                continue;
+        for (auto [pos, size, bomb] : ecs::join(data.getStorage<game::components::Position>(),
+                 data.getStorage<game::components::Size>(), data.getStorage<game::components::Bomb>())) {
+            (void)bomb;
             raylib::shapes::Sphere(pos, size.x / 2.f, raylib::core::Color::GREEN).draw();
         }
     }
@@ -30,10 +28,10 @@ namespace game::systems
     {
         auto now = std::chrono::steady_clock::now();
 
-        for (auto [pos, bomb] :
-            ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::components::Bomb>())) {
+        for (auto [pos, bomb, id] : ecs::join(data.getStorage<game::components::Position>(),
+                 data.getStorage<game::components::Bomb>(), data.getResource<ecs::Entities>())) {
             if (now - bomb.placedTime >= bomb.explosionDelay)
-                bomb.explode(pos, data);
+                bomb.explode(pos, data, id);
         }
     }
 } // namespace game::systems
