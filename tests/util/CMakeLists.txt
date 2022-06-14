@@ -4,7 +4,7 @@ set(SRC
     ${SRCROOT}/tests_BitSet.cpp
 )
 
-if (NOT EMSCRIPTEN)
+if(NOT EMSCRIPTEN)
     set(SRC
         ${SRCROOT}/test_loadConfigFile.cpp
     )
