@@ -53,7 +53,7 @@ namespace ecs
 
             // If the entity was marked for deletion, remove the mark.
             if (firstDead < this->_killed.size() - 1)
-                this->_killed.set(firstDead);
+                this->_killed.set(firstDead, false);
             return Entity(firstDead, this->_generations[firstDead]);
         }
     }

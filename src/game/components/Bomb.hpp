@@ -39,7 +39,7 @@ namespace game::components
         ///
         /// @param pos position of the bomb.
         /// @param data world data.
-        void explode(const Position &pos, ecs::SystemData data);
+        void explode(const Position &pos, ecs::SystemData data, ecs::Entity self);
 
       private:
         /// Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell)

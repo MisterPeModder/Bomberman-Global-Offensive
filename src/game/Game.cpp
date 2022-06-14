@@ -149,6 +149,7 @@ namespace game
             _world.runSystems(_drawing);
         };
         raylib::core::Window::drawFPS(10, 10);
+        _world.maintain();
     }
 
 } // namespace game
