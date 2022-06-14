@@ -29,6 +29,7 @@ namespace game::components
     {
         auto &velocity = data.getStorage<Velocity>()[self.getId()];
         auto &user = data.getResource<Users>()[event.user];
+        auto &stats = data.getStorage<Player>()[self.getId()].stats;
         GameAction bestAction = GameAction::NONE;
         float highestActionValue = 0.f;
 
@@ -44,10 +45,10 @@ namespace game::components
             velocity = {0.f, 0.f};
         else
             switch (bestAction) {
-                case GameAction::MOVE_LEFT: velocity = {-DefaultSpeed, 0.f, 0.f}; break;
-                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -DefaultSpeed}; break;
-                case GameAction::MOVE_RIGHT: velocity = {DefaultSpeed, 0.f, 0.f}; break;
-                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, DefaultSpeed}; break;
+                case GameAction::MOVE_LEFT: velocity = {-stats.speed, 0.f, 0.f}; break;
+                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -stats.speed}; break;
+                case GameAction::MOVE_RIGHT: velocity = {stats.speed, 0.f, 0.f}; break;
+                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, stats.speed}; break;
                 default: break;
             }
     }
@@ -55,10 +56,11 @@ namespace game::components
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
         auto &pos = data.getStorage<Position>()[self.getId()];
+        auto &stats = data.getStorage<Player>()[self.getId()].stats;
 
         data.getResource<ecs::Entities>()
             .builder()
-            .with<Bomb>(data.getStorage<Bomb>(), 2)
+            .with<Bomb>(data.getStorage<Bomb>(), stats.bombRange)
             .with<Position>(data.getStorage<Position>(), std::round(pos.x), 0.5f, std::round(pos.z))
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .build();
