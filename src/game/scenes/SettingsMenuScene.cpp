@@ -7,12 +7,12 @@
 
 #include "SettingsMenuScene.hpp"
 
-#include "util/util.hpp"
 #include "logger/Logger.hpp"
+#include "util/util.hpp"
 
+#include "raylib/core/Audio.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
-#include "raylib/core/Audio.hpp"
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
@@ -35,17 +35,6 @@
 #include "game/systems/Model.hpp"
 #include "game/systems/Rectangle.hpp"
 
-static void resizeWindow()
-{
-    static bool isChecked;
-
-    if (!isChecked)
-        raylib::core::Window::setSize(720, 360);
-    else
-        raylib::core::Window::setSize(1080, 720);
-    isChecked = !isChecked;
-}
-
 static void loadGraphicSettings(ecs::World &world)
 {
     world.addEntity()
@@ -57,12 +46,25 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Position>(500.f, 200.f)
         .with<game::components::Textual>("Fullscreen", 20, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+        .with<game::gui::Widget>(
+            0, game::gui::Widget::NullTag, 1, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
         .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
             raylib::core::Window::toggleFullscreen();
+            Logger::logger.log(Logger::Severity::Debug, "Toggled fullscreen");
             world.getStorage<game::components::Textual>()[checkbox.getId()].color =
                 (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
         })
+        .with<game::gui::Clickable>(
+            [](ecs::Entity _) {
+                (void)_;
+                raylib::core::Window::toggleFullscreen();
+                Logger::logger.log(Logger::Severity::Debug, "Toggled fullscreen");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
         .build();
 
     world.addEntity()
@@ -227,57 +229,6 @@ static void loadSettingsMenuScene(ecs::World &world)
     loadAudioSettings(world);
     loadKeybindSettings(world);
 
-    // static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
-
-    // world.addSystem<game::systems::DrawModel>();
-    // world.addStorage<game::components::Scale>();
-
-    // world.addEntity()
-    //     .with<game::components::Model>(testModelPath)
-    //     .with<game::components::Position>(0.f, 0.f, 0.f)
-    //     .with<game::components::Size>(3.f, 2.f, 1.f)
-    //     .with<game::components::RotationAngle>(0)
-    //     .with<game::components::RotationAxis>(0, 0, 0)
-    //     .with<game::components::Color>(raylib::core::Color::BLUE)
-    //     .build();
-
-    // world.addEntity()
-    //     .with<game::components::Position>(500.f, 200.f)
-    //     .with<game::components::Textual>("Fullscreen", 20, raylib::core::Color::RED)
-    //     .with<game::components::Controlable>(game::User::UserId::User1)
-    //     .with<game::gui::Widget>(
-    //         0, game::gui::Widget::NullTag, 1, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
-    //     .with<game::gui::Clickable>(
-    //         [](ecs::Entity _) {
-    //             (void)_;
-    //             raylib::core::Window::toggleFullscreen();
-    //         },
-    //         [&](ecs::Entity btn, game::gui::Clickable::State state) {
-    //             world.getStorage<game::components::Textual>()[btn.getId()].color =
-    //                 (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::BLUE
-    //                                                                 : raylib::core::Color::RED;
-    //         })
-    //     .build();
-
-    // world.addEntity()
-    //     .with<game::components::Position>(500.f, 300.f)
-    //     .with<game::components::Textual>("Fullscreen but it's a different button", 20, raylib::core::Color::RED)
-    //     .with<game::components::Controlable>(game::User::UserId::User1)
-    //     .with<game::gui::Widget>(
-    //         0, game::gui::Widget::NullTag, 1, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
-    //     .with<game::gui::Clickable>(
-    //         [](ecs::Entity _) {
-    //             (void)_;
-    //             raylib::core::Window::toggleFullscreen();
-    //         },
-    //         [&](ecs::Entity btn, game::gui::Clickable::State state) {
-    //             world.getStorage<game::components::Textual>()[btn.getId()].color =
-    //                 (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::BLUE
-    //                                                                 : raylib::core::Color::RED;
-    //         })
-    //     .build();
-
-
     world.addEntity()
         .with<game::components::Position>(450.f, 0.f)
         .with<game::components::Textual>("SETTINGS", 40, raylib::core::Color::YELLOW)
@@ -286,14 +237,6 @@ static void loadSettingsMenuScene(ecs::World &world)
 
 namespace game
 {
-    void SettingsMenuScene::drawFrame()
-    {
-        raylib::core::scoped::Drawing drawing;
-        raylib::core::Window::clear();
-        _world.runSystems(_global2D);
-        raylib::core::Window::drawFPS(10, 10);
-    }
-
     SettingsMenuScene::SettingsMenuScene() : _currentSettingsMenu(GRAPHICS)
     {
         _global2D.add<game::systems::DrawText>();
