@@ -6,12 +6,39 @@ interface Game {
     /** Set this to a non-zero value to enable cheat mode. */
     sv_cheats: number
 
+    /** The game screen width, in pixels. */
+    width: number
+
+    /** The game screen height, in pixels. */
+    height: number
+
     /**
      * Prints a message using the game's logging facility.
      * 
      * @param message The message to print.
      */
     log(message: string): void
+
+    /**
+     * Prints a message to the error output.
+     * 
+     * @param message The message to print.
+     */
+    error(message: string): void
+
+    /**
+     * Prints a message to the warning output.
+     * 
+     * @param message The message to print.
+     */
+    warn(message: string): void
+
+    /**
+     * Prints a message to the debug output.
+     * 
+     * @param message The message to print.
+     */
+    debug(message: string): void
 
     /**
      * Registers a new mod.
@@ -49,4 +76,25 @@ interface Mod {
      * @param message The message to print.
      */
     log(message: string): void
+
+    /**
+     * Prints a message in the mod's error logger.
+     * 
+     * @param message The message to print.
+     */
+    error(message: string): void
+
+    /**
+     * Prints a message in the mod's warning logger.
+     * 
+     * @param message The message to print.
+     */
+    warn(message: string): void
+
+    /**
+     * Prints a message in the mod's debug logger.
+     * 
+     * @param message The message to print.
+     */
+    debug(message: string): void
 }
