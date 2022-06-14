@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** Bomberman
+** Bomberman-Global-Offensive
 ** File description:
 ** Cube
 */
@@ -14,19 +14,19 @@
 namespace game::components
 {
     /// Cube component
-    struct Cube : public ecs::Component {
-        /// Stored cube.
-        raylib::shapes::Cube cube;
-
+    struct Cube : public ecs::Component, public raylib::shapes::Cube {
         /// Create a default cube component.
-        Cube() : cube() {}
+        Cube() : raylib::shapes::Cube() {}
 
         /// Construct a new Cube component with parameters.
         ///
         /// @param position position.
         /// @param size size.
         /// @param color color.
-        Cube(raylib::core::Vector3f position, raylib::core::Vector3f size, Color color) : cube(position, size, color) {}
+        Cube(raylib::core::Vector3f position, raylib::core::Vector3f size, Color color)
+            : raylib::shapes::Cube(position, size, color)
+        {
+        }
     };
 } // namespace game::components
 

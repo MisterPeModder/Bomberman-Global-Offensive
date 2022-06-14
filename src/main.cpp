@@ -9,6 +9,7 @@
 
 #include "game/Game.hpp"
 #include "game/gui/components/Widget.hpp"
+#include "game/worlds/Worlds.hpp"
 
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
@@ -47,7 +48,7 @@ static void runGame()
     auto game = std::make_unique<game::Game>(gameParams);
 #endif
 
-    game->setup();
+    game::Worlds::loadGameWorld(*game);
     game->run();
 }
 

@@ -6,11 +6,6 @@
 */
 
 #include "Game.hpp"
-#include "ecs/resource/Timer.hpp"
-#include "logger/Logger.hpp"
-#include "raylib/core/Vector2.hpp"
-#include "raylib/core/Window.hpp"
-#include "raylib/core/scoped.hpp"
 
 #include "components/Bomb.hpp"
 #include "components/Collidable.hpp"
@@ -23,7 +18,17 @@
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
 
+#include "ecs/Storage.hpp"
+#include "ecs/resource/Timer.hpp"
+
 #include "gui/components/Widget.hpp"
+#include "logger/Logger.hpp"
+
+#include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Vector2.hpp"
+#include "raylib/core/Vector3.hpp"
+#include "raylib/core/Window.hpp"
+#include "raylib/core/scoped.hpp"
 
 #include "resources/Map.hpp"
 
@@ -84,8 +89,8 @@ namespace game
         size_t depth = _map.getSize().y;
 
         _camera.setPosition(
-            {width / 2.f, 8 /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
-        _camera.setTarget({width / 2.f, 0.f, depth / 2.f});                             // Camera looking at point
+            {width / 2.f, 8.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
+        _camera.setTarget({width / 2.f, 0.f, depth / 2.f});                               // Camera looking at point
         _camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         _camera.setFovY(75.0f);            // Camera field-of-view Y
         _camera.setProjection(CAMERA_PERSPECTIVE);
@@ -157,17 +162,17 @@ namespace game
                     }
                 }
                 if (wall) {
-                    auto &builder = _world.addEntity()
-                                        .with<components::Position>(x, 0.5f, z)
-                                        .with<components::Collidable>()
-                                        .with<components::Wall>()
-                                        .with<components::Cube>()
-                                        .with<components::Size>(1.f, 1.f, 1.f)
-                                        .with<components::CubeColor>(color);
+                    auto builder = _world.addEntity();
+
+                    (void)builder.with<components::Position>(x, 0.5f, z)
+                        .with<components::Collidable>()
+                        .with<components::Wall>()
+                        .with<components::Cube>()
+                        .with<components::Size>(1.f, 1.f, 1.f)
+                        .with<components::CubeColor>(color);
                     if (destructible)
-                        builder.with<components::Destructible>().build();
-                    else
-                        builder.build();
+                        (void)builder.with<components::Destructible>();
+                    builder.build();
                 }
             }
         }

@@ -20,6 +20,11 @@ namespace raylib
 
         void Cube::draw() const { DrawCubeV(_position.asRaylib(), _size.asRaylib(), _color.asRaylib()); }
 
+        void Cube::draw(raylib::core::Vector3f position, raylib::core::Vector3f size, raylib::core::Color color)
+        {
+            DrawCubeV(position.asRaylib(), size.asRaylib(), color.asRaylib());
+        }
+
         void Cube::drawWires() const { DrawCubeWiresV(_position.asRaylib(), _size.asRaylib(), _color.asRaylib()); }
 
         void Cube::setSize(raylib::core::Vector3f size) { _size = size; }

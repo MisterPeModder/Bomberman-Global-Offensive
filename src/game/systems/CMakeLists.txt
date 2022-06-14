@@ -7,6 +7,7 @@ set(SRC
     ${SRCROOT}/Bomb.cpp
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Model.hpp
+    ${SRCROOT}/Cube.hpp
     ${SRCROOT}/ChangeCube.hpp
     ${SRCROOT}/Collision.hpp
     ${SRCROOT}/Collision.cpp

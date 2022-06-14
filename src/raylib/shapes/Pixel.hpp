@@ -28,7 +28,7 @@ namespace raylib
             /// @param x The x position of the pixel.
             /// @param y The y position of the pixel.
             /// @param color The color of the pixel.
-            Pixel(float x = 0, float y = 0, raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
+            Pixel(float x = 0.f, float y = 0.f, raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// This function is a constructor for the Pixel class. It takes in a
             /// Vector2f and a Color and sets the position and color of the Pixel to the

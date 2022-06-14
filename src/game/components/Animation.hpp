@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** Animation
+*/
+
 #ifndef GAME_COMPONENTS_ANIMATION_HPP_
 #define GAME_COMPONENTS_ANIMATION_HPP_
 
@@ -5,12 +12,12 @@
 #include "ecs/Component.hpp"
 #include "raylib/model/Animation.hpp"
 
-namespace game
+namespace game::components
 {
     struct Animation : public ecs::Component, public raylib::model::Animation {
-        Animation(raylib::model::Animation &panimation) : raylib::model::Animation(panimation) {}
-        Animation(std::filesystem::path &path) : raylib::model::Animation(path) {}
+        Animation(const raylib::model::Animation &panimation) : raylib::model::Animation(panimation) {}
+        Animation(const std::filesystem::path &path) : raylib::model::Animation(path) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif

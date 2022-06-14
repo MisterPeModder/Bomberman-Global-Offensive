@@ -29,7 +29,7 @@ namespace game::systems
                 ecs::join(data.getStorage<game::components::Cube>(), maybeDestructible, maybeLiving)) {
                 if ((destructible && destructible->destroyed) || (living && living->hp == 0))
                     continue;
-                cube.cube.draw();
+                cube.draw();
             }
         }
     };
