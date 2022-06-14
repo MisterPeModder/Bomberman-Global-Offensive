@@ -8,6 +8,7 @@
 #ifndef GAME_SYSTEMS_CHANGECUBE_HPP_
 #define GAME_SYSTEMS_CHANGECUBE_HPP_
 
+#include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
 #include "game/components/Cube.hpp"
