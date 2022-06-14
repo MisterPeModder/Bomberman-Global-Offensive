@@ -66,6 +66,17 @@ extern "C"
             raylib::core::Window::setSize(newSize.x - 32, newSize.y - 32);
         return EM_TRUE;
     }
+
+    /// Emscriten fullscreen state change event
+    static EM_BOOL Game_onFullscreenChange(
+        [[maybe_unused]] int eventType, EmscriptenFullscreenChangeEvent const *event, [[maybe_unused]] void *userData)
+    {
+        if (!event->isFullscreen) {
+            raylib::core::Window::setSize(1, 1);
+            Game_onResize(EMSCRIPTEN_EVENT_FULLSCREENCHANGE, nullptr, nullptr);
+        }
+        return EM_FALSE;
+    }
 }
 
 #endif // !defined(__EMSCRIPTEN__)
@@ -200,6 +211,9 @@ namespace game
 #ifdef __EMSCRIPTEN__
         emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, nullptr, EM_FALSE, &Game_onResize);
         Game_onResize(EMSCRIPTEN_EVENT_RESIZE, nullptr, nullptr);
+
+        emscripten_set_fullscreenchange_callback(
+            EMSCRIPTEN_EVENT_TARGET_WINDOW, nullptr, EM_FALSE, &Game_onFullscreenChange);
 
         // We cannot use the WindowShouldClose() loop on the web,
         // since there is no such thing as a window.
