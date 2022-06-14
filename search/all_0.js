@@ -13,7 +13,7 @@ var searchData=
   ['_5fbirth_10',['_birth',['../classgame_1_1map_1_1cellular_1_1_rule.html#aec7ce2595fb437ceb7dd91e648aafaff',1,'game::map::cellular::Rule']]],
   ['_5fbuilder_11',['_builder',['../classecs_1_1_world_1_1_entity_builder.html#a6b9b14ad4ab6279c20c96d826126c4fb',1,'ecs::World::EntityBuilder']]],
   ['_5fbutton_12',['_button',['../classgame_1_1settings_1_1_gamepad_input.html#a3bfa2865e855bffaaeae69dc343f8e36',1,'game::settings::GamepadInput']]],
-  ['_5fcamera_13',['_camera',['../classraylib_1_1core_1_1_camera3_d.html#a8fdcbb7b5105da1d130b552a06424119',1,'raylib::core::Camera3D']]],
+  ['_5fcamera_13',['_camera',['../classgame_1_1_game.html#a3766ad7a042186db666af180ba84c61a',1,'game::Game::_camera()'],['../classraylib_1_1core_1_1_camera3_d.html#a8fdcbb7b5105da1d130b552a06424119',1,'raylib::core::Camera3D::_camera()']]],
   ['_5fcells_14',['_cells',['../classgame_1_1map_1_1cellular_1_1_grid.html#aabba43c2bb1f9e63b6cabeec7ce8eaaf',1,'game::map::cellular::Grid']]],
   ['_5fchangedactions_15',['_changedActions',['../classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f',1,'game::User']]],
   ['_5fcolor_16',['_color',['../classraylib_1_1shapes_1_1_a_shape.html#ac0afc2eaefeefe5b4e39b5e4997aacad',1,'raylib::shapes::AShape::_color()'],['../classraylib_1_1textures_1_1_image.html#a048ed677d281061f15016b82d2be7365',1,'raylib::textures::Image::_color()']]],
@@ -38,7 +38,7 @@ var searchData=
   ['_5fimage_35',['_image',['../classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204',1,'raylib::textures::Image']]],
   ['_5finfos_36',['_infos',['../class_logger.html#a2c4fb7c94548c4f375839d07ffa207b8',1,'Logger']]],
   ['_5finner_37',['_inner',['../classecs_1_1_maybe_join.html#a0c52d7c77dd90324246e0b131d1a2ce5',1,'ecs::MaybeJoin::_inner()'],['../classecs_1_1_instances.html#a02f13c11c88ae2672bb9c70cc0ede987',1,'ecs::Instances::_inner()']]],
-  ['_5finstance_38',['_Instance',['../classlocalization_1_1_localization.html#af96ee478fa57f54dec4b59f29bc259cb',1,'localization::Localization::_Instance()'],['../classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e',1,'ecs::MarkerStorage::_instance()'],['../classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2',1,'bmjs::Engine::_instance()']]],
+  ['_5finstance_38',['_instance',['../classecs_1_1_marker_storage.html#ac978bc8d2c394d33796380097c329a4e',1,'ecs::MarkerStorage::_instance()'],['../classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2',1,'bmjs::Engine::_instance()'],['../classlocalization_1_1_localization.html#af96ee478fa57f54dec4b59f29bc259cb',1,'localization::Localization::_Instance()']]],
   ['_5fkey_39',['_key',['../classbmjs_1_1_registry_guard.html#a9a7469cf25b5c787dc11019ff6c46dd9',1,'bmjs::RegistryGuard']]],
   ['_5fkeybinds_40',['_keybinds',['../classgame_1_1settings_1_1_profile.html#a05a79e4f3f3e048ed98e75fb9b365a5d',1,'game::settings::Profile']]],
   ['_5fkeyboardbindings_41',['_keyboardBindings',['../classgame_1_1settings_1_1_keybinds.html#a4d96b44207b1e887d6b193836da67dac',1,'game::settings::Keybinds']]],
@@ -100,5 +100,5 @@ var searchData=
   ['_5fusers_97',['_users',['../classgame_1_1_users.html#a4d963c511d9ef1f68819762c6c58b195',1,'game::Users']]],
   ['_5fvolume_98',['_volume',['../classraylib_1_1core_1_1_audio.html#a0e8a27e52049e5a1c8fef9a3fbf7c865',1,'raylib::core::Audio::_volume()'],['../classraylib_1_1core_1_1_sound.html#a9a75db9dd3c239ed4ed14ad54c54a604',1,'raylib::core::Sound::_volume()']]],
   ['_5fwidth_99',['_width',['../classgame_1_1map_1_1cellular_1_1_grid.html#aeb7d8c384482173f7292764e17481815',1,'game::map::cellular::Grid']]],
-  ['_5fworld_100',['_world',['../classecs_1_1_system_data.html#a41574fd12f99abd9d29b3ad4c85d3e12',1,'ecs::SystemData::_world()'],['../classgame_1_1_game.html#ade7db3e019d79ad205d94c9c6e96be55',1,'game::Game::_world()']]]
+  ['_5fworld_100',['_world',['../classecs_1_1_system_data.html#a41574fd12f99abd9d29b3ad4c85d3e12',1,'ecs::SystemData::_world()'],['../classgame_1_1_game.html#acb6e8540742ef0239d2f9ba4fa163eed',1,'game::Game::_world()']]]
 ];

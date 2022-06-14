@@ -1,5 +1,10 @@
 var NAVTREEINDEX3 =
 {
+"classgame_1_1settings_1_1_profile.html#a207573d0031e9d16a7f82327b0beb618":[2,0,2,4,2,12],
+"classgame_1_1settings_1_1_profile.html#a2ad7183fb52d635258390a928983acfe":[2,0,2,4,2,18],
+"classgame_1_1settings_1_1_profile.html#a2f43e56c1569250a87b71052194055b8":[2,0,2,4,2,14],
+"classgame_1_1settings_1_1_profile.html#a543aee644cd66fa704b06cefde7108f8":[2,0,2,4,2,8],
+"classgame_1_1settings_1_1_profile.html#a6189ea869c745dda2201ea3178316db7":[2,0,2,4,2,5],
 "classgame_1_1settings_1_1_profile.html#a7d7f3ce72335479fa20a1f32c0db3ffc":[2,0,2,4,2,7],
 "classgame_1_1settings_1_1_profile.html#a86d16c7d11b4f45965d948fb647c7636":[2,0,2,4,2,13],
 "classgame_1_1settings_1_1_profile.html#a90cb85eaf8a211d01364a199e4ec15d7":[2,0,2,4,2,11],
@@ -244,10 +249,5 @@ var NAVTREEINDEX3 =
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a684d325a7303f52e64011467ff5c5758":[2,0,4,0,6,0,56],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a69691c7bdcc3ce6d5d8a1361f22d04ac":[2,0,4,0,6,0,30],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a6f5d8e41084b4d3d47fa621c459eede1":[2,0,4,0,6,0,52],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a710533dd879dd1202e5c73b27705bf02":[2,0,4,0,6,0,61],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a71f42e8faf0fb7cb14174c8481461c00":[2,0,4,0,6,0,96],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a73995fb90f0ebefe78b90731e67789cd":[2,0,4,0,6,0,15],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a766b4a88cba7645629bac70fd01d8275":[2,0,4,0,6,0,92],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7c333963ed187368820c5343b355e5bc":[2,0,4,0,6,0,100],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7fc56270e7a70fa81a5935b72eacbe29":[2,0,4,0,6,0,18]
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a710533dd879dd1202e5c73b27705bf02":[2,0,4,0,6,0,61]
 };

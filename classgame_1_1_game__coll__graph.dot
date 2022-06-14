@@ -29,6 +29,9 @@ digraph "game::Game"
   Node12 [label="std::vector\< Element \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="/home/runner/work/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html",tooltip=" "];
   Node13 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _size" ,fontname="Helvetica"];
   Node13 [label="raylib::core::Vector2\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structraylib_1_1core_1_1_vector2.html",tooltip="The Vector2 struct (compatible with the raylib Vector2)"];
-  Node14 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _params" ,fontname="Helvetica"];
-  Node14 [label="game::Game::Parameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1_game_1_1_parameters.html",tooltip="Game parameters."];
+  Node14 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _camera" ,fontname="Helvetica"];
+  Node14 [label="raylib::core::Camera3D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1core_1_1_camera3_d.html",tooltip="The Camera3D class that encapsulates the raylib 3D camera."];
+  Node14 -> Node14 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _camera" ,fontname="Helvetica"];
+  Node15 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _params" ,fontname="Helvetica"];
+  Node15 [label="game::Game::Parameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1_game_1_1_parameters.html",tooltip="Game parameters."];
 }

@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="raylib::core::scoped\l::Drawing",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1core_1_1scoped_1_1_drawing.html",tooltip="Setup/End window drawing."];
+  Node0 [label="raylib::core::scoped\l::Mode3D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classraylib_1_1core_1_1scoped_1_1_mode3_d.html",tooltip="Setup/End a 3D mode with a custom camera."];
 }

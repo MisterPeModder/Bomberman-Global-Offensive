@@ -101,7 +101,6 @@ var hierarchy =
     ] ],
     [ "raylib::core::Mouse", "classraylib_1_1core_1_1_mouse.html", null ],
     [ "game::Game::Parameters", "structgame_1_1_game_1_1_parameters.html", null ],
-    [ "Params", "struct_params.html", null ],
     [ "game::settings::Profile", "classgame_1_1settings_1_1_profile.html", null ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "bmjs::RegistryGuard", "classbmjs_1_1_registry_guard.html", null ],
@@ -142,10 +141,10 @@ var hierarchy =
     ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "ecs::SystemTag", "classecs_1_1_system_tag.html", null ],
-    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "Texture2D", null, [
       [ "game::components::Texture2D", "structgame_1_1components_1_1_texture2_d.html", null ]
     ] ],
+    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "game::User", "classgame_1_1_user.html", null ],
     [ "raylib::core::Vector2< T >", "structraylib_1_1core_1_1_vector2.html", null ],
     [ "raylib::core::Vector3< T >", "structraylib_1_1core_1_1_vector3.html", [

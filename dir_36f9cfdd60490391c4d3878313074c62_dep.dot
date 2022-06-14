@@ -7,5 +7,8 @@ digraph "src/script/api" {
   dir_36f9cfdd60490391c4d3878313074c62 [shape=box, label="api", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_36f9cfdd60490391c4d3878313074c62.html"];
   }
   dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [shape=box label="logger" URL="dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html"];
+  dir_d4cc5f0b3cfddd1b0952a9e00053f649 [shape=box label="raylib" fillcolor="white" style="filled" color="red" URL="dir_d4cc5f0b3cfddd1b0952a9e00053f649.html"];
   dir_36f9cfdd60490391c4d3878313074c62->dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [headlabel="2", labeldistance=1.5 headhref="dir_000025_000023.html"];
+  dir_36f9cfdd60490391c4d3878313074c62->dir_d4cc5f0b3cfddd1b0952a9e00053f649 [headlabel="1", labeldistance=1.5 headhref="dir_000025_000010.html"];
+  dir_d4cc5f0b3cfddd1b0952a9e00053f649->dir_ffde1fbcaa8d6b0d34e29c3bddf7a801 [headlabel="2", labeldistance=1.5 headhref="dir_000010_000023.html"];
 }
