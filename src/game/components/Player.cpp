@@ -8,6 +8,7 @@
 #include "Player.hpp"
 #include <cmath>
 #include "Bomb.hpp"
+#include "Identity.hpp"
 #include "Position.hpp"
 #include "Size.hpp"
 #include "Velocity.hpp"
@@ -57,8 +58,11 @@ namespace game::components
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
+        auto &player = data.getStorage<Player>()[self.getId()];
+
+        if (player.placedBombs >= player.stats.bombLimit)
+            return;
         auto &playerPos = data.getStorage<Position>()[self.getId()];
-        auto &stats = data.getStorage<Player>()[self.getId()].stats;
         raylib::core::Vector3f placedPos = {std::round(playerPos.x), 0.5f, std::round(playerPos.z)};
 
         /// Avoid multiple bombs on the same cell
@@ -70,9 +74,10 @@ namespace game::components
 
         data.getResource<ecs::Entities>()
             .builder()
-            .with<Bomb>(data.getStorage<Bomb>(), stats.bombRange)
+            .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id, player.stats.bombRange)
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .build();
+        ++player.placedBombs;
     }
 } // namespace game::components

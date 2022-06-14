@@ -31,6 +31,8 @@ namespace game::components
         };
         /// Player stats
         Stats stats;
+        /// Number of bomb currently placed on the map.
+        size_t placedBombs;
 
         /// Callback of the @ref Controlable component of the players.
         ///
@@ -40,6 +42,9 @@ namespace game::components
         /// @return true If the action was consumed.
         /// @return false If the action wasn't consumed.
         static bool handleActionEvent(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
+
+        /// Construct a new Player component
+        Player() : placedBombs(0) {}
 
       private:
         /// Change the velocity of the player from its action values.
