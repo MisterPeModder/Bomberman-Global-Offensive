@@ -20,8 +20,10 @@ namespace game::components
         /// Unique id of the entity
         Id id;
 
+        /// Create a new Identity component with a unique Identifier.
         Identity();
 
+        /// Get the current
         static Id getCurrentId();
 
       private:

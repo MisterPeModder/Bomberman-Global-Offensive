@@ -19,7 +19,7 @@ namespace game::components
     struct Player : public ecs::Component {
         struct Stats {
             /// Default speed of the player (in cells per seconds).
-            static constexpr float DefaultSpeed = 4.f;
+            static constexpr float DEFAULT_SPEED = 4.f;
             /// Current player speed.
             float speed;
             /// Current player bomb explosion range.
@@ -27,7 +27,7 @@ namespace game::components
             /// Max number of bomb simulteanously placed per player.
             size_t bombLimit;
 
-            Stats() : speed(DefaultSpeed), bombRange(2), bombLimit(2) {}
+            Stats() : speed(DEFAULT_SPEED), bombRange(2), bombLimit(2) {}
         };
         /// Player stats
         Stats stats;

@@ -60,6 +60,7 @@ namespace game::components
     {
         auto &player = data.getStorage<Player>()[self.getId()];
 
+        /// Player cannot place more bomb
         if (player.placedBombs >= player.stats.bombLimit)
             return;
         auto &playerPos = data.getStorage<Position>()[self.getId()];
