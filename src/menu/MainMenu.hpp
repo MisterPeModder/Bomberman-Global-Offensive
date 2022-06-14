@@ -10,6 +10,7 @@
 
 #include "ecs/Storage.hpp"
 #include "ecs/World.hpp"
+#include "game/resources/Map.hpp"
 #include "raylib/core/Camera3D.hpp"
 
 namespace Menu
@@ -18,7 +19,7 @@ namespace Menu
       public:
         MainMenu(ecs::World &world);
         ~MainMenu();
-        void setup();
+        void setup(raylib::core::Camera3D &camera, size_t width, size_t depth);
         /// Create all buttons needed in the manu
         void createsButtons();
         void modulePlayerFirst();

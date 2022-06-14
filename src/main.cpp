@@ -36,9 +36,10 @@ constexpr int HEIGHT(720);
 struct Params {
     ecs::World world;
     raylib::core::Camera3D camera;
+    Menu::MainMenu menu;
     game::Game game;
 
-    Params() : world(), camera(), game(this->world, game::Game::Parameters(1)) {}
+    Params() : world(), camera(), menu(this->world), game(this->world, game::Game::Parameters(1)) {}
 };
 
 static void drawFrame(void *args)
@@ -46,7 +47,8 @@ static void drawFrame(void *args)
     Params *params = reinterpret_cast<Params *>(args);
 
     params->camera.update();
-    params->game.drawFrame(params->camera);
+    params->menu.drawFrame(params->camera);
+    // params->game.drawFrame(params->camera);
 }
 
 static void setupLogger()
@@ -62,10 +64,11 @@ static void setupLogger()
 static void runGame()
 {
     auto params = new Params();
-    Menu::MainMenu menu;
-    menu.createsButtons(params->world);
+    size_t width = WIDTH;  // params->game.getMap().getSize().x;
+    size_t depth = HEIGHT; // params->game.getMap().getSize().y;
 
-    params->game.setup(params->camera);
+    params->menu.setup(params->camera, width, depth);
+    //params->game.setup(params->camera);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
