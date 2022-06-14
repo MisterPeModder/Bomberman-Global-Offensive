@@ -8,9 +8,9 @@
 #ifndef GAME_COMPONENTS_NOCLIP_HPP_
 #define GAME_COMPONENTS_NOCLIP_HPP_
 
+#include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
-#include "ecs/storage.hpp"
 #include "game/components/BombNoClip.hpp"
 #include "game/components/Position.hpp"
 
