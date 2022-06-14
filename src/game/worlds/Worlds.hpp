@@ -15,7 +15,7 @@ namespace game
 {
     class Worlds {
       public:
-        static void loadGameWorld(game::Game &game, raylib::core::Camera3D &camera);
+        static void loadGameWorld(game::Game &game);
         static void loadSplashWorld(ecs::World &world);
         static void loadMainWorld(ecs::World &world);
         static void loadSettingsWorld(ecs::World &world);

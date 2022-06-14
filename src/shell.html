@@ -62,14 +62,14 @@
             text-align: center;
         }
 
-        div.emscripten_wrapper {
+        #emscripten_wrapper {
             flex: 1;
             display: flex;
             justify-content: space-evenly;
             flex-direction: column;
         }
 
-        div.emscripten_border {
+        #emscripten_border {
             border: 4px solid #009e2f;
             margin: auto;
         }
@@ -188,7 +188,7 @@
         <div class="emscripten" id="status">Downloading...</div>
 
         <span id='controls'>
-            <span><input type="button" value="🖵 FULLSCREEN" onclick="Module.requestFullscreen(false, false)"></span>
+            <span><input type="button" value="🖵 FULLSCREEN" onclick="Module.requestFullscreen(false, true)"></span>
             <span><input type="button" id="btn-audio" value="🔇 SUSPEND" onclick="toggleAudio()"></span>
         </span>
 
@@ -197,8 +197,8 @@
         </div>
     </div>
 
-    <div class="emscripten_wrapper">
-        <div class="emscripten_border">
+    <div id="emscripten_wrapper">
+        <div id="emscripten_border">
             <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
         </div>
     </div>

@@ -18,6 +18,19 @@
 #include "script/JsException.hpp"
 #include "script/script.hpp"
 
+namespace bmjs::mods
+{
+    static void log(Logger::Severity severity, bmjs::Number modId, bmjs::String message)
+    {
+        auto engine = bmjs::Engine::rawInstance();
+        auto mod = engine ? engine->getMod(static_cast<std::size_t>(modId)) : nullptr;
+
+        if (!engine || !mod)
+            return;
+        mod->getLogger().log(severity, message);
+    }
+} // namespace bmjs::mods
+
 BMJS_API_START(mods)
 
 BMJS_DEFINE bmjs::Number mods_create(bmjs::String name, bmjs::String description)
@@ -42,12 +55,22 @@ BMJS_DEFINE void mods_enable(bmjs::Number modId)
 
 BMJS_DEFINE void mods_log(bmjs::Number modId, bmjs::String message)
 {
-    auto engine = bmjs::Engine::rawInstance();
-    auto mod = engine ? engine->getMod(static_cast<std::size_t>(modId)) : nullptr;
+    bmjs::mods::log(Logger::Severity::Information, modId, message);
+}
 
-    if (!engine || !mod)
-        return;
-    mod->getLogger().log(Logger::Severity::Information, message);
+BMJS_DEFINE void mods_error(bmjs::Number modId, bmjs::String message)
+{
+    bmjs::mods::log(Logger::Severity::Error, modId, message);
+}
+
+BMJS_DEFINE void mods_warn(bmjs::Number modId, bmjs::String message)
+{
+    bmjs::mods::log(Logger::Severity::Warning, modId, message);
+}
+
+BMJS_DEFINE void mods_debug(bmjs::Number modId, bmjs::String message)
+{
+    bmjs::mods::log(Logger::Severity::Debug, modId, message);
 }
 
 BMJS_DEFINE void mods_setLoadCallback(bmjs::Number modId, bmjs::Function<void> onLoad)

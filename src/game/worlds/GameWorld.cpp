@@ -11,5 +11,5 @@
 
 namespace game
 {
-    void Worlds::loadGameWorld(game::Game &game, raylib::core::Camera3D &camera) { game.setup(camera); }
+    void Worlds::loadGameWorld(game::Game &game) { game.setup(); }
 } // namespace game
