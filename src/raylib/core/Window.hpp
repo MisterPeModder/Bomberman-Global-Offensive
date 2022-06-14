@@ -64,6 +64,9 @@ namespace raylib
 
             /// @return The height of the window.
             static int getHeight();
+
+            /// @return Toggles fullscreen
+            static void toggleFullscreen();
         };
     } // namespace core
 } // namespace raylib
