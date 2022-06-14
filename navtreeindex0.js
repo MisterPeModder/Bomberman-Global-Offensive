@@ -202,7 +202,6 @@ var NAVTREEINDEX0 =
 "_player_8cpp.html":[3,0,0,1,0,12],
 "_player_8cpp_source.html":[3,0,0,1,0,12],
 "_player_8hpp.html":[3,0,0,1,0,13],
-"_player_8hpp.html#aa51d823d8210990c853395030a996baa":[3,0,0,1,0,13,1],
 "_player_8hpp_source.html":[3,0,0,1,0,13],
 "_position_8hpp.html":[3,0,0,1,0,14],
 "_position_8hpp_source.html":[3,0,0,1,0,14],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "_settings_8cpp_source.html":[3,0,0,1,5,6],
 "_settings_8hpp.html":[3,0,0,1,5,7],
 "_settings_8hpp.html#af478e74b3bf68adf7123d2e47d91dc44":[3,0,0,1,5,7,2],
-"_settings_8hpp_source.html":[3,0,0,1,5,7]
+"_settings_8hpp_source.html":[3,0,0,1,5,7],
+"_settings_menu_scene_8cpp.html":[3,0,0,1,4,6]
 };

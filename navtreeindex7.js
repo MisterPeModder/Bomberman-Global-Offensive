@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"structgame_1_1components_1_1_size.html":[2,0,2,0,17],
+"structgame_1_1components_1_1_size.html#a17b966b675472d570bd60f0a32783b49":[2,0,2,0,17,1],
+"structgame_1_1components_1_1_size.html#a3beb5b63ff29d8dbe4f14294a671a2dc":[2,0,2,0,17,3],
+"structgame_1_1components_1_1_size.html#a4a08eda2123d567211b729aebe713fea":[2,0,2,0,17,0],
 "structgame_1_1components_1_1_size.html#aa29187541b8a726dde7d4b5a60a556d4":[2,0,2,0,17,2],
 "structgame_1_1components_1_1_textual.html":[2,0,2,0,18],
 "structgame_1_1components_1_1_textual.html#a05855656d1e729405ee18946ccde1186":[2,0,2,0,18,2],

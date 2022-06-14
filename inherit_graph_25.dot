@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="game::Game",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1_game.html",tooltip="Game class."];
+  Node0 [label="game::components::Player\l::Stats",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1components_1_1_player_1_1_stats.html",tooltip=" "];
 }

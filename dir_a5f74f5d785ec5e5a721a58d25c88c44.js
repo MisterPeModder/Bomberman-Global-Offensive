@@ -31,7 +31,10 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
       [ "Model", "structgame_1_1components_1_1_model.html", "structgame_1_1components_1_1_model" ]
     ] ],
     [ "Player.cpp", "_player_8cpp.html", null ],
-    [ "Player.hpp", "_player_8hpp.html", "_player_8hpp" ],
+    [ "Player.hpp", "_player_8hpp.html", [
+      [ "Player", "structgame_1_1components_1_1_player.html", "structgame_1_1components_1_1_player" ],
+      [ "Stats", "structgame_1_1components_1_1_player_1_1_stats.html", "structgame_1_1components_1_1_player_1_1_stats" ]
+    ] ],
     [ "Position.hpp", "_position_8hpp.html", [
       [ "Position", "structgame_1_1components_1_1_position.html", "structgame_1_1components_1_1_position" ]
     ] ],

@@ -131,6 +131,7 @@ var hierarchy =
     ] ],
     [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
     [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", null ],
+    [ "game::components::Player::Stats", "structgame_1_1components_1_1_player_1_1_stats.html", null ],
     [ "ecs::Storage", "classecs_1_1_storage.html", [
       [ "ecs::MapStorage< C >", "classecs_1_1_map_storage.html", null ],
       [ "ecs::MarkerStorage< C >", "classecs_1_1_marker_storage.html", null ]
@@ -150,10 +151,10 @@ var hierarchy =
     ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "ecs::SystemTag", "classecs_1_1_system_tag.html", null ],
+    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "Texture2D", null, [
       [ "game::components::Texture2D", "structgame_1_1components_1_1_texture2_d.html", null ]
     ] ],
-    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "game::User", "classgame_1_1_user.html", null ],
     [ "raylib::core::Vector2< T >", "structraylib_1_1core_1_1_vector2.html", null ],
     [ "raylib::core::Vector3< T >", "structraylib_1_1core_1_1_vector3.html", [

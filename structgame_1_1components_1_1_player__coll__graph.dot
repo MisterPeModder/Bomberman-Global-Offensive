@@ -6,4 +6,6 @@ digraph "game::components::Player"
   Node1 [label="game::components::Player",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Player marker."];
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="ecs::Component",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classecs_1_1_component.html",tooltip="The base component type, all components must inherit from Component."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" stats" ,fontname="Helvetica"];
+  Node3 [label="game::components::Player\l::Stats",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structgame_1_1components_1_1_player_1_1_stats.html",tooltip=" "];
 }
