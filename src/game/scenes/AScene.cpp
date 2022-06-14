@@ -25,10 +25,14 @@ namespace game
         raylib::core::scoped::Drawing drawing;
         raylib::core::Window::clear();
         {
-            raylib::core::scoped::Mode3D mode3D(_defaultCamera);
-            _world.runSystems();
+            raylib::core::scoped::Mode3D mode3D(_defaultCamera3D);
+            _world.runSystems(_global3D);
         };
-        raylib::core::Window::drawFPS(10, 10);
+        {
+            raylib::core::scoped::Mode2D mode2D(_defaultCamera2D);
+            _world.runSystems(_global2D);
+            raylib::core::Window::drawFPS(10, 10);
+        };
     }
 
     ecs::World &AScene::getWorld()
