@@ -48,7 +48,7 @@ static void setupLogger()
 
 static void runGame()
 {
-    game::Game::Parameters gameParams(1);
+    game::Game::Parameters gameParams(2);
 
 #ifdef __EMSCRIPTEN__
     auto game = new game::Game(gameParams);
