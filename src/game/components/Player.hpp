@@ -17,8 +17,18 @@ namespace game::components
 {
     /// Player marker.
     struct Player : public ecs::Component {
-        /// Default speed of the player (in cells per seconds)
-        static constexpr float DefaultSpeed = 4.f;
+        struct Stats {
+            /// Default speed of the player (in cells per seconds).
+            static constexpr float DEFAULT_SPEED = 4.f;
+            /// Current player speed.
+            float speed;
+            /// Current player bomb explosion range.
+            size_t bombRange;
+
+            Stats() : speed(DEFAULT_SPEED), bombRange(2) {}
+        };
+        /// Player stats
+        Stats stats;
 
         /// Callback of the @ref Controlable component of the players.
         ///
@@ -46,7 +56,5 @@ namespace game::components
         static void placeBomb(ecs::Entity self, ecs::SystemData data);
     };
 } // namespace game::components
-
-SET_COMPONENT_STORAGE(game::components::Player, ecs::MarkerStorage);
 
 #endif /* !GAME_COMPONENTS_PLAYER_HPP_ */
