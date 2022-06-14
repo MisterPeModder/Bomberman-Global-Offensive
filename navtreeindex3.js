@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classgame_1_1settings_1_1_profile.html#a7d7f3ce72335479fa20a1f32c0db3ffc":[2,0,2,4,2,7],
 "classgame_1_1settings_1_1_profile.html#a86d16c7d11b4f45965d948fb647c7636":[2,0,2,4,2,13],
 "classgame_1_1settings_1_1_profile.html#a90cb85eaf8a211d01364a199e4ec15d7":[2,0,2,4,2,11],
 "classgame_1_1settings_1_1_profile.html#a913bdf8756757278af2d853617765333":[2,0,2,4,2,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a73995fb90f0ebefe78b90731e67789cd":[2,0,4,0,6,0,15],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a766b4a88cba7645629bac70fd01d8275":[2,0,4,0,6,0,92],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7c333963ed187368820c5343b355e5bc":[2,0,4,0,6,0,100],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7fc56270e7a70fa81a5935b72eacbe29":[2,0,4,0,6,0,18],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a800618943025315f869e4e1f09471012":[2,0,4,0,6,0,23]
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7fc56270e7a70fa81a5935b72eacbe29":[2,0,4,0,6,0,18]
 };

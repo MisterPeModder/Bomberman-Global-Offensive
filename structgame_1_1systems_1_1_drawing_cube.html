@@ -118,7 +118,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Drawing cube system. </p>
 
-<p class="definition">Definition at line <a class="el" href="_drawing_cube_8hpp_source.html#l00021">21</a> of file <a class="el" href="_drawing_cube_8hpp_source.html">DrawingCube.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_drawing_cube_8hpp_source.html#l00018">18</a> of file <a class="el" href="_drawing_cube_8hpp_source.html">DrawingCube.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aefed8995eeaaf9b3d93b98dcb55e23f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefed8995eeaaf9b3d93b98dcb55e23f6">&#9670;&nbsp;</a></span>run()</h2>
@@ -148,18 +148,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classecs_1_1_system.html#ad1a93c71ce561822c2b3a2d6ea96ef56">ecs::System</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_drawing_cube_8hpp_source.html#l00023">23</a> of file <a class="el" href="_drawing_cube_8hpp_source.html">DrawingCube.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">auto</span> maybeDestructible = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_destructible.html">game::components::Destructible</a>&gt;());</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">auto</span> maybeLiving = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_living.html">game::components::Living</a>&gt;());</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [cube, destructible, living] :</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_cube.html">game::components::Cube</a>&gt;(), maybeDestructible, maybeLiving)) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">if</span> ((destructible &amp;&amp; destructible-&gt;destroyed) || (living &amp;&amp; living-&gt;hp == 0))</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                cube.draw();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_drawing_cube_8hpp_source.html#l00020">20</a> of file <a class="el" href="_drawing_cube_8hpp_source.html">DrawingCube.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [cube] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_cube.html">game::components::Cube</a>&gt;()))</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                cube.draw();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -168,9 +161,6 @@ Public Member Functions</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructgame_1_1components_1_1_living_html"><div class="ttname"><a href="structgame_1_1components_1_1_living.html">game::components::Living</a></div><div class="ttdoc">Living component.</div><div class="ttdef"><b>Definition:</b> <a href="_living_8hpp_source.html#l00016">Living.hpp:16</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_destructible_html"><div class="ttname"><a href="structgame_1_1components_1_1_destructible.html">game::components::Destructible</a></div><div class="ttdoc">Destructible component.</div><div class="ttdef"><b>Definition:</b> <a href="_destructible_8hpp_source.html#l00016">Destructible.hpp:16</a></div></div>
-<div class="ttc" id="anamespaceecs_html_a36bbcee819473693f3869f528beb7bca"><div class="ttname"><a href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a></div><div class="ttdeci">MaybeJoin&lt; J &gt; maybe(J &amp;joinable)</div><div class="ttdoc">Creates A Joinable structure that yields all indices, returning nullptr for all missing elements and ...</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00053">join.hpp:53</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/data.html">std::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_cube_html"><div class="ttname"><a href="structgame_1_1components_1_1_cube.html">game::components::Cube</a></div><div class="ttdoc">Cube component.</div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_cube_8hpp_source.html#l00017">Cube.hpp:17</a></div></div>

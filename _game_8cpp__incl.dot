@@ -116,6 +116,7 @@ digraph "src/game/Game.cpp"
   Node1 -> Node74 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node74 [label="components/Destructible.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_destructible_8hpp.html",tooltip=" "];
   Node74 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node74 -> Node51 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node75 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node75 [label="components/Living.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_living_8hpp.html",tooltip=" "];
   Node75 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -150,8 +151,6 @@ digraph "src/game/Game.cpp"
   Node90 [label="systems/DrawingCube.hpp",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$_drawing_cube_8hpp.html",tooltip=" "];
   Node90 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node90 -> Node70 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node90 -> Node74 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node90 -> Node75 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node91 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node91 [label="systems/InputManager.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_input_manager_8hpp.html",tooltip=" "];
   Node91 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

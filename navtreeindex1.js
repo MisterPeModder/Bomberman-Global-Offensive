@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"_sphere_8cpp_source.html":[3,0,0,4,2,12],
 "_sphere_8hpp.html":[3,0,0,4,2,13],
 "_sphere_8hpp_source.html":[3,0,0,4,2,13],
 "_splash_world_8cpp.html":[3,0,0,1,6,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classecs_1_1_join_iter.html#ab007d25bcc0ca0919ac63c40f9e233c9":[2,0,1,5,10],
 "classecs_1_1_join_iter.html#abee2b635de4e489d221be92f8404957f":[2,0,1,5,6],
 "classecs_1_1_join_iter.html#acb322cb974000f29eaaf5fb6a355557b":[2,0,1,5,8],
-"classecs_1_1_join_iter.html#ad09ddb3d4ae598070422da82e7ff6e4c":[2,0,1,5,9],
-"classecs_1_1_join_iter.html#af965facb7aecef468f980009dc073cc5":[2,0,1,5,1]
+"classecs_1_1_join_iter.html#ad09ddb3d4ae598070422da82e7ff6e4c":[2,0,1,5,9]
 };

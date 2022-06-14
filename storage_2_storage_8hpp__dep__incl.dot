@@ -96,11 +96,11 @@ digraph "src/ecs/storage/Storage.hpp"
   Node47 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node48 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node48 [label="src/game/components\l/Destructible.hpp",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$_destructible_8hpp.html",tooltip=" "];
+  Node48 [label="src/game/components\l/Destructible.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_destructible_8hpp.html",tooltip=" "];
   Node48 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node48 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node49 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node49 [label="src/game/components\l/Living.hpp",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$_living_8hpp.html",tooltip=" "];
+  Node49 [label="src/game/components\l/Living.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_living_8hpp.html",tooltip=" "];
   Node49 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node49 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node50 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -182,6 +182,7 @@ digraph "src/ecs/storage/Storage.hpp"
   Node64 [label="src/ecs/storage/MapStorage.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_map_storage_8hpp.html",tooltip=" "];
   Node64 -> Node65 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node65 [label="src/ecs/Storage.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_storage_8hpp.html",tooltip=" "];
+  Node65 -> Node48 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node65 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node65 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node65 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
