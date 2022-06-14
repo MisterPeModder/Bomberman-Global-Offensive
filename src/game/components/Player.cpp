@@ -6,13 +6,13 @@
 */
 
 #include "Player.hpp"
-#include <cmath>
 #include "Bomb.hpp"
 #include "BombNoClip.hpp"
 #include "Collidable.hpp"
 #include "Position.hpp"
 #include "Size.hpp"
 #include "Velocity.hpp"
+#include "game/Game.hpp"
 
 namespace game::components
 {
@@ -56,16 +56,16 @@ namespace game::components
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
-        auto &pos = data.getStorage<Position>()[self.getId()];
+        raylib::core::Vector2u bombPos = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
 
         data.getResource<ecs::Entities>()
             .builder()
             .with<Bomb>(data.getStorage<Bomb>(), 2)
-            .with<Position>(data.getStorage<Position>(), std::round(pos.x), 0.5f, std::round(pos.z))
+            .with<Position>(
+                data.getStorage<Position>(), static_cast<float>(bombPos.x), 0.5f, static_cast<float>(bombPos.y))
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .with<Collidable>(data.getStorage<Collidable>())
             .build();
-        data.getStorage<BombNoClip>()[self.getId()].setBombPosition(
-            {static_cast<unsigned int>(std::round(pos.x)), static_cast<unsigned int>(std::round(pos.z))});
+        data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombPos);
     }
 } // namespace game::components

@@ -41,8 +41,6 @@
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
 
-#include <cmath>
-
 #pragma region Browser Events
 #ifdef __EMSCRIPTEN__
 

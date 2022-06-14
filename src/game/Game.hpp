@@ -8,11 +8,13 @@
 #ifndef GAME_GAME_HPP_
 #define GAME_GAME_HPP_
 
+#include <cmath>
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "map/Map.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Vector2.hpp"
+#include "raylib/core/Vector3.hpp"
 
 namespace game
 {
@@ -71,6 +73,11 @@ namespace game
 
         /// Start of the main event loop.
         void run();
+
+        constexpr static raylib::core::Vector2u worldPosToMapCell(raylib::core::Vector3f pos)
+        {
+            return {static_cast<unsigned int>(std::round(pos.x)), static_cast<unsigned int>(std::round(pos.z))};
+        }
 
       private:
         ecs::SystemTag _drawing;

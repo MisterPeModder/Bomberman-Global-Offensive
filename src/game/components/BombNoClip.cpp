@@ -6,6 +6,7 @@
 */
 
 #include "BombNoClip.hpp"
+#include "game/Game.hpp"
 
 namespace game::components
 {
@@ -19,7 +20,6 @@ namespace game::components
 
     bool BombNoClip::matchEntityPosition(raylib::core::Vector3f entityPosition)
     {
-        return enabled && bombPos.x == static_cast<unsigned int>(std::round(entityPosition.x))
-            && bombPos.y == static_cast<unsigned int>(std::round(entityPosition.z));
+        return enabled && bombPos == game::Game::worldPosToMapCell(entityPosition);
     }
 } // namespace game::components
