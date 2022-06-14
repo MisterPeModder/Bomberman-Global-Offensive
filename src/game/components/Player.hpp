@@ -24,8 +24,10 @@ namespace game::components
             float speed;
             /// Current player bomb explosion range.
             size_t bombRange;
+            /// Max number of bomb simulteanously placed per player.
+            size_t bombLimit;
 
-            Stats() : speed(DefaultSpeed), bombRange(2) {}
+            Stats() : speed(DefaultSpeed), bombRange(2), bombLimit(2) {}
         };
         /// Player stats
         Stats stats;
