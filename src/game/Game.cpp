@@ -41,7 +41,7 @@ namespace game
 
     const map::Map &Game::getMap() const { return _map; }
 
-    void Game::setup(raylib::core::Camera3D &camera)
+    void Game::setCamera(raylib::core::Camera3D &camera)
     {
         size_t width = _map.getSize().x;
         size_t depth = _map.getSize().y;
@@ -52,6 +52,12 @@ namespace game
         camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         camera.setFovY(75.0f);            // Camera field-of-view Y
         camera.setProjection(CAMERA_PERSPECTIVE);
+    }
+
+    void Game::setup()
+    {
+        size_t width = _map.getSize().x;
+        size_t depth = _map.getSize().y;
 
         /// Add world resources
         _world.addResource<game::Users>();

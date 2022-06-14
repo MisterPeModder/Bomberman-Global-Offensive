@@ -21,7 +21,12 @@
 #include "script/Engine.hpp"
 
 #include "game/Game.hpp"
-#include "game/worlds/Worlds.hpp"
+#include "game/scenes/GameScene.hpp"
+#include "game/scenes/IScene.hpp"
+#include "game/scenes/MainScene.hpp"
+#include "game/scenes/SettingsScene.hpp"
+#include "game/scenes/SplashScene.hpp"
+#include "game/scenes/TestScene.hpp"
 
 #if defined(PLATFORM_WEB)
     #include <emscripten/emscripten.h>
@@ -31,20 +36,11 @@ constexpr int WIDTH(1080);
 constexpr int HEIGHT(720);
 
 struct Params {
-    ecs::World world;
+    std::unique_ptr<game::IScene> scene;
     raylib::core::Camera3D camera;
-    game::Game game;
 
-    Params() : world(), camera(), game(this->world, game::Game::Parameters(1)) {}
+    Params() : scene(new game::GameScene()), camera() {}
 };
-
-static void drawFrame(void *args)
-{
-    Params *params = reinterpret_cast<Params *>(args);
-
-    params->camera.update();
-    params->game.drawFrame(params->camera);
-}
 
 static void setupLogger()
 {
@@ -56,17 +52,27 @@ static void setupLogger()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
 }
 
+static void drawFrame(void *args)
+{
+    Params *params = reinterpret_cast<Params *>(args);
+
+    params->camera.update();
+    params->scene.get()->drawFrame(params->camera);
+}
+
 static void runGame()
 {
     auto params = new Params();
 
+    params->scene.get()->setCamera(params->camera);
+
     // params->game.setup(params->camera);
-    game::Worlds::loadGameWorld(params->game, params->camera);
+    // game::Worlds::loadGameWorld(params->game, params->camera);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
     // since there is no such thing as a window.
-    emscripten_set_main_loop_arg(&drawFrame, params, 0, 1);
+    emscripten_set_main_loop_arg(drawFrame, params, 0, 1);
 #else
     while (!WindowShouldClose())
         drawFrame(params);

@@ -9,6 +9,7 @@
 #define GAME_SYSTEMS_ANIMATION_HPP_
 
 #include <iostream>
+#include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
 #include "game/components/Model.hpp"
