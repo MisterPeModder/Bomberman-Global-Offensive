@@ -42,7 +42,7 @@ namespace game
         /// Construct a new Game.
         ///
         /// @param params parameters if the game.
-        Game(Parameters params = Parameters());
+        Game(ecs::World &world, Parameters params = Parameters());
 
         /// Destroy the game.
         ~Game() = default;
@@ -82,7 +82,7 @@ namespace game
         ecs::SystemTag _handleInputs;
         ecs::SystemTag _update;
         ecs::SystemTag _resolveCollisions;
-        ecs::World _world;
+        ecs::World &_world;
         map::Map _map;
         Parameters _params;
         raylib::core::Camera3D _camera;

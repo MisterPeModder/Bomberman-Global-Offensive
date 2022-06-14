@@ -9,7 +9,6 @@
 
 #include "game/Game.hpp"
 #include "game/gui/components/Widget.hpp"
-// #include "game/scenes/GameScene.hpp"
 
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
@@ -22,6 +21,7 @@
 #include "raylib/raylib.hpp"
 
 #include "script/Engine.hpp"
+#include "game/Engine.hpp"
 
 #include <memory>
 
@@ -38,26 +38,13 @@ static void setupLogger()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
 }
 
-// static void drawFrame(void *args)
-// {
-//     Params *params = reinterpret_cast<Params *>(args);
-
-//     params->camera.update();
-//     params->scene.get()->drawFrame(params->camera);
-// }
-
 static void runGame()
 {
-    game::Game::Parameters gameParams(2);
-
 #ifdef __EMSCRIPTEN__
-    auto game = new game::Game(gameParams);
+    auto game = new game::Engine;
 #else
-    auto game = std::make_unique<game::Game>(gameParams);
+    auto game = std::make_unique<game::Engine>();
 #endif
-
-    // game::Worlds::loadGameWorld(*game);
-    game->setup();
     game->run();
 }
 
