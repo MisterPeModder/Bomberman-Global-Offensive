@@ -19,13 +19,13 @@ namespace game::components
     struct Player : public ecs::Component {
         struct Stats {
             /// Default speed of the player (in cells per seconds).
-            static constexpr float DefaultSpeed = 4.f;
+            static constexpr float DEFAULT_SPEED = 4.f;
             /// Current player speed.
             float speed;
             /// Current player bomb explosion range.
             size_t bombRange;
 
-            Stats() : speed(DefaultSpeed), bombRange(2) {}
+            Stats() : speed(DEFAULT_SPEED), bombRange(2) {}
         };
         /// Player stats
         Stats stats;
