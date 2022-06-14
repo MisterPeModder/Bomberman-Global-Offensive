@@ -11,6 +11,8 @@
 #include "Position.hpp"
 #include "Size.hpp"
 #include "Velocity.hpp"
+#include "ecs/Storage.hpp"
+#include "ecs/join.hpp"
 
 namespace game::components
 {
@@ -54,12 +56,20 @@ namespace game::components
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
-        auto &pos = data.getStorage<Position>()[self.getId()];
+        auto &playerPos = data.getStorage<Position>()[self.getId()];
+        raylib::core::Vector3f placedPos = {std::round(playerPos.x), 0.5f, std::round(playerPos.z)};
+
+        /// Avoid multiple bombs on the same cell
+        for (auto [bombPos, bomb] : ecs::join(data.getStorage<Position>(), data.getStorage<Bomb>())) {
+            (void)bomb;
+            if (bombPos == placedPos)
+                return;
+        }
 
         data.getResource<ecs::Entities>()
             .builder()
             .with<Bomb>(data.getStorage<Bomb>(), 2)
-            .with<Position>(data.getStorage<Position>(), std::round(pos.x), 0.5f, std::round(pos.z))
+            .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .build();
     }
