@@ -2,9 +2,10 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman-Global-Offensive
 ** File description:
-** TestWorld
+** TestScene
 */
 
+#include "game/scenes/TestScene.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
@@ -30,7 +31,6 @@
 #include "game/systems/DrawText.hpp"
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
-#include "game/worlds/Worlds.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Audio.hpp"
 #include "raylib/core/Color.hpp"
@@ -38,6 +38,10 @@
 #include "raylib/model/Animation.hpp"
 #include "raylib/model/Model.hpp"
 #include "util/util.hpp"
+
+#include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Window.hpp"
+#include "raylib/core/scoped.hpp"
 
 static raylib::model::Model &getTestingModel()
 {
@@ -107,38 +111,40 @@ static void addTestWidgets(ecs::World &world)
     world.addSystem<game::systems::InputManager>();
 }
 
+static void loadTestScene(ecs::World &world)
+{
+    world.addSystem<game::systems::DrawCube>();
+    world.addEntity()
+        .with<game::components::Cube>()
+        .with<game::components::Position>(0.f, 0.f, 0.f)
+        .with<game::components::Scale>(10)
+        .with<game::components::Color>(raylib::core::Color::YELLOW)
+        .build();
+
+    raylib::core::Vector3 pos(0.f, -5.f, 0.f);
+    raylib::core::Vector3 size(0.5f, 0.5f, 0.5f);
+    raylib::core::Vector3 rotationAxis(1.f, 0.f, 0.f);
+    float rotationAngle = -90;
+
+    raylib::model::Model &testingModel = getTestingModel();
+    raylib::model::Animation &testingAnimation = getTestingAnimation();
+
+    world.addSystem<game::systems::DrawModel>();
+    world.addSystem<game::systems::RunAnimation>();
+    world.addEntity()
+        .with<game::components::Model>(testingModel)
+        .with<game::components::Position>(pos)
+        .with<game::components::Size>(size)
+        .with<game::components::RotationAngle>(rotationAngle)
+        .with<game::components::RotationAxis>(rotationAxis)
+        .with<game::components::Color>(raylib::core::Color::YELLOW)
+        .with<game::components::Animation>(testingAnimation)
+        .build();
+
+    addTestWidgets(world);
+}
+
 namespace game
 {
-    void Worlds::loadTestWorld(ecs::World &world)
-    {
-        world.addSystem<game::systems::DrawCube>();
-        world.addEntity()
-            .with<game::components::Cube>()
-            .with<game::components::Position>(0.f, 0.f, 0.f)
-            .with<game::components::Scale>(10)
-            .with<game::components::Color>(raylib::core::Color::YELLOW)
-            .build();
-
-        raylib::core::Vector3 pos(0.f, -5.f, 0.f);
-        raylib::core::Vector3 size(0.5f, 0.5f, 0.5f);
-        raylib::core::Vector3 rotationAxis(1.f, 0.f, 0.f);
-        float rotationAngle = -90;
-
-        raylib::model::Model &testingModel = getTestingModel();
-        raylib::model::Animation &testingAnimation = getTestingAnimation();
-
-        world.addSystem<game::systems::DrawModel>();
-        world.addSystem<game::systems::RunAnimation>();
-        world.addEntity()
-            .with<game::components::Model>(testingModel)
-            .with<game::components::Position>(pos)
-            .with<game::components::Size>(size)
-            .with<game::components::RotationAngle>(rotationAngle)
-            .with<game::components::RotationAxis>(rotationAxis)
-            .with<game::components::Color>(raylib::core::Color::YELLOW)
-            .with<game::components::Animation>(testingAnimation)
-            .build();
-
-        addTestWidgets(world);
-    }
+    TestScene::TestScene() { loadTestScene(_world); }
 } // namespace game

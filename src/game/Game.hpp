@@ -54,6 +54,14 @@ namespace game
         /// @return const map::Map& loaded map.
         const map::Map &getMap() const;
 
+        /// Setup the world entities.
+        void setup();
+
+        /// Setup the camera position.
+        ///
+        /// @param camera camera to use for drawing purposes.
+        void setupCamera(raylib::core::Camera3D &camera);
+
         /// @returns A constant reference to the game's camera.
         raylib::core::Camera3D const &getCamera() const;
 
@@ -64,9 +72,6 @@ namespace game
         ///
         /// @param camera The camera.
         void setCamera(raylib::core::Camera3D &&camera);
-
-        /// Setup the world entities and the camera position.
-        void setup();
 
         /// Draw a single frame of the game.
         void drawFrame();

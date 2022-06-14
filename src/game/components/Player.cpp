@@ -12,6 +12,8 @@
 #include "Position.hpp"
 #include "Size.hpp"
 #include "Velocity.hpp"
+#include "ecs/Storage.hpp"
+#include "ecs/join.hpp"
 #include "game/Game.hpp"
 
 namespace game::components
@@ -56,16 +58,23 @@ namespace game::components
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
-        raylib::core::Vector2u bombPos = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
+        raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
+        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.5f, static_cast<float>(bombCell.y)};
+
+        /// Avoid multiple bombs on the same cell
+        for (auto [bombPos, bomb] : ecs::join(data.getStorage<Position>(), data.getStorage<Bomb>())) {
+            (void)bomb;
+            if (bombPos == placedPos)
+                return;
+        }
 
         data.getResource<ecs::Entities>()
             .builder()
             .with<Bomb>(data.getStorage<Bomb>(), 2)
-            .with<Position>(
-                data.getStorage<Position>(), static_cast<float>(bombPos.x), 0.5f, static_cast<float>(bombPos.y))
+            .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .with<Collidable>(data.getStorage<Collidable>())
             .build();
-        data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombPos);
+        data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombCell);
     }
 } // namespace game::components
