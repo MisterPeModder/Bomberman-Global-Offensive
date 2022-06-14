@@ -7,6 +7,7 @@
 
 #include "Collision.hpp"
 #include "ecs/join.hpp"
+#include "game/components/BombNoClip.hpp"
 #include "game/components/Collidable.hpp"
 #include "game/components/Size.hpp"
 #include "game/components/Velocity.hpp"
@@ -22,16 +23,20 @@ namespace game::systems
         auto &entities = data.getResource<ecs::Entities>();
         auto &collidable = data.getStorage<Collidable>();
         auto &velocities = data.getStorage<Velocity>();
+        auto maybeBombNoClip = ecs::maybe(data.getStorage<BombNoClip>());
         auto optionalVelocity = ecs::maybe(velocities);
         raylib::shapes::Rectangle collideRect;
 
-        for (auto [pos1, size1, vel1, id1, c1] : ecs::join(positions, sizes, velocities, entities, collidable)) {
+        for (auto [pos1, size1, vel1, id1, c1, bombNoClip] :
+            ecs::join(positions, sizes, velocities, entities, collidable, maybeBombNoClip)) {
             for (auto [pos2, size2, vel2, id2, c2] :
                 ecs::join(positions, sizes, optionalVelocity, entities, collidable)) {
                 (void)c1;
                 (void)c2;
                 /// Do not collide entities with themselves
                 if (id1.getId() == id2.getId())
+                    continue;
+                if (bombNoClip->enabled && bombNoClip->matchEntityPosition(pos2))
                     continue;
                 if (!getCollideRect(collideRect, pos1, size1, pos2, size2))
                     continue;

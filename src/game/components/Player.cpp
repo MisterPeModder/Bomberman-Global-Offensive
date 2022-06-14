@@ -8,6 +8,8 @@
 #include "Player.hpp"
 #include <cmath>
 #include "Bomb.hpp"
+#include "BombNoClip.hpp"
+#include "Collidable.hpp"
 #include "Position.hpp"
 #include "Size.hpp"
 #include "Velocity.hpp"
@@ -61,6 +63,9 @@ namespace game::components
             .with<Bomb>(data.getStorage<Bomb>(), 2)
             .with<Position>(data.getStorage<Position>(), std::round(pos.x), 0.5f, std::round(pos.z))
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
+            .with<Collidable>(data.getStorage<Collidable>())
             .build();
+        data.getStorage<BombNoClip>()[self.getId()].setBombPosition(
+            {static_cast<unsigned int>(std::round(pos.x)), static_cast<unsigned int>(std::round(pos.z))});
     }
 } // namespace game::components
