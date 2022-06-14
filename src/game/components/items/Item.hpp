@@ -13,6 +13,7 @@
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
 #include "ecs/System.hpp"
+#include "raylib/core/Vector2.hpp"
 
 namespace game::components
 {
@@ -54,6 +55,8 @@ namespace game::components
         static std::vector<Item> powerUps;
         static std::vector<Item> powerDowns;
         static std::vector<Item> activables;
+
+        static bool spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell);
 
       private:
         Item(){};
