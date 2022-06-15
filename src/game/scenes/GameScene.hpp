@@ -17,7 +17,7 @@ namespace game
 {
     class GameScene : public AScene {
       public:
-        GameScene() : _game(_world) { _game.setup(); }
+        GameScene() : _game(_world, game::Game::Parameters(2)) { _game.setup(); }
 
         ~GameScene() = default;
 
