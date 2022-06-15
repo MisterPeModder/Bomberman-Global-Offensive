@@ -39,6 +39,8 @@ namespace game::components
             std::array<size_t, static_cast<size_t>(Item::Identifier::Count)> items;
 
             Inventory() { items.fill(0); }
+
+            constexpr size_t operator[](Item::Identifier itemId) const { return items[static_cast<size_t>(itemId)]; }
         };
 
         /// Player stats

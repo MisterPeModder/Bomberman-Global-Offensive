@@ -15,6 +15,7 @@
 #include "ecs/Entity.hpp"
 #include "ecs/System.hpp"
 #include "game/map/Map.hpp"
+#include "raylib/core/Vector3.hpp"
 
 namespace game::components
 {
@@ -46,6 +47,8 @@ namespace game::components
         /// @param pos position of the bomb.
         /// @param data world data.
         void explode(const Position &pos, ecs::SystemData data, ecs::Entity self);
+
+        void kick(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity);
 
       private:
         /// Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell)
