@@ -73,3 +73,4 @@ namespace game
 
         loadSplashScene(_world);
     }
+}

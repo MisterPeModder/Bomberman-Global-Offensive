@@ -73,8 +73,6 @@ namespace game::systems
             }
         }
 
-        bool changeSceneReady() { return _changeSceneReady; }
-
       private:
         int _screenId;
     };
