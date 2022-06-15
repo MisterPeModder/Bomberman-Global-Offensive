@@ -14,6 +14,11 @@
 /// Raylib namespace
 namespace raylib
 {
+    namespace textures
+    {
+        class Image;
+    }
+
     /// Core namespace (inside of raylib)
     namespace core
     {
@@ -64,6 +69,8 @@ namespace raylib
 
             /// @return The height of the window.
             static int getHeight();
+
+            static void setIcon(textures::Image const &icon);
         };
     } // namespace core
 } // namespace raylib
