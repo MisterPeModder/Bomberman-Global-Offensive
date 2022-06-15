@@ -48,7 +48,7 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Textual>("Fullscreen", 20, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(
-            0, game::gui::Widget::NullTag, 1, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
+            game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::VOLUME_MUTE, game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::SettingsMenuScene::RES_2, true)
         .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
             raylib::core::Window::toggleFullscreen();
             Logger::logger.log(Logger::Severity::Debug, "Toggled fullscreen");
@@ -77,36 +77,54 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Position>(425.f, 350.f)
         .with<game::components::Textual>("720x360", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
-        .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
-            raylib::core::Window::setSize(720, 360);
-            world.getStorage<game::components::Textual>()[checkbox.getId()].color =
-                (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
-        })
+        .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN)
+        .with<game::gui::Clickable>(
+            [](ecs::Entity _) {
+                (void)_;
+                raylib::core::Window::setSize(720, 360);
+                Logger::logger.log(Logger::Severity::Debug, "Window size set to (720, 360)");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
         .build();
 
     world.addEntity()
         .with<game::components::Position>(525.f, 350.f)
         .with<game::components::Textual>("1080x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
-        .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
-            raylib::core::Window::setSize(1080, 720);
-            world.getStorage<game::components::Textual>()[checkbox.getId()].color =
-                (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
-        })
+        .with<game::gui::Widget>(game::SettingsMenuScene::RES_2, game::SettingsMenuScene::RES_1, game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN)
+        .with<game::gui::Clickable>(
+            [](ecs::Entity _) {
+                (void)_;
+                raylib::core::Window::setSize(1080, 720);
+                Logger::logger.log(Logger::Severity::Debug, "Window size set to (1080, 720)");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
         .build();
 
     world.addEntity()
         .with<game::components::Position>(625.f, 350.f)
         .with<game::components::Textual>("1920x1080", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
-        .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
-            raylib::core::Window::setSize(1920, 1080);
-            world.getStorage<game::components::Textual>()[checkbox.getId()].color =
-                (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
-        })
+        .with<game::gui::Widget>(game::SettingsMenuScene::RES_3, game::SettingsMenuScene::RES_2, game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN)
+        .with<game::gui::Clickable>(
+            [](ecs::Entity _) {
+                (void)_;
+                raylib::core::Window::setSize(1920, 1080);
+                Logger::logger.log(Logger::Severity::Debug, "Window size set to (1920, 1080)");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
         .build();
 }
 
@@ -121,7 +139,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::components::Position>(170.f, 200.f)
         .with<game::components::Textual>("Mute", 20, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_MUTE, game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, game::gui::Widget::NullTag, game::SettingsMenuScene::VOLUME_50)
         .with<game::gui::Clickable>(
             [](ecs::Entity _) {
                 (void)_;
@@ -144,7 +162,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::components::Position>(100.f, 350.f)
         .with<game::components::Textual>("25%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_25, game::gui::Widget::NullTag, game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_MUTE)
         .with<game::gui::Clickable>(
             [](ecs::Entity _) {
                 (void)_;
@@ -162,7 +180,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::components::Position>(150.f, 350.f)
         .with<game::components::Textual>("50%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_25, game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_MUTE)
         .with<game::gui::Clickable>(
             [](ecs::Entity _) {
                 (void)_;
@@ -180,7 +198,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::components::Position>(200.f, 350.f)
         .with<game::components::Textual>("75%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_MUTE)
         .with<game::gui::Clickable>(
             [](ecs::Entity _) {
                 (void)_;
@@ -198,7 +216,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::components::Position>(250.f, 350.f)
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(1, 0, game::gui::Widget::NullTag)
+        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_MUTE)
         .with<game::gui::Clickable>(
             [](ecs::Entity _) {
                 (void)_;
