@@ -70,7 +70,7 @@ namespace raylib
             /// @return The height of the window.
             static int getHeight();
 
-            /// @return Toggles fullscreen
+            /// Toggles fullscreen
             static void toggleFullscreen();
 
             static void setIcon(textures::Image const &icon);
