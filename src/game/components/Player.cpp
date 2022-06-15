@@ -65,7 +65,6 @@ namespace game::components
         /// Player cannot place more bomb
         if (player.placedBombs >= player.stats.bombLimit)
             return;
-        auto &playerPos = data.getStorage<Position>()[self.getId()];
         raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
         raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.5f, static_cast<float>(bombCell.y)};
 
