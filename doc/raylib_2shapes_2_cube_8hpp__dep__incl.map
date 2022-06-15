@@ -1,10 +1,11 @@
 <map id="src/raylib/shapes/Cube.hpp" name="src/raylib/shapes/Cube.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="539,5,736,32"/>
-<area shape="rect" id="node2" href="$game_2components_2_cube_8hpp.html" title=" " alt="" coords="389,80,556,121"/>
-<area shape="rect" id="node7" href="$game_2systems_2_cube_8hpp.html" title=" " alt="" coords="578,177,785,203"/>
-<area shape="rect" id="node8" href="$_cube_8cpp.html" title=" " alt="" coords="676,87,872,114"/>
-<area shape="rect" id="node3" href="$_game_8cpp.html" title=" " alt="" coords="78,259,230,285"/>
-<area shape="rect" id="node4" href="$_change_cube_8hpp.html" title=" " alt="" coords="26,177,281,203"/>
-<area shape="rect" id="node5" href="$_drawing_cube_8hpp.html" title=" " alt="" coords="305,169,504,211"/>
-<area shape="rect" id="node6" href="$_test_scene_8cpp.html" title=" " alt="" coords="498,259,724,285"/>
+<area shape="rect" id="node1" title=" " alt="" coords="726,5,923,32"/>
+<area shape="rect" id="node2" href="$game_2components_2_cube_8hpp.html" title=" " alt="" coords="543,80,709,121"/>
+<area shape="rect" id="node8" href="$game_2systems_2_cube_8hpp.html" title=" " alt="" coords="800,177,1007,203"/>
+<area shape="rect" id="node9" href="$_cube_8cpp.html" title=" " alt="" coords="863,87,1059,114"/>
+<area shape="rect" id="node3" href="$_item_8cpp.html" title=" " alt="" coords="5,169,172,211"/>
+<area shape="rect" id="node4" href="$_game_8cpp.html" title=" " alt="" coords="299,259,451,285"/>
+<area shape="rect" id="node5" href="$_change_cube_8hpp.html" title=" " alt="" coords="248,177,503,203"/>
+<area shape="rect" id="node6" href="$_drawing_cube_8hpp.html" title=" " alt="" coords="527,169,725,211"/>
+<area shape="rect" id="node7" href="$_test_scene_8cpp.html" title=" " alt="" coords="719,259,946,285"/>
 </map>

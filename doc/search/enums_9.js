@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['token_7437',['Token',['../classlocalization_1_1_resource_file.html#ab45427e5ddbe495873a4179364f7133a',1,'localization::ResourceFile']]]
+  ['severity_7513',['Severity',['../class_logger.html#a4cc16315b37eb0265c2d199880464a15',1,'Logger']]],
+  ['state_7514',['State',['../structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f',1,'game::gui::Clickable']]]
 ];

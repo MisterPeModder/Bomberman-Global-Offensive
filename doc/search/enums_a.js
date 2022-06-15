@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['userid_7438',['UserId',['../classgame_1_1_user.html#a95dae16765e383a69b835b7916c734ed',1,'game::User']]]
+  ['token_7515',['Token',['../classlocalization_1_1_resource_file.html#ab45427e5ddbe495873a4179364f7133a',1,'localization::ResourceFile']]],
+  ['type_7516',['Type',['../structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896d',1,'game::components::Item']]]
 ];

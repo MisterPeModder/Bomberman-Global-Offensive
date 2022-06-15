@@ -11,6 +11,8 @@ var namespacegame_1_1components =
     [ "Destructible", "structgame_1_1components_1_1_destructible.html", "structgame_1_1components_1_1_destructible" ],
     [ "Identity", "structgame_1_1components_1_1_identity.html", "structgame_1_1components_1_1_identity" ],
     [ "Image", "structgame_1_1components_1_1_image.html", "structgame_1_1components_1_1_image" ],
+    [ "Item", "structgame_1_1components_1_1_item.html", "structgame_1_1components_1_1_item" ],
+    [ "ItemIdentifier", "structgame_1_1components_1_1_item_identifier.html", "structgame_1_1components_1_1_item_identifier" ],
     [ "Living", "structgame_1_1components_1_1_living.html", "structgame_1_1components_1_1_living" ],
     [ "Model", "structgame_1_1components_1_1_model.html", "structgame_1_1components_1_1_model" ],
     [ "Player", "structgame_1_1components_1_1_player.html", "structgame_1_1components_1_1_player" ],

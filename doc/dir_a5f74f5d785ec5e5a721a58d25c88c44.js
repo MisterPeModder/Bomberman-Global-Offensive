@@ -1,5 +1,6 @@
 var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
 [
+    [ "items", "dir_e078b991db8fce4c9dd088dba37f5be0.html", "dir_e078b991db8fce4c9dd088dba37f5be0" ],
     [ "Animation.hpp", "game_2components_2_animation_8hpp.html", [
       [ "Animation", "structgame_1_1components_1_1_animation.html", "structgame_1_1components_1_1_animation" ]
     ] ],
@@ -41,7 +42,8 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Player.cpp", "_player_8cpp.html", null ],
     [ "Player.hpp", "_player_8hpp.html", [
       [ "Player", "structgame_1_1components_1_1_player.html", "structgame_1_1components_1_1_player" ],
-      [ "Stats", "structgame_1_1components_1_1_player_1_1_stats.html", "structgame_1_1components_1_1_player_1_1_stats" ]
+      [ "Stats", "structgame_1_1components_1_1_player_1_1_stats.html", "structgame_1_1components_1_1_player_1_1_stats" ],
+      [ "Inventory", "structgame_1_1components_1_1_player_1_1_inventory.html", "structgame_1_1components_1_1_player_1_1_inventory" ]
     ] ],
     [ "Position.hpp", "_position_8hpp.html", [
       [ "Position", "structgame_1_1components_1_1_position.html", "structgame_1_1components_1_1_position" ]

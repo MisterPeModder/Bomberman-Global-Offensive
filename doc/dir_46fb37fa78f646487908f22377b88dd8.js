@@ -29,6 +29,10 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "InputManager.hpp", "_input_manager_8hpp.html", [
       [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ]
     ] ],
+    [ "Items.cpp", "_items_8cpp.html", null ],
+    [ "Items.hpp", "_items_8hpp.html", [
+      [ "PickupItem", "structgame_1_1systems_1_1_pickup_item.html", "structgame_1_1systems_1_1_pickup_item" ]
+    ] ],
     [ "Model.hpp", "game_2systems_2_model_8hpp.html", [
       [ "DrawModel", "structgame_1_1systems_1_1_draw_model.html", "structgame_1_1systems_1_1_draw_model" ]
     ] ],

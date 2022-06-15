@@ -100,7 +100,7 @@ Inheritance diagram for ecs::System:</div>
 <div class="dyncontent">
 <div class="center"><img src="classecs_1_1_system__inherit__graph.png" border="0" usemap="#ecs_1_1_system_inherit__map" alt="Inheritance graph"/></div>
 <map name="ecs_1_1_system_inherit__map" id="ecs_1_1_system_inherit__map">
-<area shape="rect" title="The base system type, all systems must inherit from System." alt="" coords="5,300,107,327"/>
+<area shape="rect" title="The base system type, all systems must inherit from System." alt="" coords="5,325,107,352"/>
 <area shape="rect" href="structgame_1_1systems_1_1_change_cube.html" title="ChangeCube system." alt="" coords="160,5,372,32"/>
 <area shape="rect" href="structgame_1_1systems_1_1_collision.html" title="Collisions resolver system." alt="" coords="173,56,359,83"/>
 <area shape="rect" href="structgame_1_1systems_1_1_disable_bomb_no_clip.html" title="Disables the bomb no clip when the player walk off of the bomb position." alt="" coords="157,107,375,149"/>
@@ -112,7 +112,8 @@ Inheritance diagram for ecs::System:</div>
 <area shape="rect" href="structgame_1_1systems_1_1_explode_bomb.html" title="Explode bomb system." alt="" coords="156,427,376,453"/>
 <area shape="rect" href="structgame_1_1systems_1_1_input_manager.html" title="System managing all the users inputs." alt="" coords="156,477,376,504"/>
 <area shape="rect" href="structgame_1_1systems_1_1_movement.html" title="Movement system." alt="" coords="166,528,366,555"/>
-<area shape="rect" href="structgame_1_1systems_1_1_run_animation.html" title=" " alt="" coords="155,579,377,605"/>
+<area shape="rect" href="structgame_1_1systems_1_1_pickup_item.html" title=" " alt="" coords="165,579,367,605"/>
+<area shape="rect" href="structgame_1_1systems_1_1_run_animation.html" title=" " alt="" coords="155,629,377,656"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -181,7 +182,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Run the system. </p>
 
-<p>Implemented in <a class="el" href="structgame_1_1systems_1_1_run_animation.html#aac3b9443873ed03c521d0e2f5a24a322">game::systems::RunAnimation</a>, <a class="el" href="structgame_1_1systems_1_1_draw_cube.html#a05eb9e958df24d948c15ac90982ce5b7">game::systems::DrawCube</a>, <a class="el" href="structgame_1_1systems_1_1_draw_model.html#a1efbac94a47907dca8432161af6d13d8">game::systems::DrawModel</a>, <a class="el" href="structgame_1_1systems_1_1_explode_bomb.html#a453ca7ece97615e76ec19b594075e1d9">game::systems::ExplodeBomb</a>, <a class="el" href="structgame_1_1systems_1_1_change_cube.html#a0eab0b991e758a6e0dd7cc89a60d6317">game::systems::ChangeCube</a>, <a class="el" href="structgame_1_1systems_1_1_input_manager.html#af680100398a8d7526240167b31705f0a">game::systems::InputManager</a>, <a class="el" href="structgame_1_1systems_1_1_disable_bomb_no_clip.html#a34875f5ea81cfa7524d9dd3d252f1c75">game::systems::DisableBombNoClip</a>, <a class="el" href="structgame_1_1systems_1_1_collision.html#aaff75d7abb10c35ca378c6b34c083856">game::systems::Collision</a>, <a class="el" href="structgame_1_1systems_1_1_drawing_cube.html#aefed8995eeaaf9b3d93b98dcb55e23f6">game::systems::DrawingCube</a>, <a class="el" href="structgame_1_1systems_1_1_draw_text.html#a18abb8a15b01b44ce3e7109a7b72137d">game::systems::DrawText</a>, <a class="el" href="structgame_1_1systems_1_1_draw_bomb.html#a049b15df12112250dc7a63771f34d0f6">game::systems::DrawBomb</a>, and <a class="el" href="structgame_1_1systems_1_1_movement.html#af8255194fe315e1ddcc4eb2bee379330">game::systems::Movement</a>.</p>
+<p>Implemented in <a class="el" href="structgame_1_1systems_1_1_run_animation.html#aac3b9443873ed03c521d0e2f5a24a322">game::systems::RunAnimation</a>, <a class="el" href="structgame_1_1systems_1_1_draw_cube.html#a05eb9e958df24d948c15ac90982ce5b7">game::systems::DrawCube</a>, <a class="el" href="structgame_1_1systems_1_1_draw_model.html#a1efbac94a47907dca8432161af6d13d8">game::systems::DrawModel</a>, <a class="el" href="structgame_1_1systems_1_1_explode_bomb.html#a453ca7ece97615e76ec19b594075e1d9">game::systems::ExplodeBomb</a>, <a class="el" href="structgame_1_1systems_1_1_change_cube.html#a0eab0b991e758a6e0dd7cc89a60d6317">game::systems::ChangeCube</a>, <a class="el" href="structgame_1_1systems_1_1_input_manager.html#af680100398a8d7526240167b31705f0a">game::systems::InputManager</a>, <a class="el" href="structgame_1_1systems_1_1_disable_bomb_no_clip.html#a34875f5ea81cfa7524d9dd3d252f1c75">game::systems::DisableBombNoClip</a>, <a class="el" href="structgame_1_1systems_1_1_collision.html#aaff75d7abb10c35ca378c6b34c083856">game::systems::Collision</a>, <a class="el" href="structgame_1_1systems_1_1_drawing_cube.html#aefed8995eeaaf9b3d93b98dcb55e23f6">game::systems::DrawingCube</a>, <a class="el" href="structgame_1_1systems_1_1_draw_text.html#a18abb8a15b01b44ce3e7109a7b72137d">game::systems::DrawText</a>, <a class="el" href="structgame_1_1systems_1_1_draw_bomb.html#a049b15df12112250dc7a63771f34d0f6">game::systems::DrawBomb</a>, <a class="el" href="structgame_1_1systems_1_1_movement.html#af8255194fe315e1ddcc4eb2bee379330">game::systems::Movement</a>, and <a class="el" href="structgame_1_1systems_1_1_pickup_item.html#a8a7cdc047256ffa490e6f57ea5faa7ce">game::systems::PickupItem</a>.</p>
 
 </div>
 </div>

@@ -40,6 +40,8 @@ var hierarchy =
       [ "game::components::Destructible", "structgame_1_1components_1_1_destructible.html", null ],
       [ "game::components::Identity", "structgame_1_1components_1_1_identity.html", null ],
       [ "game::components::Image", "structgame_1_1components_1_1_image.html", null ],
+      [ "game::components::Item", "structgame_1_1components_1_1_item.html", null ],
+      [ "game::components::ItemIdentifier", "structgame_1_1components_1_1_item_identifier.html", null ],
       [ "game::components::Living", "structgame_1_1components_1_1_living.html", null ],
       [ "game::components::Model", "structgame_1_1components_1_1_model.html", null ],
       [ "game::components::Player", "structgame_1_1components_1_1_player.html", null ],
@@ -77,6 +79,7 @@ var hierarchy =
     [ "ecs::Instances< ecs::Resource >", "classecs_1_1_instances.html", null ],
     [ "ecs::Instances< ecs::Storage >", "classecs_1_1_instances.html", null ],
     [ "ecs::Instances< ecs::System >", "classecs_1_1_instances.html", null ],
+    [ "game::components::Player::Inventory", "structgame_1_1components_1_1_player_1_1_inventory.html", null ],
     [ "game::IScene", "classgame_1_1_i_scene.html", [
       [ "game::AScene", "classgame_1_1_a_scene.html", [
         [ "game::GameScene", "classgame_1_1_game_scene.html", null ],
@@ -120,6 +123,7 @@ var hierarchy =
       [ "ecs::Timer", "classecs_1_1_timer.html", null ],
       [ "game::resources::AssetMap< T >", "classgame_1_1resources_1_1_asset_map.html", null ],
       [ "game::resources::Map", "structgame_1_1resources_1_1_map.html", null ],
+      [ "game::resources::RandomDevice", "structgame_1_1resources_1_1_random_device.html", null ],
       [ "game::Users", "classgame_1_1_users.html", null ]
     ] ],
     [ "localization::ResourceFile", "classlocalization_1_1_resource_file.html", null ],
@@ -151,14 +155,15 @@ var hierarchy =
       [ "game::systems::ExplodeBomb", "structgame_1_1systems_1_1_explode_bomb.html", null ],
       [ "game::systems::InputManager", "structgame_1_1systems_1_1_input_manager.html", null ],
       [ "game::systems::Movement", "structgame_1_1systems_1_1_movement.html", null ],
+      [ "game::systems::PickupItem", "structgame_1_1systems_1_1_pickup_item.html", null ],
       [ "game::systems::RunAnimation", "structgame_1_1systems_1_1_run_animation.html", null ]
     ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "ecs::SystemTag", "classecs_1_1_system_tag.html", null ],
-    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "Texture2D", null, [
       [ "game::components::Texture2D", "structgame_1_1components_1_1_texture2_d.html", null ]
     ] ],
+    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "game::User", "classgame_1_1_user.html", null ],
     [ "raylib::core::Vector2< T >", "structraylib_1_1core_1_1_vector2.html", null ],
     [ "raylib::core::Vector3< T >", "structraylib_1_1core_1_1_vector3.html", [

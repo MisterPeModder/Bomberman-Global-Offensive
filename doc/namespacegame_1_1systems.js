@@ -11,5 +11,6 @@ var namespacegame_1_1systems =
     [ "ExplodeBomb", "structgame_1_1systems_1_1_explode_bomb.html", "structgame_1_1systems_1_1_explode_bomb" ],
     [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ],
     [ "Movement", "structgame_1_1systems_1_1_movement.html", "structgame_1_1systems_1_1_movement" ],
+    [ "PickupItem", "structgame_1_1systems_1_1_pickup_item.html", "structgame_1_1systems_1_1_pickup_item" ],
     [ "RunAnimation", "structgame_1_1systems_1_1_run_animation.html", "structgame_1_1systems_1_1_run_animation" ]
 ];

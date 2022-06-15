@@ -1,31 +1,33 @@
 <map id="ecs::Component" name="ecs::Component">
-<area shape="rect" id="node1" title="The base component type, all components must inherit from Component." alt="" coords="5,613,132,640"/>
-<area shape="rect" id="node2" href="$structgame_1_1components_1_1_animation.html" title=" " alt="" coords="188,5,411,32"/>
-<area shape="rect" id="node3" href="$structgame_1_1components_1_1_bomb.html" title="Bomb component." alt="" coords="203,56,396,83"/>
-<area shape="rect" id="node4" href="$structgame_1_1components_1_1_bomb_no_clip.html" title=" " alt="" coords="181,107,417,133"/>
-<area shape="rect" id="node5" href="$structgame_1_1components_1_1_collidable.html" title="Collidable marker." alt="" coords="189,157,409,184"/>
-<area shape="rect" id="node6" href="$structgame_1_1components_1_1_color.html" title=" " alt="" coords="205,208,394,235"/>
-<area shape="rect" id="node7" href="$structgame_1_1components_1_1_controlable.html" title="Controlable entity, may be a widget or a player." alt="" coords="184,259,415,285"/>
-<area shape="rect" id="node8" href="$structgame_1_1components_1_1_cube.html" title="Cube component." alt="" coords="205,309,393,336"/>
-<area shape="rect" id="node9" href="$structgame_1_1components_1_1_cube_color.html" title="Cube color component." alt="" coords="188,360,411,387"/>
-<area shape="rect" id="node10" href="$structgame_1_1components_1_1_destructible.html" title="Destructible component." alt="" coords="182,411,417,437"/>
-<area shape="rect" id="node11" href="$structgame_1_1components_1_1_identity.html" title="Unique Identity component." alt="" coords="197,461,402,488"/>
-<area shape="rect" id="node12" href="$structgame_1_1components_1_1_image.html" title=" " alt="" coords="201,512,397,539"/>
-<area shape="rect" id="node13" href="$structgame_1_1components_1_1_living.html" title="Living component." alt="" coords="202,563,397,589"/>
-<area shape="rect" id="node14" href="$structgame_1_1components_1_1_model.html" title=" " alt="" coords="202,613,397,640"/>
-<area shape="rect" id="node15" href="$structgame_1_1components_1_1_player.html" title="Player marker." alt="" coords="201,664,397,691"/>
-<area shape="rect" id="node16" href="$structgame_1_1components_1_1_position.html" title=" " alt="" coords="196,715,403,741"/>
-<area shape="rect" id="node17" href="$structgame_1_1components_1_1_rectangle.html" title=" " alt="" coords="189,765,409,792"/>
-<area shape="rect" id="node18" href="$structgame_1_1components_1_1_rotation_angle.html" title=" " alt="" coords="194,817,405,858"/>
-<area shape="rect" id="node19" href="$structgame_1_1components_1_1_rotation_axis.html" title=" " alt="" coords="180,883,419,909"/>
-<area shape="rect" id="node20" href="$structgame_1_1components_1_1_scale.html" title=" " alt="" coords="204,933,395,960"/>
-<area shape="rect" id="node21" href="$structgame_1_1components_1_1_size.html" title=" " alt="" coords="208,984,391,1011"/>
-<area shape="rect" id="node22" href="$structgame_1_1components_1_1_textual.html" title="Textual element." alt="" coords="198,1035,401,1061"/>
-<area shape="rect" id="node23" href="$structgame_1_1components_1_1_texture2_d.html" title=" " alt="" coords="189,1085,410,1112"/>
-<area shape="rect" id="node24" href="$structgame_1_1components_1_1_velocity.html" title="Velocity component." alt="" coords="196,1136,403,1163"/>
-<area shape="rect" id="node25" href="$structgame_1_1components_1_1_wall.html" title="Wall marker." alt="" coords="208,1187,391,1213"/>
-<area shape="rect" id="node26" href="$classgame_1_1gui_1_1_i_widget_component.html" title="Base class for all widgets components." alt="" coords="189,1237,409,1264"/>
-<area shape="rect" id="node27" href="$structgame_1_1gui_1_1_checkable.html" title="Checkable component, used for checkbox widgets." alt="" coords="467,1187,629,1213"/>
-<area shape="rect" id="node28" href="$structgame_1_1gui_1_1_clickable.html" title="Clickable component." alt="" coords="471,1237,625,1264"/>
-<area shape="rect" id="node29" href="$structgame_1_1gui_1_1_widget.html" title="Widget component." alt="" coords="477,1288,619,1315"/>
+<area shape="rect" id="node1" title="The base component type, all components must inherit from Component." alt="" coords="5,664,132,691"/>
+<area shape="rect" id="node2" href="$structgame_1_1components_1_1_animation.html" title=" " alt="" coords="190,5,413,32"/>
+<area shape="rect" id="node3" href="$structgame_1_1components_1_1_bomb.html" title="Bomb component." alt="" coords="205,56,398,83"/>
+<area shape="rect" id="node4" href="$structgame_1_1components_1_1_bomb_no_clip.html" title=" " alt="" coords="183,107,419,133"/>
+<area shape="rect" id="node5" href="$structgame_1_1components_1_1_collidable.html" title="Collidable marker." alt="" coords="191,157,411,184"/>
+<area shape="rect" id="node6" href="$structgame_1_1components_1_1_color.html" title=" " alt="" coords="207,208,396,235"/>
+<area shape="rect" id="node7" href="$structgame_1_1components_1_1_controlable.html" title="Controlable entity, may be a widget or a player." alt="" coords="186,259,417,285"/>
+<area shape="rect" id="node8" href="$structgame_1_1components_1_1_cube.html" title="Cube component." alt="" coords="207,309,395,336"/>
+<area shape="rect" id="node9" href="$structgame_1_1components_1_1_cube_color.html" title="Cube color component." alt="" coords="190,360,413,387"/>
+<area shape="rect" id="node10" href="$structgame_1_1components_1_1_destructible.html" title="Destructible component." alt="" coords="184,411,419,437"/>
+<area shape="rect" id="node11" href="$structgame_1_1components_1_1_identity.html" title="Unique Identity component." alt="" coords="199,461,404,488"/>
+<area shape="rect" id="node12" href="$structgame_1_1components_1_1_image.html" title=" " alt="" coords="203,512,399,539"/>
+<area shape="rect" id="node13" href="$structgame_1_1components_1_1_item.html" title=" " alt="" coords="209,563,394,589"/>
+<area shape="rect" id="node14" href="$structgame_1_1components_1_1_item_identifier.html" title="Item identifier component." alt="" coords="180,613,423,640"/>
+<area shape="rect" id="node15" href="$structgame_1_1components_1_1_living.html" title="Living component." alt="" coords="204,664,399,691"/>
+<area shape="rect" id="node16" href="$structgame_1_1components_1_1_model.html" title=" " alt="" coords="204,715,399,741"/>
+<area shape="rect" id="node17" href="$structgame_1_1components_1_1_player.html" title="Player marker." alt="" coords="203,765,399,792"/>
+<area shape="rect" id="node18" href="$structgame_1_1components_1_1_position.html" title=" " alt="" coords="198,816,405,843"/>
+<area shape="rect" id="node19" href="$structgame_1_1components_1_1_rectangle.html" title=" " alt="" coords="191,867,411,893"/>
+<area shape="rect" id="node20" href="$structgame_1_1components_1_1_rotation_angle.html" title=" " alt="" coords="196,918,407,959"/>
+<area shape="rect" id="node21" href="$structgame_1_1components_1_1_rotation_axis.html" title=" " alt="" coords="182,984,421,1011"/>
+<area shape="rect" id="node22" href="$structgame_1_1components_1_1_scale.html" title=" " alt="" coords="206,1035,397,1061"/>
+<area shape="rect" id="node23" href="$structgame_1_1components_1_1_size.html" title=" " alt="" coords="210,1085,393,1112"/>
+<area shape="rect" id="node24" href="$structgame_1_1components_1_1_textual.html" title="Textual element." alt="" coords="200,1136,403,1163"/>
+<area shape="rect" id="node25" href="$structgame_1_1components_1_1_texture2_d.html" title=" " alt="" coords="191,1187,412,1213"/>
+<area shape="rect" id="node26" href="$structgame_1_1components_1_1_velocity.html" title="Velocity component." alt="" coords="198,1237,405,1264"/>
+<area shape="rect" id="node27" href="$structgame_1_1components_1_1_wall.html" title="Wall marker." alt="" coords="210,1288,393,1315"/>
+<area shape="rect" id="node28" href="$classgame_1_1gui_1_1_i_widget_component.html" title="Base class for all widgets components." alt="" coords="191,1339,411,1365"/>
+<area shape="rect" id="node29" href="$structgame_1_1gui_1_1_checkable.html" title="Checkable component, used for checkbox widgets." alt="" coords="471,1288,633,1315"/>
+<area shape="rect" id="node30" href="$structgame_1_1gui_1_1_clickable.html" title="Clickable component." alt="" coords="475,1339,629,1365"/>
+<area shape="rect" id="node31" href="$structgame_1_1gui_1_1_widget.html" title="Widget component." alt="" coords="481,1389,623,1416"/>
 </map>
