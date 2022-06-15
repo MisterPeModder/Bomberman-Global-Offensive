@@ -11,3 +11,6 @@ msgstr ""
 "Bonjour en\n"
 "plusieurs\n"
 "lignes\n"
+
+msgid "Graphic"
+msgstr ""

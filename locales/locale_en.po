@@ -8,3 +8,6 @@ msgid ""
 "multiple\n"
 "lines\n"
 msgstr ""
+
+msgid "Graphic"
+msgstr ""

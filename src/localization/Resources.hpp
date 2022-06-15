@@ -13,11 +13,19 @@
 namespace localization
 {
     /// used to register all project string resources as const @ref ResourceString.
-    namespace Resources
+    namespace resources
     {
         /// Simple hello world.
         constexpr ResourceString rsHello("Hello, World!");
-    } // namespace Resources
+        constexpr ResourceString rsSettings("Settings");
+        namespace settings
+        {
+            constexpr ResourceString rsSettingsGraphic("Graphic");
+            constexpr ResourceString rsSettingsAudio("Audio");
+            constexpr ResourceString rsSettingsKeybinds("Keybinds");
+
+        } // namespace settings
+    }     // namespace resources
 } // namespace localization
 
 #endif /* !LOCALIZATION_RESOURCES_HPP_ */
