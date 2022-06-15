@@ -19,7 +19,7 @@ namespace game::components
         bombDown.identifier = Item::Identifier::BombDown;
         bombDown.maxStack = 0;
         bombDown.name = "Bomb Down";
-        bombDown.duration = std::chrono::milliseconds(0);
+        bombDown.duration = std::chrono::milliseconds::zero();
         bombDown.dropRate = 30;
         bombDown.onApply = [](ecs::Entity player, ecs::SystemData data) {
             auto &bombLimit = data.getStorage<Player>()[player.getId()].stats.bombLimit;

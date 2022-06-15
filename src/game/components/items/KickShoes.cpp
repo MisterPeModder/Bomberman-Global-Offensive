@@ -19,7 +19,7 @@ namespace game::components
         kickShoes.identifier = Item::Identifier::KickShoes;
         kickShoes.maxStack = 1;
         kickShoes.name = "Kick Shoes";
-        kickShoes.duration = std::chrono::milliseconds(0);
+        kickShoes.duration = std::chrono::milliseconds::zero();
         kickShoes.dropRate = 10;
         /// Item is a passive, applied on collision with bombs
         kickShoes.onApply = [](ecs::Entity player, ecs::SystemData data) {

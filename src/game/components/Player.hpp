@@ -9,6 +9,7 @@
 #define GAME_COMPONENTS_PLAYER_HPP_
 
 #include <array>
+#include <chrono>
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
@@ -76,6 +77,12 @@ namespace game::components
         /// @param itemId item identifier.
         /// @param data world data.
         void pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data);
+
+        /// Update the activated items with a timer.
+        ///
+        /// @param self player entity id.
+        /// @param data world data.
+        void updateTimedItems(ecs::Entity self, ecs::SystemData data);
 
       private:
         /// Change the velocity of the player from its action values.

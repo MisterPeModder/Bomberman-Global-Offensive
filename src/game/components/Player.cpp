@@ -48,7 +48,7 @@ namespace game::components
             }
         }
         if (highestActionValue < 0.2f)
-            velocity = {0.f, 0.f};
+            velocity = {0.f, 0.f, 0.f};
         else
             switch (bestAction) {
                 case GameAction::MOVE_LEFT: velocity = {-stats.speed, 0.f, 0.f}; break;
@@ -57,6 +57,8 @@ namespace game::components
                 case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, stats.speed}; break;
                 default: break;
             }
+        if (stats.inverted)
+            velocity *= {-1.f, 0.f, -1.f};
     }
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
@@ -99,9 +101,30 @@ namespace game::components
         if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown) && !item.onApply(self, data))
             return;
         ++count;
+        /// Item has a duration.
+        if (item.duration != std::chrono::milliseconds::zero())
+            inventory.timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
             out << "Player entity " << self.getId() << " pick up item '" << item.name << "', " << count << "/"
                 << item.maxStack << " in inventory ";
         });
+    }
+
+    void Player::updateTimedItems(ecs::Entity self, ecs::SystemData data)
+    {
+        if (inventory.timedItems.empty())
+            return;
+        size_t i = inventory.timedItems.size() - 1;
+
+        do {
+            auto &pair = inventory.timedItems[i];
+            auto &item = Item::getItem(pair.first);
+
+            if (std::chrono::steady_clock::now() - pair.second >= item.duration) {
+                item.onTimedOut(self, data);
+                inventory.timedItems.erase(inventory.timedItems.begin() + i);
+            }
+            --i;
+        } while (i != 0);
     }
 } // namespace game::components

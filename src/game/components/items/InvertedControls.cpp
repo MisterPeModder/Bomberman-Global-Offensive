@@ -8,6 +8,7 @@
 
 #include "Item.hpp"
 #include "game/components/Player.hpp"
+#include "game/components/Velocity.hpp"
 
 namespace game::components
 {
@@ -23,10 +24,12 @@ namespace game::components
         invertedControls.dropRate = 10;
         invertedControls.onApply = [](ecs::Entity player, ecs::SystemData data) {
             data.getStorage<Player>()[player.getId()].stats.inverted = true;
+            data.getStorage<Velocity>()[player.getId()] *= {-1.f, 0.f, -1.f};
             return true;
         };
         invertedControls.onTimedOut = [](ecs::Entity player, ecs::SystemData data) {
             data.getStorage<Player>()[player.getId()].stats.inverted = false;
+            data.getStorage<Velocity>()[player.getId()] *= {-1.f, 0.f, -1.f};
         };
         return invertedControls;
     }

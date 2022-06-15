@@ -19,7 +19,7 @@ namespace game::components
         fireDown.identifier = Item::Identifier::FireDown;
         fireDown.maxStack = 0;
         fireDown.name = "Fire Down";
-        fireDown.duration = std::chrono::milliseconds(0);
+        fireDown.duration = std::chrono::milliseconds::zero();
         fireDown.dropRate = 30;
         fireDown.onApply = [](ecs::Entity player, ecs::SystemData data) {
             auto &bombRange = data.getStorage<Player>()[player.getId()].stats.bombRange;

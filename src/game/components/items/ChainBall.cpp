@@ -18,7 +18,7 @@ namespace game::components
         chainBall.identifier = Item::Identifier::ChainBall;
         chainBall.maxStack = 5;
         chainBall.name = "Chain ball";
-        chainBall.duration = std::chrono::milliseconds(0);
+        chainBall.duration = std::chrono::milliseconds::zero();
         chainBall.dropRate = 30;
         chainBall.onApply = [](ecs::Entity player, ecs::SystemData data) {
             data.getStorage<Player>()[player.getId()].stats.speed -= Player::Stats::DEFAULT_SPEED * 0.1f;

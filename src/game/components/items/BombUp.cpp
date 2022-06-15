@@ -19,7 +19,7 @@ namespace game::components
         bombUp.identifier = Item::Identifier::BombUp;
         bombUp.maxStack = 0;
         bombUp.name = "Bomb Up";
-        bombUp.duration = std::chrono::milliseconds(0);
+        bombUp.duration = std::chrono::milliseconds::zero();
         bombUp.dropRate = 30;
         bombUp.onApply = [](ecs::Entity player, ecs::SystemData data) {
             data.getStorage<Player>()[player.getId()].stats.bombLimit++;
