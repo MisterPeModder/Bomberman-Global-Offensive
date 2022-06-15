@@ -8,7 +8,9 @@
 #ifndef GAME_SYSTEMS_MODEL_HPP_
 #define GAME_SYSTEMS_MODEL_HPP_
 
+#include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
+#include "ecs/join.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"

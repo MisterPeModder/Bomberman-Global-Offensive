@@ -2,7 +2,7 @@ set(INCROOT ${INCROOT}/shapes)
 set(SRCROOT ${SRCROOT}/shapes)
 
 set(SRC
-	${SRC}
+    ${SRC}
     ${SRCROOT}/Rectangle.cpp
     ${SRCROOT}/Rectangle.hpp
     ${SRCROOT}/Circle.cpp
@@ -19,9 +19,9 @@ set(SRC
     ${SRCROOT}/AShape.hpp
     ${SRCROOT}/Circle.hpp
     ${SRCROOT}/Circle.cpp
-	PARENT_SCOPE)
+    PARENT_SCOPE)
 
 set(INCDIRS
-	${INCDIRS}
-	${INCROOT}
-	PARENT_SCOPE)
+    ${INCDIRS}
+    ${INCROOT}
+    PARENT_SCOPE)

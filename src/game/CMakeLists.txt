@@ -7,20 +7,20 @@ add_subdirectory(settings)
 add_subdirectory(systems)
 add_subdirectory(resources)
 add_subdirectory(gui)
-add_subdirectory(worlds)
+add_subdirectory(scenes)
 
-set (SRC
-	${SRC}
-	${SRCROOT}/Game.cpp
-	${SRCROOT}/Game.hpp
-	${SRCROOT}/GameAction.hpp
-	${SRCROOT}/User.cpp
-	${SRCROOT}/User.hpp
-	${SRCROOT}/Users.cpp
-	${SRCROOT}/Users.hpp
-	PARENT_SCOPE)
+set(SRC
+    ${SRC}
+    ${SRCROOT}/Game.cpp
+    ${SRCROOT}/Game.hpp
+    ${SRCROOT}/GameAction.hpp
+    ${SRCROOT}/User.cpp
+    ${SRCROOT}/User.hpp
+    ${SRCROOT}/Users.cpp
+    ${SRCROOT}/Users.hpp
+    PARENT_SCOPE)
 
 set(INCDIRS
-	${INCDIRS}
-	${INCROOT}
-	PARENT_SCOPE)
+    ${INCDIRS}
+    ${INCROOT}
+    PARENT_SCOPE)

@@ -5,46 +5,28 @@
 ** main
 */
 
-#include <filesystem>
-#include <iostream>
-#include <memory>
 #include "ecs/World.hpp"
+
+#include "game/Game.hpp"
+#include "game/gui/components/Widget.hpp"
+// #include "game/scenes/GameScene.hpp"
+
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
+
 #include "logger/Logger.hpp"
 
-#include "game/gui/components/Widget.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/raylib.hpp"
+
 #include "script/Engine.hpp"
 
-#include "game/Game.hpp"
-#include "game/worlds/Worlds.hpp"
-
-#if defined(PLATFORM_WEB)
-    #include <emscripten/emscripten.h>
-#endif
+#include <memory>
 
 constexpr int WIDTH(1080);
 constexpr int HEIGHT(720);
-
-struct Params {
-    ecs::World world;
-    raylib::core::Camera3D camera;
-    game::Game game;
-
-    Params() : world(), camera(), game(this->world, game::Game::Parameters(1)) {}
-};
-
-static void drawFrame(void *args)
-{
-    Params *params = reinterpret_cast<Params *>(args);
-
-    params->camera.update();
-    params->game.drawFrame(params->camera);
-}
 
 static void setupLogger()
 {
@@ -56,40 +38,36 @@ static void setupLogger()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
 }
 
-struct Position : public ecs::Component, public raylib::core::Vector3 {
-    Position(float px, float py, float pz) : raylib::core::Vector3(px, py, pz) {}
-    Position(raylib::core::Vector3 &other) : raylib::core::Vector3(other) {}
-};
+// struct Position : public ecs::Component, public raylib::core::Vector3 {
+//     Position(float px, float py, float pz) : raylib::core::Vector3(px, py, pz) {}
+//     Position(raylib::core::Vector3 &other) : raylib::core::Vector3(other) {}
+// };
+// static void drawFrame(void *args)
+// {
+//     Params *params = reinterpret_cast<Params *>(args);
+
+//     params->camera.update();
+//     params->scene.get()->drawFrame(params->camera);
+// }
 
 static void runGame()
 {
-    auto params = new Params();
+    game::Game::Parameters gameParams(2);
 
-    // params->game.setup(params->camera);
-    game::Worlds::loadGameWorld(params->game, params->camera);
-
-#if defined(PLATFORM_WEB)
-    // We cannot use the WindowShouldClose() loop on the web,
-    // since there is no such thing as a window.
-    emscripten_set_main_loop_arg(&drawFrame, params, 0, 1);
+#ifdef __EMSCRIPTEN__
+    auto game = new game::Game(gameParams);
 #else
-    while (!WindowShouldClose())
-        drawFrame(params);
-    CloseWindow();
-
-    // Manual delete on purpose, we don't want params to be freed on the web
-    delete params;
+    auto game = std::make_unique<game::Game>(gameParams);
 #endif
+
+    // game::Worlds::loadGameWorld(*game);
+    game->setup();
+    game->run();
 }
 
 int main()
 {
     setupLogger();
-
-    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
-
-    jsEngine->loadApi();
-    jsEngine->loadScript("hello");
 
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
@@ -101,12 +79,20 @@ int main()
     raylib::core::Window::setTargetFPS(60);
     Logger::logger.log(Logger::Severity::Information, "Before game loop");
 
+    /// Start the Javascript engine
+    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
+
+    jsEngine->loadApi();
+    jsEngine->loadScript("hello");
+
     try {
         runGame();
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
         Logger::logger.log(Logger::Severity::Error,
             [&](std::ostream &writer) { writer << "Game stopped with exception: " << e.what(); });
     }
+
+    raylib::core::Window::close();
 
     localization::Localization::saveLocales();
     Logger::logger.log(Logger::Severity::Information, "End of program");
