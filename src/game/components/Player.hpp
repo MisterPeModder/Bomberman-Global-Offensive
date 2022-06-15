@@ -8,10 +8,13 @@
 #ifndef GAME_COMPONENTS_PLAYER_HPP_
 #define GAME_COMPONENTS_PLAYER_HPP_
 
+#include <array>
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "game/Users.hpp"
+#include "items/Item.hpp"
+#include "items/ItemIdentifier.hpp"
 
 namespace game::components
 {
@@ -29,8 +32,19 @@ namespace game::components
 
             Stats() : speed(DEFAULT_SPEED), bombRange(2), bombLimit(2) {}
         };
+
+        /// Occurence of each item in a player inventory
+        struct Inventory {
+            /// Number of occurence of each item in the inventory.
+            std::array<size_t, static_cast<size_t>(Item::Identifier::Count)> items;
+
+            Inventory() { items.fill(0); }
+        };
+
         /// Player stats
         Stats stats;
+        /// Player items
+        Inventory inventory;
         /// Number of bomb currently placed on the map.
         size_t placedBombs;
 
@@ -45,6 +59,8 @@ namespace game::components
 
         /// Construct a new Player component
         Player() : placedBombs(0) {}
+
+        void pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data);
 
       private:
         /// Change the velocity of the player from its action values.

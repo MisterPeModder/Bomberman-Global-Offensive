@@ -85,4 +85,17 @@ namespace game::components
         data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombCell);
         ++player.placedBombs;
     }
+
+    void Player::pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data)
+    {
+        const Item &item = Item::getItem(itemId);
+        auto &count = inventory.items[static_cast<size_t>(itemId)];
+
+        /// Can't get more of this item
+        if (count >= item.maxStack)
+            return;
+        ++count;
+        if (item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown)
+            item.onApply(self, data);
+    }
 } // namespace game::components

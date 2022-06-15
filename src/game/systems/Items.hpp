@@ -33,7 +33,7 @@ namespace game::systems
                     if (!Collision::getCollideRect(collideRect, playerPos, playerSize, pos, size))
                         continue;
 
-                    game::components::Item::getItem(itemId.identifier).onApply(playerId, data);
+                    player.pickupItem(playerId, itemId.identifier, data);
                     entities.kill(id);
                 }
             }

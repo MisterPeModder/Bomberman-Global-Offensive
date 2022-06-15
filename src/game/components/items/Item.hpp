@@ -27,6 +27,7 @@ namespace game::components
         /// Item identifiers
         enum class Identifier {
             SpeedShoes,
+            Count,
         };
 
         /// @ref Type.
