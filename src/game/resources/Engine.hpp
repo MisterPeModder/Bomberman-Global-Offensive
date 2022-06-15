@@ -10,7 +10,8 @@
 
 #include "ecs/resource/Resource.hpp"
 
-namespace game {
+namespace game
+{
     class Engine;
 }
 
