@@ -9,6 +9,7 @@
 #include "Bomb.hpp"
 #include "BombNoClip.hpp"
 #include "Collidable.hpp"
+#include "Identity.hpp"
 #include "Position.hpp"
 #include "Size.hpp"
 #include "Velocity.hpp"
@@ -33,6 +34,7 @@ namespace game::components
     {
         auto &velocity = data.getStorage<Velocity>()[self.getId()];
         auto &user = data.getResource<Users>()[event.user];
+        auto &stats = data.getStorage<Player>()[self.getId()].stats;
         GameAction bestAction = GameAction::NONE;
         float highestActionValue = 0.f;
 
@@ -48,16 +50,22 @@ namespace game::components
             velocity = {0.f, 0.f};
         else
             switch (bestAction) {
-                case GameAction::MOVE_LEFT: velocity = {-DefaultSpeed, 0.f, 0.f}; break;
-                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -DefaultSpeed}; break;
-                case GameAction::MOVE_RIGHT: velocity = {DefaultSpeed, 0.f, 0.f}; break;
-                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, DefaultSpeed}; break;
+                case GameAction::MOVE_LEFT: velocity = {-stats.speed, 0.f, 0.f}; break;
+                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -stats.speed}; break;
+                case GameAction::MOVE_RIGHT: velocity = {stats.speed, 0.f, 0.f}; break;
+                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, stats.speed}; break;
                 default: break;
             }
     }
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
+        auto &player = data.getStorage<Player>()[self.getId()];
+
+        /// Player cannot place more bomb
+        if (player.placedBombs >= player.stats.bombLimit)
+            return;
+        auto &playerPos = data.getStorage<Position>()[self.getId()];
         raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
         raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.5f, static_cast<float>(bombCell.y)};
 
@@ -70,11 +78,12 @@ namespace game::components
 
         data.getResource<ecs::Entities>()
             .builder()
-            .with<Bomb>(data.getStorage<Bomb>(), 2)
+            .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id, player.stats.bombRange)
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .with<Collidable>(data.getStorage<Collidable>())
             .build();
         data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombCell);
+        ++player.placedBombs;
     }
 } // namespace game::components

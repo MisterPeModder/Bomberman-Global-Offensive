@@ -14,6 +14,7 @@
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
+#include "components/Identity.hpp"
 #include "components/Living.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
@@ -143,6 +144,7 @@ namespace game
                 .with<components::CubeColor>(raylib::core::Color::RED)
                 .with<components::Controlable>(owner, components::Player::handleActionEvent)
                 .with<components::BombNoClip>()
+                .with<components::Identity>()
                 .build();
         }
 

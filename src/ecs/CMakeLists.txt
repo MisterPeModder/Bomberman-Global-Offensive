@@ -8,16 +8,16 @@ add_subdirectory(system)
 add_subdirectory(world)
 
 set(SRC
-	${SRC}
+    ${SRC}
     ${INCROOT}/Component.hpp
     ${INCROOT}/Entity.hpp
     ${INCROOT}/join.hpp
     ${INCROOT}/Storage.hpp
     ${INCROOT}/World.hpp
-	PARENT_SCOPE
+    PARENT_SCOPE
 )
 
-set(INCDIRS 
-	${INCDIRS}
-	${INCROOT}
-	PARENT_SCOPE)
+set(INCDIRS
+    ${INCDIRS}
+    ${INCROOT}
+    PARENT_SCOPE)

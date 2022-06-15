@@ -12,6 +12,8 @@ set(SRC
     ${SRCROOT}/Textual.hpp
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Color.hpp
+    ${SRCROOT}/Identity.cpp
+    ${SRCROOT}/Identity.hpp
     ${INCROOT}/Image.hpp
     ${INCROOT}/Model.hpp
     ${INCROOT}/Position.hpp

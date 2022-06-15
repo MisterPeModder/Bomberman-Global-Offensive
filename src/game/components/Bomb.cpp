@@ -8,7 +8,9 @@
 #include "Bomb.hpp"
 #include <cmath>
 #include "Destructible.hpp"
+#include "Identity.hpp"
 #include "Living.hpp"
+#include "Player.hpp"
 #include "Size.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
@@ -25,6 +27,10 @@ namespace game::components
         if (this->exploded)
             return;
         this->exploded = true;
+        for (auto [id, player] : ecs::join(data.getStorage<Identity>(), data.getStorage<Player>())) {
+            if (id.id == owner)
+                --player.placedBombs;
+        }
         /// Retrieve storages
         auto &positions = data.getStorage<Position>();
         auto &sizes = data.getStorage<Size>();

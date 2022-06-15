@@ -5,10 +5,11 @@ function(add_bomberman_test)
     cmake_parse_arguments(add_bomberman_test "" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 
     # Check for required arguments NAME and SOURCES
-    if (NOT DEFINED add_bomberman_test_NAME)
+    if(NOT DEFINED add_bomberman_test_NAME)
         message(FATAL_ERROR "missing unit test name")
     endif()
-    if (NOT DEFINED add_bomberman_test_SOURCES)
+
+    if(NOT DEFINED add_bomberman_test_SOURCES)
         message(FATAL_ERROR "missing unit test sources")
     endif()
 
@@ -18,7 +19,7 @@ function(add_bomberman_test)
     set(INCDIRS ${add_bomberman_test_INCLUDE_DIRS})
     set(WORKING_DIRECTORY ${add_bomberman_test_WORKING_DIRECTORY})
 
-    if (DEFINED add_bomberman_test_DISPLAY_NAME)
+    if(DEFINED add_bomberman_test_DISPLAY_NAME)
         set(DISPLAY_NAME ${add_bomberman_test_DISPLAY_NAME})
     else()
         set(DISPLAY_NAME ${TARGET_NAME})
@@ -47,7 +48,7 @@ add_subdirectory(ecs)
 add_subdirectory(util)
 
 # FIXME: #55 Re-enable localization tests on the web once we figure out how to bundle files
-if (NOT EMSCRIPTEN)
+if(NOT EMSCRIPTEN)
     add_subdirectory(localization)
     add_subdirectory(settings)
 endif()
