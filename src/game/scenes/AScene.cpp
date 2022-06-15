@@ -33,13 +33,11 @@ namespace game
 
     ecs::World &AScene::getWorld()
     {
-        _world.getResource<resources::EngineResource>().engine->setScene<SettingsMenuScene>();
         return _world;
     }
 
     const ecs::World &AScene::getWorld() const
     {
-        _world.getResource<resources::EngineResource>().engine->setScene<SettingsMenuScene>();
         return _world;
     }
 } // namespace game

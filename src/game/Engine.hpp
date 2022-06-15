@@ -26,7 +26,6 @@ namespace game
         template <std::derived_from<IScene> S> void setScene()
         {
             _scene = std::make_unique<S>();
-            _scene->getWorld().addResource<resources::EngineResource>(this);
         }
 
         /// Gets the mutable active scene
