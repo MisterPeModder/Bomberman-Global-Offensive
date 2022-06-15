@@ -34,7 +34,7 @@ namespace game::components
 
         /// Construct a new Bomb component.
         ///
-        /// @param pOwner @ref oxner.
+        /// @param pOwner @ref owner.
         /// @param pRadius @ref radius
         /// @param pExplosionDelay @ref explosionDelay
         Bomb(Identity::Id pOwner, size_t pRadius = 1,
@@ -46,8 +46,15 @@ namespace game::components
         ///
         /// @param pos position of the bomb.
         /// @param data world data.
+        /// @param self entity @a owning of the bomb component.
         void explode(const Position &pos, ecs::SystemData data, ecs::Entity self);
 
+        /// Kick the bomb following the sender velocity.
+        /// @note Kill the entity @c self to create a new entity representing the kicked bomb (moving).
+        ///
+        /// @param data world data.
+        /// @param self entity @a owning of the bomb component.
+        /// @param senderVelocity sender velocity. (will become the kicked bomb velocity)
         void kick(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity);
 
       private:

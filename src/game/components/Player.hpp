@@ -40,6 +40,10 @@ namespace game::components
 
             Inventory() { items.fill(0); }
 
+            /// Get the quantity of an item in the inventory.
+            ///
+            /// @param itemId item identifier.
+            /// @return constexpr size_t quantity of this item in the inventory.
             constexpr size_t operator[](Item::Identifier itemId) const { return items[static_cast<size_t>(itemId)]; }
         };
 
