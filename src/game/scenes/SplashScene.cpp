@@ -16,50 +16,43 @@
 #include "game/components/RotationAxis.hpp"
 #include "game/components/Scale.hpp"
 #include "game/components/Size.hpp"
+#include "game/components/Textual.hpp"
+
 #include "game/systems/Model.hpp"
+#include "game/systems/DrawText.hpp"
 
 static void loadSplashScene(ecs::World &world)
 {
     static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
 
-    world.addSystem<game::systems::DrawModel>();
-    world.addStorage<game::components::Scale>();
+    world.addEntity()
+        .with<game::components::Model>(testModelPath)
+        .with<game::components::Position>(0.f, -2.f, 0.f)
+        .with<game::components::Size>(1.f, 0.5f, 0.5f)
+        .with<game::components::RotationAngle>(-90.f)
+        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
+        .with<game::components::Color>(raylib::core::Color::WHITE)
+        .build();
 
     world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(-5.f, -2.f, -5.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::PURPLE)
+        .with<game::components::Position>(400.f, 500.f)
+        .with<game::components::Textual>("VLAVe", 72, raylib::core::Color::WHITE)
         .build();
-    world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(-5.f, -2.f, 5.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::BROWN)
-        .build();
-    world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(5.f, -2.f, -5.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::DARK_GREEN)
-        .build();
-    world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(5.f, -2.f, 5.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::ORANGE)
-        .build();
+
 }
 
 namespace game
 {
-    SplashScene::SplashScene() { loadSplashScene(_world); }
+    SplashScene::SplashScene()
+    {
+        _world.addStorage<game::components::Scale>();
+
+        _world.addSystem<game::systems::DrawModel>();
+        _world.addSystem<game::systems::DrawText>();
+
+        _global3D.add<game::systems::DrawModel>();
+        _global2D.add<game::systems::DrawText>();
+
+        loadSplashScene(_world);
+    }
 } // namespace game
