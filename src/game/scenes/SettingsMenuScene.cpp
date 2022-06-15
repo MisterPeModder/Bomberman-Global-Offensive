@@ -54,12 +54,6 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::VOLUME_MUTE,
             game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::SettingsMenuScene::RES_2, true)
-        .with<game::gui::Checkable>([&](ecs::Entity checkbox, bool checked) {
-            raylib::core::Window::toggleFullscreen();
-            Logger::logger.log(Logger::Severity::Debug, "Toggled fullscreen");
-            world.getStorage<game::components::Textual>()[checkbox.getId()].color =
-                (checked) ? raylib::core::Color::BLUE : raylib::core::Color::RED;
-        })
         .with<game::gui::Clickable>(
             [](ecs::Entity _) {
                 (void)_;
@@ -275,7 +269,7 @@ static void loadSettingsMenuScene(ecs::World &world)
 
 namespace game
 {
-    SettingsMenuScene::SettingsMenuScene() // : _currentSettingsMenu(GRAPHICS)
+    SettingsMenuScene::SettingsMenuScene()
     {
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::InputManager>();

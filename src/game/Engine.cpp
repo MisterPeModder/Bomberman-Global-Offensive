@@ -6,8 +6,6 @@
 */
 
 #include "game/Engine.hpp"
-#include "game/scenes/GameScene.hpp"
-#include "game/scenes/SettingsMenuScene.hpp"
 #include "game/scenes/SplashScene.hpp"
 #include "raylib/core/Window.hpp"
 
