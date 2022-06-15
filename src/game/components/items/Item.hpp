@@ -77,23 +77,6 @@ namespace game::components
       private:
         Item(){};
 
-        template <size_t N>
-        static Identifier selectItemFromPool(
-            const std::array<Identifier, N> &itemPool, game::resources::RandomDevice &randDevice)
-        {
-            int randVal = randDevice.randInt(0, 99);
-            size_t i = 0;
-            int current = getItem(itemPool[i]).dropRate;
-
-            while (randVal >= current) {
-                ++i;
-                if (i >= itemPool.size())
-                    throw std::logic_error("Invalid ddrop rates.");
-                current += getItem(itemPool[i]).dropRate;
-            }
-            return itemPool[i];
-        }
-
         static void spawnItem(Identifier item, ecs::SystemData data, raylib::core::Vector2u cell);
 
         //////// Items

@@ -35,13 +35,23 @@ namespace game::components
         if (randDevice.randInt(0, 99) >= 70)
             return false;
 
+        /// Which item type ? (To do: Activable type)
         int randVal = randDevice.randInt(0, 99);
-        Identifier itemId;
-        if (randVal < 70)
-            itemId = selectItemFromPool(powerUps, randDevice);
-        else
-            itemId = selectItemFromPool(powerDowns, randDevice);
-        spawnItem(itemId, data, cell);
+        auto itemsPool((randVal < 70) ? std::span<Identifier, std::dynamic_extent>(powerUps)
+                                      : std::span<Identifier, std::dynamic_extent>(powerDowns));
+
+        /// Which item ?
+        randVal = randDevice.randInt(0, 99);
+        size_t i = 0;
+        int current = getItem(itemsPool[i]).dropRate;
+
+        while (randVal >= current) {
+            ++i;
+            if (i >= itemsPool.size())
+                throw std::logic_error("Invalid ddrop rates.");
+            current += getItem(itemsPool[i]).dropRate;
+        }
+        spawnItem(itemsPool[i], data, cell);
         return true;
     }
 
