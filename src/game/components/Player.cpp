@@ -92,8 +92,8 @@ namespace game::components
         const Item &item = Item::getItem(itemId);
         auto &count = inventory.items[static_cast<size_t>(itemId)];
 
-        /// Can't get more of this item
-        if (count >= item.maxStack)
+        /// Item has a stack limit and we reached it
+        if (item.maxStack && count >= item.maxStack)
             return;
         ++count;
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {

@@ -28,6 +28,7 @@ namespace game::components
         enum class Identifier {
             /// Power Up
             SpeedShoes,
+            FireUp,
             /// Power Down
             ChainBall,
             Count,
@@ -81,6 +82,7 @@ namespace game::components
         //////// Items
         /// Power Ups
         static Item SpeedShoes();
+        static Item FireUp();
         /// Power Downs
         static Item ChainBall();
 
