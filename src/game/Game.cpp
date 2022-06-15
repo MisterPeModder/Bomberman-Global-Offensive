@@ -8,11 +8,13 @@
 #include "Game.hpp"
 
 #include "components/Bomb.hpp"
+#include "components/BombNoClip.hpp"
 #include "components/Collidable.hpp"
 #include "components/Controlable.hpp"
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
+#include "components/Identity.hpp"
 #include "components/Living.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
@@ -40,8 +42,7 @@
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
 #include "systems/Movement.hpp"
-
-#include <cmath>
+#include "systems/NoClip.hpp"
 
 #pragma region Browser Events
 #ifdef __EMSCRIPTEN__
@@ -125,9 +126,11 @@ namespace game
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
         _world.addSystem<systems::PickupItem>();
+        _world.addSystem<systems::DisableBombNoClip>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem>();
+        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
+            systems::DisableBombNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawingCube, systems::DrawBomb>();
 
@@ -145,6 +148,8 @@ namespace game
                 .with<components::Size>(0.7f, 2.f, 0.7f)
                 .with<components::CubeColor>(raylib::core::Color::RED)
                 .with<components::Controlable>(owner, components::Player::handleActionEvent)
+                .with<components::BombNoClip>()
+                .with<components::Identity>()
                 .build();
         }
 

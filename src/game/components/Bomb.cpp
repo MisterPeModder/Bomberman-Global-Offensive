@@ -8,10 +8,13 @@
 #include "Bomb.hpp"
 #include <cmath>
 #include "Destructible.hpp"
+#include "Identity.hpp"
 #include "Living.hpp"
+#include "Player.hpp"
 #include "Size.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
+#include "game/Game.hpp"
 #include "game/resources/Map.hpp"
 #include "items/Item.hpp"
 #include "logger/Logger.hpp"
@@ -25,6 +28,10 @@ namespace game::components
         if (this->exploded)
             return;
         this->exploded = true;
+        for (auto [id, player] : ecs::join(data.getStorage<Identity>(), data.getStorage<Player>())) {
+            if (id.id == owner)
+                --player.placedBombs;
+        }
         /// Retrieve storages
         auto &positions = data.getStorage<Position>();
         auto &sizes = data.getStorage<Size>();
@@ -51,8 +58,7 @@ namespace game::components
             if ((!destructible && !living && !bomb) || (living && living->hp == 0))
                 continue;
 
-            raylib::core::Vector2u roundedPos2D = {
-                static_cast<unsigned int>(std::round(pos.x)), static_cast<unsigned int>(std::round(pos.z))};
+            raylib::core::Vector2u roundedPos2D = game::Game::worldPosToMapCell(pos);
 
             if (std::find(explodedPositions.begin(), explodedPositions.end(), roundedPos2D) == explodedPositions.end()
                 && (!living || !explodeLiving(pos, size, roundedPos2D, explodedPositions)))

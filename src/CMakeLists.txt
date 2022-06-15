@@ -67,11 +67,18 @@ if(EMSCRIPTEN)
     # Preload the API
     target_link_options(${TARGET_NAME} PUBLIC "SHELL:--post-js ${PROJECT_SOURCE_DIR}/mods/api.js")
 
-    # Make the contents of the mods directory available at the root of the site
-    target_link_options(${TARGET_NAME} PUBLIC "SHELL:--preload-file ${PROJECT_SOURCE_DIR}/mods@mods")
+    # The list of all bundled root directories
+    SET(BUNDLED_DIRS
+        mods
+        assets
+        locales
+        settings
+    )
 
-    # Make the contents of the assets directory available at the root of the site
-    target_link_options(${TARGET_NAME} PUBLIC "SHELL:--preload-file ${PROJECT_SOURCE_DIR}/assets@assets")
+    foreach(BUNDLED_DIR IN LISTS BUNDLED_DIRS)
+        # Make the contents of the directory available at the root of the site
+        target_link_options(${TARGET_NAME} PUBLIC "SHELL:--preload-file ${PROJECT_SOURCE_DIR}/${BUNDLED_DIR}@${BUNDLED_DIR}")
+    endforeach()
 endif()
 
 # Copy the executable to the root.
