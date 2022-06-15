@@ -17,11 +17,18 @@ namespace localization
     {
         /// Simple hello world.
         constexpr ResourceString rsHello("Hello, World!");
-        constexpr ResourceString rsSettings("Settings");
+        constexpr ResourceString rsSettings("SETTINGS");
+
         namespace settings
         {
             constexpr ResourceString rsSettingsGraphic("Graphic");
+            constexpr ResourceString rsSettingsFullscreen("Fullscreen");
+            constexpr ResourceString rsSettingsResolution("Resolution");
+
             constexpr ResourceString rsSettingsAudio("Audio");
+            constexpr ResourceString rsSettingsMute("Mute");
+            constexpr ResourceString rsSettingsVolume("Volume");
+
             constexpr ResourceString rsSettingsKeybinds("Keybinds");
 
         } // namespace settings
