@@ -23,6 +23,7 @@ namespace game::components
         bombUp.dropRate = 30;
         bombUp.onApply = [](ecs::Entity player, ecs::SystemData data) {
             data.getStorage<Player>()[player.getId()].stats.bombLimit++;
+            return true;
         };
         return bombUp;
     }

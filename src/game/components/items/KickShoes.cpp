@@ -25,6 +25,7 @@ namespace game::components
         kickShoes.onApply = [](ecs::Entity player, ecs::SystemData data) {
             (void)player;
             (void)data;
+            return true;
         };
         return kickShoes;
     }

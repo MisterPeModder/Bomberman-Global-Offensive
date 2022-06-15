@@ -22,6 +22,7 @@ namespace game::components
         shoes.dropRate = 30;
         shoes.onApply = [](ecs::Entity player, ecs::SystemData data) {
             data.getStorage<Player>()[player.getId()].stats.speed += Player::Stats::DEFAULT_SPEED * 0.1f;
+            return true;
         };
         return shoes;
     }

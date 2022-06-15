@@ -95,12 +95,13 @@ namespace game::components
         /// Item has a stack limit and we reached it
         if (item.maxStack && count >= item.maxStack)
             return;
+        /// Item has no effect (rejected).
+        if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown) && !item.onApply(self, data))
+            return;
         ++count;
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
             out << "Player entity " << self.getId() << " pick up item '" << item.name << "', " << count << "/"
                 << item.maxStack << " in inventory ";
         });
-        if (item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown)
-            item.onApply(self, data);
     }
 } // namespace game::components

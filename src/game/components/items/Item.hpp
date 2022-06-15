@@ -22,7 +22,7 @@ namespace game::components
     struct Item : public ecs::Component {
       public:
         /// Function called when item is applied
-        using OnApply = std::function<void(ecs::Entity, ecs::SystemData)>;
+        using OnApply = std::function<bool(ecs::Entity, ecs::SystemData)>;
         /// Item Type.
         enum class Type { PowerUp, PowerDown, Activable };
         /// Item identifiers
@@ -34,6 +34,7 @@ namespace game::components
             KickShoes,
             /// Power Down
             ChainBall,
+            FireDown,
             Count,
         };
 
@@ -90,9 +91,10 @@ namespace game::components
         static Item KickShoes();
         /// Power Downs
         static Item ChainBall();
+        static Item FireDown();
 
         static constexpr size_t POWER_UP_COUNT = 4;
-        static constexpr size_t POWER_DOWN_COUNT = 1;
+        static constexpr size_t POWER_DOWN_COUNT = 2;
         static constexpr size_t ACTIVABLE_COUNT = 0;
 
         static std::array<Identifier, POWER_UP_COUNT> powerUps;

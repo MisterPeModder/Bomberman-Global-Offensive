@@ -21,11 +21,12 @@ namespace game::components
 {
     std::array<Item::Identifier, Item::POWER_UP_COUNT> Item::powerUps = {
         Item::Identifier::SpeedShoes, Item::Identifier::FireUp, Item::Identifier::BombUp, Item::Identifier::KickShoes};
-    std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {Item::Identifier::ChainBall};
+    std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {
+        Item::Identifier::ChainBall, Item::Identifier::FireDown};
     std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables;
 
     std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {
-        SpeedShoes(), FireUp(), BombUp(), KickShoes(), ChainBall()};
+        SpeedShoes(), FireUp(), BombUp(), KickShoes(), ChainBall(), FireDown()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {

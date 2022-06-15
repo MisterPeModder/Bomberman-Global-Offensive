@@ -3,7 +3,7 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman
 ** File description:
-** Fire Up
+** Fire Down
 */
 
 #include "Item.hpp"
@@ -11,18 +11,22 @@
 
 namespace game::components
 {
-    Item Item::FireUp()
+    Item Item::FireDown()
     {
         Item fireUp;
 
         fireUp.type = Item::Type::PowerUp;
-        fireUp.identifier = Item::Identifier::FireUp;
+        fireUp.identifier = Item::Identifier::FireDown;
         fireUp.maxStack = 0;
-        fireUp.name = "Fire Up";
+        fireUp.name = "Fire Down";
         fireUp.duration = std::chrono::milliseconds(0);
         fireUp.dropRate = 30;
         fireUp.onApply = [](ecs::Entity player, ecs::SystemData data) {
-            data.getStorage<Player>()[player.getId()].stats.bombRange++;
+            auto &bombRange = data.getStorage<Player>()[player.getId()].stats.bombRange;
+
+            if (bombRange == 1)
+                return false;
+            bombRange--;
             return true;
         };
         return fireUp;
