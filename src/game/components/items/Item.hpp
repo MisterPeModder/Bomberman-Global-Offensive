@@ -35,6 +35,7 @@ namespace game::components
             /// Power Down
             ChainBall,
             FireDown,
+            BombDown,
             Count,
         };
 
@@ -92,9 +93,10 @@ namespace game::components
         /// Power Downs
         static Item ChainBall();
         static Item FireDown();
+        static Item BombDown();
 
         static constexpr size_t POWER_UP_COUNT = 4;
-        static constexpr size_t POWER_DOWN_COUNT = 2;
+        static constexpr size_t POWER_DOWN_COUNT = 3;
         static constexpr size_t ACTIVABLE_COUNT = 0;
 
         static std::array<Identifier, POWER_UP_COUNT> powerUps;

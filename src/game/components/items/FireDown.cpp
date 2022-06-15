@@ -13,15 +13,15 @@ namespace game::components
 {
     Item Item::FireDown()
     {
-        Item fireUp;
+        Item fireDown;
 
-        fireUp.type = Item::Type::PowerUp;
-        fireUp.identifier = Item::Identifier::FireDown;
-        fireUp.maxStack = 0;
-        fireUp.name = "Fire Down";
-        fireUp.duration = std::chrono::milliseconds(0);
-        fireUp.dropRate = 30;
-        fireUp.onApply = [](ecs::Entity player, ecs::SystemData data) {
+        fireDown.type = Item::Type::PowerUp;
+        fireDown.identifier = Item::Identifier::FireDown;
+        fireDown.maxStack = 0;
+        fireDown.name = "Fire Down";
+        fireDown.duration = std::chrono::milliseconds(0);
+        fireDown.dropRate = 30;
+        fireDown.onApply = [](ecs::Entity player, ecs::SystemData data) {
             auto &bombRange = data.getStorage<Player>()[player.getId()].stats.bombRange;
 
             if (bombRange == 1)
@@ -29,6 +29,6 @@ namespace game::components
             bombRange--;
             return true;
         };
-        return fireUp;
+        return fireDown;
     }
 } // namespace game::components
