@@ -1,8 +1,9 @@
 set(INCROOT ${INCROOT}/resources)
 set(SRCROOT ${SRCROOT}/resources)
 
-set (SRC
+set(SRC
     ${SRC}
+    ${SRCROOT}/Engine.hpp
     ${SRCROOT}/AssetMap.hpp
     ${SRCROOT}/Engine.hpp
     ${SRCROOT}/Map.hpp

@@ -14,6 +14,11 @@
 /// Raylib namespace
 namespace raylib
 {
+    namespace textures
+    {
+        class Image;
+    }
+
     /// Core namespace (inside of raylib)
     namespace core
     {
@@ -67,6 +72,8 @@ namespace raylib
 
             /// @return Toggles fullscreen
             static void toggleFullscreen();
+
+            static void setIcon(textures::Image const &icon);
         };
     } // namespace core
 } // namespace raylib

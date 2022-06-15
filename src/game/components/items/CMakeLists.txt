@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/items)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/ChainBall.cpp
     ${SRCROOT}/Item.cpp
     ${SRCROOT}/Item.hpp
     ${SRCROOT}/ItemIdentifier.hpp
