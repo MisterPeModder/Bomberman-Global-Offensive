@@ -14,6 +14,7 @@
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
 #include "ecs/System.hpp"
+#include "game/resources/RandomDevice.hpp"
 #include "raylib/core/Vector2.hpp"
 
 namespace game::components
@@ -26,7 +27,10 @@ namespace game::components
         enum class Type { PowerUp, PowerDown, Activable };
         /// Item identifiers
         enum class Identifier {
+            /// Power Up
             SpeedShoes,
+            /// Power Down
+            ChainBall,
             Count,
         };
 
@@ -78,9 +82,11 @@ namespace game::components
         //////// Items
         /// Power Ups
         static Item SpeedShoes();
+        /// Power Downs
+        static Item ChainBall();
 
         static constexpr size_t POWER_UP_COUNT = 1;
-        static constexpr size_t POWER_DOWN_COUNT = 0;
+        static constexpr size_t POWER_DOWN_COUNT = 1;
         static constexpr size_t ACTIVABLE_COUNT = 0;
 
         static std::array<Identifier, POWER_UP_COUNT> powerUps;

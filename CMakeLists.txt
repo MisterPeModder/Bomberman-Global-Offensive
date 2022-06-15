@@ -47,6 +47,7 @@ if(EMSCRIPTEN)
         ${PROJECT_BINARY_DIR}/src/bomberman.data
         ${PROJECT_BINARY_DIR}/src/bomberman.js
         ${PROJECT_BINARY_DIR}/src/bomberman.wasm
+        ${PROJECT_SOURCE_DIR}/assets/favicon.ico
         CONFIGURATIONS Release
         DESTINATION web
     )
