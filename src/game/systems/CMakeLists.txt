@@ -22,6 +22,7 @@ set(SRC
     ${SRCROOT}/Movement.hpp
     ${SRCROOT}/Movement.cpp
     ${SRCROOT}/Rectangle.hpp
+    ${INCROOT}/SplashScreen.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
