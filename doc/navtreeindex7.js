@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"storage_2_storage_8hpp_source.html":[3,0,0,0,2,2],
 "struct_get_component_storage_type.html":[2,0,6],
 "struct_get_component_storage_type.html#a67eefa6edf49034a2ce0e94f65d14b88":[2,0,6,0],
 "structecs_1_1_join_traits.html":[2,0,1,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "structraylib_1_1core_1_1_color.html#a09d3a3a3403d55b96e482677f1c4198a":[2,0,4,0,3,10],
 "structraylib_1_1core_1_1_color.html#a0f049c8c9514f788064a1c45e9058773":[2,0,4,0,3,26],
 "structraylib_1_1core_1_1_color.html#a18b2cb88d8df107fa3ef92d59631c077":[2,0,4,0,3,21],
-"structraylib_1_1core_1_1_color.html#a19bde3c4ff8676200970b93b93e90d40":[2,0,4,0,3,33],
-"structraylib_1_1core_1_1_color.html#a1a40286a32b9936527d21bd57671e236":[2,0,4,0,3,38]
+"structraylib_1_1core_1_1_color.html#a19bde3c4ff8676200970b93b93e90d40":[2,0,4,0,3,33]
 };

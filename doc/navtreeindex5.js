@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"classraylib_1_1model_1_1_bounding_box.html#a21f6f555a6f96101e156e261767a2241":[2,0,4,1,1,8],
 "classraylib_1_1model_1_1_bounding_box.html#a378fd69fed8992b36db4aad849d7bc55":[2,0,4,1,1,6],
 "classraylib_1_1model_1_1_bounding_box.html#a629e04ccf8237864112a496d52b69d8a":[2,0,4,1,1,0],
 "classraylib_1_1model_1_1_bounding_box.html#a8023b5ffe266a2db994c63e6edf667ba":[2,0,4,1,1,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "dir_5643fc5b65571d5df13cbb45af2e9897.html":[3,0,0,1,4],
 "dir_5abdaf7f73d21794a8fbc6d7283f9520.html":[3,0,0,0,0],
 "dir_5fd2de56c9e34b9f11062f1ca20ce5f5.html":[3,0,0,1,3],
-"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[3,0,0],
-"dir_83ffee900fdf5683175689ab2eee10c3.html":[3,0,0,1,2,0]
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[3,0,0]
 };

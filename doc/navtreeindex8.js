@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"structraylib_1_1core_1_1_color.html#a1a40286a32b9936527d21bd57671e236":[2,0,4,0,3,38],
 "structraylib_1_1core_1_1_color.html#a22bfbc21e1b061b1163aed476157ae10":[2,0,4,0,3,6],
 "structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9":[2,0,4,0,3,7],
 "structraylib_1_1core_1_1_color.html#a28dd40ec5862b038d3b38bee678602fe":[2,0,4,0,3,1],

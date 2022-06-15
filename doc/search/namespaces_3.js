@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['localization_4553',['localization',['../namespacelocalization.html',1,'']]],
-  ['resources_4554',['Resources',['../namespacelocalization_1_1_resources.html',1,'localization']]]
+  ['localization_4554',['localization',['../namespacelocalization.html',1,'']]],
+  ['resources_4555',['Resources',['../namespacelocalization_1_1_resources.html',1,'localization']]]
 ];
