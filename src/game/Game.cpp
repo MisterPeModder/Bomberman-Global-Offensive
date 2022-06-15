@@ -31,7 +31,9 @@
 #include "raylib/core/Vector3.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
+#include "raylib/textures/Texture2D.hpp"
 
+#include "resources/AssetMap.hpp"
 #include "resources/Map.hpp"
 
 #include "systems/Bomb.hpp"
@@ -111,6 +113,7 @@ namespace game
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
+        _world.addResource<resources::Textures>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
         _world.addStorage<game::gui::Widget>();
