@@ -110,10 +110,10 @@ namespace game
         size_t depth = _map.getSize().y;
 
         _camera.setPosition(
-            {width / 2.f, 8.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
+            {width / 2.f, 15.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
         _camera.setTarget({width / 2.f, 0.f, depth / 2.f});                               // Camera looking at point
         _camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
-        _camera.setFovY(75.0f);            // Camera field-of-view Y
+        _camera.setFovY(50.0f);            // Camera field-of-view Y
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
         /// Add world resources
@@ -146,7 +146,7 @@ namespace game
         _world.getResource<resources::Textures>().emplace("crate", "assets/map/crate.png");
         _world.getResource<resources::Textures>().emplace("wall", "assets/map/wall.png");
         _world.getResource<resources::Textures>().emplace("ground", "assets/map/ground.png");
-        _world.getResource<resources::Textures>().emplace("C4", "assets/items/C4_Texture.png");
+        _world.getResource<resources::Textures>().emplace("C4", "assets/items/weapons/C4_Texture.png");
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
@@ -170,7 +170,7 @@ namespace game
         /// Ground
         _world.addEntity()
             .with<components::Position>(width / 2.f - 0.5f, 0.f, depth / 2.f - 0.5f)
-            .with<game::components::Scale>(1.f)
+            .with<game::components::Scale>(3.f)
             .with<game::components::Color>(raylib::core::Color::WHITE)
             .with<game::components::Model>(
                 raylib::model::Mesh::genCube({_map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f}),
