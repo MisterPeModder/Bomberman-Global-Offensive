@@ -32,8 +32,8 @@ namespace game
         SettingsMenuScene();
 
       private:
-        enum CURRENT_SETTINGS_MENU { GRAPHICS, AUDIO, KEYBINDS, CURRENT_SETTINGS_MENU_SIZE };
-        CURRENT_SETTINGS_MENU _currentSettingsMenu;
+        // enum CURRENT_SETTINGS_MENU { GRAPHICS, AUDIO, KEYBINDS, CURRENT_SETTINGS_MENU_SIZE };
+        // CURRENT_SETTINGS_MENU _currentSettingsMenu;
         // ecs::SystemTag _graphicSettings;
         // ecs::SystemTag _audioSettings;
         // ecs::SystemTag _keybindSettings;
