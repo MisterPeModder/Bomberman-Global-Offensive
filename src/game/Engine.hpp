@@ -38,6 +38,7 @@ namespace game
         /// Runs the game
         void run();
 
+        /// Switch to the waiting scene if it exists and releases the current one
         void switchScene()
         {
             if (_waitingScene) {
