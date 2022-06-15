@@ -12,25 +12,25 @@ msgstr ""
 "lignes\n"
 
 msgid "Graphic"
-msgstr ""
+msgstr "Graphique"
 
 msgid "Audio"
-msgstr ""
+msgstr "Audio"
 
 msgid "Fullscreen"
-msgstr ""
+msgstr "Plein écran"
 
 msgid "Keybinds"
-msgstr ""
+msgstr "Boutons"
 
 msgid "Mute"
-msgstr ""
+msgstr "Muet"
 
 msgid "Resolution"
-msgstr ""
+msgstr "Résolution"
 
 msgid "SETTINGS"
-msgstr ""
+msgstr "PARAMETRES"
 
 msgid "Volume"
-msgstr ""
+msgstr "Volume"
