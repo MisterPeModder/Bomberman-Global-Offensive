@@ -94,12 +94,7 @@ extern "C"
 
 namespace game
 {
-    Game::Game(Parameters params) : _world(), _map(params.mapSize), _params(params), _camera()
-    {
-        _textures[static_cast<size_t>(TextureId::CRATE)].load("assets/map/crate.png");
-        _textures[static_cast<size_t>(TextureId::WALL)].load("assets/map/wall.png");
-        _textures[static_cast<size_t>(TextureId::GROUND)].load("assets/map/ground.png");
-    }
+    Game::Game(Parameters params) : _world(), _map(params.mapSize), _params(params), _camera() {}
 
     const map::Map &Game::getMap() const { return _map; }
 
@@ -147,6 +142,10 @@ namespace game
         _update.add<systems::Movement, systems::ExplodeBomb, systems::ChangeCube, systems::DisableBombNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawBomb, systems::DrawModel, systems::DrawingCube>();
+        /// Load game textures
+        _world.getResource<resources::Textures>().emplace("crate", "assets/map/crate.png");
+        _world.getResource<resources::Textures>().emplace("wall", "assets/map/wall.png");
+        _world.getResource<resources::Textures>().emplace("ground", "assets/map/ground.png");
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
@@ -174,7 +173,7 @@ namespace game
             .with<game::components::Color>(raylib::core::Color::WHITE)
             .with<game::components::Model>(
                 raylib::model::Mesh::genCube({_map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f}),
-                _textures[static_cast<size_t>(TextureId::GROUND)], 0, MATERIAL_MAP_DIFFUSE)
+                _world.getResource<resources::Textures>().get("ground"), 0, MATERIAL_MAP_DIFFUSE)
             .build();
 
         /// Walls, crates
@@ -209,11 +208,11 @@ namespace game
                         (void)builder.with<components::Destructible>()
                             .with<game::components::Color>(raylib::core::Color::BROWN)
                             .with<game::components::Model>(raylib::model::Mesh::genCube({1.0f, 1.0f, 1.0f}),
-                                _textures[static_cast<size_t>(TextureId::CRATE)], 0, MATERIAL_MAP_DIFFUSE);
+                                _world.getResource<resources::Textures>().get("crate"), 0, MATERIAL_MAP_DIFFUSE);
                     } else {
                         (void)builder.with<game::components::Color>(raylib::core::Color::GRAY)
                             .with<game::components::Model>(raylib::model::Mesh::genCube({1.0f, 1.0f, 1.0f}),
-                                _textures[static_cast<size_t>(TextureId::WALL)], 0, MATERIAL_MAP_DIFFUSE);
+                                _world.getResource<resources::Textures>().get("wall"), 0, MATERIAL_MAP_DIFFUSE);
                     }
                     builder.build();
                 }

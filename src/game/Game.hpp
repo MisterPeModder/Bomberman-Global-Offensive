@@ -16,7 +16,6 @@
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Vector2.hpp"
 #include "raylib/core/Vector3.hpp"
-#include "raylib/textures/Texture2D.hpp"
 
 namespace game
 {
@@ -97,7 +96,6 @@ namespace game
         map::Map _map;
         Parameters _params;
         raylib::core::Camera3D _camera;
-        std::array<raylib::textures::Texture2D, static_cast<size_t>(TextureId::COUNT)> _textures;
     };
 } // namespace game
 
