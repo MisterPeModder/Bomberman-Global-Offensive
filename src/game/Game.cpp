@@ -8,11 +8,13 @@
 #include "Game.hpp"
 
 #include "components/Bomb.hpp"
+#include "components/BombNoClip.hpp"
 #include "components/Collidable.hpp"
 #include "components/Controlable.hpp"
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
+#include "components/Identity.hpp"
 #include "components/Living.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
@@ -29,7 +31,10 @@
 #include "raylib/core/Vector3.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
+#include "raylib/textures/Texture2D.hpp"
 
+#include "resources/AssetMap.hpp"
+#include "resources/Engine.hpp"
 #include "resources/Map.hpp"
 
 #include "systems/Bomb.hpp"
@@ -38,10 +43,10 @@
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Movement.hpp"
+#include "systems/NoClip.hpp"
 
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
-#include "resources/Engine.hpp"
 
 #include <cmath>
 
@@ -75,6 +80,7 @@ namespace game
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
+        _world.addResource<resources::Textures>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
         _world.addStorage<game::gui::Widget>();
@@ -86,9 +92,10 @@ namespace game
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
+        _world.addSystem<systems::DisableBombNoClip>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb>();
+        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::DisableBombNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawingCube, systems::DrawBomb>();
 
@@ -106,6 +113,8 @@ namespace game
                 .with<components::Size>(0.7f, 2.f, 0.7f)
                 .with<components::CubeColor>(raylib::core::Color::RED)
                 .with<components::Controlable>(owner, components::Player::handleActionEvent)
+                .with<components::BombNoClip>()
+                .with<components::Identity>()
                 .build();
         }
 
