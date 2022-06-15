@@ -1,5 +1,5 @@
-msgid "Graphic"
-msgstr "Graphique"
+msgid "Graphics"
+msgstr "Graphismes"
 
 msgid "Audio"
 msgstr "Audio"
@@ -8,7 +8,7 @@ msgid "Fullscreen"
 msgstr "Plein écran"
 
 msgid "Keybinds"
-msgstr "Boutons"
+msgstr "Contrôles"
 
 msgid "Mute"
 msgstr "Muet"

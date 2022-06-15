@@ -1,4 +1,4 @@
-msgid "Graphic"
+msgid "Graphics"
 msgstr ""
 
 msgid "Audio"

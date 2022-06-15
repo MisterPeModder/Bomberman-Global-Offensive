@@ -44,7 +44,7 @@ static void loadGraphicSettings(ecs::World &world)
     world.addEntity()
         .with<game::components::Position>(480.f, 100.f)
         .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsGraphic, 40, raylib::core::Color::RED)
+            localization::resources::settings::rsSettingsGraphics, 40, raylib::core::Color::RED)
         .build();
 
     world.addEntity()

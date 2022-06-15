@@ -19,7 +19,7 @@ namespace localization
 
         namespace settings
         {
-            constexpr ResourceString rsSettingsGraphic("Graphic");
+            constexpr ResourceString rsSettingsGraphics("Graphics");
             constexpr ResourceString rsSettingsFullscreen("Fullscreen");
             constexpr ResourceString rsSettingsResolution("Resolution");
 
