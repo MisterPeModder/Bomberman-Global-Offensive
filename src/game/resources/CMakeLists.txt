@@ -3,6 +3,7 @@ set(SRCROOT ${SRCROOT}/resources)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/Engine.hpp
     ${SRCROOT}/AssetMap.hpp
     ${SRCROOT}/Map.hpp
     ${SRCROOT}/RandomDevice.hpp
