@@ -14,6 +14,7 @@
 #include "components/Size.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Entities.hpp"
+#include "game/resources/RandomDevice.hpp"
 #include "util/util.hpp"
 
 namespace game::components
@@ -26,12 +27,14 @@ namespace game::components
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
-        if (util::randInt(0, 99) >= 70)
+        auto &randDevice = data.getResource<game::resources::RandomDevice>();
+
+        if (randDevice.randInt(0, 99) >= 70)
             return false;
         /// To Do: handle item types
         auto &itemsPool = powerUps;
 
-        int rand = util::randInt(0, 99);
+        int rand = randDevice.randInt(0, 99);
         size_t i = 0;
         int current = getItem(itemsPool[i]).dropRate;
 

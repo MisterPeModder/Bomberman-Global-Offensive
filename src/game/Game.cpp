@@ -36,6 +36,7 @@
 
 #include "resources/AssetMap.hpp"
 #include "resources/Map.hpp"
+#include "resources/RandomDevice.hpp"
 
 #include "systems/Bomb.hpp"
 #include "systems/ChangeCube.hpp"
@@ -116,6 +117,7 @@ namespace game
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();
+        _world.addResource<resources::RandomDevice>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
         _world.addStorage<components::ItemIdentifier>();
