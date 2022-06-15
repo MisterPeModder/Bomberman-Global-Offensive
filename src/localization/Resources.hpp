@@ -15,8 +15,6 @@ namespace localization
     /// used to register all project string resources as const @ref ResourceString.
     namespace resources
     {
-        /// Simple hello world.
-        constexpr ResourceString rsHello("Hello, World!");
         constexpr ResourceString rsSettings("SETTINGS");
 
         namespace settings
