@@ -7,6 +7,7 @@
 
 #include "Window.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/textures/Image.hpp"
 
 extern "C"
 {
@@ -45,6 +46,8 @@ namespace raylib
         int Window::getWidth() { return GetScreenWidth(); }
 
         int Window::getHeight() { return GetScreenHeight(); }
+
+        void Window::setIcon(textures::Image const &icon) { SetWindowIcon(icon.asRaylib()); }
 
     } // namespace core
 } // namespace raylib

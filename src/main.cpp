@@ -19,9 +19,12 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/raylib.hpp"
+#include "raylib/textures/Image.hpp"
 
 #include "game/Engine.hpp"
 #include "script/Engine.hpp"
+
+#include "util/util.hpp"
 
 #include <memory>
 
@@ -55,11 +58,17 @@ int main()
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
     localization::Localization::setLocale("fr");
+
     /// Setup Audio for the program
     raylib::core::scoped::AudioDevice audioDevice;
+
     /// Setup the Window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
     raylib::core::Window::setTargetFPS(60);
+#ifndef __EMSCRIPTEN__
+    raylib::textures::Image icon(util::makePath("assets", "icon.png"));
+    raylib::core::Window::setIcon(icon);
+#endif
 
     /// Start the Javascript engine
     std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
