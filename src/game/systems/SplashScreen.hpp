@@ -53,43 +53,42 @@ namespace game::systems
 
             if (timer.elapsed() >= 6)
                 data.getResource<resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
-            for (auto [screenId, entityId] : ecs::join(data.getStorage<components::ScreenId>(), entities)) {
-                if (screenId.screenId < _screenId)
-                    entities.kill(entityId);
-                if (timer.elapsed() >= 3 && _screenId == 0) {
-                    buildRaylibSplash(data);
-                    _screenId = 1;
-                }
-            }
             for (auto [color] : ecs::join(data.getStorage<components::Color>())) {
-                std::cout << timer.elapsed() << " " << static_cast<int>(color.a) << std::endl;
                 if (_screenId == 0) {
                     if (timer.elapsed() < 1.5) {
-                        if (color.a < 255 - colorMoveValue)
+                        if (color.a <= 255 - colorMoveValue)
                             color.a += colorMoveValue;
-                    } else if (color.a > 0 + colorMoveValue)
+                    } else if (color.a >= 0 + colorMoveValue)
                         color.a -= colorMoveValue;
                 } else if (_screenId == 1) {
                     if (timer.elapsed() < 4.5) {
-                        if (color.a < 255 - colorMoveValue)
+                        if (color.a <= 255 - colorMoveValue)
                             color.a += colorMoveValue;
-                    } else if (color.a > 0 + colorMoveValue)
+                    } else if (color.a >= 0 + colorMoveValue)
                         color.a -= colorMoveValue;
                 }
             }
             for (auto [text] : ecs::join(data.getStorage<components::Textual>())) {
                 if (_screenId == 0) {
                     if (timer.elapsed() < 1.5) {
-                        if (text.color.a < 255 - colorMoveValue)
+                        if (text.color.a <= 255 - colorMoveValue)
                             text.color.a += colorMoveValue;
-                    } else if (text.color.a > 0 + colorMoveValue)
+                    } else if (text.color.a >= 0 + colorMoveValue)
                         text.color.a -= colorMoveValue;
                 } else if (_screenId == 1) {
                     if (timer.elapsed() < 4.5) {
-                        if (text.color.a < 255 - colorMoveValue)
+                        if (text.color.a <= 255 - colorMoveValue)
                             text.color.a += colorMoveValue;
-                    } else if (text.color.a > 0 + colorMoveValue)
+                    } else if (text.color.a >= 0 + colorMoveValue)
                         text.color.a -= colorMoveValue;
+                }
+            }
+            for (auto [screenId, entityId] : ecs::join(data.getStorage<components::ScreenId>(), entities)) {
+                if (screenId.screenId < _screenId)
+                    entities.kill(entityId);
+                if (timer.elapsed() >= 3 && _screenId == 0) {
+                    buildRaylibSplash(data);
+                    _screenId = 1;
                 }
             }
         }
