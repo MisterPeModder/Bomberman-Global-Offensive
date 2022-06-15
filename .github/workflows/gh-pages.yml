@@ -1,0 +1,51 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+
+permissions: 
+  contents: write
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  deploy:
+    container: emscripten/emsdk
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake python3
+        sudo apt-get install -y doxygen graphviz rsync
+        sudo apt-get install -y libasound2-dev mesa-common-dev libx11-dev libxrandr-dev libxi-dev xorg-dev libgl1-mesa-dev libglu1-mesa-dev
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Configure CMake
+      run: emcmake cmake -B ./build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build
+      run: cmake --build ./build --config ${{env.BUILD_TYPE}} -j
+
+    - name: Build Documentation
+      run: doxygen
+
+    - name: Setup Install Directory
+      run: |
+        cmake --install ./build --prefix ./install
+        mv ./doc/build/html ./install/web/doc
+        touch ./install/web/.nojekyll
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4.3.3
+      with:
+        github_token: ${{ inputs.github_token }}
+        workspace: .
+        folder: ./install/web
+        message: "Update generated page"
+        branch: gh-pages

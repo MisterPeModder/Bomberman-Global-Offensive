@@ -6,6 +6,7 @@
 */
 
 #include "Item.hpp"
+#include <span>
 #include <stdexcept>
 #include "ItemIdentifier.hpp"
 #include "components/Cube.hpp"
@@ -14,32 +15,35 @@
 #include "components/Size.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Entities.hpp"
-#include "util/util.hpp"
+#include "game/resources/RandomDevice.hpp"
 
 namespace game::components
 {
-    std::vector<Item::Identifier> Item::powerUps = {Item::Identifier::SpeedShoes, Item::Identifier::FireUp};
-    std::vector<Item::Identifier> Item::powerDowns = {Item::Identifier::ChainBall};
-    std::vector<Item::Identifier> Item::activables;
+    std::array<Item::Identifier, Item::POWER_UP_COUNT> Item::powerUps = {
+        Item::Identifier::SpeedShoes, Item::Identifier::FireUp};
+    std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {Item::Identifier::ChainBall};
+    std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables;
 
-    std::vector<Item> Item::items = {SpeedShoes(), FireUp(), ChainBall()};
+    std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes(), FireUp(), ChainBall()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
+        auto &randDevice = data.getResource<game::resources::RandomDevice>();
+
         /// Crate spawn an item ?
-        if (util::randInt(0, 99) >= 70)
+        if (randDevice.randInt(0, 99) >= 70)
             return false;
 
-        /// Which type of item ? (To Do: handle Activables)
-        int rand = util::randInt(0, 99);
-        auto &itemsPool = (rand < 70) ? powerUps : powerDowns;
+        /// Which item type ? (To do: Activable type)
+        auto itemsPool((randDevice.randInt(0, 99) < 70) ? std::span<Identifier, std::dynamic_extent>(powerUps)
+                                                        : std::span<Identifier, std::dynamic_extent>(powerDowns));
 
         /// Which item ?
-        rand = util::randInt(0, 99);
+        int randVal = randDevice.randInt(0, 99);
         size_t i = 0;
         int current = getItem(itemsPool[i]).dropRate;
 
-        while (rand >= current) {
+        while (randVal >= current) {
             ++i;
             if (i >= itemsPool.size())
                 throw std::logic_error("Invalid drop rates.");
