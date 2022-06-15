@@ -60,6 +60,11 @@ namespace game::components
         /// Construct a new Player component
         Player() : placedBombs(0) {}
 
+        /// Pick up an item from the map.
+        ///
+        /// @param self player entity id.
+        /// @param itemId item identifier.
+        /// @param data world data.
         void pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data);
 
       private:

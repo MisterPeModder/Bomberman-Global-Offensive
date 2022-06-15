@@ -16,6 +16,7 @@
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
 #include "game/Game.hpp"
+#include "logger/Logger.hpp"
 
 namespace game::components
 {
@@ -95,6 +96,10 @@ namespace game::components
         if (count >= item.maxStack)
             return;
         ++count;
+        Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
+            out << "Player entity " << self.getId() << " pick up item '" << item.name << "', " << count << "/"
+                << item.maxStack << " in inventory ";
+        });
         if (item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown)
             item.onApply(self, data);
     }

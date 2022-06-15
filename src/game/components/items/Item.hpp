@@ -55,13 +55,19 @@ namespace game::components
         /// @note PowerUp/Down are used on pickup.
         OnApply onApply;
 
-        static std::vector<Identifier> powerUps;
-        static std::vector<Identifier> powerDowns;
-        static std::vector<Identifier> activables;
-        static std::vector<Item> items;
-
+        /// Spawn a random item on a given cell.
+        /// @note Doesn't always spawn an item, follow the item drop rate from crates.
+        ///
+        /// @param data world data.
+        /// @param cell item position.
+        /// @retval true if an item was created.
+        /// @retval false if no item was created.
         static bool spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell);
 
+        /// Get an item from its identifier.
+        ///
+        /// @param identifier item identifier.
+        /// @return const Item& item.
         static const Item &getItem(Identifier identifier);
 
       private:
@@ -69,7 +75,14 @@ namespace game::components
 
         static void spawnItem(Identifier item, ecs::SystemData data, raylib::core::Vector2u cell);
 
+        //////// Items
+        /// Power Ups
         static Item SpeedShoes();
+
+        static std::vector<Identifier> powerUps;
+        static std::vector<Identifier> powerDowns;
+        static std::vector<Identifier> activables;
+        static std::vector<Item> items;
     };
 } // namespace game::components
 

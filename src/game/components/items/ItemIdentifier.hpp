@@ -12,10 +12,14 @@
 
 namespace game::components
 {
+    /// Item identifier component
+    /// @note use @ref Item::getItem() to get the item from the identifier.
     struct ItemIdentifier : public ecs::Component {
       public:
+        /// Item identifier
         Item::Identifier identifier;
 
+        /// Construct a new Item Identifier component
         ItemIdentifier(Item::Identifier pIdentifier) : identifier(pIdentifier) {}
     };
 } // namespace game::components
