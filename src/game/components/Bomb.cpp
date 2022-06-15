@@ -14,6 +14,7 @@
 #include "Size.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
+#include "game/Game.hpp"
 #include "game/resources/Map.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Vector2.hpp"
@@ -56,8 +57,7 @@ namespace game::components
             if ((!destructible && !living && !bomb) || (living && living->hp == 0))
                 continue;
 
-            raylib::core::Vector2u roundedPos2D = {
-                static_cast<unsigned int>(std::round(pos.x)), static_cast<unsigned int>(std::round(pos.z))};
+            raylib::core::Vector2u roundedPos2D = game::Game::worldPosToMapCell(pos);
 
             if (std::find(explodedPositions.begin(), explodedPositions.end(), roundedPos2D) == explodedPositions.end()
                 && (!living || !explodeLiving(pos, size, roundedPos2D, explodedPositions)))

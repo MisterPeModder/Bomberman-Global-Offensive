@@ -6,14 +6,16 @@
 */
 
 #include "Player.hpp"
-#include <cmath>
 #include "Bomb.hpp"
+#include "BombNoClip.hpp"
+#include "Collidable.hpp"
 #include "Identity.hpp"
 #include "Position.hpp"
 #include "Size.hpp"
 #include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
+#include "game/Game.hpp"
 
 namespace game::components
 {
@@ -63,8 +65,8 @@ namespace game::components
         /// Player cannot place more bomb
         if (player.placedBombs >= player.stats.bombLimit)
             return;
-        auto &playerPos = data.getStorage<Position>()[self.getId()];
-        raylib::core::Vector3f placedPos = {std::round(playerPos.x), 0.5f, std::round(playerPos.z)};
+        raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
+        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.5f, static_cast<float>(bombCell.y)};
 
         /// Avoid multiple bombs on the same cell
         for (auto [bombPos, bomb] : ecs::join(data.getStorage<Position>(), data.getStorage<Bomb>())) {
@@ -78,7 +80,9 @@ namespace game::components
             .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id, player.stats.bombRange)
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
+            .with<Collidable>(data.getStorage<Collidable>())
             .build();
+        data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombCell);
         ++player.placedBombs;
     }
 } // namespace game::components
