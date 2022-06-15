@@ -55,8 +55,8 @@ namespace game
 {
     Engine::Engine()
     {
-        std::cout << "eeee" << std::endl;
-        setScene<game::GameScene>();
+        _scene = std::make_unique<GameScene>();
+        _scene->getWorld().addResource<resources::EngineResource>(this);
     }
 
     game::IScene &Engine::getScene() { return *_scene; }

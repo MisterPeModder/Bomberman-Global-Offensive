@@ -29,6 +29,7 @@ namespace game
             _world.runSystems();
         };
         raylib::core::Window::drawFPS(10, 10);
+        _world.getResource<resources::EngineResource>().engine->switchScene();
     }
 
     ecs::World &AScene::getWorld()
