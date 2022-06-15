@@ -23,6 +23,8 @@ namespace game::components
       public:
         /// Function called when item is applied
         using OnApply = std::function<bool(ecs::Entity, ecs::SystemData)>;
+        /// Function called for timed item on timer end
+        using OnTimedOut = std::function<void(ecs::Entity, ecs::SystemData)>;
         /// Item Type.
         enum class Type { PowerUp, PowerDown, Activable };
         /// Item identifiers
@@ -36,6 +38,7 @@ namespace game::components
             ChainBall,
             FireDown,
             BombDown,
+            InvertedControls,
             Count,
         };
 
@@ -63,6 +66,10 @@ namespace game::components
         /// Function called when the player use the item.
         /// @note PowerUp/Down are used on pickup.
         OnApply onApply;
+
+        /// Function called for timed item on timer end
+        /// @note Not used if @c duration is infinite (0).
+        OnTimedOut onTimedOut;
 
         /// Spawn a random item on a given cell.
         /// @note Doesn't always spawn an item, follow the item drop rate from crates.
@@ -94,9 +101,10 @@ namespace game::components
         static Item ChainBall();
         static Item FireDown();
         static Item BombDown();
+        static Item InvertedControls();
 
         static constexpr size_t POWER_UP_COUNT = 4;
-        static constexpr size_t POWER_DOWN_COUNT = 3;
+        static constexpr size_t POWER_DOWN_COUNT = 4;
         static constexpr size_t ACTIVABLE_COUNT = 0;
 
         static std::array<Identifier, POWER_UP_COUNT> powerUps;

@@ -29,14 +29,18 @@ namespace game::components
             size_t bombRange;
             /// Max number of bomb simulteanously placed per player.
             size_t bombLimit;
+            /// If controls are inverted.
+            bool inverted;
 
-            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1) {}
+            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false) {}
         };
 
         /// Occurence of each item in a player inventory
         struct Inventory {
             /// Number of occurence of each item in the inventory.
             std::array<size_t, static_cast<size_t>(Item::Identifier::Count)> items;
+            /// Activated items with a timer.
+            std::vector<std::pair<Item::Identifier, std::chrono::steady_clock::time_point>> timedItems;
 
             Inventory() { items.fill(0); }
 

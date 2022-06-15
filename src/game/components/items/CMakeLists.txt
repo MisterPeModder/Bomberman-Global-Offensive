@@ -8,6 +8,7 @@ set(SRC
     ${SRCROOT}/ChainBall.cpp
     ${SRCROOT}/FireDown.cpp
     ${SRCROOT}/FireUp.cpp
+    ${SRCROOT}/InvertedControls.cpp
     ${SRCROOT}/Item.cpp
     ${SRCROOT}/Item.hpp
     ${SRCROOT}/ItemIdentifier.hpp
