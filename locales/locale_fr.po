@@ -1,4 +1,3 @@
-#Simple hello
 msgid "Hello, World!"
 msgstr "Bonjour, i18n!"
 
@@ -11,3 +10,27 @@ msgstr ""
 "Bonjour en\n"
 "plusieurs\n"
 "lignes\n"
+
+msgid "Graphic"
+msgstr "Graphique"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Fullscreen"
+msgstr "Plein écran"
+
+msgid "Keybinds"
+msgstr "Boutons"
+
+msgid "Mute"
+msgstr "Muet"
+
+msgid "Resolution"
+msgstr "Résolution"
+
+msgid "SETTINGS"
+msgstr "PARAMETRES"
+
+msgid "Volume"
+msgstr "Volume"

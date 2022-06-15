@@ -7,6 +7,7 @@
 
 #include "game/Engine.hpp"
 #include "game/scenes/GameScene.hpp"
+#include "game/scenes/SettingsMenuScene.hpp"
 #include "raylib/core/Window.hpp"
 
 #pragma region Browser Events

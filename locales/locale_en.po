@@ -8,3 +8,27 @@ msgid ""
 "multiple\n"
 "lines\n"
 msgstr ""
+
+msgid "Graphic"
+msgstr ""
+
+msgid "Audio"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Keybinds"
+msgstr ""
+
+msgid "Mute"
+msgstr ""
+
+msgid "Resolution"
+msgstr ""
+
+msgid "SETTINGS"
+msgstr ""
+
+msgid "Volume"
+msgstr ""
