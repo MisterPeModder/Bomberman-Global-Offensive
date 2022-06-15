@@ -31,6 +31,7 @@ namespace game::components
             SpeedShoes,
             FireUp,
             BombUp,
+            KickShoes,
             /// Power Down
             ChainBall,
             Count,
@@ -86,10 +87,11 @@ namespace game::components
         static Item SpeedShoes();
         static Item FireUp();
         static Item BombUp();
+        static Item KickShoes();
         /// Power Downs
         static Item ChainBall();
 
-        static constexpr size_t POWER_UP_COUNT = 3;
+        static constexpr size_t POWER_UP_COUNT = 4;
         static constexpr size_t POWER_DOWN_COUNT = 1;
         static constexpr size_t ACTIVABLE_COUNT = 0;
 

@@ -30,7 +30,7 @@ namespace game::components
             /// Max number of bomb simulteanously placed per player.
             size_t bombLimit;
 
-            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(2) {}
+            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1) {}
         };
 
         /// Occurence of each item in a player inventory

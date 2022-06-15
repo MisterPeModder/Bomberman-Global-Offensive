@@ -3,7 +3,7 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman
 ** File description:
-** Fire Up
+** Bomb Up
 */
 
 #include "Item.hpp"

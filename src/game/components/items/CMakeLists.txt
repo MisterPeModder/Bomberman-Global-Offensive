@@ -9,6 +9,7 @@ set(SRC
     ${SRCROOT}/Item.cpp
     ${SRCROOT}/Item.hpp
     ${SRCROOT}/ItemIdentifier.hpp
+    ${SRCROOT}/KickShoes.cpp
     ${SRCROOT}/SpeedShoes.cpp
     PARENT_SCOPE)
 
