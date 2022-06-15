@@ -17,13 +17,13 @@ namespace game
 {
     class GameScene : public AScene {
       public:
-        GameScene() : _game(_world) { _game.setup(); }
+        GameScene() : _game(_world, game::Game::Parameters(2)) { _game.setup(); }
+
+        GameScene(game::Game::Parameters parameters) : _game(_world, parameters) { _game.setup(); }
 
         ~GameScene() = default;
 
-        void setCamera(raylib::core::Camera3D &camera) override final { _game.setCamera(camera); }
-
-        void drawFrame(const raylib::core::Camera3D &camera) override final { _game.drawFrame(camera); }
+        void drawFrame() override final { _game.drawFrame(); }
 
       private:
         Game _game;
