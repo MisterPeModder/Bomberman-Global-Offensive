@@ -44,7 +44,6 @@ namespace util
     /// @return false If the file couldn't be opened or if the @c handleValue function returned false for an element.
     bool loadConfigFile(
         const std::filesystem::path &path, const std::function<bool(std::string_view, std::string_view)> &handleValue);
-
 } // namespace util
 
 #endif /* !BOMBERMAN_UTILS_HPP_ */

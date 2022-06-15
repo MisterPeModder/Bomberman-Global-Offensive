@@ -16,6 +16,7 @@
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
 #include "game/Game.hpp"
+#include "logger/Logger.hpp"
 
 namespace game::components
 {
@@ -84,5 +85,22 @@ namespace game::components
             .build();
         data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombCell);
         ++player.placedBombs;
+    }
+
+    void Player::pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data)
+    {
+        const Item &item = Item::getItem(itemId);
+        auto &count = inventory.items[static_cast<size_t>(itemId)];
+
+        /// Can't get more of this item
+        if (count >= item.maxStack)
+            return;
+        ++count;
+        Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
+            out << "Player entity " << self.getId() << " pick up item '" << item.name << "', " << count << "/"
+                << item.maxStack << " in inventory ";
+        });
+        if (item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown)
+            item.onApply(self, data);
     }
 } // namespace game::components

@@ -20,6 +20,12 @@ namespace game::resources
     /// Game engine resource.
     struct EngineResource : public ecs::Resource {
         /// Pointer to the engine.
+        ///
+        /// The game::Engine instance is allocated at the beginning of the game and lives for the whole lifetime of the
+        /// program.
+        ///
+        /// It needs to be allocated on the heap by itself, since it is passed as the parameter of
+        /// emscriptem_set_main_loop_arg.
         game::Engine *engine;
 
         /// Construct a new Engine resource.
