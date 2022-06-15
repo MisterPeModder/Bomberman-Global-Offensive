@@ -48,11 +48,11 @@ namespace util
 
     /// Generate a random number in the interval [min, max]
     ///
-    /// @tparam numeral type of the numbers.
+    /// @tparam numeric type of the numbers.
     /// @param min minimum value.
     /// @param max maximum value.
-    /// @return numeral value in the interval [min, max]
-    template <typename numeral> numeral randInt(numeral min, numeral max)
+    /// @return numeric value in the interval [min, max]
+    template <typename numeric> numeric randInt(numeric min, numeric max)
     {
         std::random_device rd;
         std::mt19937 gen(rd());

@@ -18,11 +18,11 @@
 
 namespace game::components
 {
-    std::vector<Item::Identifier> Item::powerUps = {Item::Identifier::SpeedShoes};
-    std::vector<Item::Identifier> Item::powerDowns;
-    std::vector<Item::Identifier> Item::activables;
+    std::array<Item::Identifier, Item::POWER_UP_COUNT> Item::powerUps = {Item::Identifier::SpeedShoes};
+    std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns;
+    std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables;
 
-    std::vector<Item> Item::items = {SpeedShoes()};
+    std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
