@@ -12,6 +12,7 @@ set(SRC
     ${SRCROOT}/Collision.hpp
     ${SRCROOT}/Collision.cpp
     ${SRCROOT}/DrawingCube.hpp
+    ${INCROOT}/DrawSelectedWidget.hpp
     ${SRCROOT}/DrawText.hpp
     ${SRCROOT}/DrawText.cpp
     ${SRCROOT}/InputManager.hpp

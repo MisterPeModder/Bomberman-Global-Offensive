@@ -30,6 +30,7 @@
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
+#include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
@@ -224,6 +225,7 @@ static void loadSettingsMenuScene(ecs::World &world)
 {
     world.addSystem<game::systems::InputManager>();
     world.addSystem<game::systems::DrawText>();
+    world.addSystem<game::systems::DrawSelectedWidget>();
 
     loadGraphicSettings(world);
     loadAudioSettings(world);
@@ -241,6 +243,7 @@ namespace game
     {
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::InputManager>();
+        _global2D.add<game::systems::DrawSelectedWidget>();
 
         _world.addResource<game::Users>();
 
