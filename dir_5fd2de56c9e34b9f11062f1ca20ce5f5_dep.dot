@@ -9,5 +9,5 @@ digraph "src/game/resources" {
   dir_982fd39ee1731a8b580daaa875541184 [shape=box label="map" fillcolor="white" style="filled" color="red" URL="dir_982fd39ee1731a8b580daaa875541184.html"];
   dir_ddca5f149c4ce13074f28b270e950ba9 [shape=box label="ecs" fillcolor="white" style="filled" color="red" URL="dir_ddca5f149c4ce13074f28b270e950ba9.html"];
   dir_5fd2de56c9e34b9f11062f1ca20ce5f5->dir_982fd39ee1731a8b580daaa875541184 [headlabel="1", labeldistance=1.5 headhref="dir_000019_000017.html"];
-  dir_5fd2de56c9e34b9f11062f1ca20ce5f5->dir_ddca5f149c4ce13074f28b270e950ba9 [headlabel="1", labeldistance=1.5 headhref="dir_000019_000001.html"];
+  dir_5fd2de56c9e34b9f11062f1ca20ce5f5->dir_ddca5f149c4ce13074f28b270e950ba9 [headlabel="2", labeldistance=1.5 headhref="dir_000019_000001.html"];
 }

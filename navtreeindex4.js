@@ -1,5 +1,17 @@
 var NAVTREEINDEX4 =
 {
+"classraylib_1_1core_1_1_gamepad.html#af7d567dcb7307fc1dc1facec5115fdfa":[2,0,4,0,5,15],
+"classraylib_1_1core_1_1_gamepad.html#afba88a8847febfafcb4b1340b2445ea4":[2,0,4,0,5,7],
+"classraylib_1_1core_1_1_keyboard.html":[2,0,4,0,6],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90":[2,0,4,0,6,0],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0123827c03dce5d07ebd43bd649a1073":[2,0,4,0,6,0,86],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a02129bb861061d1a052c592e2dc6b383":[2,0,4,0,6,0,41],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0454988b6250b7e13d8e9222e118c127":[2,0,4,0,6,0,47],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0c2629e56daed25c9df918961d0cc03f":[2,0,4,0,6,0,44],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0d61f8370cad1d412f80b84d143e1257":[2,0,4,0,6,0,20],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0f82d86afa0f5dc965c5c15aca58dcfb":[2,0,4,0,6,0,8],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a17de1e647789892e1fb512bf04db4866":[2,0,4,0,6,0,102],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a180bb5e381e316e2246b88c92770ee75":[2,0,4,0,6,0,11],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1a9c94725005bc4759507db8acc8da33":[2,0,4,0,6,0,99],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1dd26f1f1790f0b56d5752fb0fbecef0":[2,0,4,0,6,0,106],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1faf42f2823f184eb2c9f0dffe5d73f2":[2,0,4,0,6,0,73],
@@ -237,17 +249,5 @@ var NAVTREEINDEX4 =
 "classraylib_1_1shapes_1_1_circle.html#aa41e23b2830ccd7e98b51da0ef50cc58":[2,0,4,2,1,1],
 "classraylib_1_1shapes_1_1_circle.html#ae93b284aca398836326bae8587bb13c3":[2,0,4,2,1,12],
 "classraylib_1_1shapes_1_1_circle.html#aed0d6c3f251dd1728379f8c72f6551fa":[2,0,4,2,1,4],
-"classraylib_1_1shapes_1_1_circle.html#afe96620f9993b25731b82f956f124367":[2,0,4,2,1,10],
-"classraylib_1_1shapes_1_1_cone.html":[2,0,4,2,2],
-"classraylib_1_1shapes_1_1_cone.html#a04e223e9f7af87c2c90d75f927112963":[2,0,4,2,2,5],
-"classraylib_1_1shapes_1_1_cone.html#a10d107593ceaba7c941a96f445bcf28e":[2,0,4,2,2,16],
-"classraylib_1_1shapes_1_1_cone.html#a161ba9bbfd020596cfb0555836203e37":[2,0,4,2,2,10],
-"classraylib_1_1shapes_1_1_cone.html#a2de6ab37613f6bdd3d8caea092016a2f":[2,0,4,2,2,1],
-"classraylib_1_1shapes_1_1_cone.html#a4623509566bb61637f2f1ccfb6e07aa6":[2,0,4,2,2,2],
-"classraylib_1_1shapes_1_1_cone.html#a4a246379a3c4d469b523f2ad89ad62c7":[2,0,4,2,2,6],
-"classraylib_1_1shapes_1_1_cone.html#a5025ea394ac0fd09966370c982e058b4":[2,0,4,2,2,7],
-"classraylib_1_1shapes_1_1_cone.html#a51f85dba8a06f1b79df7ed7f248c9324":[2,0,4,2,2,4],
-"classraylib_1_1shapes_1_1_cone.html#a5c238f7936a4ec33571181ff3d95b4dc":[2,0,4,2,2,13],
-"classraylib_1_1shapes_1_1_cone.html#a66d6af3b5f3712745b88cd5d55359a62":[2,0,4,2,2,8],
-"classraylib_1_1shapes_1_1_cone.html#a6886e6c2a28683ac96b6f1da33150b01":[2,0,4,2,2,14]
+"classraylib_1_1shapes_1_1_circle.html#afe96620f9993b25731b82f956f124367":[2,0,4,2,1,10]
 };

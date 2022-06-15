@@ -118,6 +118,7 @@ var hierarchy =
     [ "ecs::Resource", "classecs_1_1_resource.html", [
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
       [ "ecs::Timer", "classecs_1_1_timer.html", null ],
+      [ "game::resources::AssetMap< T >", "classgame_1_1resources_1_1_asset_map.html", null ],
       [ "game::resources::Map", "structgame_1_1resources_1_1_map.html", null ],
       [ "game::Users", "classgame_1_1_users.html", null ]
     ] ],

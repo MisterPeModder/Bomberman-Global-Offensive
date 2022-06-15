@@ -155,5 +155,6 @@ digraph "src/raylib/core/Vector2.hpp"
   Node98 [label="src/raylib/textures\l/Texture2D.hpp",height=0.2,width=0.4,color="red", fillcolor="white", style="filled",URL="$raylib_2textures_2_texture2_d_8hpp.html",tooltip=" "];
   Node98 -> Node99 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node99 [label="src/game/components\l/Texture2D.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game_2components_2_texture2_d_8hpp.html",tooltip=" "];
+  Node98 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node98 -> Node45 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
