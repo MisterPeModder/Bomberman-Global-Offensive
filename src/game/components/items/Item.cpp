@@ -6,6 +6,7 @@
 */
 
 #include "Item.hpp"
+#include <span>
 #include <stdexcept>
 #include "ItemIdentifier.hpp"
 #include "components/Cube.hpp"
@@ -20,25 +21,30 @@
 namespace game::components
 {
     std::array<Item::Identifier, Item::POWER_UP_COUNT> Item::powerUps = {Item::Identifier::SpeedShoes};
-    std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns;
+    std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {Item::Identifier::ChainBall};
     std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables;
 
-    std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes()};
+    std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes(), ChainBall()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
         auto &randDevice = data.getResource<game::resources::RandomDevice>();
 
+        /// Crate spawn an item ?
         if (randDevice.randInt(0, 99) >= 70)
             return false;
-        /// To Do: handle item types
-        auto &itemsPool = powerUps;
 
-        int rand = randDevice.randInt(0, 99);
+        /// Which item type ? (To do: Activable type)
+        int randVal = randDevice.randInt(0, 99);
+        auto itemsPool((randVal < 70) ? std::span<Identifier, std::dynamic_extent>(powerUps)
+                                      : std::span<Identifier, std::dynamic_extent>(powerDowns));
+
+        /// Which item ?
+        randVal = randDevice.randInt(0, 99);
         size_t i = 0;
         int current = getItem(itemsPool[i]).dropRate;
 
-        while (rand >= current) {
+        while (randVal >= current) {
             ++i;
             if (i >= itemsPool.size())
                 throw std::logic_error("Invalid drop rates.");
@@ -52,12 +58,15 @@ namespace game::components
 
     void Item::spawnItem(Identifier identifier, ecs::SystemData data, raylib::core::Vector2u cell)
     {
+        size_t id = static_cast<size_t>(identifier);
+
         data.getResource<ecs::Entities>()
             .builder()
             .with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
             .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 0.5f, static_cast<float>(cell.y))
             .with<Size>(data.getStorage<Size>(), 0.4f, 0.4f, 0.4f)
-            .with<components::CubeColor>(data.getStorage<CubeColor>(), raylib::core::Color::YELLOW)
+            .with<components::CubeColor>( /// Different color based on identifier waiting for models
+                data.getStorage<CubeColor>(), raylib::core::Color(127 * (id % 3), 127 * (id / 3), 127 * (id / 9)))
             .with<components::Cube>(data.getStorage<Cube>())
             .build();
     }
