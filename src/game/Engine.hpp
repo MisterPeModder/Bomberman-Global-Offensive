@@ -35,8 +35,16 @@ namespace game
         /// Gets the immutable active scene
         const game::IScene &getScene() const;
 
+        /// Enables/disables the debug mode.
+        ///
+        /// When enabled, extra information will be displayed on screen, such as the game FPS counter.
+        ///
+        /// @param value @c true to enable, @c false to disable.
         void setDebugMode(bool value) noexcept;
 
+        /// @see Engine::setDebugMode()
+        ///
+        /// @returns Whether the debug mode is enabled.
         bool getDebugMode() const noexcept;
 
         /// Switch to the waiting scene if it exists and releases the current one

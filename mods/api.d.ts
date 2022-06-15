@@ -12,7 +12,11 @@ interface Game {
     /** The game screen height, in pixels. */
     height: number
 
-    /** Debug mode, disabled by default. */
+    /**
+     * Debug mode, disabled by default.
+     * 
+     * When enabled, extra information will be displayed on screen, such as the game FPS counter.
+    */
     debugMode: boolean
 
     /**
