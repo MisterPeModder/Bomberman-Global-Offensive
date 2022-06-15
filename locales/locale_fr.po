@@ -1,16 +1,3 @@
-msgid "Hello, World!"
-msgstr "Bonjour, i18n!"
-
-# Multiple lines hello
-msgid ""
-"Hello in\n"
-"multiple\n"
-"lines\n"
-msgstr ""
-"Bonjour en\n"
-"plusieurs\n"
-"lignes\n"
-
 msgid "Graphic"
 msgstr "Graphique"
 
