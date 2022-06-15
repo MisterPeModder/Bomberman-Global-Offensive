@@ -15,7 +15,7 @@ namespace game::components
     {
         Item bombDown;
 
-        bombDown.type = Item::Type::PowerUp;
+        bombDown.type = Item::Type::PowerDown;
         bombDown.identifier = Item::Identifier::BombDown;
         bombDown.maxStack = 0;
         bombDown.name = "Bomb Down";

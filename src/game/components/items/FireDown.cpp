@@ -15,7 +15,7 @@ namespace game::components
     {
         Item fireDown;
 
-        fireDown.type = Item::Type::PowerUp;
+        fireDown.type = Item::Type::PowerDown;
         fireDown.identifier = Item::Identifier::FireDown;
         fireDown.maxStack = 0;
         fireDown.name = "Fire Down";

@@ -4,6 +4,7 @@ set(SRCROOT ${SRCROOT}/items)
 set(SRC
     ${SRC}
     ${SRCROOT}/BombUp.cpp
+    ${SRCROOT}/BombDown.cpp
     ${SRCROOT}/ChainBall.cpp
     ${SRCROOT}/FireDown.cpp
     ${SRCROOT}/FireUp.cpp
