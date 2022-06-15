@@ -9,10 +9,12 @@
 #define CREATEMAP_HPP_
 
 #include "game/map/Map.hpp"
+
 #include "game/components/Color.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Scale.hpp"
+
 #include "game/systems/Model.hpp"
 
 #include "raylib/model/Mesh.hpp"

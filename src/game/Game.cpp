@@ -9,14 +9,20 @@
 
 #include "components/Bomb.hpp"
 #include "components/Collidable.hpp"
+#include "components/Color.hpp"
 #include "components/Controlable.hpp"
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Identity.hpp"
 #include "components/Living.hpp"
+#include "components/Model.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
+#include "components/RotationAngle.hpp"
+#include "components/RotationAxis.hpp"
+#include "components/Scale.hpp"
+#include "components/Size.hpp"
 #include "components/Velocity.hpp"
 
 #include "ecs/Storage.hpp"
@@ -38,6 +44,7 @@
 #include "systems/Collision.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
+#include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 
 #include <cmath>
@@ -114,19 +121,23 @@ namespace game
         /// Add world storages
         _world.addStorage<components::Bomb>();
         _world.addStorage<game::gui::Widget>();
+        _world.addStorage<components::Size>();
+        _world.addStorage<components::RotationAngle>();
+        _world.addStorage<components::RotationAxis>();
         /// Add world systems
+        _world.addSystem<game::systems::DrawModel>();
         _world.addSystem<systems::InputManager>();
-        _world.addSystem<systems::ChangeCube>();
-        _world.addSystem<systems::DrawingCube>();
+        // _world.addSystem<systems::ChangeCube>();
+        // _world.addSystem<systems::DrawingCube>();
         _world.addSystem<systems::Movement>();
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
         /// Setup world systems tags
-        _handleInputs.add<systems::InputManager>();
-        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb>();
+         _handleInputs.add<systems::InputManager>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawingCube, systems::DrawBomb>();
+        // _update.add<systems::Movement, systems::ExplodeBomb>();
+        _drawing.add<systems::DrawBomb>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
@@ -138,7 +149,7 @@ namespace game
                 .with<components::Living>(_params.livesCount)
                 .with<components::Collidable>()
                 .with<components::Player>()
-                .with<components::Cube>()
+               // .with<components::Cube>()
                 .with<components::Size>(0.7f, 2.f, 0.7f)
                 .with<components::CubeColor>(raylib::core::Color::RED)
                 .with<components::Controlable>(owner, components::Player::handleActionEvent)
@@ -146,12 +157,28 @@ namespace game
                 .build();
         }
 
+        raylib::textures::Texture2D texture_crate("assets/map/crate.png");
+        raylib::model::Mesh mesh_crate = mesh_crate.genCube({1.0f, 1.0f, 1.0f});
+        raylib::model::Model model_crate(mesh_crate);
+
+        raylib::textures::Texture2D texture_ground("assets/map/ground.png");
+        raylib::model::Mesh mesh_ground = mesh_ground.genCube({_map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f});
+        raylib::model::Model model_ground(mesh_ground);
+
+        raylib::textures::Texture2D texture_wall("assets/map/wall.png");
+        raylib::model::Mesh mesh_wall = mesh_wall.genCube({1.0f, 1.0f, 1.0f});
+        raylib::model::Model model_wall(mesh_wall);
+
+        model_ground.setMaterialMapTexture(texture_ground, 0, MATERIAL_MAP_DIFFUSE);
+        model_wall.setMaterialMapTexture(texture_wall, 0, MATERIAL_MAP_DIFFUSE);
+        model_crate.setMaterialMapTexture(texture_crate, 0, MATERIAL_MAP_DIFFUSE);
+
         /// Ground
         _world.addEntity()
             .with<components::Position>(width / 2.f - 0.5f, 0.f, depth / 2.f - 0.5f)
-            .with<components::Size>(static_cast<float>(width), 0.1f, static_cast<float>(depth))
-            .with<components::CubeColor>(raylib::core::Color::RAY_WHITE)
-            .with<components::Cube>()
+            .with<game::components::Scale>(1.f)
+            .with<game::components::Color>(raylib::core::Color::YELLOW)
+            .with<game::components::Model>(model_ground)
             .build();
 
         /// Walls, crates
@@ -180,11 +207,16 @@ namespace game
                     (void)builder.with<components::Position>(x, 0.5f, z)
                         .with<components::Collidable>()
                         .with<components::Wall>()
-                        .with<components::Cube>()
-                        .with<components::Size>(1.f, 1.f, 1.f)
-                        .with<components::CubeColor>(color);
-                    if (destructible)
+                        .with<game::components::Scale>(1.f);
+                    if (destructible) {
                         (void)builder.with<components::Destructible>();
+                        (void)builder.with<game::components::Color>(raylib::core::Color::BROWN);
+                        (void)builder.with<game::components::Model>(model_crate);
+                    }
+                    if (!destructible) {
+                        (void)builder.with<game::components::Model>(model_wall);
+                        (void)builder.with<game::components::Color>(raylib::core::Color::BLACK);
+                    }
                     builder.build();
                 }
             }

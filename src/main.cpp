@@ -54,8 +54,10 @@ static void runGame()
 {
     game::Game::Parameters gameParams(2);
 
-#ifdef __EMSCRIPTEN__
-    auto game = new game::Game(gameParams);
+#if defined(PLATFORM_WEB)
+    // We cannot use the WindowShouldClose() loop on the web,
+    // since there is no such thing as a window.
+    emscripten_set_main_loop_arg(&drawFrame, params, 0, 1);
 #else
     auto game = std::make_unique<game::Game>(gameParams);
 #endif
