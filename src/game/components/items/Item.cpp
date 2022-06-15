@@ -47,7 +47,7 @@ namespace game::components
         while (randVal >= current) {
             ++i;
             if (i >= itemsPool.size())
-                throw std::logic_error("Invalid ddrop rates.");
+                throw std::logic_error("Invalid drop rates.");
             current += getItem(itemsPool[i]).dropRate;
         }
         spawnItem(itemsPool[i], data, cell);
