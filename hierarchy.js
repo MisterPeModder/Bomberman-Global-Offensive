@@ -37,6 +37,7 @@ var hierarchy =
       [ "game::components::Cube", "structgame_1_1components_1_1_cube.html", null ],
       [ "game::components::CubeColor", "structgame_1_1components_1_1_cube_color.html", null ],
       [ "game::components::Destructible", "structgame_1_1components_1_1_destructible.html", null ],
+      [ "game::components::Identity", "structgame_1_1components_1_1_identity.html", null ],
       [ "game::components::Image", "structgame_1_1components_1_1_image.html", null ],
       [ "game::components::Living", "structgame_1_1components_1_1_living.html", null ],
       [ "game::components::Model", "structgame_1_1components_1_1_model.html", null ],

@@ -21,6 +21,10 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
       [ "CubeColor", "structgame_1_1components_1_1_cube_color.html", "structgame_1_1components_1_1_cube_color" ]
     ] ],
     [ "Destructible.hpp", "_destructible_8hpp.html", "_destructible_8hpp" ],
+    [ "Identity.cpp", "_identity_8cpp.html", null ],
+    [ "Identity.hpp", "_identity_8hpp.html", [
+      [ "Identity", "structgame_1_1components_1_1_identity.html", "structgame_1_1components_1_1_identity" ]
+    ] ],
     [ "Image.hpp", "game_2components_2_image_8hpp.html", [
       [ "Image", "structgame_1_1components_1_1_image.html", "structgame_1_1components_1_1_image" ]
     ] ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a291554596c183e837f0a6bec3767c891":[2,0,4,0,6,0,67],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2cfe3b4f9911c5899d79f171d6b9cc4a":[2,0,4,0,6,0,105],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2d0bfa737eccfce7842cd2230eed6712":[2,0,4,0,6,0,91],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a30808a0391df7790292aa5c13f6195e4":[2,0,4,0,6,0,103],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a324bf1f059b99e2882bc1d567080d8ed":[2,0,4,0,6,0,64],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a32f68a60cef40faedbc6af20298c1a1e":[2,0,4,0,6,0,54],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a331b3100a485d8cacff1d3df8e9b0c13":[2,0,4,0,6,0,50],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "classraylib_1_1shapes_1_1_cone.html#af7f781d23acd402f32d2897e81209512":[2,0,4,2,2,3],
 "classraylib_1_1shapes_1_1_cone.html#afd90045d53aee6af240c4775b70db1b0":[2,0,4,2,2,12],
 "classraylib_1_1shapes_1_1_cone.html#afe697948792c3eacbdb2ec497af2828a":[2,0,4,2,2,15],
-"classraylib_1_1shapes_1_1_cube.html":[2,0,4,2,3],
-"classraylib_1_1shapes_1_1_cube.html#a051b3c91675ceec3041e16b22c35ea15":[2,0,4,2,3,4],
-"classraylib_1_1shapes_1_1_cube.html#a0c3ba40f503c5ec3f8a8d31c5006e17c":[2,0,4,2,3,2],
-"classraylib_1_1shapes_1_1_cube.html#a3c933431e577f3dd7b492ca9e11ed182":[2,0,4,2,3,3],
-"classraylib_1_1shapes_1_1_cube.html#a4716c359444cf0dccec5a536e6b793cd":[2,0,4,2,3,8]
+"classraylib_1_1shapes_1_1_cube.html":[2,0,4,2,3]
 };

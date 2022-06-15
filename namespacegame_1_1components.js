@@ -8,6 +8,7 @@ var namespacegame_1_1components =
     [ "Cube", "structgame_1_1components_1_1_cube.html", "structgame_1_1components_1_1_cube" ],
     [ "CubeColor", "structgame_1_1components_1_1_cube_color.html", "structgame_1_1components_1_1_cube_color" ],
     [ "Destructible", "structgame_1_1components_1_1_destructible.html", "structgame_1_1components_1_1_destructible" ],
+    [ "Identity", "structgame_1_1components_1_1_identity.html", "structgame_1_1components_1_1_identity" ],
     [ "Image", "structgame_1_1components_1_1_image.html", "structgame_1_1components_1_1_image" ],
     [ "Living", "structgame_1_1components_1_1_living.html", "structgame_1_1components_1_1_living" ],
     [ "Model", "structgame_1_1components_1_1_model.html", "structgame_1_1components_1_1_model" ],
