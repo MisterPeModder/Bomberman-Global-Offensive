@@ -31,6 +31,7 @@
 #include "raylib/core/Vector3.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
+#include "raylib/textures/Texture2D.hpp"
 
 #include "resources/AssetMap.hpp"
 #include "resources/Map.hpp"

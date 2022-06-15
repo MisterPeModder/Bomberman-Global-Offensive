@@ -10,9 +10,13 @@
 
 #include <string>
 #include "ecs/resource/Resource.hpp"
-#include "raylib/textures/Texture2D.hpp"
 #include <string_view>
 #include <unordered_map>
+
+namespace raylib::textures
+{
+    class Texture2D;
+}
 
 namespace game::resources
 {
