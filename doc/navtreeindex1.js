@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"_resource_string_8hpp.html#ac2e6d472f0ee933c365353a1d8eb64e7":[3,0,0,2,6,1],
+"_resource_string_8hpp_source.html":[3,0,0,2,6],
 "_resources_8hpp.html":[3,0,0,2,4],
 "_resources_8hpp.html#a5b48c51945127b268e0f961945480a8f":[3,0,0,2,4,0],
 "_resources_8hpp_source.html":[3,0,0,2,4],
@@ -30,8 +32,8 @@ var NAVTREEINDEX1 =
 "_sound_8cpp_source.html":[3,0,0,4,0,14],
 "_sound_8hpp.html":[3,0,0,4,0,15],
 "_sound_8hpp_source.html":[3,0,0,4,0,15],
-"_speed_shoes_8cpp.html":[3,0,0,1,0,0,3],
-"_speed_shoes_8cpp_source.html":[3,0,0,1,0,0,3],
+"_speed_shoes_8cpp.html":[3,0,0,1,0,0,4],
+"_speed_shoes_8cpp_source.html":[3,0,0,1,0,0,4],
 "_sphere_8cpp.html":[3,0,0,4,2,12],
 "_sphere_8cpp_source.html":[3,0,0,4,2,12],
 "_sphere_8hpp.html":[3,0,0,4,2,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "classbmjs_1_1_registry_guard.html#a1e7f9692aee04fe740afcfb3f9013e9d":[2,0,0,3,2],
 "classbmjs_1_1_registry_guard.html#a3e35b3815c8350b3bdd247fafe729a10":[2,0,0,3,5],
 "classbmjs_1_1_registry_guard.html#a7aaad0b3effc95709adc1e4e1e2d81df":[2,0,0,3,3],
-"classbmjs_1_1_registry_guard.html#a9064e5a27f41b55eef82218a6cb84f6a":[2,0,0,3,1],
-"classbmjs_1_1_registry_guard.html#a9185b16d50e8a3c3a6315fe3142f1e9b":[2,0,0,3,0],
-"classbmjs_1_1_registry_guard.html#a9a7469cf25b5c787dc11019ff6c46dd9":[2,0,0,3,6]
+"classbmjs_1_1_registry_guard.html#a9064e5a27f41b55eef82218a6cb84f6a":[2,0,0,3,1]
 };

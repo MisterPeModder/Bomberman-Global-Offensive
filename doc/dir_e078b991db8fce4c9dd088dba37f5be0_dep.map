@@ -1,7 +1,7 @@
 <map id="src/game/components/items" name="src/game/components/items">
 <area shape="rect" id="node1" href="dir_e078b991db8fce4c9dd088dba37f5be0.html" title="items" alt="" coords="117,52,189,100"/>
 <area shape="rect" id="node2" href="dir_5fd2de56c9e34b9f11062f1ca20ce5f5.html" title="resources" alt="" coords="5,148,91,196"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000015_000017.html" title="1" alt="" coords="88,135,98,149"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000015_000017.html" title="2" alt="" coords="88,135,98,149"/>
 <area shape="rect" id="node3" href="dir_b7878ad5ecbf2506f4125b9d34c97e45.html" title="util" alt="" coords="105,340,177,388"/>
 <area shape="rect" id="edge4-headlabel" href="dir_000015_000027.html" title="1" alt="" coords="153,316,162,331"/>
 <area shape="rect" id="node4" href="dir_ddca5f149c4ce13074f28b270e950ba9.html" title="ecs" alt="" coords="69,244,141,292"/>
