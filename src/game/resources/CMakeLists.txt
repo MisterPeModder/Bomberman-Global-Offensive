@@ -3,9 +3,10 @@ set(SRCROOT ${SRCROOT}/resources)
 
 set (SRC
 	${SRC}
+    ${SRCROOT}/AssetMap.hpp
 	${SRCROOT}/Engine.hpp
-	${SRCROOT}/Map.hpp
-	PARENT_SCOPE)
+    ${SRCROOT}/Map.hpp
+    PARENT_SCOPE)
 
 set(INCDIRS
 	${INCDIRS}
