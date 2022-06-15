@@ -19,9 +19,9 @@
 
 namespace game::systems
 {
-    /// Drawing cube system
+    /// Draw selected widget system
     struct DrawSelectedWidget : public ecs::System {
-        /// Draws all the cubes.
+        /// Draw the selected widget
         void run(ecs::SystemData data) override final
         {
             for (auto [widget, pos] :

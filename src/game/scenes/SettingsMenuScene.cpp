@@ -43,12 +43,14 @@ static void loadGraphicSettings(ecs::World &world)
 {
     world.addEntity()
         .with<game::components::Position>(480.f, 100.f)
-        .with<game::components::Textual>(localization::resources::settings::rsSettingsGraphic, 40, raylib::core::Color::RED)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsGraphic, 40, raylib::core::Color::RED)
         .build();
 
     world.addEntity()
         .with<game::components::Position>(500.f, 200.f)
-        .with<game::components::Textual>(localization::resources::settings::rsSettingsFullscreen, 20, raylib::core::Color::RED)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsFullscreen, 20, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::VOLUME_MUTE,
             game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::SettingsMenuScene::RES_2, true)
@@ -73,7 +75,8 @@ static void loadGraphicSettings(ecs::World &world)
 
     world.addEntity()
         .with<game::components::Position>(500.f, 300.f)
-        .with<game::components::Textual>(localization::resources::settings::rsSettingsResolution, 20, raylib::core::Color::RED)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsResolution, 20, raylib::core::Color::RED)
         .build();
 
     world.addEntity()
@@ -138,12 +141,14 @@ static void loadAudioSettings(ecs::World &world)
 {
     world.addEntity()
         .with<game::components::Position>(150.f, 100.f)
-        .with<game::components::Textual>(localization::resources::settings::rsSettingsAudio, 40, raylib::core::Color::BLUE)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsAudio, 40, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
         .with<game::components::Position>(170.f, 200.f)
-        .with<game::components::Textual>(localization::resources::settings::rsSettingsMute, 20, raylib::core::Color::BLUE)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsMute, 20, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_MUTE, game::gui::Widget::NullTag,
             game::SettingsMenuScene::FULLSCREEN, game::gui::Widget::NullTag, game::SettingsMenuScene::VOLUME_50)
@@ -162,7 +167,8 @@ static void loadAudioSettings(ecs::World &world)
 
     world.addEntity()
         .with<game::components::Position>(170.f, 300.f)
-        .with<game::components::Textual>(localization::resources::settings::rsSettingsVolume, 20, raylib::core::Color::BLUE)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsVolume, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
@@ -246,7 +252,8 @@ static void loadKeybindSettings(ecs::World &world)
 {
     world.addEntity()
         .with<game::components::Position>(800.f, 100.f)
-        .with<game::components::Textual>(localization::resources::settings::rsSettingsKeybinds, 40, raylib::core::Color::GREEN)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsKeybinds, 40, raylib::core::Color::GREEN)
         .build();
 }
 
