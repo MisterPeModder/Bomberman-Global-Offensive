@@ -8,6 +8,7 @@
 #include "Game.hpp"
 
 #include "components/Bomb.hpp"
+#include "components/BombNoClip.hpp"
 #include "components/Collidable.hpp"
 #include "components/Color.hpp"
 #include "components/Controlable.hpp"
@@ -46,8 +47,7 @@
 #include "systems/InputManager.hpp"
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
-
-#include <cmath>
+#include "systems/NoClip.hpp"
 
 #pragma region Browser Events
 #ifdef __EMSCRIPTEN__
@@ -138,10 +138,11 @@ namespace game
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
+        _world.addSystem<systems::DisableBombNoClip>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
+        _update.add<systems::Movement, systems::ExplodeBomb, systems::ChangeCube, systems::DisableBombNoClip>();
         _resolveCollisions.add<systems::Collision>();
-        _update.add<systems::Movement, systems::ExplodeBomb, systems::ChangeCube>();
         _drawing.add<systems::DrawBomb, systems::DrawModel, systems::DrawingCube>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
@@ -158,6 +159,7 @@ namespace game
                 .with<components::Size>(0.7f, 2.f, 0.7f)
                 .with<components::CubeColor>(raylib::core::Color::RED)
                 .with<components::Controlable>(owner, components::Player::handleActionEvent)
+                .with<components::BombNoClip>()
                 .with<components::Identity>()
                 .build();
         }

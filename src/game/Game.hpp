@@ -9,11 +9,13 @@
 #define GAME_GAME_HPP_
 
 #include <array>
+#include <cmath>
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "map/Map.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Vector2.hpp"
+#include "raylib/core/Vector3.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
 namespace game
@@ -79,8 +81,12 @@ namespace game
         /// Start of the main event loop.
         void run();
 
-      private:
+        constexpr static raylib::core::Vector2u worldPosToMapCell(raylib::core::Vector3f pos)
+        {
+            return {static_cast<unsigned int>(std::round(pos.x)), static_cast<unsigned int>(std::round(pos.z))};
+        }
 
+      private:
         enum class TextureId { CRATE, WALL, GROUND, COUNT };
 
         ecs::SystemTag _drawing;
@@ -92,9 +98,6 @@ namespace game
         Parameters _params;
         raylib::core::Camera3D _camera;
         std::array<raylib::textures::Texture2D, static_cast<size_t>(TextureId::COUNT)> _textures;
-        // raylib::textures::Texture2D _texture_crate;
-        // raylib::textures::Texture2D _texture_wall;
-        // raylib::textures::Texture2D _texture_ground;
     };
 } // namespace game
 
