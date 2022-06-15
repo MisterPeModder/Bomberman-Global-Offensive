@@ -18,7 +18,7 @@
 extern "C"
 {
     /// Emscripten main loop callback
-    static void Game_drawFrame(void *userData)
+    static void Engine_drawFrame(void *userData)
     {
         game::Engine *engine = reinterpret_cast<game::Engine *>(userData);
         engine->getScene().getWorld();
@@ -27,7 +27,7 @@ extern "C"
     }
 
     /// Emscripten window resize event
-    static EM_BOOL Game_onResize([[maybe_unused]] int eventType, [[maybe_unused]] EmscriptenUiEvent const *event,
+    static EM_BOOL Engine_onResize([[maybe_unused]] int eventType, [[maybe_unused]] EmscriptenUiEvent const *event,
         [[maybe_unused]] void *userData)
     {
         raylib::core::Vector2<double> newSize;
@@ -38,12 +38,12 @@ extern "C"
     }
 
     /// Emscriten fullscreen state change event
-    static EM_BOOL Game_onFullscreenChange(
+    static EM_BOOL Engine_onFullscreenChange(
         [[maybe_unused]] int eventType, EmscriptenFullscreenChangeEvent const *event, [[maybe_unused]] void *userData)
     {
         if (!event->isFullscreen) {
             raylib::core::Window::setSize(1, 1);
-            Game_onResize(EMSCRIPTEN_EVENT_FULLSCREENCHANGE, nullptr, nullptr);
+            Engine_onResize(EMSCRIPTEN_EVENT_FULLSCREENCHANGE, nullptr, nullptr);
         }
         return EM_FALSE;
     }
@@ -67,15 +67,15 @@ namespace game
     void Engine::run()
     {
 #ifdef __EMSCRIPTEN__
-        emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, nullptr, EM_FALSE, &Game_onResize);
-        Game_onResize(EMSCRIPTEN_EVENT_RESIZE, nullptr, nullptr);
+        emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, nullptr, EM_FALSE, &Engine_onResize);
+        Engine_onResize(EMSCRIPTEN_EVENT_RESIZE, nullptr, nullptr);
 
         emscripten_set_fullscreenchange_callback(
-            EMSCRIPTEN_EVENT_TARGET_WINDOW, nullptr, EM_FALSE, &Game_onFullscreenChange);
+            EMSCRIPTEN_EVENT_TARGET_WINDOW, nullptr, EM_FALSE, &Engine_onFullscreenChange);
 
         // We cannot use the WindowShouldClose() loop on the web,
         // since there is no such thing as a window.
-        emscripten_set_main_loop_arg(&Game_drawFrame, reinterpret_cast<void *>(this), 0, 1);
+        emscripten_set_main_loop_arg(&Engine_drawFrame, reinterpret_cast<void *>(this), 0, 1);
 #else
         while (!raylib::core::Window::shouldClose()) {
             _scene->drawFrame();
