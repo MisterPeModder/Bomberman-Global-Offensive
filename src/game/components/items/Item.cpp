@@ -19,19 +19,23 @@
 namespace game::components
 {
     std::vector<Item::Identifier> Item::powerUps = {Item::Identifier::SpeedShoes};
-    std::vector<Item::Identifier> Item::powerDowns;
+    std::vector<Item::Identifier> Item::powerDowns = {Item::Identifier::ChainBall};
     std::vector<Item::Identifier> Item::activables;
 
-    std::vector<Item> Item::items = {SpeedShoes()};
+    std::vector<Item> Item::items = {SpeedShoes(), ChainBall()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
+        /// Crate spawn an item ?
         if (util::randInt(0, 99) >= 70)
             return false;
-        /// To Do: handle item types
-        auto &itemsPool = powerUps;
 
+        /// Which type of item ? (To Do: handle Activables)
         int rand = util::randInt(0, 99);
+        auto &itemsPool = (rand < 70) ? powerUps : powerDowns;
+
+        /// Which item ?
+        rand = util::randInt(0, 99);
         size_t i = 0;
         int current = getItem(itemsPool[i]).dropRate;
 
@@ -49,12 +53,15 @@ namespace game::components
 
     void Item::spawnItem(Identifier identifier, ecs::SystemData data, raylib::core::Vector2u cell)
     {
+        size_t id = static_cast<size_t>(identifier);
+
         data.getResource<ecs::Entities>()
             .builder()
             .with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
             .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 0.5f, static_cast<float>(cell.y))
             .with<Size>(data.getStorage<Size>(), 0.4f, 0.4f, 0.4f)
-            .with<components::CubeColor>(data.getStorage<CubeColor>(), raylib::core::Color::YELLOW)
+            .with<components::CubeColor>( /// Different color based on identifier waiting for models
+                data.getStorage<CubeColor>(), raylib::core::Color(127 * (id % 3), 127 * (id / 3), 127 * (id / 9)))
             .with<components::Cube>(data.getStorage<Cube>())
             .build();
     }

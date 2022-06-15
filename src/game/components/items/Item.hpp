@@ -26,7 +26,10 @@ namespace game::components
         enum class Type { PowerUp, PowerDown, Activable };
         /// Item identifiers
         enum class Identifier {
+            /// Power Up
             SpeedShoes,
+            /// Power Down
+            ChainBall,
             Count,
         };
 
@@ -78,6 +81,8 @@ namespace game::components
         //////// Items
         /// Power Ups
         static Item SpeedShoes();
+        /// Power Downs
+        static Item ChainBall();
 
         static std::vector<Identifier> powerUps;
         static std::vector<Identifier> powerDowns;
