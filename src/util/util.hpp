@@ -10,7 +10,6 @@
 
 #include <filesystem>
 #include <functional>
-#include <random>
 #include <string_view>
 
 namespace util
@@ -45,22 +44,6 @@ namespace util
     /// @return false If the file couldn't be opened or if the @c handleValue function returned false for an element.
     bool loadConfigFile(
         const std::filesystem::path &path, const std::function<bool(std::string_view, std::string_view)> &handleValue);
-
-    /// Generate a random number in the interval [min, max]
-    ///
-    /// @tparam numeral type of the numbers.
-    /// @param min minimum value.
-    /// @param max maximum value.
-    /// @return numeral value in the interval [min, max]
-    template <typename numeral> numeral randInt(numeral min, numeral max)
-    {
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<std::mt19937::result_type> dist(min, max);
-
-        return dist(gen);
-    }
-
 } // namespace util
 
 #endif /* !BOMBERMAN_UTILS_HPP_ */

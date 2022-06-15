@@ -32,3 +32,22 @@ if(BUILD_TEST_SUITE)
 
     add_subdirectory(tests)
 endif()
+
+# Copy the Web files (html/js/wasm/...) into the web directory on install
+if(EMSCRIPTEN)
+    install(
+        FILES ${PROJECT_BINARY_DIR}/src/bomberman.html
+        CONFIGURATIONS Release
+        DESTINATION web
+        RENAME index.html
+    )
+
+    install(
+        FILES
+        ${PROJECT_BINARY_DIR}/src/bomberman.data
+        ${PROJECT_BINARY_DIR}/src/bomberman.js
+        ${PROJECT_BINARY_DIR}/src/bomberman.wasm
+        CONFIGURATIONS Release
+        DESTINATION web
+    )
+endif()

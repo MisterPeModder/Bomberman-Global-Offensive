@@ -8,12 +8,13 @@
 #ifndef GAME_COMPONENTS_ITEMS_ITEM_HPP_
 #define GAME_COMPONENTS_ITEMS_ITEM_HPP_
 
+#include <array>
 #include <chrono>
 #include <functional>
-#include <vector>
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
 #include "ecs/System.hpp"
+#include "game/resources/RandomDevice.hpp"
 #include "raylib/core/Vector2.hpp"
 
 namespace game::components
@@ -76,6 +77,23 @@ namespace game::components
       private:
         Item(){};
 
+        template <size_t N>
+        static Identifier selectItemFromPool(
+            const std::array<Identifier, N> &itemPool, game::resources::RandomDevice &randDevice)
+        {
+            int randVal = randDevice.randInt(0, 99);
+            size_t i = 0;
+            int current = getItem(itemPool[i]).dropRate;
+
+            while (randVal >= current) {
+                ++i;
+                if (i >= itemPool.size())
+                    throw std::logic_error("Invalid ddrop rates.");
+                current += getItem(itemPool[i]).dropRate;
+            }
+            return itemPool[i];
+        }
+
         static void spawnItem(Identifier item, ecs::SystemData data, raylib::core::Vector2u cell);
 
         //////// Items
@@ -84,10 +102,14 @@ namespace game::components
         /// Power Downs
         static Item ChainBall();
 
-        static std::vector<Identifier> powerUps;
-        static std::vector<Identifier> powerDowns;
-        static std::vector<Identifier> activables;
-        static std::vector<Item> items;
+        static constexpr size_t POWER_UP_COUNT = 1;
+        static constexpr size_t POWER_DOWN_COUNT = 1;
+        static constexpr size_t ACTIVABLE_COUNT = 0;
+
+        static std::array<Identifier, POWER_UP_COUNT> powerUps;
+        static std::array<Identifier, POWER_DOWN_COUNT> powerDowns;
+        static std::array<Identifier, ACTIVABLE_COUNT> activables;
+        static std::array<Item, static_cast<size_t>(Identifier::Count)> items;
     };
 } // namespace game::components
 
