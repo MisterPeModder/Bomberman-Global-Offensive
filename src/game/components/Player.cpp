@@ -114,9 +114,10 @@ namespace game::components
     {
         if (inventory.timedItems.empty())
             return;
-        size_t i = inventory.timedItems.size() - 1;
+        size_t i = inventory.timedItems.size();
 
         do {
+            --i;
             auto &pair = inventory.timedItems[i];
             auto &item = Item::getItem(pair.first);
 
@@ -124,7 +125,6 @@ namespace game::components
                 item.onTimedOut(self, data);
                 inventory.timedItems.erase(inventory.timedItems.begin() + i);
             }
-            --i;
         } while (i != 0);
     }
 } // namespace game::components
