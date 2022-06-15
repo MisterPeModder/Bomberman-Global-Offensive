@@ -162,15 +162,14 @@ namespace game
                 .build();
         }
 
-        raylib::model::Mesh mesh_crate = raylib::model::Mesh::genCube({1.0f, 1.0f, 1.0f});
-        raylib::model::Mesh mesh_wall = raylib::model::Mesh::genCube({1.0f, 1.0f, 1.0f});
-
         /// Ground
         _world.addEntity()
             .with<components::Position>(width / 2.f - 0.5f, 0.f, depth / 2.f - 0.5f)
             .with<game::components::Scale>(1.f)
             .with<game::components::Color>(raylib::core::Color::WHITE)
-            .with<game::components::Model>(raylib::model::Mesh::genCube({_map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f}),  _textures[static_cast<size_t>(TextureId::GROUND)], 0, MATERIAL_MAP_DIFFUSE)
+            .with<game::components::Model>(
+                raylib::model::Mesh::genCube({_map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f}),
+                _textures[static_cast<size_t>(TextureId::GROUND)], 0, MATERIAL_MAP_DIFFUSE)
             .build();
 
         /// Walls, crates
@@ -202,13 +201,14 @@ namespace game
                         .with<game::components::Scale>(1.f)
                         .with<components::Size>(1.f, 1.f, 1.f);
                     if (destructible) {
-                        (void)builder.with<components::Destructible>();
-                        (void)builder.with<game::components::Color>(raylib::core::Color::BROWN);
-                        (void)builder.with<game::components::Model>(mesh_crate,  _textures[static_cast<size_t>(TextureId::CRATE)], 0, MATERIAL_MAP_DIFFUSE);
-                    }
-                    else {
-                        (void)builder.with<game::components::Color>(raylib::core::Color::GRAY);
-                        (void)builder.with<game::components::Model>(mesh_wall,  _textures[static_cast<size_t>(TextureId::WALL)], 0, MATERIAL_MAP_DIFFUSE);
+                        (void)builder.with<components::Destructible>()
+                            .with<game::components::Color>(raylib::core::Color::BROWN)
+                            .with<game::components::Model>(raylib::model::Mesh::genCube({1.0f, 1.0f, 1.0f}),
+                                _textures[static_cast<size_t>(TextureId::CRATE)], 0, MATERIAL_MAP_DIFFUSE);
+                    } else {
+                        (void)builder.with<game::components::Color>(raylib::core::Color::GRAY)
+                            .with<game::components::Model>(raylib::model::Mesh::genCube({1.0f, 1.0f, 1.0f}),
+                                _textures[static_cast<size_t>(TextureId::WALL)], 0, MATERIAL_MAP_DIFFUSE);
                     }
                     builder.build();
                 }
