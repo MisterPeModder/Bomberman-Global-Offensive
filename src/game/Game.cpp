@@ -19,6 +19,7 @@
 #include "components/Player.hpp"
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
+#include "components/items/ItemIdentifier.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Timer.hpp"
@@ -35,12 +36,14 @@
 
 #include "resources/AssetMap.hpp"
 #include "resources/Map.hpp"
+#include "resources/RandomDevice.hpp"
 
 #include "systems/Bomb.hpp"
 #include "systems/ChangeCube.hpp"
 #include "systems/Collision.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
+#include "systems/Items.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
 
@@ -114,8 +117,10 @@ namespace game
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();
+        _world.addResource<resources::RandomDevice>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
+        _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
         /// Add world systems
         _world.addSystem<systems::InputManager>();
@@ -125,10 +130,12 @@ namespace game
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
+        _world.addSystem<systems::PickupItem>();
         _world.addSystem<systems::DisableBombNoClip>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::DisableBombNoClip>();
+        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
+            systems::DisableBombNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawingCube, systems::DrawBomb>();
 

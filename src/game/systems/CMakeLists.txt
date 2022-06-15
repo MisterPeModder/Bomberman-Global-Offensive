@@ -16,6 +16,8 @@ set(SRC
     ${SRCROOT}/DrawText.cpp
     ${SRCROOT}/InputManager.hpp
     ${SRCROOT}/InputManager.cpp
+    ${SRCROOT}/Items.cpp
+    ${SRCROOT}/Items.hpp
     ${SRCROOT}/Movement.hpp
     ${SRCROOT}/Movement.cpp
     PARENT_SCOPE)

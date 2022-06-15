@@ -5,6 +5,7 @@ set(SRC
     ${SRC}
     ${SRCROOT}/AssetMap.hpp
     ${SRCROOT}/Map.hpp
+    ${SRCROOT}/RandomDevice.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
