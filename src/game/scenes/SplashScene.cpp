@@ -73,4 +73,4 @@ namespace game
 
         loadSplashScene(_world);
     }
-}
+} // namespace game
