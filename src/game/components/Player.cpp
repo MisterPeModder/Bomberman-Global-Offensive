@@ -15,7 +15,15 @@
 #include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
+#include "raylib/model/Mesh.hpp"
+#include "raylib/model/Model.hpp"
+#include "game/components/Scale.hpp"
+#include "game/components/Color.hpp"
+#include "game/components/Model.hpp"
+#include "game/components/RotationAngle.hpp"
+#include "game/components/RotationAxis.hpp"
 #include "game/Game.hpp"
+#include "game/resources/AssetMap.hpp"
 
 namespace game::components
 {
@@ -39,7 +47,7 @@ namespace game::components
         float highestActionValue = 0.f;
 
         for (size_t j = static_cast<size_t>(GameAction::MOVE_LEFT); j <= static_cast<size_t>(GameAction::MOVE_DOWN);
-             j++) {
+            j++) {
             GameAction current = static_cast<GameAction>(j);
             if (user.getActionValue(current) > highestActionValue) {
                 bestAction = current;
@@ -75,14 +83,21 @@ namespace game::components
                 return;
         }
 
-        data.getResource<ecs::Entities>()
+        auto bomb = data.getResource<ecs::Entities>()
             .builder()
             .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id, player.stats.bombRange)
+            //.with<Scale>(data.getStorage<Scale>(), 1.f)
+            .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
+            .with<Model>(data.getStorage<Model>(), "assets/items/c4.iqm")
             .with<Position>(data.getStorage<Position>(), placedPos)
-            .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
+            .with<Size>(data.getStorage<Size>(), .3f, .3f, .3f)
             .with<Collidable>(data.getStorage<Collidable>())
+            .with<RotationAngle>(data.getStorage<RotationAngle>(), 0.0f)
+            .with<RotationAxis>(data.getStorage<RotationAxis>(), 0.f, 0.f, 0.f)
             .build();
+        data.getStorage<Model>()[bomb.getId()].setMaterialMapTexture(data.getResource<resources::Textures>().get("C4"), 0, MATERIAL_MAP_DIFFUSE);
         data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombCell);
+
         ++player.placedBombs;
     }
 } // namespace game::components

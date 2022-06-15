@@ -146,6 +146,7 @@ namespace game
         _world.getResource<resources::Textures>().emplace("crate", "assets/map/crate.png");
         _world.getResource<resources::Textures>().emplace("wall", "assets/map/wall.png");
         _world.getResource<resources::Textures>().emplace("ground", "assets/map/ground.png");
+        _world.getResource<resources::Textures>().emplace("C4", "assets/items/C4_Texture.png");
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
