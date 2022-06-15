@@ -1,0 +1,8 @@
+<map id="ecs::MarkerStorage&lt; C &gt;" name="ecs::MarkerStorage&lt; C &gt;">
+<area shape="rect" id="node1" title="&quot;Storage&quot; for marker&#45;like components, does not store any data except for which entities have the mark..." alt="" coords="148,184,335,211"/>
+<area shape="rect" id="node2" href="$classecs_1_1_storage.html" title="used to declare a virtual destructor on all Storage implementations." alt="" coords="10,95,113,121"/>
+<area shape="rect" id="node3" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="137,95,228,121"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="232,5,320,32"/>
+<area shape="rect" id="node6" title=" " alt="" coords="338,95,377,121"/>
+</map>

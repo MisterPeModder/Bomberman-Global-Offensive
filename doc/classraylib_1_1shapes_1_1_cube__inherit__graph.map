@@ -1,0 +1,5 @@
+<map id="raylib::shapes::Cube" name="raylib::shapes::Cube">
+<area shape="rect" id="node1" title="3D shape representing a cube." alt="" coords="22,80,177,107"/>
+<area shape="rect" id="node3" href="$structgame_1_1components_1_1_cube.html" title="Cube component." alt="" coords="5,155,193,181"/>
+<area shape="rect" id="node2" href="$classraylib_1_1shapes_1_1_a_shape.html" title=" " alt="" coords="14,5,185,32"/>
+</map>

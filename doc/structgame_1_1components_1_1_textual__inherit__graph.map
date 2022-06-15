@@ -1,0 +1,4 @@
+<map id="game::components::Textual" name="game::components::Textual">
+<area shape="rect" id="node1" title="Textual element." alt="" coords="5,80,208,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="43,5,170,32"/>
+</map>

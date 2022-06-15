@@ -1,0 +1,5 @@
+<map id="game::components::Model" name="game::components::Model">
+<area shape="rect" id="node1" title=" " alt="" coords="54,80,249,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node3" href="$classraylib_1_1model_1_1_model.html" title="The Model class ; it shouldn&#39;t be created multiple times for the same file." alt="" coords="156,5,312,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="game::gui::Clickable" name="game::gui::Clickable">
+<area shape="rect" id="node1" title="Clickable component." alt="" coords="561,64,716,91"/>
+<area shape="rect" id="node2" href="$classgame_1_1gui_1_1_i_widget_component.html" title="Base class for all widgets components." alt="" coords="181,5,401,32"/>
+<area shape="rect" id="node3" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/utility/functional/function.html" title=" " alt="" coords="218,57,365,98"/>
+<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/utility/functional/function.html" title=" " alt="" coords="215,122,368,163"/>
+</map>

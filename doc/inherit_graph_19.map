@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classecs_1_1_storage.html" title="used to declare a virtual destructor on all Storage implementations." alt="" coords="5,31,108,57"/>
+<area shape="rect" id="node2" href="$classecs_1_1_map_storage.html" title="Map&#45;based component storage." alt="" coords="165,5,334,32"/>
+<area shape="rect" id="node3" href="$classecs_1_1_marker_storage.html" title="&quot;Storage&quot; for marker&#45;like components, does not store any data except for which entities have the mark..." alt="" coords="156,56,343,83"/>
+</map>

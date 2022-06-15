@@ -1,0 +1,6 @@
+<map id="game::components::Textual" name="game::components::Textual">
+<area shape="rect" id="node1" title="Textual element." alt="" coords="123,229,326,256"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,73,132,99"/>
+<area shape="rect" id="node3" href="$structraylib_1_1core_1_1_color.html" title="The Color struct that encapsulates the raylib Color struct." alt="" coords="156,73,293,99"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html" title=" " alt="" coords="423,73,509,99"/>
+</map>

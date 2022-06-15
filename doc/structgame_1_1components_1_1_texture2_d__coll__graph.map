@@ -1,0 +1,5 @@
+<map id="game::components::Texture2D" name="game::components::Texture2D">
+<area shape="rect" id="node1" title=" " alt="" coords="47,80,269,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node3" title=" " alt="" coords="156,5,339,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="raylib::core::Color" name="raylib::core::Color">
+<area shape="rect" id="node1" title="The Color struct that encapsulates the raylib Color struct." alt="" coords="146,5,283,32"/>
+<area shape="rect" id="node2" href="$structgame_1_1components_1_1_color.html" title=" " alt="" coords="5,80,195,107"/>
+<area shape="rect" id="node3" href="$structgame_1_1components_1_1_cube_color.html" title="Cube color component." alt="" coords="219,80,442,107"/>
+</map>

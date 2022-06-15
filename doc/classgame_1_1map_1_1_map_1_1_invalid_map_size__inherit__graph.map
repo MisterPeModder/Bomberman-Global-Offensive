@@ -1,0 +1,4 @@
+<map id="game::map::Map::InvalidMapSize" name="game::map::Map::InvalidMapSize">
+<area shape="rect" id="node1" title="Exception thrown when the map size is invalid." alt="" coords="5,80,244,107"/>
+<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/error/logic_error.html" title=" " alt="" coords="65,5,184,32"/>
+</map>

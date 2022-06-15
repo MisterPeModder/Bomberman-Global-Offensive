@@ -1,0 +1,5 @@
+<map id="raylib::shapes::Cylinder" name="raylib::shapes::Cylinder">
+<area shape="rect" id="node1" title="3D Cylinder shape, basically just a Cone with the same base and top radius" alt="" coords="5,155,180,181"/>
+<area shape="rect" id="node2" href="$classraylib_1_1shapes_1_1_cone.html" title="3D Cone shape. Can be used as a cylinder when base and top radius are equal (See Cylinder shape)." alt="" coords="15,80,170,107"/>
+<area shape="rect" id="node3" href="$classraylib_1_1shapes_1_1_a_shape.html" title=" " alt="" coords="7,5,178,32"/>
+</map>

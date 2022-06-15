@@ -1,8 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
- // LATEX_PDF_SIZE
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node0 [label="game::map::cellular\l::Rule",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classgame_1_1map_1_1cellular_1_1_rule.html",tooltip="Cellular automata rule, representing of form B[0-9]+/S[0-9]+ Where B stands for Birth,..."];
-}

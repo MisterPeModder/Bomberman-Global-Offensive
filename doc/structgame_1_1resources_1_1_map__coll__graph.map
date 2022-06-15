@@ -1,0 +1,7 @@
+<map id="game::resources::Map" name="game::resources::Map">
+<area shape="rect" id="node1" title="Game map resource." alt="" coords="5,184,172,211"/>
+<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="11,95,123,121"/>
+<area shape="rect" id="node3" href="$classgame_1_1map_1_1_map.html" title="Bomberman Map." alt="" coords="148,95,280,121"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="24,5,199,32"/>
+<area shape="rect" id="node5" href="$structraylib_1_1core_1_1_vector2.html" title="The Vector2 struct (compatible with the raylib Vector2)" alt="" coords="223,5,413,32"/>
+</map>

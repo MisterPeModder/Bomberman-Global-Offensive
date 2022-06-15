@@ -1,0 +1,323 @@
+"use strict"
+
+/**
+ * @file Very basic mod example.
+ */
+
+/// <reference path="api.d.ts" />
+
+game.addMod({
+    name: 'Hello',
+    description: 'Very basic mod example',
+
+    onLoad: function (mod) {
+        mod.log('The basic mod is loading...');
+
+        // :see_no_evil:
+        game.sv_cheats = 1;
+
+        mod.log('The basic mod has loaded, enjoy!');
+    },
+    onUnload: function (mod) {
+        mod.warn('The basic mod has unloaded :(');
+    }
+});
+
+game.addMod({
+    name: 'Secondary',
+    description: 'The second mod, for testing',
+
+    onLoad: function (mod) {
+        mod.log('Loading mod #' + mod.id);
+    },
+    onUnload: function (mod) {
+        mod.log('Unloading mod #' + mod.id);
+    }
+});
+/**
+ * @file Bomberman Modding API Definitions (ES5-compatible).
+ */
+
+interface Game {
+    /** Set this to a non-zero value to enable cheat mode. */
+    sv_cheats: number
+
+    /** The game screen width, in pixels. */
+    width: number
+
+    /** The game screen height, in pixels. */
+    height: number
+
+    /**
+     * Prints a message using the game's logging facility.
+     * 
+     * @param message The message to print.
+     */
+    log(message: string): void
+
+    /**
+     * Prints a message to the error output.
+     * 
+     * @param message The message to print.
+     */
+    error(message: string): void
+
+    /**
+     * Prints a message to the warning output.
+     * 
+     * @param message The message to print.
+     */
+    warn(message: string): void
+
+    /**
+     * Prints a message to the debug output.
+     * 
+     * @param message The message to print.
+     */
+    debug(message: string): void
+
+    /**
+     * Registers a new mod.
+     * 
+     * @param mod The mod to register.
+     */
+    addMod(mod: ModDefinition): void
+}
+
+/** Game global variable. */
+declare var game: Game;
+
+/** Mod declaration data. */
+interface ModDefinition {
+    /** The name of the mod, required. */
+    name: string,
+    /** The description of the mod, required. */
+    description: string,
+
+    /** A function to call when the mod gets initialized, optional. */
+    onLoad?: (mod: Mod) => void,
+
+    /** A function to call when the mod gets unloaded, optional. */
+    onUnload?: (mod: Mod) => void,
+}
+
+/** Mod instance. */
+interface Mod {
+    /** The mod's id. */
+    id: number,
+
+    /**
+     * Prints a message in the mod's logger.
+     * 
+     * @param message The message to print.
+     */
+    log(message: string): void
+
+    /**
+     * Prints a message in the mod's error logger.
+     * 
+     * @param message The message to print.
+     */
+    error(message: string): void
+
+    /**
+     * Prints a message in the mod's warning logger.
+     * 
+     * @param message The message to print.
+     */
+    warn(message: string): void
+
+    /**
+     * Prints a message in the mod's debug logger.
+     * 
+     * @param message The message to print.
+     */
+    debug(message: string): void
+}
+"use strict"
+
+/**
+ * @file Bomberman Modding API (ES5-compatible).
+ * 
+ * Refer to the 'api.d.ts' file for more information.
+ */
+
+/// <reference path="api.d.ts" />
+
+/** @type {Game} */
+var game;
+
+(function (game) {
+    /**
+     * Result of the typeof expression.
+     * 
+     * @typedef {'boolean' | 'function' | 'number' | 'object' | 'string' } TypeofResult
+     */
+
+
+    /**
+     * Adds a read-only property called `name` to the `object`.
+     * 
+     * @param {Object} object 
+     * @param {string} name 
+     * @param {*} value 
+     */
+    function readOnly(object, name, value) {
+        Object.defineProperty(object, name, {
+            value: value,
+            writable: false
+        });
+    }
+
+    /**
+     * Checks the type of given argument, or throws if it doesn't match the `type` parameter.
+     * 
+     * @param {string} funcName The name of the function, used in the generated exception.
+     * @param {number} index
+     * @param {TypeofResult} type The type 
+     * @param {*} arg The argument to check
+     */
+    function checkArg(funcName, index, type, arg) {
+        if (typeof arg !== type)
+            throw funcName + ' expected argument of type ' + type + ' at index ' + index;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    Object.defineProperty(game, 'sv_cheats', {
+        get: function () { return bm.common.getCVar('sv_cheats'); },
+        set: function (value) { bm.common.setCVar('sv_cheats', Number(value)); }
+    });
+
+    Object.defineProperty(game, 'width', {
+        get: function () { return bm.common.getWidth(); },
+        set: function (value) {
+            checkArg('game.width', 0, 'number', value);
+            bm.common.setWidth(Number(value));
+        }
+    });
+    Object.defineProperty(game, 'height', {
+        get: function () { return bm.common.getHeight(); },
+        set: function (value) {
+            checkArg('game.height', 0, 'number', value);
+            bm.common.setHeight(Number(value));
+        }
+    });
+
+    readOnly(game, 'log', function (msg) { bm.common.log(String(msg)); });
+    readOnly(game, 'error', function (msg) { bm.common.error(String(msg)); });
+    readOnly(game, 'warn', function (msg) { bm.common.warn(String(msg)); });
+    readOnly(game, 'debug', function (msg) { bm.common.debug(String(msg)); });
+
+    game.addMod = function (/** @type {ModDefinition} */ modDef) {
+        /** @type {Mod} */
+        var mod = {};
+
+        if (!('name' in modDef) || modDef.name == null)
+            throw 'Missing mod name';
+        if (!('description' in modDef) || modDef.description == null)
+            throw 'Missing mod description';
+
+        // Define the read-only properties of the mod object
+        readOnly(mod, 'id', bm.mods.create(String(modDef.name), String(modDef.description)));
+
+        readOnly(mod, 'log', function (message) { bm.mods.log(mod.id, String(message)); });
+        readOnly(mod, 'error', function (message) { bm.mods.error(mod.id, String(message)); });
+        readOnly(mod, 'warn', function (message) { bm.mods.warn(mod.id, String(message)); });
+        readOnly(mod, 'debug', function (message) { bm.mods.debug(mod.id, String(message)); });
+
+        if ('onLoad' in modDef && typeof modDef.onLoad === 'function') {
+            bm.mods.setLoadCallback(mod.id, function () {
+                modDef.onLoad(mod);
+            });
+        }
+        if ('onUnload' in modDef && typeof modDef.onUnload === 'function') {
+            bm.mods.setUnloadCallback(mod.id, function () {
+                modDef.onUnload(mod);
+            });
+        }
+
+        bm.mods.enable(mod.id);
+    }
+
+    game.callMeBack = bm.common.callMeBack;
+})(game || (game = {}));
+#Simple hello
+msgid "Hello, World!"
+msgstr ""
+
+# Multiple lines hello
+msgid ""
+"Hello in\n"
+"multiple\n"
+"lines\n"
+msgstr ""
+#Simple hello
+msgid "Hello, World!"
+msgstr "Bonjour, i18n!"
+
+# Multiple lines hello
+msgid ""
+"Hello in\n"
+"multiple\n"
+"lines\n"
+msgstr ""
+"Bonjour en\n"
+"plusieurs\n"
+"lignes\n"
+# Profile of player 1
+
+name=Player 2
+
+# Keyboard bindings, move: keyboard arrows, place bomb: SPACE
+key:4=8
+key:32=5
+key:80=6
+key:257=7
+key:262=3
+key:263=1
+key:264=4
+key:265=2
+
+# Gamepad bindings
+gamepad:1=2
+gamepad:2=3
+gamepad:3=4
+gamepad:4=1
+gamepad:6=8
+gamepad:7=7
+gamepad:13=6
+gamepad:14=6
+gamepad:15=6
+gamepad:0:1=1
+gamepad:0:2=3
+gamepad:1:1=4
+gamepad:1:2=2
+# Profile of player 0
+
+name=Player 1
+
+# Keyboard bindings, move: WASD, place bomb: E
+key:4=8
+key:65=1
+key:68=3
+key:69=5
+key:80=6
+key:83=4
+key:87=2
+key:257=7
+
+# Gamepad bindings
+gamepad:1=2
+gamepad:2=3
+gamepad:3=4
+gamepad:4=1
+gamepad:6=8
+gamepad:7=7
+gamepad:13=6
+gamepad:14=6
+gamepad:15=6
+gamepad:0:1=1
+gamepad:0:2=3
+gamepad:1:1=4
+gamepad:1:2=2

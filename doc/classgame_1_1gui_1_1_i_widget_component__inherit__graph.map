@@ -1,0 +1,7 @@
+<map id="game::gui::IWidgetComponent" name="game::gui::IWidgetComponent">
+<area shape="rect" id="node1" title="Base class for all widgets components." alt="" coords="159,80,379,107"/>
+<area shape="rect" id="node3" href="$structgame_1_1gui_1_1_checkable.html" title="Checkable component, used for checkbox widgets." alt="" coords="5,155,168,181"/>
+<area shape="rect" id="node4" href="$structgame_1_1gui_1_1_clickable.html" title="Clickable component." alt="" coords="192,155,347,181"/>
+<area shape="rect" id="node5" href="$structgame_1_1gui_1_1_widget.html" title="Widget component." alt="" coords="371,155,512,181"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="206,5,333,32"/>
+</map>

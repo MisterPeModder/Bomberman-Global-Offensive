@@ -1,0 +1,5 @@
+<map id="game::map::cellular::Rule" name="game::map::cellular::Rule">
+<area shape="rect" id="node1" title="Cellular automata rule, representing of form B[0&#45;9]+/S[0&#45;9]+ Where B stands for Birth,..." alt="" coords="46,109,198,151"/>
+<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="116,5,275,32"/>
+</map>

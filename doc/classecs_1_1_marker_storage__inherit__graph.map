@@ -1,0 +1,4 @@
+<map id="ecs::MarkerStorage&lt; C &gt;" name="ecs::MarkerStorage&lt; C &gt;">
+<area shape="rect" id="node1" title="&quot;Storage&quot; for marker&#45;like components, does not store any data except for which entities have the mark..." alt="" coords="5,80,192,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_storage.html" title="used to declare a virtual destructor on all Storage implementations." alt="" coords="47,5,150,32"/>
+</map>

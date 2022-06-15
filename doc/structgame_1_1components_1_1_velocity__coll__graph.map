@@ -1,0 +1,5 @@
+<map id="game::components::Velocity" name="game::components::Velocity">
+<area shape="rect" id="node1" title="Velocity component." alt="" coords="48,80,255,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node3" href="$structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)" alt="" coords="157,5,314,32"/>
+</map>

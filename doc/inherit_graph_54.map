@@ -1,0 +1,45 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classraylib_1_1model_1_1_animation.html" title="The Animation class." alt="" coords="228,56,411,83"/>
+<area shape="rect" id="node2" href="$structgame_1_1components_1_1_animation.html" title=" " alt="" coords="471,56,693,83"/>
+<area shape="rect" id="node3" href="$classraylib_1_1shapes_1_1_a_shape.html" title=" " alt="" coords="5,807,176,833"/>
+<area shape="rect" id="node4" href="$classraylib_1_1shapes_1_1_circle.html" title="The Circle Class used to represent a 2d circle shape." alt="" coords="240,1085,399,1112"/>
+<area shape="rect" id="node5" href="$classraylib_1_1shapes_1_1_cone.html" title="3D Cone shape. Can be used as a cylinder when base and top radius are equal (See Cylinder shape)." alt="" coords="242,1035,397,1061"/>
+<area shape="rect" id="node7" href="$classraylib_1_1shapes_1_1_cube.html" title="3D shape representing a cube." alt="" coords="242,781,397,808"/>
+<area shape="rect" id="node9" href="$classraylib_1_1shapes_1_1_pixel.html" title="The Pixel Class used to represent a pixel." alt="" coords="243,731,395,757"/>
+<area shape="rect" id="node10" href="$classraylib_1_1shapes_1_1_rectangle.html" title="The Rectangle Class used to represent a 2d rectangle shape." alt="" coords="226,5,413,32"/>
+<area shape="rect" id="node12" href="$classraylib_1_1shapes_1_1_sphere.html" title="3D shape representing a sphere." alt="" coords="236,832,403,859"/>
+<area shape="rect" id="node6" href="$classraylib_1_1shapes_1_1_cylinder.html" title="3D Cylinder shape, basically just a Cone with the same base and top radius" alt="" coords="495,1085,669,1112"/>
+<area shape="rect" id="node8" href="$structgame_1_1components_1_1_cube.html" title="Cube component." alt="" coords="488,781,676,808"/>
+<area shape="rect" id="node11" href="$structgame_1_1components_1_1_rectangle.html" title=" " alt="" coords="472,5,692,32"/>
+<area shape="rect" id="node13" href="$structraylib_1_1core_1_1_color.html" title="The Color struct that encapsulates the raylib Color struct." alt="" coords="251,883,388,909"/>
+<area shape="rect" id="node14" href="$structgame_1_1components_1_1_color.html" title=" " alt="" coords="487,832,677,859"/>
+<area shape="rect" id="node15" href="$structgame_1_1components_1_1_cube_color.html" title="Cube color component." alt="" coords="471,883,693,909"/>
+<area shape="rect" id="node16" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="256,629,383,656"/>
+<area shape="rect" id="node17" href="$structgame_1_1components_1_1_bomb.html" title="Bomb component." alt="" coords="485,680,679,707"/>
+<area shape="rect" id="node18" href="$structgame_1_1components_1_1_bomb_no_clip.html" title=" " alt="" coords="464,731,700,757"/>
+<area shape="rect" id="node19" href="$structgame_1_1components_1_1_collidable.html" title="Collidable marker." alt="" coords="472,107,692,133"/>
+<area shape="rect" id="node20" href="$structgame_1_1components_1_1_controlable.html" title="Controlable entity, may be a widget or a player." alt="" coords="467,157,697,184"/>
+<area shape="rect" id="node21" href="$structgame_1_1components_1_1_destructible.html" title="Destructible component." alt="" coords="465,208,699,235"/>
+<area shape="rect" id="node22" href="$structgame_1_1components_1_1_identity.html" title="Unique Identity component." alt="" coords="479,259,685,285"/>
+<area shape="rect" id="node23" href="$structgame_1_1components_1_1_image.html" title=" " alt="" coords="484,933,680,960"/>
+<area shape="rect" id="node24" href="$structgame_1_1components_1_1_living.html" title="Living component." alt="" coords="485,309,679,336"/>
+<area shape="rect" id="node25" href="$structgame_1_1components_1_1_model.html" title=" " alt="" coords="485,984,679,1011"/>
+<area shape="rect" id="node26" href="$structgame_1_1components_1_1_player.html" title="Player marker." alt="" coords="484,360,680,387"/>
+<area shape="rect" id="node27" href="$structgame_1_1components_1_1_position.html" title=" " alt="" coords="479,1035,685,1061"/>
+<area shape="rect" id="node28" href="$structgame_1_1components_1_1_rotation_angle.html" title=" " alt="" coords="477,411,687,453"/>
+<area shape="rect" id="node29" href="$structgame_1_1components_1_1_rotation_axis.html" title=" " alt="" coords="463,1136,701,1163"/>
+<area shape="rect" id="node30" href="$structgame_1_1components_1_1_scale.html" title=" " alt="" coords="487,477,677,504"/>
+<area shape="rect" id="node31" href="$structgame_1_1components_1_1_size.html" title=" " alt="" coords="491,1237,673,1264"/>
+<area shape="rect" id="node32" href="$structgame_1_1components_1_1_textual.html" title="Textual element." alt="" coords="481,528,683,555"/>
+<area shape="rect" id="node33" href="$structgame_1_1components_1_1_texture2_d.html" title=" " alt="" coords="471,1288,693,1315"/>
+<area shape="rect" id="node34" href="$structgame_1_1components_1_1_velocity.html" title="Velocity component." alt="" coords="479,1187,685,1213"/>
+<area shape="rect" id="node35" href="$structgame_1_1components_1_1_wall.html" title="Wall marker." alt="" coords="491,579,673,605"/>
+<area shape="rect" id="node36" href="$classgame_1_1gui_1_1_i_widget_component.html" title="Base class for all widgets components." alt="" coords="472,629,692,656"/>
+<area shape="rect" id="node37" href="$structgame_1_1gui_1_1_checkable.html" title="Checkable component, used for checkbox widgets." alt="" coords="749,579,912,605"/>
+<area shape="rect" id="node38" href="$structgame_1_1gui_1_1_clickable.html" title="Clickable component." alt="" coords="753,629,908,656"/>
+<area shape="rect" id="node39" href="$structgame_1_1gui_1_1_widget.html" title="Widget component." alt="" coords="760,680,901,707"/>
+<area shape="rect" id="node40" title=" " alt="" coords="288,933,351,960"/>
+<area shape="rect" id="node41" href="$classraylib_1_1model_1_1_model.html" title="The Model class ; it shouldn&#39;t be created multiple times for the same file." alt="" coords="241,984,397,1011"/>
+<area shape="rect" id="node42" title=" " alt="" coords="275,1288,363,1315"/>
+<area shape="rect" id="node43" href="$structraylib_1_1core_1_1_vector3.html" title="The Vector3 struct (compatible with the raylib Vector3)" alt="" coords="224,1161,415,1188"/>
+</map>

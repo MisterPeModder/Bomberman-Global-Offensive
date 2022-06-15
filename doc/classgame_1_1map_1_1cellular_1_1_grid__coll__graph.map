@@ -1,0 +1,9 @@
+<map id="game::map::cellular::Grid" name="game::map::cellular::Grid">
+<area shape="rect" id="node1" title="Cellular automata 2D grid." alt="" coords="263,213,415,255"/>
+<area shape="rect" id="node2" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="221,117,312,143"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="232,5,320,32"/>
+<area shape="rect" id="node5" href="$classgame_1_1map_1_1cellular_1_1_rule.html" title="Cellular automata rule, representing of form B[0&#45;9]+/S[0&#45;9]+ Where B stands for Birth,..." alt="" coords="336,109,488,151"/>
+<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html" title=" " alt="" coords="361,5,447,32"/>
+<area shape="rect" id="node7" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="471,5,630,32"/>
+</map>

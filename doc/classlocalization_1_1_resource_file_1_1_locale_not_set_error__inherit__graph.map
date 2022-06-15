@@ -1,0 +1,4 @@
+<map id="localization::ResourceFile::LocaleNotSetError" name="localization::ResourceFile::LocaleNotSetError">
+<area shape="rect" id="node1" title="Exception thrown when the locale isn&#39;t set (unititialized) on translate/register operations." alt="" coords="5,80,193,121"/>
+<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/error/logic_error.html" title=" " alt="" coords="40,5,159,32"/>
+</map>

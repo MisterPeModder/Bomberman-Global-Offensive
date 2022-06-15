@@ -1,0 +1,5 @@
+<map id="raylib::shapes::Rectangle" name="raylib::shapes::Rectangle">
+<area shape="rect" id="node1" title="The Rectangle Class used to represent a 2d rectangle shape." alt="" coords="5,305,192,332"/>
+<area shape="rect" id="node2" href="$classraylib_1_1shapes_1_1_a_shape.html" title=" " alt="" coords="13,229,184,256"/>
+<area shape="rect" id="node3" href="$structraylib_1_1core_1_1_color.html" title="The Color struct that encapsulates the raylib Color struct." alt="" coords="30,73,167,99"/>
+</map>

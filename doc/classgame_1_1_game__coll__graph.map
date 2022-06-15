@@ -1,0 +1,17 @@
+<map id="game::Game" name="game::Game">
+<area shape="rect" id="node1" title="Game class." alt="" coords="1005,287,1112,313"/>
+<area shape="rect" id="node2" href="$classecs_1_1_world.html" title="Contains all entities and systems." alt="" coords="696,116,785,143"/>
+<area shape="rect" id="node3" href="$classecs_1_1_instances.html" title=" " alt="" coords="353,19,504,61"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="11,5,234,61"/>
+<area shape="rect" id="node5" href="$classecs_1_1_instances.html" title=" " alt="" coords="353,93,504,134"/>
+<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="5,85,240,141"/>
+<area shape="rect" id="node7" href="$classecs_1_1_instances.html" title=" " alt="" coords="353,158,504,199"/>
+<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="11,165,235,221"/>
+<area shape="rect" id="node9" href="$classecs_1_1_system_tag.html" title="A group of System types." alt="" coords="679,232,802,259"/>
+<area shape="rect" id="node10" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="347,223,510,265"/>
+<area shape="rect" id="node11" href="$classgame_1_1map_1_1_map.html" title="Bomberman Map." alt="" coords="675,287,807,313"/>
+<area shape="rect" id="node12" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="341,289,516,316"/>
+<area shape="rect" id="node13" href="$structraylib_1_1core_1_1_vector2.html" title="The Vector2 struct (compatible with the raylib Vector2)" alt="" coords="333,340,524,367"/>
+<area shape="rect" id="node14" href="$classraylib_1_1core_1_1_camera3_d.html" title="The Camera3D class that encapsulates the raylib 3D camera." alt="" coords="655,376,827,403"/>
+<area shape="rect" id="node15" href="$structgame_1_1_game_1_1_parameters.html" title="Game parameters." alt="" coords="647,427,835,453"/>
+</map>

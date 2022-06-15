@@ -1,0 +1,4 @@
+<map id="game::components::Controlable" name="game::components::Controlable">
+<area shape="rect" id="node1" title="Controlable entity, may be a widget or a player." alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="57,5,184,32"/>
+</map>

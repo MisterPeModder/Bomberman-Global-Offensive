@@ -1,0 +1,6 @@
+<map id="game::gui::Checkable" name="game::gui::Checkable">
+<area shape="rect" id="node1" title="Checkable component, used for checkbox widgets." alt="" coords="138,185,301,212"/>
+<area shape="rect" id="node2" href="$classgame_1_1gui_1_1_i_widget_component.html" title="Base class for all widgets components." alt="" coords="5,89,225,115"/>
+<area shape="rect" id="node3" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="52,5,179,32"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/utility/functional/function.html" title=" " alt="" coords="250,81,397,123"/>
+</map>

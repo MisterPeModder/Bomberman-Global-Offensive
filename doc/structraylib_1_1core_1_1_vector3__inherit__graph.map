@@ -1,0 +1,7 @@
+<map id="raylib::core::Vector3&lt; T &gt;" name="raylib::core::Vector3&lt; T &gt;">
+<area shape="rect" id="node1" title="The Vector3 struct (compatible with the raylib Vector3)" alt="" coords="5,111,196,138"/>
+<area shape="rect" id="node2" href="$structgame_1_1components_1_1_position.html" title=" " alt="" coords="246,5,453,47"/>
+<area shape="rect" id="node3" href="$structgame_1_1components_1_1_rotation_axis.html" title=" " alt="" coords="244,71,455,112"/>
+<area shape="rect" id="node4" href="$structgame_1_1components_1_1_size.html" title=" " alt="" coords="258,136,441,177"/>
+<area shape="rect" id="node5" href="$structgame_1_1components_1_1_velocity.html" title="Velocity component." alt="" coords="246,201,453,243"/>
+</map>

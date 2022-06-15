@@ -1,0 +1,4 @@
+<map id="localization::ResourceString" name="localization::ResourceString">
+<area shape="rect" id="node1" title="Translatable string. Will register itself in the loaded locales." alt="" coords="5,95,208,121"/>
+<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string_view.html" title=" " alt="" coords="44,5,169,32"/>
+</map>

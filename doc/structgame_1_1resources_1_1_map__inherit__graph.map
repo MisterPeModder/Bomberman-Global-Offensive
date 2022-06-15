@@ -1,0 +1,4 @@
+<map id="game::resources::Map" name="game::resources::Map">
+<area shape="rect" id="node1" title="Game map resource." alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="33,5,145,32"/>
+</map>

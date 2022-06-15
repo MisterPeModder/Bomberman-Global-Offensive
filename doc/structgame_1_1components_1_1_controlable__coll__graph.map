@@ -1,0 +1,5 @@
+<map id="game::components::Controlable" name="game::components::Controlable">
+<area shape="rect" id="node1" title="Controlable entity, may be a widget or a player." alt="" coords="331,39,561,65"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="51,5,178,32"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/utility/functional/function.html" title=" " alt="" coords="5,56,224,112"/>
+</map>

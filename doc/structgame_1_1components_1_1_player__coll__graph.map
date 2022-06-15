@@ -1,0 +1,5 @@
+<map id="game::components::Player" name="game::components::Player">
+<area shape="rect" id="node1" title="Player marker." alt="" coords="63,109,259,136"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,13,132,39"/>
+<area shape="rect" id="node3" href="$structgame_1_1components_1_1_player_1_1_stats.html" title=" " alt="" coords="156,5,352,47"/>
+</map>

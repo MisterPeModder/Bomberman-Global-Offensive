@@ -1,0 +1,10 @@
+<map id="ecs::Entities::Builder" name="ecs::Entities::Builder">
+<area shape="rect" id="node1" title="Allows one to construct an entity component by component." alt="" coords="32,303,187,329"/>
+<area shape="rect" id="node2" href="$classecs_1_1_entity.html" title="Encapsulates a index to an entity that may or may not exist." alt="" coords="33,161,124,188"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node6" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="111,109,201,136"/>
+<area shape="rect" id="node4" href="$classecs_1_1_entities.html" title="The entities world resource." alt="" coords="167,213,268,240"/>
+<area shape="rect" id="node5" href="$classecs_1_1_resource.html" title=" " alt="" coords="225,109,337,136"/>
+<area shape="rect" id="node7" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="123,5,325,32"/>
+<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="361,109,548,136"/>
+</map>

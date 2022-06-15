@@ -1,0 +1,5 @@
+<map id="raylib::shapes::Circle" name="raylib::shapes::Circle">
+<area shape="rect" id="node1" title="The Circle Class used to represent a 2d circle shape." alt="" coords="11,305,170,332"/>
+<area shape="rect" id="node2" href="$classraylib_1_1shapes_1_1_a_shape.html" title=" " alt="" coords="5,229,176,256"/>
+<area shape="rect" id="node3" href="$structraylib_1_1core_1_1_color.html" title="The Color struct that encapsulates the raylib Color struct." alt="" coords="22,73,159,99"/>
+</map>

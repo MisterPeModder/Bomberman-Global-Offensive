@@ -1,0 +1,5 @@
+<map id="raylib::shapes::Sphere" name="raylib::shapes::Sphere">
+<area shape="rect" id="node1" title="3D shape representing a sphere." alt="" coords="7,305,174,332"/>
+<area shape="rect" id="node2" href="$classraylib_1_1shapes_1_1_a_shape.html" title=" " alt="" coords="5,229,176,256"/>
+<area shape="rect" id="node3" href="$structraylib_1_1core_1_1_color.html" title="The Color struct that encapsulates the raylib Color struct." alt="" coords="22,73,159,99"/>
+</map>

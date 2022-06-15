@@ -1,0 +1,12 @@
+<map id="raylib::shapes::AShape" name="raylib::shapes::AShape">
+<area shape="rect" id="node1" title=" " alt="" coords="5,132,176,159"/>
+<area shape="rect" id="node2" href="$classraylib_1_1shapes_1_1_circle.html" title="The Circle Class used to represent a 2d circle shape." alt="" coords="238,5,397,32"/>
+<area shape="rect" id="node3" href="$classraylib_1_1shapes_1_1_cone.html" title="3D Cone shape. Can be used as a cylinder when base and top radius are equal (See Cylinder shape)." alt="" coords="240,56,395,83"/>
+<area shape="rect" id="node5" href="$classraylib_1_1shapes_1_1_cube.html" title="3D shape representing a cube." alt="" coords="240,107,395,133"/>
+<area shape="rect" id="node7" href="$classraylib_1_1shapes_1_1_pixel.html" title="The Pixel Class used to represent a pixel." alt="" coords="241,157,393,184"/>
+<area shape="rect" id="node8" href="$classraylib_1_1shapes_1_1_rectangle.html" title="The Rectangle Class used to represent a 2d rectangle shape." alt="" coords="224,208,411,235"/>
+<area shape="rect" id="node10" href="$classraylib_1_1shapes_1_1_sphere.html" title="3D shape representing a sphere." alt="" coords="234,259,401,285"/>
+<area shape="rect" id="node4" href="$classraylib_1_1shapes_1_1_cylinder.html" title="3D Cylinder shape, basically just a Cone with the same base and top radius" alt="" coords="481,56,656,83"/>
+<area shape="rect" id="node6" href="$structgame_1_1components_1_1_cube.html" title="Cube component." alt="" coords="475,107,663,133"/>
+<area shape="rect" id="node9" href="$structgame_1_1components_1_1_rectangle.html" title=" " alt="" coords="459,208,679,235"/>
+</map>

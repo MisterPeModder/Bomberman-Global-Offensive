@@ -1,0 +1,4 @@
+<map id="game::systems::DrawText" name="game::systems::DrawText">
+<area shape="rect" id="node1" title="Draw text system." alt="" coords="5,80,196,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_system.html" title="The base system type, all systems must inherit from System." alt="" coords="50,5,151,32"/>
+</map>

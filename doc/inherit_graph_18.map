@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classecs_1_1_resource.html" title=" " alt="" coords="5,107,117,133"/>
+<area shape="rect" id="node2" href="$classecs_1_1_entities.html" title="The entities world resource." alt="" coords="235,5,336,32"/>
+<area shape="rect" id="node3" href="$classecs_1_1_timer.html" title="Simple timer resource." alt="" coords="240,56,331,83"/>
+<area shape="rect" id="node4" href="$classgame_1_1resources_1_1_asset_map.html" title="Map used to store assets (fonts, textures...) with strings as keys." alt="" coords="165,107,405,133"/>
+<area shape="rect" id="node5" href="$structgame_1_1resources_1_1_map.html" title="Game map resource." alt="" coords="202,157,369,184"/>
+<area shape="rect" id="node6" href="$classgame_1_1_users.html" title="Resource allowing to get users actions using the keybinds." alt="" coords="233,208,337,235"/>
+</map>

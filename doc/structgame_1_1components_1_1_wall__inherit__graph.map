@@ -1,0 +1,4 @@
+<map id="game::components::Wall" name="game::components::Wall">
+<area shape="rect" id="node1" title="Wall marker." alt="" coords="5,80,188,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="33,5,160,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="ecs::MaybeJoin&lt; J &gt;" name="ecs::MaybeJoin&lt; J &gt;">
+<area shape="rect" id="node1" title="A Joinable structure that yields all indices, returning nullptr for all missing elements and pointers..." alt="" coords="113,184,268,211"/>
+<area shape="rect" id="node2" href="$classutil_1_1_bit_set.html" title="Mimics the API of std::bitset but with the dynamic properties of std::vector&lt;bool&gt;" alt="" coords="145,95,236,121"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/types/size_t.html" title=" " alt="" coords="232,5,320,32"/>
+</map>

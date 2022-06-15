@@ -1,0 +1,5 @@
+<map id="game::resources::AssetMap&lt; T &gt;" name="game::resources::AssetMap&lt; T &gt;">
+<area shape="rect" id="node1" title="Map used to store assets (fonts, textures...) with strings as keys." alt="" coords="19,109,259,136"/>
+<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="5,13,117,39"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="141,5,293,47"/>
+</map>

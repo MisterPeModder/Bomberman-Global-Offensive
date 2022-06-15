@@ -1,0 +1,7 @@
+<map id="game::components::Cube" name="game::components::Cube">
+<area shape="rect" id="node1" title="Cube component." alt="" coords="5,381,193,408"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="20,305,147,332"/>
+<area shape="rect" id="node3" href="$classraylib_1_1shapes_1_1_cube.html" title="3D shape representing a cube." alt="" coords="171,305,326,332"/>
+<area shape="rect" id="node4" href="$classraylib_1_1shapes_1_1_a_shape.html" title=" " alt="" coords="163,229,334,256"/>
+<area shape="rect" id="node5" href="$structraylib_1_1core_1_1_color.html" title="The Color struct that encapsulates the raylib Color struct." alt="" coords="180,73,317,99"/>
+</map>
