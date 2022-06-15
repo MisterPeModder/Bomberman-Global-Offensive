@@ -269,7 +269,7 @@ static void loadSettingsMenuScene(ecs::World &world)
 
 namespace game
 {
-    SettingsMenuScene::SettingsMenuScene() // : _currentSettingsMenu(GRAPHICS)
+    SettingsMenuScene::SettingsMenuScene()
     {
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::InputManager>();
