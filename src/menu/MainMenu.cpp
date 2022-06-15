@@ -36,6 +36,8 @@
 #include "raylib/core/scoped.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
+#include "raylib/textures/Image.hpp"
+
 namespace Menu
 {
     MainMenu::MainMenu(ecs::World &world) : _world(world) {}
@@ -44,16 +46,115 @@ namespace Menu
 
     void MainMenu::createsButtons()
     {
-        std::filesystem::path logoPath = "assets/ponay.png";
+        std::filesystem::path logoPath = "resources/BMGO.png";
+        raylib::textures::Image image(logoPath, {1, 2}, raylib::core::Color::WHITE);
 
-        _world.addEntity()
-            .with<game::components::Position>(0.f, 0.f)
-            .with<game::Texture2D>(logoPath)
-            .build();
+        _world.addEntity().with<game::components::Position>(0.f, 0.f).with<game::Texture2D>(logoPath).build();
 
         _world.addEntity()
             .with<game::components::Position>(50.f, 50.f)
-            .with<game::components::Textual>("PLAY", 90, raylib::core::Color::WHITE)
+            .with<game::components::Textual>("PLAY", 20, raylib::core::Color::WHITE)
+            .with<game::components::Controlable>(game::User::UserId::User1,
+                [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                    (void)self;
+                    (void)data;
+                    (void)event;
+                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                        writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
+                    });
+                    return false;
+                })
+            .build();
+
+        _world.addEntity()
+            .with<game::components::Position>(100.f, 50.f)
+            .with<game::components::Textual>("OPTION", 20, raylib::core::Color::WHITE)
+            .with<game::components::Controlable>(game::User::UserId::User1,
+                [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                    (void)self;
+                    (void)data;
+                    (void)event;
+                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                        writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
+                    });
+                    return false;
+                })
+            .build();
+        _world.addEntity()
+            .with<game::components::Position>(50.f, 50.f)
+            .with<game::components::Textual>("QUIT", 20, raylib::core::Color::WHITE)
+            .with<game::components::Controlable>(game::User::UserId::User1,
+                [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                    (void)self;
+                    (void)data;
+                    (void)event;
+                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                        writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
+                    });
+                    return false;
+                })
+            .build();
+    }
+
+    void MainMenu::modulePlayerFirst()
+    {
+        _world.addEntity()
+            .with<game::components::Position>(800.f, 100.f)
+            .with<game::components::Textual>("PLAYER 1", 90, raylib::core::Color::WHITE)
+            .with<game::components::Controlable>(game::User::UserId::User1,
+                [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                    (void)self;
+                    (void)data;
+                    (void)event;
+                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                        writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
+                    });
+                    return false;
+                })
+            .build();
+    }
+
+    void MainMenu::modulePlayerSecond()
+    {
+        _world.addEntity()
+            .with<game::components::Position>(800.f, 200.f)
+            .with<game::components::Textual>("PLAYER 1", 90, raylib::core::Color::WHITE)
+            .with<game::components::Controlable>(game::User::UserId::User1,
+                [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                    (void)self;
+                    (void)data;
+                    (void)event;
+                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                        writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
+                    });
+                    return false;
+                })
+            .build();
+    }
+
+    void MainMenu::modulePlayerThird()
+    {
+        _world.addEntity()
+            .with<game::components::Position>(800.f, 300.f)
+            .with<game::components::Textual>("PLAYER 1", 90, raylib::core::Color::WHITE)
+            .with<game::components::Controlable>(game::User::UserId::User1,
+                [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                    (void)self;
+                    (void)data;
+                    (void)event;
+                    Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
+                        writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
+                    });
+                    return false;
+                })
+            .build();
+    }
+
+    void MainMenu::modulePlayerFourth()
+    {
+        _world.addEntity()
+            .with<game::components::Position>(800.f, 400.f)
+            .with<game::components::Textual>("PLAYER 1", 20, raylib::core::Color::WHITE)
             .with<game::components::Controlable>(game::User::UserId::User1,
                 [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
                     (void)self;
@@ -80,6 +181,7 @@ namespace Menu
 
     void MainMenu::setup(raylib::core::Camera3D &camera, size_t width, size_t depth)
     {
+        Logger::logger.log(Logger::Severity::Information, "Start setup menu");
         /// Add world resources
         _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
@@ -92,10 +194,10 @@ namespace Menu
         /// Add world systems
         _world.addSystem<game::systems::InputManager>();
 
-        camera.setPosition(
-            {width / 2.f, 8 /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
-        camera.setTarget({width / 2.f, 0.f, depth / 2.f});
-        camera.setProjection(CAMERA_PERSPECTIVE);
+        // camera.setPosition(
+        //     {width / 2.f, 8 /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
+        // camera.setTarget({width / 2.f, 0.f, depth / 2.f});
+        // camera.setProjection(CAMERA_PERSPECTIVE);
 
         createsButtons();
     }
