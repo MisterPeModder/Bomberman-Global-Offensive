@@ -20,8 +20,8 @@
 #include "raylib/core/scoped.hpp"
 #include "raylib/raylib.hpp"
 
-#include "script/Engine.hpp"
 #include "game/Engine.hpp"
+#include "script/Engine.hpp"
 
 #include <memory>
 

@@ -39,15 +39,17 @@
 #include "systems/InputManager.hpp"
 #include "systems/Movement.hpp"
 
-#include "resources/Engine.hpp"
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
+#include "resources/Engine.hpp"
 
 #include <cmath>
 
 namespace game
 {
-    Game::Game(ecs::World &world, Parameters params) : _world(world), _map(params.mapSize), _params(params), _camera() {}
+    Game::Game(ecs::World &world, Parameters params) : _world(world), _map(params.mapSize), _params(params), _camera()
+    {
+    }
 
     const map::Map &Game::getMap() const { return _map; }
 
