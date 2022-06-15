@@ -1,5 +1,12 @@
 var NAVTREEINDEX3 =
 {
+"classgame_1_1map_1_1cellular_1_1_rule.html#aaf9c642523a83250eebe7b4b753988d2":[2,0,2,2,0,1,1],
+"classgame_1_1map_1_1cellular_1_1_rule.html#aec7ce2595fb437ceb7dd91e648aafaff":[2,0,2,2,0,1,9],
+"classgame_1_1map_1_1cellular_1_1_rule.html#afbc4807d1e31408ef1f7b1b4a0130b38":[2,0,2,2,0,1,11],
+"classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html":[2,0,2,2,0,1,0],
+"classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html#ac387eaf1c015a85bde316242546a7a25":[2,0,2,2,0,1,0,0],
+"classgame_1_1settings_1_1_gamepad_input.html":[2,0,2,4,0],
+"classgame_1_1settings_1_1_gamepad_input.html#a0b633c127b55d1eb37aef142bf9a59c4":[2,0,2,4,0,2],
 "classgame_1_1settings_1_1_gamepad_input.html#a0e24500a49fb4989dc3ad71ba0aae822":[2,0,2,4,0,4],
 "classgame_1_1settings_1_1_gamepad_input.html#a26318ea09122c207c2063a6c025be517":[2,0,2,4,0,5],
 "classgame_1_1settings_1_1_gamepad_input.html#a321dc78fe6a15ba534e3bb550ed630f2":[2,0,2,4,0,10],
@@ -242,12 +249,5 @@ var NAVTREEINDEX3 =
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0d61f8370cad1d412f80b84d143e1257":[2,0,4,0,6,0,20],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a0f82d86afa0f5dc965c5c15aca58dcfb":[2,0,4,0,6,0,8],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a17de1e647789892e1fb512bf04db4866":[2,0,4,0,6,0,102],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a180bb5e381e316e2246b88c92770ee75":[2,0,4,0,6,0,11],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1a9c94725005bc4759507db8acc8da33":[2,0,4,0,6,0,99],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1dd26f1f1790f0b56d5752fb0fbecef0":[2,0,4,0,6,0,106],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1faf42f2823f184eb2c9f0dffe5d73f2":[2,0,4,0,6,0,73],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2091809ab6bdbc0a1975bf61d6099748":[2,0,4,0,6,0,95],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2140df7839a3713724b35168defcc975":[2,0,4,0,6,0,101],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a21507b40c80068eda19865706fdc2403":[2,0,4,0,6,0,55],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a21c2e59531c8710156d34a3c30ac81d5":[2,0,4,0,6,0,43]
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a180bb5e381e316e2246b88c92770ee75":[2,0,4,0,6,0,11]
 };

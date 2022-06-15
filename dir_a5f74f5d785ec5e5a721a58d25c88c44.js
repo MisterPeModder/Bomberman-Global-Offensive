@@ -7,6 +7,10 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Bomb.hpp", "components_2_bomb_8hpp.html", [
       [ "Bomb", "structgame_1_1components_1_1_bomb.html", "structgame_1_1components_1_1_bomb" ]
     ] ],
+    [ "BombNoClip.cpp", "_bomb_no_clip_8cpp.html", null ],
+    [ "BombNoClip.hpp", "_bomb_no_clip_8hpp.html", [
+      [ "BombNoClip", "structgame_1_1components_1_1_bomb_no_clip.html", "structgame_1_1components_1_1_bomb_no_clip" ]
+    ] ],
     [ "Collidable.hpp", "_collidable_8hpp.html", "_collidable_8hpp" ],
     [ "Color.hpp", "game_2components_2_color_8hpp.html", [
       [ "Color", "structgame_1_1components_1_1_color.html", "structgame_1_1components_1_1_color" ]

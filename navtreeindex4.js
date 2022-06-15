@@ -1,5 +1,12 @@
 var NAVTREEINDEX4 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1a9c94725005bc4759507db8acc8da33":[2,0,4,0,6,0,99],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1dd26f1f1790f0b56d5752fb0fbecef0":[2,0,4,0,6,0,106],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a1faf42f2823f184eb2c9f0dffe5d73f2":[2,0,4,0,6,0,73],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2091809ab6bdbc0a1975bf61d6099748":[2,0,4,0,6,0,95],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2140df7839a3713724b35168defcc975":[2,0,4,0,6,0,101],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a21507b40c80068eda19865706fdc2403":[2,0,4,0,6,0,55],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a21c2e59531c8710156d34a3c30ac81d5":[2,0,4,0,6,0,43],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a291554596c183e837f0a6bec3767c891":[2,0,4,0,6,0,67],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2cfe3b4f9911c5899d79f171d6b9cc4a":[2,0,4,0,6,0,105],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2d0bfa737eccfce7842cd2230eed6712":[2,0,4,0,6,0,91],
@@ -242,12 +249,5 @@ var NAVTREEINDEX4 =
 "classraylib_1_1shapes_1_1_cone.html#a51f85dba8a06f1b79df7ed7f248c9324":[2,0,4,2,2,4],
 "classraylib_1_1shapes_1_1_cone.html#a5c238f7936a4ec33571181ff3d95b4dc":[2,0,4,2,2,13],
 "classraylib_1_1shapes_1_1_cone.html#a66d6af3b5f3712745b88cd5d55359a62":[2,0,4,2,2,8],
-"classraylib_1_1shapes_1_1_cone.html#a6886e6c2a28683ac96b6f1da33150b01":[2,0,4,2,2,14],
-"classraylib_1_1shapes_1_1_cone.html#ac2a28835573e881ead567f85f11e8842":[2,0,4,2,2,11],
-"classraylib_1_1shapes_1_1_cone.html#ac6559bc0301faf7a18efae6e2cec0a8e":[2,0,4,2,2,9],
-"classraylib_1_1shapes_1_1_cone.html#accc0d86cc0f9907bf34e325d5ca637a9":[2,0,4,2,2,0],
-"classraylib_1_1shapes_1_1_cone.html#af7f781d23acd402f32d2897e81209512":[2,0,4,2,2,3],
-"classraylib_1_1shapes_1_1_cone.html#afd90045d53aee6af240c4775b70db1b0":[2,0,4,2,2,12],
-"classraylib_1_1shapes_1_1_cone.html#afe697948792c3eacbdb2ec497af2828a":[2,0,4,2,2,15],
-"classraylib_1_1shapes_1_1_cube.html":[2,0,4,2,3]
+"classraylib_1_1shapes_1_1_cone.html#a6886e6c2a28683ac96b6f1da33150b01":[2,0,4,2,2,14]
 };

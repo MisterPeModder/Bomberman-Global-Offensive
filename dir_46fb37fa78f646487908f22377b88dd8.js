@@ -35,5 +35,8 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "Movement.cpp", "_movement_8cpp.html", null ],
     [ "Movement.hpp", "_movement_8hpp.html", [
       [ "Movement", "structgame_1_1systems_1_1_movement.html", "structgame_1_1systems_1_1_movement" ]
+    ] ],
+    [ "NoClip.hpp", "_no_clip_8hpp.html", [
+      [ "DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", "structgame_1_1systems_1_1_disable_bomb_no_clip" ]
     ] ]
 ];

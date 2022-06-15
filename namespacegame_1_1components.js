@@ -2,6 +2,7 @@ var namespacegame_1_1components =
 [
     [ "Animation", "structgame_1_1components_1_1_animation.html", "structgame_1_1components_1_1_animation" ],
     [ "Bomb", "structgame_1_1components_1_1_bomb.html", "structgame_1_1components_1_1_bomb" ],
+    [ "BombNoClip", "structgame_1_1components_1_1_bomb_no_clip.html", "structgame_1_1components_1_1_bomb_no_clip" ],
     [ "Collidable", "structgame_1_1components_1_1_collidable.html", null ],
     [ "Color", "structgame_1_1components_1_1_color.html", "structgame_1_1components_1_1_color" ],
     [ "Controlable", "structgame_1_1components_1_1_controlable.html", "structgame_1_1components_1_1_controlable" ],

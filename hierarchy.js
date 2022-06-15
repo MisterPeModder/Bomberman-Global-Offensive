@@ -31,6 +31,7 @@ var hierarchy =
     [ "ecs::Component", "classecs_1_1_component.html", [
       [ "game::components::Animation", "structgame_1_1components_1_1_animation.html", null ],
       [ "game::components::Bomb", "structgame_1_1components_1_1_bomb.html", null ],
+      [ "game::components::BombNoClip", "structgame_1_1components_1_1_bomb_no_clip.html", null ],
       [ "game::components::Collidable", "structgame_1_1components_1_1_collidable.html", null ],
       [ "game::components::Color", "structgame_1_1components_1_1_color.html", null ],
       [ "game::components::Controlable", "structgame_1_1components_1_1_controlable.html", null ],
@@ -140,6 +141,7 @@ var hierarchy =
     [ "ecs::System", "classecs_1_1_system.html", [
       [ "game::systems::ChangeCube", "structgame_1_1systems_1_1_change_cube.html", null ],
       [ "game::systems::Collision", "structgame_1_1systems_1_1_collision.html", null ],
+      [ "game::systems::DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", null ],
       [ "game::systems::DrawBomb", "structgame_1_1systems_1_1_draw_bomb.html", null ],
       [ "game::systems::DrawCube", "structgame_1_1systems_1_1_draw_cube.html", null ],
       [ "game::systems::DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", null ],

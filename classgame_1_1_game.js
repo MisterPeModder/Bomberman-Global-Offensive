@@ -11,6 +11,7 @@ var classgame_1_1_game =
     [ "setCamera", "classgame_1_1_game.html#ae1640ac4bc4035fb5f28f6324747e6ac", null ],
     [ "setup", "classgame_1_1_game.html#a58c3da954462f02dbe9ab3da92c0a377", null ],
     [ "setupCamera", "classgame_1_1_game.html#ac79bf9c9fc17fd5479bab5cb2140fa2a", null ],
+    [ "worldPosToMapCell", "classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab", null ],
     [ "_camera", "classgame_1_1_game.html#a3766ad7a042186db666af180ba84c61a", null ],
     [ "_drawing", "classgame_1_1_game.html#ae77ce3fcde8187996a464db2bfb9941e", null ],
     [ "_handleInputs", "classgame_1_1_game.html#afc60aef10303189b946466d15891a3b9", null ],
