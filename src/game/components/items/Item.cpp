@@ -20,7 +20,6 @@
 
 namespace game::components
 {
-
     std::array<Item::Identifier, Item::POWER_UP_COUNT> Item::powerUps = {Item::Identifier::SpeedShoes};
     std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {Item::Identifier::ChainBall};
     std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables;
