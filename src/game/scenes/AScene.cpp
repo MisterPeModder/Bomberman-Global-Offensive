@@ -28,7 +28,6 @@ namespace game
             raylib::core::scoped::Mode3D mode3D(_defaultCamera);
             _world.runSystems();
         };
-        raylib::core::Window::drawFPS(10, 10);
     }
 
     ecs::World &AScene::getWorld() { return _world; }

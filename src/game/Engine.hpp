@@ -35,22 +35,25 @@ namespace game
         /// Gets the immutable active scene
         const game::IScene &getScene() const;
 
+        void setDebugMode(bool value) noexcept;
+
+        bool getDebugMode() const noexcept;
+
+        /// Switch to the waiting scene if it exists and releases the current one
+        void switchScene();
+
         /// Runs the game
         void run();
 
-        /// Switch to the waiting scene if it exists and releases the current one
-        void switchScene()
-        {
-            if (_waitingScene) {
-                _scene.swap(_waitingScene);
-                _waitingScene.release();
-            }
-        }
+        /// Called on each render tick.
+        void drawFrame();
 
       private:
         /// Sets the active scene and deletes the old one
         std::unique_ptr<game::IScene> _scene;
         std::unique_ptr<game::IScene> _waitingScene;
+
+        bool _debugMode;
     };
 } // namespace game
 

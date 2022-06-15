@@ -21,9 +21,7 @@ extern "C"
     static void Engine_drawFrame(void *userData)
     {
         game::Engine *engine = reinterpret_cast<game::Engine *>(userData);
-        engine->getScene().getWorld();
-        engine->getScene().drawFrame();
-        engine->switchScene();
+        engine->drawFrame();
     }
 
     /// Emscripten window resize event
@@ -54,7 +52,7 @@ extern "C"
 
 namespace game
 {
-    Engine::Engine()
+    Engine::Engine() : _debugMode(false)
     {
         _scene = std::make_unique<GameScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
@@ -63,6 +61,18 @@ namespace game
     game::IScene &Engine::getScene() { return *_scene; }
 
     const game::IScene &Engine::getScene() const { return *_scene; }
+
+    void Engine::setDebugMode(bool value) noexcept { this->_debugMode = value; }
+
+    bool Engine::getDebugMode() const noexcept { return this->_debugMode; }
+
+    void Engine::switchScene()
+    {
+        if (_waitingScene) {
+            _scene.swap(_waitingScene);
+            _waitingScene.release();
+        }
+    }
 
     void Engine::run()
     {
@@ -77,10 +87,16 @@ namespace game
         // since there is no such thing as a window.
         emscripten_set_main_loop_arg(&Engine_drawFrame, reinterpret_cast<void *>(this), 0, 1);
 #else
-        while (!raylib::core::Window::shouldClose()) {
-            _scene->drawFrame();
-            switchScene();
-        }
+        while (!raylib::core::Window::shouldClose())
+            this->drawFrame();
 #endif // !defined(__EMSCRIPTEN__)}
+    }
+
+    void Engine::drawFrame()
+    {
+        this->_scene->drawFrame();
+        if (this->_debugMode)
+            raylib::core::Window::drawFPS(10, 10);
+        this->switchScene();
     }
 } // namespace game

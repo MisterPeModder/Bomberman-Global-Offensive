@@ -12,6 +12,9 @@ interface Game {
     /** The game screen height, in pixels. */
     height: number
 
+    /** Debug mode, disabled by default. */
+    debugMode: boolean
+
     /**
      * Prints a message using the game's logging facility.
      * 
