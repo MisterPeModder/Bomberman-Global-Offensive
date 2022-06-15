@@ -21,6 +21,11 @@ namespace raylib
 
         Model::Model(const ::Mesh &mesh) { _model = LoadModelFromMesh(mesh); }
 
+        Model::Model(const raylib::model::Mesh &mesh, const raylib::textures::Texture2D &texture, int materialId, int mapType) : Model(mesh)
+        {
+            setMaterialMapTexture(texture, materialId, mapType);
+        }
+
         Model::~Model() { UnloadModel(_model); }
 
         void Model::draw(raylib::core::Vector3f position, float scale, raylib::core::Color tint) const

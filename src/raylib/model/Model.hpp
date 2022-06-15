@@ -39,6 +39,8 @@ namespace raylib
             /// @param mesh the mesh from which to create the 3d model
             Model(const raylib::model::Mesh &mesh);
 
+            Model(const raylib::model::Mesh &mesh, const raylib::textures::Texture2D &texture, int materialId, int mapType);
+
             Model(const ::Mesh &mesh);
 
             /// Model destructor
