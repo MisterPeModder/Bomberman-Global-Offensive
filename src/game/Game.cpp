@@ -17,6 +17,7 @@
 #include "components/Player.hpp"
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
+#include "components/items/ItemIdentifier.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Timer.hpp"
@@ -112,6 +113,7 @@ namespace game
         _world.addResource<resources::Map>(_map);
         /// Add world storages
         _world.addStorage<components::Bomb>();
+        _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
         /// Add world systems
         _world.addSystem<systems::InputManager>();

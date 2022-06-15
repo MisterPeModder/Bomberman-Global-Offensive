@@ -10,6 +10,7 @@
 
 #include <chrono>
 #include <functional>
+#include <vector>
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
 #include "ecs/System.hpp"
@@ -45,21 +46,27 @@ namespace game::components
         /// @note 0 means infinite.
         std::chrono::milliseconds duration;
 
-        /// Chance to get this item when dropping an item from its type.
-        float dropRate;
+        /// Chance to get this item when dropping an item from its type. ([0-100])
+        /// @warning the sum of all the drop rates of the items with the same type @b must be equal to 100.
+        unsigned int dropRate;
 
         /// Function called when the player use the item.
         /// @note PowerUp/Down are used on pickup.
         OnApply onApply;
 
-        static std::vector<Item> powerUps;
-        static std::vector<Item> powerDowns;
-        static std::vector<Item> activables;
+        static std::vector<Identifier> powerUps;
+        static std::vector<Identifier> powerDowns;
+        static std::vector<Identifier> activables;
+        static std::vector<Item> items;
 
         static bool spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell);
 
+        static const Item &getItem(Identifier identifier);
+
       private:
         Item(){};
+
+        static void spawnItem(Identifier item, ecs::SystemData data, raylib::core::Vector2u cell);
 
         static Item SpeedShoes();
     };

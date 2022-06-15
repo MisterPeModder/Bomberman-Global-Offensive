@@ -6,6 +6,7 @@ set(SRC
     ${SRCROOT}/Activable.hpp
     ${SRCROOT}/Item.cpp
     ${SRCROOT}/Item.hpp
+    ${SRCROOT}/ItemIdentifier.hpp
     ${SRCROOT}/PowerDown.hpp
     ${SRCROOT}/PowerUp.hpp
     ${SRCROOT}/SpeedShoes.cpp
