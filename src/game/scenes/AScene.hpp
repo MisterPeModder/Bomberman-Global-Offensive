@@ -8,11 +8,11 @@
 #ifndef GAME_WORLDS_ASCENES_HPP_
 #define GAME_WORLDS_ASCENES_HPP_
 
+#include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "game/scenes/IScene.hpp"
 #include "raylib/core/Camera2D.hpp"
 #include "raylib/core/Camera3D.hpp"
-#include "ecs/System.hpp"
 
 namespace game
 {

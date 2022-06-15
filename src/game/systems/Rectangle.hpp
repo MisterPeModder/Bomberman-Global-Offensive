@@ -13,8 +13,8 @@
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
 #include "game/components/Color.hpp"
-#include "game/components/Rectangle.hpp"
 #include "game/components/Position2D.hpp"
+#include "game/components/Rectangle.hpp"
 #include "game/components/Size2D.hpp"
 #include "raylib/shapes/Rectangle.hpp"
 
@@ -25,9 +25,9 @@ namespace game
         struct DrawRectangle : public ecs::System {
             void run(ecs::SystemData data) override final
             {
-                for (auto [rectangle, pos, size, color] :
-                    ecs::join(data.getStorage<game::components::Rectangle>(), data.getStorage<game::components::Position2D>(),
-                        data.getStorage<game::components::Size2D>(), data.getStorage<game::components::Color>())) {
+                for (auto [rectangle, pos, size, color] : ecs::join(data.getStorage<game::components::Rectangle>(),
+                         data.getStorage<game::components::Position2D>(), data.getStorage<game::components::Size2D>(),
+                         data.getStorage<game::components::Color>())) {
                     rectangle.draw(pos, size, color);
                 }
             }

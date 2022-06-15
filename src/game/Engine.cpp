@@ -54,10 +54,7 @@ extern "C"
 
 namespace game
 {
-    Engine::Engine()
-    {
-        setScene<game::GameScene>();
-    }
+    Engine::Engine() { setScene<game::SettingsMenuScene>(); }
 
     game::IScene &Engine::getScene() { return *_scene; }
 

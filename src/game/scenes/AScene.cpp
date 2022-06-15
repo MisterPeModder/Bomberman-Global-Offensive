@@ -35,13 +35,7 @@ namespace game
         };
     }
 
-    ecs::World &AScene::getWorld()
-    {
-        return _world;
-    }
+    ecs::World &AScene::getWorld() { return _world; }
 
-    const ecs::World &AScene::getWorld() const
-    {
-        return _world;
-    }
+    const ecs::World &AScene::getWorld() const { return _world; }
 } // namespace game
