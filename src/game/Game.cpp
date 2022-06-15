@@ -179,6 +179,5 @@ namespace game
         };
         raylib::core::Window::drawFPS(10, 10);
         _world.maintain();
-        _world.getResource<resources::EngineResource>().engine->switchScene();
     }
 } // namespace game

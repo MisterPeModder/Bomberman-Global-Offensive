@@ -23,6 +23,7 @@ extern "C"
         game::Engine *engine = reinterpret_cast<game::Engine *>(userData);
         engine->getScene().getWorld();
         engine->getScene().drawFrame();
+        engine->switchScene();
     }
 
     /// Emscripten window resize event
@@ -76,8 +77,10 @@ namespace game
         // since there is no such thing as a window.
         emscripten_set_main_loop_arg(&Game_drawFrame, reinterpret_cast<void *>(this), 0, 1);
 #else
-        while (!raylib::core::Window::shouldClose())
+        while (!raylib::core::Window::shouldClose()) {
             _scene->drawFrame();
+            switchScene();
+        }
 #endif // !defined(__EMSCRIPTEN__)}
     }
 } // namespace game
