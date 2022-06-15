@@ -38,6 +38,7 @@
 #include "systems/Collision.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
+#include "systems/Items.hpp"
 #include "systems/Movement.hpp"
 
 #include <cmath>
@@ -123,9 +124,10 @@ namespace game
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
+        _world.addSystem<systems::PickupItem>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb>();
+        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawingCube, systems::DrawBomb>();
 
