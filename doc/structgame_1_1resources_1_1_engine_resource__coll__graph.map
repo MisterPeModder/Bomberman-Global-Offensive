@@ -1,0 +1,6 @@
+<map id="game::resources::EngineResource" name="game::resources::EngineResource">
+<area shape="rect" id="node1" title="Game engine resource." alt="" coords="5,213,248,240"/>
+<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="49,124,161,151"/>
+<area shape="rect" id="node3" href="$classgame_1_1_engine.html" title=" " alt="" coords="186,124,297,151"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="156,5,327,47"/>
+</map>

@@ -1,7 +1,7 @@
 var classgame_1_1_game =
 [
     [ "Parameters", "structgame_1_1_game_1_1_parameters.html", "structgame_1_1_game_1_1_parameters" ],
-    [ "Game", "classgame_1_1_game.html#a9451f6193dfa22357d2281af27a0e3cb", null ],
+    [ "Game", "classgame_1_1_game.html#abd5f35d29ea99ac7558f37ea24e3ebb1", null ],
     [ "~Game", "classgame_1_1_game.html#a61f0017c3ec2875e8e58a250f822fa5f", null ],
     [ "drawFrame", "classgame_1_1_game.html#a69462d190aa20f35c398add3bc918c4f", null ],
     [ "getCamera", "classgame_1_1_game.html#a4969959436c3675a631bead959f9a227", null ],
@@ -19,5 +19,5 @@ var classgame_1_1_game =
     [ "_params", "classgame_1_1_game.html#a747a80e1e314f5cf1da37bfa8c4e92ee", null ],
     [ "_resolveCollisions", "classgame_1_1_game.html#a376f908d8e8467ddc927df52eaf6fddc", null ],
     [ "_update", "classgame_1_1_game.html#a9c253c4c0b2d9a1b1f22cfb75528201e", null ],
-    [ "_world", "classgame_1_1_game.html#acb6e8540742ef0239d2f9ba4fa163eed", null ]
+    [ "_world", "classgame_1_1_game.html#ade7db3e019d79ad205d94c9c6e96be55", null ]
 ];

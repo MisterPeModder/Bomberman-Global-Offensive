@@ -63,6 +63,7 @@ var hierarchy =
     ] ],
     [ "raylib::core::Cursor", "classraylib_1_1core_1_1_cursor.html", null ],
     [ "raylib::core::scoped::Drawing", "classraylib_1_1core_1_1scoped_1_1_drawing.html", null ],
+    [ "game::Engine", "classgame_1_1_engine.html", null ],
     [ "bmjs::Engine", "classbmjs_1_1_engine.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "ecs::World::EntityBuilder", "classecs_1_1_world_1_1_entity_builder.html", null ],
@@ -122,6 +123,7 @@ var hierarchy =
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
       [ "ecs::Timer", "classecs_1_1_timer.html", null ],
       [ "game::resources::AssetMap< T >", "classgame_1_1resources_1_1_asset_map.html", null ],
+      [ "game::resources::EngineResource", "structgame_1_1resources_1_1_engine_resource.html", null ],
       [ "game::resources::Map", "structgame_1_1resources_1_1_map.html", null ],
       [ "game::resources::RandomDevice", "structgame_1_1resources_1_1_random_device.html", null ],
       [ "game::Users", "classgame_1_1_users.html", null ]

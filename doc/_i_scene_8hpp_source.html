@@ -97,29 +97,35 @@ $(document).ready(function(){initNavTree('_i_scene_8hpp_source.html',''); initRe
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef GAME_SCENES_ISCENE_HPP_</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define GAME_SCENES_ISCENE_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_8hpp.html">game/Game.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_camera3_d_8hpp.html">raylib/core/Camera3D.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegame.html">game</a></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classgame_1_1_i_scene.html">   16</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classgame_1_1_i_scene.html">IScene</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classgame_1_1_i_scene.html#aec2ec510ab99aefc8080d28eb4c6076e">~IScene</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_i_scene.html#a148377517749171258c9aba901e08094">setCamera</a>(<a class="code" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a> &amp;camera) = 0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_i_scene.html#a8416831ddffbdc55d69dae01e52482f3">drawFrame</a>(<span class="keyword">const</span> <a class="code" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a> &amp;camera) = 0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    };</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;} <span class="comment">// namespace game</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_world_8hpp.html">ecs/World.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_8hpp.html">game/Game.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_camera3_d_8hpp.html">raylib/core/Camera3D.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegame.html">game</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classgame_1_1_i_scene.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classgame_1_1_i_scene.html">IScene</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classgame_1_1_i_scene.html#aec2ec510ab99aefc8080d28eb4c6076e">~IScene</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_i_scene.html#a23689ac4dc7690f54baa819a4fb4737e">drawFrame</a>() = 0;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !GAME_SCENES_ISCENE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classecs_1_1_world.html">ecs::World</a> &amp;<a class="code" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">getWorld</a>() = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classecs_1_1_world.html">ecs::World</a> &amp;<a class="code" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">getWorld</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <span class="comment">// namespace game</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !GAME_SCENES_ISCENE_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassgame_1_1_i_scene_html_a148377517749171258c9aba901e08094"><div class="ttname"><a href="classgame_1_1_i_scene.html#a148377517749171258c9aba901e08094">game::IScene::setCamera</a></div><div class="ttdeci">virtual void setCamera(raylib::core::Camera3D &amp;camera)=0</div></div>
-<div class="ttc" id="aclassgame_1_1_i_scene_html"><div class="ttname"><a href="classgame_1_1_i_scene.html">game::IScene</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_scene_8hpp_source.html#l00016">IScene.hpp:16</a></div></div>
+<div class="ttc" id="aclassgame_1_1_i_scene_html_a23689ac4dc7690f54baa819a4fb4737e"><div class="ttname"><a href="classgame_1_1_i_scene.html#a23689ac4dc7690f54baa819a4fb4737e">game::IScene::drawFrame</a></div><div class="ttdeci">virtual void drawFrame()=0</div><div class="ttdoc">Call the scene's drawFrame function.</div></div>
+<div class="ttc" id="aclassgame_1_1_i_scene_html"><div class="ttname"><a href="classgame_1_1_i_scene.html">game::IScene</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_scene_8hpp_source.html#l00017">IScene.hpp:17</a></div></div>
 <div class="ttc" id="a_game_8hpp_html"><div class="ttname"><a href="_game_8hpp.html">Game.hpp</a></div></div>
 <div class="ttc" id="anamespacegame_html"><div class="ttname"><a href="namespacegame.html">game</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_animation_8hpp_source.html#l00015">Animation.hpp:15</a></div></div>
-<div class="ttc" id="aclassraylib_1_1core_1_1_camera3_d_html"><div class="ttname"><a href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a></div><div class="ttdoc">The Camera3D class that encapsulates the raylib 3D camera.</div><div class="ttdef"><b>Definition:</b> <a href="_camera3_d_8hpp_source.html#l00025">Camera3D.hpp:25</a></div></div>
+<div class="ttc" id="a_world_8hpp_html"><div class="ttname"><a href="_world_8hpp.html">World.hpp</a></div></div>
+<div class="ttc" id="aclassgame_1_1_i_scene_html_a6dc8c2f9b7f74e0281ccb914626bdbf1"><div class="ttname"><a href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">game::IScene::getWorld</a></div><div class="ttdeci">virtual ecs::World &amp; getWorld()=0</div><div class="ttdoc">Gets the scene's mutable world object.</div></div>
 <div class="ttc" id="a_camera3_d_8hpp_html"><div class="ttname"><a href="_camera3_d_8hpp.html">Camera3D.hpp</a></div></div>
-<div class="ttc" id="aclassgame_1_1_i_scene_html_a8416831ddffbdc55d69dae01e52482f3"><div class="ttname"><a href="classgame_1_1_i_scene.html#a8416831ddffbdc55d69dae01e52482f3">game::IScene::drawFrame</a></div><div class="ttdeci">virtual void drawFrame(const raylib::core::Camera3D &amp;camera)=0</div></div>
+<div class="ttc" id="aclassecs_1_1_world_html"><div class="ttname"><a href="classecs_1_1_world.html">ecs::World</a></div><div class="ttdoc">Contains all entities and systems.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00030">World.hpp:30</a></div></div>
 <div class="ttc" id="aclassgame_1_1_i_scene_html_aec2ec510ab99aefc8080d28eb4c6076e"><div class="ttname"><a href="classgame_1_1_i_scene.html#aec2ec510ab99aefc8080d28eb4c6076e">game::IScene::~IScene</a></div><div class="ttdeci">virtual ~IScene()=default</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -1,8 +1,8 @@
 var dir_fe414d616bd0c4668e6515f48824338f =
 [
     [ "api", "dir_36f9cfdd60490391c4d3878313074c62.html", "dir_36f9cfdd60490391c4d3878313074c62" ],
-    [ "Engine.cpp", "_engine_8cpp.html", "_engine_8cpp" ],
-    [ "Engine.hpp", "_engine_8hpp.html", [
+    [ "Engine.cpp", "script_2_engine_8cpp.html", "script_2_engine_8cpp" ],
+    [ "Engine.hpp", "script_2_engine_8hpp.html", [
       [ "Engine", "classbmjs_1_1_engine.html", "classbmjs_1_1_engine" ]
     ] ],
     [ "JsException.cpp", "_js_exception_8cpp.html", null ],

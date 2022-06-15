@@ -1,5 +1,12 @@
 var NAVTREEINDEX4 =
 {
+"classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5a7586d7c8a4141211be912d9f30451040":[2,0,4,0,2,0,1],
+"classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5aae5bc943f4a997743bed5b2317c3a338":[2,0,4,0,2,0,3],
+"classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5ae282589e6de6f071091e57aa408fdeb2":[2,0,4,0,2,0,0],
+"classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5ae6fd45a0aa9df6b97d2c5505eb0fb7aa":[2,0,4,0,2,0,2],
+"classraylib_1_1core_1_1_camera3_d.html#ac3fb3fd911672e83a8d5ecdae63d0f5b":[2,0,4,0,2,15],
+"classraylib_1_1core_1_1_camera3_d.html#acdf27ff6ffd338468fc1d6487272a450":[2,0,4,0,2,18],
+"classraylib_1_1core_1_1_camera3_d.html#adc4c39d0308ab1a0a7688ffba23ef528":[2,0,4,0,2,7],
 "classraylib_1_1core_1_1_camera3_d.html#aecec3562123769ca05a6068108e52c03":[2,0,4,0,2,9],
 "classraylib_1_1core_1_1_camera3_d.html#aee661482534e8580623fce499ec4f41c":[2,0,4,0,2,8],
 "classraylib_1_1core_1_1_camera3_d.html#afc471bc078926ee5ddc07da8ee00cd76":[2,0,4,0,2,17],
@@ -242,12 +249,5 @@ var NAVTREEINDEX4 =
 "classraylib_1_1model_1_1_bounding_box.html#a1873931617e184c77374b560b70a9069":[2,0,4,1,1,7],
 "classraylib_1_1model_1_1_bounding_box.html#a21f6f555a6f96101e156e261767a2241":[2,0,4,1,1,8],
 "classraylib_1_1model_1_1_bounding_box.html#a378fd69fed8992b36db4aad849d7bc55":[2,0,4,1,1,6],
-"classraylib_1_1model_1_1_bounding_box.html#a629e04ccf8237864112a496d52b69d8a":[2,0,4,1,1,0],
-"classraylib_1_1model_1_1_bounding_box.html#a8023b5ffe266a2db994c63e6edf667ba":[2,0,4,1,1,2],
-"classraylib_1_1model_1_1_bounding_box.html#a9b42d291178cc69b52b158457395cae5":[2,0,4,1,1,3],
-"classraylib_1_1model_1_1_bounding_box.html#aa1531cba38ccc3692366442a8e6cbed8":[2,0,4,1,1,4],
-"classraylib_1_1model_1_1_bounding_box.html#ab00cfa1845fee8d842c89486335aa388":[2,0,4,1,1,5],
-"classraylib_1_1model_1_1_bounding_box.html#abb592c40daa6e8cf58aa5f33914c834e":[2,0,4,1,1,10],
-"classraylib_1_1model_1_1_bounding_box.html#ae0c88e28dd5c17240c1c7eaec0fe8e23":[2,0,4,1,1,9],
-"classraylib_1_1model_1_1_mesh.html":[2,0,4,1,2]
+"classraylib_1_1model_1_1_bounding_box.html#a629e04ccf8237864112a496d52b69d8a":[2,0,4,1,1,0]
 };

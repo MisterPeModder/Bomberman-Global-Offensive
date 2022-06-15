@@ -73,14 +73,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_scene_8cpp.html",
-"_resource_string_8cpp.html#ac2e6d472f0ee933c365353a1d8eb64e7",
-"classbmjs_1_1_registry_guard.html#a3e35b3815c8350b3bdd247fafe729a10",
-"classgame_1_1_users.html",
-"classraylib_1_1core_1_1_camera3_d.html#aecec3562123769ca05a6068108e52c03",
-"classraylib_1_1model_1_1_mesh.html#a0d58a36c1219abc9cadcc3a97c424431",
-"dir_fbda2f72d2afa15692e40e5b20379453.html",
-"structgame_1_1_game_1_1_parameters.html#a53dcbcfd11421a158021b9b97602c0e8",
-"structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041"
+"_resources_8hpp.html",
+"classbmjs_1_1_registry_guard.html#aef8abb5e1088d81bf7905185f6a07476",
+"classgame_1_1_user.html#a95dae16765e383a69b835b7916c734edae5d2ad241ec44cf155bc78ae8d11f715",
+"classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5a7586d7c8a4141211be912d9f30451040",
+"classraylib_1_1model_1_1_bounding_box.html#a8023b5ffe266a2db994c63e6edf667ba",
+"dir_a5f74f5d785ec5e5a721a58d25c88c44.html",
+"structecs_1_1_join_traits.html",
+"structraylib_1_1core_1_1_color.html#a32368efe61278e660c858a7aeb30615f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

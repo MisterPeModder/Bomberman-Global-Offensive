@@ -7,6 +7,7 @@ var namespacegame =
     [ "settings", "namespacegame_1_1settings.html", "namespacegame_1_1settings" ],
     [ "systems", "namespacegame_1_1systems.html", "namespacegame_1_1systems" ],
     [ "AScene", "classgame_1_1_a_scene.html", "classgame_1_1_a_scene" ],
+    [ "Engine", "classgame_1_1_engine.html", "classgame_1_1_engine" ],
     [ "Game", "classgame_1_1_game.html", "classgame_1_1_game" ],
     [ "GameScene", "classgame_1_1_game_scene.html", "classgame_1_1_game_scene" ],
     [ "IScene", "classgame_1_1_i_scene.html", "classgame_1_1_i_scene" ],
