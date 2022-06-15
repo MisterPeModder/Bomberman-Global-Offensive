@@ -44,13 +44,13 @@ static void loadSplashScene(ecs::World &world)
         .with<game::components::Size>(1.f, 0.5f, 0.5f)
         .with<game::components::RotationAngle>(-90.f)
         .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::WHITE)
+        .with<game::components::Color>(255, 255, 255, 0)
         .with<game::components::ScreenId>(0.f)
         .build();
 
     world.addEntity()
         .with<game::components::Position>(400.f, 500.f)
-        .with<game::components::Textual>("VLAVe", 72, raylib::core::Color::WHITE)
+        .with<game::components::Textual>("VLAVe", 72, game::components::Color(255, 255, 255, 0))
         .with<game::components::ScreenId>(0.f)
         .build();
 }

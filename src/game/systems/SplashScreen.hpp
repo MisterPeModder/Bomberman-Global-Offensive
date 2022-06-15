@@ -15,6 +15,8 @@
 #include "ecs/resource/Resource.hpp"
 #include "ecs/resource/Timer.hpp"
 
+#include "raylib/core/Color.hpp"
+
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
@@ -31,23 +33,10 @@
 
 static void buildRaylibSplash(ecs::SystemData &data)
 {
-    static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
-
-    data.getResource<ecs::Entities>()
-        .builder()
-        .with<game::components::Model>(data.getStorage<game::components::Model>(), testModelPath)
-        .with<game::components::Position>(data.getStorage<game::components::Position>(), 0.f, -2.f, 0.f)
-        .with<game::components::Size>(data.getStorage<game::components::Size>(), 1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(data.getStorage<game::components::RotationAngle>(), -90.f)
-        .with<game::components::RotationAxis>(data.getStorage<game::components::RotationAxis>(), 1.f, 0.f, 0.f)
-        .with<game::components::Color>(data.getStorage<game::components::Color>(), raylib::core::Color::RAY_WHITE)
-        .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 0.f)
-        .build();
-
     data.getResource<ecs::Entities>()
         .builder()
         .with<game::components::Textual>(
-            data.getStorage<game::components::Textual>(), "RAYLIB", 72, raylib::core::Color::WHITE)
+            data.getStorage<game::components::Textual>(), "RAYLIB", 72, raylib::core::Color(255, 255, 255, 0))
         .with<game::components::Position>(data.getStorage<game::components::Position>(), 400.f, 500.f)
         .build();
 }
@@ -60,6 +49,7 @@ namespace game::systems
         {
             auto &timer = data.getResource<ecs::Timer>();
             auto &entities = data.getResource<ecs::Entities>();
+            int colorMoveValue = 5;
 
             if (timer.elapsed() >= 6)
                 data.getResource<resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
@@ -69,6 +59,37 @@ namespace game::systems
                 if (timer.elapsed() >= 3 && _screenId == 0) {
                     buildRaylibSplash(data);
                     _screenId = 1;
+                }
+            }
+            for (auto [color] : ecs::join(data.getStorage<components::Color>())) {
+                std::cout << timer.elapsed() << " " << static_cast<int>(color.a) << std::endl;
+                if (_screenId == 0) {
+                    if (timer.elapsed() < 1.5) {
+                        if (color.a < 255 - colorMoveValue)
+                            color.a += colorMoveValue;
+                    } else if (color.a > 0 + colorMoveValue)
+                        color.a -= colorMoveValue;
+                } else if (_screenId == 1) {
+                    if (timer.elapsed() < 4.5) {
+                        if (color.a < 255 - colorMoveValue)
+                            color.a += colorMoveValue;
+                    } else if (color.a > 0 + colorMoveValue)
+                        color.a -= colorMoveValue;
+                }
+            }
+            for (auto [text] : ecs::join(data.getStorage<components::Textual>())) {
+                if (_screenId == 0) {
+                    if (timer.elapsed() < 1.5) {
+                        if (text.color.a < 255 - colorMoveValue)
+                            text.color.a += colorMoveValue;
+                    } else if (text.color.a > 0 + colorMoveValue)
+                        text.color.a -= colorMoveValue;
+                } else if (_screenId == 1) {
+                    if (timer.elapsed() < 4.5) {
+                        if (text.color.a < 255 - colorMoveValue)
+                            text.color.a += colorMoveValue;
+                    } else if (text.color.a > 0 + colorMoveValue)
+                        text.color.a -= colorMoveValue;
                 }
             }
         }
