@@ -24,7 +24,7 @@ namespace raylib
         {
             SetConfigFlags(FLAG_WINDOW_RESIZABLE);
             InitWindow(width, height, title.data());
-            SetWindowMinSize(1080, 720);
+            SetWindowMinSize(1280, 720);
         }
 
         void Window::close() { CloseWindow(); }

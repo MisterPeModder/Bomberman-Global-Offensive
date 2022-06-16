@@ -73,9 +73,7 @@ static void loadGraphicSettings(ecs::World &world)
             game::gui::Widget::NullTag, game::SettingsMenuScene::BACK, game::SettingsMenuScene::RES_1)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
-                raylib::core::Window::setSize(1080, 720);
                 raylib::core::Window::toggleFullscreen();
-                raylib::core::Window::setSize(1080, 720);
                 Logger::logger.log(Logger::Severity::Debug, "Toggled fullscreen");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
@@ -93,21 +91,19 @@ static void loadGraphicSettings(ecs::World &world)
 
     world.addEntity()
         .with<game::components::Position>(40.f, 30.f)
-        .with<game::components::Textual>("1080x720", 15, raylib::core::Color::RED)
+        .with<game::components::Textual>("1280x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_100,
             game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
-                if (!raylib::core::Window::isFullscreen())
-                    raylib::core::Window::setSize(1080, 720);
-                Logger::logger.log(Logger::Severity::Debug, "Window size set to (1080, 720)");
+                raylib::core::Window::setSize(1280, 720);
+                Logger::logger.log(Logger::Severity::Debug, "Window size set to (1280, 720)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color = raylib::core::Window::isFullscreen()
-                    ? raylib::core::Color::GRAY
-                    : ((state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                       : raylib::core::Color::RED);
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
             })
         .build();
 
@@ -119,15 +115,13 @@ static void loadGraphicSettings(ecs::World &world)
             game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
-                if (!raylib::core::Window::isFullscreen())
-                    raylib::core::Window::setSize(1366, 768);
+                raylib::core::Window::setSize(1366, 768);
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1366, 768)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color = raylib::core::Window::isFullscreen()
-                    ? raylib::core::Color::GRAY
-                    : ((state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                       : raylib::core::Color::RED);
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
             })
         .build();
 
@@ -139,15 +133,18 @@ static void loadGraphicSettings(ecs::World &world)
             game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
-                if (!raylib::core::Window::isFullscreen())
+                if (raylib::core::Window::isFullscreen()) {
+                    raylib::core::Window::toggleFullscreen();
+                    raylib::core::Window::setSize(1920, 1080);
+                    raylib::core::Window::toggleFullscreen();
+                } else
                     raylib::core::Window::setSize(1920, 1080);
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1920, 1080)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color = raylib::core::Window::isFullscreen()
-                    ? raylib::core::Color::GRAY
-                    : ((state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                       : raylib::core::Color::RED);
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
             })
         .build();
 }
