@@ -1,5 +1,7 @@
 <map id="bmjs::Engine" name="bmjs::Engine">
-<area shape="rect" id="node1" title="Javascript Engine Wrapper." alt="" coords="119,109,225,136"/>
-<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/weak_ptr.html" title=" " alt="" coords="5,5,163,47"/>
-<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="187,5,333,47"/>
+<area shape="rect" id="node1" title="Javascript Engine Wrapper." alt="" coords="196,228,303,255"/>
+<area shape="rect" id="node2" href="$classgame_1_1_engine.html" title=" " alt="" coords="35,131,146,158"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="5,5,176,47"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/weak_ptr.html" title=" " alt="" coords="171,124,328,165"/>
+<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="352,124,499,165"/>
 </map>

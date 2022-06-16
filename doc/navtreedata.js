@@ -74,13 +74,14 @@ var NAVTREEINDEX =
 [
 "_a_scene_8cpp.html",
 "_profile_8cpp.html#adcad6f6488d08c1303938c3ff1fdd534",
-"classbmjs_1_1_engine.html#ac4ab158fa38e4a74e4789609d6d7903e",
-"classgame_1_1_game.html#ae1640ac4bc4035fb5f28f6324747e6ac",
-"classlocalization_1_1_resource_file.html#a990e3a8cb3fce2e16fbe5c6da7eb63f2",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90afe5c3684dce76cdd9f7f42430868aa74",
-"classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204",
-"map_2_map_8hpp.html#a95b641603eaac584b05c44e4c58d21eb",
-"structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f"
+"classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971",
+"classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab",
+"classlocalization_1_1_resource_file.html#a2fbb494517dafb904df97fe868703bb5",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ae902674982fc99aa343cdd94da7476c3",
+"classraylib_1_1textures_1_1_image.html#aa53eeec71d70060d5cc33a14a4f494ab",
+"index.html#autotoc_md7",
+"structgame_1_1components_1_1_model.html#ae2451613aebb6795e8cbc2fbf7bf4835",
+"util_8hpp.html#a242a9ab3d7ed4cf8f348a27f5b47c36d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

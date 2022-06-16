@@ -172,8 +172,6 @@ Functions</h2></td></tr>
 <tr class="separator:a82b637c95aa6588de38ede48e48c659b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a738d65e5bb235cd4a2b0e5152341b20b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a> ()</td></tr>
 <tr class="separator:a738d65e5bb235cd4a2b0e5152341b20b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac89a68c1b4cae4b3bcbfc70638d5b5ea"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac89a68c1b4cae4b3bcbfc70638d5b5ea">runGame</a> ()</td></tr>
-<tr class="separator:ac89a68c1b4cae4b3bcbfc70638d5b5ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -221,77 +219,50 @@ Functions</h2></td></tr>
 <p>Setup the locales parameters</p>
 <p>Setup Audio for the program</p>
 <p>Setup the Window</p>
+<p>Create the game engine instance</p>
 <p>Start the Javascript engine</p>
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00054">54</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a8f00a5713bb962e7faf242e57d339c8c">localization::Localization::loadLocales</a>({<span class="stringliteral">&quot;en&quot;</span>, <span class="stringliteral">&quot;fr&quot;</span>});</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a>(<span class="stringliteral">&quot;fr&quot;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classraylib_1_1core_1_1scoped_1_1_audio_device.html">raylib::core::scoped::AudioDevice</a> audioDevice;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4888ad6d11dc3ce6a44500dd775c3228">raylib::core::Window::open</a>(<a class="code" href="main_8cpp.html#aad71f77cb8eb2283f94cde5892afd3d5">WIDTH</a>, <a class="code" href="main_8cpp.html#a82b637c95aa6588de38ede48e48c659b">HEIGHT</a>, <span class="stringliteral">&quot;Bomberman: Global Offensive&quot;</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a>(60);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#ifndef __EMSCRIPTEN__</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a> icon(<a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;assets&quot;</span>, <span class="stringliteral">&quot;icon.png&quot;</span>));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58">raylib::core::Window::setIcon</a>(icon);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr&lt;bmjs::Engine&gt;</a> jsEngine = <a class="code" href="classbmjs_1_1_engine.html#aac996ee9413c408bd9df23d83aa30d70">bmjs::Engine::create</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    jsEngine-&gt;loadApi();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    jsEngine-&gt;loadScript(<span class="stringliteral">&quot;hello&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="main_8cpp.html#ac89a68c1b4cae4b3bcbfc70638d5b5ea">runGame</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    } <span class="keywordflow">catch</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/error/exception.html">std::exception</a> <span class="keyword">const</span> &amp;e) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a>,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            [&amp;](<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;writer) { writer &lt;&lt; <span class="stringliteral">&quot;Game stopped with exception: &quot;</span> &lt;&lt; e.<a class="codeRef" href="http://en.cppreference.com/w/cpp/error/exception/what.html">what</a>(); });</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4554280bd183327323e4295a649d47f8">raylib::core::Window::close</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a21b107ce84909ff70792bff85e4fa7fb">localization::Localization::saveLocales</a>();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, <span class="stringliteral">&quot;End of program&quot;</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ac89a68c1b4cae4b3bcbfc70638d5b5ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac89a68c1b4cae4b3bcbfc70638d5b5ea">&#9670;&nbsp;</a></span>runGame()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void runGame </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00044">44</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef __EMSCRIPTEN__</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespacegame.html">game</a> = <span class="keyword">new</span> <a class="code" href="classgame_1_1_engine.html">game::Engine</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">auto</span> <a class="code" href="namespacegame.html">game</a> = std::make_unique&lt;game::Engine&gt;();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="namespacegame.html">game</a>-&gt;run();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a8f00a5713bb962e7faf242e57d339c8c">localization::Localization::loadLocales</a>({<span class="stringliteral">&quot;en&quot;</span>, <span class="stringliteral">&quot;fr&quot;</span>});</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a>(<span class="stringliteral">&quot;fr&quot;</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classraylib_1_1core_1_1scoped_1_1_audio_device.html">raylib::core::scoped::AudioDevice</a> audioDevice;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4888ad6d11dc3ce6a44500dd775c3228">raylib::core::Window::open</a>(<a class="code" href="main_8cpp.html#aad71f77cb8eb2283f94cde5892afd3d5">WIDTH</a>, <a class="code" href="main_8cpp.html#a82b637c95aa6588de38ede48e48c659b">HEIGHT</a>, <span class="stringliteral">&quot;Bomberman: Global Offensive&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a>(60);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#ifndef __EMSCRIPTEN__</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a> icon(<a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;assets&quot;</span>, <span class="stringliteral">&quot;icon.png&quot;</span>));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58">raylib::core::Window::setIcon</a>(icon);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifdef __EMSCRIPTEN__</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">auto</span> gameEnginePtr = <span class="keyword">new</span> <a class="code" href="classgame_1_1_engine.html">game::Engine</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">auto</span> gameEngine = std::make_unique&lt;game::Engine&gt;();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classgame_1_1_engine.html">game::Engine</a> *gameEnginePtr = gameEngine.get();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr&lt;bmjs::Engine&gt;</a> jsEngine = <a class="code" href="classbmjs_1_1_engine.html#a6d7f7c0d56901d0a83adfbac0c4828ac">bmjs::Engine::create</a>(gameEnginePtr);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    jsEngine-&gt;loadApi();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    jsEngine-&gt;loadScript(<span class="stringliteral">&quot;hello&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        gameEnginePtr-&gt;<a class="code" href="classgame_1_1_engine.html#a83b72454c8f96779dd8b2bf5ae1581f5">run</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    } <span class="keywordflow">catch</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/error/exception.html">std::exception</a> <span class="keyword">const</span> &amp;e) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a>,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            [&amp;](<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;writer) { writer &lt;&lt; <span class="stringliteral">&quot;Game stopped with exception: &quot;</span> &lt;&lt; e.<a class="codeRef" href="http://en.cppreference.com/w/cpp/error/exception/what.html">what</a>(); });</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4554280bd183327323e4295a649d47f8">raylib::core::Window::close</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="classlocalization_1_1_localization.html#a21b107ce84909ff70792bff85e4fa7fb">localization::Localization::saveLocales</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, <span class="stringliteral">&quot;End of program&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -365,15 +336,13 @@ Functions</h2></td></tr>
 <div class="ttc" id="amain_8cpp_html_a82b637c95aa6588de38ede48e48c659b"><div class="ttname"><a href="main_8cpp.html#a82b637c95aa6588de38ede48e48c659b">HEIGHT</a></div><div class="ttdeci">constexpr int HEIGHT(720)</div></div>
 <div class="ttc" id="aexception_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/exception.html">std::exception</a></div></div>
 <div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00057">Logger.hpp:57</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_aac996ee9413c408bd9df23d83aa30d70"><div class="ttname"><a href="classbmjs_1_1_engine.html#aac996ee9413c408bd9df23d83aa30d70">bmjs::Engine::create</a></div><div class="ttdeci">static std::shared_ptr&lt; Engine &gt; create()</div><div class="ttdoc">Creates the instance of Engine, if it does not already exist.</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00028">Engine.cpp:28</a></div></div>
 <div class="ttc" id="aclasslocalization_1_1_localization_html_a1a818ebbf478503b554160495ca14cd6"><div class="ttname"><a href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a></div><div class="ttdeci">static void setLocale(std::string_view locale)</div><div class="ttdoc">Load a locale file.</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8cpp_source.html#l00026">Localization.cpp:26</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a></div><div class="ttdeci">@ Information</div><div class="ttdoc">Debug messages.</div></div>
-<div class="ttc" id="amain_8cpp_html_ac89a68c1b4cae4b3bcbfc70638d5b5ea"><div class="ttname"><a href="main_8cpp.html#ac89a68c1b4cae4b3bcbfc70638d5b5ea">runGame</a></div><div class="ttdeci">static void runGame()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00044">main.cpp:44</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_a6d7f7c0d56901d0a83adfbac0c4828ac"><div class="ttname"><a href="classbmjs_1_1_engine.html#a6d7f7c0d56901d0a83adfbac0c4828ac">bmjs::Engine::create</a></div><div class="ttdeci">static std::shared_ptr&lt; Engine &gt; create(game::Engine *gameEngine)</div><div class="ttdoc">Creates the instance of Engine, if it does not already exist.</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00028">Engine.cpp:28</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a4554280bd183327323e4295a649d47f8"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a4554280bd183327323e4295a649d47f8">raylib::core::Window::close</a></div><div class="ttdeci">static void close()</div><div class="ttdoc">Close the window.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00029">Window.cpp:29</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_aabadae0caf642d84ed7e2268837fef58"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58">raylib::core::Window::setIcon</a></div><div class="ttdeci">static void setIcon(textures::Image const &amp;icon)</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00056">Window.cpp:56</a></div></div>
 <div class="ttc" id="anamespaceutil_html_a05454346e6b75a324321c23f7afc5727"><div class="ttname"><a href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00022">util.hpp:22</a></div></div>
 <div class="ttc" id="aclass_logger_html_a36215575ad071720cbef8f6ea5542c7d"><div class="ttname"><a href="class_logger.html#a36215575ad071720cbef8f6ea5542c7d">Logger::setLogLevel</a></div><div class="ttdeci">void setLogLevel(Severity logLevel)</div><div class="ttdoc">Set the Log Level.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00138">Logger.cpp:138</a></div></div>
-<div class="ttc" id="anamespacegame_html"><div class="ttname"><a href="namespacegame.html">game</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_animation_8hpp_source.html#l00015">Animation.hpp:15</a></div></div>
 <div class="ttc" id="abasic_ostream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a4888ad6d11dc3ce6a44500dd775c3228"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a4888ad6d11dc3ce6a44500dd775c3228">raylib::core::Window::open</a></div><div class="ttdeci">static void open(int width=1920, int height=1080, std::string_view title=&quot;BM:GO&quot;)</div><div class="ttdoc">Open the window (may cause problems if the window is already open)</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00023">Window.cpp:23</a></div></div>
 <div class="ttc" id="amain_8cpp_html_aad71f77cb8eb2283f94cde5892afd3d5"><div class="ttname"><a href="main_8cpp.html#aad71f77cb8eb2283f94cde5892afd3d5">WIDTH</a></div><div class="ttdeci">constexpr int WIDTH(1080)</div></div>
@@ -384,6 +353,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="amain_8cpp_html_a738d65e5bb235cd4a2b0e5152341b20b"><div class="ttname"><a href="main_8cpp.html#a738d65e5bb235cd4a2b0e5152341b20b">setupLogger</a></div><div class="ttdeci">static void setupLogger()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00034">main.cpp:34</a></div></div>
 <div class="ttc" id="aclassraylib_1_1textures_1_1_image_html"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a></div><div class="ttdoc">This is the Image class.</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2textures_2_image_8hpp_source.html#l00026">Image.hpp:26</a></div></div>
 <div class="ttc" id="anamespaceraylib_html_a5dc68016fbc13caad670072e7802ac94"><div class="ttname"><a href="namespaceraylib.html#a5dc68016fbc13caad670072e7802ac94">raylib::initLogger</a></div><div class="ttdeci">void initLogger(int logLevel)</div><div class="ttdoc">Redirect the raylib logger in log_raylib.txt.</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2_logger_8cpp_source.html#l00038">logger.cpp:38</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a83b72454c8f96779dd8b2bf5ae1581f5"><div class="ttname"><a href="classgame_1_1_engine.html#a83b72454c8f96779dd8b2bf5ae1581f5">game::Engine::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs the game.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00077">Engine.cpp:77</a></div></div>
 <div class="ttc" id="aclass_logger_html_ab6e8022952d15d8784dc022587d14b09"><div class="ttname"><a href="class_logger.html#ab6e8022952d15d8784dc022587d14b09">Logger::setLogInfo</a></div><div class="ttdeci">void setLogInfo(LogInfo info, Args... args)</div><div class="ttdoc">Set the exclusive LogInfo enabled (all infos not specified will be disabled).</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00162">Logger.hpp:162</a></div></div>
 <div class="ttc" id="aclasslocalization_1_1_localization_html_a21b107ce84909ff70792bff85e4fa7fb"><div class="ttname"><a href="classlocalization_1_1_localization.html#a21b107ce84909ff70792bff85e4fa7fb">localization::Localization::saveLocales</a></div><div class="ttdeci">static void saveLocales()</div><div class="ttdoc">Save the loaded locale files.</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8cpp_source.html#l00035">Localization.cpp:35</a></div></div>
 <div class="ttc" id="awhat_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/exception/what.html">std::exception::what</a></div><div class="ttdeci">T what(T... args)</div></div>
