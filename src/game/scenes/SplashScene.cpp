@@ -59,11 +59,10 @@ static void loadSplashScene(ecs::World &world)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(0, game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::gui::Widget::NullTag, true)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) {
-                world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
-                Logger::logger.log(Logger::Severity::Debug, "Skip splash screen");
-            })
+        .with<game::gui::Clickable>([&world](ecs::Entity) {
+            world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            Logger::logger.log(Logger::Severity::Debug, "Skip splash screen");
+        })
         .build();
 }
 

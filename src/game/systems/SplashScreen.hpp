@@ -46,13 +46,15 @@ static void buildRaylibSplash(ecs::SystemData &data)
         .with<game::components::Textual>(
             data.getStorage<game::components::Textual>(), "RAYLIB", 72, raylib::core::Color(255, 255, 255, 0))
         .with<game::components::Position>(data.getStorage<game::components::Position>(), 400.f, 500.f)
-        .with<game::components::Controlable>(data.getStorage<game::components::Controlable>(), game::User::UserId::User1)
-        .with<game::gui::Widget>(data.getStorage<game::gui::Widget>(), 0, game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
-            game::gui::Widget::NullTag, true)
-        .with<game::gui::Clickable>(data.getStorage<game::gui::Clickable>(), [&data](ecs::Entity) {
-            data.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
-            Logger::logger.log(Logger::Severity::Debug, "Skip splash screen");
-        })
+        .with<game::components::Controlable>(
+            data.getStorage<game::components::Controlable>(), game::User::UserId::User1)
+        .with<game::gui::Widget>(data.getStorage<game::gui::Widget>(), 0, game::gui::Widget::NullTag,
+            game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
+        .with<game::gui::Clickable>(data.getStorage<game::gui::Clickable>(),
+            [&data](ecs::Entity) {
+                data.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+                Logger::logger.log(Logger::Severity::Debug, "Skip splash screen");
+            })
         .build();
 }
 
