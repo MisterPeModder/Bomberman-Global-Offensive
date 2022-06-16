@@ -9,6 +9,7 @@
 #define GAME_COMPONENTS_MODEL_HPP_
 
 #include <filesystem>
+#include "Reference.hpp"
 #include "ecs/Component.hpp"
 #include "raylib/model/Mesh.hpp"
 #include "raylib/model/Model.hpp"
@@ -20,6 +21,8 @@ namespace game::components
         Model(const raylib::model::Mesh &pMesh) : raylib::model::Model(pMesh) {}
         Model(const std::filesystem::path &pPath) : raylib::model::Model(pPath) {}
     };
+
+    using ModelReference = Reference<raylib::model::Model>;
 } // namespace game::components
 
 #endif
