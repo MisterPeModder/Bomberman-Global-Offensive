@@ -42,7 +42,7 @@ namespace game::systems
                     continue;
                 /// If entity1 has a bomb no clip enabled and entity 2 is the ignored (static) bomb we ignore the
                 /// collision.
-                if (bombNoClip && bombNoClip->enabled && bomb2 && !vel2 && bombNoClip->matchEntityPosition(pos2))
+                if (bombNoClip && bombNoClip->enabled && bomb2 && !vel2 && bombNoClip->matchEntityPosition(pos2, size2))
                     continue;
                 if (!getCollideRect(collideRect, pos1, size1, pos2, size2))
                     continue;

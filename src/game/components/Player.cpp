@@ -139,7 +139,8 @@ namespace game::components
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .with<Collidable>(data.getStorage<Collidable>())
             .build();
-        ++placer.placedBombs;
+        if (bombType == Bomb::Type::Classic)
+            ++placer.placedBombs;
         /// Disable collision with bomb for all player on the bomb cell
         for (auto [pos, player, playerId] : ecs::join(positions, players, data.getResource<ecs::Entities>()))
             if (bombCell == game::Game::worldPosToMapCell(pos))
