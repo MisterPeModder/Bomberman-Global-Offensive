@@ -89,8 +89,22 @@ namespace game::components
         /// @return const Item& item.
         static const Item &getItem(Identifier identifier);
 
+        /// First activable item.
+        /// @note The last is the item preceeding @ref Identifier::Count
         static constexpr Identifier FIRST_ACTIVABLE = Identifier::LandMine;
+
+        /// Get the activable item following @c current.
+        /// @note This function consider the activable items as a circular list, beware infinity loops.
+        ///
+        /// @param current current item.
+        /// @return Identifier item following @c current.
         static Identifier nextActivable(Identifier current);
+
+        /// Get the activable item preceeding @c current.
+        /// @note This function consider the activable items as a circular list, beware infinity loops.
+        ///
+        /// @param current current item.
+        /// @return Identifier item preceeding @c current.
         static Identifier previousActivable(Identifier current);
 
       private:
