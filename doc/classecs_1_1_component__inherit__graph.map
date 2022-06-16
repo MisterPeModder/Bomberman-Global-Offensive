@@ -1,5 +1,5 @@
 <map id="ecs::Component" name="ecs::Component">
-<area shape="rect" id="node1" title="The base component type, all components must inherit from Component." alt="" coords="5,740,132,767"/>
+<area shape="rect" id="node1" title="The base component type, all components must inherit from Component." alt="" coords="5,765,132,792"/>
 <area shape="rect" id="node2" href="$structgame_1_1components_1_1_animation.html" title=" " alt="" coords="198,5,421,32"/>
 <area shape="rect" id="node3" href="$structgame_1_1components_1_1_bomb.html" title="Bomb component." alt="" coords="213,56,406,83"/>
 <area shape="rect" id="node4" href="$structgame_1_1components_1_1_bomb_no_clip.html" title=" " alt="" coords="191,107,427,133"/>
@@ -23,14 +23,15 @@
 <area shape="rect" id="node22" href="$structgame_1_1components_1_1_rotation_angle.html" title=" " alt="" coords="204,1019,415,1061"/>
 <area shape="rect" id="node23" href="$structgame_1_1components_1_1_rotation_axis.html" title=" " alt="" coords="190,1085,429,1112"/>
 <area shape="rect" id="node24" href="$structgame_1_1components_1_1_scale.html" title=" " alt="" coords="214,1136,405,1163"/>
-<area shape="rect" id="node25" href="$structgame_1_1components_1_1_size.html" title=" " alt="" coords="218,1187,401,1213"/>
-<area shape="rect" id="node26" href="$structgame_1_1components_1_1_size2_d.html" title=" " alt="" coords="209,1237,409,1264"/>
-<area shape="rect" id="node27" href="$structgame_1_1components_1_1_textual.html" title="Textual element." alt="" coords="208,1288,411,1315"/>
-<area shape="rect" id="node28" href="$structgame_1_1components_1_1_texture2_d.html" title=" " alt="" coords="199,1339,420,1365"/>
-<area shape="rect" id="node29" href="$structgame_1_1components_1_1_velocity.html" title="Velocity component." alt="" coords="206,1389,413,1416"/>
-<area shape="rect" id="node30" href="$structgame_1_1components_1_1_wall.html" title="Wall marker." alt="" coords="218,1440,401,1467"/>
-<area shape="rect" id="node31" href="$classgame_1_1gui_1_1_i_widget_component.html" title="Base class for all widgets components." alt="" coords="199,1491,419,1517"/>
-<area shape="rect" id="node32" href="$structgame_1_1gui_1_1_checkable.html" title="Checkable component, used for checkbox widgets." alt="" coords="487,1440,649,1467"/>
-<area shape="rect" id="node33" href="$structgame_1_1gui_1_1_clickable.html" title="Clickable component." alt="" coords="491,1491,645,1517"/>
-<area shape="rect" id="node34" href="$structgame_1_1gui_1_1_widget.html" title="Widget component." alt="" coords="497,1541,639,1568"/>
+<area shape="rect" id="node25" href="$structgame_1_1components_1_1_screen_id.html" title=" " alt="" coords="204,1187,415,1213"/>
+<area shape="rect" id="node26" href="$structgame_1_1components_1_1_size.html" title=" " alt="" coords="218,1237,401,1264"/>
+<area shape="rect" id="node27" href="$structgame_1_1components_1_1_size2_d.html" title=" " alt="" coords="209,1288,409,1315"/>
+<area shape="rect" id="node28" href="$structgame_1_1components_1_1_textual.html" title="Textual element." alt="" coords="208,1339,411,1365"/>
+<area shape="rect" id="node29" href="$structgame_1_1components_1_1_texture2_d.html" title=" " alt="" coords="199,1389,420,1416"/>
+<area shape="rect" id="node30" href="$structgame_1_1components_1_1_velocity.html" title="Velocity component." alt="" coords="206,1440,413,1467"/>
+<area shape="rect" id="node31" href="$structgame_1_1components_1_1_wall.html" title="Wall marker." alt="" coords="218,1491,401,1517"/>
+<area shape="rect" id="node32" href="$classgame_1_1gui_1_1_i_widget_component.html" title="Base class for all widgets components." alt="" coords="199,1541,419,1568"/>
+<area shape="rect" id="node33" href="$structgame_1_1gui_1_1_checkable.html" title="Checkable component, used for checkbox widgets." alt="" coords="487,1491,649,1517"/>
+<area shape="rect" id="node34" href="$structgame_1_1gui_1_1_clickable.html" title="Clickable component." alt="" coords="491,1541,645,1568"/>
+<area shape="rect" id="node35" href="$structgame_1_1gui_1_1_widget.html" title="Widget component." alt="" coords="497,1592,639,1619"/>
 </map>

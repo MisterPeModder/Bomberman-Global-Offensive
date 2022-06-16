@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('game_2_engine_8cpp_source.html',''); i
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game_2_engine_8hpp.html">game/Engine.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_settings_menu_scene_8hpp.html">game/scenes/SettingsMenuScene.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_splash_scene_8hpp.html">game/scenes/SplashScene.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_window_8hpp.html">raylib/core/Window.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#pragma region Browser Events</span></div>
@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('game_2_engine_8cpp_source.html',''); i
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classgame_1_1_engine.html#a73c74b99146453a5f42f9fbc8a1b0ddf">   55</a></span>&#160;    <a class="code" href="classgame_1_1_engine.html#a73c74b99146453a5f42f9fbc8a1b0ddf">Engine::Engine</a>() : _debugMode(false)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a> = std::make_unique&lt;SettingsMenuScene&gt;();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a> = std::make_unique&lt;SplashScene&gt;();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>-&gt;getWorld().addResource&lt;<a class="code" href="structgame_1_1resources_1_1_engine_resource.html">resources::EngineResource</a>&gt;(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
@@ -210,9 +210,9 @@ $(document).ready(function(){initNavTree('game_2_engine_8cpp_source.html',''); i
 <div class="ttc" id="aclassgame_1_1_engine_html_a83b72454c8f96779dd8b2bf5ae1581f5"><div class="ttname"><a href="classgame_1_1_engine.html#a83b72454c8f96779dd8b2bf5ae1581f5">game::Engine::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs the game.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00077">Engine.cpp:77</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_a000198d5814b224f892bc9ae317015c6"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">raylib::core::Vector2::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00139">Vector2.hpp:139</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a4db1d089b4108b6a2644b48b72a7f524"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a></div><div class="ttdeci">static void setSize(int width, int height)</div><div class="ttdoc">Set the window size.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00043">Window.cpp:43</a></div></div>
+<div class="ttc" id="a_splash_scene_8hpp_html"><div class="ttname"><a href="_splash_scene_8hpp.html">SplashScene.hpp</a></div></div>
 <div class="ttc" id="agame_2_engine_8hpp_html"><div class="ttname"><a href="game_2_engine_8hpp.html">Engine.hpp</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_af286ae0d4dd1908cf3668c651a509c47"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">raylib::core::Vector2::y</a></div><div class="ttdeci">T y</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00140">Vector2.hpp:140</a></div></div>
-<div class="ttc" id="a_settings_menu_scene_8hpp_html"><div class="ttname"><a href="_settings_menu_scene_8hpp.html">SettingsMenuScene.hpp</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

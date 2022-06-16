@@ -107,8 +107,8 @@ Collaboration diagram for game::SplashScene:</div>
 <div class="dyncontent">
 <div class="center"><img src="classgame_1_1_splash_scene__coll__graph.png" border="0" usemap="#game_1_1_splash_scene_coll__map" alt="Collaboration graph"/></div>
 <map name="game_1_1_splash_scene_coll__map" id="game_1_1_splash_scene_coll__map">
-<area shape="rect" title=" " alt="" coords="1129,191,1279,217"/>
-<area shape="rect" href="classgame_1_1_a_scene.html" title=" " alt="" coords="965,191,1080,217"/>
+<area shape="rect" title=" " alt="" coords="1129,205,1279,232"/>
+<area shape="rect" href="classgame_1_1_a_scene.html" title=" " alt="" coords="965,205,1080,232"/>
 <area shape="rect" href="classgame_1_1_i_scene.html" title=" " alt="" coords="649,80,760,107"/>
 <area shape="rect" href="classecs_1_1_world.html" title="Contains all entities and systems." alt="" coords="660,131,749,157"/>
 <area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="339,19,490,61"/>
@@ -117,10 +117,10 @@ Collaboration diagram for game::SplashScene:</div>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="5,85,240,141"/>
 <area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="339,158,490,199"/>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="11,165,235,221"/>
-<area shape="rect" href="classecs_1_1_system_tag.html" title="A group of System types." alt="" coords="643,185,766,212"/>
+<area shape="rect" href="classecs_1_1_system_tag.html" title="A group of System types." alt="" coords="643,193,766,220"/>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/vector.html" title=" " alt="" coords="333,223,496,265"/>
-<area shape="rect" href="classraylib_1_1core_1_1_camera2_d.html" title="The Camera2D class that encapsulates the raylib 2D camera." alt="" coords="619,275,791,301"/>
-<area shape="rect" href="classraylib_1_1core_1_1_camera3_d.html" title="The Camera3D class that encapsulates the raylib 3D camera." alt="" coords="619,364,791,391"/>
+<area shape="rect" href="classraylib_1_1core_1_1_camera2_d.html" title="The Camera2D class that encapsulates the raylib 2D camera." alt="" coords="619,283,791,309"/>
+<area shape="rect" href="classraylib_1_1core_1_1_camera3_d.html" title="The Camera3D class that encapsulates the raylib 3D camera." alt="" coords="619,372,791,399"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -159,6 +159,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a2ae76f39f390cfaa183ccfec1410eb46 inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a416cd98a9845c72451fc80bcd91f9754 inherit pro_attribs_classgame_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_system_tag.html">ecs::SystemTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#a416cd98a9845c72451fc80bcd91f9754">_global3D</a></td></tr>
 <tr class="separator:a416cd98a9845c72451fc80bcd91f9754 inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a795ee95198a746a13208195fb0c2e inherit pro_attribs_classgame_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_system_tag.html">ecs::SystemTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#ae6a795ee95198a746a13208195fb0c2e">_globalNoDraw</a></td></tr>
+<tr class="separator:ae6a795ee95198a746a13208195fb0c2e inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -180,7 +182,22 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_splash_scene_8cpp_source.html#l00064">64</a> of file <a class="el" href="_splash_scene_8cpp_source.html">SplashScene.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ <a class="code" href="_splash_scene_8cpp.html#a973ccbf0cab4bb58019c703579b2a013">loadSplashScene</a>(<a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>); }</div>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a35d2aabad3acb861b98122430c89d52e">addResource</a>&lt;<a class="code" href="classecs_1_1_timer.html">ecs::Timer</a>&gt;();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a35d2aabad3acb861b98122430c89d52e">addResource</a>&lt;<a class="code" href="classgame_1_1_users.html">game::Users</a>&gt;();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#aa1222e462fa0cfa6944cc92c0238afe7">addStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">addSystem</a>&lt;<a class="code" href="structgame_1_1systems_1_1_input_manager.html">game::systems::InputManager</a>&gt;();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">addSystem</a>&lt;<a class="code" href="structgame_1_1systems_1_1_splash_screen.html">game::systems::SplashScreen</a>&gt;();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">addSystem</a>&lt;<a class="code" href="structgame_1_1systems_1_1_draw_texture.html">game::systems::DrawTexture</a>&gt;();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#ae6a795ee95198a746a13208195fb0c2e">_globalNoDraw</a>.<a class="code" href="classecs_1_1_system_tag.html#aa780de0d82b66258e5540b0e1ba56c0c">add</a>&lt;<a class="code" href="structgame_1_1systems_1_1_input_manager.html">game::systems::InputManager</a>&gt;();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#ae6a795ee95198a746a13208195fb0c2e">_globalNoDraw</a>.<a class="code" href="classecs_1_1_system_tag.html#aa780de0d82b66258e5540b0e1ba56c0c">add</a>&lt;<a class="code" href="structgame_1_1systems_1_1_splash_screen.html">game::systems::SplashScreen</a>&gt;();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">_global2D</a>.<a class="code" href="classecs_1_1_system_tag.html#aa780de0d82b66258e5540b0e1ba56c0c">add</a>&lt;<a class="code" href="structgame_1_1systems_1_1_draw_texture.html">game::systems::DrawTexture</a>&gt;();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="_splash_scene_8cpp.html#a973ccbf0cab4bb58019c703579b2a013">loadSplashScene</a>(<a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -190,8 +207,20 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a_splash_scene_8cpp_html_a973ccbf0cab4bb58019c703579b2a013"><div class="ttname"><a href="_splash_scene_8cpp.html#a973ccbf0cab4bb58019c703579b2a013">loadSplashScene</a></div><div class="ttdeci">static void loadSplashScene(ecs::World &amp;world)</div><div class="ttdef"><b>Definition:</b> <a href="_splash_scene_8cpp_source.html#l00021">SplashScene.cpp:21</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_a35d2aabad3acb861b98122430c89d52e"><div class="ttname"><a href="classecs_1_1_world.html#a35d2aabad3acb861b98122430c89d52e">ecs::World::addResource</a></div><div class="ttdeci">R &amp; addResource(Args &amp;&amp;...args)</div><div class="ttdoc">Adds a new world Resource instance.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00103">World.hpp:103</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_draw_texture_html"><div class="ttname"><a href="structgame_1_1systems_1_1_draw_texture.html">game::systems::DrawTexture</a></div><div class="ttdef"><b>Definition:</b> <a href="_draw_texture_8hpp_source.html#l00024">DrawTexture.hpp:24</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_splash_screen_html"><div class="ttname"><a href="structgame_1_1systems_1_1_splash_screen.html">game::systems::SplashScreen</a></div><div class="ttdef"><b>Definition:</b> <a href="_splash_screen_8hpp_source.html#l00067">SplashScreen.hpp:67</a></div></div>
+<div class="ttc" id="a_splash_scene_8cpp_html_a973ccbf0cab4bb58019c703579b2a013"><div class="ttname"><a href="_splash_scene_8cpp.html#a973ccbf0cab4bb58019c703579b2a013">loadSplashScene</a></div><div class="ttdeci">static void loadSplashScene(ecs::World &amp;world)</div><div class="ttdef"><b>Definition:</b> <a href="_splash_scene_8cpp_source.html#l00039">SplashScene.cpp:39</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_a2ae76f39f390cfaa183ccfec1410eb46"><div class="ttname"><a href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">game::AScene::_global2D</a></div><div class="ttdeci">ecs::SystemTag _global2D</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00031">AScene.hpp:31</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_aa1222e462fa0cfa6944cc92c0238afe7"><div class="ttname"><a href="classecs_1_1_world.html#aa1222e462fa0cfa6944cc92c0238afe7">ecs::World::addStorage</a></div><div class="ttdeci">getStorageType&lt; C &gt; &amp; addStorage()</div><div class="ttdoc">Registers a component's storage.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00134">World.hpp:134</a></div></div>
+<div class="ttc" id="aclassecs_1_1_system_tag_html_aa780de0d82b66258e5540b0e1ba56c0c"><div class="ttname"><a href="classecs_1_1_system_tag.html#aa780de0d82b66258e5540b0e1ba56c0c">ecs::SystemTag::add</a></div><div class="ttdeci">SystemTag &amp; add()</div><div class="ttdoc">Adds the given System types to this tag.</div><div class="ttdef"><b>Definition:</b> <a href="_system_tag_8hpp_source.html#l00037">SystemTag.hpp:37</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_a4318218f7d56a3103a49d75807555781"><div class="ttname"><a href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">ecs::World::addSystem</a></div><div class="ttdeci">void addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Creates a instance of the system S and adds it the active systems of this World.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00117">World.hpp:117</a></div></div>
 <div class="ttc" id="aclassgame_1_1_a_scene_html_afdf06f86902561fc6171caab6313e71b"><div class="ttname"><a href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">game::AScene::_world</a></div><div class="ttdeci">ecs::World _world</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00028">AScene.hpp:28</a></div></div>
+<div class="ttc" id="aclassecs_1_1_timer_html"><div class="ttname"><a href="classecs_1_1_timer.html">ecs::Timer</a></div><div class="ttdoc">Simple timer resource.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00019">Timer.hpp:19</a></div></div>
+<div class="ttc" id="aclassgame_1_1_users_html"><div class="ttname"><a href="classgame_1_1_users.html">game::Users</a></div><div class="ttdoc">Resource allowing to get users actions using the keybinds.</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00018">Users.hpp:18</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_ae6a795ee95198a746a13208195fb0c2e"><div class="ttname"><a href="classgame_1_1_a_scene.html#ae6a795ee95198a746a13208195fb0c2e">game::AScene::_globalNoDraw</a></div><div class="ttdeci">ecs::SystemTag _globalNoDraw</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00033">AScene.hpp:33</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_textual_html"><div class="ttname"><a href="structgame_1_1components_1_1_textual.html">game::components::Textual</a></div><div class="ttdoc">Textual element.</div><div class="ttdef"><b>Definition:</b> <a href="_textual_8hpp_source.html#l00017">Textual.hpp:17</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_input_manager_html"><div class="ttname"><a href="structgame_1_1systems_1_1_input_manager.html">game::systems::InputManager</a></div><div class="ttdoc">System managing all the users inputs.</div><div class="ttdef"><b>Definition:</b> <a href="_input_manager_8hpp_source.html#l00017">InputManager.hpp:17</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -1,5 +1,13 @@
 var NAVTREEINDEX5 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90adc271d081ca9fcbefdc42998313398d8":[2,0,4,0,7,0,94],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90add7536794b63bf90eccfd37f9b147d7f":[2,0,4,0,7,0,26],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90addf133566f544b297f2f84874c283589":[2,0,4,0,7,0,81],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ade58a28573783fe95304a260ccd90362":[2,0,4,0,7,0,4],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90adea24610606fb34c587a8fe8ed8f8389":[2,0,4,0,7,0,104],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90adfcf28d0734569a6a693bc8194de62bf":[2,0,4,0,7,0,24],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ae1dffc8709f31a4987c8a88334107e89":[2,0,4,0,7,0,68],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ae1e1d3d40573127e9ee0480caf1283d6":[2,0,4,0,7,0,35],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ae40af1d5cc55c55ae0bb25953f7a7ee2":[2,0,4,0,7,0,63],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ae791d936f894ce58dd18bf603edcb9b4":[2,0,4,0,7,0,59],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ae7e0e72401a9f2718ed0f39f2861d702":[2,0,4,0,7,0,71],
@@ -241,13 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1text_1_1_font.html#ac2e4e9291f3a708ca64ec5fb4c13bce4":[2,0,4,3,0,16],
 "classraylib_1_1text_1_1_font.html#ad33456560108394bbe6eeb754941580e":[2,0,4,3,0,11],
 "classraylib_1_1text_1_1_font.html#ae22f947d2b143351544fdf4dba59bdf7":[2,0,4,3,0,2],
-"classraylib_1_1text_1_1_font.html#af9f59ca5e02a90af87bba98f3b593fa2":[2,0,4,3,0,13],
-"classraylib_1_1textures_1_1_image.html":[2,0,4,4,0],
-"classraylib_1_1textures_1_1_image.html#a048ed677d281061f15016b82d2be7365":[2,0,4,4,0,22],
-"classraylib_1_1textures_1_1_image.html#a2a08ae91ebee2b2cce9a2af308e051c6":[2,0,4,4,0,13],
-"classraylib_1_1textures_1_1_image.html#a348070ebc65989736e902049ca46e2f6":[2,0,4,4,0,6],
-"classraylib_1_1textures_1_1_image.html#a35ad95e6ffff0dc2f2273e9a902e82bc":[2,0,4,4,0,16],
-"classraylib_1_1textures_1_1_image.html#a3d303816e0b40f133dfd2a728483a804":[2,0,4,4,0,14],
-"classraylib_1_1textures_1_1_image.html#a4a0617efe394c5261396b0499ff183a8":[2,0,4,4,0,19],
-"classraylib_1_1textures_1_1_image.html#a4b45ddfd538b51fe2b171a6653636af1":[2,0,4,4,0,5]
+"classraylib_1_1text_1_1_font.html#af9f59ca5e02a90af87bba98f3b593fa2":[2,0,4,3,0,13]
 };

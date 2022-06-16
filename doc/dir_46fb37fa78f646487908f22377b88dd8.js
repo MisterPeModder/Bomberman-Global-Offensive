@@ -28,6 +28,9 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "DrawText.hpp", "_draw_text_8hpp.html", [
       [ "DrawText", "structgame_1_1systems_1_1_draw_text.html", "structgame_1_1systems_1_1_draw_text" ]
     ] ],
+    [ "DrawTexture.hpp", "_draw_texture_8hpp.html", [
+      [ "DrawTexture", "structgame_1_1systems_1_1_draw_texture.html", "structgame_1_1systems_1_1_draw_texture" ]
+    ] ],
     [ "InputManager.cpp", "_input_manager_8cpp.html", null ],
     [ "InputManager.hpp", "_input_manager_8hpp.html", [
       [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ]
@@ -49,5 +52,6 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     ] ],
     [ "Rectangle.hpp", "game_2systems_2_rectangle_8hpp.html", [
       [ "DrawRectangle", "structgame_1_1systems_1_1_draw_rectangle.html", "structgame_1_1systems_1_1_draw_rectangle" ]
-    ] ]
+    ] ],
+    [ "SplashScreen.hpp", "_splash_screen_8hpp.html", "_splash_screen_8hpp" ]
 ];

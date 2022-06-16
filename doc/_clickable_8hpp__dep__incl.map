@@ -1,7 +1,9 @@
 <map id="src/game/gui/components/Clickable.hpp" name="src/game/gui/components/Clickable.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="327,5,517,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="499,5,689,47"/>
 <area shape="rect" id="node2" href="$_clickable_8cpp.html" title=" " alt="" coords="5,95,196,136"/>
 <area shape="rect" id="node3" href="$_widget_8cpp.html" title=" " alt="" coords="220,95,411,136"/>
 <area shape="rect" id="node4" href="$_settings_menu_scene_8cpp.html" title=" " alt="" coords="435,95,623,136"/>
-<area shape="rect" id="node5" href="$_test_scene_8cpp.html" title=" " alt="" coords="647,102,874,129"/>
+<area shape="rect" id="node5" href="$_splash_scene_8cpp.html" title=" " alt="" coords="748,184,992,211"/>
+<area shape="rect" id="node6" href="$_test_scene_8cpp.html" title=" " alt="" coords="698,102,925,129"/>
+<area shape="rect" id="node7" href="$_splash_screen_8hpp.html" title=" " alt="" coords="949,102,1209,129"/>
 </map>

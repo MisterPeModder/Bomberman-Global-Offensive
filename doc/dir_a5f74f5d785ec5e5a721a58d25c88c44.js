@@ -64,6 +64,9 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Scale.hpp", "_scale_8hpp.html", [
       [ "Scale", "structgame_1_1components_1_1_scale.html", "structgame_1_1components_1_1_scale" ]
     ] ],
+    [ "ScreenId.hpp", "_screen_id_8hpp.html", [
+      [ "ScreenId", "structgame_1_1components_1_1_screen_id.html", "structgame_1_1components_1_1_screen_id" ]
+    ] ],
     [ "Size.hpp", "_size_8hpp.html", [
       [ "Size", "structgame_1_1components_1_1_size.html", "structgame_1_1components_1_1_size" ]
     ] ],
