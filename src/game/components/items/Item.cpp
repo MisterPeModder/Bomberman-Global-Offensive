@@ -15,16 +15,18 @@
 #include "components/Size.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Entities.hpp"
+#include "game/components/Destructible.hpp"
 #include "game/resources/RandomDevice.hpp"
-#include "util/util.hpp"
 
 namespace game::components
 {
-    std::array<Item::Identifier, Item::POWER_UP_COUNT> Item::powerUps = {Item::Identifier::SpeedShoes};
+    std::array<Item::Identifier, Item::POWER_UP_COUNT> Item::powerUps = {
+        Item::Identifier::SpeedShoes, Item::Identifier::FireUp, Item::Identifier::BombUp, Item::Identifier::KickShoes};
     std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {Item::Identifier::ChainBall};
     std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables;
 
-    std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes(), ChainBall()};
+    std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {
+        SpeedShoes(), FireUp(), BombUp(), KickShoes(), ChainBall()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
@@ -35,12 +37,11 @@ namespace game::components
             return false;
 
         /// Which item type ? (To do: Activable type)
-        int randVal = randDevice.randInt(0, 99);
-        auto itemsPool((randVal < 70) ? std::span<Identifier, std::dynamic_extent>(powerUps)
-                                      : std::span<Identifier, std::dynamic_extent>(powerDowns));
+        auto itemsPool((randDevice.randInt(0, 99) < 70) ? std::span<Identifier, std::dynamic_extent>(powerUps)
+                                                        : std::span<Identifier, std::dynamic_extent>(powerDowns));
 
         /// Which item ?
-        randVal = randDevice.randInt(0, 99);
+        int randVal = randDevice.randInt(0, 99);
         size_t i = 0;
         int current = getItem(itemsPool[i]).dropRate;
 
@@ -65,9 +66,10 @@ namespace game::components
             .with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
             .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 0.5f, static_cast<float>(cell.y))
             .with<Size>(data.getStorage<Size>(), 0.4f, 0.4f, 0.4f)
-            .with<components::CubeColor>( /// Different color based on identifier waiting for models
+            .with<CubeColor>( /// Different color based on identifier waiting for models
                 data.getStorage<CubeColor>(), raylib::core::Color(127 * (id % 3), 127 * (id / 3), 127 * (id / 9)))
-            .with<components::Cube>(data.getStorage<Cube>())
+            .with<Cube>(data.getStorage<Cube>())
+            .with<Destructible>(data.getStorage<Destructible>())
             .build();
     }
 } // namespace game::components

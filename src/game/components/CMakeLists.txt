@@ -19,10 +19,12 @@ set(SRC
     ${INCROOT}/Image.hpp
     ${INCROOT}/Model.hpp
     ${INCROOT}/Position.hpp
+    ${INCROOT}/Position2D.hpp
     ${INCROOT}/RotationAngle.hpp
     ${INCROOT}/RotationAxis.hpp
     ${INCROOT}/Scale.hpp
     ${INCROOT}/Size.hpp
+    ${INCROOT}/Size2D.hpp
     ${INCROOT}/Texture2D.hpp
     ${INCROOT}/Rectangle.hpp
     ${SRCROOT}/Velocity.hpp

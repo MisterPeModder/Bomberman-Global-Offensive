@@ -70,6 +70,9 @@ namespace raylib
             /// @return The height of the window.
             static int getHeight();
 
+            /// Toggles fullscreen
+            static void toggleFullscreen();
+
             static void setIcon(textures::Image const &icon);
         };
     } // namespace core

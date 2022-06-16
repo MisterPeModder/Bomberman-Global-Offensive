@@ -9,6 +9,7 @@
 #define RAYLIB_CORE_SCOPED3D_HPP_
 
 #include "Audio.hpp"
+#include "Camera2D.hpp"
 #include "Camera3D.hpp"
 #include "Window.hpp"
 
@@ -31,6 +32,18 @@ namespace raylib
 
                 /// End the Mode3D
                 inline ~Mode3D() { Camera3D::end3D(); };
+            };
+
+            /// Setup/End a 2D mode with a custom camera
+            class Mode2D {
+              public:
+                /// Begin the Mode2D with the given camera.
+                ///
+                /// @param camera custom camera.
+                inline Mode2D(const Camera2D &camera) { camera.begin2D(); };
+
+                /// End the Mode2D
+                inline ~Mode2D() { Camera2D::end2D(); };
             };
 
             /// Setup/End window drawing
