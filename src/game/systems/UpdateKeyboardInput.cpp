@@ -5,7 +5,7 @@
 ** DrawText
 */
 
-#include "UpdateInputField.hpp"
+#include "UpdateKeyboardInput.hpp"
 #include "game/components/KeyboardInput.hpp"
 
 #include "ecs/Storage.hpp"
@@ -43,7 +43,7 @@ namespace game::systems
         }
     }
 
-    void UpdateInputField::run(ecs::SystemData data)
+    void UpdateKeyboardInput::run(ecs::SystemData data)
     {
         auto iter = ecs::join(data.getStorage<game::KeyboardInput>());
 
@@ -60,10 +60,5 @@ namespace game::systems
         while ((codepoint = Keyboard::getCharPressed()))
             util::pushUtf8Codepoint(field.contents, codepoint);
         handleFieldBackspace(field, data.getResource<ecs::Timer>());
-
-        Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
-            out << "Field contents: [[" << field.contents << "]], since backspace: " << field.timeSinceBackspace
-                << ", cooldown: " << field.backspaceCooldown;
-        });
     }
 } // namespace game::systems

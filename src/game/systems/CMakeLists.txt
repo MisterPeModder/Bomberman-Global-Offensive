@@ -25,8 +25,8 @@ set(SRC
     ${INCROOT}/Movement.hpp
     ${INCROOT}/NoClip.hpp
     ${INCROOT}/Rectangle.hpp
-    ${SRCROOT}/UpdateInputField.cpp
-    ${INCROOT}/UpdateInputField.hpp
+    ${SRCROOT}/UpdateKeyboardInput.cpp
+    ${INCROOT}/UpdateKeyboardInput.hpp
     PARENT_SCOPE)
 
 set(INCDIRS

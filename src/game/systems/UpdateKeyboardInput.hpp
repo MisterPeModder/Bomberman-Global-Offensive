@@ -5,20 +5,20 @@
 ** Input Field Updater System
 */
 
-#ifndef GAME_SYSTEMS_UPDATE_INPUT_FIELD_HPP_
-#define GAME_SYSTEMS_UPDATE_INPUT_FIELD_HPP_
+#ifndef GAME_SYSTEMS_UPDATE_KEYBOARD_INPUT_HPP_
+#define GAME_SYSTEMS_UPDATE_KEYBOARD_INPUT_HPP_
 
 #include "ecs/System.hpp"
 
 namespace game::systems
 {
-    /// Updates the first selected input field found.
+    /// Updates the first selected keyboard input field found.
     ///
     /// Required resources: ecs::Timer
     /// Required storages: game::KeyboardInput
-    struct UpdateInputField : public ecs::System {
+    struct UpdateKeyboardInput : public ecs::System {
         void run(ecs::SystemData data) override final;
     };
 } // namespace game::systems
 
-#endif /* !GAME_SYSTEMS_UPDATE_INPUT_FIELD_HPP_ */
+#endif /* !GAME_SYSTEMS_UPDATE_KEYBOARD_INPUT_HPP_ */

@@ -49,7 +49,7 @@
 #include "systems/Items.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
-#include "systems/UpdateInputField.hpp"
+#include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
 #include "game/components/KeyboardInput.hpp"
@@ -83,7 +83,7 @@ namespace game
         _camera.setFovY(75.0f);            // Camera field-of-view Y
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
-        _world.addSystem<game::systems::UpdateInputField>();
+        _world.addSystem<game::systems::UpdateKeyboardInput>();
         _world.addSystem<game::systems::DrawInputField>();
 
         _world.addEntity()
@@ -187,7 +187,7 @@ namespace game
     {
         _camera.update();
 
-        _world.runSystem<game::systems::UpdateInputField>();
+        _world.runSystem<game::systems::UpdateKeyboardInput>();
 
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
