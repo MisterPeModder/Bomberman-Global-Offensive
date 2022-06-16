@@ -49,6 +49,7 @@ namespace game::resources
         ///
         /// @param name asset name.
         /// @param args arguments that will be passed to the asset's constructor.
+        /// @return T& created asset.
         template <typename... Args> T &emplace(const std::string &name, Args &&...args)
         {
             return _assets
