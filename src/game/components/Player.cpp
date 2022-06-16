@@ -139,16 +139,21 @@ namespace game::components
         }
         if (highestActionValue < 0.2f)
             velocity = {0.f, 0.f, 0.f};
-        else
+        else {
+            float speed = stats.speed;
+
+            if (stats.inverted)
+                speed *= -1.f;
+            if (stats.slowness)
+                speed *= 0.25f;
             switch (bestAction) {
-                case GameAction::MOVE_LEFT: velocity = {-stats.speed, 0.f, 0.f}; break;
-                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -stats.speed}; break;
-                case GameAction::MOVE_RIGHT: velocity = {stats.speed, 0.f, 0.f}; break;
-                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, stats.speed}; break;
+                case GameAction::MOVE_LEFT: velocity = {-speed, 0.f, 0.f}; break;
+                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -speed}; break;
+                case GameAction::MOVE_RIGHT: velocity = {speed, 0.f, 0.f}; break;
+                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, speed}; break;
                 default: break;
             }
-        if (stats.inverted)
-            velocity *= {-1.f, 0.f, -1.f};
+        }
     }
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType)
