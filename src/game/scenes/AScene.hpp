@@ -8,8 +8,11 @@
 #ifndef GAME_WORLDS_ASCENES_HPP_
 #define GAME_WORLDS_ASCENES_HPP_
 
+#include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "game/scenes/IScene.hpp"
+#include "raylib/core/Camera2D.hpp"
+#include "raylib/core/Camera3D.hpp"
 
 namespace game
 {
@@ -23,7 +26,10 @@ namespace game
 
       protected:
         ecs::World _world;
-        raylib::core::Camera3D _defaultCamera;
+        raylib::core::Camera2D _defaultCamera2D;
+        raylib::core::Camera3D _defaultCamera3D;
+        ecs::SystemTag _global2D;
+        ecs::SystemTag _global3D;
     };
 } // namespace game
 

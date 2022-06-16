@@ -10,6 +10,7 @@
 #include "game/components/Bomb.hpp"
 #include "game/components/BombNoClip.hpp"
 #include "game/components/Collidable.hpp"
+#include "game/components/Player.hpp"
 #include "game/components/Size.hpp"
 #include "game/components/Velocity.hpp"
 
@@ -27,22 +28,43 @@ namespace game::systems
         auto maybeBombNoClip = ecs::maybe(data.getStorage<BombNoClip>());
         auto maybeBomb = ecs::maybe(data.getStorage<Bomb>());
         auto optionalVelocity = ecs::maybe(velocities);
+        auto maybePlayer = ecs::maybe(data.getStorage<Player>());
         raylib::shapes::Rectangle collideRect;
 
-        for (auto [pos1, size1, vel1, id1, c1, bombNoClip] :
-            ecs::join(positions, sizes, velocities, entities, collidable, maybeBombNoClip)) {
-            for (auto [pos2, size2, vel2, id2, c2, bomb] :
+        for (auto [pos1, size1, vel1, id1, c1, bombNoClip, player, bomb1] :
+            ecs::join(positions, sizes, velocities, entities, collidable, maybeBombNoClip, maybePlayer, maybeBomb)) {
+            for (auto [pos2, size2, vel2, id2, c2, bomb2] :
                 ecs::join(positions, sizes, optionalVelocity, entities, collidable, maybeBomb)) {
                 (void)c1;
                 (void)c2;
                 /// Do not collide entities with themselves
                 if (id1.getId() == id2.getId())
                     continue;
-                /// If entity1 has a bomb no clip enabled and entity 2 is the ignored bomb we ignore the collision.
-                if (bombNoClip->enabled && bomb && bombNoClip->matchEntityPosition(pos2))
+                /// If entity1 has a bomb no clip enabled and entity 2 is the ignored (static) bomb we ignore the
+                /// collision.
+                if (bombNoClip && bombNoClip->enabled && bomb2 && !vel2 && bombNoClip->matchEntityPosition(pos2))
                     continue;
                 if (!getCollideRect(collideRect, pos1, size1, pos2, size2))
                     continue;
+
+                /// Kick(ed) bomb related tests
+                if (bomb1 || bomb2) {
+                    /// Kicked bomb(s)
+                    if (bomb1 || (bomb2 && vel2)) {
+                        if (bomb1)
+                            bomb1->explode(pos1, data, id1);
+                        if (bomb2)
+                            bomb2->explode(pos2, data, id2);
+                        break;
+                    }
+                    /// Static bomb (can't be bomb1 because first entity must have a velocity)
+                    else if (player && player->inventory[Item::Identifier::KickShoes]) {
+                        raylib::core::Vector3f posDelta = pos2 - pos1;
+                        /// Kick bomb if the player is moving toward it.
+                        if ((abs(posDelta.x) > abs(posDelta.z)) ? (posDelta.x * vel1.x > 0) : (posDelta.z * vel1.z > 0))
+                            bomb2->kick(data, id2, vel1);
+                    }
+                }
 
                 float firstMovePercent = (vel2) ? 0.5f : 1.f;
                 resolveCollision(collideRect.getRaylibRectangle(), firstMovePercent, pos1);

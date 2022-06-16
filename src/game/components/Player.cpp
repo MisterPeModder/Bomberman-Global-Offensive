@@ -56,7 +56,7 @@ namespace game::components
             }
         }
         if (highestActionValue < 0.2f)
-            velocity = {0.f, 0.f};
+            velocity = {0.f, 0.f, 0.f};
         else
             switch (bestAction) {
                 case GameAction::MOVE_LEFT: velocity = {-stats.speed, 0.f, 0.f}; break;
@@ -65,41 +65,49 @@ namespace game::components
                 case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, stats.speed}; break;
                 default: break;
             }
+        if (stats.inverted)
+            velocity *= {-1.f, 0.f, -1.f};
     }
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
-        auto &player = data.getStorage<Player>()[self.getId()];
+        auto &players = data.getStorage<Player>();
+        auto &positions = data.getStorage<Position>();
+        auto &placer = players[self.getId()];
 
         /// Player cannot place more bomb
-        if (player.placedBombs >= player.stats.bombLimit)
+        if (placer.placedBombs >= placer.stats.bombLimit)
             return;
-        raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
+        raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(positions[self.getId()]);
         raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.5f, static_cast<float>(bombCell.y)};
 
         /// Avoid multiple bombs on the same cell
-        for (auto [bombPos, bomb] : ecs::join(data.getStorage<Position>(), data.getStorage<Bomb>())) {
+        for (auto [bombPos, bomb] : ecs::join(positions, data.getStorage<Bomb>())) {
             (void)bomb;
             if (bombPos == placedPos)
                 return;
         }
 
         auto bomb = data.getResource<ecs::Entities>()
-            .builder()
-            .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id, player.stats.bombRange)
-            //.with<Scale>(data.getStorage<Scale>(), 1.f)
-            .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
-            .with<Model>(data.getStorage<Model>(), "assets/items/c4.iqm")
-            .with<Position>(data.getStorage<Position>(), placedPos)
-            .with<Size>(data.getStorage<Size>(), 1.f, 1.f, 1.f)
-            .with<Collidable>(data.getStorage<Collidable>())
-            .with<RotationAngle>(data.getStorage<RotationAngle>(), 0.0f)
-            .with<RotationAxis>(data.getStorage<RotationAxis>(), 0.f, 0.f, 0.f)
-            .build();
-        data.getStorage<Model>()[bomb.getId()].setMaterialMapTexture(data.getResource<resources::Textures>().get("C4"), 0, MATERIAL_MAP_DIFFUSE);
-        data.getStorage<BombNoClip>()[self.getId()].setBombPosition(bombCell);
+                        .builder()
+                        .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id,
+                            placer.stats.bombRange)
+                        .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
+                        .with<Model>(data.getStorage<Model>(), "assets/items/c4.iqm")
+                        .with<Position>(data.getStorage<Position>(), placedPos)
+                        .with<Size>(data.getStorage<Size>(), 0.3f, 1.f, 0.3f)
+                        .with<Collidable>(data.getStorage<Collidable>())
+                        .with<RotationAngle>(data.getStorage<RotationAngle>(), 0.0f)
+                        .with<RotationAxis>(data.getStorage<RotationAxis>(), 0.f, 0.f, 0.f)
+                        .build();
+        data.getStorage<Model>()[bomb.getId()].setMaterialMapTexture(
+            data.getResource<resources::Textures>().get("C4"), 0, MATERIAL_MAP_DIFFUSE);
 
-        ++player.placedBombs;
+        ++placer.placedBombs;
+        /// Disable collision with bomb for all player on the bomb cell
+        for (auto [pos, player, playerId] : ecs::join(positions, players, data.getResource<ecs::Entities>()))
+            if (bombCell == game::Game::worldPosToMapCell(pos))
+                data.getStorage<BombNoClip>()[playerId.getId()].setBombPosition(bombCell);
     }
 
     void Player::pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data)
@@ -107,15 +115,37 @@ namespace game::components
         const Item &item = Item::getItem(itemId);
         auto &count = inventory.items[static_cast<size_t>(itemId)];
 
-        /// Can't get more of this item
-        if (count >= item.maxStack)
+        /// Item has a stack limit and we reached it
+        if (item.maxStack && count >= item.maxStack)
+            return;
+        /// Item has no effect (rejected).
+        if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown) && !item.onApply(self, data))
             return;
         ++count;
+        /// Item has a duration.
+        if (item.duration != std::chrono::milliseconds::zero())
+            inventory.timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
             out << "Player entity " << self.getId() << " pick up item '" << item.name << "', " << count << "/"
                 << item.maxStack << " in inventory ";
         });
-        if (item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown)
-            item.onApply(self, data);
+    }
+
+    void Player::updateTimedItems(ecs::Entity self, ecs::SystemData data)
+    {
+        if (inventory.timedItems.empty())
+            return;
+        size_t i = inventory.timedItems.size();
+
+        do {
+            --i;
+            auto &pair = inventory.timedItems[i];
+            auto &item = Item::getItem(pair.first);
+
+            if (std::chrono::steady_clock::now() - pair.second >= item.duration) {
+                item.onTimedOut(self, data);
+                inventory.timedItems.erase(inventory.timedItems.begin() + i);
+            }
+        } while (i != 0);
     }
 } // namespace game::components

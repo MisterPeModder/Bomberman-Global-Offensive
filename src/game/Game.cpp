@@ -110,10 +110,11 @@ namespace game
         _world.addSystem<systems::ExplodeBomb>();
         _world.addSystem<systems::PickupItem>();
         _world.addSystem<systems::DisableBombNoClip>();
+        _world.addSystem<systems::UpdateItemTimer>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
-            systems::DisableBombNoClip>();
+            systems::DisableBombNoClip, systems::UpdateItemTimer>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawBomb, systems::DrawModel, systems::DrawingCube>();
         /// Load game Textures

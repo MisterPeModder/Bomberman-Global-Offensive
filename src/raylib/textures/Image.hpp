@@ -44,7 +44,7 @@ namespace raylib
             /// LoadImage loads an image from a file
             ///
             /// @param fileName The name of the file to load.
-            void load();
+            void load(const std::filesystem::path &filename = "");
 
             /// Loads an image from a texture
             ///
