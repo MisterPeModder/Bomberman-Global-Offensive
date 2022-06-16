@@ -109,21 +109,20 @@ namespace game
 
     void Game::_loadModels()
     {
-        /// Ground
-        _world.getResource<resources::Models>().emplace(
-            "ground", _world.getResource<resources::Meshes>().get("ground"), false);
-        _world.getResource<resources::Models>().get("ground").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("ground"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Crate
-        _world.getResource<resources::Models>().emplace(
-            "crate", _world.getResource<resources::Meshes>().get("box"), false);
-        _world.getResource<resources::Models>().get("crate").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("crate"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Wall
-        _world.getResource<resources::Models>().emplace(
-            "wall", _world.getResource<resources::Meshes>().get("box"), false);
-        _world.getResource<resources::Models>().get("wall").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("wall"), 0, MATERIAL_MAP_DIFFUSE);
+        /// Map
+        _world.getResource<resources::Models>()
+            .emplace("ground", _world.getResource<resources::Meshes>().get("ground"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("ground"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("crate", _world.getResource<resources::Meshes>().get("box"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("crate"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("wall", _world.getResource<resources::Meshes>().get("box"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("wall"), 0, MATERIAL_MAP_DIFFUSE);
+        /// Bomb
+        _world.getResource<resources::Models>()
+            .emplace("C4", "assets/items/weapons/c4.iqm")
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("C4"), 0, MATERIAL_MAP_DIFFUSE);
     }
 
     void Game::setup()

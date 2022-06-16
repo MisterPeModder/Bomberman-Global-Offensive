@@ -79,7 +79,7 @@ namespace game::components
         if (placer.placedBombs >= placer.stats.bombLimit)
             return;
         raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(positions[self.getId()]);
-        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.5f, static_cast<float>(bombCell.y)};
+        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.15f, static_cast<float>(bombCell.y)};
 
         /// Avoid multiple bombs on the same cell
         for (auto [bombPos, bomb] : ecs::join(positions, data.getStorage<Bomb>())) {
@@ -93,16 +93,14 @@ namespace game::components
                         .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id,
                             placer.stats.bombRange)
                         .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
-                        .with<Model>(data.getStorage<Model>(), "assets/items/c4.iqm")
+                        .with<ModelReference>(
+                            data.getStorage<ModelReference>(), data.getResource<game::resources::Models>().get("C4"))
                         .with<Position>(data.getStorage<Position>(), placedPos)
-                        .with<Size>(data.getStorage<Size>(), 0.3f, 1.f, 0.3f)
+                        .with<Size>(data.getStorage<Size>(), 0.3f, 0.3f, 0.3f)
                         .with<Collidable>(data.getStorage<Collidable>())
-                        .with<RotationAngle>(data.getStorage<RotationAngle>(), 0.0f)
-                        .with<RotationAxis>(data.getStorage<RotationAxis>(), 0.f, 0.f, 0.f)
+                        .with<RotationAngle>(data.getStorage<RotationAngle>(), -90.0f)
+                        .with<RotationAxis>(data.getStorage<RotationAxis>(), 1.f, 0.f, 0.f)
                         .build();
-        data.getStorage<Model>()[bomb.getId()].setMaterialMapTexture(
-            data.getResource<resources::Textures>().get("C4"), 0, MATERIAL_MAP_DIFFUSE);
-
         ++placer.placedBombs;
         /// Disable collision with bomb for all player on the bomb cell
         for (auto [pos, player, playerId] : ecs::join(positions, players, data.getResource<ecs::Entities>()))
