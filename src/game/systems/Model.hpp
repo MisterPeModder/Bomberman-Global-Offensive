@@ -24,20 +24,26 @@ namespace game::systems
     struct DrawModel : public ecs::System {
         void run(ecs::SystemData data) override final
         {
-            auto &models = data.getStorage<game::components::Model>();
+            auto models = ecs::maybe(data.getStorage<game::components::Model>());
+            auto modelRefs = ecs::maybe(data.getStorage<game::components::ModelReference>());
             auto &poses = data.getStorage<game::components::Position>();
-            auto &scales = data.getStorage<game::components::Scale>();
             auto &colors = data.getStorage<game::components::Color>();
-            auto &sizes = data.getStorage<game::components::Size>();
-            auto &rAxises = data.getStorage<game::components::RotationAxis>();
-            auto &rAngles = data.getStorage<game::components::RotationAngle>();
+            auto scales = ecs::maybe(data.getStorage<game::components::Scale>());
+            auto sizes = ecs::maybe(data.getStorage<game::components::Size>());
+            auto rAxises = ecs::maybe(data.getStorage<game::components::RotationAxis>());
+            auto rAngles = ecs::maybe(data.getStorage<game::components::RotationAngle>());
 
-            for (auto [model, pos, rAxis, rAngle, size, color] :
-                ecs::join(models, poses, rAxises, rAngles, sizes, colors)) {
-                model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
-            }
-            for (auto [model, pos, scale, color] : ecs::join(models, poses, scales, colors)) {
-                model.draw(pos, scale.scale, color);
+            for (auto [model, modelRef, pos, color, scale, size, rAxis, rAngle] :
+                ecs::join(models, modelRefs, poses, colors, scales, sizes, rAxises, rAngles)) {
+                auto obj = (model) ? model : ((modelRef) ? &modelRef->object : nullptr);
+
+                if (!obj)
+                    continue;
+                /// Prior to extended draw.
+                if (size && rAxis && rAngle)
+                    obj->draw(pos, *rAxis, rAngle->rotationAngle, *size, color);
+                else if (scale)
+                    obj->draw(pos, scale->scale, color);
             }
         }
     };

@@ -13,10 +13,18 @@
 #include <string_view>
 #include <unordered_map>
 
-namespace raylib::textures
+namespace raylib
 {
-    class Texture2D;
-}
+    namespace textures
+    {
+        class Texture2D;
+    }
+    namespace model
+    {
+        class Mesh;
+        class Model;
+    } // namespace model
+} // namespace raylib
 
 namespace game::resources
 {
@@ -41,10 +49,12 @@ namespace game::resources
         ///
         /// @param name asset name.
         /// @param args arguments that will be passed to the asset's constructor.
-        template <typename... Args> void emplace(const std::string &name, Args &&...args)
+        template <typename... Args> T &emplace(const std::string &name, Args &&...args)
         {
-            _assets.emplace(std::piecewise_construct, std::forward_as_tuple(name),
-                std::forward_as_tuple(std::forward<Args>(args)...));
+            return _assets
+                .emplace(std::piecewise_construct, std::forward_as_tuple(name),
+                    std::forward_as_tuple(std::forward<Args>(args)...))
+                .first->second;
         }
 
         /// Access to an asset stored in the map.
@@ -53,6 +63,13 @@ namespace game::resources
         /// @return const T& reference to the asset.
         /// @throw std::out_of_range If there is no asset matching @c name in the map.
         const T &get(const std::string &name) const { return _assets.at(name); }
+
+        /// Access to an asset stored in the map.
+        ///
+        /// @param name name of the asset.
+        /// @return T& reference to the asset.
+        /// @throw std::out_of_range If there is no asset matching @c name in the map.
+        T &get(const std::string &name) { return _assets.at(name); }
 
         /// Clear the asset map.
         void clear(void) { _assets.clear(); }
@@ -67,6 +84,8 @@ namespace game::resources
     };
 
     using Textures = AssetMap<raylib::textures::Texture2D>;
+    using Meshes = AssetMap<raylib::model::Mesh>;
+    using Models = AssetMap<raylib::model::Model>;
 } // namespace game::resources
 
 #endif /* !GAME_RESOURCES_ASSETSMAP_HPP_ */
