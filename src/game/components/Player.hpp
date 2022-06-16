@@ -9,6 +9,7 @@
 #define GAME_COMPONENTS_PLAYER_HPP_
 
 #include <array>
+#include <chrono>
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
@@ -29,16 +30,26 @@ namespace game::components
             size_t bombRange;
             /// Max number of bomb simulteanously placed per player.
             size_t bombLimit;
+            /// If controls are inverted.
+            bool inverted;
 
-            Stats() : speed(DEFAULT_SPEED), bombRange(2), bombLimit(2) {}
+            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false) {}
         };
 
         /// Occurence of each item in a player inventory
         struct Inventory {
             /// Number of occurence of each item in the inventory.
             std::array<size_t, static_cast<size_t>(Item::Identifier::Count)> items;
+            /// Activated items with a timer.
+            std::vector<std::pair<Item::Identifier, std::chrono::steady_clock::time_point>> timedItems;
 
             Inventory() { items.fill(0); }
+
+            /// Get the quantity of an item in the inventory.
+            ///
+            /// @param itemId item identifier.
+            /// @return constexpr size_t quantity of this item in the inventory.
+            constexpr size_t operator[](Item::Identifier itemId) const { return items[static_cast<size_t>(itemId)]; }
         };
 
         /// Player stats
@@ -66,6 +77,12 @@ namespace game::components
         /// @param itemId item identifier.
         /// @param data world data.
         void pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data);
+
+        /// Update the activated items with a timer.
+        ///
+        /// @param self player entity id.
+        /// @param data world data.
+        void updateTimedItems(ecs::Entity self, ecs::SystemData data);
 
       private:
         /// Change the velocity of the player from its action values.
