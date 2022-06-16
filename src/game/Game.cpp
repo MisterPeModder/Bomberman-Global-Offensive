@@ -47,9 +47,12 @@
 #include "systems/Items.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
+#include "systems/UpdateInputFields.hpp"
 
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
+
+#include "game/gui/components/InputField.hpp"
 
 #include <cmath>
 
@@ -78,6 +81,9 @@ namespace game
         _camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         _camera.setFovY(75.0f);            // Camera field-of-view Y
         _camera.setProjection(CAMERA_PERSPECTIVE);
+
+        _world.addSystem<game::systems::UpdateInputFields>();
+        _world.addEntity().with<game::gui::InputField>("", true).build();
 
         /// Add world resources
         _world.addResource<game::Users>();
@@ -174,6 +180,7 @@ namespace game
     {
         _camera.update();
 
+        _world.runSystem<game::systems::UpdateInputFields>();
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);

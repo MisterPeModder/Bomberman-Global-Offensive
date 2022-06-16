@@ -4,12 +4,13 @@ set(SRCROOT ${SRCROOT}/components)
 set(SRC
     ${SRC}
     ${SRCROOT}/Checkable.cpp
-    ${SRCROOT}/Checkable.hpp
+    ${INCROOT}/Checkable.hpp
     ${SRCROOT}/Clickable.cpp
-    ${SRCROOT}/Clickable.hpp
+    ${INCROOT}/Clickable.hpp
+    ${INCROOT}/InputField.hpp
     ${SRCROOT}/IWidgetComponent.hpp
     ${SRCROOT}/Widget.cpp
-    ${SRCROOT}/Widget.hpp
+    ${INCROOT}/Widget.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
