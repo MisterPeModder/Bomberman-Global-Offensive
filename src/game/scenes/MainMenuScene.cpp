@@ -37,22 +37,23 @@ static void loadMainMenuScene(ecs::World &world)
     static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
 
     world.addSystem<game::systems::DrawModel>();
+    world.addSystem<game::systems::DrawText>();
     world.addStorage<game::components::Scale>();
 
     world.addEntity()
         .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(0, -2, 0)
+        .with<game::components::Position>(0, -10, 0)
         .with<game::components::Size>(0.5f, 0.5f, 0.5f)
         .with<game::components::RotationAngle>(-90)
         .with<game::components::RotationAxis>(1, 0, 0)
         .with<game::components::Color>(raylib::core::Color::GREEN)
         .build();
 
-    std::filesystem::path logoPath = "assets/ponay.png";
-    raylib::textures::Image image(logoPath, {1, 2}, raylib::core::Color::WHITE);
-
     world.addEntity()
-        .with<game::components::Position>(50.f, 50.f)
+        .with<game::components::Position>(0, 5, 0)
+        .with<game::components::Size>(0.5f, 0.5f, 0.5f)
+        .with<game::components::RotationAngle>(-90)
+        .with<game::components::RotationAxis>(1, 0, 0)
         .with<game::components::Textual>("PLAY", 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1,
             [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
@@ -81,7 +82,6 @@ static void loadMainMenuScene(ecs::World &world)
             })
         .build();
     world.addEntity()
-        .with<game::components::Position>(50.f, 50.f)
         .with<game::components::Textual>("QUIT", 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1,
             [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
@@ -94,6 +94,11 @@ static void loadMainMenuScene(ecs::World &world)
                 return false;
             })
         .build();
+
+    std::filesystem::path logoPath = "assets/ponay.png";
+    raylib::textures::Image image(logoPath, {1, 2}, raylib::core::Color::WHITE);
+
+    world.addEntity().with<game::components::Position>(0.f, 0.f).build();
 }
 
 namespace game

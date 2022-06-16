@@ -8,6 +8,7 @@
 #include "game/Engine.hpp"
 #include "game/scenes/GameScene.hpp"
 #include "raylib/core/Window.hpp"
+#include "game/scenes/MainMenuScene.hpp"
 
 #pragma region Browser Events
 #ifdef __EMSCRIPTEN__
@@ -56,7 +57,8 @@ namespace game
 {
     Engine::Engine()
     {
-        _scene = std::make_unique<GameScene>();
+        //_scene = std::make_unique<GameScene>();
+        _scene = std::make_unique<MainMenuScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
     }
 
