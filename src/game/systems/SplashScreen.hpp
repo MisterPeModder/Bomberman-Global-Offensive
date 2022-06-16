@@ -44,7 +44,9 @@ static void buildRaylibSplash(ecs::SystemData &data)
         .builder()
         .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 1)
         .with<game::components::Texture2D>(data.getStorage<game::components::Texture2D>(), raylibLogoPath)
-        .with<game::components::Position>(data.getStorage<game::components::Position>(), (raylib::core::Window::getWidth() / 2) - (64.f * scale), (raylib::core::Window::getHeight() / 2) - (64.f * scale))
+        .with<game::components::Position>(data.getStorage<game::components::Position>(),
+            (raylib::core::Window::getWidth() / 2) - (64.f * scale),
+            (raylib::core::Window::getHeight() / 2) - (64.f * scale))
         .with<game::components::Scale>(data.getStorage<game::components::Scale>(), scale)
         .with<game::components::RotationAngle>(data.getStorage<game::components::RotationAngle>(), 0.f)
         .with<game::components::Color>(
