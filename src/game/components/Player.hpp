@@ -69,6 +69,12 @@ namespace game::components
             /// @param data world data.
             void add(ecs::Entity player, Item::Identifier itemId, ecs::SystemData data);
 
+            /// Try to use the selected activable item.
+            ///
+            /// @param player player entity id.
+            /// @param data world data.
+            /// @return true If the item was consumed.
+            /// @return false If no item was consumed.
             bool useActivable(ecs::Entity player, ecs::SystemData data);
         };
 
