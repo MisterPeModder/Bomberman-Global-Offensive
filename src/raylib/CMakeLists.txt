@@ -9,7 +9,9 @@ add_subdirectory(model)
 set(SRC
     ${SRC}
     ${SRCROOT}/logger.cpp
-    ${SRCROOT}/raylib.hpp
+    ${INCROOT}/raylib.hpp
+    ${SRCROOT}/text.cpp
+    ${INCROOT}/text.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
