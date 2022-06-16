@@ -37,7 +37,8 @@ namespace raylib
             /// Model constructor. Used to initialize a 3D model from a mesh
             ///
             /// @param mesh the mesh from which to create the 3d model
-            Model(const raylib::model::Mesh &mesh);
+            /// @param ownsMesh if the model owns the mesh, see @ref setOwnsMesh().
+            Model(const raylib::model::Mesh &mesh, bool ownsMesh = true);
 
             /// Constructor with texture for map this texture
             /// Model(mesh)
@@ -47,20 +48,22 @@ namespace raylib
             /// @param materialId The material id of the material you want to set the
             /// texture for.
             /// @param mapType
-            Model(const raylib::model::Mesh &mesh, const raylib::textures::Texture2D &texture, int materialId, int mapType);
+            Model(const raylib::model::Mesh &mesh, const raylib::textures::Texture2D &texture, int materialId,
+                int mapType);
 
             /// Constructor. It takes a mesh and returns a model
             ///
             /// @param mesh The mesh to load the model from.
             Model(const ::Mesh &mesh);
 
-            /// Model destructor
-            ~Model();
-
             /// Copy constructor
             ///
             /// @param other the model to copy
-            Model(const Model &other);
+            /// @param ownsMesh if the model owns the mesh, see @ref setOwnsMesh().
+            Model(const Model &other, bool ownsMesh = false);
+
+            /// Model destructor
+            ~Model();
 
             /// Deleted copy operator because it makes no sense to load the same file multiple simes
             Model &operator=(const Model &other) = delete;
@@ -143,9 +146,15 @@ namespace raylib
             /// @param mapType the map type to replace the texture
             void setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapType);
 
+            /// Set the model as owner of the mesh or not.
+            /// @note Model owning a mesh will unload it on destruction.
+            ///
+            /// @param ownsMesh If the model owns the mesh.
+            void setOwnsMesh(bool ownsMesh = true);
+
           private:
             ::Model _model;
-            std::filesystem::path _path;
+            bool _ownsMesh;
         };
     } // namespace model
 } // namespace raylib

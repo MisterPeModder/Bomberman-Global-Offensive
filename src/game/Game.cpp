@@ -74,6 +74,58 @@ namespace game
 
     void Game::setCamera(raylib::core::Camera3D &&camera) { this->_camera = std::move(camera); }
 
+    void Game::_loadTextures()
+    {
+        /// Map
+        _world.getResource<resources::Textures>().emplace("crate", "assets/map/crate.png");
+        _world.getResource<resources::Textures>().emplace("wall", "assets/map/wall.png");
+        _world.getResource<resources::Textures>().emplace("ground", "assets/map/ground.png");
+        /// Activables
+        _world.getResource<resources::Textures>().emplace(
+            "no_clip", "assets/items/activables/bonus_activable_no_clip.png");
+        _world.getResource<resources::Textures>().emplace("mine", "assets/items/activables/bonus_activable_mine.png");
+        _world.getResource<resources::Textures>().emplace("punch", "assets/items/activables/bonus_activable_punch.png");
+        _world.getResource<resources::Textures>().emplace("smoke", "assets/items/activables/bonus_activable_smoke.png");
+        _world.getResource<resources::Textures>().emplace("stunt", "assets/items/activables/bonus_activable_stunt.png");
+        /// Power Ups
+        _world.getResource<resources::Textures>().emplace("speed_up", "assets/items/power_ups/bonus_up_speed.png");
+        _world.getResource<resources::Textures>().emplace("C4_up", "assets/items/power_ups/bonus_up_C4.png");
+        _world.getResource<resources::Textures>().emplace("range_up", "assets/items/power_ups/bonus_up_range.png");
+        /// Power Downs
+        _world.getResource<resources::Textures>().emplace(
+            "speed_down", "assets/items/power_downs/bonus_down_speed.png");
+        _world.getResource<resources::Textures>().emplace("C4_down", "assets/items/power_downs/bonus_down_C4.png");
+        _world.getResource<resources::Textures>().emplace(
+            "range_down", "assets/items/power_downs/bonus_down_range.png");
+        /// Weapons
+        _world.getResource<resources::Textures>().emplace("C4", "assets/items/weapons/C4_Texture.png");
+    }
+
+    void Game::_loadMeshes()
+    {
+        _world.getResource<resources::Meshes>().emplace("box", 1.f, 1.f, 1.f);
+        _world.getResource<resources::Meshes>().emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
+    }
+
+    void Game::_loadModels()
+    {
+        /// Ground
+        _world.getResource<resources::Models>().emplace(
+            "ground", _world.getResource<resources::Meshes>().get("ground"), false);
+        _world.getResource<resources::Models>().get("ground").setMaterialMapTexture(
+            _world.getResource<resources::Textures>().get("ground"), 0, MATERIAL_MAP_DIFFUSE);
+        /// Crate
+        _world.getResource<resources::Models>().emplace(
+            "crate", _world.getResource<resources::Meshes>().get("box"), false);
+        _world.getResource<resources::Models>().get("crate").setMaterialMapTexture(
+            _world.getResource<resources::Textures>().get("crate"), 0, MATERIAL_MAP_DIFFUSE);
+        /// Wall
+        _world.getResource<resources::Models>().emplace(
+            "wall", _world.getResource<resources::Meshes>().get("box"), false);
+        _world.getResource<resources::Models>().get("wall").setMaterialMapTexture(
+            _world.getResource<resources::Textures>().get("wall"), 0, MATERIAL_MAP_DIFFUSE);
+    }
+
     void Game::setup()
     {
         size_t width = _map.getSize().x;
@@ -81,7 +133,7 @@ namespace game
 
         _camera.setPosition(
             {width / 2.f, 15.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
-        _camera.setTarget({width / 2.f, 0.f, depth / 2.f});                               // Camera looking at point
+        _camera.setTarget({width / 2.f, 0.f, depth / 2.f});                                // Camera looking at point
         _camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         _camera.setFovY(50.0f);            // Camera field-of-view Y
         _camera.setProjection(CAMERA_PERSPECTIVE);
@@ -91,6 +143,8 @@ namespace game
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();
+        _world.addResource<resources::Meshes>();
+        _world.addResource<resources::Models>();
         _world.addResource<resources::RandomDevice>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
@@ -99,6 +153,7 @@ namespace game
         _world.addStorage<components::Size>();
         _world.addStorage<components::RotationAngle>();
         _world.addStorage<components::RotationAxis>();
+        _world.addStorage<components::Model>();
         /// Add world systems
         _world.addSystem<game::systems::DrawModel>();
         _world.addSystem<systems::InputManager>();
@@ -106,7 +161,6 @@ namespace game
         _world.addSystem<systems::DrawingCube>();
         _world.addSystem<systems::Movement>();
         _world.addSystem<systems::Collision>();
-        _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
         _world.addSystem<systems::PickupItem>();
         _world.addSystem<systems::DisableBombNoClip>();
@@ -116,34 +170,11 @@ namespace game
         _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
             systems::DisableBombNoClip, systems::UpdateItemTimer>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawBomb, systems::DrawModel, systems::DrawingCube>();
-        /// Load game Textures
-        ///
-        /// Load map Textures
-        _world.getResource<resources::Textures>().emplace("crate", "assets/map/crate.png");
-        _world.getResource<resources::Textures>().emplace("wall", "assets/map/wall.png");
-        _world.getResource<resources::Textures>().emplace("ground", "assets/map/ground.png");
+        _drawing.add<systems::DrawModel, systems::DrawingCube>();
 
-        /// Load activables Textures
-        _world.getResource<resources::Textures>().emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
-        _world.getResource<resources::Textures>().emplace("mine", "assets/items/activables/bonus_activable_mine.png");
-        _world.getResource<resources::Textures>().emplace("punch", "assets/items/activables/bonus_activable_punch.png");
-        _world.getResource<resources::Textures>().emplace("smoke", "assets/items/activables/bonus_activable_smoke.png");
-        _world.getResource<resources::Textures>().emplace("stunt", "assets/items/activables/bonus_activable_stunt.png");
-
-        /// Load power_ups Textures
-        _world.getResource<resources::Textures>().emplace("speed_up", "assets/items/power_ups/bonus_up_speed.png");
-        _world.getResource<resources::Textures>().emplace("C4_up", "assets/items/power_ups/bonus_up_C4.png");
-        _world.getResource<resources::Textures>().emplace("range_up", "assets/items/power_ups/bonus_up_range.png");
-
-        /// Load power_downs Textures
-        _world.getResource<resources::Textures>().emplace("speed_down", "assets/items/power_downs/bonus_down_speed.png");
-        _world.getResource<resources::Textures>().emplace("C4_down", "assets/items/power_downs/bonus_down_C4.png");
-        _world.getResource<resources::Textures>().emplace("range_down", "assets/items/power_downs/bonus_down_range.png");
-
-        /// Load weapons Textures
-        _world.getResource<resources::Textures>().emplace("C4", "assets/items/weapons/C4_Texture.png");
-
+        _loadTextures();
+        _loadMeshes();
+        _loadModels();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
@@ -169,9 +200,7 @@ namespace game
             .with<components::Position>(width / 2.f - 0.5f, 0.f, depth / 2.f - 0.5f)
             .with<game::components::Scale>(3.f)
             .with<game::components::Color>(raylib::core::Color::WHITE)
-            .with<game::components::Model>(
-                raylib::model::Mesh::genCube({_map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f}),
-                _world.getResource<resources::Textures>().get("ground"), 0, MATERIAL_MAP_DIFFUSE)
+            .with<game::components::ModelReference>(_world.getResource<resources::Models>().get("ground"))
             .build();
 
         /// Walls, crates
@@ -205,12 +234,12 @@ namespace game
                     if (destructible) {
                         (void)builder.with<components::Destructible>()
                             .with<game::components::Color>(raylib::core::Color::BROWN)
-                            .with<game::components::Model>(raylib::model::Mesh::genCube({1.0f, 1.0f, 1.0f}),
-                                _world.getResource<resources::Textures>().get("crate"), 0, MATERIAL_MAP_DIFFUSE);
+                            .with<game::components::ModelReference>(
+                                _world.getResource<resources::Models>().get("crate"));
                     } else {
                         (void)builder.with<game::components::Color>(raylib::core::Color::GRAY)
-                            .with<game::components::Model>(raylib::model::Mesh::genCube({1.0f, 1.0f, 1.0f}),
-                                _world.getResource<resources::Textures>().get("wall"), 0, MATERIAL_MAP_DIFFUSE);
+                            .with<game::components::ModelReference>(
+                                _world.getResource<resources::Models>().get("wall"));
                     }
                     builder.build();
                 }
