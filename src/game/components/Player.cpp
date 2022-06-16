@@ -89,7 +89,7 @@ namespace game::components
             .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id, player.stats.bombRange)
             //.with<Scale>(data.getStorage<Scale>(), 1.f)
             .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
-            .with<Model>(data.getStorage<Model>(), "assets/items/c4.iqm")
+            .with<Model>(data.getStorage<Model>(), "assets/items/weapons/c4.iqm")
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 1.f, 1.f, 1.f)
             .with<Collidable>(data.getStorage<Collidable>())
