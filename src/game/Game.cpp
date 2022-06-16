@@ -142,11 +142,33 @@ namespace game
         _update.add<systems::Movement, systems::ExplodeBomb, systems::ChangeCube, systems::DisableBombNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawBomb, systems::DrawModel, systems::DrawingCube>();
-        /// Load game textures
+        /// Load game Textures
+        ///
+        /// Load map Textures
         _world.getResource<resources::Textures>().emplace("crate", "assets/map/crate.png");
         _world.getResource<resources::Textures>().emplace("wall", "assets/map/wall.png");
         _world.getResource<resources::Textures>().emplace("ground", "assets/map/ground.png");
+
+        /// Load activables Textures
+        _world.getResource<resources::Textures>().emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
+        _world.getResource<resources::Textures>().emplace("mine", "assets/items/activables/bonus_activable_mine.png");
+        _world.getResource<resources::Textures>().emplace("punch", "assets/items/activables/bonus_activable_punch.png");
+        _world.getResource<resources::Textures>().emplace("smoke", "assets/items/activables/bonus_activable_smoke.png");
+        _world.getResource<resources::Textures>().emplace("stunt", "assets/items/activables/bonus_activable_stunt.png");
+
+        /// Load power_ups Textures
+        _world.getResource<resources::Textures>().emplace("speed_up", "assets/items/power_ups/bonus_up_speed.png");
+        _world.getResource<resources::Textures>().emplace("C4_up", "assets/items/power_ups/bonus_up_C4.png");
+        _world.getResource<resources::Textures>().emplace("range_up", "assets/items/power_ups/bonus_up_range.png");
+
+        /// Load power_downs Textures
+        _world.getResource<resources::Textures>().emplace("speed_down", "assets/items/power_downs/bonus_down_speed.png");
+        _world.getResource<resources::Textures>().emplace("C4_down", "assets/items/power_downs/bonus_down_C4.png");
+        _world.getResource<resources::Textures>().emplace("range_down", "assets/items/power_downs/bonus_down_range.png");
+
+        /// Load weapons Textures
         _world.getResource<resources::Textures>().emplace("C4", "assets/items/weapons/C4_Texture.png");
+
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
