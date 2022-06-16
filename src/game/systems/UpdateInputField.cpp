@@ -22,10 +22,29 @@
 
 namespace game::systems
 {
+    using Keyboard = raylib::core::Keyboard;
+
+    static void handleFieldBackspace(game::gui::InputField &field, ecs::Timer const &timer)
+    {
+        if (Keyboard::isKeyDown(Keyboard::Key::BACKSPACE))
+            field.timeSinceBackspace = std::min(100.0, field.timeSinceBackspace + timer.elapsed());
+        else
+            field.timeSinceBackspace = 0;
+        field.backspaceCooldown = std::max(0.0, field.backspaceCooldown - timer.elapsed());
+
+        if (Keyboard::isKeyPressed(Keyboard::Key::BACKSPACE)
+            && field.timeSinceBackspace < game::gui::InputField::BACKSPACE_REPEAT_THRESHOLD) {
+            util::popUtf8Codepoint(field.contents);
+        } else if (Keyboard::isKeyDown(Keyboard::Key::BACKSPACE)
+            && field.timeSinceBackspace >= game::gui::InputField::BACKSPACE_REPEAT_THRESHOLD
+            && field.backspaceCooldown <= 0) {
+            util::popUtf8Codepoint(field.contents);
+            field.backspaceCooldown = game::gui::InputField::BACKSPACE_REPEAT_DELAY;
+        }
+    }
+
     void UpdateInputField::run(ecs::SystemData data)
     {
-        using Keyboard = raylib::core::Keyboard;
-
         auto iter = ecs::join(data.getStorage<game::gui::InputField>());
 
         auto begin = iter.begin();
@@ -40,19 +59,11 @@ namespace game::systems
 
         while ((codepoint = Keyboard::getCharPressed()))
             util::pushUtf8Codepoint(field.contents, codepoint);
+        handleFieldBackspace(field, data.getResource<ecs::Timer>());
 
-        if (field.backspaceCooldown <= 0) { // if cooldown is zero, accept backspace event
-            if (Keyboard::isKeyDown(Keyboard::Key::BACKSPACE)) {
-                util::popUtf8Codepoint(field.contents);
-                field.backspaceCooldown = game::gui::InputField::BACKSPACE_DELAY;
-            }
-        } else { // or else, tick down to cooldown
-            auto &timer = data.getResource<ecs::Timer>();
-
-            field.backspaceCooldown = std::max(0.0, field.backspaceCooldown - timer.elapsed());
-        }
-
-        Logger::logger.log(
-            Logger::Severity::Debug, [&](auto &out) { out << "Field contents: [[" << field.contents << "]]"; });
+        Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
+            out << "Field contents: [[" << field.contents << "]], since backspace: " << field.timeSinceBackspace
+                << ", cooldown: " << field.backspaceCooldown;
+        });
     }
 } // namespace game::systems
