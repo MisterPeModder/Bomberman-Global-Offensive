@@ -8,6 +8,8 @@
 #ifndef RAYLIB_TEXT_FONT_HPP_
 #define RAYLIB_TEXT_FONT_HPP_
 
+#include "raylib/core/Vector2.hpp"
+
 extern "C"
 {
 #include <raylib.h>
@@ -69,6 +71,15 @@ namespace raylib::text
 
         /// @returns A mutable reference to the inner raylib font object.
         constexpr ::Font &asRaylib() noexcept { return this->_font; }
+
+        /// Measure the size that @b str will occupy once rendered.
+        ///
+        /// @param str The string to measure, must be nul-terminated.
+        /// @param size The font size.
+        /// @param spacing Space between characters.
+        ///
+        /// @returns The rendered font size.
+        raylib::core::Vector2f measure(std::string_view str, float size, float spacing = 1.0f);
 
       private:
         bool _initialized;

@@ -53,4 +53,9 @@ namespace raylib::text
 
     Font Font::getDefault() noexcept { return Font(::GetFontDefault()); }
 
+    raylib::core::Vector2f Font::measure(std::string_view str, float size, float spacing)
+    {
+        return raylib::core::Vector2f(::MeasureTextEx(this->_font, str.data(), size, spacing));
+    }
+
 } // namespace raylib::text
