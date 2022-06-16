@@ -53,9 +53,27 @@ namespace raylib::text
 
     Font Font::getDefault() noexcept { return Font(::GetFontDefault()); }
 
-    raylib::core::Vector2f Font::measure(std::string_view str, float size, float spacing)
+    raylib::core::Vector2f Font::measure(std::string_view str, float size, float spacing) const noexcept
     {
         return raylib::core::Vector2f(::MeasureTextEx(this->_font, str.data(), size, spacing));
+    }
+
+    void Font::draw(
+        std::string_view str, raylib::core::Vector2f pos, float fontSize, raylib::core::Color tint, float spacing) const
+    {
+        ::DrawTextEx(this->_font, str.data(), pos.asRaylib(), fontSize, spacing, tint.asRaylib());
+    }
+
+    void Font::draw(std::string_view str, raylib::core::Vector2f pos, raylib::core::Vector2f origin, float rotation,
+        float fontSize, raylib::core::Color tint, float spacing) const
+    {
+        ::DrawTextPro(
+            this->_font, str.data(), pos.asRaylib(), origin.asRaylib(), rotation, fontSize, spacing, tint.asRaylib());
+    }
+
+    void Font::draw(int codepoint, raylib::core::Vector2f pos, float fontSize, raylib::core::Color tint) const
+    {
+        ::DrawTextCodepoint(this->_font, codepoint, pos.asRaylib(), fontSize, tint.asRaylib());
     }
 
 } // namespace raylib::text

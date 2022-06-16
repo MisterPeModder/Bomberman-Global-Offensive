@@ -34,37 +34,4 @@ namespace raylib::text
 
         return {codepoint, byteCount};
     }
-
-    void draw(std::string_view str, raylib::core::Vector2f pos, float fontSize, raylib::core::Color tint)
-    {
-        Font font(Font::getDefault());
-
-        // Check if default font has been loaded
-        if (font.asRaylib().texture.id != 0) {
-            int defaultFontSize = 10; // Default Font chars height in pixel
-            if (fontSize < defaultFontSize)
-                fontSize = defaultFontSize;
-            int spacing = fontSize / defaultFontSize;
-
-            draw(font, str, pos, fontSize, spacing, tint);
-        }
-    }
-
-    void draw(Font const &font, std::string_view str, raylib::core::Vector2f pos, float fontSize, float spacing,
-        raylib::core::Color tint)
-    {
-        ::DrawTextEx(font.asRaylib(), str.data(), pos.asRaylib(), fontSize, spacing, tint.asRaylib());
-    }
-
-    void draw(Font const &font, std::string_view str, raylib::core::Vector2f pos, raylib::core::Vector2f origin,
-        float rotation, float fontSize, float spacing, raylib::core::Color tint)
-    {
-        ::DrawTextPro(font.asRaylib(), str.data(), pos.asRaylib(), origin.asRaylib(), rotation, fontSize, spacing,
-            tint.asRaylib());
-    }
-
-    void draw(Font const &font, int codepoint, raylib::core::Vector2f pos, float fontSize, raylib::core::Color tint)
-    {
-        ::DrawTextCodepoint(font.asRaylib(), codepoint, pos.asRaylib(), fontSize, tint.asRaylib());
-    }
 } // namespace raylib::text

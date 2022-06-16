@@ -8,6 +8,7 @@
 #ifndef RAYLIB_TEXT_FONT_HPP_
 #define RAYLIB_TEXT_FONT_HPP_
 
+#include "raylib/core/Color.hpp"
 #include "raylib/core/Vector2.hpp"
 
 extern "C"
@@ -79,7 +80,38 @@ namespace raylib::text
         /// @param spacing Space between characters.
         ///
         /// @returns The rendered font size.
-        raylib::core::Vector2f measure(std::string_view str, float size, float spacing = 1.0f);
+        raylib::core::Vector2f measure(std::string_view str, float size, float spacing = 1.0f) const noexcept;
+
+        /// Draws the text @b str at @b pos with a size of @b fontSize with a color of @c tint.
+        ///
+        /// @param str The text to render.
+        /// @param pos Where to draw the text.
+        /// @param fontSize The size of the font.
+        /// @param tint The color of the text.
+        /// @param spacing The padding between each character.
+        void draw(std::string_view str, raylib::core::Vector2f pos, float fontSize, raylib::core::Color tint,
+            float spacing = 1.0f) const;
+
+        /// Draws the text @b str at @b pos with a size of @b fontSize with a color of @c tint.
+        /// Allows the rendered text to be rotated.
+        ///
+        /// @param str The text to render.
+        /// @param pos Where to draw the text.
+        /// @param origin The rotation origin position.
+        /// @param rotation The rotation.
+        /// @param fontSize The size of the font.
+        /// @param tint The color of the text.
+        /// @param spacing The padding between each character.
+        void draw(std::string_view str, raylib::core::Vector2f pos, raylib::core::Vector2f origin, float rotation,
+            float fontSize, raylib::core::Color tint, float spacing = 1.0f) const;
+
+        /// Draws the codepoint str at @b pos with a size of @b fontSize with a color of @c tint.
+        ///
+        /// @param codepoint The Unicode codepoint to render
+        /// @param pos Where to draw the text.
+        /// @param fontSize The size of the font.
+        /// @param tint The color of the text.
+        void draw(int codepoint, raylib::core::Vector2f pos, float fontSize, raylib::core::Color tint) const;
 
       private:
         bool _initialized;
