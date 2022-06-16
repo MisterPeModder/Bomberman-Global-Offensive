@@ -49,8 +49,6 @@ namespace Menu
         std::filesystem::path logoPath = "assets/ponay.png";
         raylib::textures::Image image(logoPath, {1, 2}, raylib::core::Color::WHITE);
 
-        _world.addEntity().with<game::components::Position>(50.f, 50.f).with<game::Texture2D>(logoPath).build();
-
         _world.addEntity()
             .with<game::components::Position>(50.f, 50.f)
             .with<game::components::Textual>("PLAY", 20, raylib::core::Color::WHITE)
@@ -193,11 +191,6 @@ namespace Menu
         _world.addStorage<game::components::Controlable>();
         /// Add world systems
         _world.addSystem<game::systems::InputManager>();
-
-        camera.setPosition(
-            {width / 2.f, 8 /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
-        camera.setTarget({width / 2.f, 0.f, depth / 2.f});
-        camera.setProjection(CAMERA_CUSTOM);
 
         createsButtons();
     }
