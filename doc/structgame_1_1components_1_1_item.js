@@ -3,6 +3,9 @@ var structgame_1_1components_1_1_item =
     [ "OnApply", "structgame_1_1components_1_1_item.html#a72e3dd7a17d69224ca90456697bb9a24", null ],
     [ "Identifier", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174", [
       [ "SpeedShoes", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a00ec18550dcef626cfd42e95effa9d94", null ],
+      [ "FireUp", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174ab39ed7f5c05b2da0cb2e14c8e3b5b665", null ],
+      [ "BombUp", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a68fe0ea183eb388818c64e5a7030363e", null ],
+      [ "KickShoes", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174af5023101d60ec5eaf0ef8f019762fb38", null ],
       [ "ChainBall", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174ae993b837f5bb182fba3fc860ecf9e411", null ],
       [ "Count", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
@@ -12,8 +15,11 @@ var structgame_1_1components_1_1_item =
       [ "Activable", "structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da18201ca2222ee15c405c11fa042fa525", null ]
     ] ],
     [ "Item", "structgame_1_1components_1_1_item.html#ae480fa3e43e86b6e63be2250aaf89b6b", null ],
+    [ "BombUp", "structgame_1_1components_1_1_item.html#ab1c43e14ae719db040671d867dae1e17", null ],
     [ "ChainBall", "structgame_1_1components_1_1_item.html#a2d4462d71595dae6bb38fffd34696e16", null ],
+    [ "FireUp", "structgame_1_1components_1_1_item.html#a5c83ad59088c29d44998134284a797c8", null ],
     [ "getItem", "structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb", null ],
+    [ "KickShoes", "structgame_1_1components_1_1_item.html#a7239f3aed563eedb5599494dd03ff9e2", null ],
     [ "spawnItem", "structgame_1_1components_1_1_item.html#a1575ae1d5a1d43baea2c2c38b6cb472f", null ],
     [ "spawnRandomItem", "structgame_1_1components_1_1_item.html#a61a5037b4476d64e775d6736855d353e", null ],
     [ "SpeedShoes", "structgame_1_1components_1_1_item.html#a58b29e974325827dea65460642c893c9", null ],

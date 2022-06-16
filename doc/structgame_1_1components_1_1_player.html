@@ -203,8 +203,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Construct a new <a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> component. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00061">61</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;: <a class="code" href="structgame_1_1components_1_1_player.html#aac2857ba20e1518c5c588ca3288ffa83">placedBombs</a>(0) {}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00067">67</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;: <a class="code" href="structgame_1_1components_1_1_player.html#aac2857ba20e1518c5c588ca3288ffa83">placedBombs</a>(0) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -396,14 +396,14 @@ false If the action wasn't consumed. </dd></dl>
   </table>
   </dd>
 </dl>
-<p>Can't get more of this item</p>
+<p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> has a stack limit and we reached it</p>
 
 <p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00090">90</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">const</span> Item &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(itemId);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">auto</span> &amp;<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> = <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)];</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (count &gt;= item.maxStack)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (item.maxStack &amp;&amp; count &gt;= item.maxStack)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ++<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
@@ -507,7 +507,7 @@ false If the action wasn't consumed. </dd></dl>
 
 <p><a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> items. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00047">47</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00053">53</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -525,7 +525,7 @@ false If the action wasn't consumed. </dd></dl>
 
 <p>Number of bomb currently placed on the map. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00049">49</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00055">55</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -543,7 +543,7 @@ false If the action wasn't consumed. </dd></dl>
 
 <p><a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> stats. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00045">45</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00051">51</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -569,16 +569,16 @@ false If the action wasn't consumed. </dd></dl>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5">game::GameAction::MOVE_RIGHT</a></div><div class="ttdeci">@ MOVE_RIGHT</div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a15dc31954a8b1761a279cd6aadb93d7f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">game::components::Player::Inventory::items</a></div><div class="ttdeci">std::array&lt; size_t, static_cast&lt; size_t &gt;Item::Identifier::Count)&gt; items</div><div class="ttdoc">Number of occurence of each item in the inventory.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00039">Player.hpp:39</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">game::GameAction</a></div><div class="ttdeci">GameAction</div><div class="ttdef"><b>Definition:</b> <a href="_game_action_8hpp_source.html#l00013">GameAction.hpp:13</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_adce320aa43365f3864aa215d9624af5f"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">game::components::Player::Player</a></div><div class="ttdeci">Player()</div><div class="ttdoc">Construct a new Player component.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00061">Player.hpp:61</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_adce320aa43365f3864aa215d9624af5f"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">game::components::Player::Player</a></div><div class="ttdeci">Player()</div><div class="ttdoc">Construct a new Player component.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00067">Player.hpp:67</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_aac2857ba20e1518c5c588ca3288ffa83"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#aac2857ba20e1518c5c588ca3288ffa83">game::components::Player::placedBombs</a></div><div class="ttdeci">size_t placedBombs</div><div class="ttdoc">Number of bomb currently placed on the map.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00049">Player.hpp:49</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_aac2857ba20e1518c5c588ca3288ffa83"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#aac2857ba20e1518c5c588ca3288ffa83">game::components::Player::placedBombs</a></div><div class="ttdeci">size_t placedBombs</div><div class="ttdoc">Number of bomb currently placed on the map.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00055">Player.hpp:55</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
 <div class="ttc" id="aclassecs_1_1_entities_html"><div class="ttname"><a href="classecs_1_1_entities.html">ecs::Entities</a></div><div class="ttdoc">The entities world resource.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8hpp_source.html#l00024">Entities.hpp:24</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_a8e901b532993d7767d429ad524d439c6"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">game::components::Player::inventory</a></div><div class="ttdeci">Inventory inventory</div><div class="ttdoc">Player items.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00047">Player.hpp:47</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_a8e901b532993d7767d429ad524d439c6"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">game::components::Player::inventory</a></div><div class="ttdeci">Inventory inventory</div><div class="ttdoc">Player items.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00053">Player.hpp:53</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2</a></div><div class="ttdoc">The Vector2 struct (compatible with the raylib Vector2)</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00025">Vector2.hpp:25</a></div></div>
 <div class="ttc" id="acount_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/count.html">std::count</a></div><div class="ttdeci">T count(T... args)</div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_a000198d5814b224f892bc9ae317015c6"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">raylib::core::Vector2::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00139">Vector2.hpp:139</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_ab3c17c894d8bc8737324508b1311a19c"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">game::components::Player::stats</a></div><div class="ttdeci">Stats stats</div><div class="ttdoc">Player stats.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00045">Player.hpp:45</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_ab3c17c894d8bc8737324508b1311a19c"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">game::components::Player::stats</a></div><div class="ttdeci">Stats stats</div><div class="ttdoc">Player stats.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00051">Player.hpp:51</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/data.html">std::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_player_html_a1447ff856b2f9dba16259d6704f46721"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#a1447ff856b2f9dba16259d6704f46721">game::components::Player::move</a></div><div class="ttdeci">static void move(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &amp;event)</div><div class="ttdoc">Change the velocity of the player from its action values.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00034">Player.cpp:34</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8">game::GameAction::MOVE_LEFT</a></div><div class="ttdeci">@ MOVE_LEFT</div></div>

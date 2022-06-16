@@ -1,7 +1,8 @@
 <map id="src/game/components/Velocity.hpp" name="src/game/components/Velocity.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="296,5,463,47"/>
-<area shape="rect" id="node2" href="$_player_8cpp.html" title=" " alt="" coords="5,95,172,136"/>
-<area shape="rect" id="node3" href="$_game_8cpp.html" title=" " alt="" coords="197,102,349,129"/>
-<area shape="rect" id="node4" href="$_collision_8cpp.html" title=" " alt="" coords="373,102,601,129"/>
-<area shape="rect" id="node5" href="$_movement_8cpp.html" title=" " alt="" coords="626,102,869,129"/>
+<area shape="rect" id="node1" title=" " alt="" coords="380,5,547,47"/>
+<area shape="rect" id="node2" href="$components_2_bomb_8cpp.html" title=" " alt="" coords="5,95,172,136"/>
+<area shape="rect" id="node3" href="$_player_8cpp.html" title=" " alt="" coords="196,95,363,136"/>
+<area shape="rect" id="node4" href="$_game_8cpp.html" title=" " alt="" coords="387,102,539,129"/>
+<area shape="rect" id="node5" href="$_collision_8cpp.html" title=" " alt="" coords="564,102,792,129"/>
+<area shape="rect" id="node6" href="$_movement_8cpp.html" title=" " alt="" coords="817,102,1059,129"/>
 </map>

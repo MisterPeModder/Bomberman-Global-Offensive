@@ -101,6 +101,9 @@ $(document).ready(function(){initNavTree('structgame_1_1components_1_1_player_1_
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1892f91f71861587a6b05e51e062a070"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#a1892f91f71861587a6b05e51e062a070">Inventory</a> ()</td></tr>
 <tr class="separator:a1892f91f71861587a6b05e51e062a070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e2ee53dede885e35e8cb77068eff6ee"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#a7e2ee53dede885e35e8cb77068eff6ee">operator[]</a> (<a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a> itemId) const</td></tr>
+<tr class="memdesc:a7e2ee53dede885e35e8cb77068eff6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the quantity of an item in the inventory.  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#a7e2ee53dede885e35e8cb77068eff6ee">More...</a><br /></td></tr>
+<tr class="separator:a7e2ee53dede885e35e8cb77068eff6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -138,6 +141,45 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00041">41</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{ <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>.fill(0); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7e2ee53dede885e35e8cb77068eff6ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e2ee53dede885e35e8cb77068eff6ee">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t game::components::Player::Inventory::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a>&#160;</td>
+          <td class="paramname"><em>itemId</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the quantity of an item in the inventory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">itemId</td><td>item identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>constexpr size_t quantity of this item in the inventory. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00047">47</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
