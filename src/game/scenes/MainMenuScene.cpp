@@ -7,6 +7,15 @@
 
 #include "MainMenuScene.hpp"
 
+#include "ecs/Storage.hpp"
+#include "ecs/System.hpp"
+#include "ecs/join.hpp"
+
+#include "logger/Logger.hpp"
+
+#include "ecs/resource/Resource.hpp"
+#include "ecs/resource/Timer.hpp"
+
 #include "util/util.hpp"
 
 #include "game/components/Color.hpp"
@@ -95,10 +104,19 @@ static void loadMainMenuScene(ecs::World &world)
             })
         .build();
 
-    std::filesystem::path logoPath = "assets/ponay.png";
+    std::filesystem::path logoPath = util::makePath("assets", "ponay.png");
     raylib::textures::Image image(logoPath, {1, 2}, raylib::core::Color::WHITE);
 
-    world.addEntity().with<game::components::Position>(0.f, 0.f).build();
+    world.addEntity()
+        .with<game::components::Position>(30.f, 30.f)
+        .with<game::components::Texture2D>(logoPath)
+        .with<game::components::Scale>(1.f)
+        .with<game::components::RotationAngle>(0.f)
+        .with<game::components::Color>(255, 255, 255, 0)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(0, game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+            game::gui::Widget::NullTag, true)
+        .build();
 }
 
 namespace game
