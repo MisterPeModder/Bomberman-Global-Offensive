@@ -6,7 +6,7 @@
 */
 
 #include "UpdateInputField.hpp"
-#include "game/gui/components/InputField.hpp"
+#include "game/components/KeyboardInput.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
@@ -24,7 +24,7 @@ namespace game::systems
 {
     using Keyboard = raylib::core::Keyboard;
 
-    static void handleFieldBackspace(game::gui::InputField &field, ecs::Timer const &timer)
+    static void handleFieldBackspace(game::KeyboardInput &field, ecs::Timer const &timer)
     {
         if (Keyboard::isKeyDown(Keyboard::Key::BACKSPACE))
             field.timeSinceBackspace = std::min(100.0, field.timeSinceBackspace + timer.elapsed());
@@ -33,28 +33,28 @@ namespace game::systems
         field.backspaceCooldown = std::max(0.0, field.backspaceCooldown - timer.elapsed());
 
         if (Keyboard::isKeyPressed(Keyboard::Key::BACKSPACE)
-            && field.timeSinceBackspace < game::gui::InputField::BACKSPACE_REPEAT_THRESHOLD) {
+            && field.timeSinceBackspace < game::KeyboardInput::BACKSPACE_REPEAT_THRESHOLD) {
             util::popUtf8Codepoint(field.contents);
         } else if (Keyboard::isKeyDown(Keyboard::Key::BACKSPACE)
-            && field.timeSinceBackspace >= game::gui::InputField::BACKSPACE_REPEAT_THRESHOLD
+            && field.timeSinceBackspace >= game::KeyboardInput::BACKSPACE_REPEAT_THRESHOLD
             && field.backspaceCooldown <= 0) {
             util::popUtf8Codepoint(field.contents);
-            field.backspaceCooldown = game::gui::InputField::BACKSPACE_REPEAT_DELAY;
+            field.backspaceCooldown = game::KeyboardInput::BACKSPACE_REPEAT_DELAY;
         }
     }
 
     void UpdateInputField::run(ecs::SystemData data)
     {
-        auto iter = ecs::join(data.getStorage<game::gui::InputField>());
+        auto iter = ecs::join(data.getStorage<game::KeyboardInput>());
 
         auto begin = iter.begin();
         auto end = iter.end();
-        auto firstSelected = std::find_if(begin, end, [](auto i) { return std::get<0>(i).selected; });
+        auto firstSelected = std::find_if(begin, end, [](auto i) { return std::get<0>(i).focused; });
 
         if (firstSelected == end)
             return;
 
-        game::gui::InputField &field = std::get<0>(*firstSelected);
+        game::KeyboardInput &field = std::get<0>(*firstSelected);
         int codepoint;
 
         while ((codepoint = Keyboard::getCharPressed()))

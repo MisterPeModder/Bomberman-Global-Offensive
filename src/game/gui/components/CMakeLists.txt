@@ -7,7 +7,6 @@ set(SRC
     ${INCROOT}/Checkable.hpp
     ${SRCROOT}/Clickable.cpp
     ${INCROOT}/Clickable.hpp
-    ${INCROOT}/InputField.hpp
     ${SRCROOT}/IWidgetComponent.hpp
     ${SRCROOT}/Widget.cpp
     ${INCROOT}/Widget.hpp

@@ -17,6 +17,7 @@ set(SRC
     ${SRCROOT}/Identity.cpp
     ${SRCROOT}/Identity.hpp
     ${INCROOT}/Image.hpp
+    ${INCROOT}/KeyboardInput.hpp
     ${INCROOT}/Model.hpp
     ${INCROOT}/Position.hpp
     ${INCROOT}/Position2D.hpp

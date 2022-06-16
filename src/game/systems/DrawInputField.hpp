@@ -14,9 +14,9 @@ namespace game::systems
 {
     /// Updates the first selected input field found.
     ///
-    /// Required storages: game::components::Positions, game::gui::InputField
+    /// Required storages: game::components::Positions, game::KeyboardInput
     struct DrawInputField : public ecs::System {
-        /// Draw all the entities with the components Position and InputField.
+        /// Draw all the entities with the components Position and KeyboardInput.
         ///
         /// @param data view on the world.
         void run(ecs::SystemData data) override final;

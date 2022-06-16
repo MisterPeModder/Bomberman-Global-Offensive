@@ -28,6 +28,7 @@
 #include "logger/Logger.hpp"
 
 #include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Color.hpp"
 #include "raylib/core/Vector2.hpp"
 #include "raylib/core/Vector3.hpp"
 #include "raylib/core/Window.hpp"
@@ -51,9 +52,8 @@
 #include "systems/UpdateInputField.hpp"
 
 #include "game/Engine.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
-
-#include "game/gui/components/InputField.hpp"
 
 #include <cmath>
 
@@ -87,7 +87,7 @@ namespace game
         _world.addSystem<game::systems::DrawInputField>();
 
         _world.addEntity()
-            .with<game::gui::InputField>("", true)
+            .with<game::KeyboardInput>("", true)
             .with<game::components::Position>(50.f, 50.f, 0.f)
             .build();
 
