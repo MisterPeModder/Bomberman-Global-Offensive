@@ -10,11 +10,7 @@
 #include "ecs/join.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Textual.hpp"
-
-extern "C"
-{
-#include "raylib.h"
-}
+#include "raylib/text/text.hpp"
 
 using namespace game::components;
 
@@ -24,7 +20,7 @@ namespace game::systems
     {
         for (auto [pos, text] :
             ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::components::Textual>())) {
-            ::DrawText(text.text.c_str(), pos.x, pos.y, text.fontSize, text.color.asRaylib());
+            raylib::text::draw(text.text, {pos.x, pos.y}, text.fontSize, text.color);
         }
     }
 } // namespace game::systems

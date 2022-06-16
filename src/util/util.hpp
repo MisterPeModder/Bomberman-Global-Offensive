@@ -10,6 +10,7 @@
 
 #include <filesystem>
 #include <functional>
+#include <string>
 #include <string_view>
 
 namespace util
@@ -44,6 +45,23 @@ namespace util
     /// @return false If the file couldn't be opened or if the @c handleValue function returned false for an element.
     bool loadConfigFile(
         const std::filesystem::path &path, const std::function<bool(std::string_view, std::string_view)> &handleValue);
+
+    /// Appends an UTF-8 codepoint to the end of @b str.
+    ///
+    /// @note This function is not safe to call over multiple threads.
+    ///
+    /// @param str The string to modify.
+    /// @param codepoint An Unicode codepoint.
+    void pushUtf8Codepoint(std::string &str, int codepoint) noexcept;
+
+    /// Removes the last UTF-8 codepoint from the end of @b str.
+    ///
+    /// @note This function is not safe to call over multiple threads.
+    ///
+    /// @param str The string to modify.
+    ///
+    /// @return The removed codepoint, or 0 if @b str was empty or not valid UTF-8.
+    int popUtf8Codepoint(std::string &str) noexcept;
 } // namespace util
 
 #endif /* !BOMBERMAN_UTILS_HPP_ */

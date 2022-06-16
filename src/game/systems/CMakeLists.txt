@@ -11,6 +11,8 @@ set(SRC
     ${INCROOT}/Collision.hpp
     ${INCROOT}/Cube.hpp
     ${INCROOT}/DrawingCube.hpp
+    ${SRCROOT}/DrawInputField.cpp
+    ${INCROOT}/DrawInputField.hpp
     ${INCROOT}/DrawSelectedWidget.hpp
     ${SRCROOT}/DrawText.cpp
     ${INCROOT}/DrawText.hpp
@@ -23,8 +25,8 @@ set(SRC
     ${INCROOT}/Movement.hpp
     ${INCROOT}/NoClip.hpp
     ${INCROOT}/Rectangle.hpp
-    ${SRCROOT}/UpdateInputFields.cpp
-    ${INCROOT}/UpdateInputFields.hpp
+    ${SRCROOT}/UpdateInputField.cpp
+    ${INCROOT}/UpdateInputField.hpp
     PARENT_SCOPE)
 
 set(INCDIRS

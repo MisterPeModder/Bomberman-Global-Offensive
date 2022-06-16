@@ -42,12 +42,13 @@
 #include "systems/Bomb.hpp"
 #include "systems/ChangeCube.hpp"
 #include "systems/Collision.hpp"
+#include "systems/DrawInputField.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
-#include "systems/UpdateInputFields.hpp"
+#include "systems/UpdateInputField.hpp"
 
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
@@ -82,8 +83,13 @@ namespace game
         _camera.setFovY(75.0f);            // Camera field-of-view Y
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
-        _world.addSystem<game::systems::UpdateInputFields>();
-        _world.addEntity().with<game::gui::InputField>("", true).build();
+        _world.addSystem<game::systems::UpdateInputField>();
+        _world.addSystem<game::systems::DrawInputField>();
+
+        _world.addEntity()
+            .with<game::gui::InputField>("", true)
+            .with<game::components::Position>(50.f, 50.f, 0.f)
+            .build();
 
         /// Add world resources
         _world.addResource<game::Users>();
@@ -180,7 +186,9 @@ namespace game
     {
         _camera.update();
 
-        _world.runSystem<game::systems::UpdateInputFields>();
+        _world.runSystem<game::systems::UpdateInputField>();
+        _world.runSystem<game::systems::DrawInputField>();
+
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);

@@ -15,7 +15,7 @@ namespace game::gui
     /// Keyboard-only input field
     struct InputField : public ecs::Component {
         /// The minimum number of seconds between each character delete when the backspace key is pressed.
-        static constexpr double BACKSPACE_DELAY = 0.0625;
+        static constexpr double BACKSPACE_DELAY = 0.05;
 
         std::string contents;
         bool selected;
