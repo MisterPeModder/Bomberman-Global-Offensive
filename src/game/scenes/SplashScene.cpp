@@ -5,61 +5,75 @@
 ** SplashScene
 */
 
-#include "SplashScene.hpp"
+#include "game/scenes/SplashScene.hpp"
+#include "game/Engine.hpp"
+#include "game/scenes/SettingsMenuScene.hpp"
 
+#include "logger/Logger.hpp"
 #include "util/util.hpp"
 
+#include "raylib/core/Camera2D.hpp"
+#include "raylib/core/Camera3D.hpp"
+#include "raylib/core/scoped.hpp"
+
 #include "game/components/Color.hpp"
-#include "game/components/Model.hpp"
+#include "game/components/Controlable.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
-#include "game/components/RotationAxis.hpp"
 #include "game/components/Scale.hpp"
-#include "game/components/Size.hpp"
-#include "game/systems/Model.hpp"
+#include "game/components/ScreenId.hpp"
+#include "game/components/Textual.hpp"
+#include "game/components/Texture2D.hpp"
+#include "game/gui/components/Clickable.hpp"
+#include "game/gui/components/Widget.hpp"
+
+#include "game/resources/Engine.hpp"
+
+#include "game/systems/DrawText.hpp"
+#include "game/systems/DrawTexture.hpp"
+#include "game/systems/InputManager.hpp"
+#include "game/systems/SplashScreen.hpp"
+
+#include "ecs/resource/Timer.hpp"
 
 static void loadSplashScene(ecs::World &world)
 {
-    static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
-
-    world.addSystem<game::systems::DrawModel>();
-    world.addStorage<game::components::Scale>();
+    static const std::filesystem::path studioLogoPath = util::makePath("assets", "studio_logo.png");
 
     world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(-5.f, -2.f, -5.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::PURPLE)
-        .build();
-    world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(-5.f, -2.f, 5.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::BROWN)
-        .build();
-    world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(5.f, -2.f, -5.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::DARK_GREEN)
-        .build();
-    world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(5.f, -2.f, 5.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
-        .with<game::components::Color>(raylib::core::Color::ORANGE)
+        .with<game::components::Texture2D>(studioLogoPath)
+        .with<game::components::Position>(350.f, 250.f)
+        .with<game::components::Scale>(1.f)
+        .with<game::components::RotationAngle>(0.f)
+        .with<game::components::Color>(255, 255, 255, 0)
+        .with<game::components::ScreenId>(0)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(0, game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+            game::gui::Widget::NullTag, true)
+        .with<game::gui::Clickable>([&world](ecs::Entity) {
+            world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            Logger::logger.log(Logger::Severity::Debug, "Skip splash screen");
+        })
         .build();
 }
 
 namespace game
 {
-    SplashScene::SplashScene() { loadSplashScene(_world); }
+    SplashScene::SplashScene()
+    {
+        _world.addResource<ecs::Timer>();
+        _world.addResource<game::Users>();
+
+        _world.addStorage<game::components::Textual>();
+
+        _world.addSystem<game::systems::InputManager>();
+        _world.addSystem<game::systems::SplashScreen>();
+        _world.addSystem<game::systems::DrawTexture>();
+
+        _globalNoDraw.add<game::systems::InputManager>();
+        _globalNoDraw.add<game::systems::SplashScreen>();
+        _global2D.add<game::systems::DrawTexture>();
+
+        loadSplashScene(_world);
+    }
 } // namespace game
