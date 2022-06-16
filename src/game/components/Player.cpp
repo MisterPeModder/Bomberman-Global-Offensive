@@ -88,19 +88,18 @@ namespace game::components
                 return;
         }
 
-        auto bomb = data.getResource<ecs::Entities>()
-                        .builder()
-                        .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id,
-                            placer.stats.bombRange)
-                        .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
-                        .with<ModelReference>(
-                            data.getStorage<ModelReference>(), data.getResource<game::resources::Models>().get("C4"))
-                        .with<Position>(data.getStorage<Position>(), placedPos)
-                        .with<Size>(data.getStorage<Size>(), 0.3f, 0.3f, 0.5f)
-                        .with<Collidable>(data.getStorage<Collidable>())
-                        .with<RotationAngle>(data.getStorage<RotationAngle>(), -90.0f)
-                        .with<RotationAxis>(data.getStorage<RotationAxis>(), 1.f, 0.f, 0.f)
-                        .build();
+        data.getResource<ecs::Entities>()
+            .builder()
+            .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id, placer.stats.bombRange)
+            .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
+            .with<ModelReference>(
+                data.getStorage<ModelReference>(), data.getResource<game::resources::Models>().get("C4"))
+            .with<Position>(data.getStorage<Position>(), placedPos)
+            .with<Size>(data.getStorage<Size>(), 0.3f, 0.3f, 0.5f)
+            .with<Collidable>(data.getStorage<Collidable>())
+            .with<RotationAngle>(data.getStorage<RotationAngle>(), -90.0f)
+            .with<RotationAxis>(data.getStorage<RotationAxis>(), 1.f, 0.f, 0.f)
+            .build();
         ++placer.placedBombs;
         /// Disable collision with bomb for all player on the bomb cell
         for (auto [pos, player, playerId] : ecs::join(positions, players, data.getResource<ecs::Entities>()))
