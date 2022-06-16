@@ -43,6 +43,7 @@ namespace game::components
             return true;
         };
         stunGrenade.onTimedOut = [](ecs::Entity placer, ecs::SystemData data) {
+            (void)placer;
             for (auto [player, velocity] : ecs::join(data.getStorage<Player>(), data.getStorage<Velocity>())) {
                 if (!player.stats.slowness)
                     continue;
