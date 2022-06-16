@@ -24,3 +24,12 @@ msgstr "Volume"
 
 msgid "Back"
 msgstr "Retour"
+
+msgid "Option"
+msgstr "Option"
+
+msgid "Play"
+msgstr "Jouer"
+
+msgid "Quit"
+msgstr "Quitté"

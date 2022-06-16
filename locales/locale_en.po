@@ -24,3 +24,13 @@ msgstr ""
 
 msgid "Back"
 msgstr ""
+
+msgid "Option"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Quit"
+msgstr ""
+

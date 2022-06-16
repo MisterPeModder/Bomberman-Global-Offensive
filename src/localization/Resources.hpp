@@ -32,6 +32,12 @@ namespace localization
             constexpr ResourceString rsSettingsKeybinds("Keybinds");
 
         } // namespace settings
+        namespace menu
+        {
+            constexpr ResourceString rsMenuOption("Option");
+            constexpr ResourceString rsMenuPlay("Play");
+            constexpr ResourceString rsMenuQuit("Quit");
+        } // namespace menu
     }     // namespace resources
 } // namespace localization
 
