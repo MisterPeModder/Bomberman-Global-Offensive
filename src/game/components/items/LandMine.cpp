@@ -24,9 +24,7 @@ namespace game::components
         landMine.duration = std::chrono::milliseconds::zero();
         landMine.dropRate = 100;
         landMine.onApply = [](ecs::Entity player, ecs::SystemData data) {
-            (void)player;
-            (void)data;
-            Logger::logger.log(Logger::Severity::Debug, "Landmine activated");
+            Player::placeBomb(player, data, Bomb::Type::LandMine);
             return true;
         };
         return landMine;

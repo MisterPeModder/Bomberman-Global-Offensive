@@ -110,15 +110,17 @@ namespace game::components
             velocity *= {-1.f, 0.f, -1.f};
     }
 
-    void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
+    void Player::placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType)
     {
         auto &players = data.getStorage<Player>();
         auto &positions = data.getStorage<Position>();
         auto &placer = players[self.getId()];
 
-        /// Player cannot place more bomb
-        if (placer.placedBombs >= placer.stats.bombLimit)
-            return;
+        if (bombType == Bomb::Type::Classic) {
+            /// Player cannot place more bomb
+            if (placer.placedBombs >= placer.stats.bombLimit)
+                return;
+        }
         raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(positions[self.getId()]);
         raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.5f, static_cast<float>(bombCell.y)};
 
@@ -131,7 +133,8 @@ namespace game::components
 
         data.getResource<ecs::Entities>()
             .builder()
-            .with<Bomb>(data.getStorage<Bomb>(), data.getStorage<Identity>()[self.getId()].id, placer.stats.bombRange)
+            .with<Bomb>(data.getStorage<Bomb>(), bombType, data.getStorage<Identity>()[self.getId()].id,
+                (bombType == Bomb::Type::Classic) ? placer.stats.bombRange : 1)
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .with<Collidable>(data.getStorage<Collidable>())

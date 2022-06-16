@@ -10,6 +10,7 @@
 
 #include <array>
 #include <chrono>
+#include "Bomb.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
@@ -96,6 +97,15 @@ namespace game::components
         /// @param data world data.
         void updateTimedItems(ecs::Entity self, ecs::SystemData data);
 
+        /// Place a bomb at the player position.
+        ///
+        /// @param self player entity
+        /// @param data world data
+        /// @param bombType bomb type.
+        /// @return true If the action was consumed.
+        /// @return false If the action wasn't consumed.
+        static void placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType = Bomb::Type::Classic);
+
       private:
         /// Change the velocity of the player from its action values.
         ///
@@ -103,14 +113,6 @@ namespace game::components
         /// @param data world data
         /// @param event action event
         static void move(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
-
-        /// Place a bomb at the player position.
-        ///
-        /// @param self player entity
-        /// @param data world data
-        /// @return true If the action was consumed.
-        /// @return false If the action wasn't consumed.
-        static void placeBomb(ecs::Entity self, ecs::SystemData data);
     };
 } // namespace game::components
 
