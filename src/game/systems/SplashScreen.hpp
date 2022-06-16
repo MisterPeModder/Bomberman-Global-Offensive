@@ -38,13 +38,14 @@
 static void buildRaylibSplash(ecs::SystemData &data)
 {
     static const std::filesystem::path raylibLogoPath = util::makePath("assets", "raylib_logo.png");
+    float scale = 3.f;
 
     data.getResource<ecs::Entities>()
         .builder()
         .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 1)
         .with<game::components::Texture2D>(data.getStorage<game::components::Texture2D>(), raylibLogoPath)
-        .with<game::components::Position>(data.getStorage<game::components::Position>(), 350.f, 150.f)
-        .with<game::components::Scale>(data.getStorage<game::components::Scale>(), 3.f)
+        .with<game::components::Position>(data.getStorage<game::components::Position>(), (raylib::core::Window::getWidth() / 2) - (64.f * scale), (raylib::core::Window::getHeight() / 2) - (64.f * scale))
+        .with<game::components::Scale>(data.getStorage<game::components::Scale>(), scale)
         .with<game::components::RotationAngle>(data.getStorage<game::components::RotationAngle>(), 0.f)
         .with<game::components::Color>(
             data.getStorage<game::components::Color>(), raylib::core::Color(255, 255, 255, 0))
