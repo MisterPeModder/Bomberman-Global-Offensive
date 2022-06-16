@@ -149,7 +149,6 @@ namespace game
         _world.addStorage<components::Bomb>();
         _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
-        _world.addStorage<components::Size>();
         _world.addStorage<components::RotationAngle>();
         _world.addStorage<components::RotationAxis>();
         _world.addStorage<components::Model>();
