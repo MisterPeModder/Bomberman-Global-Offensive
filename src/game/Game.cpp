@@ -187,7 +187,6 @@ namespace game
         _camera.update();
 
         _world.runSystem<game::systems::UpdateInputField>();
-        _world.runSystem<game::systems::DrawInputField>();
 
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
@@ -199,7 +198,11 @@ namespace game
             raylib::core::scoped::Mode3D mode3D(_camera);
             _world.runSystems(_drawing);
         };
-        raylib::core::Window::drawFPS(10, 10);
+        {
+            raylib::core::scoped::Mode2D mode2D((raylib::core::Camera2D()));
+            _world.runSystem<game::systems::DrawInputField>();
+            raylib::core::Window::drawFPS(10, 10);
+        };
         _world.maintain();
     }
 } // namespace game
