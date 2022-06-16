@@ -70,7 +70,7 @@ static void loadGraphicSettings(ecs::World &world)
             localization::resources::settings::rsSettingsFullscreen, 20, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::VOLUME_MUTE,
-            game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::SettingsMenuScene::RES_2, true)
+            game::gui::Widget::NullTag, game::SettingsMenuScene::BACK, game::SettingsMenuScene::RES_1)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Window::setSize(1080, 720);
@@ -96,7 +96,7 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Textual>("1080x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_100,
-            game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN)
+            game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 if (!raylib::core::Window::isFullscreen())
@@ -136,7 +136,7 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Textual>("1920x1080", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_3, game::SettingsMenuScene::RES_2,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN)
+            game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 if (!raylib::core::Window::isFullscreen())
@@ -168,18 +168,18 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(15.f, 10.f)
+        .with<game::components::Position>(3.f, 12.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsAudio, 40, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(17.f, 20.f)
+        .with<game::components::Position>(5.f, 20.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsMute, 20, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_MUTE, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::FULLSCREEN, game::gui::Widget::NullTag, game::SettingsMenuScene::VOLUME_50)
+            game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK, game::SettingsMenuScene::VOLUME_25)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(0.f);
@@ -193,17 +193,17 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(17.f, 30.f)
+        .with<game::components::Position>(5.f, 25.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsVolume, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(10.f, 35.f)
+        .with<game::components::Position>(7.f, 30.f)
         .with<game::components::Textual>("25%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_25, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_MUTE)
+            game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(25.f);
@@ -217,11 +217,11 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(15.f, 35.f)
+        .with<game::components::Position>(12.f, 30.f)
         .with<game::components::Textual>("50%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_25,
-            game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_MUTE)
+            game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(50.f);
@@ -235,11 +235,11 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(20.f, 35.f)
+        .with<game::components::Position>(17.f, 30.f)
         .with<game::components::Textual>("75%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_50,
-            game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_MUTE)
+            game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(75.f);
@@ -253,11 +253,11 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(25.f, 35.f)
+        .with<game::components::Position>(22.f, 30.f)
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_75,
-            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_MUTE)
+            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(100.f);
@@ -287,7 +287,7 @@ static void loadKeybindSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(80.f, 10.f)
+        .with<game::components::Position>(69.f, 12.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsKeybinds, 40, raylib::core::Color::GREEN)
         .build();
@@ -300,7 +300,7 @@ static void loadSettingsMenuScene(ecs::World &world)
         .with<game::components::Textual>(localization::resources::rsBack, 30, raylib::core::Color::PURPLE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::BACK, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::RES_2, game::gui::Widget::NullTag)
+            game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, true)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
