@@ -103,6 +103,10 @@ var NAVTREEINDEX0 =
 "_entity_8hpp_source.html":[3,0,0,0,6],
 "_fire_up_8cpp.html":[3,0,0,1,0,0,2],
 "_fire_up_8cpp_source.html":[3,0,0,1,0,0,2],
+"_font_8cpp.html":[3,0,0,4,3,0],
+"_font_8cpp_source.html":[3,0,0,4,3,0],
+"_font_8hpp.html":[3,0,0,4,3,1],
+"_font_8hpp_source.html":[3,0,0,4,3,1],
 "_game_8cpp.html":[3,0,0,1,9],
 "_game_8cpp_source.html":[3,0,0,1,9],
 "_game_8hpp.html":[3,0,0,1,10],
@@ -142,8 +146,8 @@ var NAVTREEINDEX0 =
 "_identity_8cpp_source.html":[3,0,0,1,0,12],
 "_identity_8hpp.html":[3,0,0,1,0,13],
 "_identity_8hpp_source.html":[3,0,0,1,0,13],
-"_image_8cpp.html":[3,0,0,4,3,0],
-"_image_8cpp_source.html":[3,0,0,4,3,0],
+"_image_8cpp.html":[3,0,0,4,4,0],
+"_image_8cpp_source.html":[3,0,0,4,4,0],
 "_input_manager_8cpp.html":[3,0,0,1,6,11],
 "_input_manager_8cpp_source.html":[3,0,0,1,6,11],
 "_input_manager_8hpp.html":[3,0,0,1,6,12],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "_profile_8hpp.html":[3,0,0,1,5,5],
 "_profile_8hpp.html#adcad6f6488d08c1303938c3ff1fdd534":[3,0,0,1,5,5,1],
 "_profile_8hpp_source.html":[3,0,0,1,5,5],
-"_random_device_8hpp.html":[3,0,0,1,3,3],
-"_random_device_8hpp_source.html":[3,0,0,1,3,3],
-"_rectangle_8cpp.html":[3,0,0,4,2,10],
-"_rectangle_8cpp_source.html":[3,0,0,4,2,10],
-"_registry_guard_8cpp.html":[3,0,0,5,7]
+"_random_device_8hpp.html":[3,0,0,1,3,3]
 };

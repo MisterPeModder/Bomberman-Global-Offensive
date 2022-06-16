@@ -70,6 +70,7 @@ var hierarchy =
     [ "bmjs::Engine", "classbmjs_1_1_engine.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "ecs::World::EntityBuilder", "classecs_1_1_world_1_1_entity_builder.html", null ],
+    [ "raylib::text::Font", "classraylib_1_1text_1_1_font.html", null ],
     [ "game::Game", "classgame_1_1_game.html", null ],
     [ "raylib::core::Gamepad", "classraylib_1_1core_1_1_gamepad.html", null ],
     [ "game::settings::GamepadInput", "classgame_1_1settings_1_1_gamepad_input.html", null ],
