@@ -13,6 +13,13 @@ interface Game {
     height: number
 
     /**
+     * Debug mode, disabled by default.
+     * 
+     * When enabled, extra information will be displayed on screen, such as the game FPS counter.
+    */
+    debugMode: boolean
+
+    /**
      * Prints a message using the game's logging facility.
      * 
      * @param message The message to print.
