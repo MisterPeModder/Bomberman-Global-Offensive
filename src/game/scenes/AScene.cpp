@@ -10,27 +10,28 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 
+#include "game/Engine.hpp"
+#include "game/resources/Engine.hpp"
+#include "game/scenes/SettingsMenuScene.hpp"
+
 namespace game
 {
     AScene::AScene() {}
 
-    AScene::~AScene()
-    { /* _world.clear(); */
-    }
+    AScene::~AScene() {}
 
-    void AScene::setCamera(raylib::core::Camera3D &camera)
-    {
-        camera.setMode(raylib::core::Camera3D::CameraMode::CUSTOM);
-    }
-
-    void AScene::drawFrame(const raylib::core::Camera3D &camera)
+    void AScene::drawFrame()
     {
         raylib::core::scoped::Drawing drawing;
         raylib::core::Window::clear();
         {
-            raylib::core::scoped::Mode3D mode3D(camera);
+            raylib::core::scoped::Mode3D mode3D(_defaultCamera);
             _world.runSystems();
         };
         raylib::core::Window::drawFPS(10, 10);
     }
+
+    ecs::World &AScene::getWorld() { return _world; }
+
+    const ecs::World &AScene::getWorld() const { return _world; }
 } // namespace game

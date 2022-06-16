@@ -25,6 +25,7 @@
 #include "components/Scale.hpp"
 #include "components/Size.hpp"
 #include "components/Velocity.hpp"
+#include "components/items/ItemIdentifier.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Timer.hpp"
@@ -40,61 +41,30 @@
 #include "raylib/textures/Texture2D.hpp"
 
 #include "resources/AssetMap.hpp"
+#include "resources/Engine.hpp"
 #include "resources/Map.hpp"
+#include "resources/RandomDevice.hpp"
 
 #include "systems/Bomb.hpp"
 #include "systems/ChangeCube.hpp"
 #include "systems/Collision.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
+#include "systems/Items.hpp"
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
 
-#pragma region Browser Events
-#ifdef __EMSCRIPTEN__
+#include "game/Engine.hpp"
+#include "game/scenes/SettingsMenuScene.hpp"
 
-    #include <emscripten/emscripten.h>
-    #include <emscripten/html5.h>
-
-extern "C"
-{
-    /// Emscripten main loop callback
-    static void Game_drawFrame(void *userData)
-    {
-        game::Game *game = reinterpret_cast<game::Game *>(userData);
-        game->drawFrame();
-    }
-
-    /// Emscripten window resize event
-    static EM_BOOL Game_onResize([[maybe_unused]] int eventType, [[maybe_unused]] EmscriptenUiEvent const *event,
-        [[maybe_unused]] void *userData)
-    {
-        raylib::core::Vector2<double> newSize;
-
-        if (emscripten_get_element_css_size("#emscripten_wrapper", &newSize.x, &newSize.y) == EMSCRIPTEN_RESULT_SUCCESS)
-            raylib::core::Window::setSize(newSize.x - 32, newSize.y - 32);
-        return EM_TRUE;
-    }
-
-    /// Emscriten fullscreen state change event
-    static EM_BOOL Game_onFullscreenChange(
-        [[maybe_unused]] int eventType, EmscriptenFullscreenChangeEvent const *event, [[maybe_unused]] void *userData)
-    {
-        if (!event->isFullscreen) {
-            raylib::core::Window::setSize(1, 1);
-            Game_onResize(EMSCRIPTEN_EVENT_FULLSCREENCHANGE, nullptr, nullptr);
-        }
-        return EM_FALSE;
-    }
-}
-
-#endif // !defined(__EMSCRIPTEN__)
-#pragma endregion Browser Events
+#include <cmath>
 
 namespace game
 {
-    Game::Game(Parameters params) : _world(), _map(params.mapSize), _params(params), _camera() {}
+    Game::Game(ecs::World &world, Parameters params) : _world(world), _map(params.mapSize), _params(params), _camera()
+    {
+    }
 
     const map::Map &Game::getMap() const { return _map; }
 
@@ -121,8 +91,10 @@ namespace game
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();
+        _world.addResource<resources::RandomDevice>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
+        _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
         _world.addStorage<components::Size>();
         _world.addStorage<components::RotationAngle>();
@@ -136,10 +108,12 @@ namespace game
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::DrawBomb>();
         _world.addSystem<systems::ExplodeBomb>();
+        _world.addSystem<systems::PickupItem>();
         _world.addSystem<systems::DisableBombNoClip>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::Movement, systems::ExplodeBomb, systems::ChangeCube, systems::DisableBombNoClip>();
+        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
+            systems::DisableBombNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawBomb, systems::DrawModel, systems::DrawingCube>();
         /// Load game textures
@@ -237,23 +211,5 @@ namespace game
         };
         raylib::core::Window::drawFPS(10, 10);
         _world.maintain();
-    }
-
-    void Game::run()
-    {
-#ifdef __EMSCRIPTEN__
-        emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, nullptr, EM_FALSE, &Game_onResize);
-        Game_onResize(EMSCRIPTEN_EVENT_RESIZE, nullptr, nullptr);
-
-        emscripten_set_fullscreenchange_callback(
-            EMSCRIPTEN_EVENT_TARGET_WINDOW, nullptr, EM_FALSE, &Game_onFullscreenChange);
-
-        // We cannot use the WindowShouldClose() loop on the web,
-        // since there is no such thing as a window.
-        emscripten_set_main_loop_arg(&Game_drawFrame, reinterpret_cast<void *>(this), 0, 1);
-#else
-        while (!raylib::core::Window::shouldClose())
-            this->drawFrame();
-#endif // !defined(__EMSCRIPTEN__)
     }
 } // namespace game

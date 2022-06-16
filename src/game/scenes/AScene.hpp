@@ -17,11 +17,13 @@ namespace game
       public:
         AScene();
         ~AScene();
-        void setCamera(raylib::core::Camera3D &camera) override;
-        void drawFrame(const raylib::core::Camera3D &camera) override;
+        void drawFrame() override;
+        ecs::World &getWorld() override;
+        const ecs::World &getWorld() const override;
 
       protected:
         ecs::World _world;
+        raylib::core::Camera3D _defaultCamera;
     };
 } // namespace game
 

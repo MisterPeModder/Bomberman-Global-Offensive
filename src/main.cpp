@@ -9,7 +9,6 @@
 
 #include "game/Game.hpp"
 #include "game/gui/components/Widget.hpp"
-// #include "game/scenes/GameScene.hpp"
 
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
@@ -20,8 +19,12 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/raylib.hpp"
+#include "raylib/textures/Image.hpp"
 
+#include "game/Engine.hpp"
 #include "script/Engine.hpp"
+
+#include "util/util.hpp"
 
 #include <memory>
 
@@ -38,32 +41,13 @@ static void setupLogger()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
 }
 
-// struct Position : public ecs::Component, public raylib::core::Vector3 {
-//     Position(float px, float py, float pz) : raylib::core::Vector3(px, py, pz) {}
-//     Position(raylib::core::Vector3 &other) : raylib::core::Vector3(other) {}
-// };
-// static void drawFrame(void *args)
-// {
-//     Params *params = reinterpret_cast<Params *>(args);
-
-//     params->camera.update();
-//     params->scene.get()->drawFrame(params->camera);
-// }
-
 static void runGame()
 {
-    game::Game::Parameters gameParams(2);
-
-#if defined(PLATFORM_WEB)
-    // We cannot use the WindowShouldClose() loop on the web,
-    // since there is no such thing as a window.
-    emscripten_set_main_loop_arg(&drawFrame, params, 0, 1);
+#ifdef __EMSCRIPTEN__
+    auto game = new game::Engine;
 #else
-    auto game = std::make_unique<game::Game>(gameParams);
+    auto game = std::make_unique<game::Engine>();
 #endif
-
-    // game::Worlds::loadGameWorld(*game);
-    game->setup();
     game->run();
 }
 
@@ -74,12 +58,17 @@ int main()
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
     localization::Localization::setLocale("fr");
+
     /// Setup Audio for the program
     raylib::core::scoped::AudioDevice audioDevice;
+
     /// Setup the Window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
     raylib::core::Window::setTargetFPS(60);
-    Logger::logger.log(Logger::Severity::Information, "Before game loop");
+#ifndef __EMSCRIPTEN__
+    raylib::textures::Image icon(util::makePath("assets", "icon.png"));
+    raylib::core::Window::setIcon(icon);
+#endif
 
     /// Start the Javascript engine
     std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
