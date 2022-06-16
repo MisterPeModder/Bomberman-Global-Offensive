@@ -47,6 +47,7 @@ namespace game::components
             out << "Player entity " << player.getId() << " pick up item '" << item.name << "', " << count << "/"
                 << item.maxStack << " in inventory ";
         });
+        updateSelectedActivable();
     }
 
     bool Player::Inventory::useActivable(ecs::Entity player, ecs::SystemData data)
@@ -69,7 +70,42 @@ namespace game::components
             out << "Player entity " << player.getId() << " activated item '" << item.name << "', " << count
                 << " left in inventory.";
         });
+        if (!count)
+            updateSelectedActivable();
         return true;
+    }
+
+    bool Player::Inventory::selectActivable(Item::Identifier itemId)
+    {
+        if (itemId == selected)
+            return false;
+        selected = itemId;
+        Logger::logger.log(Logger::Severity::Debug,
+            [&](auto &out) { out << "Player activable item set to '" << Item::getItem(selected).name; });
+        return true;
+    }
+
+    bool Player::Inventory::selectPreviousActivable()
+    {
+        Item::Identifier current = Item::previousActivable(selected);
+
+        while (!(*this)[current] && current != selected)
+            current = Item::previousActivable(current);
+        return selectActivable(current);
+    }
+    bool Player::Inventory::selectNextActivable()
+    {
+        Item::Identifier current = Item::nextActivable(selected);
+
+        while (!(*this)[current] && current != selected)
+            current = Item::nextActivable(current);
+        return selectActivable(current);
+    }
+    void Player::Inventory::updateSelectedActivable()
+    {
+        if ((*this)[selected])
+            return;
+        selectNextActivable();
     }
 
     bool Player::handleActionEvent(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)

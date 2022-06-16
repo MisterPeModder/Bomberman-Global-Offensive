@@ -76,6 +76,11 @@ namespace game::components
             /// @return true If the item was consumed.
             /// @return false If no item was consumed.
             bool useActivable(ecs::Entity player, ecs::SystemData data);
+
+            bool selectPreviousActivable();
+            bool selectNextActivable();
+            bool selectActivable(Item::Identifier itemId);
+            void updateSelectedActivable();
         };
 
         /// Player stats

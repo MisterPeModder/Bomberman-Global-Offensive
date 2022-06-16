@@ -89,6 +89,10 @@ namespace game::components
         /// @return const Item& item.
         static const Item &getItem(Identifier identifier);
 
+        static constexpr Identifier FIRST_ACTIVABLE = Identifier::LandMine;
+        static Identifier nextActivable(Identifier current);
+        static Identifier previousActivable(Identifier current);
+
       private:
         Item(){};
 

@@ -76,4 +76,18 @@ namespace game::components
             .with<Destructible>(data.getStorage<Destructible>())
             .build();
     }
+
+    Item::Identifier Item::nextActivable(Identifier current)
+    {
+        current = static_cast<Identifier>(static_cast<size_t>(current) + 1);
+        if (current == Identifier::Count)
+            return FIRST_ACTIVABLE;
+        return current;
+    }
+    Item::Identifier Item::previousActivable(Identifier current)
+    {
+        if (current == FIRST_ACTIVABLE)
+            return static_cast<Identifier>(static_cast<size_t>(Identifier::Count) - 1);
+        return static_cast<Identifier>(static_cast<size_t>(current) - 1);
+    }
 } // namespace game::components
