@@ -19,6 +19,7 @@ var namespacegame_1_1components =
     [ "Position", "structgame_1_1components_1_1_position.html", "structgame_1_1components_1_1_position" ],
     [ "Position2D", "structgame_1_1components_1_1_position2_d.html", "structgame_1_1components_1_1_position2_d" ],
     [ "Rectangle", "structgame_1_1components_1_1_rectangle.html", "structgame_1_1components_1_1_rectangle" ],
+    [ "Reference", "structgame_1_1components_1_1_reference.html", "structgame_1_1components_1_1_reference" ],
     [ "RotationAngle", "structgame_1_1components_1_1_rotation_angle.html", "structgame_1_1components_1_1_rotation_angle" ],
     [ "RotationAxis", "structgame_1_1components_1_1_rotation_axis.html", "structgame_1_1components_1_1_rotation_axis" ],
     [ "Scale", "structgame_1_1components_1_1_scale.html", "structgame_1_1components_1_1_scale" ],

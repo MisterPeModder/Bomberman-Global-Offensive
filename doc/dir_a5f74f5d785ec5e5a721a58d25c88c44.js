@@ -36,9 +36,7 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Living.hpp", "_living_8hpp.html", [
       [ "Living", "structgame_1_1components_1_1_living.html", "structgame_1_1components_1_1_living" ]
     ] ],
-    [ "Model.hpp", "game_2components_2_model_8hpp.html", [
-      [ "Model", "structgame_1_1components_1_1_model.html", "structgame_1_1components_1_1_model" ]
-    ] ],
+    [ "Model.hpp", "game_2components_2_model_8hpp.html", "game_2components_2_model_8hpp" ],
     [ "Player.cpp", "_player_8cpp.html", null ],
     [ "Player.hpp", "_player_8hpp.html", [
       [ "Player", "structgame_1_1components_1_1_player.html", "structgame_1_1components_1_1_player" ],
@@ -53,6 +51,9 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     ] ],
     [ "Rectangle.hpp", "game_2components_2_rectangle_8hpp.html", [
       [ "Rectangle", "structgame_1_1components_1_1_rectangle.html", "structgame_1_1components_1_1_rectangle" ]
+    ] ],
+    [ "Reference.hpp", "_reference_8hpp.html", [
+      [ "Reference", "structgame_1_1components_1_1_reference.html", "structgame_1_1components_1_1_reference" ]
     ] ],
     [ "RotationAngle.hpp", "_rotation_angle_8hpp.html", [
       [ "RotationAngle", "structgame_1_1components_1_1_rotation_angle.html", "structgame_1_1components_1_1_rotation_angle" ]

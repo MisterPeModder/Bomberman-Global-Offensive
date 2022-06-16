@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['limits_4832',['limits',['http://en.cppreference.com/w/cpp/header/limits.html',1,'']]],
-  ['list_4833',['list',['http://en.cppreference.com/w/cpp/header/list.html',1,'']]],
-  ['living_2ehpp_4834',['Living.hpp',['../_living_8hpp.html',1,'']]],
-  ['locale_4835',['locale',['http://en.cppreference.com/w/cpp/header/locale.html',1,'']]],
-  ['localization_2ecpp_4836',['Localization.cpp',['../_localization_8cpp.html',1,'']]],
-  ['localization_2ehpp_4837',['Localization.hpp',['../_localization_8hpp.html',1,'']]],
-  ['logger_2ecpp_4838',['Logger.cpp',['../logger_2_logger_8cpp.html',1,'(Global Namespace)'],['../raylib_2_logger_8cpp.html',1,'(Global Namespace)']]],
-  ['logger_2ehpp_4839',['Logger.hpp',['../_logger_8hpp.html',1,'']]]
+  ['limits_4836',['limits',['http://en.cppreference.com/w/cpp/header/limits.html',1,'']]],
+  ['list_4837',['list',['http://en.cppreference.com/w/cpp/header/list.html',1,'']]],
+  ['living_2ehpp_4838',['Living.hpp',['../_living_8hpp.html',1,'']]],
+  ['locale_4839',['locale',['http://en.cppreference.com/w/cpp/header/locale.html',1,'']]],
+  ['localization_2ecpp_4840',['Localization.cpp',['../_localization_8cpp.html',1,'']]],
+  ['localization_2ehpp_4841',['Localization.hpp',['../_localization_8hpp.html',1,'']]],
+  ['logger_2ecpp_4842',['Logger.cpp',['../logger_2_logger_8cpp.html',1,'(Global Namespace)'],['../raylib_2_logger_8cpp.html',1,'(Global Namespace)']]],
+  ['logger_2ehpp_4843',['Logger.hpp',['../_logger_8hpp.html',1,'']]]
 ];

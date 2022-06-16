@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classgame_1_1_game.html#a4969959436c3675a631bead959f9a227":[2,0,2,8,4],
+"classgame_1_1_game.html#a58c3da954462f02dbe9ab3da92c0a377":[2,0,2,8,9],
 "classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab":[2,0,2,8,11],
 "classgame_1_1_game.html#a61f0017c3ec2875e8e58a250f822fa5f":[2,0,2,8,2],
 "classgame_1_1_game.html#a66b00f7ca8b772db6befe4069d00804c":[2,0,2,8,15],
@@ -138,11 +140,12 @@ var NAVTREEINDEX3 =
 "classgame_1_1resources_1_1_asset_map.html":[2,0,2,3,0],
 "classgame_1_1resources_1_1_asset_map.html#a0d1858e0f5d4a90224a74110c9c386a9":[2,0,2,3,0,0],
 "classgame_1_1resources_1_1_asset_map.html#a2cced29a0afda2e9000828a3bb9f2700":[2,0,2,3,0,2],
-"classgame_1_1resources_1_1_asset_map.html#a3b32cde747df2a2da88ae92a8c85259d":[2,0,2,3,0,7],
-"classgame_1_1resources_1_1_asset_map.html#a50ff226e4f05cce8bd272ff18e7bd471":[2,0,2,3,0,5],
-"classgame_1_1resources_1_1_asset_map.html#a75cd1026082790cb5013c9e3f771b8ca":[2,0,2,3,0,4],
+"classgame_1_1resources_1_1_asset_map.html#a3b32cde747df2a2da88ae92a8c85259d":[2,0,2,3,0,8],
+"classgame_1_1resources_1_1_asset_map.html#a50ff226e4f05cce8bd272ff18e7bd471":[2,0,2,3,0,6],
+"classgame_1_1resources_1_1_asset_map.html#a57393291539dcf49b461caf605c02ef0":[2,0,2,3,0,4],
+"classgame_1_1resources_1_1_asset_map.html#a7f69df9f3e6e70b8fe27a3cdbfee7870":[2,0,2,3,0,5],
 "classgame_1_1resources_1_1_asset_map.html#a9d0fabf62b21351759438548a975a92a":[2,0,2,3,0,1],
-"classgame_1_1resources_1_1_asset_map.html#ab6dc6f84c56c8557ae666dbf7a4afb1a":[2,0,2,3,0,6],
+"classgame_1_1resources_1_1_asset_map.html#ab6dc6f84c56c8557ae666dbf7a4afb1a":[2,0,2,3,0,7],
 "classgame_1_1resources_1_1_asset_map.html#aed23da6c76bd5008853658c45928244e":[2,0,2,3,0,3],
 "classgame_1_1settings_1_1_gamepad_input.html":[2,0,2,4,0],
 "classgame_1_1settings_1_1_gamepad_input.html#a0b633c127b55d1eb37aef142bf9a59c4":[2,0,2,4,0,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "classlocalization_1_1_localization.html#acb50daa8bbeb7fc9bcc5342f31a2c16e":[2,0,3,1,1],
 "classlocalization_1_1_localization.html#af96ee478fa57f54dec4b59f29bc259cb":[2,0,3,1,11],
 "classlocalization_1_1_resource_file.html":[2,0,3,2],
-"classlocalization_1_1_resource_file.html#a0cc38c8a0da2e2ad3a93b15e73eb0e98":[2,0,3,2,12],
-"classlocalization_1_1_resource_file.html#a0f453ffb7f0d53d17410d134866aa8bd":[2,0,3,2,3],
-"classlocalization_1_1_resource_file.html#a1831b3ba21209af8725a4cb8ca690969":[2,0,3,2,6],
-"classlocalization_1_1_resource_file.html#a1edff0d5a56ada378d343a02cde25a84":[2,0,3,2,23]
+"classlocalization_1_1_resource_file.html#a0cc38c8a0da2e2ad3a93b15e73eb0e98":[2,0,3,2,12]
 };

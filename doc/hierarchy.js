@@ -49,6 +49,7 @@ var hierarchy =
       [ "game::components::Position", "structgame_1_1components_1_1_position.html", null ],
       [ "game::components::Position2D", "structgame_1_1components_1_1_position2_d.html", null ],
       [ "game::components::Rectangle", "structgame_1_1components_1_1_rectangle.html", null ],
+      [ "game::components::Reference< T >", "structgame_1_1components_1_1_reference.html", null ],
       [ "game::components::RotationAngle", "structgame_1_1components_1_1_rotation_angle.html", null ],
       [ "game::components::RotationAxis", "structgame_1_1components_1_1_rotation_axis.html", null ],
       [ "game::components::Scale", "structgame_1_1components_1_1_scale.html", null ],

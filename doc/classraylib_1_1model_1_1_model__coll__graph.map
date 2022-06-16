@@ -1,4 +1,3 @@
 <map id="raylib::model::Model" name="raylib::model::Model">
-<area shape="rect" id="node1" title="The Model class ; it shouldn&#39;t be created multiple times for the same file." alt="" coords="5,95,161,121"/>
-<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/filesystem/path.html" title=" " alt="" coords="6,5,161,32"/>
+<area shape="rect" id="node1" title="The Model class ; it shouldn&#39;t be created multiple times for the same file." alt="" coords="5,5,161,32"/>
 </map>
