@@ -52,7 +52,7 @@ namespace game::resources
         /// @return T& created asset.
         template <typename... Args> T &emplace(const std::string &name, Args &&...args)
         {
-            _assets
+            return _assets
                 .emplace(std::piecewise_construct, std::forward_as_tuple(name),
                     std::forward_as_tuple(std::forward<Args>(args)...))
                 .first->second;
