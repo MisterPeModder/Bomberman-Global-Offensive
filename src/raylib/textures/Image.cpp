@@ -13,18 +13,18 @@ namespace raylib
     {
         Image::Image(
             const std::filesystem::path &fileName, raylib::core::Vector2f position, const raylib::core::Color &color)
-            : _fileName(fileName), _position(position), _color(color)
+            : _fileName(fileName), _position(position), _color(color), _loaded(false)
         {
             load();
         }
 
         Image::~Image() { unload(); }
 
-        void Image::load()
+        void Image::load(const std::filesystem::path &filename)
         {
             unload();
-            if (!_fileName.empty())
-                _fileName = " ";
+            if (!filename.empty())
+                _fileName = filename;
             _image = LoadImage(_fileName.generic_string().c_str());
             _loaded = true;
         }
@@ -33,7 +33,7 @@ namespace raylib
         {
             unload();
             if (!_fileName.empty())
-                _fileName = " ";
+                _fileName = "";
             _image = LoadImageFromTexture(texture);
             _loaded = true;
         }
@@ -42,7 +42,7 @@ namespace raylib
         {
             unload();
             if (!_fileName.empty())
-                _fileName = " ";
+                _fileName = "";
             _image = LoadImageFromScreen();
             _loaded = true;
         }
