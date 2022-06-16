@@ -57,6 +57,13 @@ namespace game::components
         /// @param senderVelocity sender velocity. (will become the kicked bomb velocity)
         void kick(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity);
 
+        /// Set the Bomb Model components
+        ///
+        /// @param builder bomb entity builder.
+        /// @param data world data.
+        /// @return ecs::Entities::Builder& bomb entity builder.
+        static ecs::Entities::Builder &setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data);
+
       private:
         /// Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell)
         static constexpr float LivingEntityExplodeLimit = 0.4f;
