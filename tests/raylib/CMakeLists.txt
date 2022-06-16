@@ -1,8 +1,8 @@
 set(SRCROOT ${SRCROOT}/raylib)
 
-set(SRC
-    ${SRCROOT}/test_text.cpp
-)
+set(SRC)
+
+add_subdirectory(text)
 
 add_bomberman_test(
     NAME bm_test_raylib
