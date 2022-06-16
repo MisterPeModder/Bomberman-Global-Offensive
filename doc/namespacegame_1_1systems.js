@@ -14,5 +14,6 @@ var namespacegame_1_1systems =
     [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ],
     [ "Movement", "structgame_1_1systems_1_1_movement.html", "structgame_1_1systems_1_1_movement" ],
     [ "PickupItem", "structgame_1_1systems_1_1_pickup_item.html", "structgame_1_1systems_1_1_pickup_item" ],
-    [ "RunAnimation", "structgame_1_1systems_1_1_run_animation.html", "structgame_1_1systems_1_1_run_animation" ]
+    [ "RunAnimation", "structgame_1_1systems_1_1_run_animation.html", "structgame_1_1systems_1_1_run_animation" ],
+    [ "UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", "structgame_1_1systems_1_1_update_item_timer" ]
 ];

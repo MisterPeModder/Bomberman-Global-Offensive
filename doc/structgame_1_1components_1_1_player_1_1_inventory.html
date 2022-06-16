@@ -96,6 +96,15 @@ $(document).ready(function(){initNavTree('structgame_1_1components_1_1_player_1_
  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_player_8hpp_source.html">Player.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for game::components::Player::Inventory:</div>
+<div class="dyncontent">
+<div class="center"><img src="structgame_1_1components_1_1_player_1_1_inventory__coll__graph.png" border="0" usemap="#game_1_1components_1_1_player_1_1_inventory_coll__map" alt="Collaboration graph"/></div>
+<map name="game_1_1components_1_1_player_1_1_inventory_coll__map" id="game_1_1components_1_1_player_1_1_inventory_coll__map">
+<area shape="rect" title="Occurence of each item in a player inventory." alt="" coords="308,20,504,61"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/container/vector.html" title=" " alt="" coords="5,5,180,76"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -110,11 +119,14 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a15dc31954a8b1761a279cd6aadb93d7f"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a>&lt; size_t, static_cast&lt; size_t &gt;<a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174ae93f994f01c537c4e2f7d8528c3eb5e9">Item::Identifier::Count</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a></td></tr>
 <tr class="memdesc:a15dc31954a8b1761a279cd6aadb93d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of occurence of each item in the inventory.  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">More...</a><br /></td></tr>
 <tr class="separator:a15dc31954a8b1761a279cd6aadb93d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70cdfe9db1e6a02cc1a162ab3b9b0521"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; <a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a>, std::chrono::steady_clock::time_point &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a></td></tr>
+<tr class="memdesc:a70cdfe9db1e6a02cc1a162ab3b9b0521"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activated items with a timer.  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">More...</a><br /></td></tr>
+<tr class="separator:a70cdfe9db1e6a02cc1a162ab3b9b0521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Occurence of each item in a player inventory. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00037">37</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00040">40</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1892f91f71861587a6b05e51e062a070"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1892f91f71861587a6b05e51e062a070">&#9670;&nbsp;</a></span>Inventory()</h2>
@@ -139,8 +151,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00041">41</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{ <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>.fill(0); }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00046">46</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{ <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>.fill(0); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -178,8 +190,8 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>constexpr size_t quantity of this item in the inventory. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00047">47</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)]; }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00052">52</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -198,7 +210,25 @@ Public Attributes</h2></td></tr>
 
 <p>Number of occurence of each item in the inventory. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00039">39</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00042">42</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a70cdfe9db1e6a02cc1a162ab3b9b0521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70cdfe9db1e6a02cc1a162ab3b9b0521">&#9670;&nbsp;</a></span>timedItems</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt;<a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a>, std::chrono::steady_clock::time_point&gt; &gt; game::components::Player::Inventory::timedItems</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Activated items with a timer. </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00044">44</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -207,7 +237,7 @@ Public Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a15dc31954a8b1761a279cd6aadb93d7f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">game::components::Player::Inventory::items</a></div><div class="ttdeci">std::array&lt; size_t, static_cast&lt; size_t &gt;Item::Identifier::Count)&gt; items</div><div class="ttdoc">Number of occurence of each item in the inventory.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00039">Player.hpp:39</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a15dc31954a8b1761a279cd6aadb93d7f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">game::components::Player::Inventory::items</a></div><div class="ttdeci">std::array&lt; size_t, static_cast&lt; size_t &gt;Item::Identifier::Count)&gt; items</div><div class="ttdoc">Number of occurence of each item in the inventory.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00042">Player.hpp:42</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

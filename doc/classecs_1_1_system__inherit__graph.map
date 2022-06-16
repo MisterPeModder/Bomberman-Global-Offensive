@@ -1,5 +1,5 @@
 <map id="ecs::System" name="ecs::System">
-<area shape="rect" id="node1" title="The base system type, all systems must inherit from System." alt="" coords="5,376,107,403"/>
+<area shape="rect" id="node1" title="The base system type, all systems must inherit from System." alt="" coords="5,405,107,432"/>
 <area shape="rect" id="node2" href="$structgame_1_1systems_1_1_change_cube.html" title="ChangeCube system." alt="" coords="163,5,375,32"/>
 <area shape="rect" id="node3" href="$structgame_1_1systems_1_1_collision.html" title="Collisions resolver system." alt="" coords="176,56,363,83"/>
 <area shape="rect" id="node4" href="$structgame_1_1systems_1_1_disable_bomb_no_clip.html" title="Disables the bomb no clip when the player walk off of the bomb position." alt="" coords="161,107,378,149"/>
@@ -15,4 +15,5 @@
 <area shape="rect" id="node14" href="$structgame_1_1systems_1_1_movement.html" title="Movement system." alt="" coords="169,645,369,672"/>
 <area shape="rect" id="node15" href="$structgame_1_1systems_1_1_pickup_item.html" title=" " alt="" coords="168,696,371,723"/>
 <area shape="rect" id="node16" href="$structgame_1_1systems_1_1_run_animation.html" title=" " alt="" coords="158,747,381,773"/>
+<area shape="rect" id="node17" href="$structgame_1_1systems_1_1_update_item_timer.html" title=" " alt="" coords="166,798,373,839"/>
 </map>

@@ -34,7 +34,8 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     ] ],
     [ "Items.cpp", "_items_8cpp.html", null ],
     [ "Items.hpp", "_items_8hpp.html", [
-      [ "PickupItem", "structgame_1_1systems_1_1_pickup_item.html", "structgame_1_1systems_1_1_pickup_item" ]
+      [ "PickupItem", "structgame_1_1systems_1_1_pickup_item.html", "structgame_1_1systems_1_1_pickup_item" ],
+      [ "UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", "structgame_1_1systems_1_1_update_item_timer" ]
     ] ],
     [ "Model.hpp", "game_2systems_2_model_8hpp.html", [
       [ "DrawModel", "structgame_1_1systems_1_1_draw_model.html", "structgame_1_1systems_1_1_draw_model" ]

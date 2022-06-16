@@ -1,5 +1,11 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204":[2,0,4,4,0,24],
+"classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716":[2,0,4,4,0,3],
+"classraylib_1_1textures_1_1_image.html#af9aa77980732d325aeb143937a29af59":[2,0,4,4,0,17],
+"classraylib_1_1textures_1_1_image.html#afd93efee65954ae910eccfb903f32876":[2,0,4,4,0,15],
+"classraylib_1_1textures_1_1_texture2_d.html":[2,0,4,4,1],
+"classraylib_1_1textures_1_1_texture2_d.html#a031445d37b9b8ef9ed801ff30eff24d7":[2,0,4,4,1,16],
 "classraylib_1_1textures_1_1_texture2_d.html#a24a5b2fce5bed22bde7314081189c64f":[2,0,4,4,1,14],
 "classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36":[2,0,4,4,1,4],
 "classraylib_1_1textures_1_1_texture2_d.html#a2b8a08fab4484639ca7d669e799b48f6":[2,0,4,4,1,17],
@@ -108,8 +114,8 @@ var NAVTREEINDEX6 =
 "dir_fe414d616bd0c4668e6515f48824338f.html":[3,0,0,5],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[3,0,0,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -224,8 +230,8 @@ var NAVTREEINDEX6 =
 "globals_type.html":[3,1,3],
 "globals_vars.html":[3,1,2],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#autotoc_md2":[0,0],
 "index.html#autotoc_md3":[0,1],
 "index.html#autotoc_md4":[0,1,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX6 =
 "main_8cpp.html#ac89a68c1b4cae4b3bcbfc70638d5b5ea":[3,0,0,8,2],
 "main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4":[3,0,0,8,1],
 "main_8cpp_source.html":[3,0,0,8],
-"map_2_map_8hpp.html":[3,0,0,1,2,2],
-"map_2_map_8hpp.html#a95b641603eaac584b05c44e4c58d21eb":[3,0,0,1,2,2,2],
-"map_2_map_8hpp_source.html":[3,0,0,1,2,2],
-"mods_8cpp.html":[3,0,0,5,0,2],
-"mods_8cpp.html#a1e448eefa1ab155622576bc20e8f091b":[3,0,0,5,0,2,3],
-"mods_8cpp.html#a4da5a7dedf9e0cd86ae605bf434ad003":[3,0,0,5,0,2,2],
-"mods_8cpp.html#a5d04708cfa61ba8b10cada72a8258ae1":[3,0,0,5,0,2,8]
+"map_2_map_8hpp.html":[3,0,0,1,2,2]
 };

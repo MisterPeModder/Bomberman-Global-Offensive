@@ -1,0 +1,4 @@
+<map id="game::systems::UpdateItemTimer" name="game::systems::UpdateItemTimer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,212,121"/>
+<area shape="rect" id="node2" href="$classecs_1_1_system.html" title="The base system type, all systems must inherit from System." alt="" coords="58,5,159,32"/>
+</map>

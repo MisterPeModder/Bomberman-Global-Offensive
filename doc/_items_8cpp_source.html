@@ -126,7 +126,14 @@ $(document).ready(function(){initNavTree('_items_8cpp_source.html',''); initResi
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <span class="comment">// namespace game::systems</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structgame_1_1systems_1_1_update_item_timer.html#a97cb710b7e5ea02f5e251dfa07e724f7">   41</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structgame_1_1systems_1_1_update_item_timer.html#a97cb710b7e5ea02f5e251dfa07e724f7">UpdateItemTimer::run</a>(<a class="code" href="classecs_1_1_system_data.html">ecs::SystemData</a> data)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [player, playerId] :</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html">game::components::Player</a>&gt;(), data.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;()))</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            player.updateTimedItems(playerId, data);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <span class="comment">// namespace game::systems</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_item_identifier_8hpp_html"><div class="ttname"><a href="_item_identifier_8hpp.html">ItemIdentifier.hpp</a></div></div>
@@ -145,8 +152,9 @@ $(document).ready(function(){initNavTree('_items_8cpp_source.html',''); initResi
 <div class="ttc" id="araylib_2shapes_2_rectangle_8hpp_html"><div class="ttname"><a href="raylib_2shapes_2_rectangle_8hpp.html">Rectangle.hpp</a></div></div>
 <div class="ttc" id="aclassecs_1_1_entities_html"><div class="ttname"><a href="classecs_1_1_entities.html">ecs::Entities</a></div><div class="ttdoc">The entities world resource.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8hpp_source.html#l00024">Entities.hpp:24</a></div></div>
 <div class="ttc" id="a_collision_8hpp_html"><div class="ttname"><a href="_collision_8hpp.html">Collision.hpp</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html"><div class="ttname"><a href="structgame_1_1components_1_1_player.html">game::components::Player</a></div><div class="ttdoc">Player marker.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00022">Player.hpp:22</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html"><div class="ttname"><a href="structgame_1_1components_1_1_player.html">game::components::Player</a></div><div class="ttdoc">Player marker.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00023">Player.hpp:23</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_item_identifier_html"><div class="ttname"><a href="structgame_1_1components_1_1_item_identifier.html">game::components::ItemIdentifier</a></div><div class="ttdoc">Item identifier component.</div><div class="ttdef"><b>Definition:</b> <a href="_item_identifier_8hpp_source.html#l00017">ItemIdentifier.hpp:17</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_update_item_timer_html_a97cb710b7e5ea02f5e251dfa07e724f7"><div class="ttname"><a href="structgame_1_1systems_1_1_update_item_timer.html#a97cb710b7e5ea02f5e251dfa07e724f7">game::systems::UpdateItemTimer::run</a></div><div class="ttdeci">void run(ecs::SystemData data) override final</div><div class="ttdoc">Run the system.</div><div class="ttdef"><b>Definition:</b> <a href="_items_8cpp_source.html#l00041">Items.cpp:41</a></div></div>
 <div class="ttc" id="anamespacegame_1_1systems_html"><div class="ttname"><a href="namespacegame_1_1systems.html">game::systems</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2systems_2_animation_8hpp_source.html#l00025">Animation.hpp:25</a></div></div>
 <div class="ttc" id="a_items_8hpp_html"><div class="ttname"><a href="_items_8hpp.html">Items.hpp</a></div></div>
 <div class="ttc" id="aclassecs_1_1_system_data_html"><div class="ttname"><a href="classecs_1_1_system_data.html">ecs::SystemData</a></div><div class="ttdoc">A view on world data that provides access to Resource and Storage instances to systems.</div><div class="ttdef"><b>Definition:</b> <a href="_system_data_8hpp_source.html#l00022">SystemData.hpp:22</a></div></div>

@@ -164,7 +164,8 @@ var hierarchy =
       [ "game::systems::InputManager", "structgame_1_1systems_1_1_input_manager.html", null ],
       [ "game::systems::Movement", "structgame_1_1systems_1_1_movement.html", null ],
       [ "game::systems::PickupItem", "structgame_1_1systems_1_1_pickup_item.html", null ],
-      [ "game::systems::RunAnimation", "structgame_1_1systems_1_1_run_animation.html", null ]
+      [ "game::systems::RunAnimation", "structgame_1_1systems_1_1_run_animation.html", null ],
+      [ "game::systems::UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", null ]
     ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "ecs::SystemTag", "classecs_1_1_system_tag.html", null ],

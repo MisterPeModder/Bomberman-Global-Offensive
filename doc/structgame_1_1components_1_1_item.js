@@ -1,12 +1,16 @@
 var structgame_1_1components_1_1_item =
 [
-    [ "OnApply", "structgame_1_1components_1_1_item.html#a72e3dd7a17d69224ca90456697bb9a24", null ],
+    [ "OnApply", "structgame_1_1components_1_1_item.html#ace67b02c57a986ac872d3c43366dba87", null ],
+    [ "OnTimedOut", "structgame_1_1components_1_1_item.html#a0ff98140c275a5cc3703ccc92c362e33", null ],
     [ "Identifier", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174", [
       [ "SpeedShoes", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a00ec18550dcef626cfd42e95effa9d94", null ],
       [ "FireUp", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174ab39ed7f5c05b2da0cb2e14c8e3b5b665", null ],
       [ "BombUp", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a68fe0ea183eb388818c64e5a7030363e", null ],
       [ "KickShoes", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174af5023101d60ec5eaf0ef8f019762fb38", null ],
       [ "ChainBall", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174ae993b837f5bb182fba3fc860ecf9e411", null ],
+      [ "FireDown", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a1b97542db8980a75c7f77182836a9342", null ],
+      [ "BombDown", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174acbd778e464676e4c4781723d986a463e", null ],
+      [ "InvertedControls", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a721e32cc2f336d3187bcd13d097a4826", null ],
       [ "Count", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
     [ "Type", "structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896d", [
@@ -15,10 +19,13 @@ var structgame_1_1components_1_1_item =
       [ "Activable", "structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da18201ca2222ee15c405c11fa042fa525", null ]
     ] ],
     [ "Item", "structgame_1_1components_1_1_item.html#ae480fa3e43e86b6e63be2250aaf89b6b", null ],
+    [ "BombDown", "structgame_1_1components_1_1_item.html#a499d2d9db5543e4fe769cf33ca219549", null ],
     [ "BombUp", "structgame_1_1components_1_1_item.html#ab1c43e14ae719db040671d867dae1e17", null ],
     [ "ChainBall", "structgame_1_1components_1_1_item.html#a2d4462d71595dae6bb38fffd34696e16", null ],
+    [ "FireDown", "structgame_1_1components_1_1_item.html#a4b4fc167b0b9cb2cbee339860e0571b6", null ],
     [ "FireUp", "structgame_1_1components_1_1_item.html#a5c83ad59088c29d44998134284a797c8", null ],
     [ "getItem", "structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb", null ],
+    [ "InvertedControls", "structgame_1_1components_1_1_item.html#a77e3bce6d8988a8d3a6403abc3d6300d", null ],
     [ "KickShoes", "structgame_1_1components_1_1_item.html#a7239f3aed563eedb5599494dd03ff9e2", null ],
     [ "spawnItem", "structgame_1_1components_1_1_item.html#a1575ae1d5a1d43baea2c2c38b6cb472f", null ],
     [ "spawnRandomItem", "structgame_1_1components_1_1_item.html#a61a5037b4476d64e775d6736855d353e", null ],
@@ -32,6 +39,7 @@ var structgame_1_1components_1_1_item =
     [ "maxStack", "structgame_1_1components_1_1_item.html#af44d5725f267c9e0ad3aec1e000dd41b", null ],
     [ "name", "structgame_1_1components_1_1_item.html#a9989710c428f9344bcc636b1710fa999", null ],
     [ "onApply", "structgame_1_1components_1_1_item.html#a446f2bb731e90b285ddbca510c5d6fb1", null ],
+    [ "onTimedOut", "structgame_1_1components_1_1_item.html#aad97e9315c856d90346f7179f8116e68", null ],
     [ "POWER_DOWN_COUNT", "structgame_1_1components_1_1_item.html#ae948113e449cfefb0ac3efa22dcae11e", null ],
     [ "POWER_UP_COUNT", "structgame_1_1components_1_1_item.html#aeb2d321f5a9b2eed4a88bee2e6ddd396", null ],
     [ "powerDowns", "structgame_1_1components_1_1_item.html#adb443b8168017f908981da6bcd4c63e3", null ],

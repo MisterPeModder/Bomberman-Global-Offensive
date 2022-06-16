@@ -1,6 +1,7 @@
 <map id="game::components::Player" name="game::components::Player">
-<area shape="rect" id="node1" title="Player marker." alt="" coords="156,109,352,136"/>
-<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,13,132,39"/>
-<area shape="rect" id="node3" href="$structgame_1_1components_1_1_player_1_1_stats.html" title=" " alt="" coords="156,5,352,47"/>
-<area shape="rect" id="node4" href="$structgame_1_1components_1_1_player_1_1_inventory.html" title="Occurence of each item in a player inventory." alt="" coords="376,5,572,47"/>
+<area shape="rect" id="node1" title="Player marker." alt="" coords="619,64,815,91"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="343,5,469,32"/>
+<area shape="rect" id="node3" href="$structgame_1_1components_1_1_player_1_1_stats.html" title=" " alt="" coords="308,57,504,98"/>
+<area shape="rect" id="node4" href="$structgame_1_1components_1_1_player_1_1_inventory.html" title="Occurence of each item in a player inventory." alt="" coords="308,122,504,163"/>
+<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="5,107,180,178"/>
 </map>

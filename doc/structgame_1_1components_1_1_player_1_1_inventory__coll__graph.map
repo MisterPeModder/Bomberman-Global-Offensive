@@ -1,0 +1,4 @@
+<map id="game::components::Player::Inventory" name="game::components::Player::Inventory">
+<area shape="rect" id="node1" title="Occurence of each item in a player inventory." alt="" coords="308,20,504,61"/>
+<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="5,5,180,76"/>
+</map>

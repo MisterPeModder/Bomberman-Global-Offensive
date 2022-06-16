@@ -4,5 +4,6 @@ var structgame_1_1components_1_1_player_1_1_stats =
     [ "bombLimit", "structgame_1_1components_1_1_player_1_1_stats.html#a26bb93b71d1bac3e38c6c621d48d987c", null ],
     [ "bombRange", "structgame_1_1components_1_1_player_1_1_stats.html#a7fcf47813dba04a5496c1263fdbcccf5", null ],
     [ "DEFAULT_SPEED", "structgame_1_1components_1_1_player_1_1_stats.html#ac58c335a0e79cadf47b19a22c734575f", null ],
+    [ "inverted", "structgame_1_1components_1_1_player_1_1_stats.html#a832963f734aaf9053fda7ef6aefb6f7f", null ],
     [ "speed", "structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6", null ]
 ];
