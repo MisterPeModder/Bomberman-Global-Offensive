@@ -14,9 +14,9 @@
 
 namespace game::components
 {
-    struct Texture2D : public ecs::Component, public raylib::model::Texture2D {
-        Texture2D(const raylib::model::Texture2D &pTexture) : raylib::model::Texture2D(pTexture) {}
-        Texture2D(const std::filesystem::path &pPath) : raylib::model::Texture2D(pPath) {}
+    struct Texture2D : public ecs::Component, public raylib::textures::Texture2D {
+        Texture2D(const raylib::textures::Texture2D &pTexture) : raylib::textures::Texture2D(pTexture) {}
+        Texture2D(const std::filesystem::path &pPath) : raylib::textures::Texture2D(pPath) {}
     };
 } // namespace game::components
 
