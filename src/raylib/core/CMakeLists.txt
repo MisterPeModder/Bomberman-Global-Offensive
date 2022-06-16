@@ -3,6 +3,8 @@ set(SRCROOT ${SRCROOT}/core)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/Camera2D.cpp
+    ${SRCROOT}/Camera2D.hpp
     ${SRCROOT}/Camera3D.cpp
     ${SRCROOT}/Camera3D.hpp
     ${SRCROOT}/Vector2.hpp

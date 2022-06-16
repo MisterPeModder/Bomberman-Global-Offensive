@@ -14,11 +14,7 @@
 namespace game::components
 {
     struct Rectangle : public ecs::Component, public raylib::shapes::Rectangle {
-        Rectangle(const raylib::core::Vector2f &ppos = {}, const raylib::core::Vector2f &psize = {1.f, 1.f},
-            const raylib::core::Color &pcolor = raylib::core::Color::DEFAULT_COLOR)
-            : raylib::shapes::Rectangle(ppos, psize, pcolor)
-        {
-        }
+        Rectangle() : raylib::shapes::Rectangle() {}
     };
 } // namespace game::components
 

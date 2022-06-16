@@ -15,6 +15,7 @@
 #include "components/Size.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Entities.hpp"
+#include "game/components/Destructible.hpp"
 #include "game/resources/RandomDevice.hpp"
 
 namespace game::components
@@ -66,9 +67,10 @@ namespace game::components
             .with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
             .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 0.5f, static_cast<float>(cell.y))
             .with<Size>(data.getStorage<Size>(), 0.4f, 0.4f, 0.4f)
-            .with<components::CubeColor>( /// Different color based on identifier waiting for models
+            .with<CubeColor>( /// Different color based on identifier waiting for models
                 data.getStorage<CubeColor>(), raylib::core::Color(127 * (id % 3), 127 * (id / 3), 127 * (id / 9)))
-            .with<components::Cube>(data.getStorage<Cube>())
+            .with<Cube>(data.getStorage<Cube>())
+            .with<Destructible>(data.getStorage<Destructible>())
             .build();
     }
 } // namespace game::components
