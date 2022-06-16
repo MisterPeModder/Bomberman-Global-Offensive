@@ -49,10 +49,13 @@ namespace game::resources
         ///
         /// @param name asset name.
         /// @param args arguments that will be passed to the asset's constructor.
-        template <typename... Args> void emplace(const std::string &name, Args &&...args)
+        /// @return T& created asset.
+        template <typename... Args> T &emplace(const std::string &name, Args &&...args)
         {
-            _assets.emplace(std::piecewise_construct, std::forward_as_tuple(name),
-                std::forward_as_tuple(std::forward<Args>(args)...));
+            _assets
+                .emplace(std::piecewise_construct, std::forward_as_tuple(name),
+                    std::forward_as_tuple(std::forward<Args>(args)...))
+                .first->second;
         }
 
         /// Access to an asset stored in the map.
@@ -61,6 +64,13 @@ namespace game::resources
         /// @return const T& reference to the asset.
         /// @throw std::out_of_range If there is no asset matching @c name in the map.
         const T &get(const std::string &name) const { return _assets.at(name); }
+
+        /// Access to an asset stored in the map.
+        ///
+        /// @param name name of the asset.
+        /// @return T& reference to the asset.
+        /// @throw std::out_of_range If there is no asset matching @c name in the map.
+        T &get(const std::string &name) { return _assets.at(name); }
 
         /// Clear the asset map.
         void clear(void) { _assets.clear(); }

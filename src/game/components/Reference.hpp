@@ -17,7 +17,7 @@ namespace game::components
     template <typename T> struct Reference : public ecs::Component {
         T &object;
 
-        Reference(const T &pObject) : object(pObject) {}
+        Reference(T &pObject) : object(pObject) {}
     };
 } // namespace game::components
 
