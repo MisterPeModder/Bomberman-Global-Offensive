@@ -21,3 +21,6 @@ msgstr "PARAMETRES"
 
 msgid "Volume"
 msgstr "Volume"
+
+msgid "Back"
+msgstr "Retour"

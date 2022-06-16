@@ -21,3 +21,6 @@ msgstr ""
 
 msgid "Volume"
 msgstr ""
+
+msgid "Back"
+msgstr ""

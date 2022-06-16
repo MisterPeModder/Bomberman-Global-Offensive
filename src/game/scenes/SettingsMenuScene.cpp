@@ -5,7 +5,9 @@
 ** SettingsMenuScene
 */
 
-#include "SettingsMenuScene.hpp"
+#include "game/scenes/SettingsMenuScene.hpp"
+#include "game/Engine.hpp"
+#include "game/scenes/GameScene.hpp"
 
 #include "logger/Logger.hpp"
 #include "util/util.hpp"
@@ -29,6 +31,8 @@
 #include "game/gui/components/Checkable.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
+
+#include "game/resources/Engine.hpp"
 
 #include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
@@ -95,7 +99,7 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Textual>("1080x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_2, game::SettingsMenuScene::RES_1,
-            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN)
+            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Window::setSize(1080, 720);
@@ -247,6 +251,24 @@ static void loadSettingsMenuScene(ecs::World &world)
     world.addSystem<game::systems::InputManager>();
     world.addSystem<game::systems::DrawText>();
     world.addSystem<game::systems::DrawSelectedWidget>();
+
+    world.addEntity()
+        .with<game::components::Position>(500.f, 650.f)
+        .with<game::components::Textual>(localization::resources::rsBack, 30, raylib::core::Color::PURPLE)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::BACK, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+            game::SettingsMenuScene::RES_2, game::gui::Widget::NullTag)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
+                Logger::logger.log(Logger::Severity::Debug, "Back to menu");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::PURPLE;
+            })
+        .build();
 
     loadGraphicSettings(world);
     loadAudioSettings(world);
