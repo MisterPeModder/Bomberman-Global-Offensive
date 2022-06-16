@@ -73,14 +73,14 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_scene_8cpp.html",
-"_resource_string_8hpp.html#ac2e6d472f0ee933c365353a1d8eb64e7",
-"classbmjs_1_1_registry_guard.html#a9185b16d50e8a3c3a6315fe3142f1e9b",
-"classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda7e1d024375a20eb6649b527887f17284",
-"classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5",
-"classraylib_1_1model_1_1_bounding_box.html#a21f6f555a6f96101e156e261767a2241",
-"dir_83ffee900fdf5683175689ab2eee10c3.html",
-"storage_2_storage_8hpp_source.html",
-"structraylib_1_1core_1_1_color.html#a1a40286a32b9936527d21bd57671e236"
+"_resource_file_8cpp.html",
+"classbmjs_1_1_mod.html#a6a0c6870f95b8724eb01087c76b6b237",
+"classgame_1_1_settings_menu_scene.html",
+"classlocalization_1_1_resource_file_1_1_locale_not_found_error.html",
+"classraylib_1_1core_1_1_mouse.html#a2d7b0bd27c42490f60a11a3ac5e4eb0d",
+"classutil_1_1_bit_set.html#a1e15c54e82b2c4dcd15bd2d4a2af31a5",
+"namespacelocalization.html",
+"structgame_1_1gui_1_1_checkable.html#a1dafd71fb20c5c345813612dd240a55a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

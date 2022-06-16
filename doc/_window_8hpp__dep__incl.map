@@ -1,11 +1,12 @@
 <map id="src/raylib/core/Window.hpp" name="src/raylib/core/Window.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="376,5,573,32"/>
-<area shape="rect" id="node2" href="$game_2_engine_8cpp.html" title=" " alt="" coords="29,80,187,107"/>
-<area shape="rect" id="node3" href="$_game_8cpp.html" title=" " alt="" coords="5,155,157,181"/>
-<area shape="rect" id="node4" href="$_a_scene_8cpp.html" title=" " alt="" coords="181,155,392,181"/>
-<area shape="rect" id="node5" href="$_test_scene_8cpp.html" title=" " alt="" coords="416,155,643,181"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="667,155,773,181"/>
-<area shape="rect" id="node7" href="$scoped_8hpp.html" title=" " alt="" coords="312,80,504,107"/>
-<area shape="rect" id="node8" href="$_window_8cpp.html" title=" " alt="" coords="630,80,826,107"/>
-<area shape="rect" id="node9" href="$common_8cpp.html" title=" " alt="" coords="850,80,1043,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="461,5,659,32"/>
+<area shape="rect" id="node2" href="$game_2_engine_8cpp.html" title=" " alt="" coords="131,80,288,107"/>
+<area shape="rect" id="node3" href="$_game_8cpp.html" title=" " alt="" coords="5,162,157,189"/>
+<area shape="rect" id="node4" href="$_a_scene_8cpp.html" title=" " alt="" coords="181,162,392,189"/>
+<area shape="rect" id="node5" href="$_settings_menu_scene_8cpp.html" title=" " alt="" coords="417,155,605,196"/>
+<area shape="rect" id="node6" href="$_test_scene_8cpp.html" title=" " alt="" coords="629,162,856,189"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title=" " alt="" coords="881,162,986,189"/>
+<area shape="rect" id="node8" href="$scoped_8hpp.html" title=" " alt="" coords="464,80,656,107"/>
+<area shape="rect" id="node9" href="$_window_8cpp.html" title=" " alt="" coords="782,80,978,107"/>
+<area shape="rect" id="node10" href="$common_8cpp.html" title=" " alt="" coords="1002,80,1195,107"/>
 </map>

@@ -7,6 +7,8 @@ var namespacegame_1_1systems =
     [ "DrawCube", "structgame_1_1systems_1_1_draw_cube.html", "structgame_1_1systems_1_1_draw_cube" ],
     [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ],
     [ "DrawModel", "structgame_1_1systems_1_1_draw_model.html", "structgame_1_1systems_1_1_draw_model" ],
+    [ "DrawRectangle", "structgame_1_1systems_1_1_draw_rectangle.html", "structgame_1_1systems_1_1_draw_rectangle" ],
+    [ "DrawSelectedWidget", "structgame_1_1systems_1_1_draw_selected_widget.html", "structgame_1_1systems_1_1_draw_selected_widget" ],
     [ "DrawText", "structgame_1_1systems_1_1_draw_text.html", "structgame_1_1systems_1_1_draw_text" ],
     [ "ExplodeBomb", "structgame_1_1systems_1_1_explode_bomb.html", "structgame_1_1systems_1_1_explode_bomb" ],
     [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ],

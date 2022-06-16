@@ -48,6 +48,9 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Position.hpp", "_position_8hpp.html", [
       [ "Position", "structgame_1_1components_1_1_position.html", "structgame_1_1components_1_1_position" ]
     ] ],
+    [ "Position2D.hpp", "_position2_d_8hpp.html", [
+      [ "Position2D", "structgame_1_1components_1_1_position2_d.html", "structgame_1_1components_1_1_position2_d" ]
+    ] ],
     [ "Rectangle.hpp", "game_2components_2_rectangle_8hpp.html", [
       [ "Rectangle", "structgame_1_1components_1_1_rectangle.html", "structgame_1_1components_1_1_rectangle" ]
     ] ],
@@ -62,6 +65,9 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     ] ],
     [ "Size.hpp", "_size_8hpp.html", [
       [ "Size", "structgame_1_1components_1_1_size.html", "structgame_1_1components_1_1_size" ]
+    ] ],
+    [ "Size2D.hpp", "_size2_d_8hpp.html", [
+      [ "Size2D", "structgame_1_1components_1_1_size2_d.html", "structgame_1_1components_1_1_size2_d" ]
     ] ],
     [ "Textual.hpp", "_textual_8hpp.html", [
       [ "Textual", "structgame_1_1components_1_1_textual.html", "structgame_1_1components_1_1_textual" ]

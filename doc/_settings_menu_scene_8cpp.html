@@ -90,71 +90,92 @@ $(document).ready(function(){initNavTree('_settings_menu_scene_8cpp.html',''); i
 <div class="title">SettingsMenuScene.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_settings_menu_scene_8hpp_source.html">SettingsMenuScene.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_settings_menu_scene_8hpp_source.html">game/scenes/SettingsMenuScene.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_2_engine_8hpp_source.html">game/Engine.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_game_scene_8hpp_source.html">game/scenes/GameScene.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_logger_8hpp_source.html">logger/Logger.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8hpp_source.html">util/util.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_audio_8hpp_source.html">raylib/core/Audio.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_window_8hpp_source.html">raylib/core/Window.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scoped_8hpp_source.html">raylib/core/scoped.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_2components_2_color_8hpp_source.html">game/components/Color.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_controlable_8hpp_source.html">game/components/Controlable.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_2components_2_model_8hpp_source.html">game/components/Model.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_position_8hpp_source.html">game/components/Position.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_position2_d_8hpp_source.html">game/components/Position2D.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_2components_2_rectangle_8hpp_source.html">game/components/Rectangle.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_rotation_angle_8hpp_source.html">game/components/RotationAngle.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_rotation_axis_8hpp_source.html">game/components/RotationAxis.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_scale_8hpp_source.html">game/components/Scale.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_size_8hpp_source.html">game/components/Size.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_size2_d_8hpp_source.html">game/components/Size2D.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_textual_8hpp_source.html">game/components/Textual.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_checkable_8hpp_source.html">game/gui/components/Checkable.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_clickable_8hpp_source.html">game/gui/components/Clickable.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_widget_8hpp_source.html">game/gui/components/Widget.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_2resources_2_engine_8hpp_source.html">game/resources/Engine.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_draw_selected_widget_8hpp_source.html">game/systems/DrawSelectedWidget.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_draw_text_8hpp_source.html">game/systems/DrawText.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_input_manager_8hpp_source.html">game/systems/InputManager.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_2systems_2_model_8hpp_source.html">game/systems/Model.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_2systems_2_rectangle_8hpp_source.html">game/systems/Rectangle.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_localization_8hpp_source.html">localization/Localization.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_resources_8hpp_source.html">localization/Resources.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SettingsMenuScene.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_settings_menu_scene_8cpp__incl.png" border="0" usemap="#src_2game_2scenes_2_settings_menu_scene_8cpp" alt=""/></div>
 <map name="src_2game_2scenes_2_settings_menu_scene_8cpp" id="src_2game_2scenes_2_settings_menu_scene_8cpp">
-<area shape="rect" title=" " alt="" coords="1819,5,2007,47"/>
-<area shape="rect" href="_settings_menu_scene_8hpp.html" title=" " alt="" coords="946,95,1125,121"/>
-<area shape="rect" href="util_8hpp.html" title=" " alt="" coords="3145,505,3241,531"/>
-<area shape="rect" href="game_2components_2_color_8hpp.html" title=" " alt="" coords="1981,505,2189,531"/>
-<area shape="rect" href="game_2components_2_model_8hpp.html" title=" " alt="" coords="2385,251,2600,278"/>
-<area shape="rect" href="_position_8hpp.html" title=" " alt="" coords="1494,341,1721,367"/>
-<area shape="rect" href="_rotation_angle_8hpp.html" title=" " alt="" coords="1555,244,1758,285"/>
-<area shape="rect" href="_rotation_axis_8hpp.html" title=" " alt="" coords="1745,333,1947,375"/>
-<area shape="rect" href="_scale_8hpp.html" title=" " alt="" coords="1321,251,1531,278"/>
-<area shape="rect" href="_size_8hpp.html" title=" " alt="" coords="1971,341,2174,367"/>
-<area shape="rect" href="game_2systems_2_model_8hpp.html" title=" " alt="" coords="1884,169,2075,196"/>
-<area shape="rect" href="_world_8hpp.html" title=" " alt="" coords="873,423,987,449"/>
-<area shape="rect" href="_a_scene_8hpp.html" title=" " alt="" coords="941,169,1129,196"/>
-<area shape="rect" href="world_2_world_8hpp.html" title=" " alt="" coords="820,587,973,613"/>
-<area shape="rect" href="_component_8hpp.html" title=" " alt="" coords="1393,736,1544,763"/>
-<area shape="rect" href="storage_2_storage_8hpp.html" title=" " alt="" coords="1379,811,1558,837"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/concepts.html" title=" " alt="" coords="1218,960,1298,987"/>
-<area shape="rect" href="_entities_8hpp.html" title=" " alt="" coords="633,661,819,688"/>
-<area shape="rect" href="_resource_8hpp.html" title=" " alt="" coords="584,736,780,763"/>
-<area shape="rect" href="system_2_system_8hpp.html" title=" " alt="" coords="1140,661,1317,688"/>
-<area shape="rect" href="_instances_8hpp.html" title=" " alt="" coords="329,661,507,688"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/unordered_map.html" title=" " alt="" coords="375,736,499,763"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/stdexcept.html" title=" " alt="" coords="843,661,929,688"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/utility.html" title=" " alt="" coords="953,661,1013,688"/>
-<area shape="rect" href="_joinable_8hpp.html" title=" " alt="" coords="2059,885,2215,912"/>
-<area shape="rect" href="_i_scene_8hpp.html" title=" " alt="" coords="968,251,1151,278"/>
-<area shape="rect" href="_game_8hpp.html" title=" " alt="" coords="1187,341,1318,367"/>
-<area shape="rect" href="_camera3_d_8hpp.html" title=" " alt="" coords="1545,423,1737,449"/>
-<area shape="rect" href="_system_8hpp.html" title=" " alt="" coords="1087,423,1213,449"/>
-<area shape="rect" href="_vector3_8hpp.html" title=" " alt="" coords="1858,505,1957,531"/>
-<area shape="rect" href="_vector2_8hpp.html" title=" " alt="" coords="2314,587,2413,613"/>
-<area shape="rect" href="_system_data_8hpp.html" title=" " alt="" coords="985,505,1193,531"/>
-<area shape="rect" href="_system_tag_8hpp.html" title=" " alt="" coords="5,885,204,912"/>
-<area shape="rect" title=" " alt="" coords="2328,661,2399,688"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="2929,587,3019,613"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/functional.html" title=" " alt="" coords="2496,885,2583,912"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="3196,587,3293,613"/>
-<area shape="rect" href="raylib_2core_2_color_8hpp.html" title=" " alt="" coords="2488,587,2644,613"/>
-<area shape="rect" href="_mesh_8hpp.html" title=" " alt="" coords="2747,423,2918,449"/>
-<area shape="rect" href="raylib_2model_2_model_8hpp.html" title=" " alt="" coords="2463,341,2639,367"/>
-<area shape="rect" href="raylib_2textures_2_image_8hpp.html" title=" " alt="" coords="2676,505,2867,531"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string.html" title=" " alt="" coords="2614,423,2673,449"/>
-<area shape="rect" href="_bounding_box_8hpp.html" title=" " alt="" coords="2216,423,2439,449"/>
-<area shape="rect" href="raylib_2textures_2_texture2_d_8hpp.html" title=" " alt="" coords="2372,497,2549,539"/>
-<area shape="rect" href="_storage_8hpp.html" title=" " alt="" coords="2423,661,2549,688"/>
-<area shape="rect" href="_join_8hpp.html" title=" " alt="" coords="2324,736,2424,763"/>
-<area shape="rect" href="_map_storage_8hpp.html" title=" " alt="" coords="1568,736,1775,763"/>
-<area shape="rect" href="_marker_storage_8hpp.html" title=" " alt="" coords="1850,736,2074,763"/>
-<area shape="rect" href="join_2_join_8hpp.html" title=" " alt="" coords="2397,811,2525,837"/>
-<area shape="rect" href="_maybe_join_8hpp.html" title=" " alt="" coords="2200,811,2372,837"/>
+<area shape="rect" title=" " alt="" coords="2981,5,3169,47"/>
+<area shape="rect" href="_settings_menu_scene_8hpp.html" title=" " alt="" coords="815,95,1017,136"/>
+<area shape="rect" href="game_2_engine_8hpp.html" title=" " alt="" coords="1457,102,1591,129"/>
+<area shape="rect" href="game_2resources_2_engine_8hpp.html" title=" " alt="" coords="1169,191,1372,218"/>
+<area shape="rect" href="_game_scene_8hpp.html" title=" " alt="" coords="508,102,727,129"/>
+<area shape="rect" href="_logger_8hpp.html" title=" " alt="" coords="1889,102,2028,129"/>
+<area shape="rect" href="util_8hpp.html" title=" " alt="" coords="2435,102,2531,129"/>
+<area shape="rect" href="_audio_8hpp.html" title=" " alt="" coords="5,191,165,218"/>
+<area shape="rect" href="_window_8hpp.html" title=" " alt="" coords="970,191,1145,218"/>
+<area shape="rect" href="scoped_8hpp.html" title=" " alt="" coords="247,102,417,129"/>
+<area shape="rect" href="game_2components_2_color_8hpp.html" title=" " alt="" coords="2697,191,2905,218"/>
+<area shape="rect" href="_controlable_8hpp.html" title=" " alt="" coords="2555,102,2805,129"/>
+<area shape="rect" href="game_2components_2_model_8hpp.html" title=" " alt="" coords="4491,191,4706,218"/>
+<area shape="rect" href="_position_8hpp.html" title=" " alt="" coords="4013,191,4240,218"/>
+<area shape="rect" href="_position2_d_8hpp.html" title=" " alt="" coords="2981,184,3187,225"/>
+<area shape="rect" href="game_2components_2_rectangle_8hpp.html" title=" " alt="" coords="3212,191,3452,218"/>
+<area shape="rect" href="_rotation_angle_8hpp.html" title=" " alt="" coords="4731,184,4933,225"/>
+<area shape="rect" href="_rotation_axis_8hpp.html" title=" " alt="" coords="5008,184,5211,225"/>
+<area shape="rect" href="_scale_8hpp.html" title=" " alt="" coords="5235,191,5445,218"/>
+<area shape="rect" href="_size_8hpp.html" title=" " alt="" coords="4264,191,4467,218"/>
+<area shape="rect" href="_size2_d_8hpp.html" title=" " alt="" coords="3477,191,3697,218"/>
+<area shape="rect" href="_textual_8hpp.html" title=" " alt="" coords="1702,191,1925,218"/>
+<area shape="rect" href="_checkable_8hpp.html" title=" " alt="" coords="2243,95,2410,136"/>
+<area shape="rect" href="_clickable_8hpp.html" title=" " alt="" coords="2053,95,2219,136"/>
+<area shape="rect" href="_widget_8hpp.html" title=" " alt="" coords="3721,184,3887,225"/>
+<area shape="rect" href="_draw_selected_widget_8hpp.html" title=" " alt="" coords="3855,95,4067,136"/>
+<area shape="rect" href="_draw_text_8hpp.html" title=" " alt="" coords="5192,348,5403,375"/>
+<area shape="rect" href="_input_manager_8hpp.html" title=" " alt="" coords="1889,348,2127,375"/>
+<area shape="rect" href="game_2systems_2_model_8hpp.html" title=" " alt="" coords="4667,102,4858,129"/>
+<area shape="rect" href="game_2systems_2_rectangle_8hpp.html" title=" " alt="" coords="3113,102,3327,129"/>
+<area shape="rect" href="_localization_8hpp.html" title=" " alt="" coords="2830,102,3037,129"/>
+<area shape="rect" href="_resources_8hpp.html" title=" " alt="" coords="5521,102,5717,129"/>
+<area shape="rect" href="_system_8hpp.html" title=" " alt="" coords="2445,423,2571,449"/>
+<area shape="rect" href="_world_8hpp.html" title=" " alt="" coords="767,423,881,449"/>
+<area shape="rect" href="_a_scene_8hpp.html" title=" " alt="" coords="655,191,843,218"/>
+<area shape="rect" href="_i_scene_8hpp.html" title=" " alt="" coords="655,273,838,300"/>
+<area shape="rect" href="_camera3_d_8hpp.html" title=" " alt="" coords="395,423,587,449"/>
+<area shape="rect" href="_camera2_d_8hpp.html" title=" " alt="" coords="236,273,428,300"/>
+<area shape="rect" href="_game_8hpp.html" title=" " alt="" coords="656,348,787,375"/>
+<area shape="rect" title=" " alt="" coords="297,497,367,524"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/concepts.html" title=" " alt="" coords="1447,191,1527,218"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/memory.html" title=" " alt="" coords="1551,191,1628,218"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/iostream.html" title=" " alt="" coords="2047,191,2127,218"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/array.html" title=" " alt="" coords="2151,191,2207,218"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="2652,273,2743,300"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/fstream.html" title=" " alt="" coords="1949,191,2022,218"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/functional.html" title=" " alt="" coords="2333,191,2419,218"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="2195,273,2293,300"/>
+<area shape="rect" href="raylib_2core_2_color_8hpp.html" title=" " alt="" coords="2545,273,2628,300"/>
+<area shape="rect" href="_component_8hpp.html" title=" " alt="" coords="4033,273,4183,300"/>
 </map>
 </div>
 </div>
@@ -167,10 +188,297 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aecfbd40d86c2491eb6d94a7a060e3ead"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_settings_menu_scene_8cpp.html#aecfbd40d86c2491eb6d94a7a060e3ead">loadGraphicSettings</a> (<a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;world)</td></tr>
+<tr class="separator:aecfbd40d86c2491eb6d94a7a060e3ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27f53fe9f607a7707990f0a567980a66"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_settings_menu_scene_8cpp.html#a27f53fe9f607a7707990f0a567980a66">loadAudioSettings</a> (<a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;world)</td></tr>
+<tr class="separator:a27f53fe9f607a7707990f0a567980a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906c5a02b5ff42ea2375627ef24950a4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_settings_menu_scene_8cpp.html#a906c5a02b5ff42ea2375627ef24950a4">loadKeybindSettings</a> (<a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;world)</td></tr>
+<tr class="separator:a906c5a02b5ff42ea2375627ef24950a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f158c29ae637ec7614c814894d98ccc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_settings_menu_scene_8cpp.html#a4f158c29ae637ec7614c814894d98ccc">loadSettingsMenuScene</a> (<a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;world)</td></tr>
 <tr class="separator:a4f158c29ae637ec7614c814894d98ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a27f53fe9f607a7707990f0a567980a66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27f53fe9f607a7707990f0a567980a66">&#9670;&nbsp;</a></span>loadAudioSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void loadAudioSettings </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;&#160;</td>
+          <td class="paramname"><em>world</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8cpp_source.html#l00134">134</a> of file <a class="el" href="_settings_menu_scene_8cpp_source.html">SettingsMenuScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(150.f, 100.f)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        .with&lt;game::components::Textual&gt;(</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <a class="code" href="namespacelocalization_1_1resources_1_1settings.html#a0965c66e75fc5f674257e69aed182139">localization::resources::settings::rsSettingsAudio</a>, 40, <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        .build();</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(170.f, 200.f)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        .with&lt;game::components::Textual&gt;(</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="namespacelocalization_1_1resources_1_1settings.html#a1ac2b59ca874f078536725a72d762304">localization::resources::settings::rsSettingsMute</a>, 20, <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">game::SettingsMenuScene::VOLUME_MUTE</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">game::SettingsMenuScene::FULLSCREEN</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9">game::SettingsMenuScene::VOLUME_50</a>)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(0.f);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Volume set to 0%&quot;</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            },</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            })</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        .build();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(170.f, 300.f)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        .with&lt;game::components::Textual&gt;(</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            <a class="code" href="namespacelocalization_1_1resources_1_1settings.html#a7f959dfcd2fa1cd680a609472d45b35c">localization::resources::settings::rsSettingsVolume</a>, 20, <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        .build();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(100.f, 350.f)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        .with&lt;game::components::Textual&gt;(<span class="stringliteral">&quot;25%&quot;</span>, 15, <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c">game::SettingsMenuScene::VOLUME_25</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9">game::SettingsMenuScene::VOLUME_50</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">game::SettingsMenuScene::VOLUME_MUTE</a>)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(25.f);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Volume set to 25%&quot;</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            },</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            })</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        .build();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(150.f, 350.f)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        .with&lt;game::components::Textual&gt;(<span class="stringliteral">&quot;50%&quot;</span>, 15, <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>)</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9">game::SettingsMenuScene::VOLUME_50</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c">game::SettingsMenuScene::VOLUME_25</a>,</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed">game::SettingsMenuScene::VOLUME_75</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">game::SettingsMenuScene::VOLUME_MUTE</a>)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(50.f);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Volume set to 50%&quot;</span>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            },</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            })</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        .build();</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(200.f, 350.f)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        .with&lt;game::components::Textual&gt;(<span class="stringliteral">&quot;75%&quot;</span>, 15, <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>)</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed">game::SettingsMenuScene::VOLUME_75</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9">game::SettingsMenuScene::VOLUME_50</a>,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f">game::SettingsMenuScene::VOLUME_100</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">game::SettingsMenuScene::VOLUME_MUTE</a>)</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(75.f);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Volume set to 75%&quot;</span>);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;            },</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            })</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        .build();</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(250.f, 350.f)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        .with&lt;game::components::Textual&gt;(<span class="stringliteral">&quot;100%&quot;</span>, 15, <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>)</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f">game::SettingsMenuScene::VOLUME_100</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed">game::SettingsMenuScene::VOLUME_75</a>,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad">game::SettingsMenuScene::RES_1</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">game::SettingsMenuScene::VOLUME_MUTE</a>)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(100.f);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Volume set to 100%&quot;</span>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            },</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            })</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        .build();</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aecfbd40d86c2491eb6d94a7a060e3ead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecfbd40d86c2491eb6d94a7a060e3ead">&#9670;&nbsp;</a></span>loadGraphicSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void loadGraphicSettings </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;&#160;</td>
+          <td class="paramname"><em>world</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8cpp_source.html#l00046">46</a> of file <a class="el" href="_settings_menu_scene_8cpp_source.html">SettingsMenuScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(480.f, 100.f)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        .with&lt;game::components::Textual&gt;(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="namespacelocalization_1_1resources_1_1settings.html#a1da8ad8a155d3ff5afca3d72c799ae49">localization::resources::settings::rsSettingsGraphics</a>, 40, <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        .build();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(500.f, 200.f)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        .with&lt;game::components::Textual&gt;(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="namespacelocalization_1_1resources_1_1settings.html#a692f0f1e8e4d72a4b8de37d18b15ebfd">localization::resources::settings::rsSettingsFullscreen</a>, 20, <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">game::SettingsMenuScene::FULLSCREEN</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">game::SettingsMenuScene::VOLUME_MUTE</a>,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">game::SettingsMenuScene::RES_2</a>, <span class="keyword">true</span>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db">raylib::core::Window::toggleFullscreen</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Toggled fullscreen&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            },</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            })</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        .build();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(500.f, 300.f)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        .with&lt;game::components::Textual&gt;(</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="namespacelocalization_1_1resources_1_1settings.html#a1550eb54ad2be6b5e334f62d3c64dcc4">localization::resources::settings::rsSettingsResolution</a>, 20, <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        .build();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(425.f, 350.f)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        .with&lt;game::components::Textual&gt;(<span class="stringliteral">&quot;720x360&quot;</span>, 15, <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad">game::SettingsMenuScene::RES_1</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f">game::SettingsMenuScene::VOLUME_100</a>,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">game::SettingsMenuScene::RES_2</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">game::SettingsMenuScene::FULLSCREEN</a>)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(720, 360);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Window size set to (720, 360)&quot;</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            },</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            })</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        .build();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(525.f, 350.f)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        .with&lt;game::components::Textual&gt;(<span class="stringliteral">&quot;1080x720&quot;</span>, 15, <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">game::SettingsMenuScene::RES_2</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad">game::SettingsMenuScene::RES_1</a>,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f">game::SettingsMenuScene::RES_3</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">game::SettingsMenuScene::FULLSCREEN</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35">game::SettingsMenuScene::BACK</a>)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(1080, 720);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Window size set to (1080, 720)&quot;</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            },</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            })</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        .build();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(625.f, 350.f)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        .with&lt;game::components::Textual&gt;(<span class="stringliteral">&quot;1920x1080&quot;</span>, 15, <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f">game::SettingsMenuScene::RES_3</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">game::SettingsMenuScene::RES_2</a>,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">game::SettingsMenuScene::FULLSCREEN</a>)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(1920, 1080);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Window size set to (1920, 1080)&quot;</span>);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            },</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            })</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        .build();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a906c5a02b5ff42ea2375627ef24950a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a906c5a02b5ff42ea2375627ef24950a4">&#9670;&nbsp;</a></span>loadKeybindSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void loadKeybindSettings </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;&#160;</td>
+          <td class="paramname"><em>world</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8cpp_source.html#l00240">240</a> of file <a class="el" href="_settings_menu_scene_8cpp_source.html">SettingsMenuScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;{</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(800.f, 100.f)</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        .with&lt;game::components::Textual&gt;(</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <a class="code" href="namespacelocalization_1_1resources_1_1settings.html#a18232167b072c907ad77d0461f21be3b">localization::resources::settings::rsSettingsKeybinds</a>, 40, <a class="code" href="structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba">raylib::core::Color::GREEN</a>)</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        .build();</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a4f158c29ae637ec7614c814894d98ccc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f158c29ae637ec7614c814894d98ccc">&#9670;&nbsp;</a></span>loadSettingsMenuScene()</h2>
 
@@ -195,39 +503,98 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8cpp_source.html#l00021">21</a> of file <a class="el" href="_settings_menu_scene_8cpp_source.html">SettingsMenuScene.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> testModelPath = <a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;assets&quot;</span>, <span class="stringliteral">&quot;models&quot;</span>, <span class="stringliteral">&quot;player&quot;</span>, <span class="stringliteral">&quot;raylibguy.iqm&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">addSystem</a>&lt;<a class="code" href="structgame_1_1systems_1_1_draw_model.html">game::systems::DrawModel</a>&gt;();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#aa1222e462fa0cfa6944cc92c0238afe7">addStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_scale.html">game::components::Scale</a>&gt;();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_model.html">game::components::Model</a>&gt;(testModelPath)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        .with&lt;game::components::Position&gt;(0, -2, 0)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_size.html">game::components::Size</a>&gt;(2.f, 0.5f, 0.5f)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        .with&lt;game::components::RotationAngle&gt;(-90)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_rotation_axis.html">game::components::RotationAxis</a>&gt;(1, 0, 0)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        .with&lt;game::components::Color&gt;(<a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        .build();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8cpp_source.html#l00249">249</a> of file <a class="el" href="_settings_menu_scene_8cpp_source.html">SettingsMenuScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;{</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">addSystem</a>&lt;<a class="code" href="structgame_1_1systems_1_1_input_manager.html">game::systems::InputManager</a>&gt;();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">addSystem</a>&lt;<a class="code" href="structgame_1_1systems_1_1_draw_text.html">game::systems::DrawText</a>&gt;();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">addSystem</a>&lt;<a class="code" href="structgame_1_1systems_1_1_draw_selected_widget.html">game::systems::DrawSelectedWidget</a>&gt;();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(500.f, 650.f)</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        .with&lt;game::components::Textual&gt;(<a class="code" href="namespacelocalization_1_1resources.html#ab22543a6bcc29362517b0952a977c576">localization::resources::rsBack</a>, 30, <a class="code" href="structraylib_1_1core_1_1_color.html#ad97abd743d5285924402c6b91343c64a">raylib::core::Color::PURPLE</a>)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35">game::SettingsMenuScene::BACK</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>,</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">game::SettingsMenuScene::RES_2</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            [&amp;world](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a">getResource</a>&lt;<a class="code" href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a>&gt;().engine-&gt;setScene&lt;<a class="code" href="classgame_1_1_game_scene.html">game::GameScene</a>&gt;();</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, <span class="stringliteral">&quot;Back to menu&quot;</span>);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            },</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#ad97abd743d5285924402c6b91343c64a">raylib::core::Color::PURPLE</a>;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            })</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        .build();</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="_settings_menu_scene_8cpp.html#aecfbd40d86c2491eb6d94a7a060e3ead">loadGraphicSettings</a>(world);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <a class="code" href="_settings_menu_scene_8cpp.html#a27f53fe9f607a7707990f0a567980a66">loadAudioSettings</a>(world);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="_settings_menu_scene_8cpp.html#a906c5a02b5ff42ea2375627ef24950a4">loadKeybindSettings</a>(world);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(450.f, 0.f)</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        .with&lt;game::components::Textual&gt;(<a class="code" href="namespacelocalization_1_1resources.html#af76bc827aa98298c18d4a81cb4cecff8">localization::resources::rsSettings</a>, 40, <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a>)</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        .build();</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad">game::SettingsMenuScene::RES_1</a></div><div class="ttdeci">@ RES_1</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00027">SettingsMenuScene.hpp:27</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_a694d9d1a60a30cdc6835a6edae65f42a"><div class="ttname"><a href="classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a">ecs::World::getResource</a></div><div class="ttdeci">const R &amp; getResource() const</div><div class="ttdoc">Fetches a Resource from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00182">World.hpp:182</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a45dba4d0652a46202065cbb6232315db"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db">raylib::core::Window::toggleFullscreen</a></div><div class="ttdeci">static void toggleFullscreen()</div><div class="ttdoc">Toggles fullscreen.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00054">Window.cpp:54</a></div></div>
 <div class="ttc" id="aclassecs_1_1_world_1_1_entity_builder_html_ae339f67315aa2d44e090fdd95f42f24a"><div class="ttname"><a href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">ecs::World::EntityBuilder::with</a></div><div class="ttdeci">EntityBuilder &amp; with(Args &amp;&amp;...args)</div><div class="ttdoc">Attach a component to the entity.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00065">World.hpp:65</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">game::SettingsMenuScene::VOLUME_MUTE</a></div><div class="ttdeci">@ VOLUME_MUTE</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00021">SettingsMenuScene.hpp:21</a></div></div>
 <div class="ttc" id="aclassecs_1_1_world_html_a5472f6777d6c03db7028470150d30518"><div class="ttname"><a href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">ecs::World::addEntity</a></div><div class="ttdeci">EntityBuilder addEntity()</div><div class="ttdoc">Creates a new entity.</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00032">World.cpp:32</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_scale_html"><div class="ttname"><a href="structgame_1_1components_1_1_scale.html">game::components::Scale</a></div><div class="ttdef"><b>Definition:</b> <a href="_scale_8hpp_source.html#l00015">Scale.hpp:15</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_size_html"><div class="ttname"><a href="structgame_1_1components_1_1_size.html">game::components::Size</a></div><div class="ttdef"><b>Definition:</b> <a href="_size_8hpp_source.html#l00016">Size.hpp:16</a></div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_aa1222e462fa0cfa6944cc92c0238afe7"><div class="ttname"><a href="classecs_1_1_world.html#aa1222e462fa0cfa6944cc92c0238afe7">ecs::World::addStorage</a></div><div class="ttdeci">getStorageType&lt; C &gt; &amp; addStorage()</div><div class="ttdoc">Registers a component's storage.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00134">World.hpp:134</a></div></div>
-<div class="ttc" id="anamespaceutil_html_a05454346e6b75a324321c23f7afc5727"><div class="ttname"><a href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00022">util.hpp:22</a></div></div>
-<div class="ttc" id="apath_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a></div></div>
+<div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00057">Logger.hpp:57</a></div></div>
+<div class="ttc" id="aclassecs_1_1_entity_html_a5bcfe12cfeda9661b6849b325041e41a"><div class="ttname"><a href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">ecs::Entity::getId</a></div><div class="ttdeci">constexpr Index getId() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00029">Entity.hpp:29</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">game::SettingsMenuScene::FULLSCREEN</a></div><div class="ttdeci">@ FULLSCREEN</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00026">SettingsMenuScene.hpp:26</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_position_html"><div class="ttname"><a href="structgame_1_1components_1_1_position.html">game::components::Position</a></div><div class="ttdef"><b>Definition:</b> <a href="_position_8hpp_source.html#l00016">Position.hpp:16</a></div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1settings_html_a7f959dfcd2fa1cd680a609472d45b35c"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1settings.html#a7f959dfcd2fa1cd680a609472d45b35c">localization::resources::settings::rsSettingsVolume</a></div><div class="ttdeci">constexpr ResourceString rsSettingsVolume(&quot;Volume&quot;)</div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_color_html_ad97abd743d5285924402c6b91343c64a"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#ad97abd743d5285924402c6b91343c64a">raylib::core::Color::PURPLE</a></div><div class="ttdeci">static const Color PURPLE</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00167">Color.hpp:167</a></div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1settings_html_a692f0f1e8e4d72a4b8de37d18b15ebfd"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1settings.html#a692f0f1e8e4d72a4b8de37d18b15ebfd">localization::resources::settings::rsSettingsFullscreen</a></div><div class="ttdeci">constexpr ResourceString rsSettingsFullscreen(&quot;Fullscreen&quot;)</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1settings_html_a1550eb54ad2be6b5e334f62d3c64dcc4"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1settings.html#a1550eb54ad2be6b5e334f62d3c64dcc4">localization::resources::settings::rsSettingsResolution</a></div><div class="ttdeci">constexpr ResourceString rsSettingsResolution(&quot;Resolution&quot;)</div></div>
+<div class="ttc" id="aclassgame_1_1_user_html_a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5"><div class="ttname"><a href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a></div><div class="ttdeci">@ User1</div></div>
+<div class="ttc" id="astructgame_1_1resources_1_1_engine_resource_html"><div class="ttname"><a href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a></div><div class="ttdoc">Game engine resource.</div><div class="ttdef"><b>Definition:</b> <a href="game_2resources_2_engine_8hpp_source.html#l00021">Engine.hpp:21</a></div></div>
 <div class="ttc" id="aclassecs_1_1_world_html_a4318218f7d56a3103a49d75807555781"><div class="ttname"><a href="classecs_1_1_world.html#a4318218f7d56a3103a49d75807555781">ecs::World::addSystem</a></div><div class="ttdeci">void addSystem(Args &amp;&amp;...args)</div><div class="ttdoc">Creates a instance of the system S and adds it the active systems of this World.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00117">World.hpp:117</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_rotation_axis_html"><div class="ttname"><a href="structgame_1_1components_1_1_rotation_axis.html">game::components::RotationAxis</a></div><div class="ttdef"><b>Definition:</b> <a href="_rotation_axis_8hpp_source.html#l00016">RotationAxis.hpp:16</a></div></div>
+<div class="ttc" id="astructgame_1_1gui_1_1_clickable_html_a3880be230496946b54f8381ee0acdd7f"><div class="ttname"><a href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a></div><div class="ttdeci">State</div><div class="ttdoc">State of the component.</div><div class="ttdef"><b>Definition:</b> <a href="_clickable_8hpp_source.html#l00021">Clickable.hpp:21</a></div></div>
+<div class="ttc" id="a_settings_menu_scene_8cpp_html_a27f53fe9f607a7707990f0a567980a66"><div class="ttname"><a href="_settings_menu_scene_8cpp.html#a27f53fe9f607a7707990f0a567980a66">loadAudioSettings</a></div><div class="ttdeci">static void loadAudioSettings(ecs::World &amp;world)</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8cpp_source.html#l00134">SettingsMenuScene.cpp:134</a></div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1settings_html_a0965c66e75fc5f674257e69aed182139"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1settings.html#a0965c66e75fc5f674257e69aed182139">localization::resources::settings::rsSettingsAudio</a></div><div class="ttdeci">constexpr ResourceString rsSettingsAudio(&quot;Audio&quot;)</div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_draw_text_html"><div class="ttname"><a href="structgame_1_1systems_1_1_draw_text.html">game::systems::DrawText</a></div><div class="ttdoc">Draw text system.</div><div class="ttdef"><b>Definition:</b> <a href="_draw_text_8hpp_source.html#l00016">DrawText.hpp:16</a></div></div>
+<div class="ttc" id="a_settings_menu_scene_8cpp_html_aecfbd40d86c2491eb6d94a7a060e3ead"><div class="ttname"><a href="_settings_menu_scene_8cpp.html#aecfbd40d86c2491eb6d94a7a060e3ead">loadGraphicSettings</a></div><div class="ttdeci">static void loadGraphicSettings(ecs::World &amp;world)</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8cpp_source.html#l00046">SettingsMenuScene.cpp:46</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_aab1ea951ba59262e6808ace66f709e40"><div class="ttname"><a href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">ecs::World::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Fetches a component storage from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00206">World.hpp:206</a></div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_html_ab22543a6bcc29362517b0952a977c576"><div class="ttname"><a href="namespacelocalization_1_1resources.html#ab22543a6bcc29362517b0952a977c576">localization::resources::rsBack</a></div><div class="ttdeci">constexpr ResourceString rsBack(&quot;Back&quot;)</div></div>
+<div class="ttc" id="astructgame_1_1gui_1_1_widget_html_a26a43b6c85f1464220e9712b53e0f5e8"><div class="ttname"><a href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a></div><div class="ttdeci">static constexpr WidgetId NullTag</div><div class="ttdoc">Id meaning none.</div><div class="ttdef"><b>Definition:</b> <a href="_widget_8hpp_source.html#l00023">Widget.hpp:23</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_color_html_aa0b1eeefd9bf8f23c1c5dbdc01728041"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div><div class="ttdeci">static const Color YELLOW</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00155">Color.hpp:155</a></div></div>
+<div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
+<div class="ttc" id="astructgame_1_1gui_1_1_clickable_html"><div class="ttname"><a href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a></div><div class="ttdoc">Clickable component.</div><div class="ttdef"><b>Definition:</b> <a href="_clickable_8hpp_source.html#l00019">Clickable.hpp:19</a></div></div>
+<div class="ttc" id="aclassgame_1_1_game_scene_html"><div class="ttname"><a href="classgame_1_1_game_scene.html">game::GameScene</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_scene_8hpp_source.html#l00018">GameScene.hpp:18</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c">game::SettingsMenuScene::VOLUME_25</a></div><div class="ttdeci">@ VOLUME_25</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00022">SettingsMenuScene.hpp:22</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35">game::SettingsMenuScene::BACK</a></div><div class="ttdeci">@ BACK</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00020">SettingsMenuScene.hpp:20</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed">game::SettingsMenuScene::VOLUME_75</a></div><div class="ttdeci">@ VOLUME_75</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00024">SettingsMenuScene.hpp:24</a></div></div>
+<div class="ttc" id="aclassecs_1_1_entity_html"><div class="ttname"><a href="classecs_1_1_entity.html">ecs::Entity</a></div><div class="ttdoc">Encapsulates a index to an entity that may or may not exist.</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00021">Entity.hpp:21</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_textual_html"><div class="ttname"><a href="structgame_1_1components_1_1_textual.html">game::components::Textual</a></div><div class="ttdoc">Textual element.</div><div class="ttdef"><b>Definition:</b> <a href="_textual_8hpp_source.html#l00017">Textual.hpp:17</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f">game::SettingsMenuScene::VOLUME_100</a></div><div class="ttdeci">@ VOLUME_100</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00025">SettingsMenuScene.hpp:25</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f">game::SettingsMenuScene::RES_3</a></div><div class="ttdeci">@ RES_3</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00029">SettingsMenuScene.hpp:29</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_a8740297c38d9095d3afc5c0778542ffc"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a></div><div class="ttdeci">static const Color BLUE</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00165">Color.hpp:165</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_model_html"><div class="ttname"><a href="structgame_1_1components_1_1_model.html">game::components::Model</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_model_8hpp_source.html#l00018">Model.hpp:18</a></div></div>
-<div class="ttc" id="astructgame_1_1systems_1_1_draw_model_html"><div class="ttname"><a href="structgame_1_1systems_1_1_draw_model.html">game::systems::DrawModel</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2systems_2_model_8hpp_source.html#l00024">Model.hpp:24</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">game::SettingsMenuScene::RES_2</a></div><div class="ttdeci">@ RES_2</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00028">SettingsMenuScene.hpp:28</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_audio_html_aac84084fc76a4327246d6255c6537668"><div class="ttname"><a href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a></div><div class="ttdeci">static void setMasterVolume(float volume)</div><div class="ttdoc">Set the global volume of the program.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_8cpp_source.html#l00022">Audio.cpp:22</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_textual_html_a84e6c6dbaebe1de6044bcffd3d1effa6"><div class="ttname"><a href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">game::components::Textual::color</a></div><div class="ttdeci">raylib::core::Color color</div><div class="ttdoc">Color of the text.</div><div class="ttdef"><b>Definition:</b> <a href="_textual_8hpp_source.html#l00023">Textual.hpp:23</a></div></div>
+<div class="ttc" id="a_settings_menu_scene_8cpp_html_a906c5a02b5ff42ea2375627ef24950a4"><div class="ttname"><a href="_settings_menu_scene_8cpp.html#a906c5a02b5ff42ea2375627ef24950a4">loadKeybindSettings</a></div><div class="ttdeci">static void loadKeybindSettings(ecs::World &amp;world)</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8cpp_source.html#l00240">SettingsMenuScene.cpp:240</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_draw_selected_widget_html"><div class="ttname"><a href="structgame_1_1systems_1_1_draw_selected_widget.html">game::systems::DrawSelectedWidget</a></div><div class="ttdoc">Draw selected widget system.</div><div class="ttdef"><b>Definition:</b> <a href="_draw_selected_widget_8hpp_source.html#l00023">DrawSelectedWidget.hpp:23</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_color_html_a46d212f9aa0d23c5bac2e92f51703bba"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba">raylib::core::Color::GREEN</a></div><div class="ttdeci">static const Color GREEN</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00161">Color.hpp:161</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_input_manager_html"><div class="ttname"><a href="structgame_1_1systems_1_1_input_manager.html">game::systems::InputManager</a></div><div class="ttdoc">System managing all the users inputs.</div><div class="ttdef"><b>Definition:</b> <a href="_input_manager_8hpp_source.html#l00017">InputManager.hpp:17</a></div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1settings_html_a1da8ad8a155d3ff5afca3d72c799ae49"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1settings.html#a1da8ad8a155d3ff5afca3d72c799ae49">localization::resources::settings::rsSettingsGraphics</a></div><div class="ttdeci">constexpr ResourceString rsSettingsGraphics(&quot;Graphics&quot;)</div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a4db1d089b4108b6a2644b48b72a7f524"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a></div><div class="ttdeci">static void setSize(int width, int height)</div><div class="ttdoc">Set the window size.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00043">Window.cpp:43</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9">game::SettingsMenuScene::VOLUME_50</a></div><div class="ttdeci">@ VOLUME_50</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00023">SettingsMenuScene.hpp:23</a></div></div>
+<div class="ttc" id="astructgame_1_1gui_1_1_clickable_html_a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040"><div class="ttname"><a href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a></div><div class="ttdeci">@ Pressed</div><div class="ttdoc">Default state.</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1settings_html_a18232167b072c907ad77d0461f21be3b"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1settings.html#a18232167b072c907ad77d0461f21be3b">localization::resources::settings::rsSettingsKeybinds</a></div><div class="ttdeci">constexpr ResourceString rsSettingsKeybinds(&quot;Keybinds&quot;)</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_html_af76bc827aa98298c18d4a81cb4cecff8"><div class="ttname"><a href="namespacelocalization_1_1resources.html#af76bc827aa98298c18d4a81cb4cecff8">localization::resources::rsSettings</a></div><div class="ttdeci">constexpr ResourceString rsSettings(&quot;SETTINGS&quot;)</div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_color_html_ad88a895e4beaec89b19ad46221d0c35b"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a></div><div class="ttdeci">static const Color RED</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00159">Color.hpp:159</a></div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1settings_html_a1ac2b59ca874f078536725a72d762304"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1settings.html#a1ac2b59ca874f078536725a72d762304">localization::resources::settings::rsSettingsMute</a></div><div class="ttdeci">constexpr ResourceString rsSettingsMute(&quot;Mute&quot;)</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_controlable_html"><div class="ttname"><a href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a></div><div class="ttdoc">Controlable entity, may be a widget or a player.</div><div class="ttdef"><b>Definition:</b> <a href="_controlable_8hpp_source.html#l00019">Controlable.hpp:19</a></div></div>
+<div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

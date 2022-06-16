@@ -1,8 +1,9 @@
 <map id="src/game/resources/Engine.hpp" name="src/game/resources/Engine.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="240,5,389,47"/>
-<area shape="rect" id="node2" href="$game_2_engine_8hpp.html" title=" " alt="" coords="235,95,394,121"/>
-<area shape="rect" id="node4" href="$_game_8cpp.html" title=" " alt="" coords="5,169,157,196"/>
-<area shape="rect" id="node5" href="$_a_scene_8cpp.html" title=" " alt="" coords="492,169,703,196"/>
-<area shape="rect" id="node3" href="$game_2_engine_8cpp.html" title=" " alt="" coords="181,169,339,196"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="363,169,469,196"/>
+<area shape="rect" id="node1" title=" " alt="" coords="397,5,547,47"/>
+<area shape="rect" id="node2" href="$game_2_engine_8hpp.html" title=" " alt="" coords="334,95,493,121"/>
+<area shape="rect" id="node4" href="$_game_8cpp.html" title=" " alt="" coords="5,177,157,203"/>
+<area shape="rect" id="node5" href="$_a_scene_8cpp.html" title=" " alt="" coords="493,177,704,203"/>
+<area shape="rect" id="node6" href="$_settings_menu_scene_8cpp.html" title=" " alt="" coords="729,169,917,211"/>
+<area shape="rect" id="node3" href="$game_2_engine_8cpp.html" title=" " alt="" coords="312,177,469,203"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title=" " alt="" coords="182,177,287,203"/>
 </map>

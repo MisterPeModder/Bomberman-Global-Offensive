@@ -21,6 +21,9 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "DrawingCube.hpp", "_drawing_cube_8hpp.html", [
       [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ]
     ] ],
+    [ "DrawSelectedWidget.hpp", "_draw_selected_widget_8hpp.html", [
+      [ "DrawSelectedWidget", "structgame_1_1systems_1_1_draw_selected_widget.html", "structgame_1_1systems_1_1_draw_selected_widget" ]
+    ] ],
     [ "DrawText.cpp", "_draw_text_8cpp.html", null ],
     [ "DrawText.hpp", "_draw_text_8hpp.html", [
       [ "DrawText", "structgame_1_1systems_1_1_draw_text.html", "structgame_1_1systems_1_1_draw_text" ]
@@ -42,5 +45,8 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     ] ],
     [ "NoClip.hpp", "_no_clip_8hpp.html", [
       [ "DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", "structgame_1_1systems_1_1_disable_bomb_no_clip" ]
+    ] ],
+    [ "Rectangle.hpp", "game_2systems_2_rectangle_8hpp.html", [
+      [ "DrawRectangle", "structgame_1_1systems_1_1_draw_rectangle.html", "structgame_1_1systems_1_1_draw_rectangle" ]
     ] ]
 ];

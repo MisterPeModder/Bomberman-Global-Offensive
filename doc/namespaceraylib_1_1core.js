@@ -2,6 +2,7 @@ var namespaceraylib_1_1core =
 [
     [ "scoped", "namespaceraylib_1_1core_1_1scoped.html", "namespaceraylib_1_1core_1_1scoped" ],
     [ "Audio", "classraylib_1_1core_1_1_audio.html", "classraylib_1_1core_1_1_audio" ],
+    [ "Camera2D", "classraylib_1_1core_1_1_camera2_d.html", "classraylib_1_1core_1_1_camera2_d" ],
     [ "Camera3D", "classraylib_1_1core_1_1_camera3_d.html", "classraylib_1_1core_1_1_camera3_d" ],
     [ "Color", "structraylib_1_1core_1_1_color.html", "structraylib_1_1core_1_1_color" ],
     [ "Cursor", "classraylib_1_1core_1_1_cursor.html", "classraylib_1_1core_1_1_cursor" ],

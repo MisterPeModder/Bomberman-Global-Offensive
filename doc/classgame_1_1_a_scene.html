@@ -112,16 +112,19 @@ Collaboration diagram for game::AScene:</div>
 <div class="dyncontent">
 <div class="center"><img src="classgame_1_1_a_scene__coll__graph.png" border="0" usemap="#game_1_1_a_scene_coll__map" alt="Collaboration graph"/></div>
 <map name="game_1_1_a_scene_coll__map" id="game_1_1_a_scene_coll__map">
-<area shape="rect" title=" " alt="" coords="936,100,1051,127"/>
-<area shape="rect" href="classgame_1_1_i_scene.html" title=" " alt="" coords="637,49,748,76"/>
-<area shape="rect" href="classecs_1_1_world.html" title="Contains all entities and systems." alt="" coords="648,100,737,127"/>
-<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="333,19,484,61"/>
+<area shape="rect" title=" " alt="" coords="965,191,1080,217"/>
+<area shape="rect" href="classgame_1_1_i_scene.html" title=" " alt="" coords="649,80,760,107"/>
+<area shape="rect" href="classecs_1_1_world.html" title="Contains all entities and systems." alt="" coords="660,131,749,157"/>
+<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="339,19,490,61"/>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="11,5,234,61"/>
-<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="333,93,484,134"/>
+<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="339,93,490,134"/>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="5,85,240,141"/>
-<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="333,165,484,206"/>
+<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="339,158,490,199"/>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="11,165,235,221"/>
-<area shape="rect" href="classraylib_1_1core_1_1_camera3_d.html" title="The Camera3D class that encapsulates the raylib 3D camera." alt="" coords="607,189,779,216"/>
+<area shape="rect" href="classecs_1_1_system_tag.html" title="A group of System types." alt="" coords="643,185,766,212"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/container/vector.html" title=" " alt="" coords="333,223,496,265"/>
+<area shape="rect" href="classraylib_1_1core_1_1_camera2_d.html" title="The Camera2D class that encapsulates the raylib 2D camera." alt="" coords="619,275,791,301"/>
+<area shape="rect" href="classraylib_1_1core_1_1_camera3_d.html" title="The Camera3D class that encapsulates the raylib 3D camera." alt="" coords="619,364,791,391"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -148,12 +151,18 @@ Public Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:afdf06f86902561fc6171caab6313e71b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_world.html">ecs::World</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a></td></tr>
 <tr class="separator:afdf06f86902561fc6171caab6313e71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af53c1ab9e74d2c25b5a9dc38c7e33157"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#af53c1ab9e74d2c25b5a9dc38c7e33157">_defaultCamera</a></td></tr>
-<tr class="separator:af53c1ab9e74d2c25b5a9dc38c7e33157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f1ad83486e061a8d4a29a6bea63f559"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1core_1_1_camera2_d.html">raylib::core::Camera2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#a5f1ad83486e061a8d4a29a6bea63f559">_defaultCamera2D</a></td></tr>
+<tr class="separator:a5f1ad83486e061a8d4a29a6bea63f559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd67773048df5d6ae0c5f9fe43d6299"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#affd67773048df5d6ae0c5f9fe43d6299">_defaultCamera3D</a></td></tr>
+<tr class="separator:affd67773048df5d6ae0c5f9fe43d6299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae76f39f390cfaa183ccfec1410eb46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_system_tag.html">ecs::SystemTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">_global2D</a></td></tr>
+<tr class="separator:a2ae76f39f390cfaa183ccfec1410eb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416cd98a9845c72451fc80bcd91f9754"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_system_tag.html">ecs::SystemTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#a416cd98a9845c72451fc80bcd91f9754">_global3D</a></td></tr>
+<tr class="separator:a416cd98a9845c72451fc80bcd91f9754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00016">16</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00019">19</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5df9c7ca73f9e546c8f3e2611093ee8f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5df9c7ca73f9e546c8f3e2611093ee8f">&#9670;&nbsp;</a></span>AScene()</h2>
@@ -230,11 +239,15 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classraylib_1_1core_1_1scoped_1_1_drawing.html">raylib::core::scoped::Drawing</a> drawing;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">raylib::core::Window::clear</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classraylib_1_1core_1_1scoped_1_1_mode3_d.html">raylib::core::scoped::Mode3D</a> mode3D(<a class="code" href="classgame_1_1_a_scene.html#af53c1ab9e74d2c25b5a9dc38c7e33157">_defaultCamera</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a0015fa0624f4eeaa5178d189bf5e233b">runSystems</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classraylib_1_1core_1_1scoped_1_1_mode3_d.html">raylib::core::scoped::Mode3D</a> mode3D(<a class="code" href="classgame_1_1_a_scene.html#affd67773048df5d6ae0c5f9fe43d6299">_defaultCamera3D</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a0015fa0624f4eeaa5178d189bf5e233b">runSystems</a>(<a class="code" href="classgame_1_1_a_scene.html#a416cd98a9845c72451fc80bcd91f9754">_global3D</a>);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        };</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a>(10, 10);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classraylib_1_1core_1_1scoped_1_1_mode2_d.html">raylib::core::scoped::Mode2D</a> mode2D(<a class="code" href="classgame_1_1_a_scene.html#a5f1ad83486e061a8d4a29a6bea63f559">_defaultCamera2D</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a0015fa0624f4eeaa5178d189bf5e233b">runSystems</a>(<a class="code" href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">_global2D</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a>(10, 10);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -294,14 +307,14 @@ Protected Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">game::IScene</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_a_scene_8cpp_source.html#l00034">34</a> of file <a class="el" href="_a_scene_8cpp_source.html">AScene.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_a_scene_8cpp_source.html#l00038">38</a> of file <a class="el" href="_a_scene_8cpp_source.html">AScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af53c1ab9e74d2c25b5a9dc38c7e33157"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af53c1ab9e74d2c25b5a9dc38c7e33157">&#9670;&nbsp;</a></span>_defaultCamera</h2>
+<a id="a5f1ad83486e061a8d4a29a6bea63f559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f1ad83486e061a8d4a29a6bea63f559">&#9670;&nbsp;</a></span>_defaultCamera2D</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,7 +323,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a> game::AScene::_defaultCamera</td>
+          <td class="memname"><a class="el" href="classraylib_1_1core_1_1_camera2_d.html">raylib::core::Camera2D</a> game::AScene::_defaultCamera2D</td>
         </tr>
       </table>
   </td>
@@ -320,7 +333,79 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00026">26</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00029">29</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
+
+</div>
+</div>
+<a id="affd67773048df5d6ae0c5f9fe43d6299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affd67773048df5d6ae0c5f9fe43d6299">&#9670;&nbsp;</a></span>_defaultCamera3D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a> game::AScene::_defaultCamera3D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00030">30</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a2ae76f39f390cfaa183ccfec1410eb46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae76f39f390cfaa183ccfec1410eb46">&#9670;&nbsp;</a></span>_global2D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_system_tag.html">ecs::SystemTag</a> game::AScene::_global2D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00031">31</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a416cd98a9845c72451fc80bcd91f9754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a416cd98a9845c72451fc80bcd91f9754">&#9670;&nbsp;</a></span>_global3D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_system_tag.html">ecs::SystemTag</a> game::AScene::_global3D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00032">32</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
 
 </div>
 </div>
@@ -344,7 +429,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00025">25</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_scene_8hpp_source.html#l00028">28</a> of file <a class="el" href="_a_scene_8hpp_source.html">AScene.hpp</a>.</p>
 
 </div>
 </div>
@@ -354,13 +439,17 @@ Protected Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a0ccf99b83d00909119f26d25334772fc"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a></div><div class="ttdeci">static void drawFPS(int x, int y)</div><div class="ttdoc">Displays the number of frames per seconds of the game on screen.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00033">Window.cpp:33</a></div></div>
-<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a1d83f6221942a2b79fac49a6e1e79f53"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">raylib::core::Window::clear</a></div><div class="ttdeci">static void clear(const Color &amp;color=raylib::core::Color::BLACK)</div><div class="ttdoc">Clear the window with a black background.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00027">Window.cpp:27</a></div></div>
-<div class="ttc" id="aclassgame_1_1_a_scene_html_afdf06f86902561fc6171caab6313e71b"><div class="ttname"><a href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">game::AScene::_world</a></div><div class="ttdeci">ecs::World _world</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00025">AScene.hpp:25</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_a416cd98a9845c72451fc80bcd91f9754"><div class="ttname"><a href="classgame_1_1_a_scene.html#a416cd98a9845c72451fc80bcd91f9754">game::AScene::_global3D</a></div><div class="ttdeci">ecs::SystemTag _global3D</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00032">AScene.hpp:32</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a0ccf99b83d00909119f26d25334772fc"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a></div><div class="ttdeci">static void drawFPS(int x, int y)</div><div class="ttdoc">Displays the number of frames per seconds of the game on screen.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00037">Window.cpp:37</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a1d83f6221942a2b79fac49a6e1e79f53"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">raylib::core::Window::clear</a></div><div class="ttdeci">static void clear(const Color &amp;color=raylib::core::Color::BLACK)</div><div class="ttdoc">Clear the window with a black background.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00031">Window.cpp:31</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_a2ae76f39f390cfaa183ccfec1410eb46"><div class="ttname"><a href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">game::AScene::_global2D</a></div><div class="ttdeci">ecs::SystemTag _global2D</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00031">AScene.hpp:31</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_afdf06f86902561fc6171caab6313e71b"><div class="ttname"><a href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">game::AScene::_world</a></div><div class="ttdeci">ecs::World _world</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00028">AScene.hpp:28</a></div></div>
 <div class="ttc" id="aclassecs_1_1_world_html_a0015fa0624f4eeaa5178d189bf5e233b"><div class="ttname"><a href="classecs_1_1_world.html#a0015fa0624f4eeaa5178d189bf5e233b">ecs::World::runSystems</a></div><div class="ttdeci">void runSystems()</div><div class="ttdoc">Runs all systems in this world.</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00054">World.cpp:54</a></div></div>
-<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_drawing_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_drawing.html">raylib::core::scoped::Drawing</a></div><div class="ttdoc">Setup/End window drawing.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00037">scoped.hpp:37</a></div></div>
-<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_mode3_d_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_mode3_d.html">raylib::core::scoped::Mode3D</a></div><div class="ttdoc">Setup/End a 3D mode with a custom camera.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00025">scoped.hpp:25</a></div></div>
-<div class="ttc" id="aclassgame_1_1_a_scene_html_af53c1ab9e74d2c25b5a9dc38c7e33157"><div class="ttname"><a href="classgame_1_1_a_scene.html#af53c1ab9e74d2c25b5a9dc38c7e33157">game::AScene::_defaultCamera</a></div><div class="ttdeci">raylib::core::Camera3D _defaultCamera</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00026">AScene.hpp:26</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_drawing_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_drawing.html">raylib::core::scoped::Drawing</a></div><div class="ttdoc">Setup/End window drawing.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00050">scoped.hpp:50</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_mode3_d_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_mode3_d.html">raylib::core::scoped::Mode3D</a></div><div class="ttdoc">Setup/End a 3D mode with a custom camera.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00026">scoped.hpp:26</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_mode2_d_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_mode2_d.html">raylib::core::scoped::Mode2D</a></div><div class="ttdoc">Setup/End a 2D mode with a custom camera.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00038">scoped.hpp:38</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_a5f1ad83486e061a8d4a29a6bea63f559"><div class="ttname"><a href="classgame_1_1_a_scene.html#a5f1ad83486e061a8d4a29a6bea63f559">game::AScene::_defaultCamera2D</a></div><div class="ttdeci">raylib::core::Camera2D _defaultCamera2D</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00029">AScene.hpp:29</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_affd67773048df5d6ae0c5f9fe43d6299"><div class="ttname"><a href="classgame_1_1_a_scene.html#affd67773048df5d6ae0c5f9fe43d6299">game::AScene::_defaultCamera3D</a></div><div class="ttdeci">raylib::core::Camera3D _defaultCamera3D</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00030">AScene.hpp:30</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

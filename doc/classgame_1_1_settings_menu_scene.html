@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('classgame_1_1_settings_menu_scene.html
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classgame_1_1_settings_menu_scene-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -107,20 +108,43 @@ Collaboration diagram for game::SettingsMenuScene:</div>
 <div class="dyncontent">
 <div class="center"><img src="classgame_1_1_settings_menu_scene__coll__graph.png" border="0" usemap="#game_1_1_settings_menu_scene_coll__map" alt="Collaboration graph"/></div>
 <map name="game_1_1_settings_menu_scene_coll__map" id="game_1_1_settings_menu_scene_coll__map">
-<area shape="rect" title=" " alt="" coords="1100,100,1295,127"/>
-<area shape="rect" href="classgame_1_1_a_scene.html" title=" " alt="" coords="936,100,1051,127"/>
-<area shape="rect" href="classgame_1_1_i_scene.html" title=" " alt="" coords="637,49,748,76"/>
-<area shape="rect" href="classecs_1_1_world.html" title="Contains all entities and systems." alt="" coords="648,100,737,127"/>
-<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="333,19,484,61"/>
+<area shape="rect" title=" " alt="" coords="1129,191,1324,217"/>
+<area shape="rect" href="classgame_1_1_a_scene.html" title=" " alt="" coords="965,191,1080,217"/>
+<area shape="rect" href="classgame_1_1_i_scene.html" title=" " alt="" coords="649,80,760,107"/>
+<area shape="rect" href="classecs_1_1_world.html" title="Contains all entities and systems." alt="" coords="660,131,749,157"/>
+<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="339,19,490,61"/>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="11,5,234,61"/>
-<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="333,93,484,134"/>
+<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="339,93,490,134"/>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="5,85,240,141"/>
-<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="333,165,484,206"/>
+<area shape="rect" href="classecs_1_1_instances.html" title=" " alt="" coords="339,158,490,199"/>
 <area shape="rect" href="http://en.cppreference.com/w/cpp/container/unordered_map.html" title=" " alt="" coords="11,165,235,221"/>
-<area shape="rect" href="classraylib_1_1core_1_1_camera3_d.html" title="The Camera3D class that encapsulates the raylib 3D camera." alt="" coords="607,189,779,216"/>
+<area shape="rect" href="classecs_1_1_system_tag.html" title="A group of System types." alt="" coords="643,185,766,212"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/container/vector.html" title=" " alt="" coords="333,223,496,265"/>
+<area shape="rect" href="classraylib_1_1core_1_1_camera2_d.html" title="The Camera2D class that encapsulates the raylib 2D camera." alt="" coords="619,275,791,301"/>
+<area shape="rect" href="classraylib_1_1core_1_1_camera3_d.html" title="The Camera3D class that encapsulates the raylib 3D camera." alt="" coords="619,364,791,391"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a12be941f390cf44a8f13b23ee7d8b691"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691">WIDGET_ID</a> { <br />
+&#160;&#160;<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35">BACK</a>, 
+<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">VOLUME_MUTE</a>, 
+<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c">VOLUME_25</a>, 
+<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9">VOLUME_50</a>, 
+<br />
+&#160;&#160;<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed">VOLUME_75</a>, 
+<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f">VOLUME_100</a>, 
+<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">FULLSCREEN</a>, 
+<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad">RES_1</a>, 
+<br />
+&#160;&#160;<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">RES_2</a>, 
+<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f">RES_3</a>, 
+<a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691adcc09132362bb96ee881ba82571ea92d">WIDGET_ID_SIZE</a>
+<br />
+ }</td></tr>
+<tr class="separator:a12be941f390cf44a8f13b23ee7d8b691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a889138e3049efef26f662333adf12c4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_settings_menu_scene.html#a889138e3049efef26f662333adf12c4c">SettingsMenuScene</a> ()</td></tr>
@@ -148,13 +172,62 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classgame_1_1_a_scene"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classgame_1_1_a_scene')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classgame_1_1_a_scene.html">game::AScene</a></td></tr>
 <tr class="memitem:afdf06f86902561fc6171caab6313e71b inherit pro_attribs_classgame_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_world.html">ecs::World</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a></td></tr>
 <tr class="separator:afdf06f86902561fc6171caab6313e71b inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af53c1ab9e74d2c25b5a9dc38c7e33157 inherit pro_attribs_classgame_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#af53c1ab9e74d2c25b5a9dc38c7e33157">_defaultCamera</a></td></tr>
-<tr class="separator:af53c1ab9e74d2c25b5a9dc38c7e33157 inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f1ad83486e061a8d4a29a6bea63f559 inherit pro_attribs_classgame_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1core_1_1_camera2_d.html">raylib::core::Camera2D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#a5f1ad83486e061a8d4a29a6bea63f559">_defaultCamera2D</a></td></tr>
+<tr class="separator:a5f1ad83486e061a8d4a29a6bea63f559 inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd67773048df5d6ae0c5f9fe43d6299 inherit pro_attribs_classgame_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1core_1_1_camera3_d.html">raylib::core::Camera3D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#affd67773048df5d6ae0c5f9fe43d6299">_defaultCamera3D</a></td></tr>
+<tr class="separator:affd67773048df5d6ae0c5f9fe43d6299 inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae76f39f390cfaa183ccfec1410eb46 inherit pro_attribs_classgame_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_system_tag.html">ecs::SystemTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">_global2D</a></td></tr>
+<tr class="separator:a2ae76f39f390cfaa183ccfec1410eb46 inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416cd98a9845c72451fc80bcd91f9754 inherit pro_attribs_classgame_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_system_tag.html">ecs::SystemTag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html#a416cd98a9845c72451fc80bcd91f9754">_global3D</a></td></tr>
+<tr class="separator:a416cd98a9845c72451fc80bcd91f9754 inherit pro_attribs_classgame_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8hpp_source.html#l00016">16</a> of file <a class="el" href="_settings_menu_scene_8hpp_source.html">SettingsMenuScene.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8hpp_source.html#l00017">17</a> of file <a class="el" href="_settings_menu_scene_8hpp_source.html">SettingsMenuScene.hpp</a>.</p>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a12be941f390cf44a8f13b23ee7d8b691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12be941f390cf44a8f13b23ee7d8b691">&#9670;&nbsp;</a></span>WIDGET_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691">game::SettingsMenuScene::WIDGET_ID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35"></a>BACK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0"></a>VOLUME_MUTE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c"></a>VOLUME_25&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9"></a>VOLUME_50&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed"></a>VOLUME_75&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f"></a>VOLUME_100&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc"></a>FULLSCREEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad"></a>RES_1&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8"></a>RES_2&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f"></a>RES_3&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a12be941f390cf44a8f13b23ee7d8b691adcc09132362bb96ee881ba82571ea92d"></a>WIDGET_ID_SIZE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8hpp_source.html#l00019">19</a> of file <a class="el" href="_settings_menu_scene_8hpp_source.html">SettingsMenuScene.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                       {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35">BACK</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">VOLUME_MUTE</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c">VOLUME_25</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9">VOLUME_50</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed">VOLUME_75</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f">VOLUME_100</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">FULLSCREEN</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad">RES_1</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">RES_2</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f">RES_3</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691adcc09132362bb96ee881ba82571ea92d">WIDGET_ID_SIZE</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        };</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a889138e3049efef26f662333adf12c4c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a889138e3049efef26f662333adf12c4c">&#9670;&nbsp;</a></span>SettingsMenuScene()</h2>
 
@@ -170,8 +243,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8cpp_source.html#l00040">40</a> of file <a class="el" href="_settings_menu_scene_8cpp_source.html">SettingsMenuScene.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{ <a class="code" href="_settings_menu_scene_8cpp.html#a4f158c29ae637ec7614c814894d98ccc">loadSettingsMenuScene</a>(<a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_menu_scene_8cpp_source.html#l00285">285</a> of file <a class="el" href="_settings_menu_scene_8cpp_source.html">SettingsMenuScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">_global2D</a>.<a class="code" href="classecs_1_1_system_tag.html#aa780de0d82b66258e5540b0e1ba56c0c">add</a>&lt;<a class="code" href="structgame_1_1systems_1_1_draw_text.html">game::systems::DrawText</a>&gt;();</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">_global2D</a>.<a class="code" href="classecs_1_1_system_tag.html#aa780de0d82b66258e5540b0e1ba56c0c">add</a>&lt;<a class="code" href="structgame_1_1systems_1_1_input_manager.html">game::systems::InputManager</a>&gt;();</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">_global2D</a>.<a class="code" href="classecs_1_1_system_tag.html#aa780de0d82b66258e5540b0e1ba56c0c">add</a>&lt;<a class="code" href="structgame_1_1systems_1_1_draw_selected_widget.html">game::systems::DrawSelectedWidget</a>&gt;();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160; </div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>.<a class="code" href="classecs_1_1_world.html#a35d2aabad3acb861b98122430c89d52e">addResource</a>&lt;<a class="code" href="classgame_1_1_users.html">game::Users</a>&gt;();</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="_settings_menu_scene_8cpp.html#a4f158c29ae637ec7614c814894d98ccc">loadSettingsMenuScene</a>(<a class="code" href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">_world</a>);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -181,8 +262,26 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="a_settings_menu_scene_8cpp_html_a4f158c29ae637ec7614c814894d98ccc"><div class="ttname"><a href="_settings_menu_scene_8cpp.html#a4f158c29ae637ec7614c814894d98ccc">loadSettingsMenuScene</a></div><div class="ttdeci">static void loadSettingsMenuScene(ecs::World &amp;world)</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8cpp_source.html#l00021">SettingsMenuScene.cpp:21</a></div></div>
-<div class="ttc" id="aclassgame_1_1_a_scene_html_afdf06f86902561fc6171caab6313e71b"><div class="ttname"><a href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">game::AScene::_world</a></div><div class="ttdeci">ecs::World _world</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00025">AScene.hpp:25</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad">game::SettingsMenuScene::RES_1</a></div><div class="ttdeci">@ RES_1</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00027">SettingsMenuScene.hpp:27</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0">game::SettingsMenuScene::VOLUME_MUTE</a></div><div class="ttdeci">@ VOLUME_MUTE</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00021">SettingsMenuScene.hpp:21</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_a35d2aabad3acb861b98122430c89d52e"><div class="ttname"><a href="classecs_1_1_world.html#a35d2aabad3acb861b98122430c89d52e">ecs::World::addResource</a></div><div class="ttdeci">R &amp; addResource(Args &amp;&amp;...args)</div><div class="ttdoc">Adds a new world Resource instance.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00103">World.hpp:103</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af96ae4fd313e55e20bc44d2bb15193dc">game::SettingsMenuScene::FULLSCREEN</a></div><div class="ttdeci">@ FULLSCREEN</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00026">SettingsMenuScene.hpp:26</a></div></div>
+<div class="ttc" id="a_settings_menu_scene_8cpp_html_a4f158c29ae637ec7614c814894d98ccc"><div class="ttname"><a href="_settings_menu_scene_8cpp.html#a4f158c29ae637ec7614c814894d98ccc">loadSettingsMenuScene</a></div><div class="ttdeci">static void loadSettingsMenuScene(ecs::World &amp;world)</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8cpp_source.html#l00249">SettingsMenuScene.cpp:249</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_a2ae76f39f390cfaa183ccfec1410eb46"><div class="ttname"><a href="classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46">game::AScene::_global2D</a></div><div class="ttdeci">ecs::SystemTag _global2D</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00031">AScene.hpp:31</a></div></div>
+<div class="ttc" id="aclassecs_1_1_system_tag_html_aa780de0d82b66258e5540b0e1ba56c0c"><div class="ttname"><a href="classecs_1_1_system_tag.html#aa780de0d82b66258e5540b0e1ba56c0c">ecs::SystemTag::add</a></div><div class="ttdeci">SystemTag &amp; add()</div><div class="ttdoc">Adds the given System types to this tag.</div><div class="ttdef"><b>Definition:</b> <a href="_system_tag_8hpp_source.html#l00037">SystemTag.hpp:37</a></div></div>
+<div class="ttc" id="aclassgame_1_1_a_scene_html_afdf06f86902561fc6171caab6313e71b"><div class="ttname"><a href="classgame_1_1_a_scene.html#afdf06f86902561fc6171caab6313e71b">game::AScene::_world</a></div><div class="ttdeci">ecs::World _world</div><div class="ttdef"><b>Definition:</b> <a href="_a_scene_8hpp_source.html#l00028">AScene.hpp:28</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_draw_text_html"><div class="ttname"><a href="structgame_1_1systems_1_1_draw_text.html">game::systems::DrawText</a></div><div class="ttdoc">Draw text system.</div><div class="ttdef"><b>Definition:</b> <a href="_draw_text_8hpp_source.html#l00016">DrawText.hpp:16</a></div></div>
+<div class="ttc" id="aclassgame_1_1_users_html"><div class="ttname"><a href="classgame_1_1_users.html">game::Users</a></div><div class="ttdoc">Resource allowing to get users actions using the keybinds.</div><div class="ttdef"><b>Definition:</b> <a href="_users_8hpp_source.html#l00018">Users.hpp:18</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aa1eb691859db7f637042035d37f6173c">game::SettingsMenuScene::VOLUME_25</a></div><div class="ttdeci">@ VOLUME_25</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00022">SettingsMenuScene.hpp:22</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35">game::SettingsMenuScene::BACK</a></div><div class="ttdeci">@ BACK</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00020">SettingsMenuScene.hpp:20</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ab95a4838b7c1413de9363e9976355aed">game::SettingsMenuScene::VOLUME_75</a></div><div class="ttdeci">@ VOLUME_75</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00024">SettingsMenuScene.hpp:24</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ac56dde8f714d33a144851bf9c706782f">game::SettingsMenuScene::VOLUME_100</a></div><div class="ttdeci">@ VOLUME_100</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00025">SettingsMenuScene.hpp:25</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f">game::SettingsMenuScene::RES_3</a></div><div class="ttdeci">@ RES_3</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00029">SettingsMenuScene.hpp:29</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8">game::SettingsMenuScene::RES_2</a></div><div class="ttdeci">@ RES_2</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00028">SettingsMenuScene.hpp:28</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_draw_selected_widget_html"><div class="ttname"><a href="structgame_1_1systems_1_1_draw_selected_widget.html">game::systems::DrawSelectedWidget</a></div><div class="ttdoc">Draw selected widget system.</div><div class="ttdef"><b>Definition:</b> <a href="_draw_selected_widget_8hpp_source.html#l00023">DrawSelectedWidget.hpp:23</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_input_manager_html"><div class="ttname"><a href="structgame_1_1systems_1_1_input_manager.html">game::systems::InputManager</a></div><div class="ttdoc">System managing all the users inputs.</div><div class="ttdef"><b>Definition:</b> <a href="_input_manager_8hpp_source.html#l00017">InputManager.hpp:17</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691adcc09132362bb96ee881ba82571ea92d"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691adcc09132362bb96ee881ba82571ea92d">game::SettingsMenuScene::WIDGET_ID_SIZE</a></div><div class="ttdeci">@ WIDGET_ID_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00030">SettingsMenuScene.hpp:30</a></div></div>
+<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html_a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0fe4a3257e8dc6337f0f5553da58a9d9">game::SettingsMenuScene::VOLUME_50</a></div><div class="ttdeci">@ VOLUME_50</div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00023">SettingsMenuScene.hpp:23</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

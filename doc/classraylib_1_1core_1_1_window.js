@@ -11,5 +11,6 @@ var classraylib_1_1core_1_1_window =
     [ "setIcon", "classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58", null ],
     [ "setSize", "classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524", null ],
     [ "setTargetFPS", "classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c", null ],
-    [ "shouldClose", "classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7", null ]
+    [ "shouldClose", "classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7", null ],
+    [ "toggleFullscreen", "classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db", null ]
 ];
