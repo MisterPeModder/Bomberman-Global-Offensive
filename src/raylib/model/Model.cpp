@@ -17,7 +17,7 @@ namespace raylib
         {
         }
 
-        Model::Model(const raylib::model::Mesh &mesh) : _model(loadFromMesh(mesh)) {}
+        Model::Model(const raylib::model::Mesh &mesh) : _model(loadFromMesh(mesh)) {}///
 
         Model::Model(const ::Mesh &mesh) { _model = LoadModelFromMesh(mesh); }
 

@@ -8,7 +8,6 @@
 #ifndef GAME_GAME_HPP_
 #define GAME_GAME_HPP_
 
-#include <array>
 #include <cmath>
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
@@ -86,8 +85,7 @@ namespace game
         }
 
       private:
-        enum class TextureId { CRATE, WALL, GROUND, COUNT };
-
+      
         ecs::SystemTag _drawing;
         ecs::SystemTag _handleInputs;
         ecs::SystemTag _update;

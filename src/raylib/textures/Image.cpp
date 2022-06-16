@@ -22,18 +22,27 @@ namespace raylib
 
         void Image::load()
         {
+            unload();
+            if (!_fileName.empty())
+                _fileName = " ";
             _image = LoadImage(_fileName.generic_string().c_str());
             _loaded = true;
         }
 
         void Image::loadFromTexture(const Texture2D &texture)
         {
+            unload();
+            if (!_fileName.empty())
+                _fileName = " ";
             _image = LoadImageFromTexture(texture);
             _loaded = true;
         }
 
         void Image::loadFromScreen(void)
         {
+            unload();
+            if (!_fileName.empty())
+                _fileName = " ";
             _image = LoadImageFromScreen();
             _loaded = true;
         }

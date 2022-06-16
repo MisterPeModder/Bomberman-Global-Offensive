@@ -17,7 +17,6 @@ elseif (COMPILER_TYPE MATCHES "gcc")
         "-Wno-unknown-pragmas"
         "$<$<CONFIG:RELEASE>:-O3;-Werror>"
         "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
-        "-g"
     )
     if (ENABLE_TEST_COVERAGE)
         add_compile_options("--coverage" "-fprofile-arcs" "-ftest-coverage")
@@ -31,7 +30,6 @@ elseif (COMPILER_TYPE MATCHES "clang")
         "-Wno-unknown-pragmas"
         "$<$<CONFIG:RELEASE>:-O3;-Werror>"
         "$<$<CONFIG:DEBUG>:-O0;-g3;-ggdb>"
-        "-g"
     )
 
     if (EMSCRIPTEN)

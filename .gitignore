@@ -6,7 +6,6 @@
 # Build Data
 *.o
 /build
-/builds
 /doc/build/html
 *.gcno
 *.gcda

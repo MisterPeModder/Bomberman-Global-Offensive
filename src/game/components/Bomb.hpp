@@ -15,7 +15,6 @@
 #include "ecs/Entity.hpp"
 #include "ecs/System.hpp"
 #include "game/map/Map.hpp"
-#include "raylib/textures/Texture2D.hpp"
 
 namespace game::components
 {

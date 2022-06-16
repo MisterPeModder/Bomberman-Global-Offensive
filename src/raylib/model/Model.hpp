@@ -39,8 +39,19 @@ namespace raylib
             /// @param mesh the mesh from which to create the 3d model
             Model(const raylib::model::Mesh &mesh);
 
+            /// Constructor with texture for map this texture
+            /// Model(mesh)
+            ///
+            /// @param mesh The mesh to use for the model.
+            /// @param texture The texture to set the material map to.
+            /// @param materialId The material id of the material you want to set the
+            /// texture for.
+            /// @param mapType
             Model(const raylib::model::Mesh &mesh, const raylib::textures::Texture2D &texture, int materialId, int mapType);
 
+            /// Constructor. It takes a mesh and returns a model
+            ///
+            /// @param mesh The mesh to load the model from.
             Model(const ::Mesh &mesh);
 
             /// Model destructor
