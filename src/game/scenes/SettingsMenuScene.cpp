@@ -133,12 +133,7 @@ static void loadGraphicSettings(ecs::World &world)
             game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
-                if (raylib::core::Window::isFullscreen()) {
-                    raylib::core::Window::toggleFullscreen();
-                    raylib::core::Window::setSize(1920, 1080);
-                    raylib::core::Window::toggleFullscreen();
-                } else
-                    raylib::core::Window::setSize(1920, 1080);
+                raylib::core::Window::setSize(1920, 1080);
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1920, 1080)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
