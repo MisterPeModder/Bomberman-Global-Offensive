@@ -11,6 +11,7 @@ set(SRC
     ${SRCROOT}/ChangeCube.hpp
     ${SRCROOT}/Collision.hpp
     ${SRCROOT}/Collision.cpp
+    ${INCROOT}/DrawTexture.hpp
     ${SRCROOT}/DrawingCube.hpp
     ${INCROOT}/DrawSelectedWidget.hpp
     ${SRCROOT}/DrawText.hpp

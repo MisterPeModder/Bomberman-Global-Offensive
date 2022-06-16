@@ -18,43 +18,34 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
-#include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
-#include "game/components/RotationAxis.hpp"
 #include "game/components/Scale.hpp"
 #include "game/components/ScreenId.hpp"
-#include "game/components/Size.hpp"
 #include "game/components/Textual.hpp"
+#include "game/components/Texture2D.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
 #include "game/resources/Engine.hpp"
 
 #include "game/systems/DrawText.hpp"
+#include "game/systems/DrawTexture.hpp"
 #include "game/systems/InputManager.hpp"
-#include "game/systems/Model.hpp"
 #include "game/systems/SplashScreen.hpp"
 
 #include "ecs/resource/Timer.hpp"
 
 static void loadSplashScene(ecs::World &world)
 {
-    static const std::filesystem::path testModelPath = util::makePath("assets", "models", "player", "raylibguy.iqm");
+    static const std::filesystem::path studioLogoPath = util::makePath("assets", "studio_logo.png");
 
     world.addEntity()
-        .with<game::components::Model>(testModelPath)
-        .with<game::components::Position>(0.f, -2.f, 0.f)
-        .with<game::components::Size>(1.f, 0.5f, 0.5f)
-        .with<game::components::RotationAngle>(-90.f)
-        .with<game::components::RotationAxis>(1.f, 0.f, 0.f)
+        .with<game::components::Texture2D>(studioLogoPath)
+        .with<game::components::Position>(350.f, 250.f)
+        .with<game::components::Scale>(1.f)
+        .with<game::components::RotationAngle>(0.f)
         .with<game::components::Color>(255, 255, 255, 0)
-        .with<game::components::ScreenId>(0)
-        .build();
-
-    world.addEntity()
-        .with<game::components::Position>(400.f, 500.f)
-        .with<game::components::Textual>("VLAVe", 72, game::components::Color(255, 255, 255, 0))
         .with<game::components::ScreenId>(0)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(0, game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
@@ -73,17 +64,15 @@ namespace game
         _world.addResource<ecs::Timer>();
         _world.addResource<game::Users>();
 
-        _world.addStorage<game::components::Scale>();
+        _world.addStorage<game::components::Textual>();
 
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::SplashScreen>();
-        _world.addSystem<game::systems::DrawModel>();
-        _world.addSystem<game::systems::DrawText>();
+        _world.addSystem<game::systems::DrawTexture>();
 
         _globalNoDraw.add<game::systems::InputManager>();
         _globalNoDraw.add<game::systems::SplashScreen>();
-        _global3D.add<game::systems::DrawModel>();
-        _global2D.add<game::systems::DrawText>();
+        _global2D.add<game::systems::DrawTexture>();
 
         loadSplashScene(_world);
     }

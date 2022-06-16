@@ -26,13 +26,10 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
-#include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
-#include "game/components/RotationAxis.hpp"
 #include "game/components/ScreenId.hpp"
-#include "game/components/Size.hpp"
-#include "game/components/Textual.hpp"
+#include "game/components/Texture2D.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
@@ -40,12 +37,17 @@
 
 static void buildRaylibSplash(ecs::SystemData &data)
 {
+    static const std::filesystem::path raylibLogoPath = util::makePath("assets", "raylib_logo.png");
+
     data.getResource<ecs::Entities>()
         .builder()
         .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 1)
-        .with<game::components::Textual>(
-            data.getStorage<game::components::Textual>(), "RAYLIB", 72, raylib::core::Color(255, 255, 255, 0))
-        .with<game::components::Position>(data.getStorage<game::components::Position>(), 400.f, 500.f)
+        .with<game::components::Texture2D>(data.getStorage<game::components::Texture2D>(), raylibLogoPath)
+        .with<game::components::Position>(data.getStorage<game::components::Position>(), 350.f, 150.f)
+        .with<game::components::Scale>(data.getStorage<game::components::Scale>(), 3.f)
+        .with<game::components::RotationAngle>(data.getStorage<game::components::RotationAngle>(), 0.f)
+        .with<game::components::Color>(
+            data.getStorage<game::components::Color>(), raylib::core::Color(255, 255, 255, 0))
         .with<game::components::Controlable>(
             data.getStorage<game::components::Controlable>(), game::User::UserId::User1)
         .with<game::gui::Widget>(data.getStorage<game::gui::Widget>(), 0, game::gui::Widget::NullTag,
