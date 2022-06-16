@@ -7,11 +7,13 @@
 
 #include "Bomb.hpp"
 #include <cmath>
+#include "Collidable.hpp"
 #include "Destructible.hpp"
 #include "Identity.hpp"
 #include "Living.hpp"
 #include "Player.hpp"
 #include "Size.hpp"
+#include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
 #include "game/Game.hpp"
@@ -114,4 +116,22 @@ namespace game::components
 
         return std::find(explodedPositions.begin(), explodedPositions.end(), adjacentCell) != explodedPositions.end();
     }
+
+    void Bomb::kick(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity)
+    {
+        /// Create kicked Bomb
+        data.getResource<ecs::Entities>()
+            .builder()
+            .with<Bomb>(data.getStorage<Bomb>(), owner, radius,
+                std::chrono::duration_cast<std::chrono::milliseconds>(
+                    std::chrono::milliseconds(2000) - (std::chrono::steady_clock::now() - placedTime)))
+            .with<Position>(data.getStorage<Position>(), data.getStorage<Position>()[self.getId()])
+            .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
+            .with<Collidable>(data.getStorage<Collidable>())
+            .with<Velocity>(data.getStorage<Velocity>(), senderVelocity.x * 1.3f, 0.f, senderVelocity.z * 1.3f)
+            .build();
+        /// Kill static bomb
+        data.getResource<ecs::Entities>().kill(self);
+    }
+
 } // namespace game::components

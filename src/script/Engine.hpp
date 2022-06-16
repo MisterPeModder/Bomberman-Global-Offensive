@@ -23,6 +23,11 @@
     #include <mujs.h>
 #endif // !defined(__EMSCRIPTEN__)
 
+namespace game
+{
+    class Engine;
+}
+
 namespace bmjs
 {
     /// Javascript Engine Wrapper.
@@ -36,8 +41,10 @@ namespace bmjs
 
         /// Creates the instance of Engine, if it does not already exist.
         ///
+        /// @param gameEngine The game engine instance, may not be @c nullptr.
+        ///
         /// @returns The Engine instance.
-        static std::shared_ptr<Engine> create();
+        static std::shared_ptr<Engine> create(game::Engine *gameEngine);
 
         /// @returns The Engine instance, may not exist.
         static std::weak_ptr<Engine> instance();
@@ -79,13 +86,24 @@ namespace bmjs
         Mod const *getMod(std::size_t modId) const noexcept;
         Mod *getMod(std::size_t modId) noexcept;
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Game Access
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        /// @returns The game engine instance.
+        game::Engine const &getGameEngine() const noexcept;
+
+        /// @returns The game engine instance.
+        game::Engine &getGameEngine() noexcept;
+
       private:
         static std::weak_ptr<Engine> _instance;
         static Engine *_rawInstance;
 
+        game::Engine *_gameEngine;
         std::vector<Mod> _mods;
 
-        Engine();
+        Engine(game::Engine *gameEngine);
 
         void _load(std::filesystem::path const &path);
         void _loadApi();

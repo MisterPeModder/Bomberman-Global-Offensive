@@ -25,11 +25,11 @@ namespace bmjs
 
     Engine *Engine::_rawInstance = nullptr;
 
-    std::shared_ptr<Engine> Engine::create()
+    std::shared_ptr<Engine> Engine::create(game::Engine *gameEngine)
     {
         if (Engine::_instance.expired()) {
             // using 'new' because Engine's constructor is private
-            std::shared_ptr<Engine> newInstance(new Engine());
+            std::shared_ptr<Engine> newInstance(new Engine(gameEngine));
             Engine::_instance = newInstance;
             Engine::_rawInstance = newInstance.get();
             return newInstance;
@@ -91,12 +91,20 @@ namespace bmjs
         return &*(this->_mods.begin() + modId);
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // Game Access
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    game::Engine const &Engine::getGameEngine() const noexcept { return *this->_gameEngine; }
+
+    game::Engine &Engine::getGameEngine() noexcept { return *this->_gameEngine; }
+
 #ifdef __EMSCRIPTEN__
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Emscripten-Specific Magic
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    Engine::Engine() { bmjs::useApis(); }
+    Engine::Engine(game::Engine *gameEngine) : _gameEngine(gameEngine) { bmjs::useApis(); }
 
     void Engine::_load(std::filesystem::path const &path)
     {
@@ -119,7 +127,7 @@ namespace bmjs
 
     void registerMuJSBindings(js_State *state);
 
-    Engine::Engine() : _state(js_newstate(nullptr, nullptr, JS_STRICT))
+    Engine::Engine(game::Engine *gameEngine) : _gameEngine(gameEngine), _state(js_newstate(nullptr, nullptr, JS_STRICT))
     {
         bmjs::useApis();
         registerMuJSBindings(this->_state);
