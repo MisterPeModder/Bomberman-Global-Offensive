@@ -1,6 +1,8 @@
 set(INCROOT ${INCROOT}/components)
 set(SRCROOT ${SRCROOT}/components)
 
+add_subdirectory(items)
+
 set(SRC
     ${SRC}
     ${SRCROOT}/Bomb.cpp

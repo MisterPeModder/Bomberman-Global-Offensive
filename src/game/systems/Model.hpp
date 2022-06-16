@@ -34,7 +34,7 @@ namespace game::systems
 
             for (auto [model, pos, rAxis, rAngle, size, color] :
                 ecs::join(models, poses, rAxises, rAngles, sizes, colors)) {
-                model.draw(pos, rAxis.rotationAxis, rAngle.rotationAngle, size, color);
+                model.draw(pos, rAxis, rAngle.rotationAngle, size, color);
             }
             for (auto [model, pos, scale, color] : ecs::join(models, poses, scales, colors)) {
                 model.draw(pos, scale.scale, color);

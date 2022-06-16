@@ -11,6 +11,8 @@ add_subdirectory(scenes)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/Engine.cpp
+    ${SRCROOT}/Engine.hpp
     ${SRCROOT}/Game.cpp
     ${SRCROOT}/Game.hpp
     ${SRCROOT}/GameAction.hpp

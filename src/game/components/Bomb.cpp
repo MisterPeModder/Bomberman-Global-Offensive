@@ -16,6 +16,7 @@
 #include "ecs/join.hpp"
 #include "game/Game.hpp"
 #include "game/resources/Map.hpp"
+#include "items/Item.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Vector2.hpp"
 
@@ -68,7 +69,10 @@ namespace game::components
             }
             if (destructible) {
                 entities.kill(id);
-                map.getElement(roundedPos2D) = game::map::Map::Element::Empty;
+                auto &elem = map.getElement(roundedPos2D);
+                if (elem == game::map::Map::Element::Crate)
+                    Item::spawnRandomItem(data, roundedPos2D);
+                elem = game::map::Map::Element::Empty;
             }
             if (bomb)
                 bomb->explode(pos, data, id);

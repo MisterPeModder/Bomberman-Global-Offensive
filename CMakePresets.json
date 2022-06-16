@@ -133,21 +133,49 @@
         {
             "name": "common",
             "hidden": true,
-            "jobs": 100
+            "jobs": 12
         },
         {
-            "name": "debug",
-            "displayName": "Debug Build",
+            "name": "debug_unix",
+            "displayName": "Build (Debug Unix)",
             "description": "Debug build using Unix Makefiles",
             "inherits": "common",
-            "configurePreset": "debug"
+            "configurePreset": "debug_unix"
         },
         {
-            "name": "release",
-            "displayName": "Release Build",
+            "name": "debug_web",
+            "displayName": "Build (Debug Web)",
+            "description": "Debug build using Emscripten",
+            "inherits": "common",
+            "configurePreset": "debug_web"
+        },
+        {
+            "name": "debug_msvc",
+            "displayName": "Build (Debug MSVC)",
+            "description": "Debug build using MSVC",
+            "inherits": "common",
+            "configurePreset": "debug_msvc"
+        },
+        {
+            "name": "release_unix",
+            "displayName": "Build (Release Unix)",
             "description": "Release build using Unix Makefiles",
             "inherits": "common",
-            "configurePreset": "release"
+            "configurePreset": "release_unix"
+        },
+        {
+            "name": "release_web",
+            "displayName": "Build (Release Web)",
+            "description": "Release build using Emscripten",
+            "inherits": "common",
+            "configurePreset": "release_web"
+        },
+        {
+            "name": "release_msvc",
+            "displayName": "Build (Release MSVC)",
+            "description": "Release build using MSVC",
+            "inherits": "common",
+            "configurePreset": "release_msvc"
         }
     ],
     "testPresets": [
@@ -161,7 +189,7 @@
         },
         {
             "name": "debug_unix",
-            "displayName": "Test (debug Unix)",
+            "displayName": "Test (Debug Unix)",
             "inherits": "common",
             "configurePreset": "debug_unix"
         },
@@ -174,26 +202,26 @@
         {
             "name": "debug_msvc",
             "configuration": "Debug",
-            "displayName": "Test (debug MSVC)",
+            "displayName": "Test (Debug MSVC)",
             "inherits": "common",
             "configurePreset": "debug_msvc"
         },
         {
             "name": "release_web",
-            "displayName": "Test (release web)",
+            "displayName": "Test (Release web)",
             "inherits": "common",
             "configurePreset": "release_web"
         },
         {
             "name": "release_msvc",
             "configuration": "Release",
-            "displayName": "Test (release MSVC)",
+            "displayName": "Test (Release MSVC)",
             "inherits": "common",
             "configurePreset": "release_msvc"
         },
         {
             "name": "release_unix",
-            "displayName": "Test (release Unix)",
+            "displayName": "Test (Release Unix)",
             "inherits": "common",
             "configurePreset": "release_unix"
         }
