@@ -22,8 +22,6 @@ namespace raylib
         {
         }
 
-        Model::Model(const Model &other, bool ownsMesh) : _model(other._model), _ownsMesh(ownsMesh) {}
-
         Model::~Model()
         {
             if (_ownsMesh)

@@ -40,11 +40,9 @@ namespace raylib
             /// @param ownsMesh if the model owns the mesh, see @ref setOwnsMesh().
             Model(const raylib::model::Mesh &mesh, bool ownsMesh = true);
 
-            /// Copy constructor
-            ///
-            /// @param other the model to copy
-            /// @param ownsMesh if the model owns the mesh, see @ref setOwnsMesh().
-            Model(const Model &other, bool ownsMesh = false);
+            /// Deleted copy constructor
+            /// @note Deleted to avoid double unloads.
+            Model(const Model &other) = delete;
 
             /// Model destructor
             ~Model();
