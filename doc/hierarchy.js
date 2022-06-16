@@ -76,10 +76,9 @@ var hierarchy =
     [ "game::settings::GamepadInput", "classgame_1_1settings_1_1_gamepad_input.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "game::map::cellular::Grid", "classgame_1_1map_1_1cellular_1_1_grid.html", null ],
-    [ "Image", null, [
+    [ "raylib::textures::Image", "classraylib_1_1textures_1_1_image.html", [
       [ "game::components::Image", "structgame_1_1components_1_1_image.html", null ]
     ] ],
-    [ "raylib::textures::Image", "classraylib_1_1textures_1_1_image.html", null ],
     [ "ecs::Instances< Base >", "classecs_1_1_instances.html", null ],
     [ "ecs::Instances< ecs::Resource >", "classecs_1_1_instances.html", null ],
     [ "ecs::Instances< ecs::Storage >", "classecs_1_1_instances.html", null ],
@@ -169,10 +168,9 @@ var hierarchy =
     ] ],
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "ecs::SystemTag", "classecs_1_1_system_tag.html", null ],
-    [ "Texture2D", null, [
+    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", [
       [ "game::components::Texture2D", "structgame_1_1components_1_1_texture2_d.html", null ]
     ] ],
-    [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", null ],
     [ "game::User", "classgame_1_1_user.html", null ],
     [ "raylib::core::Vector2< T >", "structraylib_1_1core_1_1_vector2.html", [
       [ "game::components::Position2D", "structgame_1_1components_1_1_position2_d.html", null ],

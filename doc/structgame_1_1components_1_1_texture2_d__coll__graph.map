@@ -1,5 +1,7 @@
 <map id="game::components::Texture2D" name="game::components::Texture2D">
-<area shape="rect" id="node1" title=" " alt="" coords="47,80,269,107"/>
-<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,5,132,32"/>
-<area shape="rect" id="node3" title=" " alt="" coords="156,5,339,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,171,227,197"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="37,95,163,121"/>
+<area shape="rect" id="node3" href="$classraylib_1_1textures_1_1_texture2_d.html" title="This is the class that is used to create a texture2D object." alt="" coords="188,95,383,121"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/filesystem/path.html" title=" " alt="" coords="109,5,264,32"/>
+<area shape="rect" id="node5" href="$structraylib_1_1core_1_1_vector2.html" title="The Vector2 struct (compatible with the raylib Vector2)" alt="" coords="289,5,479,32"/>
 </map>
