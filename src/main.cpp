@@ -68,7 +68,7 @@ static void runGame()
     size_t depth = HEIGHT; // params->game.getMap().getSize().y;
 
     params->menu.setup(params->camera, width, depth);
-    //params->game.setup(params->camera);
+    // params->game.setup(params->camera);
 
 #if defined(PLATFORM_WEB)
     // We cannot use the WindowShouldClose() loop on the web,
@@ -98,6 +98,7 @@ int main()
     localization::Localization::setLocale("fr");
     /// Setup Audio for the program
     raylib::core::scoped::AudioDevice audioDevice;
+
     /// Setup the Window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
     raylib::core::Window::setTargetFPS(60);
