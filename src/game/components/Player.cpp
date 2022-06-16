@@ -96,7 +96,7 @@ namespace game::components
                         .with<ModelReference>(
                             data.getStorage<ModelReference>(), data.getResource<game::resources::Models>().get("C4"))
                         .with<Position>(data.getStorage<Position>(), placedPos)
-                        .with<Size>(data.getStorage<Size>(), 0.3f, 0.3f, 0.3f)
+                        .with<Size>(data.getStorage<Size>(), 0.3f, 0.3f, 0.5f)
                         .with<Collidable>(data.getStorage<Collidable>())
                         .with<RotationAngle>(data.getStorage<RotationAngle>(), -90.0f)
                         .with<RotationAxis>(data.getStorage<RotationAxis>(), 1.f, 0.f, 0.f)

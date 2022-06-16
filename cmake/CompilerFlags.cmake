@@ -40,7 +40,7 @@ elseif (COMPILER_TYPE MATCHES "clang")
             "$<$<CONFIG:DEBUG>:-gsource-map>"
         )
         add_link_options(
-            -fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sUSE_GLFW=3 -sASSERTIONS=1 -sWASM=1 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap -sALLOW_TABLE_GROWTH
+            -fexceptions -sDISABLE_EXCEPTION_CATCHING=0 -sUSE_GLFW=3 -sASSERTIONS=1 -sWASM=1 -sEXPORTED_RUNTIME_METHODS=ccall,cwrap -sALLOW_TABLE_GROWTH,  -sALLOW_MEMORY_GROWTH
             "$<$<CONFIG:DEBUG>:-gsource-map>"
         )
         set(CMAKE_EXECUTABLE_SUFFIX ".html") # Build using a HTML shell template
