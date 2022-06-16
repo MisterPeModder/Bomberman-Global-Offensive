@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** Texture2D
+*/
+
 #ifndef GAME_COMPONENTS_TEXTURE2D_HPP_
 #define GAME_COMPONENTS_TEXTURE2D_HPP_
 
@@ -5,12 +12,12 @@
 #include "ecs/Component.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
-namespace game
+namespace game::components
 {
-    struct Texture2D : public ecs::Component, public raylib::textures::Texture2D {
-        Texture2D(raylib::textures::Texture2D &pTexture) : raylib::textures::Texture2D(pTexture) {}
-        Texture2D(std::filesystem::path &pPath) : raylib::textures::Texture2D(pPath) {}
+    struct Texture2D : public ecs::Component, public raylib::model::Texture2D {
+        Texture2D(const raylib::model::Texture2D &pTexture) : raylib::model::Texture2D(pTexture) {}
+        Texture2D(const std::filesystem::path &pPath) : raylib::model::Texture2D(pPath) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif

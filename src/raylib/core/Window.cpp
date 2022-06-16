@@ -6,11 +6,15 @@
 */
 
 #include "Window.hpp"
+#include "logger/Logger.hpp"
+#include "raylib/textures/Image.hpp"
 
 extern "C"
 {
 #include "raylib.h"
 }
+
+#include <algorithm>
 
 namespace raylib
 {
@@ -22,7 +26,7 @@ namespace raylib
 
         void Window::clear(const Color &color) { ClearBackground(color.asRaylib()); }
 
-        bool Window::windowShouldClose() { return WindowShouldClose(); }
+        bool Window::shouldClose() { return WindowShouldClose(); }
 
         void Window::setTargetFPS(int fps) { SetTargetFPS(fps); }
 
@@ -31,6 +35,19 @@ namespace raylib
         void Window::beginDrawing() { BeginDrawing(); }
 
         void Window::endDrawing() { EndDrawing(); }
+
+        void Window::setSize(int width, int height)
+        {
+            Logger::logger.log(
+                Logger::Severity::Information, [=](auto &out) { out << "Resized to " << width << 'x' << height; });
+            SetWindowSize(std::max(0, width), std::max(0, height));
+        }
+
+        int Window::getWidth() { return GetScreenWidth(); }
+
+        int Window::getHeight() { return GetScreenHeight(); }
+
+        void Window::setIcon(textures::Image const &icon) { SetWindowIcon(icon.asRaylib()); }
 
     } // namespace core
 } // namespace raylib

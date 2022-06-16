@@ -19,6 +19,9 @@ namespace game::systems
         /// Resolves the collisions of dynamics collidable entities.
         void run(ecs::SystemData data) override final;
 
+        static bool getCollideRect(raylib::shapes::Rectangle &collideRect, raylib::core::Vector3f pos1,
+            raylib::core::Vector3f size1, raylib::core::Vector3f pos2, raylib::core::Vector3f size2);
+
       private:
         /// Apply the collision resolution on a specific position.
         void resolveCollision(const ::Rectangle collideRectangle, float scale, game::components::Position &pos) const;

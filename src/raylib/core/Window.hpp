@@ -14,6 +14,11 @@
 /// Raylib namespace
 namespace raylib
 {
+    namespace textures
+    {
+        class Image;
+    }
+
     /// Core namespace (inside of raylib)
     namespace core
     {
@@ -37,7 +42,7 @@ namespace raylib
             ///
             /// @retval true if the window should close
             /// @retval false if the window should not close
-            static bool windowShouldClose();
+            static bool shouldClose();
 
             /// Set the max FPS the game should run at
             ///
@@ -55,6 +60,17 @@ namespace raylib
 
             /// Block the draw functions
             static void endDrawing();
+
+            /// Set the window size.
+            static void setSize(int width, int height);
+
+            /// @return The width of the window.
+            static int getWidth();
+
+            /// @return The height of the window.
+            static int getHeight();
+
+            static void setIcon(textures::Image const &icon);
         };
     } // namespace core
 } // namespace raylib

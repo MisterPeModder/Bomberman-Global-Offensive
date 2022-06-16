@@ -42,8 +42,12 @@ namespace ecs
         /// Removes the component instance for the supplied entity.
         void erase(Entity::Index entity)
         {
-            this->_components.erase(entity);
-            this->_mask[entity] = false;
+            auto it = this->_components.find(entity);
+
+            if (it != this->_components.end()) {
+                this->_components.erase(it);
+                this->_mask[entity] = false;
+            }
         }
 
         /// @returns Whether the entity exists in this storage.
@@ -65,6 +69,12 @@ namespace ecs
         ///
         /// @return The component mask.
         constexpr util::BitSet const &getMask() const noexcept { return this->_mask; }
+
+        void maintain(std::span<Entity> toRemove) override final
+        {
+            for (auto entity : toRemove)
+                this->erase(entity.getId());
+        }
 
       private:
         /// backing map storage.

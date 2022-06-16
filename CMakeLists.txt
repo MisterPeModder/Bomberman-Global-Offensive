@@ -18,12 +18,12 @@ find_package(raylib REQUIRED)
 add_subdirectory(src)
 
 # Unit testing
-if (BUILD_TEST_SUITE)
+if(BUILD_TEST_SUITE)
     # Check for GoogleTest
     find_package(googletest REQUIRED)
 
     # Disable error on Linux release builds
-    if (COMPILER_TYPE MATCHES "gcc")
+    if(COMPILER_TYPE MATCHES "gcc")
         target_compile_options(gtest PRIVATE "-Wno-error=restrict")
         target_compile_options(gmock PRIVATE "-Wno-error=restrict")
     endif()
@@ -31,4 +31,24 @@ if (BUILD_TEST_SUITE)
     enable_testing()
 
     add_subdirectory(tests)
+endif()
+
+# Copy the Web files (html/js/wasm/...) into the web directory on install
+if(EMSCRIPTEN)
+    install(
+        FILES ${PROJECT_BINARY_DIR}/src/bomberman.html
+        CONFIGURATIONS Release
+        DESTINATION web
+        RENAME index.html
+    )
+
+    install(
+        FILES
+        ${PROJECT_BINARY_DIR}/src/bomberman.data
+        ${PROJECT_BINARY_DIR}/src/bomberman.js
+        ${PROJECT_BINARY_DIR}/src/bomberman.wasm
+        ${PROJECT_SOURCE_DIR}/assets/favicon.ico
+        CONFIGURATIONS Release
+        DESTINATION web
+    )
 endif()

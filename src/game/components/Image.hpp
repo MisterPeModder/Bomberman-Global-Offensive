@@ -1,3 +1,10 @@
+/*
+** EPITECH PROJECT, 2022
+** BMGO
+** File description:
+** Image
+*/
+
 #ifndef GAME_COMPONENTS_IMAGE_HPP_
 #define GAME_COMPONENTS_IMAGE_HPP_
 
@@ -5,12 +12,12 @@
 #include "ecs/Component.hpp"
 #include "raylib/textures/Image.hpp"
 
-namespace game
+namespace game::components
 {
-    struct Image : public ecs::Component, public raylib::textures::Image {
-        Image(raylib::textures::Image &pimage) : raylib::textures::Image(pimage) {}
-        Image(std::filesystem::path &path) : raylib::textures::Image(path) {}
+    struct Image : public ecs::Component, public raylib::model::Image {
+        Image(const raylib::model::Image &pimage) : raylib::model::Image(pimage) {}
+        Image(const std::filesystem::path &path) : raylib::model::Image(path) {}
     };
-} // namespace game
+} // namespace game::components
 
 #endif

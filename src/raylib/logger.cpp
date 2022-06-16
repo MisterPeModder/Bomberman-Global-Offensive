@@ -18,7 +18,7 @@ namespace raylib
 {
     static void raylibLogger(int msgType, const char *text, va_list args)
     {
-        static Logger raylibLogger(std::cerr, "raylib");
+        static Logger raylibLogger(std::cout, "raylib");
         Logger::Severity severity;
         std::array<char, 1024> buffer;
 

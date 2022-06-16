@@ -6,6 +6,7 @@
 */
 
 #include "ecs/world/World.hpp"
+#include "ecs/join.hpp"
 #include "ecs/resource/Entities.hpp"
 #include "ecs/system/SystemData.hpp"
 #include "ecs/system/SystemTag.hpp"
@@ -36,6 +37,14 @@ namespace ecs
         this->_systems.clear();
         this->_storages.clear();
         this->addResource<Entities>();
+    }
+
+    void World::maintain()
+    {
+        std::vector<Entity> toRemove = this->getResource<Entities>().maintain();
+
+        for (auto &[type, system] : this->_storages.getInner())
+            system->maintain(toRemove);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

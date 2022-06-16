@@ -5,6 +5,10 @@
 
 ---
 
+# Playing
+- online: https://misterpemodder.github.io/Bomberman-Global-Offensive
+- local: instructions below
+
 # Building
 
 Required tools:
@@ -41,7 +45,7 @@ Note that for the web platform, the presets assume that the emscripten toolchain
 
 # Documentation
 
-The documentation is available [online](https://misterpemodder.github.io/Bomberman-Global-Offensive/).
+The documentation is available [online](https://misterpemodder.github.io/Bomberman-Global-Offensive/doc).
 
 ## Local
 

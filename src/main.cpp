@@ -5,51 +5,32 @@
 ** main
 */
 
-#include <filesystem>
-#include <iostream>
-#include <memory>
-
 #include "ecs/World.hpp"
+
+#include "game/Game.hpp"
+#include "game/gui/components/Widget.hpp"
+
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
+
 #include "logger/Logger.hpp"
 #include "menu/MainMenu.hpp"
 
-#include "game/gui/components/Widget.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 #include "raylib/raylib.hpp"
+#include "raylib/textures/Image.hpp"
+
+#include "game/Engine.hpp"
 #include "script/Engine.hpp"
 
-#include "game/Game.hpp"
+#include "util/util.hpp"
 
-#include "menu/MainMenu.hpp"
-
-#if defined(PLATFORM_WEB)
-    #include <emscripten/emscripten.h>
-#endif
+#include <memory>
 
 constexpr int WIDTH(1080);
 constexpr int HEIGHT(720);
-
-struct Params {
-    ecs::World world;
-    raylib::core::Camera3D camera;
-    Menu::MainMenu menu;
-    game::Game game;
-
-    Params() : world(), camera(), menu(this->world), game(this->world, game::Game::Parameters(1)) {}
-};
-
-static void drawFrame(void *args)
-{
-    Params *params = reinterpret_cast<Params *>(args);
-
-    params->camera.update();
-    params->menu.drawFrame(params->camera);
-    // params->game.drawFrame(params->camera);
-}
 
 static void setupLogger()
 {
@@ -63,52 +44,47 @@ static void setupLogger()
 
 static void runGame()
 {
-    auto params = new Params();
-    size_t width = WIDTH;  // params->game.getMap().getSize().x;
-    size_t depth = HEIGHT; // params->game.getMap().getSize().y;
-
-    params->menu.setup(params->camera, width, depth);
-    // params->game.setup(params->camera);
-
-#if defined(PLATFORM_WEB)
-    // We cannot use the WindowShouldClose() loop on the web,
-    // since there is no such thing as a window.
-    emscripten_set_main_loop_arg(&drawFrame, params, 0, 1);
+#ifdef __EMSCRIPTEN__
+    auto game = new game::Engine;
 #else
-    while (!WindowShouldClose())
-        drawFrame(params);
-    CloseWindow();
-
-    // Manual delete on purpose, we don't want params to be freed on the web
-    delete params;
+    auto game = std::make_unique<game::Engine>();
 #endif
+    game->run();
 }
 
 int main()
 {
     setupLogger();
 
-    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
-
-    jsEngine->loadApi();
-    jsEngine->loadScript("hello");
-
     /// Setup the locales parameters
     localization::Localization::loadLocales({"en", "fr"});
     localization::Localization::setLocale("fr");
+
     /// Setup Audio for the program
     raylib::core::scoped::AudioDevice audioDevice;
 
     /// Setup the Window
     raylib::core::Window::open(WIDTH, HEIGHT, "Bomberman: Global Offensive");
     raylib::core::Window::setTargetFPS(60);
+#ifndef __EMSCRIPTEN__
+    raylib::textures::Image icon(util::makePath("assets", "icon.png"));
+    raylib::core::Window::setIcon(icon);
+#endif
+
+    /// Start the Javascript engine
+    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
+
+    jsEngine->loadApi();
+    jsEngine->loadScript("hello");
 
     try {
         runGame();
-    } catch (std::exception &e) {
+    } catch (std::exception const &e) {
         Logger::logger.log(Logger::Severity::Error,
             [&](std::ostream &writer) { writer << "Game stopped with exception: " << e.what(); });
     }
+
+    raylib::core::Window::close();
 
     localization::Localization::saveLocales();
     Logger::logger.log(Logger::Severity::Information, "End of program");

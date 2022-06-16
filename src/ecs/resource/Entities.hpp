@@ -82,10 +82,10 @@ namespace ecs
         /// @return The entity's builder.
         [[nodiscard]] Builder builder();
 
-        /// Removes an entity.
+        /// Marks an entity for deletion on the next call to @ref Entities::maintain().
         ///
-        /// @returns @b true if the entity was successfully removed.
-        bool erase(Entity entity) noexcept;
+        /// @returns @b true if the entity was successfully marked.
+        bool kill(Entity entity) noexcept;
 
         /// Returns an entity with a given @b id.
         /// There's no guarantee for validity, meaning the entity could be not alive.
@@ -98,9 +98,17 @@ namespace ecs
         /// @returns Whether the entity is alive.
         bool isAlive(Entity entity) noexcept;
 
+        /// Removes all entities marked for deletion. Prefer @ref World::maintain() over this when possible.
+        ///
+        /// @note Invalidates @b ALL iterators!
+        ///
+        /// @returns A vector of all the deleted entities.
+        std::vector<Entity> maintain();
+
       private:
         std::vector<Entity::Generation> _generations;
         util::BitSet _alive;
+        util::BitSet _killed;
 
         Entity create(bool alive);
 

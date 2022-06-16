@@ -28,13 +28,13 @@ namespace raylib
             /// @param pos The position of the rectangle.
             /// @param size The size of the rectangle.
             /// @param color The color of the rectangle.
-            Rectangle(raylib::core::Vector2f pos = {}, raylib::core::Vector2f size = {1, 1},
+            Rectangle(raylib::core::Vector2f pos = {}, raylib::core::Vector2f size = {1.f, 1.f},
                 raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
 
             /// A constructor that takes a Rectangle as a parameter.
             ///
             /// @param other The rectangle to copy
-            Rectangle(Rectangle &other);
+            Rectangle(const Rectangle &other);
 
             /// This function creates a rectangle from a raylib Rectangle struct.
             ///
@@ -43,6 +43,12 @@ namespace raylib
 
             /// The destructor for the Rectangle class.
             ~Rectangle();
+
+            /// Copy an existing rectangle.
+            ///
+            /// @param other rectangle to copy.
+            /// @return Rectangle& @b this.
+            Rectangle &operator=(const Rectangle &other) = default;
 
             /// "Return a C++ Rectangle object with the same position and dimensions as
             /// this Rectangle object."

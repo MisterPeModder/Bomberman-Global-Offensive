@@ -141,6 +141,9 @@ namespace ecs
         /// Removes all registered resources, systems, and entities.
         void clear();
 
+        /// Remove all entities marked for deletion and their associated components.
+        void maintain();
+
 #pragma endregion ECS World Populating
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Running

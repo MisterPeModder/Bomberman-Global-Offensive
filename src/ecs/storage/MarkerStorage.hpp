@@ -39,8 +39,10 @@ namespace ecs
         /// Removes the component instance for the supplied entity.
         constexpr void erase(Entity::Index entity)
         {
-            this->_mask[entity] = false;
-            --this->_size;
+            if (entity < this->_mask.size()) {
+                this->_mask[entity] = false;
+                --this->_size;
+            }
         }
 
         /// @returns Whether the entity exists in this storage.
@@ -63,6 +65,12 @@ namespace ecs
         ///
         /// @return The component mask.
         constexpr util::BitSet const &getMask() const noexcept { return this->_mask; }
+
+        void maintain(std::span<Entity> toRemove) override final
+        {
+            for (auto entity : toRemove)
+                this->erase(entity.getId());
+        }
 
       private:
         std::size_t _size;
