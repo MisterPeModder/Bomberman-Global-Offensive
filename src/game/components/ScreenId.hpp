@@ -13,10 +13,10 @@
 namespace game::components
 {
     struct ScreenId : public ecs::Component {
-        float screenId;
+        int screenId;
 
-        ScreenId(float pScreenId) : screenId(pScreenId) {}
-        ScreenId(int pScreenId) : screenId(static_cast<float>(pScreenId)) {}
+        ScreenId(int pScreenId) : screenId(pScreenId) {}
+        ScreenId(float pScreenId) : screenId(static_cast<int>(pScreenId)) {}
     };
 } // namespace game::components
 

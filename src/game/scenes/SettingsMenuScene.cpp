@@ -284,8 +284,8 @@ namespace game
 {
     SettingsMenuScene::SettingsMenuScene()
     {
+        _globalNoDraw.add<game::systems::InputManager>();
         _global2D.add<game::systems::DrawText>();
-        _global2D.add<game::systems::InputManager>();
         _global2D.add<game::systems::DrawSelectedWidget>();
 
         _world.addResource<game::Users>();

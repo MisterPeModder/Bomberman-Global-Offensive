@@ -12,6 +12,8 @@
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
 
+#include "logger/Logger.hpp"
+
 #include "ecs/resource/Resource.hpp"
 #include "ecs/resource/Timer.hpp"
 
@@ -23,6 +25,7 @@
 #include "game/resources/Engine.hpp"
 
 #include "game/components/Color.hpp"
+#include "game/components/Controlable.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
@@ -30,14 +33,26 @@
 #include "game/components/ScreenId.hpp"
 #include "game/components/Size.hpp"
 #include "game/components/Textual.hpp"
+#include "game/gui/components/Clickable.hpp"
+#include "game/gui/components/Widget.hpp"
+
+#include "game/systems/InputManager.hpp"
 
 static void buildRaylibSplash(ecs::SystemData &data)
 {
     data.getResource<ecs::Entities>()
         .builder()
+        .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 1)
         .with<game::components::Textual>(
             data.getStorage<game::components::Textual>(), "RAYLIB", 72, raylib::core::Color(255, 255, 255, 0))
         .with<game::components::Position>(data.getStorage<game::components::Position>(), 400.f, 500.f)
+        .with<game::components::Controlable>(data.getStorage<game::components::Controlable>(), game::User::UserId::User1)
+        .with<game::gui::Widget>(data.getStorage<game::gui::Widget>(), 0, game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+            game::gui::Widget::NullTag, true)
+        .with<game::gui::Clickable>(data.getStorage<game::gui::Clickable>(), [&data](ecs::Entity) {
+            data.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            Logger::logger.log(Logger::Severity::Debug, "Skip splash screen");
+        })
         .build();
 }
 
