@@ -13,10 +13,17 @@
 #include <string_view>
 #include <unordered_map>
 
-namespace raylib::textures
+namespace raylib
 {
-    class Texture2D;
-}
+    namespace textures
+    {
+        class Texture2D;
+    }
+    namespace model
+    {
+        class Mesh;
+    }
+} // namespace raylib
 
 namespace game::resources
 {
@@ -67,6 +74,7 @@ namespace game::resources
     };
 
     using Textures = AssetMap<raylib::textures::Texture2D>;
+    using Meshes = AssetMap<raylib::model::Mesh>;
 } // namespace game::resources
 
 #endif /* !GAME_RESOURCES_ASSETSMAP_HPP_ */
