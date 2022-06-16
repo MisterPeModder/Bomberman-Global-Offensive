@@ -20,6 +20,8 @@ namespace game
         PAUSE,
         ACTION,
         BACK,
+        ACTIVATE_ITEM,
+        COUNT,
     };
 
     /// Test if a specified action is a move action.

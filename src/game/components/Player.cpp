@@ -73,6 +73,8 @@ namespace game::components
             move(self, data, event);
         else if (event.action == GameAction::PLACE_BOMB && event.value > 0.9f)
             placeBomb(self, data);
+        else if (event.action == GameAction::ACTIVATE_ITEM && event.value > 0.9f)
+            data.getStorage<Player>()[self.getId()].inventory.useActivable(self, data);
         else
             return false;
         return true;
