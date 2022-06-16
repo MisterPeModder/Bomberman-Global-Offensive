@@ -5,7 +5,9 @@
 ** SettingsMenuScene
 */
 
-#include "SettingsMenuScene.hpp"
+#include "game/scenes/SettingsMenuScene.hpp"
+#include "game/Engine.hpp"
+#include "game/scenes/GameScene.hpp"
 
 #include "logger/Logger.hpp"
 #include "util/util.hpp"
@@ -30,6 +32,8 @@
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
+#include "game/resources/Engine.hpp"
+
 #include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/InputManager.hpp"
@@ -44,7 +48,7 @@ static void loadGraphicSettings(ecs::World &world)
     world.addEntity()
         .with<game::components::Position>(480.f, 100.f)
         .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsGraphic, 40, raylib::core::Color::RED)
+            localization::resources::settings::rsSettingsGraphics, 40, raylib::core::Color::RED)
         .build();
 
     world.addEntity()
@@ -55,8 +59,7 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::gui::Widget>(game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::VOLUME_MUTE,
             game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::SettingsMenuScene::RES_2, true)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Window::toggleFullscreen();
                 Logger::logger.log(Logger::Severity::Debug, "Toggled fullscreen");
             },
@@ -80,8 +83,7 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_100,
             game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Window::setSize(720, 360);
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (720, 360)");
             },
@@ -97,10 +99,9 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Textual>("1080x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_2, game::SettingsMenuScene::RES_1,
-            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN)
+            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Window::setSize(1080, 720);
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1080, 720)");
             },
@@ -118,8 +119,7 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_3, game::SettingsMenuScene::RES_2,
             game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Window::setSize(1920, 1080);
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1920, 1080)");
             },
@@ -147,8 +147,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_MUTE, game::gui::Widget::NullTag,
             game::SettingsMenuScene::FULLSCREEN, game::gui::Widget::NullTag, game::SettingsMenuScene::VOLUME_50)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(0.f);
                 Logger::logger.log(Logger::Severity::Debug, "Volume set to 0%");
             },
@@ -172,8 +171,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_25, game::gui::Widget::NullTag,
             game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_MUTE)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(25.f);
                 Logger::logger.log(Logger::Severity::Debug, "Volume set to 25%");
             },
@@ -191,8 +189,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_25,
             game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_MUTE)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(50.f);
                 Logger::logger.log(Logger::Severity::Debug, "Volume set to 50%");
             },
@@ -210,8 +207,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_50,
             game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_MUTE)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(75.f);
                 Logger::logger.log(Logger::Severity::Debug, "Volume set to 75%");
             },
@@ -229,8 +225,7 @@ static void loadAudioSettings(ecs::World &world)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_75,
             game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_MUTE)
         .with<game::gui::Clickable>(
-            [](ecs::Entity _) {
-                (void)_;
+            [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(100.f);
                 Logger::logger.log(Logger::Severity::Debug, "Volume set to 100%");
             },
@@ -256,6 +251,24 @@ static void loadSettingsMenuScene(ecs::World &world)
     world.addSystem<game::systems::InputManager>();
     world.addSystem<game::systems::DrawText>();
     world.addSystem<game::systems::DrawSelectedWidget>();
+
+    world.addEntity()
+        .with<game::components::Position>(500.f, 650.f)
+        .with<game::components::Textual>(localization::resources::rsBack, 30, raylib::core::Color::PURPLE)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::BACK, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+            game::SettingsMenuScene::RES_2, game::gui::Widget::NullTag)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
+                Logger::logger.log(Logger::Severity::Debug, "Back to menu");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::PURPLE;
+            })
+        .build();
 
     loadGraphicSettings(world);
     loadAudioSettings(world);

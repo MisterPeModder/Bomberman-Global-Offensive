@@ -1,4 +1,4 @@
-msgid "Graphic"
+msgid "Graphics"
 msgstr ""
 
 msgid "Audio"
@@ -20,4 +20,7 @@ msgid "SETTINGS"
 msgstr ""
 
 msgid "Volume"
+msgstr ""
+
+msgid "Back"
 msgstr ""
