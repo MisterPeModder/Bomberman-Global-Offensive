@@ -13,13 +13,24 @@ namespace raylib
     namespace model
     {
         Model::Model(const std::filesystem::path &modelPath)
-            : _model(LoadModel(modelPath.generic_string().c_str())), _path(modelPath)
+            : _model(LoadModel(modelPath.generic_string().c_str())), _ownsMesh(true)
         {
         }
 
-        Model::Model(const raylib::model::Mesh &mesh) : _model(LoadModelFromMesh(mesh.asRaylib())) {}
+        Model::Model(const raylib::model::Mesh &mesh, bool ownsMesh)
+            : _model(LoadModelFromMesh(mesh.asRaylib())), _ownsMesh(ownsMesh)
+        {
+        }
 
-        Model::~Model() { UnloadModel(_model); }
+        Model::Model(const Model &other, bool ownsMesh) : _model(other._model), _ownsMesh(ownsMesh) {}
+
+        Model::~Model()
+        {
+            if (_ownsMesh)
+                UnloadModel(_model);
+            else
+                UnloadModelKeepMeshes(_model);
+        }
 
         void Model::draw(raylib::core::Vector3f position, float scale, raylib::core::Color tint) const
         {
@@ -58,12 +69,12 @@ namespace raylib
 
         ::Model const &Model::asRaylib() const { return _model; }
 
-        Model::Model(const Model &other) : _path(other._path) { _model = LoadModel(_path.generic_string().c_str()); }
-
         void Model::setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapType)
         {
             SetMaterialTexture(&_model.materials[materialId], mapType, texture.asRaylib());
         }
+
+        void Model::setOwnsMesh(bool ownsMesh) { _ownsMesh = ownsMesh; }
 
     } // namespace model
 } // namespace raylib
