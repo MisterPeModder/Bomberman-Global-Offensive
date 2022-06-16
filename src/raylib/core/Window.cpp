@@ -20,7 +20,11 @@ namespace raylib
 {
     namespace core
     {
-        void Window::open(int width, int height, std::string_view title) { InitWindow(width, height, title.data()); }
+        void Window::open(int width, int height, std::string_view title)
+        {
+            SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+            InitWindow(width, height, title.data());
+        }
 
         void Window::close() { CloseWindow(); }
 
@@ -46,6 +50,8 @@ namespace raylib
         int Window::getWidth() { return GetScreenWidth(); }
 
         int Window::getHeight() { return GetScreenHeight(); }
+
+        void Window::toggleFullscreen() { ToggleFullscreen(); }
 
         void Window::setIcon(textures::Image const &icon) { SetWindowIcon(icon.asRaylib()); }
 

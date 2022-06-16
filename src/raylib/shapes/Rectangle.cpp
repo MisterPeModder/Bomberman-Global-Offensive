@@ -41,6 +41,11 @@ namespace raylib
 
         void Rectangle::draw() const { DrawRectangleRec(this->getRaylibRectangle(), _color.asRaylib()); }
 
+        void Rectangle::draw(raylib::core::Vector2f position, raylib::core::Vector2f size, raylib::core::Color color)
+        {
+            DrawRectangleV(position.asRaylib(), size.asRaylib(), color.asRaylib());
+        }
+
         void Rectangle::drawLines() const
         {
             DrawRectangleLines(_position.x, _position.y, _size.x, _size.y, _color.asRaylib());

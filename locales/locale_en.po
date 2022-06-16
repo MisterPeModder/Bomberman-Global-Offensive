@@ -1,10 +1,26 @@
-#Simple hello
-msgid "Hello, World!"
+msgid "Graphics"
 msgstr ""
 
-# Multiple lines hello
-msgid ""
-"Hello in\n"
-"multiple\n"
-"lines\n"
+msgid "Audio"
+msgstr ""
+
+msgid "Fullscreen"
+msgstr ""
+
+msgid "Keybinds"
+msgstr ""
+
+msgid "Mute"
+msgstr ""
+
+msgid "Resolution"
+msgstr ""
+
+msgid "SETTINGS"
+msgstr ""
+
+msgid "Volume"
+msgstr ""
+
+msgid "Back"
 msgstr ""

@@ -74,6 +74,15 @@ namespace raylib
             /// that is a member of the class `Rectangle`
             void draw() const override;
 
+            /// Draw a rectangle at a particular location and with a particular size, ignoring the rectangle's
+            /// position and size (and color) members
+            ///
+            /// @param position the position where the rectangle will be drawn
+            /// @param size the size of the drawn rectangle
+            /// @param color the color the the drawn rectangle
+            static void draw(raylib::core::Vector2f position, raylib::core::Vector2f size,
+                raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
+
             /// Draws a rectangle outline (or "wireframe") with the given color
             ///
             /// @param color The color of the rectangle.

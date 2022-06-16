@@ -12,6 +12,7 @@ set(SRC
     ${SRCROOT}/Collision.hpp
     ${SRCROOT}/Collision.cpp
     ${SRCROOT}/DrawingCube.hpp
+    ${INCROOT}/DrawSelectedWidget.hpp
     ${SRCROOT}/DrawText.hpp
     ${SRCROOT}/DrawText.cpp
     ${SRCROOT}/InputManager.hpp
@@ -20,6 +21,7 @@ set(SRC
     ${SRCROOT}/Items.hpp
     ${SRCROOT}/Movement.hpp
     ${SRCROOT}/Movement.cpp
+    ${SRCROOT}/Rectangle.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
