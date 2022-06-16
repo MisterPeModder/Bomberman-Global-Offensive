@@ -11,12 +11,12 @@
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
-#include "game/components/Texture2D.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
 #include "game/components/RotationAxis.hpp"
 #include "game/components/Scale.hpp"
 #include "game/components/Size.hpp"
+#include "game/components/Texture2D.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
 namespace game::systems
