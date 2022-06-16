@@ -38,18 +38,37 @@ namespace game::components
 
         /// Occurence of each item in a player inventory
         struct Inventory {
+          public:
             /// Number of occurence of each item in the inventory.
             std::array<size_t, static_cast<size_t>(Item::Identifier::Count)> items;
             /// Activated items with a timer.
             std::vector<std::pair<Item::Identifier, std::chrono::steady_clock::time_point>> timedItems;
 
-            Inventory() { items.fill(0); }
+            /// Selected item (activable).
+            Item::Identifier selected;
+
+            Inventory();
 
             /// Get the quantity of an item in the inventory.
             ///
             /// @param itemId item identifier.
             /// @return constexpr size_t quantity of this item in the inventory.
             constexpr size_t operator[](Item::Identifier itemId) const { return items[static_cast<size_t>(itemId)]; }
+
+            /// Get the quantity of an item in the inventory.
+            ///
+            /// @param itemId item identifier.
+            /// @return constexpr size_t& quantity of this item in the inventory.
+            constexpr size_t &operator[](Item::Identifier itemId) { return items[static_cast<size_t>(itemId)]; }
+
+            /// Pick up an item from the map.
+            ///
+            /// @param player player entity id.
+            /// @param itemId item identifier.
+            /// @param data world data.
+            void add(ecs::Entity player, Item::Identifier itemId, ecs::SystemData data);
+
+            bool useActivable(ecs::Entity player, ecs::SystemData data);
         };
 
         /// Player stats
@@ -70,13 +89,6 @@ namespace game::components
 
         /// Construct a new Player component
         Player() : placedBombs(0) {}
-
-        /// Pick up an item from the map.
-        ///
-        /// @param self player entity id.
-        /// @param itemId item identifier.
-        /// @param data world data.
-        void pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data);
 
         /// Update the activated items with a timer.
         ///

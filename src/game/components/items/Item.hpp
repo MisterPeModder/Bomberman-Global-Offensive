@@ -39,6 +39,8 @@ namespace game::components
             FireDown,
             BombDown,
             InvertedControls,
+            /// Activable
+            LandMine,
             Count,
         };
 

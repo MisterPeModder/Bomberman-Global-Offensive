@@ -20,6 +20,53 @@
 
 namespace game::components
 {
+    Player::Inventory::Inventory()
+    {
+        items.fill(0);
+        selected = Item::Identifier::LandMine;
+    }
+
+    void Player::Inventory::add(ecs::Entity player, Item::Identifier itemId, ecs::SystemData data)
+    {
+        const Item &item = Item::getItem(itemId);
+        auto &count = (*this)[itemId];
+
+        /// Item has a stack limit and we reached it
+        if (item.maxStack && count >= item.maxStack)
+            return;
+        /// Item has no effect (rejected).
+        if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown) && !item.onApply(player, data))
+            return;
+        ++count;
+        /// Item has a duration.
+        if (item.duration != std::chrono::milliseconds::zero())
+            timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
+        Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
+            out << "Player entity " << player.getId() << " pick up item '" << item.name << "', " << count << "/"
+                << item.maxStack << " in inventory ";
+        });
+    }
+
+    bool Player::Inventory::useActivable(ecs::Entity player, ecs::SystemData data)
+    {
+        auto &count = (*this)[selected];
+
+        /// Don't have any activable item
+        if (count == 0)
+            return false;
+        const Item &item = Item::getItem(selected);
+
+        /// Item couldn't be activated, don't remove it.
+        if (!item.onApply(player, data))
+            return false;
+        --count;
+        Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
+            out << "Player entity " << player.getId() << " activated item '" << item.name << "', " << count
+                << " left in inventory.";
+        });
+        return true;
+    }
+
     bool Player::handleActionEvent(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
     {
         if (isMoveAction(event.action))
@@ -92,27 +139,6 @@ namespace game::components
         for (auto [pos, player, playerId] : ecs::join(positions, players, data.getResource<ecs::Entities>()))
             if (bombCell == game::Game::worldPosToMapCell(pos))
                 data.getStorage<BombNoClip>()[playerId.getId()].setBombPosition(bombCell);
-    }
-
-    void Player::pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data)
-    {
-        const Item &item = Item::getItem(itemId);
-        auto &count = inventory.items[static_cast<size_t>(itemId)];
-
-        /// Item has a stack limit and we reached it
-        if (item.maxStack && count >= item.maxStack)
-            return;
-        /// Item has no effect (rejected).
-        if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown) && !item.onApply(self, data))
-            return;
-        ++count;
-        /// Item has a duration.
-        if (item.duration != std::chrono::milliseconds::zero())
-            inventory.timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
-        Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
-            out << "Player entity " << self.getId() << " pick up item '" << item.name << "', " << count << "/"
-                << item.maxStack << " in inventory ";
-        });
     }
 
     void Player::updateTimedItems(ecs::Entity self, ecs::SystemData data)
