@@ -9,8 +9,6 @@
 #include "Item.hpp"
 #include "game/components/Player.hpp"
 
-#include "logger/Logger.hpp"
-
 namespace game::components
 {
     Item Item::LandMine()
@@ -22,7 +20,7 @@ namespace game::components
         landMine.maxStack = 0;
         landMine.name = "Land Mine";
         landMine.duration = std::chrono::milliseconds::zero();
-        landMine.dropRate = 100;
+        landMine.dropRate = 50;
         landMine.onApply = [](ecs::Entity player, ecs::SystemData data) {
             Player::placeBomb(player, data, Bomb::Type::LandMine);
             return true;

@@ -35,12 +35,14 @@ namespace game::components
         if (item.maxStack && count >= item.maxStack)
             return;
         /// Item has no effect (rejected).
-        if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown) && !item.onApply(player, data))
-            return;
+        if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown)) {
+            if (!item.onApply(player, data))
+                return;
+            /// Item has a duration.
+            if (item.duration != std::chrono::milliseconds::zero())
+                timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
+        }
         ++count;
-        /// Item has a duration.
-        if (item.duration != std::chrono::milliseconds::zero())
-            timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
             out << "Player entity " << player.getId() << " pick up item '" << item.name << "', " << count << "/"
                 << item.maxStack << " in inventory ";
@@ -60,6 +62,9 @@ namespace game::components
         if (!item.onApply(player, data))
             return false;
         --count;
+        /// Item has a duration.
+        if (item.duration != std::chrono::milliseconds::zero())
+            timedItems.emplace_back(selected, std::chrono::steady_clock::now());
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
             out << "Player entity " << player.getId() << " activated item '" << item.name << "', " << count
                 << " left in inventory.";

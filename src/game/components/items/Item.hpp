@@ -41,6 +41,7 @@ namespace game::components
             InvertedControls,
             /// Activable
             LandMine,
+            StunGrenade,
             Count,
         };
 
@@ -106,10 +107,11 @@ namespace game::components
         static Item InvertedControls();
         /// Activable
         static Item LandMine();
+        static Item StunGrenade();
 
         static constexpr size_t POWER_UP_COUNT = 4;
         static constexpr size_t POWER_DOWN_COUNT = 4;
-        static constexpr size_t ACTIVABLE_COUNT = 1;
+        static constexpr size_t ACTIVABLE_COUNT = 2;
 
         static std::array<Identifier, POWER_UP_COUNT> powerUps;
         static std::array<Identifier, POWER_DOWN_COUNT> powerDowns;
