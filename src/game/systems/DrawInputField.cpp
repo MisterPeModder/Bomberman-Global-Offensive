@@ -15,7 +15,7 @@
 #include "game/gui/components/InputField.hpp"
 
 #include "raylib/core/Color.hpp"
-#include "raylib/text/text.hpp"
+#include "raylib/text/Font.hpp"
 
 namespace game::systems
 {
@@ -23,7 +23,7 @@ namespace game::systems
     {
         for (auto [pos, field] :
             ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::gui::InputField>())) {
-            raylib::text::draw(field.contents, {pos.x, pos.y}, 10, raylib::core::Color::WHITE);
+            raylib::text::Font::getDefault().draw(field.contents, {pos.x, pos.y}, 10, raylib::core::Color::WHITE);
         }
     }
 

@@ -48,23 +48,25 @@ namespace util
 
     int popUtf8Codepoint(std::string &str) noexcept
     {
-        int bytes;
-        int codepoint;
-        char const *buf = str.c_str() + str.size();
+        auto start = str.cend() - 1;
 
-        if (str.size() > 0 && static_cast<unsigned char>(*(buf - 1)) < 128U) {
-            codepoint = static_cast<int>(*(buf - 1));
-            str.pop_back();
+        // ASCII char
+        if (str.size() > 0 && static_cast<unsigned char>(*start) < 128U) {
+            int codepoint = static_cast<int>(*start);
+            str.erase(start, start + 1);
             return codepoint;
-        } else if (str.size() > 1 && (codepoint = GetCodepoint(buf - 2, &bytes)) != '?') {
-            str.erase(str.end() - 2, str.end());
-            return codepoint;
-        } else if (str.size() > 2 && (codepoint = GetCodepoint(buf - 3, &bytes)) != '?') {
-            str.erase(str.end() - 3, str.end());
-            return codepoint;
-        } else if (str.size() > 3 && (codepoint = GetCodepoint(buf - 4, &bytes)) != '?') {
-            str.erase(str.end() - 4, str.end());
-            return codepoint;
+        }
+        // Multi-byte UTF-8 sequence
+        for (std::size_t i = 1; i < 4; ++i) {
+            if (str.size() <= i)
+                break;
+            start = str.cend() - i - 1;
+            auto [codepoint, size] = raylib::text::utf8ToCodepoint({start, str.cend()});
+
+            if (codepoint != '?') {
+                str.erase(start, start + size);
+                return codepoint;
+            }
         }
         return 0;
     }
