@@ -19,7 +19,7 @@ namespace game::components
         shoes.maxStack = 5;
         shoes.name = "Speed Shoes";
         shoes.duration = std::chrono::milliseconds(0);
-        shoes.dropRate = 100;
+        shoes.dropRate = 30;
         shoes.onApply = [](ecs::Entity player, ecs::SystemData data) {
             data.getStorage<Player>()[player.getId()].stats.speed += Player::Stats::DEFAULT_SPEED * 0.1f;
         };
