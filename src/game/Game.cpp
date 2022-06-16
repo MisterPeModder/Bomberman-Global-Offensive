@@ -202,7 +202,6 @@ namespace game
         {
             raylib::core::scoped::Mode2D mode2D((raylib::core::Camera2D()));
             _world.runSystem<game::systems::DrawInputField>();
-            raylib::core::Window::drawFPS(10, 10);
         };
         _world.maintain();
     }

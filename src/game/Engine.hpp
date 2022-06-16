@@ -35,22 +35,33 @@ namespace game
         /// Gets the immutable active scene
         const game::IScene &getScene() const;
 
+        /// Enables/disables the debug mode.
+        ///
+        /// When enabled, extra information will be displayed on screen, such as the game FPS counter.
+        ///
+        /// @param value @c true to enable, @c false to disable.
+        void setDebugMode(bool value) noexcept;
+
+        /// @see Engine::setDebugMode()
+        ///
+        /// @returns Whether the debug mode is enabled.
+        bool getDebugMode() const noexcept;
+
+        /// Switch to the waiting scene if it exists and releases the current one
+        void switchScene();
+
         /// Runs the game
         void run();
 
-        /// Switch to the waiting scene if it exists and releases the current one
-        void switchScene()
-        {
-            if (_waitingScene) {
-                _scene.swap(_waitingScene);
-                _waitingScene.release();
-            }
-        }
+        /// Called on each render tick.
+        void drawFrame();
 
       private:
         /// Sets the active scene and deletes the old one
         std::unique_ptr<game::IScene> _scene;
         std::unique_ptr<game::IScene> _waitingScene;
+
+        bool _debugMode;
     };
 } // namespace game
 
