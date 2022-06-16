@@ -134,7 +134,7 @@ namespace game::components
         data.getResource<ecs::Entities>()
             .builder()
             .with<Bomb>(data.getStorage<Bomb>(), bombType, data.getStorage<Identity>()[self.getId()].id,
-                (bombType == Bomb::Type::Classic) ? placer.stats.bombRange : 1)
+                (bombType == Bomb::Type::Classic) ? placer.stats.bombRange : 2)
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .with<Collidable>(data.getStorage<Collidable>())
