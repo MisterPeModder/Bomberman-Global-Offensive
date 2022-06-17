@@ -41,33 +41,54 @@ namespace util
         return res;
     }
 
-    void pushUtf8Codepoint(std::string &str, int codepoint) noexcept
+    std::size_t utf8BoundaryStart(std::string_view str, std::size_t index) noexcept
     {
-        str.append(raylib::text::codepointToUtf8(codepoint));
+        if (str.empty())
+            return 0;
+        if (index >= str.size())
+            return str.size();
+        while (index > 0 && (static_cast<unsigned char>(str[index]) & 0b11000000) == 0b10000000)
+            --index;
+        return index;
     }
 
-    int popUtf8Codepoint(std::string &str) noexcept
+    std::size_t utf8BoundaryEnd(std::string_view str, std::size_t index) noexcept
     {
-        auto start = str.cend() - 1;
+        if (str.empty())
+            return 0;
+        while (index < str.size() && (static_cast<unsigned char>(str[index]) & 0b11000000) == 0b10000000)
+            ++index;
+        return index;
+    }
+
+    std::size_t insertUtf8Codepoint(std::string &str, int codepoint, std::size_t index) noexcept
+    {
+        size_t pos = index == std::string::npos ? str.size() : index;
+        std::string_view encoded = raylib::text::codepointToUtf8(codepoint);
+
+        str.insert(pos, encoded);
+        return encoded.size();
+    }
+
+    std::pair<int, std::size_t> removeUtf8Codepoint(std::string &str, std::size_t index) noexcept
+    {
+        if (str.empty())
+            return {0, 0};
+
+        index = utf8BoundaryStart(str, index);
+        auto start = str.cbegin() + index;
 
         // ASCII char
-        if (str.size() > 0 && static_cast<unsigned char>(*start) < 128U) {
+        if (static_cast<unsigned char>(*start) < 128U) {
             int codepoint = static_cast<int>(*start);
             str.erase(start, start + 1);
-            return codepoint;
+            return {codepoint, 1};
         }
-        // Multi-byte UTF-8 sequence
-        for (std::size_t i = 1; i < 4; ++i) {
-            if (str.size() <= i)
-                break;
-            start = str.cend() - i - 1;
-            auto [codepoint, size] = raylib::text::utf8ToCodepoint({start, str.cend()});
 
-            if (codepoint != '?') {
-                str.erase(start, start + size);
-                return codepoint;
-            }
-        }
-        return 0;
+        // Multi-byte UTF-8 sequence
+        auto [codepoint, size] = raylib::text::utf8ToCodepoint({start, str.cend()});
+
+        str.erase(start, start + size);
+        return {codepoint, size};
     }
 } // namespace util

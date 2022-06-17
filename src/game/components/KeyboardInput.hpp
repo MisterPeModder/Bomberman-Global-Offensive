@@ -49,12 +49,15 @@ namespace game
 
         std::string contents;
         std::size_t cursorPos;
+        std::size_t selectionPos;
 
         /// Whether keyboard input should be captured.
         bool focused;
 
         /// Repeat data for the backspace key.
         KeyRepeat backspaceRepeat;
+        /// Repeat data for the delete key.
+        KeyRepeat deleteRepeat;
         /// Repeat data for the left arrow key.
         KeyRepeat leftArrowRepeat;
         /// Repeat data for the right arrow key.
@@ -65,10 +68,16 @@ namespace game
         KeyboardInput(std::string &&initialContents = std::string(), bool pFocused = false);
 
         /// Moves the cursor backwards or forwards of @b offset codepoints.
-        void moveCursor(int offset);
+        void moveCursor(int offset, bool selectingText = false);
 
         /// @returns The current cursor type.
         CursorType getCursorType();
+
+        /// @returns Whether the input has selected text.
+        bool hasSelection() noexcept;
+
+        /// Deletes the selected text and resets the selection.
+        void eraseSelection() noexcept;
     };
 } // namespace game
 

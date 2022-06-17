@@ -13,14 +13,15 @@
 #include "ecs/resource/Timer.hpp"
 
 #include "raylib/core/Keyboard.hpp"
-
-#include "logger/Logger.hpp"
+#include "raylib/core/Window.hpp"
 
 #include "util/util.hpp"
 
 #include <algorithm>
 #include <cmath>
 #include <functional>
+#include <string>
+#include <string_view>
 
 namespace game::systems
 {
@@ -38,21 +39,63 @@ namespace game::systems
             return;
 
         game::KeyboardInput &field = std::get<0>(*firstSelected);
+        Keyboard::Key key;
         int codepoint;
 
+        while ((key = Keyboard::getKeyPressed()) != Keyboard::Key::NONE) {
+            if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL)) {
+                if (key == Keyboard::Key::A) {
+                    // CTRL-A: Select All
+
+                    field.cursorPos = 0;
+                    field.selectionPos = field.contents.size();
+                } else if ((key == Keyboard::Key::C || key == Keyboard::Key::X) && field.hasSelection()) {
+                    // CTRL-C/X: Copy selection to clipboard
+
+                    auto [selectStart, selectEnd] = std::minmax(field.selectionPos, field.cursorPos);
+                    std::string copied(field.contents.cbegin() + selectStart, field.contents.cbegin() + selectEnd);
+
+                    raylib::core::Window::setClipboard(copied);
+                    if (key == Keyboard::Key::C)
+                        field.moveCursor(0, false);
+                    else
+                        field.eraseSelection();
+                } else if (key == Keyboard::Key::V) {
+                    // CTRL+V: Paste from clipboard
+
+                    std::string_view pasted = raylib::core::Window::getClipboard();
+
+                    field.contents.insert(field.selectionPos, pasted);
+                    field.moveCursor(pasted.size());
+                }
+            }
+        }
         while ((codepoint = Keyboard::getCharPressed())) {
-            util::pushUtf8Codepoint(field.contents, codepoint);
-            field.moveCursor(1);
+            field.moveCursor(util::insertUtf8Codepoint(field.contents, codepoint, field.cursorPos));
         }
 
         double elapsed = data.getResource<ecs::Timer>().elapsed();
 
         field.backspaceRepeat.check(elapsed, [&field]() {
-            field.moveCursor(-1);
-            util::popUtf8Codepoint(field.contents);
+            if (field.hasSelection()) {
+                field.eraseSelection();
+            } else if (field.cursorPos > 0) {
+                std::size_t removed = util::removeUtf8Codepoint(field.contents, field.cursorPos - 1).second;
+                field.moveCursor(-static_cast<int>(removed));
+            }
         });
-        field.leftArrowRepeat.check(elapsed, [&field]() { field.moveCursor(-1); });
-        field.rightArrowRepeat.check(elapsed, [&field]() { field.moveCursor(1); });
+        field.deleteRepeat.check(elapsed, [&field]() {
+            if (field.hasSelection()) {
+                field.eraseSelection();
+            } else if (field.cursorPos < field.contents.size()) {
+                util::removeUtf8Codepoint(field.contents, field.cursorPos);
+                field.moveCursor(0);
+            }
+        });
+        field.leftArrowRepeat.check(
+            elapsed, [&field]() { field.moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT)); });
+        field.rightArrowRepeat.check(
+            elapsed, [&field]() { field.moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT)); });
 
         field.cursorBlink = fmod(field.cursorBlink + elapsed, 1.0);
     }

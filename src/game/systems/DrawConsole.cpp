@@ -49,6 +49,8 @@ namespace game::systems
             float padding = 10.0f;
             float lineSpacing = 5.0f;
 
+            Vector2f inputPos{drawPos.x + border + padding, drawPos.y + padding};
+
             size.x = raylib::core::Window::getWidth();
             size.y = textSize.y + replySize.y + 2 * border + 2 * padding + lineSpacing;
 
@@ -59,9 +61,23 @@ namespace game::systems
 
             background.draw();
             background.setColor(Color::WHITE);
-            background.drawLines(border);
 
-            Vector2f inputPos{drawPos.x + border + padding, drawPos.y + padding};
+            // Draw selection box
+            if (field.hasSelection()) {
+                auto [selectStart, selectEnd] = std::minmax(field.selectionPos, field.cursorPos);
+                auto startIter = text.cbegin() + 4 + selectStart;
+                auto endIter = text.cbegin() + 4 + selectEnd;
+
+                Vector2f sizeBeforeSelect = console.font.measure(std::string(text.cbegin(), startIter), 20);
+                Vector2f selectSize = console.font.measure(std::string(startIter, endIter), 20);
+
+                raylib::shapes::Rectangle selection(
+                    {inputPos.x + sizeBeforeSelect.x, inputPos.y}, {selectSize.x, textSize.y}, Color::BLUE);
+
+                selection.draw();
+            }
+
+            background.drawLines(border);
 
             console.font.draw(text, inputPos, 20, Color::WHITE);
             console.font.draw("- undefined", drawPos + Vector2f{border + padding, textSize.y + padding + lineSpacing},
