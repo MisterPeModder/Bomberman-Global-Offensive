@@ -220,7 +220,7 @@ namespace game
                 .with<components::Living>(_params.livesCount)
                 .with<components::Collidable>()
                 .with<components::Player>()
-                .with<components::Size>(0.5f, 0.5, 0.5f)
+                .with<components::Size>(0.5f, 0.5f, 0.5f)
                 .with<components::ModelReference>(_world.getResource<resources::Models>().get("player"))
                 .with<components::Color>(raylib::core::Color::WHITE)
                 .with<components::RotationAngle>(90.0f)
