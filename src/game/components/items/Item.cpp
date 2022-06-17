@@ -17,7 +17,6 @@
 #include "components/Position.hpp"
 #include "components/Scale.hpp"
 #include "components/Size.hpp"
-#include "components/Scale.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Entities.hpp"
