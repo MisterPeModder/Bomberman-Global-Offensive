@@ -85,6 +85,9 @@ namespace game::components
             case Item::Identifier::KickShoes: model = &models.get("kick_shoes"); break;
             case Item::Identifier::ChainBall: model = &models.get("speed_down"); break;
             case Item::Identifier::InvertedControls: model = &models.get("control_down"); break;
+            case Item::Identifier::LandMine: model = &models.get("mine"); break;
+            case Item::Identifier::StunGrenade: model = &models.get("stun"); break;
+            case Item::Identifier::SmokeGrenade: model = &models.get("smoke"); break;
             default: model = &models.get("speed_up"); break; /// Avoid null pointers errors
         }
 
