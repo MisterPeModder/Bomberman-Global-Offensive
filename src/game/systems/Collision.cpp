@@ -58,27 +58,32 @@ namespace game::systems
                     }
                     /// Kicked bomb(s)
                     if (bomb1 || (bomb2 && vel2)) {
-                        /// Two kicked bombs -> Explode
-                        if (bomb1 && bomb2 && vel2) {
+                        if (bomb1)
                             bomb1->explode(pos1, data, id1);
-                            break;
-                        }
-                        /// Only one kicked bomb
-                        else {
-                            if (bomb1 && bomb2) {
-                                if (fabsf(vel1.x) > fabsf(vel1.z))
-                                    pos1.x -= std::copysignf(1.f, vel1.x);
-                                else
-                                    pos1.z -= std::copysignf(1.f, vel1.z);
-                            }
-                            if (bomb1)
-                                bomb1->stop(data, id1);
-                            else
-                                bomb2->stop(data, id2);
-                            if (player1 || player2)
-                                Logger::logger.log(Logger::Severity::Debug, "Player stun");
-                            break;
-                        }
+                        if (bomb2)
+                            bomb2->explode(pos2, data, id2);
+                        break;
+                        // /// Two kicked bombs -> Explode
+                        // if (bomb1 && bomb2 && vel2) {
+                        //     bomb1->explode(pos1, data, id1);
+                        //     break;
+                        // }
+                        // /// Only one kicked bomb
+                        // else {
+                        //     if (bomb1 && bomb2) {
+                        //         if (fabsf(vel1.x) > fabsf(vel1.z))
+                        //             pos1.x -= std::copysignf(1.f, vel1.x);
+                        //         else
+                        //             pos1.z -= std::copysignf(1.f, vel1.z);
+                        //     }
+                        //     if (bomb1)
+                        //         bomb1->stop(data, id1);
+                        //     else
+                        //         bomb2->stop(data, id2);
+                        //     if (player1 || player2)
+                        //         Logger::logger.log(Logger::Severity::Debug, "Player stun");
+                        //     break;
+                        // }
 
                     }
                     /// Static bomb (can't be bomb1 because first entity must have a velocity)
@@ -86,7 +91,7 @@ namespace game::systems
                         raylib::core::Vector3f posDelta = pos2 - pos1;
                         /// Kick bomb if the player is moving toward it.
                         if ((abs(posDelta.x) > abs(posDelta.z)) ? (posDelta.x * vel1.x > 0) : (posDelta.z * vel1.z > 0))
-                            bomb2->setVelocity(data, id2, {vel1.x * 1.3f, 0.f, vel1.z * 0.3f});
+                            bomb2->setVelocity(data, id2, {vel1.x * 1.3f, 0.f, vel1.z * 1.3f});
                     }
                 }
 
