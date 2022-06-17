@@ -10,12 +10,13 @@ set(SRC
     ${SRCROOT}/Collision.cpp
     ${INCROOT}/Collision.hpp
     ${INCROOT}/Cube.hpp
-    ${INCROOT}/DrawingCube.hpp
     ${SRCROOT}/DrawConsole.cpp
     ${INCROOT}/DrawConsole.hpp
+    ${INCROOT}/DrawingCube.hpp
     ${INCROOT}/DrawSelectedWidget.hpp
     ${SRCROOT}/DrawText.cpp
     ${INCROOT}/DrawText.hpp
+    ${INCROOT}/DrawTexture.hpp
     ${SRCROOT}/InputManager.cpp
     ${INCROOT}/InputManager.hpp
     ${SRCROOT}/Items.cpp
@@ -25,6 +26,7 @@ set(SRC
     ${INCROOT}/Movement.hpp
     ${INCROOT}/NoClip.hpp
     ${INCROOT}/Rectangle.hpp
+    ${INCROOT}/SplashScreen.hpp
     ${SRCROOT}/UpdateKeyboardInput.cpp
     ${INCROOT}/UpdateKeyboardInput.hpp
     PARENT_SCOPE)
