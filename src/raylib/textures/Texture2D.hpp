@@ -39,7 +39,8 @@ namespace raylib
             Texture2D(const std::filesystem::path &fileName, Vector2f position = {});
 
             ///
-            /// This function is a constructor for the Texture2D class with no argument the texture is not loaded indeed.
+            /// This function is a constructor for the Texture2D class with no argument the texture is not loaded
+            /// indeed.
             ///
             Texture2D();
 
@@ -55,7 +56,6 @@ namespace raylib
             ///
             /// @param position The position of the texture.
             void setPosition(Vector2f &position);
-
 
             /// Load the texture from the file name, the fileName can be null
             ///

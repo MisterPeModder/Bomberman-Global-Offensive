@@ -97,12 +97,14 @@ namespace game
                             break;
                         default: break;
                     }
-                    /// Out of bounds or indestructible wall
-                    if (!valid || getElement(current) == Element::Wall) {
+                    /// Any valid cell except indestructible walls explode
+                    if (valid && getElement(current) != Element::Wall)
+                        explodePositions.push_back(current);
+                    /// Update blocked ways
+                    if (!valid || getElement(current) != Element::Empty) {
                         blocked[j] = true;
                         validWays--;
-                    } else
-                        explodePositions.push_back(current);
+                    }
                 }
             }
         }

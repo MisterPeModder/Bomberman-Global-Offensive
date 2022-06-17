@@ -126,13 +126,12 @@ static void loadTestScene(ecs::World &world)
     raylib::core::Vector3 rotationAxis(1.f, 0.f, 0.f);
     float rotationAngle = -90;
 
-    raylib::model::Model &testingModel = getTestingModel();
     raylib::model::Animation &testingAnimation = getTestingAnimation();
 
     world.addSystem<game::systems::DrawModel>();
     world.addSystem<game::systems::RunAnimation>();
     world.addEntity()
-        .with<game::components::Model>(testingModel)
+        .with<game::components::ModelReference>(getTestingModel())
         .with<game::components::Position>(pos)
         .with<game::components::Size>(size)
         .with<game::components::RotationAngle>(rotationAngle)

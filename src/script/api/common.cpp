@@ -9,8 +9,10 @@
 #include <string>
 #include <unordered_map>
 
+#include "game/Engine.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/core/Window.hpp"
+#include "script/Engine.hpp"
 #include "script/JsException.hpp"
 #include "script/script.hpp"
 
@@ -60,5 +62,20 @@ BMJS_DEFINE void common_setHeight(bmjs::Number height)
 BMJS_DEFINE bmjs::Number common_getWidth() { return raylib::core::Window::getWidth(); }
 
 BMJS_DEFINE bmjs::Number common_getHeight() { return raylib::core::Window::getHeight(); }
+
+BMJS_DEFINE void common_setDebugMode(bmjs::Number value)
+{
+    auto engine = bmjs::Engine::instance().lock();
+
+    if (engine)
+        engine->getGameEngine().setDebugMode(!!value);
+}
+
+BMJS_DEFINE bmjs::Number common_getDebugMode()
+{
+    auto engine = bmjs::Engine::instance().lock();
+
+    return engine ? engine->getGameEngine().getDebugMode() : false;
+}
 
 BMJS_API_END

@@ -31,6 +31,7 @@ namespace game
             setKeyboardBinding(Key::DOWN, GameAction::MOVE_DOWN);
             /// Actions
             setKeyboardBinding(Key::E, GameAction::PLACE_BOMB);
+            setKeyboardBinding(Key::R, GameAction::ACTIVATE_ITEM);
             setKeyboardBinding(Key::P, GameAction::PAUSE);
             /// Menus
             setKeyboardBinding(Key::ENTER, GameAction::ACTION);
@@ -52,6 +53,7 @@ namespace game
                 GamepadInput(Gamepad::Axis::LEFT_Y, GamepadInput::AxisDirection::Negative), GameAction::MOVE_DOWN);
             /// Actions
             setGamepadBinding(Gamepad::Button::FACE_DOWN, GameAction::PLACE_BOMB);
+            setGamepadBinding(Gamepad::Button::RIGHT_TRIGGER, GameAction::ACTIVATE_ITEM);
             setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::PAUSE);
             setGamepadBinding(Gamepad::Button::MIDDLE, GameAction::PAUSE);
             setGamepadBinding(Gamepad::Button::MIDDLE_RIGHT, GameAction::PAUSE);

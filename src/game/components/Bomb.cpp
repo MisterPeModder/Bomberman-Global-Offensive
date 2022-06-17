@@ -8,15 +8,20 @@
 #include "Bomb.hpp"
 #include <cmath>
 #include "Collidable.hpp"
+#include "Color.hpp"
 #include "Destructible.hpp"
 #include "Identity.hpp"
 #include "Living.hpp"
+#include "Model.hpp"
 #include "Player.hpp"
+#include "RotationAngle.hpp"
+#include "RotationAxis.hpp"
 #include "Size.hpp"
 #include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
 #include "game/Game.hpp"
+#include "game/resources/AssetMap.hpp"
 #include "game/resources/Map.hpp"
 #include "items/Item.hpp"
 #include "logger/Logger.hpp"
@@ -30,9 +35,11 @@ namespace game::components
         if (this->exploded)
             return;
         this->exploded = true;
-        for (auto [id, player] : ecs::join(data.getStorage<Identity>(), data.getStorage<Player>())) {
-            if (id.id == owner)
-                --player.placedBombs;
+        if (type == Type::Classic) {
+            for (auto [id, player] : ecs::join(data.getStorage<Identity>(), data.getStorage<Player>())) {
+                if (id.id == owner)
+                    --player.placedBombs;
+            }
         }
         /// Retrieve storages
         auto &positions = data.getStorage<Position>();
@@ -120,18 +127,29 @@ namespace game::components
     void Bomb::kick(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity)
     {
         /// Create kicked Bomb
-        data.getResource<ecs::Entities>()
-            .builder()
-            .with<Bomb>(data.getStorage<Bomb>(), owner, radius,
+        auto builder = data.getResource<ecs::Entities>().builder();
+
+        setBombModel(builder, data)
+            .with<Bomb>(data.getStorage<Bomb>(), type, owner, radius,
                 std::chrono::duration_cast<std::chrono::milliseconds>(
                     std::chrono::milliseconds(2000) - (std::chrono::steady_clock::now() - placedTime)))
             .with<Position>(data.getStorage<Position>(), data.getStorage<Position>()[self.getId()])
-            .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .with<Collidable>(data.getStorage<Collidable>())
             .with<Velocity>(data.getStorage<Velocity>(), senderVelocity.x * 1.3f, 0.f, senderVelocity.z * 1.3f)
             .build();
         /// Kill static bomb
         data.getResource<ecs::Entities>().kill(self);
+    }
+
+    ecs::Entities::Builder &Bomb::setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data)
+    {
+        (void)builder.with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
+            .with<ModelReference>(
+                data.getStorage<ModelReference>(), data.getResource<game::resources::Models>().get("C4"))
+            .with<Size>(data.getStorage<Size>(), 0.3f, 0.3f, 0.5f)
+            .with<RotationAngle>(data.getStorage<RotationAngle>(), -90.0f)
+            .with<RotationAxis>(data.getStorage<RotationAxis>(), 1.f, 0.f, 0.f);
+        return builder;
     }
 
 } // namespace game::components

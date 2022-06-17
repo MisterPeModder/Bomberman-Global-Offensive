@@ -67,6 +67,13 @@ var game;
             bm.common.setHeight(Number(value));
         }
     });
+    Object.defineProperty(game, "debugMode", {
+        get: function () { return Boolean(bm.common.getDebugMode()); },
+        set: function (value) {
+            checkArg('game.debugMode', 0, 'boolean', value);
+            bm.common.setDebugMode(Boolean(value));
+        }
+    })
 
     readOnly(game, 'log', function (msg) { bm.common.log(String(msg)); });
     readOnly(game, 'error', function (msg) { bm.common.error(String(msg)); });

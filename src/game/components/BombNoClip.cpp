@@ -7,6 +7,8 @@
 
 #include "BombNoClip.hpp"
 #include "game/Game.hpp"
+#include "game/systems/Collision.hpp"
+#include "raylib/shapes/Rectangle.hpp"
 
 namespace game::components
 {
@@ -18,8 +20,11 @@ namespace game::components
         enabled = true;
     }
 
-    bool BombNoClip::matchEntityPosition(raylib::core::Vector3f entityPosition)
+    bool BombNoClip::matchEntityPosition(raylib::core::Vector3f entityPosition, raylib::core::Vector3f entitySize)
     {
-        return enabled && bombPos == game::Game::worldPosToMapCell(entityPosition);
+        raylib::shapes::Rectangle collideRect;
+
+        return game::systems::Collision::getCollideRect(collideRect, entityPosition, entitySize,
+            {static_cast<float>(bombPos.x), 0.f, static_cast<float>(bombPos.y)}, {1.f, 1.f, 1.f});
     }
 } // namespace game::components
