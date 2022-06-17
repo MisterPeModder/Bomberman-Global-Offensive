@@ -108,7 +108,7 @@ namespace game
 
         meshes.emplace("box", 1.f, 1.f, 1.f);
         meshes.emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
-        meshes.emplace("bonus", 0.75f, 0.1f, 0.75f);
+        meshes.emplace("bonus", 0.75f, 0.0f, 0.75f);
     }
 
     void Game::_loadModels()
