@@ -9,6 +9,7 @@
 
 #include "game/Game.hpp"
 #include "game/gui/components/Widget.hpp"
+#include "game/scenes/MainMenuScene.hpp"
 
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"

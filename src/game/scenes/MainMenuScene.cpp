@@ -57,7 +57,7 @@ static void loadMainMenuScene(ecs::World &world)
     raylib::textures::Image image(logoPath, {1, 2}, raylib::core::Color::WHITE);
 
     world.addEntity()
-        .with<game::components::Position>(0.f, 100.f)
+        .with<game::components::Position>(0, 10)
         .with<game::components::Textual>(localization::resources::menu::rsMenuPlay, 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::PLAY, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
@@ -69,7 +69,7 @@ static void loadMainMenuScene(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(0.f, 130.f)
+        .with<game::components::Position>(0, 20)
         .with<game::components::Textual>(localization::resources::menu::rsMenuOption, 20, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::OPTION, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
@@ -80,7 +80,7 @@ static void loadMainMenuScene(ecs::World &world)
         })
         .build();
     world.addEntity()
-        .with<game::components::Position>(0.f, 700.f)
+        .with<game::components::Position>(0, 90)
         .with<game::components::Textual>(localization::resources::menu::rsMenuQuit, 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::LOGOUT, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
@@ -92,7 +92,7 @@ static void loadMainMenuScene(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(0.f, 0.f)
+        .with<game::components::Position>(0, 0)
         .with<game::components::Texture2D>(logoPath)
         .with<game::components::Scale>(0.4f)
         .with<game::components::RotationAngle>(0.f)
