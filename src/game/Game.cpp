@@ -12,8 +12,6 @@
 #include "components/Collidable.hpp"
 #include "components/Color.hpp"
 #include "components/Controlable.hpp"
-#include "components/Cube.hpp"
-#include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Identity.hpp"
 #include "components/KeyboardInput.hpp"
@@ -50,7 +48,6 @@
 #include "resources/RandomDevice.hpp"
 
 #include "systems/Bomb.hpp"
-#include "systems/ChangeCube.hpp"
 #include "systems/Collision.hpp"
 #include "systems/DrawConsole.hpp"
 #include "systems/DrawingCube.hpp"
@@ -83,53 +80,93 @@ namespace game
 
     void Game::_loadTextures()
     {
+        auto &textures = _world.getResource<resources::Textures>();
+
         /// Map
-        _world.getResource<resources::Textures>().emplace("crate", "assets/map/crate.png");
-        _world.getResource<resources::Textures>().emplace("wall", "assets/map/wall.png");
-        _world.getResource<resources::Textures>().emplace("ground", "assets/map/ground.png");
+        textures.emplace("crate", "assets/map/crate.png");
+        textures.emplace("wall", "assets/map/wall.png");
+        textures.emplace("ground", "assets/map/ground.png");
+        /// Player
+        textures.emplace("terrorist_1", "assets/player/textures/terrorist_1.png");
+        textures.emplace("terrorist_2", "assets/player/textures/terrorist_2.png");
+        textures.emplace("counter_terrorist_1", "assets/player/textures/counter_terrorist_1.png");
+        textures.emplace("counter_terrorist_2", "assets/player/textures/counter_terrorist_2.png");
+        textures.emplace("none_sense", "assets/player/textures/none_sense.png");
+        textures.emplace("rainbow", "assets/player/textures/rainbow.png");
         /// Activables
-        _world.getResource<resources::Textures>().emplace(
-            "no_clip", "assets/items/activables/bonus_activable_no_clip.png");
-        _world.getResource<resources::Textures>().emplace("mine", "assets/items/activables/bonus_activable_mine.png");
-        _world.getResource<resources::Textures>().emplace("punch", "assets/items/activables/bonus_activable_punch.png");
-        _world.getResource<resources::Textures>().emplace("smoke", "assets/items/activables/bonus_activable_smoke.png");
-        _world.getResource<resources::Textures>().emplace("stunt", "assets/items/activables/bonus_activable_stunt.png");
+        textures.emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
+        textures.emplace("mine", "assets/items/activables/bonus_activable_mine.png");
+        textures.emplace("punch", "assets/items/activables/bonus_activable_punch.png");
+        textures.emplace("kick_shoes", "assets/items/activables/bonus_activable_kick_shoes.png");
+        textures.emplace("smoke", "assets/items/activables/bonus_activable_smoke.png");
+        textures.emplace("stunt", "assets/items/activables/bonus_activable_stunt.png");
         /// Power Ups
-        _world.getResource<resources::Textures>().emplace("speed_up", "assets/items/power_ups/bonus_up_speed.png");
-        _world.getResource<resources::Textures>().emplace("C4_up", "assets/items/power_ups/bonus_up_C4.png");
-        _world.getResource<resources::Textures>().emplace("range_up", "assets/items/power_ups/bonus_up_range.png");
+        textures.emplace("speed_up", "assets/items/power_ups/bonus_up_speed.png");
+        textures.emplace("C4_up", "assets/items/power_ups/bonus_up_C4.png");
+        textures.emplace("range_up", "assets/items/power_ups/bonus_up_range.png");
         /// Power Downs
-        _world.getResource<resources::Textures>().emplace(
-            "speed_down", "assets/items/power_downs/bonus_down_speed.png");
-        _world.getResource<resources::Textures>().emplace("C4_down", "assets/items/power_downs/bonus_down_C4.png");
-        _world.getResource<resources::Textures>().emplace(
-            "range_down", "assets/items/power_downs/bonus_down_range.png");
+        textures.emplace("speed_down", "assets/items/power_downs/bonus_down_speed.png");
+        textures.emplace("C4_down", "assets/items/power_downs/bonus_down_C4.png");
+        textures.emplace("range_down", "assets/items/power_downs/bonus_down_range.png");
+        textures.emplace("control_down", "assets/items/power_downs/bonus_down_control.png");
         /// Weapons
-        _world.getResource<resources::Textures>().emplace("C4", "assets/items/weapons/C4_Texture.png");
+        textures.emplace("C4", "assets/items/weapons/C4_Texture.png");
     }
 
     void Game::_loadMeshes()
     {
-        _world.getResource<resources::Meshes>().emplace("box", 1.f, 1.f, 1.f);
-        _world.getResource<resources::Meshes>().emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
+        auto &meshes = _world.getResource<resources::Meshes>();
+
+        meshes.emplace("box", 1.f, 1.f, 1.f);
+        meshes.emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
+        meshes.emplace("bonus", 0.75f, 0.0f, 0.75f);
     }
 
     void Game::_loadModels()
     {
-        /// Map
-        _world.getResource<resources::Models>()
-            .emplace("ground", _world.getResource<resources::Meshes>().get("ground"), false)
-            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("ground"), 0, MATERIAL_MAP_DIFFUSE);
-        _world.getResource<resources::Models>()
-            .emplace("crate", _world.getResource<resources::Meshes>().get("box"), false)
-            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("crate"), 0, MATERIAL_MAP_DIFFUSE);
-        _world.getResource<resources::Models>()
-            .emplace("wall", _world.getResource<resources::Meshes>().get("box"), false)
-            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("wall"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Bomb
-        _world.getResource<resources::Models>()
-            .emplace("C4", "assets/items/weapons/c4.iqm")
-            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("C4"), 0, MATERIAL_MAP_DIFFUSE);
+        auto &textures = _world.getResource<resources::Textures>();
+        auto &meshes = _world.getResource<resources::Meshes>();
+        auto &models = _world.getResource<resources::Models>();
+
+        /////// Map
+        models.emplace("ground", meshes.get("ground"), false)
+            .setMaterialMapTexture(textures.get("ground"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("crate", meshes.get("box"), false)
+            .setMaterialMapTexture(textures.get("crate"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("wall", meshes.get("box"), false)
+            .setMaterialMapTexture(textures.get("wall"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("C4", "assets/items/weapons/c4.iqm")
+            .setMaterialMapTexture(textures.get("C4"), 0, MATERIAL_MAP_DIFFUSE);
+
+        ////// PLayers
+        models.emplace("player", "assets/player/player.iqm")
+            .setMaterialMapTexture(textures.get("terrorist_1"), 0, MATERIAL_MAP_DIFFUSE);
+        ////// Items
+        auto &bonusMesh = meshes.get("bonus");
+        /// Power Ups
+        models.emplace("speed_up", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("speed_up"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("C4_up", bonusMesh, false).setMaterialMapTexture(textures.get("C4_up"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("range_up", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("range_up"), 0, MATERIAL_MAP_DIFFUSE);
+        /// Power Downs
+        models.emplace("speed_down", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("speed_down"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("C4_down", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("C4_down"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("range_down", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("control_down", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
+        /// Activables
+        models.emplace("no_clip", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("no_clip"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("kick_shoes", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("kick_shoes"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("stunt", bonusMesh, false).setMaterialMapTexture(textures.get("stunt"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"), 0, MATERIAL_MAP_DIFFUSE);
     }
 
     void Game::setup()
@@ -173,10 +210,8 @@ namespace game
         _world.addStorage<components::RotationAxis>();
         _world.addStorage<components::Model>();
         /// Add world systems
-        _world.addSystem<game::systems::DrawModel>();
+        _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::InputManager>();
-        _world.addSystem<systems::ChangeCube>();
-        _world.addSystem<systems::DrawingCube>();
         _world.addSystem<systems::Movement>();
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::ExplodeBomb>();
@@ -185,28 +220,32 @@ namespace game
         _world.addSystem<systems::UpdateItemTimer>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
-            systems::DisableBombNoClip, systems::UpdateItemTimer>();
+        _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
+            systems::UpdateItemTimer>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawModel, systems::DrawingCube>();
+        _drawing.add<systems::DrawModel>();
 
         _loadTextures();
         _loadMeshes();
         _loadModels();
+
+        /// Player
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
             raylib::core::Vector2u cell = _map.getPlayerStartingPosition(owner);
 
             _world.addEntity()
-                .with<components::Position>(static_cast<float>(cell.x), 1.f, static_cast<float>(cell.y))
+                .with<components::Position>(static_cast<float>(cell.x), 0.f, static_cast<float>(cell.y))
                 .with<components::Velocity>()
                 .with<components::Living>(_params.livesCount)
                 .with<components::Collidable>()
                 .with<components::Player>()
-                .with<components::Cube>()
-                .with<components::Size>(0.7f, 2.f, 0.7f)
-                .with<components::CubeColor>(raylib::core::Color::RED)
+                .with<components::Size>(0.5f, 0.5f, 0.5f)
+                .with<components::ModelReference>(_world.getResource<resources::Models>().get("player"))
+                .with<components::Color>(raylib::core::Color::WHITE)
+                .with<components::RotationAngle>(90.0f)
+                .with<components::RotationAxis>(1.f, 0.f, 0.f)
                 .with<components::Controlable>(owner, components::Player::handleActionEvent)
                 .with<components::BombNoClip>()
                 .with<components::Identity>()
@@ -251,11 +290,11 @@ namespace game
                         .with<components::Size>(1.f, 1.f, 1.f);
                     if (destructible) {
                         (void)builder.with<components::Destructible>()
-                            .with<game::components::Color>(raylib::core::Color::BROWN)
+                            .with<game::components::Color>(raylib::core::Color::WHITE)
                             .with<game::components::ModelReference>(
                                 _world.getResource<resources::Models>().get("crate"));
                     } else {
-                        (void)builder.with<game::components::Color>(raylib::core::Color::GRAY)
+                        (void)builder.with<game::components::Color>(raylib::core::Color::WHITE)
                             .with<game::components::ModelReference>(
                                 _world.getResource<resources::Models>().get("wall"));
                     }
