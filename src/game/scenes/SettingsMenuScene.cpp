@@ -80,7 +80,6 @@ static void loadGraphicSettings(ecs::World &world)
                     world.getResource<game::resources::EngineResource>().engine->getSettings().setFullscreen(true);
                 else
                     world.getResource<game::resources::EngineResource>().engine->getSettings().setFullscreen(false);
-                // world.getResource<game::resources::EngineResource>().engine->getSettings().save();
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
