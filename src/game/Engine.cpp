@@ -6,8 +6,6 @@
 */
 
 #include "game/Engine.hpp"
-#include "game/scenes/MainMenuScene.hpp"
-#include "game/scenes/SettingsMenuScene.hpp"
 #include "game/scenes/SplashScene.hpp"
 #include "localization/Localization.hpp"
 #include "raylib/core/Audio.hpp"
@@ -58,7 +56,7 @@ namespace game
 {
     Engine::Engine() : _debugMode(false)
     {
-        _scene = std::make_unique<MainMenuScene>();
+        _scene = std::make_unique<SplashScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
         loadSettings();
     }

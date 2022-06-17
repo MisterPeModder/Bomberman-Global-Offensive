@@ -7,7 +7,7 @@
 
 #include "game/scenes/SettingsMenuScene.hpp"
 #include "game/Engine.hpp"
-#include "game/scenes/GameScene.hpp"
+#include "game/scenes/MainMenuScene.hpp"
 
 #include "logger/Logger.hpp"
 #include "util/util.hpp"
@@ -311,7 +311,7 @@ static void loadSettingsMenuScene(ecs::World &world)
             game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, true)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
+                world.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
                 Logger::logger.log(Logger::Severity::Debug, "Back to menu");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
