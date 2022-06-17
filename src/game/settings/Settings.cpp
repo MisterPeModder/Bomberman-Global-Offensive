@@ -30,6 +30,7 @@ namespace game
             _targetFramerate = 60;
             _resolution = {1280, 720};
             _fullscreen = false;
+            _locale = "en";
         }
 
         std::filesystem::path Settings::getSettingsFilePath() { return util::makePath("settings", "settings.cfg"); }
@@ -68,6 +69,8 @@ namespace game
                 bool fullscreen;
                 std::istringstream(value.data()) >> fullscreen;
                 setFullscreen(fullscreen || value == "true");
+            } else if (key == "locale") {
+                setLocale(value);
             } else {
                 Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
                     writer << "Unknown settings key '" << key << "' with value '" << value << "'";
@@ -125,6 +128,10 @@ namespace game
 
         bool Settings::isFullscreen() const { return _fullscreen; }
 
+        void Settings::setLocale(std::string_view locale) { _locale = locale; }
+
+        std::string_view Settings::getLocale() const { return _locale; }
+
     } // namespace settings
 } // namespace game
 
@@ -135,5 +142,6 @@ std::ostream &operator<<(std::ostream &stream, const game::settings::Settings &s
     stream << "music_volume=" << settings.getMusicVolume() << std::endl;
     stream << "target_framerate=" << settings.getTargetFramerate() << std::endl;
     stream << "resolution=" << settings.getResolution().x << "x" << settings.getResolution().y << std::endl;
-    return stream << "fullscreen=" << std::boolalpha << settings.isFullscreen() << std::endl;
+    stream << "fullscreen=" << std::boolalpha << settings.isFullscreen() << std::endl;
+    return stream << "locale=" << settings.getLocale() << std::endl;
 }
