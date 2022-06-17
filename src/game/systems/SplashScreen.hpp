@@ -56,7 +56,7 @@ static void buildRaylibSplash(ecs::SystemData &data)
         .with<game::gui::Widget>(data.getStorage<game::gui::Widget>(), 0, game::gui::Widget::NullTag,
             game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag, true)
         .with<game::gui::Clickable>(data.getStorage<game::gui::Clickable>(),
-            [&data](ecs::Entity) {
+            [](ecs::Entity) {
                 Logger::logger.log(Logger::Severity::Debug, "Tried to skip splash screen but it's disabled for now");
             })
         .build();
