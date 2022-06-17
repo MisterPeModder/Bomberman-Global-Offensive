@@ -32,7 +32,6 @@ namespace game
         {
             raylib::core::scoped::Mode2D mode2D(_defaultCamera2D);
             _world.runSystems(_global2D);
-            raylib::core::Window::drawFPS(10, 10);
         };
         _world.maintain();
     }
