@@ -53,7 +53,7 @@ namespace raylib
             std::filesystem::path _animationPath;
             ::ModelAnimation *_animations;
             unsigned int _animsCount;
-            unsigned int _animFrameCounter;
+            int _animFrameCounter;
             unsigned int _animNumber;
         };
     } // namespace model
