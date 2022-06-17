@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"classlocalization_1_1_localization.html#a2587288e71601fce76e3ae59f0892ec6":[2,0,3,1,3],
+"classlocalization_1_1_localization.html#a35d694844b2d9f5022f195b671501022":[2,0,3,1,14],
+"classlocalization_1_1_localization.html#a4fa2cfee1532eee8c5db700a3e88d8f8":[2,0,3,1,9],
 "classlocalization_1_1_localization.html#a74f7735ca40b0c5ac6de566bcae0aa0b":[2,0,3,1,6],
 "classlocalization_1_1_localization.html#a88344334fa87666f78a87847f36915fe":[2,0,3,1,0],
 "classlocalization_1_1_localization.html#a8f00a5713bb962e7faf242e57d339c8c":[2,0,3,1,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab50339a10e1de285ac99d4c3990b8693":[2,0,4,0,7,0,0],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab51dc9db6e5110cf7e1bdc44b218ad66":[2,0,4,0,7,0,109],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab6c7e6204e97690efd79d6f513ed5613":[2,0,4,0,7,0,80],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab9ece18c950afbfa6b0fdbfa4ff731d3":[2,0,4,0,7,0,37],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90abaaceccc27b1d4e0968c999583f97de5":[2,0,4,0,7,0,16],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90abc21e6484530fc9d0313cb816b733396":[2,0,4,0,7,0,7],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ac1d9f50f86825a1a2302ec2449c17196":[2,0,4,0,7,0,25]
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab9ece18c950afbfa6b0fdbfa4ff731d3":[2,0,4,0,7,0,37]
 };

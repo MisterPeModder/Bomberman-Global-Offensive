@@ -155,7 +155,6 @@ var hierarchy =
       [ "game::systems::ChangeCube", "structgame_1_1systems_1_1_change_cube.html", null ],
       [ "game::systems::Collision", "structgame_1_1systems_1_1_collision.html", null ],
       [ "game::systems::DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", null ],
-      [ "game::systems::DrawBomb", "structgame_1_1systems_1_1_draw_bomb.html", null ],
       [ "game::systems::DrawCube", "structgame_1_1systems_1_1_draw_cube.html", null ],
       [ "game::systems::DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", null ],
       [ "game::systems::DrawModel", "structgame_1_1systems_1_1_draw_model.html", null ],

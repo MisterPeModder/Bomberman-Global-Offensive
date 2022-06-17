@@ -13,6 +13,8 @@ var classraylib_1_1model_1_1_model =
     [ "drawWires", "classraylib_1_1model_1_1_model.html#a11aa5c210c44a51678043aa5a9a91379", null ],
     [ "drawWires", "classraylib_1_1model_1_1_model.html#aef09526782379ce2db1ddb2b2552daa4", null ],
     [ "getBoundingBox", "classraylib_1_1model_1_1_model.html#ae8213c42a56c8cd7902144541ed3b593", null ],
+    [ "loadFromMesh", "classraylib_1_1model_1_1_model.html#ad9ea0a430cda548a3fd048265c9a1147", null ],
+    [ "loadFromMesh", "classraylib_1_1model_1_1_model.html#a1e561f718584a63350cd11e882eb332b", null ],
     [ "operator=", "classraylib_1_1model_1_1_model.html#ac6c00c54b48464160227978e633b0dc1", null ],
     [ "setMaterialMapTexture", "classraylib_1_1model_1_1_model.html#ab4aaf0323486bd0eefd6fa6881dbb77d", null ],
     [ "setOwnsMesh", "classraylib_1_1model_1_1_model.html#a03efa19831a8353c1cb30bb90169a11b", null ],

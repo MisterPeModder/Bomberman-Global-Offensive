@@ -155,11 +155,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00023">23</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>.fill(0);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a> = <a class="code" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a1e55a1d65cd30df92b8f33db989b223c">Item::Identifier::LandMine</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00031">31</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>.fill(0);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a> = <a class="code" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a1e55a1d65cd30df92b8f33db989b223c">Item::Identifier::LandMine</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -209,23 +209,23 @@ Public Attributes</h2></td></tr>
 <p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> has no effect (rejected).</p>
 <p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> has a duration.</p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00029">29</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">const</span> Item &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(itemId);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">auto</span> &amp;<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> = (*this)[itemId];</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (item.maxStack &amp;&amp; count &gt;= item.maxStack)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> ((item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3">Item::Type::PowerUp</a> || item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8">Item::Type::PowerDown</a>) &amp;&amp; !item.onApply(player, data))</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ++<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (item.duration != <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a>())</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">emplace_back</a>(itemId, <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>());</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>() &lt;&lt; <span class="stringliteral">&quot; pick up item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; count &lt;&lt; <span class="stringliteral">&quot;/&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                &lt;&lt; item.maxStack &lt;&lt; <span class="stringliteral">&quot; in inventory &quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        });</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00037">37</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> Item &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(itemId);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">auto</span> &amp;<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> = (*this)[itemId];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (item.maxStack &amp;&amp; count &gt;= item.maxStack)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> ((item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3">Item::Type::PowerUp</a> || item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8">Item::Type::PowerDown</a>) &amp;&amp; !item.onApply(player, data))</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ++<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (item.duration != <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a>())</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">emplace_back</a>(itemId, <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>() &lt;&lt; <span class="stringliteral">&quot; pick up item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; count &lt;&lt; <span class="stringliteral">&quot;/&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                &lt;&lt; item.maxStack &lt;&lt; <span class="stringliteral">&quot; in inventory &quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        });</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -345,23 +345,23 @@ false If no item was consumed. </dd></dl>
 <p>Don't have any activable item</p>
 <p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> couldn't be activated, don't remove it.</p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00050">50</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">auto</span> &amp;<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> = (*this)[<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> (count == 0)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> Item &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (!item.onApply(player, data))</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        --<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>() &lt;&lt; <span class="stringliteral">&quot; activated item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; count</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; left in inventory.&quot;</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        });</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00058">58</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">auto</span> &amp;<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> = (*this)[<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (count == 0)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">const</span> Item &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (!item.onApply(player, data))</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        --<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>() &lt;&lt; <span class="stringliteral">&quot; activated item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; count</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; left in inventory.&quot;</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        });</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

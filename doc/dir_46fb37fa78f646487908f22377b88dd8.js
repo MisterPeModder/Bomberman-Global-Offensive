@@ -5,7 +5,6 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     ] ],
     [ "Bomb.cpp", "systems_2_bomb_8cpp.html", null ],
     [ "Bomb.hpp", "systems_2_bomb_8hpp.html", [
-      [ "DrawBomb", "structgame_1_1systems_1_1_draw_bomb.html", "structgame_1_1systems_1_1_draw_bomb" ],
       [ "ExplodeBomb", "structgame_1_1systems_1_1_explode_bomb.html", "structgame_1_1systems_1_1_explode_bomb" ]
     ] ],
     [ "ChangeCube.hpp", "_change_cube_8hpp.html", [

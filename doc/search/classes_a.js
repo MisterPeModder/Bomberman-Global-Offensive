@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['keybinds_4169',['Keybinds',['../classgame_1_1settings_1_1_keybinds.html',1,'game::settings']]],
-  ['keyboard_4170',['Keyboard',['../classraylib_1_1core_1_1_keyboard.html',1,'raylib::core']]],
-  ['kilo_4171',['kilo',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio.html',1,'std']]],
-  ['knuth_5fb_4172',['knuth_b',['http://en.cppreference.com/w/cpp/numeric/random/shuffle_order_engine.html',1,'std']]]
+  ['keybinds_4172',['Keybinds',['../classgame_1_1settings_1_1_keybinds.html',1,'game::settings']]],
+  ['keyboard_4173',['Keyboard',['../classraylib_1_1core_1_1_keyboard.html',1,'raylib::core']]],
+  ['kilo_4174',['kilo',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio.html',1,'std']]],
+  ['knuth_5fb_4175',['knuth_b',['http://en.cppreference.com/w/cpp/numeric/random/shuffle_order_engine.html',1,'std']]]
 ];

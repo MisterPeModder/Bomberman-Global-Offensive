@@ -3,7 +3,6 @@ var namespacegame_1_1systems =
     [ "ChangeCube", "structgame_1_1systems_1_1_change_cube.html", "structgame_1_1systems_1_1_change_cube" ],
     [ "Collision", "structgame_1_1systems_1_1_collision.html", "structgame_1_1systems_1_1_collision" ],
     [ "DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", "structgame_1_1systems_1_1_disable_bomb_no_clip" ],
-    [ "DrawBomb", "structgame_1_1systems_1_1_draw_bomb.html", "structgame_1_1systems_1_1_draw_bomb" ],
     [ "DrawCube", "structgame_1_1systems_1_1_draw_cube.html", "structgame_1_1systems_1_1_draw_cube" ],
     [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ],
     [ "DrawModel", "structgame_1_1systems_1_1_draw_model.html", "structgame_1_1systems_1_1_draw_model" ],

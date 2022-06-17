@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('classraylib_1_1model_1_1_model.html','
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classraylib_1_1model_1_1_model-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -164,6 +165,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03efa19831a8353c1cb30bb90169a11b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_model.html#a03efa19831a8353c1cb30bb90169a11b">setOwnsMesh</a> (bool ownsMesh=true)</td></tr>
 <tr class="memdesc:a03efa19831a8353c1cb30bb90169a11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the model as owner of the mesh or not.  <a href="classraylib_1_1model_1_1_model.html#a03efa19831a8353c1cb30bb90169a11b">More...</a><br /></td></tr>
 <tr class="separator:a03efa19831a8353c1cb30bb90169a11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad9ea0a430cda548a3fd048265c9a1147"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1model_1_1_model.html">Model</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_model.html#ad9ea0a430cda548a3fd048265c9a1147">loadFromMesh</a> (const ::<a class="el" href="classraylib_1_1model_1_1_mesh.html">Mesh</a> &amp;mesh)</td></tr>
+<tr class="memdesc:ad9ea0a430cda548a3fd048265c9a1147"><td class="mdescLeft">&#160;</td><td class="mdescRight">loadFromMesh load model with <a class="el" href="classraylib_1_1model_1_1_mesh.html" title="Mesh class.">Mesh</a> of the raylib library  <a href="classraylib_1_1model_1_1_model.html#ad9ea0a430cda548a3fd048265c9a1147">More...</a><br /></td></tr>
+<tr class="separator:ad9ea0a430cda548a3fd048265c9a1147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e561f718584a63350cd11e882eb332b"><td class="memItemLeft" align="right" valign="top">::<a class="el" href="classraylib_1_1model_1_1_model.html">Model</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_model.html#a1e561f718584a63350cd11e882eb332b">loadFromMesh</a> (const <a class="el" href="classraylib_1_1model_1_1_mesh.html">raylib::model::Mesh</a> &amp;mesh)</td></tr>
+<tr class="memdesc:a1e561f718584a63350cd11e882eb332b"><td class="mdescLeft">&#160;</td><td class="mdescRight">loadFromMesh load model with <a class="el" href="classraylib_1_1model_1_1_mesh.html" title="Mesh class.">Mesh</a> encapsulated  <a href="classraylib_1_1model_1_1_model.html#a1e561f718584a63350cd11e882eb332b">More...</a><br /></td></tr>
+<tr class="separator:a1e561f718584a63350cd11e882eb332b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -246,7 +256,7 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00020">20</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            : <a class="code" href="classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa">_model</a>(LoadModelFromMesh(mesh.<a class="code" href="classraylib_1_1model_1_1_mesh.html#a70ec38baa35766761986cbfbabe53367">asRaylib</a>())), <a class="code" href="classraylib_1_1model_1_1_model.html#a0e66a1ddde387f68c47b9f471f2ad77c">_ownsMesh</a>(ownsMesh)</div>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            : <a class="code" href="classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa">_model</a>(LoadModelFromMesh(mesh.<a class="code" href="classraylib_1_1model_1_1_mesh.html#a1c0b976aa17957af0dac663d22c22f14">asRaylib</a>())), <a class="code" href="classraylib_1_1model_1_1_model.html#a0e66a1ddde387f68c47b9f471f2ad77c">_ownsMesh</a>(ownsMesh)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
 </div><!-- fragment -->
@@ -327,8 +337,8 @@ Private Attributes</h2></td></tr>
 <p>Gets the C Raylib mutable version of the model. </p>
 <dl class="section return"><dt>Returns</dt><dd>The raylib version of the model </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00066">66</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa">_model</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00070">70</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa">_model</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -383,8 +393,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00064">64</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1model_1_1_model.html#ae8213c42a56c8cd7902144541ed3b593">getBoundingBox</a>().<a class="code" href="classraylib_1_1model_1_1_bounding_box.html#ab00cfa1845fee8d842c89486335aa388">checkCollision</a>(otherBox); }</div>
+<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00068">68</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1model_1_1_model.html#ae8213c42a56c8cd7902144541ed3b593">getBoundingBox</a>().<a class="code" href="classraylib_1_1model_1_1_bounding_box.html#ab00cfa1845fee8d842c89486335aa388">checkCollision</a>(otherBox); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -675,6 +685,82 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="ad9ea0a430cda548a3fd048265c9a1147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9ea0a430cda548a3fd048265c9a1147">&#9670;&nbsp;</a></span>loadFromMesh() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1model_1_1_model.html">Model</a> raylib::model::Model::loadFromMesh </td>
+          <td>(</td>
+          <td class="paramtype">const ::<a class="el" href="classraylib_1_1model_1_1_mesh.html">Mesh</a> &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>loadFromMesh load model with <a class="el" href="classraylib_1_1model_1_1_mesh.html" title="Mesh class.">Mesh</a> of the raylib library </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>The mesh to load the model from.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classraylib_1_1model_1_1_model.html" title="The Model class ; it shouldn&#39;t be created multiple times for the same file.">Model</a> object. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00064">64</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ <span class="keywordflow">return</span> LoadModelFromMesh(mesh); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1e561f718584a63350cd11e882eb332b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e561f718584a63350cd11e882eb332b">&#9670;&nbsp;</a></span>loadFromMesh() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classraylib_1_1model_1_1_model.html">Model</a> raylib::model::Model::loadFromMesh </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classraylib_1_1model_1_1_mesh.html">raylib::model::Mesh</a> &amp;&#160;</td>
+          <td class="paramname"><em>mesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>loadFromMesh load model with <a class="el" href="classraylib_1_1model_1_1_mesh.html" title="Mesh class.">Mesh</a> encapsulated </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mesh</td><td>The mesh to load the model from.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classraylib_1_1model_1_1_model.html" title="The Model class ; it shouldn&#39;t be created multiple times for the same file.">Model</a> object. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00066">66</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="keywordflow">return</span> LoadModelFromMesh(mesh.<a class="code" href="classraylib_1_1model_1_1_mesh.html#a1c0b976aa17957af0dac663d22c22f14">asRaylib</a>()); }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ac6c00c54b48464160227978e633b0dc1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6c00c54b48464160227978e633b0dc1">&#9670;&nbsp;</a></span>operator=()</h2>
 
@@ -745,10 +831,10 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00070">70</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            SetMaterialTexture(&amp;<a class="code" href="classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa">_model</a>.materials[materialId], mapType, texture.<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">asRaylib</a>());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00074">74</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            SetMaterialTexture(&amp;<a class="code" href="classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa">_model</a>.materials[materialId], mapType, texture.<a class="code" href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">asRaylib</a>());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -777,8 +863,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00075">75</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{ <a class="code" href="classraylib_1_1model_1_1_model.html#a0e66a1ddde387f68c47b9f471f2ad77c">_ownsMesh</a> = ownsMesh; }</div>
+<p class="definition">Definition at line <a class="el" href="_model_8cpp_source.html#l00079">79</a> of file <a class="el" href="_model_8cpp_source.html">Model.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{ <a class="code" href="classraylib_1_1model_1_1_model.html#a0e66a1ddde387f68c47b9f471f2ad77c">_ownsMesh</a> = ownsMesh; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -803,7 +889,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="raylib_2model_2_model_8hpp_source.html#l00134">134</a> of file <a class="el" href="raylib_2model_2_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="raylib_2model_2_model_8hpp_source.html#l00148">148</a> of file <a class="el" href="raylib_2model_2_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -827,7 +913,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="raylib_2model_2_model_8hpp_source.html#l00135">135</a> of file <a class="el" href="raylib_2model_2_model_8hpp_source.html">Model.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="raylib_2model_2_model_8hpp_source.html#l00149">149</a> of file <a class="el" href="raylib_2model_2_model_8hpp_source.html">Model.hpp</a>.</p>
 
 </div>
 </div>
@@ -840,11 +926,11 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassraylib_1_1model_1_1_bounding_box_html_ab00cfa1845fee8d842c89486335aa388"><div class="ttname"><a href="classraylib_1_1model_1_1_bounding_box.html#ab00cfa1845fee8d842c89486335aa388">raylib::model::BoundingBox::checkCollision</a></div><div class="ttdeci">bool checkCollision(const BoundingBox &amp;other)</div><div class="ttdoc">Checks collision with another bounding box.</div><div class="ttdef"><b>Definition:</b> <a href="_bounding_box_8cpp_source.html#l00028">BoundingBox.cpp:28</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_a242ab45ef12f929ed0e11ea990af79f9"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">raylib::core::Color::asRaylib</a></div><div class="ttdeci">constexpr ::Color asRaylib() const</div><div class="ttdoc">Gets the raylib Color.</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00143">Color.hpp:143</a></div></div>
 <div class="ttc" id="ageneric_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">std::filesystem::path::generic_string</a></div><div class="ttdeci">T generic_string(T... args)</div></div>
-<div class="ttc" id="aclassraylib_1_1model_1_1_mesh_html_a70ec38baa35766761986cbfbabe53367"><div class="ttname"><a href="classraylib_1_1model_1_1_mesh.html#a70ec38baa35766761986cbfbabe53367">raylib::model::Mesh::asRaylib</a></div><div class="ttdeci">const ::Mesh &amp; asRaylib() const</div><div class="ttdoc">Gets the C Raylib immutable version of the mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8cpp_source.html#l00032">Mesh.cpp:32</a></div></div>
-<div class="ttc" id="aclassraylib_1_1model_1_1_model_html_a0e66a1ddde387f68c47b9f471f2ad77c"><div class="ttname"><a href="classraylib_1_1model_1_1_model.html#a0e66a1ddde387f68c47b9f471f2ad77c">raylib::model::Model::_ownsMesh</a></div><div class="ttdeci">bool _ownsMesh</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_model_8hpp_source.html#l00135">Model.hpp:135</a></div></div>
-<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_a281777f3cd027d776c3fbe96efa57a36"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">raylib::textures::Texture2D::asRaylib</a></div><div class="ttdeci">::Texture2D &amp; asRaylib()</div><div class="ttdoc">Gets the C Raylib mutable version of the 2d texture.</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8cpp_source.html#l00053">Texture2D.cpp:53</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_model_html_a0e66a1ddde387f68c47b9f471f2ad77c"><div class="ttname"><a href="classraylib_1_1model_1_1_model.html#a0e66a1ddde387f68c47b9f471f2ad77c">raylib::model::Model::_ownsMesh</a></div><div class="ttdeci">bool _ownsMesh</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_model_8hpp_source.html#l00149">Model.hpp:149</a></div></div>
+<div class="ttc" id="aclassraylib_1_1textures_1_1_texture2_d_html_a281777f3cd027d776c3fbe96efa57a36"><div class="ttname"><a href="classraylib_1_1textures_1_1_texture2_d.html#a281777f3cd027d776c3fbe96efa57a36">raylib::textures::Texture2D::asRaylib</a></div><div class="ttdeci">::Texture2D &amp; asRaylib()</div><div class="ttdoc">Gets the C Raylib mutable version of the 2d texture.</div><div class="ttdef"><b>Definition:</b> <a href="_texture2_d_8cpp_source.html#l00075">Texture2D.cpp:75</a></div></div>
 <div class="ttc" id="aclassraylib_1_1model_1_1_model_html_ae8213c42a56c8cd7902144541ed3b593"><div class="ttname"><a href="classraylib_1_1model_1_1_model.html#ae8213c42a56c8cd7902144541ed3b593">raylib::model::Model::getBoundingBox</a></div><div class="ttdeci">BoundingBox getBoundingBox() const</div><div class="ttdoc">Gets the bounding box of the model.</div><div class="ttdef"><b>Definition:</b> <a href="_model_8cpp_source.html#l00057">Model.cpp:57</a></div></div>
-<div class="ttc" id="aclassraylib_1_1model_1_1_model_html_a961c5aed89c1bb04a18e8741bac039fa"><div class="ttname"><a href="classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa">raylib::model::Model::_model</a></div><div class="ttdeci">::Model _model</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_model_8hpp_source.html#l00134">Model.hpp:134</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_model_html_a961c5aed89c1bb04a18e8741bac039fa"><div class="ttname"><a href="classraylib_1_1model_1_1_model.html#a961c5aed89c1bb04a18e8741bac039fa">raylib::model::Model::_model</a></div><div class="ttdeci">::Model _model</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_model_8hpp_source.html#l00148">Model.hpp:148</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_mesh_html_a1c0b976aa17957af0dac663d22c22f14"><div class="ttname"><a href="classraylib_1_1model_1_1_mesh.html#a1c0b976aa17957af0dac663d22c22f14">raylib::model::Mesh::asRaylib</a></div><div class="ttdeci">const ::Mesh &amp; asRaylib() const</div><div class="ttdoc">Gets the C Raylib immutable version of the mesh.</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8cpp_source.html#l00032">Mesh.cpp:32</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_ad7da110906fdfe25cdd37029288b3d7f"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#ad7da110906fdfe25cdd37029288b3d7f">raylib::core::Vector3::asRaylib</a></div><div class="ttdeci">constexpr ::Vector3 asRaylib() const</div><div class="ttdoc">Gets the raylib Vector3.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00185">Vector3.hpp:185</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
