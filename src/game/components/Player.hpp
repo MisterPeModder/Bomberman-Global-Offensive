@@ -10,6 +10,7 @@
 
 #include <array>
 #include <chrono>
+#include "Bomb.hpp"
 #include "ecs/Component.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
@@ -32,8 +33,10 @@ namespace game::components
             size_t bombLimit;
             /// If controls are inverted.
             bool inverted;
+            /// If on slowness effect.
+            bool slowness;
 
-            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false) {}
+            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false), slowness(false) {}
         };
 
         /// Occurence of each item in a player inventory
@@ -43,13 +46,61 @@ namespace game::components
             /// Activated items with a timer.
             std::vector<std::pair<Item::Identifier, std::chrono::steady_clock::time_point>> timedItems;
 
-            Inventory() { items.fill(0); }
+            /// Selected item (activable).
+            Item::Identifier selected;
+
+            Inventory();
 
             /// Get the quantity of an item in the inventory.
             ///
             /// @param itemId item identifier.
             /// @return constexpr size_t quantity of this item in the inventory.
             constexpr size_t operator[](Item::Identifier itemId) const { return items[static_cast<size_t>(itemId)]; }
+
+            /// Get the quantity of an item in the inventory.
+            ///
+            /// @param itemId item identifier.
+            /// @return constexpr size_t& quantity of this item in the inventory.
+            constexpr size_t &operator[](Item::Identifier itemId) { return items[static_cast<size_t>(itemId)]; }
+
+            /// Pick up an item from the map.
+            ///
+            /// @param player player entity id.
+            /// @param itemId item identifier.
+            /// @param data world data.
+            void add(ecs::Entity player, Item::Identifier itemId, ecs::SystemData data);
+
+            /// Try to use the selected activable item.
+            ///
+            /// @param player player entity id.
+            /// @param data world data.
+            /// @return true If the item was consumed.
+            /// @return false If no item was consumed.
+            bool useActivable(ecs::Entity player, ecs::SystemData data);
+
+            /// Try to select the previous possessed activable item.
+            /// @note Selection unchanged means there is only one or zero possessed activable item.
+            ///
+            /// @return true If the selection changed.
+            /// @return false If the selection didn't change.
+            bool selectPreviousActivable();
+
+            /// Try to select the next possessed activable item.
+            /// @note Selection unchanged means there is only one or zero possessed activable item.
+            ///
+            /// @return true If the selection changed.
+            /// @return false If the selection didn't change.
+            bool selectNextActivable();
+
+            /// Select a specific item, even if not possessed.
+            ///
+            /// @return true If the selection changed.
+            /// @return false If the selection didn't change.
+            bool selectActivable(Item::Identifier itemId);
+
+            /// Select the first possessed activable item.
+            /// @note Does nothing if the user possess the selected item.
+            void updateSelectedActivable();
         };
 
         /// Player stats
@@ -71,18 +122,20 @@ namespace game::components
         /// Construct a new Player component
         Player() : placedBombs(0) {}
 
-        /// Pick up an item from the map.
-        ///
-        /// @param self player entity id.
-        /// @param itemId item identifier.
-        /// @param data world data.
-        void pickupItem(ecs::Entity self, Item::Identifier itemId, ecs::SystemData data);
-
         /// Update the activated items with a timer.
         ///
         /// @param self player entity id.
         /// @param data world data.
         void updateTimedItems(ecs::Entity self, ecs::SystemData data);
+
+        /// Place a bomb at the player position.
+        ///
+        /// @param self player entity
+        /// @param data world data
+        /// @param bombType bomb type.
+        /// @return true If the action was consumed.
+        /// @return false If the action wasn't consumed.
+        static void placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType = Bomb::Type::Classic);
 
       private:
         /// Change the velocity of the player from its action values.
@@ -91,14 +144,6 @@ namespace game::components
         /// @param data world data
         /// @param event action event
         static void move(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
-
-        /// Place a bomb at the player position.
-        ///
-        /// @param self player entity
-        /// @param data world data
-        /// @return true If the action was consumed.
-        /// @return false If the action wasn't consumed.
-        static void placeBomb(ecs::Entity self, ecs::SystemData data);
     };
 } // namespace game::components
 

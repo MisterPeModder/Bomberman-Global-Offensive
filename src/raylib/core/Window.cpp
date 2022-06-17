@@ -24,6 +24,7 @@ namespace raylib
         {
             SetConfigFlags(FLAG_WINDOW_RESIZABLE);
             InitWindow(width, height, title.data());
+            SetWindowMinSize(1280, 720);
         }
 
         void Window::close() { CloseWindow(); }
@@ -52,6 +53,8 @@ namespace raylib
         int Window::getHeight() { return GetScreenHeight(); }
 
         void Window::toggleFullscreen() { ToggleFullscreen(); }
+
+        bool Window::isFullscreen() { return IsWindowFullscreen(); }
 
         void Window::setIcon(textures::Image const &icon) { SetWindowIcon(icon.asRaylib()); }
 

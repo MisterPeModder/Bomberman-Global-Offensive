@@ -42,7 +42,7 @@ namespace game::systems
                     continue;
                 /// If entity1 has a bomb no clip enabled and entity 2 is the ignored (static) bomb we ignore the
                 /// collision.
-                if (bombNoClip && bombNoClip->enabled && bomb2 && !vel2 && bombNoClip->matchEntityPosition(pos2))
+                if (bombNoClip && bombNoClip->enabled && bomb2 && !vel2 && bombNoClip->matchEntityPosition(pos2, size2))
                     continue;
                 if (!getCollideRect(collideRect, pos1, size1, pos2, size2))
                     continue;
@@ -58,11 +58,17 @@ namespace game::systems
                         break;
                     }
                     /// Static bomb (can't be bomb1 because first entity must have a velocity)
-                    else if (player && player->inventory[Item::Identifier::KickShoes]) {
-                        raylib::core::Vector3f posDelta = pos2 - pos1;
-                        /// Kick bomb if the player is moving toward it.
-                        if ((abs(posDelta.x) > abs(posDelta.z)) ? (posDelta.x * vel1.x > 0) : (posDelta.z * vel1.z > 0))
-                            bomb2->kick(data, id2, vel1);
+                    else {
+                        /// Landmines explode on first collision
+                        if (bomb2->type == Bomb::Type::LandMine)
+                            bomb2->explode(pos2, data, id2);
+                        else if (player && player->inventory[Item::Identifier::KickShoes]) {
+                            raylib::core::Vector3f posDelta = pos2 - pos1;
+                            /// Kick bomb if the player is moving toward it.
+                            if ((abs(posDelta.x) > abs(posDelta.z)) ? (posDelta.x * vel1.x > 0)
+                                                                    : (posDelta.z * vel1.z > 0))
+                                bomb2->kick(data, id2, vel1);
+                        }
                     }
                 }
 

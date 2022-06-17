@@ -113,7 +113,7 @@ namespace game
         settings::Profile _profile;
 
         std::queue<GameAction> _changedActions;
-        std::array<float, static_cast<size_t>(GameAction::BACK)> _lastActions;
+        std::array<float, static_cast<size_t>(GameAction::COUNT) - 1> _lastActions;
     };
 } // namespace game
 

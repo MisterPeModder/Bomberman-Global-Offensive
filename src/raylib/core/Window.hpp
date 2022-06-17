@@ -73,6 +73,9 @@ namespace raylib
             /// Toggles fullscreen
             static void toggleFullscreen();
 
+            /// @returns true if the window is in fullscreen mode, false otherwise
+            static bool isFullscreen();
+
             static void setIcon(textures::Image const &icon);
 
             /// @returns The contents of the clipboard.

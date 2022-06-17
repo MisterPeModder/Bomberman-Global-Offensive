@@ -27,9 +27,11 @@ namespace game
         {
             _sfxVolume = 100;
             _musicVolume = 100;
+            _masterVolume = 100;
             _targetFramerate = 60;
             _resolution = {1280, 720};
             _fullscreen = false;
+            _locale = "en";
         }
 
         std::filesystem::path Settings::getSettingsFilePath() { return util::makePath("settings", "settings.cfg"); }
@@ -53,6 +55,8 @@ namespace game
                 setSfxVolume(std::stof(value.data()));
             else if (key == "music_volume")
                 setMusicVolume(std::stof(value.data()));
+            else if (key == "master_volume")
+                setMasterVolume(std::stof(value.data()));
             else if (key == "target_framerate")
                 setTargetFramerate(std::stoul(value.data()));
             else if (key == "resolution") {
@@ -68,6 +72,8 @@ namespace game
                 bool fullscreen;
                 std::istringstream(value.data()) >> fullscreen;
                 setFullscreen(fullscreen || value == "true");
+            } else if (key == "locale") {
+                setLocale(value);
             } else {
                 Logger::logger.log(Logger::Severity::Warning, [&](std::ostream &writer) {
                     writer << "Unknown settings key '" << key << "' with value '" << value << "'";
@@ -113,6 +119,15 @@ namespace game
 
         float Settings::getMusicVolume() const { return _musicVolume; }
 
+        void Settings::setMasterVolume(float volume)
+        {
+            if (volume < 0 || volume > 100)
+                throw InvalidSettingsValue("Volumes must be between 0 and 100.");
+            _masterVolume = volume;
+        }
+
+        float Settings::getMasterVolume() const { return _masterVolume; }
+
         void Settings::setTargetFramerate(unsigned int target) { _targetFramerate = target; }
 
         unsigned int Settings::getTargetFramerate() const { return _targetFramerate; }
@@ -125,6 +140,10 @@ namespace game
 
         bool Settings::isFullscreen() const { return _fullscreen; }
 
+        void Settings::setLocale(std::string_view locale) { _locale = locale; }
+
+        std::string_view Settings::getLocale() const { return _locale; }
+
     } // namespace settings
 } // namespace game
 
@@ -133,7 +152,9 @@ std::ostream &operator<<(std::ostream &stream, const game::settings::Settings &s
     stream << "# Bomberman settings" << std::endl << std::endl;
     stream << "sfx_volume=" << settings.getSfxVolume() << std::endl;
     stream << "music_volume=" << settings.getMusicVolume() << std::endl;
+    stream << "master_volume=" << settings.getMasterVolume() << std::endl;
     stream << "target_framerate=" << settings.getTargetFramerate() << std::endl;
     stream << "resolution=" << settings.getResolution().x << "x" << settings.getResolution().y << std::endl;
-    return stream << "fullscreen=" << std::boolalpha << settings.isFullscreen() << std::endl;
+    stream << "fullscreen=" << std::boolalpha << settings.isFullscreen() << std::endl;
+    return stream << "locale=" << settings.getLocale() << std::endl;
 }

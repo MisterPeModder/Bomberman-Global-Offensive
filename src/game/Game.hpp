@@ -85,6 +85,10 @@ namespace game
         }
 
       private:
+        void _loadTextures();
+        void _loadMeshes();
+        void _loadModels();
+
         ecs::SystemTag _drawing;
         ecs::SystemTag _handleInputs;
         ecs::SystemTag _update;
