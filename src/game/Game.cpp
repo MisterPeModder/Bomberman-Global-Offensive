@@ -12,8 +12,6 @@
 #include "components/Collidable.hpp"
 #include "components/Color.hpp"
 #include "components/Controlable.hpp"
-#include "components/Cube.hpp"
-#include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Identity.hpp"
 #include "components/Living.hpp"
@@ -46,9 +44,7 @@
 #include "resources/RandomDevice.hpp"
 
 #include "systems/Bomb.hpp"
-#include "systems/ChangeCube.hpp"
 #include "systems/Collision.hpp"
-#include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
 #include "systems/Model.hpp"
@@ -82,6 +78,13 @@ namespace game
         textures.emplace("crate", "assets/map/crate.png");
         textures.emplace("wall", "assets/map/wall.png");
         textures.emplace("ground", "assets/map/ground.png");
+        /// Player
+        textures.emplace("terrorist_1", "assets/player/textures/terrorist_1.png");
+        textures.emplace("terrorist_2", "assets/player/textures/terrorist_2.png");
+        textures.emplace("counter_terrorist_1", "assets/player/textures/counter_terrorist_1.png");
+        textures.emplace("counter_terrorist_2", "assets/player/textures/counter_terrorist_2.png");
+        textures.emplace("none_sense", "assets/player/textures/none_sense.png");
+        textures.emplace("rainbow", "assets/player/textures/rainbow.png");
         /// Activables
         textures.emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
         textures.emplace("mine", "assets/items/activables/bonus_activable_mine.png");
@@ -125,6 +128,9 @@ namespace game
         models.emplace("C4", "assets/items/weapons/c4.iqm")
             .setMaterialMapTexture(textures.get("C4"), 0, MATERIAL_MAP_DIFFUSE);
 
+        ////// PLayers
+        models.emplace("player", "assets/player/player.iqm")
+            .setMaterialMapTexture(textures.get("terrorist_1"), 0, MATERIAL_MAP_DIFFUSE);
         ////// Items
         auto &bonusMesh = meshes.get("bonus");
         /// Power Ups
@@ -178,10 +184,8 @@ namespace game
         _world.addStorage<components::RotationAxis>();
         _world.addStorage<components::Model>();
         /// Add world systems
-        _world.addSystem<game::systems::DrawModel>();
+        _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::InputManager>();
-        _world.addSystem<systems::ChangeCube>();
-        _world.addSystem<systems::DrawingCube>();
         _world.addSystem<systems::Movement>();
         _world.addSystem<systems::Collision>();
         _world.addSystem<systems::ExplodeBomb>();
@@ -190,28 +194,32 @@ namespace game
         _world.addSystem<systems::UpdateItemTimer>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
+        _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem,
             systems::DisableBombNoClip, systems::UpdateItemTimer>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawModel, systems::DrawingCube>();
+        _drawing.add<systems::DrawModel>();
 
         _loadTextures();
         _loadMeshes();
         _loadModels();
+
+        /// Player
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
             raylib::core::Vector2u cell = _map.getPlayerStartingPosition(owner);
 
             _world.addEntity()
-                .with<components::Position>(static_cast<float>(cell.x), 1.f, static_cast<float>(cell.y))
+                .with<components::Position>(static_cast<float>(cell.x), 0.f, static_cast<float>(cell.y))
                 .with<components::Velocity>()
                 .with<components::Living>(_params.livesCount)
                 .with<components::Collidable>()
                 .with<components::Player>()
-                .with<components::Cube>()
-                .with<components::Size>(0.7f, 2.f, 0.7f)
-                .with<components::CubeColor>(raylib::core::Color::RED)
+                .with<components::Size>(1.f, 1.f, 1.f)
+                .with<components::ModelReference>(_world.getResource<resources::Models>().get("player"))
+                .with<components::Color>(raylib::core::Color::WHITE)
+                .with<components::RotationAngle>(90.0f)
+                .with<components::RotationAxis>(1.f, 0.f, 0.f)
                 .with<components::Controlable>(owner, components::Player::handleActionEvent)
                 .with<components::BombNoClip>()
                 .with<components::Identity>()
