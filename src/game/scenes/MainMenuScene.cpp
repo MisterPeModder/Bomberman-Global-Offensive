@@ -49,7 +49,7 @@
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
 
-/////////////////////////////////////////////////
+#include "game/Engine.hpp"
 
 static void loadMainMenuScene(ecs::World &world)
 {
@@ -59,60 +59,36 @@ static void loadMainMenuScene(ecs::World &world)
     world.addEntity()
         .with<game::components::Position>(0.f, 100.f)
         .with<game::components::Textual>(localization::resources::menu::rsMenuPlay, 20, raylib::core::Color::WHITE)
-        .with<game::components::Controlable>(game::User::UserId::User1,
-            [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
-                (void)self;
-                (void)data;
-                (void)event;
-                Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
-                    writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
-                });
-                return false;
-            })
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::MainMenuScene::PLAY, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+            game::gui::Widget::NullTag, game::MainMenuScene::OPTION, true)
+        .with<game::gui::Clickable>([&world](ecs::Entity) {
+            world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            Logger::logger.log(Logger::Severity::Debug, "go to game");
+        })
         .build();
 
     world.addEntity()
         .with<game::components::Position>(0.f, 130.f)
         .with<game::components::Textual>(localization::resources::menu::rsMenuOption, 20, raylib::core::Color::RED)
-        .with<game::components::Controlable>(game::User::UserId::User1,
-            [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
-                (void)self;
-                (void)data;
-                (void)event;
-                Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
-                    writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
-                });
-                return false;
-            })
-        /* .with<game::gui::Clickable>([&world](ecs::Entity) {
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::MainMenuScene::OPTION, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+            game::MainMenuScene::PLAY, game::MainMenuScene::LOGOUT, false)
+        .with<game::gui::Clickable>([&world](ecs::Entity) {
             world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
-            Logger::logger.log(Logger::Severity::Debug, "switch to menu option");
-        }) */
-        .with<game::gui::Clickable>(
-            [](ecs::Entity) {
-                world.getResource<resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
-
-                Logger::logger.log(Logger::Severity::Debug, "Toggled fullscreen");
-            },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            Logger::logger.log(Logger::Severity::Debug, "go to option");
+        })
         .build();
     world.addEntity()
         .with<game::components::Position>(0.f, 700.f)
         .with<game::components::Textual>(localization::resources::menu::rsMenuQuit, 20, raylib::core::Color::WHITE)
-        .with<game::components::Controlable>(game::User::UserId::User1,
-            [](ecs::Entity self, ecs::SystemData data, const game::Users::ActionEvent &event) {
-                (void)self;
-                (void)data;
-                (void)event;
-                Logger::logger.log(Logger::Severity::Debug, [&](std::ostream &writer) {
-                    writer << "PLAYED! " << event.value << ", " << static_cast<size_t>(event.action);
-                });
-                return false;
-            })
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::MainMenuScene::LOGOUT, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+            game::MainMenuScene::OPTION, game::gui::Widget::NullTag, false)
+        .with<game::gui::Clickable>([&world](ecs::Entity) {
+            world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            Logger::logger.log(Logger::Severity::Debug, "go to option");
+        })
         .build();
 
     world.addEntity()
