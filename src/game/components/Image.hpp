@@ -10,7 +10,7 @@
 
 #include <filesystem>
 #include "ecs/Component.hpp"
-#include "raylib/images/Image.hpp"
+#include "raylib/textures/Image.hpp"
 
 namespace game::components
 {

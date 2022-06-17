@@ -324,9 +324,9 @@ namespace game
         _world.addSystem<game::systems::DrawText>();
         _world.addSystem<game::systems::DrawSelectedWidget>();
 
+        _globalNoDraw.add<game::systems::InputManager>();
         _global2D.add<game::systems::DrawRectangle>();
         _global2D.add<game::systems::DrawText>();
-        _global2D.add<game::systems::InputManager>();
         _global2D.add<game::systems::DrawSelectedWidget>();
 
         _world.addResource<game::Users>();

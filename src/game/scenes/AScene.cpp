@@ -22,6 +22,7 @@ namespace game
 
     void AScene::drawFrame()
     {
+        _world.runSystems(_globalNoDraw);
         raylib::core::scoped::Drawing drawing;
         raylib::core::Window::clear();
         {
@@ -33,6 +34,7 @@ namespace game
             _world.runSystems(_global2D);
             raylib::core::Window::drawFPS(10, 10);
         };
+        _world.maintain();
     }
 
     ecs::World &AScene::getWorld() { return _world; }
