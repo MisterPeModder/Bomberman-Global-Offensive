@@ -14,7 +14,6 @@
 #include "localization/Resources.hpp"
 
 #include "logger/Logger.hpp"
-#include "menu/MainMenu.hpp"
 
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Window.hpp"
