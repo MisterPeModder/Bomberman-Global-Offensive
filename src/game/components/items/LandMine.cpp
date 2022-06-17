@@ -24,7 +24,7 @@ namespace game::components
         landMine.duration = std::chrono::milliseconds::zero();
         landMine.dropRate = 100;
         landMine.onApply = [](ecs::Entity player, ecs::SystemData data) {
-            Player::placeBomb(player, data, Bomb::Type::LandMine);
+            Player::placeLandMine(player, data);
             return true;
         };
         return landMine;

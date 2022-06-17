@@ -7,6 +7,7 @@
 
 #include "Bomb.hpp"
 #include <cmath>
+#include "BombNoClip.hpp"
 #include "Collidable.hpp"
 #include "Color.hpp"
 #include "Destructible.hpp"
@@ -124,21 +125,54 @@ namespace game::components
         return std::find(explodedPositions.begin(), explodedPositions.end(), adjacentCell) != explodedPositions.end();
     }
 
-    void Bomb::kick(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity)
+    bool Bomb::placeBomb(raylib::core::Vector2u bombCell, ecs::SystemData data, Bomb::Type bombType, Identity::Id owner,
+        size_t range, raylib::core::Vector3f velocity, bool avoidDuplicates)
     {
-        /// Create kicked Bomb
-        auto builder = data.getResource<ecs::Entities>().builder();
+        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.15f, static_cast<float>(bombCell.y)};
+        auto &positions = data.getStorage<Position>();
+        auto &entities = data.getResource<ecs::Entities>();
 
-        setBombModel(builder, data)
-            .with<Bomb>(data.getStorage<Bomb>(), type, owner, radius,
-                std::chrono::duration_cast<std::chrono::milliseconds>(
-                    std::chrono::milliseconds(2000) - (std::chrono::steady_clock::now() - placedTime)))
-            .with<Position>(data.getStorage<Position>(), data.getStorage<Position>()[self.getId()])
-            .with<Collidable>(data.getStorage<Collidable>())
-            .with<Velocity>(data.getStorage<Velocity>(), senderVelocity.x * 1.3f, 0.f, senderVelocity.z * 1.3f)
-            .build();
-        /// Kill static bomb
-        data.getResource<ecs::Entities>().kill(self);
+        /// Avoid multiple bombs on the same cell
+        if (avoidDuplicates) {
+            for (auto [bombPos, bomb] : ecs::join(positions, data.getStorage<Bomb>())) {
+                (void)bomb;
+                if (bombPos == placedPos)
+                    return false;
+            }
+        }
+
+        auto builder = entities.builder();
+
+        (void)Bomb::setBombModel(builder, data)
+            .with<Bomb>(data.getStorage<Bomb>(), bombType, owner, range)
+            .with<Position>(data.getStorage<Position>(), placedPos)
+            .with<Collidable>(data.getStorage<Collidable>());
+        if (fabsf(velocity.x) > 0.f || fabsf(velocity.z) > 0.f)
+            (void)builder.with<Velocity>(data.getStorage<Velocity>(), velocity);
+        builder.build();
+
+        /// Disable collision with bomb for all player on the bomb cell
+        for (auto [pos, player, playerId] : ecs::join(positions, data.getStorage<Player>(), entities))
+            if (bombCell == game::Game::worldPosToMapCell(pos))
+                data.getStorage<BombNoClip>()[playerId.getId()].setBombPosition(bombCell);
+        return true;
+    }
+
+    void Bomb::setVelocity(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity)
+    {
+        if (placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data, type, owner,
+                radius, senderVelocity, false)) {
+            /// Kill static bomb
+            data.getResource<ecs::Entities>().kill(self);
+        }
+    }
+
+    void Bomb::stop(ecs::SystemData data, ecs::Entity self)
+    {
+        if (placeBomb(
+                game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data, type, owner, radius))
+            /// Kill moving bomb
+            data.getResource<ecs::Entities>().kill(self);
     }
 
     ecs::Entities::Builder &Bomb::setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data)

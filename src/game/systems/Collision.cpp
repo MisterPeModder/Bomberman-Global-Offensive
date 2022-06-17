@@ -47,28 +47,30 @@ namespace game::systems
                 if (!getCollideRect(collideRect, pos1, size1, pos2, size2))
                     continue;
 
-                /// Kick(ed) bomb related tests
+                /// Bomb related tests
                 if (bomb1 || bomb2) {
-                    /// Kicked bomb(s)
-                    if (bomb1 || (bomb2 && vel2)) {
-                        if (bomb1)
-                            bomb1->explode(pos1, data, id1);
-                        if (bomb2)
-                            bomb2->explode(pos2, data, id2);
+                    /// Landmines explode on first collision
+                    if (bomb2 && bomb2->type == Bomb::Type::LandMine) {
+                        bomb2->explode(pos2, data, id2);
                         break;
                     }
+                    /// Kicked bomb(s)
+                    if (bomb1 || (bomb2 && vel2)) {
+                        /// Explode kicked bomb colliding together
+                        if (bomb1 && (bomb2 && vel2))
+                            bomb1->explode(pos1, data, id1);
+
+                        if (bomb1)
+                            bomb1->stop(data, id1);
+                        if (bomb2)
+                            bomb2->stop(data, id2);
+                    }
                     /// Static bomb (can't be bomb1 because first entity must have a velocity)
-                    else {
-                        /// Landmines explode on first collision
-                        if (bomb2->type == Bomb::Type::LandMine)
-                            bomb2->explode(pos2, data, id2);
-                        else if (player && player->inventory[Item::Identifier::KickShoes]) {
-                            raylib::core::Vector3f posDelta = pos2 - pos1;
-                            /// Kick bomb if the player is moving toward it.
-                            if ((abs(posDelta.x) > abs(posDelta.z)) ? (posDelta.x * vel1.x > 0)
-                                                                    : (posDelta.z * vel1.z > 0))
-                                bomb2->kick(data, id2, vel1);
-                        }
+                    else if (player && player->inventory[Item::Identifier::KickShoes]) {
+                        raylib::core::Vector3f posDelta = pos2 - pos1;
+                        /// Kick bomb if the player is moving toward it.
+                        if ((abs(posDelta.x) > abs(posDelta.z)) ? (posDelta.x * vel1.x > 0) : (posDelta.z * vel1.z > 0))
+                            bomb2->setVelocity(data, id2, {vel1.x * 1.3f, 0.f, vel1.z * 0.3f});
                     }
                 }
 
