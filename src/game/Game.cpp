@@ -85,7 +85,8 @@ namespace game
         /// Activables
         textures.emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
         textures.emplace("mine", "assets/items/activables/bonus_activable_mine.png");
-        textures.emplace("kick_shoes", "assets/items/activables/bonus_activable_punch.png");
+        textures.emplace("punch", "assets/items/activables/bonus_activable_punch.png");
+        textures.emplace("kick_shoes", "assets/items/activables/bonus_activable_kick_shoes.png");
         textures.emplace("smoke", "assets/items/activables/bonus_activable_smoke.png");
         textures.emplace("stunt", "assets/items/activables/bonus_activable_stunt.png");
         /// Power Ups
@@ -150,6 +151,7 @@ namespace game
         models.emplace("kick_shoes", bonusMesh, false).setMaterialMapTexture(textures.get("kick_shoes"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("stunt", bonusMesh, false).setMaterialMapTexture(textures.get("stunt"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"), 0, MATERIAL_MAP_DIFFUSE);
     }
 
     void Game::setup()
