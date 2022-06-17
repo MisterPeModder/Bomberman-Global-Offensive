@@ -14,6 +14,7 @@
 
 #include "raylib/core/Camera2D.hpp"
 #include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Sound.hpp"
 #include "raylib/core/scoped.hpp"
 
 #include "game/components/Color.hpp"
@@ -22,8 +23,10 @@
 #include "game/components/RotationAngle.hpp"
 #include "game/components/Scale.hpp"
 #include "game/components/ScreenId.hpp"
+#include "game/components/Sound.hpp"
 #include "game/components/Textual.hpp"
 #include "game/components/Texture2D.hpp"
+#include "game/components/UseCheck.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
@@ -32,6 +35,7 @@
 #include "game/systems/DrawText.hpp"
 #include "game/systems/DrawTexture.hpp"
 #include "game/systems/InputManager.hpp"
+#include "game/systems/PlaySoundOnce.hpp"
 #include "game/systems/SplashScreen.hpp"
 
 #include "ecs/resource/Timer.hpp"
@@ -40,6 +44,10 @@ static void loadSplashScene(ecs::World &world)
 {
     static const std::filesystem::path raylibLogoPath = util::makePath("assets", "raylib_logo.png");
     float scale = 3.f;
+    static const std::filesystem::path raylibSoundPath =
+        util::makePath("assets", "audio", "sounds", "raylib_splash.ogg");
+
+    world.addEntity().with<game::components::Sound>(raylibSoundPath).with<game::components::UseCheck>().build();
 
     world.addEntity()
         .with<game::components::Texture2D>(raylibLogoPath)
@@ -71,9 +79,11 @@ namespace game
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::SplashScreen>();
         _world.addSystem<game::systems::DrawTexture>();
+        _world.addSystem<game::systems::PlaySoundOnce>();
 
         _globalNoDraw.add<game::systems::InputManager>();
         _globalNoDraw.add<game::systems::SplashScreen>();
+        _globalNoDraw.add<game::systems::PlaySoundOnce>();
         _global2D.add<game::systems::DrawTexture>();
 
         loadSplashScene(_world);
