@@ -65,6 +65,12 @@ namespace game::systems
                         }
                         /// Only one kicked bomb
                         else {
+                            if (bomb1 && bomb2) {
+                                if (fabsf(vel1.x) > fabsf(vel1.z))
+                                    pos1.x -= std::copysignf(1.f, vel1.x);
+                                else
+                                    pos1.z -= std::copysignf(1.f, vel1.z);
+                            }
                             if (bomb1)
                                 bomb1->stop(data, id1);
                             else
