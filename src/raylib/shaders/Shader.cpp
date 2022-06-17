@@ -6,6 +6,7 @@
 */
 
 #include "Shader.hpp"
+#include "logger/Logger.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
 namespace raylib
@@ -23,14 +24,10 @@ namespace raylib
         void Shader::beginShaderMode(const Shader &shader) { BeginShaderMode(shader._shader); }
         void Shader::endShaderMode() { EndShaderMode(); }
 
-        Shader::Location Shader::getUniformLocation(std::string_view uniform) const
+        Shader::Location Shader::getLocation(std::string_view variable, bool isUniform) const
         {
-            return GetShaderLocation(_shader, uniform.data());
-        }
-
-        Shader::Location Shader::getAttributeLocation(std::string_view attribute) const
-        {
-            return GetShaderLocation(_shader, attribute.data());
+            return (isUniform) ? GetShaderLocation(_shader, variable.data())
+                               : GetShaderLocationAttrib(_shader, variable.data());
         }
 
         void Shader::setValue(Location location, float value) const
@@ -121,6 +118,15 @@ namespace raylib
         void Shader::setValues(Location location, std::span<raylib::core::Vector4i, std::dynamic_extent> values) const
         {
             SetShaderValueV(_shader, location, values.data(), SHADER_UNIFORM_IVEC4, values.size());
+        }
+
+        void Shader::bindLocations(Location location, std::string_view name, bool isUniform)
+        {
+            Location loc = getLocation(name, isUniform);
+
+            if (loc == InvalidLocation)
+                return;
+            _shader.locs[location] = loc;
         }
 
         const ::Shader &Shader::asRaylib() const { return _shader; }
