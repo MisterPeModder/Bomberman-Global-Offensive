@@ -11,24 +11,64 @@
 #include "ecs/Component.hpp"
 
 #include "raylib/core/Color.hpp"
+#include "raylib/core/Keyboard.hpp"
+
+#include <functional>
 
 namespace game
 {
     /// Keyboard-only input field
     struct KeyboardInput : public ecs::Component {
-        /// The minimum number of seconds between each character delete when the backspace key is pressed.
-        static constexpr double BACKSPACE_REPEAT_DELAY = 0.025;
-        /// The amount of seconds before the backspace key event starts repeating.
-        static constexpr double BACKSPACE_REPEAT_THRESHOLD = 0.5;
+        /// How the cursor should be drawn.
+        enum class CursorType {
+            NONE,
+            BEAM,
+        };
+
+        /// Key repeat event data.
+        class KeyRepeat {
+          public:
+            /// The minimum number of seconds between each character event repeat.
+            static constexpr double REPEAT_DELAY = 0.025;
+            /// The amount of seconds before the a key event starts repeating.
+            static constexpr double REPEAT_THRESHOLD = 0.5;
+
+            KeyRepeat(raylib::core::Keyboard::Key key);
+
+            /// Executes the function @b onRepeat if the key repeat cooldown is not active.
+            ///
+            /// @param elapsed The number of seconds since the last call to KeyRepeat::check() for this key.
+            /// @param onRepeat The function that handles the key event.
+            void check(double elapsed, std::function<void()> onRepeat);
+
+          private:
+            raylib::core::Keyboard::Key _key;
+            double _repeatCooldown;
+            double _timeSinceRepeat;
+        };
 
         std::string contents;
-        bool focused;
-        double backspaceCooldown;
-        double timeSinceBackspace;
+        std::size_t cursorPos;
 
-        KeyboardInput(std::string &&initialContents = std::string(), bool pFocused = false)
-            : contents(initialContents), focused(pFocused), backspaceCooldown(BACKSPACE_REPEAT_DELAY),
-              timeSinceBackspace(0.0){};
+        /// Whether keyboard input should be captured.
+        bool focused;
+
+        /// Repeat data for the backspace key.
+        KeyRepeat backspaceRepeat;
+        /// Repeat data for the left arrow key.
+        KeyRepeat leftArrowRepeat;
+        /// Repeat data for the right arrow key.
+        KeyRepeat rightArrowRepeat;
+
+        double cursorBlink;
+
+        KeyboardInput(std::string &&initialContents = std::string(), bool pFocused = false);
+
+        /// Moves the cursor backwards or forwards of @b offset codepoints.
+        void moveCursor(int offset);
+
+        /// @returns The current cursor type.
+        CursorType getCursorType();
     };
 } // namespace game
 

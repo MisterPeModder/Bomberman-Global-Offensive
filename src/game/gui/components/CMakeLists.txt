@@ -7,7 +7,9 @@ set(SRC
     ${INCROOT}/Checkable.hpp
     ${SRCROOT}/Clickable.cpp
     ${INCROOT}/Clickable.hpp
-    ${SRCROOT}/IWidgetComponent.hpp
+    ${SRCROOT}/Console.cpp
+    ${INCROOT}/Console.hpp
+    ${INCROOT}/IWidgetComponent.hpp
     ${SRCROOT}/Widget.cpp
     ${INCROOT}/Widget.hpp
     PARENT_SCOPE)

@@ -11,8 +11,8 @@ set(SRC
     ${INCROOT}/Collision.hpp
     ${INCROOT}/Cube.hpp
     ${INCROOT}/DrawingCube.hpp
-    ${SRCROOT}/DrawInputField.cpp
-    ${INCROOT}/DrawInputField.hpp
+    ${SRCROOT}/DrawConsole.cpp
+    ${INCROOT}/DrawConsole.hpp
     ${INCROOT}/DrawSelectedWidget.hpp
     ${SRCROOT}/DrawText.cpp
     ${INCROOT}/DrawText.hpp

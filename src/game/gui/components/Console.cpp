@@ -10,8 +10,5 @@
 
 namespace game ::gui
 {
-    Console::Console()
-        : font(util::makePath("assets", "fonts", "Inconsolata", "Inconsolata-Regular.ttf"), 20, nullptr, 0), timer(0.0)
-    {
-    }
+    Console::Console() : font(util::makePath("assets", "fonts", "Inconsolata-Medium.ttf"), 20, nullptr, 0) {}
 } // namespace game::gui

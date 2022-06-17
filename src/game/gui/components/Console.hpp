@@ -15,7 +15,6 @@ namespace game ::gui
 {
     struct Console : public ecs::Component {
         raylib::text::Font font;
-        double timer;
 
         Console();
     };

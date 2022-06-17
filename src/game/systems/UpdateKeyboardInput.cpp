@@ -19,29 +19,12 @@
 #include "util/util.hpp"
 
 #include <algorithm>
+#include <cmath>
+#include <functional>
 
 namespace game::systems
 {
     using Keyboard = raylib::core::Keyboard;
-
-    static void handleFieldBackspace(game::KeyboardInput &field, ecs::Timer const &timer)
-    {
-        if (Keyboard::isKeyDown(Keyboard::Key::BACKSPACE))
-            field.timeSinceBackspace = std::min(100.0, field.timeSinceBackspace + timer.elapsed());
-        else
-            field.timeSinceBackspace = 0;
-        field.backspaceCooldown = std::max(0.0, field.backspaceCooldown - timer.elapsed());
-
-        if (Keyboard::isKeyPressed(Keyboard::Key::BACKSPACE)
-            && field.timeSinceBackspace < game::KeyboardInput::BACKSPACE_REPEAT_THRESHOLD) {
-            util::popUtf8Codepoint(field.contents);
-        } else if (Keyboard::isKeyDown(Keyboard::Key::BACKSPACE)
-            && field.timeSinceBackspace >= game::KeyboardInput::BACKSPACE_REPEAT_THRESHOLD
-            && field.backspaceCooldown <= 0) {
-            util::popUtf8Codepoint(field.contents);
-            field.backspaceCooldown = game::KeyboardInput::BACKSPACE_REPEAT_DELAY;
-        }
-    }
 
     void UpdateKeyboardInput::run(ecs::SystemData data)
     {
@@ -57,8 +40,20 @@ namespace game::systems
         game::KeyboardInput &field = std::get<0>(*firstSelected);
         int codepoint;
 
-        while ((codepoint = Keyboard::getCharPressed()))
+        while ((codepoint = Keyboard::getCharPressed())) {
             util::pushUtf8Codepoint(field.contents, codepoint);
-        handleFieldBackspace(field, data.getResource<ecs::Timer>());
+            field.moveCursor(1);
+        }
+
+        double elapsed = data.getResource<ecs::Timer>().elapsed();
+
+        field.backspaceRepeat.check(elapsed, [&field]() {
+            field.moveCursor(-1);
+            util::popUtf8Codepoint(field.contents);
+        });
+        field.leftArrowRepeat.check(elapsed, [&field]() { field.moveCursor(-1); });
+        field.rightArrowRepeat.check(elapsed, [&field]() { field.moveCursor(1); });
+
+        field.cursorBlink = fmod(field.cursorBlink + elapsed, 1.0);
     }
 } // namespace game::systems

@@ -18,12 +18,14 @@
 #include "components/Living.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
+#include "components/Size2D.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Timer.hpp"
 
+#include "gui/components/Console.hpp"
 #include "gui/components/Widget.hpp"
 #include "logger/Logger.hpp"
 
@@ -43,7 +45,7 @@
 #include "systems/Bomb.hpp"
 #include "systems/ChangeCube.hpp"
 #include "systems/Collision.hpp"
-#include "systems/DrawInputField.hpp"
+#include "systems/DrawConsole.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
@@ -84,11 +86,14 @@ namespace game
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
         _world.addSystem<game::systems::UpdateKeyboardInput>();
-        _world.addSystem<game::systems::DrawInputField>();
+        _world.addSystem<game::systems::DrawConsole>();
 
+        /// Console
         _world.addEntity()
             .with<game::KeyboardInput>("", true)
-            .with<game::components::Position>(50.f, 50.f, 0.f)
+            .with<game::gui::Console>()
+            .with<game::components::Position>(0.f, 50.f, 0.f)
+            .with<game::components::Size2D>(720, 20)
             .build();
 
         /// Add world resources
@@ -201,7 +206,7 @@ namespace game
         };
         {
             raylib::core::scoped::Mode2D mode2D((raylib::core::Camera2D()));
-            _world.runSystem<game::systems::DrawInputField>();
+            _world.runSystem<game::systems::DrawConsole>();
         };
         _world.maintain();
     }
