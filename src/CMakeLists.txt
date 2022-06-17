@@ -14,7 +14,6 @@ add_subdirectory(raylib)
 add_subdirectory(script)
 add_subdirectory(util)
 add_subdirectory(game)
-add_subdirectory(menu)
 
 # Source groups are a feature in Visual Studio.
 source_group("" FILES ${SRC})
