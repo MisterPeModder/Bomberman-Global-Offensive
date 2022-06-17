@@ -16,7 +16,15 @@
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
 #include "game/Game.hpp"
+#include "game/components/Color.hpp"
+#include "game/components/Model.hpp"
+#include "game/components/RotationAngle.hpp"
+#include "game/components/RotationAxis.hpp"
+#include "game/components/Scale.hpp"
+#include "game/resources/AssetMap.hpp"
 #include "logger/Logger.hpp"
+#include "raylib/model/Mesh.hpp"
+#include "raylib/model/Model.hpp"
 
 namespace game::components
 {
@@ -168,7 +176,7 @@ namespace game::components
                 return;
         }
         raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(positions[self.getId()]);
-        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.5f, static_cast<float>(bombCell.y)};
+        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.15f, static_cast<float>(bombCell.y)};
 
         /// Avoid multiple bombs on the same cell
         for (auto [bombPos, bomb] : ecs::join(positions, data.getStorage<Bomb>())) {
@@ -177,12 +185,12 @@ namespace game::components
                 return;
         }
 
-        data.getResource<ecs::Entities>()
-            .builder()
-            .with<Bomb>(data.getStorage<Bomb>(), bombType, data.getStorage<Identity>()[self.getId()].id,
-                (bombType == Bomb::Type::Classic) ? placer.stats.bombRange : 2)
+        auto builder = data.getResource<ecs::Entities>().builder();
+
+        Bomb::setBombModel(builder, data)
+            .with<Bomb>(
+                data.getStorage<Bomb>(), bombType, data.getStorage<Identity>()[self.getId()].id, placer.stats.bombRange)
             .with<Position>(data.getStorage<Position>(), placedPos)
-            .with<Size>(data.getStorage<Size>(), 0.5f, 0.f, 0.5f)
             .with<Collidable>(data.getStorage<Collidable>())
             .build();
         if (bombType == Bomb::Type::Classic)

@@ -30,5 +30,6 @@ namespace raylib
         Mesh::~Mesh() { UnloadMesh(_mesh); }
 
         ::Mesh const &Mesh::asRaylib() const { return _mesh; }
+        ::Mesh &Mesh::asRaylib() { return _mesh; }
     } // namespace model
 } // namespace raylib

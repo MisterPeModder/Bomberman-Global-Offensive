@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** BMGO
+** Bomberman-Global-Offensive
 ** File description:
 ** Model
 */
