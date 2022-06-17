@@ -37,16 +37,16 @@
 
 static void buildRaylibSplash(ecs::SystemData &data)
 {
-    static const std::filesystem::path raylibLogoPath = util::makePath("assets", "raylib_logo.png");
-    float scale = 3.f;
+    static const std::filesystem::path studioLogoPath = util::makePath("assets", "studio_logo.png");
+    float scale = 1.f;
 
     data.getResource<ecs::Entities>()
         .builder()
         .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 1)
-        .with<game::components::Texture2D>(data.getStorage<game::components::Texture2D>(), raylibLogoPath)
+        .with<game::components::Texture2D>(data.getStorage<game::components::Texture2D>(), studioLogoPath)
         .with<game::components::Position>(data.getStorage<game::components::Position>(),
-            (raylib::core::Window::getWidth() / 2) - (64.f * scale),
-            (raylib::core::Window::getHeight() / 2) - (64.f * scale))
+            (raylib::core::Window::getWidth() / 2) - ((400.f * scale) / 2),
+            (raylib::core::Window::getHeight() / 2) - ((200.f * scale) / 2))
         .with<game::components::Scale>(data.getStorage<game::components::Scale>(), scale)
         .with<game::components::RotationAngle>(data.getStorage<game::components::RotationAngle>(), 0.f)
         .with<game::components::Color>(

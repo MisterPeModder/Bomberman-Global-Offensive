@@ -27,8 +27,12 @@ namespace game::systems
             for (auto [widget, pos] :
                 ecs::join(data.getStorage<game::gui::Widget>(), data.getStorage<game::components::Position>())) {
                 if (widget.selected) {
-                    raylib::shapes::Rectangle::draw({pos.x - 15, pos.y - 15}, {10, 10}, raylib::core::Color::YELLOW);
-                    raylib::shapes::Rectangle::draw({pos.x - 15, pos.y - 15}, {8, 8}, raylib::core::Color::BLACK);
+                    raylib::shapes::Rectangle::draw({(pos.x - 2) / 100 * raylib::core::Window::getWidth(),
+                                                        (pos.y - 2) / 100 * raylib::core::Window::getHeight()},
+                        {10, 10}, raylib::core::Color::YELLOW);
+                    raylib::shapes::Rectangle::draw({(pos.x - 2) / 100 * raylib::core::Window::getWidth(),
+                                                        (pos.y - 2) / 100 * raylib::core::Window::getHeight()},
+                        {8, 8}, raylib::core::Color::BLACK);
                 }
             }
         }
