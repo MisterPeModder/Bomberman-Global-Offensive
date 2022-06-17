@@ -13,6 +13,7 @@
 #include "util/util.hpp"
 
 #include <algorithm>
+#include <cctype>
 #include <functional>
 
 namespace game
@@ -64,6 +65,28 @@ namespace game
             this->cursorBlink = 0.0;
         if (!selectingText)
             this->selectionPos = this->cursorPos;
+    }
+
+    void KeyboardInput::moveCursorToWord(int wordOffset, bool selectingText)
+    {
+        std::size_t pos = selectingText ? this->selectionPos : this->cursorPos;
+        int offset = 0;
+
+        if (!this->contents.empty()) {
+            if (wordOffset > 0) {
+                while (pos + offset < this->contents.size() && std::isalnum(this->contents[pos + offset]))
+                    ++offset;
+                while (pos + offset < this->contents.size() && !std::isalnum(this->contents[pos + offset]))
+                    ++offset;
+            } else if (wordOffset < 0) {
+                while (pos - offset > 0 && std::isalnum(this->contents[pos - offset - 1]))
+                    ++offset;
+                while (pos - offset > 0 && !std::isalnum(this->contents[pos - offset - 1]))
+                    ++offset;
+                offset = -offset;
+            }
+        }
+        this->moveCursor(offset, selectingText);
     }
 
     KeyboardInput::CursorType KeyboardInput::getCursorType()

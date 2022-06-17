@@ -65,7 +65,9 @@ namespace game::systems
 
                     std::string_view pasted = raylib::core::Window::getClipboard();
 
-                    field.contents.insert(field.selectionPos, pasted);
+                    if (field.hasSelection())
+                        field.eraseSelection();
+                    field.contents.insert(field.cursorPos, pasted);
                     field.moveCursor(pasted.size());
                 }
             }
@@ -92,10 +94,18 @@ namespace game::systems
                 field.moveCursor(0);
             }
         });
-        field.leftArrowRepeat.check(
-            elapsed, [&field]() { field.moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT)); });
-        field.rightArrowRepeat.check(
-            elapsed, [&field]() { field.moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT)); });
+        field.leftArrowRepeat.check(elapsed, [&field]() {
+            if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
+                field.moveCursorToWord(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+            else
+                field.moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+        });
+        field.rightArrowRepeat.check(elapsed, [&field]() {
+            if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
+                field.moveCursorToWord(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+            else
+                field.moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+        });
 
         field.cursorBlink = fmod(field.cursorBlink + elapsed, 1.0);
     }

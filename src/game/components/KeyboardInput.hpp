@@ -70,6 +70,9 @@ namespace game
         /// Moves the cursor backwards or forwards of @b offset codepoints.
         void moveCursor(int offset, bool selectingText = false);
 
+        /// Moves the cursor one word backwards or forwards.
+        void moveCursorToWord(int wordOffset, bool selectingText = false);
+
         /// @returns The current cursor type.
         CursorType getCursorType();
 
