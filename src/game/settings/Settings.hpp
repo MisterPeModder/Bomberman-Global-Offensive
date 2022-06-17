@@ -88,6 +88,17 @@ namespace game
             /// @return the music volume.
             float getMusicVolume() const;
 
+            /// Set the master volume.
+            ///
+            /// @param volume new volume to set ([0-100]).
+            /// @throw InvalidSettingsValue when the new volume isn't in the required range.
+            void setMasterVolume(float volume);
+
+            /// Get the master volume.
+            ///
+            /// @return the master volume.
+            float getMasterVolume() const;
+
             /// Set the target framerate (frame per seconds).
             ///
             /// @param targetFPS target framerate.
@@ -139,6 +150,7 @@ namespace game
 
             float _sfxVolume;
             float _musicVolume;
+            float _masterVolume;
             unsigned int _targetFramerate;
             raylib::core::Vector2f _resolution;
             bool _fullscreen;
