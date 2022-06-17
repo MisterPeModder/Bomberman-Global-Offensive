@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a91d8d0b84f26c3e30fb064ea4fc1090f":[2,0,4,0,7,0,46],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a960df6d77e65cd185ca4f3501db634eb":[2,0,4,0,7,0,14],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a969f331a87d8c958473c32b4d0e61a44":[2,0,4,0,7,0,17],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a9c56f942b051ba23447e108e16a8b23b":[2,0,4,0,7,0,93],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a9d5ed678fe57bcca610140957afab571":[2,0,4,0,7,0,19],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1shapes_1_1_sphere.html":[2,0,4,2,7],
 "classraylib_1_1shapes_1_1_sphere.html#a34a219f69b47632f3897b62535a7d8af":[2,0,4,2,7,1],
 "classraylib_1_1shapes_1_1_sphere.html#a511b32a6ac1d57b0b00830551ad89b61":[2,0,4,2,7,2],
-"classraylib_1_1shapes_1_1_sphere.html#a708d588db72c149395e2ddd9671d8efc":[2,0,4,2,7,5],
-"classraylib_1_1shapes_1_1_sphere.html#a9523b011e2974ed626f310a1bf5ccb6b":[2,0,4,2,7,0],
-"classraylib_1_1shapes_1_1_sphere.html#ab1d53a774bd247340576ff0fc9693c81":[2,0,4,2,7,7]
+"classraylib_1_1shapes_1_1_sphere.html#a708d588db72c149395e2ddd9671d8efc":[2,0,4,2,7,5]
 };

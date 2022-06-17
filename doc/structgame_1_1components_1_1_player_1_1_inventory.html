@@ -122,6 +122,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab60f7acc9f52f823c83a9a662856b77b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab60f7acc9f52f823c83a9a662856b77b">useActivable</a> (<a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> player, <a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a> data)</td></tr>
 <tr class="memdesc:ab60f7acc9f52f823c83a9a662856b77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to use the selected activable item.  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#ab60f7acc9f52f823c83a9a662856b77b">More...</a><br /></td></tr>
 <tr class="separator:ab60f7acc9f52f823c83a9a662856b77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b77470d93cebe9f75f217f43fc0fe3a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#a6b77470d93cebe9f75f217f43fc0fe3a">selectPreviousActivable</a> ()</td></tr>
+<tr class="memdesc:a6b77470d93cebe9f75f217f43fc0fe3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to select the previous possessed activable item.  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#a6b77470d93cebe9f75f217f43fc0fe3a">More...</a><br /></td></tr>
+<tr class="separator:a6b77470d93cebe9f75f217f43fc0fe3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc75a625b2162eddaa45598d83bcbc52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#abc75a625b2162eddaa45598d83bcbc52">selectNextActivable</a> ()</td></tr>
+<tr class="memdesc:abc75a625b2162eddaa45598d83bcbc52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to select the next possessed activable item.  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#abc75a625b2162eddaa45598d83bcbc52">More...</a><br /></td></tr>
+<tr class="separator:abc75a625b2162eddaa45598d83bcbc52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9f48105761aa13352a0b8fa53f35b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#afc9f48105761aa13352a0b8fa53f35b1">selectActivable</a> (<a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a> itemId)</td></tr>
+<tr class="memdesc:afc9f48105761aa13352a0b8fa53f35b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a specific item, even if not possessed.  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#afc9f48105761aa13352a0b8fa53f35b1">More...</a><br /></td></tr>
+<tr class="separator:afc9f48105761aa13352a0b8fa53f35b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34d66091221b7d0de6d78418e03ffa4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#a34d66091221b7d0de6d78418e03ffa4b">updateSelectedActivable</a> ()</td></tr>
+<tr class="memdesc:a34d66091221b7d0de6d78418e03ffa4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the first possessed activable item.  <a href="structgame_1_1components_1_1_player_1_1_inventory.html#a34d66091221b7d0de6d78418e03ffa4b">More...</a><br /></td></tr>
+<tr class="separator:a34d66091221b7d0de6d78418e03ffa4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -138,7 +150,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Occurence of each item in a player inventory. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00041">41</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00043">43</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1892f91f71861587a6b05e51e062a070"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1892f91f71861587a6b05e51e062a070">&#9670;&nbsp;</a></span>Inventory()</h2>
@@ -216,16 +228,19 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (item.maxStack &amp;&amp; count &gt;= item.maxStack)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> ((item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3">Item::Type::PowerUp</a> || item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8">Item::Type::PowerDown</a>) &amp;&amp; !item.onApply(player, data))</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        ++<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (item.duration != <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a>())</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">emplace_back</a>(itemId, <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>());</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>() &lt;&lt; <span class="stringliteral">&quot; pick up item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; count &lt;&lt; <span class="stringliteral">&quot;/&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                &lt;&lt; item.maxStack &lt;&lt; <span class="stringliteral">&quot; in inventory &quot;</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        });</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> ((item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3">Item::Type::PowerUp</a> || item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8">Item::Type::PowerDown</a>)) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">if</span> (!item.onApply(player, data))</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (item.duration != <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a>())</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">emplace_back</a>(itemId, <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        ++<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>() &lt;&lt; <span class="stringliteral">&quot; pick up item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; count &lt;&lt; <span class="stringliteral">&quot;/&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                &lt;&lt; item.maxStack &lt;&lt; <span class="stringliteral">&quot; in inventory &quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        });</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a34d66091221b7d0de6d78418e03ffa4b">updateSelectedActivable</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -262,8 +277,8 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>constexpr size_t&amp; quantity of this item in the inventory. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00062">62</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)]; }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00064">64</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -300,8 +315,132 @@ Public Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>constexpr size_t quantity of this item in the inventory. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00056">56</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)]; }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00058">58</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)]; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afc9f48105761aa13352a0b8fa53f35b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc9f48105761aa13352a0b8fa53f35b1">&#9670;&nbsp;</a></span>selectActivable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool game::components::Player::Inventory::selectActivable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a>&#160;</td>
+          <td class="paramname"><em>itemId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Select a specific item, even if not possessed. </p>
+<dl class="section return"><dt>Returns</dt><dd>true If the selection changed. </dd>
+<dd>
+false If the selection didn't change. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00086">86</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (itemId == <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a> = itemId;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            [&amp;](<span class="keyword">auto</span> &amp;out) { out &lt;&lt; <span class="stringliteral">&quot;Player activable item set to &#39;&quot;</span> &lt;&lt; <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>).<a class="code" href="structgame_1_1components_1_1_item.html#a9989710c428f9344bcc636b1710fa999">name</a>; });</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abc75a625b2162eddaa45598d83bcbc52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc75a625b2162eddaa45598d83bcbc52">&#9670;&nbsp;</a></span>selectNextActivable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool game::components::Player::Inventory::selectNextActivable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Try to select the next possessed activable item. </p>
+<dl class="section note"><dt>Note</dt><dd>Selection unchanged means there is only one or zero possessed activable item.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the selection changed. </dd>
+<dd>
+false If the selection didn't change. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00104">104</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a> current = <a class="code" href="structgame_1_1components_1_1_item.html#a5d570fa81dace568157eabbfa472024f">Item::nextActivable</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">while</span> (!(*<span class="keyword">this</span>)[current] &amp;&amp; current != <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            current = <a class="code" href="structgame_1_1components_1_1_item.html#a5d570fa81dace568157eabbfa472024f">Item::nextActivable</a>(current);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#afc9f48105761aa13352a0b8fa53f35b1">selectActivable</a>(current);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6b77470d93cebe9f75f217f43fc0fe3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b77470d93cebe9f75f217f43fc0fe3a">&#9670;&nbsp;</a></span>selectPreviousActivable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool game::components::Player::Inventory::selectPreviousActivable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Try to select the previous possessed activable item. </p>
+<dl class="section note"><dt>Note</dt><dd>Selection unchanged means there is only one or zero possessed activable item.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true If the selection changed. </dd>
+<dd>
+false If the selection didn't change. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00096">96</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a> current = <a class="code" href="structgame_1_1components_1_1_item.html#ad6cf25fcd769b8bb72573fa9d56368d1">Item::previousActivable</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">while</span> (!(*<span class="keyword">this</span>)[current] &amp;&amp; current != <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            current = <a class="code" href="structgame_1_1components_1_1_item.html#ad6cf25fcd769b8bb72573fa9d56368d1">Item::previousActivable</a>(current);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#afc9f48105761aa13352a0b8fa53f35b1">selectActivable</a>(current);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a34d66091221b7d0de6d78418e03ffa4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34d66091221b7d0de6d78418e03ffa4b">&#9670;&nbsp;</a></span>updateSelectedActivable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game::components::Player::Inventory::updateSelectedActivable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Select the first possessed activable item. </p>
+<dl class="section note"><dt>Note</dt><dd>Does nothing if the user possess the selected item. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00112">112</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordflow">if</span> ((*<span class="keyword">this</span>)[<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>])</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#abc75a625b2162eddaa45598d83bcbc52">selectNextActivable</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -344,24 +483,29 @@ Public Attributes</h2></td></tr>
 false If no item was consumed. </dd></dl>
 <p>Don't have any activable item</p>
 <p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> couldn't be activated, don't remove it.</p>
+<p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> has a duration.</p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00058">58</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">auto</span> &amp;<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> = (*this)[<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">if</span> (count == 0)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">const</span> Item &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (!item.onApply(player, data))</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        --<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>() &lt;&lt; <span class="stringliteral">&quot; activated item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; count</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; left in inventory.&quot;</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        });</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00061">61</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">auto</span> &amp;<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> = (*this)[<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">if</span> (count == 0)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">const</span> Item &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> (!item.onApply(player, data))</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        --<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (item.duration != <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a>())</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">emplace_back</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">selected</a>, <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>() &lt;&lt; <span class="stringliteral">&quot; activated item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; count</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; left in inventory.&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        });</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (!count)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a34d66091221b7d0de6d78418e03ffa4b">updateSelectedActivable</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -380,7 +524,7 @@ false If no item was consumed. </dd></dl>
 
 <p>Number of occurence of each item in the inventory. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00043">43</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00045">45</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -398,7 +542,7 @@ false If no item was consumed. </dd></dl>
 
 <p>Selected item (activable). </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00048">48</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00050">50</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -416,7 +560,7 @@ false If no item was consumed. </dd></dl>
 
 <p>Activated items with a timer. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00045">45</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00047">47</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -431,14 +575,21 @@ false If no item was consumed. </dd></dl>
 <div class="ttc" id="astructgame_1_1components_1_1_item_html_ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8">game::components::Item::Type::PowerDown</a></div><div class="ttdeci">@ PowerDown</div></div>
 <div class="ttc" id="aclassecs_1_1_entity_html_a5bcfe12cfeda9661b6849b325041e41a"><div class="ttname"><a href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">ecs::Entity::getId</a></div><div class="ttdeci">constexpr Index getId() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00029">Entity.hpp:29</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_item_html_ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3">game::components::Item::Type::PowerUp</a></div><div class="ttdeci">@ PowerUp</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_item_html_a9f173975f3023bd17dda8d2bfd509ddb"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">game::components::Item::getItem</a></div><div class="ttdeci">static const Item &amp; getItem(Identifier identifier)</div><div class="ttdoc">Get an item from its identifier.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8cpp_source.html#l00061">Item.cpp:61</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_item_html_a9f173975f3023bd17dda8d2bfd509ddb"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">game::components::Item::getItem</a></div><div class="ttdeci">static const Item &amp; getItem(Identifier identifier)</div><div class="ttdoc">Get an item from its identifier.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8cpp_source.html#l00062">Item.cpp:62</a></div></div>
 <div class="ttc" id="azero_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a></div><div class="ttdeci">T zero(T... args)</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a70cdfe9db1e6a02cc1a162ab3b9b0521"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">game::components::Player::Inventory::timedItems</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; Item::Identifier, std::chrono::steady_clock::time_point &gt; &gt; timedItems</div><div class="ttdoc">Activated items with a timer.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00045">Player.hpp:45</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a15dc31954a8b1761a279cd6aadb93d7f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">game::components::Player::Inventory::items</a></div><div class="ttdeci">std::array&lt; size_t, static_cast&lt; size_t &gt;Item::Identifier::Count)&gt; items</div><div class="ttdoc">Number of occurence of each item in the inventory.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00043">Player.hpp:43</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a70cdfe9db1e6a02cc1a162ab3b9b0521"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">game::components::Player::Inventory::timedItems</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; Item::Identifier, std::chrono::steady_clock::time_point &gt; &gt; timedItems</div><div class="ttdoc">Activated items with a timer.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00047">Player.hpp:47</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a15dc31954a8b1761a279cd6aadb93d7f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">game::components::Player::Inventory::items</a></div><div class="ttdeci">std::array&lt; size_t, static_cast&lt; size_t &gt;Item::Identifier::Count)&gt; items</div><div class="ttdoc">Number of occurence of each item in the inventory.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00045">Player.hpp:45</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_item_html_a5d570fa81dace568157eabbfa472024f"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#a5d570fa81dace568157eabbfa472024f">game::components::Item::nextActivable</a></div><div class="ttdeci">static Identifier nextActivable(Identifier current)</div><div class="ttdoc">Get the activable item following current.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8cpp_source.html#l00080">Item.cpp:80</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_item_html_ac04ca18eed43592e8d4233d308761174"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">game::components::Item::Identifier</a></div><div class="ttdeci">Identifier</div><div class="ttdoc">Item identifiers.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00031">Item.hpp:31</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_item_html_a9989710c428f9344bcc636b1710fa999"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#a9989710c428f9344bcc636b1710fa999">game::components::Item::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Name of the item.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00059">Item.hpp:59</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a34d66091221b7d0de6d78418e03ffa4b"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a34d66091221b7d0de6d78418e03ffa4b">game::components::Player::Inventory::updateSelectedActivable</a></div><div class="ttdeci">void updateSelectedActivable()</div><div class="ttdoc">Select the first possessed activable item.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00112">Player.cpp:112</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_item_html_ad6cf25fcd769b8bb72573fa9d56368d1"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#ad6cf25fcd769b8bb72573fa9d56368d1">game::components::Item::previousActivable</a></div><div class="ttdeci">static Identifier previousActivable(Identifier current)</div><div class="ttdoc">Get the activable item preceeding current.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8cpp_source.html#l00087">Item.cpp:87</a></div></div>
 <div class="ttc" id="aemplace_back_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">std::vector::emplace_back</a></div><div class="ttdeci">T emplace_back(T... args)</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_abc75a625b2162eddaa45598d83bcbc52"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#abc75a625b2162eddaa45598d83bcbc52">game::components::Player::Inventory::selectNextActivable</a></div><div class="ttdeci">bool selectNextActivable()</div><div class="ttdoc">Try to select the next possessed activable item.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00104">Player.cpp:104</a></div></div>
 <div class="ttc" id="acount_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/count.html">std::count</a></div><div class="ttdeci">T count(T... args)</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_ab96fc0d80b213dff80843e93ffe5155e"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">game::components::Player::Inventory::selected</a></div><div class="ttdeci">Item::Identifier selected</div><div class="ttdoc">Selected item (activable).</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00048">Player.hpp:48</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_ab96fc0d80b213dff80843e93ffe5155e"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e">game::components::Player::Inventory::selected</a></div><div class="ttdeci">Item::Identifier selected</div><div class="ttdoc">Selected item (activable).</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00050">Player.hpp:50</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_afc9f48105761aa13352a0b8fa53f35b1"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#afc9f48105761aa13352a0b8fa53f35b1">game::components::Player::Inventory::selectActivable</a></div><div class="ttdeci">bool selectActivable(Item::Identifier itemId)</div><div class="ttdoc">Select a specific item, even if not possessed.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00086">Player.cpp:86</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>
 <div class="ttc" id="anow_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a></div><div class="ttdeci">T now(T... args)</div></div>
 <!-- start footer part -->

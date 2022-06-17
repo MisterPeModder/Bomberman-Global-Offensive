@@ -15,5 +15,6 @@ var dir_e078b991db8fce4c9dd088dba37f5be0 =
     ] ],
     [ "KickShoes.cpp", "_kick_shoes_8cpp.html", null ],
     [ "LandMine.cpp", "_land_mine_8cpp.html", null ],
-    [ "SpeedShoes.cpp", "_speed_shoes_8cpp.html", null ]
+    [ "SpeedShoes.cpp", "_speed_shoes_8cpp.html", null ],
+    [ "StunGrenade.cpp", "_stun_grenade_8cpp.html", null ]
 ];

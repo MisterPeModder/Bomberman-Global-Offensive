@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['function_7720',['Function',['../namespacebmjs.html#a936af5f3fe72a6b80a414129e8f67846',1,'bmjs']]]
+  ['function_7740',['Function',['../namespacebmjs.html#a936af5f3fe72a6b80a414129e8f67846',1,'bmjs']]]
 ];

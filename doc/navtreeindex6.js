@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1shapes_1_1_sphere.html#a9523b011e2974ed626f310a1bf5ccb6b":[2,0,4,2,7,0],
+"classraylib_1_1shapes_1_1_sphere.html#ab1d53a774bd247340576ff0fc9693c81":[2,0,4,2,7,7],
 "classraylib_1_1shapes_1_1_sphere.html#ac1e4be6a2bc13b74a3eef9619f14d6f8":[2,0,4,2,7,6],
 "classraylib_1_1shapes_1_1_sphere.html#ad74fa4d1a1bbdcc2cf094f6147bddca6":[2,0,4,2,7,4],
 "classraylib_1_1shapes_1_1_sphere.html#af6517f3f4c11757c231ad97d52024b65":[2,0,4,2,7,3],
@@ -216,8 +218,8 @@ var NAVTREEINDEX6 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_a.html":[2,3,2,1],
 "functions_vars_b.html":[2,3,2,2],
 "functions_vars_c.html":[2,3,2,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "functions_z.html":[2,3,0,25],
 "functions_~.html":[2,3,0,26],
 "game_2_engine_8cpp.html":[3,0,0,1,7],
-"game_2_engine_8cpp_source.html":[3,0,0,1,7],
-"game_2_engine_8hpp.html":[3,0,0,1,8],
-"game_2_engine_8hpp_source.html":[3,0,0,1,8]
+"game_2_engine_8cpp_source.html":[3,0,0,1,7]
 };
