@@ -39,7 +39,6 @@ namespace game::components
 
         /// Occurence of each item in a player inventory
         struct Inventory {
-          public:
             /// Number of occurence of each item in the inventory.
             std::array<size_t, static_cast<size_t>(Item::Identifier::Count)> items;
             /// Activated items with a timer.
