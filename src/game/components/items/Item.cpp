@@ -81,33 +81,22 @@ namespace game::components
             case Item::Identifier::FireDown: model = &models.get("range_down"); break;
             case Item::Identifier::BombUp: model = &models.get("C4_up"); break;
             case Item::Identifier::BombDown: model = &models.get("C4_down"); break;
-            case Item::Identifier::KickShoes: model = &models.get("punch"); break;
+            case Item::Identifier::KickShoes: model = &models.get("kick_shoes"); break;
             case Item::Identifier::ChainBall: model = &models.get("speed_down"); break;
-            case Item::Identifier::InvertedControls: model = &models.get("speed_down"); break;
+            case Item::Identifier::InvertedControls: model = &models.get("control_down"); break;
             default: model = &models.get("speed_up"); break; /// Avoid null pointers errors
         }
 
         data.getResource<ecs::Entities>()
             .builder()
             .with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
-            .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 0.5f, static_cast<float>(cell.y))
-            .with<Size>(data.getStorage<Size>(), 0.4f, 0.4f, 0.4f)
+            .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 0.0f, static_cast<float>(cell.y))
+            .with<Size>(data.getStorage<Size>(), 0.70f, 0.0f, 0.70f)
             .with<Scale>(data.getStorage<Scale>(), 1.f)
             .with<Destructible>(data.getStorage<Destructible>())
             .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
             .with<ModelReference>(data.getStorage<ModelReference>(), *model)
             .build();
-
-        // SpeedShoes,
-        // FireUp,
-        // BombUp,
-        // KickShoes,
-        // /// Power Down
-        // ChainBall,
-        // FireDown,
-        // BombDown,
-        // InvertedControls,
-        // Count,
     }
 
     Item::Identifier Item::nextActivable(Identifier current)

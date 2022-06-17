@@ -29,7 +29,9 @@
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
 #include "game/components/ScreenId.hpp"
+#include "game/components/Sound.hpp"
 #include "game/components/Texture2D.hpp"
+#include "game/components/UseCheck.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
@@ -37,16 +39,25 @@
 
 static void buildRaylibSplash(ecs::SystemData &data)
 {
-    static const std::filesystem::path raylibLogoPath = util::makePath("assets", "raylib_logo.png");
-    float scale = 3.f;
+    static const std::filesystem::path studioLogoPath = util::makePath("assets", "studio_logo.png");
+    float scale = 1.f;
+    static const std::filesystem::path studioSoundPath =
+        util::makePath("assets", "audio", "sounds", "vlave_splash.ogg");
 
     data.getResource<ecs::Entities>()
         .builder()
         .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 1)
-        .with<game::components::Texture2D>(data.getStorage<game::components::Texture2D>(), raylibLogoPath)
+        .with<game::components::Sound>(data.getStorage<game::components::Sound>(), studioSoundPath)
+        .with<game::components::UseCheck>(data.getStorage<game::components::UseCheck>())
+        .build();
+
+    data.getResource<ecs::Entities>()
+        .builder()
+        .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 1)
+        .with<game::components::Texture2D>(data.getStorage<game::components::Texture2D>(), studioLogoPath)
         .with<game::components::Position>(data.getStorage<game::components::Position>(),
-            (raylib::core::Window::getWidth() / 2) - (64.f * scale),
-            (raylib::core::Window::getHeight() / 2) - (64.f * scale))
+            (raylib::core::Window::getWidth() / 2) - ((400.f * scale) / 2),
+            (raylib::core::Window::getHeight() / 2) - ((200.f * scale) / 2))
         .with<game::components::Scale>(data.getStorage<game::components::Scale>(), scale)
         .with<game::components::RotationAngle>(data.getStorage<game::components::RotationAngle>(), 0.f)
         .with<game::components::Color>(
@@ -103,6 +114,11 @@ namespace game::systems
                     } else if (text.color.a >= 0 + colorMoveValue)
                         text.color.a -= colorMoveValue;
                 }
+            }
+            for (auto [screenId, sound] :
+                ecs::join(data.getStorage<components::ScreenId>(), data.getStorage<components::Sound>())) {
+                if (screenId.screenId < _screenId)
+                    sound.stop();
             }
             for (auto [screenId, entityId] : ecs::join(data.getStorage<components::ScreenId>(), entities)) {
                 if (screenId.screenId < _screenId)

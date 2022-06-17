@@ -12,6 +12,8 @@
 #include "components/Collidable.hpp"
 #include "components/Color.hpp"
 #include "components/Controlable.hpp"
+#include "components/Cube.hpp"
+#include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Identity.hpp"
 #include "components/Living.hpp"
@@ -92,6 +94,7 @@ namespace game
         textures.emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
         textures.emplace("mine", "assets/items/activables/bonus_activable_mine.png");
         textures.emplace("punch", "assets/items/activables/bonus_activable_punch.png");
+        textures.emplace("kick_shoes", "assets/items/activables/bonus_activable_kick_shoes.png");
         textures.emplace("smoke", "assets/items/activables/bonus_activable_smoke.png");
         textures.emplace("stunt", "assets/items/activables/bonus_activable_stunt.png");
         /// Power Ups
@@ -102,6 +105,7 @@ namespace game
         textures.emplace("speed_down", "assets/items/power_downs/bonus_down_speed.png");
         textures.emplace("C4_down", "assets/items/power_downs/bonus_down_C4.png");
         textures.emplace("range_down", "assets/items/power_downs/bonus_down_range.png");
+        textures.emplace("control_down", "assets/items/power_downs/bonus_down_control.png");
         /// Weapons
         textures.emplace("C4", "assets/items/weapons/C4_Texture.png");
     }
@@ -112,7 +116,7 @@ namespace game
 
         meshes.emplace("box", 1.f, 1.f, 1.f);
         meshes.emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
-        meshes.emplace("bonus", 0.75f, 0.1f, 0.75f);
+        meshes.emplace("bonus", 0.75f, 0.0f, 0.75f);
     }
 
     void Game::_loadModels()
@@ -142,7 +146,6 @@ namespace game
         models.emplace("C4_up", bonusMesh, false).setMaterialMapTexture(textures.get("C4_up"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("range_up", bonusMesh, false)
             .setMaterialMapTexture(textures.get("range_up"), 0, MATERIAL_MAP_DIFFUSE);
-        // Missing Kick Shoes
         /// Power Downs
         models.emplace("speed_down", bonusMesh, false)
             .setMaterialMapTexture(textures.get("speed_down"), 0, MATERIAL_MAP_DIFFUSE);
@@ -150,13 +153,17 @@ namespace game
             .setMaterialMapTexture(textures.get("C4_down"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("range_down", bonusMesh, false)
             .setMaterialMapTexture(textures.get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("control_down", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
         /// Activables
         models.emplace("no_clip", bonusMesh, false)
             .setMaterialMapTexture(textures.get("no_clip"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("kick_shoes", bonusMesh, false)
+            .setMaterialMapTexture(textures.get("kick_shoes"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("stunt", bonusMesh, false).setMaterialMapTexture(textures.get("stunt"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"), 0, MATERIAL_MAP_DIFFUSE);
     }
 
     void Game::setup()
@@ -186,6 +193,8 @@ namespace game
         _world.addStorage<components::RotationAngle>();
         _world.addStorage<components::RotationAxis>();
         _world.addStorage<components::Model>();
+        _world.addStorage<components::CubeColor>();
+        _world.addStorage<components::Cube>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::InputManager>();
@@ -268,11 +277,11 @@ namespace game
                         .with<components::Size>(1.f, 1.f, 1.f);
                     if (destructible) {
                         (void)builder.with<components::Destructible>()
-                            .with<game::components::Color>(raylib::core::Color::BROWN)
+                            .with<game::components::Color>(raylib::core::Color::WHITE)
                             .with<game::components::ModelReference>(
                                 _world.getResource<resources::Models>().get("crate"));
                     } else {
-                        (void)builder.with<game::components::Color>(raylib::core::Color::GRAY)
+                        (void)builder.with<game::components::Color>(raylib::core::Color::WHITE)
                             .with<game::components::ModelReference>(
                                 _world.getResource<resources::Models>().get("wall"));
                     }
