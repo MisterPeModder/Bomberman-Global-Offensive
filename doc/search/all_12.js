@@ -2,7 +2,7 @@ var searchData=
 [
   ['core_2472',['core',['../namespaceraylib_1_1core.html',1,'raylib']]],
   ['model_2473',['model',['../namespaceraylib_1_1model.html',1,'raylib']]],
-  ['r_2474',['r',['../structraylib_1_1core_1_1_color.html#a7bcf9027b8ca053af32b043ac0f311c8',1,'raylib::core::Color::r()'],['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ae1e1d3d40573127e9ee0480caf1283d6',1,'raylib::core::Keyboard::R()']]],
+  ['r_2474',['R',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ae1e1d3d40573127e9ee0480caf1283d6',1,'raylib::core::Keyboard::R()'],['../structraylib_1_1core_1_1_color.html#a7bcf9027b8ca053af32b043ac0f311c8',1,'raylib::core::Color::r()']]],
   ['radius_2475',['radius',['../structgame_1_1components_1_1_bomb.html#adc7a222bada558562bf25673536d53a9',1,'game::components::Bomb']]],
   ['raise_2476',['raise',['http://en.cppreference.com/w/cpp/utility/program/raise.html',1,'std']]],
   ['rand_2477',['rand',['http://en.cppreference.com/w/cpp/numeric/random/rand.html',1,'std']]],

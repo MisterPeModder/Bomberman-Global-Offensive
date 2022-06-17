@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['t_3050',['t',['http://en.cppreference.com/w/cpp/numeric/random/binomial_distribution/params.html',1,'std::binomial_distribution::t()'],['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab9ece18c950afbfa6b0fdbfa4ff731d3',1,'raylib::core::Keyboard::T()']]],
+  ['t_3050',['T',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab9ece18c950afbfa6b0fdbfa4ff731d3',1,'raylib::core::Keyboard::T()'],['http://en.cppreference.com/w/cpp/numeric/random/binomial_distribution/params.html',1,'std::binomial_distribution::t()']]],
   ['tab_3051',['TAB',['../classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90af684bf05fa3e81528c84d1d281d839f1',1,'raylib::core::Keyboard']]],
   ['tai_5fclock_3052',['tai_clock',['http://en.cppreference.com/w/cpp/chrono/tai_clock.html',1,'std::chrono']]],
   ['tai_5fseconds_3053',['tai_seconds',['http://en.cppreference.com/w/cpp/chrono/tai_clock.html',1,'std::chrono']]],

@@ -111,9 +111,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a73c74b99146453a5f42f9fbc8a1b0ddf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a73c74b99146453a5f42f9fbc8a1b0ddf">Engine</a> ()</td></tr>
 <tr class="memdesc:a73c74b99146453a5f42f9fbc8a1b0ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classgame_1_1_engine.html#a73c74b99146453a5f42f9fbc8a1b0ddf">More...</a><br /></td></tr>
 <tr class="separator:a73c74b99146453a5f42f9fbc8a1b0ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a0ffa4472daa06ed6158ec4615c48c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a9a0ffa4472daa06ed6158ec4615c48c3">~Engine</a> ()</td></tr>
-<tr class="memdesc:a9a0ffa4472daa06ed6158ec4615c48c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="classgame_1_1_engine.html#a9a0ffa4472daa06ed6158ec4615c48c3">More...</a><br /></td></tr>
-<tr class="separator:a9a0ffa4472daa06ed6158ec4615c48c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a467f8ea84b67043fb2874cc7d08c7dda"><td class="memTemplParams" colspan="2">template&lt;std::derived_from&lt; IScene &gt; S&gt; </td></tr>
 <tr class="memitem:a467f8ea84b67043fb2874cc7d08c7dda"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a467f8ea84b67043fb2874cc7d08c7dda">setScene</a> ()</td></tr>
 <tr class="memdesc:a467f8ea84b67043fb2874cc7d08c7dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the active scene and deletes the old one.  <a href="classgame_1_1_engine.html#a467f8ea84b67043fb2874cc7d08c7dda">More...</a><br /></td></tr>
@@ -194,28 +191,6 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a9a0ffa4472daa06ed6158ec4615c48c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a0ffa4472daa06ed6158ec4615c48c3">&#9670;&nbsp;</a></span>~Engine()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">game::Engine::~Engine </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destructor. </p>
-
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00064">64</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#adb873e4708998349aec6a2cb626fd653">save</a>(); }</div>
-</div><!-- fragment -->
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1892bfceaa736d18c1b7593c0a2244d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1892bfceaa736d18c1b7593c0a2244d5">&#9670;&nbsp;</a></span>drawFrame()</h2>
@@ -234,13 +209,13 @@ Private Attributes</h2></td></tr>
 
 <p>Called on each render tick. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00100">100</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>-&gt;drawFrame();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a>(10, 10);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#a8c5281c380f47b360ab096298e9a3f58">switchScene</a>();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00098">98</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>-&gt;drawFrame();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a>(10, 10);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#a8c5281c380f47b360ab096298e9a3f58">switchScene</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -269,8 +244,8 @@ Private Attributes</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classgame_1_1_engine.html#a69d3d901501403fdad57d5a570cb1819" title="Enables/disables the debug mode.">Engine::setDebugMode()</a></dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the debug mode is enabled. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00072">72</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00070">70</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -291,8 +266,8 @@ Private Attributes</h2></td></tr>
 
 <p>Gets the mutable active scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00066">66</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{ <span class="keywordflow">return</span> *<a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00064">64</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ <span class="keywordflow">return</span> *<a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -332,8 +307,8 @@ Private Attributes</h2></td></tr>
 
 <p>Gets the settings (mutable) </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00108">108</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00106">106</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -381,17 +356,17 @@ Private Attributes</h2></td></tr>
 
 <p>Load the settings from the settings file. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00112">112</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a6781e093b0e950ddd361369490e0020a">load</a>();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a06b1c6f822fe6202c84babcbd3481e4f">getMasterVolume</a>());</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd">getTargetFramerate</a>());</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b">getResolution</a>().<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>, <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b">getResolution</a>().<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_window.html#ad2b42af3034b758f6af55e5534fd0d20">raylib::core::Window::isFullscreen</a>() != <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#ad7077ffc79bca9949bd0ad4212e77799">isFullscreen</a>())</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db">raylib::core::Window::toggleFullscreen</a>();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a4eb05f22ef7aa3c7cccbc67b166ea013">getLocale</a>());</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00110">110</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a6781e093b0e950ddd361369490e0020a">load</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a06b1c6f822fe6202c84babcbd3481e4f">getMasterVolume</a>());</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd">getTargetFramerate</a>());</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b">getResolution</a>().<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>, <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b">getResolution</a>().<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_window.html#ad2b42af3034b758f6af55e5534fd0d20">raylib::core::Window::isFullscreen</a>() != <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#ad7077ffc79bca9949bd0ad4212e77799">isFullscreen</a>())</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db">raylib::core::Window::toggleFullscreen</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a4eb05f22ef7aa3c7cccbc67b166ea013">getLocale</a>());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -412,23 +387,23 @@ Private Attributes</h2></td></tr>
 
 <p>Runs the game. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00082">82</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#ifdef __EMSCRIPTEN__</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, <span class="keyword">nullptr</span>, EM_FALSE, &amp;Engine_onResize);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        Engine_onResize(EMSCRIPTEN_EVENT_RESIZE, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        emscripten_set_fullscreenchange_callback(</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            EMSCRIPTEN_EVENT_TARGET_WINDOW, <span class="keyword">nullptr</span>, EM_FALSE, &amp;Engine_onFullscreenChange);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// We cannot use the WindowShouldClose() loop on the web,</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// since there is no such thing as a window.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        emscripten_set_main_loop_arg(&amp;Engine_drawFrame, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span> *<span class="keyword">&gt;</span>(<span class="keyword">this</span>), 0, 1);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">while</span> (!<a class="code" href="classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7">raylib::core::Window::shouldClose</a>())</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            this-&gt;<a class="code" href="classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5">drawFrame</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif // !defined(__EMSCRIPTEN__)}</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00080">80</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#ifdef __EMSCRIPTEN__</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, <span class="keyword">nullptr</span>, EM_FALSE, &amp;Engine_onResize);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        Engine_onResize(EMSCRIPTEN_EVENT_RESIZE, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        emscripten_set_fullscreenchange_callback(</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            EMSCRIPTEN_EVENT_TARGET_WINDOW, <span class="keyword">nullptr</span>, EM_FALSE, &amp;Engine_onFullscreenChange);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// We cannot use the WindowShouldClose() loop on the web,</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// since there is no such thing as a window.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        emscripten_set_main_loop_arg(&amp;Engine_drawFrame, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span> *<span class="keyword">&gt;</span>(<span class="keyword">this</span>), 0, 1);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">while</span> (!<a class="code" href="classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7">raylib::core::Window::shouldClose</a>())</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            this-&gt;<a class="code" href="classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5">drawFrame</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif // !defined(__EMSCRIPTEN__)}</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -465,8 +440,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00070">70</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a> = value; }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00068">68</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{ this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a> = value; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -497,11 +472,11 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 
 <p>Sets the active scene and deletes the old one. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00031">31</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a> = std::make_unique&lt;S&gt;();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>-&gt;getWorld().addResource&lt;resources::EngineResource&gt;(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00028">28</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a> = std::make_unique&lt;S&gt;();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>-&gt;getWorld().addResource&lt;resources::EngineResource&gt;(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -522,13 +497,13 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 
 <p>Switch to the waiting scene if it exists and releases the current one. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00074">74</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/swap.html">swap</a>(<a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/release.html">release</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00072">72</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/swap.html">swap</a>(<a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/release.html">release</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -553,7 +528,7 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00079">79</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00076">76</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -579,7 +554,7 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 
 <p>Sets the active scene and deletes the old one. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00075">75</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00072">72</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -603,7 +578,7 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00077">77</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00074">74</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -627,7 +602,7 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00076">76</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00073">73</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -638,26 +613,25 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a45dba4d0652a46202065cbb6232315db"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db">raylib::core::Window::toggleFullscreen</a></div><div class="ttdeci">static void toggleFullscreen()</div><div class="ttdoc">Toggles fullscreen.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00055">Window.cpp:55</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_aeedd6d18c700317f4b9734422ba7b54d"><div class="ttname"><a href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">game::Engine::_debugMode</a></div><div class="ttdeci">bool _debugMode</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00079">Engine.hpp:79</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_aeedd6d18c700317f4b9734422ba7b54d"><div class="ttname"><a href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">game::Engine::_debugMode</a></div><div class="ttdeci">bool _debugMode</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00076">Engine.hpp:76</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_ad1c374c6137284e3f570a6cbfca5369c"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a></div><div class="ttdeci">static void setTargetFPS(int fps)</div><div class="ttdoc">Set the max FPS the game should run at.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00036">Window.cpp:36</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a7cc31de746b91809ba43ec59aa338b0b"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b">game::settings::Settings::getResolution</a></div><div class="ttdeci">raylib::core::Vector2f getResolution() const</div><div class="ttdoc">Get the target resolution of the window.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00137">Settings.cpp:137</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_adb873e4708998349aec6a2cb626fd653"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#adb873e4708998349aec6a2cb626fd653">game::settings::Settings::save</a></div><div class="ttdeci">void save() const</div><div class="ttdoc">Save the settings at getSettingsFilePath().</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00039">Settings.cpp:39</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_ad7077ffc79bca9949bd0ad4212e77799"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#ad7077ffc79bca9949bd0ad4212e77799">game::settings::Settings::isFullscreen</a></div><div class="ttdeci">bool isFullscreen() const</div><div class="ttdoc">Check if the fullscreen mode is required.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00141">Settings.cpp:141</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_a3577fc0d39171e83f8c7dbc04c2d33a5"><div class="ttname"><a href="classgame_1_1_engine.html#a3577fc0d39171e83f8c7dbc04c2d33a5">game::Engine::loadSettings</a></div><div class="ttdeci">void loadSettings()</div><div class="ttdoc">Load the settings from the settings file.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00112">Engine.cpp:112</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a3577fc0d39171e83f8c7dbc04c2d33a5"><div class="ttname"><a href="classgame_1_1_engine.html#a3577fc0d39171e83f8c7dbc04c2d33a5">game::Engine::loadSettings</a></div><div class="ttdeci">void loadSettings()</div><div class="ttdoc">Load the settings from the settings file.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00110">Engine.cpp:110</a></div></div>
 <div class="ttc" id="aclasslocalization_1_1_localization_html_a1a818ebbf478503b554160495ca14cd6"><div class="ttname"><a href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a></div><div class="ttdeci">static void setLocale(std::string_view locale)</div><div class="ttdoc">Load a locale file.</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8cpp_source.html#l00026">Localization.cpp:26</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a0ccf99b83d00909119f26d25334772fc"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a></div><div class="ttdeci">static void drawFPS(int x, int y)</div><div class="ttdoc">Displays the number of frames per seconds of the game on screen.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00038">Window.cpp:38</a></div></div>
 <div class="ttc" id="arelease_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr/release.html">std::unique_ptr::release</a></div><div class="ttdeci">T release(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_afb4db7ad2d99ceede3adc110580820e7"><div class="ttname"><a href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">game::Engine::_waitingScene</a></div><div class="ttdeci">std::unique_ptr&lt; game::IScene &gt; _waitingScene</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00076">Engine.hpp:76</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_a1892bfceaa736d18c1b7593c0a2244d5"><div class="ttname"><a href="classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5">game::Engine::drawFrame</a></div><div class="ttdeci">void drawFrame()</div><div class="ttdoc">Called on each render tick.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00100">Engine.cpp:100</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_a8c5281c380f47b360ab096298e9a3f58"><div class="ttname"><a href="classgame_1_1_engine.html#a8c5281c380f47b360ab096298e9a3f58">game::Engine::switchScene</a></div><div class="ttdeci">void switchScene()</div><div class="ttdoc">Switch to the waiting scene if it exists and releases the current one.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00074">Engine.cpp:74</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_afb4db7ad2d99ceede3adc110580820e7"><div class="ttname"><a href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">game::Engine::_waitingScene</a></div><div class="ttdeci">std::unique_ptr&lt; game::IScene &gt; _waitingScene</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00073">Engine.hpp:73</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a1892bfceaa736d18c1b7593c0a2244d5"><div class="ttname"><a href="classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5">game::Engine::drawFrame</a></div><div class="ttdeci">void drawFrame()</div><div class="ttdoc">Called on each render tick.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00098">Engine.cpp:98</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a8c5281c380f47b360ab096298e9a3f58"><div class="ttname"><a href="classgame_1_1_engine.html#a8c5281c380f47b360ab096298e9a3f58">game::Engine::switchScene</a></div><div class="ttdeci">void switchScene()</div><div class="ttdoc">Switch to the waiting scene if it exists and releases the current one.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00072">Engine.cpp:72</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a8041cf44d8dd940a194ded4b5ed071c7"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7">raylib::core::Window::shouldClose</a></div><div class="ttdeci">static bool shouldClose()</div><div class="ttdoc">Returns if the window should close or not (when a close window event is received for example)</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00034">Window.cpp:34</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_afe0c43c5e88c69cbc740e52b09747d5f"><div class="ttname"><a href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">game::Engine::_scene</a></div><div class="ttdeci">std::unique_ptr&lt; game::IScene &gt; _scene</div><div class="ttdoc">Sets the active scene and deletes the old one.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00075">Engine.hpp:75</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_afe0c43c5e88c69cbc740e52b09747d5f"><div class="ttname"><a href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">game::Engine::_scene</a></div><div class="ttdeci">std::unique_ptr&lt; game::IScene &gt; _scene</div><div class="ttdoc">Sets the active scene and deletes the old one.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00072">Engine.hpp:72</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a4eb05f22ef7aa3c7cccbc67b166ea013"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a4eb05f22ef7aa3c7cccbc67b166ea013">game::settings::Settings::getLocale</a></div><div class="ttdeci">std::string_view getLocale() const</div><div class="ttdoc">Get the target locale.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00145">Settings.cpp:145</a></div></div>
 <div class="ttc" id="aswap_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr/swap.html">std::unique_ptr::swap</a></div><div class="ttdeci">T swap(T... args)</div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a6781e093b0e950ddd361369490e0020a"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a6781e093b0e950ddd361369490e0020a">game::settings::Settings::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">Load the settings from getSettingsFilePath().</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00084">Settings.cpp:84</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a910a7b2e6d319a41f56f6f3306dcd0bd"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd">game::settings::Settings::getTargetFramerate</a></div><div class="ttdeci">unsigned int getTargetFramerate() const</div><div class="ttdoc">Get the target framerate.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00133">Settings.cpp:133</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_audio_html_aac84084fc76a4327246d6255c6537668"><div class="ttname"><a href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a></div><div class="ttdeci">static void setMasterVolume(float volume)</div><div class="ttdoc">Set the global volume of the program.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_8cpp_source.html#l00022">Audio.cpp:22</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_a712e2cfd9b09b557dba688ee6b21e614"><div class="ttname"><a href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">game::Engine::_settings</a></div><div class="ttdeci">settings::Settings _settings</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00077">Engine.hpp:77</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a712e2cfd9b09b557dba688ee6b21e614"><div class="ttname"><a href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">game::Engine::_settings</a></div><div class="ttdeci">settings::Settings _settings</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00074">Engine.hpp:74</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_a000198d5814b224f892bc9ae317015c6"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">raylib::core::Vector2::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00139">Vector2.hpp:139</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a06b1c6f822fe6202c84babcbd3481e4f"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a06b1c6f822fe6202c84babcbd3481e4f">game::settings::Settings::getMasterVolume</a></div><div class="ttdeci">float getMasterVolume() const</div><div class="ttdoc">Get the master volume.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00129">Settings.cpp:129</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a4db1d089b4108b6a2644b48b72a7f524"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a></div><div class="ttdeci">static void setSize(int width, int height)</div><div class="ttdoc">Set the window size.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00044">Window.cpp:44</a></div></div>
