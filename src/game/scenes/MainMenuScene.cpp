@@ -39,6 +39,7 @@
 #include "game/gui/components/Widget.hpp"
 
 #include "game/scenes/SettingsMenuScene.hpp"
+#include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/DrawTexture.hpp"
 #include "game/systems/InputManager.hpp"
@@ -59,20 +60,26 @@ static void loadMainMenuScene(ecs::World &world)
     raylib::textures::Image image(logoPath, {1, 2}, raylib::core::Color::WHITE);
 
     world.addEntity()
-        .with<game::components::Position>(0, 10)
+        .with<game::components::Position>(2, 12)
         .with<game::components::Textual>(localization::resources::menu::rsMenuPlay, 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::PLAY, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::gui::Widget::NullTag, game::MainMenuScene::OPTION, true)
-        .with<game::gui::Clickable>([&world](ecs::Entity) {
-            world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
-            Logger::logger.log(Logger::Severity::Debug, "go to game");
-        })
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
+                Logger::logger.log(Logger::Severity::Debug, "go to game");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::BLUE;
+            })
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(0, 20)
-        .with<game::components::Textual>(localization::resources::menu::rsMenuOption, 20, raylib::core::Color::RED)
+        .with<game::components::Position>(2, 20)
+        .with<game::components::Textual>(localization::resources::menu::rsMenuOption, 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::OPTION, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::MainMenuScene::PLAY, game::MainMenuScene::LOGOUT, false)
@@ -81,8 +88,9 @@ static void loadMainMenuScene(ecs::World &world)
             Logger::logger.log(Logger::Severity::Debug, "go to option");
         })
         .build();
+
     world.addEntity()
-        .with<game::components::Position>(0, 90)
+        .with<game::components::Position>(2, 90)
         .with<game::components::Textual>(localization::resources::menu::rsMenuQuit, 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::LOGOUT, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
@@ -112,6 +120,7 @@ namespace game
         _world.addResource<game::Users>();
         _world.addStorage<game::components::Textual>();
         _world.addSystem<game::systems::DrawText>();
+        _world.addSystem<game::systems::DrawSelectedWidget>();
 
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::DrawTexture>();
@@ -119,6 +128,7 @@ namespace game
         _globalNoDraw.add<game::systems::InputManager>();
         _global2D.add<game::systems::DrawTexture>();
         _global2D.add<game::systems::DrawText>();
+        _global2D.add<game::systems::DrawSelectedWidget>();
         loadMainMenuScene(_world);
     }
 } // namespace game
