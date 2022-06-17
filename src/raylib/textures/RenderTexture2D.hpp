@@ -22,15 +22,17 @@ namespace raylib
     {
         class RenderTexture2D {
           public:
-            RenderTexture2D(unsigned int width = raylib::core::Window::getWidth(),
-                unsigned int height = raylib::core::Window::getHeight());
+            RenderTexture2D(
+                int width = raylib::core::Window::getWidth(), int height = raylib::core::Window::getHeight());
 
-            RenderTexture2D(raylib::core::Vector2u size);
+            RenderTexture2D(raylib::core::Vector2i size);
 
             ~RenderTexture2D();
 
             static void beginTextureMode(const RenderTexture2D &target);
             static void endTextureMode();
+
+            void drawYFlipped() const;
 
             const ::RenderTexture2D &asRaylib() const;
             ::RenderTexture2D &asRaylib();
