@@ -7,7 +7,9 @@
 
 #include "game/Engine.hpp"
 #include "game/scenes/SplashScene.hpp"
+#include "raylib/core/Audio.hpp"
 #include "raylib/core/Window.hpp"
+#include "localization/Localization.hpp"
 
 #pragma region Browser Events
 #ifdef __EMSCRIPTEN__
@@ -56,7 +58,10 @@ namespace game
     {
         _scene = std::make_unique<SplashScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
+        loadSettings();
     }
+
+    Engine::~Engine() { _settings.save(); }
 
     game::IScene &Engine::getScene() { return *_scene; }
 
@@ -98,5 +103,21 @@ namespace game
         if (this->_debugMode)
             raylib::core::Window::drawFPS(10, 10);
         this->switchScene();
+    }
+
+    settings::Settings &Engine::getSettings() { return _settings; }
+
+    const settings::Settings &Engine::getSettings() const { return _settings; }
+
+    void Engine::loadSettings()
+    {
+        _settings.load();
+
+        raylib::core::Audio::setMasterVolume(_settings.getMasterVolume());
+        raylib::core::Window::setTargetFPS(_settings.getTargetFramerate());
+        raylib::core::Window::setSize(_settings.getResolution().x, _settings.getResolution().y);
+        if (raylib::core::Window::isFullscreen() != _settings.isFullscreen())
+            raylib::core::Window::toggleFullscreen();
+        localization::Localization::setLocale(_settings.getLocale());
     }
 } // namespace game
