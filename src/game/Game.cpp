@@ -110,82 +110,61 @@ namespace game
 
     void Game::_loadModels()
     {
-        /// Ground
-        _world.getResource<resources::Models>().emplace(
-            "ground", _world.getResource<resources::Meshes>().get("ground"), false);
-        _world.getResource<resources::Models>().get("ground").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("ground"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Crate
-        _world.getResource<resources::Models>().emplace(
-            "crate", _world.getResource<resources::Meshes>().get("box"), false);
-        _world.getResource<resources::Models>().get("crate").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("crate"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Wall
-        _world.getResource<resources::Models>().emplace(
-            "wall", _world.getResource<resources::Meshes>().get("box"), false);
-        _world.getResource<resources::Models>().get("wall").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("wall"), 0, MATERIAL_MAP_DIFFUSE);
-        /// No-Clip
-        _world.getResource<resources::Models>().emplace(
-            "no_clip", _world.getResource<resources::Meshes>().get("bonus"), false);
-        _world.getResource<resources::Models>().get("no_clip").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("no_clip"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Mine
-        _world.getResource<resources::Models>().emplace(
-            "mine", _world.getResource<resources::Meshes>().get("bonus"), false);
-        _world.getResource<resources::Models>().get("mine").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("mine"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Punch
-        _world.getResource<resources::Models>().emplace(
-            "punch", _world.getResource<resources::Meshes>().get("bonus"), false);
-        _world.getResource<resources::Models>().get("punch").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("punch"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Smoke
-        _world.getResource<resources::Models>().emplace(
-            "smoke", _world.getResource<resources::Meshes>().get("bonus"), false);
-        _world.getResource<resources::Models>().get("smoke").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Stunt
-        _world.getResource<resources::Models>().emplace(
-            "stunt", _world.getResource<resources::Meshes>().get("bonus"), false);
-        _world.getResource<resources::Models>().get("stunt").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("stunt"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Speed_up
-        _world.getResource<resources::Models>().emplace(
-            "speed_up", _world.getResource<resources::Meshes>().get("bonus"), false);
+        /////// Map
         _world.getResource<resources::Models>()
-            .get("speed_up")
+            .emplace("ground", _world.getResource<resources::Meshes>().get("ground"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("ground"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("crate", _world.getResource<resources::Meshes>().get("box"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("crate"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("wall", _world.getResource<resources::Meshes>().get("box"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("wall"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("C4", "assets/items/weapons/c4.iqm")
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("C4"), 0, MATERIAL_MAP_DIFFUSE);
+
+        ////// Items
+        auto &bonusMesh = _world.getResource<resources::Meshes>().get("bonus");
+        /// Power Ups
+        _world.getResource<resources::Models>()
+            .emplace("speed_up", bonusMesh, false)
             .setMaterialMapTexture(_world.getResource<resources::Textures>().get("speed_up"), 0, MATERIAL_MAP_DIFFUSE);
-        /// C4_up
-        _world.getResource<resources::Models>().emplace(
-            "C4_up", _world.getResource<resources::Meshes>().get("bonus"), false);
-        _world.getResource<resources::Models>().get("C4_up").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("C4_up"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Range_up
-        _world.getResource<resources::Models>().emplace(
-            "range_up", _world.getResource<resources::Meshes>().get("bonus"), false);
         _world.getResource<resources::Models>()
-            .get("range_up")
+            .emplace("C4_up", bonusMesh, false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("C4_up"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("range_up", bonusMesh, false)
             .setMaterialMapTexture(_world.getResource<resources::Textures>().get("range_up"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Speed_down
-        _world.getResource<resources::Models>().emplace(
-            "speed_down", _world.getResource<resources::Meshes>().get("bonus"), false);
+        // Missing Kick Shoes
+        /// Power Downs
         _world.getResource<resources::Models>()
-            .get("speed_down")
+            .emplace("speed_down", bonusMesh, false)
             .setMaterialMapTexture(
                 _world.getResource<resources::Textures>().get("speed_down"), 0, MATERIAL_MAP_DIFFUSE);
-        /// C4_down
-        _world.getResource<resources::Models>().emplace(
-            "C4_down", _world.getResource<resources::Meshes>().get("bonus"), false);
-        _world.getResource<resources::Models>().get("C4_down").setMaterialMapTexture(
-            _world.getResource<resources::Textures>().get("C4_down"), 0, MATERIAL_MAP_DIFFUSE);
-        /// Range_down
-        _world.getResource<resources::Models>().emplace(
-            "range_down", _world.getResource<resources::Meshes>().get("bonus"), false);
         _world.getResource<resources::Models>()
-            .get("range_down")
+            .emplace("C4_down", bonusMesh, false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("C4_down"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("range_down", bonusMesh, false)
             .setMaterialMapTexture(
                 _world.getResource<resources::Textures>().get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
+        /// Activables
+        _world.getResource<resources::Models>()
+            .emplace("no_clip", _world.getResource<resources::Meshes>().get("bonus"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("no_clip"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("mine", _world.getResource<resources::Meshes>().get("bonus"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("mine"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("punch", _world.getResource<resources::Meshes>().get("bonus"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("punch"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("smoke", _world.getResource<resources::Meshes>().get("bonus"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
+        _world.getResource<resources::Models>()
+            .emplace("stunt", _world.getResource<resources::Meshes>().get("bonus"), false)
+            .setMaterialMapTexture(_world.getResource<resources::Textures>().get("stunt"), 0, MATERIAL_MAP_DIFFUSE);
     }
 
     void Game::setup()

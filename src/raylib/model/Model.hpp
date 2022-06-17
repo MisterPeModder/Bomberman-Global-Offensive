@@ -40,28 +40,6 @@ namespace raylib
             /// @param ownsMesh if the model owns the mesh, see @ref setOwnsMesh().
             Model(const raylib::model::Mesh &mesh, bool ownsMesh = true);
 
-            /// Constructor with texture for map this texture
-            /// Model(mesh)
-            ///
-            /// @param mesh The mesh to use for the model.
-            /// @param texture The texture to set the material map to.
-            /// @param materialId The material id of the material you want to set the
-            /// texture for.
-            /// @param mapType
-            Model(const raylib::model::Mesh &mesh, const raylib::textures::Texture2D &texture, int materialId,
-                int mapType);
-
-            /// Constructor. It takes a mesh and returns a model
-            ///
-            /// @param mesh The mesh to load the model from.
-            Model(const ::Mesh &mesh);
-
-            /// Copy constructor
-            ///
-            /// @param other the model to copy
-            /// @param ownsMesh if the model owns the mesh, see @ref setOwnsMesh().
-            Model(const Model &other, bool ownsMesh = false);
-            
             /// Deleted copy constructor
             /// @note Deleted to avoid double unloads.
             Model(const Model &other) = delete;

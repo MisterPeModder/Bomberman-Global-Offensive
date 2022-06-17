@@ -15,6 +15,7 @@
 #include "components/CubeColor.hpp"
 #include "components/Model.hpp"
 #include "components/Position.hpp"
+#include "components/Scale.hpp"
 #include "components/Size.hpp"
 
 #include "ecs/Storage.hpp"
@@ -70,55 +71,33 @@ namespace game::components
 
     void Item::spawnItem(Identifier identifier, ecs::SystemData data, raylib::core::Vector2u cell)
     {
-        //size_t id = static_cast<size_t>(identifier);
+        auto &modelRefs = data.getStorage<ModelReference>();
+        auto &models = data.getResource<resources::Models>();
 
-        auto &item = data.getResource<ecs::Entities>()
-                        .builder()
-                        .with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
-                        .with<Position>(
-                            data.getStorage<Position>(), static_cast<float>(cell.x), 0.5f, static_cast<float>(cell.y))
-                        .with<Size>(data.getStorage<Size>(), 0.4f, 0.4f, 0.4f)
-                        .with<Destructible>(data.getStorage<Destructible>())
-                        .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE);
+        auto item = data.getResource<ecs::Entities>().builder();
+        (void)item.with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
+            .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 0.5f, static_cast<float>(cell.y))
+            .with<Size>(data.getStorage<Size>(), 0.4f, 0.4f, 0.4f)
+            .with<Scale>(data.getStorage<Scale>(), 1.f)
+            .with<Destructible>(data.getStorage<Destructible>())
+            .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE);
+
         switch (identifier) {
             case Item::Identifier::SpeedShoes:
-                (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
-                    data.getResource<resources::Models>().get("speed_up"));
+                (void)item.with<ModelReference>(modelRefs, models.get("speed_up"));
                 break;
-
-            case Item::Identifier::FireUp:
-                (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
-                    data.getResource<resources::Models>().get("range_up"));
-                break;
-
+            case Item::Identifier::FireUp: (void)item.with<ModelReference>(modelRefs, models.get("range_up")); break;
             case Item::Identifier::FireDown:
-                (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
-                    data.getResource<resources::Models>().get("range_down"));
+                (void)item.with<ModelReference>(modelRefs, models.get("range_down"));
                 break;
-
-            case Item::Identifier::BombUp:
-                (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
-                    data.getResource<resources::Models>().get("C4_up"));
-                break;
-
-            case Item::Identifier::BombDown:
-                (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
-                    data.getResource<resources::Models>().get("C4_down"));
-                break;
-
-            case Item::Identifier::KickShoes:
-                (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
-                    data.getResource<resources::Models>().get("punch"));
-                break;
-
+            case Item::Identifier::BombUp: (void)item.with<ModelReference>(modelRefs, models.get("C4_up")); break;
+            case Item::Identifier::BombDown: (void)item.with<ModelReference>(modelRefs, models.get("C4_down")); break;
+            case Item::Identifier::KickShoes: (void)item.with<ModelReference>(modelRefs, models.get("punch")); break;
             case Item::Identifier::ChainBall:
-                (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
-                    data.getResource<resources::Models>().get("speed_down"));
+                (void)item.with<ModelReference>(modelRefs, models.get("speed_down"));
                 break;
-
             case Item::Identifier::InvertedControls:
-                (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
-                    data.getResource<resources::Models>().get("speed_down"));
+                (void)item.with<ModelReference>(modelRefs, models.get("speed_down"));
                 break;
             default: break;
         }
