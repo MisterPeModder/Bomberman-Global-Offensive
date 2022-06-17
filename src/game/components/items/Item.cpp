@@ -33,10 +33,11 @@ namespace game::components
         Item::Identifier::SpeedShoes, Item::Identifier::FireUp, Item::Identifier::BombUp, Item::Identifier::KickShoes};
     std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {Item::Identifier::ChainBall,
         Item::Identifier::FireDown, Item::Identifier::BombDown, Item::Identifier::InvertedControls};
-    std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables = {Item::Identifier::LandMine};
+    std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables = {
+        Item::Identifier::LandMine, Item::Identifier::StunGrenade};
 
     std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes(), FireUp(), BombUp(),
-        KickShoes(), ChainBall(), FireDown(), BombDown(), InvertedControls(), LandMine()};
+        KickShoes(), ChainBall(), FireDown(), BombDown(), InvertedControls(), LandMine(), StunGrenade()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
@@ -107,5 +108,19 @@ namespace game::components
         // BombDown,
         // InvertedControls,
         // Count,
+    }
+
+    Item::Identifier Item::nextActivable(Identifier current)
+    {
+        current = static_cast<Identifier>(static_cast<size_t>(current) + 1);
+        if (current == Identifier::Count)
+            return FIRST_ACTIVABLE;
+        return current;
+    }
+    Item::Identifier Item::previousActivable(Identifier current)
+    {
+        if (current == FIRST_ACTIVABLE)
+            return static_cast<Identifier>(static_cast<size_t>(Identifier::Count) - 1);
+        return static_cast<Identifier>(static_cast<size_t>(current) - 1);
     }
 } // namespace game::components

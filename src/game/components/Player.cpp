@@ -43,16 +43,19 @@ namespace game::components
         if (item.maxStack && count >= item.maxStack)
             return;
         /// Item has no effect (rejected).
-        if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown) && !item.onApply(player, data))
-            return;
+        if ((item.type == Item::Type::PowerUp || item.type == Item::Type::PowerDown)) {
+            if (!item.onApply(player, data))
+                return;
+            /// Item has a duration.
+            if (item.duration != std::chrono::milliseconds::zero())
+                timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
+        }
         ++count;
-        /// Item has a duration.
-        if (item.duration != std::chrono::milliseconds::zero())
-            timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
             out << "Player entity " << player.getId() << " pick up item '" << item.name << "', " << count << "/"
                 << item.maxStack << " in inventory ";
         });
+        updateSelectedActivable();
     }
 
     bool Player::Inventory::useActivable(ecs::Entity player, ecs::SystemData data)
@@ -68,11 +71,49 @@ namespace game::components
         if (!item.onApply(player, data))
             return false;
         --count;
+        /// Item has a duration.
+        if (item.duration != std::chrono::milliseconds::zero())
+            timedItems.emplace_back(selected, std::chrono::steady_clock::now());
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
             out << "Player entity " << player.getId() << " activated item '" << item.name << "', " << count
                 << " left in inventory.";
         });
+        if (!count)
+            updateSelectedActivable();
         return true;
+    }
+
+    bool Player::Inventory::selectActivable(Item::Identifier itemId)
+    {
+        if (itemId == selected)
+            return false;
+        selected = itemId;
+        Logger::logger.log(Logger::Severity::Debug,
+            [&](auto &out) { out << "Player activable item set to '" << Item::getItem(selected).name; });
+        return true;
+    }
+
+    bool Player::Inventory::selectPreviousActivable()
+    {
+        Item::Identifier current = Item::previousActivable(selected);
+
+        while (!(*this)[current] && current != selected)
+            current = Item::previousActivable(current);
+        return selectActivable(current);
+    }
+    bool Player::Inventory::selectNextActivable()
+    {
+        Item::Identifier current = Item::nextActivable(selected);
+
+        while (!(*this)[current] && current != selected)
+            current = Item::nextActivable(current);
+        return selectActivable(current);
+    }
+    void Player::Inventory::updateSelectedActivable()
+    {
+        if ((*this)[selected])
+            return;
+        selectNextActivable();
     }
 
     bool Player::handleActionEvent(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
@@ -106,16 +147,21 @@ namespace game::components
         }
         if (highestActionValue < 0.2f)
             velocity = {0.f, 0.f, 0.f};
-        else
+        else {
+            float speed = stats.speed;
+
+            if (stats.inverted)
+                speed *= -1.f;
+            if (stats.slowness)
+                speed *= 0.25f;
             switch (bestAction) {
-                case GameAction::MOVE_LEFT: velocity = {-stats.speed, 0.f, 0.f}; break;
-                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -stats.speed}; break;
-                case GameAction::MOVE_RIGHT: velocity = {stats.speed, 0.f, 0.f}; break;
-                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, stats.speed}; break;
+                case GameAction::MOVE_LEFT: velocity = {-speed, 0.f, 0.f}; break;
+                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -speed}; break;
+                case GameAction::MOVE_RIGHT: velocity = {speed, 0.f, 0.f}; break;
+                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, speed}; break;
                 default: break;
             }
-        if (stats.inverted)
-            velocity *= {-1.f, 0.f, -1.f};
+        }
     }
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType)
