@@ -30,6 +30,7 @@ set(SRC
     ${INCROOT}/Texture2D.hpp
     ${INCROOT}/Rectangle.hpp
     ${SRCROOT}/Velocity.hpp
+    ${INCROOT}/UseCheck.hpp
     ${SRCROOT}/Living.hpp
     ${SRCROOT}/Player.cpp
     ${SRCROOT}/Destructible.hpp

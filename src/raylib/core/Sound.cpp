@@ -17,9 +17,11 @@ namespace raylib
 
         bool Sound::isPlaying() { return IsSoundPlaying(_sound); }
 
-        void Sound::play() { PlaySound(_sound); }
+        void Sound::play() { PlaySoundMulti(_sound); }
 
         void Sound::stop() { StopSound(_sound); }
+
+        void Sound::stopAllMulti() { StopSoundMulti(); }
 
         void Sound::pause() { PauseSound(_sound); }
 
