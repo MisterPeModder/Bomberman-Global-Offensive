@@ -13,6 +13,7 @@
 #include "ecs/join.hpp"
 #include "game/components/BombNoClip.hpp"
 #include "game/components/Position.hpp"
+#include "game/components/Size.hpp"
 
 namespace game::systems
 {
@@ -20,9 +21,9 @@ namespace game::systems
     struct DisableBombNoClip : public ecs::System {
         void run(ecs::SystemData data) override final
         {
-            for (auto [position, bombNoClip] : ecs::join(
-                     data.getStorage<game::components::Position>(), data.getStorage<game::components::BombNoClip>())) {
-                if (bombNoClip.enabled && !bombNoClip.matchEntityPosition(position))
+            for (auto [position, size, bombNoClip] : ecs::join(data.getStorage<game::components::Position>(),
+                     data.getStorage<game::components::Size>(), data.getStorage<game::components::BombNoClip>())) {
+                if (bombNoClip.enabled && !bombNoClip.matchEntityPosition(position, size))
                     bombNoClip.enabled = false;
             }
         }

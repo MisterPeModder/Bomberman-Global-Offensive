@@ -13,6 +13,7 @@ set(SRC
     ${SRCROOT}/Item.hpp
     ${SRCROOT}/ItemIdentifier.hpp
     ${SRCROOT}/KickShoes.cpp
+    ${SRCROOT}/LandMine.cpp
     ${SRCROOT}/SpeedShoes.cpp
     PARENT_SCOPE)
 
