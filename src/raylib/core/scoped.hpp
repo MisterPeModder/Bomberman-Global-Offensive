@@ -12,6 +12,7 @@
 #include "Camera2D.hpp"
 #include "Camera3D.hpp"
 #include "Window.hpp"
+#include "raylib/shaders/Shader.hpp"
 
 /// Raylib namespace
 namespace raylib
@@ -64,6 +65,16 @@ namespace raylib
 
                 /// End the audio device.
                 inline ~AudioDevice() { Audio::closeDevice(); }
+            };
+
+            /// Setup/End shader mode
+            class Shader {
+              public:
+                /// Begin the shader mode.
+                inline Shader(raylib::shaders::Shader &shader) { raylib::shaders::Shader::beginShaderMode(shader); }
+
+                /// End the shader mode.
+                inline ~Shader() { raylib::shaders::Shader::endShaderMode(); }
             };
         } // namespace scoped
 
