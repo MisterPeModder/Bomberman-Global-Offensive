@@ -23,6 +23,8 @@ set(SRC
     ${SRCROOT}/Movement.hpp
     ${SRCROOT}/Movement.cpp
     ${SRCROOT}/Rectangle.hpp
+    ${SRCROOT}/Smoke.cpp
+    ${SRCROOT}/Smoke.hpp
     ${INCROOT}/SplashScreen.hpp
     PARENT_SCOPE)
 

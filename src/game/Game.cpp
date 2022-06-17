@@ -18,6 +18,7 @@
 #include "components/Living.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
+#include "components/Smoke.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
 
@@ -47,6 +48,7 @@
 #include "systems/Items.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
+#include "systems/Smoke.hpp"
 
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
@@ -89,6 +91,7 @@ namespace game
         _world.addStorage<components::Bomb>();
         _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
+        _world.addStorage<components::Smoke>();
         /// Add world systems
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::ChangeCube>();
@@ -100,12 +103,14 @@ namespace game
         _world.addSystem<systems::PickupItem>();
         _world.addSystem<systems::DisableBombNoClip>();
         _world.addSystem<systems::UpdateItemTimer>();
+        _world.addSystem<systems::MoveSmoke>();
+        _world.addSystem<systems::DrawSmoke>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
-            systems::DisableBombNoClip, systems::UpdateItemTimer>();
+            systems::DisableBombNoClip, systems::UpdateItemTimer, systems::MoveSmoke>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawingCube, systems::DrawBomb>();
+        _drawing.add<systems::DrawingCube, systems::DrawBomb, systems::DrawSmoke>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
