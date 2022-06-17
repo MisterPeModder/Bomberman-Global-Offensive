@@ -21,6 +21,11 @@ namespace game::components
 {
     /// Bomb component
     struct Bomb : public ecs::Component {
+        /// Type of the bomb.
+        enum class Type {
+            Classic,
+            LandMine,
+        };
         /// Time when the bomb was placed
         std::chrono::steady_clock::time_point placedTime;
         /// Radius of the bomb explosion
@@ -31,16 +36,19 @@ namespace game::components
         bool exploded;
         /// Id of the entity who placed the bomb.
         Identity::Id owner;
+        /// @ref Type.
+        Type type;
 
         /// Construct a new Bomb component.
         ///
+        /// @param pType bomb type.
         /// @param pOwner @ref owner.
         /// @param pRadius @ref radius
         /// @param pExplosionDelay @ref explosionDelay
-        Bomb(Identity::Id pOwner, size_t pRadius = 1,
+        Bomb(Type pType, Identity::Id pOwner, size_t pRadius = 1,
             std::chrono::milliseconds pExplosionDelay = std::chrono::milliseconds(2000))
             : placedTime(std::chrono::steady_clock::now()), radius(pRadius), explosionDelay(pExplosionDelay),
-              exploded(false), owner(pOwner){};
+              exploded(false), owner(pOwner), type(pType){};
 
         /// Explode the bomb.
         ///
@@ -56,6 +64,13 @@ namespace game::components
         /// @param self entity @a owning of the bomb component.
         /// @param senderVelocity sender velocity. (will become the kicked bomb velocity)
         void kick(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity);
+
+        /// Set the Bomb Model components
+        ///
+        /// @param builder bomb entity builder.
+        /// @param data world data.
+        /// @return ecs::Entities::Builder& bomb entity builder.
+        static ecs::Entities::Builder &setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data);
 
       private:
         /// Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell)

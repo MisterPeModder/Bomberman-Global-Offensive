@@ -21,6 +21,8 @@ namespace game::systems
 
         for (auto [pos, bomb, id] : ecs::join(data.getStorage<game::components::Position>(),
                  data.getStorage<game::components::Bomb>(), data.getResource<ecs::Entities>())) {
+            if (bomb.type == game::components::Bomb::Type::LandMine)
+                continue;
             if (now - bomb.placedTime >= bomb.explosionDelay)
                 bomb.explode(pos, data, id);
         }

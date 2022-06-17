@@ -61,6 +61,7 @@ namespace raylib
             /// @param other the model to copy
             /// @param ownsMesh if the model owns the mesh, see @ref setOwnsMesh().
             Model(const Model &other, bool ownsMesh = false);
+            
             /// Deleted copy constructor
             /// @note Deleted to avoid double unloads.
             Model(const Model &other) = delete;
@@ -127,14 +128,14 @@ namespace raylib
             /// @param mesh The mesh to load the model from.
             ///
             /// @return A Model object.
-            ::Model loadFromMesh(const ::Mesh &mesh);
+            static ::Model loadFromMesh(const ::Mesh &mesh);
 
             /// loadFromMesh load model with Mesh encapsulated
             ///
             /// @param mesh The mesh to load the model from.
             ///
             /// @return A Model object.
-            ::Model loadFromMesh(const raylib::model::Mesh &mesh);
+            static ::Model loadFromMesh(const raylib::model::Mesh &mesh);
 
             /// Checks collision with another model
             ///
