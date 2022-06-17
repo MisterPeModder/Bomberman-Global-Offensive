@@ -93,33 +93,33 @@ namespace game::systems
 
         double elapsed = data.getResource<ecs::Timer>().elapsed();
 
-        field.backspaceRepeat.check(elapsed, [f = field]() mutable {
-            if (f.hasSelection()) {
-                f.eraseSelection();
-            } else if (f.cursorPos > 0) {
-                std::size_t removed = util::removeUtf8Codepoint(f.contents, f.cursorPos - 1).second;
-                f.moveCursor(-static_cast<int>(removed));
+        field.backspaceRepeat.check(elapsed, [f = std::ref(field)]() mutable {
+            if (f.get().hasSelection()) {
+                f.get().eraseSelection();
+            } else if (f.get().cursorPos > 0) {
+                std::size_t removed = util::removeUtf8Codepoint(f.get().contents, f.get().cursorPos - 1).second;
+                f.get().moveCursor(-static_cast<int>(removed));
             }
         });
-        field.deleteRepeat.check(elapsed, [f = field]() mutable {
-            if (f.hasSelection()) {
-                f.eraseSelection();
-            } else if (f.cursorPos < f.contents.size()) {
-                util::removeUtf8Codepoint(f.contents, f.cursorPos);
-                f.moveCursor(0);
+        field.deleteRepeat.check(elapsed, [f = std::ref(field)]() mutable {
+            if (f.get().hasSelection()) {
+                f.get().eraseSelection();
+            } else if (f.get().cursorPos < f.get().contents.size()) {
+                util::removeUtf8Codepoint(f.get().contents, f.get().cursorPos);
+                f.get().moveCursor(0);
             }
         });
-        field.leftArrowRepeat.check(elapsed, [f = field]() mutable {
+        field.leftArrowRepeat.check(elapsed, [f = std::ref(field)]() mutable {
             if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
-                f.moveCursorToWord(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                f.get().moveCursorToWord(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
             else
-                f.moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                f.get().moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
         });
-        field.rightArrowRepeat.check(elapsed, [f = field]() mutable {
+        field.rightArrowRepeat.check(elapsed, [f = std::ref(field)]() mutable {
             if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
-                f.moveCursorToWord(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                f.get().moveCursorToWord(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
             else
-                f.moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                f.get().moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
         });
 
         field.cursorBlink = fmod(field.cursorBlink + elapsed, 1.0);
