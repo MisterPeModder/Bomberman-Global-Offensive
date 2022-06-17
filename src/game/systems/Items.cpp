@@ -32,9 +32,16 @@ namespace game::systems
                 if (!Collision::getCollideRect(collideRect, playerPos, playerSize, pos, size))
                     continue;
 
-                player.pickupItem(playerId, itemId.identifier, data);
+                player.inventory.add(playerId, itemId.identifier, data);
                 entities.kill(id);
             }
         }
+    }
+
+    void UpdateItemTimer::run(ecs::SystemData data)
+    {
+        for (auto [player, playerId] :
+            ecs::join(data.getStorage<game::components::Player>(), data.getResource<ecs::Entities>()))
+            player.updateTimedItems(playerId, data);
     }
 } // namespace game::systems

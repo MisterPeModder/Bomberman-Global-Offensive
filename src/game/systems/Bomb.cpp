@@ -20,7 +20,10 @@ namespace game::systems
         for (auto [pos, size, bomb] : ecs::join(data.getStorage<game::components::Position>(),
                  data.getStorage<game::components::Size>(), data.getStorage<game::components::Bomb>())) {
             (void)bomb;
-            raylib::shapes::Sphere(pos, size.x / 2.f, raylib::core::Color::GREEN).draw();
+            raylib::shapes::Sphere(pos, size.x / 2.f,
+                (bomb.type == game::components::Bomb::Type::Classic) ? raylib::core::Color::GREEN
+                                                                     : raylib::core::Color::RED)
+                .draw();
         }
     }
 
@@ -30,6 +33,8 @@ namespace game::systems
 
         for (auto [pos, bomb, id] : ecs::join(data.getStorage<game::components::Position>(),
                  data.getStorage<game::components::Bomb>(), data.getResource<ecs::Entities>())) {
+            if (bomb.type == game::components::Bomb::Type::LandMine)
+                continue;
             if (now - bomb.placedTime >= bomb.explosionDelay)
                 bomb.explode(pos, data, id);
         }

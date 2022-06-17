@@ -42,16 +42,6 @@ static void setupLogger()
     Logger::logger.log(Logger::Severity::Information, "Start of program");
 }
 
-static void runGame()
-{
-#ifdef __EMSCRIPTEN__
-    auto game = new game::Engine;
-#else
-    auto game = std::make_unique<game::Engine>();
-#endif
-    game->run();
-}
-
 int main()
 {
     setupLogger();
@@ -71,14 +61,22 @@ int main()
     raylib::core::Window::setIcon(icon);
 #endif
 
+    /// Create the game engine instance
+#ifdef __EMSCRIPTEN__
+    auto gameEnginePtr = new game::Engine;
+#else
+    auto gameEngine = std::make_unique<game::Engine>();
+    game::Engine *gameEnginePtr = gameEngine.get();
+#endif
+
     /// Start the Javascript engine
-    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create();
+    std::shared_ptr<bmjs::Engine> jsEngine = bmjs::Engine::create(gameEnginePtr);
 
     jsEngine->loadApi();
     jsEngine->loadScript("hello");
 
     try {
-        runGame();
+        gameEnginePtr->run();
     } catch (std::exception const &e) {
         Logger::logger.log(Logger::Severity::Error,
             [&](std::ostream &writer) { writer << "Game stopped with exception: " << e.what(); });

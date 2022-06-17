@@ -99,10 +99,11 @@ namespace game
         _world.addSystem<systems::ExplodeBomb>();
         _world.addSystem<systems::PickupItem>();
         _world.addSystem<systems::DisableBombNoClip>();
+        _world.addSystem<systems::UpdateItemTimer>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::ChangeCube, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
-            systems::DisableBombNoClip>();
+            systems::DisableBombNoClip, systems::UpdateItemTimer>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawingCube, systems::DrawBomb>();
 
@@ -184,7 +185,6 @@ namespace game
             raylib::core::scoped::Mode3D mode3D(_camera);
             _world.runSystems(_drawing);
         };
-        raylib::core::Window::drawFPS(10, 10);
         _world.maintain();
     }
 } // namespace game

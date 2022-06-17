@@ -20,6 +20,7 @@ set(SRC
     ${INCROOT}/Model.hpp
     ${INCROOT}/Position.hpp
     ${INCROOT}/Position2D.hpp
+    ${INCROOT}/Reference.hpp
     ${INCROOT}/RotationAngle.hpp
     ${INCROOT}/RotationAxis.hpp
     ${INCROOT}/Scale.hpp
