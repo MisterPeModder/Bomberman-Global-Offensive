@@ -68,7 +68,6 @@ namespace raylib
         /// @return A Model object.
         ::Model Model::loadFromMesh(const ::Mesh &mesh) { return LoadModelFromMesh(mesh); }
 
-
         /// loadFromMesh load model with Mesh encapsulated
         ///
         /// @param mesh The mesh to load the model from.
