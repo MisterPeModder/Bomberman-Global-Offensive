@@ -29,4 +29,10 @@ namespace game
         }
         return {User::UserId::UserCount, GameAction::NONE, 0};
     }
+
+    void Users::setIgnoreKeyboard(bool ignore) noexcept
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); ++i)
+            this->_users[i].setIgnoreKeyboard(ignore);
+    }
 } // namespace game

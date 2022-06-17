@@ -59,6 +59,9 @@ namespace game
         /// @return ActionEvent next action event. action is set to None if there is no more actions.
         ActionEvent getNextAction();
 
+        /// @param ignore When true all keyboard-bound actions (except for TOGGLE_CONSOLE) will not be handled.
+        void setIgnoreKeyboard(bool ignore) noexcept;
+
       private:
         std::array<User, static_cast<size_t>(User::UserId::UserCount)> _users;
     };

@@ -18,6 +18,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Position2D.hpp"
@@ -248,6 +249,8 @@ static void loadKeybindSettings(ecs::World &world)
 
 static void loadSettingsMenuScene(ecs::World &world)
 {
+    world.addStorage<game::KeyboardInput>();
+
     world.addSystem<game::systems::InputManager>();
     world.addSystem<game::systems::DrawText>();
     world.addSystem<game::systems::DrawSelectedWidget>();

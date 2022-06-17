@@ -8,7 +8,10 @@
 #include "InputManager.hpp"
 #include "components/Controlable.hpp"
 #include "ecs/join.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/gui/components/Widget.hpp"
+
+#include <algorithm>
 
 using namespace game::components;
 
@@ -16,7 +19,11 @@ namespace game::systems
 {
     void InputManager::run(ecs::SystemData data)
     {
+        auto inputs = ecs::join(data.getStorage<game::KeyboardInput>());
+        bool hasActiveInput = std::any_of(inputs.begin(), inputs.end(), [](auto i) { return std::get<0>(i).focused; });
+
         Users &users = data.getResource<Users>();
+        users.setIgnoreKeyboard(hasActiveInput);
         Users::ActionEvent event = users.getNextAction();
 
         while (event.action != GameAction::NONE) {

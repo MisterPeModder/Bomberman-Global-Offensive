@@ -9,6 +9,9 @@
 #define GAME_GUI_COMPONENTS_CONSOLE_HPP_
 
 #include "ecs/Component.hpp"
+#include "ecs/Entity.hpp"
+#include "ecs/System.hpp"
+#include "game/Users.hpp"
 #include "raylib/text/Font.hpp"
 
 namespace game ::gui
@@ -17,6 +20,8 @@ namespace game ::gui
         raylib::text::Font font;
 
         Console();
+
+        static bool handleInput(ecs::Entity self, ecs::SystemData data, game::Users::ActionEvent const &event);
     };
 } // namespace game::gui
 

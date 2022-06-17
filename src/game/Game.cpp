@@ -15,6 +15,7 @@
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Identity.hpp"
+#include "components/KeyboardInput.hpp"
 #include "components/Living.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
@@ -90,10 +91,11 @@ namespace game
 
         /// Console
         _world.addEntity()
-            .with<game::KeyboardInput>("", true)
+            .with<game::KeyboardInput>("")
             .with<game::gui::Console>()
             .with<game::components::Position>(0.f, 50.f, 0.f)
             .with<game::components::Size2D>(720, 20)
+            .with<game::components::Controlable>(game::User::UserId::User1, &game::gui::Console::handleInput)
             .build();
 
         /// Add world resources
@@ -106,6 +108,7 @@ namespace game
         _world.addStorage<components::Bomb>();
         _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
+        _world.addStorage<game::KeyboardInput>();
         /// Add world systems
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::ChangeCube>();

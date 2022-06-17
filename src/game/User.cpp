@@ -12,7 +12,8 @@
 
 namespace game
 {
-    User::User(UserId id, int gamepadId) : _gamepadId(gamepadId), _profile(static_cast<size_t>(id))
+    User::User(UserId id, int gamepadId)
+        : _gamepadId(gamepadId), _ignoreKeyboard(false), _profile(static_cast<size_t>(id))
     {
         setAvailable(false);
         _lastActions.fill(0);
@@ -68,7 +69,7 @@ namespace game
             return _lastActions[static_cast<size_t>(action) - 1];
         float res = 0.f;
 
-        if (isKeyboard()) {
+        if (isKeyboard() && (!this->_ignoreKeyboard || action == GameAction::TOGGLE_CONSOLE)) {
             auto binds = _profile.getKeybinds().getKeyboardBindings();
 
             return (binds.end() != std::find_if(binds.begin(), binds.end(), [&](auto iter) {
@@ -94,4 +95,6 @@ namespace game
         }
         return res;
     }
+
+    void User::setIgnoreKeyboard(bool ignore) noexcept { this->_ignoreKeyboard = ignore; }
 } // namespace game

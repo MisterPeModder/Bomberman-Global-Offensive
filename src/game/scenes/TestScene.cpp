@@ -18,6 +18,7 @@
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
 #include "game/components/Cube.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Rectangle.hpp"
@@ -113,6 +114,8 @@ static void addTestWidgets(ecs::World &world)
 
 static void loadTestScene(ecs::World &world)
 {
+    world.addStorage<game::KeyboardInput>();
+
     world.addSystem<game::systems::DrawCube>();
     world.addEntity()
         .with<game::components::Cube>()
