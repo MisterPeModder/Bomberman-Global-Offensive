@@ -22,17 +22,6 @@ namespace raylib
         {
         }
 
-        Model::Model(const ::Mesh &mesh) { _model = LoadModelFromMesh(mesh); }
-
-        Model::Model(
-            const raylib::model::Mesh &mesh, const raylib::textures::Texture2D &texture, int materialId, int mapType)
-            : Model(mesh)
-        {
-            setMaterialMapTexture(texture, materialId, mapType);
-        }
-
-        Model::Model(const Model &other, bool ownsMesh) : _model(other._model), _ownsMesh(ownsMesh) {}
-
         Model::~Model()
         {
             if (_ownsMesh)
