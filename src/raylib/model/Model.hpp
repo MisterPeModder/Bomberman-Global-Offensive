@@ -101,8 +101,18 @@ namespace raylib
             /// @return The raylib version of the model
             ::Model const &asRaylib() const;
 
+            /// loadFromMesh load model with Mesh of the raylib library
+            ///
+            /// @param mesh The mesh to load the model from.
+            ///
+            /// @return A Model object.
             static ::Model loadFromMesh(const ::Mesh &mesh);
 
+            /// loadFromMesh load model with Mesh encapsulated
+            ///
+            /// @param mesh The mesh to load the model from.
+            ///
+            /// @return A Model object.
             static ::Model loadFromMesh(const raylib::model::Mesh &mesh);
 
             /// Checks collision with another model
