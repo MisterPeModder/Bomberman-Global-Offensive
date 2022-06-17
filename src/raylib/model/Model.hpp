@@ -119,9 +119,9 @@ namespace raylib
             /// @return The raylib version of the model
             ::Model const &asRaylib() const;
 
-            ::Model loadFromMesh(const ::Mesh &mesh);
+            static ::Model loadFromMesh(const ::Mesh &mesh);
 
-            ::Model loadFromMesh(const raylib::model::Mesh &mesh);
+            static ::Model loadFromMesh(const raylib::model::Mesh &mesh);
 
             /// Checks collision with another model
             ///
