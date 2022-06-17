@@ -70,7 +70,7 @@ var searchData=
   ['setkeyboard_6692',['setKeyboard',['../classgame_1_1_user.html#a9c40f5eb609595680bb8f02ff631d394',1,'game::User']]],
   ['setkeyboardbinding_6693',['setKeyboardBinding',['../classgame_1_1settings_1_1_keybinds.html#a873b29bf14e954826ebbd60a34b73e50',1,'game::settings::Keybinds']]],
   ['setloadcallback_6694',['setLoadCallback',['../classbmjs_1_1_mod.html#a72b9d35b646a1ad19cfc862501af2c33',1,'bmjs::Mod']]],
-  ['setlocale_6695',['setLocale',['../classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6',1,'localization::Localization::setLocale()'],['http://en.cppreference.com/w/cpp/locale/setlocale.html',1,'std::setlocale()']]],
+  ['setlocale_6695',['setLocale',['../classgame_1_1settings_1_1_settings.html#a1f39d3b48e96dfb79845a1e04a4f5b92',1,'game::settings::Settings::setLocale()'],['../classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6',1,'localization::Localization::setLocale()'],['http://en.cppreference.com/w/cpp/locale/setlocale.html',1,'std::setlocale()']]],
   ['setlocalesdirectory_6696',['setLocalesDirectory',['../classlocalization_1_1_localization.html#a4fa2cfee1532eee8c5db700a3e88d8f8',1,'localization::Localization']]],
   ['setloginfo_6697',['setLogInfo',['../class_logger.html#ab6e8022952d15d8784dc022587d14b09',1,'Logger']]],
   ['setloglevel_6698',['setLogLevel',['../class_logger.html#a36215575ad071720cbef8f6ea5542c7d',1,'Logger']]],

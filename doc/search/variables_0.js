@@ -56,7 +56,7 @@ var searchData=
   ['_5flastactions_7425',['_lastActions',['../classgame_1_1_user.html#ad0f3c02c4306d1fc841397a1d583e8c9',1,'game::User']]],
   ['_5flastreset_7426',['_lastReset',['../classecs_1_1_timer.html#ad74145a7f075a1e9617d386b4e852f61',1,'ecs::Timer']]],
   ['_5floaded_7427',['_loaded',['../classraylib_1_1textures_1_1_image.html#a02b883d8f904d53cd38dc25611cd3fab',1,'raylib::textures::Image::_loaded()'],['../classraylib_1_1textures_1_1_texture2_d.html#a3c13959abb8b96529e4dcb9287cd0bff',1,'raylib::textures::Texture2D::_loaded()'],['../classbmjs_1_1_mod.html#af522d8d59aba5e62d057a25201032cd6',1,'bmjs::Mod::_loaded()']]],
-  ['_5flocale_7428',['_locale',['../classlocalization_1_1_localization.html#aa6c6a85cc4353301e3a140f8062c0a0a',1,'localization::Localization::_locale()'],['../classlocalization_1_1_resource_file.html#a1edff0d5a56ada378d343a02cde25a84',1,'localization::ResourceFile::_locale()']]],
+  ['_5flocale_7428',['_locale',['../classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4',1,'game::settings::Settings::_locale()'],['../classlocalization_1_1_localization.html#aa6c6a85cc4353301e3a140f8062c0a0a',1,'localization::Localization::_locale()'],['../classlocalization_1_1_resource_file.html#a1edff0d5a56ada378d343a02cde25a84',1,'localization::ResourceFile::_locale()']]],
   ['_5flocales_7429',['_locales',['../classlocalization_1_1_localization.html#aa8829c90355002f929fa2afea26b2ae2',1,'localization::Localization']]],
   ['_5flocalesdirectory_7430',['_localesDirectory',['../classlocalization_1_1_localization.html#a35d694844b2d9f5022f195b671501022',1,'localization::Localization']]],
   ['_5flogger_7431',['_logger',['../classbmjs_1_1_mod.html#add94129beecc428e78e6badd2ebae2a9',1,'bmjs::Mod']]],

@@ -64,7 +64,7 @@ var searchData=
   ['_5floadmeshes_61',['_loadMeshes',['../classgame_1_1_game.html#a1cb8020dbf9e45e2dc9aa0fa0cedb489',1,'game::Game']]],
   ['_5floadmodels_62',['_loadModels',['../classgame_1_1_game.html#a0828ab041074aaeb22f7c0093f14866d',1,'game::Game']]],
   ['_5floadtextures_63',['_loadTextures',['../classgame_1_1_game.html#a7ed1340d91528ba4833c432c35fdd9e9',1,'game::Game']]],
-  ['_5flocale_64',['_locale',['../classlocalization_1_1_localization.html#aa6c6a85cc4353301e3a140f8062c0a0a',1,'localization::Localization::_locale()'],['../classlocalization_1_1_resource_file.html#a1edff0d5a56ada378d343a02cde25a84',1,'localization::ResourceFile::_locale()']]],
+  ['_5flocale_64',['_locale',['../classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4',1,'game::settings::Settings::_locale()'],['../classlocalization_1_1_localization.html#aa6c6a85cc4353301e3a140f8062c0a0a',1,'localization::Localization::_locale()'],['../classlocalization_1_1_resource_file.html#a1edff0d5a56ada378d343a02cde25a84',1,'localization::ResourceFile::_locale()']]],
   ['_5flocales_65',['_locales',['../classlocalization_1_1_localization.html#aa8829c90355002f929fa2afea26b2ae2',1,'localization::Localization']]],
   ['_5flocalesdirectory_66',['_localesDirectory',['../classlocalization_1_1_localization.html#a35d694844b2d9f5022f195b671501022',1,'localization::Localization']]],
   ['_5flogger_67',['_logger',['../classbmjs_1_1_mod.html#add94129beecc428e78e6badd2ebae2a9',1,'bmjs::Mod']]],

@@ -76,12 +76,12 @@ var NAVTREEINDEX =
 "_player_8hpp_source.html",
 "class_logger.html#aec195417f67cc95b9e9b690e2cbe1d7c",
 "classgame_1_1_engine.html#a73c74b99146453a5f42f9fbc8a1b0ddf",
-"classlocalization_1_1_localization.html#a2587288e71601fce76e3ae59f0892ec6",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90abaaceccc27b1d4e0968c999583f97de5",
-"classraylib_1_1text_1_1_font.html#aa47c3d0c85b42461161deb50eb6da07b",
-"game_2components_2_rectangle_8hpp.html",
-"structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8",
-"structraylib_1_1core_1_1_vector2.html#aed2a9de06c46fffc90318b09f4b9ad2b"
+"classlocalization_1_1_localization.html",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab51dc9db6e5110cf7e1bdc44b218ad66",
+"classraylib_1_1text_1_1_font.html#a77cf599d34493c00144ade3ad26447a9",
+"game_2components_2_model_8hpp.html",
+"structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896d",
+"structraylib_1_1core_1_1_vector2.html#ab2b02da992063ad8514e03047d6da4f6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
