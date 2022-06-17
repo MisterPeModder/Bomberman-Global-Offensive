@@ -88,7 +88,7 @@ static void loadMainMenuScene(ecs::World &world)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::LOGOUT, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::MainMenuScene::OPTION, game::gui::Widget::NullTag)
-        .with<game::gui::Clickable>([&world](ecs::Entity) {
+        .with<game::gui::Clickable>([](ecs::Entity) {
             raylib::core::Window::close();
             Logger::logger.log(Logger::Severity::Debug, "close game");
         })
