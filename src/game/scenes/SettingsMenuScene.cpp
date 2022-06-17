@@ -313,6 +313,7 @@ static void loadSettingsMenuScene(ecs::World &world)
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
                 Logger::logger.log(Logger::Severity::Debug, "Back to menu");
+                world.getResource<game::resources::EngineResource>().engine->getSettings().save();
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
