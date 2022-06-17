@@ -27,6 +27,7 @@ namespace game
         {
             _sfxVolume = 100;
             _musicVolume = 100;
+            _masterVolume = 100;
             _targetFramerate = 60;
             _resolution = {1280, 720};
             _fullscreen = false;
@@ -54,6 +55,8 @@ namespace game
                 setSfxVolume(std::stof(value.data()));
             else if (key == "music_volume")
                 setMusicVolume(std::stof(value.data()));
+            else if (key == "master_volume")
+                setMasterVolume(std::stof(value.data()));
             else if (key == "target_framerate")
                 setTargetFramerate(std::stoul(value.data()));
             else if (key == "resolution") {
@@ -116,6 +119,15 @@ namespace game
 
         float Settings::getMusicVolume() const { return _musicVolume; }
 
+        void Settings::setMasterVolume(float volume)
+        {
+            if (volume < 0 || volume > 100)
+                throw InvalidSettingsValue("Volumes must be between 0 and 100.");
+            _masterVolume = volume;
+        }
+
+        float Settings::getMasterVolume() const { return _masterVolume; }
+
         void Settings::setTargetFramerate(unsigned int target) { _targetFramerate = target; }
 
         unsigned int Settings::getTargetFramerate() const { return _targetFramerate; }
@@ -140,6 +152,7 @@ std::ostream &operator<<(std::ostream &stream, const game::settings::Settings &s
     stream << "# Bomberman settings" << std::endl << std::endl;
     stream << "sfx_volume=" << settings.getSfxVolume() << std::endl;
     stream << "music_volume=" << settings.getMusicVolume() << std::endl;
+    stream << "master_volume=" << settings.getMasterVolume() << std::endl;
     stream << "target_framerate=" << settings.getTargetFramerate() << std::endl;
     stream << "resolution=" << settings.getResolution().x << "x" << settings.getResolution().y << std::endl;
     stream << "fullscreen=" << std::boolalpha << settings.isFullscreen() << std::endl;
