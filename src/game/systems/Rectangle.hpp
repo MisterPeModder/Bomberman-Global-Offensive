@@ -13,9 +13,10 @@
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
 #include "game/components/Color.hpp"
-#include "game/components/Position2D.hpp"
+#include "game/components/Position.hpp"
 #include "game/components/Rectangle.hpp"
-#include "game/components/Size2D.hpp"
+#include "game/components/Size.hpp"
+#include "raylib/core/Window.hpp"
 #include "raylib/shapes/Rectangle.hpp"
 
 namespace game
@@ -26,9 +27,13 @@ namespace game
             void run(ecs::SystemData data) override final
             {
                 for (auto [rectangle, pos, size, color] : ecs::join(data.getStorage<game::components::Rectangle>(),
-                         data.getStorage<game::components::Position2D>(), data.getStorage<game::components::Size2D>(),
+                         data.getStorage<game::components::Position>(), data.getStorage<game::components::Size>(),
                          data.getStorage<game::components::Color>())) {
-                    rectangle.draw(pos, size, color);
+                    rectangle.draw(raylib::core::Vector2f(pos.x / 100 * raylib::core::Window::getWidth(),
+                                       pos.y / 100 * raylib::core::Window::getHeight()),
+                        raylib::core::Vector2f(size.x / 100 * raylib::core::Window::getWidth(),
+                            size.y / 100 * raylib::core::Window::getHeight()),
+                        color);
                 }
             }
         };
