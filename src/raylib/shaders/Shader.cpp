@@ -48,6 +48,11 @@ namespace raylib
             SetShaderValue(_shader, location, &value, SHADER_UNIFORM_VEC3);
         }
 
+        void Shader::setValue(Location location, raylib::core::Vector4f value) const
+        {
+            SetShaderValue(_shader, location, &value, SHADER_UNIFORM_VEC4);
+        }
+
         void Shader::setValue(Location location, int value) const
         {
             SetShaderValue(_shader, location, &value, SHADER_UNIFORM_INT);
@@ -61,6 +66,11 @@ namespace raylib
         void Shader::setValue(Location location, raylib::core::Vector3i value) const
         {
             SetShaderValue(_shader, location, &value, SHADER_UNIFORM_IVEC3);
+        }
+
+        void Shader::setValue(Location location, raylib::core::Vector4i value) const
+        {
+            SetShaderValue(_shader, location, &value, SHADER_UNIFORM_IVEC4);
         }
 
         void Shader::setValue(Location location, const ::Matrix &mat) const
@@ -88,6 +98,11 @@ namespace raylib
             SetShaderValueV(_shader, location, values.data(), SHADER_UNIFORM_VEC3, values.size());
         }
 
+        void Shader::setValues(Location location, std::span<raylib::core::Vector4f, std::dynamic_extent> values) const
+        {
+            SetShaderValueV(_shader, location, values.data(), SHADER_UNIFORM_VEC4, values.size());
+        }
+
         void Shader::setValues(Location location, std::span<int, std::dynamic_extent> values) const
         {
             SetShaderValueV(_shader, location, values.data(), SHADER_UNIFORM_INT, values.size());
@@ -101,6 +116,11 @@ namespace raylib
         void Shader::setValues(Location location, std::span<raylib::core::Vector3i, std::dynamic_extent> values) const
         {
             SetShaderValueV(_shader, location, values.data(), SHADER_UNIFORM_IVEC3, values.size());
+        }
+
+        void Shader::setValues(Location location, std::span<raylib::core::Vector4i, std::dynamic_extent> values) const
+        {
+            SetShaderValueV(_shader, location, values.data(), SHADER_UNIFORM_IVEC4, values.size());
         }
 
         const ::Shader &Shader::asRaylib() const { return _shader; }
