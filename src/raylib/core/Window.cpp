@@ -55,7 +55,14 @@ namespace raylib
 
         void Window::setIcon(textures::Image const &icon) { SetWindowIcon(icon.asRaylib()); }
 
-        std::string_view Window::getClipboard() { return ::GetClipboardText(); }
+        std::string_view Window::getClipboard()
+        {
+            char const *text = ::GetClipboardText();
+
+            if (text == nullptr)
+                return {};
+            return text;
+        }
 
         void Window::setClipboard(std::string_view text) { ::SetClipboardText(text.data()); }
 
