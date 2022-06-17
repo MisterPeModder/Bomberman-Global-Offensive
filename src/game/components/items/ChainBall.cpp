@@ -16,12 +16,17 @@ namespace game::components
 
         chainBall.type = Item::Type::PowerDown;
         chainBall.identifier = Item::Identifier::ChainBall;
-        chainBall.maxStack = 5;
+        chainBall.maxStack = 0;
         chainBall.name = "Chain ball";
         chainBall.duration = std::chrono::milliseconds::zero();
         chainBall.dropRate = 30;
         chainBall.onApply = [](ecs::Entity player, ecs::SystemData data) {
-            data.getStorage<Player>()[player.getId()].stats.speed -= Player::Stats::DEFAULT_SPEED * 0.1f;
+            auto &speed = data.getStorage<Player>()[player.getId()].stats.speed;
+
+            if (speed > Player::Stats::DEFAULT_SPEED * 0.5f) {
+                speed -= Player::Stats::DEFAULT_SPEED * 0.1f;
+                return true;
+            }
             return true;
         };
         return chainBall;

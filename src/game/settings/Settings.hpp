@@ -88,6 +88,17 @@ namespace game
             /// @return the music volume.
             float getMusicVolume() const;
 
+            /// Set the master volume.
+            ///
+            /// @param volume new volume to set ([0-100]).
+            /// @throw InvalidSettingsValue when the new volume isn't in the required range.
+            void setMasterVolume(float volume);
+
+            /// Get the master volume.
+            ///
+            /// @return the master volume.
+            float getMasterVolume() const;
+
             /// Set the target framerate (frame per seconds).
             ///
             /// @param targetFPS target framerate.
@@ -120,6 +131,16 @@ namespace game
             /// @retval true if the fullscreen mode is required.
             bool isFullscreen() const;
 
+            /// Set the target locale.
+            ///
+            /// @param locale target locale.
+            void setLocale(std::string_view locale);
+
+            /// Get the target locale.
+            ///
+            /// @return std::string_view target locale.
+            std::string_view getLocale() const;
+
           private:
             /// Load a value from its string representation.
             ///
@@ -129,9 +150,11 @@ namespace game
 
             float _sfxVolume;
             float _musicVolume;
+            float _masterVolume;
             unsigned int _targetFramerate;
             raylib::core::Vector2f _resolution;
             bool _fullscreen;
+            std::string _locale;
         };
     } // namespace settings
 } // namespace game
