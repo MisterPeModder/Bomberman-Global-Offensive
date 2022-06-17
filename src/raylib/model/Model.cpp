@@ -61,6 +61,10 @@ namespace raylib
             return getBoundingBox().checkCollision(other.getBoundingBox());
         }
 
+        ::Model Model::loadFromMesh(const ::Mesh &mesh) { return LoadModelFromMesh(mesh); }
+
+        ::Model Model::loadFromMesh(const raylib::model::Mesh &mesh) { return LoadModelFromMesh(mesh.asRaylib()); }
+
         bool Model::checkCollision(const BoundingBox &otherBox) { return getBoundingBox().checkCollision(otherBox); }
 
         ::Model &Model::asRaylib() { return _model; }
