@@ -7,6 +7,7 @@ var classraylib_1_1core_1_1_window =
     [ "endDrawing", "classraylib_1_1core_1_1_window.html#a281c780bd53355651cf941201252c289", null ],
     [ "getHeight", "classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374", null ],
     [ "getWidth", "classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255", null ],
+    [ "isFullscreen", "classraylib_1_1core_1_1_window.html#ad2b42af3034b758f6af55e5534fd0d20", null ],
     [ "open", "classraylib_1_1core_1_1_window.html#a4888ad6d11dc3ce6a44500dd775c3228", null ],
     [ "setIcon", "classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58", null ],
     [ "setSize", "classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524", null ],

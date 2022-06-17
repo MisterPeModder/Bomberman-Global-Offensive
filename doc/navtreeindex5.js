@@ -75,12 +75,13 @@ var NAVTREEINDEX5 =
 "classraylib_1_1core_1_1_window.html#a281c780bd53355651cf941201252c289":[2,0,4,0,12,4],
 "classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374":[2,0,4,0,12,5],
 "classraylib_1_1core_1_1_window.html#a4554280bd183327323e4295a649d47f8":[2,0,4,0,12,2],
-"classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db":[2,0,4,0,12,12],
-"classraylib_1_1core_1_1_window.html#a4888ad6d11dc3ce6a44500dd775c3228":[2,0,4,0,12,7],
-"classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524":[2,0,4,0,12,9],
-"classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7":[2,0,4,0,12,11],
-"classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58":[2,0,4,0,12,8],
-"classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c":[2,0,4,0,12,10],
+"classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db":[2,0,4,0,12,13],
+"classraylib_1_1core_1_1_window.html#a4888ad6d11dc3ce6a44500dd775c3228":[2,0,4,0,12,8],
+"classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524":[2,0,4,0,12,10],
+"classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7":[2,0,4,0,12,12],
+"classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58":[2,0,4,0,12,9],
+"classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c":[2,0,4,0,12,11],
+"classraylib_1_1core_1_1_window.html#ad2b42af3034b758f6af55e5534fd0d20":[2,0,4,0,12,7],
 "classraylib_1_1core_1_1scoped_1_1_audio_device.html":[2,0,4,0,0,0],
 "classraylib_1_1core_1_1scoped_1_1_audio_device.html#a47ed5571d38e2a1ab9936e5f5570603e":[2,0,4,0,0,0,1],
 "classraylib_1_1core_1_1scoped_1_1_audio_device.html#ab46a06e7b0c63238e2b5e77d4623b826":[2,0,4,0,0,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1text_1_1_font.html#aa4f0d6d18ed490cb641cd256532a186f":[2,0,4,3,0,1],
 "classraylib_1_1text_1_1_font.html#aaee5d7b3d6fcc3dd9dc8ae8d81f475f4":[2,0,4,3,0,4],
 "classraylib_1_1text_1_1_font.html#aafa5c22c01e8cbe54b0578beccfd93e8":[2,0,4,3,0,7],
-"classraylib_1_1text_1_1_font.html#aafd8a062e08717f97a0910103ef50143":[2,0,4,3,0,9],
-"classraylib_1_1text_1_1_font.html#ac17596446c069cd8abd2801dfa31cda1":[2,0,4,3,0,10]
+"classraylib_1_1text_1_1_font.html#aafd8a062e08717f97a0910103ef50143":[2,0,4,3,0,9]
 };

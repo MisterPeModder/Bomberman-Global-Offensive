@@ -317,7 +317,7 @@ var searchData=
   ['isdigit_28_3c_20clocale_20_3e_29_1681',['isdigit(&lt; clocale &gt;)',['http://en.cppreference.com/w/cpp/locale/isdigit.html',1,'std']]],
   ['isfilled_1682',['isFilled',['../classgame_1_1map_1_1cellular_1_1_grid.html#af942500e05b6be2c35022ab620bedba5',1,'game::map::cellular::Grid']]],
   ['isfinite_1683',['isfinite',['http://en.cppreference.com/w/cpp/numeric/math/isfinite.html',1,'std']]],
-  ['isfullscreen_1684',['isFullscreen',['../classgame_1_1settings_1_1_settings.html#ad7077ffc79bca9949bd0ad4212e77799',1,'game::settings::Settings']]],
+  ['isfullscreen_1684',['isFullscreen',['../classgame_1_1settings_1_1_settings.html#ad7077ffc79bca9949bd0ad4212e77799',1,'game::settings::Settings::isFullscreen()'],['../classraylib_1_1core_1_1_window.html#ad2b42af3034b758f6af55e5534fd0d20',1,'raylib::core::Window::isFullscreen()']]],
   ['isgraph_28_3c_20cctype_20_3e_29_1685',['isgraph(&lt; cctype &gt;)',['http://en.cppreference.com/w/cpp/string/byte/isgraph.html',1,'std']]],
   ['isgraph_28_3c_20clocale_20_3e_29_1686',['isgraph(&lt; clocale &gt;)',['http://en.cppreference.com/w/cpp/locale/isgraph.html',1,'std']]],
   ['isgreater_1687',['isgreater',['http://en.cppreference.com/w/cpp/numeric/math/isgreater.html',1,'std']]],

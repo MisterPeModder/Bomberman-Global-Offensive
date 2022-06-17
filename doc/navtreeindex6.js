@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1text_1_1_font.html#ac17596446c069cd8abd2801dfa31cda1":[2,0,4,3,0,10],
 "classraylib_1_1text_1_1_font.html#ac2e4e9291f3a708ca64ec5fb4c13bce4":[2,0,4,3,0,16],
 "classraylib_1_1text_1_1_font.html#ad33456560108394bbe6eeb754941580e":[2,0,4,3,0,11],
 "classraylib_1_1text_1_1_font.html#ae22f947d2b143351544fdf4dba59bdf7":[2,0,4,3,0,2],
@@ -195,8 +196,8 @@ var NAVTREEINDEX6 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2,0],
 "functions_vars.html":[2,3,2],
+"functions_vars.html":[2,3,2,0],
 "functions_vars_a.html":[2,3,2,1],
 "functions_vars_b.html":[2,3,2,2],
 "functions_vars_c.html":[2,3,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "game_2resources_2_engine_8hpp_source.html":[3,0,0,1,3,1],
 "game_2systems_2_animation_8hpp.html":[3,0,0,1,6,0],
 "game_2systems_2_animation_8hpp_source.html":[3,0,0,1,6,0],
-"game_2systems_2_cube_8hpp.html":[3,0,0,1,6,6],
-"game_2systems_2_cube_8hpp_source.html":[3,0,0,1,6,6]
+"game_2systems_2_cube_8hpp.html":[3,0,0,1,6,6]
 };
