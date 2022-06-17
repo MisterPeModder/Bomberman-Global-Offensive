@@ -105,7 +105,7 @@ namespace game
     {
         _world.getResource<resources::Meshes>().emplace("box", 1.f, 1.f, 1.f);
         _world.getResource<resources::Meshes>().emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
-        _world.getResource<resources::Meshes>().emplace("bonus", 0.75f, 0.1f, 0.75f);
+        _world.getResource<resources::Meshes>().emplace("bonus", 0.7f, 0.0f, 0.7f);
     }
 
     void Game::_loadModels()

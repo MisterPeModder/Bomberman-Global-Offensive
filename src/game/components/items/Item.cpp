@@ -16,6 +16,7 @@
 #include "components/Model.hpp"
 #include "components/Position.hpp"
 #include "components/Size.hpp"
+#include "components/Scale.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Entities.hpp"
@@ -75,9 +76,10 @@ namespace game::components
                         .with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
                         .with<Position>(
                             data.getStorage<Position>(), static_cast<float>(cell.x), 0.5f, static_cast<float>(cell.y))
-                        .with<Size>(data.getStorage<Size>(), 0.4f, 0.4f, 0.4f)
+                        .with<Size>(data.getStorage<Size>(), 0.7f, 0.0f, 0.7f)
                         .with<Destructible>(data.getStorage<Destructible>())
-                        .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE);
+                        .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
+                        .with<Scale>(data.getStorage<Scale>(), 1);
         switch (identifier) {
             case Item::Identifier::SpeedShoes:
                 (void)item.with<ModelReference>(data.getStorage<ModelReference>(),
@@ -121,15 +123,5 @@ namespace game::components
             default: break;
         }
         item.build();
-        // SpeedShoes,
-        // FireUp,
-        // BombUp,
-        // KickShoes,
-        // /// Power Down
-        // ChainBall,
-        // FireDown,
-        // BombDown,
-        // InvertedControls,
-        // Count,
     }
 } // namespace game::components
