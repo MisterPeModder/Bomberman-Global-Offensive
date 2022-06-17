@@ -16,6 +16,7 @@
 #include "components/Identity.hpp"
 #include "components/Living.hpp"
 #include "components/Model.hpp"
+#include "components/Animation.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
 #include "components/RotationAngle.hpp"
@@ -53,6 +54,8 @@
 
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
+
+#include "util/util.hpp"
 
 #include <cmath>
 
@@ -215,8 +218,9 @@ namespace game
                 .with<components::Living>(_params.livesCount)
                 .with<components::Collidable>()
                 .with<components::Player>()
-                .with<components::Size>(0.5f, 0.5, 0.5f)
+                .with<components::Size>(0.5f, 0.5f, 0.5f)
                 .with<components::ModelReference>(_world.getResource<resources::Models>().get("player"))
+                .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
                 .with<components::Color>(raylib::core::Color::WHITE)
                 .with<components::RotationAngle>(90.0f)
                 .with<components::RotationAxis>(1.f, 0.f, 0.f)

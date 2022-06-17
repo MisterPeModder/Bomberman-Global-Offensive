@@ -39,6 +39,11 @@ namespace raylib
             /// Copy operator
             Animation &operator=(const Animation &other);
 
+            /// Choose the animation to play
+            ///
+            /// @param animationId The id of the animation
+            void chooseAnimation(unsigned int animationId);
+
             /// Update a model with this animation
             ///
             /// @param model The model to update
@@ -48,7 +53,8 @@ namespace raylib
             std::filesystem::path _animationPath;
             ::ModelAnimation *_animations;
             unsigned int _animsCount;
-            int _animFrameCounter;
+            unsigned int _animFrameCounter;
+            unsigned int _animNumber;
         };
     } // namespace model
 } // namespace raylib

@@ -22,6 +22,21 @@ namespace game::components
 {
     /// Player marker.
     struct Player : public ecs::Component {
+
+        /// The different animations
+        enum class Animations {
+            Idle_1,
+            Idle_2,
+            Idle_3,
+            Idle_4,
+            Run,
+            Die,
+            Dance_1,
+            Dance_2,
+            Dance_3,
+            Dance_4,
+        };
+
         struct Stats {
             /// Default speed of the player (in cells per seconds).
             static constexpr float DEFAULT_SPEED = 4.f;
@@ -109,6 +124,8 @@ namespace game::components
         Inventory inventory;
         /// Number of bomb currently placed on the map.
         size_t placedBombs;
+        /// Animation that is currently playing
+        Animations animation;
 
         /// Callback of the @ref Controlable component of the players.
         ///
