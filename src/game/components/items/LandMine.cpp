@@ -20,7 +20,7 @@ namespace game::components
         landMine.maxStack = 0;
         landMine.name = "Land Mine";
         landMine.duration = std::chrono::milliseconds::zero();
-        landMine.dropRate = 50;
+        landMine.dropRate = 20;
         landMine.onApply = [](ecs::Entity player, ecs::SystemData data) {
             Player::placeBomb(player, data, Bomb::Type::LandMine);
             return true;
