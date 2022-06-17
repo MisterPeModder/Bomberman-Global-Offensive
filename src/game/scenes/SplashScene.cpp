@@ -38,13 +38,13 @@
 
 static void loadSplashScene(ecs::World &world)
 {
-    static const std::filesystem::path studioLogoPath = util::makePath("assets", "studio_logo.png");
-    float scale = 1.f;
+    static const std::filesystem::path raylibLogoPath = util::makePath("assets", "raylib_logo.png");
+    float scale = 3.f;
 
     world.addEntity()
-        .with<game::components::Texture2D>(studioLogoPath)
-        .with<game::components::Position>((raylib::core::Window::getWidth() / 2) - (200.f * scale),
-            (raylib::core::Window::getHeight() / 2) - (100.f * scale))
+        .with<game::components::Texture2D>(raylibLogoPath)
+        .with<game::components::Position>((raylib::core::Window::getWidth() / 2) - ((128.f * scale) / 2),
+            (raylib::core::Window::getHeight() / 2) - ((128.f * scale) / 2))
         .with<game::components::Scale>(scale)
         .with<game::components::RotationAngle>(0.f)
         .with<game::components::Color>(255, 255, 255, 0)

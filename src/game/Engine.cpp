@@ -61,8 +61,6 @@ namespace game
         loadSettings();
     }
 
-    Engine::~Engine() { _settings.save(); }
-
     game::IScene &Engine::getScene() { return *_scene; }
 
     const game::IScene &Engine::getScene() const { return *_scene; }
