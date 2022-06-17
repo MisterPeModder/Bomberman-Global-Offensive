@@ -33,8 +33,10 @@ namespace game::components
             size_t bombLimit;
             /// If controls are inverted.
             bool inverted;
+            /// If on slowness effect.
+            bool slowness;
 
-            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false) {}
+            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false), slowness(false) {}
         };
 
         /// Occurence of each item in a player inventory
@@ -75,6 +77,30 @@ namespace game::components
             /// @return true If the item was consumed.
             /// @return false If no item was consumed.
             bool useActivable(ecs::Entity player, ecs::SystemData data);
+
+            /// Try to select the previous possessed activable item.
+            /// @note Selection unchanged means there is only one or zero possessed activable item.
+            ///
+            /// @return true If the selection changed.
+            /// @return false If the selection didn't change.
+            bool selectPreviousActivable();
+
+            /// Try to select the next possessed activable item.
+            /// @note Selection unchanged means there is only one or zero possessed activable item.
+            ///
+            /// @return true If the selection changed.
+            /// @return false If the selection didn't change.
+            bool selectNextActivable();
+
+            /// Select a specific item, even if not possessed.
+            ///
+            /// @return true If the selection changed.
+            /// @return false If the selection didn't change.
+            bool selectActivable(Item::Identifier itemId);
+
+            /// Select the first possessed activable item.
+            /// @note Does nothing if the user possess the selected item.
+            void updateSelectedActivable();
         };
 
         /// Player stats

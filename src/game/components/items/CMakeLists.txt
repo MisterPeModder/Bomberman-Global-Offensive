@@ -15,6 +15,7 @@ set(SRC
     ${SRCROOT}/KickShoes.cpp
     ${SRCROOT}/LandMine.cpp
     ${SRCROOT}/SpeedShoes.cpp
+    ${SRCROOT}/StunGrenade.cpp
     PARENT_SCOPE)
 
 set(INCDIRS

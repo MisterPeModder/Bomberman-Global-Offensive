@@ -15,12 +15,17 @@
 
 #include <iostream>
 
+#include "settings/Settings.hpp"
+
 namespace game
 {
     class Engine {
       public:
         /// Constructor
         Engine();
+
+        /// Destructor
+        ~Engine();
 
         /// Sets the active scene and deletes the old one
         template <std::derived_from<IScene> S> void setScene()
@@ -56,10 +61,20 @@ namespace game
         /// Called on each render tick.
         void drawFrame();
 
+        /// Gets the settings (mutable)
+        settings::Settings &getSettings();
+
+        /// Gets the settings (immutable)
+        const settings::Settings &getSettings() const;
+
       private:
+        /// Load the settings from the settings file
+        void loadSettings();
+
         /// Sets the active scene and deletes the old one
         std::unique_ptr<game::IScene> _scene;
         std::unique_ptr<game::IScene> _waitingScene;
+        settings::Settings _settings;
 
         bool _debugMode;
     };
