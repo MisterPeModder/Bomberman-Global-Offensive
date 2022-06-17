@@ -26,6 +26,16 @@
 
 namespace game::systems
 {
+    static constexpr raylib::core::Color outputColor(game::gui::Console const &console)
+    {
+        switch (console.outputSeverity) {
+            case Logger::Severity::Debug: return raylib::core::Color::SKY_BLUE;
+            case Logger::Severity::Error: return raylib::core::Color::RED;
+            case Logger::Severity::Warning: return raylib::core::Color::YELLOW;
+            default: return raylib::core::Color::GRAY;
+        }
+    }
+
     void DrawConsole::run(ecs::SystemData data)
     {
         using Color = raylib::core::Color;
@@ -49,15 +59,17 @@ namespace game::systems
             return;
 
         std::string text = ">>> " + field.contents;
+        std::string outputText = "- " + console.output;
         std::string textBeforeCursor(text.cbegin(), text.cbegin() + 4 + field.cursorPos);
 
         Vector2f textSize = console.font.measure(text, 20);
         Vector2f textbeforeCursorSize = console.font.measure(textBeforeCursor, 20);
-        Vector2f replySize = console.font.measure("- undefined", 20);
+        Vector2f outputSize = console.font.measure(outputText, 20);
 
         float border = 2.0f;
         float padding = 10.0f;
         float lineSpacing = 5.0f;
+        int lineCount = console.output.empty() ? 1 : 2;
 
         // Position the console at the bottom of the screen
         pos.x = 0;
@@ -65,7 +77,7 @@ namespace game::systems
 
         // Occupy the full window width and enough height for two lines and some padding
         size.x = raylib::core::Window::getWidth();
-        size.y = textSize.y + replySize.y + 2 * border + 2 * padding + lineSpacing;
+        size.y = textSize.y + outputSize.y + lineCount * border + lineCount * padding + lineSpacing;
 
         Vector2f drawPos{pos.x, pos.y};
         Vector2f inputPos{drawPos.x + border + padding, drawPos.y + padding};
@@ -93,9 +105,14 @@ namespace game::systems
         background.drawLines(border);
 
         console.font.draw(text, inputPos, 20, Color::WHITE);
-        console.font.draw(
-            "- undefined", drawPos + Vector2f{border + padding, textSize.y + padding + lineSpacing}, 20, Color::GRAY);
 
+        // Draw output
+        if (!console.output.empty()) {
+            console.font.draw(outputText, drawPos + Vector2f{border + padding, textSize.y + padding + lineSpacing}, 20,
+                outputColor(console));
+        }
+
+        // Draw cursor
         if (field.getCursorType() != game::KeyboardInput::CursorType::NONE) {
             raylib::shapes::Rectangle cursor(
                 inputPos + Vector2f{textbeforeCursorSize.x, 0}, Vector2f{1, textSize.y}, Color::WHITE);

@@ -10,6 +10,7 @@
 
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
+#include "ecs/resource/Entities.hpp"
 #include "ecs/resource/Timer.hpp"
 
 #include "raylib/core/Keyboard.hpp"
@@ -29,7 +30,7 @@ namespace game::systems
 
     void UpdateKeyboardInput::run(ecs::SystemData data)
     {
-        auto iter = ecs::join(data.getStorage<game::KeyboardInput>());
+        auto iter = ecs::join(data.getStorage<game::KeyboardInput>(), data.getResource<ecs::Entities>());
 
         auto begin = iter.begin();
         auto end = iter.end();
@@ -38,7 +39,7 @@ namespace game::systems
         if (firstSelected == end)
             return;
 
-        game::KeyboardInput &field = std::get<0>(*firstSelected);
+        auto [field, self] = *firstSelected;
         Keyboard::Key key;
         int codepoint;
 
@@ -79,6 +80,11 @@ namespace game::systems
                 // END: move to the end of the contents
 
                 field.moveCursor(field.contents.size(), Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+            } else if (key == Keyboard::Key::ENTER || key == Keyboard::Key::KP_ENTER) {
+                // ENTER: submit input
+
+                if (field.onSubmit(self, data, field.contents))
+                    field.clear();
             }
         }
         while ((codepoint = Keyboard::getCharPressed())) {
@@ -87,33 +93,33 @@ namespace game::systems
 
         double elapsed = data.getResource<ecs::Timer>().elapsed();
 
-        field.backspaceRepeat.check(elapsed, [&field]() {
-            if (field.hasSelection()) {
-                field.eraseSelection();
-            } else if (field.cursorPos > 0) {
-                std::size_t removed = util::removeUtf8Codepoint(field.contents, field.cursorPos - 1).second;
-                field.moveCursor(-static_cast<int>(removed));
+        field.backspaceRepeat.check(elapsed, [f = field]() mutable {
+            if (f.hasSelection()) {
+                f.eraseSelection();
+            } else if (f.cursorPos > 0) {
+                std::size_t removed = util::removeUtf8Codepoint(f.contents, f.cursorPos - 1).second;
+                f.moveCursor(-static_cast<int>(removed));
             }
         });
-        field.deleteRepeat.check(elapsed, [&field]() {
-            if (field.hasSelection()) {
-                field.eraseSelection();
-            } else if (field.cursorPos < field.contents.size()) {
-                util::removeUtf8Codepoint(field.contents, field.cursorPos);
-                field.moveCursor(0);
+        field.deleteRepeat.check(elapsed, [f = field]() mutable {
+            if (f.hasSelection()) {
+                f.eraseSelection();
+            } else if (f.cursorPos < f.contents.size()) {
+                util::removeUtf8Codepoint(f.contents, f.cursorPos);
+                f.moveCursor(0);
             }
         });
-        field.leftArrowRepeat.check(elapsed, [&field]() {
+        field.leftArrowRepeat.check(elapsed, [f = field]() mutable {
             if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
-                field.moveCursorToWord(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                f.moveCursorToWord(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
             else
-                field.moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                f.moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
         });
-        field.rightArrowRepeat.check(elapsed, [&field]() {
+        field.rightArrowRepeat.check(elapsed, [f = field]() mutable {
             if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
-                field.moveCursorToWord(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                f.moveCursorToWord(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
             else
-                field.moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                f.moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
         });
 
         field.cursorBlink = fmod(field.cursorBlink + elapsed, 1.0);

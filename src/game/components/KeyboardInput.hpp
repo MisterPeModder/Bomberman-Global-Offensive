@@ -13,6 +13,9 @@
 #include "raylib/core/Color.hpp"
 #include "raylib/core/Keyboard.hpp"
 
+#include "ecs/Entity.hpp"
+#include "ecs/system/SystemData.hpp"
+
 #include <functional>
 
 namespace game
@@ -47,6 +50,17 @@ namespace game
             double _timeSinceRepeat;
         };
 
+        /// The type of function executed when the user presses the enter key while the input is focused.
+        ///
+        /// @param self the entity id of the input.
+        /// @param data the system data.
+        /// @param line the contents of the input field.
+        ///
+        /// @returns whether the input field should be cleared.
+        using onSubmitCallback = std::function<bool(ecs::Entity, ecs::SystemData, std::string_view)>;
+
+        onSubmitCallback onSubmit;
+
         std::string contents;
         std::size_t cursorPos;
         std::size_t selectionPos;
@@ -65,7 +79,7 @@ namespace game
 
         double cursorBlink;
 
-        KeyboardInput(std::string &&initialContents = std::string(), bool pFocused = false);
+        KeyboardInput(onSubmitCallback submitCallback);
 
         /// Moves the cursor backwards or forwards of @b offset codepoints.
         void moveCursor(int offset, bool selectingText = false);
@@ -80,7 +94,10 @@ namespace game
         bool hasSelection() noexcept;
 
         /// Deletes the selected text and resets the selection.
-        void eraseSelection() noexcept;
+        void eraseSelection();
+
+        /// Deletes the whole input.
+        void clear();
     };
 } // namespace game
 

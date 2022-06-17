@@ -42,8 +42,8 @@ namespace game
         }
     }
 
-    KeyboardInput::KeyboardInput(std::string &&initialContents, bool pFocused)
-        : contents(initialContents), cursorPos(0), selectionPos(0), focused(pFocused),
+    KeyboardInput::KeyboardInput(onSubmitCallback submitCallback)
+        : onSubmit(submitCallback), contents(), cursorPos(0), selectionPos(0), focused(false),
           backspaceRepeat(Keyboard::Key::BACKSPACE), deleteRepeat(Keyboard::Key::DELETE),
           leftArrowRepeat(Keyboard::Key::LEFT), rightArrowRepeat(Keyboard::Key::RIGHT), cursorBlink(0.0)
     {
@@ -98,12 +98,19 @@ namespace game
 
     bool KeyboardInput::hasSelection() noexcept { return this->selectionPos != this->cursorPos; }
 
-    void KeyboardInput::eraseSelection() noexcept
+    void KeyboardInput::eraseSelection()
     {
         auto [selectStart, selectEnd] = std::minmax(this->selectionPos, this->cursorPos);
 
         this->contents.erase(this->contents.cbegin() + selectStart, this->contents.cbegin() + selectEnd);
         this->cursorPos = selectStart;
         this->selectionPos = selectStart;
+    }
+
+    void KeyboardInput::clear()
+    {
+        this->contents.clear();
+        this->cursorPos = 0;
+        this->selectionPos = 0;
     }
 } // namespace game

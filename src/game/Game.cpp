@@ -91,10 +91,10 @@ namespace game
 
         /// Console
         _world.addEntity()
-            .with<game::KeyboardInput>("")
             .with<game::gui::Console>()
             .with<game::components::Position>(0.f, 50.f, 0.f)
             .with<game::components::Size2D>(720, 20)
+            .with<game::KeyboardInput>(&game::gui::Console::runCommand)
             .with<game::components::Controlable>(game::User::UserId::User1, &game::gui::Console::handleInput)
             .build();
 
