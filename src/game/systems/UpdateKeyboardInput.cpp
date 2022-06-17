@@ -70,6 +70,15 @@ namespace game::systems
                     field.contents.insert(field.cursorPos, pasted);
                     field.moveCursor(pasted.size());
                 }
+            } else if (key == Keyboard::Key::HOME) {
+                // HOME (begin): move to the start of the contents
+
+                field.moveCursor(
+                    -static_cast<int>(field.contents.size()), Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+            } else if (key == Keyboard::Key::END) {
+                // END: move to the end of the contents
+
+                field.moveCursor(field.contents.size(), Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
             }
         }
         while ((codepoint = Keyboard::getCharPressed())) {
