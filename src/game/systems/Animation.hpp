@@ -27,9 +27,16 @@ namespace game
         struct RunAnimation : public ecs::System {
             void run(ecs::SystemData data) override final
             {
-                for (auto [model, animation] : ecs::join(
-                         data.getStorage<game::components::Model>(), data.getStorage<game::components::Animation>())) {
-                    animation.updateModel(model);
+                auto models = ecs::maybe(data.getStorage<game::components::Model>());
+                auto modelRefs = ecs::maybe(data.getStorage<game::components::ModelReference>());
+
+                for (auto [model, modelRef, animation] :
+                    ecs::join(models, modelRefs, data.getStorage<game::components::Animation>())) {
+                    auto obj = (model) ? model : ((modelRef) ? &modelRef->object : nullptr);
+
+                    if (!obj)
+                        continue;
+                    animation.updateModel(*obj);
                 }
             }
         };
