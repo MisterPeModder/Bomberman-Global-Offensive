@@ -76,6 +76,18 @@ namespace game::components
         /// @param self entity @a owning of the bomb component.
         void stop(ecs::SystemData data, ecs::Entity self);
 
+        /// Place a new bomb in the world.
+        ///
+        /// @param bombCell position of the bomb.
+        /// @param data world data.
+        /// @param bombType bomb type.
+        /// @param owner entity @a owning the bomb component.
+        /// @param range bomb range.
+        /// @param delay bomb explosion delay.
+        /// @param velocity velocity of the bomb (null for static bombs)
+        /// @param avoidDuplicates Whether or not it must avoid multiple bombs on the same cell.
+        /// @return true If the bomb was placed.
+        /// @return false If the bomb couldn't be placed
         static bool placeBomb(raylib::core::Vector2u bombCell, ecs::SystemData data, Bomb::Type bombType,
             Identity::Id owner, size_t range, std::chrono::milliseconds delay = DEFAULT_DELAY,
             raylib::core::Vector3f velocity = {0.f, 0.f, 0.f}, bool avoidDuplicates = true);
