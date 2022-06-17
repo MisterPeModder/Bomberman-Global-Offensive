@@ -35,9 +35,11 @@ namespace game::components
         if (this->exploded)
             return;
         this->exploded = true;
-        for (auto [id, player] : ecs::join(data.getStorage<Identity>(), data.getStorage<Player>())) {
-            if (id.id == owner)
-                --player.placedBombs;
+        if (type == Type::Classic) {
+            for (auto [id, player] : ecs::join(data.getStorage<Identity>(), data.getStorage<Player>())) {
+                if (id.id == owner)
+                    --player.placedBombs;
+            }
         }
         /// Retrieve storages
         auto &positions = data.getStorage<Position>();
@@ -128,7 +130,7 @@ namespace game::components
         auto builder = data.getResource<ecs::Entities>().builder();
 
         setBombModel(builder, data)
-            .with<Bomb>(data.getStorage<Bomb>(), owner, radius,
+            .with<Bomb>(data.getStorage<Bomb>(), type, owner, radius,
                 std::chrono::duration_cast<std::chrono::milliseconds>(
                     std::chrono::milliseconds(2000) - (std::chrono::steady_clock::now() - placedTime)))
             .with<Position>(data.getStorage<Position>(), data.getStorage<Position>()[self.getId()])

@@ -6,7 +6,7 @@
 */
 
 #include "game/Engine.hpp"
-#include "game/scenes/SettingsMenuScene.hpp"
+#include "game/scenes/SplashScene.hpp"
 #include "raylib/core/Window.hpp"
 
 #pragma region Browser Events
@@ -54,7 +54,7 @@ namespace game
 {
     Engine::Engine() : _debugMode(false)
     {
-        _scene = std::make_unique<SettingsMenuScene>();
+        _scene = std::make_unique<SplashScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
     }
 

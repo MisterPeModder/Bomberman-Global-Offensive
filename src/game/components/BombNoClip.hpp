@@ -32,9 +32,10 @@ namespace game::components
         /// @note This is used to test rounded Vector3f with Vector2u more easily.
         ///
         /// @param entityPosition tested entity position.
+        /// @param entitySize tested entity size.
         /// @return true If the entity is on the same cell than the targeted bomb.
         /// @return false If the entity is on another cell.
-        bool matchEntityPosition(raylib::core::Vector3f entityPosition);
+        bool matchEntityPosition(raylib::core::Vector3f entityPosition, raylib::core::Vector3f entitySize);
     };
 } // namespace game::components
 

@@ -24,6 +24,7 @@ set(SRC
     ${INCROOT}/RotationAngle.hpp
     ${INCROOT}/RotationAxis.hpp
     ${INCROOT}/Scale.hpp
+    ${INCROOT}/ScreenId.hpp
     ${INCROOT}/Size.hpp
     ${INCROOT}/Size2D.hpp
     ${INCROOT}/Texture2D.hpp
