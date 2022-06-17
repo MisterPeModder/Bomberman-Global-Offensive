@@ -66,8 +66,8 @@ namespace game::systems
                         else if (player && player->inventory[Item::Identifier::KickShoes]) {
                             raylib::core::Vector3f posDelta = pos2 - pos1;
                             /// Kick bomb if the player is moving toward it.
-                            if ((std::fabsf(posDelta.x) > std::fabsf(posDelta.z)) ? (posDelta.x * vel1.x > 0)
-                                                                                  : (posDelta.z * vel1.z > 0))
+                            if ((std::fabs(posDelta.x) > std::fabs(posDelta.z)) ? (posDelta.x * vel1.x > 0)
+                                                                                : (posDelta.z * vel1.z > 0))
                                 bomb2->kick(data, id2, vel1);
                         }
                     }
