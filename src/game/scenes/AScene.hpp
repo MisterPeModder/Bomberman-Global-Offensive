@@ -30,6 +30,7 @@ namespace game
         raylib::core::Camera3D _defaultCamera3D;
         ecs::SystemTag _global2D;
         ecs::SystemTag _global3D;
+        ecs::SystemTag _globalNoDraw;
     };
 } // namespace game
 

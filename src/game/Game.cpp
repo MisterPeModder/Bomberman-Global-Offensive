@@ -323,7 +323,6 @@ namespace game
             raylib::core::scoped::Mode3D mode3D(_camera);
             _world.runSystems(_drawing);
         };
-        raylib::core::Window::drawFPS(10, 10);
         _world.maintain();
     }
 } // namespace game
