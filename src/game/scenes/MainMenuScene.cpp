@@ -10,6 +10,7 @@
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
+
 #include "ecs/resource/Resource.hpp"
 #include "ecs/resource/Timer.hpp"
 
@@ -26,7 +27,9 @@
 #include "game/components/Size.hpp"
 #include "game/components/Textual.hpp"
 #include "game/components/Texture2D.hpp"
+
 #include "game/scenes/IScene.hpp"
+#include "game/scenes/SettingsMenuScene.hpp"
 
 #include "game/Users.hpp"
 
@@ -45,6 +48,8 @@
 
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
+
+/////////////////////////////////////////////////
 
 static void loadMainMenuScene(ecs::World &world)
 {
@@ -79,10 +84,21 @@ static void loadMainMenuScene(ecs::World &world)
                 });
                 return false;
             })
-        .with<game::gui::Clickable>([&world](ecs::Entity) {
+        /* .with<game::gui::Clickable>([&world](ecs::Entity) {
             world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
             Logger::logger.log(Logger::Severity::Debug, "switch to menu option");
-        })
+        }) */
+        .with<game::gui::Clickable>(
+            [](ecs::Entity) {
+                world.getResource<resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+
+                Logger::logger.log(Logger::Severity::Debug, "Toggled fullscreen");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
         .build();
     world.addEntity()
         .with<game::components::Position>(0.f, 700.f)
