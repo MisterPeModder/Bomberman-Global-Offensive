@@ -38,7 +38,7 @@ var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
       [ "AudioDevice", "classraylib_1_1core_1_1scoped_1_1_audio_device.html", "classraylib_1_1core_1_1scoped_1_1_audio_device" ]
     ] ],
     [ "Sound.cpp", "_sound_8cpp.html", null ],
-    [ "Sound.hpp", "_sound_8hpp.html", [
+    [ "Sound.hpp", "raylib_2core_2_sound_8hpp.html", [
       [ "Sound", "classraylib_1_1core_1_1_sound.html", "classraylib_1_1core_1_1_sound" ]
     ] ],
     [ "Vector2.hpp", "_vector2_8hpp.html", "_vector2_8hpp" ],

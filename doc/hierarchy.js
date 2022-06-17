@@ -56,8 +56,10 @@ var hierarchy =
       [ "game::components::ScreenId", "structgame_1_1components_1_1_screen_id.html", null ],
       [ "game::components::Size", "structgame_1_1components_1_1_size.html", null ],
       [ "game::components::Size2D", "structgame_1_1components_1_1_size2_d.html", null ],
+      [ "game::components::Sound", "structgame_1_1components_1_1_sound.html", null ],
       [ "game::components::Textual", "structgame_1_1components_1_1_textual.html", null ],
       [ "game::components::Texture2D", "structgame_1_1components_1_1_texture2_d.html", null ],
+      [ "game::components::UseCheck", "structgame_1_1components_1_1_use_check.html", null ],
       [ "game::components::Velocity", "structgame_1_1components_1_1_velocity.html", null ],
       [ "game::components::Wall", "structgame_1_1components_1_1_wall.html", null ],
       [ "game::gui::IWidgetComponent", "classgame_1_1gui_1_1_i_widget_component.html", [
@@ -145,7 +147,9 @@ var hierarchy =
       [ "localization::ResourceFile::MessageNotFoundError", "classlocalization_1_1_resource_file_1_1_message_not_found_error.html", null ]
     ] ],
     [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
-    [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", null ],
+    [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", [
+      [ "game::components::Sound", "structgame_1_1components_1_1_sound.html", null ]
+    ] ],
     [ "game::components::Player::Stats", "structgame_1_1components_1_1_player_1_1_stats.html", null ],
     [ "ecs::Storage", "classecs_1_1_storage.html", [
       [ "ecs::MapStorage< C >", "classecs_1_1_map_storage.html", null ],
@@ -166,6 +170,7 @@ var hierarchy =
       [ "game::systems::InputManager", "structgame_1_1systems_1_1_input_manager.html", null ],
       [ "game::systems::Movement", "structgame_1_1systems_1_1_movement.html", null ],
       [ "game::systems::PickupItem", "structgame_1_1systems_1_1_pickup_item.html", null ],
+      [ "game::systems::PlaySoundOnce", "structgame_1_1systems_1_1_play_sound_once.html", null ],
       [ "game::systems::RunAnimation", "structgame_1_1systems_1_1_run_animation.html", null ],
       [ "game::systems::SplashScreen", "structgame_1_1systems_1_1_splash_screen.html", null ],
       [ "game::systems::UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", null ]

@@ -9,6 +9,7 @@ var classraylib_1_1core_1_1_sound =
     [ "resume", "classraylib_1_1core_1_1_sound.html#a3319360c7dda9d133df74c9ba1b1e128", null ],
     [ "setVolume", "classraylib_1_1core_1_1_sound.html#a5d2908932d0ebf1373679cb4deb0a62a", null ],
     [ "stop", "classraylib_1_1core_1_1_sound.html#ac6b17a8c2054547c129445c934eea306", null ],
+    [ "stopAllMulti", "classraylib_1_1core_1_1_sound.html#ad746587ac33123da4adcb5d44d09d34b", null ],
     [ "_sound", "classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64", null ],
     [ "_volume", "classraylib_1_1core_1_1_sound.html#a9a75db9dd3c239ed4ed14ad54c54a604", null ]
 ];

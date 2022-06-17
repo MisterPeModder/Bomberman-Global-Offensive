@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a8d9c307cb7f3c4a32822a51922d1ceaa":[2,0,4,0,7,0,31],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a91d8d0b84f26c3e30fb064ea4fc1090f":[2,0,4,0,7,0,46],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a960df6d77e65cd185ca4f3501db634eb":[2,0,4,0,7,0,14],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a969f331a87d8c958473c32b4d0e61a44":[2,0,4,0,7,0,17],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a9c56f942b051ba23447e108e16a8b23b":[2,0,4,0,7,0,93],
@@ -75,11 +77,12 @@ var NAVTREEINDEX5 =
 "classraylib_1_1core_1_1_sound.html#a3319360c7dda9d133df74c9ba1b1e128":[2,0,4,0,9,6],
 "classraylib_1_1core_1_1_sound.html#a3c462a8187dc65acb7bd0f20923d53f1":[2,0,4,0,9,1],
 "classraylib_1_1core_1_1_sound.html#a5d2908932d0ebf1373679cb4deb0a62a":[2,0,4,0,9,7],
-"classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64":[2,0,4,0,9,9],
+"classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64":[2,0,4,0,9,10],
 "classraylib_1_1core_1_1_sound.html#a73931e3bd2cf30e9f91581b0fac47a21":[2,0,4,0,9,2],
-"classraylib_1_1core_1_1_sound.html#a9a75db9dd3c239ed4ed14ad54c54a604":[2,0,4,0,9,10],
+"classraylib_1_1core_1_1_sound.html#a9a75db9dd3c239ed4ed14ad54c54a604":[2,0,4,0,9,11],
 "classraylib_1_1core_1_1_sound.html#a9b37208cd66ec709894da26c8a4847c8":[2,0,4,0,9,5],
 "classraylib_1_1core_1_1_sound.html#ac6b17a8c2054547c129445c934eea306":[2,0,4,0,9,8],
+"classraylib_1_1core_1_1_sound.html#ad746587ac33123da4adcb5d44d09d34b":[2,0,4,0,9,9],
 "classraylib_1_1core_1_1_sound.html#adbf5bfbd6288d6b4250ace001ff4dfd3":[2,0,4,0,9,4],
 "classraylib_1_1core_1_1_sound.html#aecf37d5915b75564c8cc97ddd6cfa920":[2,0,4,0,9,0],
 "classraylib_1_1core_1_1_window.html":[2,0,4,0,12],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1shapes_1_1_rectangle.html#acd489a0455d50aaf9f2071195b842bd1":[2,0,4,2,6,4],
 "classraylib_1_1shapes_1_1_rectangle.html#ad161334b7d7931bbbda3cb9c7c885b3a":[2,0,4,2,6,10],
 "classraylib_1_1shapes_1_1_sphere.html":[2,0,4,2,7],
-"classraylib_1_1shapes_1_1_sphere.html#a34a219f69b47632f3897b62535a7d8af":[2,0,4,2,7,1],
-"classraylib_1_1shapes_1_1_sphere.html#a511b32a6ac1d57b0b00830551ad89b61":[2,0,4,2,7,2],
-"classraylib_1_1shapes_1_1_sphere.html#a708d588db72c149395e2ddd9671d8efc":[2,0,4,2,7,5],
-"classraylib_1_1shapes_1_1_sphere.html#a9523b011e2974ed626f310a1bf5ccb6b":[2,0,4,2,7,0]
+"classraylib_1_1shapes_1_1_sphere.html#a34a219f69b47632f3897b62535a7d8af":[2,0,4,2,7,1]
 };

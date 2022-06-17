@@ -26,8 +26,10 @@ var namespacegame_1_1components =
     [ "ScreenId", "structgame_1_1components_1_1_screen_id.html", "structgame_1_1components_1_1_screen_id" ],
     [ "Size", "structgame_1_1components_1_1_size.html", "structgame_1_1components_1_1_size" ],
     [ "Size2D", "structgame_1_1components_1_1_size2_d.html", "structgame_1_1components_1_1_size2_d" ],
+    [ "Sound", "structgame_1_1components_1_1_sound.html", "structgame_1_1components_1_1_sound" ],
     [ "Textual", "structgame_1_1components_1_1_textual.html", "structgame_1_1components_1_1_textual" ],
     [ "Texture2D", "structgame_1_1components_1_1_texture2_d.html", "structgame_1_1components_1_1_texture2_d" ],
+    [ "UseCheck", "structgame_1_1components_1_1_use_check.html", "structgame_1_1components_1_1_use_check" ],
     [ "Velocity", "structgame_1_1components_1_1_velocity.html", "structgame_1_1components_1_1_velocity" ],
     [ "Wall", "structgame_1_1components_1_1_wall.html", null ]
 ];

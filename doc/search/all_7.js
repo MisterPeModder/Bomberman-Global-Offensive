@@ -176,7 +176,7 @@ var searchData=
   ['gray_1319',['GRAY',['../structraylib_1_1core_1_1_color.html#a0f049c8c9514f788064a1c45e9058773',1,'raylib::core::Color']]],
   ['greater_1320',['greater',['http://en.cppreference.com/w/cpp/utility/functional/ranges/greater.html',1,'std::ranges::greater'],['http://en.cppreference.com/w/cpp/utility/functional/greater.html',1,'std::greater']]],
   ['greater_5fequal_1321',['greater_equal',['http://en.cppreference.com/w/cpp/utility/functional/ranges/greater_equal.html',1,'std::ranges::greater_equal'],['http://en.cppreference.com/w/cpp/utility/functional/greater_equal.html',1,'std::greater_equal']]],
-  ['green_1322',['GREEN',['../structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba',1,'raylib::core::Color::GREEN()'],['../class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5ad382816a3cbeed082c9e216e7392eed1',1,'Logger::Green()']]],
+  ['green_1322',['Green',['../class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5ad382816a3cbeed082c9e216e7392eed1',1,'Logger::Green()'],['../structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba',1,'raylib::core::Color::GREEN()']]],
   ['grid_1323',['Grid',['../classgame_1_1map_1_1cellular_1_1_grid.html',1,'game::map::cellular::Grid'],['../classgame_1_1map_1_1cellular_1_1_grid.html#a3bcf64c09ee2732a63ac47ef5526343f',1,'game::map::cellular::Grid::Grid()']]],
   ['grid_2ecpp_1324',['Grid.cpp',['../_grid_8cpp.html',1,'']]],
   ['grid_2ehpp_1325',['Grid.hpp',['../_grid_8hpp.html',1,'']]],

@@ -247,7 +247,7 @@ var NAVTREEINDEX0 =
 "_pixel_8cpp_source.html":[3,0,0,4,2,8],
 "_pixel_8hpp.html":[3,0,0,4,2,9],
 "_pixel_8hpp_source.html":[3,0,0,4,2,9],
-"_player_8cpp.html":[3,0,0,1,0,17],
-"_player_8cpp_source.html":[3,0,0,1,0,17],
-"_player_8hpp.html":[3,0,0,1,0,18]
+"_play_sound_once_8hpp.html":[3,0,0,1,6,20],
+"_play_sound_once_8hpp_source.html":[3,0,0,1,6,20],
+"_player_8cpp.html":[3,0,0,1,0,17]
 };

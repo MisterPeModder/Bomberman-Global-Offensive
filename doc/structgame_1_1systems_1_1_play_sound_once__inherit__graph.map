@@ -1,0 +1,4 @@
+<map id="game::systems::PlaySoundOnce" name="game::systems::PlaySoundOnce">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_system.html" title="The base system type, all systems must inherit from System." alt="" coords="70,5,171,32"/>
+</map>
