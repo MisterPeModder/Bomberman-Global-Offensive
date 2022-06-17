@@ -25,13 +25,11 @@ namespace game
                 for (auto [sound, useCheck] : ecs::join(
                          data.getStorage<game::components::Sound>(), data.getStorage<game::components::UseCheck>())) {
                     if (!useCheck.used) {
-                        std::cout << "play sound" << std::endl;
                         sound.setVolume(
                             data.getResource<resources::EngineResource>().engine->getSettings().getSfxVolume());
                         sound.play();
                         useCheck.used = true;
-                    } else
-                        std::cout << "not play sound" << std::endl;
+                    }
                 }
             }
         };
