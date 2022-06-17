@@ -120,6 +120,16 @@ namespace game
             /// @retval true if the fullscreen mode is required.
             bool isFullscreen() const;
 
+            /// Set the target locale.
+            ///
+            /// @param locale target locale.
+            void setLocale(std::string_view locale);
+
+            /// Get the target locale.
+            ///
+            /// @return std::string_view target locale.
+            std::string_view getLocale() const;
+
           private:
             /// Load a value from its string representation.
             ///
@@ -132,6 +142,7 @@ namespace game
             unsigned int _targetFramerate;
             raylib::core::Vector2f _resolution;
             bool _fullscreen;
+            std::string _locale;
         };
     } // namespace settings
 } // namespace game
