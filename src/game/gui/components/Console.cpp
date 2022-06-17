@@ -23,14 +23,14 @@
 namespace game::gui
 {
     Console::Console()
-        : font(util::makePath("assets", "fonts", "Inconsolata-Medium.ttf"), 20, nullptr, 65535), output(),
-          outputSeverity(Logger::Severity::Information)
+        : font(util::makePath("assets", "fonts", "Inconsolata-Medium.ttf"), 20, nullptr, 65535),
+          logger(std::cout, "console"), output(), outputSeverity(Logger::Severity::Information)
     {
     }
 
     void Console::setOutput(Logger::Severity severity, std::string &&newOutput)
     {
-        Logger::logger.log(severity, newOutput);
+        this->logger.log(severity, newOutput);
         this->output = std::move(newOutput);
         this->outputSeverity = severity;
     }

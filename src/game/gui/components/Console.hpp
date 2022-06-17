@@ -29,6 +29,7 @@ namespace game::gui
     struct Console : public ecs::Component {
         raylib::text::Font font;
 
+        Logger logger;
         /// The output line
         std::string output;
         /// The log level of the output line.
