@@ -46,18 +46,31 @@
 static void loadGraphicSettings(ecs::World &world)
 {
     world.addEntity()
-        .with<game::components::Position>(480.f, 100.f)
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(34.f, 10.f)
+        .with<game::components::Size>(32.f, 32.f)
+        .with<game::components::Color>(raylib::core::Color::RED)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(35.f, 11.f)
+        .with<game::components::Size>(30.f, 30.f)
+        .with<game::components::Color>(raylib::core::Color::BLACK)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(36.f, 12.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsGraphics, 40, raylib::core::Color::RED)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(500.f, 200.f)
+        .with<game::components::Position>(38.f, 20.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsFullscreen, 20, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::VOLUME_MUTE,
-            game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::SettingsMenuScene::RES_2, true)
+            game::gui::Widget::NullTag, game::SettingsMenuScene::BACK, game::SettingsMenuScene::RES_1)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Window::toggleFullscreen();
@@ -71,21 +84,21 @@ static void loadGraphicSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(500.f, 300.f)
+        .with<game::components::Position>(38.f, 25.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsResolution, 20, raylib::core::Color::RED)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(425.f, 350.f)
-        .with<game::components::Textual>("720x360", 15, raylib::core::Color::RED)
+        .with<game::components::Position>(40.f, 30.f)
+        .with<game::components::Textual>("1280x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_100,
             game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
-                raylib::core::Window::setSize(720, 360);
-                Logger::logger.log(Logger::Severity::Debug, "Window size set to (720, 360)");
+                raylib::core::Window::setSize(1280, 720);
+                Logger::logger.log(Logger::Severity::Debug, "Window size set to (1280, 720)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -95,15 +108,15 @@ static void loadGraphicSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(525.f, 350.f)
-        .with<game::components::Textual>("1080x720", 15, raylib::core::Color::RED)
+        .with<game::components::Position>(47.5f, 30.f)
+        .with<game::components::Textual>("1366x768", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_2, game::SettingsMenuScene::RES_1,
             game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
-                raylib::core::Window::setSize(1080, 720);
-                Logger::logger.log(Logger::Severity::Debug, "Window size set to (1080, 720)");
+                raylib::core::Window::setSize(1366, 768);
+                Logger::logger.log(Logger::Severity::Debug, "Window size set to (1366, 768)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -113,7 +126,7 @@ static void loadGraphicSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(625.f, 350.f)
+        .with<game::components::Position>(55.f, 30.f)
         .with<game::components::Textual>("1920x1080", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_3, game::SettingsMenuScene::RES_2,
@@ -134,18 +147,31 @@ static void loadGraphicSettings(ecs::World &world)
 static void loadAudioSettings(ecs::World &world)
 {
     world.addEntity()
-        .with<game::components::Position>(150.f, 100.f)
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(1.f, 10.f)
+        .with<game::components::Size>(32.f, 32.f)
+        .with<game::components::Color>(raylib::core::Color::BLUE)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(2.f, 11.f)
+        .with<game::components::Size>(30.f, 30.f)
+        .with<game::components::Color>(raylib::core::Color::BLACK)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(3.f, 12.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsAudio, 40, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(170.f, 200.f)
+        .with<game::components::Position>(5.f, 20.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsMute, 20, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_MUTE, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::FULLSCREEN, game::gui::Widget::NullTag, game::SettingsMenuScene::VOLUME_50)
+            game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK, game::SettingsMenuScene::VOLUME_25)
         .with<game::gui::Clickable>(
             [](ecs::Entity) {
                 raylib::core::Audio::setMasterVolume(0.f);
@@ -159,13 +185,13 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(170.f, 300.f)
+        .with<game::components::Position>(5.f, 25.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsVolume, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(100.f, 350.f)
+        .with<game::components::Position>(7.f, 30.f)
         .with<game::components::Textual>("25%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_25, game::gui::Widget::NullTag,
@@ -183,7 +209,7 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(150.f, 350.f)
+        .with<game::components::Position>(12.f, 30.f)
         .with<game::components::Textual>("50%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_25,
@@ -201,7 +227,7 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(200.f, 350.f)
+        .with<game::components::Position>(17.f, 30.f)
         .with<game::components::Textual>("75%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_50,
@@ -219,7 +245,7 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(250.f, 350.f)
+        .with<game::components::Position>(22.f, 30.f)
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_75,
@@ -240,7 +266,20 @@ static void loadAudioSettings(ecs::World &world)
 static void loadKeybindSettings(ecs::World &world)
 {
     world.addEntity()
-        .with<game::components::Position>(800.f, 100.f)
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(67.f, 10.f)
+        .with<game::components::Size>(32.f, 32.f)
+        .with<game::components::Color>(raylib::core::Color::GREEN)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(68.f, 11.f)
+        .with<game::components::Size>(30.f, 30.f)
+        .with<game::components::Color>(raylib::core::Color::BLACK)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(69.f, 12.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsKeybinds, 40, raylib::core::Color::GREEN)
         .build();
@@ -248,16 +287,12 @@ static void loadKeybindSettings(ecs::World &world)
 
 static void loadSettingsMenuScene(ecs::World &world)
 {
-    world.addSystem<game::systems::InputManager>();
-    world.addSystem<game::systems::DrawText>();
-    world.addSystem<game::systems::DrawSelectedWidget>();
-
     world.addEntity()
-        .with<game::components::Position>(500.f, 650.f)
+        .with<game::components::Position>(80.f, 3.f)
         .with<game::components::Textual>(localization::resources::rsBack, 30, raylib::core::Color::PURPLE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::BACK, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::RES_2, game::gui::Widget::NullTag)
+            game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, true)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
@@ -275,7 +310,7 @@ static void loadSettingsMenuScene(ecs::World &world)
     loadKeybindSettings(world);
 
     world.addEntity()
-        .with<game::components::Position>(450.f, 0.f)
+        .with<game::components::Position>(40.f, 2.f)
         .with<game::components::Textual>(localization::resources::rsSettings, 40, raylib::core::Color::YELLOW)
         .build();
 }
@@ -284,7 +319,13 @@ namespace game
 {
     SettingsMenuScene::SettingsMenuScene()
     {
+        _world.addSystem<game::systems::DrawRectangle>();
+        _world.addSystem<game::systems::InputManager>();
+        _world.addSystem<game::systems::DrawText>();
+        _world.addSystem<game::systems::DrawSelectedWidget>();
+
         _globalNoDraw.add<game::systems::InputManager>();
+        _global2D.add<game::systems::DrawRectangle>();
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::DrawSelectedWidget>();
 
