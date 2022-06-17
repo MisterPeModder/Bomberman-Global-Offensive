@@ -134,9 +134,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adce320aa43365f3864aa215d9624af5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">Player</a> ()</td></tr>
 <tr class="memdesc:adce320aa43365f3864aa215d9624af5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> component.  <a href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">More...</a><br /></td></tr>
 <tr class="separator:adce320aa43365f3864aa215d9624af5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a090c4e47ce74b3fc01da9265dafaf57c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player.html#a090c4e47ce74b3fc01da9265dafaf57c">pickupItem</a> (<a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> self, <a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a> itemId, <a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a> data)</td></tr>
-<tr class="memdesc:a090c4e47ce74b3fc01da9265dafaf57c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick up an item from the map.  <a href="structgame_1_1components_1_1_player.html#a090c4e47ce74b3fc01da9265dafaf57c">More...</a><br /></td></tr>
-<tr class="separator:a090c4e47ce74b3fc01da9265dafaf57c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ddd2f5cc554ee1c1da2b9ddb4919ec8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player.html#a9ddd2f5cc554ee1c1da2b9ddb4919ec8">updateTimedItems</a> (<a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> self, <a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a> data)</td></tr>
 <tr class="memdesc:a9ddd2f5cc554ee1c1da2b9ddb4919ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the activated items with a timer.  <a href="structgame_1_1components_1_1_player.html#a9ddd2f5cc554ee1c1da2b9ddb4919ec8">More...</a><br /></td></tr>
 <tr class="separator:a9ddd2f5cc554ee1c1da2b9ddb4919ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,6 +146,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a6439a4919174d75c5b7304cb7d2152d2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player.html#a6439a4919174d75c5b7304cb7d2152d2">handleActionEvent</a> (<a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> self, <a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a> data, const <a class="el" href="structgame_1_1_users_1_1_action_event.html">Users::ActionEvent</a> &amp;event)</td></tr>
 <tr class="memdesc:a6439a4919174d75c5b7304cb7d2152d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback of the <a class="el" href="structgame_1_1components_1_1_controlable.html">Controlable</a> component of the players.  <a href="structgame_1_1components_1_1_player.html#a6439a4919174d75c5b7304cb7d2152d2">More...</a><br /></td></tr>
 <tr class="separator:a6439a4919174d75c5b7304cb7d2152d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ef7ef3ad12a0368bf76a29dcdf7e56"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player.html#ae2ef7ef3ad12a0368bf76a29dcdf7e56">placeBomb</a> (<a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> self, <a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a> data, <a class="el" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486b">Bomb::Type</a> bombType=<a class="el" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486bad35b51b639528d580362ca7042de6a0e">Bomb::Type::Classic</a>)</td></tr>
+<tr class="memdesc:ae2ef7ef3ad12a0368bf76a29dcdf7e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place a bomb at the player position.  <a href="structgame_1_1components_1_1_player.html#ae2ef7ef3ad12a0368bf76a29dcdf7e56">More...</a><br /></td></tr>
+<tr class="separator:ae2ef7ef3ad12a0368bf76a29dcdf7e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -167,9 +167,6 @@ Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a1447ff856b2f9dba16259d6704f46721"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player.html#a1447ff856b2f9dba16259d6704f46721">move</a> (<a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> self, <a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a> data, const <a class="el" href="structgame_1_1_users_1_1_action_event.html">Users::ActionEvent</a> &amp;event)</td></tr>
 <tr class="memdesc:a1447ff856b2f9dba16259d6704f46721"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the velocity of the player from its action values.  <a href="structgame_1_1components_1_1_player.html#a1447ff856b2f9dba16259d6704f46721">More...</a><br /></td></tr>
 <tr class="separator:a1447ff856b2f9dba16259d6704f46721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa98ef85d37c510b48c8dbc56a271a870"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player.html#aa98ef85d37c510b48c8dbc56a271a870">placeBomb</a> (<a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> self, <a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a> data)</td></tr>
-<tr class="memdesc:aa98ef85d37c510b48c8dbc56a271a870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place a bomb at the player position.  <a href="structgame_1_1components_1_1_player.html#aa98ef85d37c510b48c8dbc56a271a870">More...</a><br /></td></tr>
-<tr class="separator:aa98ef85d37c510b48c8dbc56a271a870"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -180,7 +177,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> marker. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00023">23</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00024">24</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="adce320aa43365f3864aa215d9624af5f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adce320aa43365f3864aa215d9624af5f">&#9670;&nbsp;</a></span>Player()</h2>
@@ -207,8 +204,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Construct a new <a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> component. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00072">72</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;: <a class="code" href="structgame_1_1components_1_1_player.html#aac2857ba20e1518c5c588ca3288ffa83">placedBombs</a>(0) {}</div>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00097">97</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;: <a class="code" href="structgame_1_1components_1_1_player.html#aac2857ba20e1518c5c588ca3288ffa83">placedBombs</a>(0) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -266,16 +263,18 @@ Additional Inherited Members</h2></td></tr>
 <dd>
 false If the action wasn't consumed. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00023">23</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacegame.html#a85afa01575b11b63bb973480cc6972e4">isMoveAction</a>(event.action))</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player.html#a1447ff856b2f9dba16259d6704f46721">move</a>(<span class="keyword">self</span>, data, event);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event.action == <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8d00c7f1627f5d1d8e5189c14338c096">GameAction::PLACE_BOMB</a> &amp;&amp; event.value &gt; 0.9f)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player.html#aa98ef85d37c510b48c8dbc56a271a870">placeBomb</a>(<span class="keyword">self</span>, data);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00070">70</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="namespacegame.html#a85afa01575b11b63bb973480cc6972e4">isMoveAction</a>(event.action))</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player.html#a1447ff856b2f9dba16259d6704f46721">move</a>(<span class="keyword">self</span>, data, event);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event.action == <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8d00c7f1627f5d1d8e5189c14338c096">GameAction::PLACE_BOMB</a> &amp;&amp; event.value &gt; 0.9f)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player.html#ae2ef7ef3ad12a0368bf76a29dcdf7e56">placeBomb</a>(<span class="keyword">self</span>, data);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (event.action == <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b">GameAction::ACTIVATE_ITEM</a> &amp;&amp; event.value &gt; 0.9f)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">Player</a>&gt;()[<span class="keyword">self</span>.getId()].inventory.useActivable(<span class="keyword">self</span>, data);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -329,105 +328,40 @@ false If the action wasn't consumed. </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00034">34</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">auto</span> &amp;velocity = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Velocity&gt;()[<span class="keyword">self</span>.getId()];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">auto</span> &amp;user = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;Users&gt;()[event.user];</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">auto</span> &amp;<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a> = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">Player</a>&gt;()[<span class="keyword">self</span>.getId()].stats;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a> bestAction = <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693">GameAction::NONE</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">float</span> highestActionValue = 0.f;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8">GameAction::MOVE_LEFT</a>); j &lt;= static_cast&lt;size_t&gt;(<a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8b32429247158c80deab773f4e04e1c2">GameAction::MOVE_DOWN</a>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;             j++) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a> current = <span class="keyword">static_cast&lt;</span><a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a><span class="keyword">&gt;</span>(j);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (user.getActionValue(current) &gt; highestActionValue) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                bestAction = current;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                highestActionValue = user.getActionValue(current);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (highestActionValue &lt; 0.2f)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            velocity = {0.f, 0.f, 0.f};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">switch</span> (bestAction) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8">GameAction::MOVE_LEFT</a>: velocity = {-<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>, 0.f, 0.f}; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ae397b4fa67c25cc1c9eae980cfdd43eb">GameAction::MOVE_UP</a>: velocity = {0.f, 0.f, -<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>}; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5">GameAction::MOVE_RIGHT</a>: velocity = {<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>, 0.f, 0.f}; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8b32429247158c80deab773f4e04e1c2">GameAction::MOVE_DOWN</a>: velocity = {0.f, 0.f, <a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>}; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a832963f734aaf9053fda7ef6aefb6f7f">inverted</a>)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            velocity *= {-1.f, 0.f, -1.f};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00083">83</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">auto</span> &amp;velocity = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Velocity&gt;()[<span class="keyword">self</span>.getId()];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">auto</span> &amp;user = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;Users&gt;()[event.user];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keyword">auto</span> &amp;<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a> = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">Player</a>&gt;()[<span class="keyword">self</span>.getId()].stats;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a> bestAction = <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693">GameAction::NONE</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">float</span> highestActionValue = 0.f;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8">GameAction::MOVE_LEFT</a>); j &lt;= static_cast&lt;size_t&gt;(<a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8b32429247158c80deab773f4e04e1c2">GameAction::MOVE_DOWN</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;             j++) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a> current = <span class="keyword">static_cast&lt;</span><a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a><span class="keyword">&gt;</span>(j);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">if</span> (user.getActionValue(current) &gt; highestActionValue) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                bestAction = current;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                highestActionValue = user.getActionValue(current);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span> (highestActionValue &lt; 0.2f)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            velocity = {0.f, 0.f, 0.f};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">switch</span> (bestAction) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8">GameAction::MOVE_LEFT</a>: velocity = {-<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>, 0.f, 0.f}; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ae397b4fa67c25cc1c9eae980cfdd43eb">GameAction::MOVE_UP</a>: velocity = {0.f, 0.f, -<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>}; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5">GameAction::MOVE_RIGHT</a>: velocity = {<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>, 0.f, 0.f}; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8b32429247158c80deab773f4e04e1c2">GameAction::MOVE_DOWN</a>: velocity = {0.f, 0.f, <a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>}; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a832963f734aaf9053fda7ef6aefb6f7f">inverted</a>)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            velocity *= {-1.f, 0.f, -1.f};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a090c4e47ce74b3fc01da9265dafaf57c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a090c4e47ce74b3fc01da9265dafaf57c">&#9670;&nbsp;</a></span>pickupItem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void game::components::Player::pickupItem </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classecs_1_1_entity.html">ecs::Entity</a>&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174">Item::Identifier</a>&#160;</td>
-          <td class="paramname"><em>itemId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a>&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pick up an item from the map. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">self</td><td>player entity id. </td></tr>
-    <tr><td class="paramname">itemId</td><td>item identifier. </td></tr>
-    <tr><td class="paramname">data</td><td>world data. </td></tr>
-  </table>
-  </dd>
-</dl>
-<p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> has a stack limit and we reached it</p>
-<p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> has no effect (rejected).</p>
-<p><a class="el" href="structgame_1_1components_1_1_item.html">Item</a> has a duration.</p>
-
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00097">97</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keyword">const</span> Item &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(itemId);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">auto</span> &amp;<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> = <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">items</a>[<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(itemId)];</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (item.maxStack &amp;&amp; count &gt;= item.maxStack)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span> ((item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3">Item::Type::PowerUp</a> || item.type == <a class="code" href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8">Item::Type::PowerDown</a>) &amp;&amp; !item.onApply(<span class="keyword">self</span>, data))</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        ++<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (item.duration != <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a>())</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">emplace_back</a>(itemId, <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>());</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<span class="keyword">auto</span> &amp;out) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            out &lt;&lt; <span class="stringliteral">&quot;Player entity &quot;</span> &lt;&lt; <span class="keyword">self</span>.getId() &lt;&lt; <span class="stringliteral">&quot; pick up item &#39;&quot;</span> &lt;&lt; item.name &lt;&lt; <span class="stringliteral">&quot;&#39;, &quot;</span> &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/count.html">count</a> &lt;&lt; <span class="stringliteral">&quot;/&quot;</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                &lt;&lt; item.maxStack &lt;&lt; <span class="stringliteral">&quot; in inventory &quot;</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        });</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aa98ef85d37c510b48c8dbc56a271a870"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa98ef85d37c510b48c8dbc56a271a870">&#9670;&nbsp;</a></span>placeBomb()</h2>
+<a id="ae2ef7ef3ad12a0368bf76a29dcdf7e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ef7ef3ad12a0368bf76a29dcdf7e56">&#9670;&nbsp;</a></span>placeBomb()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -445,7 +379,13 @@ false If the action wasn't consumed. </dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classecs_1_1_system_data.html">ecs::SystemData</a>&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486b">Bomb::Type</a>&#160;</td>
+          <td class="paramname"><em>bombType</em> = <code><a class="el" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486bad35b51b639528d580362ca7042de6a0e">Bomb::Type::Classic</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -455,7 +395,7 @@ false If the action wasn't consumed. </dd></dl>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -465,6 +405,7 @@ false If the action wasn't consumed. </dd></dl>
   <table class="params">
     <tr><td class="paramname">self</td><td>player entity </td></tr>
     <tr><td class="paramname">data</td><td>world data </td></tr>
+    <tr><td class="paramname">bombType</td><td>bomb type. </td></tr>
   </table>
   </dd>
 </dl>
@@ -475,35 +416,39 @@ false If the action wasn't consumed. </dd></dl>
 <p>Avoid multiple bombs on the same cell</p>
 <p>Disable collision with bomb for all player on the bomb cell</p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00064">64</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">auto</span> &amp;players = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">Player</a>&gt;();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">auto</span> &amp;positions = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Position&gt;();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">auto</span> &amp;placer = players[<span class="keyword">self</span>.getId()];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> (placer.placedBombs &gt;= placer.stats.bombLimit)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a> bombCell = <a class="code" href="classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab">game::Game::worldPosToMapCell</a>(positions[<span class="keyword">self</span>.getId()]);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3f</a> placedPos = {<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(bombCell.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>), 0.5f, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(bombCell.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>)};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [bombPos, bomb] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(positions, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Bomb&gt;())) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            (void)bomb;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span> (bombPos == placedPos)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;()</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            .builder()</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            .with&lt;Bomb&gt;(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Bomb&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Identity&gt;()[<span class="keyword">self</span>.getId()].id, placer.stats.bombRange)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            .with&lt;Position&gt;(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Position&gt;(), placedPos)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            .with&lt;Size&gt;(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Size&gt;(), 0.5f, 0.f, 0.5f)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            .with&lt;Collidable&gt;(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Collidable&gt;())</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            .build();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        ++placer.placedBombs;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, player, playerId] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(positions, players, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;()))</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (bombCell == <a class="code" href="classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab">game::Game::worldPosToMapCell</a>(pos))</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;BombNoClip&gt;()[playerId.getId()].setBombPosition(bombCell);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00113">113</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keyword">auto</span> &amp;players = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">Player</a>&gt;();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keyword">auto</span> &amp;positions = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Position&gt;();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keyword">auto</span> &amp;placer = players[<span class="keyword">self</span>.getId()];</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">if</span> (bombType == <a class="code" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486bad35b51b639528d580362ca7042de6a0e">Bomb::Type::Classic</a>) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">if</span> (placer.placedBombs &gt;= placer.stats.bombLimit)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a> bombCell = <a class="code" href="classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab">game::Game::worldPosToMapCell</a>(positions[<span class="keyword">self</span>.getId()]);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3f</a> placedPos = {<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(bombCell.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>), 0.5f, <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(bombCell.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>)};</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [bombPos, bomb] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(positions, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Bomb&gt;())) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            (void)bomb;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <span class="keywordflow">if</span> (bombPos == placedPos)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;()</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            .builder()</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            .with&lt;Bomb&gt;(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Bomb&gt;(), bombType, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Identity&gt;()[<span class="keyword">self</span>.getId()].id,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                (bombType == <a class="code" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486bad35b51b639528d580362ca7042de6a0e">Bomb::Type::Classic</a>) ? placer.stats.bombRange : 2)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            .with&lt;Position&gt;(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Position&gt;(), placedPos)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            .with&lt;Size&gt;(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Size&gt;(), 0.5f, 0.f, 0.5f)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            .with&lt;Collidable&gt;(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;Collidable&gt;())</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            .build();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">if</span> (bombType == <a class="code" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486bad35b51b639528d580362ca7042de6a0e">Bomb::Type::Classic</a>)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            ++placer.placedBombs;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, player, playerId] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(positions, players, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;()))</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">if</span> (bombCell == <a class="code" href="classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab">game::Game::worldPosToMapCell</a>(pos))</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;BombNoClip&gt;()[playerId.getId()].setBombPosition(bombCell);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -542,23 +487,23 @@ false If the action wasn't consumed. </dd></dl>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00118">118</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/empty.html">empty</a>())</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordtype">size_t</span> i = <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            --i;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keyword">auto</span> &amp;pair = <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>[i];</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keyword">auto</span> &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(pair.first);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>() - pair.second &gt;= item.duration) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                item.onTimedOut(<span class="keyword">self</span>, data);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/erase.html">erase</a>(<a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/begin.html">begin</a>() + i);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        } <span class="keywordflow">while</span> (i != 0);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8cpp_source.html#l00150">150</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/empty.html">empty</a>())</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordtype">size_t</span> i = <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/size.html">size</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            --i;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keyword">auto</span> &amp;pair = <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>[i];</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keyword">auto</span> &amp;item = <a class="code" href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">Item::getItem</a>(pair.first);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">if</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>() - pair.second &gt;= item.duration) {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                item.onTimedOut(<span class="keyword">self</span>, data);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/erase.html">erase</a>(<a class="code" href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">inventory</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">timedItems</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/container/vector/begin.html">begin</a>() + i);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        } <span class="keywordflow">while</span> (i != 0);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -577,7 +522,7 @@ false If the action wasn't consumed. </dd></dl>
 
 <p><a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> items. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00058">58</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00083">83</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -595,7 +540,7 @@ false If the action wasn't consumed. </dd></dl>
 
 <p>Number of bomb currently placed on the map. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00060">60</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00085">85</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -613,7 +558,7 @@ false If the action wasn't consumed. </dd></dl>
 
 <p><a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> stats. </p>
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00056">56</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00081">81</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -625,43 +570,36 @@ false If the action wasn't consumed. </dd></dl>
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a8d00c7f1627f5d1d8e5189c14338c096"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8d00c7f1627f5d1d8e5189c14338c096">game::GameAction::PLACE_BOMB</a></div><div class="ttdeci">@ PLACE_BOMB</div></div>
 <div class="ttc" id="aclassgame_1_1_game_html_a5a40fdfe8f07a4bfd8db403fae827eab"><div class="ttname"><a href="classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab">game::Game::worldPosToMapCell</a></div><div class="ttdeci">constexpr static raylib::core::Vector2u worldPosToMapCell(raylib::core::Vector3f pos)</div><div class="ttdef"><b>Definition:</b> <a href="_game_8hpp_source.html#l00082">Game.hpp:82</a></div></div>
-<div class="ttc" id="anamespacegame_html_a85afa01575b11b63bb973480cc6972e4"><div class="ttname"><a href="namespacegame.html#a85afa01575b11b63bb973480cc6972e4">game::isMoveAction</a></div><div class="ttdeci">constexpr bool isMoveAction(GameAction action)</div><div class="ttdoc">Test if a specified action is a move action.</div><div class="ttdef"><b>Definition:</b> <a href="_game_action_8hpp_source.html#l00030">GameAction.hpp:30</a></div></div>
+<div class="ttc" id="anamespacegame_html_a85afa01575b11b63bb973480cc6972e4"><div class="ttname"><a href="namespacegame.html#a85afa01575b11b63bb973480cc6972e4">game::isMoveAction</a></div><div class="ttdeci">constexpr bool isMoveAction(GameAction action)</div><div class="ttdoc">Test if a specified action is a move action.</div><div class="ttdef"><b>Definition:</b> <a href="_game_action_8hpp_source.html#l00032">GameAction.hpp:32</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ae397b4fa67c25cc1c9eae980cfdd43eb"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ae397b4fa67c25cc1c9eae980cfdd43eb">game::GameAction::MOVE_UP</a></div><div class="ttdeci">@ MOVE_UP</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693">game::GameAction::NONE</a></div><div class="ttdeci">@ NONE</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a8b32429247158c80deab773f4e04e1c2"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8b32429247158c80deab773f4e04e1c2">game::GameAction::MOVE_DOWN</a></div><div class="ttdeci">@ MOVE_DOWN</div></div>
-<div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00057">Logger.hpp:57</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector3_html"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html">raylib::core::Vector3</a></div><div class="ttdoc">The Vector3 struct (compatible with the raylib Vector3)</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00025">Vector3.hpp:25</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_aa98ef85d37c510b48c8dbc56a271a870"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#aa98ef85d37c510b48c8dbc56a271a870">game::components::Player::placeBomb</a></div><div class="ttdeci">static void placeBomb(ecs::Entity self, ecs::SystemData data)</div><div class="ttdoc">Place a bomb at the player position.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00064">Player.cpp:64</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_item_html_ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da5738b4738d0d5191678eed09d6b5c6f8">game::components::Item::Type::PowerDown</a></div><div class="ttdeci">@ PowerDown</div></div>
 <div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/size.html">std::vector::size</a></div><div class="ttdeci">T size(T... args)</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_item_html_ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3">game::components::Item::Type::PowerUp</a></div><div class="ttdeci">@ PowerUp</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_item_html_a9f173975f3023bd17dda8d2bfd509ddb"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">game::components::Item::getItem</a></div><div class="ttdeci">static const Item &amp; getItem(Identifier identifier)</div><div class="ttdoc">Get an item from its identifier.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8cpp_source.html#l00059">Item.cpp:59</a></div></div>
-<div class="ttc" id="azero_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a></div><div class="ttdeci">T zero(T... args)</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_aff1f59b6c219b5c554ac71231ff724d6"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">game::components::Player::Stats::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Current player speed.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00028">Player.hpp:28</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a70cdfe9db1e6a02cc1a162ab3b9b0521"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">game::components::Player::Inventory::timedItems</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; Item::Identifier, std::chrono::steady_clock::time_point &gt; &gt; timedItems</div><div class="ttdoc">Activated items with a timer.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00044">Player.hpp:44</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_item_html_a9f173975f3023bd17dda8d2bfd509ddb"><div class="ttname"><a href="structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb">game::components::Item::getItem</a></div><div class="ttdeci">static const Item &amp; getItem(Identifier identifier)</div><div class="ttdoc">Get an item from its identifier.</div><div class="ttdef"><b>Definition:</b> <a href="_item_8cpp_source.html#l00061">Item.cpp:61</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_aff1f59b6c219b5c554ac71231ff724d6"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">game::components::Player::Stats::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Current player speed.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00029">Player.hpp:29</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a70cdfe9db1e6a02cc1a162ab3b9b0521"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521">game::components::Player::Inventory::timedItems</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; Item::Identifier, std::chrono::steady_clock::time_point &gt; &gt; timedItems</div><div class="ttdoc">Activated items with a timer.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00045">Player.hpp:45</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5">game::GameAction::MOVE_RIGHT</a></div><div class="ttdeci">@ MOVE_RIGHT</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_inventory_html_a15dc31954a8b1761a279cd6aadb93d7f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f">game::components::Player::Inventory::items</a></div><div class="ttdeci">std::array&lt; size_t, static_cast&lt; size_t &gt;Item::Identifier::Count)&gt; items</div><div class="ttdoc">Number of occurence of each item in the inventory.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00042">Player.hpp:42</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">game::GameAction</a></div><div class="ttdeci">GameAction</div><div class="ttdef"><b>Definition:</b> <a href="_game_action_8hpp_source.html#l00013">GameAction.hpp:13</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_adce320aa43365f3864aa215d9624af5f"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">game::components::Player::Player</a></div><div class="ttdeci">Player()</div><div class="ttdoc">Construct a new Player component.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00072">Player.hpp:72</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_bomb_html_a0d4f574a936bbc99594019f952f3486bad35b51b639528d580362ca7042de6a0e"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486bad35b51b639528d580362ca7042de6a0e">game::components::Bomb::Type::Classic</a></div><div class="ttdeci">@ Classic</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_adce320aa43365f3864aa215d9624af5f"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#adce320aa43365f3864aa215d9624af5f">game::components::Player::Player</a></div><div class="ttdeci">Player()</div><div class="ttdoc">Construct a new Player component.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00097">Player.hpp:97</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
 <div class="ttc" id="aerase_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/erase.html">std::vector::erase</a></div><div class="ttdeci">T erase(T... args)</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_aac2857ba20e1518c5c588ca3288ffa83"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#aac2857ba20e1518c5c588ca3288ffa83">game::components::Player::placedBombs</a></div><div class="ttdeci">size_t placedBombs</div><div class="ttdoc">Number of bomb currently placed on the map.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00060">Player.hpp:60</a></div></div>
-<div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_aac2857ba20e1518c5c588ca3288ffa83"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#aac2857ba20e1518c5c588ca3288ffa83">game::components::Player::placedBombs</a></div><div class="ttdeci">size_t placedBombs</div><div class="ttdoc">Number of bomb currently placed on the map.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00085">Player.hpp:85</a></div></div>
+<div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b">game::GameAction::ACTIVATE_ITEM</a></div><div class="ttdeci">@ ACTIVATE_ITEM</div></div>
 <div class="ttc" id="aclassecs_1_1_entities_html"><div class="ttname"><a href="classecs_1_1_entities.html">ecs::Entities</a></div><div class="ttdoc">The entities world resource.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8hpp_source.html#l00024">Entities.hpp:24</a></div></div>
-<div class="ttc" id="aemplace_back_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/emplace_back.html">std::vector::emplace_back</a></div><div class="ttdeci">T emplace_back(T... args)</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_a8e901b532993d7767d429ad524d439c6"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">game::components::Player::inventory</a></div><div class="ttdeci">Inventory inventory</div><div class="ttdoc">Player items.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00058">Player.hpp:58</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_ae2ef7ef3ad12a0368bf76a29dcdf7e56"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#ae2ef7ef3ad12a0368bf76a29dcdf7e56">game::components::Player::placeBomb</a></div><div class="ttdeci">static void placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType=Bomb::Type::Classic)</div><div class="ttdoc">Place a bomb at the player position.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00113">Player.cpp:113</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_a8e901b532993d7767d429ad524d439c6"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#a8e901b532993d7767d429ad524d439c6">game::components::Player::inventory</a></div><div class="ttdeci">Inventory inventory</div><div class="ttdoc">Player items.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00083">Player.hpp:83</a></div></div>
 <div class="ttc" id="abegin_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/begin.html">std::vector::begin</a></div><div class="ttdeci">T begin(T... args)</div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2</a></div><div class="ttdoc">The Vector2 struct (compatible with the raylib Vector2)</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00025">Vector2.hpp:25</a></div></div>
-<div class="ttc" id="acount_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/count.html">std::count</a></div><div class="ttdeci">T count(T... args)</div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_a000198d5814b224f892bc9ae317015c6"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">raylib::core::Vector2::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00139">Vector2.hpp:139</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_a832963f734aaf9053fda7ef6aefb6f7f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#a832963f734aaf9053fda7ef6aefb6f7f">game::components::Player::Stats::inverted</a></div><div class="ttdeci">bool inverted</div><div class="ttdoc">If controls are inverted.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00034">Player.hpp:34</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_a832963f734aaf9053fda7ef6aefb6f7f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#a832963f734aaf9053fda7ef6aefb6f7f">game::components::Player::Stats::inverted</a></div><div class="ttdeci">bool inverted</div><div class="ttdoc">If controls are inverted.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00035">Player.hpp:35</a></div></div>
 <div class="ttc" id="aempty_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector/empty.html">std::vector::empty</a></div><div class="ttdeci">T empty(T... args)</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_ab3c17c894d8bc8737324508b1311a19c"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">game::components::Player::stats</a></div><div class="ttdeci">Stats stats</div><div class="ttdoc">Player stats.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00056">Player.hpp:56</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_ab3c17c894d8bc8737324508b1311a19c"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">game::components::Player::stats</a></div><div class="ttdeci">Stats stats</div><div class="ttdoc">Player stats.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00081">Player.hpp:81</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/data.html">std::data</a></div><div class="ttdeci">T data(T... args)</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_player_html_a1447ff856b2f9dba16259d6704f46721"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#a1447ff856b2f9dba16259d6704f46721">game::components::Player::move</a></div><div class="ttdeci">static void move(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &amp;event)</div><div class="ttdoc">Change the velocity of the player from its action values.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00034">Player.cpp:34</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_html_a1447ff856b2f9dba16259d6704f46721"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#a1447ff856b2f9dba16259d6704f46721">game::components::Player::move</a></div><div class="ttdeci">static void move(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &amp;event)</div><div class="ttdoc">Change the velocity of the player from its action values.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00083">Player.cpp:83</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8">game::GameAction::MOVE_LEFT</a></div><div class="ttdeci">@ MOVE_LEFT</div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_af286ae0d4dd1908cf3668c651a509c47"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">raylib::core::Vector2::y</a></div><div class="ttdeci">T y</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00140">Vector2.hpp:140</a></div></div>
-<div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>
 <div class="ttc" id="anow_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a></div><div class="ttdeci">T now(T... args)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

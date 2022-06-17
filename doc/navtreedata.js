@@ -73,15 +73,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_scene_8cpp.html",
-"_position_8hpp_source.html",
-"class_logger.html#af22710e08240baee5d5853e11f9efa32",
-"classgame_1_1_engine.html#adcc6ab7717a6eebf9625546fe38e601c",
-"classlocalization_1_1_localization.html#aa55acfc620883a92c2747003967628f6",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90adc271d081ca9fcbefdc42998313398d8",
-"classraylib_1_1textures_1_1_image.html",
-"globals.html",
-"structgame_1_1components_1_1_item.html#af44d5725f267c9e0ad3aec1e000dd41b",
-"structraylib_1_1core_1_1_vector3.html#ac8bee0f1b845b9acfdc1107e8e57ce51"
+"_player_8hpp_source.html",
+"class_logger.html#aec195417f67cc95b9e9b690e2cbe1d7c",
+"classgame_1_1_engine.html#a73c74b99146453a5f42f9fbc8a1b0ddf",
+"classlocalization_1_1_localization.html#a74f7735ca40b0c5ac6de566bcae0aa0b",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ac4e0e4e3118472beeb2ae75827450f1f",
+"classraylib_1_1text_1_1_font.html#ac2e4e9291f3a708ca64ec5fb4c13bce4",
+"game_2systems_2_model_8hpp.html",
+"structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174acbd778e464676e4c4781723d986a463e",
+"structraylib_1_1core_1_1_vector3.html#a25c3a78b1036572cdc467ed5585aff24"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

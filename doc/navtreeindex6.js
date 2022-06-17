@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1text_1_1_font.html#ac2e4e9291f3a708ca64ec5fb4c13bce4":[2,0,4,3,0,16],
+"classraylib_1_1text_1_1_font.html#ad33456560108394bbe6eeb754941580e":[2,0,4,3,0,11],
+"classraylib_1_1text_1_1_font.html#ae22f947d2b143351544fdf4dba59bdf7":[2,0,4,3,0,2],
+"classraylib_1_1text_1_1_font.html#af9f59ca5e02a90af87bba98f3b593fa2":[2,0,4,3,0,13],
 "classraylib_1_1textures_1_1_image.html":[2,0,4,4,0],
 "classraylib_1_1textures_1_1_image.html#a048ed677d281061f15016b82d2be7365":[2,0,4,4,0,22],
 "classraylib_1_1textures_1_1_image.html#a2a08ae91ebee2b2cce9a2af308e051c6":[2,0,4,4,0,13],
@@ -191,8 +195,8 @@ var NAVTREEINDEX6 =
 "functions_type.html":[2,3,3],
 "functions_u.html":[2,3,0,20],
 "functions_v.html":[2,3,0,21],
-"functions_vars.html":[2,3,2],
 "functions_vars.html":[2,3,2,0],
+"functions_vars.html":[2,3,2],
 "functions_vars_a.html":[2,3,2,1],
 "functions_vars_b.html":[2,3,2,2],
 "functions_vars_c.html":[2,3,2,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX6 =
 "game_2systems_2_animation_8hpp.html":[3,0,0,1,6,0],
 "game_2systems_2_animation_8hpp_source.html":[3,0,0,1,6,0],
 "game_2systems_2_cube_8hpp.html":[3,0,0,1,6,6],
-"game_2systems_2_cube_8hpp_source.html":[3,0,0,1,6,6],
-"game_2systems_2_model_8hpp.html":[3,0,0,1,6,16],
-"game_2systems_2_model_8hpp_source.html":[3,0,0,1,6,16],
-"game_2systems_2_rectangle_8hpp.html":[3,0,0,1,6,20],
-"game_2systems_2_rectangle_8hpp_source.html":[3,0,0,1,6,20]
+"game_2systems_2_cube_8hpp_source.html":[3,0,0,1,6,6]
 };

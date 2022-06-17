@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"_player_8hpp_source.html":[3,0,0,1,0,18],
+"_position2_d_8hpp.html":[3,0,0,1,0,20],
+"_position2_d_8hpp_source.html":[3,0,0,1,0,20],
+"_position_8hpp.html":[3,0,0,1,0,19],
 "_position_8hpp_source.html":[3,0,0,1,0,19],
 "_profile_8cpp.html":[3,0,0,1,5,4],
 "_profile_8cpp.html#adcad6f6488d08c1303938c3ff1fdd534":[3,0,0,1,5,4,0],
@@ -75,8 +79,8 @@ var NAVTREEINDEX1 =
 "_sound_8cpp_source.html":[3,0,0,4,0,16],
 "_sound_8hpp.html":[3,0,0,4,0,17],
 "_sound_8hpp_source.html":[3,0,0,4,0,17],
-"_speed_shoes_8cpp.html":[3,0,0,1,0,0,10],
-"_speed_shoes_8cpp_source.html":[3,0,0,1,0,0,10],
+"_speed_shoes_8cpp.html":[3,0,0,1,0,0,11],
+"_speed_shoes_8cpp_source.html":[3,0,0,1,0,0,11],
 "_sphere_8cpp.html":[3,0,0,4,2,12],
 "_sphere_8cpp_source.html":[3,0,0,4,2,12],
 "_sphere_8hpp.html":[3,0,0,4,2,13],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "class_logger.html#adc0e7f0c1b7fab2afb8e22c6956f3fcb":[2,0,7,4],
 "class_logger.html#ae517a1d70da20c4c9ce3b4dff2dea1ff":[2,0,7,25],
 "class_logger.html#ae82dbfb3d2aa251921e5de89a725187b":[2,0,7,18],
-"class_logger.html#ae88bc2d35d36241c1eb8cfbd1a51a43a":[2,0,7,32],
-"class_logger.html#aec195417f67cc95b9e9b690e2cbe1d7c":[2,0,7,28],
-"class_logger.html#aed5137c2edb42caa97be029cf5c920eb":[2,0,7,29],
-"class_logger.html#aeeefe4e4594b8aed3003a9dbbc47c7b8":[2,0,7,5],
-"class_logger.html#af050fc8c757429af3e17f336339af136":[2,0,7,33]
+"class_logger.html#ae88bc2d35d36241c1eb8cfbd1a51a43a":[2,0,7,32]
 };

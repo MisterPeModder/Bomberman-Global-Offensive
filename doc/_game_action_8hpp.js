@@ -9,7 +9,9 @@ var _game_action_8hpp =
       [ "PLACE_BOMB", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a8d00c7f1627f5d1d8e5189c14338c096", null ],
       [ "PAUSE", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a291554596c183e837f0a6bec3767c891", null ],
       [ "ACTION", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663ae58a1b00942e66d8b4abc960da7877ab", null ],
-      [ "BACK", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0", null ]
+      [ "BACK", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0", null ],
+      [ "ACTIVATE_ITEM", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b", null ],
+      [ "COUNT", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d", null ]
     ] ],
     [ "isMoveAction", "_game_action_8hpp.html#a85afa01575b11b63bb973480cc6972e4", null ]
 ];

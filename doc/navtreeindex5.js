@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ac4e0e4e3118472beeb2ae75827450f1f":[2,0,4,0,7,0,57],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90acb0d0bf9279e78f982deba761110e434":[2,0,4,0,7,0,65],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ad20caec3b48a1eef164cb4ca81ba2587":[2,0,4,0,7,0,29],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90adaaedac409335b869929ea43fa44be5d":[2,0,4,0,7,0,49],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90adc271d081ca9fcbefdc42998313398d8":[2,0,4,0,7,0,94],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90add7536794b63bf90eccfd37f9b147d7f":[2,0,4,0,7,0,26],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90addf133566f544b297f2f84874c283589":[2,0,4,0,7,0,81],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1text_1_1_font.html#aaee5d7b3d6fcc3dd9dc8ae8d81f475f4":[2,0,4,3,0,4],
 "classraylib_1_1text_1_1_font.html#aafa5c22c01e8cbe54b0578beccfd93e8":[2,0,4,3,0,7],
 "classraylib_1_1text_1_1_font.html#aafd8a062e08717f97a0910103ef50143":[2,0,4,3,0,9],
-"classraylib_1_1text_1_1_font.html#ac17596446c069cd8abd2801dfa31cda1":[2,0,4,3,0,10],
-"classraylib_1_1text_1_1_font.html#ac2e4e9291f3a708ca64ec5fb4c13bce4":[2,0,4,3,0,16],
-"classraylib_1_1text_1_1_font.html#ad33456560108394bbe6eeb754941580e":[2,0,4,3,0,11],
-"classraylib_1_1text_1_1_font.html#ae22f947d2b143351544fdf4dba59bdf7":[2,0,4,3,0,2],
-"classraylib_1_1text_1_1_font.html#af9f59ca5e02a90af87bba98f3b593fa2":[2,0,4,3,0,13]
+"classraylib_1_1text_1_1_font.html#ac17596446c069cd8abd2801dfa31cda1":[2,0,4,3,0,10]
 };

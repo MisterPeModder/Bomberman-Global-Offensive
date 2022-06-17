@@ -25,6 +25,6 @@ var classgame_1_1_user =
     [ "_available", "classgame_1_1_user.html#a13f760054351dd21b6469030c4387248", null ],
     [ "_changedActions", "classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f", null ],
     [ "_gamepadId", "classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463", null ],
-    [ "_lastActions", "classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e", null ],
+    [ "_lastActions", "classgame_1_1_user.html#ad0f3c02c4306d1fc841397a1d583e8c9", null ],
     [ "_profile", "classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49", null ]
 ];

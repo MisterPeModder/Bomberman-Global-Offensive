@@ -56,7 +56,7 @@ var searchData=
   ['_5fkeybinds_53',['_keybinds',['../classgame_1_1settings_1_1_profile.html#a05a79e4f3f3e048ed98e75fb9b365a5d',1,'game::settings::Profile']]],
   ['_5fkeyboardbindings_54',['_keyboardBindings',['../classgame_1_1settings_1_1_keybinds.html#a4d96b44207b1e887d6b193836da67dac',1,'game::settings::Keybinds']]],
   ['_5fkilled_55',['_killed',['../classecs_1_1_entities.html#a4b7366b69b6634c7522b70025ae570be',1,'ecs::Entities']]],
-  ['_5flastactions_56',['_lastActions',['../classgame_1_1_user.html#aa176bd3cfd1ea7b0655e2bc4dd53c77e',1,'game::User']]],
+  ['_5flastactions_56',['_lastActions',['../classgame_1_1_user.html#ad0f3c02c4306d1fc841397a1d583e8c9',1,'game::User']]],
   ['_5flastreset_57',['_lastReset',['../classecs_1_1_timer.html#ad74145a7f075a1e9617d386b4e852f61',1,'ecs::Timer']]],
   ['_5fload_58',['_load',['../classbmjs_1_1_engine.html#ae70d61698e745b499640e293e05815a9',1,'bmjs::Engine']]],
   ['_5floadapi_59',['_loadApi',['../classbmjs_1_1_engine.html#aef57bcb0db302941ca1764d1621c3a4a',1,'bmjs::Engine']]],
