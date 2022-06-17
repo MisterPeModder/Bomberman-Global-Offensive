@@ -16,6 +16,7 @@
 #include "ecs/Entity.hpp"
 #include "ecs/system/SystemData.hpp"
 
+#include <array>
 #include <functional>
 
 namespace game
@@ -36,18 +37,25 @@ namespace game
             /// The amount of seconds before the a key event starts repeating.
             static constexpr double REPEAT_THRESHOLD = 0.5;
 
-            KeyRepeat(raylib::core::Keyboard::Key key);
+            using Callback = std::function<void(KeyboardInput &, ecs::Entity, ecs::SystemData)>;
 
-            /// Executes the function @b onRepeat if the key repeat cooldown is not active.
+            KeyRepeat() = default;
+
+            KeyRepeat(raylib::core::Keyboard::Key key, Callback callback);
+
+            /// Executes the repeat callback if the key repeat cooldown is not active.
             ///
-            /// @param elapsed The number of seconds since the last call to KeyRepeat::check() for this key.
-            /// @param onRepeat The function that handles the key event.
-            void check(double elapsed, std::function<void()> onRepeat);
+            /// @param input The keyboard input field.
+            /// @param id The entity id of @b input.
+            /// @param data System data.
+            /// @param elapsed The number of seconds since the last call to KeyRepeat::check().
+            void check(KeyboardInput &input, ecs::Entity id, ecs::SystemData data, double elapsed);
 
           private:
             raylib::core::Keyboard::Key _key;
             double _repeatCooldown;
             double _timeSinceRepeat;
+            Callback _callback;
         };
 
         /// The type of function executed when the user presses the enter key while the input is focused.
@@ -68,14 +76,8 @@ namespace game
         /// Whether keyboard input should be captured.
         bool focused;
 
-        /// Repeat data for the backspace key.
-        KeyRepeat backspaceRepeat;
-        /// Repeat data for the delete key.
-        KeyRepeat deleteRepeat;
-        /// Repeat data for the left arrow key.
-        KeyRepeat leftArrowRepeat;
-        /// Repeat data for the right arrow key.
-        KeyRepeat rightArrowRepeat;
+        /// Repeat support for some keys.
+        std::array<KeyRepeat, 6> keyRepeats;
 
         double cursorBlink;
 
@@ -98,6 +100,13 @@ namespace game
 
         /// Deletes the whole input.
         void clear();
+
+        /// Executes the repeat event of each key in @ref keyRepeats.
+        ///
+        /// @param id The entity id this input.
+        /// @param data System data.
+        /// @param elapsed The number of seconds since the last call to KeyboardInput::checkKeyRepeats().
+        void checkKeyRepeats(ecs::Entity id, ecs::SystemData data, double elapsed);
     };
 } // namespace game
 

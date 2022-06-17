@@ -6,6 +6,12 @@
 */
 
 #include "KeyboardInput.hpp"
+#include "History.hpp"
+
+#include "ecs/Storage.hpp"
+#include "ecs/join.hpp"
+#include "ecs/resource/Entities.hpp"
+#include "ecs/resource/Timer.hpp"
 
 #include "raylib/core/Color.hpp"
 #include "raylib/core/Keyboard.hpp"
@@ -20,12 +26,12 @@ namespace game
 {
     using Keyboard = raylib::core::Keyboard;
 
-    KeyboardInput::KeyRepeat::KeyRepeat(raylib::core::Keyboard::Key key)
-        : _key(key), _repeatCooldown(REPEAT_DELAY), _timeSinceRepeat(0.0)
+    KeyboardInput::KeyRepeat::KeyRepeat(raylib::core::Keyboard::Key key, Callback callback)
+        : _key(key), _repeatCooldown(REPEAT_DELAY), _timeSinceRepeat(0.0), _callback(callback)
     {
     }
 
-    void KeyboardInput::KeyRepeat::check(double elapsed, std::function<void()> onRepeat)
+    void KeyboardInput::KeyRepeat::check(KeyboardInput &input, ecs::Entity id, ecs::SystemData data, double elapsed)
     {
         if (Keyboard::isKeyDown(this->_key))
             this->_timeSinceRepeat = std::min(100.0, this->_timeSinceRepeat + elapsed);
@@ -34,19 +40,76 @@ namespace game
         this->_repeatCooldown = std::max(0.0, this->_repeatCooldown - elapsed);
 
         if (Keyboard::isKeyPressed(this->_key) && this->_timeSinceRepeat < REPEAT_THRESHOLD) {
-            onRepeat();
+            this->_callback(input, id, data);
         } else if (Keyboard::isKeyDown(this->_key) && this->_timeSinceRepeat >= REPEAT_THRESHOLD
             && this->_repeatCooldown <= 0) {
-            onRepeat();
+            this->_callback(input, id, data);
             this->_repeatCooldown = REPEAT_DELAY;
         }
     }
 
     KeyboardInput::KeyboardInput(onSubmitCallback submitCallback)
-        : onSubmit(submitCallback), contents(), cursorPos(0), selectionPos(0), focused(false),
-          backspaceRepeat(Keyboard::Key::BACKSPACE), deleteRepeat(Keyboard::Key::DELETE),
-          leftArrowRepeat(Keyboard::Key::LEFT), rightArrowRepeat(Keyboard::Key::RIGHT), cursorBlink(0.0)
+        : onSubmit(submitCallback), contents(), cursorPos(0), selectionPos(0), focused(false), cursorBlink(0.0)
     {
+        this->keyRepeats[0] = KeyRepeat(Keyboard::Key::BACKSPACE, [](auto &field, auto, auto) {
+            if (field.hasSelection()) {
+                field.eraseSelection();
+            } else if (field.cursorPos > 0) {
+                std::size_t removed = util::removeUtf8Codepoint(field.contents, field.cursorPos - 1).second;
+                field.moveCursor(-static_cast<int>(removed));
+            }
+        });
+
+        this->keyRepeats[1] = KeyRepeat(Keyboard::Key::DELETE, [](auto &field, auto, auto) {
+            if (field.hasSelection()) {
+                field.eraseSelection();
+            } else if (field.cursorPos < field.contents.size()) {
+                util::removeUtf8Codepoint(field.contents, field.cursorPos);
+                field.moveCursor(0);
+            }
+        });
+
+        this->keyRepeats[2] = KeyRepeat(Keyboard::Key::LEFT, [](auto &field, auto, auto) {
+            if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
+                field.moveCursorToWord(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+            else
+                field.moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+        });
+
+        this->keyRepeats[3] = KeyRepeat(Keyboard::Key::RIGHT, [](auto &field, auto, auto) {
+            if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
+                field.moveCursorToWord(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+            else
+                field.moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+        });
+
+        this->keyRepeats[4] =
+            KeyRepeat(Keyboard::Key::UP, [](KeyboardInput &field, ecs::Entity entity, ecs::SystemData data) {
+                auto &histories = data.getStorage<game::components::History>();
+
+                if (histories.contains(entity.getId())) {
+                    auto &history = histories[entity.getId()];
+
+                    if (history.pos == 0)
+                        history.savedCurrentEntry = field.contents;
+                    history.moveUp();
+                    history.load(field.contents);
+                    field.moveCursor(field.contents.size());
+                }
+            });
+
+        this->keyRepeats[5] =
+            KeyRepeat(Keyboard::Key::DOWN, [](KeyboardInput &field, ecs::Entity entity, ecs::SystemData data) {
+                auto &histories = data.getStorage<game::components::History>();
+
+                if (histories.contains(entity.getId())) {
+                    auto &history = histories[entity.getId()];
+
+                    history.moveDown();
+                    history.load(field.contents);
+                    field.moveCursor(field.contents.size());
+                }
+            });
     }
 
     void KeyboardInput::moveCursor(int offset, bool selectingText)
@@ -112,5 +175,11 @@ namespace game
         this->contents.clear();
         this->cursorPos = 0;
         this->selectionPos = 0;
+    }
+
+    void KeyboardInput::checkKeyRepeats(ecs::Entity id, ecs::SystemData data, double elapsed)
+    {
+        for (auto &keyRepeat : this->keyRepeats)
+            keyRepeat.check(*this, id, data, elapsed);
     }
 } // namespace game

@@ -15,6 +15,7 @@
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
+#include "components/History.hpp"
 #include "components/Identity.hpp"
 #include "components/KeyboardInput.hpp"
 #include "components/Living.hpp"
@@ -189,6 +190,7 @@ namespace game
         /// Console
         _world.addEntity()
             .with<game::gui::Console>()
+            .with<game::components::History>()
             .with<game::components::Position>(0.f, 50.f, 0.f)
             .with<game::components::Size2D>(720, 20)
             .with<game::KeyboardInput>(&game::gui::Console::runCommand)

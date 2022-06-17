@@ -163,7 +163,7 @@ namespace bmjs
 
     std::string Engine::_loadString(std::string_view toRun)
     {
-        if (js_ploadstring(this->_state, "[stdin]", toRun.data())) {
+        if (js_ploadstring(this->_state, "[console]", toRun.data())) {
             JsException error(js_trystring(this->_state, -1, "Error"));
             js_pop(this->_state, 1);
             throw error;

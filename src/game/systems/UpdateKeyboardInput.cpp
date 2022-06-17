@@ -6,6 +6,7 @@
 */
 
 #include "UpdateKeyboardInput.hpp"
+#include "game/components/History.hpp"
 #include "game/components/KeyboardInput.hpp"
 
 #include "ecs/Storage.hpp"
@@ -30,16 +31,20 @@ namespace game::systems
 
     void UpdateKeyboardInput::run(ecs::SystemData data)
     {
-        auto iter = ecs::join(data.getStorage<game::KeyboardInput>(), data.getResource<ecs::Entities>());
+        auto &entities = data.getResource<ecs::Entities>();
+        auto &inputs = data.getStorage<game::KeyboardInput>();
+        auto histories = ecs::maybe(data.getStorage<game::components::History>());
+
+        auto iter = ecs::join(entities, inputs, histories);
 
         auto begin = iter.begin();
         auto end = iter.end();
-        auto firstSelected = std::find_if(begin, end, [](auto i) { return std::get<0>(i).focused; });
+        auto firstSelected = std::find_if(begin, end, [](auto i) { return std::get<1>(i).focused; });
 
         if (firstSelected == end)
             return;
 
-        auto [field, self] = *firstSelected;
+        auto [self, field, history] = *firstSelected;
         Keyboard::Key key;
         int codepoint;
 
@@ -70,6 +75,10 @@ namespace game::systems
                         field.eraseSelection();
                     field.contents.insert(field.cursorPos, pasted);
                     field.moveCursor(pasted.size());
+                } else if (key == Keyboard::Key::D) {
+                    // CTRL+D: Close console
+
+                    field.focused = false;
                 }
             } else if (key == Keyboard::Key::HOME) {
                 // HOME (begin): move to the start of the contents
@@ -83,8 +92,11 @@ namespace game::systems
             } else if (key == Keyboard::Key::ENTER || key == Keyboard::Key::KP_ENTER) {
                 // ENTER: submit input
 
-                if (field.onSubmit(self, data, field.contents))
+                if (!field.contents.empty() && field.onSubmit(self, data, field.contents)) {
+                    if (history != nullptr)
+                        history->push(field.contents);
                     field.clear();
+                }
             }
         }
         while ((codepoint = Keyboard::getCharPressed())) {
@@ -93,35 +105,7 @@ namespace game::systems
 
         double elapsed = data.getResource<ecs::Timer>().elapsed();
 
-        field.backspaceRepeat.check(elapsed, [f = std::ref(field)]() mutable {
-            if (f.get().hasSelection()) {
-                f.get().eraseSelection();
-            } else if (f.get().cursorPos > 0) {
-                std::size_t removed = util::removeUtf8Codepoint(f.get().contents, f.get().cursorPos - 1).second;
-                f.get().moveCursor(-static_cast<int>(removed));
-            }
-        });
-        field.deleteRepeat.check(elapsed, [f = std::ref(field)]() mutable {
-            if (f.get().hasSelection()) {
-                f.get().eraseSelection();
-            } else if (f.get().cursorPos < f.get().contents.size()) {
-                util::removeUtf8Codepoint(f.get().contents, f.get().cursorPos);
-                f.get().moveCursor(0);
-            }
-        });
-        field.leftArrowRepeat.check(elapsed, [f = std::ref(field)]() mutable {
-            if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
-                f.get().moveCursorToWord(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
-            else
-                f.get().moveCursor(-1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
-        });
-        field.rightArrowRepeat.check(elapsed, [f = std::ref(field)]() mutable {
-            if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL))
-                f.get().moveCursorToWord(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
-            else
-                f.get().moveCursor(1, Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
-        });
-
+        field.checkKeyRepeats(self, data, elapsed);
         field.cursorBlink = fmod(field.cursorBlink + elapsed, 1.0);
     }
 } // namespace game::systems
