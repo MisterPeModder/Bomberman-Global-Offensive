@@ -1,5 +1,13 @@
 var NAVTREEINDEX8 =
 {
+"structgame_1_1components_1_1_item.html#a61a5037b4476d64e775d6736855d353e":[2,0,2,0,11,15],
+"structgame_1_1components_1_1_item.html#a7239f3aed563eedb5599494dd03ff9e2":[2,0,2,0,11,12],
+"structgame_1_1components_1_1_item.html#a7784b9a70b756113e290bcb43dbb1455":[2,0,2,0,11,18],
+"structgame_1_1components_1_1_item.html#a77e3bce6d8988a8d3a6403abc3d6300d":[2,0,2,0,11,11],
+"structgame_1_1components_1_1_item.html#a843a3a91a1b74a57f719ca6cba4a60f8":[2,0,2,0,11,30],
+"structgame_1_1components_1_1_item.html#a9989710c428f9344bcc636b1710fa999":[2,0,2,0,11,24],
+"structgame_1_1components_1_1_item.html#a9f173975f3023bd17dda8d2bfd509ddb":[2,0,2,0,11,10],
+"structgame_1_1components_1_1_item.html#aad97e9315c856d90346f7179f8116e68":[2,0,2,0,11,26],
 "structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896d":[2,0,2,0,11,3],
 "structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da18201ca2222ee15c405c11fa042fa525":[2,0,2,0,11,3,2],
 "structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896da2808673935a9be95a8f295b932962bc3":[2,0,2,0,11,3,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX8 =
 "structraylib_1_1core_1_1_vector2.html#a0e8c5e0f70ec3abb678c93375356f9f1":[2,0,4,0,10,14],
 "structraylib_1_1core_1_1_vector2.html#a13cb3bfacab9e1e65afeb69cacb068fd":[2,0,4,0,10,7],
 "structraylib_1_1core_1_1_vector2.html#a2373913198ee1939cd7b95c16bb7a9f8":[2,0,4,0,10,10],
-"structraylib_1_1core_1_1_vector2.html#a2ca293a8067b9644a240f03ec0a0c926":[2,0,4,0,10,11],
-"structraylib_1_1core_1_1_vector2.html#a6647cc7222bb7bf8fc4f73da9bdb7728":[2,0,4,0,10,12],
-"structraylib_1_1core_1_1_vector2.html#a6d20f959df542f2acc54724fff97197e":[2,0,4,0,10,13],
-"structraylib_1_1core_1_1_vector2.html#a6d5b2eba79dc8f3718aa3aa94c90299f":[2,0,4,0,10,15],
-"structraylib_1_1core_1_1_vector2.html#a7caa7756608688a5df5d3596faa0f6e5":[2,0,4,0,10,2],
-"structraylib_1_1core_1_1_vector2.html#a856b68d209eeb3b8a7f9652a749d0d34":[2,0,4,0,10,0],
-"structraylib_1_1core_1_1_vector2.html#a9d0a198ff9d3e44816cd28207aba2503":[2,0,4,0,10,5],
-"structraylib_1_1core_1_1_vector2.html#a9f781efaa34d6e807f08f16f342342e4":[2,0,4,0,10,1],
-"structraylib_1_1core_1_1_vector2.html#aa6d17b88eab30b548c90a49729d4fc23":[2,0,4,0,10,3]
+"structraylib_1_1core_1_1_vector2.html#a2ca293a8067b9644a240f03ec0a0c926":[2,0,4,0,10,11]
 };

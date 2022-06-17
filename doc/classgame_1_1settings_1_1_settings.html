@@ -150,6 +150,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac0a51dce66823474077b80fbbc8b1479"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1settings_1_1_settings.html#ac0a51dce66823474077b80fbbc8b1479">getMusicVolume</a> () const</td></tr>
 <tr class="memdesc:ac0a51dce66823474077b80fbbc8b1479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the music volume.  <a href="classgame_1_1settings_1_1_settings.html#ac0a51dce66823474077b80fbbc8b1479">More...</a><br /></td></tr>
 <tr class="separator:ac0a51dce66823474077b80fbbc8b1479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe249e1ecca2861514e3617912e2871a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1settings_1_1_settings.html#abe249e1ecca2861514e3617912e2871a">setMasterVolume</a> (float volume)</td></tr>
+<tr class="memdesc:abe249e1ecca2861514e3617912e2871a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the master volume.  <a href="classgame_1_1settings_1_1_settings.html#abe249e1ecca2861514e3617912e2871a">More...</a><br /></td></tr>
+<tr class="separator:abe249e1ecca2861514e3617912e2871a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b1c6f822fe6202c84babcbd3481e4f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1settings_1_1_settings.html#a06b1c6f822fe6202c84babcbd3481e4f">getMasterVolume</a> () const</td></tr>
+<tr class="memdesc:a06b1c6f822fe6202c84babcbd3481e4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the master volume.  <a href="classgame_1_1settings_1_1_settings.html#a06b1c6f822fe6202c84babcbd3481e4f">More...</a><br /></td></tr>
+<tr class="separator:a06b1c6f822fe6202c84babcbd3481e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf8e5024595dd33dc86b2712c37170c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4">setTargetFramerate</a> (unsigned int targetFPS)</td></tr>
 <tr class="memdesc:aaf8e5024595dd33dc86b2712c37170c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the target framerate (frame per seconds).  <a href="classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4">More...</a><br /></td></tr>
 <tr class="separator:aaf8e5024595dd33dc86b2712c37170c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,6 +199,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af2b96d665bb862ccb88ee8d57c2d9e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a801bd8b0c09d0bf074e2a90773af8a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a">_musicVolume</a></td></tr>
 <tr class="separator:a3a801bd8b0c09d0bf074e2a90773af8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9e9cfc4586dad626a1090f77cf0d857"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1settings_1_1_settings.html#af9e9cfc4586dad626a1090f77cf0d857">_masterVolume</a></td></tr>
+<tr class="separator:af9e9cfc4586dad626a1090f77cf0d857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e3a5126067c59ff20d8c284ad4b7aee"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">_targetFramerate</a></td></tr>
 <tr class="separator:a6e3a5126067c59ff20d8c284ad4b7aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a009ea059721ed1db27b7ea7d30bf7603"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">raylib::core::Vector2f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">_resolution</a></td></tr>
@@ -309,8 +317,31 @@ Private Attributes</h2></td></tr>
 <p>Get the target locale. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> target locale. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00133">133</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4">_locale</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00145">145</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4">_locale</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a06b1c6f822fe6202c84babcbd3481e4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06b1c6f822fe6202c84babcbd3481e4f">&#9670;&nbsp;</a></span>getMasterVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float game::settings::Settings::getMasterVolume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the master volume. </p>
+<dl class="section return"><dt>Returns</dt><dd>the master volume. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00129">129</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#af9e9cfc4586dad626a1090f77cf0d857">_masterVolume</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -332,8 +363,8 @@ Private Attributes</h2></td></tr>
 <p>Get the music volume. </p>
 <dl class="section return"><dt>Returns</dt><dd>the music volume. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00117">117</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a">_musicVolume</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00120">120</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a">_musicVolume</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -355,8 +386,8 @@ Private Attributes</h2></td></tr>
 <p>Get the target resolution of the window. </p>
 <dl class="section return"><dt>Returns</dt><dd>the target resolution of the window. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00125">125</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">_resolution</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00137">137</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">_resolution</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -387,8 +418,8 @@ Private Attributes</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The path is settings/settings.cfg.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> settings file path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00036">36</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;settings&quot;</span>, <span class="stringliteral">&quot;settings.cfg&quot;</span>); }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00037">37</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;settings&quot;</span>, <span class="stringliteral">&quot;settings.cfg&quot;</span>); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -410,8 +441,8 @@ Private Attributes</h2></td></tr>
 <p>Get the sound effects volume. </p>
 <dl class="section return"><dt>Returns</dt><dd>the sound effects volume. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00108">108</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#af2b96d665bb862ccb88ee8d57c2d9e4e">_sfxVolume</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00111">111</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#af2b96d665bb862ccb88ee8d57c2d9e4e">_sfxVolume</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -433,8 +464,8 @@ Private Attributes</h2></td></tr>
 <p>Get the target framerate. </p>
 <dl class="section return"><dt>Returns</dt><dd>the target framerate. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00121">121</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">_targetFramerate</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00133">133</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">_targetFramerate</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -461,8 +492,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00129">129</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58">_fullscreen</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00141">141</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58">_fullscreen</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -484,25 +515,25 @@ Private Attributes</h2></td></tr>
 <p>Load the settings from <a class="el" href="classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0">getSettingsFilePath()</a>. </p>
 <dl class="section note"><dt>Note</dt><dd>Unknown values will be ignored. Invalid values will be replaced by default ones. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00081">81</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a9188bbf61bb01194e7e6cd4d643ae7e3">loadDefaults</a>();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">util::loadConfigFile</a>(<a class="code" href="classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0">getSettingsFilePath</a>(), [<span class="keyword">this</span>](<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key, <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> value) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    <a class="code" href="classgame_1_1settings_1_1_settings.html#aab85ce33d56764a5c2f0b4475624cdd2">loadValue</a>(key, value);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                } <span class="keywordflow">catch</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/error/exception.html">std::exception</a> &amp;e) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;writer) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                        writer &lt;&lt; <span class="stringliteral">&quot;Exception occured when loading a setting value: &#39;&quot;</span> &lt;&lt; e.<a class="codeRef" href="http://en.cppreference.com/w/cpp/error/exception/what.html">what</a>() &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    });</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a>, [&amp;](<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;writer) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        writer &lt;&lt; <span class="stringliteral">&quot;Unable to load setting &#39;&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot;&#39; with value &#39;&quot;</span> &lt;&lt; value</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                               &lt;&lt; <span class="stringliteral">&quot;&#39;. Default value will be used.&quot;</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    });</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            });</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00084">84</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a9188bbf61bb01194e7e6cd4d643ae7e3">loadDefaults</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">util::loadConfigFile</a>(<a class="code" href="classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0">getSettingsFilePath</a>(), [<span class="keyword">this</span>](<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> key, <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> value) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <a class="code" href="classgame_1_1settings_1_1_settings.html#aab85ce33d56764a5c2f0b4475624cdd2">loadValue</a>(key, value);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                } <span class="keywordflow">catch</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/error/exception.html">std::exception</a> &amp;e) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, [&amp;](<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;writer) {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                        writer &lt;&lt; <span class="stringliteral">&quot;Exception occured when loading a setting value: &#39;&quot;</span> &lt;&lt; e.<a class="codeRef" href="http://en.cppreference.com/w/cpp/error/exception/what.html">what</a>() &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    });</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a>, [&amp;](<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;writer) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                        writer &lt;&lt; <span class="stringliteral">&quot;Unable to load setting &#39;&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot;&#39; with value &#39;&quot;</span> &lt;&lt; value</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                               &lt;&lt; <span class="stringliteral">&quot;&#39;. Default value will be used.&quot;</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    });</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            });</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -527,11 +558,12 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#af2b96d665bb862ccb88ee8d57c2d9e4e">_sfxVolume</a> = 100;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a">_musicVolume</a> = 100;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">_targetFramerate</a> = 60;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">_resolution</a> = {1280, 720};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58">_fullscreen</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4">_locale</a> = <span class="stringliteral">&quot;en&quot;</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#af9e9cfc4586dad626a1090f77cf0d857">_masterVolume</a> = 100;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">_targetFramerate</a> = 60;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">_resolution</a> = {1280, 720};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58">_fullscreen</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4">_locale</a> = <span class="stringliteral">&quot;en&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -578,35 +610,37 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00051">51</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;sfx_volume&quot;</span>)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a4d54b3a0b95d809b69388d488db60851">setSfxVolume</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stof.html">std::stof</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;music_volume&quot;</span>)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a075e6f12793a8d9cffc8bdd558ff2474">setMusicVolume</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stof.html">std::stof</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;target_framerate&quot;</span>)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4">setTargetFramerate</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stoul.html">std::stoul</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;resolution&quot;</span>) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">float</span> width;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">float</span> height;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">if</span> (value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/find.html">find</a>(<span class="charliteral">&#39;x&#39;</span>) == std::string::npos)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">throw</span> InvalidSettingsValue(<span class="stringliteral">&quot;Resolution must be of form &#39;[width]x[height]&#39;&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                width = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stol.html">std::stoi</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                height = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stol.html">std::stoi</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>() + value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/find.html">find</a>(<span class="charliteral">&#39;x&#39;</span>) + 1));</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a3559d0dc3bd3956bbd76948a85a15a26">setResolution</a>({width, height});</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;fullscreen&quot;</span>) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordtype">bool</span> fullscreen;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_istringstream.html">std::istringstream</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()) &gt;&gt; fullscreen;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a338819ef128061c878a5deb2aa0aa587">setFullscreen</a>(fullscreen || value == <span class="stringliteral">&quot;true&quot;</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;locale&quot;</span>) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a1f39d3b48e96dfb79845a1e04a4f5b92">setLocale</a>(value);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a>, [&amp;](<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;writer) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    writer &lt;&lt; <span class="stringliteral">&quot;Unknown settings key &#39;&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot;&#39; with value &#39;&quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                });</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00052">52</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;sfx_volume&quot;</span>)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a4d54b3a0b95d809b69388d488db60851">setSfxVolume</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stof.html">std::stof</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;music_volume&quot;</span>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a075e6f12793a8d9cffc8bdd558ff2474">setMusicVolume</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stof.html">std::stof</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;master_volume&quot;</span>)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#abe249e1ecca2861514e3617912e2871a">setMasterVolume</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stof.html">std::stof</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;target_framerate&quot;</span>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4">setTargetFramerate</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stoul.html">std::stoul</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;resolution&quot;</span>) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordtype">float</span> width;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordtype">float</span> height;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">if</span> (value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/find.html">find</a>(<span class="charliteral">&#39;x&#39;</span>) == std::string::npos)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="keywordflow">throw</span> InvalidSettingsValue(<span class="stringliteral">&quot;Resolution must be of form &#39;[width]x[height]&#39;&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                width = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stol.html">std::stoi</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                height = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/stol.html">std::stoi</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>() + value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/find.html">find</a>(<span class="charliteral">&#39;x&#39;</span>) + 1));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a3559d0dc3bd3956bbd76948a85a15a26">setResolution</a>({width, height});</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;fullscreen&quot;</span>) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">bool</span> fullscreen;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_istringstream.html">std::istringstream</a>(value.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()) &gt;&gt; fullscreen;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a338819ef128061c878a5deb2aa0aa587">setFullscreen</a>(fullscreen || value == <span class="stringliteral">&quot;true&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (key == <span class="stringliteral">&quot;locale&quot;</span>) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="classgame_1_1settings_1_1_settings.html#a1f39d3b48e96dfb79845a1e04a4f5b92">setLocale</a>(value);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a>, [&amp;](<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;writer) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    writer &lt;&lt; <span class="stringliteral">&quot;Unknown settings key &#39;&quot;</span> &lt;&lt; key &lt;&lt; <span class="stringliteral">&quot;&#39; with value &#39;&quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                });</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -668,18 +702,18 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00038">38</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> path = <a class="code" href="classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0">getSettingsFilePath</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream.html">std::ofstream</a> file;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/create_directory.html">std::filesystem::create_directory</a>(<span class="stringliteral">&quot;settings&quot;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            file.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream/open.html">open</a>(path, std::ios_base::out);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (!file.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream/is_open.html">is_open</a>())</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">throw</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/error/runtime_error.html">std::runtime_error</a>(<span class="stringliteral">&quot;Unable to save the settings file &#39;&quot;</span> + path.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">generic_string</a>() + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            file &lt;&lt; *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            file.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream/close.html">close</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00039">39</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> path = <a class="code" href="classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0">getSettingsFilePath</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream.html">std::ofstream</a> file;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/create_directory.html">std::filesystem::create_directory</a>(<span class="stringliteral">&quot;settings&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            file.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream/open.html">open</a>(path, std::ios_base::out);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (!file.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream/is_open.html">is_open</a>())</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordflow">throw</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/error/runtime_error.html">std::runtime_error</a>(<span class="stringliteral">&quot;Unable to save the settings file &#39;&quot;</span> + path.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">generic_string</a>() + <span class="stringliteral">&quot;&#39;&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            file &lt;&lt; *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            file.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ofstream/close.html">close</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -707,8 +741,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00127">127</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{ <a class="code" href="classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58">_fullscreen</a> = fullscreen; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00139">139</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{ <a class="code" href="classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58">_fullscreen</a> = fullscreen; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -736,8 +770,47 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00131">131</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{ <a class="code" href="classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4">_locale</a> = locale; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00143">143</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;{ <a class="code" href="classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4">_locale</a> = locale; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abe249e1ecca2861514e3617912e2871a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe249e1ecca2861514e3617912e2871a">&#9670;&nbsp;</a></span>setMasterVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game::settings::Settings::setMasterVolume </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>volume</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the master volume. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">volume</td><td>new volume to set ([0-100]). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classgame_1_1settings_1_1_settings_1_1_invalid_settings_value.html" title="Exception for invalid values in settings.">InvalidSettingsValue</a></td><td>when the new volume isn't in the required range. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00122">122</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span> (volume &lt; 0 || volume &gt; 100)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordflow">throw</span> InvalidSettingsValue(<span class="stringliteral">&quot;Volumes must be between 0 and 100.&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#af9e9cfc4586dad626a1090f77cf0d857">_masterVolume</a> = volume;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -771,12 +844,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00110">110</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">if</span> (volume &lt; 0 || volume &gt; 100)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">throw</span> InvalidSettingsValue(<span class="stringliteral">&quot;Volumes must be between 0 and 100.&quot;</span>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a">_musicVolume</a> = volume;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00113">113</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span> (volume &lt; 0 || volume &gt; 100)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keywordflow">throw</span> InvalidSettingsValue(<span class="stringliteral">&quot;Volumes must be between 0 and 100.&quot;</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a">_musicVolume</a> = volume;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -804,8 +877,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00123">123</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{ <a class="code" href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">_resolution</a> = resolution; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00135">135</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{ <a class="code" href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">_resolution</a> = resolution; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -839,12 +912,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00101">101</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (volume &lt; 0 || volume &gt; 100)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">throw</span> InvalidSettingsValue(<span class="stringliteral">&quot;Volumes must be between 0 and 100.&quot;</span>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#af2b96d665bb862ccb88ee8d57c2d9e4e">_sfxVolume</a> = volume;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00104">104</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">if</span> (volume &lt; 0 || volume &gt; 100)</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">throw</span> InvalidSettingsValue(<span class="stringliteral">&quot;Volumes must be between 0 and 100.&quot;</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <a class="code" href="classgame_1_1settings_1_1_settings.html#af2b96d665bb862ccb88ee8d57c2d9e4e">_sfxVolume</a> = volume;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -872,8 +945,8 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00119">119</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{ <a class="code" href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">_targetFramerate</a> = target; }</div>
+<p class="definition">Definition at line <a class="el" href="_settings_8cpp_source.html#l00131">131</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{ <a class="code" href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">_targetFramerate</a> = target; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -898,7 +971,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00144">144</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00156">156</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
 
 </div>
 </div>
@@ -922,7 +995,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00145">145</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00157">157</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af9e9cfc4586dad626a1090f77cf0d857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9e9cfc4586dad626a1090f77cf0d857">&#9670;&nbsp;</a></span>_masterVolume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float game::settings::Settings::_masterVolume</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00153">153</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
 
 </div>
 </div>
@@ -946,7 +1043,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00141">141</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00152">152</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
 
 </div>
 </div>
@@ -970,7 +1067,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00143">143</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00155">155</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
 
 </div>
 </div>
@@ -994,7 +1091,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00140">140</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00151">151</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
 
 </div>
 </div>
@@ -1018,7 +1115,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00142">142</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_settings_8hpp_source.html#l00154">154</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
 
 </div>
 </div>
@@ -1033,38 +1130,40 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="astoul_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/stoul.html">std::stoul</a></div><div class="ttdeci">T stoul(T... args)</div></div>
 <div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00057">Logger.hpp:57</a></div></div>
 <div class="ttc" id="abasic_string_view_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_aab85ce33d56764a5c2f0b4475624cdd2"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#aab85ce33d56764a5c2f0b4475624cdd2">game::settings::Settings::loadValue</a></div><div class="ttdeci">void loadValue(std::string_view key, std::string_view value)</div><div class="ttdoc">Load a value from its string representation.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00051">Settings.cpp:51</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_aab85ce33d56764a5c2f0b4475624cdd2"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#aab85ce33d56764a5c2f0b4475624cdd2">game::settings::Settings::loadValue</a></div><div class="ttdeci">void loadValue(std::string_view key, std::string_view value)</div><div class="ttdoc">Load a value from its string representation.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00052">Settings.cpp:52</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdoc">Random informations.</div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a3559d0dc3bd3956bbd76948a85a15a26"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a3559d0dc3bd3956bbd76948a85a15a26">game::settings::Settings::setResolution</a></div><div class="ttdeci">void setResolution(raylib::core::Vector2f resolution)</div><div class="ttdoc">Set the new resolution of the window.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00123">Settings.cpp:123</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a3559d0dc3bd3956bbd76948a85a15a26"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a3559d0dc3bd3956bbd76948a85a15a26">game::settings::Settings::setResolution</a></div><div class="ttdeci">void setResolution(raylib::core::Vector2f resolution)</div><div class="ttdoc">Set the new resolution of the window.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00135">Settings.cpp:135</a></div></div>
 <div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view/find.html">std::string_view::find</a></div><div class="ttdeci">T find(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_af2b96d665bb862ccb88ee8d57c2d9e4e"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#af2b96d665bb862ccb88ee8d57c2d9e4e">game::settings::Settings::_sfxVolume</a></div><div class="ttdeci">float _sfxVolume</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00140">Settings.hpp:140</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_abe249e1ecca2861514e3617912e2871a"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#abe249e1ecca2861514e3617912e2871a">game::settings::Settings::setMasterVolume</a></div><div class="ttdeci">void setMasterVolume(float volume)</div><div class="ttdoc">Set the master volume.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00122">Settings.cpp:122</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_af2b96d665bb862ccb88ee8d57c2d9e4e"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#af2b96d665bb862ccb88ee8d57c2d9e4e">game::settings::Settings::_sfxVolume</a></div><div class="ttdeci">float _sfxVolume</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00151">Settings.hpp:151</a></div></div>
 <div class="ttc" id="abasic_istringstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_istringstream.html">std::istringstream</a></div></div>
 <div class="ttc" id="ageneric_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">std::filesystem::path::generic_string</a></div><div class="ttdeci">T generic_string(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a9046f7a71fc6cd1bef172be724e63f58"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58">game::settings::Settings::_fullscreen</a></div><div class="ttdeci">bool _fullscreen</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00144">Settings.hpp:144</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a9046f7a71fc6cd1bef172be724e63f58"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58">game::settings::Settings::_fullscreen</a></div><div class="ttdeci">bool _fullscreen</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00156">Settings.hpp:156</a></div></div>
 <div class="ttc" id="anamespaceutil_html_a05454346e6b75a324321c23f7afc5727"><div class="ttname"><a href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00022">util.hpp:22</a></div></div>
 <div class="ttc" id="apath_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a></div></div>
 <div class="ttc" id="astol_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/stol.html">std::stoi</a></div><div class="ttdeci">T stoi(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a1f39d3b48e96dfb79845a1e04a4f5b92"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a1f39d3b48e96dfb79845a1e04a4f5b92">game::settings::Settings::setLocale</a></div><div class="ttdeci">void setLocale(std::string_view locale)</div><div class="ttdoc">Set the target locale.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00131">Settings.cpp:131</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a1f39d3b48e96dfb79845a1e04a4f5b92"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a1f39d3b48e96dfb79845a1e04a4f5b92">game::settings::Settings::setLocale</a></div><div class="ttdeci">void setLocale(std::string_view locale)</div><div class="ttdoc">Set the target locale.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00143">Settings.cpp:143</a></div></div>
 <div class="ttc" id="abasic_ostream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a></div></div>
 <div class="ttc" id="abasic_ofstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ofstream.html">std::ofstream</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a338819ef128061c878a5deb2aa0aa587"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a338819ef128061c878a5deb2aa0aa587">game::settings::Settings::setFullscreen</a></div><div class="ttdeci">void setFullscreen(bool fullscreen=true)</div><div class="ttdoc">Enable/disable the fullscreen mode.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00127">Settings.cpp:127</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a6e3a5126067c59ff20d8c284ad4b7aee"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">game::settings::Settings::_targetFramerate</a></div><div class="ttdeci">unsigned int _targetFramerate</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00142">Settings.hpp:142</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a338819ef128061c878a5deb2aa0aa587"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a338819ef128061c878a5deb2aa0aa587">game::settings::Settings::setFullscreen</a></div><div class="ttdeci">void setFullscreen(bool fullscreen=true)</div><div class="ttdoc">Enable/disable the fullscreen mode.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00139">Settings.cpp:139</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a6e3a5126067c59ff20d8c284ad4b7aee"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee">game::settings::Settings::_targetFramerate</a></div><div class="ttdeci">unsigned int _targetFramerate</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00154">Settings.hpp:154</a></div></div>
 <div class="ttc" id="aclose_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ofstream/close.html">std::ofstream::close</a></div><div class="ttdeci">T close(T... args)</div></div>
 <div class="ttc" id="aruntime_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/runtime_error.html">std::runtime_error</a></div></div>
 <div class="ttc" id="aopen_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ofstream/open.html">std::ofstream::open</a></div><div class="ttdeci">T open(T... args)</div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a9188bbf61bb01194e7e6cd4d643ae7e3"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a9188bbf61bb01194e7e6cd4d643ae7e3">game::settings::Settings::loadDefaults</a></div><div class="ttdeci">void loadDefaults()</div><div class="ttdoc">Reset the settings with the default values.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00026">Settings.cpp:26</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a009ea059721ed1db27b7ea7d30bf7603"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">game::settings::Settings::_resolution</a></div><div class="ttdeci">raylib::core::Vector2f _resolution</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00143">Settings.hpp:143</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a009ea059721ed1db27b7ea7d30bf7603"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a009ea059721ed1db27b7ea7d30bf7603">game::settings::Settings::_resolution</a></div><div class="ttdeci">raylib::core::Vector2f _resolution</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00155">Settings.hpp:155</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_af9e9cfc4586dad626a1090f77cf0d857"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#af9e9cfc4586dad626a1090f77cf0d857">game::settings::Settings::_masterVolume</a></div><div class="ttdeci">float _masterVolume</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00153">Settings.hpp:153</a></div></div>
 <div class="ttc" id="astof_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/stof.html">std::stof</a></div><div class="ttdeci">T stof(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_ad957f737f625a28c61f77a6d62262bc4"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4">game::settings::Settings::_locale</a></div><div class="ttdeci">std::string _locale</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00145">Settings.hpp:145</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a3a801bd8b0c09d0bf074e2a90773af8a"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a">game::settings::Settings::_musicVolume</a></div><div class="ttdeci">float _musicVolume</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00141">Settings.hpp:141</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_aaf8e5024595dd33dc86b2712c37170c4"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4">game::settings::Settings::setTargetFramerate</a></div><div class="ttdeci">void setTargetFramerate(unsigned int targetFPS)</div><div class="ttdoc">Set the target framerate (frame per seconds).</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00119">Settings.cpp:119</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_ad957f737f625a28c61f77a6d62262bc4"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#ad957f737f625a28c61f77a6d62262bc4">game::settings::Settings::_locale</a></div><div class="ttdeci">std::string _locale</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00157">Settings.hpp:157</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a3a801bd8b0c09d0bf074e2a90773af8a"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a3a801bd8b0c09d0bf074e2a90773af8a">game::settings::Settings::_musicVolume</a></div><div class="ttdeci">float _musicVolume</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8hpp_source.html#l00152">Settings.hpp:152</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_aaf8e5024595dd33dc86b2712c37170c4"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4">game::settings::Settings::setTargetFramerate</a></div><div class="ttdeci">void setTargetFramerate(unsigned int targetFPS)</div><div class="ttdoc">Set the target framerate (frame per seconds).</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00131">Settings.cpp:131</a></div></div>
 <div class="ttc" id="acreate_directory_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/create_directory.html">std::filesystem::create_directory</a></div><div class="ttdeci">T create_directory(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a4d54b3a0b95d809b69388d488db60851"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a4d54b3a0b95d809b69388d488db60851">game::settings::Settings::setSfxVolume</a></div><div class="ttdeci">void setSfxVolume(float volume)</div><div class="ttdoc">Set the sound effects Volume.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00101">Settings.cpp:101</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a6bb4908d5135d3fa120a48b5034b4bc0"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0">game::settings::Settings::getSettingsFilePath</a></div><div class="ttdeci">static std::filesystem::path getSettingsFilePath()</div><div class="ttdoc">Get the Settings File Path.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00036">Settings.cpp:36</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a4d54b3a0b95d809b69388d488db60851"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a4d54b3a0b95d809b69388d488db60851">game::settings::Settings::setSfxVolume</a></div><div class="ttdeci">void setSfxVolume(float volume)</div><div class="ttdoc">Set the sound effects Volume.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00104">Settings.cpp:104</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a6bb4908d5135d3fa120a48b5034b4bc0"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0">game::settings::Settings::getSettingsFilePath</a></div><div class="ttdeci">static std::filesystem::path getSettingsFilePath()</div><div class="ttdoc">Get the Settings File Path.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00037">Settings.cpp:37</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">std::string_view::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <div class="ttc" id="ais_open_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ofstream/is_open.html">std::ofstream::is_open</a></div><div class="ttdeci">T is_open(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a075e6f12793a8d9cffc8bdd558ff2474"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a075e6f12793a8d9cffc8bdd558ff2474">game::settings::Settings::setMusicVolume</a></div><div class="ttdeci">void setMusicVolume(float volume)</div><div class="ttdoc">Set the music volume.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00110">Settings.cpp:110</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a075e6f12793a8d9cffc8bdd558ff2474"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a075e6f12793a8d9cffc8bdd558ff2474">game::settings::Settings::setMusicVolume</a></div><div class="ttdeci">void setMusicVolume(float volume)</div><div class="ttdoc">Set the music volume.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00113">Settings.cpp:113</a></div></div>
 <div class="ttc" id="awhat_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/exception/what.html">std::exception::what</a></div><div class="ttdeci">T what(T... args)</div></div>
 <div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>
 <!-- start footer part -->

@@ -1,5 +1,13 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1shapes_1_1_sphere.html#ac1e4be6a2bc13b74a3eef9619f14d6f8":[2,0,4,2,7,6],
+"classraylib_1_1shapes_1_1_sphere.html#ad74fa4d1a1bbdcc2cf094f6147bddca6":[2,0,4,2,7,4],
+"classraylib_1_1shapes_1_1_sphere.html#af6517f3f4c11757c231ad97d52024b65":[2,0,4,2,7,3],
+"classraylib_1_1text_1_1_font.html":[2,0,4,3,0],
+"classraylib_1_1text_1_1_font.html#a1323e4fefded83ecb32d8da96d933549":[2,0,4,3,0,12],
+"classraylib_1_1text_1_1_font.html#a20be70eb3ffa4cabc7f64d28f4da0d7f":[2,0,4,3,0,14],
+"classraylib_1_1text_1_1_font.html#a386c86e2b9a0ffd1bc576a3a738cc1ce":[2,0,4,3,0,6],
+"classraylib_1_1text_1_1_font.html#a60657d16d33d6d887fd3ca83054d0a66":[2,0,4,3,0,8],
 "classraylib_1_1text_1_1_font.html#a77cf599d34493c00144ade3ad26447a9":[2,0,4,3,0,5],
 "classraylib_1_1text_1_1_font.html#a8f768b5c5f37a4100e2eb0e63b7fe243":[2,0,4,3,0,0],
 "classraylib_1_1text_1_1_font.html#a9953f2cbd46d5fa356d8704092b92d1e":[2,0,4,3,0,3],
@@ -166,8 +174,8 @@ var NAVTREEINDEX6 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,6],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_a.html":[2,3,1,1],
 "functions_func_b.html":[2,3,1,2],
 "functions_func_c.html":[2,3,1,3],
@@ -241,13 +249,5 @@ var NAVTREEINDEX6 =
 "game_2_engine_8cpp.html":[3,0,0,1,7],
 "game_2_engine_8cpp_source.html":[3,0,0,1,7],
 "game_2_engine_8hpp.html":[3,0,0,1,8],
-"game_2_engine_8hpp_source.html":[3,0,0,1,8],
-"game_2components_2_animation_8hpp.html":[3,0,0,1,0,1],
-"game_2components_2_animation_8hpp_source.html":[3,0,0,1,0,1],
-"game_2components_2_color_8hpp.html":[3,0,0,1,0,7],
-"game_2components_2_color_8hpp_source.html":[3,0,0,1,0,7],
-"game_2components_2_cube_8hpp.html":[3,0,0,1,0,9],
-"game_2components_2_cube_8hpp_source.html":[3,0,0,1,0,9],
-"game_2components_2_image_8hpp.html":[3,0,0,1,0,14],
-"game_2components_2_image_8hpp_source.html":[3,0,0,1,0,14]
+"game_2_engine_8hpp_source.html":[3,0,0,1,8]
 };

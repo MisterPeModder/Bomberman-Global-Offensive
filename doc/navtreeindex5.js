@@ -1,5 +1,13 @@
 var NAVTREEINDEX5 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a969f331a87d8c958473c32b4d0e61a44":[2,0,4,0,7,0,17],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a9c56f942b051ba23447e108e16a8b23b":[2,0,4,0,7,0,93],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a9d5ed678fe57bcca610140957afab571":[2,0,4,0,7,0,19],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a9df35983f4024e31955de0f1e545e888":[2,0,4,0,7,0,1],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90aa5f3c6a11b03839d46af9fb43c97c188":[2,0,4,0,7,0,28],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab1a326c06d88bf042f73d70f50197905":[2,0,4,0,7,0,62],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab213ce22ca6ad4eda8db82966b9b6e5a":[2,0,4,0,7,0,77],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab50339a10e1de285ac99d4c3990b8693":[2,0,4,0,7,0,0],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab51dc9db6e5110cf7e1bdc44b218ad66":[2,0,4,0,7,0,109],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab6c7e6204e97690efd79d6f513ed5613":[2,0,4,0,7,0,80],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab9ece18c950afbfa6b0fdbfa4ff731d3":[2,0,4,0,7,0,37],
@@ -241,13 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1shapes_1_1_sphere.html#a511b32a6ac1d57b0b00830551ad89b61":[2,0,4,2,7,2],
 "classraylib_1_1shapes_1_1_sphere.html#a708d588db72c149395e2ddd9671d8efc":[2,0,4,2,7,5],
 "classraylib_1_1shapes_1_1_sphere.html#a9523b011e2974ed626f310a1bf5ccb6b":[2,0,4,2,7,0],
-"classraylib_1_1shapes_1_1_sphere.html#ab1d53a774bd247340576ff0fc9693c81":[2,0,4,2,7,7],
-"classraylib_1_1shapes_1_1_sphere.html#ac1e4be6a2bc13b74a3eef9619f14d6f8":[2,0,4,2,7,6],
-"classraylib_1_1shapes_1_1_sphere.html#ad74fa4d1a1bbdcc2cf094f6147bddca6":[2,0,4,2,7,4],
-"classraylib_1_1shapes_1_1_sphere.html#af6517f3f4c11757c231ad97d52024b65":[2,0,4,2,7,3],
-"classraylib_1_1text_1_1_font.html":[2,0,4,3,0],
-"classraylib_1_1text_1_1_font.html#a1323e4fefded83ecb32d8da96d933549":[2,0,4,3,0,12],
-"classraylib_1_1text_1_1_font.html#a20be70eb3ffa4cabc7f64d28f4da0d7f":[2,0,4,3,0,14],
-"classraylib_1_1text_1_1_font.html#a386c86e2b9a0ffd1bc576a3a738cc1ce":[2,0,4,3,0,6],
-"classraylib_1_1text_1_1_font.html#a60657d16d33d6d887fd3ca83054d0a66":[2,0,4,3,0,8]
+"classraylib_1_1shapes_1_1_sphere.html#ab1d53a774bd247340576ff0fc9693c81":[2,0,4,2,7,7]
 };

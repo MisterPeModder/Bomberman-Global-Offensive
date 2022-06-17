@@ -1,6 +1,8 @@
 <map id="game::resources::EngineResource" name="game::resources::EngineResource">
-<area shape="rect" id="node1" title="Game engine resource." alt="" coords="5,213,248,240"/>
-<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="49,124,161,151"/>
-<area shape="rect" id="node3" href="$classgame_1_1_engine.html" title=" " alt="" coords="186,124,297,151"/>
-<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="156,5,327,47"/>
+<area shape="rect" id="node1" title="Game engine resource." alt="" coords="5,303,248,329"/>
+<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="49,213,161,240"/>
+<area shape="rect" id="node3" href="$classgame_1_1_engine.html" title=" " alt="" coords="186,213,297,240"/>
+<area shape="rect" id="node4" href="$classgame_1_1settings_1_1_settings.html" title="Settings common to the game." alt="" coords="25,102,205,129"/>
+<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html" title=" " alt="" coords="71,5,158,32"/>
+<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="229,95,400,136"/>
 </map>
