@@ -7,9 +7,9 @@
 
 #include "game/Engine.hpp"
 #include "game/scenes/SplashScene.hpp"
+#include "localization/Localization.hpp"
 #include "raylib/core/Audio.hpp"
 #include "raylib/core/Window.hpp"
-#include "localization/Localization.hpp"
 
 #pragma region Browser Events
 #ifdef __EMSCRIPTEN__
