@@ -41,6 +41,9 @@ namespace raylib
             /// Stop the sound currently played
             void stop();
 
+            /// Stop all currently playing sounds (using multichannel buffer pool)
+            static void stopAllMulti();
+
             /// Pause the sound currently played
             void pause();
 

@@ -12,6 +12,8 @@
 #include "components/Collidable.hpp"
 #include "components/Color.hpp"
 #include "components/Controlable.hpp"
+#include "components/Cube.hpp"
+#include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Identity.hpp"
 #include "components/Living.hpp"
@@ -188,6 +190,8 @@ namespace game
         _world.addStorage<components::RotationAngle>();
         _world.addStorage<components::RotationAxis>();
         _world.addStorage<components::Model>();
+        _world.addStorage<components::CubeColor>();
+        _world.addStorage<components::Cube>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::InputManager>();
