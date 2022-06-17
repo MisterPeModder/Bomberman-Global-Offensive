@@ -44,11 +44,11 @@ namespace raylib
             void setValue(Location location, float value) const;
             void setValue(Location location, raylib::core::Vector2f value) const;
             void setValue(Location location, raylib::core::Vector3f value) const;
-            void setValue(Location location, raylib::core::Vector4f value);
+            void setValue(Location location, raylib::core::Vector4f value) const;
             void setValue(Location location, int value) const;
             void setValue(Location location, raylib::core::Vector2i value) const;
             void setValue(Location location, raylib::core::Vector3i value) const;
-            void setValue(Location location, raylib::core::Vector4i value);
+            void setValue(Location location, raylib::core::Vector4i value) const;
 
             void setValue(Location location, const ::Matrix &mat) const;
             void setValue(Location location, const raylib::textures::Texture2D &texture) const;
@@ -56,11 +56,11 @@ namespace raylib
             void setValues(Location location, std::span<float, std::dynamic_extent> values) const;
             void setValues(Location location, std::span<raylib::core::Vector2f, std::dynamic_extent> values) const;
             void setValues(Location location, std::span<raylib::core::Vector3f, std::dynamic_extent> values) const;
-            void setValues(Location location, std::span<raylib::core::Vector4f, std::dynamic_extent> values);
+            void setValues(Location location, std::span<raylib::core::Vector4f, std::dynamic_extent> values) const;
             void setValues(Location location, std::span<int, std::dynamic_extent> values) const;
             void setValues(Location location, std::span<raylib::core::Vector2i, std::dynamic_extent> values) const;
             void setValues(Location location, std::span<raylib::core::Vector3i, std::dynamic_extent> values) const;
-            void setValues(Location location, std::span<raylib::core::Vector4i, std::dynamic_extent> values);
+            void setValues(Location location, std::span<raylib::core::Vector4i, std::dynamic_extent> values) const;
 
             const ::Shader &asRaylib() const;
             ::Shader &asRaylib();

@@ -44,7 +44,7 @@ namespace raylib
             template <typename U>
             constexpr explicit Vector4(const Vector4<U> &vector)
                 : x(static_cast<T>(vector.x)), y(static_cast<T>(vector.y)), z(static_cast<T>(vector.z)),
-                  W(static_cast<T>(vector.w))
+                  w(static_cast<T>(vector.w))
             {
             }
 
@@ -109,7 +109,7 @@ namespace raylib
             /// @param vector the Vector4 to multiply
             constexpr Vector4 operator*(const Vector4 &vector) const
             {
-                return {x * vector.x, y * vector.y, z * vector., w * vector.w};
+                return {x * vector.x, y * vector.y, z * vector.z, w * vector.w};
             }
 
             /// The Vector4 assignment multiply operator

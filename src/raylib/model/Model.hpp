@@ -23,6 +23,11 @@ extern "C"
 
 namespace raylib
 {
+    namespace shaders
+    {
+        class Shader;
+    }
+
     namespace model
     {
         /// The Model class ; it shouldn't be created multiple times for the same file
@@ -136,7 +141,14 @@ namespace raylib
             /// @param texture the texture to use
             /// @param materialId the material id to replace the texture
             /// @param mapType the map type to replace the texture
-            void setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapType);
+            void setMaterialMapTexture(
+                const raylib::textures::Texture2D &texture, int materialId = 0, int mapType = MATERIAL_MAP_DIFFUSE);
+
+            /// Apply a shader on the model.
+            ///
+            /// @param shader shader to apply.
+            /// @param materialId the material id to replace the shader
+            void applyShader(const raylib::shaders::Shader &shader, int materialId = 0);
 
             /// Set the model as owner of the mesh or not.
             /// @note Model owning a mesh will unload it on destruction.
