@@ -17,6 +17,7 @@
 #include "components/Position.hpp"
 #include "components/Scale.hpp"
 #include "components/Size.hpp"
+#include "components/Scale.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Entities.hpp"
@@ -96,16 +97,5 @@ namespace game::components
             .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
             .with<ModelReference>(data.getStorage<ModelReference>(), *model)
             .build();
-
-        // SpeedShoes,
-        // FireUp,
-        // BombUp,
-        // KickShoes,
-        // /// Power Down
-        // ChainBall,
-        // FireDown,
-        // BombDown,
-        // InvertedControls,
-        // Count,
     }
 } // namespace game::components
