@@ -15,18 +15,6 @@
 
 namespace game::systems
 {
-    void DrawBomb::run(ecs::SystemData data)
-    {
-        for (auto [pos, size, bomb] : ecs::join(data.getStorage<game::components::Position>(),
-                 data.getStorage<game::components::Size>(), data.getStorage<game::components::Bomb>())) {
-            (void)bomb;
-            raylib::shapes::Sphere(pos, size.x / 2.f,
-                (bomb.type == game::components::Bomb::Type::Classic) ? raylib::core::Color::GREEN
-                                                                     : raylib::core::Color::RED)
-                .draw();
-        }
-    }
-
     void ExplodeBomb::run(ecs::SystemData data)
     {
         auto now = std::chrono::steady_clock::now();
