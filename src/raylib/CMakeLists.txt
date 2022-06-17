@@ -6,6 +6,7 @@ add_subdirectory(core)
 add_subdirectory(text)
 add_subdirectory(textures)
 add_subdirectory(model)
+add_subdirectory(shaders)
 
 set(SRC
     ${SRC}
