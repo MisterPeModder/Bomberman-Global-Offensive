@@ -14,6 +14,8 @@
 #include "game/components/Size.hpp"
 #include "game/components/Velocity.hpp"
 
+#include "logger/Logger.hpp"
+
 using namespace game::components;
 
 namespace game::systems
@@ -31,10 +33,10 @@ namespace game::systems
         auto maybePlayer = ecs::maybe(data.getStorage<Player>());
         raylib::shapes::Rectangle collideRect;
 
-        for (auto [pos1, size1, vel1, id1, c1, bombNoClip, player, bomb1] :
+        for (auto [pos1, size1, vel1, id1, c1, bombNoClip, player1, bomb1] :
             ecs::join(positions, sizes, velocities, entities, collidable, maybeBombNoClip, maybePlayer, maybeBomb)) {
-            for (auto [pos2, size2, vel2, id2, c2, bomb2] :
-                ecs::join(positions, sizes, optionalVelocity, entities, collidable, maybeBomb)) {
+            for (auto [pos2, size2, vel2, id2, c2, player2, bomb2] :
+                ecs::join(positions, sizes, optionalVelocity, entities, collidable, maybePlayer, maybeBomb)) {
                 (void)c1;
                 (void)c2;
                 /// Do not collide entities with themselves
@@ -56,17 +58,25 @@ namespace game::systems
                     }
                     /// Kicked bomb(s)
                     if (bomb1 || (bomb2 && vel2)) {
-                        /// Explode kicked bomb colliding together
-                        if (bomb1 && (bomb2 && vel2))
+                        /// Two kicked bombs -> Explode
+                        if (bomb1 && bomb2 && vel2) {
                             bomb1->explode(pos1, data, id1);
+                            break;
+                        }
+                        /// Only one kicked bomb
+                        else {
+                            if (bomb1)
+                                bomb1->stop(data, id1);
+                            else
+                                bomb2->stop(data, id2);
+                            if (player1 || player2)
+                                Logger::logger.log(Logger::Severity::Debug, "Player stun");
+                            break;
+                        }
 
-                        if (bomb1)
-                            bomb1->stop(data, id1);
-                        if (bomb2)
-                            bomb2->stop(data, id2);
                     }
                     /// Static bomb (can't be bomb1 because first entity must have a velocity)
-                    else if (player && player->inventory[Item::Identifier::KickShoes]) {
+                    else if (player1 && player1->inventory[Item::Identifier::KickShoes]) {
                         raylib::core::Vector3f posDelta = pos2 - pos1;
                         /// Kick bomb if the player is moving toward it.
                         if ((abs(posDelta.x) > abs(posDelta.z)) ? (posDelta.x * vel1.x > 0) : (posDelta.z * vel1.z > 0))

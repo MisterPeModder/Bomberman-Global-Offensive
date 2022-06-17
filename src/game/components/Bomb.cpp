@@ -126,7 +126,7 @@ namespace game::components
     }
 
     bool Bomb::placeBomb(raylib::core::Vector2u bombCell, ecs::SystemData data, Bomb::Type bombType, Identity::Id owner,
-        size_t range, raylib::core::Vector3f velocity, bool avoidDuplicates)
+        size_t range, std::chrono::milliseconds delay, raylib::core::Vector3f velocity, bool avoidDuplicates)
     {
         raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.15f, static_cast<float>(bombCell.y)};
         auto &positions = data.getStorage<Position>();
@@ -144,7 +144,7 @@ namespace game::components
         auto builder = entities.builder();
 
         (void)Bomb::setBombModel(builder, data)
-            .with<Bomb>(data.getStorage<Bomb>(), bombType, owner, range)
+            .with<Bomb>(data.getStorage<Bomb>(), bombType, owner, range, delay)
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Collidable>(data.getStorage<Collidable>());
         if (fabsf(velocity.x) > 0.f || fabsf(velocity.z) > 0.f)
@@ -160,19 +160,22 @@ namespace game::components
 
     void Bomb::setVelocity(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity)
     {
-        if (placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data, type, owner,
-                radius, senderVelocity, false)) {
-            /// Kill static bomb
-            data.getResource<ecs::Entities>().kill(self);
-        }
+        placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data, type, owner, radius,
+            std::chrono::duration_cast<std::chrono::milliseconds>(
+                explosionDelay - (std::chrono::steady_clock::now() - placedTime)),
+            senderVelocity, false);
+        /// Kill static bomb
+        data.getResource<ecs::Entities>().kill(self);
     }
 
     void Bomb::stop(ecs::SystemData data, ecs::Entity self)
     {
-        if (placeBomb(
-                game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data, type, owner, radius))
-            /// Kill moving bomb
-            data.getResource<ecs::Entities>().kill(self);
+        placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data, type, owner, radius,
+            std::chrono::duration_cast<std::chrono::milliseconds>(
+                explosionDelay - (std::chrono::steady_clock::now() - placedTime)),
+            {}, false);
+        /// Kill moving bomb
+        data.getResource<ecs::Entities>().kill(self);
     }
 
     ecs::Entities::Builder &Bomb::setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data)

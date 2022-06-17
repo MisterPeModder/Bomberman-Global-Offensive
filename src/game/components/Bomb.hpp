@@ -39,6 +39,9 @@ namespace game::components
         /// @ref Type.
         Type type;
 
+        /// Default bombs explosion delay
+        static constexpr std::chrono::milliseconds DEFAULT_DELAY = std::chrono::milliseconds(2000);
+
         /// Construct a new Bomb component.
         ///
         /// @param pType bomb type.
@@ -46,7 +49,7 @@ namespace game::components
         /// @param pRadius @ref radius
         /// @param pExplosionDelay @ref explosionDelay
         Bomb(Type pType, Identity::Id pOwner, size_t pRadius = 1,
-            std::chrono::milliseconds pExplosionDelay = std::chrono::milliseconds(2000))
+            std::chrono::milliseconds pExplosionDelay = DEFAULT_DELAY)
             : placedTime(std::chrono::steady_clock::now()), radius(pRadius), explosionDelay(pExplosionDelay),
               exploded(false), owner(pOwner), type(pType){};
 
@@ -74,8 +77,8 @@ namespace game::components
         void stop(ecs::SystemData data, ecs::Entity self);
 
         static bool placeBomb(raylib::core::Vector2u bombCell, ecs::SystemData data, Bomb::Type bombType,
-            Identity::Id owner, size_t range, raylib::core::Vector3f velocity = {0.f, 0.f, 0.f},
-            bool avoidDuplicates = true);
+            Identity::Id owner, size_t range, std::chrono::milliseconds delay = DEFAULT_DELAY,
+            raylib::core::Vector3f velocity = {0.f, 0.f, 0.f}, bool avoidDuplicates = true);
 
       private:
         /// Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell)

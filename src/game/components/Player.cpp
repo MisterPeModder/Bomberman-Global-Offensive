@@ -135,8 +135,7 @@ namespace game::components
     void Player::placeLandMine(ecs::Entity self, ecs::SystemData data)
     {
         Bomb::placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data,
-            Bomb::Type::LandMine, data.getStorage<Identity>()[self.getId()].id,
-            data.getStorage<Player>()[self.getId()].stats.bombRange);
+            Bomb::Type::LandMine, data.getStorage<Identity>()[self.getId()].id, 2);
     }
 
     void Player::updateTimedItems(ecs::Entity self, ecs::SystemData data)
