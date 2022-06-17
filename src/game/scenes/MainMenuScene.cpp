@@ -31,7 +31,9 @@
 #include "game/scenes/IScene.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
+#include "game/Game.hpp"
 #include "game/Users.hpp"
+#include "game/scenes/GameScene.hpp"
 
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
@@ -63,7 +65,7 @@ static void loadMainMenuScene(ecs::World &world)
         .with<game::gui::Widget>(game::MainMenuScene::PLAY, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::gui::Widget::NullTag, game::MainMenuScene::OPTION, true)
         .with<game::gui::Clickable>([&world](ecs::Entity) {
-            world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
             Logger::logger.log(Logger::Severity::Debug, "go to game");
         })
         .build();
