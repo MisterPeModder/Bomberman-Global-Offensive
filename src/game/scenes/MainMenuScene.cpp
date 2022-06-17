@@ -30,6 +30,7 @@
 
 #include "game/scenes/IScene.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
+#include "raylib/core/Window.hpp"
 
 #include "game/Game.hpp"
 #include "game/Users.hpp"
@@ -83,10 +84,8 @@ static void loadMainMenuScene(ecs::World &world)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::OPTION, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::MainMenuScene::PLAY, game::MainMenuScene::LOGOUT, false)
-        .with<game::gui::Clickable>([&world](ecs::Entity) {
-            world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
-            Logger::logger.log(Logger::Severity::Debug, "go to option");
-        })
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Debug, "go to option"); })
         .build();
 
     world.addEntity()
@@ -95,10 +94,11 @@ static void loadMainMenuScene(ecs::World &world)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::LOGOUT, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::MainMenuScene::OPTION, game::gui::Widget::NullTag, false)
-        .with<game::gui::Clickable>([&world](ecs::Entity) {
-            world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
-            Logger::logger.log(Logger::Severity::Debug, "go to option");
-        })
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) { 
+                Logger::logger.log(Logger::Severity::Debug, "go to option");
+                raylib::core::Window::setShouldClose();
+            })
         .build();
 
     world.addEntity()
