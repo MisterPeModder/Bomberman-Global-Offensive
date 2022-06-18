@@ -114,12 +114,12 @@ namespace game
             /// @param resolution new resolution.
             /// @todo Define valid/invalid resolutions for the game and throw @ef InvalidSettingsValue for invalid
             /// resolutions.
-            void setResolution(raylib::core::Vector2f resolution);
+            void setResolution(raylib::core::Vector2i resolution);
 
             /// Get the target resolution of the window.
             ///
             /// @return the target resolution of the window.
-            raylib::core::Vector2f getResolution() const;
+            raylib::core::Vector2i getResolution() const;
 
             /// Enable/disable the fullscreen mode.
             ///
@@ -152,7 +152,7 @@ namespace game
             float _musicVolume;
             float _masterVolume;
             unsigned int _targetFramerate;
-            raylib::core::Vector2f _resolution;
+            raylib::core::Vector2i _resolution;
             bool _fullscreen;
             std::string _locale;
         };
