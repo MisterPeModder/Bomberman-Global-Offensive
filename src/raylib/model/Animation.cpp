@@ -11,7 +11,8 @@ namespace raylib
 {
     namespace model
     {
-        Animation::Animation(const std::filesystem::path &animPath) : _animationPath(animPath), _animFrameCounter(0)
+        Animation::Animation(const std::filesystem::path &animPath)
+            : _animationPath(animPath), _animFrameCounter(0), _animNumber(0)
         {
             _animations = LoadModelAnimations(animPath.generic_string().c_str(), &_animsCount);
         }
@@ -37,13 +38,21 @@ namespace raylib
             return *this;
         }
 
+        void Animation::chooseAnimation(unsigned int animationId)
+        {
+            if (animationId > _animsCount)
+                throw std::logic_error("Try to use a non-existent animation.");
+            _animNumber = animationId;
+            _animFrameCounter = 0;
+        }
+
         void Animation::updateModel(Model &model)
         {
             if (!_animations)
                 return;
             _animFrameCounter++;
-            UpdateModelAnimation(model.asRaylib(), _animations[0], _animFrameCounter);
-            if (_animFrameCounter >= _animations[0].frameCount)
+            UpdateModelAnimation(model.asRaylib(), _animations[_animNumber], _animFrameCounter);
+            if (_animFrameCounter >= _animations[_animNumber].frameCount)
                 _animFrameCounter = 0;
         }
     } // namespace model
