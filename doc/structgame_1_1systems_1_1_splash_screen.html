@@ -128,7 +128,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_splash_screen_8hpp_source.html#l00078">78</a> of file <a class="el" href="_splash_screen_8hpp_source.html">SplashScreen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_splash_screen_8hpp_source.html#l00079">79</a> of file <a class="el" href="_splash_screen_8hpp_source.html">SplashScreen.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ade5450f3ed5597e61b15c58d7e8ea08d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ade5450f3ed5597e61b15c58d7e8ea08d">&#9670;&nbsp;</a></span>run()</h2>
@@ -158,58 +158,58 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classecs_1_1_system.html#ad1a93c71ce561822c2b3a2d6ea96ef56">ecs::System</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_splash_screen_8hpp_source.html#l00080">80</a> of file <a class="el" href="_splash_screen_8hpp_source.html">SplashScreen.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">auto</span> &amp;timer = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_timer.html">ecs::Timer</a>&gt;();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keyword">auto</span> &amp;entities = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordtype">int</span> colorMoveValue = 5;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">if</span> (timer.elapsed() &gt;= 6)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;resources::EngineResource&gt;().engine-&gt;setScene&lt;<a class="code" href="classgame_1_1_main_menu_scene.html">game::MainMenuScene</a>&gt;();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [color] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::Color&gt;())) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 0) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="keywordflow">if</span> (timer.elapsed() &lt; 1.5) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                        <span class="keywordflow">if</span> (color.a &lt;= 255 - colorMoveValue)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                            color.a += colorMoveValue;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (color.a &gt;= 0 + colorMoveValue)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                        color.a -= colorMoveValue;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 1) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    <span class="keywordflow">if</span> (timer.elapsed() &lt; 4.5) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                        <span class="keywordflow">if</span> (color.a &lt;= 255 - colorMoveValue)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                            color.a += colorMoveValue;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (color.a &gt;= 0 + colorMoveValue)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                        color.a -= colorMoveValue;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [text] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::Textual&gt;())) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 0) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    <span class="keywordflow">if</span> (timer.elapsed() &lt; 1.5) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                        <span class="keywordflow">if</span> (text.color.a &lt;= 255 - colorMoveValue)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                            text.color.a += colorMoveValue;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (text.color.a &gt;= 0 + colorMoveValue)</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                        text.color.a -= colorMoveValue;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 1) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                    <span class="keywordflow">if</span> (timer.elapsed() &lt; 4.5) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                        <span class="keywordflow">if</span> (text.color.a &lt;= 255 - colorMoveValue)</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                            text.color.a += colorMoveValue;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (text.color.a &gt;= 0 + colorMoveValue)</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                        text.color.a -= colorMoveValue;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [screenId, sound] :</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::ScreenId&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::Sound&gt;())) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <span class="keywordflow">if</span> (screenId.screenId &lt; <a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a>)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    sound.stop();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [screenId, entityId] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::ScreenId&gt;(), entities)) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">if</span> (screenId.screenId &lt; <a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a>)</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                    entities.kill(entityId);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordflow">if</span> (timer.elapsed() &gt;= 3 &amp;&amp; <a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 0) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    <a class="code" href="_splash_screen_8hpp.html#aaa387156990566eb0672b7a164a874f1">buildRaylibSplash</a>(data);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    <a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> = 1;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_splash_screen_8hpp_source.html#l00081">81</a> of file <a class="el" href="_splash_screen_8hpp_source.html">SplashScreen.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keyword">auto</span> &amp;timer = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_timer.html">ecs::Timer</a>&gt;();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keyword">auto</span> &amp;entities = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">int</span> colorMoveValue = 5;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">if</span> (timer.elapsed() &gt;= 6)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;resources::EngineResource&gt;().engine-&gt;setScene&lt;<a class="code" href="classgame_1_1_main_menu_scene.html">game::MainMenuScene</a>&gt;();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [color] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::Color&gt;())) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 0) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                    <span class="keywordflow">if</span> (timer.elapsed() &lt; 1.5) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                        <span class="keywordflow">if</span> (color.a &lt;= 255 - colorMoveValue)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                            color.a += colorMoveValue;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (color.a &gt;= 0 + colorMoveValue)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                        color.a -= colorMoveValue;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 1) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <span class="keywordflow">if</span> (timer.elapsed() &lt; 4.5) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                        <span class="keywordflow">if</span> (color.a &lt;= 255 - colorMoveValue)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                            color.a += colorMoveValue;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (color.a &gt;= 0 + colorMoveValue)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                        color.a -= colorMoveValue;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [text] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::Textual&gt;())) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 0) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    <span class="keywordflow">if</span> (timer.elapsed() &lt; 1.5) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                        <span class="keywordflow">if</span> (text.color.a &lt;= 255 - colorMoveValue)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                            text.color.a += colorMoveValue;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (text.color.a &gt;= 0 + colorMoveValue)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                        text.color.a -= colorMoveValue;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 1) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                    <span class="keywordflow">if</span> (timer.elapsed() &lt; 4.5) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                        <span class="keywordflow">if</span> (text.color.a &lt;= 255 - colorMoveValue)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                            text.color.a += colorMoveValue;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (text.color.a &gt;= 0 + colorMoveValue)</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                        text.color.a -= colorMoveValue;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [screenId, sound] :</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::ScreenId&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::Sound&gt;())) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">if</span> (screenId.screenId &lt; <a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a>)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    sound.stop();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> [screenId, entityId] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;components::ScreenId&gt;(), entities)) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                <span class="keywordflow">if</span> (screenId.screenId &lt; <a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a>)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                    entities.kill(entityId);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                <span class="keywordflow">if</span> (timer.elapsed() &gt;= 3 &amp;&amp; <a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> == 0) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    <a class="code" href="_splash_screen_8hpp.html#a157e19b55086632e935a162b38c3a2a1">buildStudioSplash</a>(data);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                    <a class="code" href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">_screenId</a> = 1;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -234,7 +234,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_splash_screen_8hpp_source.html#l00134">134</a> of file <a class="el" href="_splash_screen_8hpp_source.html">SplashScreen.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_splash_screen_8hpp_source.html#l00135">135</a> of file <a class="el" href="_splash_screen_8hpp_source.html">SplashScreen.hpp</a>.</p>
 
 </div>
 </div>
@@ -243,11 +243,11 @@ Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructgame_1_1systems_1_1_splash_screen_html_a06c8f269c85b312caaaa911f4d832e33"><div class="ttname"><a href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">game::systems::SplashScreen::_screenId</a></div><div class="ttdeci">int _screenId</div><div class="ttdef"><b>Definition:</b> <a href="_splash_screen_8hpp_source.html#l00134">SplashScreen.hpp:134</a></div></div>
-<div class="ttc" id="a_splash_screen_8hpp_html_aaa387156990566eb0672b7a164a874f1"><div class="ttname"><a href="_splash_screen_8hpp.html#aaa387156990566eb0672b7a164a874f1">buildRaylibSplash</a></div><div class="ttdeci">static void buildRaylibSplash(ecs::SystemData &amp;data)</div><div class="ttdef"><b>Definition:</b> <a href="_splash_screen_8hpp_source.html#l00040">SplashScreen.hpp:40</a></div></div>
+<div class="ttc" id="astructgame_1_1systems_1_1_splash_screen_html_a06c8f269c85b312caaaa911f4d832e33"><div class="ttname"><a href="structgame_1_1systems_1_1_splash_screen.html#a06c8f269c85b312caaaa911f4d832e33">game::systems::SplashScreen::_screenId</a></div><div class="ttdeci">int _screenId</div><div class="ttdef"><b>Definition:</b> <a href="_splash_screen_8hpp_source.html#l00135">SplashScreen.hpp:135</a></div></div>
 <div class="ttc" id="aclassecs_1_1_timer_html"><div class="ttname"><a href="classecs_1_1_timer.html">ecs::Timer</a></div><div class="ttdoc">Simple timer resource.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00019">Timer.hpp:19</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
 <div class="ttc" id="aclassecs_1_1_entities_html"><div class="ttname"><a href="classecs_1_1_entities.html">ecs::Entities</a></div><div class="ttdoc">The entities world resource.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8hpp_source.html#l00024">Entities.hpp:24</a></div></div>
+<div class="ttc" id="a_splash_screen_8hpp_html_a157e19b55086632e935a162b38c3a2a1"><div class="ttname"><a href="_splash_screen_8hpp.html#a157e19b55086632e935a162b38c3a2a1">buildStudioSplash</a></div><div class="ttdeci">static void buildStudioSplash(ecs::SystemData &amp;data)</div><div class="ttdef"><b>Definition:</b> <a href="_splash_screen_8hpp_source.html#l00040">SplashScreen.hpp:40</a></div></div>
 <div class="ttc" id="aclassgame_1_1_main_menu_scene_html"><div class="ttname"><a href="classgame_1_1_main_menu_scene.html">game::MainMenuScene</a></div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_scene_8hpp_source.html#l00017">MainMenuScene.hpp:17</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/data.html">std::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <!-- start footer part -->

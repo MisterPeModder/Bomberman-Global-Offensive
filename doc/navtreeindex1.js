@@ -115,7 +115,7 @@ var NAVTREEINDEX1 =
 "_splash_scene_8hpp.html":[3,0,0,1,4,9],
 "_splash_scene_8hpp_source.html":[3,0,0,1,4,9],
 "_splash_screen_8hpp.html":[3,0,0,1,6,24],
-"_splash_screen_8hpp.html#aaa387156990566eb0672b7a164a874f1":[3,0,0,1,6,24,1],
+"_splash_screen_8hpp.html#a157e19b55086632e935a162b38c3a2a1":[3,0,0,1,6,24,1],
 "_splash_screen_8hpp_source.html":[3,0,0,1,6,24],
 "_storage_8hpp.html":[3,0,0,0,8],
 "_storage_8hpp_source.html":[3,0,0,0,8],
