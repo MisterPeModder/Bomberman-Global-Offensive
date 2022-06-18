@@ -10,9 +10,6 @@ msgstr "Plein écran"
 msgid "Keybinds"
 msgstr "Contrôles"
 
-msgid "Mute"
-msgstr "Muet"
-
 msgid "Resolution"
 msgstr "Résolution"
 
@@ -24,3 +21,12 @@ msgstr "Volume"
 
 msgid "Back"
 msgstr "Retour"
+
+msgid "Music"
+msgstr "Musique"
+
+msgid "MuteUnmute"
+msgstr "Muet/Non-muet"
+
+msgid "Sfx"
+msgstr "Effets sonores"

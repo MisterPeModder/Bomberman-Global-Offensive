@@ -98,7 +98,7 @@ static void loadGraphicSettings(ecs::World &world)
         .with<game::components::Position>(40.f, 30.f)
         .with<game::components::Textual>("1280x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_100,
+        .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::MUSIC_VOLUME_100,
             game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
@@ -179,15 +179,21 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
     world.addEntity()
         .with<game::components::Position>(pos.x + 4, pos.y + 10)
         .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsMute, 20, raylib::core::Color::BLUE)
+            localization::resources::settings::rsSettingsMuteUnmute, 20, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_MUTE, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK, game::SettingsMenuScene::VOLUME_25)
+            game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK, game::SettingsMenuScene::MUSIC_VOLUME_0)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                raylib::core::Audio::setMasterVolume(0.f);
-                world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(0.f);
-                Logger::logger.log(Logger::Severity::Debug, "Volume set to 0%");
+                if (world.getResource<game::resources::EngineResource>().engine->getSettings().getMasterVolume() > 0.f) {
+                    raylib::core::Audio::setMasterVolume(0.f);
+                    world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(0.f);
+                    Logger::logger.log(Logger::Severity::Debug, "Volume set to 0%");
+                } else {
+                    raylib::core::Audio::setMasterVolume(100.f);
+                    world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(100.f);
+                    Logger::logger.log(Logger::Severity::Debug, "Volume set to 100%");
+                }
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -196,23 +202,24 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
             })
         .build();
 
+#pragma region Music volume
     world.addEntity()
         .with<game::components::Position>(pos.x + 4, pos.y + 15)
         .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsVolume, 20, raylib::core::Color::BLUE)
+            localization::resources::settings::rsSettingsMusic, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 6, pos.y + 20)
-        .with<game::components::Textual>("25%", 15, raylib::core::Color::BLUE)
+        .with<game::components::Textual>("0%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_25, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::BACK)
+        .with<game::gui::Widget>(game::SettingsMenuScene::MUSIC_VOLUME_0, game::gui::Widget::NullTag,
+            game::SettingsMenuScene::MUSIC_VOLUME_33, game::SettingsMenuScene::VOLUME_MUTE,
+            game::SettingsMenuScene::SFX_VOLUME_0)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                raylib::core::Audio::setMasterVolume(25.f);
-                world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(25.f);
-                Logger::logger.log(Logger::Severity::Debug, "Volume set to 25%");
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setMusicVolume(0.f);
+                Logger::logger.log(Logger::Severity::Debug, "Music volume set to 0%");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -223,15 +230,15 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 11, pos.y + 20)
-        .with<game::components::Textual>("50%", 15, raylib::core::Color::BLUE)
+        .with<game::components::Textual>("33%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_25,
-            game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::BACK)
+        .with<game::gui::Widget>(game::SettingsMenuScene::MUSIC_VOLUME_33, game::SettingsMenuScene::MUSIC_VOLUME_0,
+            game::SettingsMenuScene::MUSIC_VOLUME_66, game::SettingsMenuScene::VOLUME_MUTE,
+            game::SettingsMenuScene::SFX_VOLUME_33)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                raylib::core::Audio::setMasterVolume(50.f);
-                world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(50.f);
-                Logger::logger.log(Logger::Severity::Debug, "Volume set to 50%");
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setMusicVolume(33.f);
+                Logger::logger.log(Logger::Severity::Debug, "Music volume set to 33%");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -242,15 +249,15 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 16, pos.y + 20)
-        .with<game::components::Textual>("75%", 15, raylib::core::Color::BLUE)
+        .with<game::components::Textual>("66%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_50,
-            game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::BACK)
+        .with<game::gui::Widget>(game::SettingsMenuScene::MUSIC_VOLUME_66, game::SettingsMenuScene::MUSIC_VOLUME_33,
+            game::SettingsMenuScene::MUSIC_VOLUME_100, game::SettingsMenuScene::VOLUME_MUTE,
+            game::SettingsMenuScene::SFX_VOLUME_66)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                raylib::core::Audio::setMasterVolume(75.f);
-                world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(75.f);
-                Logger::logger.log(Logger::Severity::Debug, "Volume set to 75%");
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setMusicVolume(66.f);
+                Logger::logger.log(Logger::Severity::Debug, "Music volume set to 66%");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -263,13 +270,12 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .with<game::components::Position>(pos.x + 21, pos.y + 20)
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_75,
-            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::BACK)
+        .with<game::gui::Widget>(game::SettingsMenuScene::MUSIC_VOLUME_100, game::SettingsMenuScene::MUSIC_VOLUME_66,
+            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::VOLUME_MUTE, game::SettingsMenuScene::SFX_VOLUME_100)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                raylib::core::Audio::setMasterVolume(100.f);
-                world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(100.f);
-                Logger::logger.log(Logger::Severity::Debug, "Volume set to 100%");
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setMusicVolume(100.f);
+                Logger::logger.log(Logger::Severity::Debug, "Music volume set to 100%");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -277,6 +283,90 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
                                                                     : raylib::core::Color::BLUE;
             })
         .build();
+#pragma endregion
+
+#pragma region Sfx volume
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 4, pos.y + 25)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsSfx, 20, raylib::core::Color::BLUE)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 6, pos.y + 30)
+        .with<game::components::Textual>("0%", 15, raylib::core::Color::BLUE)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_0, game::gui::Widget::NullTag,
+            game::SettingsMenuScene::SFX_VOLUME_33, game::SettingsMenuScene::MUSIC_VOLUME_0,
+            game::SettingsMenuScene::BACK)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setSfxVolume(0.f);
+                Logger::logger.log(Logger::Severity::Debug, "SFX volume set to 0%");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::BLUE;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 11, pos.y + 30)
+        .with<game::components::Textual>("33%", 15, raylib::core::Color::BLUE)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_33, game::SettingsMenuScene::SFX_VOLUME_0,
+            game::SettingsMenuScene::SFX_VOLUME_66, game::SettingsMenuScene::MUSIC_VOLUME_33,
+            game::SettingsMenuScene::BACK)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setSfxVolume(33.f);
+                Logger::logger.log(Logger::Severity::Debug, "SFX volume set to 33%");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::BLUE;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 16, pos.y + 30)
+        .with<game::components::Textual>("66%", 15, raylib::core::Color::BLUE)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_66, game::SettingsMenuScene::SFX_VOLUME_33,
+            game::SettingsMenuScene::SFX_VOLUME_100, game::SettingsMenuScene::MUSIC_VOLUME_66,
+            game::SettingsMenuScene::BACK)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setSfxVolume(66.f);
+                Logger::logger.log(Logger::Severity::Debug, "SFX volume set to 66%");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::BLUE;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 21, pos.y + 30)
+        .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_100, game::SettingsMenuScene::SFX_VOLUME_66,
+            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::MUSIC_VOLUME_100, game::SettingsMenuScene::BACK)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setSfxVolume(100.f);
+                Logger::logger.log(Logger::Severity::Debug, "SFX volume set to 100%");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::BLUE;
+            })
+        .build();
+#pragma endregion
 }
 
 static void loadKeybindSettings(ecs::World &world)
@@ -323,7 +413,7 @@ static void loadSettingsMenuScene(ecs::World &world)
         .build();
 
     loadGraphicSettings(world);
-    loadAudioSettings(world, raylib::core::Vector2f(1, 10), raylib::core::Vector2f(32, 32));
+    loadAudioSettings(world, raylib::core::Vector2f(1, 10), raylib::core::Vector2f(32, 40));
     loadKeybindSettings(world);
 
     world.addEntity()

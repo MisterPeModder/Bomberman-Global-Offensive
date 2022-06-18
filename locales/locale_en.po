@@ -10,9 +10,6 @@ msgstr ""
 msgid "Keybinds"
 msgstr ""
 
-msgid "Mute"
-msgstr ""
-
 msgid "Resolution"
 msgstr ""
 
@@ -23,4 +20,13 @@ msgid "Volume"
 msgstr ""
 
 msgid "Back"
+msgstr ""
+
+msgid "Music"
+msgstr ""
+
+msgid "MuteUnmute"
+msgstr "Mute/Unmute"
+
+msgid "Sfx"
 msgstr ""

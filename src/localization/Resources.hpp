@@ -26,8 +26,9 @@ namespace localization
             constexpr ResourceString rsSettingsResolution("Resolution");
 
             constexpr ResourceString rsSettingsAudio("Audio");
-            constexpr ResourceString rsSettingsMute("Mute");
-            constexpr ResourceString rsSettingsVolume("Volume");
+            constexpr ResourceString rsSettingsMuteUnmute("MuteUnmute");
+            constexpr ResourceString rsSettingsMusic("Music");
+            constexpr ResourceString rsSettingsSfx("Sfx");
 
             constexpr ResourceString rsSettingsKeybinds("Keybinds");
 
