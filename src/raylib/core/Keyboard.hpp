@@ -132,8 +132,8 @@ namespace raylib
                 // Android key buttons
                 BACK = 4,        //< Android back button
                 MENU = 82,       //< Android menu button
-                MUSIC_VOLUME_UP = 24,  //< Android volume up button
-                MUSIC_VOLUME_DOWN = 25 //< Android volume down button
+                VOLUME_UP = 24,  //< Android volume up button
+                VOLUME_DOWN = 25 //< Android volume down button
             };
 
             /// Check if a key has been pressed once.
