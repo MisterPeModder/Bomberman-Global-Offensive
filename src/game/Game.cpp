@@ -120,6 +120,7 @@ namespace game
         meshes.emplace("box", 1.f, 1.f, 1.f);
         meshes.emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
         meshes.emplace("bonus", 0.5f, 10, 10);
+        meshes.emplace("activable", 1.f, 0.f, 1.f);
     }
 
     void Game::_loadModels()
@@ -153,16 +154,21 @@ namespace game
         models.emplace("range_down", bonusMesh, false)
             .setMaterialMapTexture(textures.get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("control_down", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
+            .setMaterialMapTexture(textures.get("control_down"), 0, MATERIAL_MAP_DIFFUSE);
         /// Activables
-        models.emplace("no_clip", bonusMesh, false)
+        auto &activableMesh = meshes.get("activable");
+        models.emplace("no_clip", activableMesh, false)
             .setMaterialMapTexture(textures.get("no_clip"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("kick_shoes", bonusMesh, false)
+        models.emplace("mine", activableMesh, false)
+            .setMaterialMapTexture(textures.get("mine"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("kick_shoes", activableMesh, false)
             .setMaterialMapTexture(textures.get("kick_shoes"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("stun", bonusMesh, false).setMaterialMapTexture(textures.get("stun"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("smoke", activableMesh, false)
+            .setMaterialMapTexture(textures.get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("stun", activableMesh, false)
+            .setMaterialMapTexture(textures.get("stun"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("punch", activableMesh, false)
+            .setMaterialMapTexture(textures.get("punch"), 0, MATERIAL_MAP_DIFFUSE);
     }
 
     void Game::setup()
