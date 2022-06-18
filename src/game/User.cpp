@@ -94,4 +94,12 @@ namespace game
         }
         return res;
     }
+
+    const settings::Profile &User::getProfile() const { return _profile; }
+
+    settings::Profile &User::getProfile() { return _profile; }
+
+    const settings::Keybinds &User::getKeybinds() const { return _profile.getKeybinds(); }
+
+    settings::Keybinds User::getKeybinds() { return _profile.getKeybinds(); }
 } // namespace game
