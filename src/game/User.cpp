@@ -34,26 +34,30 @@ namespace game
 
     bool User::isAvailable() const { return _available; }
 
-    void User::fillActions()
+    void User::updateActions(bool fillChanged)
+    {
+        clearPendingActions();
+        for (size_t i = 0; i < _lastActions.size(); i++) {
+            float actionValue = getActionValue(static_cast<GameAction>(i + 1), true);
+
+            if (fillChanged && actionValue != _lastActions[i])
+                _changedActions.push(static_cast<GameAction>(i + 1));
+            _lastActions[i] = actionValue;
+        }
+    }
+
+    void User::clearPendingActions()
     {
         std::queue<GameAction> empty;
         float actionValue;
 
         _changedActions.swap(empty);
-        for (size_t i = 0; i < _lastActions.size(); i++) {
-            actionValue = getActionValue(static_cast<GameAction>(i + 1), true);
-
-            if (actionValue != _lastActions[i]) {
-                _changedActions.push(static_cast<GameAction>(i + 1));
-                _lastActions[i] = actionValue;
-            }
-        }
     }
 
     GameAction User::getChangedAction()
     {
         if (_changedActions.empty())
-            fillActions();
+            updateActions();
         if (_changedActions.empty())
             return GameAction::NONE;
 

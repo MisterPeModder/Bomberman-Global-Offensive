@@ -9,6 +9,7 @@
 #include "components/Controlable.hpp"
 #include "ecs/join.hpp"
 #include "game/Engine.hpp"
+#include "game/components/KeybindIntercepter.hpp"
 #include "game/gui/components/Widget.hpp"
 
 using namespace game::components;
@@ -17,6 +18,8 @@ namespace game::systems
 {
     void InputManager::run(ecs::SystemData data)
     {
+        if (data.getStorage<KeybindIntercepter>().size() > 0)
+            return;
         Users &users = data.getResource<game::resources::EngineResource>().engine->getUsers();
         Users::ActionEvent event = users.getNextAction();
 

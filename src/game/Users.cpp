@@ -103,4 +103,10 @@ namespace game
         _users[nbUsers - 1].setAvailable(false);
     }
 
+    void Users::updateActions(bool fillChanged)
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].updateActions(fillChanged);
+    }
+
 } // namespace game

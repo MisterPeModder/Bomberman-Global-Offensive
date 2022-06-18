@@ -122,9 +122,15 @@ namespace game
         /// @return settings::Keybinds& user keybinds.
         settings::Keybinds getKeybinds();
 
-      private:
-        void fillActions();
+        /// Update the user's actions' values.
+        ///
+        /// @param fillChanged Set to true to fill the changed actions queue.
+        void updateActions(bool fillChanged = true);
 
+        /// Clear the changed actions queue.
+        void clearPendingActions();
+
+      private:
         int _gamepadId;
         bool _available;
         settings::Profile _profile;

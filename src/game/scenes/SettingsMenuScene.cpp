@@ -48,6 +48,9 @@
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
 
+#include "game/components/KeybindIntercepter.hpp"
+#include "game/systems/KeybindIntercept.hpp"
+
 static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
 {
     world.addEntity()
@@ -654,7 +657,13 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
             game::SettingsMenuScene::LANGUAGE_ENGLISH, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT,
             game::SettingsMenuScene::FPS_60, game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP)
         .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
+            [&world](ecs::Entity) {
+                world.addEntity()
+                    .with<game::components::KeybindIntercepter>(game::User::UserId::User1, game::GameAction::MOVE_LEFT)
+                    .build();
+
+                Logger::logger.log(Logger::Severity::Information, "Waiting for user input");
+            },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
                     (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
@@ -1005,8 +1014,10 @@ namespace game
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::DrawText>();
         _world.addSystem<game::systems::DrawSelectedWidget>();
+        _world.addSystem<game::systems::KeybindIntercept>();
+        _world.addStorage<game::components::KeybindIntercepter>();
 
-        _globalNoDraw.add<game::systems::InputManager>();
+        _globalNoDraw.add<game::systems::InputManager, game::systems::KeybindIntercept>();
         _global2D.add<game::systems::DrawRectangle>();
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::DrawSelectedWidget>();
