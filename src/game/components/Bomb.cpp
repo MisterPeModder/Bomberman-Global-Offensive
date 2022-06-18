@@ -143,7 +143,7 @@ namespace game::components
 
         auto builder = entities.builder();
 
-        (void)Bomb::setBombModel(builder, data)
+        (void)Bomb::setBombModel(builder, data, bombType)
             .with<Bomb>(data.getStorage<Bomb>(), bombType, owner, range, delay)
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Collidable>(data.getStorage<Collidable>());
@@ -178,11 +178,11 @@ namespace game::components
         data.getResource<ecs::Entities>().kill(self);
     }
 
-    ecs::Entities::Builder &Bomb::setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data)
+    ecs::Entities::Builder &Bomb::setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data, Type type)
     {
         (void)builder.with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
-            .with<ModelReference>(
-                data.getStorage<ModelReference>(), data.getResource<game::resources::Models>().get("C4"))
+            .with<ModelReference>(data.getStorage<ModelReference>(),
+                data.getResource<game::resources::Models>().get((type == Type::Classic) ? "C4" : "landmine"))
             .with<Size>(data.getStorage<Size>(), 0.3f, 0.3f, 0.5f)
             .with<RotationAngle>(data.getStorage<RotationAngle>(), -90.0f)
             .with<RotationAxis>(data.getStorage<RotationAxis>(), 1.f, 0.f, 0.f);

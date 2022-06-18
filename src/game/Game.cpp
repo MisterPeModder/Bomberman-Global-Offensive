@@ -111,6 +111,7 @@ namespace game
         textures.emplace("control_down", "assets/items/power_downs/bonus_down_control.png");
         /// Weapons
         textures.emplace("C4", "assets/items/weapons/C4_Texture.png");
+        textures.emplace("landmine", "assets/items/weapons/landmine_texture.png");
     }
 
     void Game::_loadMeshes()
@@ -129,40 +130,29 @@ namespace game
         auto &models = _world.getResource<resources::Models>();
 
         /////// Map
-        models.emplace("ground", meshes.get("ground"), false)
-            .setMaterialMapTexture(textures.get("ground"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("crate", meshes.get("box"), false)
-            .setMaterialMapTexture(textures.get("crate"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("wall", meshes.get("box"), false)
-            .setMaterialMapTexture(textures.get("wall"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("C4", "assets/items/weapons/c4.iqm")
-            .setMaterialMapTexture(textures.get("C4"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("ground", meshes.get("ground"), false).setMaterialMapTexture(textures.get("ground"));
+        models.emplace("crate", meshes.get("box"), false).setMaterialMapTexture(textures.get("crate"));
+        models.emplace("wall", meshes.get("box"), false).setMaterialMapTexture(textures.get("wall"));
+        models.emplace("C4", "assets/items/weapons/c4.iqm").setMaterialMapTexture(textures.get("C4"));
+        models.emplace("landmine", "assets/items/weapons/landmine.iqm").setMaterialMapTexture(textures.get("landmine"));
         ////// Items
         auto &bonusMesh = meshes.get("bonus");
         /// Power Ups
-        models.emplace("speed_up", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("speed_up"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("C4_up", bonusMesh, false).setMaterialMapTexture(textures.get("C4_up"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("range_up", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("range_up"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("speed_up", bonusMesh, false).setMaterialMapTexture(textures.get("speed_up"));
+        models.emplace("C4_up", bonusMesh, false).setMaterialMapTexture(textures.get("C4_up"));
+        models.emplace("range_up", bonusMesh, false).setMaterialMapTexture(textures.get("range_up"));
         /// Power Downs
-        models.emplace("speed_down", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("speed_down"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("C4_down", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("C4_down"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("range_down", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("control_down", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("range_down"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("speed_down", bonusMesh, false).setMaterialMapTexture(textures.get("speed_down"));
+        models.emplace("C4_down", bonusMesh, false).setMaterialMapTexture(textures.get("C4_down"));
+        models.emplace("range_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
+        models.emplace("control_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
         /// Activables
-        models.emplace("no_clip", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("no_clip"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("kick_shoes", bonusMesh, false)
-            .setMaterialMapTexture(textures.get("kick_shoes"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("stun", bonusMesh, false).setMaterialMapTexture(textures.get("stun"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("no_clip", bonusMesh, false).setMaterialMapTexture(textures.get("no_clip"));
+        models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"));
+        models.emplace("kick_shoes", bonusMesh, false).setMaterialMapTexture(textures.get("kick_shoes"));
+        models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"));
+        models.emplace("stun", bonusMesh, false).setMaterialMapTexture(textures.get("stun"));
+        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"));
     }
 
     void Game::setup()
@@ -242,7 +232,7 @@ namespace game
                     .with<components::Identity>()
                     .build();
             _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
-                textures.get("counter_terrorist_1"), 0, MATERIAL_MAP_DIFFUSE);
+                textures.get("counter_terrorist_1"));
         }
 
         /// Ground
