@@ -6,7 +6,6 @@
 */
 
 #include "Shader.hpp"
-#include "logger/Logger.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
 namespace raylib
