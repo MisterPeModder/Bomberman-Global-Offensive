@@ -55,5 +55,10 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "Rectangle.hpp", "game_2systems_2_rectangle_8hpp.html", [
       [ "DrawRectangle", "structgame_1_1systems_1_1_draw_rectangle.html", "structgame_1_1systems_1_1_draw_rectangle" ]
     ] ],
+    [ "Smoke.cpp", "_smoke_8cpp.html", null ],
+    [ "Smoke.hpp", "systems_2_smoke_8hpp.html", [
+      [ "MoveSmoke", "structgame_1_1systems_1_1_move_smoke.html", "structgame_1_1systems_1_1_move_smoke" ],
+      [ "DrawSmoke", "structgame_1_1systems_1_1_draw_smoke.html", "structgame_1_1systems_1_1_draw_smoke" ]
+    ] ],
     [ "SplashScreen.hpp", "_splash_screen_8hpp.html", "_splash_screen_8hpp" ]
 ];

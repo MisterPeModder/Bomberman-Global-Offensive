@@ -1,0 +1,4 @@
+<map id="game::components::Smoke" name="game::components::Smoke">
+<area shape="rect" id="node1" title="Bomb component." alt="" coords="5,80,204,107"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="41,5,168,32"/>
+</map>

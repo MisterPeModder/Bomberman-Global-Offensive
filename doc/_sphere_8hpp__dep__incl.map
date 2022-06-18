@@ -1,5 +1,6 @@
 <map id="src/raylib/shapes/Sphere.hpp" name="src/raylib/shapes/Sphere.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="122,5,331,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="243,5,453,32"/>
 <area shape="rect" id="node2" href="$systems_2_bomb_8cpp.html" title=" " alt="" coords="5,80,216,107"/>
-<area shape="rect" id="node3" href="$_sphere_8cpp.html" title=" " alt="" coords="240,80,448,107"/>
+<area shape="rect" id="node3" href="$_smoke_8cpp.html" title=" " alt="" coords="240,80,456,107"/>
+<area shape="rect" id="node4" href="$_sphere_8cpp.html" title=" " alt="" coords="480,80,688,107"/>
 </map>

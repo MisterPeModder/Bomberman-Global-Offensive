@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1shapes_1_1_rectangle.html#a7ea4c4fc61334875ef4ac0b166bad223":[2,0,4,2,6,11],
+"classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71":[2,0,4,2,6,12],
+"classraylib_1_1shapes_1_1_rectangle.html#a8ccee08f97ac6efe47b3104b1928174c":[2,0,4,2,6,14],
+"classraylib_1_1shapes_1_1_rectangle.html#a8e069d544c5df0b9914d24cdf41384e8":[2,0,4,2,6,8],
 "classraylib_1_1shapes_1_1_rectangle.html#aa9de9a2a85e075150072e7e8b20997ea":[2,0,4,2,6,2],
 "classraylib_1_1shapes_1_1_rectangle.html#aaac44ab40988b7e125057580c9c05536":[2,0,4,2,6,9],
 "classraylib_1_1shapes_1_1_rectangle.html#ab435485147667ebca875fd05b34bc8c7":[2,0,4,2,6,7],
@@ -147,6 +151,8 @@ var NAVTREEINDEX6 =
 "components_2_bomb_8cpp_source.html":[3,0,0,1,0,2],
 "components_2_bomb_8hpp.html":[3,0,0,1,0,3],
 "components_2_bomb_8hpp_source.html":[3,0,0,1,0,3],
+"components_2_smoke_8hpp.html":[3,0,0,1,0,29],
+"components_2_smoke_8hpp_source.html":[3,0,0,1,0,29],
 "dir_070851a3a113ba0e3a3b53c5e8280d9f.html":[3,0,0,0,2],
 "dir_0eb5bc4df32830927d4599d5e42d522d.html":[3,0,0,1,1],
 "dir_158cf86d26831bf034907ad207a81480.html":[3,0,0,0,4],
@@ -177,8 +183,8 @@ var NAVTREEINDEX6 =
 "dir_fe414d616bd0c4668e6515f48824338f.html":[3,0,0,5],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[3,0,0,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -187,8 +193,8 @@ var NAVTREEINDEX6 =
 "functions_enum.html":[2,3,4],
 "functions_eval.html":[2,3,5],
 "functions_f.html":[2,3,0,6],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_a.html":[2,3,1,1],
 "functions_func_b.html":[2,3,1,2],
 "functions_func_c.html":[2,3,1,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX6 =
 "functions_vars_l.html":[2,3,2,10],
 "functions_vars_m.html":[2,3,2,11],
 "functions_vars_n.html":[2,3,2,12],
-"functions_vars_o.html":[2,3,2,13],
-"functions_vars_p.html":[2,3,2,14],
-"functions_vars_r.html":[2,3,2,15],
-"functions_vars_s.html":[2,3,2,16],
-"functions_vars_t.html":[2,3,2,17],
-"functions_vars_u.html":[2,3,2,18],
-"functions_vars_v.html":[2,3,2,19]
+"functions_vars_o.html":[2,3,2,13]
 };

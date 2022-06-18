@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a710533dd879dd1202e5c73b27705bf02":[2,0,4,0,7,0,61],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a71f42e8faf0fb7cb14174c8481461c00":[2,0,4,0,7,0,96],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a73995fb90f0ebefe78b90731e67789cd":[2,0,4,0,7,0,15],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a766b4a88cba7645629bac70fd01d8275":[2,0,4,0,7,0,92],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7c333963ed187368820c5343b355e5bc":[2,0,4,0,7,0,100],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7fc56270e7a70fa81a5935b72eacbe29":[2,0,4,0,7,0,18],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a800618943025315f869e4e1f09471012":[2,0,4,0,7,0,23],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1shapes_1_1_rectangle.html#a007ad7f5782547831247172ce2ed0668":[2,0,4,2,6,6],
 "classraylib_1_1shapes_1_1_rectangle.html#a2a80a196f86ade3d5a4ced84bf9dcb61":[2,0,4,2,6,5],
 "classraylib_1_1shapes_1_1_rectangle.html#a6730b3432ec1932a1d3986a31a071804":[2,0,4,2,6,3],
-"classraylib_1_1shapes_1_1_rectangle.html#a68e1774141541edf5a6e542910afc598":[2,0,4,2,6,0],
-"classraylib_1_1shapes_1_1_rectangle.html#a7ea4c4fc61334875ef4ac0b166bad223":[2,0,4,2,6,11],
-"classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71":[2,0,4,2,6,12],
-"classraylib_1_1shapes_1_1_rectangle.html#a8ccee08f97ac6efe47b3104b1928174c":[2,0,4,2,6,14],
-"classraylib_1_1shapes_1_1_rectangle.html#a8e069d544c5df0b9914d24cdf41384e8":[2,0,4,2,6,8]
+"classraylib_1_1shapes_1_1_rectangle.html#a68e1774141541edf5a6e542910afc598":[2,0,4,2,6,0]
 };

@@ -73,6 +73,9 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Size2D.hpp", "_size2_d_8hpp.html", [
       [ "Size2D", "structgame_1_1components_1_1_size2_d.html", "structgame_1_1components_1_1_size2_d" ]
     ] ],
+    [ "Smoke.hpp", "components_2_smoke_8hpp.html", [
+      [ "Smoke", "structgame_1_1components_1_1_smoke.html", "structgame_1_1components_1_1_smoke" ]
+    ] ],
     [ "Sound.hpp", "game_2components_2_sound_8hpp.html", [
       [ "Sound", "structgame_1_1components_1_1_sound.html", "structgame_1_1components_1_1_sound" ]
     ] ],
