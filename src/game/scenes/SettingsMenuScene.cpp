@@ -522,6 +522,17 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
                                                                     : raylib::core::Color::GOLD;
             })
         .build();
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 8, pos.y + 12)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::components::Textual>(
+
+                    "value"
+
+                    // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().
+
+                , 20, raylib::core::Color::GOLD)
+        .build();
 }
 
 static void loadLanguageSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
