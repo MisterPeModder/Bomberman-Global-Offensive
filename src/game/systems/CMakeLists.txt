@@ -24,6 +24,8 @@ set(SRC
     ${SRCROOT}/Movement.cpp
     ${INCROOT}/PlaySoundOnce.hpp
     ${SRCROOT}/Rectangle.hpp
+    ${SRCROOT}/Smoke.cpp
+    ${SRCROOT}/Smoke.hpp
     ${INCROOT}/SplashScreen.hpp
     PARENT_SCOPE)
 

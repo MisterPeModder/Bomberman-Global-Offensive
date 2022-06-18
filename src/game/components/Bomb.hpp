@@ -39,6 +39,9 @@ namespace game::components
         /// @ref Type.
         Type type;
 
+        /// Default bombs explosion delay
+        static constexpr std::chrono::milliseconds DEFAULT_DELAY = std::chrono::milliseconds(2000);
+
         /// Construct a new Bomb component.
         ///
         /// @param pType bomb type.
@@ -46,7 +49,7 @@ namespace game::components
         /// @param pRadius @ref radius
         /// @param pExplosionDelay @ref explosionDelay
         Bomb(Type pType, Identity::Id pOwner, size_t pRadius = 1,
-            std::chrono::milliseconds pExplosionDelay = std::chrono::milliseconds(2000))
+            std::chrono::milliseconds pExplosionDelay = DEFAULT_DELAY)
             : placedTime(std::chrono::steady_clock::now()), radius(pRadius), explosionDelay(pExplosionDelay),
               exploded(false), owner(pOwner), type(pType){};
 
@@ -57,20 +60,37 @@ namespace game::components
         /// @param self entity @a owning of the bomb component.
         void explode(const Position &pos, ecs::SystemData data, ecs::Entity self);
 
-        /// Kick the bomb following the sender velocity.
-        /// @note Kill the entity @c self to create a new entity representing the kicked bomb (moving).
+        /// Change the bomb velocity.
+        /// @warning Kill the entity @c self to create a new entity representing the new bomb (moving or not).
+        /// @note If @c senderVelocity is null, the new Bomb will not have a Velocity component.
         ///
         /// @param data world data.
         /// @param self entity @a owning of the bomb component.
         /// @param senderVelocity sender velocity. (will become the kicked bomb velocity)
-        void kick(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity);
+        void setVelocity(ecs::SystemData data, ecs::Entity self, raylib::core::Vector3f senderVelocity);
 
-        /// Set the Bomb Model components
+        /// Stop a kicked bomb.
+        /// @warning Kill the entity @c self to create a new entity representing the new bomb.
         ///
-        /// @param builder bomb entity builder.
         /// @param data world data.
-        /// @return ecs::Entities::Builder& bomb entity builder.
-        static ecs::Entities::Builder &setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data);
+        /// @param self entity @a owning of the bomb component.
+        void stop(ecs::SystemData data, ecs::Entity self);
+
+        /// Place a new bomb in the world.
+        ///
+        /// @param bombCell position of the bomb.
+        /// @param data world data.
+        /// @param bombType bomb type.
+        /// @param owner entity @a owning the bomb component.
+        /// @param range bomb range.
+        /// @param delay bomb explosion delay.
+        /// @param velocity velocity of the bomb (null for static bombs)
+        /// @param avoidDuplicates Whether or not it must avoid multiple bombs on the same cell.
+        /// @return true If the bomb was placed.
+        /// @return false If the bomb couldn't be placed
+        static bool placeBomb(raylib::core::Vector2u bombCell, ecs::SystemData data, Bomb::Type bombType,
+            Identity::Id owner, size_t range, std::chrono::milliseconds delay = DEFAULT_DELAY,
+            raylib::core::Vector3f velocity = {0.f, 0.f, 0.f}, bool avoidDuplicates = true);
 
       private:
         /// Limit above which an entity is considered on the cell (40% of its size overtaking on an adjacent cell)
@@ -86,6 +106,13 @@ namespace game::components
         /// @return false if the entity isn't exploded on adjacent cells
         bool explodeLiving(raylib::core::Vector3f pos, raylib::core::Vector3f size, raylib::core::Vector2u roundedPos2D,
             const std::vector<raylib::core::Vector2u> &explodedPositions) const;
+
+        /// Set the Bomb Model components
+        ///
+        /// @param builder bomb entity builder.
+        /// @param data world data.
+        /// @return ecs::Entities::Builder& bomb entity builder.
+        static ecs::Entities::Builder &setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data);
     };
 } // namespace game::components
 
