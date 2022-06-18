@@ -19,6 +19,8 @@ namespace game
 
         void Keybinds::loadDefaults()
         {
+            clear();
+
             //////// Keyboards keybinds
             /// Movements
             setKeyboardBinding(Key::A, GameAction::MOVE_LEFT);
@@ -60,15 +62,14 @@ namespace game
             /// Menus
             setGamepadBinding(Gamepad::Button::FACE_DOWN, GameAction::ACTION); /// A on Xbox
             setGamepadBinding(Gamepad::Button::FACE_RIGHT, GameAction::BACK);  /// B on Xbox
-
-            setKeyboardBinding(Key::MINUS, GameAction::DISCONNECT);
-            setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::DISCONNECT);
         }
 
         void Keybinds::clear()
         {
             _keyboardBindings.clear();
             _gamepadBindings.clear();
+            /// Do not let the user configure this action
+            setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::DISCONNECT);
         }
 
         void Keybinds::setKeyboardBinding(Key key, GameAction action)
