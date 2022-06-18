@@ -30,3 +30,12 @@ msgstr "Mute/Unmute"
 
 msgid "Sfx"
 msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "French"
+msgstr ""

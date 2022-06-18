@@ -300,7 +300,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_0, game::gui::Widget::NullTag,
             game::SettingsMenuScene::SFX_VOLUME_33, game::SettingsMenuScene::MUSIC_VOLUME_0,
-            game::SettingsMenuScene::BACK)
+            game::SettingsMenuScene::LANGUAGE_ENGLISH)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->getSettings().setSfxVolume(0.f);
@@ -319,7 +319,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_33, game::SettingsMenuScene::SFX_VOLUME_0,
             game::SettingsMenuScene::SFX_VOLUME_66, game::SettingsMenuScene::MUSIC_VOLUME_33,
-            game::SettingsMenuScene::BACK)
+            game::SettingsMenuScene::LANGUAGE_ENGLISH)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->getSettings().setSfxVolume(33.f);
@@ -338,7 +338,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_66, game::SettingsMenuScene::SFX_VOLUME_33,
             game::SettingsMenuScene::SFX_VOLUME_100, game::SettingsMenuScene::MUSIC_VOLUME_66,
-            game::SettingsMenuScene::BACK)
+            game::SettingsMenuScene::LANGUAGE_ENGLISH)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->getSettings().setSfxVolume(66.f);
@@ -356,7 +356,8 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_100, game::SettingsMenuScene::SFX_VOLUME_66,
-            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::MUSIC_VOLUME_100, game::SettingsMenuScene::BACK)
+            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::MUSIC_VOLUME_100,
+            game::SettingsMenuScene::LANGUAGE_ENGLISH)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->getSettings().setSfxVolume(100.f);
@@ -393,6 +394,71 @@ static void loadKeybindSettings(ecs::World &world, raylib::core::Vector2f pos, r
         .build();
 }
 
+static void loadLanguageSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
+{
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(pos.x, pos.y)
+        .with<game::components::Size>(size.x, size.y)
+        .with<game::components::Color>(raylib::core::Color::PURPLE)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(pos.x + 1, pos.y + 1)
+        .with<game::components::Size>(size.x - 2, size.y - 2)
+        .with<game::components::Color>(raylib::core::Color::BLACK)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 2, pos.y + 2)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsLanguage, 40, raylib::core::Color::PURPLE)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 4, pos.y + 10)
+        .with<game::components::Textual>(
+            localization::resources::languages::rsLanguageEnglish, 20, raylib::core::Color::PURPLE)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::LANGUAGE_ENGLISH, game::gui::Widget::NullTag,
+            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::SFX_VOLUME_0,
+            game::SettingsMenuScene::LANGUAGE_FRENCH)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                localization::Localization::setLocale("en");
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setLocale("en");
+                Logger::logger.log(Logger::Severity::Debug, "Set language to English");
+                world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::PURPLE;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 4, pos.y + 15)
+        .with<game::components::Textual>(
+            localization::resources::languages::rsLanguageFrench, 20, raylib::core::Color::PURPLE)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
+            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::LANGUAGE_ENGLISH, game::SettingsMenuScene::BACK)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                localization::Localization::setLocale("fr");
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setLocale("fr");
+                Logger::logger.log(Logger::Severity::Debug, "Set language to French");
+                world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::PURPLE;
+            })
+        .build();
+}
+
 static void loadSettingsMenuScene(ecs::World &world)
 {
     world.addEntity()
@@ -417,9 +483,10 @@ static void loadSettingsMenuScene(ecs::World &world)
     loadGraphicSettings(world, raylib::core::Vector2f(34, 10), raylib::core::Vector2f(32, 40));
     loadAudioSettings(world, raylib::core::Vector2f(1, 10), raylib::core::Vector2f(32, 40));
     loadKeybindSettings(world, raylib::core::Vector2f(67, 10), raylib::core::Vector2f(32, 88));
+    loadLanguageSettings(world, raylib::core::Vector2f(1, 52), raylib::core::Vector2f(32, 46));
 
     world.addEntity()
-        .with<game::components::Position>(40.f, 2.f)
+        .with<game::components::Position>(52.f, 2.f)
         .with<game::components::Textual>(localization::resources::rsSettings, 40, raylib::core::Color::YELLOW)
         .build();
 }

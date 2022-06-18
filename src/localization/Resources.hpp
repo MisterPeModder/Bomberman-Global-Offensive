@@ -19,11 +19,18 @@ namespace localization
 
         constexpr ResourceString rsSettings("SETTINGS");
 
+        namespace languages
+        {
+            constexpr ResourceString rsLanguageEnglish("English");
+            constexpr ResourceString rsLanguageFrench("French");
+        }
+
         namespace settings
         {
             constexpr ResourceString rsSettingsGraphics("Graphics");
             constexpr ResourceString rsSettingsFullscreen("Fullscreen");
             constexpr ResourceString rsSettingsResolution("Resolution");
+            constexpr ResourceString rsSettingsLanguage("Language");
 
             constexpr ResourceString rsSettingsAudio("Audio");
             constexpr ResourceString rsSettingsMuteUnmute("MuteUnmute");

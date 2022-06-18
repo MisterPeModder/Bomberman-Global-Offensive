@@ -31,6 +31,8 @@ namespace game
             RES_1,
             RES_2,
             RES_3,
+            LANGUAGE_ENGLISH,
+            LANGUAGE_FRENCH,
             WIDGET_ID_SIZE,
         };
         SettingsMenuScene();

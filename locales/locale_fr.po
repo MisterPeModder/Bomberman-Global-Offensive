@@ -30,3 +30,12 @@ msgstr "Muet/Non-muet"
 
 msgid "Sfx"
 msgstr "Effets sonores"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "English"
+msgstr "Anglais"
+
+msgid "French"
+msgstr "Français"
