@@ -105,3 +105,12 @@ msgstr "Player 3"
 
 msgid "User 4"
 msgstr "Player 4"
+
+msgid "Activ."
+msgstr ""
+
+msgid "L Activ."
+msgstr ""
+
+msgid "R Activ."
+msgstr ""

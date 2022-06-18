@@ -20,6 +20,11 @@ namespace localization
 
         constexpr ResourceString rsBack("Back");
 
+        constexpr ResourceString rsUser1("User 1");
+        constexpr ResourceString rsUser2("User 2");
+        constexpr ResourceString rsUser3("User 3");
+        constexpr ResourceString rsUser4("User 4");
+
         constexpr ResourceString rsSettings("SETTINGS");
 
         namespace keybinds
@@ -32,6 +37,9 @@ namespace localization
             constexpr ResourceString rsKeyBindActivable("Activable");
             constexpr ResourceString rsKeyBindActivableLeft("Activable Left");
             constexpr ResourceString rsKeyBindActivableRight("Activable Right");
+            constexpr ResourceString rsKeyBindActivableShort("Activ.");
+            constexpr ResourceString rsKeyBindActivableLeftShort("L Activ.");
+            constexpr ResourceString rsKeyBindActivableRightShort("R Activ.");
         } // namespace keybinds
 
         namespace languages
