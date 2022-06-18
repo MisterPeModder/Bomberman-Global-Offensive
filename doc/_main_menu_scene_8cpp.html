@@ -84,8 +84,8 @@ $(document).ready(function(){initNavTree('_main_menu_scene_8cpp.html',''); initR
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">MainMenuScene.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -95,25 +95,15 @@ $(document).ready(function(){initNavTree('_main_menu_scene_8cpp.html',''); initR
 <code>#include &quot;<a class="el" href="_system_8hpp_source.html">ecs/System.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_join_8hpp_source.html">ecs/join.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_resource_8hpp_source.html">ecs/resource/Resource.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_timer_8hpp_source.html">ecs/resource/Timer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8hpp_source.html">util/util.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_2components_2_color_8hpp_source.html">game/components/Color.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_controlable_8hpp_source.html">game/components/Controlable.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="game_2components_2_image_8hpp_source.html">game/components/Image.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_2components_2_model_8hpp_source.html">game/components/Model.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_position_8hpp_source.html">game/components/Position.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_rotation_angle_8hpp_source.html">game/components/RotationAngle.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_rotation_axis_8hpp_source.html">game/components/RotationAxis.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_scale_8hpp_source.html">game/components/Scale.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_2components_2_rectangle_8hpp_source.html">game/components/Rectangle.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_size_8hpp_source.html">game/components/Size.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_textual_8hpp_source.html">game/components/Textual.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_2components_2_texture2_d_8hpp_source.html">game/components/Texture2D.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_i_scene_8hpp_source.html">game/scenes/IScene.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_settings_menu_scene_8hpp_source.html">game/scenes/SettingsMenuScene.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_window_8hpp_source.html">raylib/core/Window.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_game_8hpp_source.html">game/Game.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_users_8hpp_source.html">game/Users.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_game_scene_8hpp_source.html">game/scenes/GameScene.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_clickable_8hpp_source.html">game/gui/components/Clickable.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_widget_8hpp_source.html">game/gui/components/Widget.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_draw_selected_widget_8hpp_source.html">game/systems/DrawSelectedWidget.hpp</a>&quot;</code><br />
@@ -121,194 +111,90 @@ $(document).ready(function(){initNavTree('_main_menu_scene_8cpp.html',''); initR
 <code>#include &quot;<a class="el" href="_draw_texture_8hpp_source.html">game/systems/DrawTexture.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_input_manager_8hpp_source.html">game/systems/InputManager.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_2systems_2_model_8hpp_source.html">game/systems/Model.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_2systems_2_rectangle_8hpp_source.html">game/systems/Rectangle.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_2resources_2_engine_8hpp_source.html">game/resources/Engine.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_logger_8hpp_source.html">logger/Logger.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_game_scene_8hpp_source.html">game/scenes/GameScene.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_i_scene_8hpp_source.html">game/scenes/IScene.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_settings_menu_scene_8hpp_source.html">game/scenes/SettingsMenuScene.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_window_8hpp_source.html">raylib/core/Window.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_2_engine_8hpp_source.html">game/Engine.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_game_8hpp_source.html">game/Game.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_users_8hpp_source.html">game/Users.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_localization_8hpp_source.html">localization/Localization.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_resources_8hpp_source.html">localization/Resources.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="game_2_engine_8hpp_source.html">game/Engine.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_logger_8hpp_source.html">logger/Logger.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for MainMenuScene.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_main_menu_scene_8cpp__incl.png" border="0" usemap="#src_2game_2scenes_2_main_menu_scene_8cpp" alt=""/></div>
 <map name="src_2game_2scenes_2_main_menu_scene_8cpp" id="src_2game_2scenes_2_main_menu_scene_8cpp">
-<area shape="rect" title=" " alt="" coords="2174,5,2376,47"/>
-<area shape="rect" href="_main_menu_scene_8hpp.html" title=" " alt="" coords="511,102,668,129"/>
-<area shape="rect" href="_system_8hpp.html" title=" " alt="" coords="1484,423,1610,449"/>
-<area shape="rect" href="_i_scene_8hpp.html" title=" " alt="" coords="448,273,630,300"/>
-<area shape="rect" href="_game_8hpp.html" title=" " alt="" coords="970,348,1100,375"/>
-<area shape="rect" href="_storage_8hpp.html" title=" " alt="" coords="4349,273,4476,300"/>
-<area shape="rect" href="_join_8hpp.html" title=" " alt="" coords="3697,191,3797,218"/>
-<area shape="rect" href="_resource_8hpp.html" title=" " alt="" coords="117,273,313,300"/>
-<area shape="rect" href="_timer_8hpp.html" title=" " alt="" coords="52,102,226,129"/>
-<area shape="rect" href="util_8hpp.html" title=" " alt="" coords="2219,191,2315,218"/>
-<area shape="rect" href="game_2components_2_color_8hpp.html" title=" " alt="" coords="1212,102,1420,129"/>
-<area shape="rect" href="_controlable_8hpp.html" title=" " alt="" coords="1495,102,1746,129"/>
-<area shape="rect" href="_users_8hpp.html" title=" " alt="" coords="1230,191,1358,218"/>
-<area shape="rect" href="game_2components_2_image_8hpp.html" title=" " alt="" coords="1979,191,2195,218"/>
-<area shape="rect" href="game_2components_2_model_8hpp.html" title=" " alt="" coords="2340,191,2554,218"/>
-<area shape="rect" href="_position_8hpp.html" title=" " alt="" coords="3872,191,4099,218"/>
-<area shape="rect" href="_rotation_angle_8hpp.html" title=" " alt="" coords="2958,184,3160,225"/>
-<area shape="rect" href="_rotation_axis_8hpp.html" title=" " alt="" coords="3419,184,3622,225"/>
-<area shape="rect" href="_scale_8hpp.html" title=" " alt="" coords="3184,191,3395,218"/>
-<area shape="rect" href="_size_8hpp.html" title=" " alt="" coords="4123,191,4326,218"/>
-<area shape="rect" href="_textual_8hpp.html" title=" " alt="" coords="2337,102,2560,129"/>
-<area shape="rect" href="game_2components_2_texture2_d_8hpp.html" title=" " alt="" coords="2630,184,2832,225"/>
-<area shape="rect" href="_settings_menu_scene_8hpp.html" title=" " alt="" coords="936,95,1137,136"/>
-<area shape="rect" href="_window_8hpp.html" title=" " alt="" coords="2685,102,2860,129"/>
-<area shape="rect" href="_game_scene_8hpp.html" title=" " alt="" coords="692,102,911,129"/>
-<area shape="rect" href="_clickable_8hpp.html" title=" " alt="" coords="2936,95,3102,136"/>
-<area shape="rect" href="_widget_8hpp.html" title=" " alt="" coords="4452,184,4618,225"/>
-<area shape="rect" href="_draw_selected_widget_8hpp.html" title=" " alt="" coords="4096,95,4308,136"/>
-<area shape="rect" href="_draw_text_8hpp.html" title=" " alt="" coords="2036,348,2247,375"/>
-<area shape="rect" href="_draw_texture_8hpp.html" title=" " alt="" coords="3471,102,3703,129"/>
-<area shape="rect" href="_input_manager_8hpp.html" title=" " alt="" coords="1770,102,2009,129"/>
-<area shape="rect" href="game_2systems_2_model_8hpp.html" title=" " alt="" coords="3126,102,3317,129"/>
-<area shape="rect" href="game_2resources_2_engine_8hpp.html" title=" " alt="" coords="183,191,386,218"/>
-<area shape="rect" href="_logger_8hpp.html" title=" " alt="" coords="1584,191,1723,218"/>
-<area shape="rect" href="_localization_8hpp.html" title=" " alt="" coords="1748,191,1954,218"/>
-<area shape="rect" href="_resources_8hpp.html" title=" " alt="" coords="4382,102,4578,129"/>
-<area shape="rect" href="game_2_engine_8hpp.html" title=" " alt="" coords="301,102,436,129"/>
-<area shape="rect" href="_world_8hpp.html" title=" " alt="" coords="708,423,821,449"/>
-<area shape="rect" href="_a_scene_8hpp.html" title=" " alt="" coords="757,191,945,218"/>
-<area shape="rect" href="system_2_system_8hpp.html" title=" " alt="" coords="1353,497,1530,524"/>
-<area shape="rect" href="_system_data_8hpp.html" title=" " alt="" coords="3802,497,4010,524"/>
-<area shape="rect" href="_system_tag_8hpp.html" title=" " alt="" coords="1554,497,1753,524"/>
-<area shape="rect" href="storage_2_storage_8hpp.html" title=" " alt="" coords="4187,572,4366,599"/>
-<area shape="rect" href="_joinable_8hpp.html" title=" " alt="" coords="4020,647,4176,673"/>
-<area shape="rect" href="_map_storage_8hpp.html" title=" " alt="" coords="4314,423,4521,449"/>
-<area shape="rect" href="_marker_storage_8hpp.html" title=" " alt="" coords="4450,348,4674,375"/>
-<area shape="rect" href="join_2_join_8hpp.html" title=" " alt="" coords="3983,572,4111,599"/>
-<area shape="rect" href="_maybe_join_8hpp.html" title=" " alt="" coords="4066,423,4238,449"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/chrono.html" title=" " alt="" coords="42,191,108,218"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="2131,273,2222,300"/>
+<area shape="rect" title=" " alt="" coords="2335,5,2538,47"/>
+<area shape="rect" href="_main_menu_scene_8hpp.html" title=" " alt="" coords="4108,102,4266,129"/>
+<area shape="rect" href="_system_8hpp.html" title=" " alt="" coords="2220,437,2346,464"/>
+<area shape="rect" href="_i_scene_8hpp.html" title=" " alt="" coords="4058,281,4241,307"/>
+<area shape="rect" href="_game_8hpp.html" title=" " alt="" coords="3852,363,3983,389"/>
+<area shape="rect" href="_storage_8hpp.html" title=" " alt="" coords="169,281,296,307"/>
+<area shape="rect" href="_join_8hpp.html" title=" " alt="" coords="950,191,1050,218"/>
+<area shape="rect" href="_resource_8hpp.html" title=" " alt="" coords="2986,281,3182,307"/>
+<area shape="rect" href="util_8hpp.html" title=" " alt="" coords="3572,191,3668,218"/>
+<area shape="rect" href="game_2components_2_color_8hpp.html" title=" " alt="" coords="1227,191,1435,218"/>
+<area shape="rect" href="_controlable_8hpp.html" title=" " alt="" coords="2311,102,2562,129"/>
+<area shape="rect" href="_users_8hpp.html" title=" " alt="" coords="2795,191,2923,218"/>
+<area shape="rect" href="game_2components_2_model_8hpp.html" title=" " alt="" coords="1510,191,1725,218"/>
+<area shape="rect" href="_position_8hpp.html" title=" " alt="" coords="422,191,648,218"/>
+<area shape="rect" href="game_2components_2_rectangle_8hpp.html" title=" " alt="" coords="1750,191,1990,218"/>
+<area shape="rect" href="_size_8hpp.html" title=" " alt="" coords="672,191,875,218"/>
+<area shape="rect" href="_textual_8hpp.html" title=" " alt="" coords="1662,102,1885,129"/>
+<area shape="rect" href="game_2components_2_texture2_d_8hpp.html" title=" " alt="" coords="2014,184,2216,225"/>
+<area shape="rect" href="_clickable_8hpp.html" title=" " alt="" coords="2796,273,2962,315"/>
+<area shape="rect" href="_widget_8hpp.html" title=" " alt="" coords="28,184,194,225"/>
+<area shape="rect" href="_draw_selected_widget_8hpp.html" title=" " alt="" coords="429,95,641,136"/>
+<area shape="rect" href="_window_8hpp.html" title=" " alt="" coords="2444,191,2618,218"/>
+<area shape="rect" href="_draw_text_8hpp.html" title=" " alt="" coords="2107,363,2318,389"/>
+<area shape="rect" href="_draw_texture_8hpp.html" title=" " alt="" coords="931,102,1163,129"/>
+<area shape="rect" href="_input_manager_8hpp.html" title=" " alt="" coords="2688,102,2926,129"/>
+<area shape="rect" href="game_2systems_2_model_8hpp.html" title=" " alt="" coords="665,102,856,129"/>
+<area shape="rect" href="game_2systems_2_rectangle_8hpp.html" title=" " alt="" coords="1238,102,1453,129"/>
+<area shape="rect" href="game_2resources_2_engine_8hpp.html" title=" " alt="" coords="2998,191,3200,218"/>
+<area shape="rect" href="_game_scene_8hpp.html" title=" " alt="" coords="3815,102,4034,129"/>
+<area shape="rect" href="_settings_menu_scene_8hpp.html" title=" " alt="" coords="4510,95,4712,136"/>
+<area shape="rect" href="game_2_engine_8hpp.html" title=" " alt="" coords="3104,102,3238,129"/>
+<area shape="rect" href="_localization_8hpp.html" title=" " alt="" coords="3262,102,3469,129"/>
+<area shape="rect" href="_resources_8hpp.html" title=" " alt="" coords="4290,102,4486,129"/>
+<area shape="rect" href="_logger_8hpp.html" title=" " alt="" coords="3692,191,3831,218"/>
+<area shape="rect" href="_world_8hpp.html" title=" " alt="" coords="4228,437,4341,464"/>
+<area shape="rect" href="_identity_8hpp.html" title=" " alt="" coords="3325,191,3548,218"/>
+<area shape="rect" href="_a_scene_8hpp.html" title=" " alt="" coords="4109,191,4297,218"/>
+<area shape="rect" href="_component_8hpp.html" title=" " alt="" coords="1469,281,1620,307"/>
+<area shape="rect" href="storage_2_storage_8hpp.html" title=" " alt="" coords="224,587,403,613"/>
+<area shape="rect" href="_joinable_8hpp.html" title=" " alt="" coords="605,661,761,688"/>
+<area shape="rect" href="system_2_system_8hpp.html" title=" " alt="" coords="2300,512,2477,539"/>
+<area shape="rect" href="_system_data_8hpp.html" title=" " alt="" coords="376,512,584,539"/>
+<area shape="rect" href="_system_tag_8hpp.html" title=" " alt="" coords="2077,512,2276,539"/>
+<area shape="rect" href="_map_storage_8hpp.html" title=" " alt="" coords="129,437,336,464"/>
+<area shape="rect" href="_marker_storage_8hpp.html" title=" " alt="" coords="360,437,584,464"/>
+<area shape="rect" href="join_2_join_8hpp.html" title=" " alt="" coords="923,281,1051,307"/>
+<area shape="rect" href="_maybe_join_8hpp.html" title=" " alt="" coords="660,587,832,613"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/functional.html" title=" " alt="" coords="3014,363,3101,389"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="3275,281,3366,307"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="3572,281,3669,307"/>
 </map>
 </div>
 </div>
 <p><a href="_main_menu_scene_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1_detect_gamepad.html">game::DetectGamepad</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacegame"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html">game</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a6d129f6140cbdab3c65e2ff293ab14ef"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_main_menu_scene_8cpp.html#a6d129f6140cbdab3c65e2ff293ab14ef">loadMainMenuScene</a> (<a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;world)</td></tr>
-<tr class="separator:a6d129f6140cbdab3c65e2ff293ab14ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a6d129f6140cbdab3c65e2ff293ab14ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d129f6140cbdab3c65e2ff293ab14ef">&#9670;&nbsp;</a></span>loadMainMenuScene()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void loadMainMenuScene </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classecs_1_1_world.html">ecs::World</a> &amp;&#160;</td>
-          <td class="paramname"><em>world</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_main_menu_scene_8cpp_source.html#l00059">59</a> of file <a class="el" href="_main_menu_scene_8cpp_source.html">MainMenuScene.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">const</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> logoPath = <a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;assets&quot;</span>, <span class="stringliteral">&quot;icon.png&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a> image(logoPath, {1, 2}, <a class="code" href="structraylib_1_1core_1_1_color.html#a97a0faef847d323ec3d3211009122508">raylib::core::Color::WHITE</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(2, 12)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        .with&lt;game::components::Textual&gt;(<a class="code" href="namespacelocalization_1_1resources_1_1menu.html#ab25fa03ff568776985bb0ef7180f9cb0">localization::resources::menu::rsMenuPlay</a>, 20, <a class="code" href="structraylib_1_1core_1_1_color.html#a97a0faef847d323ec3d3211009122508">raylib::core::Color::WHITE</a>)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0cad2d8d641dbf2b20c6e5ee0a3d6465d64">game::MainMenuScene::PLAY</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca3dbbb575955adc48f05cf1a250277601">game::MainMenuScene::SETTINGS</a>, <span class="keyword">true</span>)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;(</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            [&amp;world](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a">getResource</a>&lt;<a class="code" href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a>&gt;().engine-&gt;setScene&lt;<a class="code" href="classgame_1_1_game_scene.html">game::GameScene</a>&gt;();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            },</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            [&amp;](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> btn, <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a> state) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1components_1_1_textual.html">game::components::Textual</a>&gt;()[btn.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">color</a> =</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    (state == <a class="code" href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a>) ? <a class="code" href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                                    : <a class="code" href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            })</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        .build();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(2, 20)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        .with&lt;game::components::Textual&gt;(<a class="code" href="namespacelocalization_1_1resources_1_1menu.html#acfb9fe6c8769562bd972915b5a80b867">localization::resources::menu::rsMenuSettings</a>, 20, <a class="code" href="structraylib_1_1core_1_1_color.html#a97a0faef847d323ec3d3211009122508">raylib::core::Color::WHITE</a>)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca3dbbb575955adc48f05cf1a250277601">game::MainMenuScene::SETTINGS</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0cad2d8d641dbf2b20c6e5ee0a3d6465d64">game::MainMenuScene::PLAY</a>, <a class="code" href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca52deca18b8ecd139457c84fa328e7450">game::MainMenuScene::LOGOUT</a>)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;([&amp;world](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            world.<a class="code" href="classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a">getResource</a>&lt;<a class="code" href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a>&gt;().engine-&gt;setScene&lt;<a class="code" href="classgame_1_1_settings_menu_scene.html">game::SettingsMenuScene</a>&gt;();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        })</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        .build();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(2, 90)</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        .with&lt;game::components::Textual&gt;(<a class="code" href="namespacelocalization_1_1resources_1_1menu.html#aeedde1e31032dadd01af602451a3c4fd">localization::resources::menu::rsMenuQuit</a>, 20, <a class="code" href="structraylib_1_1core_1_1_color.html#a97a0faef847d323ec3d3211009122508">raylib::core::Color::WHITE</a>)</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a>&gt;(<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        .with&lt;game::gui::Widget&gt;(<a class="code" href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca52deca18b8ecd139457c84fa328e7450">game::MainMenuScene::LOGOUT</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>,</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca3dbbb575955adc48f05cf1a250277601">game::MainMenuScene::SETTINGS</a>, <a class="code" href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a>)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        .with&lt;<a class="code" href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a>&gt;([](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a>) { <a class="code" href="classraylib_1_1core_1_1_window.html#af2981e8355c75311cf6617a68e8d5439">raylib::core::Window::setShouldClose</a>(); })</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        .build();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    world.<a class="code" href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">addEntity</a>()</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        .<a class="code" href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">with</a>&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(0, 0)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        .with&lt;game::components::Texture2D&gt;(logoPath)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_scale.html">game::components::Scale</a>&gt;(0.4f)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        .with&lt;game::components::RotationAngle&gt;(0.f)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        .with&lt;<a class="code" href="structgame_1_1components_1_1_color.html">game::components::Color</a>&gt;(255, 255, 255, 200)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        .build();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecs_1_1_world_html_a694d9d1a60a30cdc6835a6edae65f42a"><div class="ttname"><a href="classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a">ecs::World::getResource</a></div><div class="ttdeci">const R &amp; getResource() const</div><div class="ttdoc">Fetches a Resource from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00182">World.hpp:182</a></div></div>
-<div class="ttc" id="aclassecs_1_1_world_1_1_entity_builder_html_ae339f67315aa2d44e090fdd95f42f24a"><div class="ttname"><a href="classecs_1_1_world_1_1_entity_builder.html#ae339f67315aa2d44e090fdd95f42f24a">ecs::World::EntityBuilder::with</a></div><div class="ttdeci">EntityBuilder &amp; with(Args &amp;&amp;...args)</div><div class="ttdoc">Attach a component to the entity.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00065">World.hpp:65</a></div></div>
-<div class="ttc" id="anamespacelocalization_1_1resources_1_1menu_html_acfb9fe6c8769562bd972915b5a80b867"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1menu.html#acfb9fe6c8769562bd972915b5a80b867">localization::resources::menu::rsMenuSettings</a></div><div class="ttdeci">constexpr ResourceString rsMenuSettings(&quot;Settings&quot;)</div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_a5472f6777d6c03db7028470150d30518"><div class="ttname"><a href="classecs_1_1_world.html#a5472f6777d6c03db7028470150d30518">ecs::World::addEntity</a></div><div class="ttdeci">EntityBuilder addEntity()</div><div class="ttdoc">Creates a new entity.</div><div class="ttdef"><b>Definition:</b> <a href="_world_8cpp_source.html#l00032">World.cpp:32</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_scale_html"><div class="ttname"><a href="structgame_1_1components_1_1_scale.html">game::components::Scale</a></div><div class="ttdef"><b>Definition:</b> <a href="_scale_8hpp_source.html#l00015">Scale.hpp:15</a></div></div>
-<div class="ttc" id="aclassecs_1_1_entity_html_a5bcfe12cfeda9661b6849b325041e41a"><div class="ttname"><a href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">ecs::Entity::getId</a></div><div class="ttdeci">constexpr Index getId() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00029">Entity.hpp:29</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_position_html"><div class="ttname"><a href="structgame_1_1components_1_1_position.html">game::components::Position</a></div><div class="ttdef"><b>Definition:</b> <a href="_position_8hpp_source.html#l00016">Position.hpp:16</a></div></div>
-<div class="ttc" id="aclassgame_1_1_main_menu_scene_html_a95e13054ea418b4b3e9c1fb59de6dc0ca52deca18b8ecd139457c84fa328e7450"><div class="ttname"><a href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca52deca18b8ecd139457c84fa328e7450">game::MainMenuScene::LOGOUT</a></div><div class="ttdeci">@ LOGOUT</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_scene_8hpp_source.html#l00021">MainMenuScene.hpp:21</a></div></div>
-<div class="ttc" id="aclassgame_1_1_user_html_a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5"><div class="ttname"><a href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a></div><div class="ttdeci">@ User1</div></div>
-<div class="ttc" id="anamespaceutil_html_a05454346e6b75a324321c23f7afc5727"><div class="ttname"><a href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00022">util.hpp:22</a></div></div>
-<div class="ttc" id="astructgame_1_1resources_1_1_engine_resource_html"><div class="ttname"><a href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a></div><div class="ttdoc">Game engine resource.</div><div class="ttdef"><b>Definition:</b> <a href="game_2resources_2_engine_8hpp_source.html#l00021">Engine.hpp:21</a></div></div>
-<div class="ttc" id="apath_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a></div></div>
-<div class="ttc" id="anamespacelocalization_1_1resources_1_1menu_html_ab25fa03ff568776985bb0ef7180f9cb0"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1menu.html#ab25fa03ff568776985bb0ef7180f9cb0">localization::resources::menu::rsMenuPlay</a></div><div class="ttdeci">constexpr ResourceString rsMenuPlay(&quot;Play&quot;)</div></div>
-<div class="ttc" id="astructgame_1_1gui_1_1_clickable_html_a3880be230496946b54f8381ee0acdd7f"><div class="ttname"><a href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f">game::gui::Clickable::State</a></div><div class="ttdeci">State</div><div class="ttdoc">State of the component.</div><div class="ttdef"><b>Definition:</b> <a href="_clickable_8hpp_source.html#l00021">Clickable.hpp:21</a></div></div>
-<div class="ttc" id="aclassgame_1_1_main_menu_scene_html_a95e13054ea418b4b3e9c1fb59de6dc0ca3dbbb575955adc48f05cf1a250277601"><div class="ttname"><a href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca3dbbb575955adc48f05cf1a250277601">game::MainMenuScene::SETTINGS</a></div><div class="ttdeci">@ SETTINGS</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_scene_8hpp_source.html#l00020">MainMenuScene.hpp:20</a></div></div>
-<div class="ttc" id="astructraylib_1_1core_1_1_color_html_a97a0faef847d323ec3d3211009122508"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a97a0faef847d323ec3d3211009122508">raylib::core::Color::WHITE</a></div><div class="ttdeci">static const Color WHITE</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00173">Color.hpp:173</a></div></div>
-<div class="ttc" id="aclassecs_1_1_world_html_aab1ea951ba59262e6808ace66f709e40"><div class="ttname"><a href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">ecs::World::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Fetches a component storage from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00206">World.hpp:206</a></div></div>
-<div class="ttc" id="astructgame_1_1gui_1_1_widget_html_a26a43b6c85f1464220e9712b53e0f5e8"><div class="ttname"><a href="structgame_1_1gui_1_1_widget.html#a26a43b6c85f1464220e9712b53e0f5e8">game::gui::Widget::NullTag</a></div><div class="ttdeci">static constexpr WidgetId NullTag</div><div class="ttdoc">Id meaning none.</div><div class="ttdef"><b>Definition:</b> <a href="_widget_8hpp_source.html#l00023">Widget.hpp:23</a></div></div>
-<div class="ttc" id="astructraylib_1_1core_1_1_color_html_aa0b1eeefd9bf8f23c1c5dbdc01728041"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div><div class="ttdeci">static const Color YELLOW</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00155">Color.hpp:155</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_color_html"><div class="ttname"><a href="structgame_1_1components_1_1_color.html">game::components::Color</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_color_8hpp_source.html#l00016">Color.hpp:16</a></div></div>
-<div class="ttc" id="astructgame_1_1gui_1_1_clickable_html"><div class="ttname"><a href="structgame_1_1gui_1_1_clickable.html">game::gui::Clickable</a></div><div class="ttdoc">Clickable component.</div><div class="ttdef"><b>Definition:</b> <a href="_clickable_8hpp_source.html#l00019">Clickable.hpp:19</a></div></div>
-<div class="ttc" id="aclassgame_1_1_game_scene_html"><div class="ttname"><a href="classgame_1_1_game_scene.html">game::GameScene</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_scene_8hpp_source.html#l00018">GameScene.hpp:18</a></div></div>
-<div class="ttc" id="aclassraylib_1_1textures_1_1_image_html"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html">raylib::textures::Image</a></div><div class="ttdoc">This is the Image class.</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2textures_2_image_8hpp_source.html#l00026">Image.hpp:26</a></div></div>
-<div class="ttc" id="aclassecs_1_1_entity_html"><div class="ttname"><a href="classecs_1_1_entity.html">ecs::Entity</a></div><div class="ttdoc">Encapsulates a index to an entity that may or may not exist.</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00021">Entity.hpp:21</a></div></div>
-<div class="ttc" id="anamespacelocalization_1_1resources_1_1menu_html_aeedde1e31032dadd01af602451a3c4fd"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1menu.html#aeedde1e31032dadd01af602451a3c4fd">localization::resources::menu::rsMenuQuit</a></div><div class="ttdeci">constexpr ResourceString rsMenuQuit(&quot;Quit&quot;)</div></div>
-<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_af2981e8355c75311cf6617a68e8d5439"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#af2981e8355c75311cf6617a68e8d5439">raylib::core::Window::setShouldClose</a></div><div class="ttdeci">static void setShouldClose()</div><div class="ttdoc">Sets if the window should close or not.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00038">Window.cpp:38</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_textual_html"><div class="ttname"><a href="structgame_1_1components_1_1_textual.html">game::components::Textual</a></div><div class="ttdoc">Textual element.</div><div class="ttdef"><b>Definition:</b> <a href="_textual_8hpp_source.html#l00017">Textual.hpp:17</a></div></div>
-<div class="ttc" id="astructraylib_1_1core_1_1_color_html_a8740297c38d9095d3afc5c0778542ffc"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc">raylib::core::Color::BLUE</a></div><div class="ttdeci">static const Color BLUE</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00165">Color.hpp:165</a></div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_textual_html_a84e6c6dbaebe1de6044bcffd3d1effa6"><div class="ttname"><a href="structgame_1_1components_1_1_textual.html#a84e6c6dbaebe1de6044bcffd3d1effa6">game::components::Textual::color</a></div><div class="ttdeci">raylib::core::Color color</div><div class="ttdoc">Color of the text.</div><div class="ttdef"><b>Definition:</b> <a href="_textual_8hpp_source.html#l00023">Textual.hpp:23</a></div></div>
-<div class="ttc" id="aclassgame_1_1_settings_menu_scene_html"><div class="ttname"><a href="classgame_1_1_settings_menu_scene.html">game::SettingsMenuScene</a></div><div class="ttdef"><b>Definition:</b> <a href="_settings_menu_scene_8hpp_source.html#l00017">SettingsMenuScene.hpp:17</a></div></div>
-<div class="ttc" id="aclassgame_1_1_main_menu_scene_html_a95e13054ea418b4b3e9c1fb59de6dc0cad2d8d641dbf2b20c6e5ee0a3d6465d64"><div class="ttname"><a href="classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0cad2d8d641dbf2b20c6e5ee0a3d6465d64">game::MainMenuScene::PLAY</a></div><div class="ttdeci">@ PLAY</div><div class="ttdef"><b>Definition:</b> <a href="_main_menu_scene_8hpp_source.html#l00019">MainMenuScene.hpp:19</a></div></div>
-<div class="ttc" id="astructgame_1_1gui_1_1_clickable_html_a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040"><div class="ttname"><a href="structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7fad78a68f6a85421ae121c2cb5b73a1040">game::gui::Clickable::State::Pressed</a></div><div class="ttdeci">@ Pressed</div><div class="ttdoc">Default state.</div></div>
-<div class="ttc" id="astructgame_1_1components_1_1_controlable_html"><div class="ttname"><a href="structgame_1_1components_1_1_controlable.html">game::components::Controlable</a></div><div class="ttdoc">Controlable entity, may be a widget or a player.</div><div class="ttdef"><b>Definition:</b> <a href="_controlable_8hpp_source.html#l00019">Controlable.hpp:19</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

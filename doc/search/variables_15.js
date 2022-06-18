@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['value_7876',['value',['../structgame_1_1_users_1_1_action_event.html#abb055ce0c8e638108b9d6d2744e93f2e',1,'game::Users::ActionEvent']]],
-  ['variant_5fsize_5fv_7877',['variant_size_v',['http://en.cppreference.com/w/cpp/utility/variant/variant_size.html',1,'std']]],
-  ['violet_7878',['VIOLET',['../structraylib_1_1core_1_1_color.html#a6d36a11025c9f7414029984e209e60b5',1,'raylib::core::Color']]]
+  ['up_7912',['up',['../structgame_1_1gui_1_1_widget.html#a63f3888f41a020b9165d0fd7401f5680',1,'game::gui::Widget']]],
+  ['used_7913',['used',['../structgame_1_1components_1_1_use_check.html#a6cfb8ad7d024b25b27a980bf1dba9994',1,'game::components::UseCheck']]],
+  ['user_7914',['user',['../structgame_1_1_users_1_1_action_event.html#ad730ac65f3efc2fde4eca587a525ae73',1,'game::Users::ActionEvent']]],
+  ['userid_7915',['userId',['../structgame_1_1components_1_1_controlable.html#a0b7475a968b66f87c81800e9e1ac7e66',1,'game::components::Controlable']]],
+  ['uses_5fallocator_5fv_7916',['uses_allocator_v',['http://en.cppreference.com/w/cpp/memory/uses_allocator.html',1,'std::uses_allocator_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::uses_allocator_v()']]]
 ];

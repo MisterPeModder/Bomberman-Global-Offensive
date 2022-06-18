@@ -1,12 +1,18 @@
 var searchData=
 [
-  ['scale_7857',['scale',['../structgame_1_1components_1_1_scale.html#ab4d3e770957dcc659cefe53f80d6dd12',1,'game::components::Scale']]],
-  ['screenid_7858',['screenId',['../structgame_1_1components_1_1_screen_id.html#ababe5c260d511ae3703ca60ee3021a95',1,'game::components::ScreenId']]],
-  ['second_7859',['second',['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::csub_match::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::pair::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::ssub_match::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::sub_match::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::wcsub_match::second()'],['http://en.cppreference.com/w/cpp/utility/pair.html',1,'std::wssub_match::second()']]],
-  ['selected_7860',['selected',['../structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e',1,'game::components::Player::Inventory::selected()'],['../structgame_1_1gui_1_1_widget.html#afa050ae3c63979e4813d15c8329951bf',1,'game::gui::Widget::selected()']]],
-  ['sky_5fblue_7861',['SKY_BLUE',['../structraylib_1_1core_1_1_color.html#a1a40286a32b9936527d21bd57671e236',1,'raylib::core::Color']]],
-  ['slowness_7862',['slowness',['../structgame_1_1components_1_1_player_1_1_stats.html#a34c6b23132156deef06801ca71bd7f01',1,'game::components::Player::Stats']]],
-  ['speed_7863',['speed',['../structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6',1,'game::components::Player::Stats']]],
-  ['state_7864',['state',['../structgame_1_1gui_1_1_clickable.html#a7dc3d2b14a16077487dc8d55afe98531',1,'game::gui::Clickable']]],
-  ['stats_7865',['stats',['../structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c',1,'game::components::Player']]]
+  ['r_7883',['r',['../structraylib_1_1core_1_1_color.html#a7bcf9027b8ca053af32b043ac0f311c8',1,'raylib::core::Color']]],
+  ['radius_7884',['radius',['../structgame_1_1components_1_1_bomb.html#adc7a222bada558562bf25673536d53a9',1,'game::components::Bomb::radius()'],['../structgame_1_1components_1_1_smoke.html#a59f47d2c63864f26f347f4f80adda96a',1,'game::components::Smoke::radius()']]],
+  ['rank_5fv_7885',['rank_v',['http://en.cppreference.com/w/cpp/types/rank.html',1,'std::rank_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::rank_v()']]],
+  ['ratio_5fequal_5fv_7886',['ratio_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_equal.html',1,'std::ratio_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_equal_v()']]],
+  ['ratio_5fgreater_5fequal_5fv_7887',['ratio_greater_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_greater_equal.html',1,'std::ratio_greater_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_greater_equal_v()']]],
+  ['ratio_5fgreater_5fv_7888',['ratio_greater_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_greater.html',1,'std::ratio_greater_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_greater_v()']]],
+  ['ratio_5fless_5fequal_5fv_7889',['ratio_less_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_less_equal.html',1,'std::ratio_less_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_less_equal_v()']]],
+  ['ratio_5fless_5fv_7890',['ratio_less_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_less.html',1,'std::ratio_less_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_less_v()']]],
+  ['ratio_5fnot_5fequal_5fv_7891',['ratio_not_equal_v',['http://en.cppreference.com/w/cpp/numeric/ratio/ratio_not_equal.html',1,'std::ratio_not_equal_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::ratio_not_equal_v()']]],
+  ['ray_5fwhite_7892',['RAY_WHITE',['../structraylib_1_1core_1_1_color.html#a679a1e758fbfb55e246a976c253f1c3e',1,'raylib::core::Color']]],
+  ['red_7893',['RED',['../structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b',1,'raylib::core::Color']]],
+  ['reference_7894',['Reference',['../classutil_1_1_bit_set.html#adbc690e56987545c1ffef321f4bfc8cf',1,'util::BitSet']]],
+  ['rem_7895',['rem',['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::div_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::imaxdiv_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::ldiv_t::rem()'],['http://en.cppreference.com/w/cpp/numeric/math/div.html',1,'std::lldiv_t::rem()']]],
+  ['right_7896',['right',['../structgame_1_1gui_1_1_widget.html#a3fb98ef8b08d135ece14372e38ce922d',1,'game::gui::Widget']]],
+  ['rotationangle_7897',['rotationAngle',['../structgame_1_1components_1_1_rotation_angle.html#ac6057b05c8c17fe178a6626c92085587',1,'game::components::RotationAngle']]]
 ];

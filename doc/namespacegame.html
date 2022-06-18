@@ -112,6 +112,8 @@ Namespaces</h2></td></tr>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_a_scene.html">AScene</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1_detect_gamepad.html">DetectGamepad</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html">Engine</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_game.html">Game</a></td></tr>
@@ -151,6 +153,7 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0">GameAction::BACK</a>, 
 <a class="el" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b">GameAction::ACTIVATE_ITEM</a>, 
+<a class="el" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663add7cd0eb57db08d4f98abc48e5593462">GameAction::DISCONNECT</a>, 
 <a class="el" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d">GameAction::COUNT</a>
 <br />
  }</td></tr>
@@ -193,6 +196,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a8483766bb6895afd4bba8290587dd663ae58a1b00942e66d8b4abc960da7877ab"></a>ACTION&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0"></a>BACK&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b"></a>ACTIVATE_ITEM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a8483766bb6895afd4bba8290587dd663add7cd0eb57db08d4f98abc48e5593462"></a>DISCONNECT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d"></a>COUNT&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -208,8 +212,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ae58a1b00942e66d8b4abc960da7877ab">ACTION</a>,</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0">BACK</a>,</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b">ACTIVATE_ITEM</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d">COUNT</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663add7cd0eb57db08d4f98abc48e5593462">DISCONNECT</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d">COUNT</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -249,11 +254,11 @@ Functions</h2></td></tr>
 <dd>
 false if the action is an other action. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_game_action_8hpp_source.html#l00032">32</a> of file <a class="el" href="_game_action_8hpp_source.html">GameAction.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> (action == GameAction::MOVE_LEFT || action == GameAction::MOVE_DOWN || action == GameAction::MOVE_RIGHT</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            || action == GameAction::MOVE_UP);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_game_action_8hpp_source.html#l00033">33</a> of file <a class="el" href="_game_action_8hpp_source.html">GameAction.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> (action == GameAction::MOVE_LEFT || action == GameAction::MOVE_DOWN || action == GameAction::MOVE_RIGHT</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            || action == GameAction::MOVE_UP);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -267,6 +272,7 @@ false if the action is an other action. </dd></dl>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d">game::GameAction::COUNT</a></div><div class="ttdeci">@ COUNT</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a291554596c183e837f0a6bec3767c891"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a291554596c183e837f0a6bec3767c891">game::GameAction::PAUSE</a></div><div class="ttdeci">@ PAUSE</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5">game::GameAction::MOVE_RIGHT</a></div><div class="ttdeci">@ MOVE_RIGHT</div></div>
+<div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663add7cd0eb57db08d4f98abc48e5593462"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663add7cd0eb57db08d4f98abc48e5593462">game::GameAction::DISCONNECT</a></div><div class="ttdeci">@ DISCONNECT</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b">game::GameAction::ACTIVATE_ITEM</a></div><div class="ttdeci">@ ACTIVATE_ITEM</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0">game::GameAction::BACK</a></div><div class="ttdeci">@ BACK</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8">game::GameAction::MOVE_LEFT</a></div><div class="ttdeci">@ MOVE_LEFT</div></div>

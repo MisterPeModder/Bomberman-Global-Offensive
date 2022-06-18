@@ -1,17 +1,17 @@
 <map id="src/game/settings/Profile.hpp" name="src/game/settings/Profile.hpp">
 <area shape="rect" id="node1" title=" " alt="" coords="61,5,272,32"/>
 <area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/filesystem.html" title=" " alt="" coords="5,80,96,107"/>
-<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/ostream.html" title=" " alt="" coords="86,155,162,181"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/ostream.html" title=" " alt="" coords="83,155,159,181"/>
 <area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string.html" title=" " alt="" coords="171,80,229,107"/>
-<area shape="rect" id="node5" href="$_keybinds_8hpp.html" title=" " alt="" coords="271,80,380,107"/>
-<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/map.html" title=" " alt="" coords="187,155,237,181"/>
-<area shape="rect" id="node7" href="$_gamepad_input_8hpp.html" title=" " alt="" coords="261,155,408,181"/>
-<area shape="rect" id="node14" href="$_game_action_8hpp.html" title=" " alt="" coords="432,155,603,181"/>
-<area shape="rect" id="node15" href="$_keyboard_8hpp.html" title=" " alt="" coords="548,229,732,256"/>
-<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/compare.html" title=" " alt="" coords="234,229,313,256"/>
-<area shape="rect" id="node9" href="$_gamepad_8hpp.html" title=" " alt="" coords="337,229,524,256"/>
-<area shape="rect" id="node10" href="$_vector2_8hpp.html" title=" " alt="" coords="304,304,403,331"/>
-<area shape="rect" id="node12" title=" " alt="" coords="414,379,485,405"/>
-<area shape="rect" id="node13" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html" title=" " alt="" coords="478,304,575,331"/>
-<area shape="rect" id="node11" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/type_traits.html" title=" " alt="" coords="298,379,390,405"/>
+<area shape="rect" id="node5" href="$_keybinds_8hpp.html" title=" " alt="" coords="277,80,387,107"/>
+<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/vector.html" title=" " alt="" coords="183,155,246,181"/>
+<area shape="rect" id="node7" href="$_gamepad_input_8hpp.html" title=" " alt="" coords="271,155,417,181"/>
+<area shape="rect" id="node14" href="$_game_action_8hpp.html" title=" " alt="" coords="441,155,612,181"/>
+<area shape="rect" id="node15" href="$_keyboard_8hpp.html" title=" " alt="" coords="557,229,741,256"/>
+<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/compare.html" title=" " alt="" coords="243,229,322,256"/>
+<area shape="rect" id="node9" href="$_gamepad_8hpp.html" title=" " alt="" coords="347,229,533,256"/>
+<area shape="rect" id="node10" href="$_vector2_8hpp.html" title=" " alt="" coords="313,304,412,331"/>
+<area shape="rect" id="node12" title=" " alt="" coords="423,379,494,405"/>
+<area shape="rect" id="node13" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html" title=" " alt="" coords="487,304,585,331"/>
+<area shape="rect" id="node11" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/type_traits.html" title=" " alt="" coords="307,379,399,405"/>
 </map>

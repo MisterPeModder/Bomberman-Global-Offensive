@@ -78,6 +78,7 @@ var hierarchy =
     [ "raylib::text::Font", "classraylib_1_1text_1_1_font.html", null ],
     [ "game::Game", "classgame_1_1_game.html", null ],
     [ "raylib::core::Gamepad", "classraylib_1_1core_1_1_gamepad.html", null ],
+    [ "game::settings::Keybinds::GamepadBind", "structgame_1_1settings_1_1_keybinds_1_1_gamepad_bind.html", null ],
     [ "game::settings::GamepadInput", "classgame_1_1settings_1_1_gamepad_input.html", null ],
     [ "GetComponentStorageType< C >", "struct_get_component_storage_type.html", null ],
     [ "game::map::cellular::Grid", "classgame_1_1map_1_1cellular_1_1_grid.html", null ],
@@ -108,6 +109,7 @@ var hierarchy =
     [ "ecs::JoinTraitsExt< MaybeJoin< J > >", "structecs_1_1_join_traits_ext_3_01_maybe_join_3_01_j_01_4_01_4.html", null ],
     [ "game::settings::Keybinds", "classgame_1_1settings_1_1_keybinds.html", null ],
     [ "raylib::core::Keyboard", "classraylib_1_1core_1_1_keyboard.html", null ],
+    [ "game::settings::Keybinds::KeyboardBind", "structgame_1_1settings_1_1_keybinds_1_1_keyboard_bind.html", null ],
     [ "localization::Localization", "classlocalization_1_1_localization.html", null ],
     [ "Logger", "class_logger.html", null ],
     [ "std::logic_error", "http://en.cppreference.com/w/cpp/error/logic_error.html", [
@@ -161,6 +163,7 @@ var hierarchy =
       [ "ecs::MarkerStorage< C >", "classecs_1_1_marker_storage.html", null ]
     ] ],
     [ "ecs::System", "classecs_1_1_system.html", [
+      [ "game::DetectGamepad", "structgame_1_1_detect_gamepad.html", null ],
       [ "game::systems::ChangeCube", "structgame_1_1systems_1_1_change_cube.html", null ],
       [ "game::systems::Collision", "structgame_1_1systems_1_1_collision.html", null ],
       [ "game::systems::DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", null ],

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['up_7871',['up',['../structgame_1_1gui_1_1_widget.html#a63f3888f41a020b9165d0fd7401f5680',1,'game::gui::Widget']]],
-  ['used_7872',['used',['../structgame_1_1components_1_1_use_check.html#a6cfb8ad7d024b25b27a980bf1dba9994',1,'game::components::UseCheck']]],
-  ['user_7873',['user',['../structgame_1_1_users_1_1_action_event.html#ad730ac65f3efc2fde4eca587a525ae73',1,'game::Users::ActionEvent']]],
-  ['userid_7874',['userId',['../structgame_1_1components_1_1_controlable.html#a0b7475a968b66f87c81800e9e1ac7e66',1,'game::components::Controlable']]],
-  ['uses_5fallocator_5fv_7875',['uses_allocator_v',['http://en.cppreference.com/w/cpp/memory/uses_allocator.html',1,'std::uses_allocator_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::uses_allocator_v()']]]
+  ['text_7907',['text',['../structgame_1_1components_1_1_textual.html#a7005791dfec099ef5e4fcc80cb4c01d8',1,'game::components::Textual']]],
+  ['timeditems_7908',['timedItems',['../structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521',1,'game::components::Player::Inventory']]],
+  ['treat_5fas_5ffloating_5fpoint_5fv_7909',['treat_as_floating_point_v',['http://en.cppreference.com/w/cpp/chrono/treat_as_floating_point.html',1,'std::chrono::treat_as_floating_point_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::treat_as_floating_point_v()']]],
+  ['tuple_5fsize_5fv_7910',['tuple_size_v',['http://en.cppreference.com/w/cpp/utility/tuple/tuple_size.html',1,'std::tuple_size_v()'],['http://en.cppreference.com/w/cpp/experimental/type_trait_variable_templates.html',1,'std::experimental::tuple_size_v()']]],
+  ['type_7911',['type',['../structgame_1_1components_1_1_bomb.html#abeab13e108947263eba81ee451df419b',1,'game::components::Bomb::type()'],['../structgame_1_1components_1_1_item.html#a1542e3aad1c344883283728ce0394dae',1,'game::components::Item::type()']]]
 ];
