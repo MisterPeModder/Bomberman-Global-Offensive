@@ -60,7 +60,6 @@ namespace game
         loadSettings();
         _scene = std::make_unique<SplashScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
-        loadColorBlindShader();
     }
 
     game::IScene &Engine::getScene() { return *_scene; }
@@ -145,9 +144,11 @@ namespace game
         shaderSetup(*_globalShader.get());
     }
 
-    const raylib::shaders::Shader &Engine::getGlobalShader() const { return *_globalShader.get(); }
+    const std::unique_ptr<raylib::shaders::Shader> &Engine::getGlobalShader() const { return _globalShader; }
 
-    void Engine::loadColorBlindShader(int mode)
+    std::unique_ptr<raylib::shaders::Shader> &Engine::getGlobalShader() { return _globalShader; }
+
+    void Engine::setColorBlindShader(int mode)
     {
         setGlobalShader(
             "assets/shaders/base_lighing.vs", "assets/shaders/colorblind.fs", [&mode](raylib::shaders::Shader &shader) {

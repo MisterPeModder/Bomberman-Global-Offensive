@@ -68,17 +68,40 @@ namespace game
         /// Gets the settings (immutable)
         const settings::Settings &getSettings() const;
 
+        /// Update the size of the render target to match the window size.
         void updateRenderTarget();
 
+        /// Get the Render Target.
+        ///
+        /// @return const raylib::textures::RenderTexture2D& engine render target.
         const raylib::textures::RenderTexture2D &getRenderTarget() const;
 
+        /// Remove the currently loaded global shader.
+        /// @note If no global shader is loaded, does nothing.
         void removeGlobalShader();
 
+        /// Set the Global Shader.
+        ///
+        /// @param vertex vertex file (.vs).
+        /// @param fragments fragments file (.fs)
+        /// @param shaderSetup callback to setup the shader parameters.( @ref raylib::shaders::Shader::setValue() )
         void setGlobalShader(std::filesystem::path vertex, std::filesystem::path fragments,
             std::function<void(raylib::shaders::Shader &)> shaderSetup);
 
-        const raylib::shaders::Shader &getGlobalShader() const;
+        /// Get the Global Shader.
+        ///
+        /// @return const std::unique_ptr<raylib::shaders::Shader>& global shader.
+        const std::unique_ptr<raylib::shaders::Shader> &getGlobalShader() const;
 
+        /// Get the Global Shader.
+        ///
+        /// @return std::unique_ptr<raylib::shaders::Shader>& global shader.
+        std::unique_ptr<raylib::shaders::Shader> &getGlobalShader();
+
+        /// Set the Color Blind shader.
+        ///
+        /// @param mode colorblind mode (in order [0, 2] Protanopia, Deuteranopia, Tritanopia)
+        /// @todo Create an enum in an appropriate file.
         void setColorBlindShader(int mode = 2);
 
       private:
