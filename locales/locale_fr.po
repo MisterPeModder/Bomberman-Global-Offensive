@@ -32,4 +32,4 @@ msgid "Play"
 msgstr "Jouer"
 
 msgid "Quit"
-msgstr "Quitté"
+msgstr "Quitter"
