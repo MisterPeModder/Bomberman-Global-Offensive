@@ -42,6 +42,7 @@ namespace game::components
             /// Activable
             LandMine,
             StunGrenade,
+            SmokeGrenade,
             Count,
         };
 
@@ -126,10 +127,11 @@ namespace game::components
         /// Activable
         static Item LandMine();
         static Item StunGrenade();
+        static Item SmokeGrenade();
 
         static constexpr size_t POWER_UP_COUNT = 4;
         static constexpr size_t POWER_DOWN_COUNT = 4;
-        static constexpr size_t ACTIVABLE_COUNT = 2;
+        static constexpr size_t ACTIVABLE_COUNT = 3;
 
         static std::array<Identifier, POWER_UP_COUNT> powerUps;
         static std::array<Identifier, POWER_DOWN_COUNT> powerDowns;

@@ -102,9 +102,8 @@ static void loadGraphicSettings(ecs::World &world)
             game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                raylib::core::Window::setSize(1280, 720);
-                world.getResource<game::resources::EngineResource>().engine->getSettings().setResolution(
-                    raylib::core::Vector2(1280.f, 720.f));
+                world.getResource<game::resources::EngineResource>().engine->setResolution(
+                    raylib::core::Vector2i(1280, 720));
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1280, 720)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
@@ -122,9 +121,8 @@ static void loadGraphicSettings(ecs::World &world)
             game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                raylib::core::Window::setSize(1366, 768);
-                world.getResource<game::resources::EngineResource>().engine->getSettings().setResolution(
-                    raylib::core::Vector2(1366.f, 768.f));
+                world.getResource<game::resources::EngineResource>().engine->setResolution(
+                    raylib::core::Vector2i(1366, 768));
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1366, 768)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
@@ -142,9 +140,8 @@ static void loadGraphicSettings(ecs::World &world)
             game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                raylib::core::Window::setSize(1920, 1080);
-                world.getResource<game::resources::EngineResource>().engine->getSettings().setResolution(
-                    raylib::core::Vector2(1920.f, 1080.f));
+                world.getResource<game::resources::EngineResource>().engine->setResolution(
+                    raylib::core::Vector2i(1920, 1080));
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1920, 1080)");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {

@@ -7,6 +7,7 @@
 
 #include "Model.hpp"
 #include "BoundingBox.hpp"
+#include "raylib/shaders/Shader.hpp"
 
 namespace raylib
 {
@@ -74,6 +75,11 @@ namespace raylib
         void Model::setMaterialMapTexture(const raylib::textures::Texture2D &texture, int materialId, int mapType)
         {
             SetMaterialTexture(&_model.materials[materialId], mapType, texture.asRaylib());
+        }
+
+        void Model::applyShader(const raylib::shaders::Shader &shader, int materialId)
+        {
+            _model.materials[materialId].shader = shader.asRaylib();
         }
 
         void Model::setOwnsMesh(bool ownsMesh) { _ownsMesh = ownsMesh; }

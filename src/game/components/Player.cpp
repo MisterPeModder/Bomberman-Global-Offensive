@@ -7,7 +7,6 @@
 
 #include "Player.hpp"
 #include "Bomb.hpp"
-#include "BombNoClip.hpp"
 #include "Collidable.hpp"
 #include "Identity.hpp"
 #include "Position.hpp"
@@ -165,41 +164,25 @@ namespace game::components
         }
     }
 
-    void Player::placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType)
+    void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
-        auto &players = data.getStorage<Player>();
-        auto &positions = data.getStorage<Position>();
-        auto &placer = players[self.getId()];
+        auto &placer = data.getStorage<Player>()[self.getId()];
 
-        if (bombType == Bomb::Type::Classic) {
-            /// Player cannot place more bomb
-            if (placer.placedBombs >= placer.stats.bombLimit)
-                return;
-        }
-        raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(positions[self.getId()]);
-        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.15f, static_cast<float>(bombCell.y)};
+        /// Player cannot place more bomb
+        if (placer.placedBombs >= placer.stats.bombLimit)
+            return;
+        raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
 
-        /// Avoid multiple bombs on the same cell
-        for (auto [bombPos, bomb] : ecs::join(positions, data.getStorage<Bomb>())) {
-            (void)bomb;
-            if (bombPos == placedPos)
-                return;
-        }
+        if (!Bomb::placeBomb(bombCell, data, Bomb::Type::Classic, data.getStorage<Identity>()[self.getId()].id,
+                placer.stats.bombRange))
+            return;
+        ++placer.placedBombs;
+    }
 
-        auto builder = data.getResource<ecs::Entities>().builder();
-
-        Bomb::setBombModel(builder, data)
-            .with<Bomb>(
-                data.getStorage<Bomb>(), bombType, data.getStorage<Identity>()[self.getId()].id, placer.stats.bombRange)
-            .with<Position>(data.getStorage<Position>(), placedPos)
-            .with<Collidable>(data.getStorage<Collidable>())
-            .build();
-        if (bombType == Bomb::Type::Classic)
-            ++placer.placedBombs;
-        /// Disable collision with bomb for all player on the bomb cell
-        for (auto [pos, player, playerId] : ecs::join(positions, players, data.getResource<ecs::Entities>()))
-            if (bombCell == game::Game::worldPosToMapCell(pos))
-                data.getStorage<BombNoClip>()[playerId.getId()].setBombPosition(bombCell);
+    void Player::placeLandMine(ecs::Entity self, ecs::SystemData data)
+    {
+        Bomb::placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data,
+            Bomb::Type::LandMine, data.getStorage<Identity>()[self.getId()].id, 2);
     }
 
     void Player::updateTimedItems(ecs::Entity self, ecs::SystemData data)
