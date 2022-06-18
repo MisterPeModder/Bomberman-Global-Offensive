@@ -55,15 +55,12 @@ extern "C"
 
 namespace game
 {
-    Engine::Engine()
-        : _debugMode(false), _globalShader("assets/shaders/base_lighing.vs", "assets/shaders/colorblind.fs")
+    Engine::Engine() : _debugMode(false)
     {
-        _globalShader.bindLocations(SHADER_LOC_MATRIX_MODEL, "matModel");
-        _globalShader.setValue("mode", 2);
-        _globalShader.setValue("intensity", 1.f);
         loadSettings();
         _scene = std::make_unique<SplashScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
+        loadColorBlindShader();
     }
 
     game::IScene &Engine::getScene() { return *_scene; }
@@ -106,10 +103,11 @@ namespace game
         {
             raylib::core::scoped::Drawing drawing;
             raylib::core::Window::clear();
-            {
-                raylib::core::scoped::Shader modeShader(_globalShader);
+            if (_globalShader) {
+                raylib::core::scoped::Shader modeShader(*_globalShader.get());
                 _renderTarget->drawYFlipped();
-            }
+            } else
+                _renderTarget->drawYFlipped();
         }
         if (this->_debugMode)
             raylib::core::Window::drawFPS(10, 10);
@@ -136,4 +134,26 @@ namespace game
     void Engine::updateRenderTarget() { _renderTarget = std::make_unique<raylib::textures::RenderTexture2D>(); }
 
     const raylib::textures::RenderTexture2D &Engine::getRenderTarget() const { return *_renderTarget.get(); }
+
+    void Engine::removeGlobalShader() { _globalShader.reset(); }
+
+    void Engine::setGlobalShader(std::filesystem::path vertex, std::filesystem::path fragments,
+        std::function<void(raylib::shaders::Shader &)> shaderSetup)
+    {
+        _globalShader = std::make_unique<raylib::shaders::Shader>(vertex, fragments);
+
+        shaderSetup(*_globalShader.get());
+    }
+
+    const raylib::shaders::Shader &Engine::getGlobalShader() const { return *_globalShader.get(); }
+
+    void Engine::loadColorBlindShader(int mode)
+    {
+        setGlobalShader(
+            "assets/shaders/base_lighing.vs", "assets/shaders/colorblind.fs", [&mode](raylib::shaders::Shader &shader) {
+                shader.bindLocations(SHADER_LOC_MATRIX_MODEL, "matModel");
+                shader.setValue("mode", mode);
+                shader.setValue("intensity", 1.f);
+            });
+    }
 } // namespace game

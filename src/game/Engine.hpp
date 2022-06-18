@@ -9,6 +9,7 @@
 #define GAME_ENGINE_HPP_
 
 #include <concepts>
+#include <functional>
 #include <memory>
 #include "game/resources/Engine.hpp"
 #include "game/scenes/IScene.hpp"
@@ -71,6 +72,15 @@ namespace game
 
         const raylib::textures::RenderTexture2D &getRenderTarget() const;
 
+        void removeGlobalShader();
+
+        void setGlobalShader(std::filesystem::path vertex, std::filesystem::path fragments,
+            std::function<void(raylib::shaders::Shader &)> shaderSetup);
+
+        const raylib::shaders::Shader &getGlobalShader() const;
+
+        void setColorBlindShader(int mode = 2);
+
       private:
         /// Load the settings from the settings file
         void loadSettings();
@@ -80,7 +90,7 @@ namespace game
         std::unique_ptr<game::IScene> _waitingScene;
         settings::Settings _settings;
         std::unique_ptr<raylib::textures::RenderTexture2D> _renderTarget;
-        raylib::shaders::Shader _globalShader;
+        std::unique_ptr<raylib::shaders::Shader> _globalShader;
 
         bool _debugMode;
     };
