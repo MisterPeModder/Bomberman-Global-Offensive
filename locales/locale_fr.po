@@ -38,4 +38,4 @@ msgid "Not connected"
 msgstr "Pas connecté"
 
 msgid "connected"
-msgstr "connectée"
+msgstr "Connecté"
