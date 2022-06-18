@@ -191,6 +191,7 @@ namespace game
         _world.addEntity()
             .with<components::Controlable>(User::UserId::AllUsers,
                 [this](ecs::Entity controlable, ecs::SystemData data, const Users::ActionEvent &event) {
+                    (void)controlable;
                     if (event.action == GameAction::DISCONNECT && event.value == 1.f) {
                         auto &users = data.getResource<resources::EngineResource>().engine->getUsers();
                         users.disconnectUser(event.user);
