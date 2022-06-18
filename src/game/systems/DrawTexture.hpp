@@ -17,8 +17,8 @@
 #include "game/components/Scale.hpp"
 #include "game/components/Size.hpp"
 #include "game/components/Texture2D.hpp"
-#include "raylib/textures/Texture2D.hpp"
 #include "raylib/core/Window.hpp"
+#include "raylib/textures/Texture2D.hpp"
 
 namespace game::systems
 {
@@ -32,7 +32,9 @@ namespace game::systems
             auto &rotations = data.getStorage<game::components::RotationAngle>();
 
             for (auto [texture, rotation, pos, scale, color] : ecs::join(textures, rotations, poses, scales, colors)) {
-                texture.draw({pos.x / 100 * raylib::core::Window::getWidth(), pos.y / 100 * raylib::core::Window::getHeight()}, rotation.rotationAngle, scale.scale, color);
+                texture.draw(
+                    {pos.x / 100 * raylib::core::Window::getWidth(), pos.y / 100 * raylib::core::Window::getHeight()},
+                    rotation.rotationAngle, scale.scale, color);
             }
         }
     };
