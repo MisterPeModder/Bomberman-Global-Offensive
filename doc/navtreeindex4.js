@@ -1,5 +1,12 @@
 var NAVTREEINDEX4 =
 {
+"classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee":[2,0,2,4,3,30],
+"classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b":[2,0,2,4,3,7],
+"classgame_1_1settings_1_1_settings.html#a87fb8617851fdc9f44db342113fda8db":[2,0,2,4,3,2],
+"classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58":[2,0,2,4,3,24],
+"classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd":[2,0,2,4,3,10],
+"classgame_1_1settings_1_1_settings.html#a9188bbf61bb01194e7e6cd4d643ae7e3":[2,0,2,4,3,13],
+"classgame_1_1settings_1_1_settings.html#aaaff24d59278304d4993cb6d1dac7638":[2,0,2,4,3,3],
 "classgame_1_1settings_1_1_settings.html#aab85ce33d56764a5c2f0b4475624cdd2":[2,0,2,4,3,14],
 "classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4":[2,0,2,4,3,23],
 "classgame_1_1settings_1_1_settings.html#abe249e1ecca2861514e3617912e2871a":[2,0,2,4,3,19],
@@ -242,12 +249,5 @@ var NAVTREEINDEX4 =
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a710533dd879dd1202e5c73b27705bf02":[2,0,4,0,7,0,61],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a71f42e8faf0fb7cb14174c8481461c00":[2,0,4,0,7,0,96],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a73995fb90f0ebefe78b90731e67789cd":[2,0,4,0,7,0,15],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a766b4a88cba7645629bac70fd01d8275":[2,0,4,0,7,0,92],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7c333963ed187368820c5343b355e5bc":[2,0,4,0,7,0,100],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a7fc56270e7a70fa81a5935b72eacbe29":[2,0,4,0,7,0,18],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a800618943025315f869e4e1f09471012":[2,0,4,0,7,0,23],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a80cdb34a10d276950f8b20b6814c9194":[2,0,4,0,7,0,85],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a853f8ded7a96b5a765704974e6a3ca96":[2,0,4,0,7,0,66],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a8825bb5d58b44b72465799553acb964d":[2,0,4,0,7,0,87],
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a892a245e287c163080b23db737d3c4c9":[2,0,4,0,7,0,76]
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a766b4a88cba7645629bac70fd01d8275":[2,0,4,0,7,0,92]
 };

@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('classraylib_1_1core_1_1_window.html','
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="classraylib_1_1core_1_1_window-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">raylib::core::Window Class Reference</div>  </div>
@@ -107,9 +108,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d83f6221942a2b79fac49a6e1e79f53"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">clear</a> (const <a class="el" href="structraylib_1_1core_1_1_color.html">Color</a> &amp;color=<a class="el" href="structraylib_1_1core_1_1_color.html#a32368efe61278e660c858a7aeb30615f">raylib::core::Color::BLACK</a>)</td></tr>
 <tr class="memdesc:a1d83f6221942a2b79fac49a6e1e79f53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the window with a black background.  <a href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">More...</a><br /></td></tr>
 <tr class="separator:a1d83f6221942a2b79fac49a6e1e79f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8041cf44d8dd940a194ded4b5ed071c7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7">shouldClose</a> ()</td></tr>
-<tr class="memdesc:a8041cf44d8dd940a194ded4b5ed071c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the window should close or not (when a close window event is received for example)  <a href="classraylib_1_1core_1_1_window.html#a8041cf44d8dd940a194ded4b5ed071c7">More...</a><br /></td></tr>
-<tr class="separator:a8041cf44d8dd940a194ded4b5ed071c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86bf07fb4d43da6471aec128a73a0b1d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#a86bf07fb4d43da6471aec128a73a0b1d">getShouldClose</a> ()</td></tr>
+<tr class="memdesc:a86bf07fb4d43da6471aec128a73a0b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the window should close or not (when a close window event is received for example)  <a href="classraylib_1_1core_1_1_window.html#a86bf07fb4d43da6471aec128a73a0b1d">More...</a><br /></td></tr>
+<tr class="separator:a86bf07fb4d43da6471aec128a73a0b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2981e8355c75311cf6617a68e8d5439"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#af2981e8355c75311cf6617a68e8d5439">setShouldClose</a> ()</td></tr>
+<tr class="memdesc:af2981e8355c75311cf6617a68e8d5439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets if the window should close or not.  <a href="classraylib_1_1core_1_1_window.html#af2981e8355c75311cf6617a68e8d5439">More...</a><br /></td></tr>
+<tr class="separator:af2981e8355c75311cf6617a68e8d5439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1c374c6137284e3f570a6cbfca5369c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">setTargetFPS</a> (int fps)</td></tr>
 <tr class="memdesc:ad1c374c6137284e3f570a6cbfca5369c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the max FPS the game should run at.  <a href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">More...</a><br /></td></tr>
 <tr class="separator:ad1c374c6137284e3f570a6cbfca5369c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +140,11 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2b42af3034b758f6af55e5534fd0d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabadae0caf642d84ed7e2268837fef58"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58">setIcon</a> (<a class="el" href="classraylib_1_1textures_1_1_image.html">textures::Image</a> const &amp;icon)</td></tr>
 <tr class="separator:aabadae0caf642d84ed7e2268837fef58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a040d555ff2e15bb95e73b23effd62aa6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#a040d555ff2e15bb95e73b23effd62aa6">_shouldClose</a> = false</td></tr>
+<tr class="separator:a040d555ff2e15bb95e73b23effd62aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The window static class that will manage the raylib window. </p>
@@ -167,8 +176,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Allow the draw functions to work. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00040">40</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{ BeginDrawing(); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00044">44</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{ BeginDrawing(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -198,8 +207,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Clear the window with a black background. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00032">32</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ ClearBackground(color.asRaylib()); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00034">34</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{ ClearBackground(color.asRaylib()); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -228,8 +237,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Close the window. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00030">30</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ CloseWindow(); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00032">32</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ CloseWindow(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,8 +285,8 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00038">38</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{ DrawFPS(x, y); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00042">42</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{ DrawFPS(x, y); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -306,8 +315,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Block the draw functions. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00042">42</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{ EndDrawing(); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00046">46</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{ EndDrawing(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -335,8 +344,45 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The height of the window. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00053">53</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <span class="keywordflow">return</span> GetScreenHeight(); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00057">57</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{ <span class="keywordflow">return</span> GetScreenHeight(); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a86bf07fb4d43da6471aec128a73a0b1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86bf07fb4d43da6471aec128a73a0b1d">&#9670;&nbsp;</a></span>getShouldClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool raylib::core::Window::getShouldClose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns if the window should close or not (when a close window event is received for example) </p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>if the window should close </td></tr>
+    <tr><td class="paramname">false</td><td>if the window should not close </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00036">36</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1core_1_1_window.html#a040d555ff2e15bb95e73b23effd62aa6">_shouldClose</a> || WindowShouldClose(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -364,8 +410,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The width of the window. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00051">51</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{ <span class="keywordflow">return</span> GetScreenWidth(); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00055">55</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <span class="keywordflow">return</span> GetScreenWidth(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -393,8 +439,8 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true if the window is in fullscreen mode, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00057">57</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{ <span class="keywordflow">return</span> IsWindowFullscreen(); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00061">61</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{ <span class="keywordflow">return</span> IsWindowFullscreen(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -481,8 +527,44 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00059">59</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ SetWindowIcon(icon.asRaylib()); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00063">63</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{ SetWindowIcon(icon.asRaylib()); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af2981e8355c75311cf6617a68e8d5439"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2981e8355c75311cf6617a68e8d5439">&#9670;&nbsp;</a></span>setShouldClose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void raylib::core::Window::setShouldClose </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets if the window should close or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shouldClose</td><td>set to true if the window should close </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00038">38</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{ <a class="code" href="classraylib_1_1core_1_1_window.html#a040d555ff2e15bb95e73b23effd62aa6">_shouldClose</a> = <span class="keyword">true</span>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -522,12 +604,12 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Set the window size. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00044">44</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, [=](<span class="keyword">auto</span> &amp;out) { out &lt;&lt; <span class="stringliteral">&quot;Resized to &quot;</span> &lt;&lt; width &lt;&lt; <span class="charliteral">&#39;x&#39;</span> &lt;&lt; height; });</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            SetWindowSize(<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>(0, width), <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>(0, height));</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00048">48</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, [=](<span class="keyword">auto</span> &amp;out) { out &lt;&lt; <span class="stringliteral">&quot;Resized to &quot;</span> &lt;&lt; width &lt;&lt; <span class="charliteral">&#39;x&#39;</span> &lt;&lt; height; });</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            SetWindowSize(<a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>(0, width), <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a>(0, height));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -563,45 +645,8 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00036">36</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ SetTargetFPS(fps); }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a8041cf44d8dd940a194ded4b5ed071c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8041cf44d8dd940a194ded4b5ed071c7">&#9670;&nbsp;</a></span>shouldClose()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool raylib::core::Window::shouldClose </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns if the window should close or not (when a close window event is received for example) </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">true</td><td>if the window should close </td></tr>
-    <tr><td class="paramname">false</td><td>if the window should not close </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00034">34</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{ <span class="keywordflow">return</span> WindowShouldClose(); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00040">40</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{ SetTargetFPS(fps); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -630,9 +675,34 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Toggles fullscreen. </p>
 
-<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00055">55</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ ToggleFullscreen(); }</div>
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00059">59</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{ ToggleFullscreen(); }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a040d555ff2e15bb95e73b23effd62aa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a040d555ff2e15bb95e73b23effd62aa6">&#9670;&nbsp;</a></span>_shouldClose</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool raylib::core::Window::_shouldClose = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00087">87</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -643,6 +713,7 @@ Static Public Member Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00057">Logger.hpp:57</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a></div><div class="ttdeci">@ Information</div><div class="ttdoc">Debug messages.</div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a040d555ff2e15bb95e73b23effd62aa6"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a040d555ff2e15bb95e73b23effd62aa6">raylib::core::Window::_shouldClose</a></div><div class="ttdeci">static bool _shouldClose</div><div class="ttdef"><b>Definition:</b> <a href="_window_8hpp_source.html#l00087">Window.hpp:87</a></div></div>
 <div class="ttc" id="amax_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a></div><div class="ttdeci">T max(T... args)</div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">std::string_view::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>

@@ -1,6 +1,9 @@
 var _resources_8hpp =
 [
     [ "rsBack", "_resources_8hpp.html#ab22543a6bcc29362517b0952a977c576", null ],
+    [ "rsMenuPlay", "_resources_8hpp.html#ab25fa03ff568776985bb0ef7180f9cb0", null ],
+    [ "rsMenuQuit", "_resources_8hpp.html#aeedde1e31032dadd01af602451a3c4fd", null ],
+    [ "rsMenuSettings", "_resources_8hpp.html#acfb9fe6c8769562bd972915b5a80b867", null ],
     [ "rsSettings", "_resources_8hpp.html#af76bc827aa98298c18d4a81cb4cecff8", null ],
     [ "rsSettingsAudio", "_resources_8hpp.html#a0965c66e75fc5f674257e69aed182139", null ],
     [ "rsSettingsFullscreen", "_resources_8hpp.html#a692f0f1e8e4d72a4b8de37d18b15ebfd", null ],

@@ -1,5 +1,15 @@
 var NAVTREEINDEX9 =
 {
+"structraylib_1_1core_1_1_color.html#a33aa39f405f8cba92982ae86681a64ac":[2,0,4,0,4,24],
+"structraylib_1_1core_1_1_color.html#a39aa6a49cc04b27171ff7c530031ffc4":[2,0,4,0,4,5],
+"structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba":[2,0,4,0,4,27],
+"structraylib_1_1core_1_1_color.html#a4719267b62f527f51395019c13767011":[2,0,4,0,4,20],
+"structraylib_1_1core_1_1_color.html#a492f3e9b471af8e807a04df8a0b2cb06":[2,0,4,0,4,0],
+"structraylib_1_1core_1_1_color.html#a5667968ac1c3ee55fea10fe44c5574c9":[2,0,4,0,4,30],
+"structraylib_1_1core_1_1_color.html#a5bf560d2d23ba1753feb6b23f41c0a0a":[2,0,4,0,4,12],
+"structraylib_1_1core_1_1_color.html#a679a1e758fbfb55e246a976c253f1c3e":[2,0,4,0,4,36],
+"structraylib_1_1core_1_1_color.html#a6d36a11025c9f7414029984e209e60b5":[2,0,4,0,4,39],
+"structraylib_1_1core_1_1_color.html#a6f6c944867fabfdaac02aabdd9f233b5":[2,0,4,0,4,11],
 "structraylib_1_1core_1_1_color.html#a70f5089cd1e3208789fa38172d93b164":[2,0,4,0,4,22],
 "structraylib_1_1core_1_1_color.html#a7486d780fd0e4a5203b8d2acb2c2ec6b":[2,0,4,0,4,32],
 "structraylib_1_1core_1_1_color.html#a79cd83222b755f8de9fbff47b55ace5f":[2,0,4,0,4,25],

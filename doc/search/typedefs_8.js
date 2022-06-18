@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['number_7764',['Number',['../namespacebmjs.html#aed712f9025418bceda599f26d2922ef5',1,'bmjs']]]
+  ['number_7777',['Number',['../namespacebmjs.html#aed712f9025418bceda599f26d2922ef5',1,'bmjs']]]
 ];
