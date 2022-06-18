@@ -7,6 +7,7 @@
 
 #include "Game.hpp"
 
+#include "components/Animation.hpp"
 #include "components/Bomb.hpp"
 #include "components/BombNoClip.hpp"
 #include "components/Collidable.hpp"
@@ -18,7 +19,6 @@
 #include "components/Identity.hpp"
 #include "components/Living.hpp"
 #include "components/Model.hpp"
-#include "components/Animation.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
 #include "components/RotationAngle.hpp"
@@ -46,6 +46,7 @@
 #include "resources/Map.hpp"
 #include "resources/RandomDevice.hpp"
 
+#include "systems/Animation.hpp"
 #include "systems/Bomb.hpp"
 #include "systems/Collision.hpp"
 #include "systems/InputManager.hpp"
@@ -53,7 +54,6 @@
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
-#include "systems/Animation.hpp"
 
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
@@ -214,27 +214,31 @@ namespace game
         _loadModels();
 
         /// Player
+        auto &textures = _world.getResource<resources::Textures>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
             raylib::core::Vector2u cell = _map.getPlayerStartingPosition(owner);
 
-            _world.addEntity()
-                .with<components::Position>(static_cast<float>(cell.x), 0.f, static_cast<float>(cell.y))
-                .with<components::Velocity>()
-                .with<components::Living>(_params.livesCount)
-                .with<components::Collidable>()
-                .with<components::Player>()
-                .with<components::Size>(0.5f, 0.5f, 0.5f)
-                .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
-                .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
-                .with<components::Color>(raylib::core::Color::RED)
-                .with<components::RotationAngle>(0.0f)
-                .with<components::RotationAxis>(0.f, 1.f, 0.f)
-                .with<components::Controlable>(owner, components::Player::handleActionEvent)
-                .with<components::BombNoClip>()
-                .with<components::Identity>()
-                .build();
+            auto playerEntity =
+                _world.addEntity()
+                    .with<components::Position>(static_cast<float>(cell.x), 0.f, static_cast<float>(cell.y))
+                    .with<components::Velocity>()
+                    .with<components::Living>(_params.livesCount)
+                    .with<components::Collidable>()
+                    .with<components::Player>()
+                    .with<components::Size>(0.5f, 0.5f, 0.5f)
+                    .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
+                    .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
+                    .with<components::Color>(raylib::core::Color::WHITE)
+                    .with<components::RotationAngle>(0.0f)
+                    .with<components::RotationAxis>(0.f, 1.f, 0.f)
+                    .with<components::Controlable>(owner, components::Player::handleActionEvent)
+                    .with<components::BombNoClip>()
+                    .with<components::Identity>()
+                    .build();
+            _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
+                textures.get("counter_terrorist_1"), 0, MATERIAL_MAP_DIFFUSE);
         }
 
         /// Ground
