@@ -70,7 +70,6 @@ static void loadMainMenuScene(ecs::World &world)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
-                Logger::logger.log(Logger::Severity::Debug, "go to game");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -87,7 +86,6 @@ static void loadMainMenuScene(ecs::World &world)
             game::MainMenuScene::PLAY, game::MainMenuScene::LOGOUT)
         .with<game::gui::Clickable>([&world](ecs::Entity) {
             world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
-            Logger::logger.log(Logger::Severity::Debug, "go to option");
         })
         .build();
 
@@ -97,10 +95,7 @@ static void loadMainMenuScene(ecs::World &world)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::LOGOUT, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::MainMenuScene::OPTION, game::gui::Widget::NullTag)
-        .with<game::gui::Clickable>([](ecs::Entity) {
-            raylib::core::Window::setShouldClose();
-            Logger::logger.log(Logger::Severity::Debug, "close game");
-        })
+        .with<game::gui::Clickable>([](ecs::Entity) { raylib::core::Window::setShouldClose(); })
         .build();
 
     world.addEntity()
