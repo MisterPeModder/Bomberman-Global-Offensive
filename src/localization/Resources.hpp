@@ -26,7 +26,7 @@ namespace localization
         {
             constexpr ResourceString rsLanguageEnglish("English");
             constexpr ResourceString rsLanguageFrench("French");
-        }
+        } // namespace languages
 
         namespace settings
         {
