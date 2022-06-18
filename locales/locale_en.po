@@ -58,5 +58,5 @@ msgstr ""
 msgid "Not connected"
 msgstr ""
 
-msgid "connected"
+msgid "Connected"
 msgstr ""

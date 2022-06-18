@@ -58,5 +58,5 @@ msgstr "Quitter"
 msgid "Not connected"
 msgstr "Pas connecté"
 
-msgid "connected"
+msgid "Connected"
 msgstr "Connecté"
