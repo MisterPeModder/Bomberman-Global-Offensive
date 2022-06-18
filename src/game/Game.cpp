@@ -53,6 +53,7 @@
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
+#include "systems/Animation.hpp"
 
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
@@ -134,10 +135,6 @@ namespace game
             .setMaterialMapTexture(textures.get("wall"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("C4", "assets/items/weapons/c4.iqm")
             .setMaterialMapTexture(textures.get("C4"), 0, MATERIAL_MAP_DIFFUSE);
-
-        ////// PLayers
-        models.emplace("player", "assets/player/player.iqm")
-            .setMaterialMapTexture(textures.get("terrorist_1"), 0, MATERIAL_MAP_DIFFUSE);
         ////// Items
         auto &bonusMesh = meshes.get("bonus");
         /// Power Ups
@@ -197,6 +194,7 @@ namespace game
         _world.addStorage<components::Cube>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
+        _world.addSystem<systems::RunAnimation>();
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::Movement>();
         _world.addSystem<systems::Collision>();
@@ -207,7 +205,7 @@ namespace game
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer>();
+            systems::UpdateItemTimer, systems::RunAnimation>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel>();
 
@@ -228,11 +226,11 @@ namespace game
                 .with<components::Collidable>()
                 .with<components::Player>()
                 .with<components::Size>(0.5f, 0.5f, 0.5f)
-                .with<components::ModelReference>(_world.getResource<resources::Models>().get("player"))
+                .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
                 .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
-                .with<components::Color>(raylib::core::Color::WHITE)
-                .with<components::RotationAngle>(90.0f)
-                .with<components::RotationAxis>(1.f, 0.f, 0.f)
+                .with<components::Color>(raylib::core::Color::RED)
+                .with<components::RotationAngle>(0.0f)
+                .with<components::RotationAxis>(0.f, 1.f, 0.f)
                 .with<components::Controlable>(owner, components::Player::handleActionEvent)
                 .with<components::BombNoClip>()
                 .with<components::Identity>()

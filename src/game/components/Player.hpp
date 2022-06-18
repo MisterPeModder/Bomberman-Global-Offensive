@@ -23,18 +23,18 @@ namespace game::components
     /// Player marker.
     struct Player : public ecs::Component {
 
-        /// The different animations
-        enum class Animations {
-            Idle_1,
-            Idle_2,
-            Idle_3,
-            Idle_4,
-            Run,
-            Die,
-            Dance_1,
-            Dance_2,
-            Dance_3,
-            Dance_4,
+        /// The different player animations
+        enum class Animations : unsigned int {
+            Idle_1 = 0,
+            Idle_2 = 1,
+            Idle_3 = 2,
+            Idle_4 = 3,
+            Run = 4,
+            Die = 5,
+            Dance_1 = 6,
+            Dance_2 = 7,
+            Dance_3 = 8,
+            Dance_4 = 9,
         };
 
         struct Stats {
@@ -137,7 +137,7 @@ namespace game::components
         static bool handleActionEvent(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
 
         /// Construct a new Player component
-        Player() : placedBombs(0) {}
+        Player() : placedBombs(0), animation(Animations::Idle_1) {}
 
         /// Update the activated items with a timer.
         ///
