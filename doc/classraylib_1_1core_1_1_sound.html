@@ -206,8 +206,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00016">16</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{ UnloadSound(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00017">17</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>.stream.buffer)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                UnloadSound(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -229,8 +232,8 @@ Private Attributes</h2></td></tr>
 
 <p>Get volume of the sound. </p>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00032">32</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1core_1_1_sound.html#a9a75db9dd3c239ed4ed14ad54c54a604">_volume</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00062">62</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1core_1_1_sound.html#a9a75db9dd3c239ed4ed14ad54c54a604">_volume</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,8 +261,12 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00018">18</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{ <span class="keywordflow">return</span> IsSoundPlaying(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00023">23</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>.stream.buffer)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> IsSoundPlaying(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -280,8 +287,11 @@ Private Attributes</h2></td></tr>
 
 <p>Pause the sound currently played. </p>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00026">26</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{ PauseSound(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00044">44</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>.stream.buffer)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                PauseSound(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -302,8 +312,11 @@ Private Attributes</h2></td></tr>
 
 <p>plays the sound that has been changed </p>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00020">20</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ PlaySoundMulti(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00030">30</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>.stream.buffer)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                PlaySoundMulti(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -324,8 +337,11 @@ Private Attributes</h2></td></tr>
 
 <p>Resumes where the sound was paused. </p>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00028">28</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{ ResumeSound(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00050">50</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>.stream.buffer)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                ResumeSound(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -347,8 +363,11 @@ Private Attributes</h2></td></tr>
 
 <p>Set the volume of the sound. </p>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00030">30</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ SetSoundVolume(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>, volume), <a class="code" href="classraylib_1_1core_1_1_sound.html#a9a75db9dd3c239ed4ed14ad54c54a604">_volume</a> = volume; }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00056">56</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>.stream.buffer)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                SetSoundVolume(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>, volume), <a class="code" href="classraylib_1_1core_1_1_sound.html#a9a75db9dd3c239ed4ed14ad54c54a604">_volume</a> = volume;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -369,8 +388,11 @@ Private Attributes</h2></td></tr>
 
 <p>Stop the sound currently played. </p>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00022">22</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{ StopSound(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00036">36</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>.stream.buffer)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                StopSound(<a class="code" href="classraylib_1_1core_1_1_sound.html#a68577070d23c945311f06d646e7afe64">_sound</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,8 +421,8 @@ Private Attributes</h2></td></tr>
 
 <p>Stop all currently playing sounds (using multichannel buffer pool) </p>
 
-<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00024">24</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{ StopSoundMulti(); }</div>
+<p class="definition">Definition at line <a class="el" href="_sound_8cpp_source.html#l00042">42</a> of file <a class="el" href="_sound_8cpp_source.html">Sound.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{ StopSoundMulti(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
