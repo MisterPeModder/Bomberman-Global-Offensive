@@ -6,8 +6,8 @@
 */
 
 #include "Users.hpp"
+#include "logger/Logger.hpp"
 
-#include <iostream>
 namespace game
 {
     Users::Users()
@@ -78,6 +78,8 @@ namespace game
             return;
         _users[nbUsers].setAvailable();
         _users[nbUsers].setGamepadId(gamepadId);
+        Logger::logger.log(Logger::Severity::Information,
+            [&](auto &out) { out << "User " << nbUsers + 1 << " connected with gamepad " << gamepadId; });
     }
 
     void Users::disconnectUser(User::UserId user)
@@ -85,12 +87,17 @@ namespace game
         unsigned int nbUsers = getAvailableUsers();
 
         if (nbUsers == 1) {
-            if (!_users[0].isKeyboard())
+            if (!_users[0].isKeyboard()) {
                 _users[0].setKeyboard();
+                Logger::logger.log(Logger::Severity::Information, "User 1 switched to keyboard mode.");
+            }
             return;
         }
         size_t userPos = static_cast<size_t>(user);
 
+        Logger::logger.log(Logger::Severity::Information, [&](auto &out) {
+            out << "User " << nbUsers - 1 << " with gamepad " << _users[userPos].getGamepadId() << " disconnected";
+        });
         for (size_t i = userPos; i < nbUsers - 1; i++)
             _users[i].setGamepadId(_users[i + 1].getGamepadId());
         _users[nbUsers - 1].setAvailable(false);

@@ -29,11 +29,10 @@ namespace game
 
         void updateConnectedTexts();
 
-        components::Identity::Id getFirstConnectedTextId() const;
-
       private:
         void loadPlayerSlot(size_t id);
         void loadPlayerInterface();
+        void loadLeftButtons();
 
         components::Identity::Id _firstUserId;
     };
