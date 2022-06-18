@@ -63,3 +63,9 @@ msgstr ""
 
 msgid "Left"
 msgstr ""
+
+msgid "Not connected"
+msgstr "Pas connecté"
+
+msgid "Connected"
+msgstr "Connecté"

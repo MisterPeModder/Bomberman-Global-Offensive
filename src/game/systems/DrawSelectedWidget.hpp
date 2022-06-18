@@ -15,6 +15,7 @@
 #include "game/components/Size.hpp"
 #include "game/gui/components/Widget.hpp"
 #include "raylib/core/Color.hpp"
+#include "raylib/core/Window.hpp"
 #include "raylib/shapes/Rectangle.hpp"
 
 namespace game::systems

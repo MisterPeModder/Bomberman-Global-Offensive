@@ -190,4 +190,9 @@ namespace game
         this->updateRenderTarget(resolution.x, resolution.y);
 #endif
     }
+
+    Users &Engine::getUsers() { return _users; }
+
+    const Users &Engine::getUsers() const { return _users; }
+
 } // namespace game
