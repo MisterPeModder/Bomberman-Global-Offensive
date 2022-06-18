@@ -15,6 +15,11 @@ namespace game
 {
     class MainMenuScene : public AScene {
       public:
+        enum WIDGET_ID {
+            PLAY,
+            SETTINGS,
+            LOGOUT,
+        };
         MainMenuScene();
     };
 } // namespace game
