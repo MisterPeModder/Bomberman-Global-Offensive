@@ -35,10 +35,10 @@ msgid "Language"
 msgstr "Langue"
 
 msgid "English"
-msgstr "Anglais"
+msgstr ""
 
-msgid "French"
-msgstr "Français"
+msgid "Français"
+msgstr ""
 
 msgid "BM:GO"
 msgstr ""
