@@ -93,3 +93,15 @@ msgstr ""
 
 msgid "Bomb"
 msgstr ""
+
+msgid "User 1"
+msgstr "Player 1"
+
+msgid "User 2"
+msgstr "Player 2"
+
+msgid "User 3"
+msgstr "Player 3"
+
+msgid "User 4"
+msgstr "Player 4"
