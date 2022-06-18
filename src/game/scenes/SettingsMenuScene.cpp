@@ -462,8 +462,8 @@ static void loadLanguageSettings(ecs::World &world, raylib::core::Vector2f pos, 
 static void loadSettingsMenuScene(ecs::World &world)
 {
     world.addEntity()
-        .with<game::components::Position>(80.f, 3.f)
-        .with<game::components::Textual>(localization::resources::rsBack, 30, raylib::core::Color::PURPLE)
+        .with<game::components::Position>(67.f, 3.f)
+        .with<game::components::Textual>(localization::resources::rsBack, 30, raylib::core::Color::GOLD)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::BACK, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, true)
@@ -475,8 +475,8 @@ static void loadSettingsMenuScene(ecs::World &world)
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::PURPLE;
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::GOLD
+                                                                    : raylib::core::Color::GOLD;
             })
         .build();
 
@@ -486,8 +486,13 @@ static void loadSettingsMenuScene(ecs::World &world)
     loadLanguageSettings(world, raylib::core::Vector2f(1, 52), raylib::core::Vector2f(32, 46));
 
     world.addEntity()
-        .with<game::components::Position>(52.f, 2.f)
-        .with<game::components::Textual>(localization::resources::rsSettings, 40, raylib::core::Color::YELLOW)
+        .with<game::components::Position>(34.f, 2.f)
+        .with<game::components::Textual>(localization::resources::rsSettings, 40, raylib::core::Color::WHITE)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(1.f, 2.f)
+        .with<game::components::Textual>(localization::resources::rsShortTitle, 40, raylib::core::Color::YELLOW)
         .build();
 }
 

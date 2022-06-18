@@ -39,3 +39,6 @@ msgstr ""
 
 msgid "French"
 msgstr ""
+
+msgid "BM:GO"
+msgstr ""
