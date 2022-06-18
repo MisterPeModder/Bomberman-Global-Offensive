@@ -116,7 +116,6 @@ static void loadMainMenuScene(ecs::World &world)
 
 static void loadPlayerInterface(ecs::World &world)
 {
-    auto &users = world.getResource<game::Users>();
     // player1
     world.addEntity()
         .with<game::components::Position>(20, 40)
@@ -129,8 +128,9 @@ static void loadPlayerInterface(ecs::World &world)
         .with<game::components::Position>(20, 70)
         .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::AllUsers,
-            [&](ecs::Entity controlable, ecs::SystemData data, const game::Users::ActionEvent &event) {
+            [](ecs::Entity controlable, ecs::SystemData data, const game::Users::ActionEvent &event) {
                 if (event.action == game::GameAction::JOIN) {
+                    auto &users = data.getResource<game::resources::EngineResource>().engine->getUsers();
                     std::cout << "Gamepad " << static_cast<size_t>(event.user) << " join" << std::endl;
                     /// Change users[event.use] to users[first_not_connected]
                     users[event.user].setAvailable(true);
@@ -206,7 +206,6 @@ namespace game
 {
     MainMenuScene::MainMenuScene()
     {
-        _world.addResource<game::Users>();
         _world.addStorage<game::components::Textual>();
         _world.addSystem<game::systems::DrawText>();
         _world.addSystem<game::systems::DrawSelectedWidget>();

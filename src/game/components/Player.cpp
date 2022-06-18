@@ -15,6 +15,7 @@
 #include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
+#include "game/Engine.hpp"
 #include "game/Game.hpp"
 #include "game/components/Color.hpp"
 #include "game/components/Model.hpp"
@@ -132,7 +133,7 @@ namespace game::components
     void Player::move(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
     {
         auto &velocity = data.getStorage<Velocity>()[self.getId()];
-        auto &user = data.getResource<Users>()[event.user];
+        auto &user = data.getResource<game::resources::EngineResource>().engine->getUsers()[event.user];
         auto &stats = data.getStorage<Player>()[self.getId()].stats;
         GameAction bestAction = GameAction::NONE;
         float highestActionValue = 0.f;

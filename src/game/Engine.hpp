@@ -15,6 +15,7 @@
 
 #include <iostream>
 
+#include "Users.hpp"
 #include "settings/Settings.hpp"
 
 namespace game
@@ -64,6 +65,12 @@ namespace game
         /// Gets the settings (immutable)
         const settings::Settings &getSettings() const;
 
+        /// Gets the users (mutable)
+        Users &getUsers();
+
+        /// Gets the users (immutable)
+        const Users &getUsers() const;
+
       private:
         /// Load the settings from the settings file
         void loadSettings();
@@ -72,6 +79,7 @@ namespace game
         std::unique_ptr<game::IScene> _scene;
         std::unique_ptr<game::IScene> _waitingScene;
         settings::Settings _settings;
+        Users _users;
 
         bool _debugMode;
     };

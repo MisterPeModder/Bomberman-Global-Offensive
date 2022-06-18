@@ -174,7 +174,6 @@ namespace game
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
         /// Add world resources
-        _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();

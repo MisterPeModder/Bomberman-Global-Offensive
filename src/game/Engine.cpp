@@ -118,4 +118,9 @@ namespace game
             raylib::core::Window::toggleFullscreen();
         localization::Localization::setLocale(_settings.getLocale());
     }
+
+    Users &Engine::getUsers() { return _users; }
+
+    const Users &Engine::getUsers() const { return _users; }
+
 } // namespace game

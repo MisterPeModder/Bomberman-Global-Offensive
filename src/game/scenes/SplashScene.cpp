@@ -64,7 +64,6 @@ namespace game
     SplashScene::SplashScene()
     {
         _world.addResource<ecs::Timer>();
-        _world.addResource<game::Users>();
 
         _world.addStorage<game::components::Textual>();
 

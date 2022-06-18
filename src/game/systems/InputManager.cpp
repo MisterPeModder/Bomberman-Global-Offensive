@@ -8,6 +8,7 @@
 #include "InputManager.hpp"
 #include "components/Controlable.hpp"
 #include "ecs/join.hpp"
+#include "game/Engine.hpp"
 #include "game/gui/components/Widget.hpp"
 
 using namespace game::components;
@@ -16,7 +17,7 @@ namespace game::systems
 {
     void InputManager::run(ecs::SystemData data)
     {
-        Users &users = data.getResource<Users>();
+        Users &users = data.getResource<game::resources::EngineResource>().engine->getUsers();
         Users::ActionEvent event = users.getNextAction();
 
         while (event.action != GameAction::NONE) {
