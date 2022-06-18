@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2091809ab6bdbc0a1975bf61d6099748":[2,0,4,0,7,0,95],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2140df7839a3713724b35168defcc975":[2,0,4,0,7,0,101],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a21507b40c80068eda19865706fdc2403":[2,0,4,0,7,0,55],
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a21c2e59531c8710156d34a3c30ac81d5":[2,0,4,0,7,0,43],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a291554596c183e837f0a6bec3767c891":[2,0,4,0,7,0,67],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2cfe3b4f9911c5899d79f171d6b9cc4a":[2,0,4,0,7,0,105],
 "classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a2d0bfa737eccfce7842cd2230eed6712":[2,0,4,0,7,0,91],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1shaders_1_1_shader.html#aa485323b79aa3067514ac8b4e7e3f50f":[2,0,4,2,0,10],
 "classraylib_1_1shaders_1_1_shader.html#aa922f41354ff0263d2ac342768b7e13f":[2,0,4,2,0,5],
 "classraylib_1_1shaders_1_1_shader.html#ab32f9c2b72d17ed946bedb9ad1c6291a":[2,0,4,2,0,26],
-"classraylib_1_1shaders_1_1_shader.html#ab8a897d236e2d1078131a82f9287a3f9":[2,0,4,2,0,18],
-"classraylib_1_1shaders_1_1_shader.html#ac78515108a0e3f942fb7024a281f2292":[2,0,4,2,0,23],
-"classraylib_1_1shaders_1_1_shader.html#ad8c0b8871d76628416e3a5970a96dc83":[2,0,4,2,0,22],
-"classraylib_1_1shaders_1_1_shader.html#ad9031c3d72aef1ca3d3f484503d8b473":[2,0,4,2,0,3],
-"classraylib_1_1shaders_1_1_shader.html#adcb80510f0b9fac840b6ebcef910a02b":[2,0,4,2,0,15]
+"classraylib_1_1shaders_1_1_shader.html#ab8a897d236e2d1078131a82f9287a3f9":[2,0,4,2,0,18]
 };

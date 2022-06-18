@@ -1,5 +1,9 @@
 var NAVTREEINDEX8 =
 {
+"raylib_8hpp.html#a5dc68016fbc13caad670072e7802ac94":[3,0,0,4,7,0],
+"raylib_8hpp_source.html":[3,0,0,4,7],
+"resources_2_map_8hpp.html":[3,0,0,1,3,2],
+"resources_2_map_8hpp_source.html":[3,0,0,1,3,2],
 "scoped_8hpp.html":[3,0,0,4,0,15],
 "scoped_8hpp_source.html":[3,0,0,4,0,15],
 "script_2_engine_8cpp.html":[3,0,0,5,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX8 =
 "structgame_1_1components_1_1_smoke.html#a63d6fd0d5ae219f0249d6c42cb1e4f5b":[2,0,2,0,26,0],
 "structgame_1_1components_1_1_smoke.html#af9d105358c07c68c80f042f9704c5bd3":[2,0,2,0,26,1],
 "structgame_1_1components_1_1_sound.html":[2,0,2,0,27],
-"structgame_1_1components_1_1_sound.html#a3f72976e6dd12f83257cec040a4c7a90":[2,0,2,0,27,0],
-"structgame_1_1components_1_1_sound.html#a9a2a3d6aa64b5815af4928b145df8a27":[2,0,2,0,27,1],
-"structgame_1_1components_1_1_textual.html":[2,0,2,0,28],
-"structgame_1_1components_1_1_textual.html#a05855656d1e729405ee18946ccde1186":[2,0,2,0,28,2],
-"structgame_1_1components_1_1_textual.html#a7005791dfec099ef5e4fcc80cb4c01d8":[2,0,2,0,28,3]
+"structgame_1_1components_1_1_sound.html#a3f72976e6dd12f83257cec040a4c7a90":[2,0,2,0,27,0]
 };
