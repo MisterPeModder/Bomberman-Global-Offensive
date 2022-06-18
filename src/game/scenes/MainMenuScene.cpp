@@ -21,6 +21,7 @@
 #include "game/components/Image.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
+#include "game/components/Rectangle.hpp"
 #include "game/components/RotationAngle.hpp"
 #include "game/components/RotationAxis.hpp"
 #include "game/components/Scale.hpp"
@@ -45,6 +46,7 @@
 #include "game/systems/DrawTexture.hpp"
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
+#include "game/systems/Rectangle.hpp"
 
 #include "game/resources/Engine.hpp"
 
@@ -112,6 +114,53 @@ static void loadMainMenuScene(ecs::World &world)
         .build();
 }
 
+static void loadPlayerInterface(ecs::World &world)
+{
+    // player1
+    world.addEntity()
+        .with<game::components::Position>(20, 40)
+        .with<game::components::Rectangle>()
+        .with<game::components::Size>(10.f, 30.f)
+        .with<game::components::Color>(raylib::core::Color::BLUE)
+        .build();
+
+    // player2
+    world.addEntity()
+        .with<game::components::Position>(40, 40)
+        .with<game::components::Rectangle>()
+        .with<game::components::Size>(10.f, 30.f)
+        .with<game::components::Color>(raylib::core::Color::RED)
+        .build();
+
+    // player3
+    world.addEntity()
+        .with<game::components::Position>(60, 40)
+        .with<game::components::Rectangle>()
+        .with<game::components::Size>(10.f, 30.f)
+        .with<game::components::Color>(raylib::core::Color::GREEN)
+        .build();
+
+    // player4
+    world.addEntity()
+        .with<game::components::Position>(80, 40)
+        .with<game::components::Rectangle>()
+        .with<game::components::Size>(10.f, 30.f)
+        .with<game::components::Color>(raylib::core::Color::PURPLE)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(80, 70)
+        .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
+        .with<game::components::Controlable>(
+            [&world](ecs::Entity btn, game::User owner) {
+                world.getStorage<game::components::Textual>() = 
+                (game::User::isAvailable() == true) ? localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED
+                                                    : localization::resources::menu::rsNotConnected, 20, raylib::core::Color::BLUE;
+            }
+        )
+        .build();
+}
+
 namespace game
 {
     MainMenuScene::MainMenuScene()
@@ -120,6 +169,7 @@ namespace game
         _world.addStorage<game::components::Textual>();
         _world.addSystem<game::systems::DrawText>();
         _world.addSystem<game::systems::DrawSelectedWidget>();
+        _world.addSystem<game::systems::DrawRectangle>();
 
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::DrawTexture>();
@@ -128,6 +178,8 @@ namespace game
         _global2D.add<game::systems::DrawTexture>();
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::DrawSelectedWidget>();
+        _global2D.add<game::systems::DrawRectangle>();
         loadMainMenuScene(_world);
+        loadPlayerInterface(_world);
     }
 } // namespace game

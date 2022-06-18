@@ -33,3 +33,11 @@ msgstr "Jouer"
 
 msgid "Quit"
 msgstr "Quitté"
+
+msgid "Not connected"
+msgstr "Pas connecté"
+msgid "Not connected"
+msgstr ""
+
+msgid "Not connected"
+msgstr ""
