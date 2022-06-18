@@ -81,7 +81,7 @@ var NAVTREEINDEX =
 "classraylib_1_1shapes_1_1_a_shape.html#aa94aa4ee7f2e9d53e12ed4f18821cb3d",
 "dir_db37c42d313def05fbfe463294e4c39f.html",
 "script_8hpp.html#aed712f9025418bceda599f26d2922ef5",
-"structgame_1_1gui_1_1_clickable.html#a17069aba1dab4e09035f3cbe751cb3eb"
+"structgame_1_1gui_1_1_checkable.html#a825f9b78b33a9dc8287a858ddcece786"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

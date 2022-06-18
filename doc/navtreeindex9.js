@@ -1,5 +1,9 @@
 var NAVTREEINDEX9 =
 {
+"structgame_1_1gui_1_1_checkable.html#a825f9b78b33a9dc8287a858ddcece786":[2,0,2,1,0,4],
+"structgame_1_1gui_1_1_checkable.html#a8e088a682ca2ca65f0a25bc3d292f02f":[2,0,2,1,0,3],
+"structgame_1_1gui_1_1_checkable.html#af6b0660f0d2647ed47817aa5a33525c7":[2,0,2,1,0,0],
+"structgame_1_1gui_1_1_clickable.html":[2,0,2,1,1],
 "structgame_1_1gui_1_1_clickable.html#a17069aba1dab4e09035f3cbe751cb3eb":[2,0,2,1,1,4],
 "structgame_1_1gui_1_1_clickable.html#a1ad301d9e35b8adaeecfa9eb0f0ebea0":[2,0,2,1,1,1],
 "structgame_1_1gui_1_1_clickable.html#a3880be230496946b54f8381ee0acdd7f":[2,0,2,1,1,2],

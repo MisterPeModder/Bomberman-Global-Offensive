@@ -94,7 +94,7 @@ var searchData=
   ['bmjs_5fdeclare_5fapi_435',['BMJS_DECLARE_API',['../script_8hpp.html#a6813bb33bffea8b1add77727c72be36d',1,'script.hpp']]],
   ['bmjs_5fdefine_436',['BMJS_DEFINE',['../script_8hpp.html#a5dbae3941a515ba0370e03de6bca3231',1,'script.hpp']]],
   ['bmjs_5fuse_5fapi_437',['BMJS_USE_API',['../script_8hpp.html#ac7e52316c601c34072f1c11b135825d2',1,'script.hpp']]],
-  ['bomb_438',['Bomb',['../structgame_1_1components_1_1_bomb.html',1,'game::components::Bomb'],['../structgame_1_1components_1_1_bomb.html#a333241d1bb333d6d40f67c6d11f43bd6',1,'game::components::Bomb::Bomb()']]],
+  ['bomb_438',['Bomb',['../structgame_1_1components_1_1_bomb.html',1,'game::components::Bomb'],['../structgame_1_1components_1_1_bomb.html#ab707097e920497c141616f971824b379',1,'game::components::Bomb::Bomb()']]],
   ['bomb_2ecpp_439',['Bomb.cpp',['../components_2_bomb_8cpp.html',1,'(Global Namespace)'],['../systems_2_bomb_8cpp.html',1,'(Global Namespace)']]],
   ['bomb_2ehpp_440',['Bomb.hpp',['../components_2_bomb_8hpp.html',1,'(Global Namespace)'],['../systems_2_bomb_8hpp.html',1,'(Global Namespace)']]],
   ['bombdown_441',['BombDown',['../structgame_1_1components_1_1_item.html#a499d2d9db5543e4fe769cf33ca219549',1,'game::components::Item::BombDown()'],['../structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174acbd778e464676e4c4781723d986a463e',1,'game::components::Item::BombDown()']]],
