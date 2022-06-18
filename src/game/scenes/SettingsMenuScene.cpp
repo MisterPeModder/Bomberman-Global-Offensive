@@ -99,7 +99,7 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
         .with<game::components::Textual>("1280x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::MUSIC_VOLUME_100,
-            game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
+            game::SettingsMenuScene::RES_2, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::FPS_60)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setResolution(
@@ -118,7 +118,7 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
         .with<game::components::Textual>("1366x768", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_2, game::SettingsMenuScene::RES_1,
-            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
+            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::FPS_144)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setResolution(
@@ -137,12 +137,94 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
         .with<game::components::Textual>("1920x1080", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_3, game::SettingsMenuScene::RES_2,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK)
+            game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::FPS_240)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setResolution(
                     raylib::core::Vector2i(1920, 1080));
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1920, 1080)");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 4.f, pos.y + 25.f)
+        .with<game::components::Textual>(
+            localization::resources::settings::rsSettingsFPS, 20, raylib::core::Color::RED)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 6.f, pos.y + 30.f)
+        .with<game::components::Textual>("30", 15, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::FPS_30, game::SettingsMenuScene::SFX_VOLUME_100,
+            game::SettingsMenuScene::FPS_60, game::SettingsMenuScene::RES_1, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                raylib::core::Window::setTargetFPS(30);
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setTargetFramerate(30);
+                Logger::logger.log(Logger::Severity::Debug, "FPS size set to 30");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 11.f, pos.y + 30.f)
+        .with<game::components::Textual>("60", 15, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::FPS_60, game::SettingsMenuScene::FPS_30,
+            game::SettingsMenuScene::FPS_144, game::SettingsMenuScene::RES_1, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                raylib::core::Window::setTargetFPS(60);
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setTargetFramerate(60);
+                Logger::logger.log(Logger::Severity::Debug, "FPS size set to 60");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 16.f, pos.y + 30.f)
+        .with<game::components::Textual>("144", 15, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::FPS_144, game::SettingsMenuScene::FPS_60,
+            game::SettingsMenuScene::FPS_240, game::SettingsMenuScene::RES_2, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                raylib::core::Window::setTargetFPS(144);
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setTargetFramerate(144);
+                Logger::logger.log(Logger::Severity::Debug, "FPS size set to 144");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::RED;
+            })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 21.f, pos.y + 30.f)
+        .with<game::components::Textual>("240", 15, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::FPS_240, game::SettingsMenuScene::FPS_144,
+            game::gui::Widget::NullTag, game::SettingsMenuScene::RES_3, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                raylib::core::Window::setTargetFPS(240);
+                world.getResource<game::resources::EngineResource>().engine->getSettings().setTargetFramerate(240);
+                Logger::logger.log(Logger::Severity::Debug, "FPS size set to 240");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
                 world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -353,7 +435,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_100, game::SettingsMenuScene::SFX_VOLUME_66,
-            game::SettingsMenuScene::RES_1, game::SettingsMenuScene::MUSIC_VOLUME_100,
+            game::SettingsMenuScene::FPS_30, game::SettingsMenuScene::MUSIC_VOLUME_100,
             game::SettingsMenuScene::LANGUAGE_ENGLISH)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
@@ -428,7 +510,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
             localization::resources::keybinds::rsKeyBindLeft, 20, raylib::core::Color::GOLD)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT, game::SettingsMenuScene::LANGUAGE_FRENCH,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::FPS_30,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::FPS_60,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {

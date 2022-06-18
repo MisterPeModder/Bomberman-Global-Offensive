@@ -41,6 +41,8 @@ namespace localization
             constexpr ResourceString rsSettingsGraphics("Graphics");
             constexpr ResourceString rsSettingsFullscreen("Fullscreen");
             constexpr ResourceString rsSettingsResolution("Resolution");
+            constexpr ResourceString rsSettingsFPS("FPS");
+
             constexpr ResourceString rsSettingsLanguage("Language");
 
             constexpr ResourceString rsSettingsAudio("Audio");
