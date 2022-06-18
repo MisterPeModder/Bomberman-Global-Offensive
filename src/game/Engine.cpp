@@ -11,6 +11,7 @@
 #include "raylib/core/Audio.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
+#include "raylib/shaders/Shader.hpp"
 #include "util/util.hpp"
 
 #pragma region Browser Events
@@ -169,8 +170,8 @@ namespace game
 
     void Engine::setColorBlindShader(int mode)
     {
-        setGlobalShader(util::makePath("assets", "shaders", "base_lighting.vs"),
-            util::makePath("assets", "shaders", "colorblind.fs"), [&mode](raylib::shaders::Shader &shader) {
+        setGlobalShader(raylib::shaders::Shader::getPath("base_lighting.vs"),
+            raylib::shaders::Shader::getPath("colorblind.fs"), [&mode](raylib::shaders::Shader &shader) {
                 shader.bindLocations(SHADER_LOC_MATRIX_MODEL, "matModel");
                 shader.setValue("mode", mode);
                 shader.setValue("intensity", 1.f);

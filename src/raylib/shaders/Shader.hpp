@@ -160,6 +160,13 @@ namespace raylib
             /// @param isUniform if the variable is a uniform or attribute variable.
             void bindLocations(Location location, std::string_view name, bool isUniform = true);
 
+            /// Fetches to path of a shader, based on the GLSL version.
+            ///
+            /// @param name The name of the shader.
+
+            /// @returns The shader path.
+            static std::filesystem::path getPath(std::string_view name);
+
             /// Get the raylib shader object.
             ///
             /// @return const ::Shader& shader.

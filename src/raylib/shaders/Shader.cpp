@@ -7,6 +7,7 @@
 
 #include "Shader.hpp"
 #include "raylib/textures/Texture2D.hpp"
+#include "util/util.hpp"
 
 namespace raylib
 {
@@ -126,6 +127,15 @@ namespace raylib
             if (loc == InvalidLocation)
                 return;
             _shader.locs[location] = loc;
+        }
+
+        std::filesystem::path Shader::getPath(std::string_view name)
+        {
+#ifdef PLATFORM_DESKTOP
+            return util::makePath("assets", "shaders", "glsl330", name);
+#else // PLATFORM_RPI, PLATFORM_ANDROID, PLATFORM_WEB
+            return util::makePath("assets", "shaders", "glsl100", name);
+#endif
         }
 
         const ::Shader &Shader::asRaylib() const { return _shader; }
