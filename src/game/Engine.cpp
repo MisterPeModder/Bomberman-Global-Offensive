@@ -92,7 +92,7 @@ namespace game
         // since there is no such thing as a window.
         emscripten_set_main_loop_arg(&Engine_drawFrame, reinterpret_cast<void *>(this), 0, 1);
 #else
-        while (!raylib::core::Window::shouldClose())
+        while (!raylib::core::Window::getShouldClose())
             this->drawFrame();
 #endif // !defined(__EMSCRIPTEN__)}
     }

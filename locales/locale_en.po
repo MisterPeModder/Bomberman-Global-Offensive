@@ -45,3 +45,12 @@ msgstr ""
 
 msgid "Bomberman: Global Offensive"
 msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Quit"
+msgstr ""

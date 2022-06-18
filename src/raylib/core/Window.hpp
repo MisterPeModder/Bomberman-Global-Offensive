@@ -42,7 +42,12 @@ namespace raylib
             ///
             /// @retval true if the window should close
             /// @retval false if the window should not close
-            static bool shouldClose();
+            static bool getShouldClose();
+
+            /// Sets if the window should close or not
+            ///
+            /// @param shouldClose set to true if the window should close
+            static void setShouldClose();
 
             /// Set the max FPS the game should run at
             ///
@@ -77,6 +82,9 @@ namespace raylib
             static bool isFullscreen();
 
             static void setIcon(textures::Image const &icon);
+
+          private:
+            static bool _shouldClose;
         };
     } // namespace core
 } // namespace raylib
