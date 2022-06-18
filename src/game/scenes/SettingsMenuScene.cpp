@@ -369,23 +369,23 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 #pragma endregion
 }
 
-static void loadKeybindSettings(ecs::World &world)
+static void loadKeybindSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
 {
     world.addEntity()
         .with<game::components::Rectangle>()
-        .with<game::components::Position>(67.f, 10.f)
-        .with<game::components::Size>(32.f, 32.f)
+        .with<game::components::Position>(pos.x, pos.y)
+        .with<game::components::Size>(size.x, size.y)
         .with<game::components::Color>(raylib::core::Color::GREEN)
         .build();
     world.addEntity()
         .with<game::components::Rectangle>()
-        .with<game::components::Position>(68.f, 11.f)
-        .with<game::components::Size>(30.f, 30.f)
+        .with<game::components::Position>(pos.x + 1, pos.y + 1)
+        .with<game::components::Size>(size.x - 2, size.y - 2)
         .with<game::components::Color>(raylib::core::Color::BLACK)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(69.f, 12.f)
+        .with<game::components::Position>(pos.x + 2, pos.y + 2)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsKeybinds, 40, raylib::core::Color::GREEN)
         .build();
@@ -414,7 +414,7 @@ static void loadSettingsMenuScene(ecs::World &world)
 
     loadGraphicSettings(world);
     loadAudioSettings(world, raylib::core::Vector2f(1, 10), raylib::core::Vector2f(32, 40));
-    loadKeybindSettings(world);
+    loadKeybindSettings(world, raylib::core::Vector2f(67, 10), raylib::core::Vector2f(32, 88));
 
     world.addEntity()
         .with<game::components::Position>(40.f, 2.f)
