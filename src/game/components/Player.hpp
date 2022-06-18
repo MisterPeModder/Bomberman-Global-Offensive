@@ -148,10 +148,13 @@ namespace game::components
         ///
         /// @param self player entity
         /// @param data world data
-        /// @param bombType bomb type.
-        /// @return true If the action was consumed.
-        /// @return false If the action wasn't consumed.
-        static void placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType = Bomb::Type::Classic);
+        static void placeBomb(ecs::Entity self, ecs::SystemData data);
+
+        /// Place a mine at the player position.
+        ///
+        /// @param self player entity
+        /// @param data world data
+        static void placeLandMine(ecs::Entity self, ecs::SystemData data);
 
       private:
         /// Change the velocity of the player from its action values.

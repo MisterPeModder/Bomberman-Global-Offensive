@@ -12,6 +12,8 @@
 #include "Camera2D.hpp"
 #include "Camera3D.hpp"
 #include "Window.hpp"
+#include "raylib/shaders/Shader.hpp"
+#include "raylib/textures/RenderTexture2D.hpp"
 
 /// Raylib namespace
 namespace raylib
@@ -64,6 +66,32 @@ namespace raylib
 
                 /// End the audio device.
                 inline ~AudioDevice() { Audio::closeDevice(); }
+            };
+
+            /// Setup/End shader mode
+            class Shader {
+              public:
+                /// Begin the shader mode.
+                inline Shader(const raylib::shaders::Shader &shader)
+                {
+                    raylib::shaders::Shader::beginShaderMode(shader);
+                }
+
+                /// End the shader mode.
+                inline ~Shader() { raylib::shaders::Shader::endShaderMode(); }
+            };
+
+            /// Setup/End RenderTexture drawing
+            class RenderTexture {
+              public:
+                /// Begin the RenderTexture drawing.
+                inline RenderTexture(const raylib::textures::RenderTexture2D &texture)
+                {
+                    raylib::textures::RenderTexture2D::beginTextureMode(texture);
+                }
+
+                /// End the RenderTexture drawing.
+                inline ~RenderTexture() { raylib::textures::RenderTexture2D::endTextureMode(); }
             };
         } // namespace scoped
 

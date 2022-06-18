@@ -22,7 +22,7 @@ namespace game::components
         stunGrenade.maxStack = 0;
         stunGrenade.name = "Stun Grenade";
         stunGrenade.duration = std::chrono::milliseconds(4000);
-        stunGrenade.dropRate = 50;
+        stunGrenade.dropRate = 15;
         stunGrenade.onApply = [](ecs::Entity placer, ecs::SystemData data) {
             auto &players = data.getStorage<Player>();
 

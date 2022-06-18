@@ -23,7 +23,8 @@ namespace game
     void AScene::drawFrame()
     {
         _world.runSystems(_globalNoDraw);
-        raylib::core::scoped::Drawing drawing;
+        raylib::core::scoped::RenderTexture textureMode(
+            _world.getResource<game::resources::EngineResource>().engine->getRenderTarget());
         raylib::core::Window::clear();
         {
             raylib::core::scoped::Mode3D mode3D(_defaultCamera3D);
