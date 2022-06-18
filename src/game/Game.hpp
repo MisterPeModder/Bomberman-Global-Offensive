@@ -13,6 +13,7 @@
 #include "ecs/World.hpp"
 #include "map/Map.hpp"
 #include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Camera2D.hpp"
 #include "raylib/core/Vector2.hpp"
 #include "raylib/core/Vector3.hpp"
 
@@ -88,15 +89,18 @@ namespace game
         void _loadTextures();
         void _loadMeshes();
         void _loadModels();
+        void _loadHud();
 
         ecs::SystemTag _drawing;
         ecs::SystemTag _handleInputs;
         ecs::SystemTag _update;
         ecs::SystemTag _resolveCollisions;
+        ecs::SystemTag _hud;
         ecs::World &_world;
         map::Map _map;
         Parameters _params;
         raylib::core::Camera3D _camera;
+        raylib::core::Camera2D _camera2d;
     };
 } // namespace game
 

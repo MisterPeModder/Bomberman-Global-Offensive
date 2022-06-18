@@ -20,19 +20,23 @@
 #include "components/Model.hpp"
 #include "components/Player.hpp"
 #include "components/Position.hpp"
+#include "components/Rectangle.hpp"
 #include "components/RotationAngle.hpp"
 #include "components/RotationAxis.hpp"
 #include "components/Scale.hpp"
 #include "components/Size.hpp"
+#include "components/Texture2D.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
 
 #include "ecs/Storage.hpp"
+#include "ecs/System.hpp"
 #include "ecs/resource/Timer.hpp"
 
 #include "gui/components/Widget.hpp"
 #include "logger/Logger.hpp"
 
+#include "raylib/core/Camera2D.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Vector2.hpp"
 #include "raylib/core/Vector3.hpp"
@@ -47,16 +51,21 @@
 
 #include "systems/Bomb.hpp"
 #include "systems/Collision.hpp"
+#include "systems/DrawTexture.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
+#include "systems/Rectangle.hpp"
 
 #include "game/Engine.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
+#include "util/util.hpp"
+
 #include <cmath>
+#include <filesystem>
 
 namespace game
 {
@@ -105,6 +114,8 @@ namespace game
         textures.emplace("control_down", "assets/items/power_downs/bonus_down_control.png");
         /// Weapons
         textures.emplace("C4", "assets/items/weapons/C4_Texture.png");
+        /// Hud
+        textures.emplace("test_icone", "assets/icon.png");
     }
 
     void Game::_loadMeshes()
@@ -192,6 +203,7 @@ namespace game
         _world.addStorage<components::Model>();
         _world.addStorage<components::CubeColor>();
         _world.addStorage<components::Cube>();
+        _world.addStorage<components::Rectangle>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::InputManager>();
@@ -201,16 +213,20 @@ namespace game
         _world.addSystem<systems::PickupItem>();
         _world.addSystem<systems::DisableBombNoClip>();
         _world.addSystem<systems::UpdateItemTimer>();
+        _world.addSystem<systems::DrawRectangle>();
+
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
             systems::UpdateItemTimer>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel>();
+        _hud.add<systems::DrawTexture, systems::DrawRectangle>();
 
         _loadTextures();
         _loadMeshes();
         _loadModels();
+        //_loadHud();
 
         /// Player
 
@@ -287,6 +303,33 @@ namespace game
         }
     }
 
+    void Game::_loadHud()
+    {
+        auto &textures = _world.getResource<resources::Textures>();
+        const std::filesystem::path logoPath = util::makePath("assets", "icon.png");
+
+        _world.addEntity()
+            .with<game::components::Position>(80, 40)
+            .with<game::components::Texture2D>(textures.get("test_icone"))
+            .with<game::components::Color>(raylib::core::Color::PURPLE)
+            .build();
+        _world.addEntity()
+            .with<game::components::Position>(80, 40)
+            .with<game::components::Texture2D>(textures.get("test_icone"))
+            .with<game::components::Color>(raylib::core::Color::PURPLE)
+            .build();
+        _world.addEntity()
+            .with<game::components::Position>(80, 40)
+            .with<game::components::Texture2D>(textures.get("test_icone"))
+            .with<game::components::Color>(raylib::core::Color::PURPLE)
+            .build();
+        _world.addEntity()
+            .with<game::components::Position>(80, 40)
+            .with<game::components::Texture2D>(textures.get("test_icone"))
+            .with<game::components::Color>(raylib::core::Color::PURPLE)
+            .build();
+    }
+
     void Game::drawFrame()
     {
         _camera.update();
@@ -294,11 +337,16 @@ namespace game
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);
+        _world.runSystems(_hud);
 
         raylib::core::scoped::Drawing drawing;
         raylib::core::Window::clear();
         {
             raylib::core::scoped::Mode3D mode3D(_camera);
+            _world.runSystems(_drawing);
+        };
+        {
+            raylib::core::scoped::Mode2D mode2d(_camera2d);
             _world.runSystems(_drawing);
         };
         _world.maintain();
