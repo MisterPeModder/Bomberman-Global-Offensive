@@ -25,11 +25,12 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
+msgid "Settings"
+msgstr ""
+
 msgid "Play"
 msgstr ""
 
 msgid "Quit"
 msgstr ""
 
-msgid "Settings"
-msgstr ""

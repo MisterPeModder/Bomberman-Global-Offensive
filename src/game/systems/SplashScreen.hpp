@@ -20,7 +20,7 @@
 #include "raylib/core/Color.hpp"
 
 #include "game/Engine.hpp"
-#include "game/scenes/SettingsMenuScene.hpp"
+#include "game/scenes/MainMenuScene.hpp"
 
 #include "game/resources/Engine.hpp"
 
@@ -84,7 +84,7 @@ namespace game::systems
             int colorMoveValue = 5;
 
             if (timer.elapsed() >= 6)
-                data.getResource<resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+                data.getResource<resources::EngineResource>().engine->setScene<game::MainMenuScene>();
             for (auto [color] : ecs::join(data.getStorage<components::Color>())) {
                 if (_screenId == 0) {
                     if (timer.elapsed() < 1.5) {
