@@ -18,7 +18,7 @@ namespace game
       public:
         enum WIDGET_ID {
             PLAY,
-            OPTION,
+            SETTINGS,
             LOGOUT,
             JOIN_SLOT_ONE,
             JOIN_SLOT_TWO,

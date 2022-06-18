@@ -25,14 +25,14 @@ msgstr "Volume"
 msgid "Back"
 msgstr "Retour"
 
-msgid "Option"
-msgstr "Option"
+msgid "Settings"
+msgstr "Options"
 
 msgid "Play"
 msgstr "Jouer"
 
 msgid "Quit"
-msgstr "Quitté"
+msgstr "Quitter"
 
 msgid "Not connected"
 msgstr "Pas connecté"

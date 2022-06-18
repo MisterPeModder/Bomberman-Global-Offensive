@@ -25,7 +25,7 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
-msgid "Option"
+msgid "Settings"
 msgstr ""
 
 msgid "Play"
