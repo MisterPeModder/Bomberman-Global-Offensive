@@ -59,9 +59,19 @@ namespace game
         /// @return ActionEvent next action event. action is set to None if there is no more actions.
         ActionEvent getNextAction();
 
-      private:
-        ActionEvent getGamepadJoin();
+        bool isGamepadUsed(int gamepadId) const;
 
+        /// Find the first available gamepad which has @ref getButtonPressed() button down and is not used by any
+        /// user.
+        ///
+        /// @return int gamepad id, -1 if no joining gamepad at the moment.
+        int getJoiningGamepad() const;
+
+        unsigned int getAvailableUsers() const;
+
+        void addUser(int gamepadId);
+
+      private:
         std::array<User, static_cast<size_t>(User::UserId::UserCount)> _users;
     };
 } // namespace game

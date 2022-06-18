@@ -58,6 +58,25 @@
 #include "game/Engine.hpp"
 #include "raylib/core/Window.hpp"
 
+struct DetectGamepad : public ecs::System {
+    void run(ecs::SystemData data) override final
+    {
+        auto &users = data.getResource<game::resources::EngineResource>().engine->getUsers();
+
+        int gamepadId = users.getJoiningGamepad();
+        if (gamepadId == -1)
+            return;
+        raylib::core::Gamepad::Button pressedBtn = raylib::core::Gamepad::getButtonPressed();
+
+        if (pressedBtn != raylib::core::Gamepad::Button::MIDDLE_RIGHT
+            && users[game::User::UserId::User1].isKeyboard()) {
+            users[game::User::UserId::User1].setGamepadId(gamepadId);
+            std::cout << "User1 set to gamepad" << std::endl;
+        } else
+            users.addUser(gamepadId);
+    }
+};
+
 static void loadMainMenuScene(ecs::World &world)
 {
     static const std::filesystem::path logoPath = util::makePath("assets", "icon.png");
@@ -210,11 +229,12 @@ namespace game
         _world.addSystem<game::systems::DrawText>();
         _world.addSystem<game::systems::DrawSelectedWidget>();
         _world.addSystem<game::systems::DrawRectangle>();
+        _world.addSystem<DetectGamepad>();
 
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::DrawTexture>();
 
-        _globalNoDraw.add<game::systems::InputManager>();
+        _globalNoDraw.add<game::systems::InputManager, DetectGamepad>();
         _global2D.add<game::systems::DrawTexture>();
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::DrawSelectedWidget>();

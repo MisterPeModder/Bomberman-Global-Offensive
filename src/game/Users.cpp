@@ -7,6 +7,7 @@
 
 #include "Users.hpp"
 
+#include <iostream>
 namespace game
 {
     Users::Users()
@@ -28,29 +29,53 @@ namespace game
             if (action != GameAction::NONE)
                 return ActionEvent{static_cast<User::UserId>(i), action, _users[i].getActionValue(action)};
         }
-        return getGamepadJoin();
+        return {User::UserId::UserCount, GameAction::NONE, 0};
     }
 
-    Users::ActionEvent Users::getGamepadJoin()
+    bool Users::isGamepadUsed(int gamepadId) const
     {
-        size_t usersCount = static_cast<size_t>(User::UserId::UserCount);
+        auto gamepad = raylib::core::Gamepad(gamepadId);
 
-        for (size_t i = 0; i < usersCount; i++) {
-            auto gamepad = raylib::core::Gamepad(i);
-            if (!gamepad.isAvailable())
-                continue;
-            bool unbindGamepad = true;
-            for (size_t j = 0; j < usersCount; j++) {
-                if (_users[j].isAvailable() && static_cast<size_t>(_users[j].getGamepadId()) == i) {
-                    unbindGamepad = false;
-                    break;
-                }
-            }
-            if (!unbindGamepad)
-                continue;
-            if (gamepad.isButtonReleased(raylib::core::Gamepad::Button::FACE_DOWN))
-                return {static_cast<User::UserId>(i), GameAction::JOIN, 1};
+        if (!gamepad.isAvailable())
+            return false;
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            if (_users[i].isAvailable() && static_cast<size_t>(_users[i].getGamepadId()) == gamepadId)
+                return true;
+        return false;
+    }
+
+    int Users::getJoiningGamepad() const
+    {
+        raylib::core::Gamepad::Button btn = raylib::core::Gamepad::getButtonPressed();
+
+        if (static_cast<int>(btn) == -1)
+            return -1;
+        for (int id = 0; id < 4; id++) {
+            auto gamepad = raylib::core::Gamepad(id);
+
+            if (gamepad.isAvailable() && !isGamepadUsed(id) && gamepad.isButtonDown(btn))
+                return id;
         }
-        return {User::UserId::UserCount, GameAction::NONE, 0};
+        return -1;
+    }
+
+    unsigned int Users::getAvailableUsers() const
+    {
+        unsigned int count = 0;
+
+        for (size_t i = 0; i < 4; i++)
+            count += _users[i].isAvailable();
+        return count;
+    }
+
+    void Users::addUser(int gamepadId)
+    {
+        unsigned int nbUsers = getAvailableUsers();
+
+        if (nbUsers >= 4)
+            return;
+        _users[nbUsers].setAvailable();
+        _users[nbUsers].setGamepadId(gamepadId);
+        std::cout << "User " << nbUsers << " connected on gamepad " << gamepadId << std::endl;
     }
 } // namespace game
