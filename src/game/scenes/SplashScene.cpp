@@ -7,7 +7,7 @@
 
 #include "game/scenes/SplashScene.hpp"
 #include "game/Engine.hpp"
-#include "game/scenes/SettingsMenuScene.hpp"
+#include "game/scenes/MainMenuScene.hpp"
 
 #include "logger/Logger.hpp"
 #include "util/util.hpp"
@@ -61,7 +61,7 @@ static void loadSplashScene(ecs::World &world)
         .with<game::gui::Widget>(0, game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::gui::Widget::NullTag, true)
         .with<game::gui::Clickable>([&world](ecs::Entity) {
-            world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
+            world.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
             Logger::logger.log(Logger::Severity::Debug, "Skip splash screen");
             raylib::core::Sound::stopAllMulti();
         })
