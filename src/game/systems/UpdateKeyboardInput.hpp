@@ -15,7 +15,7 @@ namespace game::systems
     /// Updates the first selected keyboard input field found.
     ///
     /// Required resources: ecs::Timer
-    /// Required storages: game::KeyboardInput
+    /// Required storages: game::components::KeyboardInput
     struct UpdateKeyboardInput : public ecs::System {
         void run(ecs::SystemData data) override final;
     };

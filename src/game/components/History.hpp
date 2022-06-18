@@ -42,8 +42,8 @@ namespace game::components
         /// Move one entry down.
         void moveDown();
 
-        /// Loads the selected entry into @b dst.
-        void load(std::string &dst);
+        /// @returns The selected entry.
+        std::string const &get() const noexcept;
     };
 } // namespace game::components
 

@@ -19,11 +19,7 @@
 
 #include "util/util.hpp"
 
-#include <algorithm>
 #include <cmath>
-#include <functional>
-#include <string>
-#include <string_view>
 
 namespace game::systems
 {
@@ -32,7 +28,7 @@ namespace game::systems
     void UpdateKeyboardInput::run(ecs::SystemData data)
     {
         auto &entities = data.getResource<ecs::Entities>();
-        auto &inputs = data.getStorage<game::KeyboardInput>();
+        auto &inputs = data.getStorage<game::components::KeyboardInput>();
         auto histories = ecs::maybe(data.getStorage<game::components::History>());
 
         auto iter = ecs::join(entities, inputs, histories);
@@ -50,57 +46,35 @@ namespace game::systems
 
         while ((key = Keyboard::getKeyPressed()) != Keyboard::Key::NONE) {
             if (Keyboard::isKeyDown(Keyboard::Key::LEFT_CONTROL)) {
-                if (key == Keyboard::Key::A) {
-                    // CTRL-A: Select All
-
-                    field.cursorPos = 0;
-                    field.selectionPos = field.contents.size();
-                } else if ((key == Keyboard::Key::C || key == Keyboard::Key::X) && field.hasSelection()) {
-                    // CTRL-C/X: Copy selection to clipboard
-
-                    auto [selectStart, selectEnd] = std::minmax(field.selectionPos, field.cursorPos);
-                    std::string copied(field.contents.cbegin() + selectStart, field.contents.cbegin() + selectEnd);
-
-                    raylib::core::Window::setClipboard(copied);
-                    if (key == Keyboard::Key::C)
-                        field.moveCursor(0, false);
-                    else
-                        field.eraseSelection();
-                } else if (key == Keyboard::Key::V) {
-                    // CTRL+V: Paste from clipboard
-
-                    std::string_view pasted = raylib::core::Window::getClipboard();
-
-                    if (field.hasSelection())
-                        field.eraseSelection();
-                    field.contents.insert(field.cursorPos, pasted);
-                    field.moveCursor(pasted.size());
-                } else if (key == Keyboard::Key::D) {
-                    // CTRL+D: Close console
-
-                    field.focused = false;
+                switch (key) {
+                    case Keyboard::Key::A: field.selectAll(); break;
+                    case Keyboard::Key::C: field.copyToClipboard(false); break;
+                    case Keyboard::Key::X: field.copyToClipboard(true); break;
+                    case Keyboard::Key::V: field.pasteFromClipboard(); break;
+                    case Keyboard::Key::D: field.focused = false; break;
+                    default: break;
                 }
             } else if (key == Keyboard::Key::HOME) {
                 // HOME (begin): move to the start of the contents
 
-                field.moveCursor(
-                    -static_cast<int>(field.contents.size()), Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                field.setCursorPos({0, 0}, game::components::KeyboardInput::selectKeyDown());
             } else if (key == Keyboard::Key::END) {
                 // END: move to the end of the contents
 
-                field.moveCursor(field.contents.size(), Keyboard::isKeyDown(Keyboard::Key::LEFT_SHIFT));
+                field.setCursorPos({UINT_MAX, UINT_MAX}, game::components::KeyboardInput::selectKeyDown());
             } else if (key == Keyboard::Key::ENTER || key == Keyboard::Key::KP_ENTER) {
-                // ENTER: submit input
+                // ENTER: Submit input
+                // SHIFT+ENTER: New line
 
-                if (!field.contents.empty() && field.onSubmit(self, data, field.contents)) {
-                    if (history != nullptr)
-                        history->push(field.contents);
-                    field.clear();
-                }
+                if (game::components::KeyboardInput::selectKeyDown())
+                    field.insertLine();
+                else
+                    field.submit(self, data, history);
             }
         }
         while ((codepoint = Keyboard::getCharPressed())) {
-            field.moveCursor(util::insertUtf8Codepoint(field.contents, codepoint, field.cursorPos));
+            field.moveCursor(
+                util::insertUtf8Codepoint(field.contents[field.cursorPos.y], codepoint, field.cursorPos.x));
         }
 
         double elapsed = data.getResource<ecs::Timer>().elapsed();

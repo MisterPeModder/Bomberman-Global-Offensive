@@ -12,17 +12,24 @@
 
 #include "raylib/core/Color.hpp"
 #include "raylib/core/Keyboard.hpp"
+#include "raylib/core/Vector2.hpp"
 
 #include "ecs/Entity.hpp"
 #include "ecs/system/SystemData.hpp"
 
 #include <array>
 #include <functional>
+#include <string>
+#include <utility>
+#include <vector>
 
-namespace game
+namespace game::components
 {
+    class History;
+
     /// Keyboard-only input field
-    struct KeyboardInput : public ecs::Component {
+    class KeyboardInput : public ecs::Component {
+      public:
         /// How the cursor should be drawn.
         enum class CursorType {
             NONE,
@@ -69,9 +76,10 @@ namespace game
 
         onSubmitCallback onSubmit;
 
-        std::string contents;
-        std::size_t cursorPos;
-        std::size_t selectionPos;
+        std::vector<std::string> contents;
+
+        raylib::core::Vector2u cursorPos;
+        raylib::core::Vector2u selectionPos;
 
         /// Whether keyboard input should be captured.
         bool focused;
@@ -83,17 +91,30 @@ namespace game
 
         KeyboardInput(onSubmitCallback submitCallback);
 
+        /// @returns A pair of vectors corresponding to the start and the end of the selection, respectively.
+        std::pair<raylib::core::Vector2u, raylib::core::Vector2u> getSelection() const noexcept;
+
         /// Moves the cursor backwards or forwards of @b offset codepoints.
+        ///
+        /// @param selectingText Whether the user is in selection mode.
         void moveCursor(int offset, bool selectingText = false);
 
         /// Moves the cursor one word backwards or forwards.
+        ///
+        /// @param selectingText Whether the user is in selection mode.
         void moveCursorToWord(int wordOffset, bool selectingText = false);
+
+        /// Sets the cursor at a specific position.
+        ///
+        /// @param pos The new cursor position, it will be adjusted for UTF-8 borders
+        /// @param selectingText Whether the user is in selection mode.
+        void setCursorPos(raylib::core::Vector2u pos, bool selectingText = false) noexcept;
 
         /// @returns The current cursor type.
         CursorType getCursorType();
 
         /// @returns Whether the input has selected text.
-        bool hasSelection() noexcept;
+        bool hasSelection() const noexcept;
 
         /// Deletes the selected text and resets the selection.
         void eraseSelection();
@@ -107,7 +128,50 @@ namespace game
         /// @param data System data.
         /// @param elapsed The number of seconds since the last call to KeyboardInput::checkKeyRepeats().
         void checkKeyRepeats(ecs::Entity id, ecs::SystemData data, double elapsed);
+
+        /// Merges all the content lines into a single string seperated by '\n'
+        ///
+        /// @returns The merged contents.
+        std::string mergeContents() const;
+
+        /// Loads a newline-seprated string into the content.
+        ///
+        /// @param merged A merged string.
+        void unmergeContents(std::string_view merged);
+
+        /// Selects all the content.
+        void selectAll();
+
+        /// Copies the current selection to the system clipboard.
+        ///
+        /// @param doCut Whether to erase the selection after copying.
+        void copyToClipboard(bool doCut);
+
+        /// Paste the contents of the system clipboard at the current cursor position.
+        void pasteFromClipboard();
+
+        /// Inserts a new line at the cursor's position.
+        void insertLine();
+
+        /// Process the contents
+        void submit(ecs::Entity self, ecs::SystemData data, game::components::History *history);
+
+        /// @returns Whether the left or left shift keys are pressed.
+        static bool selectKeyDown();
+
+      private:
+        /// Deletes the character to the left of the cursor.
+        void deleteBackwards();
+
+        /// Deletes the character to the right of the cursor.
+        void deleteForwards();
+
+        /// Loads the previous histrory entry.
+        void prevHistory(History &History);
+
+        /// Loads the next histrory entry.
+        void nextHistory(History &History);
     };
-} // namespace game
+} // namespace game::components
 
 #endif // !defined(GAME_COMPONENTS_INPUT_FIELD_HPP_)

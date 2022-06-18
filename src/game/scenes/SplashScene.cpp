@@ -68,7 +68,7 @@ namespace game
         _world.addResource<game::Users>();
 
         _world.addStorage<game::components::Textual>();
-        _world.addStorage<game::KeyboardInput>();
+        _world.addStorage<game::components::KeyboardInput>();
 
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::SplashScreen>();

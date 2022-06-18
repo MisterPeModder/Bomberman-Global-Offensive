@@ -114,7 +114,7 @@ static void addTestWidgets(ecs::World &world)
 
 static void loadTestScene(ecs::World &world)
 {
-    world.addStorage<game::KeyboardInput>();
+    world.addStorage<game::components::KeyboardInput>();
 
     world.addSystem<game::systems::DrawCube>();
     world.addEntity()

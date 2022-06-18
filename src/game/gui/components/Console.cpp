@@ -23,7 +23,7 @@
 namespace game::gui
 {
     Console::Console()
-        : font(util::makePath("assets", "fonts", "Inconsolata-Medium.ttf"), 20, nullptr, 65535),
+        : font(util::makePath("assets", "fonts", "Inconsolata-Medium.ttf"), FONT_HEIGHT, nullptr, 65535),
           logger(std::cout, "console"), output(), outputSeverity(Logger::Severity::Information)
     {
     }
@@ -56,7 +56,7 @@ namespace game::gui
     bool Console::handleInput(ecs::Entity self, ecs::SystemData data, game::Users::ActionEvent const &event)
     {
         if (event.action == GameAction::TOGGLE_CONSOLE && event.value > 0.f) {
-            game::KeyboardInput &input = data.getStorage<game::KeyboardInput>()[self.getId()];
+            game::components::KeyboardInput &input = data.getStorage<game::components::KeyboardInput>()[self.getId()];
             input.focused = !input.focused;
             return true;
         }

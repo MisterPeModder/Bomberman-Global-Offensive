@@ -27,6 +27,9 @@ namespace game
 namespace game::gui
 {
     struct Console : public ecs::Component {
+        /// The console's font height.
+        static constexpr int FONT_HEIGHT = 20;
+
         raylib::text::Font font;
 
         Logger logger;

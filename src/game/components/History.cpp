@@ -32,11 +32,11 @@ namespace game::components
             --this->pos;
     }
 
-    void History::load(std::string &dst)
+    std::string const &History::get() const noexcept
     {
-        if (this->pos == 0)
-            dst = this->savedCurrentEntry;
+        if (this->pos == 0 || this->pos > this->history.size())
+            return this->savedCurrentEntry;
         else
-            dst = this->history[this->pos - 1];
+            return this->history[this->pos - 1];
     }
 } // namespace game::components

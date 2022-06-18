@@ -304,7 +304,7 @@ static void loadKeybindSettings(ecs::World &world)
 
 static void loadSettingsMenuScene(ecs::World &world)
 {
-    world.addStorage<game::KeyboardInput>();
+    world.addStorage<game::components::KeyboardInput>();
     world.addStorage<game::gui::Checkable>();
 
     world.addEntity()

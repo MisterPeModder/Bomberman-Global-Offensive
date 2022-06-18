@@ -193,7 +193,7 @@ namespace game
             .with<game::components::History>()
             .with<game::components::Position>(0.f, 50.f, 0.f)
             .with<game::components::Size2D>(720, 20)
-            .with<game::KeyboardInput>(&game::gui::Console::runCommand)
+            .with<game::components::KeyboardInput>(&game::gui::Console::runCommand)
             .with<game::components::Controlable>(game::User::UserId::User1, &game::gui::Console::handleInput)
             .build();
 
@@ -209,7 +209,7 @@ namespace game
         _world.addStorage<components::Bomb>();
         _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
-        _world.addStorage<game::KeyboardInput>();
+        _world.addStorage<components::KeyboardInput>();
         _world.addStorage<components::RotationAngle>();
         _world.addStorage<components::RotationAxis>();
         _world.addStorage<components::Model>();
