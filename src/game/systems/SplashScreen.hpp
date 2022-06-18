@@ -37,7 +37,7 @@
 
 #include "game/systems/InputManager.hpp"
 
-static void buildRaylibSplash(ecs::SystemData &data)
+static void buildStudioSplash(ecs::SystemData &data)
 {
     static const std::filesystem::path studioLogoPath = util::makePath("assets", "studio_logo.png");
     float scale = 1.f;
@@ -56,8 +56,9 @@ static void buildRaylibSplash(ecs::SystemData &data)
         .with<game::components::ScreenId>(data.getStorage<game::components::ScreenId>(), 1)
         .with<game::components::Texture2D>(data.getStorage<game::components::Texture2D>(), studioLogoPath)
         .with<game::components::Position>(data.getStorage<game::components::Position>(),
-            (raylib::core::Window::getWidth() / 2) - ((400.f * scale) / 2),
-            (raylib::core::Window::getHeight() / 2) - ((200.f * scale) / 2))
+            ((raylib::core::Window::getWidth() / 2) - ((400.f * scale) / 2)) / (raylib::core::Window::getWidth() / 100),
+            ((raylib::core::Window::getHeight() / 2) - ((200.f * scale) / 2))
+                / (raylib::core::Window::getHeight() / 100))
         .with<game::components::Scale>(data.getStorage<game::components::Scale>(), scale)
         .with<game::components::RotationAngle>(data.getStorage<game::components::RotationAngle>(), 0.f)
         .with<game::components::Color>(
@@ -124,7 +125,7 @@ namespace game::systems
                 if (screenId.screenId < _screenId)
                     entities.kill(entityId);
                 if (timer.elapsed() >= 3 && _screenId == 0) {
-                    buildRaylibSplash(data);
+                    buildStudioSplash(data);
                     _screenId = 1;
                 }
             }
