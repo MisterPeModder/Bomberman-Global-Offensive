@@ -129,6 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f623f6cc59369aa80e541cc3b0cde3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classraylib_1_1model_1_1_animation.html">Animation</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_animation.html#a8f623f6cc59369aa80e541cc3b0cde3f">operator=</a> (const <a class="el" href="classraylib_1_1model_1_1_animation.html">Animation</a> &amp;other)</td></tr>
 <tr class="memdesc:a8f623f6cc59369aa80e541cc3b0cde3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy operator.  <a href="classraylib_1_1model_1_1_animation.html#a8f623f6cc59369aa80e541cc3b0cde3f">More...</a><br /></td></tr>
 <tr class="separator:a8f623f6cc59369aa80e541cc3b0cde3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59890df975f849a920deb03561c0dbcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_animation.html#a59890df975f849a920deb03561c0dbcf">chooseAnimation</a> (unsigned int animationId)</td></tr>
+<tr class="memdesc:a59890df975f849a920deb03561c0dbcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choose the animation to play.  <a href="classraylib_1_1model_1_1_animation.html#a59890df975f849a920deb03561c0dbcf">More...</a><br /></td></tr>
+<tr class="separator:a59890df975f849a920deb03561c0dbcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fd383b3c2df603ae1c12c5378fc09f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_animation.html#a7fd383b3c2df603ae1c12c5378fc09f8">updateModel</a> (<a class="el" href="classraylib_1_1model_1_1_model.html">Model</a> &amp;model)</td></tr>
 <tr class="memdesc:a7fd383b3c2df603ae1c12c5378fc09f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a model with this animation.  <a href="classraylib_1_1model_1_1_animation.html#a7fd383b3c2df603ae1c12c5378fc09f8">More...</a><br /></td></tr>
 <tr class="separator:a7fd383b3c2df603ae1c12c5378fc09f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,6 +146,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:af4bb09fb8eb724b3c0327ea79cc90b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cb4533429f46b7a8451f5a326d0a89c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a></td></tr>
 <tr class="separator:a1cb4533429f46b7a8451f5a326d0a89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef0bc8d6db6c27b2a22fe1494e92db89"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_animation.html#aef0bc8d6db6c27b2a22fe1494e92db89">_animNumber</a></td></tr>
+<tr class="separator:aef0bc8d6db6c27b2a22fe1494e92db89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classraylib_1_1model_1_1_animation.html" title="The Animation class.">Animation</a> class. </p>
@@ -175,10 +180,10 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00014">14</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                              : <a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a>(animPath), <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>(0)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a> = LoadModelAnimations(animPath.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">generic_string</a>().c_str(), &amp;<a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            : <a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a>(animPath), <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>(0), <a class="code" href="classraylib_1_1model_1_1_animation.html#aef0bc8d6db6c27b2a22fe1494e92db89">_animNumber</a>(0)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a> = LoadModelAnimations(animPath.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">generic_string</a>().c_str(), &amp;<a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -199,11 +204,11 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="classraylib_1_1model_1_1_animation.html" title="The Animation class.">Animation</a> destructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00019">19</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                UnloadModelAnimations(<a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>, <a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00020">20</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>)</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                UnloadModelAnimations(<a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>, <a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -225,15 +230,49 @@ Private Attributes</h2></td></tr>
 
 <p>Copy constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00025">25</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            : <a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a>(other._animationPath), <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>(other._animFrameCounter)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a> = LoadModelAnimations(<a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">generic_string</a>().c_str(), &amp;<a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00026">26</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            : <a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a>(other._animationPath), <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>(other._animFrameCounter)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a> = LoadModelAnimations(<a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">generic_string</a>().c_str(), &amp;<a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a59890df975f849a920deb03561c0dbcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59890df975f849a920deb03561c0dbcf">&#9670;&nbsp;</a></span>chooseAnimation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void raylib::model::Animation::chooseAnimation </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>animationId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Choose the animation to play. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">animationId</td><td>The id of the animation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00041">41</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (animationId &gt; <a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">throw</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a>(<span class="stringliteral">&quot;Try to use a non-existent animation.&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#aef0bc8d6db6c27b2a22fe1494e92db89">_animNumber</a> = animationId;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a8f623f6cc59369aa80e541cc3b0cde3f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f623f6cc59369aa80e541cc3b0cde3f">&#9670;&nbsp;</a></span>operator=()</h2>
 
@@ -252,14 +291,14 @@ Private Attributes</h2></td></tr>
 
 <p>Copy operator. </p>
 
-<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00031">31</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> = other._animFrameCounter;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a> = other._animationPath;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a> = LoadModelAnimations(<a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">generic_string</a>().c_str(), &amp;<a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00032">32</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> = other._animFrameCounter;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a> = other._animationPath;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a> = LoadModelAnimations(<a class="code" href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">_animationPath</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">generic_string</a>().c_str(), &amp;<a class="code" href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">_animsCount</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -287,15 +326,15 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00040">40</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>++;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            UpdateModelAnimation(model.asRaylib(), <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>[0], <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> &gt;= <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>[0].frameCount)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> = 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_animation_8cpp_source.html#l00049">49</a> of file <a class="el" href="_animation_8cpp_source.html">Animation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>++;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            UpdateModelAnimation(model.asRaylib(), <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>[<a class="code" href="classraylib_1_1model_1_1_animation.html#aef0bc8d6db6c27b2a22fe1494e92db89">_animNumber</a>], <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> &gt;= <a class="code" href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">_animations</a>[<a class="code" href="classraylib_1_1model_1_1_animation.html#aef0bc8d6db6c27b2a22fe1494e92db89">_animNumber</a>].frameCount)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">_animFrameCounter</a> = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -320,7 +359,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00048">48</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00053">53</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
 
 </div>
 </div>
@@ -344,7 +383,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00049">49</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00054">54</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
 
 </div>
 </div>
@@ -368,7 +407,31 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00051">51</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00056">56</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
+
+</div>
+</div>
+<a id="aef0bc8d6db6c27b2a22fe1494e92db89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef0bc8d6db6c27b2a22fe1494e92db89">&#9670;&nbsp;</a></span>_animNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int raylib::model::Animation::_animNumber</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00057">57</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
 
 </div>
 </div>
@@ -392,7 +455,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00050">50</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="raylib_2model_2_animation_8hpp_source.html#l00055">55</a> of file <a class="el" href="raylib_2model_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
 
 </div>
 </div>
@@ -402,11 +465,13 @@ Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_aac11e98d656886d03884bc0ecfbd8f54"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">raylib::model::Animation::_animationPath</a></div><div class="ttdeci">std::filesystem::path _animationPath</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00048">Animation.hpp:48</a></div></div>
-<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_a1cb4533429f46b7a8451f5a326d0a89c"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">raylib::model::Animation::_animFrameCounter</a></div><div class="ttdeci">int _animFrameCounter</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00051">Animation.hpp:51</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_aac11e98d656886d03884bc0ecfbd8f54"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54">raylib::model::Animation::_animationPath</a></div><div class="ttdeci">std::filesystem::path _animationPath</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00053">Animation.hpp:53</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_a1cb4533429f46b7a8451f5a326d0a89c"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c">raylib::model::Animation::_animFrameCounter</a></div><div class="ttdeci">int _animFrameCounter</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00056">Animation.hpp:56</a></div></div>
 <div class="ttc" id="ageneric_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/generic_string.html">std::filesystem::path::generic_string</a></div><div class="ttdeci">T generic_string(T... args)</div></div>
-<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_af4bb09fb8eb724b3c0327ea79cc90b5c"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">raylib::model::Animation::_animsCount</a></div><div class="ttdeci">unsigned int _animsCount</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00050">Animation.hpp:50</a></div></div>
-<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_a98b22e6fb30e41623015a0cc419270ee"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">raylib::model::Animation::_animations</a></div><div class="ttdeci">::ModelAnimation * _animations</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00049">Animation.hpp:49</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_aef0bc8d6db6c27b2a22fe1494e92db89"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#aef0bc8d6db6c27b2a22fe1494e92db89">raylib::model::Animation::_animNumber</a></div><div class="ttdeci">unsigned int _animNumber</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00057">Animation.hpp:57</a></div></div>
+<div class="ttc" id="alogic_error_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/error/logic_error.html">std::logic_error</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_af4bb09fb8eb724b3c0327ea79cc90b5c"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c">raylib::model::Animation::_animsCount</a></div><div class="ttdeci">unsigned int _animsCount</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00055">Animation.hpp:55</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_animation_html_a98b22e6fb30e41623015a0cc419270ee"><div class="ttname"><a href="classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee">raylib::model::Animation::_animations</a></div><div class="ttdeci">::ModelAnimation * _animations</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2model_2_animation_8hpp_source.html#l00054">Animation.hpp:54</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
