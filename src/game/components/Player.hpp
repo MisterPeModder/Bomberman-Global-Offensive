@@ -22,7 +22,6 @@ namespace game::components
 {
     /// Player marker.
     struct Player : public ecs::Component {
-
         /// The different player animations
         enum class Animations : unsigned int {
             Idle_1 = 0,
