@@ -24,6 +24,8 @@ namespace game
     Users::ActionEvent Users::getNextAction()
     {
         for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+            if (!_users[i].isAvailable())
+                continue;
             GameAction action = _users[i].getChangedAction();
 
             if (action != GameAction::NONE)
@@ -68,7 +70,7 @@ namespace game
         return count;
     }
 
-    void Users::addUser(int gamepadId)
+    void Users::connectUser(int gamepadId)
     {
         unsigned int nbUsers = getAvailableUsers();
 
@@ -76,6 +78,22 @@ namespace game
             return;
         _users[nbUsers].setAvailable();
         _users[nbUsers].setGamepadId(gamepadId);
-        std::cout << "User " << nbUsers << " connected on gamepad " << gamepadId << std::endl;
     }
+
+    void Users::disconnectUser(User::UserId user)
+    {
+        unsigned int nbUsers = getAvailableUsers();
+
+        if (nbUsers == 1) {
+            if (!_users[0].isKeyboard())
+                _users[0].setKeyboard();
+            return;
+        }
+        size_t userPos = static_cast<size_t>(user);
+
+        for (size_t i = userPos; i < nbUsers - 1; i++)
+            _users[i].setGamepadId(_users[i + 1].getGamepadId());
+        _users[nbUsers - 1].setAvailable(false);
+    }
+
 } // namespace game

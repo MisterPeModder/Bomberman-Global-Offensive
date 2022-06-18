@@ -69,7 +69,9 @@ namespace game
 
         unsigned int getAvailableUsers() const;
 
-        void addUser(int gamepadId);
+        void connectUser(int gamepadId);
+
+        void disconnectUser(User::UserId user);
 
       private:
         std::array<User, static_cast<size_t>(User::UserId::UserCount)> _users;

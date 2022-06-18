@@ -60,6 +60,9 @@ namespace game
             /// Menus
             setGamepadBinding(Gamepad::Button::FACE_DOWN, GameAction::ACTION); /// A on Xbox
             setGamepadBinding(Gamepad::Button::FACE_RIGHT, GameAction::BACK);  /// B on Xbox
+
+            setKeyboardBinding(Key::MINUS, GameAction::DISCONNECT);
+            setGamepadBinding(Gamepad::Button::MIDDLE_RIGHT, GameAction::DISCONNECT);
         }
 
         void Keybinds::clear()
