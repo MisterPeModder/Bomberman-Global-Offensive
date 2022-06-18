@@ -12,5 +12,6 @@ var namespaceraylib_1_1core =
     [ "Sound", "classraylib_1_1core_1_1_sound.html", "classraylib_1_1core_1_1_sound" ],
     [ "Vector2", "structraylib_1_1core_1_1_vector2.html", "structraylib_1_1core_1_1_vector2" ],
     [ "Vector3", "structraylib_1_1core_1_1_vector3.html", "structraylib_1_1core_1_1_vector3" ],
+    [ "Vector4", "structraylib_1_1core_1_1_vector4.html", "structraylib_1_1core_1_1_vector4" ],
     [ "Window", "classraylib_1_1core_1_1_window.html", "classraylib_1_1core_1_1_window" ]
 ];

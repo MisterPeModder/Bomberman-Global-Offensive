@@ -35,7 +35,9 @@ var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
       [ "Mode3D", "classraylib_1_1core_1_1scoped_1_1_mode3_d.html", "classraylib_1_1core_1_1scoped_1_1_mode3_d" ],
       [ "Mode2D", "classraylib_1_1core_1_1scoped_1_1_mode2_d.html", "classraylib_1_1core_1_1scoped_1_1_mode2_d" ],
       [ "Drawing", "classraylib_1_1core_1_1scoped_1_1_drawing.html", "classraylib_1_1core_1_1scoped_1_1_drawing" ],
-      [ "AudioDevice", "classraylib_1_1core_1_1scoped_1_1_audio_device.html", "classraylib_1_1core_1_1scoped_1_1_audio_device" ]
+      [ "AudioDevice", "classraylib_1_1core_1_1scoped_1_1_audio_device.html", "classraylib_1_1core_1_1scoped_1_1_audio_device" ],
+      [ "Shader", "classraylib_1_1core_1_1scoped_1_1_shader.html", "classraylib_1_1core_1_1scoped_1_1_shader" ],
+      [ "RenderTexture", "classraylib_1_1core_1_1scoped_1_1_render_texture.html", "classraylib_1_1core_1_1scoped_1_1_render_texture" ]
     ] ],
     [ "Sound.cpp", "_sound_8cpp.html", null ],
     [ "Sound.hpp", "raylib_2core_2_sound_8hpp.html", [
@@ -43,6 +45,7 @@ var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
     ] ],
     [ "Vector2.hpp", "_vector2_8hpp.html", "_vector2_8hpp" ],
     [ "Vector3.hpp", "_vector3_8hpp.html", "_vector3_8hpp" ],
+    [ "Vector4.hpp", "_vector4_8hpp.html", "_vector4_8hpp" ],
     [ "Window.cpp", "_window_8cpp.html", null ],
     [ "Window.hpp", "_window_8hpp.html", [
       [ "Window", "classraylib_1_1core_1_1_window.html", "classraylib_1_1core_1_1_window" ]

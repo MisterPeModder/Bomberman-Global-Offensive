@@ -128,6 +128,8 @@ var hierarchy =
     [ "game::settings::Profile", "classgame_1_1settings_1_1_profile.html", null ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],
     [ "bmjs::RegistryGuard", "classbmjs_1_1_registry_guard.html", null ],
+    [ "raylib::core::scoped::RenderTexture", "classraylib_1_1core_1_1scoped_1_1_render_texture.html", null ],
+    [ "raylib::textures::RenderTexture2D", "classraylib_1_1textures_1_1_render_texture2_d.html", null ],
     [ "ecs::Resource", "classecs_1_1_resource.html", [
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
       [ "ecs::Timer", "classecs_1_1_timer.html", null ],
@@ -148,6 +150,8 @@ var hierarchy =
       [ "localization::ResourceFile::MessageNotFoundError", "classlocalization_1_1_resource_file_1_1_message_not_found_error.html", null ]
     ] ],
     [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
+    [ "raylib::shaders::Shader", "classraylib_1_1shaders_1_1_shader.html", null ],
+    [ "raylib::core::scoped::Shader", "classraylib_1_1core_1_1scoped_1_1_shader.html", null ],
     [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", [
       [ "game::components::Sound", "structgame_1_1components_1_1_sound.html", null ]
     ] ],
@@ -194,6 +198,7 @@ var hierarchy =
       [ "game::components::Size", "structgame_1_1components_1_1_size.html", null ],
       [ "game::components::Velocity", "structgame_1_1components_1_1_velocity.html", null ]
     ] ],
+    [ "raylib::core::Vector4< T >", "structraylib_1_1core_1_1_vector4.html", null ],
     [ "raylib::core::Window", "classraylib_1_1core_1_1_window.html", null ],
     [ "ecs::World", "classecs_1_1_world.html", null ]
 ];

@@ -94,22 +94,29 @@ $(document).ready(function(){initNavTree('scoped_8hpp.html',''); initResizable()
 <code>#include &quot;<a class="el" href="_camera2_d_8hpp_source.html">Camera2D.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_camera3_d_8hpp_source.html">Camera3D.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_window_8hpp_source.html">Window.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_shader_8hpp_source.html">raylib/shaders/Shader.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_render_texture2_d_8hpp_source.html">raylib/textures/RenderTexture2D.hpp</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for scoped.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="scoped_8hpp__incl.png" border="0" usemap="#src_2raylib_2core_2scoped_8hpp" alt=""/></div>
 <map name="src_2raylib_2core_2scoped_8hpp" id="src_2raylib_2core_2scoped_8hpp">
-<area shape="rect" title=" " alt="" coords="221,5,413,32"/>
-<area shape="rect" href="_audio_8hpp.html" title=" " alt="" coords="323,229,409,256"/>
-<area shape="rect" href="_camera2_d_8hpp.html" title=" " alt="" coords="5,155,124,181"/>
-<area shape="rect" href="_camera3_d_8hpp.html" title=" " alt="" coords="209,80,328,107"/>
-<area shape="rect" href="_window_8hpp.html" title=" " alt="" coords="414,80,515,107"/>
-<area shape="rect" title=" " alt="" coords="233,304,304,331"/>
-<area shape="rect" href="_vector2_8hpp.html" title=" " alt="" coords="98,229,197,256"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/type_traits.html" title=" " alt="" coords="101,304,193,331"/>
-<area shape="rect" href="_vector3_8hpp.html" title=" " alt="" coords="149,155,247,181"/>
-<area shape="rect" href="raylib_2core_2_color_8hpp.html" title=" " alt="" coords="434,229,517,256"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="503,155,600,181"/>
+<area shape="rect" title=" " alt="" coords="423,5,615,32"/>
+<area shape="rect" href="_audio_8hpp.html" title=" " alt="" coords="1069,244,1156,271"/>
+<area shape="rect" href="_camera2_d_8hpp.html" title=" " alt="" coords="509,169,628,196"/>
+<area shape="rect" href="_camera3_d_8hpp.html" title=" " alt="" coords="412,87,531,114"/>
+<area shape="rect" href="_window_8hpp.html" title=" " alt="" coords="93,169,194,196"/>
+<area shape="rect" href="_shader_8hpp.html" title=" " alt="" coords="699,87,889,114"/>
+<area shape="rect" href="_render_texture2_d_8hpp.html" title=" " alt="" coords="165,80,388,121"/>
+<area shape="rect" title=" " alt="" coords="425,319,496,345"/>
+<area shape="rect" href="_vector2_8hpp.html" title=" " alt="" coords="455,244,554,271"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/type_traits.html" title=" " alt="" coords="520,319,612,345"/>
+<area shape="rect" href="_vector3_8hpp.html" title=" " alt="" coords="386,169,485,196"/>
+<area shape="rect" href="raylib_2core_2_color_8hpp.html" title=" " alt="" coords="127,244,210,271"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="5,244,103,271"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="653,169,743,196"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/span.html" title=" " alt="" coords="767,169,821,196"/>
+<area shape="rect" href="_vector4_8hpp.html" title=" " alt="" coords="873,244,1045,271"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,13 +124,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="scoped_8hpp__dep__incl.png" border="0" usemap="#src_2raylib_2core_2scoped_8hppdep" alt=""/></div>
 <map name="src_2raylib_2core_2scoped_8hppdep" id="src_2raylib_2core_2scoped_8hppdep">
-<area shape="rect" title=" " alt="" coords="535,5,727,32"/>
-<area shape="rect" href="_game_8cpp.html" title=" " alt="" coords="5,87,157,114"/>
-<area shape="rect" href="_a_scene_8cpp.html" title=" " alt="" coords="181,87,392,114"/>
-<area shape="rect" href="_settings_menu_scene_8cpp.html" title=" " alt="" coords="417,80,605,121"/>
-<area shape="rect" href="_splash_scene_8cpp.html" title=" " alt="" coords="629,87,873,114"/>
-<area shape="rect" href="_test_scene_8cpp.html" title=" " alt="" coords="897,87,1124,114"/>
-<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="1149,87,1254,114"/>
+<area shape="rect" title=" " alt="" coords="596,5,788,32"/>
+<area shape="rect" href="game_2_engine_8cpp.html" title=" " alt="" coords="5,87,163,114"/>
+<area shape="rect" href="_game_8cpp.html" title=" " alt="" coords="187,87,339,114"/>
+<area shape="rect" href="_a_scene_8cpp.html" title=" " alt="" coords="363,87,573,114"/>
+<area shape="rect" href="_settings_menu_scene_8cpp.html" title=" " alt="" coords="598,80,786,121"/>
+<area shape="rect" href="_splash_scene_8cpp.html" title=" " alt="" coords="810,87,1054,114"/>
+<area shape="rect" href="_test_scene_8cpp.html" title=" " alt="" coords="1079,87,1305,114"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="1330,87,1435,114"/>
 </map>
 </div>
 </div>
@@ -142,6 +150,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1scoped_1_1_audio_device.html">raylib::core::scoped::AudioDevice</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup/End audio device.  <a href="classraylib_1_1core_1_1scoped_1_1_audio_device.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1scoped_1_1_shader.html">raylib::core::scoped::Shader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup/End shader mode.  <a href="classraylib_1_1core_1_1scoped_1_1_shader.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1scoped_1_1_render_texture.html">raylib::core::scoped::RenderTexture</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup/End <a class="el" href="classraylib_1_1core_1_1scoped_1_1_render_texture.html" title="Setup/End RenderTexture drawing.">RenderTexture</a> drawing.  <a href="classraylib_1_1core_1_1scoped_1_1_render_texture.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>

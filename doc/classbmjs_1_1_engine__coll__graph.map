@@ -1,9 +1,11 @@
 <map id="bmjs::Engine" name="bmjs::Engine">
-<area shape="rect" id="node1" title="Javascript Engine Wrapper." alt="" coords="301,317,407,344"/>
-<area shape="rect" id="node2" href="$classgame_1_1_engine.html" title=" " alt="" coords="140,221,251,247"/>
-<area shape="rect" id="node3" href="$classgame_1_1settings_1_1_settings.html" title="Settings common to the game." alt="" coords="5,102,185,129"/>
-<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html" title=" " alt="" coords="52,5,139,32"/>
-<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="210,95,381,136"/>
-<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/weak_ptr.html" title=" " alt="" coords="275,213,433,255"/>
-<area shape="rect" id="node7" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="457,213,603,255"/>
+<area shape="rect" id="node1" title="Javascript Engine Wrapper." alt="" coords="855,156,961,183"/>
+<area shape="rect" id="node2" href="$classgame_1_1_engine.html" title=" " alt="" coords="579,97,690,124"/>
+<area shape="rect" id="node3" href="$classgame_1_1settings_1_1_settings.html" title="Settings common to the game." alt="" coords="210,7,390,33"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html" title=" " alt="" coords="5,7,92,33"/>
+<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="215,58,385,99"/>
+<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="215,123,385,165"/>
+<area shape="rect" id="node7" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="191,189,409,230"/>
+<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/weak_ptr.html" title=" " alt="" coords="556,149,713,190"/>
+<area shape="rect" id="node9" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="561,214,708,255"/>
 </map>

@@ -99,10 +99,12 @@ Collaboration diagram for game::Engine:</div>
 <div class="dyncontent">
 <div class="center"><img src="classgame_1_1_engine__coll__graph.png" border="0" usemap="#game_1_1_engine_coll__map" alt="Collaboration graph"/></div>
 <map name="game_1_1_engine_coll__map" id="game_1_1_engine_coll__map">
-<area shape="rect" title=" " alt="" coords="140,213,251,240"/>
-<area shape="rect" href="classgame_1_1settings_1_1_settings.html" title="Settings common to the game." alt="" coords="5,102,185,129"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/string/basic_string.html" title=" " alt="" coords="52,5,139,32"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" title=" " alt="" coords="210,95,381,136"/>
+<area shape="rect" title=" " alt="" coords="556,99,667,125"/>
+<area shape="rect" href="classgame_1_1settings_1_1_settings.html" title="Settings common to the game." alt="" coords="210,7,390,33"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/string/basic_string.html" title=" " alt="" coords="5,7,92,33"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" title=" " alt="" coords="215,58,385,99"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" title=" " alt="" coords="215,123,385,165"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html" title=" " alt="" coords="191,189,409,230"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -141,6 +143,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeee1155aee5f642413db3cf5e56d68cc"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classgame_1_1settings_1_1_settings.html">settings::Settings</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#aeee1155aee5f642413db3cf5e56d68cc">getSettings</a> () const</td></tr>
 <tr class="memdesc:aeee1155aee5f642413db3cf5e56d68cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the settings (immutable)  <a href="classgame_1_1_engine.html#aeee1155aee5f642413db3cf5e56d68cc">More...</a><br /></td></tr>
 <tr class="separator:aeee1155aee5f642413db3cf5e56d68cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b882fc21f345d9f35481ba84dca4f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#ae5b882fc21f345d9f35481ba84dca4f6">updateRenderTarget</a> (int width=<a class="el" href="classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255">raylib::core::Window::getWidth</a>(), int height=<a class="el" href="classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374">raylib::core::Window::getHeight</a>())</td></tr>
+<tr class="memdesc:ae5b882fc21f345d9f35481ba84dca4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the size of the render target to match the given parameters.  <a href="classgame_1_1_engine.html#ae5b882fc21f345d9f35481ba84dca4f6">More...</a><br /></td></tr>
+<tr class="separator:ae5b882fc21f345d9f35481ba84dca4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5acddddc03a1b127578787d50bb3183b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classraylib_1_1textures_1_1_render_texture2_d.html">raylib::textures::RenderTexture2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a5acddddc03a1b127578787d50bb3183b">getRenderTarget</a> () const</td></tr>
+<tr class="memdesc:a5acddddc03a1b127578787d50bb3183b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Render Target.  <a href="classgame_1_1_engine.html#a5acddddc03a1b127578787d50bb3183b">More...</a><br /></td></tr>
+<tr class="separator:a5acddddc03a1b127578787d50bb3183b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa6aebe86141d93d1dc26c79c1302f9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#afa6aebe86141d93d1dc26c79c1302f9f">removeGlobalShader</a> ()</td></tr>
+<tr class="memdesc:afa6aebe86141d93d1dc26c79c1302f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the currently loaded global shader.  <a href="classgame_1_1_engine.html#afa6aebe86141d93d1dc26c79c1302f9f">More...</a><br /></td></tr>
+<tr class="separator:afa6aebe86141d93d1dc26c79c1302f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710e53756309e2550b986f73e7bb0c17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a710e53756309e2550b986f73e7bb0c17">setGlobalShader</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> vertex, <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> fragments, <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; void(<a class="el" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a> &amp;)&gt; shaderSetup)</td></tr>
+<tr class="memdesc:a710e53756309e2550b986f73e7bb0c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Global Shader.  <a href="classgame_1_1_engine.html#a710e53756309e2550b986f73e7bb0c17">More...</a><br /></td></tr>
+<tr class="separator:a710e53756309e2550b986f73e7bb0c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9212bb8022f43ab506ad2afa473df9ba"><td class="memItemLeft" align="right" valign="top">const <a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a9212bb8022f43ab506ad2afa473df9ba">getGlobalShader</a> () const</td></tr>
+<tr class="memdesc:a9212bb8022f43ab506ad2afa473df9ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Global Shader.  <a href="classgame_1_1_engine.html#a9212bb8022f43ab506ad2afa473df9ba">More...</a><br /></td></tr>
+<tr class="separator:a9212bb8022f43ab506ad2afa473df9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13b4e4e7f8fd6985b098352a81ca218a"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a13b4e4e7f8fd6985b098352a81ca218a">getGlobalShader</a> ()</td></tr>
+<tr class="memdesc:a13b4e4e7f8fd6985b098352a81ca218a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Global Shader.  <a href="classgame_1_1_engine.html#a13b4e4e7f8fd6985b098352a81ca218a">More...</a><br /></td></tr>
+<tr class="separator:a13b4e4e7f8fd6985b098352a81ca218a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a012a5ef4323dd1dd0cf47afacebb7c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a012a5ef4323dd1dd0cf47afacebb7c02">setColorBlindShader</a> (int mode=2)</td></tr>
+<tr class="memdesc:a012a5ef4323dd1dd0cf47afacebb7c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Color Blind shader.  <a href="classgame_1_1_engine.html#a012a5ef4323dd1dd0cf47afacebb7c02">More...</a><br /></td></tr>
+<tr class="separator:a012a5ef4323dd1dd0cf47afacebb7c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2abf911905a7f88338e801620b6565ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a2abf911905a7f88338e801620b6565ad">setResolution</a> (<a class="el" href="namespaceraylib_1_1core.html#a40eef12a05d7729b3fe1772f2b44e755">raylib::core::Vector2i</a> resolution)</td></tr>
+<tr class="memdesc:a2abf911905a7f88338e801620b6565ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the game engine's render resolution.  <a href="classgame_1_1_engine.html#a2abf911905a7f88338e801620b6565ad">More...</a><br /></td></tr>
+<tr class="separator:a2abf911905a7f88338e801620b6565ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -157,12 +183,16 @@ Private Attributes</h2></td></tr>
 <tr class="separator:afb4db7ad2d99ceede3adc110580820e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a712e2cfd9b09b557dba688ee6b21e614"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgame_1_1settings_1_1_settings.html">settings::Settings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a></td></tr>
 <tr class="separator:a712e2cfd9b09b557dba688ee6b21e614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80cf996800e85045bb04b7aff8b4d67"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classraylib_1_1textures_1_1_render_texture2_d.html">raylib::textures::RenderTexture2D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#ab80cf996800e85045bb04b7aff8b4d67">_renderTarget</a></td></tr>
+<tr class="separator:ab80cf996800e85045bb04b7aff8b4d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e1537240492df919dd95e8587356f1"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#ab4e1537240492df919dd95e8587356f1">_globalShader</a></td></tr>
+<tr class="separator:ab4e1537240492df919dd95e8587356f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeedd6d18c700317f4b9734422ba7b54d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a></td></tr>
 <tr class="separator:aeedd6d18c700317f4b9734422ba7b54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00022">22</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00026">26</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a73c74b99146453a5f42f9fbc8a1b0ddf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a73c74b99146453a5f42f9fbc8a1b0ddf">&#9670;&nbsp;</a></span>Engine()</h2>
@@ -181,13 +211,21 @@ Private Attributes</h2></td></tr>
 
 <p>Constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00057">57</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                   : <a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>(<span class="keyword">false</span>)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a> = std::make_unique&lt;SplashScene&gt;();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>-&gt;getWorld().addResource&lt;resources::EngineResource&gt;(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classgame_1_1_engine.html#a3577fc0d39171e83f8c7dbc04c2d33a5">loadSettings</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00073">73</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                   : <a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>(<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#ifdef __EMSCRIPTEN__</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// Setup emscripten events</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> *<span class="keyword">self</span> = <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span> *<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, <span class="keyword">self</span>, EM_FALSE, &amp;Engine_onResize);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        emscripten_set_fullscreenchange_callback(</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            EMSCRIPTEN_EVENT_TARGET_WINDOW, <span class="keyword">self</span>, EM_FALSE, &amp;Engine_onFullscreenChange);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif // !defined(__EMSCRIPTEN__)</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classgame_1_1_engine.html#a3577fc0d39171e83f8c7dbc04c2d33a5">loadSettings</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a> = std::make_unique&lt;SplashScene&gt;();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>-&gt;getWorld().addResource&lt;resources::EngineResource&gt;(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -209,13 +247,22 @@ Private Attributes</h2></td></tr>
 
 <p>Called on each render tick. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00098">98</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>-&gt;drawFrame();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>)</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a>(10, 10);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#a8c5281c380f47b360ab096298e9a3f58">switchScene</a>();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00116">116</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>-&gt;drawFrame();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <a class="code" href="classraylib_1_1core_1_1scoped_1_1_drawing.html">raylib::core::scoped::Drawing</a> drawing;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">raylib::core::Window::clear</a>();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_engine.html#ab4e1537240492df919dd95e8587356f1">_globalShader</a>) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="classraylib_1_1core_1_1scoped_1_1_shader.html">raylib::core::scoped::Shader</a> modeShader(*<a class="code" href="classgame_1_1_engine.html#ab4e1537240492df919dd95e8587356f1">_globalShader</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/get.html">get</a>());</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <a class="code" href="classgame_1_1_engine.html#ab80cf996800e85045bb04b7aff8b4d67">_renderTarget</a>-&gt;drawYFlipped();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <a class="code" href="classgame_1_1_engine.html#ab80cf996800e85045bb04b7aff8b4d67">_renderTarget</a>-&gt;drawYFlipped();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>)</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a>(10, 10);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#a8c5281c380f47b360ab096298e9a3f58">switchScene</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -244,8 +291,74 @@ Private Attributes</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classgame_1_1_engine.html#a69d3d901501403fdad57d5a570cb1819" title="Enables/disables the debug mode.">Engine::setDebugMode()</a></dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the debug mode is enabled. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00070">70</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00094">94</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a13b4e4e7f8fd6985b098352a81ca218a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13b4e4e7f8fd6985b098352a81ca218a">&#9670;&nbsp;</a></span>getGlobalShader() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt;<a class="el" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a>&gt;&amp; game::Engine::getGlobalShader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Global Shader. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;raylib::shaders::Shader&gt;&amp; global shader. </dd></dl>
+
+</div>
+</div>
+<a id="a9212bb8022f43ab506ad2afa473df9ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9212bb8022f43ab506ad2afa473df9ba">&#9670;&nbsp;</a></span>getGlobalShader() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt; <a class="el" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a> &gt; &amp; game::Engine::getGlobalShader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Global Shader. </p>
+<dl class="section return"><dt>Returns</dt><dd>const std::unique_ptr&lt;raylib::shaders::Shader&gt;&amp; global shader. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00167">167</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_engine.html#ab4e1537240492df919dd95e8587356f1">_globalShader</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5acddddc03a1b127578787d50bb3183b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5acddddc03a1b127578787d50bb3183b">&#9670;&nbsp;</a></span>getRenderTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classraylib_1_1textures_1_1_render_texture2_d.html">raylib::textures::RenderTexture2D</a> &amp; game::Engine::getRenderTarget </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Render Target. </p>
+<dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="classraylib_1_1textures_1_1_render_texture2_d.html" title="Render Texture 2D.">raylib::textures::RenderTexture2D</a>&amp; engine render target. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00155">155</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{ <span class="keywordflow">return</span> *<a class="code" href="classgame_1_1_engine.html#ab80cf996800e85045bb04b7aff8b4d67">_renderTarget</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/get.html">get</a>(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -266,8 +379,8 @@ Private Attributes</h2></td></tr>
 
 <p>Gets the mutable active scene. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00064">64</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{ <span class="keywordflow">return</span> *<a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00088">88</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{ <span class="keywordflow">return</span> *<a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,8 +420,8 @@ Private Attributes</h2></td></tr>
 
 <p>Gets the settings (mutable) </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00106">106</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00133">133</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -356,17 +469,41 @@ Private Attributes</h2></td></tr>
 
 <p>Load the settings from the settings file. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00110">110</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a6781e093b0e950ddd361369490e0020a">load</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a06b1c6f822fe6202c84babcbd3481e4f">getMasterVolume</a>());</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd">getTargetFramerate</a>());</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b">getResolution</a>().<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>, <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b">getResolution</a>().<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_window.html#ad2b42af3034b758f6af55e5534fd0d20">raylib::core::Window::isFullscreen</a>() != <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#ad7077ffc79bca9949bd0ad4212e77799">isFullscreen</a>())</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db">raylib::core::Window::toggleFullscreen</a>();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a4eb05f22ef7aa3c7cccbc67b166ea013">getLocale</a>());</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00137">137</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a6781e093b0e950ddd361369490e0020a">load</a>();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a06b1c6f822fe6202c84babcbd3481e4f">getMasterVolume</a>());</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd">getTargetFramerate</a>());</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a68b51286e91e1ad75b6f80fc662310e8">getResolution</a>().<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>, <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a68b51286e91e1ad75b6f80fc662310e8">getResolution</a>().<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classraylib_1_1core_1_1_window.html#ad2b42af3034b758f6af55e5534fd0d20">raylib::core::Window::isFullscreen</a>() != <a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#ad7077ffc79bca9949bd0ad4212e77799">isFullscreen</a>())</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db">raylib::core::Window::toggleFullscreen</a>();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a>(<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a4eb05f22ef7aa3c7cccbc67b166ea013">getLocale</a>());</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#a2abf911905a7f88338e801620b6565ad">setResolution</a>(this-&gt;<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a68b51286e91e1ad75b6f80fc662310e8">getResolution</a>());</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="afa6aebe86141d93d1dc26c79c1302f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa6aebe86141d93d1dc26c79c1302f9f">&#9670;&nbsp;</a></span>removeGlobalShader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game::Engine::removeGlobalShader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the currently loaded global shader. </p>
+<dl class="section note"><dt>Note</dt><dd>If no global shader is loaded, does nothing. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00157">157</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{ <a class="code" href="classgame_1_1_engine.html#ab4e1537240492df919dd95e8587356f1">_globalShader</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/reset.html">reset</a>(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -387,23 +524,53 @@ Private Attributes</h2></td></tr>
 
 <p>Runs the game. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00080">80</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#ifdef __EMSCRIPTEN__</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        emscripten_set_resize_callback(EMSCRIPTEN_EVENT_TARGET_WINDOW, <span class="keyword">nullptr</span>, EM_FALSE, &amp;Engine_onResize);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        Engine_onResize(EMSCRIPTEN_EVENT_RESIZE, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        emscripten_set_fullscreenchange_callback(</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            EMSCRIPTEN_EVENT_TARGET_WINDOW, <span class="keyword">nullptr</span>, EM_FALSE, &amp;Engine_onFullscreenChange);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// We cannot use the WindowShouldClose() loop on the web,</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// since there is no such thing as a window.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        emscripten_set_main_loop_arg(&amp;Engine_drawFrame, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span> *<span class="keyword">&gt;</span>(<span class="keyword">this</span>), 0, 1);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">while</span> (!<a class="code" href="classraylib_1_1core_1_1_window.html#a86bf07fb4d43da6471aec128a73a0b1d">raylib::core::Window::getShouldClose</a>())</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            this-&gt;<a class="code" href="classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5">drawFrame</a>();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#endif // !defined(__EMSCRIPTEN__)}</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00104">104</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#ifdef __EMSCRIPTEN__</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// We cannot use the WindowShouldClose() loop on the web,</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">// since there is no such thing as a window.</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        emscripten_set_main_loop_arg(&amp;Engine_drawFrame, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span> *<span class="keyword">&gt;</span>(<span class="keyword">this</span>), 0, 1);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">while</span> (!<a class="code" href="classraylib_1_1core_1_1_window.html#a86bf07fb4d43da6471aec128a73a0b1d">raylib::core::Window::getShouldClose</a>())</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            this-&gt;<a class="code" href="classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5">drawFrame</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif // !defined(__EMSCRIPTEN__)}</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a012a5ef4323dd1dd0cf47afacebb7c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a012a5ef4323dd1dd0cf47afacebb7c02">&#9670;&nbsp;</a></span>setColorBlindShader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game::Engine::setColorBlindShader </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mode</em> = <code>2</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Color Blind shader. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mode</td><td>colorblind mode (in order [0, 2] Protanopia, Deuteranopia, Tritanopia) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00171">171</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="classgame_1_1_engine.html#a710e53756309e2550b986f73e7bb0c17">setGlobalShader</a>(<a class="code" href="classraylib_1_1shaders_1_1_shader.html#a568996f98a5662f376685f904066eb73">raylib::shaders::Shader::getPath</a>(<span class="stringliteral">&quot;base_lighting.vs&quot;</span>),</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <a class="code" href="classraylib_1_1shaders_1_1_shader.html#a568996f98a5662f376685f904066eb73">raylib::shaders::Shader::getPath</a>(<span class="stringliteral">&quot;colorblind.fs&quot;</span>), [&amp;mode](<a class="code" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a> &amp;shader) {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                shader.<a class="code" href="classraylib_1_1shaders_1_1_shader.html#a0b45f6a7dcd1a38f788e68c91298335b">bindLocations</a>(SHADER_LOC_MATRIX_MODEL, <span class="stringliteral">&quot;matModel&quot;</span>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                shader.<a class="code" href="classraylib_1_1shaders_1_1_shader.html#a8900df798086e08db8ff72da0e3f9ed6">setValue</a>(<span class="stringliteral">&quot;mode&quot;</span>, mode);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                shader.<a class="code" href="classraylib_1_1shaders_1_1_shader.html#a8900df798086e08db8ff72da0e3f9ed6">setValue</a>(<span class="stringliteral">&quot;intensity&quot;</span>, 1.f);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            });</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -440,8 +607,96 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00068">68</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{ this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a> = value; }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00092">92</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{ this-&gt;<a class="code" href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">_debugMode</a> = value; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a710e53756309e2550b986f73e7bb0c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a710e53756309e2550b986f73e7bb0c17">&#9670;&nbsp;</a></span>setGlobalShader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game::Engine::setGlobalShader </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a>&#160;</td>
+          <td class="paramname"><em>vertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a>&#160;</td>
+          <td class="paramname"><em>fragments</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; void(<a class="el" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a> &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>shaderSetup</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Global Shader. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertex</td><td>vertex file (.vs). </td></tr>
+    <tr><td class="paramname">fragments</td><td>fragments file (.fs) </td></tr>
+    <tr><td class="paramname">shaderSetup</td><td>callback to setup the shader parameters.( <a class="el" href="classraylib_1_1shaders_1_1_shader.html#a8900df798086e08db8ff72da0e3f9ed6">raylib::shaders::Shader::setValue()</a> ) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00159">159</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="classgame_1_1_engine.html#ab4e1537240492df919dd95e8587356f1">_globalShader</a> = std::make_unique&lt;raylib::shaders::Shader&gt;(vertex, fragments);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        shaderSetup(*<a class="code" href="classgame_1_1_engine.html#ab4e1537240492df919dd95e8587356f1">_globalShader</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/get.html">get</a>());</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2abf911905a7f88338e801620b6565ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2abf911905a7f88338e801620b6565ad">&#9670;&nbsp;</a></span>setResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game::Engine::setResolution </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceraylib_1_1core.html#a40eef12a05d7729b3fe1772f2b44e755">raylib::core::Vector2i</a>&#160;</td>
+          <td class="paramname"><em>resolution</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the game engine's render resolution. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resolution</td><td>The resolution. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00181">181</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#ifdef __EMSCRIPTEN__</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        Engine_onResize(EMSCRIPTEN_EVENT_RESIZE, <span class="keyword">nullptr</span>, <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span> *<span class="keyword">&gt;</span>(<span class="keyword">this</span>));</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(resolution.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>, resolution.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">_settings</a>.<a class="code" href="classgame_1_1settings_1_1_settings.html#a0b5619004c13660b06278f082a6be7a5">setResolution</a>(resolution);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        this-&gt;<a class="code" href="classgame_1_1_engine.html#ae5b882fc21f345d9f35481ba84dca4f6">updateRenderTarget</a>(resolution.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>, resolution.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -472,11 +727,11 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 
 <p>Sets the active scene and deletes the old one. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00028">28</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a> = std::make_unique&lt;S&gt;();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>-&gt;getWorld().addResource&lt;resources::EngineResource&gt;(<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00032">32</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a> = std::make_unique&lt;S&gt;();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>-&gt;getWorld().addResource&lt;resources::EngineResource&gt;(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -497,13 +752,55 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 
 <p>Switch to the waiting scene if it exists and releases the current one. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00072">72</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/swap.html">swap</a>(<a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/release.html">release</a>();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00096">96</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">_scene</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/swap.html">swap</a>(<a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <a class="code" href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">_waitingScene</a>.<a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr/release.html">release</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae5b882fc21f345d9f35481ba84dca4f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b882fc21f345d9f35481ba84dca4f6">&#9670;&nbsp;</a></span>updateRenderTarget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game::Engine::updateRenderTarget </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em> = <code><a class="el" href="classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255">raylib::core::Window::getWidth</a>()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em> = <code><a class="el" href="classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374">raylib::core::Window::getHeight</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the size of the render target to match the given parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Render target width. </td></tr>
+    <tr><td class="paramname">heigth</td><td>Render target width. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8cpp_source.html#l00150">150</a> of file <a class="el" href="game_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="classgame_1_1_engine.html#ab80cf996800e85045bb04b7aff8b4d67">_renderTarget</a> = std::make_unique&lt;raylib::textures::RenderTexture2D&gt;(width, height);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -528,7 +825,55 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00076">76</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00127">127</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab4e1537240492df919dd95e8587356f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4e1537240492df919dd95e8587356f1">&#9670;&nbsp;</a></span>_globalShader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt;<a class="el" href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a>&gt; game::Engine::_globalShader</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00125">125</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ab80cf996800e85045bb04b7aff8b4d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab80cf996800e85045bb04b7aff8b4d67">&#9670;&nbsp;</a></span>_renderTarget</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/memory/unique_ptr.html">std::unique_ptr</a>&lt;<a class="el" href="classraylib_1_1textures_1_1_render_texture2_d.html">raylib::textures::RenderTexture2D</a>&gt; game::Engine::_renderTarget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00124">124</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -554,7 +899,7 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 
 <p>Sets the active scene and deletes the old one. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00072">72</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00121">121</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -578,7 +923,7 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00074">74</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00123">123</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -602,7 +947,7 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00073">73</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2_engine_8hpp_source.html#l00122">122</a> of file <a class="el" href="game_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -613,29 +958,44 @@ template&lt;std::derived_from&lt; IScene &gt; S&gt; </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a45dba4d0652a46202065cbb6232315db"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a45dba4d0652a46202065cbb6232315db">raylib::core::Window::toggleFullscreen</a></div><div class="ttdeci">static void toggleFullscreen()</div><div class="ttdoc">Toggles fullscreen.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00059">Window.cpp:59</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_aeedd6d18c700317f4b9734422ba7b54d"><div class="ttname"><a href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">game::Engine::_debugMode</a></div><div class="ttdeci">bool _debugMode</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00076">Engine.hpp:76</a></div></div>
+<div class="ttc" id="aclassraylib_1_1shaders_1_1_shader_html"><div class="ttname"><a href="classraylib_1_1shaders_1_1_shader.html">raylib::shaders::Shader</a></div><div class="ttdoc">GLSL Shader class.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8hpp_source.html#l00032">Shader.hpp:32</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_aeedd6d18c700317f4b9734422ba7b54d"><div class="ttname"><a href="classgame_1_1_engine.html#aeedd6d18c700317f4b9734422ba7b54d">game::Engine::_debugMode</a></div><div class="ttdeci">bool _debugMode</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00127">Engine.hpp:127</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a86bf07fb4d43da6471aec128a73a0b1d"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a86bf07fb4d43da6471aec128a73a0b1d">raylib::core::Window::getShouldClose</a></div><div class="ttdeci">static bool getShouldClose()</div><div class="ttdoc">Returns if the window should close or not (when a close window event is received for example)</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00036">Window.cpp:36</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_ad1c374c6137284e3f570a6cbfca5369c"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#ad1c374c6137284e3f570a6cbfca5369c">raylib::core::Window::setTargetFPS</a></div><div class="ttdeci">static void setTargetFPS(int fps)</div><div class="ttdoc">Set the max FPS the game should run at.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00040">Window.cpp:40</a></div></div>
-<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a7cc31de746b91809ba43ec59aa338b0b"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a7cc31de746b91809ba43ec59aa338b0b">game::settings::Settings::getResolution</a></div><div class="ttdeci">raylib::core::Vector2f getResolution() const</div><div class="ttdoc">Get the target resolution of the window.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00137">Settings.cpp:137</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_ad7077ffc79bca9949bd0ad4212e77799"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#ad7077ffc79bca9949bd0ad4212e77799">game::settings::Settings::isFullscreen</a></div><div class="ttdeci">bool isFullscreen() const</div><div class="ttdoc">Check if the fullscreen mode is required.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00141">Settings.cpp:141</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_a3577fc0d39171e83f8c7dbc04c2d33a5"><div class="ttname"><a href="classgame_1_1_engine.html#a3577fc0d39171e83f8c7dbc04c2d33a5">game::Engine::loadSettings</a></div><div class="ttdeci">void loadSettings()</div><div class="ttdoc">Load the settings from the settings file.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00110">Engine.cpp:110</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a2abf911905a7f88338e801620b6565ad"><div class="ttname"><a href="classgame_1_1_engine.html#a2abf911905a7f88338e801620b6565ad">game::Engine::setResolution</a></div><div class="ttdeci">void setResolution(raylib::core::Vector2i resolution)</div><div class="ttdoc">Updates the game engine's render resolution.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00181">Engine.cpp:181</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a68b51286e91e1ad75b6f80fc662310e8"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a68b51286e91e1ad75b6f80fc662310e8">game::settings::Settings::getResolution</a></div><div class="ttdeci">raylib::core::Vector2i getResolution() const</div><div class="ttdoc">Get the target resolution of the window.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00137">Settings.cpp:137</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a3577fc0d39171e83f8c7dbc04c2d33a5"><div class="ttname"><a href="classgame_1_1_engine.html#a3577fc0d39171e83f8c7dbc04c2d33a5">game::Engine::loadSettings</a></div><div class="ttdeci">void loadSettings()</div><div class="ttdoc">Load the settings from the settings file.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00137">Engine.cpp:137</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_shader_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_shader.html">raylib::core::scoped::Shader</a></div><div class="ttdoc">Setup/End shader mode.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00072">scoped.hpp:72</a></div></div>
 <div class="ttc" id="aclasslocalization_1_1_localization_html_a1a818ebbf478503b554160495ca14cd6"><div class="ttname"><a href="classlocalization_1_1_localization.html#a1a818ebbf478503b554160495ca14cd6">localization::Localization::setLocale</a></div><div class="ttdeci">static void setLocale(std::string_view locale)</div><div class="ttdoc">Load a locale file.</div><div class="ttdef"><b>Definition:</b> <a href="_localization_8cpp_source.html#l00026">Localization.cpp:26</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a0ccf99b83d00909119f26d25334772fc"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a0ccf99b83d00909119f26d25334772fc">raylib::core::Window::drawFPS</a></div><div class="ttdeci">static void drawFPS(int x, int y)</div><div class="ttdoc">Displays the number of frames per seconds of the game on screen.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00042">Window.cpp:42</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a1d83f6221942a2b79fac49a6e1e79f53"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a1d83f6221942a2b79fac49a6e1e79f53">raylib::core::Window::clear</a></div><div class="ttdeci">static void clear(const Color &amp;color=raylib::core::Color::BLACK)</div><div class="ttdoc">Clear the window with a black background.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00034">Window.cpp:34</a></div></div>
+<div class="ttc" id="aget_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr/get.html">std::unique_ptr::get</a></div><div class="ttdeci">T get(T... args)</div></div>
 <div class="ttc" id="arelease_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr/release.html">std::unique_ptr::release</a></div><div class="ttdeci">T release(T... args)</div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_afb4db7ad2d99ceede3adc110580820e7"><div class="ttname"><a href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">game::Engine::_waitingScene</a></div><div class="ttdeci">std::unique_ptr&lt; game::IScene &gt; _waitingScene</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00073">Engine.hpp:73</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_a1892bfceaa736d18c1b7593c0a2244d5"><div class="ttname"><a href="classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5">game::Engine::drawFrame</a></div><div class="ttdeci">void drawFrame()</div><div class="ttdoc">Called on each render tick.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00098">Engine.cpp:98</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_a8c5281c380f47b360ab096298e9a3f58"><div class="ttname"><a href="classgame_1_1_engine.html#a8c5281c380f47b360ab096298e9a3f58">game::Engine::switchScene</a></div><div class="ttdeci">void switchScene()</div><div class="ttdoc">Switch to the waiting scene if it exists and releases the current one.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00072">Engine.cpp:72</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_afe0c43c5e88c69cbc740e52b09747d5f"><div class="ttname"><a href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">game::Engine::_scene</a></div><div class="ttdeci">std::unique_ptr&lt; game::IScene &gt; _scene</div><div class="ttdoc">Sets the active scene and deletes the old one.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00072">Engine.hpp:72</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_ab80cf996800e85045bb04b7aff8b4d67"><div class="ttname"><a href="classgame_1_1_engine.html#ab80cf996800e85045bb04b7aff8b4d67">game::Engine::_renderTarget</a></div><div class="ttdeci">std::unique_ptr&lt; raylib::textures::RenderTexture2D &gt; _renderTarget</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00124">Engine.hpp:124</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_ae5b882fc21f345d9f35481ba84dca4f6"><div class="ttname"><a href="classgame_1_1_engine.html#ae5b882fc21f345d9f35481ba84dca4f6">game::Engine::updateRenderTarget</a></div><div class="ttdeci">void updateRenderTarget(int width=raylib::core::Window::getWidth(), int height=raylib::core::Window::getHeight())</div><div class="ttdoc">Update the size of the render target to match the given parameters.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00150">Engine.cpp:150</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_afb4db7ad2d99ceede3adc110580820e7"><div class="ttname"><a href="classgame_1_1_engine.html#afb4db7ad2d99ceede3adc110580820e7">game::Engine::_waitingScene</a></div><div class="ttdeci">std::unique_ptr&lt; game::IScene &gt; _waitingScene</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00122">Engine.hpp:122</a></div></div>
+<div class="ttc" id="areset_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr/reset.html">std::unique_ptr::reset</a></div><div class="ttdeci">T reset(T... args)</div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a1892bfceaa736d18c1b7593c0a2244d5"><div class="ttname"><a href="classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5">game::Engine::drawFrame</a></div><div class="ttdeci">void drawFrame()</div><div class="ttdoc">Called on each render tick.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00116">Engine.cpp:116</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a8c5281c380f47b360ab096298e9a3f58"><div class="ttname"><a href="classgame_1_1_engine.html#a8c5281c380f47b360ab096298e9a3f58">game::Engine::switchScene</a></div><div class="ttdeci">void switchScene()</div><div class="ttdoc">Switch to the waiting scene if it exists and releases the current one.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00096">Engine.cpp:96</a></div></div>
+<div class="ttc" id="aclassraylib_1_1shaders_1_1_shader_html_a0b45f6a7dcd1a38f788e68c91298335b"><div class="ttname"><a href="classraylib_1_1shaders_1_1_shader.html#a0b45f6a7dcd1a38f788e68c91298335b">raylib::shaders::Shader::bindLocations</a></div><div class="ttdeci">void bindLocations(Location location, std::string_view name, bool isUniform=true)</div><div class="ttdoc">Bind the location of the variable name to the shader location location.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8cpp_source.html#l00123">Shader.cpp:123</a></div></div>
+<div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a0b5619004c13660b06278f082a6be7a5"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a0b5619004c13660b06278f082a6be7a5">game::settings::Settings::setResolution</a></div><div class="ttdeci">void setResolution(raylib::core::Vector2i resolution)</div><div class="ttdoc">Set the new resolution of the window.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00135">Settings.cpp:135</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1scoped_1_1_drawing_html"><div class="ttname"><a href="classraylib_1_1core_1_1scoped_1_1_drawing.html">raylib::core::scoped::Drawing</a></div><div class="ttdoc">Setup/End window drawing.</div><div class="ttdef"><b>Definition:</b> <a href="scoped_8hpp_source.html#l00052">scoped.hpp:52</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_afe0c43c5e88c69cbc740e52b09747d5f"><div class="ttname"><a href="classgame_1_1_engine.html#afe0c43c5e88c69cbc740e52b09747d5f">game::Engine::_scene</a></div><div class="ttdeci">std::unique_ptr&lt; game::IScene &gt; _scene</div><div class="ttdoc">Sets the active scene and deletes the old one.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00121">Engine.hpp:121</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a4eb05f22ef7aa3c7cccbc67b166ea013"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a4eb05f22ef7aa3c7cccbc67b166ea013">game::settings::Settings::getLocale</a></div><div class="ttdeci">std::string_view getLocale() const</div><div class="ttdoc">Get the target locale.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00145">Settings.cpp:145</a></div></div>
 <div class="ttc" id="aswap_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/memory/unique_ptr/swap.html">std::unique_ptr::swap</a></div><div class="ttdeci">T swap(T... args)</div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a6781e093b0e950ddd361369490e0020a"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a6781e093b0e950ddd361369490e0020a">game::settings::Settings::load</a></div><div class="ttdeci">void load()</div><div class="ttdoc">Load the settings from getSettingsFilePath().</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00084">Settings.cpp:84</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a910a7b2e6d319a41f56f6f3306dcd0bd"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd">game::settings::Settings::getTargetFramerate</a></div><div class="ttdeci">unsigned int getTargetFramerate() const</div><div class="ttdoc">Get the target framerate.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00133">Settings.cpp:133</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_audio_html_aac84084fc76a4327246d6255c6537668"><div class="ttname"><a href="classraylib_1_1core_1_1_audio.html#aac84084fc76a4327246d6255c6537668">raylib::core::Audio::setMasterVolume</a></div><div class="ttdeci">static void setMasterVolume(float volume)</div><div class="ttdoc">Set the global volume of the program.</div><div class="ttdef"><b>Definition:</b> <a href="_audio_8cpp_source.html#l00022">Audio.cpp:22</a></div></div>
-<div class="ttc" id="aclassgame_1_1_engine_html_a712e2cfd9b09b557dba688ee6b21e614"><div class="ttname"><a href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">game::Engine::_settings</a></div><div class="ttdeci">settings::Settings _settings</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00074">Engine.hpp:74</a></div></div>
+<div class="ttc" id="aclassraylib_1_1shaders_1_1_shader_html_a8900df798086e08db8ff72da0e3f9ed6"><div class="ttname"><a href="classraylib_1_1shaders_1_1_shader.html#a8900df798086e08db8ff72da0e3f9ed6">raylib::shaders::Shader::setValue</a></div><div class="ttdeci">void setValue(Location location, float value) const</div><div class="ttdoc">Set the Value of a variable.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8cpp_source.html#l00033">Shader.cpp:33</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a712e2cfd9b09b557dba688ee6b21e614"><div class="ttname"><a href="classgame_1_1_engine.html#a712e2cfd9b09b557dba688ee6b21e614">game::Engine::_settings</a></div><div class="ttdeci">settings::Settings _settings</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00123">Engine.hpp:123</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_a000198d5814b224f892bc9ae317015c6"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">raylib::core::Vector2::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00139">Vector2.hpp:139</a></div></div>
 <div class="ttc" id="aclassgame_1_1settings_1_1_settings_html_a06b1c6f822fe6202c84babcbd3481e4f"><div class="ttname"><a href="classgame_1_1settings_1_1_settings.html#a06b1c6f822fe6202c84babcbd3481e4f">game::settings::Settings::getMasterVolume</a></div><div class="ttdeci">float getMasterVolume() const</div><div class="ttdoc">Get the master volume.</div><div class="ttdef"><b>Definition:</b> <a href="_settings_8cpp_source.html#l00129">Settings.cpp:129</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a4db1d089b4108b6a2644b48b72a7f524"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a></div><div class="ttdeci">static void setSize(int width, int height)</div><div class="ttdoc">Set the window size.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00048">Window.cpp:48</a></div></div>
+<div class="ttc" id="aclassraylib_1_1shaders_1_1_shader_html_a568996f98a5662f376685f904066eb73"><div class="ttname"><a href="classraylib_1_1shaders_1_1_shader.html#a568996f98a5662f376685f904066eb73">raylib::shaders::Shader::getPath</a></div><div class="ttdeci">static std::filesystem::path getPath(std::string_view name)</div><div class="ttdoc">Fetches to path of a shader, based on the GLSL version.</div><div class="ttdef"><b>Definition:</b> <a href="_shader_8cpp_source.html#l00132">Shader.cpp:132</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_ad2b42af3034b758f6af55e5534fd0d20"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#ad2b42af3034b758f6af55e5534fd0d20">raylib::core::Window::isFullscreen</a></div><div class="ttdeci">static bool isFullscreen()</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00061">Window.cpp:61</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_ab4e1537240492df919dd95e8587356f1"><div class="ttname"><a href="classgame_1_1_engine.html#ab4e1537240492df919dd95e8587356f1">game::Engine::_globalShader</a></div><div class="ttdeci">std::unique_ptr&lt; raylib::shaders::Shader &gt; _globalShader</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00125">Engine.hpp:125</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a710e53756309e2550b986f73e7bb0c17"><div class="ttname"><a href="classgame_1_1_engine.html#a710e53756309e2550b986f73e7bb0c17">game::Engine::setGlobalShader</a></div><div class="ttdeci">void setGlobalShader(std::filesystem::path vertex, std::filesystem::path fragments, std::function&lt; void(raylib::shaders::Shader &amp;)&gt; shaderSetup)</div><div class="ttdoc">Set the Global Shader.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00159">Engine.cpp:159</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_af286ae0d4dd1908cf3668c651a509c47"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">raylib::core::Vector2::y</a></div><div class="ttdeci">T y</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00140">Vector2.hpp:140</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
