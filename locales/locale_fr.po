@@ -65,7 +65,7 @@ msgid "Left"
 msgstr "Gauche"
 
 msgid "Not connected"
-msgstr "Pas connecté"
+msgstr "Non connecté"
 
 msgid "Connected"
 msgstr "Connecté"
@@ -93,3 +93,6 @@ msgstr "Activable Droit"
 
 msgid "Bomb"
 msgstr "Bombe"
+
+msgid "User 1"
+msgstr ""
