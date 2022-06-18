@@ -102,7 +102,7 @@ namespace raylib
             /// @param isUniform if it is a uniform or attribute variable.
             template <typename T> void setValue(std::string_view name, T value, bool isUniform = true) const
             {
-                Location loc = getLocation(name);
+                Location loc = getLocation(name, isUniform);
 
                 if (loc == InvalidLocation)
                     return;
@@ -145,7 +145,7 @@ namespace raylib
             template <typename T>
             void setValues(std::string_view name, std::span<T, std::dynamic_extent> values, bool isUniform = true) const
             {
-                Location loc = getLocation(name);
+                Location loc = getLocation(name, isUniform);
 
                 if (loc == InvalidLocation)
                     return;
