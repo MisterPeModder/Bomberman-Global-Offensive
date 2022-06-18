@@ -151,13 +151,14 @@ static void loadPlayerInterface(ecs::World &world)
     world.addEntity()
         .with<game::components::Position>(80, 70)
         .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
-        .with<game::components::Controlable>(
-            [&world](ecs::Entity btn, game::User owner) {
-                world.getStorage<game::components::Textual>() = 
-                (game::User::isAvailable() == true) ? localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED
-                                                    : localization::resources::menu::rsNotConnected, 20, raylib::core::Color::BLUE;
-            }
-        )
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::MainMenuScene::JOIN_SLOT_ONE, game::MainMenuScene::OPTION,
+            game::gui::Widget::NullTag, game::MainMenuScene::PLAY, game::MainMenuScene::LOGOUT)
+        .with<game::gui::Clickable>([&world](ecs::Entity btn, game::gui::Clickable::State state) {
+            world.getStorage<game::components::Textual>()[btn.getId()].text =
+                (state == game::gui::Clickable::State::Pressed) ? localization::resources::menu::rsConnected,
+            20, raylib::core::Color::BLUE : localization::resources::menu::rsConnected, 20, raylib::core::Color::BLUE
+        })
         .build();
 }
 

@@ -36,3 +36,6 @@ msgstr ""
 
 msgid "Not connected"
 msgstr ""
+
+msgid "connected"
+msgstr ""

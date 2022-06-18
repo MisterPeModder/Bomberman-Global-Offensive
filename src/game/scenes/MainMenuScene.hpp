@@ -19,6 +19,7 @@ namespace game
             PLAY,
             OPTION,
             LOGOUT,
+            JOIN_SLOT_ONE,
         };
         MainMenuScene();
     };

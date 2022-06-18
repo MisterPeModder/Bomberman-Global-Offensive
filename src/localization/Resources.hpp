@@ -38,6 +38,7 @@ namespace localization
             constexpr ResourceString rsMenuPlay("Play");
             constexpr ResourceString rsMenuQuit("Quit");
             constexpr ResourceString rsNotConnected("Not connected");
+            constexpr ResourceString rsConnected("connected");
         } // namespace menu
     }     // namespace resources
 } // namespace localization
