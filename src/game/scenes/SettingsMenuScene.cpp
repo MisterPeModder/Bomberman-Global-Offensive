@@ -509,7 +509,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 2, pos.y + 12)
+        .with<game::components::Position>(pos.x + 4, pos.y + 12)
         .with<game::components::Textual>(
             localization::resources::keybinds::rsKeyBindLeft, 20, raylib::core::Color::GOLD)
         .with<game::components::Controlable>(game::User::UserId::User1)
@@ -527,7 +527,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
             })
         .build();
     world.addEntity()
-        .with<game::components::Position>(pos.x + 8, pos.y + 12)
+        .with<game::components::Position>(pos.x + 10, pos.y + 12)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::components::Textual>(
 
@@ -541,7 +541,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 16, pos.y + 12)
+        .with<game::components::Position>(pos.x + 18, pos.y + 12)
         .with<game::components::Textual>(
             localization::resources::keybinds::rsKeyBindRight, 20, raylib::core::Color::GOLD)
         .with<game::components::Controlable>(game::User::UserId::User1)
@@ -559,7 +559,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
             })
         .build();
     world.addEntity()
-        .with<game::components::Position>(pos.x + 22, pos.y + 12)
+        .with<game::components::Position>(pos.x + 24, pos.y + 12)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::components::Textual>(
 
@@ -573,7 +573,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
         
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 2, pos.y + 17)
+        .with<game::components::Position>(pos.x + 4, pos.y + 17)
         .with<game::components::Textual>(
             localization::resources::keybinds::rsKeyBindUp, 20, raylib::core::Color::GOLD)
         .with<game::components::Controlable>(game::User::UserId::User1)
@@ -591,7 +591,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
             })
         .build();
     world.addEntity()
-        .with<game::components::Position>(pos.x + 8, pos.y + 17)
+        .with<game::components::Position>(pos.x + 10, pos.y + 17)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::components::Textual>(
 
@@ -601,7 +601,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 16, pos.y + 17)
+        .with<game::components::Position>(pos.x + 18, pos.y + 17)
         .with<game::components::Textual>(
             localization::resources::keybinds::rsKeyBindDown, 20, raylib::core::Color::GOLD)
         .with<game::components::Controlable>(game::User::UserId::User1)
@@ -619,7 +619,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
             })
         .build();
     world.addEntity()
-        .with<game::components::Position>(pos.x + 22, pos.y + 17)
+        .with<game::components::Position>(pos.x + 24, pos.y + 17)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::components::Textual>(
 
