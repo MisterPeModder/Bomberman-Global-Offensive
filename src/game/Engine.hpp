@@ -29,6 +29,9 @@ namespace game
         /// Constructor
         Engine();
 
+        /// Destructor
+        ~Engine();
+
         /// Sets the active scene and deletes the old one
         template <std::derived_from<IScene> S, typename... Args> void setScene(Args &&...args)
         {
