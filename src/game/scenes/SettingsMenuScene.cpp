@@ -155,29 +155,29 @@ static void loadGraphicSettings(ecs::World &world)
         .build();
 }
 
-static void loadAudioSettings(ecs::World &world)
+static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
 {
     world.addEntity()
         .with<game::components::Rectangle>()
-        .with<game::components::Position>(1.f, 10.f)
-        .with<game::components::Size>(32.f, 32.f)
+        .with<game::components::Position>(pos.x, pos.y)
+        .with<game::components::Size>(size.x, size.y)
         .with<game::components::Color>(raylib::core::Color::BLUE)
         .build();
     world.addEntity()
         .with<game::components::Rectangle>()
-        .with<game::components::Position>(2.f, 11.f)
-        .with<game::components::Size>(30.f, 30.f)
+        .with<game::components::Position>(pos.x + 1, pos.y + 1)
+        .with<game::components::Size>(size.x - 2, size.y - 2)
         .with<game::components::Color>(raylib::core::Color::BLACK)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(3.f, 12.f)
+        .with<game::components::Position>(pos.x + 2, pos.y + 2)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsAudio, 40, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(5.f, 20.f)
+        .with<game::components::Position>(pos.x + 4, pos.y + 10)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsMute, 20, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
@@ -197,13 +197,13 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(5.f, 25.f)
+        .with<game::components::Position>(pos.x + 4, pos.y + 15)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsVolume, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(7.f, 30.f)
+        .with<game::components::Position>(pos.x + 6, pos.y + 20)
         .with<game::components::Textual>("25%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_25, game::gui::Widget::NullTag,
@@ -222,7 +222,7 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(12.f, 30.f)
+        .with<game::components::Position>(pos.x + 11, pos.y + 20)
         .with<game::components::Textual>("50%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_50, game::SettingsMenuScene::VOLUME_25,
@@ -241,7 +241,7 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(17.f, 30.f)
+        .with<game::components::Position>(pos.x + 16, pos.y + 20)
         .with<game::components::Textual>("75%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_75, game::SettingsMenuScene::VOLUME_50,
@@ -260,7 +260,7 @@ static void loadAudioSettings(ecs::World &world)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(22.f, 30.f)
+        .with<game::components::Position>(pos.x + 21, pos.y + 20)
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_100, game::SettingsMenuScene::VOLUME_75,
@@ -323,7 +323,7 @@ static void loadSettingsMenuScene(ecs::World &world)
         .build();
 
     loadGraphicSettings(world);
-    loadAudioSettings(world);
+    loadAudioSettings(world, raylib::core::Vector2f(1, 10), raylib::core::Vector2f(32, 32));
     loadKeybindSettings(world);
 
     world.addEntity()
