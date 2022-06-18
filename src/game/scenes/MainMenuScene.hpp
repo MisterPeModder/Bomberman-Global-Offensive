@@ -17,7 +17,7 @@ namespace game
       public:
         enum WIDGET_ID {
             PLAY,
-            OPTION,
+            SETTINGS,
             LOGOUT,
         };
         MainMenuScene();

@@ -34,7 +34,7 @@ namespace localization
         } // namespace settings
         namespace menu
         {
-            constexpr ResourceString rsMenuOption("Option");
+            constexpr ResourceString rsMenuSettings("Settings");
             constexpr ResourceString rsMenuPlay("Play");
             constexpr ResourceString rsMenuQuit("Quit");
         } // namespace menu

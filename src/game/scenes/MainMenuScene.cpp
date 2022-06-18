@@ -66,7 +66,7 @@ static void loadMainMenuScene(ecs::World &world)
         .with<game::components::Textual>(localization::resources::menu::rsMenuPlay, 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::PLAY, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
-            game::gui::Widget::NullTag, game::MainMenuScene::OPTION, true)
+            game::gui::Widget::NullTag, game::MainMenuScene::SETTINGS, true)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
@@ -80,9 +80,9 @@ static void loadMainMenuScene(ecs::World &world)
 
     world.addEntity()
         .with<game::components::Position>(2, 20)
-        .with<game::components::Textual>(localization::resources::menu::rsMenuOption, 20, raylib::core::Color::WHITE)
+        .with<game::components::Textual>(localization::resources::menu::rsMenuSettings, 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::MainMenuScene::OPTION, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
+        .with<game::gui::Widget>(game::MainMenuScene::SETTINGS, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
             game::MainMenuScene::PLAY, game::MainMenuScene::LOGOUT)
         .with<game::gui::Clickable>([&world](ecs::Entity) {
             world.getResource<game::resources::EngineResource>().engine->setScene<game::SettingsMenuScene>();
@@ -94,7 +94,7 @@ static void loadMainMenuScene(ecs::World &world)
         .with<game::components::Textual>(localization::resources::menu::rsMenuQuit, 20, raylib::core::Color::WHITE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::MainMenuScene::LOGOUT, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
-            game::MainMenuScene::OPTION, game::gui::Widget::NullTag)
+            game::MainMenuScene::SETTINGS, game::gui::Widget::NullTag)
         .with<game::gui::Clickable>([](ecs::Entity) { raylib::core::Window::setShouldClose(); })
         .build();
 

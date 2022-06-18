@@ -25,8 +25,8 @@ msgstr "Volume"
 msgid "Back"
 msgstr "Retour"
 
-msgid "Option"
-msgstr "Option"
+msgid "Settings"
+msgstr "Options"
 
 msgid "Play"
 msgstr "Jouer"
