@@ -22,6 +22,14 @@ namespace localization
 
         constexpr ResourceString rsSettings("SETTINGS");
 
+        namespace keybinds
+        {
+            constexpr ResourceString rsKeyBindLeft("Left");
+            constexpr ResourceString rsKeyBindRight("Right");
+            constexpr ResourceString rsKeyBindUp("Up");
+            constexpr ResourceString rsKeyBindDown("Down");
+        } // namespace keybinds
+
         namespace languages
         {
             constexpr ResourceString rsLanguageEnglish("English");
@@ -41,6 +49,8 @@ namespace localization
             constexpr ResourceString rsSettingsSfx("Sfx");
 
             constexpr ResourceString rsSettingsKeybinds("Keybinds");
+            constexpr ResourceString rsSettingsControllerKeybinds("(Controller)");
+            constexpr ResourceString rsSettingsKeyboardKeybinds("(Keyboard)");
 
         } // namespace settings
         namespace menu

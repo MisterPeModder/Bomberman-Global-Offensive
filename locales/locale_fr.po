@@ -54,3 +54,12 @@ msgstr "Jouer"
 
 msgid "Quit"
 msgstr "Quitter"
+
+msgid "(Controller)"
+msgstr ""
+
+msgid "(Keyboard)"
+msgstr ""
+
+msgid "Left"
+msgstr ""
