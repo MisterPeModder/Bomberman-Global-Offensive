@@ -30,7 +30,6 @@ namespace game
                 auto models = ecs::maybe(data.getStorage<game::components::Model>());
                 auto modelRefs = ecs::maybe(data.getStorage<game::components::ModelReference>());
 
-
                 for (auto [model, modelRef, animation] :
                     ecs::join(models, modelRefs, data.getStorage<game::components::Animation>())) {
                     auto obj = (model) ? model : ((modelRef) ? &modelRef->object : nullptr);
