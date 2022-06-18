@@ -101,6 +101,26 @@ namespace game
         /// @return action changed since last queue check.
         GameAction getChangedAction();
 
+        /// Get the Profile.
+        ///
+        /// @return const settings::Profile& user profile.
+        const settings::Profile &getProfile() const;
+
+        /// Get the Profile.
+        ///
+        /// @return settings::Profile& user profile.
+        settings::Profile &getProfile();
+
+        /// Get the Keybinds.
+        ///
+        /// @return const settings::Keybinds& user keybinds.
+        const settings::Keybinds &getKeybinds() const;
+
+        /// Get the Keybinds.
+        ///
+        /// @return settings::Keybinds& user keybinds.
+        settings::Keybinds getKeybinds();
+
       private:
         void fillActions();
 
