@@ -105,7 +105,7 @@ namespace game
             .with<components::Textual>(localization::resources::menu::rsMenuPlay, 20, raylib::core::Color::WHITE)
             .with<components::Controlable>(User::UserId::User1)
             .with<gui::Widget>(MainMenuScene::PLAY, gui::Widget::NullTag, gui::Widget::NullTag, gui::Widget::NullTag,
-                MainMenuScene::OPTION, true)
+                MainMenuScene::SETTINGS, true)
             .with<gui::Clickable>(
                 [this](ecs::Entity) {
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
@@ -121,9 +121,9 @@ namespace game
         /// Settings
         _world.addEntity()
             .with<components::Position>(2, 20)
-            .with<components::Textual>(localization::resources::menu::rsMenuOption, 20, raylib::core::Color::WHITE)
+            .with<components::Textual>(localization::resources::menu::rsMenuSettings, 20, raylib::core::Color::WHITE)
             .with<components::Controlable>(User::UserId::User1)
-            .with<gui::Widget>(MainMenuScene::OPTION, gui::Widget::NullTag, MainMenuScene::JOIN_SLOT_ONE,
+            .with<gui::Widget>(MainMenuScene::SETTINGS, gui::Widget::NullTag, MainMenuScene::JOIN_SLOT_ONE,
                 MainMenuScene::PLAY, MainMenuScene::LOGOUT)
             .with<gui::Clickable>([this](ecs::Entity) {
                 _world.getResource<resources::EngineResource>().engine->setScene<SettingsMenuScene>();
@@ -135,8 +135,8 @@ namespace game
             .with<components::Position>(2, 90)
             .with<components::Textual>(localization::resources::menu::rsMenuQuit, 20, raylib::core::Color::WHITE)
             .with<components::Controlable>(User::UserId::User1)
-            .with<gui::Widget>(MainMenuScene::LOGOUT, gui::Widget::NullTag, gui::Widget::NullTag, MainMenuScene::OPTION,
-                gui::Widget::NullTag)
+            .with<gui::Widget>(MainMenuScene::LOGOUT, gui::Widget::NullTag, gui::Widget::NullTag,
+                MainMenuScene::SETTINGS, gui::Widget::NullTag)
             .with<gui::Clickable>([](ecs::Entity) { raylib::core::Window::setShouldClose(); })
             .build();
 
