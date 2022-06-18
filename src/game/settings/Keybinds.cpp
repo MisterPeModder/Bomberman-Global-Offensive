@@ -68,29 +68,49 @@ namespace game
             _gamepadBindings.clear();
         }
 
-        void Keybinds::setKeyboardBinding(Key key, GameAction action) { _keyboardBindings[key] = action; }
+        void Keybinds::setKeyboardBinding(Key key, GameAction action)
+        {
+            unbindKey(key, action);
+            _keyboardBindings.emplace_back(key, action);
+        }
 
-        void Keybinds::unbindKey(Key key) { _keyboardBindings.erase(key); }
+        void Keybinds::unbindKey(Key key, GameAction action)
+        {
+            for (size_t i = _keyboardBindings.size(); i > 0; i--) {
+                auto &bind = _keyboardBindings[i - 1];
+                if (bind.key == key && (action == GameAction::NONE || bind.action == action))
+                    _keyboardBindings.erase(_keyboardBindings.begin() + i);
+            }
+        }
 
         void Keybinds::setGamepadBinding(const GamepadInput &gamepadInput, GameAction action)
         {
-            _gamepadBindings[gamepadInput] = action;
+            unbindGamepadInput(gamepadInput, action);
+            _gamepadBindings.emplace_back(gamepadInput, action);
         }
 
-        void Keybinds::unbindGamepadInput(const GamepadInput &gamepadInput) { _gamepadBindings.erase(gamepadInput); }
+        void Keybinds::unbindGamepadInput(const GamepadInput &gamepadInput, GameAction action)
+        {
+            for (size_t i = _gamepadBindings.size(); i > 0; i--) {
+                const GamepadBind &bind = _gamepadBindings[i - 1];
+                if ((bind.input <=> gamepadInput == std::strong_ordering::equal)
+                    && (action == GameAction::NONE || bind.action == action))
+                    _gamepadBindings.erase(_gamepadBindings.begin() + i);
+            }
+        }
 
-        const std::map<Key, GameAction> &Keybinds::getKeyboardBindings() const { return _keyboardBindings; }
+        const std::vector<Keybinds::KeyboardBind> &Keybinds::getKeyboardBindings() const { return _keyboardBindings; }
 
-        const std::map<GamepadInput, GameAction> &Keybinds::getGamepadBindings() const { return _gamepadBindings; }
+        const std::vector<Keybinds::GamepadBind> &Keybinds::getGamepadBindings() const { return _gamepadBindings; }
 
         const Keybinds &Keybinds::operator>>(std::ostream &stream) const
         {
             stream << "# Keyboard bindings" << std::endl;
             for (auto iter : _keyboardBindings)
-                stream << "key:" << static_cast<int>(iter.first) << "=" << static_cast<int>(iter.second) << std::endl;
+                stream << "key:" << static_cast<int>(iter.key) << "=" << static_cast<int>(iter.action) << std::endl;
             stream << std::endl << "# Gamepad bindings" << std::endl;
             for (auto iter : _gamepadBindings)
-                stream << "gamepad:" << iter.first.toString() << "=" << static_cast<int>(iter.second) << std::endl;
+                stream << "gamepad:" << iter.input.toString() << "=" << static_cast<int>(iter.action) << std::endl;
             return *this;
         }
     } // namespace settings
