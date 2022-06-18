@@ -295,12 +295,13 @@ namespace game
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);
 
-        raylib::core::scoped::Drawing drawing;
+        raylib::core::scoped::RenderTexture textureMode(
+            _world.getResource<game::resources::EngineResource>().engine->getRenderTarget());
         raylib::core::Window::clear();
         {
             raylib::core::scoped::Mode3D mode3D(_camera);
             _world.runSystems(_drawing);
-        };
+        }
         _world.maintain();
     }
 } // namespace game

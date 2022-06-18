@@ -13,6 +13,9 @@
 #include "game/resources/Engine.hpp"
 #include "game/scenes/IScene.hpp"
 
+#include "raylib/shaders/Shader.hpp"
+#include "raylib/textures/RenderTexture2D.hpp"
+
 #include <iostream>
 
 #include "settings/Settings.hpp"
@@ -64,6 +67,10 @@ namespace game
         /// Gets the settings (immutable)
         const settings::Settings &getSettings() const;
 
+        void updateRenderTarget();
+
+        const raylib::textures::RenderTexture2D &getRenderTarget() const;
+
       private:
         /// Load the settings from the settings file
         void loadSettings();
@@ -72,6 +79,8 @@ namespace game
         std::unique_ptr<game::IScene> _scene;
         std::unique_ptr<game::IScene> _waitingScene;
         settings::Settings _settings;
+        std::unique_ptr<raylib::textures::RenderTexture2D> _renderTarget;
+        raylib::shaders::Shader _globalShader;
 
         bool _debugMode;
     };
