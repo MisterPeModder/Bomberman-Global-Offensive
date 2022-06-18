@@ -72,3 +72,6 @@ msgstr ""
 
 msgid "FPS"
 msgstr ""
+
+msgid "Right"
+msgstr ""

@@ -72,3 +72,6 @@ msgstr "Connecté"
 
 msgid "FPS"
 msgstr "IPS (FPS)"
+
+msgid "Right"
+msgstr "Droite"

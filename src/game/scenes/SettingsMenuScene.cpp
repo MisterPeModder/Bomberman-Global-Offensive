@@ -5,6 +5,8 @@
 ** SettingsMenuScene
 */
 
+#include <algorithm>
+
 #include "game/scenes/SettingsMenuScene.hpp"
 #include "game/Engine.hpp"
 #include "game/scenes/MainMenuScene.hpp"
@@ -40,6 +42,8 @@
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
 #include "game/systems/Rectangle.hpp"
+
+#include "game/GameAction.hpp"
 
 #include "localization/Localization.hpp"
 #include "localization/Resources.hpp"
@@ -529,7 +533,37 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
 
                     "value"
 
+                    // std::find_if(world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().begin(), world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().end(), game::GameAction::MOVE_LEFT) != world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().begin() ? "ok" : "not ok"
+
                     // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().
+
+                , 20, raylib::core::Color::GOLD)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 16, pos.y + 12)
+        .with<game::components::Textual>(
+            localization::resources::keybinds::rsKeyBindRight, 20, raylib::core::Color::GOLD)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT,
+            game::gui::Widget::NullTag, game::SettingsMenuScene::FPS_240,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                Logger::logger.log(Logger::Severity::Error, "Button must be set");
+            },
+            [&](ecs::Entity btn, game::gui::Clickable::State state) {
+                world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+                                                                    : raylib::core::Color::GOLD;
+            })
+        .build();
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 22, pos.y + 12)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::components::Textual>(
+
+                    "value"
 
                 , 20, raylib::core::Color::GOLD)
         .build();
