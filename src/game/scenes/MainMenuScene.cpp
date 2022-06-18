@@ -90,7 +90,9 @@ static void loadMainMenuScene(ecs::World &world)
             game::gui::Widget::NullTag, game::MainMenuScene::OPTION, true)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
-                world.getResource<game::resources::EngineResource>().engine->setScene<game::GameScene>();
+                auto &engine = world.getResource<game::resources::EngineResource>().engine;
+
+                engine->setScene<game::GameScene>(game::Game::Parameters(engine->getUsers().getAvailableUsers()));
                 Logger::logger.log(Logger::Severity::Debug, "go to game");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {

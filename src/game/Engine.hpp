@@ -26,9 +26,9 @@ namespace game
         Engine();
 
         /// Sets the active scene and deletes the old one
-        template <std::derived_from<IScene> S> void setScene()
+        template <std::derived_from<IScene> S, typename... Args> void setScene(Args &&...args)
         {
-            _waitingScene = std::make_unique<S>();
+            _waitingScene = std::make_unique<S>(args...);
             _waitingScene->getWorld().addResource<resources::EngineResource>(this);
         }
 
