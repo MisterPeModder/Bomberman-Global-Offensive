@@ -75,3 +75,9 @@ msgstr "IPS (FPS)"
 
 msgid "Right"
 msgstr "Droite"
+
+msgid "Down"
+msgstr "Bas"
+
+msgid "Up"
+msgstr "Haut"

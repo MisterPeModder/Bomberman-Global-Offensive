@@ -75,3 +75,9 @@ msgstr ""
 
 msgid "Right"
 msgstr ""
+
+msgid "Down"
+msgstr ""
+
+msgid "Up"
+msgstr ""
