@@ -13,6 +13,7 @@ namespace game
     {
         for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
             _users[i].setId(static_cast<User::UserId>(i));
+        _users[0].setAvailable();
     }
 
     const User &Users::operator[](User::UserId id) const { return _users[static_cast<size_t>(id)]; }

@@ -80,7 +80,7 @@ namespace game
         ///
         /// @param available wheter or not the user is available.
         /// @todo Detect new gamepad availables.
-        void setAvailable(bool available);
+        void setAvailable(bool available = true);
 
         /// Test if the user is available.
         ///
