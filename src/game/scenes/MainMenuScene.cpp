@@ -58,7 +58,7 @@
 
 static void loadMainMenuScene(ecs::World &world)
 {
-    static const std::filesystem::path logoPath = util::makePath("assets", "icon.png");
+    const std::filesystem::path logoPath = util::makePath("assets", "icon.png");
     raylib::textures::Image image(logoPath, {1, 2}, raylib::core::Color::WHITE);
 
     world.addEntity()
