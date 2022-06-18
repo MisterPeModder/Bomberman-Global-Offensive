@@ -81,3 +81,15 @@ msgstr ""
 
 msgid "Up"
 msgstr ""
+
+msgid "Activable"
+msgstr ""
+
+msgid "Activable Left"
+msgstr ""
+
+msgid "Activable Right"
+msgstr ""
+
+msgid "Bomb"
+msgstr ""

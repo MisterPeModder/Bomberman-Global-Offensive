@@ -81,3 +81,15 @@ msgstr "Bas"
 
 msgid "Up"
 msgstr "Haut"
+
+msgid "Activable"
+msgstr "Activable"
+
+msgid "Activable Left"
+msgstr "Activable Gauche"
+
+msgid "Activable Right"
+msgstr "Activable Droit"
+
+msgid "Bomb"
+msgstr "Bombe"

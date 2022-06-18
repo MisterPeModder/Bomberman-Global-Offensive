@@ -28,6 +28,10 @@ namespace localization
             constexpr ResourceString rsKeyBindRight("Right");
             constexpr ResourceString rsKeyBindUp("Up");
             constexpr ResourceString rsKeyBindDown("Down");
+            constexpr ResourceString rsKeyBindBomb("Bomb");
+            constexpr ResourceString rsKeyBindActivable("Activable");
+            constexpr ResourceString rsKeyBindActivableLeft("Activable Left");
+            constexpr ResourceString rsKeyBindActivableRight("Activable Right");
         } // namespace keybinds
 
         namespace languages
