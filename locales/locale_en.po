@@ -69,3 +69,6 @@ msgstr ""
 
 msgid "Connected"
 msgstr ""
+
+msgid "FPS"
+msgstr ""

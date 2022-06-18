@@ -56,16 +56,19 @@ msgid "Quit"
 msgstr "Quitter"
 
 msgid "(Controller)"
-msgstr ""
+msgstr "(Manette)"
 
 msgid "(Keyboard)"
-msgstr ""
+msgstr "(Clavier)"
 
 msgid "Left"
-msgstr ""
+msgstr "Gauche"
 
 msgid "Not connected"
 msgstr "Pas connecté"
 
 msgid "Connected"
 msgstr "Connecté"
+
+msgid "FPS"
+msgstr "IPS (FPS)"
