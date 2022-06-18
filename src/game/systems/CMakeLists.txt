@@ -22,6 +22,7 @@ set(SRC
     ${SRCROOT}/Items.hpp
     ${SRCROOT}/Movement.hpp
     ${SRCROOT}/Movement.cpp
+    ${INCROOT}/PlaySoundOnce.hpp
     ${SRCROOT}/Rectangle.hpp
     ${INCROOT}/SplashScreen.hpp
     PARENT_SCOPE)
