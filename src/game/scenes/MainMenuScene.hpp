@@ -20,6 +20,9 @@ namespace game
             OPTION,
             LOGOUT,
             JOIN_SLOT_ONE,
+            JOIN_SLOT_TWO,
+            JOIN_SLOT_THREE,
+            JOIN_SLOT_FOUR,
         };
         MainMenuScene();
     };
