@@ -1,6 +1,7 @@
 var classgame_1_1_engine =
 [
     [ "Engine", "classgame_1_1_engine.html#a73c74b99146453a5f42f9fbc8a1b0ddf", null ],
+    [ "~Engine", "classgame_1_1_engine.html#a9a0ffa4472daa06ed6158ec4615c48c3", null ],
     [ "drawFrame", "classgame_1_1_engine.html#a1892bfceaa736d18c1b7593c0a2244d5", null ],
     [ "getDebugMode", "classgame_1_1_engine.html#a9d55ade5f7b0bb6ea6409e7f3ed40c29", null ],
     [ "getGlobalShader", "classgame_1_1_engine.html#a13b4e4e7f8fd6985b098352a81ca218a", null ],
