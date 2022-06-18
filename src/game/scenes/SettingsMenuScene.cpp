@@ -115,7 +115,7 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 13.5, pos.y + 20)
+        .with<game::components::Position>(pos.x + 13.5f, pos.y + 20.f)
         .with<game::components::Textual>("1366x768", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_2, game::SettingsMenuScene::RES_1,
@@ -135,7 +135,7 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 21, pos.y + 20)
+        .with<game::components::Position>(pos.x + 21.f, pos.y + 20.f)
         .with<game::components::Textual>("1920x1080", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_3, game::SettingsMenuScene::RES_2,
@@ -177,7 +177,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 10)
+        .with<game::components::Position>(pos.x + 4.f, pos.y + 10.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsMuteUnmute, 20, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
@@ -205,13 +205,13 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 
 #pragma region Music volume
     world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 15)
+        .with<game::components::Position>(pos.x + 4.f, pos.y + 15.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsMusic, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 6, pos.y + 20)
+        .with<game::components::Position>(pos.x + 6.f, pos.y + 20.f)
         .with<game::components::Textual>("0%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::MUSIC_VOLUME_0, game::gui::Widget::NullTag,
@@ -230,7 +230,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 11, pos.y + 20)
+        .with<game::components::Position>(pos.x + 11.f, pos.y + 20.f)
         .with<game::components::Textual>("33%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::MUSIC_VOLUME_33, game::SettingsMenuScene::MUSIC_VOLUME_0,
@@ -249,7 +249,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 16, pos.y + 20)
+        .with<game::components::Position>(pos.x + 16.f, pos.y + 20.f)
         .with<game::components::Textual>("66%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::MUSIC_VOLUME_66, game::SettingsMenuScene::MUSIC_VOLUME_33,
@@ -268,7 +268,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 21, pos.y + 20)
+        .with<game::components::Position>(pos.x + 21.f, pos.y + 20.f)
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::MUSIC_VOLUME_100, game::SettingsMenuScene::MUSIC_VOLUME_66,
@@ -289,13 +289,13 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 
 #pragma region Sfx volume
     world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 25)
+        .with<game::components::Position>(pos.x + 4.f, pos.y + 25.f)
         .with<game::components::Textual>(
             localization::resources::settings::rsSettingsSfx, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 6, pos.y + 30)
+        .with<game::components::Position>(pos.x + 6.f, pos.y + 30.f)
         .with<game::components::Textual>("0%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_0, game::gui::Widget::NullTag,
@@ -314,7 +314,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 11, pos.y + 30)
+        .with<game::components::Position>(pos.x + 11.f, pos.y + 30.f)
         .with<game::components::Textual>("33%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_33, game::SettingsMenuScene::SFX_VOLUME_0,
@@ -333,7 +333,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 16, pos.y + 30)
+        .with<game::components::Position>(pos.x + 16.f, pos.y + 30.f)
         .with<game::components::Textual>("66%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_66, game::SettingsMenuScene::SFX_VOLUME_33,
@@ -352,7 +352,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 21, pos.y + 30)
+        .with<game::components::Position>(pos.x + 21.f, pos.y + 30.f)
         .with<game::components::Textual>("100%", 15, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::SFX_VOLUME_100, game::SettingsMenuScene::SFX_VOLUME_66,
