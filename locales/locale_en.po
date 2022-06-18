@@ -25,8 +25,8 @@ msgstr ""
 msgid "Music"
 msgstr ""
 
-msgid "MuteUnmute"
-msgstr "Mute/Unmute"
+msgid "Mute/Unmute"
+msgstr ""
 
 msgid "Sfx"
 msgstr ""
@@ -41,4 +41,7 @@ msgid "French"
 msgstr ""
 
 msgid "BM:GO"
+msgstr ""
+
+msgid "Bomberman: Global Offensive"
 msgstr ""
