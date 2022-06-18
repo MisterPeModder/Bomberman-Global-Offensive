@@ -62,7 +62,7 @@ namespace game
             setGamepadBinding(Gamepad::Button::FACE_RIGHT, GameAction::BACK);  /// B on Xbox
 
             setKeyboardBinding(Key::MINUS, GameAction::DISCONNECT);
-            setGamepadBinding(Gamepad::Button::MIDDLE_RIGHT, GameAction::DISCONNECT);
+            setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::DISCONNECT);
         }
 
         void Keybinds::clear()

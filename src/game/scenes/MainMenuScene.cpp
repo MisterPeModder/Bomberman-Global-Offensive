@@ -18,6 +18,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/Identity.hpp"
 #include "game/components/Image.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
@@ -68,11 +69,38 @@ struct DetectGamepad : public ecs::System {
             return;
         raylib::core::Gamepad::Button pressedBtn = raylib::core::Gamepad::getButtonPressed();
 
+        if (pressedBtn == raylib::core::Gamepad::Button::MIDDLE_LEFT)
+            return;
         if (pressedBtn != raylib::core::Gamepad::Button::MIDDLE_RIGHT
             && users[game::User::UserId::User1].isKeyboard()) {
             users[game::User::UserId::User1].setGamepadId(gamepadId);
         } else
             users.connectUser(gamepadId);
+    }
+};
+
+struct UpdateConnected : public ecs::System {
+    void run(ecs::SystemData data) override final
+    {
+        auto engine = data.getResource<game::resources::EngineResource>().engine;
+        auto &users = engine->getUsers();
+        auto &scene = dynamic_cast<game::MainMenuScene &>(engine->getScene());
+        auto firstId = scene.getFirstConnectedTextId();
+
+        for (auto [text, id] :
+            ecs::join(data.getStorage<game::components::Textual>(), data.getStorage<game::components::Identity>())) {
+            if (id.id >= firstId && id.id < firstId + 4) {
+                game::User::UserId userId = static_cast<game::User::UserId>(id.id - firstId);
+
+                if (users[userId].isAvailable()) {
+                    text.text = localization::resources::menu::rsConnected;
+                    text.color = raylib::core::Color::GREEN;
+                } else {
+                    text.text = localization::resources::menu::rsNotConnected;
+                    text.color = raylib::core::Color::RED;
+                }
+            }
+        }
     }
 };
 
@@ -134,55 +162,6 @@ static void loadMainMenuScene(ecs::World &world)
         .build();
 }
 
-static void loadPlayerInterface(ecs::World &world)
-{
-    // player1
-    world.addEntity()
-        .with<game::components::Position>(20, 40)
-        .with<game::components::Rectangle>()
-        .with<game::components::Size>(10.f, 30.f)
-        .with<game::components::Color>(raylib::core::Color::BLUE)
-        .build();
-
-    // world.addEntity()
-    //     .with<game::components::Position>(20, 70)
-    //     .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
-    //     .with<game::components::Controlable>(game::User::UserId::AllUsers,
-    //         [](ecs::Entity controlable, ecs::SystemData data, const game::Users::ActionEvent &event) {
-    //             if (event.action == game::GameAction::DISCONNECT && event.value == 1.f) {
-    //                 auto &users = data.getResource<game::resources::EngineResource>().engine->getUsers();
-    //                 std::cout << "User " << static_cast<size_t>(event.user) << " disconnected " << std::endl;
-    //                 users.disconnectUser(event.user);
-    //             }
-
-    //             return false;
-    //         })
-    //     .build();
-    // player2
-    world.addEntity()
-        .with<game::components::Position>(40, 40)
-        .with<game::components::Rectangle>()
-        .with<game::components::Size>(10.f, 30.f)
-        .with<game::components::Color>(raylib::core::Color::RED)
-        .build();
-
-    // player3
-    world.addEntity()
-        .with<game::components::Position>(60, 40)
-        .with<game::components::Rectangle>()
-        .with<game::components::Size>(10.f, 30.f)
-        .with<game::components::Color>(raylib::core::Color::GREEN)
-        .build();
-
-    // player4
-    world.addEntity()
-        .with<game::components::Position>(80, 40)
-        .with<game::components::Rectangle>()
-        .with<game::components::Size>(10.f, 30.f)
-        .with<game::components::Color>(raylib::core::Color::PURPLE)
-        .build();
-}
-
 namespace game
 {
     MainMenuScene::MainMenuScene()
@@ -192,16 +171,66 @@ namespace game
         _world.addSystem<game::systems::DrawSelectedWidget>();
         _world.addSystem<game::systems::DrawRectangle>();
         _world.addSystem<DetectGamepad>();
+        _world.addSystem<UpdateConnected>();
 
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::DrawTexture>();
 
-        _globalNoDraw.add<game::systems::InputManager, DetectGamepad>();
+        _globalNoDraw.add<game::systems::InputManager, DetectGamepad, UpdateConnected>();
         _global2D.add<game::systems::DrawTexture>();
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::DrawSelectedWidget>();
         _global2D.add<game::systems::DrawRectangle>();
         loadMainMenuScene(_world);
-        loadPlayerInterface(_world);
+        loadPlayerInterface();
     }
+
+    void MainMenuScene::loadPlayerSlot(size_t id)
+    {
+        raylib::core::Color color;
+
+        switch (id) {
+            case 0: color = raylib::core::Color::BLUE; break;
+            case 1: color = raylib::core::Color::RED; break;
+            case 2: color = raylib::core::Color::GREEN; break;
+            default: color = raylib::core::Color::PURPLE; break;
+        }
+
+        // player Rect
+        _world.addEntity()
+            .with<game::components::Position>(20 + 20 * static_cast<int>(id), 40)
+            .with<game::components::Rectangle>()
+            .with<game::components::Size>(10.f, 30.f)
+            .with<game::components::Color>(color)
+            .build();
+
+        auto connectedText = _world.addEntity()
+                                 .with<game::components::Position>(20 + static_cast<int>(id) * 20, 70)
+                                 .with<game::components::Textual>(
+                                     localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
+                                 .with<game::components::Identity>()
+                                 .build();
+        if (id == 0)
+            _firstUserId = _world.getStorage<components::Identity>()[connectedText.getId()].id;
+    }
+
+    void MainMenuScene::loadPlayerInterface()
+    {
+        for (size_t i = 0; i < 4; i++)
+            loadPlayerSlot(i);
+
+        _world.addEntity()
+            .with<game::components::Controlable>(game::User::UserId::AllUsers,
+                [](ecs::Entity controlable, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                    if (event.action == game::GameAction::DISCONNECT && event.value == 1.f) {
+                        auto &users = data.getResource<game::resources::EngineResource>().engine->getUsers();
+                        users.disconnectUser(event.user);
+                        return true;
+                    }
+                    return false;
+                })
+            .build();
+    }
+
+    components::Identity::Id MainMenuScene::getFirstConnectedTextId() const { return _firstUserId; }
 } // namespace game
