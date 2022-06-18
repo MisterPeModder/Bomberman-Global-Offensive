@@ -185,7 +185,7 @@ namespace game::components
                     break;
                 default: break;
             }
-            if (velocity != Vector3(0.f, 0.f, 0.f) && player.animation != Animations::Run) {
+            if (velocity != raylib::core::Vector3f(0.f, 0.f, 0.f) && player.animation != Animations::Run) {
                 anim.chooseAnimation(static_cast<unsigned int>(Animations::Run));
                 player.animation = Animations::Run;
             }
