@@ -27,8 +27,7 @@ namespace raylib
             ///
             /// @param width width of the texture.
             /// @param height height of the texture.
-            RenderTexture2D(
-                int width = raylib::core::Window::getWidth(), int height = raylib::core::Window::getHeight());
+            RenderTexture2D(int width, int height);
 
             /// Construct a new Render Texture object.
             ///

@@ -68,8 +68,12 @@ namespace game
         /// Gets the settings (immutable)
         const settings::Settings &getSettings() const;
 
-        /// Update the size of the render target to match the window size.
-        void updateRenderTarget();
+        /// Update the size of the render target to match the given parameters.
+        ///
+        /// @param width Render target width.
+        /// @param heigth Render target width.
+        void updateRenderTarget(
+            int width = raylib::core::Window::getWidth(), int height = raylib::core::Window::getHeight());
 
         /// Get the Render Target.
         ///
@@ -103,6 +107,11 @@ namespace game
         /// @param mode colorblind mode (in order [0, 2] Protanopia, Deuteranopia, Tritanopia)
         /// @todo Create an enum in an appropriate file.
         void setColorBlindShader(int mode = 2);
+
+        /// Updates the game engine's render resolution.
+        ///
+        /// @param resolution The resolution.
+        void setResolution(raylib::core::Vector2i resolution);
 
       private:
         /// Load the settings from the settings file
