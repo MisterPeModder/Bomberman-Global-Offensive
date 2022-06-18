@@ -41,7 +41,7 @@ namespace game
         if (!gamepad.isAvailable())
             return false;
         for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
-            if (_users[i].isAvailable() && static_cast<size_t>(_users[i].getGamepadId()) == gamepadId)
+            if (_users[i].isAvailable() && _users[i].getGamepadId() == gamepadId)
                 return true;
         return false;
     }
