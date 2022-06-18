@@ -10,9 +10,6 @@ msgstr ""
 msgid "Keybinds"
 msgstr ""
 
-msgid "Mute"
-msgstr ""
-
 msgid "Resolution"
 msgstr ""
 
@@ -25,6 +22,30 @@ msgstr ""
 msgid "Back"
 msgstr ""
 
+msgid "Music"
+msgstr ""
+
+msgid "Mute/Unmute"
+msgstr ""
+
+msgid "Sfx"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Français"
+msgstr ""
+
+msgid "BM:GO"
+msgstr ""
+
+msgid "Bomberman: Global Offensive"
+msgstr ""
+
 msgid "Settings"
 msgstr ""
 
@@ -34,3 +55,8 @@ msgstr ""
 msgid "Quit"
 msgstr ""
 
+msgid "Not connected"
+msgstr ""
+
+msgid "Connected"
+msgstr ""

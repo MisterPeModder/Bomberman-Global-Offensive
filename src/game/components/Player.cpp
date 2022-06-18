@@ -14,6 +14,7 @@
 #include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
+#include "game/Engine.hpp"
 #include "game/Game.hpp"
 #include "game/components/Animation.hpp"
 #include "game/components/Color.hpp"
@@ -133,8 +134,8 @@ namespace game::components
     {
         auto &velocity = data.getStorage<Velocity>()[self.getId()];
         auto &rAngle = data.getStorage<RotationAngle>()[self.getId()];
-        auto &user = data.getResource<Users>()[event.user];
         auto &anim = data.getStorage<Animation>()[self.getId()];
+        auto &user = data.getResource<game::resources::EngineResource>().engine->getUsers()[event.user];
         auto &stats = data.getStorage<Player>()[self.getId()].stats;
         auto &player = data.getStorage<Player>()[self.getId()];
         GameAction bestAction = GameAction::NONE;

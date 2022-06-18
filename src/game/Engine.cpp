@@ -85,6 +85,8 @@ namespace game
         _scene->getWorld().addResource<resources::EngineResource>(this);
     }
 
+    Engine::~Engine() { _settings.save(); }
+
     game::IScene &Engine::getScene() { return *_scene; }
 
     const game::IScene &Engine::getScene() const { return *_scene; }
@@ -188,4 +190,9 @@ namespace game
         this->updateRenderTarget(resolution.x, resolution.y);
 #endif
     }
+
+    Users &Engine::getUsers() { return _users; }
+
+    const Users &Engine::getUsers() const { return _users; }
+
 } // namespace game
