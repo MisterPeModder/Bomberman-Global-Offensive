@@ -60,6 +60,8 @@ namespace game
         ActionEvent getNextAction();
 
       private:
+        ActionEvent getGamepadJoin();
+
         std::array<User, static_cast<size_t>(User::UserId::UserCount)> _users;
     };
 } // namespace game

@@ -116,6 +116,7 @@ static void loadMainMenuScene(ecs::World &world)
 
 static void loadPlayerInterface(ecs::World &world)
 {
+    auto &users = world.getResource<game::Users>();
     // player1
     world.addEntity()
         .with<game::components::Position>(20, 40)
@@ -127,14 +128,17 @@ static void loadPlayerInterface(ecs::World &world)
     world.addEntity()
         .with<game::components::Position>(20, 70)
         .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
-        .with<game::components::Controlable>(game::User::UserId::User2)
-        .with<game::gui::Widget>(game::MainMenuScene::JOIN_SLOT_ONE, game::gui::Widget::NullTag,
-            game::MainMenuScene::JOIN_SLOT_TWO, game::gui::Widget::NullTag, game::gui::Widget::NullTag)
-        /* .with<game::gui::Clickable>([&world](ecs::Entity btn, game::gui::Clickable::State state) {
-            world.getStorage<game::components::Textual>()[btn.getId()].text =
-                (state == game::gui::Clickable::State::Pressed) ? localization::resources::menu::rsConnected,
-            20, raylib::core::Color::BLUE : localization::resources::menu::rsConnected, 20, raylib::core::Color::BLUE
-        }) */
+        .with<game::components::Controlable>(game::User::UserId::AllUsers,
+            [&](ecs::Entity controlable, ecs::SystemData data, const game::Users::ActionEvent &event) {
+                if (event.action == game::GameAction::JOIN) {
+                    std::cout << "Gamepad " << static_cast<size_t>(event.user) << " join" << std::endl;
+                    /// Change users[event.use] to users[first_not_connected]
+                    users[event.user].setAvailable(true);
+                    users[event.user].setGamepadId(static_cast<size_t>(event.user));
+                }
+
+                return false;
+            })
         .build();
     // player2
     world.addEntity()
@@ -143,18 +147,18 @@ static void loadPlayerInterface(ecs::World &world)
         .with<game::components::Size>(10.f, 30.f)
         .with<game::components::Color>(raylib::core::Color::RED)
         .build();
-    world.addEntity()
-        .with<game::components::Position>(40, 70)
-        .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::MainMenuScene::JOIN_SLOT_TWO, game::MainMenuScene::OPTION,
-            game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::MainMenuScene::LOGOUT)
-        /* .with<game::gui::Clickable>([&world](ecs::Entity btn, game::gui::Clickable::State state) {
-            world.getStorage<game::components::Textual>()[btn.getId()].text =
-                (state == game::gui::Clickable::State::Pressed) ? localization::resources::menu::rsConnected,
-            20, raylib::core::Color::BLUE : localization::resources::menu::rsConnected, 20, raylib::core::Color::BLUE
-        }) */
-        .build();
+    // world.addEntity()
+    //     .with<game::components::Position>(40, 70)
+    //     .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
+    //     .with<game::components::Controlable>(game::User::UserId::User1)
+    //     .with<game::gui::Widget>(game::MainMenuScene::JOIN_SLOT_TWO, game::MainMenuScene::OPTION,
+    //         game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::MainMenuScene::LOGOUT)
+    //     /* .with<game::gui::Clickable>([&world](ecs::Entity btn, game::gui::Clickable::State state) {
+    //         world.getStorage<game::components::Textual>()[btn.getId()].text =
+    //             (state == game::gui::Clickable::State::Pressed) ? localization::resources::menu::rsConnected,
+    //         20, raylib::core::Color::BLUE : localization::resources::menu::rsConnected, 20, raylib::core::Color::BLUE
+    //     }) */
+    //     .build();
 
     // player3
     world.addEntity()
@@ -163,18 +167,18 @@ static void loadPlayerInterface(ecs::World &world)
         .with<game::components::Size>(10.f, 30.f)
         .with<game::components::Color>(raylib::core::Color::GREEN)
         .build();
-    world.addEntity()
-        .with<game::components::Position>(60, 70)
-        .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::MainMenuScene::JOIN_SLOT_THREE, game::MainMenuScene::OPTION,
-            game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::MainMenuScene::LOGOUT)
-        /* .with<game::gui::Clickable>([&world](ecs::Entity btn, game::gui::Clickable::State state) {
-            world.getStorage<game::components::Textual>()[btn.getId()].text =
-                (state == game::gui::Clickable::State::Pressed) ? localization::resources::menu::rsConnected,
-            20, raylib::core::Color::BLUE : localization::resources::menu::rsConnected, 20, raylib::core::Color::BLUE
-        }) */
-        .build();
+    // world.addEntity()
+    //     .with<game::components::Position>(60, 70)
+    //     .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
+    //     .with<game::components::Controlable>(game::User::UserId::User1)
+    //     .with<game::gui::Widget>(game::MainMenuScene::JOIN_SLOT_THREE, game::MainMenuScene::OPTION,
+    //         game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::MainMenuScene::LOGOUT)
+    //     /* .with<game::gui::Clickable>([&world](ecs::Entity btn, game::gui::Clickable::State state) {
+    //         world.getStorage<game::components::Textual>()[btn.getId()].text =
+    //             (state == game::gui::Clickable::State::Pressed) ? localization::resources::menu::rsConnected,
+    //         20, raylib::core::Color::BLUE : localization::resources::menu::rsConnected, 20, raylib::core::Color::BLUE
+    //     }) */
+    //     .build();
 
     // player4
     world.addEntity()
@@ -184,18 +188,18 @@ static void loadPlayerInterface(ecs::World &world)
         .with<game::components::Color>(raylib::core::Color::PURPLE)
         .build();
 
-    world.addEntity()
-        .with<game::components::Position>(80, 70)
-        .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::MainMenuScene::JOIN_SLOT_FOUR, game::MainMenuScene::OPTION,
-            game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::MainMenuScene::LOGOUT)
-        /* .with<game::gui::Clickable>([&world](ecs::Entity btn, game::gui::Clickable::State state) {
-            world.getStorage<game::components::Textual>()[btn.getId()].text =
-                (state == game::gui::Clickable::State::Pressed) ? localization::resources::menu::rsConnected,
-            20, raylib::core::Color::BLUE : localization::resources::menu::rsConnected, 20, raylib::core::Color::BLUE
-        }) */
-        .build();
+    // world.addEntity()
+    //     .with<game::components::Position>(80, 70)
+    //     .with<game::components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
+    //     .with<game::components::Controlable>(game::User::UserId::User1)
+    //     .with<game::gui::Widget>(game::MainMenuScene::JOIN_SLOT_FOUR, game::MainMenuScene::OPTION,
+    //         game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::MainMenuScene::LOGOUT)
+    //     /* .with<game::gui::Clickable>([&world](ecs::Entity btn, game::gui::Clickable::State state) {
+    //         world.getStorage<game::components::Textual>()[btn.getId()].text =
+    //             (state == game::gui::Clickable::State::Pressed) ? localization::resources::menu::rsConnected,
+    //         20, raylib::core::Color::BLUE : localization::resources::menu::rsConnected, 20, raylib::core::Color::BLUE
+    //     }) */
+    //     .build();
 }
 
 namespace game

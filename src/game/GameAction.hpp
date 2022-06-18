@@ -21,6 +21,7 @@ namespace game
         ACTION,
         BACK,
         ACTIVATE_ITEM,
+        JOIN,
         COUNT,
     };
 

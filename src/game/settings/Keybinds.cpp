@@ -41,10 +41,10 @@ namespace game
             /// Movements
             setGamepadBinding(Gamepad::Button::DPAD_FACE_LEFT, GameAction::MOVE_LEFT);
             setGamepadBinding(
-                GamepadInput(Gamepad::Axis::LEFT_X, GamepadInput::AxisDirection::Negative), GameAction::MOVE_LEFT);
+                GamepadInput(Gamepad::Axis::LEFT_X, GamepadInput::AxisDirection::Positive), GameAction::MOVE_LEFT);
             setGamepadBinding(Gamepad::Button::DPAD_FACE_UP, GameAction::MOVE_UP);
             setGamepadBinding(
-                GamepadInput(Gamepad::Axis::LEFT_Y, GamepadInput::AxisDirection::Positive), GameAction::MOVE_UP);
+                GamepadInput(Gamepad::Axis::LEFT_Y, GamepadInput::AxisDirection::Negative), GameAction::MOVE_UP);
             setGamepadBinding(Gamepad::Button::DPAD_FACE_RIGHT, GameAction::MOVE_RIGHT);
             setGamepadBinding(
                 GamepadInput(Gamepad::Axis::LEFT_X, GamepadInput::AxisDirection::Positive), GameAction::MOVE_RIGHT);

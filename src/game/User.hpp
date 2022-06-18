@@ -24,6 +24,7 @@ namespace game
             User3,     /// Third user
             User4,     /// Fourth user
             UserCount, /// Number of simultaneaous users possible, Invalid for all functions taking a UserId
+            AllUsers,  /// Matching all users, /!\ not supported for all functions
         };
 
         /// Create a new User.

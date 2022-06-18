@@ -27,6 +27,29 @@ namespace game
             if (action != GameAction::NONE)
                 return ActionEvent{static_cast<User::UserId>(i), action, _users[i].getActionValue(action)};
         }
+        return getGamepadJoin();
+    }
+
+    Users::ActionEvent Users::getGamepadJoin()
+    {
+        size_t usersCount = static_cast<size_t>(User::UserId::UserCount);
+
+        for (size_t i = 0; i < usersCount; i++) {
+            auto gamepad = raylib::core::Gamepad(i);
+            if (!gamepad.isAvailable())
+                continue;
+            bool unbindGamepad = true;
+            for (size_t j = 0; j < usersCount; j++) {
+                if (_users[j].isAvailable() && static_cast<size_t>(_users[j].getGamepadId()) == i) {
+                    unbindGamepad = false;
+                    break;
+                }
+            }
+            if (!unbindGamepad)
+                continue;
+            if (gamepad.isButtonReleased(raylib::core::Gamepad::Button::FACE_DOWN))
+                return {static_cast<User::UserId>(i), GameAction::JOIN, 1};
+        }
         return {User::UserId::UserCount, GameAction::NONE, 0};
     }
 } // namespace game

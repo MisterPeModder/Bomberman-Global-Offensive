@@ -27,7 +27,7 @@ namespace game
 
         bool Widget::updateSelection(ecs::SystemData data, const Users::ActionEvent &event)
         {
-            if (event.value < 0.7f
+            if (event.value < 0.9f
                 || ((event.action != GameAction::MOVE_LEFT || left == NullTag)
                     && (event.action != GameAction::MOVE_RIGHT || right == NullTag)
                     && (event.action != GameAction::MOVE_UP || up == NullTag)
