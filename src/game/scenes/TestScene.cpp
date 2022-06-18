@@ -106,7 +106,6 @@ static void addTestWidgets(ecs::World &world)
         })
         .build();
 
-    world.addResource<game::Users>();
     world.addSystem<game::systems::DrawText>();
     world.addSystem<game::systems::InputManager>();
 }

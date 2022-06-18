@@ -507,8 +507,6 @@ namespace game
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::DrawSelectedWidget>();
 
-        _world.addResource<game::Users>();
-
         loadSettingsMenuScene(_world);
     }
 } // namespace game

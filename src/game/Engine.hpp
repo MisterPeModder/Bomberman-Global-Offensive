@@ -19,6 +19,7 @@
 
 #include <iostream>
 
+#include "Users.hpp"
 #include "settings/Settings.hpp"
 
 namespace game
@@ -32,9 +33,9 @@ namespace game
         ~Engine();
 
         /// Sets the active scene and deletes the old one
-        template <std::derived_from<IScene> S> void setScene()
+        template <std::derived_from<IScene> S, typename... Args> void setScene(Args &&...args)
         {
-            _waitingScene = std::make_unique<S>();
+            _waitingScene = std::make_unique<S>(args...);
             _waitingScene->getWorld().addResource<resources::EngineResource>(this);
         }
 
@@ -71,6 +72,11 @@ namespace game
         /// Gets the settings (immutable)
         const settings::Settings &getSettings() const;
 
+        /// Gets the users (mutable)
+        Users &getUsers();
+
+        /// Gets the users (immutable)
+        const Users &getUsers() const;
         /// Update the size of the render target to match the given parameters.
         ///
         /// @param width Render target width.
@@ -124,6 +130,7 @@ namespace game
         std::unique_ptr<game::IScene> _scene;
         std::unique_ptr<game::IScene> _waitingScene;
         settings::Settings _settings;
+        Users _users;
         std::unique_ptr<raylib::textures::RenderTexture2D> _renderTarget;
         std::unique_ptr<raylib::shaders::Shader> _globalShader;
 

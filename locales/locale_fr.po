@@ -54,3 +54,9 @@ msgstr "Jouer"
 
 msgid "Quit"
 msgstr "Quitter"
+
+msgid "Not connected"
+msgstr "Pas connecté"
+
+msgid "Connected"
+msgstr "Connecté"
