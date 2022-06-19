@@ -23,14 +23,21 @@ namespace game
 
             //////// Keyboards keybinds
             /// Movements
+#ifdef __EMSCRIPTEN__
+            setKeyboardBinding(Key::Q, GameAction::MOVE_LEFT);
+            setKeyboardBinding(Key::Z, GameAction::MOVE_UP);
+            setKeyboardBinding(Key::A, GameAction::PREVIOUS_ACTIVABLE);
+#else
             setKeyboardBinding(Key::A, GameAction::MOVE_LEFT);
             setKeyboardBinding(Key::W, GameAction::MOVE_UP);
+            setKeyboardBinding(Key::Q, GameAction::PREVIOUS_ACTIVABLE);
+#endif
             setKeyboardBinding(Key::D, GameAction::MOVE_RIGHT);
             setKeyboardBinding(Key::S, GameAction::MOVE_DOWN);
+
             /// Actions
             setKeyboardBinding(Key::SPACE, GameAction::PLACE_BOMB);
             setKeyboardBinding(Key::F, GameAction::ACTIVATE_ITEM);
-            setKeyboardBinding(Key::Q, GameAction::PREVIOUS_ACTIVABLE);
             setKeyboardBinding(Key::E, GameAction::NEXT_ACTIVABLE);
             setKeyboardBinding(Key::P, GameAction::PAUSE);
             /// Menus
