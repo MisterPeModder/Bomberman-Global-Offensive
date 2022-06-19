@@ -27,6 +27,8 @@ namespace game
         };
         MainMenuScene();
 
+        void setupWorld() override;
+
         void updateConnectedTexts();
 
       private:
