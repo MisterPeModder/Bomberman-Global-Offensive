@@ -140,6 +140,8 @@ namespace game::components
         auto &positions = data.getStorage<Position>();
         auto &entities = data.getResource<ecs::Entities>();
 
+        if (data.getResource<game::resources::Map>().map.getElement(bombCell) != game::map::Map::Element::Empty)
+            return false;
         /// Avoid multiple bombs on the same cell
         if (avoidDuplicates) {
             for (auto [bombPos, bomb] : ecs::join(positions, data.getStorage<Bomb>())) {

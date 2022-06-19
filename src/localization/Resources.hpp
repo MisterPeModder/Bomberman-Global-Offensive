@@ -83,6 +83,12 @@ namespace localization
             constexpr ResourceString rsSettingsResolution("Resolution");
             constexpr ResourceString rsSettingsFPS("FPS");
 
+            constexpr ResourceString rsSettingsColorblindFilter("Colorblind Filter");
+            constexpr ResourceString rsSettingsColorblindFilterNone("none");
+            constexpr ResourceString rsSettingsColorblindFilterProtanopia("protanopia");
+            constexpr ResourceString rsSettingsColorblindFilterDeuteranopia("deuteranopia");
+            constexpr ResourceString rsSettingsColorblindFilterTritanopia("tritanopia");
+
             constexpr ResourceString rsSettingsLanguage("Language");
 
             constexpr ResourceString rsSettingsAudio("Audio");
