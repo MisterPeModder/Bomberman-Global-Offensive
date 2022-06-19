@@ -37,6 +37,9 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "DrawTexture.hpp", "_draw_texture_8hpp.html", [
       [ "DrawTexture", "structgame_1_1systems_1_1_draw_texture.html", "structgame_1_1systems_1_1_draw_texture" ]
     ] ],
+    [ "DrawTextureBackground.hpp", "_draw_texture_background_8hpp.html", [
+      [ "DrawTextureBackground", "structgame_1_1systems_1_1_draw_texture_background.html", "structgame_1_1systems_1_1_draw_texture_background" ]
+    ] ],
     [ "InputManager.cpp", "_input_manager_8cpp.html", null ],
     [ "InputManager.hpp", "_input_manager_8hpp.html", [
       [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ]

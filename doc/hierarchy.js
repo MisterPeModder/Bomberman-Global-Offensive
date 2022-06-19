@@ -186,6 +186,7 @@ var hierarchy =
       [ "game::systems::DrawSmoke", "structgame_1_1systems_1_1_draw_smoke.html", null ],
       [ "game::systems::DrawText", "structgame_1_1systems_1_1_draw_text.html", null ],
       [ "game::systems::DrawTexture", "structgame_1_1systems_1_1_draw_texture.html", null ],
+      [ "game::systems::DrawTextureBackground", "structgame_1_1systems_1_1_draw_texture_background.html", null ],
       [ "game::systems::ExplodeBomb", "structgame_1_1systems_1_1_explode_bomb.html", null ],
       [ "game::systems::InputManager", "structgame_1_1systems_1_1_input_manager.html", null ],
       [ "game::systems::KeybindIntercept", "structgame_1_1systems_1_1_keybind_intercept.html", null ],

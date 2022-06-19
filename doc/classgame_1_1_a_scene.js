@@ -6,6 +6,7 @@ var classgame_1_1_a_scene =
     [ "getWorld", "classgame_1_1_a_scene.html#ae389ab8adb4cc96ed2d7e81cffb7374d", null ],
     [ "getWorld", "classgame_1_1_a_scene.html#a64e6660ce0bbd24933323dd271e8d37f", null ],
     [ "setupWorld", "classgame_1_1_a_scene.html#afb5d37216c0df1eaccb51e4c47f28052", null ],
+    [ "_background2D", "classgame_1_1_a_scene.html#a9d867556bff14d721eb6cc02ced234d5", null ],
     [ "_defaultCamera2D", "classgame_1_1_a_scene.html#a5f1ad83486e061a8d4a29a6bea63f559", null ],
     [ "_defaultCamera3D", "classgame_1_1_a_scene.html#affd67773048df5d6ae0c5f9fe43d6299", null ],
     [ "_global2D", "classgame_1_1_a_scene.html#a2ae76f39f390cfaa183ccfec1410eb46", null ],

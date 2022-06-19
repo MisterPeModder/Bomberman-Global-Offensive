@@ -73,17 +73,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_scene_8cpp.html",
-"_map_storage_8hpp_source.html",
-"_window_8cpp.html",
-"classecs_1_1_join_iter.html#afd0899a9948400fc68d44008566c9691",
-"classgame_1_1_user.html#a06dc65a4ec1e0d158088febb3fdf0707",
-"classgame_1_1settings_1_1_settings_1_1_invalid_settings_value.html",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab213ce22ca6ad4eda8db82966b9b6e5a",
-"classraylib_1_1shapes_1_1_cube.html#a051b3c91675ceec3041e16b22c35ea15",
-"functions_func_t.html",
-"structgame_1_1_detect_gamepad.html",
-"structgame_1_1components_1_1_smoke.html#af9d105358c07c68c80f042f9704c5bd3",
-"system_2_system_8hpp.html"
+"_map_8cpp_source.html",
+"_widget_8hpp.html",
+"classecs_1_1_join_iter.html#ad09ddb3d4ae598070422da82e7ff6e4c",
+"classgame_1_1_test_scene.html#a7143167fd03d6975d9603dc36e4cd657",
+"classgame_1_1settings_1_1_settings.html#adb873e4708998349aec6a2cb626fd653",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a9df35983f4024e31955de0f1e545e888",
+"classraylib_1_1shapes_1_1_cone.html#afd90045d53aee6af240c4775b70db1b0",
+"functions_func_p.html",
+"structecs_1_1_join_traits_ext.html#aadec28db6f60883b4e9fd90bbbcf22c7",
+"structgame_1_1components_1_1_smoke.html",
+"structraylib_1_1core_1_1_vector4.html#ad186e45ce4de80bdba79cb55b5912c55"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

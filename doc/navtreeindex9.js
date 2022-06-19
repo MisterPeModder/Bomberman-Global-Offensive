@@ -1,5 +1,8 @@
 var NAVTREEINDEX9 =
 {
+"structecs_1_1_join_traits_ext.html#aadec28db6f60883b4e9fd90bbbcf22c7":[2,0,1,10,0],
+"structecs_1_1_join_traits_ext_3_01_maybe_join_3_01_j_01_4_01_4.html":[2,0,1,11],
+"structecs_1_1_join_traits_ext_3_01_maybe_join_3_01_j_01_4_01_4.html#aa9c73615998bc70a045370f5b3127d4b":[2,0,1,11,0],
 "structgame_1_1_detect_gamepad.html":[2,0,2,7],
 "structgame_1_1_detect_gamepad.html#a84bd77abaf84203f539cdd3ec9c1963f":[2,0,2,7,0],
 "structgame_1_1_game_1_1_parameters.html":[2,0,2,9,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX9 =
 "structgame_1_1components_1_1_size2_d.html":[2,0,2,0,28],
 "structgame_1_1components_1_1_size2_d.html#a0f9fa0fcf094e8df262296f3f44bfdbb":[2,0,2,0,28,1],
 "structgame_1_1components_1_1_size2_d.html#aa22c39e0268410afcb8c76045d88e2b8":[2,0,2,0,28,2],
-"structgame_1_1components_1_1_size2_d.html#addb1f7d49893985c877a18ea3897d353":[2,0,2,0,28,0],
-"structgame_1_1components_1_1_smoke.html":[2,0,2,0,29],
-"structgame_1_1components_1_1_smoke.html#a59f47d2c63864f26f347f4f80adda96a":[2,0,2,0,29,2],
-"structgame_1_1components_1_1_smoke.html#a63d6fd0d5ae219f0249d6c42cb1e4f5b":[2,0,2,0,29,0]
+"structgame_1_1components_1_1_size2_d.html#addb1f7d49893985c877a18ea3897d353":[2,0,2,0,28,0]
 };

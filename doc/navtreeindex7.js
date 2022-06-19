@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"classraylib_1_1shapes_1_1_cone.html#afd90045d53aee6af240c4775b70db1b0":[2,0,4,3,2,12],
+"classraylib_1_1shapes_1_1_cone.html#afe697948792c3eacbdb2ec497af2828a":[2,0,4,3,2,15],
+"classraylib_1_1shapes_1_1_cube.html":[2,0,4,3,3],
 "classraylib_1_1shapes_1_1_cube.html#a051b3c91675ceec3041e16b22c35ea15":[2,0,4,3,3,4],
 "classraylib_1_1shapes_1_1_cube.html#a0c3ba40f503c5ec3f8a8d31c5006e17c":[2,0,4,3,3,2],
 "classraylib_1_1shapes_1_1_cube.html#a3c933431e577f3dd7b492ca9e11ed182":[2,0,4,3,3,3],
@@ -220,8 +223,8 @@ var NAVTREEINDEX7 =
 "dir_fe414d616bd0c4668e6515f48824338f.html":[3,0,0,5],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[3,0,0,3],
 "files.html":[3,0],
-"functions.html":[2,3,0,0],
 "functions.html":[2,3,0],
+"functions.html":[2,3,0,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX7 =
 "functions_func_l.html":[2,3,1,12],
 "functions_func_m.html":[2,3,1,13],
 "functions_func_n.html":[2,3,1,14],
-"functions_func_o.html":[2,3,1,15],
-"functions_func_p.html":[2,3,1,16],
-"functions_func_r.html":[2,3,1,17],
-"functions_func_s.html":[2,3,1,18]
+"functions_func_o.html":[2,3,1,15]
 };
