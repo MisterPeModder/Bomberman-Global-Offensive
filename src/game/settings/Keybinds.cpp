@@ -38,6 +38,8 @@ namespace game
             /// Menus
             setKeyboardBinding(Key::ENTER, GameAction::ACTION);
             setKeyboardBinding(Key::BACK, GameAction::BACK);
+            /// Console
+            setKeyboardBinding(Key::F3, GameAction::TOGGLE_CONSOLE);
 
             /////// Gamepad keybinds
             /// Movements

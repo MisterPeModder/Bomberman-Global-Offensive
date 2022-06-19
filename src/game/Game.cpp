@@ -16,7 +16,9 @@
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
+#include "components/History.hpp"
 #include "components/Identity.hpp"
+#include "components/KeyboardInput.hpp"
 #include "components/Living.hpp"
 #include "components/Model.hpp"
 #include "components/Player.hpp"
@@ -25,6 +27,7 @@
 #include "components/RotationAxis.hpp"
 #include "components/Scale.hpp"
 #include "components/Size.hpp"
+#include "components/Size2D.hpp"
 #include "components/Smoke.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
@@ -32,10 +35,12 @@
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Timer.hpp"
 
+#include "gui/components/Console.hpp"
 #include "gui/components/Widget.hpp"
 #include "logger/Logger.hpp"
 
 #include "raylib/core/Camera3D.hpp"
+#include "raylib/core/Color.hpp"
 #include "raylib/core/Vector2.hpp"
 #include "raylib/core/Vector3.hpp"
 #include "raylib/core/Window.hpp"
@@ -49,15 +54,20 @@
 
 #include "systems/Animation.hpp"
 #include "systems/Bomb.hpp"
+#include "systems/CheckGameEnd.hpp"
 #include "systems/Collision.hpp"
+#include "systems/DrawConsole.hpp"
+#include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
 #include "systems/Smoke.hpp"
+#include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
 #include "util/util.hpp"
@@ -120,7 +130,8 @@ namespace game
 
         meshes.emplace("box", 1.f, 1.f, 1.f);
         meshes.emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
-        meshes.emplace("bonus", 0.75f, 0.0f, 0.75f);
+        meshes.emplace("bonus", 0.5f, 10, 10);
+        meshes.emplace("activable", 1.f, 0.f, 1.f);
     }
 
     void Game::_loadModels()
@@ -145,7 +156,7 @@ namespace game
         models.emplace("speed_down", bonusMesh, false).setMaterialMapTexture(textures.get("speed_down"));
         models.emplace("C4_down", bonusMesh, false).setMaterialMapTexture(textures.get("C4_down"));
         models.emplace("range_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
-        models.emplace("control_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
+        models.emplace("control_down", bonusMesh, false).setMaterialMapTexture(textures.get("control_down"));
         /// Activables
         models.emplace("no_clip", bonusMesh, false).setMaterialMapTexture(textures.get("no_clip"));
         models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"));
@@ -167,6 +178,21 @@ namespace game
         _camera.setFovY(50.0f);            // Camera field-of-view Y
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
+        _world.addSystem<game::systems::UpdateKeyboardInput>();
+
+        /// Console
+        _world.addSystem<game::systems::DrawConsole>();
+        _drawing2d.add<game::systems::DrawConsole>();
+
+        _world.addEntity()
+            .with<game::gui::Console>()
+            .with<game::components::History>()
+            .with<game::components::Position>(0.f, 50.f, 0.f)
+            .with<game::components::Size2D>(720, 20)
+            .with<game::components::KeyboardInput>(&game::gui::Console::runCommand)
+            .with<game::components::Controlable>(game::User::UserId::User1, &game::gui::Console::handleInput)
+            .build();
+
         /// Add world resources
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
@@ -178,6 +204,7 @@ namespace game
         _world.addStorage<components::Bomb>();
         _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
+        _world.addStorage<components::KeyboardInput>();
         _world.addStorage<components::Smoke>();
         _world.addStorage<components::RotationAngle>();
         _world.addStorage<components::RotationAxis>();
@@ -201,6 +228,11 @@ namespace game
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
             systems::DisableNoClip, systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke>();
+        _world.addSystem<systems::CheckGameEnd>();
+        /// Setup world systems tags
+        _handleInputs.add<systems::InputManager>();
+        _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
+            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 
@@ -292,6 +324,8 @@ namespace game
     {
         _camera.update();
 
+        _world.runSystem<game::systems::UpdateKeyboardInput>();
+
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);
@@ -302,7 +336,11 @@ namespace game
         {
             raylib::core::scoped::Mode3D mode3D(_camera);
             _world.runSystems(_drawing);
-        }
+        };
+        {
+            raylib::core::scoped::Mode2D mode2D((raylib::core::Camera2D()));
+            _world.runSystems(_drawing2d);
+        };
         _world.maintain();
     }
 } // namespace game

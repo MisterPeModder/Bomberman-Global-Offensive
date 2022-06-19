@@ -27,6 +27,8 @@ namespace raylib
             _mesh = GenMeshCubicmap(image.asRaylib(), vector.asRaylib());
         }
 
+        Mesh::Mesh(float radius, int rings, int slices) { _mesh = GenMeshSphere(radius, rings, slices); }
+
         Mesh::~Mesh() { UnloadMesh(_mesh); }
 
         ::Mesh const &Mesh::asRaylib() const { return _mesh; }

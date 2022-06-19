@@ -29,6 +29,8 @@ namespace raylib::model
         /// @param mesh the C Raylib mesh to import
         Mesh(const ::Mesh &mesh);
 
+        Mesh(float radius, int rings, int slices);
+
         /// Generates a cubic mesh
         ///
         /// @param width the width of the cube

@@ -19,6 +19,7 @@ namespace game
         PLACE_BOMB,
         PAUSE,
         ACTION,
+        TOGGLE_CONSOLE,
         BACK,
         ACTIVATE_ITEM,
         DISCONNECT,

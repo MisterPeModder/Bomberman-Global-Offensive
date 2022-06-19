@@ -17,6 +17,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Rectangle.hpp"
@@ -78,6 +79,7 @@ namespace game
     MainMenuScene::MainMenuScene()
     {
         _world.addStorage<components::Textual>();
+        _world.addStorage<components::KeyboardInput>();
         _world.addSystem<systems::DrawText>();
         _world.addSystem<systems::DrawSelectedWidget>();
         _world.addSystem<systems::DrawRectangle>();
@@ -109,6 +111,9 @@ namespace game
             .with<gui::Clickable>(
                 [this](ecs::Entity) {
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
+
+                    if (engine->getUsers().getAvailableUsers() < 2)
+                        return;
                     engine->setScene<GameScene>(Game::Parameters(engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
