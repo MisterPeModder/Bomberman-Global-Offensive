@@ -154,11 +154,11 @@ msgstr "Y/^/X"
 msgid "MIDDLE"
 msgstr "HOME"
 
-msgid "SELECT"
-msgstr ""
+msgid "MIDDLE-LEFT"
+msgstr "SELECT"
 
-msgid "START"
-msgstr ""
+msgid "MIDDLE-RIGHT"
+msgstr "START"
 
 msgid "THUMB-LEFT"
 msgstr "L3"
@@ -171,9 +171,3 @@ msgstr "L (B/2/Z)"
 
 msgid "TRIGGER-RIGHT"
 msgstr "R (B/2/Z)"
-
-msgid "MIDDLE-LEFT"
-msgstr ""
-
-msgid "MIDDLE-RIGHT"
-msgstr ""
