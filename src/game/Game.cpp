@@ -7,6 +7,7 @@
 
 #include "Game.hpp"
 
+#include "components/AiControlable.hpp"
 #include "components/Animation.hpp"
 #include "components/Bomb.hpp"
 #include "components/BombNoClip.hpp"
@@ -55,6 +56,7 @@
 #include "resources/Map.hpp"
 #include "resources/RandomDevice.hpp"
 
+#include "systems/AiUpdate.hpp"
 #include "systems/Animation.hpp"
 #include "systems/Bomb.hpp"
 #include "systems/CheckGameEnd.hpp"
@@ -252,6 +254,7 @@ namespace game
         _world.addStorage<components::SoundReference>();
         _world.addStorage<components::Explosion>();
         /// Add world systems
+        _world.addSystem<systems::AiUpdate>();
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::RunAnimation>();
         _world.addSystem<systems::InputManager>();
@@ -269,9 +272,9 @@ namespace game
         _world.addSystem<systems::UpdateGameClock>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
-            systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
+        _update.add<systems::AiUpdate, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
+            systems::DisableBombNoClip, systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke,
+            systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, system::ClearExplosions>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
 
@@ -301,6 +304,7 @@ namespace game
                     .with<components::RotationAngle>(0.0f)
                     .with<components::RotationAxis>(0.f, 1.f, 0.f)
                     .with<components::Controlable>(owner, components::Player::handleActionEvent)
+                    .with<components::AiControlable>()
                     .with<components::BombNoClip>()
                     .with<components::Identity>()
                     .build();

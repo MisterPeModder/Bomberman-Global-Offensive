@@ -5,6 +5,8 @@ add_subdirectory(items)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/AiControlable.cpp
+    ${INCROOT}/AiControlable.hpp
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Background.hpp
     ${SRCROOT}/Bomb.cpp

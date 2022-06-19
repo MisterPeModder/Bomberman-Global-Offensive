@@ -173,6 +173,9 @@ namespace game::components
         /// @param data world data
         static void placeLandMine(ecs::Entity self, ecs::SystemData data);
 
+        /// Performs a move action.
+        static void move(ecs::Entity self, ecs::SystemData data, GameAction action, float value);
+
       private:
         /// Change the velocity of the player from its action values.
         ///
