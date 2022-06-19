@@ -28,12 +28,4 @@ namespace game::systems
             }
         }
     }
-
-    void DrawSmoke::run(ecs::SystemData data)
-    {
-        for (auto [pos, smoke] :
-            ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::components::Smoke>())) {
-            raylib::shapes::Sphere(pos, smoke.radius, raylib::core::Color(200, 200, 200, 240)).draw();
-        }
-    }
 } // namespace game::systems

@@ -31,6 +31,8 @@ namespace game
         };
         MainMenuScene();
 
+        void setupWorld() override;
+
         void updateConnectedTexts();
 
         void updateSkinTexts();
