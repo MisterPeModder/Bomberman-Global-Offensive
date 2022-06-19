@@ -20,6 +20,8 @@ namespace game
 
     AScene::~AScene() {}
 
+    void AScene::setupWorld() {}
+
     void AScene::drawFrame()
     {
         _world.runSystems(_globalNoDraw);

@@ -721,7 +721,9 @@ static void loadSettingsMenuScene(ecs::World &world)
 
 namespace game
 {
-    SettingsMenuScene::SettingsMenuScene()
+    SettingsMenuScene::SettingsMenuScene() {}
+
+    void SettingsMenuScene::setupWorld()
     {
         _world.addSystem<game::systems::DrawRectangle>();
         _world.addSystem<game::systems::InputManager>();
@@ -829,7 +831,7 @@ namespace game
                             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
                     })
                 .build();
-            // _updateActionKey(action);
+            _updateActionKey(action);
         };
 
         addAction({4, 13}, {10, 13}, GameAction::MOVE_LEFT, localization::resources::keybinds::rsKeyBindLeft,

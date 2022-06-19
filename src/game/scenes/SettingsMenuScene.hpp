@@ -52,6 +52,8 @@ namespace game
         };
         SettingsMenuScene();
 
+        void setupWorld() override;
+
       private:
         struct Section {
             raylib::core::Vector2f pos;

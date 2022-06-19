@@ -37,6 +37,7 @@ namespace game
         {
             _waitingScene = std::make_unique<S>(args...);
             _waitingScene->getWorld().addResource<resources::EngineResource>(this);
+            _waitingScene->setupWorld();
         }
 
         /// Gets the mutable active scene

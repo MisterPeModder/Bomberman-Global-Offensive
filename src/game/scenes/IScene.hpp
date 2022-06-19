@@ -18,6 +18,9 @@ namespace game
       public:
         virtual ~IScene() = default;
 
+        /// Call the scene's world setup.
+        virtual void setupWorld() = 0;
+
         /// Call the scene's drawFrame function
         virtual void drawFrame() = 0;
 
