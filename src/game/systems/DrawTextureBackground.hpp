@@ -11,12 +11,12 @@
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
+#include "game/components/Background.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
 #include "game/components/RotationAxis.hpp"
 #include "game/components/Scale.hpp"
 #include "game/components/Size.hpp"
-#include "game/components/Texture2D.hpp"
 #include "raylib/core/Window.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
@@ -25,7 +25,7 @@ namespace game::systems
     struct DrawTextureBackground : public ecs::System {
         void run(ecs::SystemData data) override final
         {
-            auto &textures = data.getStorage<game::components::Texture2D>();
+            auto &textures = data.getStorage<game::components::Background>();
             auto &poses = data.getStorage<game::components::Position>();
             auto &scales = data.getStorage<game::components::Scale>();
             auto &colors = data.getStorage<game::components::Color>();

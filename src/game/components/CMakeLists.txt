@@ -6,6 +6,7 @@ add_subdirectory(items)
 set(SRC
     ${SRC}
     ${INCROOT}/Animation.hpp
+    ${INCROOT}/Background.hpp
     ${SRCROOT}/Bomb.cpp
     ${INCROOT}/Bomb.hpp
     ${SRCROOT}/BombNoClip.cpp

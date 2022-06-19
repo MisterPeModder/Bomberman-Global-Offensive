@@ -12,9 +12,11 @@
 #include "ecs/join.hpp"
 
 #include "ecs/resource/Resource.hpp"
+#include "resources/RandomDevice.hpp"
 
 #include "util/util.hpp"
 
+#include "game/components/Animation.hpp"
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
 #include "game/components/KeybindIntercepter.hpp"
@@ -27,6 +29,7 @@
 #include "game/components/Texture2D.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
+#include "resources/AssetMap.hpp"
 
 #include "game/systems/DrawFpsCounter.hpp"
 #include "game/systems/DrawSelectedWidget.hpp"
@@ -36,6 +39,7 @@
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
 #include "game/systems/Rectangle.hpp"
+#include "systems/Animation.hpp"
 
 #include "game/resources/Engine.hpp"
 
@@ -44,6 +48,7 @@
 #include "game/scenes/SettingsMenuScene.hpp"
 
 #include "raylib/core/Window.hpp"
+#include "raylib/textures/Texture2D.hpp"
 
 #include "game/Engine.hpp"
 #include "game/Game.hpp"
@@ -74,43 +79,78 @@ namespace game
             } else {
                 users.connectUser(gamepadId, dynamic_cast<game::MainMenuScene &>(engine->getScene()).getUnusedSkin());
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateConnectedTexts();
-                dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkinTexts();
+                dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkins();
             }
         }
     };
 
+    void MainMenuScene::loadPlayerTextures()
+    {
+        auto &textures = _world.getResource<resources::Textures>();
+
+        textures.emplace(std::string(localization::resources::textures::rsTerroristOne.getMsgId()),
+            "assets/player/textures/terrorist_1.png");
+        textures.emplace(std::string(localization::resources::textures::rsTerroristTwo.getMsgId()),
+            "assets/player/textures/terrorist_2.png");
+        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristOne.getMsgId()),
+            "assets/player/textures/counter_terrorist_1.png");
+        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristTwo.getMsgId()),
+            "assets/player/textures/counter_terrorist_2.png");
+        textures.emplace(std::string(localization::resources::textures::rsNoSense.getMsgId()),
+            "assets/player/textures/none_sense.png");
+        textures.emplace(
+            std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
+        textures.emplace(
+            std::string(localization::resources::textures::rsUnknown.getMsgId()), "assets/player/textures/unknown.png");
+    }
+
     MainMenuScene::MainMenuScene()
     {
+        _world.addResource<resources::Textures>();
         for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++) {
             _availableSkins.push_back(User::USER_SKINS(i));
         }
 
+        _defaultCamera3D.setPosition({1.9f, 1.3f, 4.f}); // Camera position
+        _defaultCamera3D.setTarget({1.9f, 0.5f, 0});     // Camera looking at point
+        _defaultCamera3D.setUp({0.0f, 1.0f, 0.0f});      // Camera up vector (rotation towards target)
+        _defaultCamera3D.setFovY(50.0f);                 // Camera field-of-view Y
+        _defaultCamera3D.setProjection(CAMERA_PERSPECTIVE);
+
         _world.addStorage<components::Textual>();
         _world.addStorage<components::KeyboardInput>();
-        _world.addSystem<systems::DrawText>();
-        _world.addSystem<systems::DrawSelectedWidget>();
-        _world.addSystem<systems::DrawRectangle>();
-        _world.addSystem<DetectGamepad>();
+        _world.addStorage<components::ModelReference>();
+        _world.addStorage<components::Animation>();
         _world.addStorage<game::components::KeybindIntercepter>();
 
+        _world.addSystem<systems::DrawText>();
+        _world.addSystem<systems::DrawSelectedWidget>();
+        _world.addSystem<systems::DrawModel>();
+        _world.addSystem<DetectGamepad>();
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::DrawTexture>();
         _world.addSystem<systems::DrawFpsCounter>();
         _world.addSystem<systems::DrawTextureBackground>();
+        _world.addSystem<systems::RunAnimation>();
+
+        _world.addResource<resources::RandomDevice>();
 
         _globalNoDraw.add<systems::InputManager, DetectGamepad>();
         _global2D.add<systems::DrawTexture>();
         _global2D.add<systems::DrawText>();
         _global2D.add<systems::DrawSelectedWidget>();
-        _global2D.add<systems::DrawRectangle>();
         _global2D.add<systems::DrawFpsCounter>();
+        _global3D.add<systems::DrawModel>();
+        _global3D.add<systems::RunAnimation>();
         _background2D.add<systems::DrawTextureBackground>();
+
+        loadPlayerTextures();
 
         static const std::filesystem::path backgroundPath =
             util::makePath("assets", "images", "background", "main-menu-background.png");
 
         _world.addEntity()
-            .with<game::components::Texture2D>(backgroundPath)
+            .with<game::components::Background>(backgroundPath)
             .with<game::components::Position>(0.f, 0.f)
             .with<game::components::Scale>(1.f)
             .with<game::components::RotationAngle>(0.f)
@@ -197,26 +237,35 @@ namespace game
 
     void MainMenuScene::loadPlayerSlot(size_t id)
     {
-        raylib::core::Color color;
+        // player Model
+        auto &textures = _world.getResource<resources::Textures>();
+        auto playerEntity = _world.addEntity()
+                                .with<components::Position>(1.3f * (static_cast<int>(id)), 0.f, 0.f)
+                                .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
+                                .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
+                                .with<components::Size>(0.7f, 0.7f, 0.7f)
+                                .with<components::Color>(raylib::core::Color::WHITE)
+                                .with<components::RotationAngle>(35.0f - id * 25.f)
+                                .with<components::RotationAxis>(0.f, 1.f, 0.f)
+                                .with<components::Identity>()
+                                .build();
+        if (id == 0)
+            _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
+                textures.get(std::string(userSkinToRessourceString(_availableSkins.front()).getMsgId())));
+        else
+            _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
+                textures.get(std::string(localization::resources::textures::rsUnknown.getMsgId())));
 
-        switch (id) {
-            case 0: color = raylib::core::Color::BLUE; break;
-            case 1: color = raylib::core::Color::RED; break;
-            case 2: color = raylib::core::Color::GREEN; break;
-            default: color = raylib::core::Color::PURPLE; break;
-        }
-
-        // player Rect
-        _world.addEntity()
-            .with<components::Position>(20 + 20 * static_cast<int>(id), 40)
-            .with<components::Rectangle>()
-            .with<components::Size>(10.f, 30.f)
-            .with<components::Color>(color)
-            .build();
+        auto &anim = _world.getStorage<components::Animation>()[playerEntity.getId()];
+        auto &randDevice = _world.getResource<game::resources::RandomDevice>();
+        unsigned int randVal = randDevice.randInt(0, 3);
+        _animations[id] = _world.getStorage<components::Identity>()[playerEntity.getId()].id;
+        _models[id] = _world.getStorage<components::Identity>()[playerEntity.getId()].id;
+        anim.chooseAnimation(randVal);
 
         // Skin Text
         auto builder = _world.addEntity();
-        (void)builder.with<components::Position>(20 + static_cast<int>(id) * 20, 75)
+        (void)builder.with<components::Position>(17 + static_cast<int>(id) * 19 + static_cast<int>(id) / 2, 75)
             .with<components::Identity>()
             .with<components::Controlable>(User::UserId::AllUsers,
                 [this](ecs::Entity controlable, ecs::SystemData data, const Users::ActionEvent &event) {
@@ -235,7 +284,7 @@ namespace game
                         user.setSkin(_availableSkins.back());
                         _availableSkins.pop_back();
                     }
-                    updateSkinTexts();
+                    updateSkins();
                     return true;
                 });
         if (id == 0) {
@@ -251,7 +300,7 @@ namespace game
 
         auto connectedText =
             _world.addEntity()
-                .with<components::Position>(20 + static_cast<int>(id) * 20, 70)
+                .with<components::Position>(17 + static_cast<int>(id) * 19 + static_cast<int>(id) / 2, 70)
                 .with<components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
                 .with<components::Identity>()
                 .build();
@@ -278,7 +327,7 @@ namespace game
                         User::USER_SKINS temp = lusers[event.user].getSkin();
                         if (lusers.disconnectUser(event.user)) {
                             _availableSkins.push_back(temp);
-                            updateSkinTexts();
+                            updateSkins();
                         };
                         updateConnectedTexts();
                         return true;
@@ -286,22 +335,6 @@ namespace game
                     return false;
                 })
             .build();
-    }
-
-    void MainMenuScene::updateSkinTexts()
-    {
-        auto engine = _world.getResource<game::resources::EngineResource>().engine;
-        auto &users = engine->getUsers();
-
-        for (auto [text, id] :
-            ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
-            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
-                if (_skinTexts[i] != id.id)
-                    continue;
-                User::UserId userId = static_cast<User::UserId>(i);
-                text.text = userSkinToRessourceString(users[userId].getSkin());
-            }
-        }
     }
 
     void MainMenuScene::setupWorld() { updateConnectedTexts(); }
@@ -325,6 +358,35 @@ namespace game
                     text.text = localization::resources::menu::rsNotConnected;
                     text.color = raylib::core::Color::RED;
                 }
+            }
+        }
+    }
+
+    void MainMenuScene::updateSkins()
+    {
+        auto &textures = _world.getResource<resources::Textures>();
+        auto engine = _world.getResource<game::resources::EngineResource>().engine;
+        auto &users = engine->getUsers();
+
+        // update Text
+        for (auto [text, id] :
+            ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                if (_skinTexts[i] != id.id)
+                    continue;
+                User::UserId userId = static_cast<User::UserId>(i);
+                text.text = userSkinToRessourceString(users[userId].getSkin());
+            }
+        }
+        // Update texture
+        for (auto [model, id] :
+            ecs::join(_world.getStorage<components::Model>(), _world.getStorage<components::Identity>())) {
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                if (_models[i] != id.id)
+                    continue;
+                User::UserId userId = static_cast<User::UserId>(i);
+                model.setMaterialMapTexture(
+                    textures.get(std::string(userSkinToRessourceString(users[userId].getSkin()).getMsgId())));
             }
         }
     }
