@@ -16,8 +16,8 @@
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
-#include "components/Hud.hpp"
 #include "components/History.hpp"
+#include "components/Hud.hpp"
 #include "components/Identity.hpp"
 #include "components/KeyboardInput.hpp"
 #include "components/Living.hpp"
@@ -63,18 +63,18 @@
 #include "systems/Bomb.hpp"
 #include "systems/CheckGameEnd.hpp"
 #include "systems/Collision.hpp"
+#include "systems/DrawConsole.hpp"
 #include "systems/DrawHud.hpp"
 #include "systems/DrawText.hpp"
 #include "systems/DrawTexture.hpp"
-#include "systems/DrawConsole.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
-#include "systems/Rectangle.hpp"
 #include "systems/PlaySoundOnce.hpp"
+#include "systems/Rectangle.hpp"
 #include "systems/Smoke.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
 
@@ -268,11 +268,12 @@ namespace game
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::DrawHud>();
+            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::DrawHud,
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
             systems::PlaySoundReferences, systems::DisableNoClip>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawModel, systems::DrawTexture, systems::DrawRectangle, systems::DrawText, systems::DrawHud>();
+        _drawing.add<systems::DrawModel, systems::DrawTexture, systems::DrawRectangle, systems::DrawText,
+            systems::DrawHud>();
         _hud.add<systems::DrawTexture, systems::DrawRectangle, systems::DrawText, systems::DrawHud>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 
@@ -383,7 +384,7 @@ namespace game
             _world.runSystems(_drawing);
         };
         {
-            raylib::core::scoped::Mode2D mode2D((raylib::core::Camera2D()));
+            raylib::core::scoped::Mode2D mode2D(_camera2d);
             _world.runSystems(_drawing2d);
         };
         _world.maintain();
