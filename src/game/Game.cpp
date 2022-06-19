@@ -270,14 +270,11 @@ namespace game
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::DrawHud,
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
             systems::PlaySoundReferences, systems::DisableNoClip>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawModel, systems::DrawTexture, systems::DrawRectangle, systems::DrawText,
-            systems::DrawHud>();
-        _hud.add<systems::DrawTexture, systems::DrawRectangle, systems::DrawText, systems::DrawHud>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
+        _drawing2d.add<systems::DrawHud, systems::DrawHud, systems::DrawRectangle>();
 
         _loadTextures();
         _loadMeshes();
@@ -365,8 +362,6 @@ namespace game
         }
     }
 
-    void Game::_updateHud(ecs::SystemData data) {}
-
     void Game::drawFrame()
     {
         _camera.update();
@@ -386,7 +381,7 @@ namespace game
             _world.runSystems(_drawing);
         };
         {
-            raylib::core::scoped::Mode2D mode2D(_camera2d);
+            raylib::core::scoped::Mode2D mode2D((raylib::core::Camera2D()));
             _world.runSystems(_drawing2d);
         };
         _world.maintain();

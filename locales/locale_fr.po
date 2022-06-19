@@ -67,8 +67,6 @@ msgstr "Puissance Bomb"
 msgid "User"
 msgstr "Utilisateur"
 
-msgid "Number Bomb"
-msgstr ""
 msgid "(Controller)"
 msgstr "(Manette)"
 
@@ -188,3 +186,6 @@ msgstr "RT"
 
 msgid "SPACE"
 msgstr "ESPACE"
+
+msgid "Number Bomb"
+msgstr ""

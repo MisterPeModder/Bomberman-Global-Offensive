@@ -66,10 +66,7 @@ msgstr ""
 
 msgid "User"
 msgstr ""
-msgid "Number Bomb"
-msgstr ""
 
-msgid "Number Bomb"
 msgid "(Controller)"
 msgstr ""
 
@@ -188,4 +185,9 @@ msgid "TRIGGER-RIGHT"
 msgstr "RT"
 
 msgid "SPACE"
+msgstr ""
+msgid "Number Bomb"
+msgstr ""
+
+msgid "Number Bomb"
 msgstr ""
