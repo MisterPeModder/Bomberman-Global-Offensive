@@ -15,11 +15,6 @@ namespace raylib
     {
         Music::Music() {}
 
-        // Music::Music(const std::filesystem::path &fileName)
-        // {
-        //     _music = LoadMusicStream(fileName.generic_string().c_str());
-        // }
-
         Music::~Music()
         {
             if (_music.stream.buffer)
@@ -41,10 +36,8 @@ namespace raylib
 
         void Music::play()
         {
-            if (_music.stream.buffer) {
-                std::cout << "play" << std::endl;
+            if (_music.stream.buffer)
                 PlayMusicStream(_music);
-            }
         }
 
         void Music::stop()

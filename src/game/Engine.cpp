@@ -199,21 +199,18 @@ namespace game
 
     void Engine::setCurrentMusic(PreloadedMusics music)
     {
-        std::cout << "heho" << std::endl;
         switch (music) {
             case PreloadedMusics::GAME_THEME:
                 if (_mainMenuTheme.isPlaying())
                     _mainMenuTheme.stop();
                 _gameTheme.play();
-                std::cout << "game" << std::endl;
                 break;
             case PreloadedMusics::MAIN_MENU_THEME:
                 if (_gameTheme.isPlaying())
                     _gameTheme.stop();
                 _mainMenuTheme.play();
-                std::cout << "menu" << std::endl;
                 break;
-            default: std::cout << "default" << std::endl; break;
+            default: break;
         }
     }
 
