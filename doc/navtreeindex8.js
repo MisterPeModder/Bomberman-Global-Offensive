@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"namespaceutil.html":[1,0,5],
 "namespaceutil.html":[2,0,5],
 "pages.html":[],
 "raylib_2_logger_8cpp.html":[3,0,0,4,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "structgame_1_1components_1_1_position.html#aebb1f26d62e1f545282c67f92671fec2":[2,0,2,0,16,1],
 "structgame_1_1components_1_1_position.html#af7f6556aa0f3d2dc7bd6ad65f35a8574":[2,0,2,0,16,3],
 "structgame_1_1components_1_1_position2_d.html":[2,0,2,0,17],
-"structgame_1_1components_1_1_position2_d.html#a6d0050a5eaa2ec724e2b75838b2caf60":[2,0,2,0,17,1],
-"structgame_1_1components_1_1_position2_d.html#ace662f5bbc6b55ef5d5fae8e6795f4a1":[2,0,2,0,17,2]
+"structgame_1_1components_1_1_position2_d.html#a6d0050a5eaa2ec724e2b75838b2caf60":[2,0,2,0,17,1]
 };

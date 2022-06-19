@@ -113,6 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa966997eb0f9ad2fb5146ac65b8022c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_mesh.html#aa966997eb0f9ad2fb5146ac65b8022c5">Mesh</a> (const ::<a class="el" href="classraylib_1_1model_1_1_mesh.html">Mesh</a> &amp;mesh)</td></tr>
 <tr class="memdesc:aa966997eb0f9ad2fb5146ac65b8022c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">C Raylib mesh import constructor.  <a href="classraylib_1_1model_1_1_mesh.html#aa966997eb0f9ad2fb5146ac65b8022c5">More...</a><br /></td></tr>
 <tr class="separator:aa966997eb0f9ad2fb5146ac65b8022c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6efadc7f909b7817a429d5f8027bdb7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_mesh.html#a6efadc7f909b7817a429d5f8027bdb7a">Mesh</a> (float radius, int rings, int slices)</td></tr>
+<tr class="separator:a6efadc7f909b7817a429d5f8027bdb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65881082cf795c959bce3252799799ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1model_1_1_mesh.html#a65881082cf795c959bce3252799799ff">Mesh</a> (float width, float height, float length)</td></tr>
 <tr class="memdesc:a65881082cf795c959bce3252799799ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a cubic mesh.  <a href="classraylib_1_1model_1_1_mesh.html#a65881082cf795c959bce3252799799ff">More...</a><br /></td></tr>
 <tr class="separator:a65881082cf795c959bce3252799799ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,7 +154,7 @@ Private Attributes</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="_mesh_8hpp_source.html#l00021">21</a> of file <a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab6682d67c70cedc2d23ceaad64aad1a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6682d67c70cedc2d23ceaad64aad1a0">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[1/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6682d67c70cedc2d23ceaad64aad1a0">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,7 +182,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="aa966997eb0f9ad2fb5146ac65b8022c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa966997eb0f9ad2fb5146ac65b8022c5">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa966997eb0f9ad2fb5146ac65b8022c5">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,8 +210,45 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a6efadc7f909b7817a429d5f8027bdb7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6efadc7f909b7817a429d5f8027bdb7a">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">raylib::model::Mesh::Mesh </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rings</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>slices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00030">30</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ <a class="code" href="classraylib_1_1model_1_1_mesh.html#a9b2c482493d6d5fc8ba57e3377120066">_mesh</a> = GenMeshSphere(radius, rings, slices); }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a65881082cf795c959bce3252799799ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65881082cf795c959bce3252799799ff">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a65881082cf795c959bce3252799799ff">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,7 +296,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a476cdda1ae41a184daf99f92028ede4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a476cdda1ae41a184daf99f92028ede4e">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[4/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a476cdda1ae41a184daf99f92028ede4e">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,7 +326,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ac13bc84f4f9cd03ab36785b2d85438b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac13bc84f4f9cd03ab36785b2d85438b5">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[5/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac13bc84f4f9cd03ab36785b2d85438b5">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -344,7 +383,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a28c55b5677e6ca6bedd81749f647b005"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28c55b5677e6ca6bedd81749f647b005">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c55b5677e6ca6bedd81749f647b005">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,7 +426,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a6fb040a4e5ad60631bd3c04f8b023998"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fb040a4e5ad60631bd3c04f8b023998">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[7/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fb040a4e5ad60631bd3c04f8b023998">&#9670;&nbsp;</a></span>Mesh() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -433,8 +472,8 @@ Private Attributes</h2></td></tr>
 <p>Destructor. </p>
 <dl class="section warning"><dt>Warning</dt><dd>Unload the mesh. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00030">30</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{ UnloadMesh(<a class="code" href="classraylib_1_1model_1_1_mesh.html#a9b2c482493d6d5fc8ba57e3377120066">_mesh</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00032">32</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ UnloadMesh(<a class="code" href="classraylib_1_1model_1_1_mesh.html#a9b2c482493d6d5fc8ba57e3377120066">_mesh</a>); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -477,8 +516,8 @@ Private Attributes</h2></td></tr>
 <p>Gets the C Raylib immutable version of the mesh. </p>
 <dl class="section return"><dt>Returns</dt><dd>The raylib version of the mesh </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00032">32</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1model_1_1_mesh.html#a9b2c482493d6d5fc8ba57e3377120066">_mesh</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00034">34</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1model_1_1_mesh.html#a9b2c482493d6d5fc8ba57e3377120066">_mesh</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -532,7 +571,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_mesh_8hpp_source.html#l00089">89</a> of file <a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_mesh_8hpp_source.html#l00091">91</a> of file <a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a>.</p>
 
 </div>
 </div>
@@ -544,7 +583,7 @@ Private Attributes</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/size.html">std::size</a></div><div class="ttdeci">T size(T... args)</div></div>
 <div class="ttc" id="aclassraylib_1_1textures_1_1_image_html_af67c920b2d2a705125f705f722f49716"><div class="ttname"><a href="classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716">raylib::textures::Image::asRaylib</a></div><div class="ttdeci">::Image &amp; asRaylib()</div><div class="ttdoc">Gets the C Raylib mutable version of the image.</div><div class="ttdef"><b>Definition:</b> <a href="_image_8cpp_source.html#l00090">Image.cpp:90</a></div></div>
-<div class="ttc" id="aclassraylib_1_1model_1_1_mesh_html_a9b2c482493d6d5fc8ba57e3377120066"><div class="ttname"><a href="classraylib_1_1model_1_1_mesh.html#a9b2c482493d6d5fc8ba57e3377120066">raylib::model::Mesh::_mesh</a></div><div class="ttdeci">::Mesh _mesh</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00089">Mesh.hpp:89</a></div></div>
+<div class="ttc" id="aclassraylib_1_1model_1_1_mesh_html_a9b2c482493d6d5fc8ba57e3377120066"><div class="ttname"><a href="classraylib_1_1model_1_1_mesh.html#a9b2c482493d6d5fc8ba57e3377120066">raylib::model::Mesh::_mesh</a></div><div class="ttdeci">::Mesh _mesh</div><div class="ttdef"><b>Definition:</b> <a href="_mesh_8hpp_source.html#l00091">Mesh.hpp:91</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_ad7da110906fdfe25cdd37029288b3d7f"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#ad7da110906fdfe25cdd37029288b3d7f">raylib::core::Vector3::asRaylib</a></div><div class="ttdeci">constexpr ::Vector3 asRaylib() const</div><div class="ttdoc">Gets the raylib Vector3.</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00175">Vector3.hpp:175</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

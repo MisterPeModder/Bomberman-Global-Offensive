@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"structraylib_1_1core_1_1_vector4.html#ac11494f3afe957236cda6b21c81f6f5c":[2,0,4,0,12,14],
 "structraylib_1_1core_1_1_vector4.html#ad186e45ce4de80bdba79cb55b5912c55":[2,0,4,0,12,7],
 "structraylib_1_1core_1_1_vector4.html#ad5af2b9edea62d90d2c21061d19ed98b":[2,0,4,0,12,2],
 "structraylib_1_1core_1_1_vector4.html#ad8ea43f5a8f0d3e9ee7d17ba75bdf4d5":[2,0,4,0,12,1],

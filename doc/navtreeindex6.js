@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1model_1_1_model.html#af0e3be54ce251183115d6bb0bd025350":[2,0,4,1,3,3],
 "classraylib_1_1model_1_1_model.html#af83422d0f8034118ebed5e9130cfc3f3":[2,0,4,1,3,1],
 "classraylib_1_1shaders_1_1_shader.html":[2,0,4,2,0],
 "classraylib_1_1shaders_1_1_shader.html#a0b45f6a7dcd1a38f788e68c91298335b":[2,0,4,2,0,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "common_8cpp.html":[3,0,0,5,0,1],
 "common_8cpp.html#a17553df808975dee52b7b36f9832f426":[3,0,0,5,0,1,5],
 "common_8cpp.html#a27e9fd11a9866c2b00f06aee1d8b951d":[3,0,0,5,0,1,1],
-"common_8cpp.html#a44214abd9f680e837d90227e2c53234a":[3,0,0,5,0,1,12],
-"common_8cpp.html#a4ce964a600d8da3213a54e2fece93e94":[3,0,0,5,0,1,11]
+"common_8cpp.html#a44214abd9f680e837d90227e2c53234a":[3,0,0,5,0,1,12]
 };
