@@ -46,7 +46,6 @@
 #include "game/Users.hpp"
 
 #include "localization/Localization.hpp"
-#include "localization/Resources.hpp"
 #include "logger/Logger.hpp"
 
 namespace game
@@ -77,6 +76,13 @@ namespace game
 
     MainMenuScene::MainMenuScene()
     {
+        _playerTextures.push(PLAYER_TEXTURE(0));
+        _playerTextures.push(PLAYER_TEXTURE(1));
+        _playerTextures.push(PLAYER_TEXTURE(2));
+        _playerTextures.push(PLAYER_TEXTURE(3));
+        _playerTextures.push(PLAYER_TEXTURE(4));
+        _playerTextures.push(PLAYER_TEXTURE(5));
+
         _world.addStorage<components::Textual>();
         _world.addSystem<systems::DrawText>();
         _world.addSystem<systems::DrawSelectedWidget>();
@@ -93,6 +99,27 @@ namespace game
         _global2D.add<systems::DrawRectangle>();
         loadLeftButtons();
         loadPlayerInterface();
+    }
+
+    localization::ResourceString MainMenuScene::playerTextureToRessourceString(PLAYER_TEXTURE texture)
+    {
+        switch (texture)
+        {
+        case TERRORIST_1:
+            return localization::resources::textures::rsTerroristOne;
+        case TERRORIST_2:
+            return localization::resources::textures::rsTerroristTwo;
+        case COUNTER_TERRORIST_1:
+            return localization::resources::textures::rsCounterTerroristOne;
+        case COUNTER_TERRORIST_2:
+            return localization::resources::textures::rsCounterTerroristTwo;
+        case NO_SENSE:
+            return localization::resources::textures::rsNoSense;
+        case RAINBOW:
+            return localization::resources::textures::rsRainbow;
+        default:
+            return localization::resources::textures::rsUnknown;
+        }
     }
 
     void MainMenuScene::loadLeftButtons()
@@ -168,6 +195,14 @@ namespace game
             .with<components::Size>(10.f, 30.f)
             .with<components::Color>(color)
             .build();
+
+        // Skin Text
+        _world.addEntity()
+            .with<components::Position>(20 + static_cast<int>(id) * 20, 75)
+            .with<components::Textual>(playerTextureToRessourceString(_playerTextures.front()), 20, raylib::core::Color::WHITE)
+            .with<components::Identity>()
+            .build();
+        _playerTextures.pop();
 
         auto connectedText =
             _world.addEntity()

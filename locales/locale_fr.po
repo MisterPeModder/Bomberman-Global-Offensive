@@ -60,3 +60,24 @@ msgstr "Pas connecté"
 
 msgid "Connected"
 msgstr "Connecté"
+
+msgid "Terrorist 1"
+msgstr "Terroriste 1"
+
+msgid "Terrorist 2"
+msgstr "Terroriste 2"
+
+msgid "Counter-terrorist 1"
+msgstr "Anti-terroriste 1"
+
+msgid "Counter-terrorist 2"
+msgstr "Anti-terroriste 2"
+
+msgid "No sense"
+msgstr "Pas de sens"
+
+msgid "Rainbow"
+msgstr "Arc-en-ciel"
+
+msgid "Unknown skin"
+msgstr "Texture inconnue"
