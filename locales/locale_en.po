@@ -122,10 +122,10 @@ msgid "?"
 msgstr ""
 
 msgid "BUMPER-LEFT"
-msgstr "L"
+msgstr "LB"
 
 msgid "BUMPER-RIGHT"
-msgstr "R"
+msgstr "RB"
 
 msgid "DPAD-DOWN"
 msgstr "DOWN"
@@ -167,7 +167,7 @@ msgid "THUMB-RIGHT"
 msgstr "R3"
 
 msgid "TRIGGER-LEFT"
-msgstr "LB"
+msgstr "LT"
 
 msgid "TRIGGER-RIGHT"
-msgstr "RB"
+msgstr "RT"
