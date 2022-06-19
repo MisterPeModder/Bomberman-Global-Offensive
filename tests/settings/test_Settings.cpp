@@ -47,13 +47,13 @@ TEST(Settings, load)
     EXPECT_EQ(settings.getMusicVolume(), 100);
     EXPECT_EQ(settings.getSfxVolume(), 100);
     EXPECT_EQ(settings.getTargetFramerate(), 60);
-    EXPECT_EQ(settings.getResolution(), raylib::core::Vector2f(1280, 720));
+    EXPECT_EQ(settings.getResolution(), raylib::core::Vector2i(1280, 720));
     EXPECT_FALSE(settings.isFullscreen());
     /// Loaded values (music and target framerate are invalid and therefore set to default)
     settings.load();
     EXPECT_EQ(settings.getMusicVolume(), 100);
     EXPECT_EQ(settings.getSfxVolume(), 10);
     EXPECT_EQ(settings.getTargetFramerate(), 60);
-    EXPECT_EQ(settings.getResolution(), raylib::core::Vector2f(1920, 1080));
+    EXPECT_EQ(settings.getResolution(), raylib::core::Vector2i(1920, 1080));
     EXPECT_TRUE(settings.isFullscreen());
 }

@@ -51,8 +51,10 @@ static void loadSplashScene(ecs::World &world)
 
     world.addEntity()
         .with<game::components::Texture2D>(raylibLogoPath)
-        .with<game::components::Position>((raylib::core::Window::getWidth() / 2) - ((128.f * scale) / 2),
-            (raylib::core::Window::getHeight() / 2) - ((128.f * scale) / 2))
+        .with<game::components::Position>(
+            ((raylib::core::Window::getWidth() / 2) - ((128.f * scale) / 2)) / (raylib::core::Window::getWidth() / 100),
+            ((raylib::core::Window::getHeight() / 2) - ((128.f * scale) / 2))
+                / (raylib::core::Window::getHeight() / 100))
         .with<game::components::Scale>(scale)
         .with<game::components::RotationAngle>(0.f)
         .with<game::components::Color>(255, 255, 255, 0)
@@ -73,7 +75,6 @@ namespace game
     SplashScene::SplashScene()
     {
         _world.addResource<ecs::Timer>();
-        _world.addResource<game::Users>();
 
         _world.addStorage<game::components::Textual>();
 

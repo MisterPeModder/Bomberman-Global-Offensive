@@ -9,6 +9,7 @@ set(SRC
     ${SRCROOT}/Camera3D.hpp
     ${SRCROOT}/Vector2.hpp
     ${SRCROOT}/Vector3.hpp
+    ${SRCROOT}/Vector4.hpp
     ${SRCROOT}/Window.cpp
     ${SRCROOT}/Window.hpp
     ${SRCROOT}/Mouse.hpp

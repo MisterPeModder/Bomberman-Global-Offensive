@@ -10,9 +10,6 @@ msgstr "Plein écran"
 msgid "Keybinds"
 msgstr "Contrôles"
 
-msgid "Mute"
-msgstr "Muet"
-
 msgid "Resolution"
 msgstr "Résolution"
 
@@ -24,6 +21,30 @@ msgstr "Volume"
 
 msgid "Back"
 msgstr "Retour"
+
+msgid "Music"
+msgstr "Musique"
+
+msgid "Mute/Unmute"
+msgstr "Muet/Non-muet"
+
+msgid "Sfx"
+msgstr "Effets sonores"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "English"
+msgstr ""
+
+msgid "Français"
+msgstr ""
+
+msgid "BM:GO"
+msgstr ""
+
+msgid "Bomberman: Global Offensive"
+msgstr ""
 
 msgid "Settings"
 msgstr "Options"
@@ -48,3 +69,8 @@ msgstr "Utilisateur"
 
 msgid "Number Bomb"
 msgstr ""
+msgid "Not connected"
+msgstr "Pas connecté"
+
+msgid "Connected"
+msgstr "Connecté"
