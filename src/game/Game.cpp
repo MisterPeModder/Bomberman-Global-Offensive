@@ -51,6 +51,7 @@
 
 #include "resources/AssetMap.hpp"
 #include "resources/Engine.hpp"
+#include "resources/GameClock.hpp"
 #include "resources/Map.hpp"
 #include "resources/RandomDevice.hpp"
 
@@ -69,6 +70,7 @@
 #include "systems/NoClip.hpp"
 #include "systems/PlaySoundOnce.hpp"
 #include "systems/Smoke.hpp"
+#include "systems/UpdateGameClock.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
@@ -76,6 +78,8 @@
 #include "game/scenes/SettingsMenuScene.hpp"
 
 #include "util/util.hpp"
+
+#include "localization/Resources.hpp"
 
 #include <cmath>
 
@@ -102,12 +106,18 @@ namespace game
         textures.emplace("wall", "assets/map/wall.png");
         textures.emplace("ground", "assets/map/ground.png");
         /// Player
-        textures.emplace("terrorist_1", "assets/player/textures/terrorist_1.png");
-        textures.emplace("terrorist_2", "assets/player/textures/terrorist_2.png");
-        textures.emplace("counter_terrorist_1", "assets/player/textures/counter_terrorist_1.png");
-        textures.emplace("counter_terrorist_2", "assets/player/textures/counter_terrorist_2.png");
-        textures.emplace("none_sense", "assets/player/textures/none_sense.png");
-        textures.emplace("rainbow", "assets/player/textures/rainbow.png");
+        textures.emplace(std::string(localization::resources::textures::rsTerroristOne.getMsgId()),
+            "assets/player/textures/terrorist_1.png");
+        textures.emplace(std::string(localization::resources::textures::rsTerroristTwo.getMsgId()),
+            "assets/player/textures/terrorist_2.png");
+        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristOne.getMsgId()),
+            "assets/player/textures/counter_terrorist_1.png");
+        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristTwo.getMsgId()),
+            "assets/player/textures/counter_terrorist_2.png");
+        textures.emplace(std::string(localization::resources::textures::rsNoSense.getMsgId()),
+            "assets/player/textures/none_sense.png");
+        textures.emplace(
+            std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
         /// Activables
         textures.emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
         textures.emplace("mine", "assets/items/activables/bonus_activable_mine.png");
@@ -224,6 +234,7 @@ namespace game
         _world.addResource<resources::Models>();
         _world.addResource<resources::Sounds>();
         _world.addResource<resources::RandomDevice>();
+        _world.addResource<resources::GameClock>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
         _world.addStorage<components::ItemIdentifier>();
@@ -253,12 +264,13 @@ namespace game
         _world.addSystem<systems::DisableNoClip>();
         _world.addSystem<systems::CheckGameEnd>();
         _world.addSystem<systems::ClearExplosions>();
+        _world.addSystem<systems::UpdateGameClock>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
             systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
-        _resolveCollisions.add<systems::Collision>();
+        _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
 
         _loadTextures();
@@ -291,7 +303,8 @@ namespace game
                     .with<components::Identity>()
                     .build();
             _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
-                textures.get("counter_terrorist_1"));
+                textures.get(_params.skinList.front()));
+            _params.skinList.pop();
         }
 
         /// Ground
@@ -348,6 +361,7 @@ namespace game
 
     void Game::drawFrame()
     {
+        _world.getResource<game::resources::EngineResource>().engine->updateMusicStreams();
         _camera.update();
 
         _world.runSystem<game::systems::UpdateKeyboardInput>();

@@ -84,8 +84,11 @@ namespace game::systems
             auto &entities = data.getResource<ecs::Entities>();
             int colorMoveValue = 5;
 
-            if (timer.elapsed() >= 6)
+            if (timer.elapsed() >= 6) {
                 data.getResource<resources::EngineResource>().engine->setScene<game::MainMenuScene>();
+                data.getResource<resources::EngineResource>().engine->setCurrentMusic(
+                    game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
+            }
             for (auto [color] : ecs::join(data.getStorage<components::Color>())) {
                 if (_screenId == 0) {
                     if (timer.elapsed() < 1.5) {

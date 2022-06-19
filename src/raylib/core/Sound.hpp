@@ -5,8 +5,8 @@
 ** Music
 */
 
-#ifndef RAYLIB_CORE_MUSIC_HPP_
-#define RAYLIB_CORE_MUSIC_HPP_
+#ifndef RAYLIB_CORE_SOUND_HPP_
+#define RAYLIB_CORE_SOUND_HPP_
 
 extern "C"
 {
@@ -63,4 +63,4 @@ namespace raylib
     } // namespace core
 } // namespace raylib
 
-#endif /*RAYLIB_CORE_MUSIC_HPP_*/
+#endif /*RAYLIB_CORE_SOUND_HPP_*/

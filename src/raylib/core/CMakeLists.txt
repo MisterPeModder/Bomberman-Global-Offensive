@@ -20,8 +20,10 @@ set(SRC
     ${SRCROOT}/Color.cpp
     ${SRCROOT}/Audio.cpp
     ${INCROOT}/Audio.hpp
-    ${SRCROOT}/Sound.cpp
     ${INCROOT}/Sound.hpp
+    ${SRCROOT}/Sound.cpp
+    ${INCROOT}/Music.hpp
+    ${SRCROOT}/Music.cpp
     ${SRCROOT}/Keyboard.hpp
     ${SRCROOT}/Keyboard.cpp
     ${SRCROOT}/Gamepad.hpp
