@@ -114,3 +114,6 @@ msgstr "Prec."
 
 msgid "Previous Activable"
 msgstr "Activable Précedent"
+
+msgid "Reset"
+msgstr "Réinitialiser"

@@ -537,19 +537,32 @@ static void loadSettingsMenuScene(ecs::World &world)
         .with<game::components::Position>(67.f, 3.f)
         .with<game::components::Textual>(localization::resources::rsBack, 30, raylib::core::Color::YELLOW)
         .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::BACK, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_GAMEPAD_FIRST, true)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) {
-                world.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
-                Logger::logger.log(Logger::Severity::Debug, "Back to menu");
-                world.getResource<game::resources::EngineResource>().engine->getSettings().save();
-            },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::YELLOW;
-            })
+        .with<game::gui::Widget>(game::SettingsMenuScene::BACK, game::gui::Widget::NullTag,
+            game::SettingsMenuScene::RESET, game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_GAMEPAD_FIRST,
+            true)
+        .with<game::gui::Clickable>([&world](ecs::Entity) {
+            Logger::logger.log(Logger::Severity::Debug, "Back to menu");
+            auto engine = world.getResource<game::resources::EngineResource>().engine;
+
+            engine->getSettings().save();
+            engine->getUsers().save();
+            engine->setScene<game::MainMenuScene>();
+        })
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(77.f, 3.f)
+        .with<game::components::Textual>(localization::resources::rsReset, 30, raylib::core::Color::YELLOW)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::RESET, game::SettingsMenuScene::BACK,
+            game::gui::Widget::NullTag, game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_GAMEPAD_FIRST)
+        .with<game::gui::Clickable>([&world](ecs::Entity) {
+            Logger::logger.log(Logger::Severity::Debug, "Reloaded default settings");
+            auto engine = world.getResource<game::resources::EngineResource>().engine;
+            engine->getSettings().loadDefaults();
+            engine->getUsers().loadDefaults();
+            engine->setScene<game::SettingsMenuScene>();
+        })
         .build();
 
     loadGraphicSettings(world, raylib::core::Vector2f(34, 10), raylib::core::Vector2f(32, 40));

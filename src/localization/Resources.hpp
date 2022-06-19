@@ -19,6 +19,7 @@ namespace localization
         constexpr ResourceString rsShortTitle("BM:GO");
 
         constexpr ResourceString rsBack("Back");
+        constexpr ResourceString rsReset("Reset");
 
         constexpr ResourceString rsUser1("User 1");
         constexpr ResourceString rsUser2("User 2");

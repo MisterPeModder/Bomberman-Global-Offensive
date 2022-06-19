@@ -110,4 +110,16 @@ namespace game
             _users[i].updateActions(fillChanged);
     }
 
+    void Users::save()
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].getProfile().save();
+    }
+
+    void Users::loadDefaults()
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].getProfile().loadDefaults();
+    }
+
 } // namespace game

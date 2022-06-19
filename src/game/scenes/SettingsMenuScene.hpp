@@ -21,6 +21,7 @@ namespace game
       public:
         enum WIDGET_ID {
             BACK,
+            RESET,
             VOLUME_MUTE,
             MUSIC_VOLUME_0,
             MUSIC_VOLUME_33,
