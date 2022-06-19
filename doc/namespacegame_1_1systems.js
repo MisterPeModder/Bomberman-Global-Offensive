@@ -7,6 +7,7 @@ var namespacegame_1_1systems =
     [ "DisableNoClip", "structgame_1_1systems_1_1_disable_no_clip.html", "structgame_1_1systems_1_1_disable_no_clip" ],
     [ "DrawConsole", "structgame_1_1systems_1_1_draw_console.html", "structgame_1_1systems_1_1_draw_console" ],
     [ "DrawCube", "structgame_1_1systems_1_1_draw_cube.html", "structgame_1_1systems_1_1_draw_cube" ],
+    [ "DrawFpsCounter", "structgame_1_1systems_1_1_draw_fps_counter.html", "structgame_1_1systems_1_1_draw_fps_counter" ],
     [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ],
     [ "DrawModel", "structgame_1_1systems_1_1_draw_model.html", "structgame_1_1systems_1_1_draw_model" ],
     [ "DrawRectangle", "structgame_1_1systems_1_1_draw_rectangle.html", "structgame_1_1systems_1_1_draw_rectangle" ],

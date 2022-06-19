@@ -1,5 +1,11 @@
 var NAVTREEINDEX11 =
 {
+"structraylib_1_1core_1_1_vector4.html#a6bfcb40c49c3395a65078053e51ed98f":[2,0,4,0,12,20],
+"structraylib_1_1core_1_1_vector4.html#a74e2c7cac509b1befd230f7e24abf25d":[2,0,4,0,12,17],
+"structraylib_1_1core_1_1_vector4.html#ab38e8ff50a83810675c36ad6e3e9687c":[2,0,4,0,12,13],
+"structraylib_1_1core_1_1_vector4.html#ab4bbd5357598f168ee560980a3e12bed":[2,0,4,0,12,4],
+"structraylib_1_1core_1_1_vector4.html#aba0f580f33f852cae5d69fcd250df1bb":[2,0,4,0,12,12],
+"structraylib_1_1core_1_1_vector4.html#ac11494f3afe957236cda6b21c81f6f5c":[2,0,4,0,12,14],
 "structraylib_1_1core_1_1_vector4.html#ad186e45ce4de80bdba79cb55b5912c55":[2,0,4,0,12,7],
 "structraylib_1_1core_1_1_vector4.html#ad5af2b9edea62d90d2c21061d19ed98b":[2,0,4,0,12,2],
 "structraylib_1_1core_1_1_vector4.html#ad8ea43f5a8f0d3e9ee7d17ba75bdf4d5":[2,0,4,0,12,1],
@@ -11,8 +17,8 @@ var NAVTREEINDEX11 =
 "systems_2_bomb_8cpp_source.html":[3,0,0,1,6,1],
 "systems_2_bomb_8hpp.html":[3,0,0,1,6,2],
 "systems_2_bomb_8hpp_source.html":[3,0,0,1,6,2],
-"systems_2_smoke_8hpp.html":[3,0,0,1,6,28],
-"systems_2_smoke_8hpp_source.html":[3,0,0,1,6,28],
+"systems_2_smoke_8hpp.html":[3,0,0,1,6,30],
+"systems_2_smoke_8hpp_source.html":[3,0,0,1,6,30],
 "text_8cpp.html":[3,0,0,4,4,2],
 "text_8cpp.html#a6f6a87d31882421f67abf604658f68cc":[3,0,0,4,4,2,0],
 "text_8cpp.html#aa382587153ded95d28ec2a8b01200360":[3,0,0,4,4,2,1],

@@ -179,6 +179,7 @@ var hierarchy =
       [ "game::systems::DisableNoClip", "structgame_1_1systems_1_1_disable_no_clip.html", null ],
       [ "game::systems::DrawConsole", "structgame_1_1systems_1_1_draw_console.html", null ],
       [ "game::systems::DrawCube", "structgame_1_1systems_1_1_draw_cube.html", null ],
+      [ "game::systems::DrawFpsCounter", "structgame_1_1systems_1_1_draw_fps_counter.html", null ],
       [ "game::systems::DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", null ],
       [ "game::systems::DrawModel", "structgame_1_1systems_1_1_draw_model.html", null ],
       [ "game::systems::DrawRectangle", "structgame_1_1systems_1_1_draw_rectangle.html", null ],

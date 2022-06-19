@@ -120,7 +120,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_main_menu_scene_8cpp_source.html#l00057">57</a> of file <a class="el" href="_main_menu_scene_8cpp_source.html">MainMenuScene.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_main_menu_scene_8cpp_source.html#l00058">58</a> of file <a class="el" href="_main_menu_scene_8cpp_source.html">MainMenuScene.cpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a84bd77abaf84203f539cdd3ec9c1963f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84bd77abaf84203f539cdd3ec9c1963f">&#9670;&nbsp;</a></span>run()</h2>
@@ -150,27 +150,27 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classecs_1_1_system.html#ad1a93c71ce561822c2b3a2d6ea96ef56">ecs::System</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_main_menu_scene_8cpp_source.html#l00058">58</a> of file <a class="el" href="_main_menu_scene_8cpp_source.html">MainMenuScene.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">auto</span> engine = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a>&gt;().engine;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">auto</span> &amp;users = engine-&gt;getUsers();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">int</span> gamepadId = users.getJoiningGamepad();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span> (gamepadId == -1)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159">raylib::core::Gamepad::Button</a> pressedBtn = <a class="code" href="classraylib_1_1core_1_1_gamepad.html#a8bd9addbf160511aebbee4d700689da8">raylib::core::Gamepad::getButtonPressed</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span> (pressedBtn == <a class="code" href="classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a9d4989e254422a15442ed8c59c600f1a">raylib::core::Gamepad::Button::MIDDLE_LEFT</a>)</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> (pressedBtn != <a class="code" href="classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a0a22e84ed1c4062d7ac11d80bbed3876">raylib::core::Gamepad::Button::MIDDLE_RIGHT</a></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                &amp;&amp; users[<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>].isKeyboard()) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                users[<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>].setGamepadId(gamepadId);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, <span class="stringliteral">&quot;User 1 switched to gamepad mode.&quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                users.connectUser(gamepadId);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classgame_1_1_main_menu_scene.html">game::MainMenuScene</a> &amp;<span class="keyword">&gt;</span>(engine-&gt;getScene()).updateConnectedTexts();</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_main_menu_scene_8cpp_source.html#l00059">59</a> of file <a class="el" href="_main_menu_scene_8cpp_source.html">MainMenuScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keyword">auto</span> engine = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a>&gt;().engine;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keyword">auto</span> &amp;users = engine-&gt;getUsers();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">int</span> gamepadId = users.getJoiningGamepad();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (gamepadId == -1)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159">raylib::core::Gamepad::Button</a> pressedBtn = <a class="code" href="classraylib_1_1core_1_1_gamepad.html#a8bd9addbf160511aebbee4d700689da8">raylib::core::Gamepad::getButtonPressed</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (pressedBtn == <a class="code" href="classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a9d4989e254422a15442ed8c59c600f1a">raylib::core::Gamepad::Button::MIDDLE_LEFT</a>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span> (pressedBtn != <a class="code" href="classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159a0a22e84ed1c4062d7ac11d80bbed3876">raylib::core::Gamepad::Button::MIDDLE_RIGHT</a></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                &amp;&amp; users[<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>].isKeyboard()) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                users[<a class="code" href="classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5">game::User::UserId::User1</a>].setGamepadId(gamepadId);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, <span class="stringliteral">&quot;User 1 switched to gamepad mode.&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                users.connectUser(gamepadId);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classgame_1_1_main_menu_scene.html">game::MainMenuScene</a> &amp;<span class="keyword">&gt;</span>(engine-&gt;getScene()).updateConnectedTexts();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -24,6 +24,10 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "DrawConsole.hpp", "_draw_console_8hpp.html", [
       [ "DrawConsole", "structgame_1_1systems_1_1_draw_console.html", "structgame_1_1systems_1_1_draw_console" ]
     ] ],
+    [ "DrawFpsCounter.cpp", "_draw_fps_counter_8cpp.html", null ],
+    [ "DrawFpsCounter.hpp", "_draw_fps_counter_8hpp.html", [
+      [ "DrawFpsCounter", "structgame_1_1systems_1_1_draw_fps_counter.html", "structgame_1_1systems_1_1_draw_fps_counter" ]
+    ] ],
     [ "DrawingCube.hpp", "_drawing_cube_8hpp.html", [
       [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ]
     ] ],

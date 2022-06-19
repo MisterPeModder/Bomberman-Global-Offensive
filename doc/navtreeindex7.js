@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"classraylib_1_1shapes_1_1_cone.html#ac2a28835573e881ead567f85f11e8842":[2,0,4,3,2,11],
+"classraylib_1_1shapes_1_1_cone.html#ac6559bc0301faf7a18efae6e2cec0a8e":[2,0,4,3,2,9],
+"classraylib_1_1shapes_1_1_cone.html#accc0d86cc0f9907bf34e325d5ca637a9":[2,0,4,3,2,0],
+"classraylib_1_1shapes_1_1_cone.html#af7f781d23acd402f32d2897e81209512":[2,0,4,3,2,3],
 "classraylib_1_1shapes_1_1_cone.html#afd90045d53aee6af240c4775b70db1b0":[2,0,4,3,2,12],
 "classraylib_1_1shapes_1_1_cone.html#afe697948792c3eacbdb2ec497af2828a":[2,0,4,3,2,15],
 "classraylib_1_1shapes_1_1_cube.html":[2,0,4,3,3],
@@ -223,8 +227,8 @@ var NAVTREEINDEX7 =
 "dir_fe414d616bd0c4668e6515f48824338f.html":[3,0,0,5],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[3,0,0,3],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_a.html":[2,3,0,1],
 "functions_b.html":[2,3,0,2],
 "functions_c.html":[2,3,0,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "functions_func_h.html":[2,3,1,8],
 "functions_func_i.html":[2,3,1,9],
 "functions_func_j.html":[2,3,1,10],
-"functions_func_k.html":[2,3,1,11],
-"functions_func_l.html":[2,3,1,12],
-"functions_func_m.html":[2,3,1,13],
-"functions_func_n.html":[2,3,1,14],
-"functions_func_o.html":[2,3,1,15]
+"functions_func_k.html":[2,3,1,11]
 };

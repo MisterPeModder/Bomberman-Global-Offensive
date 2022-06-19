@@ -73,17 +73,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_scene_8cpp.html",
-"_map_8cpp_source.html",
-"_widget_8hpp.html",
-"classecs_1_1_join_iter.html#ad09ddb3d4ae598070422da82e7ff6e4c",
-"classgame_1_1_test_scene.html#a7143167fd03d6975d9603dc36e4cd657",
-"classgame_1_1settings_1_1_settings.html#adb873e4708998349aec6a2cb626fd653",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a9df35983f4024e31955de0f1e545e888",
-"classraylib_1_1shapes_1_1_cone.html#afd90045d53aee6af240c4775b70db1b0",
-"functions_func_p.html",
-"structecs_1_1_join_traits_ext.html#aadec28db6f60883b4e9fd90bbbcf22c7",
-"structgame_1_1components_1_1_smoke.html",
-"structraylib_1_1core_1_1_vector4.html#ad186e45ce4de80bdba79cb55b5912c55"
+"_main_menu_scene_8hpp.html",
+"_velocity_8hpp.html",
+"classecs_1_1_join_iter.html#aa1dc5789cbad4624f5c1c9aae972f46b",
+"classgame_1_1_settings_menu_scene.html#aec2fd8f1ee693b6298d69e3296db8fa8",
+"classgame_1_1settings_1_1_settings.html#ac0a51dce66823474077b80fbbc8b1479",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a960df6d77e65cd185ca4f3501db634eb",
+"classraylib_1_1shapes_1_1_cone.html#ac2a28835573e881ead567f85f11e8842",
+"functions_func_l.html",
+"structecs_1_1_join_traits_3_01_storage_01_4.html#a2280092d27261f1f2a2ac39aaf6cd857",
+"structgame_1_1components_1_1_size2_d.html",
+"structraylib_1_1core_1_1_vector4.html#a6bfcb40c49c3395a65078053e51ed98f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
