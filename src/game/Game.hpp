@@ -12,8 +12,8 @@
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
 #include "map/Map.hpp"
-#include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Camera2D.hpp"
+#include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Vector2.hpp"
 #include "raylib/core/Vector3.hpp"
 
@@ -90,6 +90,7 @@ namespace game
         void _loadMeshes();
         void _loadModels();
         void _loadHud();
+        void _updateHud(ecs::SystemData data);
 
         ecs::SystemTag _drawing;
         ecs::SystemTag _handleInputs;

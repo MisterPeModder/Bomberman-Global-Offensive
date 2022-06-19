@@ -36,6 +36,8 @@ set(SRC
     ${SRCROOT}/Destructible.hpp
     ${SRCROOT}/Cube.hpp
     ${SRCROOT}/CubeColor.hpp
+    ${SRCROOT}/Hud.cpp
+    ${SRCROOT}/Hud.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
