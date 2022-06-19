@@ -25,8 +25,9 @@ namespace game::systems
         void run(ecs::SystemData data) override final;
 
       private:
-        raylib::core::Color whatColor(ecs::SystemData data, int id);
         void drawDataHud(float x, float y, std::string text, raylib::core::Color color);
+
+        raylib::core::Color whatColor(components::Player::Inventory inv, int id, float x, float y);
     };
 } // namespace game::systems
 #endif /*!DRAW_HUD_HPP_*/

@@ -29,38 +29,71 @@ namespace game::systems
     void DrawHud::drawDataHud(float x, float y, std::string text, raylib::core::Color color)
     {
         ::DrawText(text.c_str(), x / 100 * raylib::core::Window::getWidth(),
-            y / 100 * raylib::core::Window::getHeight(), 2, color.asRaylib());
+            y / 100 * raylib::core::Window::getHeight(), 15, color.asRaylib());
     }
 
-    raylib::core::Color DrawHud::whatColor(ecs::SystemData data, int id)
+    raylib::core::Color DrawHud::whatColor(components::Player::Inventory inv, int id, float x, float y)
     {
-        for (auto [player] : ecs::join(data.getStorage<game::components::Player>())) {
-            switch (id) {
-                case (1):
-                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::NoClip)] != 0)
-                        return (raylib::core::Color::GREEN);
-                    break;
-                case (2):
-                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::LandMine)] != 0)
-                        return (raylib::core::Color::GREEN);
-                    break;
-                case (3):
-                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::SmokeGrenade)]
-                        != 0)
-                        return (raylib::core::Color::GREEN);
-                    break;
-                case (4):
-                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::StunGrenade)]
-                        != 0)
-                        return (raylib::core::Color::GREEN);
-                    break;
-                case (5):
-                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::Punch)] != 0)
-                        return (raylib::core::Color::GREEN);
-                    break;
+        size_t occurence = 0;
 
-                default: break; return (raylib::core::Color::DARK_GRAY);
-            }
+        switch (id) {
+            case (1):
+                occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::NoClip)];
+                if (inv.selected == game::components::Item::Identifier::NoClip) {
+                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::RED);
+                }
+                if (occurence != 0) {
+                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::GREEN);
+                }
+                break;
+            case (2):
+                occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::LandMine)];
+                if (inv.selected == game::components::Item::Identifier::LandMine) {
+                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::RED);
+                }
+                if (occurence != 0) {
+                    drawDataHud(6.0 + x, 13.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::GREEN);
+                }
+                break;
+            case (3):
+                occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::SmokeGrenade)];
+                if (inv.selected == game::components::Item::Identifier::SmokeGrenade) {
+                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::RED);
+                }
+                if (occurence != 0) {
+                    drawDataHud(6.0 + x, 15.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::GREEN);
+                }
+                break;
+            case (4):
+                occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::StunGrenade)];
+                if (inv.selected == game::components::Item::Identifier::StunGrenade) {
+                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::RED);
+                }
+                if (occurence != 0) {
+                    drawDataHud(7.0 + x, 17.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::GREEN);
+                }
+                break;
+            case (5):
+                occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::Punch)];
+                if (inv.selected == game::components::Item::Identifier::Punch) {
+                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::RED);
+                }
+                if (occurence != 0) {
+                    drawDataHud(6.0 + x, 19.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::GREEN);
+                }
+                break;
+
+            default: break; return (raylib::core::Color::DARK_GRAY);
         }
 
         return (raylib::core::Color::DARK_BLUE);
@@ -89,18 +122,22 @@ namespace game::systems
             player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::LandMine)];
 
             drawDataHud(1.0 + x, 3.0 + y, localization::resources::hud::rsNumberbomb, raylib::core::Color::BLUE);
-            drawDataHud(5.0 + x, 3.0 + y, std::to_string(player.stats.bombLimit), raylib::core::Color::BLUE);
-            drawDataHud(1.0 + x, 4.0 + y, localization::resources::hud::rsPowerBomb, raylib::core::Color::BLUE);
-            drawDataHud(5.0 + x, 4.0 + y, std::to_string(player.stats.bombRange), raylib::core::Color::BLUE);
-            drawDataHud(1.0 + x, 5.0 + y, localization::resources::hud::rsSpeed, raylib::core::Color::BLUE);
-            drawDataHud(5.0 + x, 5.0 + y, std::to_string(player.stats.speed), raylib::core::Color::BLUE);
+            drawDataHud(7.0 + x, 3.0 + y, std::to_string(player.stats.bombLimit), raylib::core::Color::BLUE);
+            drawDataHud(1.0 + x, 5.0 + y, localization::resources::hud::rsPowerBomb, raylib::core::Color::BLUE);
+            drawDataHud(7.0 + x, 5.0 + y, std::to_string(player.stats.bombRange), raylib::core::Color::BLUE);
+            drawDataHud(1.0 + x, 7.0 + y, localization::resources::hud::rsSpeed, raylib::core::Color::BLUE);
+            drawDataHud(7.0 + x, 7.0 + y, std::to_string(player.stats.speed), raylib::core::Color::BLUE);
 
-            drawDataHud(1.0 + x, 6.0 + y, localization::resources::hud::rsActivable, raylib::core::Color::GREEN);
-            drawDataHud(1.0 + x, 7.0 + y, localization::resources::hud::rsNoclip, whatColor(data, 1));
-            drawDataHud(1.0 + x, 8.0 + y, localization::resources::hud::rsLandMine, whatColor(data, 2));
-            drawDataHud(1.0 + x, 9.0 + y, localization::resources::hud::rsSmokeGrenade, whatColor(data, 3));
-            drawDataHud(1.0 + x, 10.0 + y, localization::resources::hud::rsStunGrenade, whatColor(data, 4));
-            drawDataHud(1.0 + x, 11.0 + y, localization::resources::hud::rsPunch, whatColor(data, 5));
+            drawDataHud(1.0 + x, 9.0 + y, localization::resources::hud::rsActivable, raylib::core::Color::PURPLE);
+            drawDataHud(
+                1.0 + x, 11.0 + y, localization::resources::hud::rsNoclip, whatColor(player.inventory, 1, x, y));
+            drawDataHud(
+                1.0 + x, 13 + y, localization::resources::hud::rsLandMine, whatColor(player.inventory, 2, x, y));
+            drawDataHud(
+                1.0 + x, 15 + y, localization::resources::hud::rsSmokeGrenade, whatColor(player.inventory, 3, x, y));
+            drawDataHud(
+                1.0 + x, 17.0 + y, localization::resources::hud::rsStunGrenade, whatColor(player.inventory, 4, x, y));
+            drawDataHud(1.0 + x, 19.0 + y, localization::resources::hud::rsPunch, whatColor(player.inventory, 5, x, y));
         }
     }
 } // namespace game::systems
