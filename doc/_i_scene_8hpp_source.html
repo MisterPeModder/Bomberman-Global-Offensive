@@ -107,21 +107,24 @@ $(document).ready(function(){initNavTree('_i_scene_8hpp_source.html',''); initRe
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classgame_1_1_i_scene.html#aec2ec510ab99aefc8080d28eb4c6076e">~IScene</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_i_scene.html#a23689ac4dc7690f54baa819a4fb4737e">drawFrame</a>() = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_i_scene.html#a99effc9a095e38e29c5f8dff6781edb2">setupWorld</a>() = 0;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classecs_1_1_world.html">ecs::World</a> &amp;<a class="code" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">getWorld</a>() = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_i_scene.html#a23689ac4dc7690f54baa819a4fb4737e">drawFrame</a>() = 0;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classecs_1_1_world.html">ecs::World</a> &amp;<a class="code" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">getWorld</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <span class="comment">// namespace game</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !GAME_SCENES_ISCENE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classecs_1_1_world.html">ecs::World</a> &amp;<a class="code" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">getWorld</a>() = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="classecs_1_1_world.html">ecs::World</a> &amp;<a class="code" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">getWorld</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <span class="comment">// namespace game</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !GAME_SCENES_ISCENE_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassgame_1_1_i_scene_html_a23689ac4dc7690f54baa819a4fb4737e"><div class="ttname"><a href="classgame_1_1_i_scene.html#a23689ac4dc7690f54baa819a4fb4737e">game::IScene::drawFrame</a></div><div class="ttdeci">virtual void drawFrame()=0</div><div class="ttdoc">Call the scene's drawFrame function.</div></div>
 <div class="ttc" id="aclassgame_1_1_i_scene_html"><div class="ttname"><a href="classgame_1_1_i_scene.html">game::IScene</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_scene_8hpp_source.html#l00017">IScene.hpp:17</a></div></div>
 <div class="ttc" id="a_game_8hpp_html"><div class="ttname"><a href="_game_8hpp.html">Game.hpp</a></div></div>
 <div class="ttc" id="anamespacegame_html"><div class="ttname"><a href="namespacegame.html">game</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_animation_8hpp_source.html#l00015">Animation.hpp:15</a></div></div>
+<div class="ttc" id="aclassgame_1_1_i_scene_html_a99effc9a095e38e29c5f8dff6781edb2"><div class="ttname"><a href="classgame_1_1_i_scene.html#a99effc9a095e38e29c5f8dff6781edb2">game::IScene::setupWorld</a></div><div class="ttdeci">virtual void setupWorld()=0</div><div class="ttdoc">Call the scene's world setup.</div></div>
 <div class="ttc" id="a_world_8hpp_html"><div class="ttname"><a href="_world_8hpp.html">World.hpp</a></div></div>
 <div class="ttc" id="aclassgame_1_1_i_scene_html_a6dc8c2f9b7f74e0281ccb914626bdbf1"><div class="ttname"><a href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">game::IScene::getWorld</a></div><div class="ttdeci">virtual ecs::World &amp; getWorld()=0</div><div class="ttdoc">Gets the scene's mutable world object.</div></div>
 <div class="ttc" id="a_camera3_d_8hpp_html"><div class="ttname"><a href="_camera3_d_8hpp.html">Camera3D.hpp</a></div></div>

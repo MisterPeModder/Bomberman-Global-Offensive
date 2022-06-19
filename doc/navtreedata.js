@@ -73,16 +73,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_scene_8cpp.html",
-"_mesh_8cpp_source.html",
-"bindings_8cpp.html#ab4e5d6fabf64789ce5320bfcb1fdc224",
-"classecs_1_1_system.html#ab0ae8f1804130e3b8cfa2bbe2b0c5e6b",
-"classgame_1_1components_1_1_keyboard_input.html#ad9124a30984b5853e4b09664fd16b534ab50339a10e1de285ac99d4c3990b8693",
-"classraylib_1_1core_1_1_camera2_d.html#a90cbfda6cbfc0479fc0d19f901148a74a83f880ade98e02aa07304071be91df5c",
-"classraylib_1_1core_1_1_window.html#a281c780bd53355651cf941201252c289",
-"classraylib_1_1textures_1_1_image.html#abd86b6b249e8cd397c83f124b69d8c49",
-"game_2systems_2_model_8hpp.html",
-"structgame_1_1components_1_1_item.html#a45845578fe364df3f5d6a8ebc7855df7",
-"structgame_1_1systems_1_1_draw_cube.html#a05eb9e958df24d948c15ac90982ce5b7"
+"_map_storage_8hpp_source.html",
+"_window_8cpp.html",
+"classecs_1_1_join_iter.html#afd0899a9948400fc68d44008566c9691",
+"classgame_1_1_user.html#a06dc65a4ec1e0d158088febb3fdf0707",
+"classgame_1_1settings_1_1_settings_1_1_invalid_settings_value.html",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90ab213ce22ca6ad4eda8db82966b9b6e5a",
+"classraylib_1_1shapes_1_1_cube.html#a051b3c91675ceec3041e16b22c35ea15",
+"functions_func_t.html",
+"structgame_1_1_detect_gamepad.html",
+"structgame_1_1components_1_1_smoke.html#af9d105358c07c68c80f042f9704c5bd3",
+"system_2_system_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

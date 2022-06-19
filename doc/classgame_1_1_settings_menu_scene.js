@@ -1,7 +1,16 @@
 var classgame_1_1_settings_menu_scene =
 [
+    [ "Section", "structgame_1_1_settings_menu_scene_1_1_section.html", "structgame_1_1_settings_menu_scene_1_1_section" ],
+    [ "WIDGET_GAMEPAD_ID", "classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00", [
+      [ "KEYBINDS_GAMEPAD_BOMB", "classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00a9dc0a742eddea77351c271ba00c2d56b", null ],
+      [ "KEYBINDS_GAMEPAD_ACTIVABLE", "classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00a801eebf01f3b38eb34a411abb64e16f7", null ],
+      [ "KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE", "classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00af718cd2fc53c6acd4b5bca2ca6f37dc5", null ],
+      [ "KEYBINDS_GAMEPAD_NEXT_ACTIVABLE", "classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00abfab43feca002869329c737b9d95cd63", null ],
+      [ "KEYBINDS_GAMEPAD_COUNT", "classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00a5f106c28a027d528a2327b1bb475a408", null ]
+    ] ],
     [ "WIDGET_ID", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691", [
       [ "BACK", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aee8263d844f7c818cdaa56797d67bd35", null ],
+      [ "RESET", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9a03f5f400db44e15aab56fc87e726c0", null ],
       [ "VOLUME_MUTE", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ad6f39b1d414799e230146060ebd882f0", null ],
       [ "MUSIC_VOLUME_0", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a5e5cb6b5b62b0853869f26201972df04", null ],
       [ "MUSIC_VOLUME_33", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9a2bddbc6bb7b74ecccbbe20378f150c", null ],
@@ -15,9 +24,34 @@ var classgame_1_1_settings_menu_scene =
       [ "RES_1", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad", null ],
       [ "RES_2", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44c89546e61cb5895c983aaf785770e8", null ],
       [ "RES_3", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a9464e04e8d515331dce8dec99abc671f", null ],
+      [ "FPS_30", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ab42ca9610197f2c28f502cf89c19a62c", null ],
+      [ "FPS_60", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a5add3b082d61a5c813e2d51682f39b78", null ],
+      [ "FPS_144", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a43cb873df216c2f9e5675d2a562c3468", null ],
+      [ "FPS_240", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aa986e71a1c31f566ba2631a7cf0727d2", null ],
       [ "LANGUAGE_ENGLISH", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a62eb4cddda54e4e7e5a0bf9fe22da9b3", null ],
       [ "LANGUAGE_FRENCH", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a6013244c2922ff932107f96ca52f1d0e", null ],
+      [ "KEYBINDS_KEYBOARD_UP", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aa010a4b1ff0b3c6cead0f2cf556904bf", null ],
+      [ "KEYBINDS_KEYBOARD_DOWN", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691afdbeec6872305f313eed22f8a2d47055", null ],
+      [ "KEYBINDS_KEYBOARD_LEFT", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a8d4b76192c299f8290cfe8587256be97", null ],
+      [ "KEYBINDS_KEYBOARD_RIGHT", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ae6299b3fd51ce07fa58a5b5e06d6c219", null ],
+      [ "KEYBINDS_KEYBOARD_BOMB", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ac40f44228beafa688f4811c5697f1fcf", null ],
+      [ "KEYBINDS_KEYBOARD_ACTIVABLE", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691ae79bf5c1c969e7218b2dd03ae0cf3c5e", null ],
+      [ "KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a44312423ebedd2b028a60ff5755cfc3a", null ],
+      [ "KEYBINDS_KEYBOARD_ACTIVABLE_NEXT", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a797bcea4b3ae3814f47e003116e04943", null ],
+      [ "KEYBINDS_GAMEPAD_FIRST", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691aed7e853476e88965abe4458c99970e18", null ],
       [ "WIDGET_ID_SIZE", "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691adcc09132362bb96ee881ba82571ea92d", null ]
     ] ],
-    [ "SettingsMenuScene", "classgame_1_1_settings_menu_scene.html#a889138e3049efef26f662333adf12c4c", null ]
+    [ "SettingsMenuScene", "classgame_1_1_settings_menu_scene.html#a889138e3049efef26f662333adf12c4c", null ],
+    [ "_fillGamepadButtonStrings", "classgame_1_1_settings_menu_scene.html#a214ac9596ee9dbce852e63384cddc0d0", null ],
+    [ "_loadGamepadKeybinds", "classgame_1_1_settings_menu_scene.html#a2d42cf880e08eb9b66b5ca153ed45a01", null ],
+    [ "_loadGamepadProfile", "classgame_1_1_settings_menu_scene.html#a2e9653e402e3741b120bd0ac7d7f11f7", null ],
+    [ "_loadKeyboardKeybinds", "classgame_1_1_settings_menu_scene.html#a8f2ec513879fbd2c4708e5c425b6951d", null ],
+    [ "_updateActionGamepad", "classgame_1_1_settings_menu_scene.html#a9fd3f1bd12b19c508be534546a3e37be", null ],
+    [ "_updateActionKey", "classgame_1_1_settings_menu_scene.html#aec2fd8f1ee693b6298d69e3296db8fa8", null ],
+    [ "getGamepadWidgetId", "classgame_1_1_settings_menu_scene.html#aa2c42439729cf59935463737b6d32d17", null ],
+    [ "loadSection", "classgame_1_1_settings_menu_scene.html#ac75eb4e2507ce635a6286ea46b85cbcc", null ],
+    [ "setupWorld", "classgame_1_1_settings_menu_scene.html#a7d82310452c665fa89ff0646d1ee589e", null ],
+    [ "_actionsGamepadBindings", "classgame_1_1_settings_menu_scene.html#acbd35e1f3bc0194b23f034ff16bbfd16", null ],
+    [ "_actionsKeyboardBindings", "classgame_1_1_settings_menu_scene.html#a74e943977cdee91660d0449e9230e821", null ],
+    [ "_gamepadButtonStrings", "classgame_1_1_settings_menu_scene.html#aeb6cefd608c5fd7a8699e5220d98e9c4", null ]
 ];

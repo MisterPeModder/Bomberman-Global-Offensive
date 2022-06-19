@@ -14,6 +14,7 @@ var namespacegame_1_1components =
     [ "Image", "structgame_1_1components_1_1_image.html", "structgame_1_1components_1_1_image" ],
     [ "Item", "structgame_1_1components_1_1_item.html", "structgame_1_1components_1_1_item" ],
     [ "ItemIdentifier", "structgame_1_1components_1_1_item_identifier.html", "structgame_1_1components_1_1_item_identifier" ],
+    [ "KeybindIntercepter", "structgame_1_1components_1_1_keybind_intercepter.html", "structgame_1_1components_1_1_keybind_intercepter" ],
     [ "KeyboardInput", "classgame_1_1components_1_1_keyboard_input.html", "classgame_1_1components_1_1_keyboard_input" ],
     [ "Living", "structgame_1_1components_1_1_living.html", "structgame_1_1components_1_1_living" ],
     [ "Model", "structgame_1_1components_1_1_model.html", "structgame_1_1components_1_1_model" ],

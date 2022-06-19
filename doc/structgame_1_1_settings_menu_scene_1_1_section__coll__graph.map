@@ -1,0 +1,6 @@
+<map id="game::SettingsMenuScene::Section" name="game::SettingsMenuScene::Section">
+<area shape="rect" id="node1" title=" " alt="" coords="126,319,321,360"/>
+<area shape="rect" id="node2" href="$structraylib_1_1core_1_1_color.html" title="The Color struct that encapsulates the raylib Color struct." alt="" coords="5,162,143,189"/>
+<area shape="rect" id="node3" href="$classlocalization_1_1_resource_string.html" title="Translatable string. Will register itself in the loaded locales." alt="" coords="273,162,475,189"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string_view.html" title=" " alt="" coords="311,5,437,32"/>
+</map>

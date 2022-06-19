@@ -18,7 +18,8 @@ var dir_5643fc5b65571d5df13cbb45af2e9897 =
     ] ],
     [ "SettingsMenuScene.cpp", "_settings_menu_scene_8cpp.html", "_settings_menu_scene_8cpp" ],
     [ "SettingsMenuScene.hpp", "_settings_menu_scene_8hpp.html", [
-      [ "SettingsMenuScene", "classgame_1_1_settings_menu_scene.html", "classgame_1_1_settings_menu_scene" ]
+      [ "SettingsMenuScene", "classgame_1_1_settings_menu_scene.html", "classgame_1_1_settings_menu_scene" ],
+      [ "Section", "structgame_1_1_settings_menu_scene_1_1_section.html", "structgame_1_1_settings_menu_scene_1_1_section" ]
     ] ],
     [ "SplashScene.cpp", "_splash_scene_8cpp.html", "_splash_scene_8cpp" ],
     [ "SplashScene.hpp", "_splash_scene_8hpp.html", [

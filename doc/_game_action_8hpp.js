@@ -13,6 +13,8 @@ var _game_action_8hpp =
       [ "BACK", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0", null ],
       [ "ACTIVATE_ITEM", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b", null ],
       [ "DISCONNECT", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663add7cd0eb57db08d4f98abc48e5593462", null ],
+      [ "PREVIOUS_ACTIVABLE", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a1666d55be21cf20000f01a4e01cd2d49", null ],
+      [ "NEXT_ACTIVABLE", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a452027db946d37ba0f94d1160a3184bd", null ],
       [ "COUNT", "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d", null ]
     ] ],
     [ "isMoveAction", "_game_action_8hpp.html#a85afa01575b11b63bb973480cc6972e4", null ]

@@ -111,6 +111,9 @@ Inheritance diagram for game::IScene:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aec2ec510ab99aefc8080d28eb4c6076e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_i_scene.html#aec2ec510ab99aefc8080d28eb4c6076e">~IScene</a> ()=default</td></tr>
 <tr class="separator:aec2ec510ab99aefc8080d28eb4c6076e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99effc9a095e38e29c5f8dff6781edb2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_i_scene.html#a99effc9a095e38e29c5f8dff6781edb2">setupWorld</a> ()=0</td></tr>
+<tr class="memdesc:a99effc9a095e38e29c5f8dff6781edb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the scene's world setup.  <a href="classgame_1_1_i_scene.html#a99effc9a095e38e29c5f8dff6781edb2">More...</a><br /></td></tr>
+<tr class="separator:a99effc9a095e38e29c5f8dff6781edb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23689ac4dc7690f54baa819a4fb4737e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_i_scene.html#a23689ac4dc7690f54baa819a4fb4737e">drawFrame</a> ()=0</td></tr>
 <tr class="memdesc:a23689ac4dc7690f54baa819a4fb4737e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the scene's drawFrame function.  <a href="classgame_1_1_i_scene.html#a23689ac4dc7690f54baa819a4fb4737e">More...</a><br /></td></tr>
 <tr class="separator:a23689ac4dc7690f54baa819a4fb4737e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,7 +208,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets the scene's immutable world object. </p>
 
-<p>Implemented in <a class="el" href="classgame_1_1_a_scene.html#a9c2a69272f5661df3f6dcb31ce35d17a">game::AScene</a>.</p>
+<p>Implemented in <a class="el" href="classgame_1_1_a_scene.html#ae389ab8adb4cc96ed2d7e81cffb7374d">game::AScene</a>.</p>
 
 </div>
 </div>
@@ -234,7 +237,36 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets the scene's mutable world object. </p>
 
-<p>Implemented in <a class="el" href="classgame_1_1_a_scene.html#a2ac603a9460be4126555a7f46b2b34d4">game::AScene</a>.</p>
+<p>Implemented in <a class="el" href="classgame_1_1_a_scene.html#a64e6660ce0bbd24933323dd271e8d37f">game::AScene</a>.</p>
+
+</div>
+</div>
+<a id="a99effc9a095e38e29c5f8dff6781edb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99effc9a095e38e29c5f8dff6781edb2">&#9670;&nbsp;</a></span>setupWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void game::IScene::setupWorld </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Call the scene's world setup. </p>
+
+<p>Implemented in <a class="el" href="classgame_1_1_settings_menu_scene.html#a7d82310452c665fa89ff0646d1ee589e">game::SettingsMenuScene</a>, and <a class="el" href="classgame_1_1_a_scene.html#afb5d37216c0df1eaccb51e4c47f28052">game::AScene</a>.</p>
 
 </div>
 </div>

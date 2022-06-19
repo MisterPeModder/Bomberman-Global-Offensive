@@ -144,6 +144,7 @@ var menudata={children:[
 {text:"c",url:"functions_eval.html#index_c"},
 {text:"f",url:"functions_eval.html#index_f"},
 {text:"j",url:"functions_eval.html#index_j"},
+{text:"k",url:"functions_eval.html#index_k"},
 {text:"l",url:"functions_eval.html#index_l"},
 {text:"m",url:"functions_eval.html#index_m"},
 {text:"o",url:"functions_eval.html#index_o"},
