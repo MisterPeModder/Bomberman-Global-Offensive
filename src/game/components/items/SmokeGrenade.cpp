@@ -24,7 +24,7 @@ namespace game::components
         smokeGrenade.maxStack = 0;
         smokeGrenade.name = "Smoke Grenade";
         smokeGrenade.duration = std::chrono::milliseconds(7000);
-        smokeGrenade.dropRate = 65;
+        smokeGrenade.dropRate = 15;
         smokeGrenade.onApply = [](ecs::Entity placer, ecs::SystemData data) {
             auto &positions = data.getStorage<Position>();
             auto &smokes = data.getStorage<Smoke>();
