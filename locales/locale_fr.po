@@ -73,6 +73,21 @@ msgstr "Connecté"
 msgid "FPS"
 msgstr "IPS (FPS)"
 
+msgid "Colorblind Filter"
+msgstr "Filtre daltonisme"
+
+msgid "none"
+msgstr "aucun"
+
+msgid "protanopia"
+msgstr "protanopie"
+
+msgid "deuteranopia"
+msgstr "deutéranopie"
+
+msgid "tritanopia"
+msgstr "tritanopie"
+
 msgid "Right"
 msgstr "Droite"
 

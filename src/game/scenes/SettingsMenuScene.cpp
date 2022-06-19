@@ -58,6 +58,8 @@
 #include "game/components/KeybindIntercepter.hpp"
 #include "game/systems/KeybindIntercept.hpp"
 
+using namespace localization::resources::settings;
+
 static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
 {
     world.addEntity()
@@ -87,14 +89,17 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 2, pos.y + 2)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsGraphics, 40, raylib::core::Color::RED)
+        .with<game::components::Textual>(rsSettingsGraphics, 40, raylib::core::Color::RED)
         .build();
+
+    auto onSelect = [&world](ecs::Entity btn, game::gui::Clickable::State state) {
+        world.getStorage<game::components::Textual>()[btn.getId()].color =
+            (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : raylib::core::Color::RED;
+    };
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 4, pos.y + 10)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsFullscreen, 20, raylib::core::Color::RED)
+        .with<game::components::Textual>(rsSettingsFullscreen, 20, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::VOLUME_MUTE,
             game::gui::Widget::NullTag, game::SettingsMenuScene::BACK, game::SettingsMenuScene::RES_1)
@@ -107,21 +112,16 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
                 else
                     world.getResource<game::resources::EngineResource>().engine->getSettings().setFullscreen(false);
             },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            onSelect)
         .build();
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 4, pos.y + 15)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsResolution, 20, raylib::core::Color::RED)
+        .with<game::components::Textual>(rsSettingsResolution, 20, raylib::core::Color::RED)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 6, pos.y + 20)
+        .with<game::components::Position>(pos.x + 6, pos.y + 19)
         .with<game::components::Textual>("1280x720", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_1, game::SettingsMenuScene::MUSIC_VOLUME_100,
@@ -132,15 +132,11 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
                     raylib::core::Vector2i(1280, 720));
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1280, 720)");
             },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            onSelect)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 13.5f, pos.y + 20.f)
+        .with<game::components::Position>(pos.x + 13.5f, pos.y + 19.f)
         .with<game::components::Textual>("1366x768", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_2, game::SettingsMenuScene::RES_1,
@@ -151,15 +147,11 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
                     raylib::core::Vector2i(1366, 768));
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1366, 768)");
             },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            onSelect)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 21.f, pos.y + 20.f)
+        .with<game::components::Position>(pos.x + 21.f, pos.y + 19.f)
         .with<game::components::Textual>("1920x1080", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_3, game::SettingsMenuScene::RES_2,
@@ -171,97 +163,145 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
                     raylib::core::Vector2i(1920, 1080));
                 Logger::logger.log(Logger::Severity::Debug, "Window size set to (1920, 1080)");
             },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            onSelect)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 4.f, pos.y + 25.f)
-        .with<game::components::Textual>(localization::resources::settings::rsSettingsFPS, 20, raylib::core::Color::RED)
+        .with<game::components::Position>(pos.x + 4.f, pos.y + 24.f)
+        .with<game::components::Textual>(rsSettingsFPS, 20, raylib::core::Color::RED)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 6.f, pos.y + 30.f)
+        .with<game::components::Position>(pos.x + 6.f, pos.y + 28.f)
         .with<game::components::Textual>("30", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FPS_30, game::SettingsMenuScene::SFX_VOLUME_100,
             game::SettingsMenuScene::FPS_60, game::SettingsMenuScene::RES_1,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT)
+            game::SettingsMenuScene::COLORBLIND_FILTER_NONE)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 raylib::core::Window::setTargetFPS(30);
                 world.getResource<game::resources::EngineResource>().engine->getSettings().setTargetFramerate(30);
-                Logger::logger.log(Logger::Severity::Debug, "FPS size set to 30");
+                Logger::logger.log(Logger::Severity::Debug, "FPS target set to 30");
             },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            onSelect)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 11.f, pos.y + 30.f)
+        .with<game::components::Position>(pos.x + 11.f, pos.y + 28.f)
         .with<game::components::Textual>("60", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FPS_60, game::SettingsMenuScene::FPS_30,
             game::SettingsMenuScene::FPS_144, game::SettingsMenuScene::RES_1,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT)
+            game::SettingsMenuScene::COLORBLIND_FILTER_PROTANOPIA)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 raylib::core::Window::setTargetFPS(60);
                 world.getResource<game::resources::EngineResource>().engine->getSettings().setTargetFramerate(60);
-                Logger::logger.log(Logger::Severity::Debug, "FPS size set to 60");
+                Logger::logger.log(Logger::Severity::Debug, "FPS target set to 60");
             },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            onSelect)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 16.f, pos.y + 30.f)
+        .with<game::components::Position>(pos.x + 16.f, pos.y + 28.f)
         .with<game::components::Textual>("144", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FPS_144, game::SettingsMenuScene::FPS_60,
             game::SettingsMenuScene::FPS_240, game::SettingsMenuScene::RES_2,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT)
+            game::SettingsMenuScene::COLORBLIND_FILTER_DEUTERANOPIA)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 raylib::core::Window::setTargetFPS(144);
                 world.getResource<game::resources::EngineResource>().engine->getSettings().setTargetFramerate(144);
-                Logger::logger.log(Logger::Severity::Debug, "FPS size set to 144");
+                Logger::logger.log(Logger::Severity::Debug, "FPS target set to 144");
             },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            onSelect)
         .build();
 
     world.addEntity()
-        .with<game::components::Position>(pos.x + 21.f, pos.y + 30.f)
+        .with<game::components::Position>(pos.x + 21.f, pos.y + 28.f)
         .with<game::components::Textual>("240", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FPS_240, game::SettingsMenuScene::FPS_144,
             game::SettingsMenuScene::getGamepadWidgetId(
                 game::SettingsMenuScene::KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, 0),
-            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT)
+            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::COLORBLIND_FILTER_TRITANOPIA)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 raylib::core::Window::setTargetFPS(240);
                 world.getResource<game::resources::EngineResource>().engine->getSettings().setTargetFramerate(240);
-                Logger::logger.log(Logger::Severity::Debug, "FPS size set to 240");
+                Logger::logger.log(Logger::Severity::Debug, "FPS target set to 240");
             },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::RED;
-            })
+            onSelect)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 4.f, pos.y + 32.f)
+        .with<game::components::Textual>(rsSettingsColorblindFilter, 20, raylib::core::Color::RED)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 4.f, pos.y + 36.f)
+        .with<game::components::Textual>(rsSettingsColorblindFilterNone, 15, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::COLORBLIND_FILTER_NONE,
+            game::SettingsMenuScene::SFX_VOLUME_100, game::SettingsMenuScene::COLORBLIND_FILTER_PROTANOPIA,
+            game::SettingsMenuScene::FPS_30, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->removeGlobalShader();
+                Logger::logger.log(Logger::Severity::Debug, "Cleared colorblind shader");
+            },
+            onSelect)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 8.f, pos.y + 36.f)
+        .with<game::components::Textual>(rsSettingsColorblindFilterProtanopia, 15, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::COLORBLIND_FILTER_PROTANOPIA,
+            game::SettingsMenuScene::COLORBLIND_FILTER_NONE, game::SettingsMenuScene::COLORBLIND_FILTER_DEUTERANOPIA,
+            game::SettingsMenuScene::FPS_60, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->setColorBlindShader(1);
+                Logger::logger.log(Logger::Severity::Debug, "Enabled protanopia filter");
+            },
+            onSelect)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 15.f, pos.y + 36.f)
+        .with<game::components::Textual>(rsSettingsColorblindFilterDeuteranopia, 15, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::COLORBLIND_FILTER_DEUTERANOPIA,
+            game::SettingsMenuScene::COLORBLIND_FILTER_PROTANOPIA,
+            game::SettingsMenuScene::COLORBLIND_FILTER_TRITANOPIA, game::SettingsMenuScene::FPS_144,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->setColorBlindShader(2);
+                Logger::logger.log(Logger::Severity::Debug, "Enabled deuteranopia filter");
+            },
+            onSelect)
+        .build();
+
+    world.addEntity()
+        .with<game::components::Position>(pos.x + 24.f, pos.y + 36.f)
+        .with<game::components::Textual>(rsSettingsColorblindFilterTritanopia, 15, raylib::core::Color::RED)
+        .with<game::components::Controlable>(game::User::UserId::User1)
+        .with<game::gui::Widget>(game::SettingsMenuScene::COLORBLIND_FILTER_TRITANOPIA,
+            game::SettingsMenuScene::COLORBLIND_FILTER_DEUTERANOPIA,
+            game::SettingsMenuScene::getGamepadWidgetId(
+                game::SettingsMenuScene::KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, 0),
+            game::SettingsMenuScene::FPS_240, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT)
+        .with<game::gui::Clickable>(
+            [&world](ecs::Entity) {
+                world.getResource<game::resources::EngineResource>().engine->setColorBlindShader(3);
+                Logger::logger.log(Logger::Severity::Debug, "Enabled tritanopia filter");
+            },
+            onSelect)
         .build();
 }
 
@@ -294,14 +334,12 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 2, pos.y + 2)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsAudio, 40, raylib::core::Color::BLUE)
+        .with<game::components::Textual>(rsSettingsAudio, 40, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 4.f, pos.y + 10.f)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsMuteUnmute, 20, raylib::core::Color::BLUE)
+        .with<game::components::Textual>(rsSettingsMuteUnmute, 20, raylib::core::Color::BLUE)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::VOLUME_MUTE, game::gui::Widget::NullTag,
             game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::BACK, game::SettingsMenuScene::MUSIC_VOLUME_0)
@@ -328,8 +366,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 #pragma region Music volume
     world.addEntity()
         .with<game::components::Position>(pos.x + 4.f, pos.y + 15.f)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsMusic, 20, raylib::core::Color::BLUE)
+        .with<game::components::Textual>(rsSettingsMusic, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
@@ -412,8 +449,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 #pragma region Sfx volume
     world.addEntity()
         .with<game::components::Position>(pos.x + 4.f, pos.y + 25.f)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsSfx, 20, raylib::core::Color::BLUE)
+        .with<game::components::Textual>(rsSettingsSfx, 20, raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
@@ -526,8 +562,7 @@ static void loadLanguageSettings(ecs::World &world, raylib::core::Vector2f pos, 
 
     world.addEntity()
         .with<game::components::Position>(pos.x + 2, pos.y + 2)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsLanguage, 40, raylib::core::Color::PURPLE)
+        .with<game::components::Textual>(rsSettingsLanguage, 40, raylib::core::Color::PURPLE)
         .build();
 
     world.addEntity()
@@ -660,11 +695,11 @@ namespace game
 
         loadSettingsMenuScene(_world);
         loadSection({raylib::core::Vector2f(34, 52), raylib::core::Vector2f(32, 46), raylib::core::Color::GOLD,
-                        localization::resources::settings::rsSettingsKeybinds},
+                        rsSettingsKeybinds},
             [this](auto &sct) { _loadKeyboardKeybinds(sct); });
 
         loadSection({raylib::core::Vector2f(67, 10), raylib::core::Vector2f(32, 88), raylib::core::Color::GREEN,
-                        localization::resources::settings::rsSettingsKeybinds},
+                        rsSettingsKeybinds},
             [this](auto &sct) { _loadGamepadKeybinds(sct); });
     }
 
@@ -714,7 +749,7 @@ namespace game
         for (auto iter : binds)
             if (iter.action == action) {
                 if (static_cast<char>(iter.key) == ' ')
-                    ss << localization::resources::settings::rsSpace;
+                    ss << rsSpace;
                 else
                     ss << static_cast<char>(iter.key);
                 break;
@@ -733,8 +768,7 @@ namespace game
     {
         _world.addEntity()
             .with<game::components::Position>(sct.pos.x + 4, sct.pos.y + 8)
-            .with<game::components::Textual>(
-                localization::resources::settings::rsSettingsKeyboardKeybinds, 20, sct.color)
+            .with<game::components::Textual>(rsSettingsKeyboardKeybinds, 20, sct.color)
             .build();
 
         auto addAction =
@@ -788,12 +822,12 @@ namespace game
 
         addAction({4, 13}, {10, 13}, GameAction::MOVE_LEFT, localization::resources::keybinds::rsKeyBindLeft,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT, game::SettingsMenuScene::LANGUAGE_ENGLISH,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::FPS_60,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::COLORBLIND_FILTER_NONE,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP);
         addAction({18, 13}, {24, 13}, GameAction::MOVE_RIGHT, localization::resources::keybinds::rsKeyBindRight,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT,
-            getGamepadWidgetId(KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, 0), game::SettingsMenuScene::FPS_240,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN);
+            getGamepadWidgetId(KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, 0),
+            game::SettingsMenuScene::COLORBLIND_FILTER_DEUTERANOPIA, game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN);
         addAction({4, 18}, {10, 18}, GameAction::MOVE_UP, localization::resources::keybinds::rsKeyBindUp,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP, game::SettingsMenuScene::LANGUAGE_FRENCH,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT,
@@ -982,8 +1016,7 @@ namespace game
         auto &users = _world.getResource<game::resources::EngineResource>().engine->getUsers();
         _world.addEntity()
             .with<game::components::Position>(sct.pos.x + 4, sct.pos.y + 8)
-            .with<game::components::Textual>(
-                localization::resources::settings::rsSettingsControllerKeybinds, 20, sct.color)
+            .with<game::components::Textual>(rsSettingsControllerKeybinds, 20, sct.color)
             .build();
 
         _fillGamepadButtonStrings();
