@@ -124,6 +124,7 @@ namespace game
         /// Weapons
         textures.emplace("C4", "assets/items/weapons/C4_Texture.png");
         textures.emplace("landmine", "assets/items/weapons/landmine_texture.png");
+        textures.emplace("smoke_texture", "assets/items/weapons/smoke.png");
     }
 
     void Game::_loadMeshes()
@@ -134,6 +135,7 @@ namespace game
         meshes.emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
         meshes.emplace("bonus", 0.5f, 10, 10);
         meshes.emplace("activable", 1.f, 0.f, 1.f);
+        meshes.emplace("smoke_sphere", 2.f, 10, 10);
     }
 
     void Game::_loadModels()
@@ -148,6 +150,8 @@ namespace game
         models.emplace("wall", meshes.get("box"), false).setMaterialMapTexture(textures.get("wall"));
         models.emplace("C4", "assets/items/weapons/c4.iqm").setMaterialMapTexture(textures.get("C4"));
         models.emplace("landmine", "assets/items/weapons/landmine.iqm").setMaterialMapTexture(textures.get("landmine"));
+        models.emplace("smoke_sphere", meshes.get("smoke_sphere"), false)
+            .setMaterialMapTexture(textures.get("smoke_texture"));
         ////// Items
         auto &bonusMesh = meshes.get("bonus");
         /// Power Ups
