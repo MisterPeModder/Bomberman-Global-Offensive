@@ -1,13 +1,14 @@
 <map id="bmjs::Engine" name="bmjs::Engine">
-<area shape="rect" id="node1" title="Javascript Engine Wrapper." alt="" coords="880,181,987,208"/>
-<area shape="rect" id="node2" href="$classgame_1_1_engine.html" title=" " alt="" coords="605,123,715,149"/>
+<area shape="rect" id="node1" title="Javascript Engine Wrapper." alt="" coords="907,239,1013,265"/>
+<area shape="rect" id="node2" href="$classgame_1_1_engine.html" title=" " alt="" coords="631,180,742,207"/>
 <area shape="rect" id="node3" href="$classgame_1_1settings_1_1_settings.html" title="Settings common to the game." alt="" coords="235,7,415,33"/>
 <area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html" title=" " alt="" coords="18,7,105,33"/>
-<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="240,58,411,99"/>
-<area shape="rect" id="node6" href="$classgame_1_1_users.html" title="Resource allowing to get users actions using the keybinds." alt="" coords="273,124,377,151"/>
-<area shape="rect" id="node7" href="$classecs_1_1_resource.html" title=" " alt="" coords="5,124,117,151"/>
-<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="240,175,411,217"/>
-<area shape="rect" id="node9" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="216,241,435,282"/>
-<area shape="rect" id="node10" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/weak_ptr.html" title=" " alt="" coords="581,174,739,215"/>
-<area shape="rect" id="node11" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="587,239,733,281"/>
+<area shape="rect" id="node5" href="$classraylib_1_1core_1_1_music.html" title="Core namespace (inside of raylib)" alt="" coords="255,96,396,123"/>
+<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="240,147,411,189"/>
+<area shape="rect" id="node7" href="$classgame_1_1_users.html" title="Resource allowing to get users actions using the keybinds." alt="" coords="273,213,377,240"/>
+<area shape="rect" id="node8" href="$classecs_1_1_resource.html" title=" " alt="" coords="5,213,117,240"/>
+<area shape="rect" id="node9" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="240,265,411,306"/>
+<area shape="rect" id="node10" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="216,330,435,371"/>
+<area shape="rect" id="node11" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/weak_ptr.html" title=" " alt="" coords="608,231,765,273"/>
+<area shape="rect" id="node12" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="613,297,760,338"/>
 </map>

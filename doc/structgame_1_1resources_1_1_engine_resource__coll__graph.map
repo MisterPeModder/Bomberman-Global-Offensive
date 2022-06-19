@@ -1,11 +1,12 @@
 <map id="game::resources::EngineResource" name="game::resources::EngineResource">
-<area shape="rect" id="node1" title="Game engine resource." alt="" coords="789,39,1032,65"/>
+<area shape="rect" id="node1" title="Game engine resource." alt="" coords="816,83,1059,109"/>
 <area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="5,5,117,32"/>
-<area shape="rect" id="node7" href="$classgame_1_1_users.html" title="Resource allowing to get users actions using the keybinds." alt="" coords="273,39,377,65"/>
-<area shape="rect" id="node3" href="$classgame_1_1_engine.html" title=" " alt="" coords="581,125,692,152"/>
+<area shape="rect" id="node8" href="$classgame_1_1_users.html" title="Resource allowing to get users actions using the keybinds." alt="" coords="273,39,377,65"/>
+<area shape="rect" id="node3" href="$classgame_1_1_engine.html" title=" " alt="" coords="608,179,719,205"/>
 <area shape="rect" id="node4" href="$classgame_1_1settings_1_1_settings.html" title="Settings common to the game." alt="" coords="235,89,415,116"/>
 <area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/string/basic_string.html" title=" " alt="" coords="18,89,105,116"/>
-<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="240,141,411,182"/>
-<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="240,206,411,247"/>
-<area shape="rect" id="node9" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="216,271,435,313"/>
+<area shape="rect" id="node6" href="$classraylib_1_1core_1_1_music.html" title="Core namespace (inside of raylib)" alt="" coords="255,179,396,205"/>
+<area shape="rect" id="node7" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="240,230,411,271"/>
+<area shape="rect" id="node9" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="240,295,411,337"/>
+<area shape="rect" id="node10" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/memory/unique_ptr.html" title=" " alt="" coords="216,361,435,402"/>
 </map>

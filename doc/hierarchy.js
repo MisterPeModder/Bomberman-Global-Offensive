@@ -132,6 +132,7 @@ var hierarchy =
       [ "game::components::Model", "structgame_1_1components_1_1_model.html", null ]
     ] ],
     [ "raylib::core::Mouse", "classraylib_1_1core_1_1_mouse.html", null ],
+    [ "raylib::core::Music", "classraylib_1_1core_1_1_music.html", null ],
     [ "game::Game::Parameters", "structgame_1_1_game_1_1_parameters.html", null ],
     [ "game::settings::Profile", "classgame_1_1settings_1_1_profile.html", null ],
     [ "util::BitSet::Reference", "classutil_1_1_bit_set_1_1_reference.html", null ],

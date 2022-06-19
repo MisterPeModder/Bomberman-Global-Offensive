@@ -9,6 +9,7 @@ var namespaceraylib_1_1core =
     [ "Gamepad", "classraylib_1_1core_1_1_gamepad.html", "classraylib_1_1core_1_1_gamepad" ],
     [ "Keyboard", "classraylib_1_1core_1_1_keyboard.html", "classraylib_1_1core_1_1_keyboard" ],
     [ "Mouse", "classraylib_1_1core_1_1_mouse.html", "classraylib_1_1core_1_1_mouse" ],
+    [ "Music", "classraylib_1_1core_1_1_music.html", "classraylib_1_1core_1_1_music" ],
     [ "Sound", "classraylib_1_1core_1_1_sound.html", "classraylib_1_1core_1_1_sound" ],
     [ "Vector2", "structraylib_1_1core_1_1_vector2.html", "structraylib_1_1core_1_1_vector2" ],
     [ "Vector3", "structraylib_1_1core_1_1_vector3.html", "structraylib_1_1core_1_1_vector3" ],

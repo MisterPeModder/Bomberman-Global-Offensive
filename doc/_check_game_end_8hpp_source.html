@@ -108,13 +108,16 @@ $(document).ready(function(){initNavTree('_check_game_end_8hpp_source.html','');
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structgame_1_1systems_1_1_check_game_end.html">   20</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structgame_1_1systems_1_1_check_game_end.html">CheckGameEnd</a> : <span class="keyword">public</span> <a class="code" href="classecs_1_1_system.html">ecs::System</a> {</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structgame_1_1systems_1_1_check_game_end.html#a5663254789eaa74efa2490ac62af7ef1">   22</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="structgame_1_1systems_1_1_check_game_end.html#a5663254789eaa74efa2490ac62af7ef1">run</a>(<a class="code" href="classecs_1_1_system_data.html">ecs::SystemData</a> data) <span class="keyword">override</span> <span class="keyword">final</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html">game::components::Player</a>&gt;().size() &lt;= 1)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html">game::components::Player</a>&gt;().size() &lt;= 1) {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                data.getResource&lt;<a class="code" href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a>&gt;().engine-&gt;setScene&lt;<a class="code" href="classgame_1_1_main_menu_scene.html">game::MainMenuScene</a>&gt;();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    };</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;} <span class="comment">// namespace game::systems</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !GAME_SYSTEMS_CHANGECUBE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                data.getResource&lt;<a class="code" href="structgame_1_1resources_1_1_engine_resource.html">game::resources::EngineResource</a>&gt;().engine-&gt;setCurrentMusic(</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <span class="comment">// namespace game::systems</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !GAME_SYSTEMS_CHANGECUBE_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructgame_1_1systems_1_1_check_game_end_html_a5663254789eaa74efa2490ac62af7ef1"><div class="ttname"><a href="structgame_1_1systems_1_1_check_game_end.html#a5663254789eaa74efa2490ac62af7ef1">game::systems::CheckGameEnd::run</a></div><div class="ttdeci">void run(ecs::SystemData data) override final</div><div class="ttdoc">Return to main menu when only one player left.</div><div class="ttdef"><b>Definition:</b> <a href="_check_game_end_8hpp_source.html#l00022">CheckGameEnd.hpp:22</a></div></div>

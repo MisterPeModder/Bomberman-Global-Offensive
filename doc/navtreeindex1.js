@@ -28,6 +28,10 @@ var NAVTREEINDEX1 =
 "_movement_8cpp_source.html":[3,0,0,1,6,24],
 "_movement_8hpp.html":[3,0,0,1,6,25],
 "_movement_8hpp_source.html":[3,0,0,1,6,25],
+"_music_8cpp.html":[3,0,0,4,0,15],
+"_music_8cpp_source.html":[3,0,0,4,0,15],
+"_music_8hpp.html":[3,0,0,4,0,16],
+"_music_8hpp_source.html":[3,0,0,4,0,16],
 "_no_clip_8cpp.html":[3,0,0,1,0,0,11],
 "_no_clip_8cpp_source.html":[3,0,0,1,0,0,11],
 "_no_clip_8hpp.html":[3,0,0,1,6,26],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "_user_8hpp.html":[3,0,0,1,13],
 "_user_8hpp_source.html":[3,0,0,1,13],
 "_users_8cpp.html":[3,0,0,1,14],
-"_users_8cpp_source.html":[3,0,0,1,14],
-"_users_8hpp.html":[3,0,0,1,15],
-"_users_8hpp_source.html":[3,0,0,1,15],
-"_vector2_8hpp.html":[3,0,0,4,0,18],
-"_vector2_8hpp.html#a40eef12a05d7729b3fe1772f2b44e755":[3,0,0,4,0,18,2]
+"_users_8cpp_source.html":[3,0,0,1,14]
 };

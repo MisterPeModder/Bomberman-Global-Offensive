@@ -31,6 +31,10 @@ var dir_8eb5564b7954c35d70c55c3a33ff6f37 =
     [ "Mouse.hpp", "_mouse_8hpp.html", [
       [ "Mouse", "classraylib_1_1core_1_1_mouse.html", "classraylib_1_1core_1_1_mouse" ]
     ] ],
+    [ "Music.cpp", "_music_8cpp.html", null ],
+    [ "Music.hpp", "_music_8hpp.html", [
+      [ "Music", "classraylib_1_1core_1_1_music.html", "classraylib_1_1core_1_1_music" ]
+    ] ],
     [ "scoped.hpp", "scoped_8hpp.html", [
       [ "Mode3D", "classraylib_1_1core_1_1scoped_1_1_mode3_d.html", "classraylib_1_1core_1_1scoped_1_1_mode3_d" ],
       [ "Mode2D", "classraylib_1_1core_1_1scoped_1_1_mode2_d.html", "classraylib_1_1core_1_1scoped_1_1_mode2_d" ],
