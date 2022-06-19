@@ -20,6 +20,7 @@ set(SRC
     ${SRCROOT}/User.hpp
     ${SRCROOT}/Users.cpp
     ${SRCROOT}/Users.hpp
+    ${INCROOT}/GameTimer.hpp
     PARENT_SCOPE)
 
 set(INCDIRS
