@@ -28,11 +28,11 @@ namespace game::systems
 {
     void DrawHud::drawBorder(float x, float y)
     {
-        float getWidth = 100 * raylib::core::Window::getWidth();
-        float getHeight = 100 * raylib::core::Window::getHeight();
+        int getWidth = 100 * raylib::core::Window::getWidth();
+        int getHeight = 100 * raylib::core::Window::getHeight();
 
         ::DrawRectangleLines(
-            x / getWidth, y / getHeight, 5 / getWidth, 5 / getHeight, raylib::core::Color::MAGENTA.asRaylib());
+            x / getWidth, y / getHeight, 5 / getWidth, 15 / getHeight, raylib::core::Color::PURPLE.asRaylib());
     }
 
     void DrawHud::drawDataHud(float x, float y, std::string text, raylib::core::Color color)
@@ -131,7 +131,7 @@ namespace game::systems
             /// x = 90 & Y = 90 for 4th user
             switch (user.userId) {
                 case (game::User::UserId::User1): break;
-                case (game::User::UserId::User2): x = 90; break;
+                case (game::User::UserId::User2): x = 85; break;
                 case (game::User::UserId::User3): y = 90; break;
                 case (game::User::UserId::User4):
                     x = 85;
