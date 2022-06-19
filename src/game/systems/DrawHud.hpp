@@ -21,22 +21,11 @@ namespace game::systems
     struct DrawHud : public ecs::System {
         /// Draw all the entities with the components Player.
         ///
-        /// @param data view on the world.
-        enum hudPosition {
-            x1 = 0,
-            y1 = 0,
-            x2 = 0,
-            y2 = 700,
-            x3 = 1800,
-            y3 = 0,
-            x4 = 1800,
-            y4 = 700,
-
-        };
-        void run(ecs::SystemData data) override final;
+        /// @param data view on the world. 
+       void run(ecs::SystemData data) override final;
 
       private:
-        void drawDataHud(int x, int y, std::string text, raylib::core::Color color);
+        void drawDataHud(float x, float y, std::string text, raylib::core::Color color);
     };
 } // namespace game::systems
 #endif /*!DRAW_HUD_HPP_*/

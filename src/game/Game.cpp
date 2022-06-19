@@ -227,7 +227,7 @@ namespace game
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::DrawHud>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawModel, systems::DrawTexture, systems::DrawRectangle, systems::DrawText>();
+        _drawing.add<systems::DrawModel, systems::DrawTexture, systems::DrawRectangle, systems::DrawText, systems::DrawHud>();
         _hud.add<systems::DrawTexture, systems::DrawRectangle, systems::DrawText, systems::DrawHud>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 
