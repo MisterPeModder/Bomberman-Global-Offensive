@@ -59,7 +59,7 @@ namespace game::systems
                         return (raylib::core::Color::GREEN);
                     break;
 
-                default: break;
+                default: break; return (raylib::core::Color::DARK_GRAY);
             }
         }
 

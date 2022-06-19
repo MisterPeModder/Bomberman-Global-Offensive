@@ -25,7 +25,7 @@ namespace game::systems
         void run(ecs::SystemData data) override final;
 
       private:
-        raylib::core::Color DrawHud::whatColor(ecs::SystemData data, int id);
+        raylib::core::Color whatColor(ecs::SystemData data, int id);
         void drawDataHud(float x, float y, std::string text, raylib::core::Color color);
     };
 } // namespace game::systems
