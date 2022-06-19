@@ -69,14 +69,122 @@ msgstr "Utilisateur"
 
 msgid "Number Bomb"
 msgstr ""
+msgid "(Controller)"
+msgstr "(Manette)"
+
+msgid "(Keyboard)"
+msgstr "(Clavier)"
+
+msgid "Left"
+msgstr "Gauche"
+
 msgid "Not connected"
-msgstr "Pas connecté"
+msgstr "Non connecté"
 
 msgid "Connected"
 msgstr "Connecté"
 
-msgid "Not connected"
+msgid "FPS"
+msgstr "IPS (FPS)"
+
+msgid "Right"
+msgstr "Droite"
+
+msgid "Down"
+msgstr "Bas"
+
+msgid "Up"
+msgstr "Haut"
+
+msgid "Activable"
+msgstr "Activable"
+
+msgid "Bomb"
+msgstr "Bombe"
+
+msgid "User 1"
+msgstr "Joueur 1"
+
+msgid "User 2"
+msgstr "Joueur 2"
+
+msgid "User 3"
+msgstr "Joueur 3"
+
+msgid "User 4"
+msgstr "Joueur 4"
+
+msgid "Activ."
+msgstr "Activ."
+
+msgid "Next"
+msgstr "Suiv."
+
+msgid "Next Activable"
+msgstr "Activable Suivant"
+
+msgid "Prev."
+msgstr "Prec."
+
+msgid "Previous Activable"
+msgstr "Activable Précedent"
+
+msgid "Reset"
+msgstr "Réinitialiser"
+
+msgid "?"
 msgstr ""
 
-msgid "Number Bomb"
-msgstr ""
+msgid "BUMPER-LEFT"
+msgstr "LB"
+
+msgid "BUMPER-RIGHT"
+msgstr "RB"
+
+msgid "DPAD-DOWN"
+msgstr "BAS"
+
+msgid "DPAD-LEFT"
+msgstr "GAUCHE"
+
+msgid "DPAD-RIGHT"
+msgstr "DROITE"
+
+msgid "DPAD-UP"
+msgstr "HAUT"
+
+msgid "FACE-DOWN"
+msgstr "A"
+
+msgid "FACE-LEFT"
+msgstr "X"
+
+msgid "FACE-RIGHT"
+msgstr "B"
+
+msgid "FACE-UP"
+msgstr "Y"
+
+msgid "MIDDLE"
+msgstr "HOME"
+
+msgid "MIDDLE-LEFT"
+msgstr "RETOUR"
+
+msgid "MIDDLE-RIGHT"
+msgstr "START"
+
+msgid "THUMB-LEFT"
+msgstr "LS"
+
+msgid "THUMB-RIGHT"
+msgstr "RS"
+
+msgid "TRIGGER-LEFT"
+msgstr "LT"
+
+msgid "TRIGGER-RIGHT"
+msgstr "RT"
+
+msgid "SPACE"
+msgstr "ESPACE"

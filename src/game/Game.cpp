@@ -19,6 +19,7 @@
 #include "components/History.hpp"
 #include "components/Hud.hpp"
 #include "components/Identity.hpp"
+#include "components/KeybindIntercepter.hpp"
 #include "components/KeyboardInput.hpp"
 #include "components/Living.hpp"
 #include "components/Model.hpp"
@@ -244,6 +245,7 @@ namespace game
         _world.addStorage<components::Texture2D>();
         _world.addStorage<components::Textual>();
         _world.addStorage<components::Hud>();
+        _world.addStorage<components::KeybindIntercepter>();
         _world.addStorage<components::SoundReference>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();

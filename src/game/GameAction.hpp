@@ -23,6 +23,8 @@ namespace game
         BACK,
         ACTIVATE_ITEM,
         DISCONNECT,
+        PREVIOUS_ACTIVABLE,
+        NEXT_ACTIVABLE,
         COUNT,
     };
 

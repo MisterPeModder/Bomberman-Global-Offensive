@@ -9,6 +9,7 @@
 #include "components/Controlable.hpp"
 #include "ecs/join.hpp"
 #include "game/Engine.hpp"
+#include "game/components/KeybindIntercepter.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/gui/components/Widget.hpp"
 
@@ -20,6 +21,8 @@ namespace game::systems
 {
     void InputManager::run(ecs::SystemData data)
     {
+        if (data.getStorage<KeybindIntercepter>().size() > 0)
+            return;
         auto inputs = ecs::join(data.getStorage<game::components::KeyboardInput>());
         bool hasActiveInput = std::any_of(inputs.begin(), inputs.end(), [](auto i) { return std::get<0>(i).focused; });
 
