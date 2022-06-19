@@ -120,7 +120,7 @@ namespace game
         /// Get the Keybinds.
         ///
         /// @return settings::Keybinds& user keybinds.
-        settings::Keybinds getKeybinds();
+        settings::Keybinds &getKeybinds();
 
         /// Update the user's actions' values.
         ///

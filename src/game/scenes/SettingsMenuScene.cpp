@@ -8,9 +8,11 @@
 #include <algorithm>
 
 #include "game/Engine.hpp"
+#include "game/components/Identity.hpp"
 #include "game/scenes/MainMenuScene.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
+#include <sstream>
 #include "logger/Logger.hpp"
 #include "util/util.hpp"
 
@@ -517,14 +519,6 @@ static void loadControllerKeybindSettings(ecs::World &world, raylib::core::Vecto
 
             "value"
 
-            // std::find_if(world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().begin(),
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().end(),
-            // game::GameAction::MOVE_LEFT) !=
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().begin()
-            // ? "ok" : "not ok"
-
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().
-
             ,
             15, raylib::core::Color::BLUE)
         .build();
@@ -648,6 +642,19 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
         .build();
 
 #pragma region Left
+    auto leftKey = world.addEntity()
+                       .with<game::components::Position>(pos.x + 10, pos.y + 13)
+                       .with<game::components::Controlable>(game::User::UserId::User1)
+                       .with<game::components::Identity>()
+                       .with<game::components::Textual>(
+
+                           "value"
+
+                           ,
+                           20, raylib::core::Color::GOLD)
+                       .build();
+    auto leftKeyId = world.getStorage<game::components::Identity>()[leftKey.getId()].id;
+
     world.addEntity()
         .with<game::components::Position>(pos.x + 4, pos.y + 13)
         .with<game::components::Textual>(
@@ -657,11 +664,28 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
             game::SettingsMenuScene::LANGUAGE_ENGLISH, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT,
             game::SettingsMenuScene::FPS_60, game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP)
         .with<game::gui::Clickable>(
-            [&world](ecs::Entity) {
+            [&](ecs::Entity) {
                 world.addEntity()
-                    .with<game::components::KeybindIntercepter>(game::User::UserId::User1, game::GameAction::MOVE_LEFT)
-                    .build();
+                    .with<game::components::KeybindIntercepter>(game::User::UserId::User1, game::GameAction::MOVE_LEFT,
+                        [&]() {
+                            auto &binds = world.getResource<game::resources::EngineResource>()
+                                              .engine->getUsers()[game::User::UserId::User1]
+                                              .getKeybinds()
+                                              .getKeyboardBindings();
+                            std::stringstream ss;
 
+                            for (auto iter : binds)
+                                if (iter.action == game::GameAction::MOVE_LEFT)
+                                    ss << static_cast<char>(iter.key) << ", ";
+                            for (auto [text, id] : ecs::join(world.getStorage<game::components::Textual>(),
+                                     world.getStorage<game::components::Identity>())) {
+                                if (id.id == 4) { /// 4 is the leftKeyId above
+                                    text.text = ss.str();
+                                    return;
+                                }
+                            }
+                        })
+                    .build();
                 Logger::logger.log(Logger::Severity::Information, "Waiting for user input");
             },
             [&](ecs::Entity btn, game::gui::Clickable::State state) {
@@ -670,24 +694,7 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
                                                                     : raylib::core::Color::GOLD;
             })
         .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 10, pos.y + 13)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
 
-            "value"
-
-            // std::find_if(world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().begin(),
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().end(),
-            // game::GameAction::MOVE_LEFT) !=
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().begin()
-            // ? "ok" : "not ok"
-
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().
-
-            ,
-            20, raylib::core::Color::GOLD)
-        .build();
 #pragma endregion
 
 #pragma region Right
@@ -799,14 +806,6 @@ static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2
         .with<game::components::Textual>(
 
             "value"
-
-            // std::find_if(world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().begin(),
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().end(),
-            // game::GameAction::MOVE_LEFT) !=
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().begin()
-            // ? "ok" : "not ok"
-
-            // world.getResource<game::resources::EngineResource>().engine->getUsers()[game::User::UserId::User1].getProfile().getKeybinds().getKeyboardBindings().
 
             ,
             20, raylib::core::Color::GOLD)

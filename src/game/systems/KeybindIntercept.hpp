@@ -29,10 +29,15 @@ namespace game::systems
                     raylib::core::Keyboard::Key key = raylib::core::Keyboard::getKeyPressed();
 
                     if (key != raylib::core::Keyboard::Key::NONE) {
-                        Logger::logger.log(Logger::Severity::Information,
-                            "Got user input " + std::to_string(static_cast<size_t>(key)));
+                        Logger::logger.log(Logger::Severity::Information, [&](auto &out) {
+                            out << "Bind user " << static_cast<size_t>(intercepter.user) << " action "
+                                << static_cast<size_t>(intercepter.action) << " to key " << static_cast<size_t>(key);
+                        });
+                        users[game::User::UserId::User1].getKeybinds().setKeyboardBinding(key, intercepter.action);
                         users.updateActions(false);
                         entities.kill(id);
+                        if (intercepter.callback)
+                            intercepter.callback();
                     }
                 } else {
                 }

@@ -105,5 +105,5 @@ namespace game
 
     const settings::Keybinds &User::getKeybinds() const { return _profile.getKeybinds(); }
 
-    settings::Keybinds User::getKeybinds() { return _profile.getKeybinds(); }
+    settings::Keybinds &User::getKeybinds() { return _profile.getKeybinds(); }
 } // namespace game
