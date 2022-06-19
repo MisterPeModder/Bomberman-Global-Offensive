@@ -16,6 +16,7 @@
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
+#include "components/GameEnded.hpp"
 #include "components/History.hpp"
 #include "components/Identity.hpp"
 #include "components/KeybindIntercepter.hpp"
@@ -202,6 +203,8 @@ namespace game
         _world.addSystem<game::systems::DrawConsole>();
         _drawing2d.add<game::systems::DrawConsole>();
 
+        _world.addEntity().with<game::components::GameEnded>().build();
+
         _world.addEntity()
             .with<game::gui::Console>()
             .with<game::components::History>()
@@ -233,6 +236,7 @@ namespace game
         _world.addStorage<components::Cube>();
         _world.addStorage<components::KeybindIntercepter>();
         _world.addStorage<components::SoundReference>();
+        _world.addStorage<components::GameEnded>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::RunAnimation>();

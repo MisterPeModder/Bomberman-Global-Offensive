@@ -14,8 +14,9 @@ namespace game::components
 {
     struct GameEnded : public ecs::Component {
         bool gameEnded;
+        double endTime;
 
-        GameEnded(bool pGameEnded = false) : gameEnded(pGameEnded) {}
+        GameEnded(bool pGameEnded = false) : gameEnded(pGameEnded), endTime(0.0) {}
     };
 } // namespace game::components
 

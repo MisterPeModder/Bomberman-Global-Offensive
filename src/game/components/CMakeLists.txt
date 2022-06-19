@@ -16,6 +16,7 @@ set(SRC
     ${INCROOT}/Cube.hpp
     ${INCROOT}/CubeColor.hpp
     ${INCROOT}/Destructible.hpp
+    ${INCROOT}/GameEnded.hpp
     ${SRCROOT}/History.cpp
     ${INCROOT}/History.hpp
     ${SRCROOT}/Identity.cpp
