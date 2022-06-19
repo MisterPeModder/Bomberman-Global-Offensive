@@ -8,7 +8,7 @@ var structgame_1_1components_1_1_bomb =
     [ "explode", "structgame_1_1components_1_1_bomb.html#a9a0429098749a8724d9396c73800b8e5", null ],
     [ "explodeLiving", "structgame_1_1components_1_1_bomb.html#aad24108cd02e2ad93c1f603808ed1b46", null ],
     [ "placeBomb", "structgame_1_1components_1_1_bomb.html#ac335fc6d89567ae62a6192c2746e6b9e", null ],
-    [ "setBombModel", "structgame_1_1components_1_1_bomb.html#a286190215b79e06811920884ce62ab1a", null ],
+    [ "setBombModel", "structgame_1_1components_1_1_bomb.html#a46d1e021f69a8fd9d6b826177d77749c", null ],
     [ "setVelocity", "structgame_1_1components_1_1_bomb.html#ac0bef463794523d4008a7461d7ea8b1d", null ],
     [ "stop", "structgame_1_1components_1_1_bomb.html#af6671e5e58b5f3fa8c551c6562d70804", null ],
     [ "DEFAULT_DELAY", "structgame_1_1components_1_1_bomb.html#a9cd5e434a36647c155fc01814c057307", null ],
