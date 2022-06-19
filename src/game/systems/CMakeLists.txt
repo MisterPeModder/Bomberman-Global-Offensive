@@ -12,11 +12,14 @@ set(SRC
     ${INCROOT}/Cube.hpp
     ${SRCROOT}/DrawConsole.cpp
     ${INCROOT}/DrawConsole.hpp
+    ${SRCROOT}/DrawFpsCounter.cpp
+    ${INCROOT}/DrawFpsCounter.hpp
     ${INCROOT}/DrawingCube.hpp
     ${INCROOT}/DrawSelectedWidget.hpp
     ${SRCROOT}/DrawText.cpp
     ${INCROOT}/DrawText.hpp
     ${INCROOT}/DrawTexture.hpp
+    ${INCROOT}/DrawTextureBackground.hpp
     ${SRCROOT}/InputManager.cpp
     ${INCROOT}/InputManager.hpp
     ${SRCROOT}/Items.cpp

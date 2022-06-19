@@ -68,6 +68,7 @@
 #include "systems/DrawHud.hpp"
 #include "systems/DrawText.hpp"
 #include "systems/DrawTexture.hpp"
+#include "systems/DrawFpsCounter.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
@@ -141,6 +142,7 @@ namespace game
         /// Hud
         textures.emplace("test_icone", "assets/icon.png");
         textures.emplace("landmine", "assets/items/weapons/landmine_texture.png");
+        textures.emplace("smoke_texture", "assets/items/weapons/smoke.png");
     }
 
     void Game::_loadMeshes()
@@ -151,6 +153,7 @@ namespace game
         meshes.emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
         meshes.emplace("bonus", 0.5f, 10, 10);
         meshes.emplace("activable", 1.f, 0.f, 1.f);
+        meshes.emplace("smoke_sphere", 2.f, 10, 10);
     }
 
     void Game::_loadModels()
@@ -165,6 +168,8 @@ namespace game
         models.emplace("wall", meshes.get("box"), false).setMaterialMapTexture(textures.get("wall"));
         models.emplace("C4", "assets/items/weapons/c4.iqm").setMaterialMapTexture(textures.get("C4"));
         models.emplace("landmine", "assets/items/weapons/landmine.iqm").setMaterialMapTexture(textures.get("landmine"));
+        models.emplace("smoke_sphere", meshes.get("smoke_sphere"), false)
+            .setMaterialMapTexture(textures.get("smoke_texture"));
         ////// Items
         auto &bonusMesh = meshes.get("bonus");
         /// Power Ups
@@ -208,6 +213,10 @@ namespace game
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
         _world.addSystem<game::systems::UpdateKeyboardInput>();
+
+        /// FPS Counter
+        _world.addSystem<game::systems::DrawFpsCounter>();
+        _drawing2d.add<game::systems::DrawFpsCounter>();
 
         /// Console
         _world.addSystem<game::systems::DrawConsole>();
@@ -263,7 +272,6 @@ namespace game
         _world.addSystem<systems::DrawHud>();
 
         _world.addSystem<systems::MoveSmoke>();
-        _world.addSystem<systems::DrawSmoke>();
         _world.addSystem<systems::PlaySoundReferences>();
         _world.addSystem<systems::DisableNoClip>();
         _world.addSystem<systems::CheckGameEnd>();
@@ -273,8 +281,8 @@ namespace game
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
             systems::PlaySoundReferences, systems::DisableNoClip>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawModel, systems::DrawSmoke>();
         _drawing2d.add<systems::DrawHud, systems::DrawHud, systems::DrawRectangle>();
+        _drawing.add<systems::DrawModel>();
 
         _loadTextures();
         _loadMeshes();

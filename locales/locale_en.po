@@ -85,6 +85,21 @@ msgstr ""
 msgid "FPS"
 msgstr ""
 
+msgid "Colorblind Filter"
+msgstr ""
+
+msgid "none"
+msgstr ""
+
+msgid "protanopia"
+msgstr ""
+
+msgid "deuteranopia"
+msgstr ""
+
+msgid "tritanopia"
+msgstr ""
+
 msgid "Right"
 msgstr ""
 

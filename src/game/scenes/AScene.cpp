@@ -29,6 +29,10 @@ namespace game
             _world.getResource<game::resources::EngineResource>().engine->getRenderTarget());
         raylib::core::Window::clear();
         {
+            raylib::core::scoped::Mode2D mode2D(_defaultCamera2D);
+            _world.runSystems(_background2D);
+        };
+        {
             raylib::core::scoped::Mode3D mode3D(_defaultCamera3D);
             _world.runSystems(_global3D);
         };
