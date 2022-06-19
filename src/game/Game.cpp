@@ -69,7 +69,7 @@
 #include "systems/PlaySoundOnce.hpp"
 #include "systems/Smoke.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
-#include "systems/KillPlayer.hpp"
+// #include "systems/KillPlayer.hpp"
 
 #include "game/Engine.hpp"
 #include "game/GameTimer.hpp"
@@ -254,6 +254,7 @@ namespace game
         _world.addSystem<systems::PlaySoundReferences>();
         _world.addSystem<systems::DisableNoClip>();
         _world.addSystem<systems::CheckGameEnd>();
+        // _world.addSystem<systems::KillPlayer>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
