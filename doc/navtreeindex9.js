@@ -1,5 +1,14 @@
 var NAVTREEINDEX9 =
 {
+"structecs_1_1_join_traits_3_01_entities_01_4.html":[2,0,1,7],
+"structecs_1_1_join_traits_3_01_entities_01_4.html#a0b5e03ba4ea9f08a567e47e3beee6833":[2,0,1,7,0],
+"structecs_1_1_join_traits_3_01_entities_01_4.html#a51ef73f38b3197f0961b7ce913f49a54":[2,0,1,7,1],
+"structecs_1_1_join_traits_3_01_entities_01_4.html#a99c30c96e939f12b870bc952a29b8db6":[2,0,1,7,2],
+"structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html":[2,0,1,8],
+"structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html#a009f64c5187ed8250daeb47af942b42e":[2,0,1,8,2],
+"structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html#a71f1b1be7283601b85726b0d130f3683":[2,0,1,8,1],
+"structecs_1_1_join_traits_3_01_maybe_join_3_01_j_01_4_01_4.html#adc7f8542465f9b05bf8162df6d9e523a":[2,0,1,8,0],
+"structecs_1_1_join_traits_3_01_storage_01_4.html":[2,0,1,9],
 "structecs_1_1_join_traits_3_01_storage_01_4.html#a2280092d27261f1f2a2ac39aaf6cd857":[2,0,1,9,1],
 "structecs_1_1_join_traits_3_01_storage_01_4.html#a45865b285090c5163a32665c19cb2147":[2,0,1,9,0],
 "structecs_1_1_join_traits_3_01_storage_01_4.html#ab5c671c381e6124e8950b58287642f40":[2,0,1,9,2],
@@ -240,14 +249,5 @@ var NAVTREEINDEX9 =
 "structgame_1_1components_1_1_scale.html":[2,0,2,0,25],
 "structgame_1_1components_1_1_scale.html#a8eb1fa2f188f1bb2f634516c232a2e0c":[2,0,2,0,25,0],
 "structgame_1_1components_1_1_scale.html#ab4d3e770957dcc659cefe53f80d6dd12":[2,0,2,0,25,2],
-"structgame_1_1components_1_1_scale.html#aec4445ef96ab0eeb2a827c2c7b0294df":[2,0,2,0,25,1],
-"structgame_1_1components_1_1_screen_id.html":[2,0,2,0,26],
-"structgame_1_1components_1_1_screen_id.html#a36344c6553d4658438a808ebf6992562":[2,0,2,0,26,0],
-"structgame_1_1components_1_1_screen_id.html#ababe5c260d511ae3703ca60ee3021a95":[2,0,2,0,26,2],
-"structgame_1_1components_1_1_screen_id.html#ac54a676145eca026f6d84c557f725f2f":[2,0,2,0,26,1],
-"structgame_1_1components_1_1_size.html":[2,0,2,0,27],
-"structgame_1_1components_1_1_size.html#a17b966b675472d570bd60f0a32783b49":[2,0,2,0,27,1],
-"structgame_1_1components_1_1_size.html#a3beb5b63ff29d8dbe4f14294a671a2dc":[2,0,2,0,27,3],
-"structgame_1_1components_1_1_size.html#a4a08eda2123d567211b729aebe713fea":[2,0,2,0,27,0],
-"structgame_1_1components_1_1_size.html#aa29187541b8a726dde7d4b5a60a556d4":[2,0,2,0,27,2]
+"structgame_1_1components_1_1_scale.html#aec4445ef96ab0eeb2a827c2c7b0294df":[2,0,2,0,25,1]
 };

@@ -1,5 +1,14 @@
 var NAVTREEINDEX4 =
 {
+"classgame_1_1_settings_menu_scene.html#ac75eb4e2507ce635a6286ea46b85cbcc":[2,0,2,13,11],
+"classgame_1_1_settings_menu_scene.html#acbd35e1f3bc0194b23f034ff16bbfd16":[2,0,2,13,13],
+"classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00":[2,0,2,13,1],
+"classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00a5f106c28a027d528a2327b1bb475a408":[2,0,2,13,1,4],
+"classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00a801eebf01f3b38eb34a411abb64e16f7":[2,0,2,13,1,1],
+"classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00a9dc0a742eddea77351c271ba00c2d56b":[2,0,2,13,1,0],
+"classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00abfab43feca002869329c737b9d95cd63":[2,0,2,13,1,3],
+"classgame_1_1_settings_menu_scene.html#ae610b5b0253daacc35a5e8462a271f00af718cd2fc53c6acd4b5bca2ca6f37dc5":[2,0,2,13,1,2],
+"classgame_1_1_settings_menu_scene.html#aeb6cefd608c5fd7a8699e5220d98e9c4":[2,0,2,13,15],
 "classgame_1_1_settings_menu_scene.html#aec2fd8f1ee693b6298d69e3296db8fa8":[2,0,2,13,9],
 "classgame_1_1_splash_scene.html":[2,0,2,14],
 "classgame_1_1_splash_scene.html#a57c28a1e292ee4d985d8b3394f61319a":[2,0,2,14,0],
@@ -240,14 +249,5 @@ var NAVTREEINDEX4 =
 "classgame_1_1settings_1_1_settings.html#a4eb05f22ef7aa3c7cccbc67b166ea013":[2,0,2,4,3,4],
 "classgame_1_1settings_1_1_settings.html#a6781e093b0e950ddd361369490e0020a":[2,0,2,4,3,12],
 "classgame_1_1settings_1_1_settings.html#a68b51286e91e1ad75b6f80fc662310e8":[2,0,2,4,3,7],
-"classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0":[2,0,2,4,3,8],
-"classgame_1_1settings_1_1_settings.html#a6e3a5126067c59ff20d8c284ad4b7aee":[2,0,2,4,3,30],
-"classgame_1_1settings_1_1_settings.html#a87fb8617851fdc9f44db342113fda8db":[2,0,2,4,3,2],
-"classgame_1_1settings_1_1_settings.html#a9046f7a71fc6cd1bef172be724e63f58":[2,0,2,4,3,24],
-"classgame_1_1settings_1_1_settings.html#a910a7b2e6d319a41f56f6f3306dcd0bd":[2,0,2,4,3,10],
-"classgame_1_1settings_1_1_settings.html#a9188bbf61bb01194e7e6cd4d643ae7e3":[2,0,2,4,3,13],
-"classgame_1_1settings_1_1_settings.html#aaaff24d59278304d4993cb6d1dac7638":[2,0,2,4,3,3],
-"classgame_1_1settings_1_1_settings.html#aab85ce33d56764a5c2f0b4475624cdd2":[2,0,2,4,3,14],
-"classgame_1_1settings_1_1_settings.html#aaf8e5024595dd33dc86b2712c37170c4":[2,0,2,4,3,23],
-"classgame_1_1settings_1_1_settings.html#abe249e1ecca2861514e3617912e2871a":[2,0,2,4,3,19]
+"classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0":[2,0,2,4,3,8]
 };

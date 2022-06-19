@@ -1,5 +1,14 @@
 var NAVTREEINDEX11 =
 {
+"structraylib_1_1core_1_1_vector4.html#a0f5e52c9624aad1285387314231d0ddf":[2,0,4,0,12,8],
+"structraylib_1_1core_1_1_vector4.html#a12a7615d2f15c030ab8aa0631ba54ce8":[2,0,4,0,12,10],
+"structraylib_1_1core_1_1_vector4.html#a1744a8c575e3c5f162d5d15701403e75":[2,0,4,0,12,18],
+"structraylib_1_1core_1_1_vector4.html#a1af88f3423798b99818fa9daf83ccbab":[2,0,4,0,12,16],
+"structraylib_1_1core_1_1_vector4.html#a2012402558d215efbfbf37366d8e7dcc":[2,0,4,0,12,0],
+"structraylib_1_1core_1_1_vector4.html#a2059b90fc370029d6dd40a33cba4625e":[2,0,4,0,12,3],
+"structraylib_1_1core_1_1_vector4.html#a4b24f72b86903e5b3bb3f60cfb5f89e6":[2,0,4,0,12,6],
+"structraylib_1_1core_1_1_vector4.html#a556567245b4305e43cc71935bc066bad":[2,0,4,0,12,11],
+"structraylib_1_1core_1_1_vector4.html#a56f562d0846134f6a033c96f5cfb18a9":[2,0,4,0,12,5],
 "structraylib_1_1core_1_1_vector4.html#a6bfcb40c49c3395a65078053e51ed98f":[2,0,4,0,12,20],
 "structraylib_1_1core_1_1_vector4.html#a74e2c7cac509b1befd230f7e24abf25d":[2,0,4,0,12,17],
 "structraylib_1_1core_1_1_vector4.html#ab38e8ff50a83810675c36ad6e3e9687c":[2,0,4,0,12,13],

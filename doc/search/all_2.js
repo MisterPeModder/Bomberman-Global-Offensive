@@ -86,7 +86,7 @@ var searchData=
   ['bitset_2ecpp_449',['BitSet.cpp',['../_bit_set_8cpp.html',1,'']]],
   ['bitset_2ehpp_450',['BitSet.hpp',['../_bit_set_8hpp.html',1,'']]],
   ['bitsettester_451',['BitSetTester',['../classutil_1_1_bit_set.html#a50fbe33c02d6b35187ef754650a4eab1',1,'util::BitSet']]],
-  ['black_452',['BLACK',['../structraylib_1_1core_1_1_color.html#a32368efe61278e660c858a7aeb30615f',1,'raylib::core::Color::BLACK()'],['../class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5ae90dfb84e30edf611e326eeb04d680de',1,'Logger::Black()']]],
+  ['black_452',['Black',['../class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5ae90dfb84e30edf611e326eeb04d680de',1,'Logger::Black()'],['../structraylib_1_1core_1_1_color.html#a32368efe61278e660c858a7aeb30615f',1,'raylib::core::Color::BLACK()']]],
   ['blank_453',['BLANK',['../structraylib_1_1core_1_1_color.html#ac3b1358168ca7dba994e7357717c37a5',1,'raylib::core::Color']]],
   ['blue_454',['Blue',['../class_logger.html#a1da14c6b2b82634176a9bb92ca2806a5a9594eec95be70e7b1710f730fdda33d9',1,'Logger::Blue()'],['../structraylib_1_1core_1_1_color.html#a8740297c38d9095d3afc5c0778542ffc',1,'raylib::core::Color::BLUE()']]],
   ['bmjs_455',['bmjs',['../namespacebmjs.html',1,'']]],
