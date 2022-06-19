@@ -16,7 +16,10 @@
 #include "util/util.hpp"
 
 #include "game/components/Animation.hpp"
+<<<<<<< Updated upstream
 #include "game/components/Background.hpp"
+=======
+>>>>>>> Stashed changes
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
 #include "game/components/KeybindIntercepter.hpp"
@@ -108,10 +111,17 @@ namespace game
             _availableSkins.push_back(User::USER_SKINS(i));
         }
 
+<<<<<<< Updated upstream
         _defaultCamera3D.setPosition({4.f, 10.f, 0.f}); // Camera position
         _defaultCamera3D.setTarget({0.f, 0.f, 0});      // Camera looking at point
         _defaultCamera3D.setUp({0.0f, 1.0f, 0.0f});     // Camera up vector (rotation towards target)
         _defaultCamera3D.setFovY(50.0f);                // Camera field-of-view Y
+=======
+        _defaultCamera3D.setPosition({1.3f, 1.3f, 4.f}); // Camera position
+        _defaultCamera3D.setTarget({1.3f, 0.5f, 0});     // Camera looking at point
+        _defaultCamera3D.setUp({0.0f, 1.0f, 0.0f});      // Camera up vector (rotation towards target)
+        _defaultCamera3D.setFovY(50.0f);                 // Camera field-of-view Y
+>>>>>>> Stashed changes
         _defaultCamera3D.setProjection(CAMERA_PERSPECTIVE);
 
         _world.addStorage<components::Textual>();
@@ -241,13 +251,13 @@ namespace game
 
         // player Model
         _world.addEntity()
-            .with<components::Position>(2 * (static_cast<int>(id) + 1), 0, 0)
+            .with<components::Position>(1.3f * (static_cast<int>(id)), 0.f, 0.f)
             .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
             .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
             .with<components::Size>(0.5f, 0.5f, 0.5f)
             .with<components::Color>(raylib::core::Color::WHITE)
-            .with<components::RotationAngle>(0.0f)
-            .with<components::RotationAxis>(0.f, 1.f, 0.f)
+            .with<components::RotationAngle>(90.0f)
+            .with<components::RotationAxis>(1.f, 0.f, 0.f)
             .with<components::Identity>()
             .build();
 
