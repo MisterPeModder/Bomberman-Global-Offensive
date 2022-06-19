@@ -156,18 +156,18 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classecs_1_1_system.html#ad1a93c71ce561822c2b3a2d6ea96ef56">ecs::System</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="systems_2_bomb_8cpp_source.html#l00018">18</a> of file <a class="el" href="systems_2_bomb_8cpp_source.html">Bomb.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">auto</span> now = <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, bomb, <span class="keywordtype">id</span>] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(),</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                 <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_bomb.html">game::components::Bomb</a>&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;())) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keywordflow">if</span> (bomb.type == <a class="code" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486ba1e55a1d65cd30df92b8f33db989b223c">game::components::Bomb::Type::LandMine</a>)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">if</span> (now - bomb.placedTime &gt;= bomb.explosionDelay)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                bomb.explode(pos, data, <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="systems_2_bomb_8cpp_source.html#l00019">19</a> of file <a class="el" href="systems_2_bomb_8cpp_source.html">Bomb.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">auto</span> now = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classgame_1_1resources_1_1_game_clock.html">game::resources::GameClock</a>&gt;().getTime();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, bomb, <span class="keywordtype">id</span>] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">game::components::Position</a>&gt;(),</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                 <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_bomb.html">game::components::Bomb</a>&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_entities.html">ecs::Entities</a>&gt;())) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span> (bomb.type == <a class="code" href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486ba1e55a1d65cd30df92b8f33db989b223c">game::components::Bomb::Type::LandMine</a>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (now - bomb.placedTime &gt;= bomb.explosionDelay)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                bomb.explode(pos, data, <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -180,10 +180,10 @@ Public Member Functions</h2></td></tr>
 <div class="ttc" id="astructgame_1_1components_1_1_position_html"><div class="ttname"><a href="structgame_1_1components_1_1_position.html">game::components::Position</a></div><div class="ttdef"><b>Definition:</b> <a href="_position_8hpp_source.html#l00016">Position.hpp:16</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_bomb_html"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html">game::components::Bomb</a></div><div class="ttdoc">Bomb component.</div><div class="ttdef"><b>Definition:</b> <a href="components_2_bomb_8hpp_source.html#l00023">Bomb.hpp:23</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
+<div class="ttc" id="aclassgame_1_1resources_1_1_game_clock_html"><div class="ttname"><a href="classgame_1_1resources_1_1_game_clock.html">game::resources::GameClock</a></div><div class="ttdoc">Game related clock.</div><div class="ttdef"><b>Definition:</b> <a href="_game_clock_8hpp_source.html#l00018">GameClock.hpp:18</a></div></div>
 <div class="ttc" id="aclassecs_1_1_entities_html"><div class="ttname"><a href="classecs_1_1_entities.html">ecs::Entities</a></div><div class="ttdoc">The entities world resource.</div><div class="ttdef"><b>Definition:</b> <a href="_entities_8hpp_source.html#l00024">Entities.hpp:24</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_bomb_html_a0d4f574a936bbc99594019f952f3486ba1e55a1d65cd30df92b8f33db989b223c"><div class="ttname"><a href="structgame_1_1components_1_1_bomb.html#a0d4f574a936bbc99594019f952f3486ba1e55a1d65cd30df92b8f33db989b223c">game::components::Bomb::Type::LandMine</a></div><div class="ttdeci">@ LandMine</div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/data.html">std::data</a></div><div class="ttdeci">T data(T... args)</div></div>
-<div class="ttc" id="anow_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a></div><div class="ttdeci">T now(T... args)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

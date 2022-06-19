@@ -158,7 +158,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_movement_8cpp_source.html#l00019">19</a> of file <a class="el" href="_movement_8cpp_source.html">Movement.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> seconds = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_timer.html">ecs::Timer</a>&gt;().elapsed();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> seconds = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classgame_1_1resources_1_1_game_clock.html">game::resources::GameClock</a>&gt;().elapsedSeconds();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, vel] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">Position</a>&gt;(), <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_velocity.html">Velocity</a>&gt;())) {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="comment">// no friction here, just plain old perpertual motion</span></div>
@@ -166,8 +166,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            pos.y += vel.y * seconds;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            pos.z += vel.z * seconds;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classecs_1_1_timer.html">ecs::Timer</a>&gt;().reset();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -178,8 +177,8 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructgame_1_1components_1_1_position_html"><div class="ttname"><a href="structgame_1_1components_1_1_position.html">game::components::Position</a></div><div class="ttdef"><b>Definition:</b> <a href="_position_8hpp_source.html#l00016">Position.hpp:16</a></div></div>
-<div class="ttc" id="aclassecs_1_1_timer_html"><div class="ttname"><a href="classecs_1_1_timer.html">ecs::Timer</a></div><div class="ttdoc">Simple timer resource.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00019">Timer.hpp:19</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
+<div class="ttc" id="aclassgame_1_1resources_1_1_game_clock_html"><div class="ttname"><a href="classgame_1_1resources_1_1_game_clock.html">game::resources::GameClock</a></div><div class="ttdoc">Game related clock.</div><div class="ttdef"><b>Definition:</b> <a href="_game_clock_8hpp_source.html#l00018">GameClock.hpp:18</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/data.html">std::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_velocity_html"><div class="ttname"><a href="structgame_1_1components_1_1_velocity.html">game::components::Velocity</a></div><div class="ttdoc">Velocity component.</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_8hpp_source.html#l00017">Velocity.hpp:17</a></div></div>
 <!-- start footer part -->

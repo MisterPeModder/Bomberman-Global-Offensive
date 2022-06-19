@@ -1,5 +1,5 @@
 <map id="game::components::Bomb" name="game::components::Bomb">
-<area shape="rect" id="node1" title="Bomb component." alt="" coords="61,109,255,136"/>
+<area shape="rect" id="node1" title="Bomb component." alt="" coords="61,124,255,151"/>
 <area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,5,132,32"/>
 <area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/chrono/duration.html" title=" " alt="" coords="157,5,341,32"/>
 </map>

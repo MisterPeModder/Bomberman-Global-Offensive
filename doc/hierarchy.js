@@ -145,6 +145,7 @@ var hierarchy =
       [ "ecs::Timer", "classecs_1_1_timer.html", null ],
       [ "game::resources::AssetMap< T >", "classgame_1_1resources_1_1_asset_map.html", null ],
       [ "game::resources::EngineResource", "structgame_1_1resources_1_1_engine_resource.html", null ],
+      [ "game::resources::GameClock", "classgame_1_1resources_1_1_game_clock.html", null ],
       [ "game::resources::Map", "structgame_1_1resources_1_1_map.html", null ],
       [ "game::resources::RandomDevice", "structgame_1_1resources_1_1_random_device.html", null ],
       [ "game::Users", "classgame_1_1_users.html", null ]
@@ -199,6 +200,7 @@ var hierarchy =
       [ "game::systems::PlaySoundReferences", "structgame_1_1systems_1_1_play_sound_references.html", null ],
       [ "game::systems::RunAnimation", "structgame_1_1systems_1_1_run_animation.html", null ],
       [ "game::systems::SplashScreen", "structgame_1_1systems_1_1_splash_screen.html", null ],
+      [ "game::systems::UpdateGameClock", "structgame_1_1systems_1_1_update_game_clock.html", null ],
       [ "game::systems::UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", null ],
       [ "game::systems::UpdateKeyboardInput", "structgame_1_1systems_1_1_update_keyboard_input.html", null ]
     ] ],

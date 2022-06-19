@@ -97,9 +97,9 @@ $(document).ready(function(){initNavTree('_movement_8cpp_source.html',''); initR
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_movement_8hpp.html">Movement.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_storage_8hpp.html">ecs/Storage.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_join_8hpp.html">ecs/join.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_timer_8hpp.html">ecs/resource/Timer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_position_8hpp.html">game/components/Position.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_velocity_8hpp.html">game/components/Velocity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_position_8hpp.html">game/components/Position.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_velocity_8hpp.html">game/components/Velocity.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_clock_8hpp.html">game/resources/GameClock.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacegame_1_1components.html">game::components</a>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('_movement_8cpp_source.html',''); initR
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structgame_1_1systems_1_1_movement.html#af8255194fe315e1ddcc4eb2bee379330">   19</a></span>&#160;    <span class="keywordtype">void</span> Movement::run(<a class="code" href="classecs_1_1_system_data.html">ecs::SystemData</a> data)</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> seconds = data.getResource&lt;<a class="code" href="classecs_1_1_timer.html">ecs::Timer</a>&gt;().elapsed();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> seconds = data.getResource&lt;<a class="code" href="classgame_1_1resources_1_1_game_clock.html">game::resources::GameClock</a>&gt;().elapsedSeconds();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> [pos, vel] : <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_position.html">Position</a>&gt;(), data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_velocity.html">Velocity</a>&gt;())) {</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="comment">// no friction here, just plain old perpertual motion</span></div>
@@ -115,9 +115,8 @@ $(document).ready(function(){initNavTree('_movement_8cpp_source.html',''); initR
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            pos.y += vel.y * seconds;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            pos.z += vel.z * seconds;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        data.getResource&lt;<a class="code" href="classecs_1_1_timer.html">ecs::Timer</a>&gt;().reset();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <span class="comment">// namespace game::systems</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <span class="comment">// namespace game::systems</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_join_8hpp_html"><div class="ttname"><a href="_join_8hpp.html">join.hpp</a></div></div>
@@ -126,10 +125,10 @@ $(document).ready(function(){initNavTree('_movement_8cpp_source.html',''); initR
 <div class="ttc" id="astructgame_1_1components_1_1_position_html"><div class="ttname"><a href="structgame_1_1components_1_1_position.html">game::components::Position</a></div><div class="ttdef"><b>Definition:</b> <a href="_position_8hpp_source.html#l00016">Position.hpp:16</a></div></div>
 <div class="ttc" id="a_position_8hpp_html"><div class="ttname"><a href="_position_8hpp.html">Position.hpp</a></div></div>
 <div class="ttc" id="a_storage_8hpp_html"><div class="ttname"><a href="_storage_8hpp.html">Storage.hpp</a></div></div>
-<div class="ttc" id="aclassecs_1_1_timer_html"><div class="ttname"><a href="classecs_1_1_timer.html">ecs::Timer</a></div><div class="ttdoc">Simple timer resource.</div><div class="ttdef"><b>Definition:</b> <a href="_timer_8hpp_source.html#l00019">Timer.hpp:19</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
+<div class="ttc" id="aclassgame_1_1resources_1_1_game_clock_html"><div class="ttname"><a href="classgame_1_1resources_1_1_game_clock.html">game::resources::GameClock</a></div><div class="ttdoc">Game related clock.</div><div class="ttdef"><b>Definition:</b> <a href="_game_clock_8hpp_source.html#l00018">GameClock.hpp:18</a></div></div>
 <div class="ttc" id="a_movement_8hpp_html"><div class="ttname"><a href="_movement_8hpp.html">Movement.hpp</a></div></div>
-<div class="ttc" id="a_timer_8hpp_html"><div class="ttname"><a href="_timer_8hpp.html">Timer.hpp</a></div></div>
+<div class="ttc" id="a_game_clock_8hpp_html"><div class="ttname"><a href="_game_clock_8hpp.html">GameClock.hpp</a></div></div>
 <div class="ttc" id="anamespacegame_1_1systems_html"><div class="ttname"><a href="namespacegame_1_1systems.html">game::systems</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2systems_2_animation_8hpp_source.html#l00025">Animation.hpp:25</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_velocity_html"><div class="ttname"><a href="structgame_1_1components_1_1_velocity.html">game::components::Velocity</a></div><div class="ttdoc">Velocity component.</div><div class="ttdef"><b>Definition:</b> <a href="_velocity_8hpp_source.html#l00017">Velocity.hpp:17</a></div></div>
 <div class="ttc" id="aclassecs_1_1_system_data_html"><div class="ttname"><a href="classecs_1_1_system_data.html">ecs::SystemData</a></div><div class="ttdoc">A view on world data that provides access to Resource and Storage instances to systems.</div><div class="ttdef"><b>Definition:</b> <a href="_system_data_8hpp_source.html#l00022">SystemData.hpp:22</a></div></div>

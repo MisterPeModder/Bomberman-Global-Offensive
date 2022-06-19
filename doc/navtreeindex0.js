@@ -158,6 +158,10 @@ var NAVTREEINDEX0 =
 "_game_action_8hpp.html#a8483766bb6895afd4bba8290587dd663ae58a1b00942e66d8b4abc960da7877ab":[3,0,0,1,11,0,7],
 "_game_action_8hpp.html#a85afa01575b11b63bb973480cc6972e4":[3,0,0,1,11,1],
 "_game_action_8hpp_source.html":[3,0,0,1,11],
+"_game_clock_8cpp.html":[3,0,0,1,3,2],
+"_game_clock_8cpp_source.html":[3,0,0,1,3,2],
+"_game_clock_8hpp.html":[3,0,0,1,3,3],
+"_game_clock_8hpp_source.html":[3,0,0,1,3,3],
 "_game_scene_8hpp.html":[3,0,0,1,4,2],
 "_game_scene_8hpp_source.html":[3,0,0,1,4,2],
 "_gamepad_8cpp.html":[3,0,0,4,0,10],
@@ -245,9 +249,5 @@ var NAVTREEINDEX0 =
 "_localization_8cpp.html":[3,0,0,2,0],
 "_localization_8cpp_source.html":[3,0,0,2,0],
 "_localization_8hpp.html":[3,0,0,2,1],
-"_localization_8hpp_source.html":[3,0,0,2,1],
-"_logger_8hpp.html":[3,0,0,3,1],
-"_logger_8hpp_source.html":[3,0,0,3,1],
-"_main_menu_scene_8cpp.html":[3,0,0,1,4,4],
-"_main_menu_scene_8cpp.html#abaa48e3adcb1875c2edcf36b00fa6bbc":[3,0,0,1,4,4,1]
+"_localization_8hpp_source.html":[3,0,0,2,1]
 };

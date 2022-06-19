@@ -27,6 +27,7 @@ var namespacegame_1_1systems =
     [ "RenderedText", "structgame_1_1systems_1_1_rendered_text.html", "structgame_1_1systems_1_1_rendered_text" ],
     [ "RunAnimation", "structgame_1_1systems_1_1_run_animation.html", "structgame_1_1systems_1_1_run_animation" ],
     [ "SplashScreen", "structgame_1_1systems_1_1_splash_screen.html", "structgame_1_1systems_1_1_splash_screen" ],
+    [ "UpdateGameClock", "structgame_1_1systems_1_1_update_game_clock.html", "structgame_1_1systems_1_1_update_game_clock" ],
     [ "UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", "structgame_1_1systems_1_1_update_item_timer" ],
     [ "UpdateKeyboardInput", "structgame_1_1systems_1_1_update_keyboard_input.html", "structgame_1_1systems_1_1_update_keyboard_input" ]
 ];

@@ -1,0 +1,6 @@
+<map id="game::resources::GameClock" name="game::resources::GameClock">
+<area shape="rect" id="node1" title="Game related clock." alt="" coords="128,95,341,121"/>
+<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/chrono/duration.html" title=" " alt="" coords="141,5,328,32"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/chrono/duration.html" title=" " alt="" coords="352,5,536,32"/>
+</map>

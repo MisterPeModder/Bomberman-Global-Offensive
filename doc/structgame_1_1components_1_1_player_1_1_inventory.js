@@ -11,5 +11,5 @@ var structgame_1_1components_1_1_player_1_1_inventory =
     [ "useActivable", "structgame_1_1components_1_1_player_1_1_inventory.html#ab60f7acc9f52f823c83a9a662856b77b", null ],
     [ "items", "structgame_1_1components_1_1_player_1_1_inventory.html#a15dc31954a8b1761a279cd6aadb93d7f", null ],
     [ "selected", "structgame_1_1components_1_1_player_1_1_inventory.html#ab96fc0d80b213dff80843e93ffe5155e", null ],
-    [ "timedItems", "structgame_1_1components_1_1_player_1_1_inventory.html#a70cdfe9db1e6a02cc1a162ab3b9b0521", null ]
+    [ "timedItems", "structgame_1_1components_1_1_player_1_1_inventory.html#a7d6c074b4dbde6ccb5a759861f878abd", null ]
 ];
