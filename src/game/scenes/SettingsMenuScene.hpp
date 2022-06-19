@@ -62,6 +62,7 @@ namespace game
 
         void loadSection(Section section, std::function<void(const Section &)> onLoad);
         void _loadKeyboardKeybinds(const Section &section);
+        void _updateActionKey(GameAction action);
 
         std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsKeyboardBindings;
     };

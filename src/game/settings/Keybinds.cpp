@@ -72,9 +72,26 @@ namespace game
             setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::DISCONNECT);
         }
 
-        void Keybinds::setKeyboardBinding(Key key, GameAction action)
+        void Keybinds::unbindAction(GameAction action, bool keyboard)
         {
-            unbindKey(key, action);
+            if (keyboard) {
+                for (size_t i = _keyboardBindings.size(); i > 0; i--) {
+                    if (_keyboardBindings[i - 1].action == action)
+                        _keyboardBindings.erase(_keyboardBindings.begin() + (i - 1));
+                }
+            } else {
+                for (size_t i = _gamepadBindings.size(); i > 0; i--)
+                    if (_gamepadBindings[i - 1].action == action)
+                        _gamepadBindings.erase(_gamepadBindings.begin() + (i - 1));
+            }
+        }
+
+        void Keybinds::setKeyboardBinding(Key key, GameAction action, bool exclusive)
+        {
+            if (exclusive)
+                unbindAction(action, true);
+            else
+                unbindKey(key, action);
             _keyboardBindings.emplace_back(key, action);
         }
 
@@ -83,13 +100,16 @@ namespace game
             for (size_t i = _keyboardBindings.size(); i > 0; i--) {
                 auto &bind = _keyboardBindings[i - 1];
                 if (bind.key == key && (action == GameAction::NONE || bind.action == action))
-                    _keyboardBindings.erase(_keyboardBindings.begin() + i);
+                    _keyboardBindings.erase(_keyboardBindings.begin() + (i - 1));
             }
         }
 
-        void Keybinds::setGamepadBinding(const GamepadInput &gamepadInput, GameAction action)
+        void Keybinds::setGamepadBinding(const GamepadInput &gamepadInput, GameAction action, bool exclusive)
         {
-            unbindGamepadInput(gamepadInput, action);
+            if (exclusive)
+                unbindAction(action, false);
+            else
+                unbindGamepadInput(gamepadInput, action);
             _gamepadBindings.emplace_back(gamepadInput, action);
         }
 
@@ -99,7 +119,7 @@ namespace game
                 const GamepadBind &bind = _gamepadBindings[i - 1];
                 if ((bind.input <=> gamepadInput == std::strong_ordering::equal)
                     && (action == GameAction::NONE || bind.action == action))
-                    _gamepadBindings.erase(_gamepadBindings.begin() + i);
+                    _gamepadBindings.erase(_gamepadBindings.begin() + (i - 1));
             }
         }
 

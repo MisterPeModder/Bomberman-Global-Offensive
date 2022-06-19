@@ -33,7 +33,8 @@ namespace game::systems
                             out << "Bind user " << static_cast<size_t>(intercepter.user) << " action "
                                 << static_cast<size_t>(intercepter.action) << " to key " << static_cast<size_t>(key);
                         });
-                        users[game::User::UserId::User1].getKeybinds().setKeyboardBinding(key, intercepter.action);
+                        users[game::User::UserId::User1].getKeybinds().setKeyboardBinding(
+                            key, intercepter.action, true);
                         users.updateActions(false);
                         entities.kill(id);
                         if (intercepter.callback)

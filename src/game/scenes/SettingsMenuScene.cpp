@@ -764,6 +764,30 @@ namespace game
         onLoad(section);
     }
 
+    void SettingsMenuScene::_updateActionKey(GameAction action)
+    {
+        std::stringstream ss;
+        auto &binds = _world.getResource<game::resources::EngineResource>()
+                          .engine->getUsers()[game::User::UserId::User1]
+                          .getKeybinds()
+                          .getKeyboardBindings();
+
+        for (auto iter : binds)
+            if (iter.action == action) {
+                if (ss.rdbuf()->in_avail())
+                    ss << ", ";
+                ss << static_cast<char>(iter.key);
+            }
+
+        for (auto [text, id] : ecs::join(
+                 _world.getStorage<game::components::Textual>(), _world.getStorage<game::components::Identity>())) {
+            if (id.id == _actionsKeyboardBindings[static_cast<size_t>(action)]) {
+                text.text = ss.str();
+                return;
+            }
+        }
+    }
+
     void SettingsMenuScene::_loadKeyboardKeybinds(const Section &sct)
     {
         _world.addEntity()
@@ -795,29 +819,8 @@ namespace game
                 .with<game::gui::Clickable>(
                     [=, this](ecs::Entity) {
                         _world.addEntity()
-                            .with<game::components::KeybindIntercepter>(game::User::UserId::User1, action,
-                                [=, this]() {
-                                    std::stringstream ss;
-                                    auto &binds = _world.getResource<game::resources::EngineResource>()
-                                                      .engine->getUsers()[game::User::UserId::User1]
-                                                      .getKeybinds()
-                                                      .getKeyboardBindings();
-
-                                    for (auto iter : binds)
-                                        if (iter.action == action) {
-                                            if (ss.rdbuf()->in_avail())
-                                                ss << ", ";
-                                            ss << static_cast<char>(iter.key);
-                                        }
-
-                                    for (auto [text, id] : ecs::join(_world.getStorage<game::components::Textual>(),
-                                             _world.getStorage<game::components::Identity>())) {
-                                        if (id.id == _actionsKeyboardBindings[static_cast<size_t>(action)]) {
-                                            text.text = ss.str();
-                                            return;
-                                        }
-                                    }
-                                })
+                            .with<game::components::KeybindIntercepter>(
+                                game::User::UserId::User1, action, [=, this]() { _updateActionKey(action); })
                             .build();
                         Logger::logger.log(Logger::Severity::Information, "Waiting for user input");
                     },
@@ -826,6 +829,7 @@ namespace game
                             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
                     })
                 .build();
+            // _updateActionKey(action);
         };
 
         addAction({4, 13}, {10, 13}, GameAction::MOVE_LEFT, localization::resources::keybinds::rsKeyBindLeft,
