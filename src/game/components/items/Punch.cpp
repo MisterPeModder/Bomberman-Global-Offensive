@@ -8,6 +8,7 @@
 
 #include "Item.hpp"
 #include "game/components/Player.hpp"
+#include "game/components/Velocity.hpp"
 
 namespace game::components
 {
@@ -21,7 +22,10 @@ namespace game::components
         punch.name = "Punch";
         punch.duration = std::chrono::milliseconds::zero();
         punch.dropRate = 20;
-        punch.onApply = [](ecs::Entity player, ecs::SystemData data) { return true; };
+        punch.onApply = [](ecs::Entity placer, ecs::SystemData data) {
+            data.getStorage<Player>()[placer.getId()].stun(placer, data, std::chrono::milliseconds(2000));
+            return true;
+        };
         return punch;
     }
 } // namespace game::components
