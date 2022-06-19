@@ -12,6 +12,8 @@
 #include "User.hpp"
 #include "ecs/resource/Resource.hpp"
 
+#include "localization/Resources.hpp"
+
 namespace game
 {
     /// Resource allowing to get users actions using the keybinds.
@@ -87,6 +89,13 @@ namespace game
         /// @param user User to disconnect.
         void disconnectUser(User::UserId user);
 
+        ///
+        /// It converts a USER_SKINS enum value to a localization::ResourceString
+        ///
+        /// @param skin The skin to convert.
+        ///
+        /// @return localizarion::RessourceString the ressource.
+        localization::ResourceString usersSkinToRessourceString(User::USER_SKINS skin);
       private:
         std::array<User, static_cast<size_t>(User::UserId::UserCount)> _users;
     };

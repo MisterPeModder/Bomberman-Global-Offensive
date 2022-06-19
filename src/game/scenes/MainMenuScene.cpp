@@ -77,12 +77,9 @@ namespace game
 
     MainMenuScene::MainMenuScene()
     {
-        _playerTextures.push(PLAYER_TEXTURE(0));
-        _playerTextures.push(PLAYER_TEXTURE(1));
-        _playerTextures.push(PLAYER_TEXTURE(2));
-        _playerTextures.push(PLAYER_TEXTURE(3));
-        _playerTextures.push(PLAYER_TEXTURE(4));
-        _playerTextures.push(PLAYER_TEXTURE(5));
+        std::cout << "Tru to load main menu" << std::endl;
+        for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++)
+            _availableSkins.push(User::USER_SKINS(i));
 
         _world.addStorage<components::Textual>();
         _world.addStorage<components::KeyboardInput>();
@@ -101,27 +98,9 @@ namespace game
         _global2D.add<systems::DrawRectangle>();
         loadLeftButtons();
         loadPlayerInterface();
-    }
 
-    localization::ResourceString MainMenuScene::playerTextureToRessourceString(PLAYER_TEXTURE texture)
-    {
-        switch (texture)
-        {
-        case TERRORIST_1:
-            return localization::resources::textures::rsTerroristOne;
-        case TERRORIST_2:
-            return localization::resources::textures::rsTerroristTwo;
-        case COUNTER_TERRORIST_1:
-            return localization::resources::textures::rsCounterTerroristOne;
-        case COUNTER_TERRORIST_2:
-            return localization::resources::textures::rsCounterTerroristTwo;
-        case NO_SENSE:
-            return localization::resources::textures::rsNoSense;
-        case RAINBOW:
-            return localization::resources::textures::rsRainbow;
-        default:
-            return localization::resources::textures::rsUnknown;
-        }
+        std::cout << "ENd to load main menu" << std::endl;
+
     }
 
     void MainMenuScene::loadLeftButtons()
@@ -179,6 +158,19 @@ namespace game
             .build();
     }
 
+    localization::ResourceString MainMenuScene::usersSkinToRessourceString(User::USER_SKINS skin)
+    {
+        switch (skin) {
+            case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
+            case User::USER_SKINS::TERRORIST_2: return localization::resources::textures::rsTerroristTwo;
+            case User::USER_SKINS::COUNTER_TERRORIST_1: return localization::resources::textures::rsCounterTerroristOne;
+            case User::USER_SKINS::COUNTER_TERRORIST_2: return localization::resources::textures::rsCounterTerroristTwo;
+            case User::USER_SKINS::NO_SENSE: return localization::resources::textures::rsNoSense;
+            case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
+            default: return localization::resources::textures::rsUnknown;
+        }
+    }
+
     void MainMenuScene::loadPlayerSlot(size_t id)
     {
         raylib::core::Color color;
@@ -201,10 +193,10 @@ namespace game
         // Skin Text
         _world.addEntity()
             .with<components::Position>(20 + static_cast<int>(id) * 20, 75)
-            .with<components::Textual>(playerTextureToRessourceString(_playerTextures.front()), 20, raylib::core::Color::WHITE)
+            .with<components::Textual>(usersSkinToRessourceString(_availableSkins.front()), 20, raylib::core::Color::WHITE)
             .with<components::Identity>()
             .build();
-        _playerTextures.pop();
+        _availableSkins.pop();
 
         auto connectedText =
             _world.addEntity()
@@ -222,6 +214,8 @@ namespace game
 
     void MainMenuScene::loadPlayerInterface()
     {
+        std::cout << "Tru to load player interface" << std::endl;
+
         for (size_t i = 0; i < 4; i++)
             loadPlayerSlot(i);
 
@@ -230,14 +224,15 @@ namespace game
                 [this](ecs::Entity controlable, ecs::SystemData data, const Users::ActionEvent &event) {
                     (void)controlable;
                     if (event.action == GameAction::DISCONNECT && event.value == 1.f) {
-                        auto &users = data.getResource<resources::EngineResource>().engine->getUsers();
-                        users.disconnectUser(event.user);
+                        auto &lusers = data.getResource<resources::EngineResource>().engine->getUsers();
+                        lusers.disconnectUser(event.user);
                         updateConnectedTexts();
                         return true;
                     }
                     return false;
                 })
             .build();
+        std::cout << "End to load player interface" << std::endl;
     }
 
     void MainMenuScene::updateConnectedTexts()

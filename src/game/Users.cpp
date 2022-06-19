@@ -12,8 +12,10 @@ namespace game
 {
     Users::Users()
     {
-        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
             _users[i].setId(static_cast<User::UserId>(i));
+            _users[i].setSkin(User::USER_SKINS(i));
+        }
         _users[0].setAvailable();
     }
 
@@ -107,6 +109,19 @@ namespace game
         for (size_t i = userPos; i < nbUsers - 1; i++)
             _users[i].setGamepadId(_users[i + 1].getGamepadId());
         _users[nbUsers - 1].setAvailable(false);
+    }
+
+    localization::ResourceString Users::usersSkinToRessourceString(User::USER_SKINS skin)
+    {
+        switch (skin) {
+            case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
+            case User::USER_SKINS::TERRORIST_2: return localization::resources::textures::rsTerroristTwo;
+            case User::USER_SKINS::COUNTER_TERRORIST_1: return localization::resources::textures::rsCounterTerroristOne;
+            case User::USER_SKINS::COUNTER_TERRORIST_2: return localization::resources::textures::rsCounterTerroristTwo;
+            case User::USER_SKINS::NO_SENSE: return localization::resources::textures::rsNoSense;
+            case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
+            default: return localization::resources::textures::rsUnknown;
+        }
     }
 
 } // namespace game

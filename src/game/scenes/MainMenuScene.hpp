@@ -34,23 +34,20 @@ namespace game
         void updateConnectedTexts();
 
       private:
-        enum PLAYER_TEXTURE {
-          TERRORIST_1,
-          TERRORIST_2,
-          COUNTER_TERRORIST_1,
-          COUNTER_TERRORIST_2,
-          NO_SENSE,
-          RAINBOW,
-          NONE
-        };
 
-        localization::ResourceString playerTextureToRessourceString(PLAYER_TEXTURE texture);
         void loadPlayerSlot(size_t id);
         void loadPlayerInterface();
         void loadLeftButtons();
+        ///
+        /// It converts a USER_SKINS enum value to a localization::ResourceString
+        ///
+        /// @param skin The skin to convert.
+        ///
+        /// @return localizarion::RessourceString the ressource.
+        localization::ResourceString usersSkinToRessourceString(User::USER_SKINS skin);
 
         components::Identity::Id _firstUserId;
-        std::queue<PLAYER_TEXTURE> _playerTextures;
+        std::queue<User::USER_SKINS> _availableSkins;
     };
 } // namespace game
 

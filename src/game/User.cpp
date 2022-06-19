@@ -7,6 +7,7 @@
 
 #include "User.hpp"
 #include <algorithm>
+#include "Users.hpp"
 
 #include <algorithm>
 
@@ -16,6 +17,7 @@ namespace game
         : _gamepadId(gamepadId), _ignoreKeyboard(false), _profile(static_cast<size_t>(id))
     {
         setAvailable(false);
+        setSkin(User::USER_SKINS::UNKNOWN);
         _lastActions.fill(0);
     }
 
@@ -30,6 +32,10 @@ namespace game
     void User::setId(UserId id) { _profile.load(static_cast<size_t>(id)); }
 
     User::UserId User::getId() const { return static_cast<UserId>(_profile.getId()); }
+
+    void User::setSkin(USER_SKINS skin) { _skin = skin; }
+
+    User::USER_SKINS User::getSkin() const { return _skin; }
 
     void User::setAvailable(bool available) { _available = available; }
 
