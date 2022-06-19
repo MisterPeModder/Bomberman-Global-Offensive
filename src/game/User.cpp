@@ -12,7 +12,8 @@
 
 namespace game
 {
-    User::User(UserId id, int gamepadId) : _gamepadId(gamepadId), _profile(static_cast<size_t>(id))
+    User::User(UserId id, int gamepadId)
+        : _gamepadId(gamepadId), _ignoreKeyboard(false), _profile(static_cast<size_t>(id))
     {
         setAvailable(false);
         _lastActions.fill(0);
@@ -41,7 +42,12 @@ namespace game
 
         _changedActions.swap(empty);
         for (size_t i = 0; i < _lastActions.size(); i++) {
-            actionValue = getActionValue(static_cast<GameAction>(i + 1), true);
+            GameAction action = static_cast<GameAction>(i + 1);
+#ifdef __EMSCRIPTEN__
+            if (action == GameAction::TOGGLE_CONSOLE)
+                continue;
+#endif
+            actionValue = getActionValue(action, true);
 
             if (actionValue != _lastActions[i]) {
                 _changedActions.push(static_cast<GameAction>(i + 1));
@@ -68,7 +74,7 @@ namespace game
             return _lastActions[static_cast<size_t>(action) - 1];
         float res = 0.f;
 
-        if (isKeyboard()) {
+        if (isKeyboard() && (!this->_ignoreKeyboard || action == GameAction::TOGGLE_CONSOLE)) {
             auto &binds = _profile.getKeybinds().getKeyboardBindings();
 
             return (binds.end() != std::find_if(binds.begin(), binds.end(), [&](auto iter) {
@@ -94,6 +100,8 @@ namespace game
         }
         return res;
     }
+
+    void User::setIgnoreKeyboard(bool ignore) noexcept { this->_ignoreKeyboard = ignore; }
 
     const settings::Profile &User::getProfile() const { return _profile; }
 

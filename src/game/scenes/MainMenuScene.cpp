@@ -17,6 +17,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Rectangle.hpp"
@@ -84,6 +85,7 @@ namespace game
         _playerTextures.push(PLAYER_TEXTURE(5));
 
         _world.addStorage<components::Textual>();
+        _world.addStorage<components::KeyboardInput>();
         _world.addSystem<systems::DrawText>();
         _world.addSystem<systems::DrawSelectedWidget>();
         _world.addSystem<systems::DrawRectangle>();
