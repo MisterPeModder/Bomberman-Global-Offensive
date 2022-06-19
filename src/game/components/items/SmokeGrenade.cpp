@@ -8,11 +8,18 @@
 
 #include "Item.hpp"
 #include "ecs/join.hpp"
+#include "game/components/Color.hpp"
 #include "game/components/Identity.hpp"
+#include "game/components/Model.hpp"
 #include "game/components/Player.hpp"
 #include "game/components/Position.hpp"
+#include "game/components/RotationAngle.hpp"
+#include "game/components/RotationAxis.hpp"
+#include "game/components/Size.hpp"
 #include "game/components/Smoke.hpp"
 #include "game/components/Sound.hpp"
+#include "game/resources/AssetMap.hpp"
+#include "raylib/core/Color.hpp"
 
 namespace game::components
 {
@@ -46,6 +53,12 @@ namespace game::components
                     .builder()
                     .with<Smoke>(smokes, id.id)
                     .with<Position>(positions, pos)
+                    .with<ModelReference>(
+                        data.getStorage<ModelReference>(), data.getResource<resources::Models>().get("smoke_sphere"))
+                    .with<Size>(data.getStorage<Size>(), 1.f, 1.f, 1.f)
+                    .with<RotationAngle>(data.getStorage<RotationAngle>(), 0.0f)
+                    .with<RotationAxis>(data.getStorage<RotationAxis>(), 0.f, 0.f, 0.f)
+                    .with<components::Color>(data.getStorage<components::Color>(), 200, 200, 200, 220)
                     .build();
             }
             return true;
