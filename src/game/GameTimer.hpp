@@ -17,7 +17,8 @@
 namespace game
 {
     /// Simple timer resource.
-    class GameTimer final : public ecs::Timer {};
+    class GameTimer final : public ecs::Timer {
+    };
 } // namespace game
 
 #endif // !defined(ECS_RESOURCE_GAMETIMER_HPP_)

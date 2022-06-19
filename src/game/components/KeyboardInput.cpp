@@ -12,10 +12,10 @@
 #include "ecs/join.hpp"
 #include "ecs/resource/Entities.hpp"
 
+#include "game/GameTimer.hpp"
 #include "raylib/core/Color.hpp"
 #include "raylib/core/Keyboard.hpp"
 #include "raylib/core/Window.hpp"
-#include "game/GameTimer.hpp"
 
 #include "util/util.hpp"
 

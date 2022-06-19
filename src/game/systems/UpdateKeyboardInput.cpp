@@ -6,9 +6,9 @@
 */
 
 #include "UpdateKeyboardInput.hpp"
+#include "game/GameTimer.hpp"
 #include "game/components/History.hpp"
 #include "game/components/KeyboardInput.hpp"
-#include "game/GameTimer.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
