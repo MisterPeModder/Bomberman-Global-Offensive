@@ -120,7 +120,8 @@ namespace game
 
         meshes.emplace("box", 1.f, 1.f, 1.f);
         meshes.emplace("ground", _map.getSize().x + 1.f, 0.0f, _map.getSize().y + 1.f);
-        meshes.emplace("bonus", 0.75f, 0.0f, 0.75f);
+        meshes.emplace("bonus", 0.5f, 10, 10);
+        meshes.emplace("activable", 1.f, 0.f, 1.f);
     }
 
     void Game::_loadModels()
@@ -145,7 +146,7 @@ namespace game
         models.emplace("speed_down", bonusMesh, false).setMaterialMapTexture(textures.get("speed_down"));
         models.emplace("C4_down", bonusMesh, false).setMaterialMapTexture(textures.get("C4_down"));
         models.emplace("range_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
-        models.emplace("control_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
+        models.emplace("control_down", bonusMesh, false).setMaterialMapTexture(textures.get("control_down"));
         /// Activables
         models.emplace("no_clip", bonusMesh, false).setMaterialMapTexture(textures.get("no_clip"));
         models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"));
