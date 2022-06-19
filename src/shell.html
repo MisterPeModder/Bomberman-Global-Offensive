@@ -177,6 +177,10 @@
             background-color: #f5f5f5ff;
             border-color: black;
         }
+
+        #btn-play {
+            margin: 20px;
+        }
     </style>
 </head>
 
@@ -199,7 +203,9 @@
 
     <div id="emscripten_wrapper">
         <div id="emscripten_border">
-            <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
+            <span><input type="button" id="btn-play" value="PLAY" onclick="itsBombinTime()"></span>
+            <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 width=0
+                height=0></canvas>
         </div>
     </div>
 
@@ -283,7 +289,7 @@
                 this.totalDependencies = Math.max(this.totalDependencies, left);
                 Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies - left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
             },
-            //noInitialRun: true
+            noInitialRun: true
         };
 
         Module.setStatus('Downloading...');
@@ -322,6 +328,16 @@
 
             if (resumed) audioBtn.value = "🔇 SUSPEND";
             else audioBtn.value = "🔈 RESUME";
+        }
+
+        function itsBombinTime() {
+            var playButton = document.querySelector('#btn-play');
+
+            // Remove the play button
+            playButton.remove();
+
+            // Start the game.
+            Module._main();
         }
     </script>
     {{{ SCRIPT }}}
