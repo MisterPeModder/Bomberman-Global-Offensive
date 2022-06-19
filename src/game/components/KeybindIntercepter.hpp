@@ -19,11 +19,10 @@ namespace game::components
         game::User::UserId user;
         GameAction action;
         Callback callback;
-
         bool keyboard;
 
         KeybindIntercepter(game::User::UserId pUserId, GameAction pAction, Callback pCallback, bool pKeyboard = true)
-            : user(pUserId), action(pAction), keyboard(pKeyboard), callback(pCallback){};
+            : user(pUserId), action(pAction), callback(pCallback), keyboard(pKeyboard){};
         KeybindIntercepter(game::User::UserId pUserId, GameAction pAction, bool pKeyboard = true)
             : user(pUserId), action(pAction), keyboard(pKeyboard){};
     };

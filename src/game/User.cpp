@@ -53,7 +53,6 @@ namespace game
     void User::clearPendingActions()
     {
         std::queue<GameAction> empty;
-        float actionValue;
 
         _changedActions.swap(empty);
     }

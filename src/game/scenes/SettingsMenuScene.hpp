@@ -80,6 +80,8 @@ namespace game
         void _loadGamepadProfile(const Section &section, size_t id);
         void _updateActionGamepad(GameAction action, size_t id);
 
+        int _getGamepadWidgetId(WIDGET_GAMEPAD_ID action, size_t user);
+
         std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsKeyboardBindings;
         std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsGamepadBindings[4];
     };

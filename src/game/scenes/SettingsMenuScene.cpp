@@ -695,8 +695,8 @@ namespace game
                             .build();
                         Logger::logger.log(Logger::Severity::Information, "Waiting for user keyboard input");
                     },
-                    [=, this](ecs::Entity btn, game::gui::Clickable::State state) {
-                        _world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    [=, this](ecs::Entity clickable, game::gui::Clickable::State state) {
+                        _world.getStorage<game::components::Textual>()[clickable.getId()].color =
                             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
                     })
                 .build();
@@ -766,6 +766,12 @@ namespace game
         }
     }
 
+    int SettingsMenuScene::_getGamepadWidgetId(WIDGET_GAMEPAD_ID action, size_t user)
+    {
+        return static_cast<int>(action)
+            + (static_cast<int>(KEYBINDS_GAMEPAD_FIRST) + static_cast<int>(KEYBINDS_GAMEPAD_COUNT) * user);
+    }
+
     void SettingsMenuScene::_loadGamepadProfile(const Section &sct, size_t id)
     {
         std::string name;
@@ -816,8 +822,8 @@ namespace game
                             .build();
                         Logger::logger.log(Logger::Severity::Information, "Waiting for user gamepad input");
                     },
-                    [=, this](ecs::Entity btn, game::gui::Clickable::State state) {
-                        _world.getStorage<game::components::Textual>()[btn.getId()].color =
+                    [=, this](ecs::Entity clickable, game::gui::Clickable::State state) {
+                        _world.getStorage<game::components::Textual>()[clickable.getId()].color =
                             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
                     })
                 .build();
@@ -825,29 +831,26 @@ namespace game
         };
 
         addAction({4, 18}, {10, 18}, GameAction::PLACE_BOMB, localization::resources::keybinds::rsKeyBindBomb,
-            KEYBINDS_GAMEPAD_BOMB + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
-            (id == 0) ? RES_3 : gui::Widget::NullTag,
-            KEYBINDS_GAMEPAD_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
-            (id == 0) ? BACK : gui::Widget::NullTag,
-            KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_BOMB, id), (id == 0) ? static_cast<int>(RES_3) : gui::Widget::NullTag,
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_ACTIVABLE, id),
+            (id == 0) ? static_cast<int>(BACK) : gui::Widget::NullTag,
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, id));
         addAction({16, 18}, {22, 18}, GameAction::ACTIVATE_ITEM,
             localization::resources::keybinds::rsKeyBindActivableShort,
-            KEYBINDS_GAMEPAD_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
-            KEYBINDS_GAMEPAD_BOMB + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id), gui::Widget::NullTag,
-            (id == 0) ? BACK : gui::Widget::NullTag,
-            KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_ACTIVABLE, id), _getGamepadWidgetId(KEYBINDS_GAMEPAD_BOMB, id),
+            gui::Widget::NullTag, (id == 0) ? static_cast<int>(BACK) : gui::Widget::NullTag,
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_NEXT_ACTIVABLE, id));
 
         addAction({4, 23}, {10, 23}, GameAction::PREVIOUS_ACTIVABLE,
             localization::resources::keybinds::rsKeyBindActivablePreviousShort,
-            KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
-            (id == 0) ? RES_3 : gui::Widget::NullTag,
-            KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
-            KEYBINDS_GAMEPAD_BOMB + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, id),
+            (id == 0) ? static_cast<int>(RES_3) : gui::Widget::NullTag,
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_NEXT_ACTIVABLE, id), _getGamepadWidgetId(KEYBINDS_GAMEPAD_BOMB, id));
         addAction({16, 23}, {22, 23}, GameAction::NEXT_ACTIVABLE,
             localization::resources::keybinds::rsKeyBindActivableNextShort,
-            KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
-            KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
-            gui::Widget::NullTag, KEYBINDS_GAMEPAD_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_NEXT_ACTIVABLE, id),
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, id), gui::Widget::NullTag,
+            _getGamepadWidgetId(KEYBINDS_GAMEPAD_ACTIVABLE, id));
     }
 
     void SettingsMenuScene::_loadGamepadKeybinds(const Section &sct)
