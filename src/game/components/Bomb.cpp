@@ -24,6 +24,7 @@
 #include "ecs/join.hpp"
 #include "game/Game.hpp"
 #include "game/resources/AssetMap.hpp"
+#include "game/resources/GameClock.hpp"
 #include "game/resources/Map.hpp"
 #include "items/Item.hpp"
 #include "logger/Logger.hpp"
@@ -151,7 +152,8 @@ namespace game::components
         auto builder = entities.builder();
 
         (void)Bomb::setBombModel(builder, data, bombType)
-            .with<Bomb>(data.getStorage<Bomb>(), bombType, owner, range, delay)
+            .with<Bomb>(data.getStorage<Bomb>(), data.getResource<game::resources::GameClock>().getTime(), bombType,
+                owner, range, delay)
             .with<Position>(data.getStorage<Position>(), placedPos)
             .with<Collidable>(data.getStorage<Collidable>());
         if (fabsf(velocity.x) > 0.f || fabsf(velocity.z) > 0.f)
@@ -169,7 +171,7 @@ namespace game::components
     {
         placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data, type, owner, radius,
             std::chrono::duration_cast<std::chrono::milliseconds>(
-                explosionDelay - (std::chrono::steady_clock::now() - placedTime)),
+                explosionDelay - (data.getResource<game::resources::GameClock>().getTime() - placedTime)),
             senderVelocity, false);
         /// Kill static bomb
         data.getResource<ecs::Entities>().kill(self);
@@ -179,7 +181,7 @@ namespace game::components
     {
         placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data, type, owner, radius,
             std::chrono::duration_cast<std::chrono::milliseconds>(
-                explosionDelay - (std::chrono::steady_clock::now() - placedTime)),
+                explosionDelay - (data.getResource<game::resources::GameClock>().getTime() - placedTime)),
             {}, false);
         /// Kill moving bomb
         data.getResource<ecs::Entities>().kill(self);
