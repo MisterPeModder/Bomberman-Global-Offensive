@@ -80,7 +80,7 @@ var game;
     readOnly(game, 'warn', function (msg) { bm.common.warn(String(msg)); });
     readOnly(game, 'debug', function (msg) { bm.common.debug(String(msg)); });
 
-    game.addMod = function (/** @type {ModDefinition} */ modDef) {
+    readOnly(game, 'addMod', function (/** @type {ModDefinition} */ modDef) {
         /** @type {Mod} */
         var mod = {};
 
@@ -109,7 +109,17 @@ var game;
         }
 
         bm.mods.enable(mod.id);
-    }
+    });
 
-    game.callMeBack = bm.common.callMeBack;
+    readOnly(game, 'setColorblindFilter', function (filter) {
+        if (filter === undefined)
+            filter = 'none';
+        if (typeof filter === 'number') {
+            if (number < 0 || number > 3)
+                filter = 'none';
+            else
+                filter = ['none', 'protanopia', 'deuteranopia', 'tritanopia'][number];
+        }
+        bm.common.setColorblindFilter(filter.toLowerCase());
+    });
 })(game || (game = {}));
