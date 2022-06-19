@@ -134,7 +134,8 @@ namespace game
 
                     if (engine->getUsers().getAvailableUsers() < 2)
                         return;
-                    engine->setScene<GameScene>(Game::Parameters(engine->getUsers().getAvailableUsers()));
+                    engine->setScene<GameScene>(Game::Parameters(
+                        engine->getUsers().prepareSkinParameters(), engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
