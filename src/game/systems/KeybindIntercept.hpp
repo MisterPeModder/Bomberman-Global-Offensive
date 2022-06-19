@@ -29,7 +29,7 @@ namespace game::systems
                     raylib::core::Keyboard::Key key = raylib::core::Keyboard::getKeyPressed();
 
                     if (key != raylib::core::Keyboard::Key::NONE) {
-                        Logger::logger.log(Logger::Severity::Information, [&](auto &out) {
+                        Logger::logger.log(Logger::Severity::Information, [&intercepter, &key](auto &out) {
                             out << "Bind user " << static_cast<size_t>(intercepter.user) << " action "
                                 << static_cast<size_t>(intercepter.action) << " to key " << static_cast<size_t>(key);
                         });
@@ -49,7 +49,7 @@ namespace game::systems
                     raylib::core::Gamepad gamepad(user.getGamepadId());
 
                     if (gamepad.isButtonDown(btn)) {
-                        Logger::logger.log(Logger::Severity::Information, [&](auto &out) {
+                        Logger::logger.log(Logger::Severity::Information, [&intercepter, &btn](auto &out) {
                             out << "Bind user " << static_cast<size_t>(intercepter.user) << " action "
                                 << static_cast<size_t>(intercepter.action) << " to gamepad button "
                                 << static_cast<size_t>(btn);
