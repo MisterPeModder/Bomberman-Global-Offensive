@@ -6,9 +6,14 @@
 ** Punch
 */
 
+#include <cmath>
 #include "Item.hpp"
+#include "ecs/join.hpp"
+#include "game/Game.hpp"
 #include "game/components/Player.hpp"
+#include "game/components/Position.hpp"
 #include "game/components/Velocity.hpp"
+#include "raylib/core/Vector2.hpp"
 
 namespace game::components
 {
@@ -23,7 +28,18 @@ namespace game::components
         punch.duration = std::chrono::milliseconds::zero();
         punch.dropRate = 20;
         punch.onApply = [](ecs::Entity placer, ecs::SystemData data) {
-            data.getStorage<Player>()[placer.getId()].stun(placer, data, std::chrono::milliseconds(2000));
+            auto &positions = data.getStorage<Position>();
+            auto &placerPos = positions[placer.getId()];
+
+            /// Punch all nearby ennemies
+            for (auto [pos, player, entity] :
+                ecs::join(positions, data.getStorage<Player>(), data.getResource<ecs::Entities>())) {
+                if (entity.getId() == placer.getId())
+                    continue;
+
+                if (std::fabs(pos.x - placerPos.x) + std::fabs(pos.z - placerPos.z) <= 3.f)
+                    player.stun(entity, data, std::chrono::milliseconds(2000));
+            }
             return true;
         };
         return punch;
