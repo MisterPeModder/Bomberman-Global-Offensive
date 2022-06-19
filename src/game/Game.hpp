@@ -11,11 +11,11 @@
 #include <cmath>
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
+#include "game/Users.hpp"
 #include "map/Map.hpp"
 #include "raylib/core/Camera3D.hpp"
 #include "raylib/core/Vector2.hpp"
 #include "raylib/core/Vector3.hpp"
-#include "game/Users.hpp"
 
 namespace game
 {
@@ -39,7 +39,8 @@ namespace game
             /// @param pplayerCount @ref playerCount
             /// @param plivesCount @ref livesCount
             /// @param pmapSize @ref mapSize
-            Parameters(std::queue<std::string> pskinList, size_t pplayerCount = 1, size_t plivesCount = 1, raylib::core::Vector2u pmapSize = {13, 13})
+            Parameters(std::queue<std::string> pskinList, size_t pplayerCount = 1, size_t plivesCount = 1,
+                raylib::core::Vector2u pmapSize = {13, 13})
                 : playerCount(pplayerCount), livesCount(plivesCount), mapSize(pmapSize), skinList(pskinList)
             {
             }

@@ -74,7 +74,6 @@ namespace game
                 users.connectUser(gamepadId, dynamic_cast<game::MainMenuScene &>(engine->getScene()).getUnusedSkin());
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateConnectedTexts();
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkinTexts();
-
             }
         }
     };

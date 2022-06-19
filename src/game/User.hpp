@@ -29,13 +29,13 @@ namespace game
 
         // Different possible skins
         enum USER_SKINS {
-          TERRORIST_1,
-          TERRORIST_2,
-          COUNTER_TERRORIST_1,
-          COUNTER_TERRORIST_2,
-          NO_SENSE,
-          RAINBOW,
-          UNKNOWN
+            TERRORIST_1,
+            TERRORIST_2,
+            COUNTER_TERRORIST_1,
+            COUNTER_TERRORIST_2,
+            NO_SENSE,
+            RAINBOW,
+            UNKNOWN
         };
 
         /// Create a new User.
