@@ -15,13 +15,13 @@
 
 #include "util/util.hpp"
 
+#include "game/components/Animation.hpp"
+#include "game/components/Background.hpp"
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
 #include "game/components/KeybindIntercepter.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
-#include "game/components/Animation.hpp"
-#include "resources/AssetMap.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Rectangle.hpp"
 #include "game/components/Size.hpp"
@@ -29,6 +29,7 @@
 #include "game/components/Texture2D.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
+#include "resources/AssetMap.hpp"
 
 #include "game/systems/DrawFpsCounter.hpp"
 #include "game/systems/DrawSelectedWidget.hpp"
@@ -45,8 +46,8 @@
 #include "game/scenes/IScene.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
-#include "raylib/textures/Texture2D.hpp"
 #include "raylib/core/Window.hpp"
+#include "raylib/textures/Texture2D.hpp"
 
 #include "game/Engine.hpp"
 #include "game/Game.hpp"
@@ -108,9 +109,9 @@ namespace game
         }
 
         _defaultCamera3D.setPosition({4.f, 10.f, 0.f}); // Camera position
-        _defaultCamera3D.setTarget({0.f, 0.f, 0});  // Camera looking at point
-        _defaultCamera3D.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
-        _defaultCamera3D.setFovY(50.0f);            // Camera field-of-view Y
+        _defaultCamera3D.setTarget({0.f, 0.f, 0});      // Camera looking at point
+        _defaultCamera3D.setUp({0.0f, 1.0f, 0.0f});     // Camera up vector (rotation towards target)
+        _defaultCamera3D.setFovY(50.0f);                // Camera field-of-view Y
         _defaultCamera3D.setProjection(CAMERA_PERSPECTIVE);
 
         _world.addStorage<components::Textual>();
@@ -141,7 +142,7 @@ namespace game
             util::makePath("assets", "images", "background", "main-menu-background.png");
 
         _world.addEntity()
-            .with<game::components::Texture2D>(backgroundPath)
+            .with<game::components::Background>(backgroundPath)
             .with<game::components::Position>(0.f, 0.f)
             .with<game::components::Scale>(1.f)
             .with<game::components::RotationAngle>(0.f)
