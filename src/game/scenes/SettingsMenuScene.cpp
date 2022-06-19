@@ -146,7 +146,8 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
         .with<game::components::Textual>("1920x1080", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::RES_3, game::SettingsMenuScene::RES_2,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, game::SettingsMenuScene::FPS_240)
+            game::SettingsMenuScene::KEYBINDS_GAMEPAD_FIRST, game::SettingsMenuScene::FULLSCREEN,
+            game::SettingsMenuScene::FPS_240)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setResolution(
@@ -230,8 +231,9 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
         .with<game::components::Textual>("240", 15, raylib::core::Color::RED)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::FPS_240, game::SettingsMenuScene::FPS_144,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::RES_3,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT)
+            game::SettingsMenuScene::KEYBINDS_GAMEPAD_FIRST
+                + game::SettingsMenuScene::KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
+            game::SettingsMenuScene::RES_3, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 raylib::core::Window::setTargetFPS(240);
@@ -463,159 +465,6 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 #pragma endregion
 }
 
-static void loadControllerKeybindSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
-{
-    world.addEntity()
-        .with<game::components::Rectangle>()
-        .with<game::components::Position>(pos.x, pos.y)
-        .with<game::components::Size>(size.x, size.y)
-        .with<game::components::Color>(raylib::core::Color::GREEN)
-        .build();
-    world.addEntity()
-        .with<game::components::Rectangle>()
-        .with<game::components::Position>(pos.x + 1, pos.y + 1)
-        .with<game::components::Size>(size.x - 2, size.y - 2)
-        .with<game::components::Color>(raylib::core::Color::BLACK)
-        .build();
-
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 2, pos.y + 2)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsKeybinds, 40, raylib::core::Color::GREEN)
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 8)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsControllerKeybinds, 20, raylib::core::Color::GREEN)
-        .build();
-
-#pragma region User1
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 2, pos.y + 13)
-        .with<game::components::Textual>(localization::resources::rsUser1, 20, raylib::core::Color::BLUE)
-        .build();
-
-#pragma region Bomb
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 18)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindBomb, 15, raylib::core::Color::BLUE)
-        // .with<game::components::Controlable>(game::User::UserId::User1)
-        // .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
-        //     game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE)
-        // .with<game::gui::Clickable>(
-        //     [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-        //     [&](ecs::Entity btn, game::gui::Clickable::State state) {
-        //         world.getStorage<game::components::Textual>()[btn.getId()].color =
-        //             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-        //                                                             : raylib::core::Color::BLUE;
-        //     })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 10, pos.y + 18)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            15, raylib::core::Color::BLUE)
-        .build();
-#pragma endregion
-
-#pragma region Activable
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 16, pos.y + 18)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindActivableShort, 15, raylib::core::Color::BLUE)
-        // .with<game::components::Controlable>(game::User::UserId::User1)
-        // .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
-        //     game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS)
-        // .with<game::gui::Clickable>(
-        //     [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-        //     [&](ecs::Entity btn, game::gui::Clickable::State state) {
-        //         world.getStorage<game::components::Textual>()[btn.getId()].color =
-        //             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-        //                                                             : raylib::core::Color::BLUE;
-        //     })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 22, pos.y + 18)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            15, raylib::core::Color::BLUE)
-        .build();
-#pragma endregion
-
-#pragma region ActivableLeft
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 23)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindActivableLeftShort, 15, raylib::core::Color::BLUE)
-        // .with<game::components::Controlable>(game::User::UserId::User1)
-        // .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS,
-        //     game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT)
-        // .with<game::gui::Clickable>(
-        //     [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-        //     [&](ecs::Entity btn, game::gui::Clickable::State state) {
-        //         world.getStorage<game::components::Textual>()[btn.getId()].color =
-        //             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-        //                                                             : raylib::core::Color::BLUE;
-        //     })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 10, pos.y + 23)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            15, raylib::core::Color::BLUE)
-        .build();
-#pragma endregion
-
-#pragma region ActivableRight
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 16, pos.y + 23)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindActivableRightShort, 15, raylib::core::Color::BLUE)
-        // .with<game::components::Controlable>(game::User::UserId::User1)
-        // .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT,
-        //     game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::BACK)
-        // .with<game::gui::Clickable>(
-        //     [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-        //     [&](ecs::Entity btn, game::gui::Clickable::State state) {
-        //         world.getStorage<game::components::Textual>()[btn.getId()].color =
-        //             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-        //                                                             : raylib::core::Color::BLUE;
-        //     })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 22, pos.y + 23)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            15, raylib::core::Color::BLUE)
-        .build();
-#pragma endregion
-
-#pragma endregion
-}
-
 static void loadLanguageSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
 {
     world.addEntity()
@@ -689,7 +538,7 @@ static void loadSettingsMenuScene(ecs::World &world)
         .with<game::components::Textual>(localization::resources::rsBack, 30, raylib::core::Color::YELLOW)
         .with<game::components::Controlable>(game::User::UserId::User1)
         .with<game::gui::Widget>(game::SettingsMenuScene::BACK, game::gui::Widget::NullTag, game::gui::Widget::NullTag,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::FULLSCREEN, true)
+            game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_GAMEPAD_FIRST, true)
         .with<game::gui::Clickable>(
             [&world](ecs::Entity) {
                 world.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
@@ -705,7 +554,7 @@ static void loadSettingsMenuScene(ecs::World &world)
 
     loadGraphicSettings(world, raylib::core::Vector2f(34, 10), raylib::core::Vector2f(32, 40));
     loadAudioSettings(world, raylib::core::Vector2f(1, 10), raylib::core::Vector2f(32, 40));
-    loadControllerKeybindSettings(world, raylib::core::Vector2f(67, 10), raylib::core::Vector2f(32, 88));
+    // loadControllerKeybindSettings(world, raylib::core::Vector2f(67, 10), raylib::core::Vector2f(32, 88));
     loadLanguageSettings(world, raylib::core::Vector2f(1, 52), raylib::core::Vector2f(32, 46));
 
     world.addEntity()
@@ -741,6 +590,10 @@ namespace game
         loadSection({raylib::core::Vector2f(34, 52), raylib::core::Vector2f(32, 46), raylib::core::Color::GOLD,
                         localization::resources::settings::rsSettingsKeybinds},
             [this](auto &sct) { _loadKeyboardKeybinds(sct); });
+
+        loadSection({raylib::core::Vector2f(67, 10), raylib::core::Vector2f(32, 88), raylib::core::Color::GREEN,
+                        localization::resources::settings::rsSettingsKeybinds},
+            [this](auto &sct) { _loadGamepadKeybinds(sct); });
     }
 
     void SettingsMenuScene::loadSection(Section section, std::function<void(const Section &)> onLoad)
@@ -844,7 +697,7 @@ namespace game
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP);
         addAction({18, 13}, {24, 13}, GameAction::MOVE_RIGHT, localization::resources::keybinds::rsKeyBindRight,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::FPS_240,
+            KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, game::SettingsMenuScene::FPS_240,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN);
         addAction({4, 18}, {10, 18}, GameAction::MOVE_UP, localization::resources::keybinds::rsKeyBindUp,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP, game::SettingsMenuScene::LANGUAGE_FRENCH,
@@ -852,27 +705,126 @@ namespace game
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB);
         addAction({18, 18}, {24, 18}, GameAction::MOVE_DOWN, localization::resources::keybinds::rsKeyBindDown,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN, game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB);
+            KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB);
 
         addAction({4, 25}, {24, 25}, GameAction::PLACE_BOMB, localization::resources::keybinds::rsKeyBindBomb,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB, game::SettingsMenuScene::LANGUAGE_FRENCH,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP,
+            KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE, game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE);
         addAction({4, 30}, {24, 30}, GameAction::ACTIVATE_ITEM, localization::resources::keybinds::rsKeyBindActivable,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE, game::SettingsMenuScene::LANGUAGE_FRENCH,
-            game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
+            KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS);
 
         // addAction({4, 35}, {24, 35}, GameAction::PREVIOUS_ITEM,
         //     localization::resources::keybinds::rsKeyBindActivableLeft,
         //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::LANGUAGE_FRENCH,
-        //     game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
+        //     KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
         //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT);
         // addAction({4, 40}, {24, 40}, GameAction::NEXT_ITEM,
         // localization::resources::keybinds::rsKeyBindActivableRight,
         //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT, game::SettingsMenuScene::LANGUAGE_FRENCH,
-        //     game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS,
-        //     game::SettingsMenuScene::BACK);
+        //     KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::BACK);
+    }
+
+    void SettingsMenuScene::_loadGamepadProfile(const Section &sct, size_t id)
+    {
+        std::string name;
+        raylib::core::Vector2f offset(0.f, 20.f * id);
+        User::UserId userId = static_cast<User::UserId>(id);
+
+        switch (id) {
+            case 0: name = localization::resources::rsUser1; break;
+            case 1: name = localization::resources::rsUser2; break;
+            case 2: name = localization::resources::rsUser3; break;
+            default: name = localization::resources::rsUser4; break;
+        }
+
+        _world.addEntity()
+            .with<game::components::Position>(sct.pos.x + 2, sct.pos.y + 13 + offset.y)
+            .with<game::components::Textual>(name, 20, sct.color)
+            .build();
+
+        auto addAction = [&, this](raylib::core::Vector2f posName, raylib::core::Vector2f posValue, GameAction action,
+                             std::string_view actionName, gui::Widget::WidgetId widgetId,
+                             gui::Widget::WidgetId left = gui::Widget::NullTag,
+                             gui::Widget::WidgetId right = gui::Widget::NullTag,
+                             gui::Widget::WidgetId up = gui::Widget::NullTag,
+                             gui::Widget::WidgetId down = gui::Widget::NullTag) {
+            auto btn = _world.addEntity()
+                           .with<game::components::Position>(sct.pos.x + posValue.x, sct.pos.y + posValue.y + offset.y)
+                           .with<game::components::Controlable>(game::User::UserId::User1)
+                           .with<game::components::Identity>()
+                           .with<game::components::Textual>("value", 15, sct.color)
+                           .build();
+            // _actionsKeyboardBindings[static_cast<size_t>(action)] =
+            //     _world.getStorage<game::components::Identity>()[btn.getId()].id;
+
+            _world.addEntity()
+                .with<game::components::Position>(sct.pos.x + posName.x, sct.pos.y + posName.y + offset.y)
+                .with<game::components::Textual>(actionName, 15, sct.color)
+                .with<game::components::Controlable>(userId)
+                .with<game::gui::Widget>(widgetId, left, right, up, down, (action == GameAction::PLACE_BOMB && id > 0))
+                .with<game::gui::Clickable>(
+                    [=, this](ecs::Entity) {
+                        if (_world.getResource<game::resources::EngineResource>()
+                                .engine->getUsers()[userId]
+                                .isKeyboard())
+                            return;
+                        // _world.addEntity()
+                        //     .with<game::components::KeybindIntercepter>(
+                        //         game::User::UserId::User1, action, [=, this]() { _updateActionKey(action); })
+                        //     .build();
+                        Logger::logger.log(Logger::Severity::Information, "Waiting for user input");
+                    },
+                    [=, this](ecs::Entity btn, game::gui::Clickable::State state) {
+                        _world.getStorage<game::components::Textual>()[btn.getId()].color =
+                            (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
+                    })
+                .build();
+            // _updateActionKey(action);
+        };
+
+        addAction({4, 18}, {10, 18}, GameAction::PLACE_BOMB, localization::resources::keybinds::rsKeyBindBomb,
+            KEYBINDS_GAMEPAD_BOMB + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
+            (id == 0) ? RES_3 : gui::Widget::NullTag,
+            KEYBINDS_GAMEPAD_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
+            (id == 0) ? BACK : gui::Widget::NullTag,
+            KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
+        addAction({16, 18}, {22, 18}, GameAction::ACTIVATE_ITEM,
+            localization::resources::keybinds::rsKeyBindActivableShort,
+            KEYBINDS_GAMEPAD_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
+            KEYBINDS_GAMEPAD_BOMB + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id), gui::Widget::NullTag,
+            (id == 0) ? BACK : gui::Widget::NullTag,
+            KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
+
+        addAction({4, 23}, {10, 23}, GameAction::ACTIVATE_ITEM,
+            localization::resources::keybinds::rsKeyBindActivableLeftShort,
+            KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
+            (id == 0) ? RES_3 : gui::Widget::NullTag,
+            KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
+            KEYBINDS_GAMEPAD_BOMB + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
+        addAction({16, 23}, {22, 23}, GameAction::ACTIVATE_ITEM,
+            localization::resources::keybinds::rsKeyBindActivableRightShort,
+            KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
+            KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
+            gui::Widget::NullTag, KEYBINDS_GAMEPAD_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
+    }
+
+    void SettingsMenuScene::_loadGamepadKeybinds(const Section &sct)
+    {
+        auto &users = _world.getResource<game::resources::EngineResource>().engine->getUsers();
+        _world.addEntity()
+            .with<game::components::Position>(sct.pos.x + 4, sct.pos.y + 8)
+            .with<game::components::Textual>(
+                localization::resources::settings::rsSettingsControllerKeybinds, 20, sct.color)
+            .build();
+
+        for (size_t i = 0; i < users.getAvailableUsers(); i++)
+            _loadGamepadProfile(sct, i);
     }
 } // namespace game
