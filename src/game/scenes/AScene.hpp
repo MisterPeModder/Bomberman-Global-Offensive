@@ -29,6 +29,7 @@ namespace game
         ecs::World _world;
         raylib::core::Camera2D _defaultCamera2D;
         raylib::core::Camera3D _defaultCamera3D;
+        ecs::SystemTag _background2D;
         ecs::SystemTag _global2D;
         ecs::SystemTag _global3D;
         ecs::SystemTag _globalNoDraw;

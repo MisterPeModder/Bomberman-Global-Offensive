@@ -34,6 +34,7 @@
 #include "game/components/Size.hpp"
 #include "game/components/Size2D.hpp"
 #include "game/components/Textual.hpp"
+#include "game/components/Texture2D.hpp"
 #include "game/gui/components/Checkable.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
@@ -42,6 +43,7 @@
 
 #include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
+#include "game/systems/DrawTextureBackground.hpp"
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
 #include "game/systems/Rectangle.hpp"
@@ -60,14 +62,26 @@ static void loadGraphicSettings(ecs::World &world, raylib::core::Vector2f pos, r
     world.addEntity()
         .with<game::components::Rectangle>()
         .with<game::components::Position>(pos.x, pos.y)
-        .with<game::components::Size>(size.x, size.y)
+        .with<game::components::Size>(size.x, 1.f)
         .with<game::components::Color>(raylib::core::Color::RED)
         .build();
     world.addEntity()
         .with<game::components::Rectangle>()
-        .with<game::components::Position>(pos.x + 1, pos.y + 1)
-        .with<game::components::Size>(size.x - 2, size.y - 2)
-        .with<game::components::Color>(raylib::core::Color::BLACK)
+        .with<game::components::Position>(pos.x, pos.y)
+        .with<game::components::Size>(1.f, size.y)
+        .with<game::components::Color>(raylib::core::Color::RED)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(pos.x + size.x - 1, pos.y)
+        .with<game::components::Size>(1.f, size.y)
+        .with<game::components::Color>(raylib::core::Color::RED)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(pos.x, pos.y + size.y - 1)
+        .with<game::components::Size>(size.x, 1.f)
+        .with<game::components::Color>(raylib::core::Color::RED)
         .build();
 
     world.addEntity()
@@ -255,14 +269,26 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
     world.addEntity()
         .with<game::components::Rectangle>()
         .with<game::components::Position>(pos.x, pos.y)
-        .with<game::components::Size>(size.x, size.y)
+        .with<game::components::Size>(size.x, 1.f)
         .with<game::components::Color>(raylib::core::Color::BLUE)
         .build();
     world.addEntity()
         .with<game::components::Rectangle>()
-        .with<game::components::Position>(pos.x + 1, pos.y + 1)
-        .with<game::components::Size>(size.x - 2, size.y - 2)
-        .with<game::components::Color>(raylib::core::Color::BLACK)
+        .with<game::components::Position>(pos.x, pos.y)
+        .with<game::components::Size>(1.f, size.y)
+        .with<game::components::Color>(raylib::core::Color::BLUE)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(pos.x + size.x - 1, pos.y)
+        .with<game::components::Size>(1.f, size.y)
+        .with<game::components::Color>(raylib::core::Color::BLUE)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(pos.x, pos.y + size.y - 1)
+        .with<game::components::Size>(size.x, 1.f)
+        .with<game::components::Color>(raylib::core::Color::BLUE)
         .build();
 
     world.addEntity()
@@ -475,14 +501,26 @@ static void loadLanguageSettings(ecs::World &world, raylib::core::Vector2f pos, 
     world.addEntity()
         .with<game::components::Rectangle>()
         .with<game::components::Position>(pos.x, pos.y)
-        .with<game::components::Size>(size.x, size.y)
+        .with<game::components::Size>(size.x, 1.f)
         .with<game::components::Color>(raylib::core::Color::PURPLE)
         .build();
     world.addEntity()
         .with<game::components::Rectangle>()
-        .with<game::components::Position>(pos.x + 1, pos.y + 1)
-        .with<game::components::Size>(size.x - 2, size.y - 2)
-        .with<game::components::Color>(raylib::core::Color::BLACK)
+        .with<game::components::Position>(pos.x, pos.y)
+        .with<game::components::Size>(1.f, size.y)
+        .with<game::components::Color>(raylib::core::Color::PURPLE)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(pos.x + size.x - 1, pos.y)
+        .with<game::components::Size>(1.f, size.y)
+        .with<game::components::Color>(raylib::core::Color::PURPLE)
+        .build();
+    world.addEntity()
+        .with<game::components::Rectangle>()
+        .with<game::components::Position>(pos.x, pos.y + size.y - 1)
+        .with<game::components::Size>(size.x, 1.f)
+        .with<game::components::Color>(raylib::core::Color::PURPLE)
         .build();
 
     world.addEntity()
@@ -592,17 +630,30 @@ namespace game
 
     void SettingsMenuScene::setupWorld()
     {
+        static const std::filesystem::path backgroundPath =
+            util::makePath("assets", "images", "background", "settings-background.png");
+
+        _world.addEntity()
+            .with<game::components::Texture2D>(backgroundPath)
+            .with<game::components::Position>(0.f, 0.f)
+            .with<game::components::Scale>(1.5f)
+            .with<game::components::RotationAngle>(0.f)
+            .with<game::components::Color>(255, 255, 255, 255)
+            .build();
+
         _world.addSystem<game::systems::DrawRectangle>();
         _world.addSystem<game::systems::InputManager>();
         _world.addSystem<game::systems::DrawText>();
         _world.addSystem<game::systems::DrawSelectedWidget>();
         _world.addSystem<game::systems::KeybindIntercept>();
         _world.addStorage<game::components::KeybindIntercepter>();
+        _world.addSystem<game::systems::DrawTextureBackground>();
 
         _globalNoDraw.add<game::systems::InputManager, game::systems::KeybindIntercept>();
         _global2D.add<game::systems::DrawRectangle>();
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::DrawSelectedWidget>();
+        _background2D.add<game::systems::DrawTextureBackground>();
 
         loadSettingsMenuScene(_world);
         loadSection({raylib::core::Vector2f(34, 52), raylib::core::Vector2f(32, 46), raylib::core::Color::GOLD,
@@ -619,14 +670,26 @@ namespace game
         _world.addEntity()
             .with<game::components::Rectangle>()
             .with<game::components::Position>(section.pos.x, section.pos.y)
-            .with<game::components::Size>(section.size.x, section.size.y)
+            .with<game::components::Size>(section.size.x, 1.f)
             .with<game::components::Color>(section.color)
             .build();
         _world.addEntity()
             .with<game::components::Rectangle>()
-            .with<game::components::Position>(section.pos.x + 1, section.pos.y + 1)
-            .with<game::components::Size>(section.size.x - 2, section.size.y - 2)
-            .with<game::components::Color>(raylib::core::Color::BLACK)
+            .with<game::components::Position>(section.pos.x, section.pos.y)
+            .with<game::components::Size>(1.f, section.size.y)
+            .with<game::components::Color>(section.color)
+            .build();
+        _world.addEntity()
+            .with<game::components::Rectangle>()
+            .with<game::components::Position>(section.pos.x + section.size.x - 1, section.pos.y)
+            .with<game::components::Size>(1.f, section.size.y)
+            .with<game::components::Color>(section.color)
+            .build();
+        _world.addEntity()
+            .with<game::components::Rectangle>()
+            .with<game::components::Position>(section.pos.x, section.pos.y + section.size.y - 1)
+            .with<game::components::Size>(section.size.x, 1.f)
+            .with<game::components::Color>(section.color)
             .build();
 
         _world.addEntity()
