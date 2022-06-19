@@ -67,6 +67,8 @@ static void loadSplashScene(ecs::World &world)
             game::gui::Widget::NullTag, true)
         .with<game::gui::Clickable>([&world](ecs::Entity) {
             world.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
+            world.getResource<game::resources::EngineResource>().engine->setCurrentMusic(
+                game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
             Logger::logger.log(Logger::Severity::Debug, "Skip splash screen");
             raylib::core::Sound::stopAllMulti();
         })

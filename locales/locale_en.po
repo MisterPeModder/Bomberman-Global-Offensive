@@ -70,7 +70,25 @@ msgstr ""
 msgid "Connected"
 msgstr ""
 
-msgid "FPS"
+msgid "Terrorist 1"
+msgstr ""
+
+msgid "Terrorist 2"
+msgstr ""
+
+msgid "Counter-terrorist 1"
+msgstr ""
+
+msgid "Counter-terrorist 2"
+msgstr ""
+
+msgid "No sense"
+msgstr ""
+
+msgid "Rainbow"
+msgstr ""
+
+msgid "Unknown skin"
 msgstr ""
 
 msgid "Colorblind Filter"
@@ -223,5 +241,5 @@ msgstr ""
 msgid "Kick Shoes"
 msgstr ""
 
-msgid "Land Mine"
+msgid "FPS"
 msgstr ""

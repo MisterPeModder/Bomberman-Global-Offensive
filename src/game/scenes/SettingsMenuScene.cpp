@@ -21,6 +21,7 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/core/scoped.hpp"
 
+#include "game/components/Background.hpp"
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
 #include "game/components/KeyboardInput.hpp"
@@ -34,7 +35,6 @@
 #include "game/components/Size.hpp"
 #include "game/components/Size2D.hpp"
 #include "game/components/Textual.hpp"
-#include "game/components/Texture2D.hpp"
 #include "game/gui/components/Checkable.hpp"
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
@@ -351,7 +351,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
                     world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(0.f);
                     Logger::logger.log(Logger::Severity::Debug, "Volume set to 0%");
                 } else {
-                    raylib::core::Audio::setMasterVolume(100.f);
+                    raylib::core::Audio::setMasterVolume(1.f);
                     world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(100.f);
                     Logger::logger.log(Logger::Severity::Debug, "Volume set to 100%");
                 }
@@ -670,7 +670,7 @@ namespace game
             util::makePath("assets", "images", "background", "settings-background.png");
 
         _world.addEntity()
-            .with<game::components::Texture2D>(backgroundPath)
+            .with<game::components::Background>(backgroundPath)
             .with<game::components::Position>(0.f, 0.f)
             .with<game::components::Scale>(1.5f)
             .with<game::components::RotationAngle>(0.f)

@@ -116,7 +116,7 @@ namespace localization
             constexpr ResourceString rsSpeed("Speed");
             constexpr ResourceString rsPower("Power");
             constexpr ResourceString rsWallPass("Wall pass");
-            constexpr ResourceString rsLandMine("Land Mine");
+            constexpr ResourceString rsLandMine("Land mines");
             constexpr ResourceString rsStunGrenade("Stun grenades");
             constexpr ResourceString rsSmokeGrenade("Smoke grenades");
             constexpr ResourceString rsPunch("Punch");
@@ -127,6 +127,17 @@ namespace localization
         } // namespace hud
 
     } // namespace resources
+        namespace textures
+        {
+            constexpr ResourceString rsTerroristOne("Terrorist 1");
+            constexpr ResourceString rsTerroristTwo("Terrorist 2");
+            constexpr ResourceString rsCounterTerroristOne("Counter-terrorist 1");
+            constexpr ResourceString rsCounterTerroristTwo("Counter-terrorist 2");
+            constexpr ResourceString rsNoSense("No sense");
+            constexpr ResourceString rsRainbow("Rainbow");
+            constexpr ResourceString rsUnknown("Unknown skin");
+        } // namespace textures
+    }     // namespace resources
 } // namespace localization
 
 #endif /* !LOCALIZATION_RESOURCES_HPP_ */

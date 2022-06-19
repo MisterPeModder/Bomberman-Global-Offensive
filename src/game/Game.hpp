@@ -11,6 +11,7 @@
 #include <cmath>
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
+#include "game/Users.hpp"
 #include "map/Map.hpp"
 #include "raylib/core/Camera2D.hpp"
 #include "raylib/core/Camera3D.hpp"
@@ -30,14 +31,18 @@ namespace game
             size_t livesCount;
             /// Size of the map
             raylib::core::Vector2u mapSize;
+            /// Players' skins
+            std::queue<std::string> skinList;
 
             /// Construct a new game Parameters object
             ///
+            /// @param pskinList @ref skinList
             /// @param pplayerCount @ref playerCount
             /// @param plivesCount @ref livesCount
             /// @param pmapSize @ref mapSize
-            Parameters(size_t pplayerCount = 1, size_t plivesCount = 1, raylib::core::Vector2u pmapSize = {13, 13})
-                : playerCount(pplayerCount), livesCount(plivesCount), mapSize(pmapSize)
+            Parameters(std::queue<std::string> pskinList, size_t pplayerCount = 1, size_t plivesCount = 1,
+                raylib::core::Vector2u pmapSize = {13, 13})
+                : playerCount(pplayerCount), livesCount(plivesCount), mapSize(pmapSize), skinList(pskinList)
             {
             }
         };
@@ -45,7 +50,7 @@ namespace game
         /// Construct a new Game.
         ///
         /// @param params parameters if the game.
-        Game(ecs::World &world, Parameters params = Parameters());
+        Game(ecs::World &world, Parameters params);
 
         /// Destroy the game.
         ~Game() = default;

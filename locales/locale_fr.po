@@ -55,18 +55,6 @@ msgstr "Jouer"
 msgid "Quit"
 msgstr "Quitter"
 
-<<<<<<< HEAD
-=======
-msgid "Speed"
-msgstr "Vitesse"
-
-msgid "Power Bomb"
-msgstr "Puissance Bombe"
-
-msgid "User"
-msgstr "Utilisateur"
-
->>>>>>> e1d66e352197f57ec0044e82c5d48f1295f92add
 msgid "(Controller)"
 msgstr "(Manette)"
 
@@ -81,6 +69,27 @@ msgstr "Non connecté"
 
 msgid "Connected"
 msgstr "Connecté"
+
+msgid "Terrorist 1"
+msgstr "Terroriste 1"
+
+msgid "Terrorist 2"
+msgstr "Terroriste 2"
+
+msgid "Counter-terrorist 1"
+msgstr "Anti-terroriste 1"
+
+msgid "Counter-terrorist 2"
+msgstr "Anti-terroriste 2"
+
+msgid "No sense"
+msgstr "Pas de sens"
+
+msgid "Rainbow"
+msgstr "Arc-en-ciel"
+
+msgid "Unknown skin"
+msgstr "Texture inconnue"
 
 msgid "FPS"
 msgstr "IPS (FPS)"
@@ -234,6 +243,3 @@ msgstr "Coup de poing"
 
 msgid "Kick Shoes"
 msgstr "Pousse bombe"
-
-msgid "Land Mine"
-msgstr ""

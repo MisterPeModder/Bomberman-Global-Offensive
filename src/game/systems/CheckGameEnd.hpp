@@ -21,8 +21,11 @@ namespace game::systems
         /// Return to main menu when only one player left
         void run(ecs::SystemData data) override final
         {
-            if (data.getStorage<game::components::Player>().size() <= 1)
+            if (data.getStorage<game::components::Player>().size() <= 1) {
                 data.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
+                data.getResource<game::resources::EngineResource>().engine->setCurrentMusic(
+                    game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
+            }
         }
     };
 } // namespace game::systems
