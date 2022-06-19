@@ -14,6 +14,7 @@ set(SRC
     ${SRCROOT}/ItemIdentifier.hpp
     ${SRCROOT}/KickShoes.cpp
     ${SRCROOT}/LandMine.cpp
+    ${SRCROOT}/NoClip.cpp
     ${SRCROOT}/SmokeGrenade.cpp
     ${SRCROOT}/SpeedShoes.cpp
     ${SRCROOT}/StunGrenade.cpp

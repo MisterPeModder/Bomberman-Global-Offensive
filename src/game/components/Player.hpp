@@ -37,6 +37,7 @@ namespace game::components
         };
 
         struct Stats {
+            enum class ClipState { Default, NoClip, WaitNoCollision };
             /// Default speed of the player (in cells per seconds).
             static constexpr float DEFAULT_SPEED = 4.f;
             /// Current player speed.
@@ -49,8 +50,14 @@ namespace game::components
             bool inverted;
             /// If on slowness effect.
             bool slowness;
+            /// Player NoClip power up related states
+            ClipState clipState;
 
-            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false), slowness(false) {}
+            Stats()
+                : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false), slowness(false),
+                  clipState(ClipState::Default)
+            {
+            }
         };
 
         /// Occurence of each item in a player inventory

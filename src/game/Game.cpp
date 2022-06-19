@@ -236,12 +236,13 @@ namespace game
         _world.addSystem<systems::MoveSmoke>();
         _world.addSystem<systems::DrawSmoke>();
         _world.addSystem<systems::PlaySoundReferences>();
+        _world.addSystem<systems::DisableNoClip>();
         _world.addSystem<systems::CheckGameEnd>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
-            systems::PlaySoundReferences>();
+            systems::PlaySoundReferences, systems::DisableNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 

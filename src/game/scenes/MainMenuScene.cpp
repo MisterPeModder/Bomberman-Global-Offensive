@@ -135,6 +135,7 @@ namespace game
             })
             .build();
 
+#ifndef __EMSCRIPTEN__
         /// Quit
         _world.addEntity()
             .with<components::Position>(2, 90)
@@ -144,6 +145,7 @@ namespace game
                 MainMenuScene::SETTINGS, gui::Widget::NullTag)
             .with<gui::Clickable>([](ecs::Entity) { raylib::core::Window::setShouldClose(); })
             .build();
+#endif
 
         /// Logo
         _world.addEntity()

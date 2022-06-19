@@ -9,5 +9,5 @@
 
 namespace bmjs
 {
-    JsException::JsException(char const *message) : std::runtime_error(message) {}
+    JsException::JsException(std::string_view message) : std::runtime_error(message.data()) {}
 } // namespace bmjs

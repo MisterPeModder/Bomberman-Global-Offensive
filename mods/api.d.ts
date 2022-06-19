@@ -53,6 +53,13 @@ interface Game {
      * @param mod The mod to register.
      */
     addMod(mod: ModDefinition): void
+
+    /**
+     * Changes the currenly active colorblind filter.
+     * 
+     * @param filter The filter to set.
+     */
+    setColorblindFilter(filter?: 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia' | number): void;
 }
 
 /** Game global variable. */
