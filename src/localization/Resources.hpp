@@ -60,7 +60,7 @@ namespace localization
                 constexpr ResourceString rsBumperRight("BUMPER-RIGHT");
                 constexpr ResourceString rsTriggerLeft("TRIGGER-LEFT");
                 constexpr ResourceString rsTriggerRight("TRIGGER-RIGHT");
-                
+
                 constexpr ResourceString rsMiddle("MIDDLE");
                 constexpr ResourceString rsMiddleLeft("MIDDLE-LEFT");
                 constexpr ResourceString rsMiddleRight("MIDDLE-RIGHT");
@@ -68,7 +68,7 @@ namespace localization
                 constexpr ResourceString rsThumbLeft("THUMB-LEFT");
                 constexpr ResourceString rsThumbRight("THUMB-RIGHT");
             } // namespace controller
-        } // namespace keybinds
+        }     // namespace keybinds
 
         namespace languages
         {
