@@ -1,6 +1,10 @@
 var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
 [
     [ "items", "dir_e078b991db8fce4c9dd088dba37f5be0.html", "dir_e078b991db8fce4c9dd088dba37f5be0" ],
+    [ "AiControlable.cpp", "_ai_controlable_8cpp.html", null ],
+    [ "AiControlable.hpp", "_ai_controlable_8hpp.html", [
+      [ "AiControlable", "structgame_1_1components_1_1_ai_controlable.html", "structgame_1_1components_1_1_ai_controlable" ]
+    ] ],
     [ "Animation.hpp", "game_2components_2_animation_8hpp.html", [
       [ "Animation", "structgame_1_1components_1_1_animation.html", "structgame_1_1components_1_1_animation" ]
     ] ],
@@ -34,6 +38,9 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Explosion.cpp", "components_2_explosion_8cpp.html", null ],
     [ "Explosion.hpp", "components_2_explosion_8hpp.html", [
       [ "Explosion", "structgame_1_1components_1_1_explosion.html", "structgame_1_1components_1_1_explosion" ]
+    ] ],
+    [ "GameEnded.hpp", "_game_ended_8hpp.html", [
+      [ "GameEnded", "structgame_1_1components_1_1_game_ended.html", "structgame_1_1components_1_1_game_ended" ]
     ] ],
     [ "History.cpp", "_history_8cpp.html", null ],
     [ "History.hpp", "_history_8hpp.html", [

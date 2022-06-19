@@ -1,5 +1,6 @@
 var namespacegame_1_1components =
 [
+    [ "AiControlable", "structgame_1_1components_1_1_ai_controlable.html", "structgame_1_1components_1_1_ai_controlable" ],
     [ "Animation", "structgame_1_1components_1_1_animation.html", "structgame_1_1components_1_1_animation" ],
     [ "Background", "structgame_1_1components_1_1_background.html", "structgame_1_1components_1_1_background" ],
     [ "Bomb", "structgame_1_1components_1_1_bomb.html", "structgame_1_1components_1_1_bomb" ],
@@ -11,6 +12,7 @@ var namespacegame_1_1components =
     [ "CubeColor", "structgame_1_1components_1_1_cube_color.html", "structgame_1_1components_1_1_cube_color" ],
     [ "Destructible", "structgame_1_1components_1_1_destructible.html", "structgame_1_1components_1_1_destructible" ],
     [ "Explosion", "structgame_1_1components_1_1_explosion.html", "structgame_1_1components_1_1_explosion" ],
+    [ "GameEnded", "structgame_1_1components_1_1_game_ended.html", "structgame_1_1components_1_1_game_ended" ],
     [ "History", "structgame_1_1components_1_1_history.html", "structgame_1_1components_1_1_history" ],
     [ "Identity", "structgame_1_1components_1_1_identity.html", "structgame_1_1components_1_1_identity" ],
     [ "Image", "structgame_1_1components_1_1_image.html", "structgame_1_1components_1_1_image" ],

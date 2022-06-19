@@ -94,6 +94,8 @@ $(document).ready(function(){initNavTree('namespacegame_1_1systems.html',''); in
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1systems_1_1_ai_update.html">AiUpdate</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1systems_1_1_change_cube.html">ChangeCube</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structgame_1_1systems_1_1_change_cube.html" title="ChangeCube system.">ChangeCube</a> system.  <a href="structgame_1_1systems_1_1_change_cube.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,6 +183,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae0e721625934cf50d06de623ffbaf9ee"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; Vector2f, Vector2f &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame_1_1systems.html#ae0e721625934cf50d06de623ffbaf9ee">nextGoal</a> (Vector3f &amp;pos, <a class="el" href="structgame_1_1components_1_1_ai_controlable.html">game::components::AiControlable</a> &amp;ai)</td></tr>
+<tr class="separator:ae0e721625934cf50d06de623ffbaf9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5487d5d755399240a6778f5cda9a4e9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structgame_1_1systems_1_1_rendered_text.html">RenderedText</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame_1_1systems.html#ae5487d5d755399240a6778f5cda9a4e9">renderText</a> (<a class="el" href="classgame_1_1components_1_1_keyboard_input.html">game::components::KeyboardInput</a> const &amp;field)</td></tr>
 <tr class="separator:ae5487d5d755399240a6778f5cda9a4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f74f26eebbcf950b5d73837e6d140b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame_1_1systems.html#a2f74f26eebbcf950b5d73837e6d140b4">renderSelection</a> (Vector2f pos, <a class="el" href="classgame_1_1components_1_1_keyboard_input.html">game::components::KeyboardInput</a> const &amp;field, <a class="el" href="structgame_1_1gui_1_1_console.html">game::gui::Console</a> const &amp;console, <a class="el" href="structgame_1_1systems_1_1_rendered_text.html">RenderedText</a> const &amp;rendered)</td></tr>
@@ -206,6 +210,60 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ae0e721625934cf50d06de623ffbaf9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e721625934cf50d06de623ffbaf9ee">&#9670;&nbsp;</a></span>nextGoal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt;Vector2f, Vector2f&gt; &gt; game::systems::nextGoal </td>
+          <td>(</td>
+          <td class="paramtype">Vector3f &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structgame_1_1components_1_1_ai_controlable.html">game::components::AiControlable</a> &amp;&#160;</td>
+          <td class="paramname"><em>ai</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_ai_update_8cpp_source.html#l00028">28</a> of file <a class="el" href="_ai_update_8cpp_source.html">AiUpdate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">Vector2f</a> goal(ai.<a class="code" href="structgame_1_1components_1_1_ai_controlable.html#ae3768f07f29a07f241989f6571d9f6e2">path</a>[0]);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">Vector2f</a> dist(<a class="codeRef" href="http://en.cppreference.com/w/cpp/numeric/math/fabs.html">std::fabs</a>(pos.x - goal.x), <a class="codeRef" href="http://en.cppreference.com/w/cpp/numeric/math/fabs.html">std::fabs</a>(pos.z - goal.y));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">// Pop the goal node if reached</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">while</span> (dist.x &lt; 0.2 &amp;&amp; dist.y &lt; 0.2) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            ai.<a class="code" href="structgame_1_1components_1_1_ai_controlable.html#ae3768f07f29a07f241989f6571d9f6e2">path</a>.pop_front();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            pos.x = goal.x;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            pos.z = goal.y;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (ai.<a class="code" href="structgame_1_1components_1_1_ai_controlable.html#ae3768f07f29a07f241989f6571d9f6e2">path</a>.empty())</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            goal = ai.<a class="code" href="structgame_1_1components_1_1_ai_controlable.html#ae3768f07f29a07f241989f6571d9f6e2">path</a>[0];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            dist = {<a class="codeRef" href="http://en.cppreference.com/w/cpp/numeric/math/fabs.html">std::fabs</a>(pos.x - goal.x), <a class="codeRef" href="http://en.cppreference.com/w/cpp/numeric/math/fabs.html">std::fabs</a>(pos.z - goal.y)};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a>(goal, dist));</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a3001ce62d4150fe2ad97a7ba1d2afcdf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3001ce62d4150fe2ad97a7ba1d2afcdf">&#9670;&nbsp;</a></span>outputColor()</h2>
 
@@ -362,14 +420,18 @@ Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdoc">Non critical error / Unexpected behavior.</div></div>
 <div class="ttc" id="abasic_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a></div></div>
+<div class="ttc" id="afabs_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/numeric/math/fabs.html">std::fabs</a></div><div class="ttdeci">T fabs(T... args)</div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdoc">Random informations.</div></div>
 <div class="ttc" id="avector_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector&lt; std::size_t &gt;</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_ai_controlable_html_ae3768f07f29a07f241989f6571d9f6e2"><div class="ttname"><a href="structgame_1_1components_1_1_ai_controlable.html#ae3768f07f29a07f241989f6571d9f6e2">game::components::AiControlable::path</a></div><div class="ttdeci">std::deque&lt; raylib::core::Vector2f &gt; path</div><div class="ttdef"><b>Definition:</b> <a href="_ai_controlable_8hpp_source.html#l00023">AiControlable.hpp:23</a></div></div>
 <div class="ttc" id="aclassraylib_1_1shapes_1_1_rectangle_html_a2a80a196f86ade3d5a4ced84bf9dcb61"><div class="ttname"><a href="classraylib_1_1shapes_1_1_rectangle.html#a2a80a196f86ade3d5a4ced84bf9dcb61">raylib::shapes::Rectangle::draw</a></div><div class="ttdeci">void draw() const override</div><div class="ttdoc">void Rectangle::draw() { DrawRectangleRec(this-&gt;C_rectangle(), _color); }</div><div class="ttdef"><b>Definition:</b> <a href="_rectangle_8cpp_source.html#l00042">Rectangle.cpp:42</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_a0f049c8c9514f788064a1c45e9058773"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a0f049c8c9514f788064a1c45e9058773">raylib::core::Color::GRAY</a></div><div class="ttdeci">static const Color GRAY</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00153">Color.hpp:153</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_aa0b1eeefd9bf8f23c1c5dbdc01728041"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#aa0b1eeefd9bf8f23c1c5dbdc01728041">raylib::core::Color::YELLOW</a></div><div class="ttdeci">static const Color YELLOW</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00155">Color.hpp:155</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_a1a40286a32b9936527d21bd57671e236"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a1a40286a32b9936527d21bd57671e236">raylib::core::Color::SKY_BLUE</a></div><div class="ttdeci">static const Color SKY_BLUE</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00164">Color.hpp:164</a></div></div>
+<div class="ttc" id="aoptional_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a></div></div>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
+<div class="ttc" id="amake_pair_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/pair/make_pair.html">std::make_pair</a></div><div class="ttdeci">T make_pair(T... args)</div></div>
 <div class="ttc" id="anamespaceraylib_1_1core_html_a6b1e1d0f220edd69347fabba22bf7075"><div class="ttname"><a href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">raylib::core::Vector2f</a></div><div class="ttdeci">Vector2&lt; float &gt; Vector2f</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00143">Vector2.hpp:143</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_ad88a895e4beaec89b19ad46221d0c35b"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#ad88a895e4beaec89b19ad46221d0c35b">raylib::core::Color::RED</a></div><div class="ttdeci">static const Color RED</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00159">Color.hpp:159</a></div></div>
 <!-- start footer part -->

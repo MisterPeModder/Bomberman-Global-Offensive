@@ -2,10 +2,11 @@
 <area shape="rect" id="node1" href="$classecs_1_1_resource.html" title=" " alt="" coords="5,183,117,209"/>
 <area shape="rect" id="node2" href="$classecs_1_1_entities.html" title="The entities world resource." alt="" coords="236,5,337,32"/>
 <area shape="rect" id="node3" href="$classecs_1_1_timer.html" title="Simple timer resource." alt="" coords="241,56,332,83"/>
-<area shape="rect" id="node4" href="$classgame_1_1resources_1_1_asset_map.html" title="Map used to store assets (fonts, textures...) with strings as keys." alt="" coords="167,107,407,133"/>
-<area shape="rect" id="node5" href="$structgame_1_1resources_1_1_engine_resource.html" title="Game engine resource." alt="" coords="165,157,408,184"/>
-<area shape="rect" id="node6" href="$classgame_1_1resources_1_1_game_clock.html" title="Game related clock." alt="" coords="180,208,393,235"/>
-<area shape="rect" id="node7" href="$structgame_1_1resources_1_1_map.html" title="Game map resource." alt="" coords="203,259,370,285"/>
-<area shape="rect" id="node8" href="$structgame_1_1resources_1_1_random_device.html" title="Game map resource." alt="" coords="168,309,405,336"/>
-<area shape="rect" id="node9" href="$classgame_1_1_users.html" title="Resource allowing to get users actions using the keybinds." alt="" coords="235,360,339,387"/>
+<area shape="rect" id="node5" href="$classgame_1_1resources_1_1_asset_map.html" title="Map used to store assets (fonts, textures...) with strings as keys." alt="" coords="167,107,407,133"/>
+<area shape="rect" id="node6" href="$structgame_1_1resources_1_1_engine_resource.html" title="Game engine resource." alt="" coords="165,157,408,184"/>
+<area shape="rect" id="node7" href="$classgame_1_1resources_1_1_game_clock.html" title="Game related clock." alt="" coords="180,208,393,235"/>
+<area shape="rect" id="node8" href="$structgame_1_1resources_1_1_map.html" title="Game map resource." alt="" coords="203,259,370,285"/>
+<area shape="rect" id="node9" href="$structgame_1_1resources_1_1_random_device.html" title="Game map resource." alt="" coords="168,309,405,336"/>
+<area shape="rect" id="node10" href="$classgame_1_1_users.html" title="Resource allowing to get users actions using the keybinds." alt="" coords="235,360,339,387"/>
+<area shape="rect" id="node4" href="$classgame_1_1_game_timer.html" title="Simple timer resource." alt="" coords="456,56,600,83"/>
 </map>

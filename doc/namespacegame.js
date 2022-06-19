@@ -11,6 +11,7 @@ var namespacegame =
     [ "Engine", "classgame_1_1_engine.html", "classgame_1_1_engine" ],
     [ "Game", "classgame_1_1_game.html", "classgame_1_1_game" ],
     [ "GameScene", "classgame_1_1_game_scene.html", "classgame_1_1_game_scene" ],
+    [ "GameTimer", "classgame_1_1_game_timer.html", null ],
     [ "IScene", "classgame_1_1_i_scene.html", "classgame_1_1_i_scene" ],
     [ "MainMenuScene", "classgame_1_1_main_menu_scene.html", "classgame_1_1_main_menu_scene" ],
     [ "SettingsMenuScene", "classgame_1_1_settings_menu_scene.html", "classgame_1_1_settings_menu_scene" ],

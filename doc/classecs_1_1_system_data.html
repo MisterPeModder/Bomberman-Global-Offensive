@@ -85,7 +85,6 @@ $(document).ready(function(){initNavTree('classecs_1_1_system_data.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classecs_1_1_system_data-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -123,9 +122,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd205d2821620f37363800bfac42da88"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceecs.html#ab50f8e89b62b0793f0e907d669876a0d">getStorageType</a>&lt; C &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_system_data.html#abd205d2821620f37363800bfac42da88">getStorage</a> () const</td></tr>
 <tr class="memdesc:abd205d2821620f37363800bfac42da88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetches a component storage from the attached world.  <a href="classecs_1_1_system_data.html#abd205d2821620f37363800bfac42da88">More...</a><br /></td></tr>
 <tr class="separator:abd205d2821620f37363800bfac42da88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
 <tr class="memitem:aa1f8da00a6e889760d3706bedd18dd82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_system_data.html#aa1f8da00a6e889760d3706bedd18dd82">SystemData</a> (<a class="el" href="classecs_1_1_world.html">World</a> &amp;world)</td></tr>
 <tr class="separator:aa1f8da00a6e889760d3706bedd18dd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -160,13 +156,13 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_system_data_8hpp_source.html#l00048">48</a> of file <a class="el" href="_system_data_8hpp_source.html">SystemData.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;: <a class="code" href="classecs_1_1_system_data.html#a41574fd12f99abd9d29b3ad4c85d3e12">_world</a>(world){};</div>
+<p class="definition">Definition at line <a class="el" href="_system_data_8hpp_source.html#l00045">45</a> of file <a class="el" href="_system_data_8hpp_source.html">SystemData.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;: <a class="code" href="classecs_1_1_system_data.html#a41574fd12f99abd9d29b3ad4c85d3e12">_world</a>(world){};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -284,7 +280,7 @@ template&lt;std::derived_from&lt; Component &gt; C&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_system_data_8hpp_source.html#l00046">46</a> of file <a class="el" href="_system_data_8hpp_source.html">SystemData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_system_data_8hpp_source.html#l00045">45</a> of file <a class="el" href="_system_data_8hpp_source.html">SystemData.hpp</a>.</p>
 
 </div>
 </div>
@@ -308,7 +304,7 @@ template&lt;std::derived_from&lt; Component &gt; C&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_system_data_8hpp_source.html#l00048">48</a> of file <a class="el" href="_system_data_8hpp_source.html">SystemData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_system_data_8hpp_source.html#l00051">51</a> of file <a class="el" href="_system_data_8hpp_source.html">SystemData.hpp</a>.</p>
 
 </div>
 </div>
@@ -319,7 +315,7 @@ template&lt;std::derived_from&lt; Component &gt; C&gt; </div>
 </div><!-- doc-content -->
 <div class="ttc" id="aclassecs_1_1_world_html_a694d9d1a60a30cdc6835a6edae65f42a"><div class="ttname"><a href="classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a">ecs::World::getResource</a></div><div class="ttdeci">const R &amp; getResource() const</div><div class="ttdoc">Fetches a Resource from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00182">World.hpp:182</a></div></div>
 <div class="ttc" id="aclassecs_1_1_world_html_aab1ea951ba59262e6808ace66f709e40"><div class="ttname"><a href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">ecs::World::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Fetches a component storage from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00214">World.hpp:214</a></div></div>
-<div class="ttc" id="aclassecs_1_1_system_data_html_a41574fd12f99abd9d29b3ad4c85d3e12"><div class="ttname"><a href="classecs_1_1_system_data.html#a41574fd12f99abd9d29b3ad4c85d3e12">ecs::SystemData::_world</a></div><div class="ttdeci">World &amp; _world</div><div class="ttdef"><b>Definition:</b> <a href="_system_data_8hpp_source.html#l00046">SystemData.hpp:46</a></div></div>
+<div class="ttc" id="aclassecs_1_1_system_data_html_a41574fd12f99abd9d29b3ad4c85d3e12"><div class="ttname"><a href="classecs_1_1_system_data.html#a41574fd12f99abd9d29b3ad4c85d3e12">ecs::SystemData::_world</a></div><div class="ttdeci">World &amp; _world</div><div class="ttdef"><b>Definition:</b> <a href="_system_data_8hpp_source.html#l00045">SystemData.hpp:45</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

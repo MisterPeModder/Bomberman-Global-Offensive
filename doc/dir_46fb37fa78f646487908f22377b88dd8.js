@@ -1,5 +1,9 @@
 var dir_46fb37fa78f646487908f22377b88dd8 =
 [
+    [ "AiUpdate.cpp", "_ai_update_8cpp.html", "_ai_update_8cpp" ],
+    [ "AiUpdate.hpp", "_ai_update_8hpp.html", [
+      [ "AiUpdate", "structgame_1_1systems_1_1_ai_update.html", "structgame_1_1systems_1_1_ai_update" ]
+    ] ],
     [ "Animation.hpp", "game_2systems_2_animation_8hpp.html", [
       [ "RunAnimation", "structgame_1_1systems_1_1_run_animation.html", "structgame_1_1systems_1_1_run_animation" ]
     ] ],

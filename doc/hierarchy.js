@@ -30,6 +30,7 @@ var hierarchy =
       [ "game::components::CubeColor", "structgame_1_1components_1_1_cube_color.html", null ]
     ] ],
     [ "ecs::Component", "classecs_1_1_component.html", [
+      [ "game::components::AiControlable", "structgame_1_1components_1_1_ai_controlable.html", null ],
       [ "game::components::Animation", "structgame_1_1components_1_1_animation.html", null ],
       [ "game::components::Background", "structgame_1_1components_1_1_background.html", null ],
       [ "game::components::Bomb", "structgame_1_1components_1_1_bomb.html", null ],
@@ -41,6 +42,7 @@ var hierarchy =
       [ "game::components::CubeColor", "structgame_1_1components_1_1_cube_color.html", null ],
       [ "game::components::Destructible", "structgame_1_1components_1_1_destructible.html", null ],
       [ "game::components::Explosion", "structgame_1_1components_1_1_explosion.html", null ],
+      [ "game::components::GameEnded", "structgame_1_1components_1_1_game_ended.html", null ],
       [ "game::components::History", "structgame_1_1components_1_1_history.html", null ],
       [ "game::components::Identity", "structgame_1_1components_1_1_identity.html", null ],
       [ "game::components::Image", "structgame_1_1components_1_1_image.html", null ],
@@ -144,7 +146,9 @@ var hierarchy =
     [ "raylib::textures::RenderTexture2D", "classraylib_1_1textures_1_1_render_texture2_d.html", null ],
     [ "ecs::Resource", "classecs_1_1_resource.html", [
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
-      [ "ecs::Timer", "classecs_1_1_timer.html", null ],
+      [ "ecs::Timer", "classecs_1_1_timer.html", [
+        [ "game::GameTimer", "classgame_1_1_game_timer.html", null ]
+      ] ],
       [ "game::resources::AssetMap< T >", "classgame_1_1resources_1_1_asset_map.html", null ],
       [ "game::resources::EngineResource", "structgame_1_1resources_1_1_engine_resource.html", null ],
       [ "game::resources::GameClock", "classgame_1_1resources_1_1_game_clock.html", null ],
@@ -164,8 +168,8 @@ var hierarchy =
     ] ],
     [ "game::SettingsMenuScene::Section", "structgame_1_1_settings_menu_scene_1_1_section.html", null ],
     [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
-    [ "raylib::core::scoped::Shader", "classraylib_1_1core_1_1scoped_1_1_shader.html", null ],
     [ "raylib::shaders::Shader", "classraylib_1_1shaders_1_1_shader.html", null ],
+    [ "raylib::core::scoped::Shader", "classraylib_1_1core_1_1scoped_1_1_shader.html", null ],
     [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", [
       [ "game::components::Sound", "structgame_1_1components_1_1_sound.html", null ]
     ] ],
@@ -176,6 +180,7 @@ var hierarchy =
     ] ],
     [ "ecs::System", "classecs_1_1_system.html", [
       [ "game::DetectGamepad", "structgame_1_1_detect_gamepad.html", null ],
+      [ "game::systems::AiUpdate", "structgame_1_1systems_1_1_ai_update.html", null ],
       [ "game::systems::ChangeCube", "structgame_1_1systems_1_1_change_cube.html", null ],
       [ "game::systems::CheckGameEnd", "structgame_1_1systems_1_1_check_game_end.html", null ],
       [ "game::systems::ClearExplosions", "structgame_1_1systems_1_1_clear_explosions.html", null ],

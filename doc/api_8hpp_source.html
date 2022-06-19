@@ -101,24 +101,26 @@ $(document).ready(function(){initNavTree('api_8hpp_source.html',''); initResizab
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="script_8hpp.html#a6813bb33bffea8b1add77727c72be36d">BMJS_DECLARE_API</a>(common)</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="script_8hpp.html#a6813bb33bffea8b1add77727c72be36d">BMJS_DECLARE_API</a>(mods)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacebmjs.html">bmjs</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">   19</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">useApis</a>()</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="script_8hpp.html#ac7e52316c601c34072f1c11b135825d2">BMJS_USE_API</a>(common);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="script_8hpp.html#ac7e52316c601c34072f1c11b135825d2">BMJS_USE_API</a>(mods);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;} <span class="comment">// namespace bmjs</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif // !defined(SCRIPT_API_API_HPP_)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<a class="code" href="script_8hpp.html#a6813bb33bffea8b1add77727c72be36d">BMJS_DECLARE_API</a>(players)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacebmjs.html">bmjs</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">   20</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">useApis</a>()</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="script_8hpp.html#ac7e52316c601c34072f1c11b135825d2">BMJS_USE_API</a>(common);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="script_8hpp.html#ac7e52316c601c34072f1c11b135825d2">BMJS_USE_API</a>(mods);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="script_8hpp.html#ac7e52316c601c34072f1c11b135825d2">BMJS_USE_API</a>(players);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;} <span class="comment">// namespace bmjs</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif // !defined(SCRIPT_API_API_HPP_)</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="anamespacebmjs_html"><div class="ttname"><a href="namespacebmjs.html">bmjs</a></div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00248">bindings.cpp:248</a></div></div>
+<div class="ttc" id="anamespacebmjs_html"><div class="ttname"><a href="namespacebmjs.html">bmjs</a></div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00327">bindings.cpp:327</a></div></div>
 <div class="ttc" id="ascript_8hpp_html_ac7e52316c601c34072f1c11b135825d2"><div class="ttname"><a href="script_8hpp.html#ac7e52316c601c34072f1c11b135825d2">BMJS_USE_API</a></div><div class="ttdeci">#define BMJS_USE_API(name)</div><div class="ttdoc">Call this to prevent the api group name from being excluded from the binary.</div><div class="ttdef"><b>Definition:</b> <a href="script_8hpp_source.html#l00081">script.hpp:81</a></div></div>
 <div class="ttc" id="ascript_8hpp_html"><div class="ttname"><a href="script_8hpp.html">script.hpp</a></div></div>
 <div class="ttc" id="ascript_8hpp_html_a6813bb33bffea8b1add77727c72be36d"><div class="ttname"><a href="script_8hpp.html#a6813bb33bffea8b1add77727c72be36d">BMJS_DECLARE_API</a></div><div class="ttdeci">#define BMJS_DECLARE_API(name)</div><div class="ttdoc">Define the existence of an API group.</div><div class="ttdef"><b>Definition:</b> <a href="script_8hpp_source.html#l00026">script.hpp:26</a></div></div>
-<div class="ttc" id="anamespacebmjs_html_a0d08aee03bf7cc4c19eaf0e98a3797f2"><div class="ttname"><a href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">bmjs::useApis</a></div><div class="ttdeci">void useApis()</div><div class="ttdoc">Forces Emscripten to not remove the API functions from the binary.</div><div class="ttdef"><b>Definition:</b> <a href="api_8hpp_source.html#l00019">api.hpp:19</a></div></div>
+<div class="ttc" id="anamespacebmjs_html_a0d08aee03bf7cc4c19eaf0e98a3797f2"><div class="ttname"><a href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">bmjs::useApis</a></div><div class="ttdeci">void useApis()</div><div class="ttdoc">Forces Emscripten to not remove the API functions from the binary.</div><div class="ttdef"><b>Definition:</b> <a href="api_8hpp_source.html#l00020">api.hpp:20</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

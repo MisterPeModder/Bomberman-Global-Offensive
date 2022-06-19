@@ -17,6 +17,9 @@ var dir_1699be727a800b1d059c6f7f2b91d2ee =
       [ "Parameters", "structgame_1_1_game_1_1_parameters.html", "structgame_1_1_game_1_1_parameters" ]
     ] ],
     [ "GameAction.hpp", "_game_action_8hpp.html", "_game_action_8hpp" ],
+    [ "GameTimer.hpp", "_game_timer_8hpp.html", [
+      [ "GameTimer", "classgame_1_1_game_timer.html", null ]
+    ] ],
     [ "User.cpp", "_user_8cpp.html", null ],
     [ "User.hpp", "_user_8hpp.html", [
       [ "User", "classgame_1_1_user.html", "classgame_1_1_user" ]
