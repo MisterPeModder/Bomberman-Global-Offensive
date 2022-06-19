@@ -281,7 +281,7 @@ namespace game
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
             systems::PlaySoundReferences, systems::DisableNoClip>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing2d.add<systems::DrawHud, systems::DrawHud, systems::DrawRectangle>();
+        _drawing2d.add<systems::DrawHud, systems::DrawRectangle>();
         _drawing.add<systems::DrawModel>();
 
         _loadTextures();
