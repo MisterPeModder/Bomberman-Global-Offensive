@@ -170,6 +170,7 @@ var hierarchy =
     [ "ecs::System", "classecs_1_1_system.html", [
       [ "game::DetectGamepad", "structgame_1_1_detect_gamepad.html", null ],
       [ "game::systems::ChangeCube", "structgame_1_1systems_1_1_change_cube.html", null ],
+      [ "game::systems::CheckGameEnd", "structgame_1_1systems_1_1_check_game_end.html", null ],
       [ "game::systems::Collision", "structgame_1_1systems_1_1_collision.html", null ],
       [ "game::systems::DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", null ],
       [ "game::systems::DrawConsole", "structgame_1_1systems_1_1_draw_console.html", null ],

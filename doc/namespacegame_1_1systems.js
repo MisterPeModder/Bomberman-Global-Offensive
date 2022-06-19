@@ -1,6 +1,7 @@
 var namespacegame_1_1systems =
 [
     [ "ChangeCube", "structgame_1_1systems_1_1_change_cube.html", "structgame_1_1systems_1_1_change_cube" ],
+    [ "CheckGameEnd", "structgame_1_1systems_1_1_check_game_end.html", "structgame_1_1systems_1_1_check_game_end" ],
     [ "Collision", "structgame_1_1systems_1_1_collision.html", "structgame_1_1systems_1_1_collision" ],
     [ "DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", "structgame_1_1systems_1_1_disable_bomb_no_clip" ],
     [ "DrawConsole", "structgame_1_1systems_1_1_draw_console.html", "structgame_1_1systems_1_1_draw_console" ],

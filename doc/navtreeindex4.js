@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"classgame_1_1components_1_1_keyboard_input_1_1_key_repeat.html#a61e650f8d44d54bf273578d443668f47":[2,0,2,0,14,0,5],
+"classgame_1_1components_1_1_keyboard_input_1_1_key_repeat.html#a7183e1bea3fb9f6e74852ee9b7b1d46b":[2,0,2,0,14,0,9],
 "classgame_1_1components_1_1_keyboard_input_1_1_key_repeat.html#a73741b2656bb72877a0a1de43816ba8f":[2,0,2,0,14,0,3],
 "classgame_1_1components_1_1_keyboard_input_1_1_key_repeat.html#a8a93d1e86a87097104563f703537570a":[2,0,2,0,14,0,4],
 "classgame_1_1components_1_1_keyboard_input_1_1_key_repeat.html#a9f7716df5a9aa5fae35f0a99f5b39204":[2,0,2,0,14,0,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "classraylib_1_1core_1_1_camera2_d.html#ac5121df48d1bf46819209d988d158bad":[2,0,4,0,2,7],
 "classraylib_1_1core_1_1_camera2_d.html#acabb5846fb5d50a23f12b1c18fed391b":[2,0,4,0,2,11],
 "classraylib_1_1core_1_1_camera2_d.html#acb0a156c85ec8311f45d38c54a25dbea":[2,0,4,0,2,13],
-"classraylib_1_1core_1_1_camera2_d.html#ae11386578f37aaaf2b734f7f10fa527a":[2,0,4,0,2,17],
-"classraylib_1_1core_1_1_camera2_d.html#ae40936792ff19d729b62327443072dba":[2,0,4,0,2,12],
-"classraylib_1_1core_1_1_camera2_d.html#ae835538b94b4ebbe09737cb2ecea3ada":[2,0,4,0,2,10]
+"classraylib_1_1core_1_1_camera2_d.html#ae11386578f37aaaf2b734f7f10fa527a":[2,0,4,0,2,17]
 };

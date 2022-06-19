@@ -10,6 +10,9 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "ChangeCube.hpp", "_change_cube_8hpp.html", [
       [ "ChangeCube", "structgame_1_1systems_1_1_change_cube.html", "structgame_1_1systems_1_1_change_cube" ]
     ] ],
+    [ "CheckGameEnd.hpp", "_check_game_end_8hpp.html", [
+      [ "CheckGameEnd", "structgame_1_1systems_1_1_check_game_end.html", "structgame_1_1systems_1_1_check_game_end" ]
+    ] ],
     [ "Collision.cpp", "_collision_8cpp.html", null ],
     [ "Collision.hpp", "_collision_8hpp.html", [
       [ "Collision", "structgame_1_1systems_1_1_collision.html", "structgame_1_1systems_1_1_collision" ]
