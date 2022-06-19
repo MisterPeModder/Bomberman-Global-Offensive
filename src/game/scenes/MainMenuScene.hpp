@@ -35,8 +35,7 @@ namespace game
 
         void loadPlayerTextures();
         void updateConnectedTexts();
-
-        void updateSkinTexts();
+        void updateSkins();
 
         User::USER_SKINS getUnusedSkin();
 
@@ -45,6 +44,7 @@ namespace game
         void loadPlayerInterface();
         void loadLeftButtons();
 
+        components::Identity::Id _models[4];
         components::Identity::Id _animations[4];
         components::Identity::Id _connectedTexts[4];
         components::Identity::Id _skinTexts[4];

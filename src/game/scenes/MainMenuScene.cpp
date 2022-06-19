@@ -79,7 +79,7 @@ namespace game
             } else {
                 users.connectUser(gamepadId, dynamic_cast<game::MainMenuScene &>(engine->getScene()).getUnusedSkin());
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateConnectedTexts();
-                dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkinTexts();
+                dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkins();
             }
         }
     };
@@ -100,6 +100,8 @@ namespace game
             "assets/player/textures/none_sense.png");
         textures.emplace(
             std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
+        textures.emplace(
+            std::string(localization::resources::textures::rsUnknown.getMsgId()), "assets/player/textures/unknown.png");
     }
 
     MainMenuScene::MainMenuScene()
@@ -248,13 +250,18 @@ namespace game
                                 .with<components::RotationAxis>(1.f, 0.f, 0.f)
                                 .with<components::Identity>()
                                 .build();
-        _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
-            textures.get(std::string(localization::resources::textures::rsCounterTerroristOne.getMsgId())));
+        if (id == 0)
+            _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
+                textures.get(std::string(userSkinToRessourceString(_availableSkins.front()).getMsgId())));
+        else
+            _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
+                textures.get(std::string(localization::resources::textures::rsUnknown.getMsgId())));
 
         auto &anim = _world.getStorage<components::Animation>()[playerEntity.getId()];
         auto &randDevice = _world.getResource<game::resources::RandomDevice>();
         unsigned int randVal = randDevice.randInt(0, 3);
         _animations[id] = _world.getStorage<components::Identity>()[playerEntity.getId()].id;
+        _models[id] = _world.getStorage<components::Identity>()[playerEntity.getId()].id;
         anim.chooseAnimation(randVal);
 
         // Skin Text
@@ -278,7 +285,7 @@ namespace game
                         user.setSkin(_availableSkins.back());
                         _availableSkins.pop_back();
                     }
-                    updateSkinTexts();
+                    updateSkins();
                     return true;
                 });
         if (id == 0) {
@@ -321,7 +328,7 @@ namespace game
                         User::USER_SKINS temp = lusers[event.user].getSkin();
                         if (lusers.disconnectUser(event.user)) {
                             _availableSkins.push_back(temp);
-                            updateSkinTexts();
+                            updateSkins();
                         };
                         updateConnectedTexts();
                         return true;
@@ -332,22 +339,6 @@ namespace game
     }
 
     void MainMenuScene::setupWorld() { updateConnectedTexts(); }
-
-    void MainMenuScene::updateSkinTexts()
-    {
-        auto engine = _world.getResource<game::resources::EngineResource>().engine;
-        auto &users = engine->getUsers();
-
-        for (auto [text, id] :
-            ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
-            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
-                if (_skinTexts[i] != id.id)
-                    continue;
-                User::UserId userId = static_cast<User::UserId>(i);
-                text.text = userSkinToRessourceString(users[userId].getSkin());
-            }
-        }
-    }
 
     void MainMenuScene::updateConnectedTexts()
     {
@@ -368,6 +359,35 @@ namespace game
                     text.text = localization::resources::menu::rsNotConnected;
                     text.color = raylib::core::Color::RED;
                 }
+            }
+        }
+    }
+
+    void MainMenuScene::updateSkins()
+    {
+        auto &textures = _world.getResource<resources::Textures>();
+        auto engine = _world.getResource<game::resources::EngineResource>().engine;
+        auto &users = engine->getUsers();
+
+        // update Text
+        for (auto [text, id] :
+            ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                if (_skinTexts[i] != id.id)
+                    continue;
+                User::UserId userId = static_cast<User::UserId>(i);
+                text.text = userSkinToRessourceString(users[userId].getSkin());
+            }
+        }
+        // Update texture
+        for (auto [model, id] :
+            ecs::join(_world.getStorage<components::Model>(), _world.getStorage<components::Identity>())) {
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                if (_models[i] != id.id)
+                    continue;
+                User::UserId userId = static_cast<User::UserId>(i);
+                model.setMaterialMapTexture(
+                    textures.get(std::string(userSkinToRessourceString(users[userId].getSkin()).getMsgId())));
             }
         }
     }

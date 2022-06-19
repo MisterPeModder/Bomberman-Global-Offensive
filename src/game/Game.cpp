@@ -114,6 +114,8 @@ namespace game
             "assets/player/textures/none_sense.png");
         textures.emplace(
             std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
+        textures.emplace(
+            std::string(localization::resources::textures::rsUnknown.getMsgId()), "assets/player/textures/unknown.png");
         /// Activables
         textures.emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
         textures.emplace("mine", "assets/items/activables/bonus_activable_mine.png");
