@@ -10,7 +10,10 @@
 
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
+#include "game/User.hpp"
+#include "game/components/Identity.hpp"
 #include "game/scenes/AScene.hpp"
+#include "localization/ResourceString.hpp"
 
 namespace game
 {
@@ -43,11 +46,24 @@ namespace game
             KEYBINDS_KEYBOARD_RIGHT,
             KEYBINDS_KEYBOARD_BOMB,
             KEYBINDS_KEYBOARD_ACTIVABLE,
-            KEYBINDS_KEYBOARD_ACTIVABLE_LEFT,
-            KEYBINDS_KEYBOARD_ACTIVABLE_RIGHT,
+            KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS,
+            KEYBINDS_KEYBOARD_ACTIVABLE_NEXT,
             WIDGET_ID_SIZE,
         };
         SettingsMenuScene();
+
+      private:
+        struct Section {
+            raylib::core::Vector2f pos;
+            raylib::core::Vector2f size;
+            raylib::core::Color color;
+            localization::ResourceString name;
+        };
+
+        void loadSection(Section section, std::function<void(const Section &)> onLoad);
+        void _loadKeyboardKeybinds(const Section &section);
+
+        std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsKeyboardBindings;
     };
 } // namespace game
 

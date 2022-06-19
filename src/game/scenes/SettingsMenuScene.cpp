@@ -500,17 +500,17 @@ static void loadControllerKeybindSettings(ecs::World &world, raylib::core::Vecto
         .with<game::components::Position>(pos.x + 4, pos.y + 18)
         .with<game::components::Textual>(
             localization::resources::keybinds::rsKeyBindBomb, 15, raylib::core::Color::BLUE)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::BLUE;
-            })
+        // .with<game::components::Controlable>(game::User::UserId::User1)
+        // .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
+        //     game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE)
+        // .with<game::gui::Clickable>(
+        //     [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
+        //     [&](ecs::Entity btn, game::gui::Clickable::State state) {
+        //         world.getStorage<game::components::Textual>()[btn.getId()].color =
+        //             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+        //                                                             : raylib::core::Color::BLUE;
+        //     })
         .build();
     world.addEntity()
         .with<game::components::Position>(pos.x + 10, pos.y + 18)
@@ -529,17 +529,18 @@ static void loadControllerKeybindSettings(ecs::World &world, raylib::core::Vecto
         .with<game::components::Position>(pos.x + 16, pos.y + 18)
         .with<game::components::Textual>(
             localization::resources::keybinds::rsKeyBindActivableShort, 15, raylib::core::Color::BLUE)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_LEFT)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::BLUE;
-            })
+        // .with<game::components::Controlable>(game::User::UserId::User1)
+        // .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
+        //     game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS)
+        // .with<game::gui::Clickable>(
+        //     [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
+        //     [&](ecs::Entity btn, game::gui::Clickable::State state) {
+        //         world.getStorage<game::components::Textual>()[btn.getId()].color =
+        //             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+        //                                                             : raylib::core::Color::BLUE;
+        //     })
         .build();
     world.addEntity()
         .with<game::components::Position>(pos.x + 22, pos.y + 18)
@@ -558,18 +559,18 @@ static void loadControllerKeybindSettings(ecs::World &world, raylib::core::Vecto
         .with<game::components::Position>(pos.x + 4, pos.y + 23)
         .with<game::components::Textual>(
             localization::resources::keybinds::rsKeyBindActivableLeftShort, 15, raylib::core::Color::BLUE)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_LEFT,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_RIGHT)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::BLUE;
-            })
+        // .with<game::components::Controlable>(game::User::UserId::User1)
+        // .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS,
+        //     game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT)
+        // .with<game::gui::Clickable>(
+        //     [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
+        //     [&](ecs::Entity btn, game::gui::Clickable::State state) {
+        //         world.getStorage<game::components::Textual>()[btn.getId()].color =
+        //             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+        //                                                             : raylib::core::Color::BLUE;
+        //     })
         .build();
     world.addEntity()
         .with<game::components::Position>(pos.x + 10, pos.y + 23)
@@ -588,17 +589,17 @@ static void loadControllerKeybindSettings(ecs::World &world, raylib::core::Vecto
         .with<game::components::Position>(pos.x + 16, pos.y + 23)
         .with<game::components::Textual>(
             localization::resources::keybinds::rsKeyBindActivableRightShort, 15, raylib::core::Color::BLUE)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_RIGHT,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_LEFT, game::SettingsMenuScene::BACK)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::BLUE;
-            })
+        // .with<game::components::Controlable>(game::User::UserId::User1)
+        // .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT,
+        //     game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::BACK)
+        // .with<game::gui::Clickable>(
+        //     [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
+        //     [&](ecs::Entity btn, game::gui::Clickable::State state) {
+        //         world.getStorage<game::components::Textual>()[btn.getId()].color =
+        //             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
+        //                                                             : raylib::core::Color::BLUE;
+        //     })
         .build();
     world.addEntity()
         .with<game::components::Position>(pos.x + 22, pos.y + 23)
@@ -612,292 +613,6 @@ static void loadControllerKeybindSettings(ecs::World &world, raylib::core::Vecto
         .build();
 #pragma endregion
 
-#pragma endregion
-}
-
-static void loadKeyboardKeybindSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
-{
-    world.addEntity()
-        .with<game::components::Rectangle>()
-        .with<game::components::Position>(pos.x, pos.y)
-        .with<game::components::Size>(size.x, size.y)
-        .with<game::components::Color>(raylib::core::Color::GOLD)
-        .build();
-    world.addEntity()
-        .with<game::components::Rectangle>()
-        .with<game::components::Position>(pos.x + 1, pos.y + 1)
-        .with<game::components::Size>(size.x - 2, size.y - 2)
-        .with<game::components::Color>(raylib::core::Color::BLACK)
-        .build();
-
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 2, pos.y + 2)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsKeybinds, 40, raylib::core::Color::GOLD)
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 8)
-        .with<game::components::Textual>(
-            localization::resources::settings::rsSettingsKeyboardKeybinds, 20, raylib::core::Color::GOLD)
-        .build();
-
-#pragma region Left
-    auto leftKey = world.addEntity()
-                       .with<game::components::Position>(pos.x + 10, pos.y + 13)
-                       .with<game::components::Controlable>(game::User::UserId::User1)
-                       .with<game::components::Identity>()
-                       .with<game::components::Textual>(
-
-                           "value"
-
-                           ,
-                           20, raylib::core::Color::GOLD)
-                       .build();
-    auto leftKeyId = world.getStorage<game::components::Identity>()[leftKey.getId()].id;
-
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 13)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindLeft, 20, raylib::core::Color::GOLD)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT,
-            game::SettingsMenuScene::LANGUAGE_ENGLISH, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT,
-            game::SettingsMenuScene::FPS_60, game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP)
-        .with<game::gui::Clickable>(
-            [&](ecs::Entity) {
-                world.addEntity()
-                    .with<game::components::KeybindIntercepter>(game::User::UserId::User1, game::GameAction::MOVE_LEFT,
-                        [&]() {
-                            auto &binds = world.getResource<game::resources::EngineResource>()
-                                              .engine->getUsers()[game::User::UserId::User1]
-                                              .getKeybinds()
-                                              .getKeyboardBindings();
-                            std::stringstream ss;
-
-                            for (auto iter : binds)
-                                if (iter.action == game::GameAction::MOVE_LEFT)
-                                    ss << static_cast<char>(iter.key) << ", ";
-                            for (auto [text, id] : ecs::join(world.getStorage<game::components::Textual>(),
-                                     world.getStorage<game::components::Identity>())) {
-                                if (id.id == 4) { /// 4 is the leftKeyId above
-                                    text.text = ss.str();
-                                    return;
-                                }
-                            }
-                        })
-                    .build();
-                Logger::logger.log(Logger::Severity::Information, "Waiting for user input");
-            },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::GOLD;
-            })
-        .build();
-
-#pragma endregion
-
-#pragma region Right
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 18, pos.y + 13)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindRight, 20, raylib::core::Color::GOLD)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::FPS_240, game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::GOLD;
-            })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 24, pos.y + 13)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            20, raylib::core::Color::GOLD)
-        .build();
-#pragma endregion
-
-#pragma region Up
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 18)
-        .with<game::components::Textual>(localization::resources::keybinds::rsKeyBindUp, 20, raylib::core::Color::GOLD)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT, game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::GOLD;
-            })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 10, pos.y + 18)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            20, raylib::core::Color::GOLD)
-        .build();
-#pragma endregion
-
-#pragma region Down
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 18, pos.y + 18)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindDown, 20, raylib::core::Color::GOLD)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::GOLD;
-            })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 24, pos.y + 18)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            20, raylib::core::Color::GOLD)
-        .build();
-#pragma endregion
-
-#pragma region Bomb
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 25)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindBomb, 20, raylib::core::Color::GOLD)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::GOLD;
-            })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 24, pos.y + 25)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            20, raylib::core::Color::GOLD)
-        .build();
-#pragma endregion
-
-#pragma region Activable
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 30)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindActivable, 20, raylib::core::Color::GOLD)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_LEFT)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::GOLD;
-            })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 24, pos.y + 30)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            20, raylib::core::Color::GOLD)
-        .build();
-#pragma endregion
-
-#pragma region ActivableLeft
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 35)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindActivableLeft, 20, raylib::core::Color::GOLD)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_LEFT,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_RIGHT)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::GOLD;
-            })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 24, pos.y + 35)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            20, raylib::core::Color::GOLD)
-        .build();
-#pragma endregion
-
-#pragma region ActivableRight
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 4, pos.y + 40)
-        .with<game::components::Textual>(
-            localization::resources::keybinds::rsKeyBindActivableRight, 20, raylib::core::Color::GOLD)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::gui::Widget>(game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_RIGHT,
-            game::SettingsMenuScene::LANGUAGE_FRENCH, game::gui::Widget::NullTag,
-            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_LEFT, game::SettingsMenuScene::BACK)
-        .with<game::gui::Clickable>(
-            [&world](ecs::Entity) { Logger::logger.log(Logger::Severity::Error, "Button must be set"); },
-            [&](ecs::Entity btn, game::gui::Clickable::State state) {
-                world.getStorage<game::components::Textual>()[btn.getId()].color =
-                    (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW
-                                                                    : raylib::core::Color::GOLD;
-            })
-        .build();
-    world.addEntity()
-        .with<game::components::Position>(pos.x + 24, pos.y + 40)
-        .with<game::components::Controlable>(game::User::UserId::User1)
-        .with<game::components::Textual>(
-
-            "value"
-
-            ,
-            20, raylib::core::Color::GOLD)
-        .build();
 #pragma endregion
 }
 
@@ -991,7 +706,6 @@ static void loadSettingsMenuScene(ecs::World &world)
     loadGraphicSettings(world, raylib::core::Vector2f(34, 10), raylib::core::Vector2f(32, 40));
     loadAudioSettings(world, raylib::core::Vector2f(1, 10), raylib::core::Vector2f(32, 40));
     loadControllerKeybindSettings(world, raylib::core::Vector2f(67, 10), raylib::core::Vector2f(32, 88));
-    loadKeyboardKeybindSettings(world, raylib::core::Vector2f(34, 52), raylib::core::Vector2f(32, 46));
     loadLanguageSettings(world, raylib::core::Vector2f(1, 52), raylib::core::Vector2f(32, 46));
 
     world.addEntity()
@@ -1022,5 +736,133 @@ namespace game
         _global2D.add<game::systems::DrawSelectedWidget>();
 
         loadSettingsMenuScene(_world);
+        loadSection({raylib::core::Vector2f(34, 52), raylib::core::Vector2f(32, 46), raylib::core::Color::GOLD,
+                        localization::resources::settings::rsSettingsKeybinds},
+            [this](auto &sct) { _loadKeyboardKeybinds(sct); });
+    }
+
+    void SettingsMenuScene::loadSection(Section section, std::function<void(const Section &)> onLoad)
+    {
+        _world.addEntity()
+            .with<game::components::Rectangle>()
+            .with<game::components::Position>(section.pos.x, section.pos.y)
+            .with<game::components::Size>(section.size.x, section.size.y)
+            .with<game::components::Color>(section.color)
+            .build();
+        _world.addEntity()
+            .with<game::components::Rectangle>()
+            .with<game::components::Position>(section.pos.x + 1, section.pos.y + 1)
+            .with<game::components::Size>(section.size.x - 2, section.size.y - 2)
+            .with<game::components::Color>(raylib::core::Color::BLACK)
+            .build();
+
+        _world.addEntity()
+            .with<game::components::Position>(section.pos.x + 2, section.pos.y + 2)
+            .with<game::components::Textual>(section.name, 40, section.color)
+            .build();
+
+        onLoad(section);
+    }
+
+    void SettingsMenuScene::_loadKeyboardKeybinds(const Section &sct)
+    {
+        _world.addEntity()
+            .with<game::components::Position>(sct.pos.x + 4, sct.pos.y + 8)
+            .with<game::components::Textual>(
+                localization::resources::settings::rsSettingsKeyboardKeybinds, 20, sct.color)
+            .build();
+
+        auto addAction = [&, this](raylib::core::Vector2f posName, raylib::core::Vector2f posValue, GameAction action,
+                             std::string_view actionName, gui::Widget::WidgetId id,
+                             gui::Widget::WidgetId left = gui::Widget::NullTag,
+                             gui::Widget::WidgetId right = gui::Widget::NullTag,
+                             gui::Widget::WidgetId up = gui::Widget::NullTag,
+                             gui::Widget::WidgetId down = gui::Widget::NullTag) {
+            auto btn = _world.addEntity()
+                           .with<game::components::Position>(sct.pos.x + posValue.x, sct.pos.y + posValue.y)
+                           .with<game::components::Controlable>(game::User::UserId::User1)
+                           .with<game::components::Identity>()
+                           .with<game::components::Textual>("value", 20, sct.color)
+                           .build();
+            _actionsKeyboardBindings[static_cast<size_t>(action)] =
+                _world.getStorage<game::components::Identity>()[btn.getId()].id;
+
+            _world.addEntity()
+                .with<game::components::Position>(sct.pos.x + posName.x, sct.pos.y + posName.y)
+                .with<game::components::Textual>(actionName, 20, sct.color)
+                .with<game::components::Controlable>(game::User::UserId::User1)
+                .with<game::gui::Widget>(id, left, right, up, down)
+                .with<game::gui::Clickable>(
+                    [=, this](ecs::Entity) {
+                        _world.addEntity()
+                            .with<game::components::KeybindIntercepter>(game::User::UserId::User1, action,
+                                [=, this]() {
+                                    std::stringstream ss;
+                                    auto &binds = _world.getResource<game::resources::EngineResource>()
+                                                      .engine->getUsers()[game::User::UserId::User1]
+                                                      .getKeybinds()
+                                                      .getKeyboardBindings();
+
+                                    for (auto iter : binds)
+                                        if (iter.action == action) {
+                                            if (ss.rdbuf()->in_avail())
+                                                ss << ", ";
+                                            ss << static_cast<char>(iter.key);
+                                        }
+
+                                    for (auto [text, id] : ecs::join(_world.getStorage<game::components::Textual>(),
+                                             _world.getStorage<game::components::Identity>())) {
+                                        if (id.id == _actionsKeyboardBindings[static_cast<size_t>(action)]) {
+                                            text.text = ss.str();
+                                            return;
+                                        }
+                                    }
+                                })
+                            .build();
+                        Logger::logger.log(Logger::Severity::Information, "Waiting for user input");
+                    },
+                    [=, this](ecs::Entity btn, game::gui::Clickable::State state) {
+                        _world.getStorage<game::components::Textual>()[btn.getId()].color =
+                            (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
+                    })
+                .build();
+        };
+
+        addAction({4, 13}, {10, 13}, GameAction::MOVE_LEFT, localization::resources::keybinds::rsKeyBindLeft,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT, game::SettingsMenuScene::LANGUAGE_ENGLISH,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::FPS_60,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP);
+        addAction({18, 13}, {24, 13}, GameAction::MOVE_RIGHT, localization::resources::keybinds::rsKeyBindRight,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT,
+            game::gui::Widget::NullTag, game::SettingsMenuScene::FPS_240,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN);
+        addAction({4, 18}, {10, 18}, GameAction::MOVE_UP, localization::resources::keybinds::rsKeyBindUp,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP, game::SettingsMenuScene::LANGUAGE_FRENCH,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN, game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB);
+        addAction({18, 18}, {24, 18}, GameAction::MOVE_DOWN, localization::resources::keybinds::rsKeyBindDown,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_DOWN, game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP,
+            game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_RIGHT,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB);
+
+        addAction({4, 25}, {24, 25}, GameAction::PLACE_BOMB, localization::resources::keybinds::rsKeyBindBomb,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB, game::SettingsMenuScene::LANGUAGE_FRENCH,
+            game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_UP,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE);
+        addAction({4, 30}, {24, 30}, GameAction::ACTIVATE_ITEM, localization::resources::keybinds::rsKeyBindActivable,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE, game::SettingsMenuScene::LANGUAGE_FRENCH,
+            game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS);
+
+        // addAction({4, 35}, {24, 35}, GameAction::PREVIOUS_ITEM,
+        //     localization::resources::keybinds::rsKeyBindActivableLeft,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::LANGUAGE_FRENCH,
+        //     game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT);
+        // addAction({4, 40}, {24, 40}, GameAction::NEXT_ITEM,
+        // localization::resources::keybinds::rsKeyBindActivableRight,
+        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT, game::SettingsMenuScene::LANGUAGE_FRENCH,
+        //     game::gui::Widget::NullTag, game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS,
+        //     game::SettingsMenuScene::BACK);
     }
 } // namespace game
