@@ -90,6 +90,7 @@ namespace game
         void _loadModels();
 
         ecs::SystemTag _drawing;
+        ecs::SystemTag _drawing2d;
         ecs::SystemTag _handleInputs;
         ecs::SystemTag _update;
         ecs::SystemTag _resolveCollisions;

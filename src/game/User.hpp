@@ -102,6 +102,9 @@ namespace game
         /// @return action changed since last queue check.
         GameAction getChangedAction();
 
+        /// @param ignore When true all keyboard-bound actions (except for TOGGLE_CONSOLE) will not be handled.
+        void setIgnoreKeyboard(bool ignore) noexcept;
+
         /// Get the Profile.
         ///
         /// @return const settings::Profile& user profile.
@@ -133,6 +136,7 @@ namespace game
       private:
         int _gamepadId;
         bool _available;
+        bool _ignoreKeyboard;
         settings::Profile _profile;
 
         std::queue<GameAction> _changedActions;
