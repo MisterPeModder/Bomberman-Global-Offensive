@@ -58,7 +58,8 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
       [ "DisableNoClip", "structgame_1_1systems_1_1_disable_no_clip.html", "structgame_1_1systems_1_1_disable_no_clip" ]
     ] ],
     [ "PlaySoundOnce.hpp", "_play_sound_once_8hpp.html", [
-      [ "PlaySoundOnce", "structgame_1_1systems_1_1_play_sound_once.html", "structgame_1_1systems_1_1_play_sound_once" ]
+      [ "PlaySoundOnce", "structgame_1_1systems_1_1_play_sound_once.html", "structgame_1_1systems_1_1_play_sound_once" ],
+      [ "PlaySoundReferences", "structgame_1_1systems_1_1_play_sound_references.html", "structgame_1_1systems_1_1_play_sound_references" ]
     ] ],
     [ "Rectangle.hpp", "game_2systems_2_rectangle_8hpp.html", [
       [ "DrawRectangle", "structgame_1_1systems_1_1_draw_rectangle.html", "structgame_1_1systems_1_1_draw_rectangle" ]

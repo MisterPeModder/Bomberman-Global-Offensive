@@ -85,8 +85,10 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Smoke.hpp", "components_2_smoke_8hpp.html", [
       [ "Smoke", "structgame_1_1components_1_1_smoke.html", "structgame_1_1components_1_1_smoke" ]
     ] ],
+    [ "Sound.cpp", "game_2components_2_sound_8cpp.html", null ],
     [ "Sound.hpp", "game_2components_2_sound_8hpp.html", [
-      [ "Sound", "structgame_1_1components_1_1_sound.html", "structgame_1_1components_1_1_sound" ]
+      [ "Sound", "structgame_1_1components_1_1_sound.html", "structgame_1_1components_1_1_sound" ],
+      [ "SoundReference", "structgame_1_1components_1_1_sound_reference.html", "structgame_1_1components_1_1_sound_reference" ]
     ] ],
     [ "Textual.hpp", "_textual_8hpp.html", [
       [ "Textual", "structgame_1_1components_1_1_textual.html", "structgame_1_1components_1_1_textual" ]

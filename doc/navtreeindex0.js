@@ -9,7 +9,8 @@ var NAVTREEINDEX0 =
 "_animation_8cpp.html":[3,0,0,4,1,0],
 "_animation_8cpp_source.html":[3,0,0,4,1,0],
 "_asset_map_8hpp.html":[3,0,0,1,3,0],
-"_asset_map_8hpp.html#a61c783544c6aa8abd59f7855ba015769":[3,0,0,1,3,0,3],
+"_asset_map_8hpp.html#a61c783544c6aa8abd59f7855ba015769":[3,0,0,1,3,0,4],
+"_asset_map_8hpp.html#a66f5ea2253e0f555527d37b4bbfe4787":[3,0,0,1,3,0,3],
 "_asset_map_8hpp.html#ac0b749ea57372e1a7d440106e33d249e":[3,0,0,1,3,0,1],
 "_asset_map_8hpp.html#add52b1a6a688ac8f3dd28ca2924fe222":[3,0,0,1,3,0,2],
 "_asset_map_8hpp_source.html":[3,0,0,1,3,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "_marker_storage_8hpp_source.html":[3,0,0,0,2,1],
 "_maybe_join_8hpp.html":[3,0,0,0,0,2],
 "_maybe_join_8hpp_source.html":[3,0,0,0,0,2],
-"_mesh_8cpp.html":[3,0,0,4,1,4],
-"_mesh_8cpp_source.html":[3,0,0,4,1,4]
+"_mesh_8cpp.html":[3,0,0,4,1,4]
 };

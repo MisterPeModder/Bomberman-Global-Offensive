@@ -129,6 +129,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a2cc7390a606a0e8aa92384904e3de8ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgame_1_1components_1_1_player_1_1_stats.html#ab9c406aa9d306917cb5bce5f65867620">ClipState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_stats.html#a2cc7390a606a0e8aa92384904e3de8ae">clipState</a></td></tr>
 <tr class="memdesc:a2cc7390a606a0e8aa92384904e3de8ae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structgame_1_1components_1_1_player.html" title="Player marker.">Player</a> NoClip power up related states.  <a href="structgame_1_1components_1_1_player_1_1_stats.html#a2cc7390a606a0e8aa92384904e3de8ae">More...</a><br /></td></tr>
 <tr class="separator:a2cc7390a606a0e8aa92384904e3de8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cf01a73a7d81f2f562ee82f3288d63"><td class="memItemLeft" align="right" valign="top">std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgame_1_1components_1_1_player_1_1_stats.html#ab5cf01a73a7d81f2f562ee82f3288d63">stunEnd</a></td></tr>
+<tr class="memdesc:ab5cf01a73a7d81f2f562ee82f3288d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time point after when the player will no longer be stunned.  <a href="structgame_1_1components_1_1_player_1_1_stats.html#ab5cf01a73a7d81f2f562ee82f3288d63">More...</a><br /></td></tr>
+<tr class="separator:ab5cf01a73a7d81f2f562ee82f3288d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -194,11 +197,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00056">56</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                : <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#ac58c335a0e79cadf47b19a22c734575f">DEFAULT_SPEED</a>), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a7fcf47813dba04a5496c1263fdbcccf5">bombRange</a>(1), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a26bb93b71d1bac3e38c6c621d48d987c">bombLimit</a>(1), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a832963f734aaf9053fda7ef6aefb6f7f">inverted</a>(<span class="keyword">false</span>), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a34c6b23132156deef06801ca71bd7f01">slowness</a>(<span class="keyword">false</span>),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                  <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a2cc7390a606a0e8aa92384904e3de8ae">clipState</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#ab9c406aa9d306917cb5bce5f65867620a7a1920d61156abc05a60135aefe8bc67">ClipState::Default</a>)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00058">58</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                : <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">speed</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#ac58c335a0e79cadf47b19a22c734575f">DEFAULT_SPEED</a>), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a7fcf47813dba04a5496c1263fdbcccf5">bombRange</a>(1), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a26bb93b71d1bac3e38c6c621d48d987c">bombLimit</a>(1), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a832963f734aaf9053fda7ef6aefb6f7f">inverted</a>(<span class="keyword">false</span>), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a34c6b23132156deef06801ca71bd7f01">slowness</a>(<span class="keyword">false</span>),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                  <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a2cc7390a606a0e8aa92384904e3de8ae">clipState</a>(<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#ab9c406aa9d306917cb5bce5f65867620a7a1920d61156abc05a60135aefe8bc67">ClipState::Default</a>), <a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#ab5cf01a73a7d81f2f562ee82f3288d63">stunEnd</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a>())</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -337,12 +340,31 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab5cf01a73a7d81f2f562ee82f3288d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cf01a73a7d81f2f562ee82f3288d63">&#9670;&nbsp;</a></span>stunEnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::steady_clock::time_point game::components::Player::Stats::stunEnd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Time point after when the player will no longer be stunned. </p>
+
+<p class="definition">Definition at line <a class="el" href="_player_8hpp_source.html#l00056">56</a> of file <a class="el" href="_player_8hpp_source.html">Player.hpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/game/components/<a class="el" href="_player_8hpp_source.html">Player.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_a26bb93b71d1bac3e38c6c621d48d987c"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#a26bb93b71d1bac3e38c6c621d48d987c">game::components::Player::Stats::bombLimit</a></div><div class="ttdeci">size_t bombLimit</div><div class="ttdoc">Max number of bomb simulteanously placed per player.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00048">Player.hpp:48</a></div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_ab5cf01a73a7d81f2f562ee82f3288d63"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#ab5cf01a73a7d81f2f562ee82f3288d63">game::components::Player::Stats::stunEnd</a></div><div class="ttdeci">std::chrono::steady_clock::time_point stunEnd</div><div class="ttdoc">Time point after when the player will no longer be stunned.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00056">Player.hpp:56</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_aff1f59b6c219b5c554ac71231ff724d6"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6">game::components::Player::Stats::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Current player speed.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00044">Player.hpp:44</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_ab9c406aa9d306917cb5bce5f65867620a7a1920d61156abc05a60135aefe8bc67"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#ab9c406aa9d306917cb5bce5f65867620a7a1920d61156abc05a60135aefe8bc67">game::components::Player::Stats::ClipState::Default</a></div><div class="ttdeci">@ Default</div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_a2cc7390a606a0e8aa92384904e3de8ae"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#a2cc7390a606a0e8aa92384904e3de8ae">game::components::Player::Stats::clipState</a></div><div class="ttdeci">ClipState clipState</div><div class="ttdoc">Player NoClip power up related states.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00054">Player.hpp:54</a></div></div>
@@ -350,6 +372,7 @@ Static Public Attributes</h2></td></tr>
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_a34c6b23132156deef06801ca71bd7f01"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#a34c6b23132156deef06801ca71bd7f01">game::components::Player::Stats::slowness</a></div><div class="ttdeci">bool slowness</div><div class="ttdoc">If on slowness effect.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00052">Player.hpp:52</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_a7fcf47813dba04a5496c1263fdbcccf5"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#a7fcf47813dba04a5496c1263fdbcccf5">game::components::Player::Stats::bombRange</a></div><div class="ttdeci">size_t bombRange</div><div class="ttdoc">Current player bomb explosion range.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00046">Player.hpp:46</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_ac58c335a0e79cadf47b19a22c734575f"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#ac58c335a0e79cadf47b19a22c734575f">game::components::Player::Stats::DEFAULT_SPEED</a></div><div class="ttdeci">static constexpr float DEFAULT_SPEED</div><div class="ttdoc">Default speed of the player (in cells per seconds).</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00042">Player.hpp:42</a></div></div>
+<div class="ttc" id="anow_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/chrono/steady_clock/now.html">std::chrono::steady_clock::now</a></div><div class="ttdeci">T now(T... args)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

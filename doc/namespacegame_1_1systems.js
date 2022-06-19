@@ -20,6 +20,7 @@ var namespacegame_1_1systems =
     [ "MoveSmoke", "structgame_1_1systems_1_1_move_smoke.html", "structgame_1_1systems_1_1_move_smoke" ],
     [ "PickupItem", "structgame_1_1systems_1_1_pickup_item.html", "structgame_1_1systems_1_1_pickup_item" ],
     [ "PlaySoundOnce", "structgame_1_1systems_1_1_play_sound_once.html", "structgame_1_1systems_1_1_play_sound_once" ],
+    [ "PlaySoundReferences", "structgame_1_1systems_1_1_play_sound_references.html", "structgame_1_1systems_1_1_play_sound_references" ],
     [ "RenderedText", "structgame_1_1systems_1_1_rendered_text.html", "structgame_1_1systems_1_1_rendered_text" ],
     [ "RunAnimation", "structgame_1_1systems_1_1_run_animation.html", "structgame_1_1systems_1_1_run_animation" ],
     [ "SplashScreen", "structgame_1_1systems_1_1_splash_screen.html", "structgame_1_1systems_1_1_splash_screen" ],

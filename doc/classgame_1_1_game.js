@@ -5,6 +5,7 @@ var classgame_1_1_game =
     [ "~Game", "classgame_1_1_game.html#a61f0017c3ec2875e8e58a250f822fa5f", null ],
     [ "_loadMeshes", "classgame_1_1_game.html#a1cb8020dbf9e45e2dc9aa0fa0cedb489", null ],
     [ "_loadModels", "classgame_1_1_game.html#a0828ab041074aaeb22f7c0093f14866d", null ],
+    [ "_loadSounds", "classgame_1_1_game.html#a40efef72f2302114dd17ed342fbefa53", null ],
     [ "_loadTextures", "classgame_1_1_game.html#a7ed1340d91528ba4833c432c35fdd9e9", null ],
     [ "drawFrame", "classgame_1_1_game.html#a69462d190aa20f35c398add3bc918c4f", null ],
     [ "getCamera", "classgame_1_1_game.html#a4969959436c3675a631bead959f9a227", null ],

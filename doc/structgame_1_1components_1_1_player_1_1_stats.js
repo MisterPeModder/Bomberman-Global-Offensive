@@ -12,5 +12,6 @@ var structgame_1_1components_1_1_player_1_1_stats =
     [ "DEFAULT_SPEED", "structgame_1_1components_1_1_player_1_1_stats.html#ac58c335a0e79cadf47b19a22c734575f", null ],
     [ "inverted", "structgame_1_1components_1_1_player_1_1_stats.html#a832963f734aaf9053fda7ef6aefb6f7f", null ],
     [ "slowness", "structgame_1_1components_1_1_player_1_1_stats.html#a34c6b23132156deef06801ca71bd7f01", null ],
-    [ "speed", "structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6", null ]
+    [ "speed", "structgame_1_1components_1_1_player_1_1_stats.html#aff1f59b6c219b5c554ac71231ff724d6", null ],
+    [ "stunEnd", "structgame_1_1components_1_1_player_1_1_stats.html#ab5cf01a73a7d81f2f562ee82f3288d63", null ]
 ];

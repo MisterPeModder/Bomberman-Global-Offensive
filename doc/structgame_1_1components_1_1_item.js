@@ -15,6 +15,7 @@ var structgame_1_1components_1_1_item =
       [ "LandMine", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a1e55a1d65cd30df92b8f33db989b223c", null ],
       [ "StunGrenade", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a256778a46e18db6a2e758e4833cde5ef", null ],
       [ "SmokeGrenade", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174aa4c73548be51cc3a3f1901ec1f14db30", null ],
+      [ "Punch", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174a140685b8f5c6b18ddb68c087c31ea975", null ],
       [ "Count", "structgame_1_1components_1_1_item.html#ac04ca18eed43592e8d4233d308761174ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
     [ "Type", "structgame_1_1components_1_1_item.html#ab01200c39f07438767de0dad667b896d", [
@@ -35,6 +36,7 @@ var structgame_1_1components_1_1_item =
     [ "nextActivable", "structgame_1_1components_1_1_item.html#a5d570fa81dace568157eabbfa472024f", null ],
     [ "NoClip", "structgame_1_1components_1_1_item.html#a4f2a59e1de3c2d211ce5730abb9e223a", null ],
     [ "previousActivable", "structgame_1_1components_1_1_item.html#ad6cf25fcd769b8bb72573fa9d56368d1", null ],
+    [ "Punch", "structgame_1_1components_1_1_item.html#a840fb2ab3f1093e51136a0237c7c8a51", null ],
     [ "SmokeGrenade", "structgame_1_1components_1_1_item.html#a2499e8e13f4ee1c4ee83fb5686fb74bf", null ],
     [ "spawnItem", "structgame_1_1components_1_1_item.html#a1575ae1d5a1d43baea2c2c38b6cb472f", null ],
     [ "spawnRandomItem", "structgame_1_1components_1_1_item.html#a61a5037b4476d64e775d6736855d353e", null ],

@@ -30,6 +30,7 @@ var namespacegame_1_1components =
     [ "Size2D", "structgame_1_1components_1_1_size2_d.html", "structgame_1_1components_1_1_size2_d" ],
     [ "Smoke", "structgame_1_1components_1_1_smoke.html", "structgame_1_1components_1_1_smoke" ],
     [ "Sound", "structgame_1_1components_1_1_sound.html", "structgame_1_1components_1_1_sound" ],
+    [ "SoundReference", "structgame_1_1components_1_1_sound_reference.html", "structgame_1_1components_1_1_sound_reference" ],
     [ "Textual", "structgame_1_1components_1_1_textual.html", "structgame_1_1components_1_1_textual" ],
     [ "Texture2D", "structgame_1_1components_1_1_texture2_d.html", "structgame_1_1components_1_1_texture2_d" ],
     [ "UseCheck", "structgame_1_1components_1_1_use_check.html", "structgame_1_1components_1_1_use_check" ],

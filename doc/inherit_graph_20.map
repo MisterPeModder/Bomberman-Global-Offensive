@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classecs_1_1_system.html" title="The base system type, all systems must inherit from System." alt="" coords="5,645,107,672"/>
+<area shape="rect" id="node1" href="$classecs_1_1_system.html" title="The base system type, all systems must inherit from System." alt="" coords="5,671,107,697"/>
 <area shape="rect" id="node2" href="$structgame_1_1_detect_gamepad.html" title=" " alt="" coords="187,5,361,32"/>
 <area shape="rect" id="node3" href="$structgame_1_1systems_1_1_change_cube.html" title="ChangeCube system." alt="" coords="168,56,380,83"/>
 <area shape="rect" id="node4" href="$structgame_1_1systems_1_1_check_game_end.html" title="CheckGameEnd system." alt="" coords="157,107,391,133"/>
@@ -21,8 +21,9 @@
 <area shape="rect" id="node20" href="$structgame_1_1systems_1_1_move_smoke.html" title="Move smoke system." alt="" coords="169,949,379,976"/>
 <area shape="rect" id="node21" href="$structgame_1_1systems_1_1_pickup_item.html" title=" " alt="" coords="173,1000,375,1027"/>
 <area shape="rect" id="node22" href="$structgame_1_1systems_1_1_play_sound_once.html" title=" " alt="" coords="159,1051,389,1077"/>
-<area shape="rect" id="node23" href="$structgame_1_1systems_1_1_run_animation.html" title=" " alt="" coords="163,1101,385,1128"/>
-<area shape="rect" id="node24" href="$structgame_1_1systems_1_1_splash_screen.html" title=" " alt="" coords="165,1152,383,1179"/>
-<area shape="rect" id="node25" href="$structgame_1_1systems_1_1_update_item_timer.html" title=" " alt="" coords="171,1203,377,1245"/>
-<area shape="rect" id="node26" href="$structgame_1_1systems_1_1_update_keyboard_input.html" title="Updates the first selected keyboard input field found." alt="" coords="155,1269,393,1310"/>
+<area shape="rect" id="node23" href="$structgame_1_1systems_1_1_play_sound_references.html" title=" " alt="" coords="175,1102,373,1143"/>
+<area shape="rect" id="node24" href="$structgame_1_1systems_1_1_run_animation.html" title=" " alt="" coords="163,1168,385,1195"/>
+<area shape="rect" id="node25" href="$structgame_1_1systems_1_1_splash_screen.html" title=" " alt="" coords="165,1219,383,1245"/>
+<area shape="rect" id="node26" href="$structgame_1_1systems_1_1_update_item_timer.html" title=" " alt="" coords="171,1270,377,1311"/>
+<area shape="rect" id="node27" href="$structgame_1_1systems_1_1_update_keyboard_input.html" title="Updates the first selected keyboard input field found." alt="" coords="155,1335,393,1377"/>
 </map>
