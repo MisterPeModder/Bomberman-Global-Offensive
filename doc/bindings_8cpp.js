@@ -14,6 +14,8 @@ var bindings_8cpp =
     [ "common_getWidth_mujs", "bindings_8cpp.html#a62afacaeb9a3e2406b73359ec2122d26", null ],
     [ "common_log", "bindings_8cpp.html#acd818960e6f97de5b61916b04d93feaa", null ],
     [ "common_log_mujs", "bindings_8cpp.html#af4d7239056d964d74c3341bc838ea5aa", null ],
+    [ "common_setColorblindFilter", "bindings_8cpp.html#a498e3cd1b9c0d93a3cd0cb0e6f0a2d10", null ],
+    [ "common_setColorblindFilter_mujs", "bindings_8cpp.html#a9db21d5e485a3f21cde94d18e185297d", null ],
     [ "common_setCVar", "bindings_8cpp.html#a9555c97f3aa59a5b0e5aeba9347adefc", null ],
     [ "common_setCVar_mujs", "bindings_8cpp.html#a4ab2c8f8a4c0cfa748e97ad7fc7e420a", null ],
     [ "common_setDebugMode", "bindings_8cpp.html#a7108e0ca19f1eaa244173c54872bc9cf", null ],

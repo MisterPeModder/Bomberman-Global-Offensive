@@ -19,6 +19,7 @@ var classbmjs_1_1_engine =
     [ "loadScript", "classbmjs_1_1_engine.html#ad66050b1321a448710c9a04faf844cfe", null ],
     [ "loadString", "classbmjs_1_1_engine.html#ac4b89531260efa92de60c220008aef25", null ],
     [ "rawInstance", "classbmjs_1_1_engine.html#add6750d38973b4af7a496fd122310fdb", null ],
+    [ "setConsoleOutput", "classbmjs_1_1_engine.html#a39c84c5c3c64223f355b3eae53e645e9", null ],
     [ "_gameEngine", "classbmjs_1_1_engine.html#aaf84f99092b709dd3a54ad01c5d8b73c", null ],
     [ "_instance", "classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2", null ],
     [ "_mods", "classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c", null ],

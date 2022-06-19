@@ -1,11 +1,12 @@
 <map id="src/bindings.cpp" name="src/bindings.cpp">
-<area shape="rect" id="node1" title=" " alt="" coords="313,5,439,32"/>
-<area shape="rect" id="node2" href="$_js_exception_8hpp.html" title=" " alt="" coords="5,80,171,107"/>
-<area shape="rect" id="node4" href="$_registry_guard_8hpp.html" title=" " alt="" coords="195,80,378,107"/>
-<area shape="rect" id="node7" href="$script_8hpp.html" title=" " alt="" coords="402,80,529,107"/>
-<area shape="rect" id="node9" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/memory.html" title=" " alt="" coords="553,80,631,107"/>
-<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/stdexcept.html" title=" " alt="" coords="45,155,131,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="335,155,401,181"/>
-<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string.html" title=" " alt="" coords="252,155,311,181"/>
-<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/functional.html" title=" " alt="" coords="426,155,513,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="345,5,472,32"/>
+<area shape="rect" id="node2" href="$_js_exception_8hpp.html" title=" " alt="" coords="38,80,203,107"/>
+<area shape="rect" id="node5" href="$_registry_guard_8hpp.html" title=" " alt="" coords="228,80,411,107"/>
+<area shape="rect" id="node8" href="$script_8hpp.html" title=" " alt="" coords="435,80,561,107"/>
+<area shape="rect" id="node10" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/memory.html" title=" " alt="" coords="586,80,663,107"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/stdexcept.html" title=" " alt="" coords="5,155,92,181"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html" title=" " alt="" coords="116,155,213,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="369,155,435,181"/>
+<area shape="rect" id="node7" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string.html" title=" " alt="" coords="286,155,345,181"/>
+<area shape="rect" id="node9" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/functional.html" title=" " alt="" coords="460,155,547,181"/>
 </map>

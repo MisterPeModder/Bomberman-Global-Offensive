@@ -147,6 +147,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a122e2566fc4d40936e0249e658cf5916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44206b7c91be7108a2248566f87b3bc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classgame_1_1_engine.html">game::Engine</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmjs_1_1_engine.html#a44206b7c91be7108a2248566f87b3bc3">getGameEngine</a> () noexcept</td></tr>
 <tr class="separator:a44206b7c91be7108a2248566f87b3bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c84c5c3c64223f355b3eae53e645e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classbmjs_1_1_engine.html#a39c84c5c3c64223f355b3eae53e645e9">setConsoleOutput</a> (<a class="el" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15">Logger::Severity</a> severity, <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;&amp;newOutput)</td></tr>
+<tr class="memdesc:a39c84c5c3c64223f355b3eae53e645e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a message to the console.  <a href="classbmjs_1_1_engine.html#a39c84c5c3c64223f355b3eae53e645e9">More...</a><br /></td></tr>
+<tr class="separator:a39c84c5c3c64223f355b3eae53e645e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -237,12 +240,12 @@ Static Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00053">53</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.clear();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a02bf0bd2a90930608fa28885df39d8a8">_delete</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#ac69c84d1ab991340163a708e53022628">_rawInstance</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00062">62</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.clear();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a02bf0bd2a90930608fa28885df39d8a8">_delete</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#ac69c84d1ab991340163a708e53022628">_rawInstance</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -270,14 +273,14 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00143">143</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                         : <a class="code" href="classbmjs_1_1_engine.html#aaf84f99092b709dd3a54ad01c5d8b73c">_gameEngine</a>(gameEngine), <a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>(js_newstate(<span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, JS_STRICT))</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        js_atpanic(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, &amp;<a class="code" href="script_2_engine_8cpp.html#a55975160bd398c06fca2ff9683a3cb26">bmjs_Engine_panic</a>);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        js_setreport(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, &amp;<a class="code" href="script_2_engine_8cpp.html#a07a8b2b5135774dc694eda32089ee060">bmjs_Engine_report</a>);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">bmjs::useApis</a>();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="namespacebmjs.html#a547e6a66f5e9e41abc4b629a5791c75b">registerMuJSBindings</a>(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00167">167</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                                         : <a class="code" href="classbmjs_1_1_engine.html#aaf84f99092b709dd3a54ad01c5d8b73c">_gameEngine</a>(gameEngine), <a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>(js_newstate(<span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>, JS_STRICT))</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        js_atpanic(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, &amp;<a class="code" href="script_2_engine_8cpp.html#a55975160bd398c06fca2ff9683a3cb26">bmjs_Engine_panic</a>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        js_setreport(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, &amp;<a class="code" href="script_2_engine_8cpp.html#a07a8b2b5135774dc694eda32089ee060">bmjs_Engine_report</a>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">bmjs::useApis</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="namespacebmjs.html#a547e6a66f5e9e41abc4b629a5791c75b">registerMuJSBindings</a>(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -305,11 +308,11 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00187">187</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        js_gc(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 0);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        js_freestate(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00211">211</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        js_gc(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 0);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        js_freestate(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -337,12 +340,12 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00151">151</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> pathStr = path.generic_string();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        js_dofile(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, pathStr.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/c_str.html">c_str</a>());</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00175">175</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> pathStr = path.generic_string();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        js_dofile(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, pathStr.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/c_str.html">c_str</a>());</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -369,11 +372,11 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00158">158</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keyword">auto</span> apiPath = <a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;mods&quot;</span>, <span class="stringliteral">&quot;api.js&quot;</span>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a020691d5c69f4b314cc9f2156827bd23">load</a>(apiPath);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00182">182</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keyword">auto</span> apiPath = <a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;mods&quot;</span>, <span class="stringliteral">&quot;api.js&quot;</span>);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a020691d5c69f4b314cc9f2156827bd23">load</a>(apiPath);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -401,28 +404,28 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00164">164</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span> (js_ploadstring(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, <span class="stringliteral">&quot;[console]&quot;</span>, toRun.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>())) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            JsException error(js_trystring(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, -1, <span class="stringliteral">&quot;Error&quot;</span>));</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            js_pop(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 1);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">throw</span> error;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        }</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        js_pushundefined(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">if</span> (js_pcall(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 0)) {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            JsException error(js_trystring(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, -1, <span class="stringliteral">&quot;Error&quot;</span>));</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            js_pop(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 1);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">throw</span> error;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">if</span> (js_isdefined(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, -1)) {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> result(js_trystring(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, -1, <span class="stringliteral">&quot;[no string representation]&quot;</span>));</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            js_pop(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 1);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        js_pop(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 1);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;undefined&quot;</span>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00188">188</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">if</span> (js_ploadstring(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, <span class="stringliteral">&quot;[console]&quot;</span>, toRun.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>())) {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            JsException error(js_trystring(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, -1, <span class="stringliteral">&quot;Error&quot;</span>));</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            js_pop(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 1);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordflow">throw</span> error;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        js_pushundefined(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> (js_pcall(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 0)) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            JsException error(js_trystring(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, -1, <span class="stringliteral">&quot;Error&quot;</span>));</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            js_pop(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 1);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">throw</span> error;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">if</span> (js_isdefined(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, -1)) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> result(js_trystring(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, -1, <span class="stringliteral">&quot;[no string representation]&quot;</span>));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            js_pop(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 1);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        js_pop(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">_state</a>, 1);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;undefined&quot;</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -453,10 +456,10 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A new mod instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00086">86</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.emplace_back(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.size(), name, description);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00095">95</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.emplace_back(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.size(), name, description);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -493,17 +496,17 @@ Static Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classbmjs_1_1_engine.html" title="Javascript Engine Wrapper.">Engine</a> instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00037">37</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">Engine::_instance</a>.expired()) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// using &#39;new&#39; because Engine&#39;s constructor is private</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr&lt;Engine&gt;</a> newInstance(<span class="keyword">new</span> <a class="code" href="classbmjs_1_1_engine.html#a2fb530efdddba9591dc6525dcdca1405">Engine</a>(gameEngine));</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">Engine::_instance</a> = newInstance;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classbmjs_1_1_engine.html#ac69c84d1ab991340163a708e53022628">Engine::_rawInstance</a> = newInstance.get();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">return</span> newInstance;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">Engine::_instance</a>.lock();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00046">46</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">Engine::_instance</a>.expired()) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="comment">// using &#39;new&#39; because Engine&#39;s constructor is private</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr&lt;Engine&gt;</a> newInstance(<span class="keyword">new</span> <a class="code" href="classbmjs_1_1_engine.html#a2fb530efdddba9591dc6525dcdca1405">Engine</a>(gameEngine));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">Engine::_instance</a> = newInstance;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="classbmjs_1_1_engine.html#ac69c84d1ab991340163a708e53022628">Engine::_rawInstance</a> = newInstance.get();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">return</span> newInstance;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">Engine::_instance</a>.lock();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -531,8 +534,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The game engine instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00109">109</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{ <span class="keywordflow">return</span> *this-&gt;<a class="code" href="classbmjs_1_1_engine.html#aaf84f99092b709dd3a54ad01c5d8b73c">_gameEngine</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00118">118</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{ <span class="keywordflow">return</span> *this-&gt;<a class="code" href="classbmjs_1_1_engine.html#aaf84f99092b709dd3a54ad01c5d8b73c">_gameEngine</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -586,12 +589,12 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00091">91</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (modId &gt;= this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.size())</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> &amp;*(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.cbegin() + modId);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00100">100</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (modId &gt;= this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.size())</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> &amp;*(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.cbegin() + modId);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -619,12 +622,12 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00098">98</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (modId &gt;= this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.size())</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> &amp;*(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.begin() + modId);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00107">107</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span> (modId &gt;= this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.size())</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">return</span> &amp;*(this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">_mods</a>.begin() + modId);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -652,8 +655,8 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classbmjs_1_1_engine.html" title="Javascript Engine Wrapper.">Engine</a> instance, may not exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00049">49</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">Engine::_instance</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00058">58</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">Engine::_instance</a>; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -681,12 +684,12 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00064">64</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, [&amp;](<span class="keyword">auto</span> &amp;out) { out &lt;&lt; <span class="stringliteral">&quot;Loading script at &#39;&quot;</span> &lt;&lt; path &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>; });</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#ae70d61698e745b499640e293e05815a9">_load</a>(path);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00073">73</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, [&amp;](<span class="keyword">auto</span> &amp;out) { out &lt;&lt; <span class="stringliteral">&quot;Loading script at &#39;&quot;</span> &lt;&lt; path &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>; });</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#ae70d61698e745b499640e293e05815a9">_load</a>(path);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -707,8 +710,8 @@ Static Private Attributes</h2></td></tr>
 
 <p>Loads the built-in JS API. </p>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00078">78</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{ this-&gt;<a class="code" href="classbmjs_1_1_engine.html#aef57bcb0db302941ca1764d1621c3a4a">_loadApi</a>(); }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00087">87</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{ this-&gt;<a class="code" href="classbmjs_1_1_engine.html#aef57bcb0db302941ca1764d1621c3a4a">_loadApi</a>(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -736,12 +739,12 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00071">71</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">auto</span> modPath = <a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;mods&quot;</span>, name);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        modPath += <span class="stringliteral">&quot;.js&quot;</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a020691d5c69f4b314cc9f2156827bd23">load</a>(modPath);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00080">80</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">auto</span> modPath = <a class="code" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a>(<span class="stringliteral">&quot;mods&quot;</span>, name);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        modPath += <span class="stringliteral">&quot;.js&quot;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a020691d5c69f4b314cc9f2156827bd23">load</a>(modPath);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -775,8 +778,8 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00080">80</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a48ad862089e1ac5fa81219601eb4579a">_loadString</a>(toRun); }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00089">89</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="classbmjs_1_1_engine.html#a48ad862089e1ac5fa81219601eb4579a">_loadString</a>(toRun); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -807,8 +810,53 @@ Static Private Attributes</h2></td></tr>
 <p>Only call this from the main thread.</p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classbmjs_1_1_engine.html" title="Javascript Engine Wrapper.">Engine</a> instance. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00051">51</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classbmjs_1_1_engine.html#ac69c84d1ab991340163a708e53022628">Engine::_rawInstance</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00060">60</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classbmjs_1_1_engine.html#ac69c84d1ab991340163a708e53022628">Engine::_rawInstance</a>; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a39c84c5c3c64223f355b3eae53e645e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c84c5c3c64223f355b3eae53e645e9">&#9670;&nbsp;</a></span>setConsoleOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bmjs::Engine::setConsoleOutput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15">Logger::Severity</a>&#160;</td>
+          <td class="paramname"><em>severity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>newOutput</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes a message to the console. </p>
+
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8cpp_source.html#l00122">122</a> of file <a class="el" href="script_2_engine_8cpp_source.html">Engine.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="classecs_1_1_world.html">ecs::World</a> &amp;world = this-&gt;<a class="code" href="classbmjs_1_1_engine.html#aaf84f99092b709dd3a54ad01c5d8b73c">_gameEngine</a>-&gt;<a class="code" href="classgame_1_1_engine.html#a6634fd0dd2be5d9cff3bd72d3b4c9e57">getScene</a>().<a class="code" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">getWorld</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (world.<a class="code" href="classecs_1_1_world.html#ac7d3665cadaad232d29e3321ee04acf2">hasStorage</a>&lt;<a class="code" href="structgame_1_1gui_1_1_console.html">game::gui::Console</a>&gt;()) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keyword">auto</span> consoles = <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(world.<a class="code" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">getStorage</a>&lt;<a class="code" href="structgame_1_1gui_1_1_console.html">game::gui::Console</a>&gt;());</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span> (consoles.begin() != consoles.end()) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                std::get&lt;0&gt;(*consoles.begin()).setOutput(severity, std::move(newOutput));</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(severity, newOutput);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -833,7 +881,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00111">111</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00114">114</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -857,7 +905,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00108">108</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00111">111</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -881,7 +929,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00112">112</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00115">115</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -905,7 +953,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00109">109</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00112">112</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -929,7 +977,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00122">122</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="script_2_engine_8hpp_source.html#l00125">125</a> of file <a class="el" href="script_2_engine_8hpp_source.html">Engine.hpp</a>.</p>
 
 </div>
 </div>
@@ -939,28 +987,35 @@ Static Private Attributes</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="ascript_2_engine_8cpp_html_a07a8b2b5135774dc694eda32089ee060"><div class="ttname"><a href="script_2_engine_8cpp.html#a07a8b2b5135774dc694eda32089ee060">bmjs_Engine_report</a></div><div class="ttdeci">static void bmjs_Engine_report(js_State *, char const *message)</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00023">Engine.cpp:23</a></div></div>
+<div class="ttc" id="ascript_2_engine_8cpp_html_a07a8b2b5135774dc694eda32089ee060"><div class="ttname"><a href="script_2_engine_8cpp.html#a07a8b2b5135774dc694eda32089ee060">bmjs_Engine_report</a></div><div class="ttdeci">static void bmjs_Engine_report(js_State *, char const *message)</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00032">Engine.cpp:32</a></div></div>
+<div class="ttc" id="astructgame_1_1gui_1_1_console_html"><div class="ttname"><a href="structgame_1_1gui_1_1_console.html">game::gui::Console</a></div><div class="ttdef"><b>Definition:</b> <a href="_console_8hpp_source.html#l00029">Console.hpp:29</a></div></div>
 <div class="ttc" id="abasic_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a></div></div>
 <div class="ttc" id="ashared_ptr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/memory/shared_ptr.html">std::shared_ptr</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_a089198f2780547080a61c6cfcd0273a2"><div class="ttname"><a href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">bmjs::Engine::_instance</a></div><div class="ttdeci">static std::weak_ptr&lt; Engine &gt; _instance</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00108">Engine.hpp:108</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_a089198f2780547080a61c6cfcd0273a2"><div class="ttname"><a href="classbmjs_1_1_engine.html#a089198f2780547080a61c6cfcd0273a2">bmjs::Engine::_instance</a></div><div class="ttdeci">static std::weak_ptr&lt; Engine &gt; _instance</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00111">Engine.hpp:111</a></div></div>
 <div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00057">Logger.hpp:57</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_aef57bcb0db302941ca1764d1621c3a4a"><div class="ttname"><a href="classbmjs_1_1_engine.html#aef57bcb0db302941ca1764d1621c3a4a">bmjs::Engine::_loadApi</a></div><div class="ttdeci">void _loadApi()</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00158">Engine.cpp:158</a></div></div>
-<div class="ttc" id="anamespacebmjs_html_a547e6a66f5e9e41abc4b629a5791c75b"><div class="ttname"><a href="namespacebmjs.html#a547e6a66f5e9e41abc4b629a5791c75b">bmjs::registerMuJSBindings</a></div><div class="ttdeci">void registerMuJSBindings(js_State *state)</div><div class="ttdoc">Registers the JS bindings in the 'bm' global object.</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00318">bindings.cpp:318</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_aef57bcb0db302941ca1764d1621c3a4a"><div class="ttname"><a href="classbmjs_1_1_engine.html#aef57bcb0db302941ca1764d1621c3a4a">bmjs::Engine::_loadApi</a></div><div class="ttdeci">void _loadApi()</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00182">Engine.cpp:182</a></div></div>
+<div class="ttc" id="anamespacebmjs_html_a547e6a66f5e9e41abc4b629a5791c75b"><div class="ttname"><a href="namespacebmjs.html#a547e6a66f5e9e41abc4b629a5791c75b">bmjs::registerMuJSBindings</a></div><div class="ttdeci">void registerMuJSBindings(js_State *state)</div><div class="ttdoc">Registers the JS bindings in the 'bm' global object.</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00330">bindings.cpp:330</a></div></div>
+<div class="ttc" id="aclassgame_1_1_engine_html_a6634fd0dd2be5d9cff3bd72d3b4c9e57"><div class="ttname"><a href="classgame_1_1_engine.html#a6634fd0dd2be5d9cff3bd72d3b4c9e57">game::Engine::getScene</a></div><div class="ttdeci">game::IScene &amp; getScene()</div><div class="ttdoc">Gets the mutable active scene.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00090">Engine.cpp:90</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a></div><div class="ttdeci">@ Information</div><div class="ttdoc">Debug messages.</div></div>
 <div class="ttc" id="aclassbmjs_1_1_engine_html_a2fb530efdddba9591dc6525dcdca1405"><div class="ttname"><a href="classbmjs_1_1_engine.html#a2fb530efdddba9591dc6525dcdca1405">bmjs::Engine::Engine</a></div><div class="ttdeci">Engine(Engine const &amp;)=delete</div><div class="ttdoc">Cannot copy.</div></div>
 <div class="ttc" id="anamespaceutil_html_a05454346e6b75a324321c23f7afc5727"><div class="ttname"><a href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00024">util.hpp:24</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_ac7d3665cadaad232d29e3321ee04acf2"><div class="ttname"><a href="classecs_1_1_world.html#ac7d3665cadaad232d29e3321ee04acf2">ecs::World::hasStorage</a></div><div class="ttdeci">bool hasStorage() const</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00202">World.hpp:202</a></div></div>
 <div class="ttc" id="ac_str_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/c_str.html">std::string::c_str</a></div><div class="ttdeci">T c_str(T... args)</div></div>
-<div class="ttc" id="ascript_2_engine_8cpp_html_a55975160bd398c06fca2ff9683a3cb26"><div class="ttname"><a href="script_2_engine_8cpp.html#a55975160bd398c06fca2ff9683a3cb26">bmjs_Engine_panic</a></div><div class="ttdeci">static void bmjs_Engine_panic(js_State *)</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00022">Engine.cpp:22</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_aaf84f99092b709dd3a54ad01c5d8b73c"><div class="ttname"><a href="classbmjs_1_1_engine.html#aaf84f99092b709dd3a54ad01c5d8b73c">bmjs::Engine::_gameEngine</a></div><div class="ttdeci">game::Engine * _gameEngine</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00111">Engine.hpp:111</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_a7e463a24c259b4d529513f960734ec0c"><div class="ttname"><a href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">bmjs::Engine::_mods</a></div><div class="ttdeci">std::vector&lt; Mod &gt; _mods</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00112">Engine.hpp:112</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_a020691d5c69f4b314cc9f2156827bd23"><div class="ttname"><a href="classbmjs_1_1_engine.html#a020691d5c69f4b314cc9f2156827bd23">bmjs::Engine::load</a></div><div class="ttdeci">void load(std::filesystem::path const &amp;path)</div><div class="ttdoc">Runs the JavaScript file at path.</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00064">Engine.cpp:64</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_a48ad862089e1ac5fa81219601eb4579a"><div class="ttname"><a href="classbmjs_1_1_engine.html#a48ad862089e1ac5fa81219601eb4579a">bmjs::Engine::_loadString</a></div><div class="ttdeci">std::string _loadString(std::string_view toRun)</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00164">Engine.cpp:164</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_a31f1e2894053ccd3ad4c47cfe202e971"><div class="ttname"><a href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">bmjs::Engine::_state</a></div><div class="ttdeci">js_State * _state</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00122">Engine.hpp:122</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_ac69c84d1ab991340163a708e53022628"><div class="ttname"><a href="classbmjs_1_1_engine.html#ac69c84d1ab991340163a708e53022628">bmjs::Engine::_rawInstance</a></div><div class="ttdeci">static Engine * _rawInstance</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00109">Engine.hpp:109</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_a02bf0bd2a90930608fa28885df39d8a8"><div class="ttname"><a href="classbmjs_1_1_engine.html#a02bf0bd2a90930608fa28885df39d8a8">bmjs::Engine::_delete</a></div><div class="ttdeci">void _delete()</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00187">Engine.cpp:187</a></div></div>
+<div class="ttc" id="ascript_2_engine_8cpp_html_a55975160bd398c06fca2ff9683a3cb26"><div class="ttname"><a href="script_2_engine_8cpp.html#a55975160bd398c06fca2ff9683a3cb26">bmjs_Engine_panic</a></div><div class="ttdeci">static void bmjs_Engine_panic(js_State *)</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00031">Engine.cpp:31</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_aaf84f99092b709dd3a54ad01c5d8b73c"><div class="ttname"><a href="classbmjs_1_1_engine.html#aaf84f99092b709dd3a54ad01c5d8b73c">bmjs::Engine::_gameEngine</a></div><div class="ttdeci">game::Engine * _gameEngine</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00114">Engine.hpp:114</a></div></div>
+<div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html_aab1ea951ba59262e6808ace66f709e40"><div class="ttname"><a href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">ecs::World::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Fetches a component storage from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00214">World.hpp:214</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_a7e463a24c259b4d529513f960734ec0c"><div class="ttname"><a href="classbmjs_1_1_engine.html#a7e463a24c259b4d529513f960734ec0c">bmjs::Engine::_mods</a></div><div class="ttdeci">std::vector&lt; Mod &gt; _mods</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00115">Engine.hpp:115</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_a020691d5c69f4b314cc9f2156827bd23"><div class="ttname"><a href="classbmjs_1_1_engine.html#a020691d5c69f4b314cc9f2156827bd23">bmjs::Engine::load</a></div><div class="ttdeci">void load(std::filesystem::path const &amp;path)</div><div class="ttdoc">Runs the JavaScript file at path.</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00073">Engine.cpp:73</a></div></div>
+<div class="ttc" id="aclassgame_1_1_i_scene_html_a6dc8c2f9b7f74e0281ccb914626bdbf1"><div class="ttname"><a href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">game::IScene::getWorld</a></div><div class="ttdeci">virtual ecs::World &amp; getWorld()=0</div><div class="ttdoc">Gets the scene's mutable world object.</div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_a48ad862089e1ac5fa81219601eb4579a"><div class="ttname"><a href="classbmjs_1_1_engine.html#a48ad862089e1ac5fa81219601eb4579a">bmjs::Engine::_loadString</a></div><div class="ttdeci">std::string _loadString(std::string_view toRun)</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00188">Engine.cpp:188</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_a31f1e2894053ccd3ad4c47cfe202e971"><div class="ttname"><a href="classbmjs_1_1_engine.html#a31f1e2894053ccd3ad4c47cfe202e971">bmjs::Engine::_state</a></div><div class="ttdeci">js_State * _state</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00125">Engine.hpp:125</a></div></div>
+<div class="ttc" id="aclassecs_1_1_world_html"><div class="ttname"><a href="classecs_1_1_world.html">ecs::World</a></div><div class="ttdoc">Contains all entities and systems.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00030">World.hpp:30</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_ac69c84d1ab991340163a708e53022628"><div class="ttname"><a href="classbmjs_1_1_engine.html#ac69c84d1ab991340163a708e53022628">bmjs::Engine::_rawInstance</a></div><div class="ttdeci">static Engine * _rawInstance</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8hpp_source.html#l00112">Engine.hpp:112</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_a02bf0bd2a90930608fa28885df39d8a8"><div class="ttname"><a href="classbmjs_1_1_engine.html#a02bf0bd2a90930608fa28885df39d8a8">bmjs::Engine::_delete</a></div><div class="ttdeci">void _delete()</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00211">Engine.cpp:211</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">std::string_view::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <div class="ttc" id="anamespacebmjs_html_a0d08aee03bf7cc4c19eaf0e98a3797f2"><div class="ttname"><a href="namespacebmjs.html#a0d08aee03bf7cc4c19eaf0e98a3797f2">bmjs::useApis</a></div><div class="ttdeci">void useApis()</div><div class="ttdoc">Forces Emscripten to not remove the API functions from the binary.</div><div class="ttdef"><b>Definition:</b> <a href="api_8hpp_source.html#l00019">api.hpp:19</a></div></div>
-<div class="ttc" id="aclassbmjs_1_1_engine_html_ae70d61698e745b499640e293e05815a9"><div class="ttname"><a href="classbmjs_1_1_engine.html#ae70d61698e745b499640e293e05815a9">bmjs::Engine::_load</a></div><div class="ttdeci">void _load(std::filesystem::path const &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00151">Engine.cpp:151</a></div></div>
+<div class="ttc" id="aclassbmjs_1_1_engine_html_ae70d61698e745b499640e293e05815a9"><div class="ttname"><a href="classbmjs_1_1_engine.html#ae70d61698e745b499640e293e05815a9">bmjs::Engine::_load</a></div><div class="ttdeci">void _load(std::filesystem::path const &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00175">Engine.cpp:175</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

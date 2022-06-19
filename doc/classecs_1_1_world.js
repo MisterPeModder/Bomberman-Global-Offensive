@@ -13,6 +13,7 @@ var classecs_1_1_world =
     [ "getResource", "classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a", null ],
     [ "getStorage", "classecs_1_1_world.html#ac134d76d91d87b31b1aa87b2755d16e3", null ],
     [ "getStorage", "classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40", null ],
+    [ "hasStorage", "classecs_1_1_world.html#ac7d3665cadaad232d29e3321ee04acf2", null ],
     [ "maintain", "classecs_1_1_world.html#ac584572982f3ccbf26ac6f5232d9b3ab", null ],
     [ "runSystem", "classecs_1_1_world.html#ade5f2efe02c5b1473f2559131e8b433d", null ],
     [ "runSystem", "classecs_1_1_world.html#abb2756ff1135ce167d0cd298589bc1c8", null ],

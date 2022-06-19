@@ -1,6 +1,7 @@
 <map id="src/game/gui/components/Console.hpp" name="src/game/gui/components/Console.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="182,5,373,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="306,5,497,47"/>
 <area shape="rect" id="node2" href="$_game_8cpp.html" title=" " alt="" coords="5,102,157,129"/>
 <area shape="rect" id="node3" href="$_console_8cpp.html" title=" " alt="" coords="182,95,373,136"/>
 <area shape="rect" id="node4" href="$_draw_console_8cpp.html" title=" " alt="" coords="397,102,656,129"/>
+<area shape="rect" id="node5" href="$script_2_engine_8cpp.html" title=" " alt="" coords="681,102,837,129"/>
 </map>
