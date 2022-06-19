@@ -12,6 +12,7 @@
 #include "game/components/Player.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Smoke.hpp"
+#include "game/components/Sound.hpp"
 
 namespace game::components
 {
@@ -32,6 +33,8 @@ namespace game::components
             /// Don't activate two smokes at a time.
             if (smokes.size() > 0)
                 return false;
+
+            game::components::Sound::playSound(data, "smoke");
 
             /// Place a smoke on all ennemies.
             for (auto [pos, player, id, entity] : ecs::join(positions, data.getStorage<Player>(),

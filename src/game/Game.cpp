@@ -171,6 +171,8 @@ namespace game
         auto &sounds = _world.getResource<resources::Sounds>();
 
         sounds.emplace("C4", "assets/audio/sounds/c4_explosion.ogg");
+        sounds.emplace("stun", "assets/audio/sounds/flashbang.ogg");
+        sounds.emplace("smoke", "assets/audio/sounds/smoke.ogg");
     }
 
     void Game::setup()
