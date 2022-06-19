@@ -111,10 +111,10 @@ namespace game
             .with<gui::Clickable>(
                 [this](ecs::Entity) {
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
+                    size_t nbUsers = engine->getUsers().getAvailableUsers();
 
-                    if (engine->getUsers().getAvailableUsers() < 2)
-                        return;
-                    engine->setScene<GameScene>(Game::Parameters(engine->getUsers().getAvailableUsers()));
+                    engine->setScene<GameScene>(
+                        Game::Parameters((nbUsers < 2) ? 2 : engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
