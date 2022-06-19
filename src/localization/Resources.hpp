@@ -125,8 +125,6 @@ namespace localization
 
             // constexpr ResourceString rs();
         } // namespace hud
-
-    } // namespace resources
         namespace textures
         {
             constexpr ResourceString rsTerroristOne("Terrorist 1");
