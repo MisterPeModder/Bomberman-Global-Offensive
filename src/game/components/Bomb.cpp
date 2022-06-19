@@ -7,11 +7,9 @@
 
 #include "Bomb.hpp"
 #include <cmath>
-#include "Animation.hpp"
 #include "BombNoClip.hpp"
 #include "Collidable.hpp"
 #include "Color.hpp"
-#include "Controlable.hpp"
 #include "Destructible.hpp"
 #include "Identity.hpp"
 #include "Living.hpp"
@@ -81,13 +79,8 @@ namespace game::components
 
             if (living) {
                 living->hp--;
-                if (data.getStorage<Controlable>().contains(id.getId())) {
-                    data.getStorage<Controlable>().erase(id.getId());
-                    data.getStorage<game::components::Animation>()[id.getId()].chooseAnimation(
-                        static_cast<unsigned int>(game::components::Player::Animations::Die));
-                }
-                // if (living->hp == 0)
-                //     entities.kill(id);
+                if (living->hp == 0)
+                    entities.kill(id);
             }
             if (destructible) {
                 entities.kill(id);
