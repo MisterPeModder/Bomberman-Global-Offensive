@@ -81,7 +81,6 @@ namespace game
     MainMenuScene::MainMenuScene()
     {
         for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++) {
-            std::cout << "PUSH" << i << std::endl;
             _availableSkins.push(User::USER_SKINS(i));
         }
 
@@ -211,7 +210,6 @@ namespace game
                         return false;
 
                     auto &user = data.getResource<game::resources::EngineResource>().engine->getUsers()[event.user];
-                    std::cout << "HAVE " << user.getSkin() << " WILL HAVE " << _availableSkins.front() << std::endl;
                     _availableSkins.push(user.getSkin());
                     user.setSkin(_availableSkins.front());
                     _availableSkins.pop();
