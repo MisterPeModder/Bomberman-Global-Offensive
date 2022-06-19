@@ -54,6 +54,7 @@
 
 #include "systems/Animation.hpp"
 #include "systems/Bomb.hpp"
+#include "systems/CheckGameEnd.hpp"
 #include "systems/Collision.hpp"
 #include "systems/DrawConsole.hpp"
 #include "systems/DrawingCube.hpp"
@@ -235,10 +236,12 @@ namespace game
         _world.addSystem<systems::MoveSmoke>();
         _world.addSystem<systems::DrawSmoke>();
         _world.addSystem<systems::PlaySoundReferences>();
+        _world.addSystem<systems::CheckGameEnd>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::PlaySoundReferences>();
+            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
+            systems::PlaySoundReferences>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 

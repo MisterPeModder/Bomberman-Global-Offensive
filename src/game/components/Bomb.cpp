@@ -78,7 +78,9 @@ namespace game::components
                 continue;
 
             if (living) {
-                Logger::logger.log(Logger::Severity::Debug, "Living entity hit by a bomb"); // living->hp--;
+                living->hp--;
+                if (living->hp == 0)
+                    entities.kill(id);
             }
             if (destructible) {
                 entities.kill(id);
