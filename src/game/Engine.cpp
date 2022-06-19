@@ -195,4 +195,21 @@ namespace game
 
     const Users &Engine::getUsers() const { return _users; }
 
+    void Engine::setCurrentMusic(PreloadedMusics music)
+    {
+        switch (music) {
+            case PreloadedMusics::GAME_THEME:
+                if (_mainMenuTheme.isPlaying())
+                    _mainMenuTheme.stop();
+                _gameTheme.play();
+                break;
+            case PreloadedMusics::MAIN_MENU_THEME:
+                if (_gameTheme.isPlaying())
+                    _gameTheme.stop();
+                _mainMenuTheme.play();
+                break;
+            default: break;
+        }
+    }
+
 } // namespace game
