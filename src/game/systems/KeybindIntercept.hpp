@@ -41,6 +41,26 @@ namespace game::systems
                             intercepter.callback();
                     }
                 } else {
+                    raylib::core::Gamepad::Button btn = raylib::core::Gamepad::getButtonPressed();
+
+                    if (static_cast<int>(btn) == -1)
+                        continue;
+                    auto &user = users[intercepter.user];
+                    raylib::core::Gamepad gamepad(user.getGamepadId());
+
+                    if (gamepad.isButtonDown(btn)) {
+                        Logger::logger.log(Logger::Severity::Information, [&](auto &out) {
+                            out << "Bind user " << static_cast<size_t>(intercepter.user) << " action "
+                                << static_cast<size_t>(intercepter.action) << " to gamepad button "
+                                << static_cast<size_t>(btn);
+                        });
+                        user.getKeybinds().setGamepadBinding(
+                            game::settings::GamepadInput(btn), intercepter.action, true);
+                        users.updateActions(false);
+                        entities.kill(id);
+                        if (intercepter.callback)
+                            intercepter.callback();
+                    }
                 }
             }
         }

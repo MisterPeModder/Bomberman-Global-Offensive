@@ -799,7 +799,7 @@ namespace game
                             return;
                         _world.addEntity()
                             .with<game::components::KeybindIntercepter>(
-                                userId, action, [=, this]() { _updateActionGamepad(action, id); })
+                                userId, action, [=, this]() { _updateActionGamepad(action, id); }, false)
                             .build();
                         Logger::logger.log(Logger::Severity::Information, "Waiting for user gamepad input");
                     },
