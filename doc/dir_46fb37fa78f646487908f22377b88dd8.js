@@ -44,6 +44,10 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "DrawTextureBackground.hpp", "_draw_texture_background_8hpp.html", [
       [ "DrawTextureBackground", "structgame_1_1systems_1_1_draw_texture_background.html", "structgame_1_1systems_1_1_draw_texture_background" ]
     ] ],
+    [ "Explosion.cpp", "systems_2_explosion_8cpp.html", null ],
+    [ "Explosion.hpp", "systems_2_explosion_8hpp.html", [
+      [ "ClearExplosions", "structgame_1_1systems_1_1_clear_explosions.html", "structgame_1_1systems_1_1_clear_explosions" ]
+    ] ],
     [ "InputManager.cpp", "_input_manager_8cpp.html", null ],
     [ "InputManager.hpp", "_input_manager_8hpp.html", [
       [ "InputManager", "structgame_1_1systems_1_1_input_manager.html", "structgame_1_1systems_1_1_input_manager" ]
