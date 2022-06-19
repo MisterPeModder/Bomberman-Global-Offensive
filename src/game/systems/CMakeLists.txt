@@ -17,6 +17,8 @@ set(SRC
     ${SRCROOT}/DrawText.cpp
     ${INCROOT}/DrawText.hpp
     ${INCROOT}/DrawTexture.hpp
+    ${SRCROOT}/Explosion.cpp
+    ${INCROOT}/Explosion.hpp
     ${SRCROOT}/InputManager.cpp
     ${INCROOT}/InputManager.hpp
     ${SRCROOT}/Items.cpp

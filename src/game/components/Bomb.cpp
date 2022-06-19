@@ -11,6 +11,7 @@
 #include "Collidable.hpp"
 #include "Color.hpp"
 #include "Destructible.hpp"
+#include "Explosion.hpp"
 #include "Identity.hpp"
 #include "Living.hpp"
 #include "Model.hpp"
@@ -63,6 +64,8 @@ namespace game::components
             this->radius);
         if (explodedPositions.empty())
             return;
+        for (auto iter : explodedPositions)
+            Explosion::placeExplosion(data, iter);
 
         /// Test for destructible and living entities if they are in an exploded cell.
         for (auto [pos, size, destructible, living, bomb, id] :
