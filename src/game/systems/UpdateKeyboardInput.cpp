@@ -6,13 +6,13 @@
 */
 
 #include "UpdateKeyboardInput.hpp"
-#include "game/GameTimer.hpp"
 #include "game/components/History.hpp"
 #include "game/components/KeyboardInput.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
 #include "ecs/resource/Entities.hpp"
+#include "ecs/resource/Timer.hpp"
 
 #include "raylib/core/Keyboard.hpp"
 #include "raylib/core/Window.hpp"
@@ -77,7 +77,7 @@ namespace game::systems
                 util::insertUtf8Codepoint(field.contents[field.cursorPos.y], codepoint, field.cursorPos.x));
         }
 
-        double elapsed = data.getResource<game::GameTimer>().elapsed();
+        double elapsed = data.getResource<ecs::Timer>().elapsed();
 
         field.checkKeyRepeats(self, data, elapsed);
         field.cursorBlink = fmod(field.cursorBlink + elapsed, 1.0);
