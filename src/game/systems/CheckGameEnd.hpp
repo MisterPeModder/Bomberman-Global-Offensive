@@ -31,6 +31,8 @@ namespace game::systems
                 for (auto [gameEnded] : ecs::join(data.getStorage<game::components::GameEnded>())) {
                     if (gameEnded.endTime + 5 <= timer.elapsed()) {
                         data.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
+                        data.getResource<game::resources::EngineResource>().engine->setCurrentMusic(
+                            game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
                     }
                     if (!gameEnded.gameEnded) {
                         for (auto [living, entity] :

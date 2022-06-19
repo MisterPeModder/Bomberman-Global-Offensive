@@ -360,6 +360,7 @@ namespace game
 
     void Game::drawFrame()
     {
+        _world.getResource<game::resources::EngineResource>().engine->updateMusicStreams();
         _camera.update();
 
         _world.runSystem<game::systems::UpdateKeyboardInput>();
