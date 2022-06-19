@@ -12,6 +12,7 @@
 
 BMJS_DECLARE_API(common)
 BMJS_DECLARE_API(mods)
+BMJS_DECLARE_API(players)
 
 namespace bmjs
 {
@@ -20,6 +21,7 @@ namespace bmjs
     {
         BMJS_USE_API(common);
         BMJS_USE_API(mods);
+        BMJS_USE_API(players);
     }
 } // namespace bmjs
 

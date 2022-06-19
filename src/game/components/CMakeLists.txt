@@ -5,6 +5,8 @@ add_subdirectory(items)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/AiControlable.cpp
+    ${INCROOT}/AiControlable.hpp
     ${INCROOT}/Animation.hpp
     ${INCROOT}/Background.hpp
     ${SRCROOT}/Bomb.cpp
@@ -17,6 +19,7 @@ set(SRC
     ${INCROOT}/Cube.hpp
     ${INCROOT}/CubeColor.hpp
     ${INCROOT}/Destructible.hpp
+    ${INCROOT}/GameEnded.hpp
     ${INCROOT}/Explosion.cpp
     ${INCROOT}/Explosion.hpp
     ${SRCROOT}/History.cpp

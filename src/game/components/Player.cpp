@@ -139,6 +139,61 @@ namespace game::components
         return true;
     }
 
+    void Player::move(ecs::Entity self, ecs::SystemData data, GameAction action, float value)
+    {
+        auto &velocity = data.getStorage<Velocity>()[self.getId()];
+        auto &rAngle = data.getStorage<RotationAngle>()[self.getId()];
+        auto &anim = data.getStorage<Animation>()[self.getId()];
+        auto &stats = data.getStorage<Player>()[self.getId()].stats;
+        auto &player = data.getStorage<Player>()[self.getId()];
+
+        if (data.getResource<game::resources::GameClock>().getTime() < player.stats.stunEnd)
+            return;
+
+        if (value < 0.2f) {
+            velocity = {0.f, 0.f, 0.f};
+            if (player.animation == Animations::Run) {
+                // Randomize the idle animation id
+                auto &randDevice = data.getResource<game::resources::RandomDevice>();
+                unsigned int randVal = randDevice.randInt(
+                    static_cast<unsigned int>(Animations::Idle_1), static_cast<unsigned int>(Animations::Idle_4));
+
+                anim.chooseAnimation(randVal);
+                player.animation = Animations(randVal);
+            }
+        } else {
+            float speed = stats.speed;
+
+            if (stats.inverted)
+                speed *= -1.f;
+            if (stats.slowness)
+                speed *= 0.25f;
+            switch (action) {
+                case GameAction::MOVE_LEFT:
+                    velocity = {-speed, 0.f, 0.f};
+                    rAngle.rotationAngle = 270.f;
+                    break;
+                case GameAction::MOVE_UP:
+                    velocity = {0.f, 0.f, -speed};
+                    rAngle.rotationAngle = 180.f;
+                    break;
+                case GameAction::MOVE_RIGHT:
+                    velocity = {speed, 0.f, 0.f};
+                    rAngle.rotationAngle = 90.f;
+                    break;
+                case GameAction::MOVE_DOWN:
+                    velocity = {0.f, 0.f, speed};
+                    rAngle.rotationAngle = 0.f;
+                    break;
+                default: break;
+            }
+            if (velocity != raylib::core::Vector3f(0.f, 0.f, 0.f) && player.animation != Animations::Run) {
+                anim.chooseAnimation(static_cast<unsigned int>(Animations::Run));
+                player.animation = Animations::Run;
+            }
+        }
+    }
+
     void Player::move(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
     {
         auto &velocity = data.getStorage<Velocity>()[self.getId()];

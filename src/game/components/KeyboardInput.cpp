@@ -11,8 +11,8 @@
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
 #include "ecs/resource/Entities.hpp"
-#include "ecs/resource/Timer.hpp"
 
+#include "game/GameTimer.hpp"
 #include "raylib/core/Color.hpp"
 #include "raylib/core/Keyboard.hpp"
 #include "raylib/core/Window.hpp"

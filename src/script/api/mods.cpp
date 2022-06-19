@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** Bomberman: Global Offensive
 ** File description:
-** Common JS utilities
+** JS Mod Object Methods
 */
 
 /// @file

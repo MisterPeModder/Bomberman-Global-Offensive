@@ -7,6 +7,7 @@
 
 #include "Game.hpp"
 
+#include "components/AiControlable.hpp"
 #include "components/Animation.hpp"
 #include "components/Bomb.hpp"
 #include "components/BombNoClip.hpp"
@@ -17,6 +18,7 @@
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Explosion.hpp"
+#include "components/GameEnded.hpp"
 #include "components/History.hpp"
 #include "components/Hud.hpp"
 #include "components/Identity.hpp"
@@ -62,6 +64,7 @@
 #include "resources/Map.hpp"
 #include "resources/RandomDevice.hpp"
 
+#include "systems/AiUpdate.hpp"
 #include "systems/Animation.hpp"
 #include "systems/Bomb.hpp"
 #include "systems/CheckGameEnd.hpp"
@@ -85,6 +88,7 @@
 #include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
+#include "game/GameTimer.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
@@ -210,6 +214,7 @@ namespace game
         sounds.emplace("C4", "assets/audio/sounds/c4_explosion.ogg");
         sounds.emplace("stun", "assets/audio/sounds/flashbang.ogg");
         sounds.emplace("smoke", "assets/audio/sounds/smoke.ogg");
+        sounds.emplace("victory", "assets/audio/sounds/wins.ogg");
     }
 
     void Game::setup()
@@ -234,6 +239,8 @@ namespace game
         _world.addSystem<game::systems::DrawConsole>();
         _drawing2d.add<game::systems::DrawConsole>();
 
+        _world.addEntity().with<game::components::GameEnded>().build();
+
         _world.addEntity()
             .with<game::gui::Console>()
             .with<game::components::History>()
@@ -245,6 +252,7 @@ namespace game
 
         /// Add world resources
         _world.addResource<ecs::Timer>();
+        _world.addResource<game::GameTimer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();
         _world.addResource<resources::Meshes>();
@@ -269,8 +277,10 @@ namespace game
         _world.addStorage<components::Hud>();
         _world.addStorage<components::KeybindIntercepter>();
         _world.addStorage<components::SoundReference>();
+        _world.addStorage<components::GameEnded>();
         _world.addStorage<components::Explosion>();
         /// Add world systems
+        _world.addSystem<systems::AiUpdate>();
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::RunAnimation>();
         _world.addSystem<systems::InputManager>();
@@ -293,9 +303,9 @@ namespace game
         _world.addSystem<systems::UpdateGameClock>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
-        _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
-            systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
+        _update.add<systems::AiUpdate, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
+            systems::DisableBombNoClip, systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke,
+            systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
         _drawing2d.add<systems::DrawHud, systems::DrawRectangle>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
@@ -326,6 +336,7 @@ namespace game
                     .with<components::RotationAngle>(0.0f)
                     .with<components::RotationAxis>(0.f, 1.f, 0.f)
                     .with<components::Controlable>(owner, components::Player::handleActionEvent)
+                    .with<components::AiControlable>()
                     .with<components::BombNoClip>()
                     .with<components::Identity>()
                     .with<components::Hud>()

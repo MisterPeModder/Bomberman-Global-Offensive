@@ -16,7 +16,7 @@
 namespace ecs
 {
     /// Simple timer resource.
-    class Timer final : public Resource {
+    class Timer : public Resource {
       public:
         /// Creates a new timer.
         explicit Timer() noexcept;

@@ -42,10 +42,10 @@ namespace ecs
             return this->_world.getStorage<C>();
         }
 
+        explicit SystemData(World &world) : _world(world){};
+
       private:
         World &_world;
-
-        SystemData(World &world) : _world(world){};
 
         // only World may create instances of SystemData.
         friend World;
