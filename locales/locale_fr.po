@@ -171,3 +171,6 @@ msgstr "LT"
 
 msgid "TRIGGER-RIGHT"
 msgstr "RT"
+
+msgid "SPACE"
+msgstr "ESPACE"
