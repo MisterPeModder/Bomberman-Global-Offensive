@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"classgame_1_1settings_1_1_gamepad_input.html#a64813d984138ac46ab67e2a1fa711f25":[2,0,2,4,0,14],
+"classgame_1_1settings_1_1_gamepad_input.html#a9003a94dc79d2a320683bdba2b3b8899":[2,0,2,4,0,3],
+"classgame_1_1settings_1_1_gamepad_input.html#ab80a13fbfcc8f81c8702aefdeca47bdd":[2,0,2,4,0,8],
+"classgame_1_1settings_1_1_gamepad_input.html#ac12b274af182e8605c7ade880f1bba0d":[2,0,2,4,0,11],
+"classgame_1_1settings_1_1_gamepad_input.html#ac76c068cc2b626eacfdf2d17befde940":[2,0,2,4,0,7],
 "classgame_1_1settings_1_1_gamepad_input.html#ad15f026c20e299066cd540886edac081":[2,0,2,4,0,13],
 "classgame_1_1settings_1_1_gamepad_input.html#ad22976cd6d14ce215bf7d286014f29fe":[2,0,2,4,0,0],
 "classgame_1_1settings_1_1_gamepad_input.html#ad22976cd6d14ce215bf7d286014f29fea3289297424e01eda5b788c083bbf3147":[2,0,2,4,0,0,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1core_1_1_gamepad.html#ad166743ab5675edf9e2613f2918288c0a684d325a7303f52e64011467ff5c5758":[2,0,4,0,6,2,0],
 "classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5":[2,0,4,0,6,0],
 "classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5a1c6f9e180caaad13119136f0193b64e0":[2,0,4,0,6,0,5],
-"classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5a87cefa1bf6e203cee834747ea138e766":[2,0,4,0,6,0,4],
-"classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5a9dfcf221fddfd2f237b3fd736caa7809":[2,0,4,0,6,0,3],
-"classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5adbc23e1293dc0846d28e1ea129344fcf":[2,0,4,0,6,0,1],
-"classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5ae5815a16e50afa87f9a36ab8a52545c7":[2,0,4,0,6,0,0],
-"classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5aea468ab59a115911fef1492a49e6bc59":[2,0,4,0,6,0,2],
-"classraylib_1_1core_1_1_gamepad.html#af7d567dcb7307fc1dc1facec5115fdfa":[2,0,4,0,6,15]
+"classraylib_1_1core_1_1_gamepad.html#af23310dbbd259c829b373088788ef9a5a87cefa1bf6e203cee834747ea138e766":[2,0,4,0,6,0,4]
 };

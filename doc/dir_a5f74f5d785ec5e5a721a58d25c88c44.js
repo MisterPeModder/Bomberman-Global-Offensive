@@ -4,6 +4,9 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Animation.hpp", "game_2components_2_animation_8hpp.html", [
       [ "Animation", "structgame_1_1components_1_1_animation.html", "structgame_1_1components_1_1_animation" ]
     ] ],
+    [ "Background.hpp", "_background_8hpp.html", [
+      [ "Background", "structgame_1_1components_1_1_background.html", "structgame_1_1components_1_1_background" ]
+    ] ],
     [ "Bomb.cpp", "components_2_bomb_8cpp.html", null ],
     [ "Bomb.hpp", "components_2_bomb_8hpp.html", [
       [ "Bomb", "structgame_1_1components_1_1_bomb.html", "structgame_1_1components_1_1_bomb" ]

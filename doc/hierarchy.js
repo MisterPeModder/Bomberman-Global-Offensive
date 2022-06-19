@@ -31,6 +31,7 @@ var hierarchy =
     ] ],
     [ "ecs::Component", "classecs_1_1_component.html", [
       [ "game::components::Animation", "structgame_1_1components_1_1_animation.html", null ],
+      [ "game::components::Background", "structgame_1_1components_1_1_background.html", null ],
       [ "game::components::Bomb", "structgame_1_1components_1_1_bomb.html", null ],
       [ "game::components::BombNoClip", "structgame_1_1components_1_1_bomb_no_clip.html", null ],
       [ "game::components::Collidable", "structgame_1_1components_1_1_collidable.html", null ],
@@ -207,6 +208,7 @@ var hierarchy =
     [ "ecs::SystemData", "classecs_1_1_system_data.html", null ],
     [ "ecs::SystemTag", "classecs_1_1_system_tag.html", null ],
     [ "raylib::textures::Texture2D", "classraylib_1_1textures_1_1_texture2_d.html", [
+      [ "game::components::Background", "structgame_1_1components_1_1_background.html", null ],
       [ "game::components::Texture2D", "structgame_1_1components_1_1_texture2_d.html", null ]
     ] ],
     [ "game::User", "classgame_1_1_user.html", null ],
