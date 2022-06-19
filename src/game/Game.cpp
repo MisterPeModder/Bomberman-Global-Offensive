@@ -62,6 +62,7 @@
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
+#include "systems/PlaySoundOnce.hpp"
 #include "systems/Smoke.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
 
@@ -165,6 +166,13 @@ namespace game
         models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"));
     }
 
+    void Game::_loadSounds()
+    {
+        auto &sounds = _world.getResource<resources::Sounds>();
+
+        sounds.emplace("C4", "assets/audio/sounds/c4_explosion.ogg");
+    }
+
     void Game::setup()
     {
         size_t width = _map.getSize().x;
@@ -198,6 +206,7 @@ namespace game
         _world.addResource<resources::Textures>();
         _world.addResource<resources::Meshes>();
         _world.addResource<resources::Models>();
+        _world.addResource<resources::Sounds>();
         _world.addResource<resources::RandomDevice>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
@@ -210,6 +219,7 @@ namespace game
         _world.addStorage<components::Model>();
         _world.addStorage<components::CubeColor>();
         _world.addStorage<components::Cube>();
+        _world.addStorage<components::SoundReference>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::RunAnimation>();
@@ -222,16 +232,18 @@ namespace game
         _world.addSystem<systems::UpdateItemTimer>();
         _world.addSystem<systems::MoveSmoke>();
         _world.addSystem<systems::DrawSmoke>();
+        _world.addSystem<systems::PlaySoundReferences>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke>();
+            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::PlaySoundReferences>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 
         _loadTextures();
         _loadMeshes();
         _loadModels();
+        _loadSounds();
 
         /// Player
         auto &textures = _world.getResource<resources::Textures>();

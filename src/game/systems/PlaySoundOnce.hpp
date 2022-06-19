@@ -12,6 +12,7 @@
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
+#include "game/Engine.hpp"
 #include "game/components/Sound.hpp"
 #include "game/components/UseCheck.hpp"
 
@@ -30,6 +31,20 @@ namespace game
                         sound.play();
                         useCheck.used = true;
                     }
+                }
+            }
+        };
+
+        struct PlaySoundReferences : public ecs::System {
+            void run(ecs::SystemData data) override final
+            {
+                auto &entities = data.getResource<ecs::Entities>();
+
+                for (auto [soundRef, id] : ecs::join(data.getStorage<game::components::SoundReference>(), entities)) {
+                    soundRef.sound.setVolume(
+                        data.getResource<resources::EngineResource>().engine->getSettings().getSfxVolume());
+                    soundRef.sound.play();
+                    entities.kill(id);
                 }
             }
         };
