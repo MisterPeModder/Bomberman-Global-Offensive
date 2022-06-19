@@ -50,7 +50,7 @@ namespace game::components
                 return;
             /// Item has a duration.
             if (item.duration != std::chrono::milliseconds::zero())
-                timedItems.emplace_back(itemId, std::chrono::steady_clock::now());
+                timedItems.emplace_back(itemId, data.getResource<game::resources::GameClock>().getTime());
         }
         ++count;
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
@@ -75,7 +75,7 @@ namespace game::components
         --count;
         /// Item has a duration.
         if (item.duration != std::chrono::milliseconds::zero())
-            timedItems.emplace_back(selected, std::chrono::steady_clock::now());
+            timedItems.emplace_back(selected, data.getResource<game::resources::GameClock>().getTime());
         Logger::logger.log(Logger::Severity::Debug, [&](auto &out) {
             out << "Player entity " << player.getId() << " activated item '" << item.name << "', " << count
                 << " left in inventory.";
@@ -150,7 +150,7 @@ namespace game::components
         GameAction bestAction = GameAction::NONE;
         float highestActionValue = 0.f;
 
-        if (std::chrono::steady_clock::now() < player.stats.stunEnd)
+        if (data.getResource<game::resources::GameClock>().getTime() < player.stats.stunEnd)
             return;
 
         for (size_t j = static_cast<size_t>(GameAction::MOVE_LEFT); j <= static_cast<size_t>(GameAction::MOVE_DOWN);
@@ -207,7 +207,7 @@ namespace game::components
 
     void Player::stun(ecs::Entity self, ecs::SystemData data, std::chrono::milliseconds duration)
     {
-        stats.stunEnd = std::chrono::steady_clock::now() + duration;
+        stats.stunEnd = data.getResource<game::resources::GameClock>().getTime() + duration;
         // Randomize the idle animation id
         auto &randDevice = data.getResource<game::resources::RandomDevice>();
         unsigned int randVal = randDevice.randInt(
@@ -250,7 +250,7 @@ namespace game::components
             auto &pair = inventory.timedItems[i];
             auto &item = Item::getItem(pair.first);
 
-            if (std::chrono::steady_clock::now() - pair.second >= item.duration) {
+            if (data.getResource<game::resources::GameClock>().getTime() - pair.second >= item.duration) {
                 item.onTimedOut(self, data);
                 inventory.timedItems.erase(inventory.timedItems.begin() + i);
             }
