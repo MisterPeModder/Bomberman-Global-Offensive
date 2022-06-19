@@ -41,7 +41,6 @@ namespace game
         void loadPlayerSlot(size_t id);
         void loadPlayerInterface();
         void loadLeftButtons();
-        localization::ResourceString userSkinToRessourceString(User::USER_SKINS skin);
 
         components::Identity::Id _connectedTexts[4];
         components::Identity::Id _skinTexts[4];

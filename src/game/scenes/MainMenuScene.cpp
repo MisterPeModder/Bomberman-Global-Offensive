@@ -180,6 +180,19 @@ namespace game
             .build();
     }
 
+    static localization::ResourceString userSkinToRessourceString(User::USER_SKINS skin)
+    {
+        switch (skin) {
+            case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
+            case User::USER_SKINS::TERRORIST_2: return localization::resources::textures::rsTerroristTwo;
+            case User::USER_SKINS::COUNTER_TERRORIST_1: return localization::resources::textures::rsCounterTerroristOne;
+            case User::USER_SKINS::COUNTER_TERRORIST_2: return localization::resources::textures::rsCounterTerroristTwo;
+            case User::USER_SKINS::NO_SENSE: return localization::resources::textures::rsNoSense;
+            case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
+            default: return localization::resources::textures::rsUnknown;
+        }
+    }
+
     void MainMenuScene::loadPlayerSlot(size_t id)
     {
         raylib::core::Color color;
@@ -246,19 +259,6 @@ namespace game
             auto &text = _world.getStorage<components::Textual>()[connectedText.getId()];
             text.text = localization::resources::menu::rsConnected;
             text.color = raylib::core::Color::GREEN;
-        }
-    }
-
-    localization::ResourceString MainMenuScene::userSkinToRessourceString(User::USER_SKINS skin)
-    {
-        switch (skin) {
-            case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
-            case User::USER_SKINS::TERRORIST_2: return localization::resources::textures::rsTerroristTwo;
-            case User::USER_SKINS::COUNTER_TERRORIST_1: return localization::resources::textures::rsCounterTerroristOne;
-            case User::USER_SKINS::COUNTER_TERRORIST_2: return localization::resources::textures::rsCounterTerroristTwo;
-            case User::USER_SKINS::NO_SENSE: return localization::resources::textures::rsNoSense;
-            case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
-            default: return localization::resources::textures::rsUnknown;
         }
     }
 
