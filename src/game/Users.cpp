@@ -120,10 +120,7 @@ namespace game
         return true;
     }
 
-    User::USER_SKINS Users::getUserSkin(unsigned int id)
-    {
-        return _users[id].getSkin();
-    }
+    User::USER_SKINS Users::getUserSkin(unsigned int id) { return _users[id].getSkin(); }
 
     localization::ResourceString Users::userSkinToRessourceString(User::USER_SKINS skin)
     {
@@ -137,7 +134,6 @@ namespace game
             default: return localization::resources::textures::rsUnknown;
         }
     }
-
 
     std::queue<std::string> Users::prepareSkinParameters()
     {
