@@ -42,7 +42,12 @@ namespace game
 
         _changedActions.swap(empty);
         for (size_t i = 0; i < _lastActions.size(); i++) {
-            actionValue = getActionValue(static_cast<GameAction>(i + 1), true);
+            GameAction action = static_cast<GameAction>(i + 1);
+#ifdef __EMSCRIPTEN__
+            if (action == GameAction::TOGGLE_CONSOLE)
+                continue;
+#endif
+            actionValue = getActionValue(action, true);
 
             if (actionValue != _lastActions[i]) {
                 _changedActions.push(static_cast<GameAction>(i + 1));

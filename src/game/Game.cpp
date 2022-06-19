@@ -187,9 +187,11 @@ namespace game
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
         _world.addSystem<game::systems::UpdateKeyboardInput>();
-        _world.addSystem<game::systems::DrawConsole>();
 
         /// Console
+        _world.addSystem<game::systems::DrawConsole>();
+        _drawing2d.add<game::systems::DrawConsole>();
+
         _world.addEntity()
             .with<game::gui::Console>()
             .with<game::components::History>()
@@ -339,7 +341,7 @@ namespace game
         };
         {
             raylib::core::scoped::Mode2D mode2D((raylib::core::Camera2D()));
-            _world.runSystem<game::systems::DrawConsole>();
+            _world.runSystems(_drawing2d);
         };
         _world.maintain();
     }
