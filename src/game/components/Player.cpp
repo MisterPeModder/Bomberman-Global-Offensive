@@ -124,6 +124,10 @@ namespace game::components
             placeBomb(self, data);
         else if (event.action == GameAction::ACTIVATE_ITEM && event.value > 0.9f)
             data.getStorage<Player>()[self.getId()].inventory.useActivable(self, data);
+        else if (event.action == GameAction::PREVIOUS_ACTIVABLE && event.value > 0.9f)
+            data.getStorage<Player>()[self.getId()].inventory.selectPreviousActivable();
+        else if (event.action == GameAction::NEXT_ACTIVABLE && event.value > 0.9f)
+            data.getStorage<Player>()[self.getId()].inventory.selectNextActivable();
         else
             return false;
         return true;

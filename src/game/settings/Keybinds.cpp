@@ -28,11 +28,13 @@ namespace game
             setKeyboardBinding(Key::D, GameAction::MOVE_RIGHT);
             setKeyboardBinding(Key::S, GameAction::MOVE_DOWN);
             /// Actions
-            setKeyboardBinding(Key::E, GameAction::PLACE_BOMB);
-            setKeyboardBinding(Key::R, GameAction::ACTIVATE_ITEM);
+            setKeyboardBinding(Key::SPACE, GameAction::PLACE_BOMB);
+            setKeyboardBinding(Key::F, GameAction::ACTIVATE_ITEM);
+            setKeyboardBinding(Key::Q, GameAction::PREVIOUS_ACTIVABLE);
+            setKeyboardBinding(Key::E, GameAction::NEXT_ACTIVABLE);
             setKeyboardBinding(Key::P, GameAction::PAUSE);
             /// Menus
-            setKeyboardBinding(Key::ENTER, GameAction::ACTION);
+            setKeyboardBinding(Key::SPACE, GameAction::ACTION);
             setKeyboardBinding(Key::BACK, GameAction::BACK);
 
             /////// Gamepad keybinds
@@ -52,6 +54,8 @@ namespace game
             /// Actions
             setGamepadBinding(Gamepad::Button::FACE_DOWN, GameAction::PLACE_BOMB);
             setGamepadBinding(Gamepad::Button::RIGHT_TRIGGER, GameAction::ACTIVATE_ITEM);
+            setGamepadBinding(Gamepad::Button::LEFT_BUMPER, GameAction::PREVIOUS_ACTIVABLE);
+            setGamepadBinding(Gamepad::Button::RIGHT_BUMPER, GameAction::NEXT_ACTIVABLE);
             setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::PAUSE);
             setGamepadBinding(Gamepad::Button::MIDDLE, GameAction::PAUSE);
             setGamepadBinding(Gamepad::Button::MIDDLE_RIGHT, GameAction::PAUSE);
