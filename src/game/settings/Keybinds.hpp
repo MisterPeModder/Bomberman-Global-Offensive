@@ -59,13 +59,20 @@ namespace game
             /// Delete all the bindings.
             void clear();
 
+            /// Unbind an action from all inputs. (keyboard @b or gamepad)
+            ///
+            /// @param action action to unbind.
+            /// @param keyboard set to true to unbind keyboard inputs, false for gamepad.
+            void unbindAction(GameAction action, bool keyboard);
+
             /// Bind a keyboard key to a game action.
             /// @note Multiple key can be bound to the same action.
             /// @note Binding a key that was previously bind to an action will override the bind.
             ///
             /// @param key key.
             /// @param action game action.
-            void setKeyboardBinding(raylib::core::Keyboard::Key key, GameAction action);
+            /// @param exclusive if the action must be only linked to this key.
+            void setKeyboardBinding(raylib::core::Keyboard::Key key, GameAction action, bool exclusive = false);
 
             /// Unbind a key from its game action.
             /// @note Does nothing if the key is already unbound.
@@ -79,7 +86,8 @@ namespace game
             ///
             /// @param gamepadInput input.
             /// @param action game action.
-            void setGamepadBinding(const GamepadInput &gamepadInput, GameAction action);
+            /// @param exclusive if the action must be only linked to this input.
+            void setGamepadBinding(const GamepadInput &gamepadInput, GameAction action, bool exclusive = false);
 
             /// Unbind a gamepad input from its game action.
             /// @note Does nothing if the gamepad input is already unbound.

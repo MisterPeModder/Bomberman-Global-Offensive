@@ -18,6 +18,7 @@
 #include "RotationAngle.hpp"
 #include "RotationAxis.hpp"
 #include "Size.hpp"
+#include "Sound.hpp"
 #include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
@@ -36,6 +37,8 @@ namespace game::components
         if (this->exploded)
             return;
         this->exploded = true;
+        Sound::playSound(data, "C4");
+
         if (type == Type::Classic) {
             for (auto [id, player] : ecs::join(data.getStorage<Identity>(), data.getStorage<Player>())) {
                 if (id.id == owner)

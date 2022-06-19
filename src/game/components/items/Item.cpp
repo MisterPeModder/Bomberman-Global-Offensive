@@ -36,11 +36,12 @@ namespace game::components
     std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {Item::Identifier::ChainBall,
         Item::Identifier::FireDown, Item::Identifier::BombDown, Item::Identifier::InvertedControls};
     std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables = {Item::Identifier::NoClip,
-        Item::Identifier::LandMine, Item::Identifier::StunGrenade, Item::Identifier::SmokeGrenade};
+        Item::Identifier::LandMine, Item::Identifier::StunGrenade, Item::Identifier::SmokeGrenade,
+        Item::Identifier::Punch};
 
     std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes(), FireUp(), BombUp(),
         KickShoes(), ChainBall(), FireDown(), BombDown(), InvertedControls(), NoClip(), LandMine(), StunGrenade(),
-        SmokeGrenade()};
+        SmokeGrenade(), Punch()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
@@ -91,6 +92,7 @@ namespace game::components
             case Item::Identifier::LandMine: model = &models.get("mine"); break;
             case Item::Identifier::StunGrenade: model = &models.get("stun"); break;
             case Item::Identifier::SmokeGrenade: model = &models.get("smoke"); break;
+            case Item::Identifier::Punch: model = &models.get("punch"); break;
             default: model = &models.get("speed_up"); break; /// Avoid null pointers errors
         }
 

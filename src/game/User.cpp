@@ -25,7 +25,11 @@ namespace game
 
     bool User::isKeyboard() const { return _gamepadId < 0; }
 
-    void User::setGamepadId(int id) { _gamepadId = id; }
+    void User::setGamepadId(int id)
+    {
+        _gamepadId = id;
+        updateActions(false);
+    }
 
     int User::getGamepadId() const { return _gamepadId; }
 
@@ -41,31 +45,34 @@ namespace game
 
     bool User::isAvailable() const { return _available; }
 
-    void User::fillActions()
+    void User::updateActions(bool fillChanged)
     {
-        std::queue<GameAction> empty;
-        float actionValue;
-
-        _changedActions.swap(empty);
+        clearPendingActions();
         for (size_t i = 0; i < _lastActions.size(); i++) {
             GameAction action = static_cast<GameAction>(i + 1);
 #ifdef __EMSCRIPTEN__
             if (action == GameAction::TOGGLE_CONSOLE)
                 continue;
 #endif
-            actionValue = getActionValue(action, true);
+            float actionValue = getActionValue(action, true);
 
-            if (actionValue != _lastActions[i]) {
-                _changedActions.push(static_cast<GameAction>(i + 1));
-                _lastActions[i] = actionValue;
-            }
+            if (fillChanged && actionValue != _lastActions[i])
+                _changedActions.push(action);
+            _lastActions[i] = actionValue;
         }
+    }
+
+    void User::clearPendingActions()
+    {
+        std::queue<GameAction> empty;
+
+        _changedActions.swap(empty);
     }
 
     GameAction User::getChangedAction()
     {
         if (_changedActions.empty())
-            fillActions();
+            updateActions();
         if (_changedActions.empty())
             return GameAction::NONE;
 
@@ -115,5 +122,5 @@ namespace game
 
     const settings::Keybinds &User::getKeybinds() const { return _profile.getKeybinds(); }
 
-    settings::Keybinds User::getKeybinds() { return _profile.getKeybinds(); }
+    settings::Keybinds &User::getKeybinds() { return _profile.getKeybinds(); }
 } // namespace game

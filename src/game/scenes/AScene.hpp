@@ -20,9 +20,10 @@ namespace game
       public:
         AScene();
         ~AScene();
-        void drawFrame() override;
-        ecs::World &getWorld() override;
-        const ecs::World &getWorld() const override;
+        virtual void setupWorld() override;
+        virtual void drawFrame() override;
+        ecs::World &getWorld() override final;
+        const ecs::World &getWorld() const override final;
 
       protected:
         ecs::World _world;

@@ -19,8 +19,56 @@ namespace localization
         constexpr ResourceString rsShortTitle("BM:GO");
 
         constexpr ResourceString rsBack("Back");
+        constexpr ResourceString rsReset("Reset");
+
+        constexpr ResourceString rsUser1("User 1");
+        constexpr ResourceString rsUser2("User 2");
+        constexpr ResourceString rsUser3("User 3");
+        constexpr ResourceString rsUser4("User 4");
 
         constexpr ResourceString rsSettings("SETTINGS");
+
+        namespace keybinds
+        {
+            constexpr ResourceString rsKeyBindLeft("Left");
+            constexpr ResourceString rsKeyBindRight("Right");
+            constexpr ResourceString rsKeyBindUp("Up");
+            constexpr ResourceString rsKeyBindDown("Down");
+            constexpr ResourceString rsKeyBindBomb("Bomb");
+            constexpr ResourceString rsKeyBindActivable("Activable");
+            constexpr ResourceString rsKeyBindActivablePrevious("Previous Activable");
+            constexpr ResourceString rsKeyBindActivableNext("Next Activable");
+            constexpr ResourceString rsKeyBindActivableShort("Activ.");
+            constexpr ResourceString rsKeyBindActivablePreviousShort("Prev.");
+            constexpr ResourceString rsKeyBindActivableNextShort("Next");
+
+            namespace controller
+            {
+                constexpr ResourceString rsUnknown("?");
+
+                constexpr ResourceString rsDPadUP("DPAD-UP");
+                constexpr ResourceString rsDPadDown("DPAD-DOWN");
+                constexpr ResourceString rsDPadLeft("DPAD-LEFT");
+                constexpr ResourceString rsDPadRight("DPAD-RIGHT");
+
+                constexpr ResourceString rsFaceUP("FACE-UP");
+                constexpr ResourceString rsFaceDown("FACE-DOWN");
+                constexpr ResourceString rsFaceLeft("FACE-LEFT");
+                constexpr ResourceString rsFaceRight("FACE-RIGHT");
+
+                constexpr ResourceString rsBumperLeft("BUMPER-LEFT");
+                constexpr ResourceString rsBumperRight("BUMPER-RIGHT");
+                constexpr ResourceString rsTriggerLeft("TRIGGER-LEFT");
+                constexpr ResourceString rsTriggerRight("TRIGGER-RIGHT");
+
+                constexpr ResourceString rsMiddle("MIDDLE");
+                constexpr ResourceString rsMiddleLeft("MIDDLE-LEFT");
+                constexpr ResourceString rsMiddleRight("MIDDLE-RIGHT");
+
+                constexpr ResourceString rsThumbLeft("THUMB-LEFT");
+                constexpr ResourceString rsThumbRight("THUMB-RIGHT");
+            } // namespace controller
+        }     // namespace keybinds
 
         namespace languages
         {
@@ -33,6 +81,8 @@ namespace localization
             constexpr ResourceString rsSettingsGraphics("Graphics");
             constexpr ResourceString rsSettingsFullscreen("Fullscreen");
             constexpr ResourceString rsSettingsResolution("Resolution");
+            constexpr ResourceString rsSettingsFPS("FPS");
+
             constexpr ResourceString rsSettingsLanguage("Language");
 
             constexpr ResourceString rsSettingsAudio("Audio");
@@ -41,6 +91,9 @@ namespace localization
             constexpr ResourceString rsSettingsSfx("Sfx");
 
             constexpr ResourceString rsSettingsKeybinds("Keybinds");
+            constexpr ResourceString rsSettingsControllerKeybinds("(Controller)");
+            constexpr ResourceString rsSettingsKeyboardKeybinds("(Keyboard)");
+            constexpr ResourceString rsSpace("SPACE");
 
         } // namespace settings
         namespace menu

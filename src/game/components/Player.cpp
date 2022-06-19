@@ -125,6 +125,10 @@ namespace game::components
             placeBomb(self, data);
         else if (event.action == GameAction::ACTIVATE_ITEM && event.value > 0.9f)
             data.getStorage<Player>()[self.getId()].inventory.useActivable(self, data);
+        else if (event.action == GameAction::PREVIOUS_ACTIVABLE && event.value > 0.9f)
+            data.getStorage<Player>()[self.getId()].inventory.selectPreviousActivable();
+        else if (event.action == GameAction::NEXT_ACTIVABLE && event.value > 0.9f)
+            data.getStorage<Player>()[self.getId()].inventory.selectNextActivable();
         else
             return false;
         return true;
@@ -140,6 +144,9 @@ namespace game::components
         auto &player = data.getStorage<Player>()[self.getId()];
         GameAction bestAction = GameAction::NONE;
         float highestActionValue = 0.f;
+
+        if (std::chrono::steady_clock::now() < player.stats.stunEnd)
+            return;
 
         for (size_t j = static_cast<size_t>(GameAction::MOVE_LEFT); j <= static_cast<size_t>(GameAction::MOVE_DOWN);
              j++) {
@@ -191,6 +198,19 @@ namespace game::components
                 player.animation = Animations::Run;
             }
         }
+    }
+
+    void Player::stun(ecs::Entity self, ecs::SystemData data, std::chrono::milliseconds duration)
+    {
+        stats.stunEnd = std::chrono::steady_clock::now() + duration;
+        // Randomize the idle animation id
+        auto &randDevice = data.getResource<game::resources::RandomDevice>();
+        unsigned int randVal = randDevice.randInt(
+            static_cast<unsigned int>(Animations::Idle_1), static_cast<unsigned int>(Animations::Idle_4));
+
+        data.getStorage<Animation>()[self.getId()].chooseAnimation(randVal);
+        data.getStorage<Velocity>()[self.getId()] = {0.f, 0.f, 0.f};
+        animation = Animations(randVal);
     }
 
     void Player::placeBomb(ecs::Entity self, ecs::SystemData data)

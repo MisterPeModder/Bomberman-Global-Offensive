@@ -107,6 +107,16 @@ namespace game
 
 
         std::queue<std::string> prepareSkinParameters();
+        /// Call @ref User::updateActions() for each user.
+        ///
+        /// @param fillChanged Set to true to fill the changed actions queueq.
+        void updateActions(bool fillChanged = true);
+
+        /// Save all the users profiles.
+        void save();
+
+        /// Load the default parameters for all users.
+        void loadDefaults();
 
       private:
         std::array<User, static_cast<size_t>(User::UserId::UserCount)> _users;

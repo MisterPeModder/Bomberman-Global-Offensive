@@ -5,10 +5,19 @@
 ** Engine
 */
 
-#include "script/Engine.hpp"
+#include "ecs/Storage.hpp"
+#include "ecs/World.hpp"
+#include "ecs/join.hpp"
+
+#include "game/Engine.hpp"
+#include "game/gui/components/Console.hpp"
+
 #include "logger/Logger.hpp"
+
+#include "script/Engine.hpp"
 #include "script/JsException.hpp"
 #include "script/api/api.hpp"
+
 #include "util/util.hpp"
 
 #include <filesystem>
@@ -109,6 +118,21 @@ namespace bmjs
     game::Engine const &Engine::getGameEngine() const noexcept { return *this->_gameEngine; }
 
     game::Engine &Engine::getGameEngine() noexcept { return *this->_gameEngine; }
+
+    void Engine::setConsoleOutput(Logger::Severity severity, std::string &&newOutput)
+    {
+        ecs::World &world = this->_gameEngine->getScene().getWorld();
+
+        if (world.hasStorage<game::gui::Console>()) {
+            auto consoles = ecs::join(world.getStorage<game::gui::Console>());
+
+            if (consoles.begin() != consoles.end()) {
+                std::get<0>(*consoles.begin()).setOutput(severity, std::move(newOutput));
+                return;
+            }
+        }
+        Logger::logger.log(severity, newOutput);
+    }
 
 #ifdef __EMSCRIPTEN__
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

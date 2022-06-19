@@ -17,6 +17,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/KeybindIntercepter.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
@@ -104,6 +105,7 @@ namespace game
         _world.addSystem<systems::DrawSelectedWidget>();
         _world.addSystem<systems::DrawRectangle>();
         _world.addSystem<DetectGamepad>();
+        _world.addStorage<game::components::KeybindIntercepter>();
 
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::DrawTexture>();
@@ -131,11 +133,12 @@ namespace game
             .with<gui::Clickable>(
                 [this](ecs::Entity) {
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
+                    size_t nbUsers = engine->getUsers().getAvailableUsers();
 
                     if (engine->getUsers().getAvailableUsers() < 2)
                         return;
                     engine->setScene<GameScene>(Game::Parameters(
-                        engine->getUsers().prepareSkinParameters(), engine->getUsers().getAvailableUsers()));
+                        engine->getUsers().prepareSkinParameters(), (nbUsers < 2) ? 2 : engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
@@ -156,6 +159,7 @@ namespace game
             })
             .build();
 
+#ifndef __EMSCRIPTEN__
         /// Quit
         _world.addEntity()
             .with<components::Position>(2, 90)
@@ -165,6 +169,7 @@ namespace game
                 MainMenuScene::SETTINGS, gui::Widget::NullTag)
             .with<gui::Clickable>([](ecs::Entity) { raylib::core::Window::setShouldClose(); })
             .build();
+#endif
 
         /// Logo
         _world.addEntity()

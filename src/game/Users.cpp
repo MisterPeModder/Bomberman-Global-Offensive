@@ -87,6 +87,7 @@ namespace game
         _users[nbUsers].setAvailable();
         _users[nbUsers].setGamepadId(gamepadId);
         _users[nbUsers].setSkin(skin);
+        _users[nbUsers].updateActions(false);
         Logger::logger.log(Logger::Severity::Information,
             [&](auto &out) { out << "User " << nbUsers + 1 << " connected with gamepad " << gamepadId; });
     }
@@ -141,6 +142,24 @@ namespace game
         for (unsigned int i = 0; i < getAvailableUsers(); i++)
             skinQueue.push(std::string(userSkinToRessourceString(_users[i].getSkin()).getMsgId()));
         return skinQueue;
+    }
+
+    void Users::updateActions(bool fillChanged)
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].updateActions(fillChanged);
+    }
+
+    void Users::save()
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].getProfile().save();
+    }
+
+    void Users::loadDefaults()
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].getProfile().loadDefaults();
     }
 
 } // namespace game

@@ -23,20 +23,25 @@ namespace game
 
             //////// Keyboards keybinds
             /// Movements
+#ifdef __EMSCRIPTEN__
+            setKeyboardBinding(Key::Q, GameAction::MOVE_LEFT);
+            setKeyboardBinding(Key::Z, GameAction::MOVE_UP);
+            setKeyboardBinding(Key::A, GameAction::PREVIOUS_ACTIVABLE);
+#else
             setKeyboardBinding(Key::A, GameAction::MOVE_LEFT);
-            setKeyboardBinding(Key::LEFT, GameAction::MOVE_LEFT);
             setKeyboardBinding(Key::W, GameAction::MOVE_UP);
-            setKeyboardBinding(Key::UP, GameAction::MOVE_UP);
+            setKeyboardBinding(Key::Q, GameAction::PREVIOUS_ACTIVABLE);
+#endif
             setKeyboardBinding(Key::D, GameAction::MOVE_RIGHT);
-            setKeyboardBinding(Key::RIGHT, GameAction::MOVE_RIGHT);
             setKeyboardBinding(Key::S, GameAction::MOVE_DOWN);
-            setKeyboardBinding(Key::DOWN, GameAction::MOVE_DOWN);
+
             /// Actions
-            setKeyboardBinding(Key::E, GameAction::PLACE_BOMB);
-            setKeyboardBinding(Key::R, GameAction::ACTIVATE_ITEM);
+            setKeyboardBinding(Key::SPACE, GameAction::PLACE_BOMB);
+            setKeyboardBinding(Key::F, GameAction::ACTIVATE_ITEM);
+            setKeyboardBinding(Key::E, GameAction::NEXT_ACTIVABLE);
             setKeyboardBinding(Key::P, GameAction::PAUSE);
             /// Menus
-            setKeyboardBinding(Key::ENTER, GameAction::ACTION);
+            setKeyboardBinding(Key::SPACE, GameAction::ACTION);
             setKeyboardBinding(Key::BACK, GameAction::BACK);
             /// Console
             setKeyboardBinding(Key::F3, GameAction::TOGGLE_CONSOLE);
@@ -58,6 +63,8 @@ namespace game
             /// Actions
             setGamepadBinding(Gamepad::Button::FACE_DOWN, GameAction::PLACE_BOMB);
             setGamepadBinding(Gamepad::Button::RIGHT_TRIGGER, GameAction::ACTIVATE_ITEM);
+            setGamepadBinding(Gamepad::Button::LEFT_BUMPER, GameAction::PREVIOUS_ACTIVABLE);
+            setGamepadBinding(Gamepad::Button::RIGHT_BUMPER, GameAction::NEXT_ACTIVABLE);
             setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::PAUSE);
             setGamepadBinding(Gamepad::Button::MIDDLE, GameAction::PAUSE);
             setGamepadBinding(Gamepad::Button::MIDDLE_RIGHT, GameAction::PAUSE);
@@ -74,9 +81,26 @@ namespace game
             setGamepadBinding(Gamepad::Button::MIDDLE_LEFT, GameAction::DISCONNECT);
         }
 
-        void Keybinds::setKeyboardBinding(Key key, GameAction action)
+        void Keybinds::unbindAction(GameAction action, bool keyboard)
         {
-            unbindKey(key, action);
+            if (keyboard) {
+                for (size_t i = _keyboardBindings.size(); i > 0; i--) {
+                    if (_keyboardBindings[i - 1].action == action)
+                        _keyboardBindings.erase(_keyboardBindings.begin() + (i - 1));
+                }
+            } else {
+                for (size_t i = _gamepadBindings.size(); i > 0; i--)
+                    if (_gamepadBindings[i - 1].action == action)
+                        _gamepadBindings.erase(_gamepadBindings.begin() + (i - 1));
+            }
+        }
+
+        void Keybinds::setKeyboardBinding(Key key, GameAction action, bool exclusive)
+        {
+            if (exclusive)
+                unbindAction(action, true);
+            else
+                unbindKey(key, action);
             _keyboardBindings.emplace_back(key, action);
         }
 
@@ -89,9 +113,12 @@ namespace game
             }
         }
 
-        void Keybinds::setGamepadBinding(const GamepadInput &gamepadInput, GameAction action)
+        void Keybinds::setGamepadBinding(const GamepadInput &gamepadInput, GameAction action, bool exclusive)
         {
-            unbindGamepadInput(gamepadInput, action);
+            if (exclusive)
+                unbindAction(action, false);
+            else
+                unbindGamepadInput(gamepadInput, action);
             _gamepadBindings.emplace_back(gamepadInput, action);
         }
 
