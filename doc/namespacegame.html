@@ -168,6 +168,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a85afa01575b11b63bb973480cc6972e4"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a85afa01575b11b63bb973480cc6972e4">isMoveAction</a> (<a class="el" href="namespacegame.html#a8483766bb6895afd4bba8290587dd663">GameAction</a> action)</td></tr>
 <tr class="memdesc:a85afa01575b11b63bb973480cc6972e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if a specified action is a move action.  <a href="namespacegame.html#a85afa01575b11b63bb973480cc6972e4">More...</a><br /></td></tr>
 <tr class="separator:a85afa01575b11b63bb973480cc6972e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa48e3adcb1875c2edcf36b00fa6bbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classlocalization_1_1_resource_string.html">localization::ResourceString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#abaa48e3adcb1875c2edcf36b00fa6bbc">userSkinToRessourceString</a> (<a class="el" href="classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923">User::USER_SKINS</a> skin)</td></tr>
+<tr class="separator:abaa48e3adcb1875c2edcf36b00fa6bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a8483766bb6895afd4bba8290587dd663"></a>
@@ -272,22 +274,68 @@ false if the action is an other action. </dd></dl>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="abaa48e3adcb1875c2edcf36b00fa6bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa48e3adcb1875c2edcf36b00fa6bbc">&#9670;&nbsp;</a></span>userSkinToRessourceString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classlocalization_1_1_resource_string.html">localization::ResourceString</a> game::userSkinToRessourceString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923">User::USER_SKINS</a>&#160;</td>
+          <td class="paramname"><em>skin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_main_menu_scene_8cpp_source.html#l00184">184</a> of file <a class="el" href="_main_menu_scene_8cpp_source.html">MainMenuScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">switch</span> (skin) {</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">case</span> User::USER_SKINS::TERRORIST_1: <span class="keywordflow">return</span> <a class="code" href="namespacelocalization_1_1resources_1_1textures.html#a0c5f7338e1542559aae8b23bc28a4036">localization::resources::textures::rsTerroristOne</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keywordflow">case</span> User::USER_SKINS::TERRORIST_2: <span class="keywordflow">return</span> <a class="code" href="namespacelocalization_1_1resources_1_1textures.html#a3fdfa195cca1f7c5336a10bd85959a3a">localization::resources::textures::rsTerroristTwo</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">case</span> User::USER_SKINS::COUNTER_TERRORIST_1: <span class="keywordflow">return</span> <a class="code" href="namespacelocalization_1_1resources_1_1textures.html#a0e0dca30b94b70aadcc7bc2dc1e26e68">localization::resources::textures::rsCounterTerroristOne</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">case</span> User::USER_SKINS::COUNTER_TERRORIST_2: <span class="keywordflow">return</span> <a class="code" href="namespacelocalization_1_1resources_1_1textures.html#ab8e894c71cc2417e31247918b27cb1d2">localization::resources::textures::rsCounterTerroristTwo</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">case</span> User::USER_SKINS::NO_SENSE: <span class="keywordflow">return</span> <a class="code" href="namespacelocalization_1_1resources_1_1textures.html#a5ff5433c66cab5e0dee08bc85c0dff30">localization::resources::textures::rsNoSense</a>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">case</span> User::USER_SKINS::RAINBOW: <span class="keywordflow">return</span> <a class="code" href="namespacelocalization_1_1resources_1_1textures.html#a373170e2f25178b56a6578379f065264">localization::resources::textures::rsRainbow</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordflow">default</span>: <span class="keywordflow">return</span> <a class="code" href="namespacelocalization_1_1resources_1_1textures.html#a676d954603d77837d6142df66fdf5aa0">localization::resources::textures::rsUnknown</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a8d00c7f1627f5d1d8e5189c14338c096"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8d00c7f1627f5d1d8e5189c14338c096">game::GameAction::PLACE_BOMB</a></div><div class="ttdeci">@ PLACE_BOMB</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ae397b4fa67c25cc1c9eae980cfdd43eb"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ae397b4fa67c25cc1c9eae980cfdd43eb">game::GameAction::MOVE_UP</a></div><div class="ttdeci">@ MOVE_UP</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1textures_html_a0e0dca30b94b70aadcc7bc2dc1e26e68"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1textures.html#a0e0dca30b94b70aadcc7bc2dc1e26e68">localization::resources::textures::rsCounterTerroristOne</a></div><div class="ttdeci">constexpr ResourceString rsCounterTerroristOne(&quot;Counter-terrorist 1&quot;)</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ae58a1b00942e66d8b4abc960da7877ab"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ae58a1b00942e66d8b4abc960da7877ab">game::GameAction::ACTION</a></div><div class="ttdeci">@ ACTION</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1textures_html_a3fdfa195cca1f7c5336a10bd85959a3a"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1textures.html#a3fdfa195cca1f7c5336a10bd85959a3a">localization::resources::textures::rsTerroristTwo</a></div><div class="ttdeci">constexpr ResourceString rsTerroristTwo(&quot;Terrorist 2&quot;)</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1textures_html_ab8e894c71cc2417e31247918b27cb1d2"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1textures.html#ab8e894c71cc2417e31247918b27cb1d2">localization::resources::textures::rsCounterTerroristTwo</a></div><div class="ttdeci">constexpr ResourceString rsCounterTerroristTwo(&quot;Counter-terrorist 2&quot;)</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ab50339a10e1de285ac99d4c3990b8693">game::GameAction::NONE</a></div><div class="ttdeci">@ NONE</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a8b32429247158c80deab773f4e04e1c2"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a8b32429247158c80deab773f4e04e1c2">game::GameAction::MOVE_DOWN</a></div><div class="ttdeci">@ MOVE_DOWN</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a4905ac9d6a22bdfc1ae096094ce6248d">game::GameAction::COUNT</a></div><div class="ttdeci">@ COUNT</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a291554596c183e837f0a6bec3767c891"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a291554596c183e837f0a6bec3767c891">game::GameAction::PAUSE</a></div><div class="ttdeci">@ PAUSE</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5">game::GameAction::MOVE_RIGHT</a></div><div class="ttdeci">@ MOVE_RIGHT</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a452027db946d37ba0f94d1160a3184bd"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a452027db946d37ba0f94d1160a3184bd">game::GameAction::NEXT_ACTIVABLE</a></div><div class="ttdeci">@ NEXT_ACTIVABLE</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1textures_html_a676d954603d77837d6142df66fdf5aa0"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1textures.html#a676d954603d77837d6142df66fdf5aa0">localization::resources::textures::rsUnknown</a></div><div class="ttdeci">constexpr ResourceString rsUnknown(&quot;Unknown skin&quot;)</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663add7cd0eb57db08d4f98abc48e5593462"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663add7cd0eb57db08d4f98abc48e5593462">game::GameAction::DISCONNECT</a></div><div class="ttdeci">@ DISCONNECT</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1textures_html_a0c5f7338e1542559aae8b23bc28a4036"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1textures.html#a0c5f7338e1542559aae8b23bc28a4036">localization::resources::textures::rsTerroristOne</a></div><div class="ttdeci">constexpr ResourceString rsTerroristOne(&quot;Terrorist 1&quot;)</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1textures_html_a373170e2f25178b56a6578379f065264"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1textures.html#a373170e2f25178b56a6578379f065264">localization::resources::textures::rsRainbow</a></div><div class="ttdeci">constexpr ResourceString rsRainbow(&quot;Rainbow&quot;)</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a488312f3ca07fb3bb54a7d52094ed74b">game::GameAction::ACTIVATE_ITEM</a></div><div class="ttdeci">@ ACTIVATE_ITEM</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a01cb85db7a0be8e1b1e1d63b55300443"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a01cb85db7a0be8e1b1e1d63b55300443">game::GameAction::TOGGLE_CONSOLE</a></div><div class="ttdeci">@ TOGGLE_CONSOLE</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a1dd26f1f1790f0b56d5752fb0fbecef0">game::GameAction::BACK</a></div><div class="ttdeci">@ BACK</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a1666d55be21cf20000f01a4e01cd2d49"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a1666d55be21cf20000f01a4e01cd2d49">game::GameAction::PREVIOUS_ACTIVABLE</a></div><div class="ttdeci">@ PREVIOUS_ACTIVABLE</div></div>
+<div class="ttc" id="anamespacelocalization_1_1resources_1_1textures_html_a5ff5433c66cab5e0dee08bc85c0dff30"><div class="ttname"><a href="namespacelocalization_1_1resources_1_1textures.html#a5ff5433c66cab5e0dee08bc85c0dff30">localization::resources::textures::rsNoSense</a></div><div class="ttdeci">constexpr ResourceString rsNoSense(&quot;No sense&quot;)</div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663ad7aa835d76fc894935ade13f4d0624f8">game::GameAction::MOVE_LEFT</a></div><div class="ttdeci">@ MOVE_LEFT</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

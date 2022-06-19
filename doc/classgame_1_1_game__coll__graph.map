@@ -1,6 +1,6 @@
 <map id="game::Game" name="game::Game">
 <area shape="rect" id="node1" title="Game class." alt="" coords="1005,287,1112,313"/>
-<area shape="rect" id="node2" href="$classecs_1_1_world.html" title="Contains all entities and systems." alt="" coords="696,113,785,140"/>
+<area shape="rect" id="node2" href="$classecs_1_1_world.html" title="Contains all entities and systems." alt="" coords="696,115,785,141"/>
 <area shape="rect" id="node3" href="$classecs_1_1_instances.html" title=" " alt="" coords="353,19,504,61"/>
 <area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/unordered_map.html" title=" " alt="" coords="11,5,234,61"/>
 <area shape="rect" id="node5" href="$classecs_1_1_instances.html" title=" " alt="" coords="353,93,504,134"/>
@@ -14,4 +14,5 @@
 <area shape="rect" id="node13" href="$structraylib_1_1core_1_1_vector2.html" title="The Vector2 struct (compatible with the raylib Vector2)" alt="" coords="333,340,524,367"/>
 <area shape="rect" id="node14" href="$classraylib_1_1core_1_1_camera3_d.html" title="The Camera3D class that encapsulates the raylib 3D camera." alt="" coords="655,376,827,403"/>
 <area shape="rect" id="node15" href="$structgame_1_1_game_1_1_parameters.html" title="Game parameters." alt="" coords="647,427,835,453"/>
+<area shape="rect" id="node16" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/queue.html" title=" " alt="" coords="336,427,521,453"/>
 </map>

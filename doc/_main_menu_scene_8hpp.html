@@ -93,61 +93,63 @@ $(document).ready(function(){initNavTree('_main_menu_scene_8hpp.html',''); initR
 <div class="textblock"><code>#include &quot;<a class="el" href="_world_8hpp_source.html">ecs/World.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_identity_8hpp_source.html">game/components/Identity.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_a_scene_8hpp_source.html">game/scenes/AScene.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_resources_8hpp_source.html">localization/Resources.hpp</a>&quot;</code><br />
+<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/deque.html">deque</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for MainMenuScene.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_main_menu_scene_8hpp__incl.png" border="0" usemap="#src_2game_2scenes_2_main_menu_scene_8hpp" alt=""/></div>
 <map name="src_2game_2scenes_2_main_menu_scene_8hpp" id="src_2game_2scenes_2_main_menu_scene_8hpp">
-<area shape="rect" title=" " alt="" coords="981,5,1183,47"/>
-<area shape="rect" href="_world_8hpp.html" title=" " alt="" coords="1151,319,1264,345"/>
-<area shape="rect" href="_identity_8hpp.html" title=" " alt="" coords="272,169,495,196"/>
-<area shape="rect" href="_a_scene_8hpp.html" title=" " alt="" coords="1120,95,1308,121"/>
-<area shape="rect" href="world_2_world_8hpp.html" title=" " alt="" coords="883,468,1036,495"/>
-<area shape="rect" href="_component_8hpp.html" title=" " alt="" coords="869,617,1020,644"/>
-<area shape="rect" href="storage_2_storage_8hpp.html" title=" " alt="" coords="855,692,1034,719"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/concepts.html" title=" " alt="" coords="767,841,847,868"/>
-<area shape="rect" href="_entities_8hpp.html" title=" " alt="" coords="1100,543,1285,569"/>
-<area shape="rect" href="_resource_8hpp.html" title=" " alt="" coords="1465,617,1661,644"/>
-<area shape="rect" href="system_2_system_8hpp.html" title=" " alt="" coords="407,543,584,569"/>
-<area shape="rect" href="_instances_8hpp.html" title=" " alt="" coords="659,543,838,569"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/unordered_map.html" title=" " alt="" coords="517,617,641,644"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/stdexcept.html" title=" " alt="" coords="1361,543,1448,569"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/utility.html" title=" " alt="" coords="964,543,1024,569"/>
-<area shape="rect" href="_entity_8hpp.html" title=" " alt="" coords="1046,767,1158,793"/>
-<area shape="rect" href="_joinable_8hpp.html" title=" " alt="" coords="1183,767,1339,793"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/iterator.html" title=" " alt="" coords="772,767,843,793"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/span.html" title=" " alt="" coords="918,767,971,793"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/compare.html" title=" " alt="" coords="1304,991,1383,1017"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/cstddef.html" title=" " alt="" coords="1097,916,1168,943"/>
-<area shape="rect" href="_bit_set_8hpp.html" title=" " alt="" coords="1275,841,1390,868"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/cstdint.html" title=" " alt="" coords="1193,916,1259,943"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/bit.html" title=" " alt="" coords="1405,916,1444,943"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/ostream.html" title=" " alt="" coords="1803,916,1879,943"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/vector.html" title=" " alt="" coords="1468,916,1531,943"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="1284,916,1381,943"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/memory.html" title=" " alt="" coords="717,617,794,644"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/typeindex.html" title=" " alt="" coords="193,617,280,644"/>
-<area shape="rect" href="_system_8hpp.html" title=" " alt="" coords="487,319,613,345"/>
-<area shape="rect" href="_i_scene_8hpp.html" title=" " alt="" coords="1272,169,1455,196"/>
-<area shape="rect" href="_camera3_d_8hpp.html" title=" " alt="" coords="1527,319,1719,345"/>
-<area shape="rect" href="_camera2_d_8hpp.html" title=" " alt="" coords="1159,393,1351,420"/>
-<area shape="rect" href="_system_data_8hpp.html" title=" " alt="" coords="305,393,513,420"/>
-<area shape="rect" href="_system_tag_8hpp.html" title=" " alt="" coords="5,543,204,569"/>
-<area shape="rect" href="_game_8hpp.html" title=" " alt="" coords="1318,244,1449,271"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/cmath.html" title=" " alt="" coords="1288,319,1351,345"/>
-<area shape="rect" href="map_2_map_8hpp.html" title=" " alt="" coords="1661,393,1772,420"/>
-<area shape="rect" href="_vector2_8hpp.html" title=" " alt="" coords="1386,468,1485,495"/>
-<area shape="rect" href="_vector3_8hpp.html" title=" " alt="" coords="1457,393,1555,420"/>
-<area shape="rect" href="_user_8hpp.html" title=" " alt="" coords="1691,692,1811,719"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/array.html" title=" " alt="" coords="1850,767,1906,793"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/queue.html" title=" " alt="" coords="1592,767,1655,793"/>
-<area shape="rect" href="_profile_8hpp.html" title=" " alt="" coords="1679,767,1826,793"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="1707,841,1798,868"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string.html" title=" " alt="" coords="1822,841,1881,868"/>
-<area shape="rect" href="_keybinds_8hpp.html" title=" " alt="" coords="1574,841,1683,868"/>
-<area shape="rect" href="_gamepad_input_8hpp.html" title=" " alt="" coords="1555,916,1702,943"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/type_traits.html" title=" " alt="" coords="1472,543,1564,569"/>
-<area shape="rect" title=" " alt="" coords="1588,543,1659,569"/>
+<area shape="rect" title=" " alt="" coords="1440,5,1643,47"/>
+<area shape="rect" href="_world_8hpp.html" title=" " alt="" coords="1217,319,1330,345"/>
+<area shape="rect" href="_identity_8hpp.html" title=" " alt="" coords="698,169,921,196"/>
+<area shape="rect" href="_a_scene_8hpp.html" title=" " alt="" coords="1447,95,1635,121"/>
+<area shape="rect" href="_resources_8hpp.html" title=" " alt="" coords="2142,617,2338,644"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/deque.html" title=" " alt="" coords="2214,95,2277,121"/>
+<area shape="rect" href="world_2_world_8hpp.html" title=" " alt="" coords="757,468,910,495"/>
+<area shape="rect" href="_component_8hpp.html" title=" " alt="" coords="395,617,546,644"/>
+<area shape="rect" href="storage_2_storage_8hpp.html" title=" " alt="" coords="469,692,648,719"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/concepts.html" title=" " alt="" coords="843,841,923,868"/>
+<area shape="rect" href="_entities_8hpp.html" title=" " alt="" coords="214,543,399,569"/>
+<area shape="rect" href="_resource_8hpp.html" title=" " alt="" coords="622,617,818,644"/>
+<area shape="rect" href="system_2_system_8hpp.html" title=" " alt="" coords="1062,543,1239,569"/>
+<area shape="rect" href="_instances_8hpp.html" title=" " alt="" coords="808,543,987,569"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/unordered_map.html" title=" " alt="" coords="842,617,966,644"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/stdexcept.html" title=" " alt="" coords="1587,543,1674,569"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/utility.html" title=" " alt="" coords="673,543,733,569"/>
+<area shape="rect" href="_entity_8hpp.html" title=" " alt="" coords="5,767,117,793"/>
+<area shape="rect" href="_joinable_8hpp.html" title=" " alt="" coords="193,767,349,793"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/iterator.html" title=" " alt="" coords="859,767,930,793"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/span.html" title=" " alt="" coords="596,767,649,793"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/compare.html" title=" " alt="" coords="81,841,159,868"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/cstddef.html" title=" " alt="" coords="46,916,117,943"/>
+<area shape="rect" href="_bit_set_8hpp.html" title=" " alt="" coords="235,841,349,868"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/cstdint.html" title=" " alt="" coords="172,916,239,943"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/bit.html" title=" " alt="" coords="273,916,311,943"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/ostream.html" title=" " alt="" coords="1959,916,2035,943"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/vector.html" title=" " alt="" coords="685,916,747,943"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="1178,916,1275,943"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/memory.html" title=" " alt="" coords="991,617,1068,644"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/typeindex.html" title=" " alt="" coords="1245,617,1331,644"/>
+<area shape="rect" href="_system_8hpp.html" title=" " alt="" coords="1355,319,1480,345"/>
+<area shape="rect" href="_i_scene_8hpp.html" title=" " alt="" coords="1450,169,1633,196"/>
+<area shape="rect" href="_camera3_d_8hpp.html" title=" " alt="" coords="1504,319,1696,345"/>
+<area shape="rect" href="_camera2_d_8hpp.html" title=" " alt="" coords="1687,393,1879,420"/>
+<area shape="rect" href="_system_data_8hpp.html" title=" " alt="" coords="1171,393,1379,420"/>
+<area shape="rect" href="_system_tag_8hpp.html" title=" " alt="" coords="1365,543,1563,569"/>
+<area shape="rect" href="_game_8hpp.html" title=" " alt="" coords="1708,244,1839,271"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/cmath.html" title=" " alt="" coords="1721,319,1783,345"/>
+<area shape="rect" href="_users_8hpp.html" title=" " alt="" coords="1909,543,2037,569"/>
+<area shape="rect" href="map_2_map_8hpp.html" title=" " alt="" coords="2015,393,2126,420"/>
+<area shape="rect" href="_vector2_8hpp.html" title=" " alt="" coords="1780,468,1879,495"/>
+<area shape="rect" href="_vector3_8hpp.html" title=" " alt="" coords="1564,393,1663,420"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/array.html" title=" " alt="" coords="1752,692,1808,719"/>
+<area shape="rect" href="_user_8hpp.html" title=" " alt="" coords="1934,617,2013,644"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/queue.html" title=" " alt="" coords="1833,692,1895,719"/>
+<area shape="rect" href="_profile_8hpp.html" title=" " alt="" coords="1920,692,2067,719"/>
+<area shape="rect" href="_resource_string_8hpp.html" title=" " alt="" coords="1867,841,2015,868"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/type_traits.html" title=" " alt="" coords="1793,543,1885,569"/>
+<area shape="rect" title=" " alt="" coords="1698,543,1769,569"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">

@@ -1,22 +1,24 @@
 <map id="src/game/Users.hpp" name="src/game/Users.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="39,5,190,32"/>
-<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/array.html" title=" " alt="" coords="5,155,61,181"/>
-<area shape="rect" id="node3" href="$_user_8hpp.html" title=" " alt="" coords="75,80,154,107"/>
-<area shape="rect" id="node20" href="$_resource_8hpp.html" title=" " alt="" coords="178,80,374,107"/>
-<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/queue.html" title=" " alt="" coords="86,155,149,181"/>
-<area shape="rect" id="node5" href="$_profile_8hpp.html" title=" " alt="" coords="173,155,320,181"/>
-<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/filesystem.html" title=" " alt="" coords="85,229,176,256"/>
-<area shape="rect" id="node7" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/ostream.html" title=" " alt="" coords="163,304,239,331"/>
-<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string.html" title=" " alt="" coords="251,229,309,256"/>
-<area shape="rect" id="node9" href="$_keybinds_8hpp.html" title=" " alt="" coords="357,229,467,256"/>
-<area shape="rect" id="node10" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/vector.html" title=" " alt="" coords="263,304,326,331"/>
-<area shape="rect" id="node11" href="$_gamepad_input_8hpp.html" title=" " alt="" coords="351,304,497,331"/>
-<area shape="rect" id="node18" href="$_game_action_8hpp.html" title=" " alt="" coords="521,304,692,331"/>
-<area shape="rect" id="node19" href="$_keyboard_8hpp.html" title=" " alt="" coords="637,379,821,405"/>
-<area shape="rect" id="node12" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/compare.html" title=" " alt="" coords="323,379,402,405"/>
-<area shape="rect" id="node13" href="$_gamepad_8hpp.html" title=" " alt="" coords="427,379,613,405"/>
-<area shape="rect" id="node14" href="$_vector2_8hpp.html" title=" " alt="" coords="393,453,492,480"/>
-<area shape="rect" id="node16" title=" " alt="" coords="503,528,574,555"/>
-<area shape="rect" id="node17" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html" title=" " alt="" coords="567,453,665,480"/>
-<area shape="rect" id="node15" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/type_traits.html" title=" " alt="" coords="387,528,479,555"/>
+<area shape="rect" id="node1" title=" " alt="" coords="279,5,430,32"/>
+<area shape="rect" id="node2" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/array.html" title=" " alt="" coords="163,155,219,181"/>
+<area shape="rect" id="node3" href="$_user_8hpp.html" title=" " alt="" coords="235,80,314,107"/>
+<area shape="rect" id="node20" href="$_resource_8hpp.html" title=" " alt="" coords="558,80,754,107"/>
+<area shape="rect" id="node21" href="$_resources_8hpp.html" title=" " alt="" coords="338,80,534,107"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/queue.html" title=" " alt="" coords="243,155,306,181"/>
+<area shape="rect" id="node5" href="$_profile_8hpp.html" title=" " alt="" coords="331,155,477,181"/>
+<area shape="rect" id="node6" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/filesystem.html" title=" " alt="" coords="143,229,233,256"/>
+<area shape="rect" id="node7" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/ostream.html" title=" " alt="" coords="523,304,599,331"/>
+<area shape="rect" id="node8" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string.html" title=" " alt="" coords="441,229,500,256"/>
+<area shape="rect" id="node9" href="$_keybinds_8hpp.html" title=" " alt="" coords="257,229,367,256"/>
+<area shape="rect" id="node10" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/vector.html" title=" " alt="" coords="19,304,82,331"/>
+<area shape="rect" id="node11" href="$_gamepad_input_8hpp.html" title=" " alt="" coords="157,304,304,331"/>
+<area shape="rect" id="node18" href="$_game_action_8hpp.html" title=" " alt="" coords="328,304,499,331"/>
+<area shape="rect" id="node19" href="$_keyboard_8hpp.html" title=" " alt="" coords="5,379,189,405"/>
+<area shape="rect" id="node12" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/compare.html" title=" " alt="" coords="214,379,293,405"/>
+<area shape="rect" id="node13" href="$_gamepad_8hpp.html" title=" " alt="" coords="317,379,504,405"/>
+<area shape="rect" id="node14" href="$_vector2_8hpp.html" title=" " alt="" coords="361,453,460,480"/>
+<area shape="rect" id="node16" title=" " alt="" coords="274,528,345,555"/>
+<area shape="rect" id="node17" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/string_view.html" title=" " alt="" coords="547,453,645,480"/>
+<area shape="rect" id="node15" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/type_traits.html" title=" " alt="" coords="369,528,461,555"/>
+<area shape="rect" id="node22" href="$_resource_string_8hpp.html" title=" " alt="" coords="525,229,673,256"/>
 </map>

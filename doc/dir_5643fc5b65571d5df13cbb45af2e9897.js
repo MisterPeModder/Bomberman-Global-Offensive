@@ -10,9 +10,7 @@ var dir_5643fc5b65571d5df13cbb45af2e9897 =
     [ "IScene.hpp", "_i_scene_8hpp.html", [
       [ "IScene", "classgame_1_1_i_scene.html", "classgame_1_1_i_scene" ]
     ] ],
-    [ "MainMenuScene.cpp", "_main_menu_scene_8cpp.html", [
-      [ "DetectGamepad", "structgame_1_1_detect_gamepad.html", "structgame_1_1_detect_gamepad" ]
-    ] ],
+    [ "MainMenuScene.cpp", "_main_menu_scene_8cpp.html", "_main_menu_scene_8cpp" ],
     [ "MainMenuScene.hpp", "_main_menu_scene_8hpp.html", [
       [ "MainMenuScene", "classgame_1_1_main_menu_scene.html", "classgame_1_1_main_menu_scene" ]
     ] ],

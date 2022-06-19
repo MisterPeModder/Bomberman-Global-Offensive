@@ -1,5 +1,14 @@
 var classgame_1_1_user =
 [
+    [ "USER_SKINS", "classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923", [
+      [ "TERRORIST_1", "classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923a4d32adf94008db0fa03c809f97b5ebf8", null ],
+      [ "TERRORIST_2", "classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923a9d0defb3e8caed3f555c8c2b342a1c9e", null ],
+      [ "COUNTER_TERRORIST_1", "classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923ac89615c0a04a22d2832c59613c8066d7", null ],
+      [ "COUNTER_TERRORIST_2", "classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923a041257f0112f3101459390bc4c809996", null ],
+      [ "NO_SENSE", "classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923ae9f4d1b635fc87fa67cadb1f5155f805", null ],
+      [ "RAINBOW", "classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923a94c1a55d457393ac92208bd25bec0303", null ],
+      [ "UNKNOWN", "classgame_1_1_user.html#ac89e7ac8c37627d35528430f6b05f923a89fd5a8efa9636e8a66c1c76b4403c81", null ]
+    ] ],
     [ "UserId", "classgame_1_1_user.html#a95dae16765e383a69b835b7916c734ed", [
       [ "User1", "classgame_1_1_user.html#a95dae16765e383a69b835b7916c734eda6b908b785fdba05a6446347dae08d8c5", null ],
       [ "User2", "classgame_1_1_user.html#a95dae16765e383a69b835b7916c734edaa09bccf2b2963982b34dc0e08d8b582a", null ],
@@ -20,6 +29,7 @@ var classgame_1_1_user =
     [ "getKeybinds", "classgame_1_1_user.html#a3c85a2d8eed543a230fee344196dd840", null ],
     [ "getProfile", "classgame_1_1_user.html#adcabfa6cddf73705c07583f9621550cb", null ],
     [ "getProfile", "classgame_1_1_user.html#a815fc8b6991fe7929de8484cd95853a8", null ],
+    [ "getSkin", "classgame_1_1_user.html#a7f4440e8f5addbdc77ff5b36c5bb909b", null ],
     [ "isAvailable", "classgame_1_1_user.html#aa85a628732a4a5cb428c53da9358c093", null ],
     [ "isKeyboard", "classgame_1_1_user.html#aae6864404e1d953ed996e9bd4d30f635", null ],
     [ "operator=", "classgame_1_1_user.html#a4cff7564c579955da13433e71c3c1985", null ],
@@ -28,11 +38,13 @@ var classgame_1_1_user =
     [ "setId", "classgame_1_1_user.html#afb04b1bf85ad6f4d267d7afce720105a", null ],
     [ "setIgnoreKeyboard", "classgame_1_1_user.html#aaed750acc6c037c67cb0ed0ce32d0ead", null ],
     [ "setKeyboard", "classgame_1_1_user.html#a9c40f5eb609595680bb8f02ff631d394", null ],
+    [ "setSkin", "classgame_1_1_user.html#a1e6afcc726a1f5d8d4663587934f6caa", null ],
     [ "updateActions", "classgame_1_1_user.html#a2dd47ac0c42368297d29e2eb75b6ea30", null ],
     [ "_available", "classgame_1_1_user.html#a13f760054351dd21b6469030c4387248", null ],
     [ "_changedActions", "classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f", null ],
     [ "_gamepadId", "classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463", null ],
     [ "_ignoreKeyboard", "classgame_1_1_user.html#a06dc65a4ec1e0d158088febb3fdf0707", null ],
     [ "_lastActions", "classgame_1_1_user.html#ad0f3c02c4306d1fc841397a1d583e8c9", null ],
-    [ "_profile", "classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49", null ]
+    [ "_profile", "classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49", null ],
+    [ "_skin", "classgame_1_1_user.html#a47f4a0027ec8ae84bb9d0a48dae2f923", null ]
 ];

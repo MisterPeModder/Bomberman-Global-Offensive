@@ -73,17 +73,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_scene_8cpp.html",
-"_main_menu_scene_8hpp.html",
-"_vector4_8hpp.html",
-"classecs_1_1_join_iter.html#a7246bc938d9bdbf1aed3bfedca9d364b",
-"classgame_1_1_settings_menu_scene.html#aa2c42439729cf59935463737b6d32d17",
-"classgame_1_1settings_1_1_settings.html#a6bb4908d5135d3fa120a48b5034b4bc0",
-"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a766b4a88cba7645629bac70fd01d8275",
-"classraylib_1_1shapes_1_1_cone.html#a10d107593ceaba7c941a96f445bcf28e",
-"functions_func_b.html",
-"structecs_1_1_join_traits.html",
-"structgame_1_1components_1_1_scale.html#aec4445ef96ab0eeb2a827c2c7b0294df",
-"structraylib_1_1core_1_1_vector4.html#a07c24c72dab03128fe701ee3cf5748f0"
+"_main_menu_scene_8cpp_source.html",
+"_vector2_8hpp.html#a6b1e1d0f220edd69347fabba22bf7075",
+"classecs_1_1_join_iter.html#a0bf03bf0484f57f351315be9c3b74031",
+"classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691af166fa2a3cb8ab6f9a98159e624630ad",
+"classgame_1_1settings_1_1_profile.html#a90cb85eaf8a211d01364a199e4ec15d7",
+"classraylib_1_1core_1_1_keyboard.html#a00845927ebc1f58a489eaf68686ebb90a47489eb597b7db34caa24b1fc78fc839",
+"classraylib_1_1shapes_1_1_a_shape.html#a2748064fc1e569e3f6ce59c82eab982f",
+"dir_982fd39ee1731a8b580daaa875541184.html",
+"scoped_8hpp.html",
+"structgame_1_1components_1_1_player_1_1_stats.html#ac58c335a0e79cadf47b19a22c734575f",
+"structraylib_1_1core_1_1_vector2.html#aed2a9de06c46fffc90318b09f4b9ad2b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
