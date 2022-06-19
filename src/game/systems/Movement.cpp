@@ -11,6 +11,7 @@
 #include "ecs/resource/Timer.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Velocity.hpp"
+#include "game/resources/GameClock.hpp"
 
 using namespace game::components;
 
@@ -18,7 +19,7 @@ namespace game::systems
 {
     void Movement::run(ecs::SystemData data)
     {
-        float seconds = data.getResource<ecs::Timer>().elapsed();
+        float seconds = data.getResource<game::resources::GameClock>().elapsedSeconds();
 
         for (auto [pos, vel] : ecs::join(data.getStorage<Position>(), data.getStorage<Velocity>())) {
             // no friction here, just plain old perpertual motion

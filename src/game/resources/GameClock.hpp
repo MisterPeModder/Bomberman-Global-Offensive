@@ -10,6 +10,7 @@
 
 #include <chrono>
 #include "ecs/Component.hpp"
+#include "ecs/resource/Resource.hpp"
 
 namespace game::resources
 {
@@ -20,6 +21,8 @@ namespace game::resources
         std::chrono::milliseconds getTime() const;
 
         std::chrono::milliseconds elapsed() const;
+        float elapsedSeconds() const;
+
         void update();
         void pause(bool pause = true);
 
@@ -27,6 +30,7 @@ namespace game::resources
         std::chrono::milliseconds _gameTime;
         std::chrono::steady_clock::time_point _lastReset;
         bool _paused;
+        std::chrono::nanoseconds _lastFrame;
     };
 } // namespace game::resources
 
