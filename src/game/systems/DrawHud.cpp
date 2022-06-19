@@ -32,10 +32,38 @@ namespace game::systems
             y / 100 * raylib::core::Window::getHeight(), 2, color.asRaylib());
     }
 
-    raylib::core::Color whatColor(game::components::Item::Identifier id) 
+    raylib::core::Color DrawHud::whatColor(ecs::SystemData data, int id)
     {
-        
-        game::components::Item::Identifier::LandMine;
+        for (auto [player] : ecs::join(data.getStorage<game::components::Player>())) {
+            switch (id) {
+                case (1):
+                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::NoClip)] != 0)
+                        return (raylib::core::Color::GREEN);
+                    break;
+                case (2):
+                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::LandMine)] != 0)
+                        return (raylib::core::Color::GREEN);
+                    break;
+                case (3):
+                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::SmokeGrenade)]
+                        != 0)
+                        return (raylib::core::Color::GREEN);
+                    break;
+                case (4):
+                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::StunGrenade)]
+                        != 0)
+                        return (raylib::core::Color::GREEN);
+                    break;
+                case (5):
+                    if (player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::Punch)] != 0)
+                        return (raylib::core::Color::GREEN);
+                    break;
+
+                default: break;
+            }
+        }
+
+        return (raylib::core::Color::DARK_BLUE);
     }
 
     void DrawHud::run(ecs::SystemData data)
@@ -58,8 +86,9 @@ namespace game::systems
                     break;
                 default: break;
             }
-            player.inventory.drawDataHud(
-                1.0 + x, 3.0 + y, localization::resources::hud::rsNumberbomb, raylib::core::Color::BLUE);
+            player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::LandMine)];
+
+            drawDataHud(1.0 + x, 3.0 + y, localization::resources::hud::rsNumberbomb, raylib::core::Color::BLUE);
             drawDataHud(5.0 + x, 3.0 + y, std::to_string(player.stats.bombLimit), raylib::core::Color::BLUE);
             drawDataHud(1.0 + x, 4.0 + y, localization::resources::hud::rsPowerBomb, raylib::core::Color::BLUE);
             drawDataHud(5.0 + x, 4.0 + y, std::to_string(player.stats.bombRange), raylib::core::Color::BLUE);
@@ -67,11 +96,11 @@ namespace game::systems
             drawDataHud(5.0 + x, 5.0 + y, std::to_string(player.stats.speed), raylib::core::Color::BLUE);
 
             drawDataHud(1.0 + x, 6.0 + y, localization::resources::hud::rsActivable, raylib::core::Color::GREEN);
-            drawDataHud(1.0 + x, 7.0 + y, localization::resources::hud::rsNoclip, raylib::core::Color::DARK_GRAY);
-            drawDataHud(1.0 + x, 8.0 + y, localization::resources::hud::rsLandMine, raylib::core::Color::DARK_GRAY);
-            drawDataHud(1.0 + x, 9.0 + y, localization::resources::hud::rsSmokeGrenade, raylib::core::Color::DARK_GRAY);
-            drawDataHud(1.0 + x, 10.0 + y, localization::resources::hud::rsStunGrenade, raylib::core::Color::DARK_GRAY);
-            drawDataHud(1.0 + x, 11.0 + y, localization::resources::hud::rsPunch, raylib::core::Color::DARK_GRAY);
+            drawDataHud(1.0 + x, 7.0 + y, localization::resources::hud::rsNoclip, whatColor(data, 1));
+            drawDataHud(1.0 + x, 8.0 + y, localization::resources::hud::rsLandMine, whatColor(data, 2));
+            drawDataHud(1.0 + x, 9.0 + y, localization::resources::hud::rsSmokeGrenade, whatColor(data, 3));
+            drawDataHud(1.0 + x, 10.0 + y, localization::resources::hud::rsStunGrenade, whatColor(data, 4));
+            drawDataHud(1.0 + x, 11.0 + y, localization::resources::hud::rsPunch, whatColor(data, 5));
         }
     }
 } // namespace game::systems

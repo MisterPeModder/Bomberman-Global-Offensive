@@ -21,10 +21,11 @@ namespace game::systems
     struct DrawHud : public ecs::System {
         /// Draw all the entities with the components Player.
         ///
-        /// @param data view on the world. 
-       void run(ecs::SystemData data) override final;
+        /// @param data view on the world.
+        void run(ecs::SystemData data) override final;
 
       private:
+        raylib::core::Color DrawHud::whatColor(ecs::SystemData data, int id);
         void drawDataHud(float x, float y, std::string text, raylib::core::Color color);
     };
 } // namespace game::systems
