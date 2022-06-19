@@ -28,6 +28,7 @@
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
+#include "game/systems/DrawFpsCounter.hpp"
 #include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/DrawTexture.hpp"
@@ -90,6 +91,7 @@ namespace game
 
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::DrawTexture>();
+        _world.addSystem<systems::DrawFpsCounter>();
         _world.addSystem<systems::DrawTextureBackground>();
 
         _globalNoDraw.add<systems::InputManager, DetectGamepad>();
@@ -97,6 +99,7 @@ namespace game
         _global2D.add<systems::DrawText>();
         _global2D.add<systems::DrawSelectedWidget>();
         _global2D.add<systems::DrawRectangle>();
+        _global2D.add<systems::DrawFpsCounter>();
         _background2D.add<systems::DrawTextureBackground>();
 
         static const std::filesystem::path backgroundPath =

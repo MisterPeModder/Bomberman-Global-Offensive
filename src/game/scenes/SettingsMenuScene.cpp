@@ -41,6 +41,7 @@
 
 #include "game/resources/Engine.hpp"
 
+#include "game/systems/DrawFpsCounter.hpp"
 #include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/DrawTextureBackground.hpp"
@@ -646,6 +647,8 @@ namespace game
         _world.addSystem<game::systems::DrawText>();
         _world.addSystem<game::systems::DrawSelectedWidget>();
         _world.addSystem<game::systems::KeybindIntercept>();
+        _world.addSystem<game::systems::DrawFpsCounter>();
+
         _world.addStorage<game::components::KeybindIntercepter>();
         _world.addSystem<game::systems::DrawTextureBackground>();
 
