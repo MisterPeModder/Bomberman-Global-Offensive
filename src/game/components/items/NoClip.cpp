@@ -20,7 +20,7 @@ namespace game::components
         noClip.maxStack = 1;
         noClip.name = "Wall Pass";
         noClip.duration = std::chrono::milliseconds(3000);
-        noClip.dropRate = 50;
+        noClip.dropRate = 30;
         noClip.onApply = [](ecs::Entity placer, ecs::SystemData data) {
             auto &player = data.getStorage<Player>()[placer.getId()];
 
