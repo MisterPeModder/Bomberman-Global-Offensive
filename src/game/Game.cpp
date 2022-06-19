@@ -16,6 +16,7 @@
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
+#include "components/Explosion.hpp"
 #include "components/History.hpp"
 #include "components/Hud.hpp"
 #include "components/Identity.hpp"
@@ -71,6 +72,7 @@
 #include "systems/DrawTexture.hpp"
 #include "systems/DrawFpsCounter.hpp"
 #include "systems/DrawingCube.hpp"
+#include "systems/Explosion.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
 #include "systems/Model.hpp"
@@ -267,6 +269,7 @@ namespace game
         _world.addStorage<components::Hud>();
         _world.addStorage<components::KeybindIntercepter>();
         _world.addStorage<components::SoundReference>();
+        _world.addStorage<components::Explosion>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::RunAnimation>();
@@ -286,12 +289,13 @@ namespace game
         _world.addSystem<systems::PlaySoundReferences>();
         _world.addSystem<systems::DisableNoClip>();
         _world.addSystem<systems::CheckGameEnd>();
+        _world.addSystem<systems::ClearExplosions>();
         _world.addSystem<systems::UpdateGameClock>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
-            systems::PlaySoundReferences, systems::DisableNoClip>();
+            systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
         _drawing2d.add<systems::DrawHud, systems::DrawRectangle>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();

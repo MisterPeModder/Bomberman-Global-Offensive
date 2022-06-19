@@ -20,6 +20,6 @@ namespace game::components
     };
 } // namespace game::components
 
-SET_COMPONENT_STORAGE(game::components::Destructible, ecs::MarkerStorage);
+// SET_COMPONENT_STORAGE(game::components::Destructible, ecs::MarkerStorage);
 
 #endif /* !GAME_COMPONENTS_DESTRUCTIBLE_HPP_ */
