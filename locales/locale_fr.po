@@ -194,27 +194,40 @@ msgid "NoClip"
 msgstr ""
  
 msgid "LandMine"
-msgstr ""
+msgstr "Mine"
 
-msgid "StunGrenade"
-msgstr ""
+msgid "FlashBang"
+msgstr FlashBang
 
-msgid "SmokeGrenade"
-msgstr ""
+msgid "Smoke"
+msgstr "Fumigène"
+
+msgid "Punch"
+msgstr "Punch"
+
+msgid "Activable"
+msgstr "Activable"
 
 msgid "Punch"
 msgstr ""
+
+msgid "KickShoes"
+msgstr ""
+
+msgid "Bombs"
+msgstr ""
+
+msgid "FlashBang"
+msgstr ""
+
+msgid "Inventory"
+msgstr ""
+
 msgid "LandMine"
 msgstr ""
 
 msgid "NoClip"
 msgstr ""
 
-msgid "LandMine"
-msgstr ""
-
-msgid "Activable"
-msgstr "Activable"
-
-msgid "Punch"
+msgid "Power range"
 msgstr ""

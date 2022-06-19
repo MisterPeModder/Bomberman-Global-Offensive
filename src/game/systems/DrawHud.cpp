@@ -40,55 +40,66 @@ namespace game::systems
             case (1):
                 occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::NoClip)];
                 if (inv.selected == game::components::Item::Identifier::NoClip) {
-                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 12.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::RED);
                 }
                 if (occurence != 0) {
-                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 12.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::GREEN);
                 }
                 break;
             case (2):
                 occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::LandMine)];
                 if (inv.selected == game::components::Item::Identifier::LandMine) {
-                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 14.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::RED);
                 }
                 if (occurence != 0) {
-                    drawDataHud(6.0 + x, 13.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 14.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::GREEN);
                 }
                 break;
             case (3):
                 occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::SmokeGrenade)];
                 if (inv.selected == game::components::Item::Identifier::SmokeGrenade) {
-                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 16.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::RED);
                 }
                 if (occurence != 0) {
-                    drawDataHud(6.0 + x, 15.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 16.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::GREEN);
                 }
                 break;
             case (4):
                 occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::StunGrenade)];
                 if (inv.selected == game::components::Item::Identifier::StunGrenade) {
-                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 18.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::RED);
                 }
                 if (occurence != 0) {
-                    drawDataHud(7.0 + x, 17.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 18.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::GREEN);
                 }
                 break;
             case (5):
                 occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::Punch)];
                 if (inv.selected == game::components::Item::Identifier::Punch) {
-                    drawDataHud(6.0 + x, 11.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 20.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::RED);
                 }
                 if (occurence != 0) {
-                    drawDataHud(6.0 + x, 19.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    drawDataHud(6.0 + x, 20.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::GREEN);
+                }
+                break;
+            case (6):
+                occurence = inv.items[static_cast<size_t>(game::components::Item::Identifier::KickShoes)];
+                if (inv.selected == game::components::Item::Identifier::KickShoes) {
+                    drawDataHud(6.0 + x, 22.0 + y, std::to_string(occurence), raylib::core::Color::RED);
+                    return (raylib::core::Color::RED);
+                }
+                if (occurence != 0) {
+                    drawDataHud(6.0 + x, 22.0 + y, std::to_string(occurence), raylib::core::Color::RED);
                     return (raylib::core::Color::GREEN);
                 }
                 break;
@@ -114,8 +125,8 @@ namespace game::systems
                 case (game::User::UserId::User2): x = 90; break;
                 case (game::User::UserId::User3): y = 90; break;
                 case (game::User::UserId::User4):
-                    x = 90;
-                    y = 90;
+                    x = 80;
+                    y = 80;
                     break;
                 default: break;
             }
@@ -128,16 +139,18 @@ namespace game::systems
             drawDataHud(1.0 + x, 7.0 + y, localization::resources::hud::rsSpeed, raylib::core::Color::BLUE);
             drawDataHud(7.0 + x, 7.0 + y, std::to_string(player.stats.speed), raylib::core::Color::BLUE);
 
-            drawDataHud(1.0 + x, 9.0 + y, localization::resources::hud::rsActivable, raylib::core::Color::PURPLE);
+            drawDataHud(1.0 + x, 10.0 + y, localization::resources::hud::rsActivable, raylib::core::Color::PURPLE);
             drawDataHud(
-                1.0 + x, 11.0 + y, localization::resources::hud::rsNoclip, whatColor(player.inventory, 1, x, y));
+                1.0 + x, 12.0 + y, localization::resources::hud::rsNoclip, whatColor(player.inventory, 1, x, y));
             drawDataHud(
-                1.0 + x, 13 + y, localization::resources::hud::rsLandMine, whatColor(player.inventory, 2, x, y));
+                1.0 + x, 14 + y, localization::resources::hud::rsLandMine, whatColor(player.inventory, 2, x, y));
             drawDataHud(
-                1.0 + x, 15 + y, localization::resources::hud::rsSmokeGrenade, whatColor(player.inventory, 3, x, y));
+                1.0 + x, 16 + y, localization::resources::hud::rsSmokeGrenade, whatColor(player.inventory, 3, x, y));
             drawDataHud(
-                1.0 + x, 17.0 + y, localization::resources::hud::rsStunGrenade, whatColor(player.inventory, 4, x, y));
-            drawDataHud(1.0 + x, 19.0 + y, localization::resources::hud::rsPunch, whatColor(player.inventory, 5, x, y));
+                1.0 + x, 18.0 + y, localization::resources::hud::rsStunGrenade, whatColor(player.inventory, 4, x, y));
+            drawDataHud(1.0 + x, 20.0 + y, localization::resources::hud::rsPunch, whatColor(player.inventory, 5, x, y));
+            drawDataHud(
+                1.0 + x, 22.0 + y, localization::resources::hud::rsKickShoes, whatColor(player.inventory, 6, x, y));
         }
     }
 } // namespace game::systems
