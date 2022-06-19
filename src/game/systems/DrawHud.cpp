@@ -8,6 +8,7 @@
 #include "systems/DrawHud.hpp"
 #include "raylib/core/Window.hpp"
 #include "systems/DrawText.hpp"
+#include "logger/Logger.hpp"
 
 extern "C"
 {
@@ -23,9 +24,10 @@ namespace game::systems
     }
     void DrawHud::run(ecs::SystemData data)
     {
+        Logger::logger.log(Logger::Severity::Information, "enter in hud draw");
         for (auto [hud] : ecs::join(data.getStorage<game::components::Hud>())) {
             //game::components::Textual nbbom(std::to_string(hud.nbBomb), 20, raylib::core::Color::WHITE);
-            drawDataHud(0, 0, std::to_string(hud.nbBomb), raylib::core::Color::WHITE);
+            drawDataHud(10, 10, std::to_string(hud.nbBomb), raylib::core::Color::BLUE);
         }
     }
 } // namespace game::systems

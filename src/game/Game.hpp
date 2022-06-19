@@ -89,7 +89,6 @@ namespace game
         void _loadTextures();
         void _loadMeshes();
         void _loadModels();
-        void _loadHud();
         void _updateHud(ecs::SystemData data);
 
         ecs::SystemTag _drawing;

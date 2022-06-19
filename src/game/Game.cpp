@@ -225,7 +225,7 @@ namespace game
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke>();
+            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::DrawHud>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel, systems::DrawTexture, systems::DrawRectangle, systems::DrawText>();
         _hud.add<systems::DrawTexture, systems::DrawRectangle, systems::DrawText, systems::DrawHud>();
@@ -234,7 +234,6 @@ namespace game
         _loadTextures();
         _loadMeshes();
         _loadModels();
-        _loadHud();
 
         /// Player
         auto &textures = _world.getResource<resources::Textures>();
@@ -317,85 +316,12 @@ namespace game
         }
     }
 
-    void Game::_updateHud(ecs::SystemData data)
-    {
-        for (auto [player, living, id] : ecs::join(data.getStorage<game::components::Player>(),
-                 data.getStorage<game::components::Living>(), data.getResource<ecs::Entities>())) {
-            // player.stats.speed;
-            //  id.getId();
-            _world.addEntity()
-                .with<game::components::Position>(0, 8)
-                .with<game::components::Textual>(std::to_string(player.stats.bombLimit), 20, raylib::core::Color::WHITE)
-                .build();
-            _world.addEntity()
-                .with<game::components::Position>(2, 8)
-                .with<game::components::Textual>(std::to_string(player.stats.speed), 20, raylib::core::Color::WHITE)
-                .build();
-            _world.addEntity()
-                .with<game::components::Position>(4, 8)
-                .with<game::components::Textual>(std::to_string(player.stats.bombRange), 20, raylib::core::Color::WHITE)
-                .build();
-            // player.inventory.current
-        }
-    }
-
-    void Game::_loadHud()
-    {
-        // auto &textures = _world.getResource<resources::Textures>();
-
-        /*  _world.addEntity()
-             .with<game::components::Position>(0, 0)
-             .with<game::components::Texture2D>(textures.get("test_icone"))
-             .with<game::components::Scale>(1.f)
-             .with<game::components::RotationAngle>(0.f)
-             .with<game::components::Color>(255, 255, 255, 200)
-             .build();
-  */
-        _world.addEntity()
-            .with<game::components::Position>(0, 0)
-            .with<game::components::Rectangle>()
-            .with<game::components::Size>(20.f, 20.f)
-            .with<game::components::Color>(raylib::core::Color::GREEN)
-            .build();
-
-        _world.addEntity()
-            .with<game::components::Position>(0, 0)
-            .with<game::components::Textual>(localization::resources::hud::rsNumberbomb, 20, raylib::core::Color::WHITE)
-            .build();
-
-        /*         _world.addEntity()
-                    .with<game::components::Position>(0, 700)
-                    .with<game::components::Texture2D>(textures.get("test_icone"))
-                    .with<game::components::Scale>(1.f)
-                    .with<game::components::RotationAngle>(0.f)
-                    .with<game::components::Color>(255, 255, 255, 200)
-                    .build();
-                _world.addEntity()
-                    .with<game::components::Position>(1700, 0)
-                    .with<game::components::Texture2D>(textures.get("test_icone"))
-                    .with<game::components::Scale>(1.f)
-                    .with<game::components::RotationAngle>(0.f)
-                    .with<game::components::Color>(255, 255, 255, 200)
-                    .build();
-                _world.addEntity()
-                    .with<game::components::Position>(1500, 80)
-                    .with<game::components::Texture2D>(textures.get("test_icone"))
-                    .with<game::components::Scale>(1.f)
-                    .with<game::components::RotationAngle>(0.f)
-                    .with<game::components::Color>(255, 255, 255, 200)
-                    .build(); */
-        /*         _world.addEntity()
-                    .with<game::components::Position>(50, 50)
-                    .with<game::components::Rectangle>()
-                    .with<game::components::Size>(10.f, 30.f)
-                    .with<game::components::Color>(raylib::core::Color::GREEN)
-                    .build(); */
-    }
+    void Game::_updateHud(ecs::SystemData data) {}
 
     void Game::drawFrame()
     {
         _camera.update();
-        
+
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);
