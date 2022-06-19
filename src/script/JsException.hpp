@@ -9,13 +9,14 @@
 #define SCRIPT_JS_EXCEPTION_HPP_
 
 #include <stdexcept>
+#include <string_view>
 
 namespace bmjs
 {
     /// Exception thrown by invocations of bmjs::Function.
     class JsException : public std::runtime_error {
       public:
-        JsException(char const *message);
+        JsException(std::string_view message);
     };
 } // namespace bmjs
 
