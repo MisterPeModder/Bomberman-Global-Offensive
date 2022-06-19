@@ -820,6 +820,10 @@ namespace game
                 .with<game::gui::Widget>(id, left, right, up, down)
                 .with<game::gui::Clickable>(
                     [=, this](ecs::Entity) {
+                        if (!_world.getResource<game::resources::EngineResource>()
+                                 .engine->getUsers()[game::User::UserId::User1]
+                                 .isKeyboard())
+                            return;
                         _world.addEntity()
                             .with<game::components::KeybindIntercepter>(
                                 game::User::UserId::User1, action, [=, this]() { _updateActionKey(action); })

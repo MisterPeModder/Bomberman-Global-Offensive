@@ -78,6 +78,7 @@ namespace game
             return;
         _users[nbUsers].setAvailable();
         _users[nbUsers].setGamepadId(gamepadId);
+        _users[nbUsers].updateActions(false);
         Logger::logger.log(Logger::Severity::Information,
             [&](auto &out) { out << "User " << nbUsers + 1 << " connected with gamepad " << gamepadId; });
     }

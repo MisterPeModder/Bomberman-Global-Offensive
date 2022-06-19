@@ -16,6 +16,7 @@
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
 #include "components/Identity.hpp"
+#include "components/KeybindIntercepter.hpp"
 #include "components/Living.hpp"
 #include "components/Model.hpp"
 #include "components/Player.hpp"
@@ -194,6 +195,7 @@ namespace game
         _world.addStorage<components::Model>();
         _world.addStorage<components::CubeColor>();
         _world.addStorage<components::Cube>();
+        _world.addStorage<components::KeybindIntercepter>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::InputManager>();

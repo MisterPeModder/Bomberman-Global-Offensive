@@ -22,7 +22,11 @@ namespace game
 
     bool User::isKeyboard() const { return _gamepadId < 0; }
 
-    void User::setGamepadId(int id) { _gamepadId = id; }
+    void User::setGamepadId(int id)
+    {
+        _gamepadId = id;
+        updateActions(false);
+    }
 
     int User::getGamepadId() const { return _gamepadId; }
 

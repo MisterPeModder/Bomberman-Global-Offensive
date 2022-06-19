@@ -67,6 +67,7 @@ namespace game
         void _updateActionKey(GameAction action);
 
         std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsKeyboardBindings;
+        std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsGamepadBindings[4];
     };
 } // namespace game
 
