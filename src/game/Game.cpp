@@ -281,7 +281,7 @@ namespace game
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::AiUpdate, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
             systems::DisableBombNoClip, systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke,
-            systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, system::ClearExplosions>();
+            systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
 
