@@ -155,7 +155,7 @@ msgid "MIDDLE"
 msgstr "HOME"
 
 msgid "MIDDLE-LEFT"
-msgstr "SELECT"
+msgstr "RETOUR"
 
 msgid "MIDDLE-RIGHT"
 msgstr "START"
