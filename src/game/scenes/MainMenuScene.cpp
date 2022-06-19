@@ -131,7 +131,8 @@ namespace game
             .with<gui::Clickable>(
                 [this](ecs::Entity) {
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
-                    engine->setScene<GameScene>(Game::Parameters(engine->getUsers().prepareSkinParameters(), engine->getUsers().getAvailableUsers()));
+                    engine->setScene<GameScene>(Game::Parameters(
+                        engine->getUsers().prepareSkinParameters(), engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
@@ -206,8 +207,9 @@ namespace game
                 .with<components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
                 .with<components::Identity>()
                 .build();
+
+        _connectedTexts[id] = _world.getStorage<components::Identity>()[connectedText.getId()].id;
         if (id == 0) {
-            _firstUserId = _world.getStorage<components::Identity>()[connectedText.getId()].id;
             auto &text = _world.getStorage<components::Textual>()[connectedText.getId()];
             text.text = localization::resources::menu::rsConnected;
             text.color = raylib::core::Color::GREEN;
@@ -254,8 +256,10 @@ namespace game
 
         for (auto [text, id] :
             ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
-            if (id.id >= _firstUserId && id.id < _firstUserId + 4) {
-                User::UserId userId = static_cast<User::UserId>(id.id - _firstUserId);
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                if (_connectedTexts[i] != id.id)
+                    continue;
+                User::UserId userId = static_cast<User::UserId>(i);
 
                 if (users[userId].isAvailable()) {
                     text.text = localization::resources::menu::rsConnected;

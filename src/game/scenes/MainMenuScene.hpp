@@ -34,13 +34,12 @@ namespace game
         void updateConnectedTexts();
 
       private:
-
         void loadPlayerSlot(size_t id);
         void loadPlayerInterface();
         void loadLeftButtons();
         localization::ResourceString userSkinToRessourceString(User::USER_SKINS skin);
 
-        components::Identity::Id _firstUserId;
+        components::Identity::Id _connectedTexts[4];
         std::queue<User::USER_SKINS> _availableSkins;
     };
 } // namespace game
