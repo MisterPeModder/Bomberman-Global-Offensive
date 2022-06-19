@@ -24,6 +24,7 @@ set(SRC
     ${INCROOT}/InputManager.hpp
     ${SRCROOT}/Items.cpp
     ${INCROOT}/Items.hpp
+    ${INCROOT}/KillPlayer.hpp
     ${INCROOT}/Model.hpp
     ${SRCROOT}/Movement.cpp
     ${INCROOT}/Movement.hpp

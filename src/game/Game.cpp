@@ -69,6 +69,7 @@
 #include "systems/PlaySoundOnce.hpp"
 #include "systems/Smoke.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
+#include "systems/KillPlayer.hpp"
 
 #include "game/Engine.hpp"
 #include "game/GameTimer.hpp"
