@@ -9,6 +9,7 @@
 #include "Item.hpp"
 #include "ecs/join.hpp"
 #include "game/components/Player.hpp"
+#include "game/components/Sound.hpp"
 #include "game/components/Velocity.hpp"
 
 namespace game::components
@@ -31,6 +32,7 @@ namespace game::components
                 /// If it is, the grenade won't be consumed.
                 if (player.stats.slowness)
                     return false;
+            game::components::Sound::playSound(data, "stun");
 
             /// Apply the slowness effect on all ennnemies.
             for (auto [player, velocity, playerId] :

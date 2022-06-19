@@ -35,6 +35,8 @@ set(SRC
     ${INCROOT}/RotationAxis.hpp
     ${INCROOT}/Scale.hpp
     ${INCROOT}/ScreenId.hpp
+    ${INCROOT}/Sound.cpp
+    ${INCROOT}/Sound.hpp
     ${INCROOT}/Size.hpp
     ${INCROOT}/Size2D.hpp
     ${SRCROOT}/Textual.hpp
