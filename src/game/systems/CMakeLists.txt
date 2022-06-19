@@ -17,6 +17,7 @@ set(SRC
     ${SRCROOT}/DrawText.cpp
     ${INCROOT}/DrawText.hpp
     ${INCROOT}/DrawTexture.hpp
+    ${INCROOT}/DrawTextureBackground.hpp
     ${SRCROOT}/InputManager.cpp
     ${INCROOT}/InputManager.hpp
     ${SRCROOT}/Items.cpp
