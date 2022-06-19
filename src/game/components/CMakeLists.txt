@@ -5,21 +5,31 @@ add_subdirectory(items)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/Bomb.cpp
-    ${SRCROOT}/Bomb.hpp
-    ${SRCROOT}/BombNoClip.cpp
-    ${SRCROOT}/BombNoClip.hpp
-    ${SRCROOT}/Collidable.hpp
-    ${SRCROOT}/Controlable.hpp
-    ${SRCROOT}/Textual.hpp
     ${INCROOT}/Animation.hpp
+    ${SRCROOT}/Bomb.cpp
+    ${INCROOT}/Bomb.hpp
+    ${SRCROOT}/BombNoClip.cpp
+    ${INCROOT}/BombNoClip.hpp
+    ${INCROOT}/Collidable.hpp
     ${INCROOT}/Color.hpp
+    ${INCROOT}/Controlable.hpp
+    ${INCROOT}/Cube.hpp
+    ${INCROOT}/CubeColor.hpp
+    ${INCROOT}/Destructible.hpp
+    ${SRCROOT}/History.cpp
+    ${INCROOT}/History.hpp
     ${SRCROOT}/Identity.cpp
-    ${SRCROOT}/Identity.hpp
+    ${INCROOT}/Identity.hpp
     ${INCROOT}/Image.hpp
+    ${SRCROOT}/KeyboardInput.cpp
+    ${INCROOT}/KeyboardInput.hpp
+    ${INCROOT}/Living.hpp
     ${INCROOT}/Model.hpp
+    ${SRCROOT}/Player.cpp
+    ${INCROOT}/Player.hpp
     ${INCROOT}/Position.hpp
     ${INCROOT}/Position2D.hpp
+    ${INCROOT}/Rectangle.hpp
     ${INCROOT}/Reference.hpp
     ${INCROOT}/RotationAngle.hpp
     ${INCROOT}/RotationAxis.hpp
@@ -27,15 +37,10 @@ set(SRC
     ${INCROOT}/ScreenId.hpp
     ${INCROOT}/Size.hpp
     ${INCROOT}/Size2D.hpp
+    ${SRCROOT}/Textual.hpp
     ${INCROOT}/Texture2D.hpp
-    ${INCROOT}/Rectangle.hpp
-    ${SRCROOT}/Velocity.hpp
     ${INCROOT}/UseCheck.hpp
-    ${SRCROOT}/Living.hpp
-    ${SRCROOT}/Player.cpp
-    ${SRCROOT}/Destructible.hpp
-    ${SRCROOT}/Cube.hpp
-    ${SRCROOT}/CubeColor.hpp
+    ${SRCROOT}/Velocity.hpp
     PARENT_SCOPE)
 
 set(INCDIRS

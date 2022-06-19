@@ -23,6 +23,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Position2D.hpp"
@@ -467,6 +468,9 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
 
 static void loadLanguageSettings(ecs::World &world, raylib::core::Vector2f pos, raylib::core::Vector2f size)
 {
+    world.addStorage<game::components::KeyboardInput>();
+    world.addStorage<game::gui::Checkable>();
+
     world.addEntity()
         .with<game::components::Rectangle>()
         .with<game::components::Position>(pos.x, pos.y)
