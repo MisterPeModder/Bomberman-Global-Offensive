@@ -111,6 +111,9 @@ namespace game
             .with<gui::Clickable>(
                 [this](ecs::Entity) {
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
+
+                    if (engine->getUsers().getAvailableUsers() < 2)
+                        return;
                     engine->setScene<GameScene>(Game::Parameters(engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
