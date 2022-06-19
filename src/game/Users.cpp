@@ -141,6 +141,8 @@ namespace game
 
         for (unsigned int i = 0; i < getAvailableUsers(); i++)
             skinQueue.push(std::string(userSkinToRessourceString(_users[i].getSkin()).getMsgId()));
+        if (getAvailableUsers() == 1)
+            skinQueue.push(std::string(userSkinToRessourceString(_users[0].getSkin()).getMsgId()));
         return skinQueue;
     }
 
