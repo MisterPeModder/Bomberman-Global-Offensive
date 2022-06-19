@@ -28,6 +28,7 @@
 #include "game/gui/components/Clickable.hpp"
 #include "game/gui/components/Widget.hpp"
 
+#include "game/systems/DrawFpsCounter.hpp"
 #include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/DrawTexture.hpp"
@@ -89,12 +90,14 @@ namespace game
 
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::DrawTexture>();
+        _world.addSystem<systems::DrawFpsCounter>();
 
         _globalNoDraw.add<systems::InputManager, DetectGamepad>();
         _global2D.add<systems::DrawTexture>();
         _global2D.add<systems::DrawText>();
         _global2D.add<systems::DrawSelectedWidget>();
         _global2D.add<systems::DrawRectangle>();
+        _global2D.add<systems::DrawFpsCounter>();
         loadLeftButtons();
         loadPlayerInterface();
     }

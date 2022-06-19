@@ -58,6 +58,7 @@
 #include "systems/CheckGameEnd.hpp"
 #include "systems/Collision.hpp"
 #include "systems/DrawConsole.hpp"
+#include "systems/DrawFpsCounter.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/InputManager.hpp"
 #include "systems/Items.hpp"
@@ -191,6 +192,10 @@ namespace game
         _camera.setProjection(CAMERA_PERSPECTIVE);
 
         _world.addSystem<game::systems::UpdateKeyboardInput>();
+
+        /// FPS Counter
+        _world.addSystem<game::systems::DrawFpsCounter>();
+        _drawing2d.add<game::systems::DrawFpsCounter>();
 
         /// Console
         _world.addSystem<game::systems::DrawConsole>();
