@@ -710,7 +710,10 @@ namespace game
 
         for (auto iter : binds)
             if (iter.action == action) {
-                ss << static_cast<char>(iter.key);
+                if (static_cast<char>(iter.key) == ' ')
+                    ss << localization::resources::settings::rsSpace;
+                else
+                    ss << static_cast<char>(iter.key);
                 break;
             }
 
@@ -731,45 +734,54 @@ namespace game
                 localization::resources::settings::rsSettingsKeyboardKeybinds, 20, sct.color)
             .build();
 
-        auto addAction = [&, this](raylib::core::Vector2f posName, raylib::core::Vector2f posValue, GameAction action,
-                             std::string_view actionName, gui::Widget::WidgetId id,
-                             gui::Widget::WidgetId left = gui::Widget::NullTag,
-                             gui::Widget::WidgetId right = gui::Widget::NullTag,
-                             gui::Widget::WidgetId up = gui::Widget::NullTag,
-                             gui::Widget::WidgetId down = gui::Widget::NullTag) {
-            auto btn = _world.addEntity()
-                           .with<game::components::Position>(sct.pos.x + posValue.x, sct.pos.y + posValue.y)
-                           .with<game::components::Controlable>(game::User::UserId::User1)
-                           .with<game::components::Identity>()
-                           .with<game::components::Textual>("", 20, sct.color)
-                           .build();
-            _actionsKeyboardBindings[static_cast<size_t>(action)] =
-                _world.getStorage<game::components::Identity>()[btn.getId()].id;
+        auto addAction =
+            [&, this](raylib::core::Vector2f posName, raylib::core::Vector2f posValue, GameAction action,
+                std::string_view actionName, gui::Widget::WidgetId id,
+                gui::Widget::WidgetId left = gui::Widget::NullTag, gui::Widget::WidgetId right = gui::Widget::NullTag,
+                gui::Widget::WidgetId up = gui::Widget::NullTag, gui::Widget::WidgetId down = gui::Widget::NullTag) {
+                auto btn = _world.addEntity()
+                               .with<game::components::Position>(sct.pos.x + posValue.x, sct.pos.y + posValue.y)
+                               .with<game::components::Controlable>(game::User::UserId::User1)
+                               .with<game::components::Identity>()
+                               .with<game::components::Textual>("", 20, sct.color)
+                               .build();
+                _actionsKeyboardBindings[static_cast<size_t>(action)] =
+                    _world.getStorage<game::components::Identity>()[btn.getId()].id;
 
-            _world.addEntity()
-                .with<game::components::Position>(sct.pos.x + posName.x, sct.pos.y + posName.y)
-                .with<game::components::Textual>(actionName, 20, sct.color)
-                .with<game::components::Controlable>(game::User::UserId::User1)
-                .with<game::gui::Widget>(id, left, right, up, down)
-                .with<game::gui::Clickable>(
-                    [=, this](ecs::Entity) {
-                        if (!_world.getResource<game::resources::EngineResource>()
-                                 .engine->getUsers()[game::User::UserId::User1]
-                                 .isKeyboard())
-                            return;
-                        _world.addEntity()
-                            .with<game::components::KeybindIntercepter>(
-                                game::User::UserId::User1, action, [=, this]() { _updateActionKey(action); })
-                            .build();
-                        Logger::logger.log(Logger::Severity::Information, "Waiting for user keyboard input");
-                    },
-                    [=, this](ecs::Entity clickable, game::gui::Clickable::State state) {
-                        _world.getStorage<game::components::Textual>()[clickable.getId()].color =
-                            (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
-                    })
-                .build();
-            _updateActionKey(action);
-        };
+                _world.addEntity()
+                    .with<game::components::Position>(sct.pos.x + posName.x, sct.pos.y + posName.y)
+                    .with<game::components::Textual>(actionName, 20, sct.color)
+                    .with<game::components::Controlable>(game::User::UserId::User1)
+                    .with<game::gui::Widget>(id, left, right, up, down)
+                    .with<game::gui::Clickable>(
+                        [=, this](ecs::Entity) {
+                            if (!_world.getResource<game::resources::EngineResource>()
+                                     .engine->getUsers()[game::User::UserId::User1]
+                                     .isKeyboard())
+                                return;
+                            _world.addEntity()
+                                .with<game::components::KeybindIntercepter>(game::User::UserId::User1, action,
+                                    [=, this]() {
+                                        _updateActionKey(action);
+                                        for (auto [widget, textual] : ecs::join(_world.getStorage<game::gui::Widget>(),
+                                                 _world.getStorage<game::components::Textual>())) {
+                                            if (widget.id == id) {
+                                                textual.color = sct.color;
+                                                break;
+                                            }
+                                        }
+                                    })
+                                .build();
+                            Logger::logger.log(Logger::Severity::Information, "Waiting for user keyboard input");
+                        },
+                        [=, this](ecs::Entity clickable, game::gui::Clickable::State state) {
+                            (void)state;
+                            _world.getStorage<game::components::Textual>()[clickable.getId()].color =
+                                raylib::core::Color::YELLOW;
+                        })
+                    .build();
+                _updateActionKey(action);
+            };
 
         addAction({4, 13}, {10, 13}, GameAction::MOVE_LEFT, localization::resources::keybinds::rsKeyBindLeft,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_LEFT, game::SettingsMenuScene::LANGUAGE_ENGLISH,
@@ -886,13 +898,25 @@ namespace game
                             return;
                         _world.addEntity()
                             .with<game::components::KeybindIntercepter>(
-                                userId, action, [=, this]() { _updateActionGamepad(action, id); }, false)
+                                userId, action,
+                                [=, this]() {
+                                    _updateActionGamepad(action, id);
+                                    for (auto [widget, textual] : ecs::join(_world.getStorage<game::gui::Widget>(),
+                                             _world.getStorage<game::components::Textual>())) {
+                                        if (widget.id == widgetId) {
+                                            textual.color = sct.color;
+                                            break;
+                                        }
+                                    }
+                                },
+                                false)
                             .build();
                         Logger::logger.log(Logger::Severity::Information, "Waiting for user gamepad input");
                     },
                     [=, this](ecs::Entity clickable, game::gui::Clickable::State state) {
+                        (void)state;
                         _world.getStorage<game::components::Textual>()[clickable.getId()].color =
-                            (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
+                            raylib::core::Color::YELLOW;
                     })
                 .build();
             _updateActionGamepad(action, id);

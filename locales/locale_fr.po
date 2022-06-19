@@ -122,10 +122,10 @@ msgid "?"
 msgstr ""
 
 msgid "BUMPER-LEFT"
-msgstr "L (1/A)"
+msgstr "LB"
 
 msgid "BUMPER-RIGHT"
-msgstr "R (2/B)"
+msgstr "RB"
 
 msgid "DPAD-DOWN"
 msgstr "BAS"
@@ -140,34 +140,37 @@ msgid "DPAD-UP"
 msgstr "HAUT"
 
 msgid "FACE-DOWN"
-msgstr "A/X/B"
+msgstr "A"
 
 msgid "FACE-LEFT"
-msgstr "X/[]/Y"
+msgstr "X"
 
 msgid "FACE-RIGHT"
-msgstr "B/O/A"
+msgstr "B"
 
 msgid "FACE-UP"
-msgstr "Y/^/X"
+msgstr "Y"
 
 msgid "MIDDLE"
 msgstr "HOME"
 
 msgid "MIDDLE-LEFT"
-msgstr "SELECT"
+msgstr "RETOUR"
 
 msgid "MIDDLE-RIGHT"
 msgstr "START"
 
 msgid "THUMB-LEFT"
-msgstr "L3"
+msgstr "LS"
 
 msgid "THUMB-RIGHT"
-msgstr "R3"
+msgstr "RS"
 
 msgid "TRIGGER-LEFT"
-msgstr "L (B/2/Z)"
+msgstr "LT"
 
 msgid "TRIGGER-RIGHT"
-msgstr "R (B/2/Z)"
+msgstr "RT"
+
+msgid "SPACE"
+msgstr "ESPACE"

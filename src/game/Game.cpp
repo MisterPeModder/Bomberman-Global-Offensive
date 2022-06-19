@@ -64,6 +64,7 @@
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
+#include "systems/PlaySoundOnce.hpp"
 #include "systems/Smoke.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
 
@@ -159,13 +160,22 @@ namespace game
         models.emplace("range_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
         models.emplace("control_down", bonusMesh, false).setMaterialMapTexture(textures.get("control_down"));
         /// Activables
-        auto &activableMesh = meshes.get("activable");
-        models.emplace("no_clip", activableMesh, false).setMaterialMapTexture(textures.get("no_clip"));
-        models.emplace("mine", activableMesh, false).setMaterialMapTexture(textures.get("mine"));
-        models.emplace("kick_shoes", activableMesh, false).setMaterialMapTexture(textures.get("kick_shoes"));
-        models.emplace("smoke", activableMesh, false).setMaterialMapTexture(textures.get("smoke"));
-        models.emplace("stun", activableMesh, false).setMaterialMapTexture(textures.get("stun"));
-        models.emplace("punch", activableMesh, false).setMaterialMapTexture(textures.get("punch"));
+        auto &activable = meshes.get("activable");
+        models.emplace("no_clip", activable, false).setMaterialMapTexture(textures.get("no_clip"));
+        models.emplace("mine", activable, false).setMaterialMapTexture(textures.get("mine"));
+        models.emplace("kick_shoes", activable, false).setMaterialMapTexture(textures.get("kick_shoes"));
+        models.emplace("smoke", activable, false).setMaterialMapTexture(textures.get("smoke"));
+        models.emplace("stun", activable, false).setMaterialMapTexture(textures.get("stun"));
+        models.emplace("punch", activable, false).setMaterialMapTexture(textures.get("punch"));
+    }
+
+    void Game::_loadSounds()
+    {
+        auto &sounds = _world.getResource<resources::Sounds>();
+
+        sounds.emplace("C4", "assets/audio/sounds/c4_explosion.ogg");
+        sounds.emplace("stun", "assets/audio/sounds/flashbang.ogg");
+        sounds.emplace("smoke", "assets/audio/sounds/smoke.ogg");
     }
 
     void Game::setup()
@@ -201,6 +211,7 @@ namespace game
         _world.addResource<resources::Textures>();
         _world.addResource<resources::Meshes>();
         _world.addResource<resources::Models>();
+        _world.addResource<resources::Sounds>();
         _world.addResource<resources::RandomDevice>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
@@ -214,6 +225,7 @@ namespace game
         _world.addStorage<components::CubeColor>();
         _world.addStorage<components::Cube>();
         _world.addStorage<components::KeybindIntercepter>();
+        _world.addStorage<components::SoundReference>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::RunAnimation>();
@@ -226,17 +238,21 @@ namespace game
         _world.addSystem<systems::UpdateItemTimer>();
         _world.addSystem<systems::MoveSmoke>();
         _world.addSystem<systems::DrawSmoke>();
+        _world.addSystem<systems::PlaySoundReferences>();
+        _world.addSystem<systems::DisableNoClip>();
         _world.addSystem<systems::CheckGameEnd>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd>();
+            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
+            systems::PlaySoundReferences, systems::DisableNoClip>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 
         _loadTextures();
         _loadMeshes();
         _loadModels();
+        _loadSounds();
 
         /// Player
         auto &textures = _world.getResource<resources::Textures>();

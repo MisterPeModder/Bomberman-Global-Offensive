@@ -24,6 +24,10 @@ namespace raylib
         class Mesh;
         class Model;
     } // namespace model
+    namespace core
+    {
+        class Sound;
+    }
 } // namespace raylib
 
 namespace game::resources
@@ -87,6 +91,7 @@ namespace game::resources
     using Textures = AssetMap<raylib::textures::Texture2D>;
     using Meshes = AssetMap<raylib::model::Mesh>;
     using Models = AssetMap<raylib::model::Model>;
+    using Sounds = AssetMap<raylib::core::Sound>;
 } // namespace game::resources
 
 #endif /* !GAME_RESOURCES_ASSETSMAP_HPP_ */

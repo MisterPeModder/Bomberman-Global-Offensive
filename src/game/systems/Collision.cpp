@@ -11,6 +11,7 @@
 #include "game/components/Bomb.hpp"
 #include "game/components/BombNoClip.hpp"
 #include "game/components/Collidable.hpp"
+#include "game/components/Destructible.hpp"
 #include "game/components/Player.hpp"
 #include "game/components/Size.hpp"
 #include "game/components/Velocity.hpp"
@@ -32,12 +33,13 @@ namespace game::systems
         auto maybeBomb = ecs::maybe(data.getStorage<Bomb>());
         auto optionalVelocity = ecs::maybe(velocities);
         auto maybePlayer = ecs::maybe(data.getStorage<Player>());
+        auto maybeDestructible = ecs::maybe(data.getStorage<Destructible>());
         raylib::shapes::Rectangle collideRect;
 
         for (auto [pos1, size1, vel1, id1, c1, bombNoClip, player1, bomb1] :
             ecs::join(positions, sizes, velocities, entities, collidable, maybeBombNoClip, maybePlayer, maybeBomb)) {
-            for (auto [pos2, size2, vel2, id2, c2, player2, bomb2] :
-                ecs::join(positions, sizes, optionalVelocity, entities, collidable, maybePlayer, maybeBomb)) {
+            for (auto [pos2, size2, vel2, id2, c2, player2, bomb2, destructible] : ecs::join(positions, sizes,
+                     optionalVelocity, entities, collidable, maybePlayer, maybeBomb, maybeDestructible)) {
                 (void)c1;
                 (void)c2;
                 /// Do not collide entities with themselves
@@ -96,6 +98,10 @@ namespace game::systems
                             bomb2->setVelocity(data, id2, {vel1.x * 1.3f, 0.f, vel1.z * 1.3f});
                     }
                 }
+
+                if (player1 && player1->stats.clipState != Player::Stats::ClipState::Default && !vel2 && !bomb2
+                    && destructible)
+                    continue;
 
                 float firstMovePercent = (vel2) ? 0.5f : 1.f;
                 resolveCollision(collideRect.getRaylibRectangle(), firstMovePercent, pos1);
