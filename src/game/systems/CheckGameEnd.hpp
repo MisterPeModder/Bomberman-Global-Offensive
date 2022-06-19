@@ -29,11 +29,6 @@ namespace game::systems
 
             if (data.getStorage<game::components::Player>().size() <= 1) {
                 for (auto [gameEnded] : ecs::join(data.getStorage<game::components::GameEnded>())) {
-                    if (gameEnded.endTime + 5 <= timer.elapsed()) {
-                        data.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
-                        data.getResource<game::resources::EngineResource>().engine->setCurrentMusic(
-                            game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
-                    }
                     if (!gameEnded.gameEnded) {
                         for (auto [living, entity] :
                             ecs::join(data.getStorage<game::components::Living>(), data.getResource<ecs::Entities>())) {
@@ -47,6 +42,11 @@ namespace game::systems
                             anim.chooseAnimation(randVal);
                             game::components::Sound::playSound(data, "victory");
                         }
+                    }
+                    if (gameEnded.endTime + 5 <= timer.elapsed()) {
+                        data.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
+                        data.getResource<game::resources::EngineResource>().engine->setCurrentMusic(
+                            game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
                     }
                 }
             }
