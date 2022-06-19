@@ -131,10 +131,10 @@ namespace game::systems
             /// x = 90 & Y = 90 for 4th user
             switch (user.userId) {
                 case (game::User::UserId::User1): break;
-                case (game::User::UserId::User2): x = 80; break;
+                case (game::User::UserId::User2): x = 83; break;
                 case (game::User::UserId::User3): y = 90; break;
                 case (game::User::UserId::User4):
-                    x = 80;
+                    x = 83;
                     y = 90;
                     break;
                 default: break;

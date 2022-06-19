@@ -55,6 +55,18 @@ msgstr "Jouer"
 msgid "Quit"
 msgstr "Quitter"
 
+<<<<<<< HEAD
+=======
+msgid "Speed"
+msgstr "Vitesse"
+
+msgid "Power Bomb"
+msgstr "Puissance Bombe"
+
+msgid "User"
+msgstr "Utilisateur"
+
+>>>>>>> e1d66e352197f57ec0044e82c5d48f1295f92add
 msgid "(Controller)"
 msgstr "(Manette)"
 
