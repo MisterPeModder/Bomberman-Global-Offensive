@@ -12,12 +12,22 @@ namespace raylib
 {
     namespace core
     {
-        Music::Music(const std::filesystem::path &fileName) { _music = LoadMusicStream(fileName.generic_string().c_str()); }
+        Music::Music() { _volume = 100; }
+
+        // Music::Music(const std::filesystem::path &fileName)
+        // {
+        //     _music = LoadMusicStream(fileName.generic_string().c_str());
+        // }
 
         Music::~Music()
         {
             if (_music.stream.buffer)
                 UnloadMusicStream(_music);
+        }
+
+        void Music::load(const std::filesystem::path &fileName)
+        {
+            _music = LoadMusicStream(fileName.generic_string().c_str());
         }
 
         bool Music::isPlaying()

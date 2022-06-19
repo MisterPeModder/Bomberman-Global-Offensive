@@ -83,6 +83,8 @@ namespace game
         loadSettings();
         _scene = std::make_unique<SplashScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
+        _mainMenuTheme.load(util::makePath("assets", "audio", "musics", "main-menu-theme.ogg"));
+        _gameTheme.load(util::makePath("assets", "audio", "musics", "game-theme.ogg"));
     }
 
     Engine::~Engine() { _settings.save(); }

@@ -23,17 +23,27 @@ namespace raylib
     { /// Core namespace (inside of raylib)
         class Music {
           public:
-            /// Consutructor of Music wich create the musics
-            ///
-            /// @param filename Music path
-            Music(const std::filesystem::path &fileName);
-            ~Music();
+            /// Default constructor
+            Music();
 
+            // /// Consutructor of Music wich create the musics
+            // ///
+            // /// @param filename Music path
+            // Music(const std::filesystem::path &fileName);
+
+            /// Destructor
+
+            ~Music();
             /// Check if music is playing now
             ///
             /// @retval true if the music is currently playing
             /// @retval false if the music is not currently playing
             bool isPlaying();
+
+            /// Load the Music
+            ///
+            /// @param filename Music path
+            void load(const std::filesystem::path &fileName);
 
             /// plays the music that has been changed
             void play();
