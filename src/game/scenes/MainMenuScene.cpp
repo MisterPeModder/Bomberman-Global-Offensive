@@ -137,8 +137,8 @@ namespace game
 
                     if (engine->getUsers().getAvailableUsers() < 2)
                         return;
-                    engine->setScene<GameScene>(Game::Parameters(
-                        engine->getUsers().prepareSkinParameters(), (nbUsers < 2) ? 2 : engine->getUsers().getAvailableUsers()));
+                    engine->setScene<GameScene>(Game::Parameters(engine->getUsers().prepareSkinParameters(),
+                        (nbUsers < 2) ? 2 : engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
@@ -201,13 +201,28 @@ namespace game
             .build();
 
         // Skin Text
-        _world.addEntity()
+        auto skinText = _world.addEntity()
             .with<components::Position>(20 + static_cast<int>(id) * 20, 75)
             .with<components::Textual>(
                 userSkinToRessourceString(_availableSkins.front()), 20, raylib::core::Color::WHITE)
             .with<components::Identity>()
+            .with<components::Controlable>(User::UserId::AllUsers,
+                [this](ecs::Entity controlable, ecs::SystemData data, const Users::ActionEvent &event) {
+                    (void)controlable;
+                    if (event.action != GameAction::NEXT_ACTIVABLE)
+                        return false;
+
+                    auto &user = data.getResource<game::resources::EngineResource>().engine->getUsers()[event.user];
+                    _availableSkins.push(user.getSkin());
+                    user.setSkin(_availableSkins.front());
+                    _availableSkins.pop();
+                    updateSkinTexts();
+                    return true;
+                })
             .build();
         _availableSkins.pop();
+        _skinTexts[id] = _world.getStorage<components::Identity>()[skinText.getId()].id;
+
 
         auto connectedText =
             _world.addEntity()
@@ -255,6 +270,22 @@ namespace game
                     return false;
                 })
             .build();
+    }
+
+    void MainMenuScene::updateSkinTexts()
+    {
+        auto engine = _world.getResource<game::resources::EngineResource>().engine;
+        auto &users = engine->getUsers();
+
+        for (auto [text, id] :
+            ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                if (_skinTexts[i] != id.id)
+                    continue;
+                User::UserId userId = static_cast<User::UserId>(i);
+                text.text = userSkinToRessourceString(users[userId].getSkin());
+            }
+        }
     }
 
     void MainMenuScene::updateConnectedTexts()

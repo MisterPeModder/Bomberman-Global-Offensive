@@ -89,7 +89,6 @@ msgid "Rainbow"
 msgstr ""
 
 msgid "Unknown skin"
-msgid "FPS"
 msgstr ""
 
 msgid "Right"
@@ -192,4 +191,7 @@ msgid "TRIGGER-RIGHT"
 msgstr "RT"
 
 msgid "SPACE"
+msgstr ""
+
+msgid "FPS"
 msgstr ""

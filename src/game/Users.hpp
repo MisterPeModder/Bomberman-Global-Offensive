@@ -105,8 +105,13 @@ namespace game
         /// @return localizarion::RessourceString the ressource.
         localization::ResourceString userSkinToRessourceString(User::USER_SKINS skin);
 
-
+        ///
+        /// Prepare the skin to send to paramaters
+        ///
+        ///@return std::queue<std::string>
+        ///
         std::queue<std::string> prepareSkinParameters();
+
         /// Call @ref User::updateActions() for each user.
         ///
         /// @param fillChanged Set to true to fill the changed actions queueq.

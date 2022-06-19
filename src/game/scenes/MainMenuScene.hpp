@@ -33,6 +33,8 @@ namespace game
 
         void updateConnectedTexts();
 
+        void updateSkinTexts();
+
       private:
         void loadPlayerSlot(size_t id);
         void loadPlayerInterface();
@@ -40,6 +42,7 @@ namespace game
         localization::ResourceString userSkinToRessourceString(User::USER_SKINS skin);
 
         components::Identity::Id _connectedTexts[4];
+        components::Identity::Id _skinTexts[4];
         std::queue<User::USER_SKINS> _availableSkins;
     };
 } // namespace game
