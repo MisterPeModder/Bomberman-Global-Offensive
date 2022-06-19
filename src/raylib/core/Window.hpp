@@ -83,6 +83,12 @@ namespace raylib
 
             static void setIcon(textures::Image const &icon);
 
+            /// @returns The contents of the clipboard.
+            static std::string_view getClipboard();
+
+            /// @param text The new contents of the clipboard, must be nul-terminated.
+            static void setClipboard(std::string_view text);
+
           private:
             static bool _shouldClose;
         };

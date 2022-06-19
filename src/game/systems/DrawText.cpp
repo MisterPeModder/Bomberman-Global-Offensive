@@ -11,6 +11,7 @@
 #include "game/components/Position.hpp"
 #include "game/components/Textual.hpp"
 #include "raylib/core/Window.hpp"
+#include "raylib/text/Font.hpp"
 
 extern "C"
 {
@@ -25,8 +26,9 @@ namespace game::systems
     {
         for (auto [pos, text] :
             ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::components::Textual>())) {
-            ::DrawText(text.text.c_str(), pos.x / 100 * raylib::core::Window::getWidth(),
-                pos.y / 100 * raylib::core::Window::getHeight(), text.fontSize, text.color.asRaylib());
+            raylib::text::Font::getDefault().draw(text.text,
+                {pos.x / 100 * raylib::core::Window::getWidth(), pos.y / 100 * raylib::core::Window::getHeight()},
+                text.fontSize, text.color);
         }
     }
 } // namespace game::systems

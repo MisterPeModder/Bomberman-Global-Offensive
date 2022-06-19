@@ -2,6 +2,7 @@ set(SRCROOT ${SRCROOT}/util)
 
 set(SRC
     ${SRCROOT}/tests_BitSet.cpp
+    ${SRCROOT}/tests_util.cpp
 )
 
 if(NOT EMSCRIPTEN)

@@ -15,6 +15,8 @@
 #include "components/CubeColor.hpp"
 #include "components/Model.hpp"
 #include "components/Position.hpp"
+#include "components/RotationAngle.hpp"
+#include "components/RotationAxis.hpp"
 #include "components/Scale.hpp"
 #include "components/Size.hpp"
 
@@ -97,8 +99,10 @@ namespace game::components
         data.getResource<ecs::Entities>()
             .builder()
             .with<ItemIdentifier>(data.getStorage<ItemIdentifier>(), identifier)
-            .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 0.0f, static_cast<float>(cell.y))
-            .with<Size>(data.getStorage<Size>(), 0.70f, 0.0f, 0.70f)
+            .with<Position>(data.getStorage<Position>(), static_cast<float>(cell.x), 1.f, static_cast<float>(cell.y))
+            .with<Size>(data.getStorage<Size>(), 0.9f, 0.9f, 0.9f)
+            .with<RotationAngle>(data.getStorage<RotationAngle>(), 90.0f)
+            .with<RotationAxis>(data.getStorage<RotationAxis>(), 0.f, 1.0f, 0.0f)
             .with<Scale>(data.getStorage<Scale>(), 1.f)
             .with<Destructible>(data.getStorage<Destructible>())
             .with<Color>(data.getStorage<Color>(), raylib::core::Color::WHITE)
