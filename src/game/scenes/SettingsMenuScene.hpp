@@ -77,6 +77,7 @@ namespace game
 
         void _loadGamepadKeybinds(const Section &section);
         void _loadGamepadProfile(const Section &section, size_t id);
+        void _updateActionGamepad(GameAction action, size_t id);
 
         std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsKeyboardBindings;
         std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsGamepadBindings[4];

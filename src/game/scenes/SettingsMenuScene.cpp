@@ -629,9 +629,8 @@ namespace game
 
         for (auto iter : binds)
             if (iter.action == action) {
-                if (ss.rdbuf()->in_avail())
-                    ss << ", ";
                 ss << static_cast<char>(iter.key);
+                break;
             }
 
         for (auto [text, id] : ecs::join(
@@ -661,7 +660,7 @@ namespace game
                            .with<game::components::Position>(sct.pos.x + posValue.x, sct.pos.y + posValue.y)
                            .with<game::components::Controlable>(game::User::UserId::User1)
                            .with<game::components::Identity>()
-                           .with<game::components::Textual>("value", 20, sct.color)
+                           .with<game::components::Textual>("", 20, sct.color)
                            .build();
             _actionsKeyboardBindings[static_cast<size_t>(action)] =
                 _world.getStorage<game::components::Identity>()[btn.getId()].id;
@@ -681,7 +680,7 @@ namespace game
                             .with<game::components::KeybindIntercepter>(
                                 game::User::UserId::User1, action, [=, this]() { _updateActionKey(action); })
                             .build();
-                        Logger::logger.log(Logger::Severity::Information, "Waiting for user input");
+                        Logger::logger.log(Logger::Severity::Information, "Waiting for user keyboard input");
                     },
                     [=, this](ecs::Entity btn, game::gui::Clickable::State state) {
                         _world.getStorage<game::components::Textual>()[btn.getId()].color =
@@ -718,17 +717,40 @@ namespace game
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_BOMB,
             game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS);
 
-        // addAction({4, 35}, {24, 35}, GameAction::PREVIOUS_ITEM,
-        //     localization::resources::keybinds::rsKeyBindActivableLeft,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::LANGUAGE_FRENCH,
-        //     KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT);
-        // addAction({4, 40}, {24, 40}, GameAction::NEXT_ITEM,
-        // localization::resources::keybinds::rsKeyBindActivableRight,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT, game::SettingsMenuScene::LANGUAGE_FRENCH,
-        //     KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
-        //     game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::BACK);
+        addAction({4, 35}, {24, 35}, GameAction::PREVIOUS_ACTIVABLE,
+            localization::resources::keybinds::rsKeyBindActivablePrevious,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::LANGUAGE_FRENCH,
+            KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT);
+        addAction({4, 40}, {24, 40}, GameAction::NEXT_ACTIVABLE,
+            localization::resources::keybinds::rsKeyBindActivableNext,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_NEXT, game::SettingsMenuScene::LANGUAGE_FRENCH,
+            KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE,
+            game::SettingsMenuScene::KEYBINDS_KEYBOARD_ACTIVABLE_PREVIOUS, game::SettingsMenuScene::BACK);
+    }
+
+    void SettingsMenuScene::_updateActionGamepad(GameAction action, size_t userId)
+    {
+        std::stringstream ss;
+        auto &binds = _world.getResource<game::resources::EngineResource>()
+                          .engine->getUsers()[static_cast<game::User::UserId>(userId)]
+                          .getKeybinds()
+                          .getGamepadBindings();
+
+        for (auto iter : binds)
+            if (iter.action == action && iter.input.isButton()) {
+                ss << static_cast<size_t>(iter.input.getButton());
+                break;
+            }
+
+        for (auto [text, id] : ecs::join(
+                 _world.getStorage<game::components::Textual>(), _world.getStorage<game::components::Identity>())) {
+            if (id.id == _actionsGamepadBindings[userId][static_cast<size_t>(action)]) {
+                text.text = ss.str();
+                return;
+            }
+        }
     }
 
     void SettingsMenuScene::_loadGamepadProfile(const Section &sct, size_t id)
@@ -761,8 +783,8 @@ namespace game
                            .with<game::components::Identity>()
                            .with<game::components::Textual>("value", 15, sct.color)
                            .build();
-            // _actionsKeyboardBindings[static_cast<size_t>(action)] =
-            //     _world.getStorage<game::components::Identity>()[btn.getId()].id;
+            _actionsGamepadBindings[id][static_cast<size_t>(action)] =
+                _world.getStorage<game::components::Identity>()[btn.getId()].id;
 
             _world.addEntity()
                 .with<game::components::Position>(sct.pos.x + posName.x, sct.pos.y + posName.y + offset.y)
@@ -775,18 +797,18 @@ namespace game
                                 .engine->getUsers()[userId]
                                 .isKeyboard())
                             return;
-                        // _world.addEntity()
-                        //     .with<game::components::KeybindIntercepter>(
-                        //         game::User::UserId::User1, action, [=, this]() { _updateActionKey(action); })
-                        //     .build();
-                        Logger::logger.log(Logger::Severity::Information, "Waiting for user input");
+                        _world.addEntity()
+                            .with<game::components::KeybindIntercepter>(
+                                userId, action, [=, this]() { _updateActionGamepad(action, id); })
+                            .build();
+                        Logger::logger.log(Logger::Severity::Information, "Waiting for user gamepad input");
                     },
                     [=, this](ecs::Entity btn, game::gui::Clickable::State state) {
                         _world.getStorage<game::components::Textual>()[btn.getId()].color =
                             (state == game::gui::Clickable::State::Pressed) ? raylib::core::Color::YELLOW : sct.color;
                     })
                 .build();
-            // _updateActionKey(action);
+            _updateActionGamepad(action, id);
         };
 
         addAction({4, 18}, {10, 18}, GameAction::PLACE_BOMB, localization::resources::keybinds::rsKeyBindBomb,
@@ -802,14 +824,14 @@ namespace game
             (id == 0) ? BACK : gui::Widget::NullTag,
             KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
 
-        addAction({4, 23}, {10, 23}, GameAction::ACTIVATE_ITEM,
-            localization::resources::keybinds::rsKeyBindActivableLeftShort,
+        addAction({4, 23}, {10, 23}, GameAction::PREVIOUS_ACTIVABLE,
+            localization::resources::keybinds::rsKeyBindActivablePreviousShort,
             KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
             (id == 0) ? RES_3 : gui::Widget::NullTag,
             KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
             KEYBINDS_GAMEPAD_BOMB + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));
-        addAction({16, 23}, {22, 23}, GameAction::ACTIVATE_ITEM,
-            localization::resources::keybinds::rsKeyBindActivableRightShort,
+        addAction({16, 23}, {22, 23}, GameAction::NEXT_ACTIVABLE,
+            localization::resources::keybinds::rsKeyBindActivableNextShort,
             KEYBINDS_GAMEPAD_NEXT_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
             KEYBINDS_GAMEPAD_PREVIOUS_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id),
             gui::Widget::NullTag, KEYBINDS_GAMEPAD_ACTIVABLE + (KEYBINDS_GAMEPAD_FIRST + KEYBINDS_GAMEPAD_COUNT * id));

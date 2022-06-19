@@ -85,12 +85,6 @@ msgstr ""
 msgid "Activable"
 msgstr ""
 
-msgid "Activable Left"
-msgstr ""
-
-msgid "Activable Right"
-msgstr ""
-
 msgid "Bomb"
 msgstr ""
 
@@ -109,8 +103,14 @@ msgstr "Player 4"
 msgid "Activ."
 msgstr ""
 
-msgid "L Activ."
+msgid "Next"
 msgstr ""
 
-msgid "R Activ."
+msgid "Next Activable"
+msgstr ""
+
+msgid "Prev."
+msgstr ""
+
+msgid "Previous Activable"
 msgstr ""

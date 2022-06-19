@@ -35,11 +35,11 @@ namespace localization
             constexpr ResourceString rsKeyBindDown("Down");
             constexpr ResourceString rsKeyBindBomb("Bomb");
             constexpr ResourceString rsKeyBindActivable("Activable");
-            constexpr ResourceString rsKeyBindActivableLeft("Activable Left");
-            constexpr ResourceString rsKeyBindActivableRight("Activable Right");
+            constexpr ResourceString rsKeyBindActivablePrevious("Previous Activable");
+            constexpr ResourceString rsKeyBindActivableNext("Next Activable");
             constexpr ResourceString rsKeyBindActivableShort("Activ.");
-            constexpr ResourceString rsKeyBindActivableLeftShort("L Activ.");
-            constexpr ResourceString rsKeyBindActivableRightShort("R Activ.");
+            constexpr ResourceString rsKeyBindActivablePreviousShort("Prev.");
+            constexpr ResourceString rsKeyBindActivableNextShort("Next");
         } // namespace keybinds
 
         namespace languages
