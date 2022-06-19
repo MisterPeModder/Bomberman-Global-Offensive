@@ -14,7 +14,10 @@ namespace game
     {
         for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
             _users[i].setId(static_cast<User::UserId>(i));
-            _users[i].setSkin(User::USER_SKINS(i));
+            if (i == 0)
+                _users[i].setSkin(User::USER_SKINS::TERRORIST_1);
+            else
+                _users[i].setSkin(User::USER_SKINS::UNKNOWN);
         }
         _users[0].setAvailable();
     }
@@ -92,7 +95,7 @@ namespace game
             [&](auto &out) { out << "User " << nbUsers + 1 << " connected with gamepad " << gamepadId; });
     }
 
-    void Users::disconnectUser(User::UserId user)
+    bool Users::disconnectUser(User::UserId user)
     {
         unsigned int nbUsers = getAvailableUsers();
 
@@ -101,7 +104,7 @@ namespace game
                 _users[0].setKeyboard();
                 Logger::logger.log(Logger::Severity::Information, "User 1 switched to keyboard mode.");
             }
-            return;
+            return false;
         }
         size_t userPos = static_cast<size_t>(user);
 
@@ -114,6 +117,7 @@ namespace game
         }
         _users[nbUsers - 1].setAvailable(false);
         _users[nbUsers - 1].setSkin(User::USER_SKINS::UNKNOWN);
+        return true;
     }
 
     User::USER_SKINS Users::getUserSkin(unsigned int id)

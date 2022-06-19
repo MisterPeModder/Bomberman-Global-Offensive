@@ -88,7 +88,9 @@ namespace game
         /// @note All following users will be shifted to the left (user 3 become user 2 with profile 2 etc)
         ///
         /// @param user User to disconnect.
-        void disconnectUser(User::UserId user);
+        ///
+        /// @return bool true if a user is disconnected
+        bool disconnectUser(User::UserId user);
 
         /// Get the skin of the user
         ///

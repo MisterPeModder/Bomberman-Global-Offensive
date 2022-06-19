@@ -35,6 +35,8 @@ namespace game
 
         void updateSkinTexts();
 
+        User::USER_SKINS getUnusedSkin();
+
       private:
         void loadPlayerSlot(size_t id);
         void loadPlayerInterface();

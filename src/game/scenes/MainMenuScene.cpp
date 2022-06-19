@@ -53,24 +53,6 @@
 namespace game
 {
     struct DetectGamepad : public ecs::System {
-        User::USER_SKINS getUnusedSkin(ecs::SystemData data)
-        {
-            auto engine = data.getResource<game::resources::EngineResource>().engine;
-            auto &users = engine->getUsers();
-            User::USER_SKINS skin = User::USER_SKINS::UNKNOWN;
-
-            for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++) {
-                skin = User::USER_SKINS(i);
-                for (unsigned int j = 0; j < users.getAvailableUsers(); j++) {
-                    if (skin == users.getUserSkin(j))
-                        continue;
-                    else
-                        return skin;
-                }
-            }
-            return skin;
-        }
-
         void run(ecs::SystemData data) override final
         {
             auto engine = data.getResource<game::resources::EngineResource>().engine;
@@ -88,16 +70,20 @@ namespace game
                 users[game::User::UserId::User1].setGamepadId(gamepadId);
                 Logger::logger.log(Logger::Severity::Information, "User 1 switched to gamepad mode.");
             } else {
-                users.connectUser(gamepadId, getUnusedSkin(data));
+                users.connectUser(gamepadId, dynamic_cast<game::MainMenuScene &>(engine->getScene()).getUnusedSkin());
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateConnectedTexts();
+                dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkinTexts();
+
             }
         }
     };
 
     MainMenuScene::MainMenuScene()
     {
-        for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++)
+        for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++) {
+            std::cout << "PUSH" << i << std::endl;
             _availableSkins.push(User::USER_SKINS(i));
+        }
 
         _world.addStorage<components::Textual>();
         _world.addStorage<components::KeyboardInput>();
@@ -201,28 +187,33 @@ namespace game
             .build();
 
         // Skin Text
-        auto skinText = _world.addEntity()
-            .with<components::Position>(20 + static_cast<int>(id) * 20, 75)
-            .with<components::Textual>(
-                userSkinToRessourceString(_availableSkins.front()), 20, raylib::core::Color::WHITE)
+        auto builder = _world.addEntity();
+        (void)builder.with<components::Position>(20 + static_cast<int>(id) * 20, 75)
             .with<components::Identity>()
             .with<components::Controlable>(User::UserId::AllUsers,
                 [this](ecs::Entity controlable, ecs::SystemData data, const Users::ActionEvent &event) {
                     (void)controlable;
-                    if (event.action != GameAction::NEXT_ACTIVABLE)
+                    if (event.action != GameAction::NEXT_ACTIVABLE || event.value != 1.f)
                         return false;
 
                     auto &user = data.getResource<game::resources::EngineResource>().engine->getUsers()[event.user];
+                    std::cout << "HAVE " << user.getSkin() << " WILL HAVE " << _availableSkins.front() << std::endl;
                     _availableSkins.push(user.getSkin());
                     user.setSkin(_availableSkins.front());
                     _availableSkins.pop();
                     updateSkinTexts();
                     return true;
-                })
-            .build();
-        _availableSkins.pop();
+                });
+        if (id == 0) {
+            (void)builder.with<components::Textual>(
+                userSkinToRessourceString(_availableSkins.front()), 20, raylib::core::Color::WHITE);
+            _availableSkins.pop();
+        } else {
+            (void)builder.with<components::Textual>(
+                userSkinToRessourceString(User::USER_SKINS::UNKNOWN), 20, raylib::core::Color::WHITE);
+        }
+        auto skinText = builder.build();
         _skinTexts[id] = _world.getStorage<components::Identity>()[skinText.getId()].id;
-
 
         auto connectedText =
             _world.addEntity()
@@ -263,7 +254,11 @@ namespace game
                     (void)controlable;
                     if (event.action == GameAction::DISCONNECT && event.value == 1.f) {
                         auto &lusers = data.getResource<resources::EngineResource>().engine->getUsers();
-                        lusers.disconnectUser(event.user);
+                        User::USER_SKINS temp = lusers[event.user].getSkin();
+                        if (lusers.disconnectUser(event.user)) {
+                            _availableSkins.push(temp);
+                            updateSkinTexts();
+                        };
                         updateConnectedTexts();
                         return true;
                     }
@@ -309,6 +304,14 @@ namespace game
                 }
             }
         }
+    }
+
+    User::USER_SKINS MainMenuScene::getUnusedSkin()
+    {
+        User::USER_SKINS skin = _availableSkins.front();
+
+        _availableSkins.pop();
+        return skin;
     }
 
 } // namespace game
