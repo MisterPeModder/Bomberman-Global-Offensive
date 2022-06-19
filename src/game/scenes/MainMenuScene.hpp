@@ -12,6 +12,10 @@
 #include "game/components/Identity.hpp"
 #include "game/scenes/AScene.hpp"
 
+#include "localization/Resources.hpp"
+
+#include <deque>
+
 namespace game
 {
     class MainMenuScene : public AScene {
@@ -31,12 +35,18 @@ namespace game
 
         void updateConnectedTexts();
 
+        void updateSkinTexts();
+
+        User::USER_SKINS getUnusedSkin();
+
       private:
         void loadPlayerSlot(size_t id);
         void loadPlayerInterface();
         void loadLeftButtons();
 
-        components::Identity::Id _firstUserId;
+        components::Identity::Id _connectedTexts[4];
+        components::Identity::Id _skinTexts[4];
+        std::deque<User::USER_SKINS> _availableSkins;
     };
 } // namespace game
 

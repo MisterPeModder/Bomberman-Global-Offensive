@@ -50,7 +50,6 @@
 #include "game/Users.hpp"
 
 #include "localization/Localization.hpp"
-#include "localization/Resources.hpp"
 #include "logger/Logger.hpp"
 
 namespace game
@@ -73,14 +72,19 @@ namespace game
                 users[game::User::UserId::User1].setGamepadId(gamepadId);
                 Logger::logger.log(Logger::Severity::Information, "User 1 switched to gamepad mode.");
             } else {
-                users.connectUser(gamepadId);
+                users.connectUser(gamepadId, dynamic_cast<game::MainMenuScene &>(engine->getScene()).getUnusedSkin());
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateConnectedTexts();
+                dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkinTexts();
             }
         }
     };
 
     MainMenuScene::MainMenuScene()
     {
+        for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++) {
+            _availableSkins.push_back(User::USER_SKINS(i));
+        }
+
         _world.addStorage<components::Textual>();
         _world.addStorage<components::KeyboardInput>();
         _world.addSystem<systems::DrawText>();
@@ -133,8 +137,8 @@ namespace game
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
                     size_t nbUsers = engine->getUsers().getAvailableUsers();
 
-                    engine->setScene<GameScene>(
-                        Game::Parameters((nbUsers < 2) ? 2 : engine->getUsers().getAvailableUsers()));
+                    engine->setScene<GameScene>(Game::Parameters(engine->getUsers().prepareSkinParameters(),
+                        (nbUsers < 2) ? 2 : engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
@@ -177,6 +181,19 @@ namespace game
             .build();
     }
 
+    static localization::ResourceString userSkinToRessourceString(User::USER_SKINS skin)
+    {
+        switch (skin) {
+            case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
+            case User::USER_SKINS::TERRORIST_2: return localization::resources::textures::rsTerroristTwo;
+            case User::USER_SKINS::COUNTER_TERRORIST_1: return localization::resources::textures::rsCounterTerroristOne;
+            case User::USER_SKINS::COUNTER_TERRORIST_2: return localization::resources::textures::rsCounterTerroristTwo;
+            case User::USER_SKINS::NO_SENSE: return localization::resources::textures::rsNoSense;
+            case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
+            default: return localization::resources::textures::rsUnknown;
+        }
+    }
+
     void MainMenuScene::loadPlayerSlot(size_t id)
     {
         raylib::core::Color color;
@@ -196,14 +213,50 @@ namespace game
             .with<components::Color>(color)
             .build();
 
+        // Skin Text
+        auto builder = _world.addEntity();
+        (void)builder.with<components::Position>(20 + static_cast<int>(id) * 20, 75)
+            .with<components::Identity>()
+            .with<components::Controlable>(User::UserId::AllUsers,
+                [this](ecs::Entity controlable, ecs::SystemData data, const Users::ActionEvent &event) {
+                    (void)controlable;
+                    if ((event.action != GameAction::PREVIOUS_ACTIVABLE && event.action != GameAction::NEXT_ACTIVABLE)
+                        || event.value != 1.f)
+                        return false;
+
+                    auto &user = data.getResource<game::resources::EngineResource>().engine->getUsers()[event.user];
+                    if (event.action == GameAction::NEXT_ACTIVABLE) {
+                        _availableSkins.push_back(user.getSkin());
+                        user.setSkin(_availableSkins.front());
+                        _availableSkins.pop_front();
+                    } else {
+                        _availableSkins.push_front(user.getSkin());
+                        user.setSkin(_availableSkins.back());
+                        _availableSkins.pop_back();
+                    }
+                    updateSkinTexts();
+                    return true;
+                });
+        if (id == 0) {
+            (void)builder.with<components::Textual>(
+                userSkinToRessourceString(_availableSkins.front()), 20, raylib::core::Color::WHITE);
+            _availableSkins.pop_front();
+        } else {
+            (void)builder.with<components::Textual>(
+                userSkinToRessourceString(User::USER_SKINS::UNKNOWN), 20, raylib::core::Color::WHITE);
+        }
+        auto skinText = builder.build();
+        _skinTexts[id] = _world.getStorage<components::Identity>()[skinText.getId()].id;
+
         auto connectedText =
             _world.addEntity()
                 .with<components::Position>(20 + static_cast<int>(id) * 20, 70)
                 .with<components::Textual>(localization::resources::menu::rsNotConnected, 20, raylib::core::Color::RED)
                 .with<components::Identity>()
                 .build();
+
+        _connectedTexts[id] = _world.getStorage<components::Identity>()[connectedText.getId()].id;
         if (id == 0) {
-            _firstUserId = _world.getStorage<components::Identity>()[connectedText.getId()].id;
             auto &text = _world.getStorage<components::Textual>()[connectedText.getId()];
             text.text = localization::resources::menu::rsConnected;
             text.color = raylib::core::Color::GREEN;
@@ -220,14 +273,34 @@ namespace game
                 [this](ecs::Entity controlable, ecs::SystemData data, const Users::ActionEvent &event) {
                     (void)controlable;
                     if (event.action == GameAction::DISCONNECT && event.value == 1.f) {
-                        auto &users = data.getResource<resources::EngineResource>().engine->getUsers();
-                        users.disconnectUser(event.user);
+                        auto &lusers = data.getResource<resources::EngineResource>().engine->getUsers();
+                        User::USER_SKINS temp = lusers[event.user].getSkin();
+                        if (lusers.disconnectUser(event.user)) {
+                            _availableSkins.push_back(temp);
+                            updateSkinTexts();
+                        };
                         updateConnectedTexts();
                         return true;
                     }
                     return false;
                 })
             .build();
+    }
+
+    void MainMenuScene::updateSkinTexts()
+    {
+        auto engine = _world.getResource<game::resources::EngineResource>().engine;
+        auto &users = engine->getUsers();
+
+        for (auto [text, id] :
+            ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                if (_skinTexts[i] != id.id)
+                    continue;
+                User::UserId userId = static_cast<User::UserId>(i);
+                text.text = userSkinToRessourceString(users[userId].getSkin());
+            }
+        }
     }
 
     void MainMenuScene::setupWorld() { updateConnectedTexts(); }
@@ -239,8 +312,10 @@ namespace game
 
         for (auto [text, id] :
             ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
-            if (id.id >= _firstUserId && id.id < _firstUserId + 4) {
-                User::UserId userId = static_cast<User::UserId>(id.id - _firstUserId);
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                if (_connectedTexts[i] != id.id)
+                    continue;
+                User::UserId userId = static_cast<User::UserId>(i);
 
                 if (users[userId].isAvailable()) {
                     text.text = localization::resources::menu::rsConnected;
@@ -251,6 +326,14 @@ namespace game
                 }
             }
         }
+    }
+
+    User::USER_SKINS MainMenuScene::getUnusedSkin()
+    {
+        User::USER_SKINS skin = _availableSkins.front();
+
+        _availableSkins.pop_front();
+        return skin;
     }
 
 } // namespace game
