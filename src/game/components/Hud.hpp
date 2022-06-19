@@ -26,11 +26,6 @@ namespace game::components
         bool slowness;
         Identity::Id idHud;
 
-        // Hud(Player owner, Identity id)
-        //     : nbBomb(owner.stats.bombLimit), rangeBomb(owner.stats.bombRange), speed(owner.stats.speed),
-        //       inverted(owner.stats.inverted), slowness(owner.stats.slowness), idHud(id.getCurrentId())
-        //{
-        // }
         Hud()
         {
             nbBomb = 0;

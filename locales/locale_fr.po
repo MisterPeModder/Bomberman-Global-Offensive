@@ -55,18 +55,6 @@ msgstr "Jouer"
 msgid "Quit"
 msgstr "Quitter"
 
-msgid "number Bomb"
-msgstr "nombre de Bomb"
-
-msgid "Speed"
-msgstr "Vitesse"
-
-msgid "Power Bomb"
-msgstr "Puissance Bomb"
-
-msgid "User"
-msgstr "Utilisateur"
-
 msgid "(Controller)"
 msgstr "(Manette)"
 
@@ -202,47 +190,38 @@ msgstr "RT"
 msgid "SPACE"
 msgstr "ESPACE"
 
-msgid "Number Bomb"
-msgstr ""
+msgid "Bombs"
+msgstr "Bombes"
 
-msgid "NoClip"
-msgstr ""
- 
-msgid "LandMine"
+msgid "Speed"
+msgstr "Vitesse"
+
+msgid "Power"
+msgstr "Puissance"
+
+msgid "User"
+msgstr "Utilisateur"
+
+msgid "Land mines"
 msgstr "Mine"
 
-msgid "FlashBang"
-msgstr FlashBang
+msgid "Stun grenades"
+msgstr "Grenades etourdissante"
 
-msgid "Smoke"
+msgid "Smoke grenades"
 msgstr "Fumigène"
 
-msgid "Punch"
-msgstr "Punch"
-
-msgid "Activable"
-msgstr "Activable"
-
-msgid "Punch"
-msgstr ""
-
-msgid "KickShoes"
-msgstr ""
-
-msgid "Bombs"
-msgstr ""
-
-msgid "FlashBang"
-msgstr ""
+msgid "Wall pass"
+msgstr "Passe muraille"
 
 msgid "Inventory"
-msgstr ""
+msgstr "Inventaire"
 
-msgid "LandMine"
-msgstr ""
+msgid "Punch"
+msgstr "Coup de poing"
 
-msgid "NoClip"
-msgstr ""
+msgid "Kick Shoes"
+msgstr "Pousse bombe"
 
-msgid "Power range"
+msgid "Land Mine"
 msgstr ""

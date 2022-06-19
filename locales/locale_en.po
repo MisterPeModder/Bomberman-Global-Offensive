@@ -55,18 +55,6 @@ msgstr ""
 msgid "Quit"
 msgstr ""
 
-msgid "Bomb number"
-msgstr ""
-
-msgid "Speed"
-msgstr ""
-
-msgid "Power Bomb"
-msgstr ""
-
-msgid "User"
-msgstr ""
-
 msgid "(Controller)"
 msgstr ""
 
@@ -202,44 +190,38 @@ msgstr "RT"
 msgid "SPACE"
 msgstr ""
 
-msgid "bombs"
-msgstr ""
-
-msgid "LandMine"
-msgstr ""
-
-msgid "FlashBang"
-msgstr ""
-
-msgid "SmokeGrenade"
-msgstr ""
-
-msgid "LandMine"
-msgstr ""
-
-msgid "NoClip"
-msgstr ""
-
-msgid "LandMine"
-msgstr ""
-
-msgid "Activable"
-msgstr ""
-
-msgid "Punch"
-msgstr ""
-
-msgid "KickShoes"
-msgstr ""
-
 msgid "Bombs"
+msgstr ""
+
+msgid "Speed"
+msgstr ""
+
+msgid "Power"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Land mines"
+msgstr ""
+
+msgid "Stun grenades"
+msgstr ""
+
+msgid "Smoke grenades"
+msgstr ""
+
+msgid "Wall pass"
 msgstr ""
 
 msgid "Inventory"
 msgstr ""
 
-msgid "Power range"
+msgid "Punch"
 msgstr ""
 
-msgid "Smoke"
+msgid "Kick Shoes"
+msgstr ""
+
+msgid "Land Mine"
 msgstr ""

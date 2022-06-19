@@ -112,16 +112,16 @@ namespace localization
         } // namespace menu
         namespace hud
         {
-            constexpr ResourceString rsNumberbomb("Bombs");
+            constexpr ResourceString rsBombs("Bombs");
             constexpr ResourceString rsSpeed("Speed");
-            constexpr ResourceString rsPowerBomb("Power range");
-            constexpr ResourceString rsNoclip("NoClip");
-            constexpr ResourceString rsLandMine("LandMine");
-            constexpr ResourceString rsStunGrenade("FlashBang");
-            constexpr ResourceString rsSmokeGrenade("Smoke");
+            constexpr ResourceString rsPower("Power");
+            constexpr ResourceString rsWallPass("Wall pass");
+            constexpr ResourceString rsLandMine("Land Mine");
+            constexpr ResourceString rsStunGrenade("Stun grenades");
+            constexpr ResourceString rsSmokeGrenade("Smoke grenades");
             constexpr ResourceString rsPunch("Punch");
-            constexpr ResourceString rsActivable("Inventory");
-            constexpr ResourceString rsKickShoes("KickShoes");
+            constexpr ResourceString rsInventory("Inventory");
+            constexpr ResourceString rsKickShoes("Kick Shoes");
 
             // constexpr ResourceString rs();
         } // namespace hud
