@@ -26,6 +26,15 @@ extern "C"
 
 namespace game::systems
 {
+    void DrawHud::drawBorder(float x, float y)
+    {
+        float getWidth = 100 * raylib::core::Window::getWidth();
+        float getHeight = 100 * raylib::core::Window::getHeight();
+
+        ::DrawRectangleLines(
+            x / getWidth, y / getHeight, 5 / getWidth, 5 / getHeight, raylib::core::Color::MAGENTA.asRaylib());
+    }
+
     void DrawHud::drawDataHud(float x, float y, std::string text, raylib::core::Color color)
     {
         ::DrawText(text.c_str(), x / 100 * raylib::core::Window::getWidth(),
@@ -125,13 +134,13 @@ namespace game::systems
                 case (game::User::UserId::User2): x = 90; break;
                 case (game::User::UserId::User3): y = 90; break;
                 case (game::User::UserId::User4):
-                    x = 80;
+                    x = 85;
                     y = 80;
                     break;
                 default: break;
             }
-            player.inventory.items[static_cast<size_t>(game::components::Item::Identifier::LandMine)];
 
+            drawBorder(x , y);
             drawDataHud(1.0 + x, 3.0 + y, localization::resources::hud::rsNumberbomb, raylib::core::Color::BLUE);
             drawDataHud(7.0 + x, 3.0 + y, std::to_string(player.stats.bombLimit), raylib::core::Color::BLUE);
             drawDataHud(1.0 + x, 5.0 + y, localization::resources::hud::rsPowerBomb, raylib::core::Color::BLUE);

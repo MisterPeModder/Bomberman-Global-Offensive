@@ -25,6 +25,7 @@ namespace game::systems
         void run(ecs::SystemData data) override final;
 
       private:
+        void drawBorder(float x, float y);
         void drawDataHud(float x, float y, std::string text, raylib::core::Color color);
 
         raylib::core::Color whatColor(components::Player::Inventory inv, int id, float x, float y);
