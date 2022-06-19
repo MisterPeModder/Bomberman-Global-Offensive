@@ -105,6 +105,16 @@ Functions</h2></td></tr>
 <tr class="memitem:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">loadConfigFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;path, const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; bool(<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>)&gt; &amp;handleValue)</td></tr>
 <tr class="memdesc:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a configuration file with a form of [key]=[value] for each line.  <a href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">More...</a><br /></td></tr>
 <tr class="separator:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf609dcf39df53532022b41c5650e714"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#aaf609dcf39df53532022b41c5650e714">utf8BoundaryStart</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> str, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index) noexcept</td></tr>
+<tr class="separator:aaf609dcf39df53532022b41c5650e714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b6dd998ed988d5599668dc3f07c2c15"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a2b6dd998ed988d5599668dc3f07c2c15">utf8BoundaryEnd</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> str, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index) noexcept</td></tr>
+<tr class="separator:a2b6dd998ed988d5599668dc3f07c2c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9507610c6f835e36e935da4cecd3a08f"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a9507610c6f835e36e935da4cecd3a08f">insertUtf8Codepoint</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;str, int codepoint, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index=std::string::npos) noexcept</td></tr>
+<tr class="memdesc:a9507610c6f835e36e935da4cecd3a08f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an UTF-8 codepoint in <b>str</b>.  <a href="namespaceutil.html#a9507610c6f835e36e935da4cecd3a08f">More...</a><br /></td></tr>
+<tr class="separator:a9507610c6f835e36e935da4cecd3a08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103e3592073a0f493de747e3b0f3c476"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; int, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a103e3592073a0f493de747e3b0f3c476">removeUtf8Codepoint</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;str, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index=std::string::npos) noexcept</td></tr>
+<tr class="memdesc:a103e3592073a0f493de747e3b0f3c476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an UTF-8 codepoint from <b>str</b>.  <a href="namespaceutil.html#a103e3592073a0f493de747e3b0f3c476">More...</a><br /></td></tr>
+<tr class="separator:a103e3592073a0f493de747e3b0f3c476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05454346e6b75a324321c23f7afc5727"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">makePath</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> path)</td></tr>
 <tr class="memdesc:a05454346e6b75a324321c23f7afc5727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenate multiple directories in a single path.  <a href="namespaceutil.html#a05454346e6b75a324321c23f7afc5727">More...</a><br /></td></tr>
 <tr class="separator:a05454346e6b75a324321c23f7afc5727"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,6 +124,69 @@ Functions</h2></td></tr>
 <tr class="separator:a242a9ab3d7ed4cf8f348a27f5b47c36d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a9507610c6f835e36e935da4cecd3a08f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9507610c6f835e36e935da4cecd3a08f">&#9670;&nbsp;</a></span>insertUtf8Codepoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> util::insertUtf8Codepoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>codepoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td>
+          <td class="paramname"><em>index</em> = <code>std::string::npos</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts an UTF-8 codepoint in <b>str</b>. </p>
+<dl class="section note"><dt>Note</dt><dd>This function is not safe to call over multiple threads.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to modify. </td></tr>
+    <tr><td class="paramname">codepoint</td><td>An Unicode codepoint. </td></tr>
+    <tr><td class="paramname">index</td><td>Where to insert the codepoint, defaults to the end of the string.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of bytes added to str. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00064">64</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordtype">size_t</span> pos = index == std::string::npos ? str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/size.html">size</a>() : index;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> encoded = <a class="code" href="namespaceraylib_1_1text.html#a6f6a87d31882421f67abf604658f68cc">raylib::text::codepointToUtf8</a>(codepoint);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/insert.html">insert</a>(pos, encoded);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> encoded.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/size.html">size</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ac6097fd1cedb28a3dbba6a8a241860aa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6097fd1cedb28a3dbba6a8a241860aa">&#9670;&nbsp;</a></span>loadConfigFile()</h2>
 
@@ -153,31 +226,31 @@ Functions</h2></td></tr>
 <dd>
 false If the file couldn't be opened or if the <code>handleValue</code> function returned false for an element. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00014">14</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ifstream.html">std::ifstream</a> file(path);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> line;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a> ss;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> key;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> value;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">bool</span> res = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (!file.is_open())</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">while</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/getline.html">std::getline</a>(file, line)) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (line.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">empty</a>() || line[0] == <span class="charliteral">&#39;#&#39;</span>)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">str</a>(line);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/getline.html">std::getline</a>(ss, key, <span class="charliteral">&#39;=&#39;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            value = ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">str</a>().substr(ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_istream/tellg.html">tellg</a>());</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (!handleValue(key, value)) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                res = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        file.close();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00017">17</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ifstream.html">std::ifstream</a> file(path);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> line;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a> ss;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> key;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> value;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">bool</span> res = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (!file.is_open())</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">while</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/getline.html">std::getline</a>(file, line)) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span> (line.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">empty</a>() || line[0] == <span class="charliteral">&#39;#&#39;</span>)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">str</a>(line);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/getline.html">std::getline</a>(ss, key, <span class="charliteral">&#39;=&#39;</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            value = ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">str</a>().substr(ss.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_istream/tellg.html">tellg</a>());</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">if</span> (!handleValue(key, value)) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                res = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        file.close();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -215,8 +288,8 @@ false If the file couldn't be opened or if the <code>handleValue</code> function
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> The path send in input. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00022">22</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{ <span class="keywordflow">return</span> path; }</div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00024">24</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{ <span class="keywordflow">return</span> path; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -271,10 +344,10 @@ template&lt;class... Args&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> concatenated path of all the directories </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00032">32</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">makePath</a>(path.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">append</a>(nextDir), args...);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="util_8hpp_source.html#l00034">34</a> of file <a class="el" href="util_8hpp_source.html">util.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">makePath</a>(path.<a class="codeRef" href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">append</a>(nextDir), args...);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -315,17 +388,189 @@ template&lt;class... Args&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a103e3592073a0f493de747e3b0f3c476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103e3592073a0f493de747e3b0f3c476">&#9670;&nbsp;</a></span>removeUtf8Codepoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; int, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> &gt; util::removeUtf8Codepoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td>
+          <td class="paramname"><em>index</em> = <code>std::string::npos</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes an UTF-8 codepoint from <b>str</b>. </p>
+<dl class="section note"><dt>Note</dt><dd>This function is not safe to call over multiple threads.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>The string to modify. </td></tr>
+    <tr><td class="paramname">index</td><td>The byte offset of the character, defaults to the end of the string.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The removed codepoint, or 0 if <b>str</b> was empty or not valid UTF-8. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00073">73</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">empty</a>())</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> {0, 0};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        index = <a class="code" href="namespaceutil.html#aaf609dcf39df53532022b41c5650e714">utf8BoundaryStart</a>(str, index);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">auto</span> start = str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/begin.html">cbegin</a>() + index;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// ASCII char</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(*start) &lt; 128U) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordtype">int</span> codepoint = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(*start);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/erase.html">erase</a>(start, start + 1);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">return</span> {codepoint, 1};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// Multi-byte UTF-8 sequence</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">auto</span> [codepoint, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>] = <a class="code" href="namespaceraylib_1_1text.html#aa382587153ded95d28ec2a8b01200360">raylib::text::utf8ToCodepoint</a>({start, str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/end.html">cend</a>()});</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/erase.html">erase</a>(start, start + size);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> {codepoint, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2b6dd998ed988d5599668dc3f07c2c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b6dd998ed988d5599668dc3f07c2c15">&#9670;&nbsp;</a></span>utf8BoundaryEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> util::utf8BoundaryEnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The index of the closest UTF-8 char boundary, starting from left to right. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00055">55</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/empty.html">empty</a>())</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">while</span> (index &lt; str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/size.html">size</a>() &amp;&amp; (<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(str[index]) &amp; 0b11000000) == 0b10000000)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            ++index;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> index;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaf609dcf39df53532022b41c5650e714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf609dcf39df53532022b41c5650e714">&#9670;&nbsp;</a></span>utf8BoundaryStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> util::utf8BoundaryStart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The index of the closest UTF-8 char boundary, starting from right to left. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00044">44</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/empty.html">empty</a>())</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (index &gt;= str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/size.html">size</a>())</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/size.html">size</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">while</span> (index &gt; 0 &amp;&amp; (<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(str[index]) &amp; 0b11000000) == 0b10000000)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            --index;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> index;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="anamespaceraylib_1_1text_html_aa382587153ded95d28ec2a8b01200360"><div class="ttname"><a href="namespaceraylib_1_1text.html#aa382587153ded95d28ec2a8b01200360">raylib::text::utf8ToCodepoint</a></div><div class="ttdeci">std::pair&lt; int, std::size_t &gt; utf8ToCodepoint(std::string_view str) noexcept</div><div class="ttdoc">Decodes the first UTF-8 codepoint in str.</div><div class="ttdef"><b>Definition:</b> <a href="text_8cpp_source.html#l00030">text.cpp:30</a></div></div>
 <div class="ttc" id="abasic_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a></div></div>
 <div class="ttc" id="atellg_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_istream/tellg.html">std::stringstream::tellg</a></div><div class="ttdeci">T tellg(T... args)</div></div>
+<div class="ttc" id="abasic_string_view_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a></div></div>
+<div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/size.html">std::string::size</a></div><div class="ttdeci">T size(T... args)</div></div>
 <div class="ttc" id="abasic_stringstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream.html">std::stringstream</a></div></div>
-<div class="ttc" id="anamespaceutil_html_a242a9ab3d7ed4cf8f348a27f5b47c36d"><div class="ttname"><a href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path, std::string_view nextDir, Args... args)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00032">util.hpp:32</a></div></div>
+<div class="ttc" id="anamespaceutil_html_aaf609dcf39df53532022b41c5650e714"><div class="ttname"><a href="namespaceutil.html#aaf609dcf39df53532022b41c5650e714">util::utf8BoundaryStart</a></div><div class="ttdeci">std::size_t utf8BoundaryStart(std::string_view str, std::size_t index) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="util_8cpp_source.html#l00044">util.cpp:44</a></div></div>
+<div class="ttc" id="anamespaceraylib_1_1text_html_a6f6a87d31882421f67abf604658f68cc"><div class="ttname"><a href="namespaceraylib_1_1text.html#a6f6a87d31882421f67abf604658f68cc">raylib::text::codepointToUtf8</a></div><div class="ttdeci">std::string_view codepointToUtf8(int codepoint) noexcept</div><div class="ttdoc">Encodes an Unicode codepoint to UTF-8.</div><div class="ttdef"><b>Definition:</b> <a href="text_8cpp_source.html#l00022">text.cpp:22</a></div></div>
+<div class="ttc" id="anamespaceutil_html_a242a9ab3d7ed4cf8f348a27f5b47c36d"><div class="ttname"><a href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path, std::string_view nextDir, Args... args)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00034">util.hpp:34</a></div></div>
+<div class="ttc" id="aerase_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/erase.html">std::string::erase</a></div><div class="ttdeci">T erase(T... args)</div></div>
 <div class="ttc" id="aappend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">std::filesystem::path::append</a></div><div class="ttdeci">T append(T... args)</div></div>
+<div class="ttc" id="abegin_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/begin.html">std::string::cbegin</a></div><div class="ttdeci">T cbegin(T... args)</div></div>
 <div class="ttc" id="agetline_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/getline.html">std::getline</a></div><div class="ttdeci">T getline(T... args)</div></div>
+<div class="ttc" id="ainsert_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/insert.html">std::string::insert</a></div><div class="ttdeci">T insert(T... args)</div></div>
 <div class="ttc" id="aempty_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">std::string::empty</a></div><div class="ttdeci">T empty(T... args)</div></div>
 <div class="ttc" id="astr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">std::stringstream::str</a></div><div class="ttdeci">T str(T... args)</div></div>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
+<div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/end.html">std::string::cend</a></div><div class="ttdeci">T cend(T... args)</div></div>
 <div class="ttc" id="abasic_ifstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ifstream.html">std::ifstream</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

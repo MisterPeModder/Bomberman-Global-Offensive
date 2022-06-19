@@ -1,9 +1,11 @@
 <map id="src/ecs/resource/Timer.hpp" name="src/ecs/resource/Timer.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="390,5,586,32"/>
-<area shape="rect" id="node2" href="$_timer_8cpp.html" title=" " alt="" coords="5,80,200,107"/>
-<area shape="rect" id="node3" href="$_game_8cpp.html" title=" " alt="" coords="224,80,376,107"/>
-<area shape="rect" id="node4" href="$_splash_scene_8cpp.html" title=" " alt="" coords="634,155,878,181"/>
-<area shape="rect" id="node5" href="$_test_scene_8cpp.html" title=" " alt="" coords="451,80,677,107"/>
-<area shape="rect" id="node6" href="$_movement_8cpp.html" title=" " alt="" coords="701,80,944,107"/>
-<area shape="rect" id="node7" href="$_splash_screen_8hpp.html" title=" " alt="" coords="969,80,1229,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="582,5,778,32"/>
+<area shape="rect" id="node2" href="$_timer_8cpp.html" title=" " alt="" coords="5,87,200,114"/>
+<area shape="rect" id="node3" href="$_keyboard_input_8cpp.html" title=" " alt="" coords="225,80,391,121"/>
+<area shape="rect" id="node4" href="$_game_8cpp.html" title=" " alt="" coords="416,87,568,114"/>
+<area shape="rect" id="node5" href="$_splash_scene_8cpp.html" title=" " alt="" coords="826,169,1070,196"/>
+<area shape="rect" id="node6" href="$_test_scene_8cpp.html" title=" " alt="" coords="643,87,869,114"/>
+<area shape="rect" id="node7" href="$_movement_8cpp.html" title=" " alt="" coords="893,87,1136,114"/>
+<area shape="rect" id="node8" href="$_splash_screen_8hpp.html" title=" " alt="" coords="1161,87,1421,114"/>
+<area shape="rect" id="node9" href="$_update_keyboard_input_8cpp.html" title=" " alt="" coords="1445,80,1699,121"/>
 </map>

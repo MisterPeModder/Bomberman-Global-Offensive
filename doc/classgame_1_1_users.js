@@ -13,5 +13,6 @@ var classgame_1_1_users =
     [ "operator=", "classgame_1_1_users.html#af4dc8fa238e3d387209125b6a22092c5", null ],
     [ "operator[]", "classgame_1_1_users.html#ac79392a6fecee7be4e001ccd1255c3c7", null ],
     [ "operator[]", "classgame_1_1_users.html#aff7f3f0ec0a2812400965545f9f18e8f", null ],
+    [ "setIgnoreKeyboard", "classgame_1_1_users.html#ab6d2534e1bf940a4a8aa57865e0b02c4", null ],
     [ "_users", "classgame_1_1_users.html#a4d963c511d9ef1f68819762c6c58b195", null ]
 ];

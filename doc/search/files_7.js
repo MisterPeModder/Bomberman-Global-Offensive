@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['identity_2ecpp_4968',['Identity.cpp',['../_identity_8cpp.html',1,'']]],
-  ['identity_2ehpp_4969',['Identity.hpp',['../_identity_8hpp.html',1,'']]],
-  ['image_2ecpp_4970',['Image.cpp',['../_image_8cpp.html',1,'']]],
-  ['image_2ehpp_4971',['Image.hpp',['../game_2components_2_image_8hpp.html',1,'(Global Namespace)'],['../raylib_2textures_2_image_8hpp.html',1,'(Global Namespace)']]],
-  ['initializer_5flist_4972',['initializer_list',['http://en.cppreference.com/w/cpp/header/initializer_list.html',1,'']]],
-  ['inputmanager_2ecpp_4973',['InputManager.cpp',['../_input_manager_8cpp.html',1,'']]],
-  ['inputmanager_2ehpp_4974',['InputManager.hpp',['../_input_manager_8hpp.html',1,'']]],
-  ['instances_2ehpp_4975',['Instances.hpp',['../_instances_8hpp.html',1,'']]],
-  ['invertedcontrols_2ecpp_4976',['InvertedControls.cpp',['../_inverted_controls_8cpp.html',1,'']]],
-  ['iomanip_4977',['iomanip',['http://en.cppreference.com/w/cpp/header/iomanip.html',1,'']]],
-  ['ios_4978',['ios',['http://en.cppreference.com/w/cpp/header/ios.html',1,'']]],
-  ['iosfwd_4979',['iosfwd',['http://en.cppreference.com/w/cpp/header/iosfwd.html',1,'']]],
-  ['iostream_4980',['iostream',['http://en.cppreference.com/w/cpp/header/iostream.html',1,'']]],
-  ['iscene_2ehpp_4981',['IScene.hpp',['../_i_scene_8hpp.html',1,'']]],
-  ['istream_4982',['istream',['http://en.cppreference.com/w/cpp/header/istream.html',1,'']]],
-  ['item_2ecpp_4983',['Item.cpp',['../_item_8cpp.html',1,'']]],
-  ['item_2ehpp_4984',['Item.hpp',['../_item_8hpp.html',1,'']]],
-  ['itemidentifier_2ehpp_4985',['ItemIdentifier.hpp',['../_item_identifier_8hpp.html',1,'']]],
-  ['items_2ecpp_4986',['Items.cpp',['../_items_8cpp.html',1,'']]],
-  ['items_2ehpp_4987',['Items.hpp',['../_items_8hpp.html',1,'']]],
-  ['iterator_4988',['iterator',['http://en.cppreference.com/w/cpp/header/iterator.html',1,'']]],
-  ['iwidgetcomponent_2ehpp_4989',['IWidgetComponent.hpp',['../_i_widget_component_8hpp.html',1,'']]]
+  ['history_2ecpp_5071',['History.cpp',['../_history_8cpp.html',1,'']]],
+  ['history_2ehpp_5072',['History.hpp',['../_history_8hpp.html',1,'']]]
 ];

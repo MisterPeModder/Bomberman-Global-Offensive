@@ -140,6 +140,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad2b42af3034b758f6af55e5534fd0d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabadae0caf642d84ed7e2268837fef58"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#aabadae0caf642d84ed7e2268837fef58">setIcon</a> (<a class="el" href="classraylib_1_1textures_1_1_image.html">textures::Image</a> const &amp;icon)</td></tr>
 <tr class="separator:aabadae0caf642d84ed7e2268837fef58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4357b60b0a87f5b7d4c51feebdc46f2"><td class="memItemLeft" align="right" valign="top">static <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#ab4357b60b0a87f5b7d4c51feebdc46f2">getClipboard</a> ()</td></tr>
+<tr class="separator:ab4357b60b0a87f5b7d4c51feebdc46f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9b59816a9ed89ff4ac915cd4ba478f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1core_1_1_window.html#aac9b59816a9ed89ff4ac915cd4ba478f">setClipboard</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> text)</td></tr>
+<tr class="separator:aac9b59816a9ed89ff4ac915cd4ba478f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -317,6 +321,41 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00046">46</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{ EndDrawing(); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab4357b60b0a87f5b7d4c51feebdc46f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4357b60b0a87f5b7d4c51feebdc46f2">&#9670;&nbsp;</a></span>getClipboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> raylib::core::Window::getClipboard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The contents of the clipboard. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00065">65</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">char</span> <span class="keyword">const</span> *text = ::GetClipboardText();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (text == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> text;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -500,6 +539,41 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            InitWindow(width, height, title.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>());</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            SetWindowMinSize(1280, 720);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aac9b59816a9ed89ff4ac915cd4ba478f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9b59816a9ed89ff4ac915cd4ba478f">&#9670;&nbsp;</a></span>setClipboard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void raylib::core::Window::setClipboard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>The new contents of the clipboard, must be nul-terminated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_window_8cpp_source.html#l00074">74</a> of file <a class="el" href="_window_8cpp_source.html">Window.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{ ::SetClipboardText(text.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">data</a>()); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -701,7 +775,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00087">87</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_window_8hpp_source.html#l00093">93</a> of file <a class="el" href="_window_8hpp_source.html">Window.hpp</a>.</p>
 
 </div>
 </div>
@@ -713,7 +787,7 @@ Static Private Attributes</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00057">Logger.hpp:57</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a></div><div class="ttdeci">@ Information</div><div class="ttdoc">Debug messages.</div></div>
-<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a040d555ff2e15bb95e73b23effd62aa6"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a040d555ff2e15bb95e73b23effd62aa6">raylib::core::Window::_shouldClose</a></div><div class="ttdeci">static bool _shouldClose</div><div class="ttdef"><b>Definition:</b> <a href="_window_8hpp_source.html#l00087">Window.hpp:87</a></div></div>
+<div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a040d555ff2e15bb95e73b23effd62aa6"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a040d555ff2e15bb95e73b23effd62aa6">raylib::core::Window::_shouldClose</a></div><div class="ttdeci">static bool _shouldClose</div><div class="ttdef"><b>Definition:</b> <a href="_window_8hpp_source.html#l00093">Window.hpp:93</a></div></div>
 <div class="ttc" id="amax_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/max.html">std::max</a></div><div class="ttdeci">T max(T... args)</div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view/data.html">std::string_view::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>

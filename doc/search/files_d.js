@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['optional_5033',['optional',['http://en.cppreference.com/w/cpp/header/optional.html',1,'']]],
-  ['ostream_5034',['ostream',['http://en.cppreference.com/w/cpp/header/ostream.html',1,'']]]
+  ['new_5137',['new',['http://en.cppreference.com/w/cpp/header/new.html',1,'']]],
+  ['noclip_2ehpp_5138',['NoClip.hpp',['../_no_clip_8hpp.html',1,'']]],
+  ['numeric_5139',['numeric',['http://en.cppreference.com/w/cpp/header/numeric.html',1,'']]]
 ];

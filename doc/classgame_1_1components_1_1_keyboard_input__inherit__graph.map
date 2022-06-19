@@ -1,0 +1,4 @@
+<map id="game::components::KeyboardInput" name="game::components::KeyboardInput">
+<area shape="rect" id="node1" title="Keyboard&#45;only input field." alt="" coords="5,80,221,121"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="50,5,177,32"/>
+</map>

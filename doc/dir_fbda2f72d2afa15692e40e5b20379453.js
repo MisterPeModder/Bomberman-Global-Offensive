@@ -8,6 +8,10 @@ var dir_fbda2f72d2afa15692e40e5b20379453 =
     [ "Clickable.hpp", "_clickable_8hpp.html", [
       [ "Clickable", "structgame_1_1gui_1_1_clickable.html", "structgame_1_1gui_1_1_clickable" ]
     ] ],
+    [ "Console.cpp", "_console_8cpp.html", null ],
+    [ "Console.hpp", "_console_8hpp.html", [
+      [ "Console", "structgame_1_1gui_1_1_console.html", "structgame_1_1gui_1_1_console" ]
+    ] ],
     [ "IWidgetComponent.hpp", "_i_widget_component_8hpp.html", [
       [ "IWidgetComponent", "classgame_1_1gui_1_1_i_widget_component.html", "classgame_1_1gui_1_1_i_widget_component" ]
     ] ],

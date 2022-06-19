@@ -17,6 +17,10 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "Cube.hpp", "game_2systems_2_cube_8hpp.html", [
       [ "DrawCube", "structgame_1_1systems_1_1_draw_cube.html", "structgame_1_1systems_1_1_draw_cube" ]
     ] ],
+    [ "DrawConsole.cpp", "_draw_console_8cpp.html", "_draw_console_8cpp" ],
+    [ "DrawConsole.hpp", "_draw_console_8hpp.html", [
+      [ "DrawConsole", "structgame_1_1systems_1_1_draw_console.html", "structgame_1_1systems_1_1_draw_console" ]
+    ] ],
     [ "DrawingCube.hpp", "_drawing_cube_8hpp.html", [
       [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ]
     ] ],
@@ -60,5 +64,9 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
       [ "MoveSmoke", "structgame_1_1systems_1_1_move_smoke.html", "structgame_1_1systems_1_1_move_smoke" ],
       [ "DrawSmoke", "structgame_1_1systems_1_1_draw_smoke.html", "structgame_1_1systems_1_1_draw_smoke" ]
     ] ],
-    [ "SplashScreen.hpp", "_splash_screen_8hpp.html", "_splash_screen_8hpp" ]
+    [ "SplashScreen.hpp", "_splash_screen_8hpp.html", "_splash_screen_8hpp" ],
+    [ "UpdateKeyboardInput.cpp", "_update_keyboard_input_8cpp.html", "_update_keyboard_input_8cpp" ],
+    [ "UpdateKeyboardInput.hpp", "_update_keyboard_input_8hpp.html", [
+      [ "UpdateKeyboardInput", "structgame_1_1systems_1_1_update_keyboard_input.html", "structgame_1_1systems_1_1_update_keyboard_input" ]
+    ] ]
 ];

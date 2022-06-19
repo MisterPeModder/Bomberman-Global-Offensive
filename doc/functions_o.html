@@ -104,21 +104,27 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 <li>onLoad()
 : <a class="el" href="classbmjs_1_1_mod.html#afcbcc64145006d5d62515bf2fdeef0b5">bmjs::Mod</a>
 </li>
-<li>OnStateChanged
-: <a class="el" href="structgame_1_1gui_1_1_checkable.html#af6b0660f0d2647ed47817aa5a33525c7">game::gui::Checkable</a>
-</li>
 <li>onStateChanged
 : <a class="el" href="structgame_1_1gui_1_1_checkable.html#a825f9b78b33a9dc8287a858ddcece786">game::gui::Checkable</a>
-, <a class="el" href="structgame_1_1gui_1_1_clickable.html#ac14fb5b8c449849e7fd195127ddd57b2">game::gui::Clickable</a>
 </li>
 <li>OnStateChanged
-: <a class="el" href="structgame_1_1gui_1_1_clickable.html#a1ad301d9e35b8adaeecfa9eb0f0ebea0">game::gui::Clickable</a>
+: <a class="el" href="structgame_1_1gui_1_1_checkable.html#af6b0660f0d2647ed47817aa5a33525c7">game::gui::Checkable</a>
+, <a class="el" href="structgame_1_1gui_1_1_clickable.html#a1ad301d9e35b8adaeecfa9eb0f0ebea0">game::gui::Clickable</a>
 </li>
-<li>onTimedOut
-: <a class="el" href="structgame_1_1components_1_1_item.html#aad97e9315c856d90346f7179f8116e68">game::components::Item</a>
+<li>onStateChanged
+: <a class="el" href="structgame_1_1gui_1_1_clickable.html#ac14fb5b8c449849e7fd195127ddd57b2">game::gui::Clickable</a>
+</li>
+<li>onSubmit
+: <a class="el" href="classgame_1_1components_1_1_keyboard_input.html#a54b1e48e00c6da96eab88852248ed830">game::components::KeyboardInput</a>
+</li>
+<li>onSubmitCallback
+: <a class="el" href="classgame_1_1components_1_1_keyboard_input.html#a37ea0287d43134c2b3dd96b19cb820c3">game::components::KeyboardInput</a>
 </li>
 <li>OnTimedOut
 : <a class="el" href="structgame_1_1components_1_1_item.html#a0ff98140c275a5cc3703ccc92c362e33">game::components::Item</a>
+</li>
+<li>onTimedOut
+: <a class="el" href="structgame_1_1components_1_1_item.html#aad97e9315c856d90346f7179f8116e68">game::components::Item</a>
 </li>
 <li>onUnload()
 : <a class="el" href="classbmjs_1_1_mod.html#ad9922ed8c4fd50e22ae6438680dd6df6">bmjs::Mod</a>
@@ -211,7 +217,7 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 , <a class="el" href="classraylib_1_1core_1_1_camera2_d.html#ae40936792ff19d729b62327443072dba">raylib::core::Camera2D</a>
 , <a class="el" href="classraylib_1_1core_1_1_camera3_d.html#a8b333fa6560ae6d5bc59dafdd3f4a165">raylib::core::Camera3D</a>
 , <a class="el" href="structraylib_1_1core_1_1_color.html#af08c38df743bfe0d581ac53f855a1190">raylib::core::Color</a>
-, <a class="el" href="classraylib_1_1core_1_1_gamepad.html#a2d7a7dd5ab0af199ae3062dd78ccc09a">raylib::core::Gamepad</a>
+, <a class="el" href="classraylib_1_1core_1_1_gamepad.html#abe420b817088c0139e908f9dbdb1f169">raylib::core::Gamepad</a>
 , <a class="el" href="structraylib_1_1core_1_1_vector2.html#a6d5b2eba79dc8f3718aa3aa94c90299f">raylib::core::Vector2&lt; T &gt;</a>
 , <a class="el" href="structraylib_1_1core_1_1_vector3.html#a25c3a78b1036572cdc467ed5585aff24">raylib::core::Vector3&lt; T &gt;</a>
 , <a class="el" href="structraylib_1_1core_1_1_vector4.html#a07c24c72dab03128fe701ee3cf5748f0">raylib::core::Vector4&lt; T &gt;</a>
@@ -237,8 +243,8 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 , <a class="el" href="classecs_1_1_marker_storage.html#a2982c2a45e35c6493169fad147589f85">ecs::MarkerStorage&lt; C &gt;</a>
 , <a class="el" href="structgame_1_1components_1_1_player_1_1_inventory.html#a7e2ee53dede885e35e8cb77068eff6ee">game::components::Player::Inventory</a>
 , <a class="el" href="classgame_1_1_users.html#ac79392a6fecee7be4e001ccd1255c3c7">game::Users</a>
-, <a class="el" href="class_logger.html#a3db50f440bc8832ece999e5d0b077d17">Logger</a>
-, <a class="el" href="classutil_1_1_bit_set.html#ab69115cd1ef0f09e20a922dafbb68413">util::BitSet</a>
+, <a class="el" href="class_logger.html#a2c22d004d2db456dca72a94bdf5e8c00">Logger</a>
+, <a class="el" href="classutil_1_1_bit_set.html#a6caa99b4b927b07a53b82048e5654191">util::BitSet</a>
 </li>
 <li>operator^()
 : <a class="el" href="classutil_1_1_bit_set.html#a1c8657d0208fb4dabf568ebb5d1df138">util::BitSet</a>
@@ -262,6 +268,12 @@ $(document).ready(function(){initNavTree('functions_o.html',''); initResizable()
 <li>ORBITAL
 : <a class="el" href="classraylib_1_1core_1_1_camera2_d.html#a90cbfda6cbfc0479fc0d19f901148a74af33459593eca5785f3b735f9b8e53082">raylib::core::Camera2D</a>
 , <a class="el" href="classraylib_1_1core_1_1_camera3_d.html#a94c1ab157632fde75d779abe554cbcb5ae6fd45a0aa9df6b97d2c5505eb0fb7aa">raylib::core::Camera3D</a>
+</li>
+<li>output
+: <a class="el" href="structgame_1_1gui_1_1_console.html#a03afe62fb0d0791da09c1c0a700b7ba2">game::gui::Console</a>
+</li>
+<li>outputSeverity
+: <a class="el" href="structgame_1_1gui_1_1_console.html#abd9f054acf11d1d0eac9e306fe9c9de8">game::gui::Console</a>
 </li>
 <li>owner
 : <a class="el" href="structgame_1_1components_1_1_bomb.html#a9bf6a011e67a0fa914d83ee159d99af0">game::components::Bomb</a>

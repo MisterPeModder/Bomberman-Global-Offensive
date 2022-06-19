@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 <li>get()
 : <a class="el" href="classecs_1_1_entities.html#a370881c520baa2192b6053188704392f">ecs::Entities</a>
 , <a class="el" href="classecs_1_1_instances.html#a796e330da54f3e942f05c716957af6ba">ecs::Instances&lt; Base &gt;</a>
+, <a class="el" href="structgame_1_1components_1_1_history.html#a19298ab2520bd0b72b0d289ed1407d03">game::components::History</a>
 , <a class="el" href="classgame_1_1resources_1_1_asset_map.html#a50ff226e4f05cce8bd272ff18e7bd471">game::resources::AssetMap&lt; T &gt;</a>
 </li>
 <li>get_components()
@@ -155,6 +156,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 <li>getCharPressed()
 : <a class="el" href="classraylib_1_1core_1_1_keyboard.html#ac3f6b96da6498cd13af7d2f782824e51">raylib::core::Keyboard</a>
 </li>
+<li>getClipboard()
+: <a class="el" href="classraylib_1_1core_1_1_window.html#ab4357b60b0a87f5b7d4c51feebdc46f2">raylib::core::Window</a>
+</li>
 <li>getCollideRect()
 : <a class="el" href="structgame_1_1systems_1_1_collision.html#ae9830ae0492f6e8de28adf72d3c06523">game::systems::Collision</a>
 </li>
@@ -166,6 +170,9 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 </li>
 <li>getCurrentId()
 : <a class="el" href="structgame_1_1components_1_1_identity.html#a0449c87c5ee4676717e2bec7c8983bf3">game::components::Identity</a>
+</li>
+<li>getCursorType()
+: <a class="el" href="classgame_1_1components_1_1_keyboard_input.html#a9d374763212468d4c1e9abec5de9a399">game::components::KeyboardInput</a>
 </li>
 <li>getData()
 : <a class="el" href="structecs_1_1_join_traits_3_01_entities_01_4.html#a51ef73f38b3197f0961b7ce913f49a54">ecs::JoinTraits&lt; Entities &gt;</a>
@@ -216,7 +223,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 : <a class="el" href="classecs_1_1_entity.html#a885985fbee48a11a0ee515b393be68b5">ecs::Entity</a>
 </li>
 <li>getGlobalShader()
-: <a class="el" href="classgame_1_1_engine.html#a9212bb8022f43ab506ad2afa473df9ba">game::Engine</a>
+: <a class="el" href="classgame_1_1_engine.html#a13b4e4e7f8fd6985b098352a81ca218a">game::Engine</a>
 </li>
 <li>getGrid()
 : <a class="el" href="classgame_1_1map_1_1cellular_1_1_grid.html#a2dae9b1e3de98aed5189fbb6f2b68794">game::map::cellular::Grid</a>
@@ -271,7 +278,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 : <a class="el" href="classraylib_1_1shaders_1_1_shader.html#a8e5fe0efbfa92fafad73d17f1c193eb6">raylib::shaders::Shader</a>
 </li>
 <li>getLogger()
-: <a class="el" href="classbmjs_1_1_mod.html#a85f33ac103f5f2074d89235d6320f7a9">bmjs::Mod</a>
+: <a class="el" href="classbmjs_1_1_mod.html#a2341534dfece885f724fceb6f9c68842">bmjs::Mod</a>
 </li>
 <li>getLogLevel()
 : <a class="el" href="class_logger.html#a197813c315e2ba04833ec35e1aeb79f8">Logger</a>
@@ -342,7 +349,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 : <a class="el" href="classraylib_1_1core_1_1_camera3_d.html#aecec3562123769ca05a6068108e52c03">raylib::core::Camera3D</a>
 </li>
 <li>getPtr()
-: <a class="el" href="classecs_1_1_instances.html#a0f447f6fca9dcfa6f18594abe6a20c91">ecs::Instances&lt; Base &gt;</a>
+: <a class="el" href="classecs_1_1_instances.html#a1ccfe00d1d00c8878468460d53943e48">ecs::Instances&lt; Base &gt;</a>
 </li>
 <li>getRadius()
 : <a class="el" href="classraylib_1_1shapes_1_1_circle.html#afe96620f9993b25731b82f956f124367">raylib::shapes::Circle</a>
@@ -359,7 +366,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 </li>
 <li>getResource()
 : <a class="el" href="classecs_1_1_system_data.html#a36789f6eb533d3c6439ab07267985c7b">ecs::SystemData</a>
-, <a class="el" href="classecs_1_1_world.html#a694d9d1a60a30cdc6835a6edae65f42a">ecs::World</a>
+, <a class="el" href="classecs_1_1_world.html#ad2291354377f36b17edca160ce05d749">ecs::World</a>
 </li>
 <li>getRotation()
 : <a class="el" href="classraylib_1_1core_1_1_camera2_d.html#a08618e0f7f5bb771bb7927634c280ba7">raylib::core::Camera2D</a>
@@ -369,7 +376,10 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 , <a class="el" href="classgame_1_1map_1_1cellular_1_1_rule.html#a17bea871053b83bc6f7377389bc05d18">game::map::cellular::Rule</a>
 </li>
 <li>getScene()
-: <a class="el" href="classgame_1_1_engine.html#adcc6ab7717a6eebf9625546fe38e601c">game::Engine</a>
+: <a class="el" href="classgame_1_1_engine.html#a6634fd0dd2be5d9cff3bd72d3b4c9e57">game::Engine</a>
+</li>
+<li>getSelection()
+: <a class="el" href="classgame_1_1components_1_1_keyboard_input.html#a1391759c890703d55978af2cde53f255">game::components::KeyboardInput</a>
 </li>
 <li>getSettings()
 : <a class="el" href="classgame_1_1_engine.html#aeee1155aee5f642413db3cf5e56d68cc">game::Engine</a>
@@ -393,7 +403,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 </li>
 <li>getStorage()
 : <a class="el" href="classecs_1_1_system_data.html#abd205d2821620f37363800bfac42da88">ecs::SystemData</a>
-, <a class="el" href="classecs_1_1_world.html#ac134d76d91d87b31b1aa87b2755d16e3">ecs::World</a>
+, <a class="el" href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">ecs::World</a>
 </li>
 <li>getStoreWordCount()
 : <a class="el" href="classutil_1_1_bit_set.html#a0a05c4dcfaafa79d3b6ee10a1f9b5dba">util::BitSet</a>
@@ -415,7 +425,7 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 : <a class="el" href="classraylib_1_1core_1_1_camera3_d.html#a4dd62b244be0e0493f2f8b5a22d687dc">raylib::core::Camera3D</a>
 </li>
 <li>getUsers()
-: <a class="el" href="classgame_1_1_engine.html#a0b653f21fe99fb81f97386d640b199e9">game::Engine</a>
+: <a class="el" href="classgame_1_1_engine.html#ab2b35b9778798b022e735409a4114992">game::Engine</a>
 </li>
 <li>getvolume()
 : <a class="el" href="classraylib_1_1core_1_1_sound.html#a73931e3bd2cf30e9f91581b0fac47a21">raylib::core::Sound</a>
@@ -427,8 +437,8 @@ $(document).ready(function(){initNavTree('functions_func_g.html',''); initResiza
 : <a class="el" href="classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255">raylib::core::Window</a>
 </li>
 <li>getWorld()
-: <a class="el" href="classgame_1_1_a_scene.html#a9c2a69272f5661df3f6dcb31ce35d17a">game::AScene</a>
-, <a class="el" href="classgame_1_1_i_scene.html#a9561e92bc054d947c9dba7bf2ade0b64">game::IScene</a>
+: <a class="el" href="classgame_1_1_a_scene.html#a2ac603a9460be4126555a7f46b2b34d4">game::AScene</a>
+, <a class="el" href="classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1">game::IScene</a>
 </li>
 <li>getX()
 : <a class="el" href="classraylib_1_1core_1_1_mouse.html#a0e9b1c380bb4c2988766ceee03188fe7">raylib::core::Mouse</a>

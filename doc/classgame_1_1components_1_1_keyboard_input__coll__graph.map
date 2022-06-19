@@ -1,0 +1,7 @@
+<map id="game::components::KeyboardInput" name="game::components::KeyboardInput">
+<area shape="rect" id="node1" title="Keyboard&#45;only input field." alt="" coords="368,101,584,142"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="59,5,185,32"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/utility/functional/function.html" title=" " alt="" coords="13,56,231,112"/>
+<area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="5,137,239,178"/>
+<area shape="rect" id="node5" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/vector.html" title=" " alt="" coords="29,203,215,229"/>
+</map>

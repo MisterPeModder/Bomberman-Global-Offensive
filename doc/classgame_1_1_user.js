@@ -26,10 +26,12 @@ var classgame_1_1_user =
     [ "setAvailable", "classgame_1_1_user.html#a132455e0c15ee88a8d801b734f80bb29", null ],
     [ "setGamepadId", "classgame_1_1_user.html#a362f637b76b19481711fefa0888efe01", null ],
     [ "setId", "classgame_1_1_user.html#afb04b1bf85ad6f4d267d7afce720105a", null ],
+    [ "setIgnoreKeyboard", "classgame_1_1_user.html#aaed750acc6c037c67cb0ed0ce32d0ead", null ],
     [ "setKeyboard", "classgame_1_1_user.html#a9c40f5eb609595680bb8f02ff631d394", null ],
     [ "_available", "classgame_1_1_user.html#a13f760054351dd21b6469030c4387248", null ],
     [ "_changedActions", "classgame_1_1_user.html#a654a8b5fd3e914c3144df2fcb50e548f", null ],
     [ "_gamepadId", "classgame_1_1_user.html#a4c8d6f5f56e7c7105a8e8283f15f4463", null ],
+    [ "_ignoreKeyboard", "classgame_1_1_user.html#a06dc65a4ec1e0d158088febb3fdf0707", null ],
     [ "_lastActions", "classgame_1_1_user.html#ad0f3c02c4306d1fc841397a1d583e8c9", null ],
     [ "_profile", "classgame_1_1_user.html#a47b2f231e1263708da76f1ef7676bf49", null ]
 ];

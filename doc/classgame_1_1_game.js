@@ -17,6 +17,7 @@ var classgame_1_1_game =
     [ "worldPosToMapCell", "classgame_1_1_game.html#a5a40fdfe8f07a4bfd8db403fae827eab", null ],
     [ "_camera", "classgame_1_1_game.html#a3766ad7a042186db666af180ba84c61a", null ],
     [ "_drawing", "classgame_1_1_game.html#ae77ce3fcde8187996a464db2bfb9941e", null ],
+    [ "_drawing2d", "classgame_1_1_game.html#a61cada282d4091e3b806d09425916947", null ],
     [ "_handleInputs", "classgame_1_1_game.html#afc60aef10303189b946466d15891a3b9", null ],
     [ "_map", "classgame_1_1_game.html#a66b00f7ca8b772db6befe4069d00804c", null ],
     [ "_params", "classgame_1_1_game.html#a747a80e1e314f5cf1da37bfa8c4e92ee", null ],

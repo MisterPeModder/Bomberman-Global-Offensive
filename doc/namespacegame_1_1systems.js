@@ -3,6 +3,7 @@ var namespacegame_1_1systems =
     [ "ChangeCube", "structgame_1_1systems_1_1_change_cube.html", "structgame_1_1systems_1_1_change_cube" ],
     [ "Collision", "structgame_1_1systems_1_1_collision.html", "structgame_1_1systems_1_1_collision" ],
     [ "DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", "structgame_1_1systems_1_1_disable_bomb_no_clip" ],
+    [ "DrawConsole", "structgame_1_1systems_1_1_draw_console.html", "structgame_1_1systems_1_1_draw_console" ],
     [ "DrawCube", "structgame_1_1systems_1_1_draw_cube.html", "structgame_1_1systems_1_1_draw_cube" ],
     [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ],
     [ "DrawModel", "structgame_1_1systems_1_1_draw_model.html", "structgame_1_1systems_1_1_draw_model" ],
@@ -17,7 +18,9 @@ var namespacegame_1_1systems =
     [ "MoveSmoke", "structgame_1_1systems_1_1_move_smoke.html", "structgame_1_1systems_1_1_move_smoke" ],
     [ "PickupItem", "structgame_1_1systems_1_1_pickup_item.html", "structgame_1_1systems_1_1_pickup_item" ],
     [ "PlaySoundOnce", "structgame_1_1systems_1_1_play_sound_once.html", "structgame_1_1systems_1_1_play_sound_once" ],
+    [ "RenderedText", "structgame_1_1systems_1_1_rendered_text.html", "structgame_1_1systems_1_1_rendered_text" ],
     [ "RunAnimation", "structgame_1_1systems_1_1_run_animation.html", "structgame_1_1systems_1_1_run_animation" ],
     [ "SplashScreen", "structgame_1_1systems_1_1_splash_screen.html", "structgame_1_1systems_1_1_splash_screen" ],
-    [ "UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", "structgame_1_1systems_1_1_update_item_timer" ]
+    [ "UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", "structgame_1_1systems_1_1_update_item_timer" ],
+    [ "UpdateKeyboardInput", "structgame_1_1systems_1_1_update_keyboard_input.html", "structgame_1_1systems_1_1_update_keyboard_input" ]
 ];

@@ -91,20 +91,25 @@ $(document).ready(function(){initNavTree('util_8cpp.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="util_8hpp_source.html">util.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="text_8hpp_source.html">raylib/text/text.hpp</a>&quot;</code><br />
 <code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/fstream.html">fstream</a>&gt;</code><br />
 <code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/sstream.html">sstream</a>&gt;</code><br />
+<code>#include &lt;<a class="elRef" href="http://en.cppreference.com/w/cpp/header/string.html">string</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for util.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="util_8cpp__incl.png" border="0" usemap="#src_2util_2util_8cpp" alt=""/></div>
 <map name="src_2util_2util_8cpp" id="src_2util_2util_8cpp">
-<area shape="rect" title=" " alt="" coords="201,5,319,32"/>
-<area shape="rect" href="util_8hpp.html" title=" " alt="" coords="129,80,199,107"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/fstream.html" title=" " alt="" coords="223,80,297,107"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/sstream.html" title=" " alt="" coords="321,80,396,107"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="5,155,96,181"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/functional.html" title=" " alt="" coords="121,155,207,181"/>
-<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="231,155,329,181"/>
+<area shape="rect" title=" " alt="" coords="311,5,430,32"/>
+<area shape="rect" href="util_8hpp.html" title=" " alt="" coords="202,80,273,107"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string.html" title=" " alt="" coords="5,155,64,181"/>
+<area shape="rect" href="text_8hpp.html" title=" " alt="" coords="297,80,444,107"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/fstream.html" title=" " alt="" coords="469,80,542,107"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/sstream.html" title=" " alt="" coords="567,80,641,107"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/filesystem.html" title=" " alt="" coords="200,155,291,181"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/functional.html" title=" " alt="" coords="89,155,175,181"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/utility.html" title=" " alt="" coords="437,155,497,181"/>
+<area shape="rect" href="http://en.cppreference.com/w/cpp/header/string_view.html" title=" " alt="" coords="315,155,413,181"/>
 </map>
 </div>
 </div>
@@ -120,6 +125,16 @@ Functions</h2></td></tr>
 <tr class="memitem:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">util::loadConfigFile</a> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/filesystem/path.html">std::filesystem::path</a> &amp;path, const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a>&lt; bool(<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>, <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>)&gt; &amp;handleValue)</td></tr>
 <tr class="memdesc:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a configuration file with a form of [key]=[value] for each line.  <a href="namespaceutil.html#ac6097fd1cedb28a3dbba6a8a241860aa">More...</a><br /></td></tr>
 <tr class="separator:ac6097fd1cedb28a3dbba6a8a241860aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf609dcf39df53532022b41c5650e714"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#aaf609dcf39df53532022b41c5650e714">util::utf8BoundaryStart</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> str, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index) noexcept</td></tr>
+<tr class="separator:aaf609dcf39df53532022b41c5650e714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b6dd998ed988d5599668dc3f07c2c15"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a2b6dd998ed988d5599668dc3f07c2c15">util::utf8BoundaryEnd</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> str, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index) noexcept</td></tr>
+<tr class="separator:a2b6dd998ed988d5599668dc3f07c2c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9507610c6f835e36e935da4cecd3a08f"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a9507610c6f835e36e935da4cecd3a08f">util::insertUtf8Codepoint</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;str, int codepoint, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index=std::string::npos) noexcept</td></tr>
+<tr class="memdesc:a9507610c6f835e36e935da4cecd3a08f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an UTF-8 codepoint in <b>str</b>.  <a href="namespaceutil.html#a9507610c6f835e36e935da4cecd3a08f">More...</a><br /></td></tr>
+<tr class="separator:a9507610c6f835e36e935da4cecd3a08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103e3592073a0f493de747e3b0f3c476"><td class="memItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; int, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceutil.html#a103e3592073a0f493de747e3b0f3c476">util::removeUtf8Codepoint</a> (<a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;str, <a class="elRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> index=std::string::npos) noexcept</td></tr>
+<tr class="memdesc:a103e3592073a0f493de747e3b0f3c476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an UTF-8 codepoint from <b>str</b>.  <a href="namespaceutil.html#a103e3592073a0f493de747e3b0f3c476">More...</a><br /></td></tr>
+<tr class="separator:a103e3592073a0f493de747e3b0f3c476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

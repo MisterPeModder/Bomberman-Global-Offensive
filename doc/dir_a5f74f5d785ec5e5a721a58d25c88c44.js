@@ -26,12 +26,21 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
       [ "CubeColor", "structgame_1_1components_1_1_cube_color.html", "structgame_1_1components_1_1_cube_color" ]
     ] ],
     [ "Destructible.hpp", "_destructible_8hpp.html", "_destructible_8hpp" ],
+    [ "History.cpp", "_history_8cpp.html", null ],
+    [ "History.hpp", "_history_8hpp.html", [
+      [ "History", "structgame_1_1components_1_1_history.html", "structgame_1_1components_1_1_history" ]
+    ] ],
     [ "Identity.cpp", "_identity_8cpp.html", null ],
     [ "Identity.hpp", "_identity_8hpp.html", [
       [ "Identity", "structgame_1_1components_1_1_identity.html", "structgame_1_1components_1_1_identity" ]
     ] ],
     [ "Image.hpp", "game_2components_2_image_8hpp.html", [
       [ "Image", "structgame_1_1components_1_1_image.html", "structgame_1_1components_1_1_image" ]
+    ] ],
+    [ "KeyboardInput.cpp", "_keyboard_input_8cpp.html", "_keyboard_input_8cpp" ],
+    [ "KeyboardInput.hpp", "_keyboard_input_8hpp.html", [
+      [ "KeyboardInput", "classgame_1_1components_1_1_keyboard_input.html", "classgame_1_1components_1_1_keyboard_input" ],
+      [ "KeyRepeat", "classgame_1_1components_1_1_keyboard_input_1_1_key_repeat.html", "classgame_1_1components_1_1_keyboard_input_1_1_key_repeat" ]
     ] ],
     [ "Living.hpp", "_living_8hpp.html", [
       [ "Living", "structgame_1_1components_1_1_living.html", "structgame_1_1components_1_1_living" ]

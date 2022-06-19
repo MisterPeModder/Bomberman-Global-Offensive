@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classutil_1_1_bit_set_1_1_reference.html" title=" " alt="" coords="5,5,169,32"/>
+<area shape="rect" id="node1" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/error/runtime_error.html" title=" " alt="" coords="5,129,144,156"/>
+<area shape="rect" id="node2" href="$classbmjs_1_1_js_exception.html" title="Exception thrown by invocations of bmjs::Function." alt="" coords="217,5,355,32"/>
+<area shape="rect" id="node3" href="$classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html" title="Exception thrown when an error occured in the rule parsing." alt="" coords="210,57,362,98"/>
+<area shape="rect" id="node4" href="$classgame_1_1settings_1_1_settings_1_1_invalid_settings_value.html" title="Exception for invalid values in settings." alt="" coords="196,122,376,163"/>
+<area shape="rect" id="node5" href="$classlocalization_1_1_resource_file_1_1_locale_not_found_error.html" title="Exception thrown when the locale file can&#39;t be found." alt="" coords="192,187,380,229"/>
+<area shape="rect" id="node6" href="$classlocalization_1_1_resource_file_1_1_message_not_found_error.html" title="Exception thrown when a message in a locale can&#39;t be found." alt="" coords="192,253,380,294"/>
 </map>
