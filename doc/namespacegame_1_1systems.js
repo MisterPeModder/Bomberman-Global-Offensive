@@ -4,6 +4,7 @@ var namespacegame_1_1systems =
     [ "CheckGameEnd", "structgame_1_1systems_1_1_check_game_end.html", "structgame_1_1systems_1_1_check_game_end" ],
     [ "Collision", "structgame_1_1systems_1_1_collision.html", "structgame_1_1systems_1_1_collision" ],
     [ "DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", "structgame_1_1systems_1_1_disable_bomb_no_clip" ],
+    [ "DisableNoClip", "structgame_1_1systems_1_1_disable_no_clip.html", "structgame_1_1systems_1_1_disable_no_clip" ],
     [ "DrawConsole", "structgame_1_1systems_1_1_draw_console.html", "structgame_1_1systems_1_1_draw_console" ],
     [ "DrawCube", "structgame_1_1systems_1_1_draw_cube.html", "structgame_1_1systems_1_1_draw_cube" ],
     [ "DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", "structgame_1_1systems_1_1_drawing_cube" ],

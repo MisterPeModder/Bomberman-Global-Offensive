@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"classraylib_1_1textures_1_1_image.html#ae30fe6629a8f1372d689ca9ee9580204":[2,0,4,5,0,24],
+"classraylib_1_1textures_1_1_image.html#af67c920b2d2a705125f705f722f49716":[2,0,4,5,0,3],
 "classraylib_1_1textures_1_1_image.html#af9aa77980732d325aeb143937a29af59":[2,0,4,5,0,17],
 "classraylib_1_1textures_1_1_render_texture2_d.html":[2,0,4,5,1],
 "classraylib_1_1textures_1_1_render_texture2_d.html#a010e0e822675effefef2020bed8864f8":[2,0,4,5,1,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "globals_defs.html":[3,1,4],
 "globals_func.html":[3,1,1],
 "globals_type.html":[3,1,3],
-"globals_vars.html":[3,1,2],
-"hierarchy.html":[2,2],
-"index.html":[]
+"globals_vars.html":[3,1,2]
 };

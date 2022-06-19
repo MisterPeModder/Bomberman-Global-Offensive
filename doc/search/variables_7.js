@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['g_7928',['g',['../structraylib_1_1core_1_1_color.html#a33aa39f405f8cba92982ae86681a64ac',1,'raylib::core::Color']]],
-  ['gold_7929',['GOLD',['../structraylib_1_1core_1_1_color.html#a79cd83222b755f8de9fbff47b55ace5f',1,'raylib::core::Color']]],
-  ['gray_7930',['GRAY',['../structraylib_1_1core_1_1_color.html#a0f049c8c9514f788064a1c45e9058773',1,'raylib::core::Color']]],
-  ['green_7931',['GREEN',['../structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba',1,'raylib::core::Color']]]
+  ['g_7937',['g',['../structraylib_1_1core_1_1_color.html#a33aa39f405f8cba92982ae86681a64ac',1,'raylib::core::Color']]],
+  ['gold_7938',['GOLD',['../structraylib_1_1core_1_1_color.html#a79cd83222b755f8de9fbff47b55ace5f',1,'raylib::core::Color']]],
+  ['gray_7939',['GRAY',['../structraylib_1_1core_1_1_color.html#a0f049c8c9514f788064a1c45e9058773',1,'raylib::core::Color']]],
+  ['green_7940',['GREEN',['../structraylib_1_1core_1_1_color.html#a46d212f9aa0d23c5bac2e92f51703bba',1,'raylib::core::Color']]]
 ];

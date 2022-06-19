@@ -173,6 +173,7 @@ var hierarchy =
       [ "game::systems::CheckGameEnd", "structgame_1_1systems_1_1_check_game_end.html", null ],
       [ "game::systems::Collision", "structgame_1_1systems_1_1_collision.html", null ],
       [ "game::systems::DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", null ],
+      [ "game::systems::DisableNoClip", "structgame_1_1systems_1_1_disable_no_clip.html", null ],
       [ "game::systems::DrawConsole", "structgame_1_1systems_1_1_draw_console.html", null ],
       [ "game::systems::DrawCube", "structgame_1_1systems_1_1_draw_cube.html", null ],
       [ "game::systems::DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", null ],

@@ -54,7 +54,8 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
       [ "Movement", "structgame_1_1systems_1_1_movement.html", "structgame_1_1systems_1_1_movement" ]
     ] ],
     [ "NoClip.hpp", "_no_clip_8hpp.html", [
-      [ "DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", "structgame_1_1systems_1_1_disable_bomb_no_clip" ]
+      [ "DisableBombNoClip", "structgame_1_1systems_1_1_disable_bomb_no_clip.html", "structgame_1_1systems_1_1_disable_bomb_no_clip" ],
+      [ "DisableNoClip", "structgame_1_1systems_1_1_disable_no_clip.html", "structgame_1_1systems_1_1_disable_no_clip" ]
     ] ],
     [ "PlaySoundOnce.hpp", "_play_sound_once_8hpp.html", [
       [ "PlaySoundOnce", "structgame_1_1systems_1_1_play_sound_once.html", "structgame_1_1systems_1_1_play_sound_once" ]
