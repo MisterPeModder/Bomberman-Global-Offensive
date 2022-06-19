@@ -43,7 +43,7 @@
 
 #include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
-#include "game/systems/DrawTexture.hpp"
+#include "game/systems/DrawTextureBackground.hpp"
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
 #include "game/systems/Rectangle.hpp"
@@ -647,13 +647,13 @@ namespace game
         _world.addSystem<game::systems::DrawSelectedWidget>();
         _world.addSystem<game::systems::KeybindIntercept>();
         _world.addStorage<game::components::KeybindIntercepter>();
-        _world.addSystem<game::systems::DrawTexture>();
+        _world.addSystem<game::systems::DrawTextureBackground>();
 
         _globalNoDraw.add<game::systems::InputManager, game::systems::KeybindIntercept>();
         _global2D.add<game::systems::DrawRectangle>();
         _global2D.add<game::systems::DrawText>();
         _global2D.add<game::systems::DrawSelectedWidget>();
-        _background2D.add<game::systems::DrawTexture>();
+        _background2D.add<game::systems::DrawTextureBackground>();
 
         loadSettingsMenuScene(_world);
         loadSection({raylib::core::Vector2f(34, 52), raylib::core::Vector2f(32, 46), raylib::core::Color::GOLD,
