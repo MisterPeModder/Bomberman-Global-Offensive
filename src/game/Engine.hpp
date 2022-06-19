@@ -28,7 +28,7 @@ namespace game
 {
     class Engine {
       public:
-        enum PreloadedMusics {
+        enum PreloadedMusicTracks {
             MAIN_MENU_THEME,
             GAME_THEME,
         };
@@ -133,7 +133,7 @@ namespace game
         /// Sets the game engine's current music.
         ///
         /// @param music The music.
-        void setCurrentMusic(PreloadedMusics music);
+        void setCurrentMusic(PreloadedMusicTracks music);
 
         /// Resume current music
         void resumeCurrentMusic();
@@ -156,7 +156,7 @@ namespace game
         std::unique_ptr<raylib::textures::RenderTexture2D> _renderTarget;
         std::unique_ptr<raylib::shaders::Shader> _globalShader;
 
-        PreloadedMusics _currentMusic;
+        PreloadedMusicTracks _currentMusic;
         raylib::core::Music _mainMenuTheme;
         raylib::core::Music _gameTheme;
 

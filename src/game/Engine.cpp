@@ -197,15 +197,15 @@ namespace game
 
     const Users &Engine::getUsers() const { return _users; }
 
-    void Engine::setCurrentMusic(PreloadedMusics music)
+    void Engine::setCurrentMusic(PreloadedMusicTracks music)
     {
         switch (music) {
-            case PreloadedMusics::GAME_THEME:
+            case PreloadedMusicTracks::GAME_THEME:
                 if (_mainMenuTheme.isPlaying())
                     _mainMenuTheme.stop();
                 _gameTheme.play();
                 break;
-            case PreloadedMusics::MAIN_MENU_THEME:
+            case PreloadedMusicTracks::MAIN_MENU_THEME:
                 if (_gameTheme.isPlaying())
                     _gameTheme.stop();
                 _mainMenuTheme.play();
@@ -218,8 +218,8 @@ namespace game
     void Engine::resumeCurrentMusic()
     {
         switch (_currentMusic) {
-            case PreloadedMusics::GAME_THEME: _gameTheme.resume(); break;
-            case PreloadedMusics::MAIN_MENU_THEME: _mainMenuTheme.resume(); break;
+            case PreloadedMusicTracks::GAME_THEME: _gameTheme.resume(); break;
+            case PreloadedMusicTracks::MAIN_MENU_THEME: _mainMenuTheme.resume(); break;
             default: break;
         }
     }
@@ -227,8 +227,8 @@ namespace game
     void Engine::pauseCurrentMusic()
     {
         switch (_currentMusic) {
-            case PreloadedMusics::GAME_THEME: _gameTheme.pause(); break;
-            case PreloadedMusics::MAIN_MENU_THEME: _mainMenuTheme.pause(); break;
+            case PreloadedMusicTracks::GAME_THEME: _gameTheme.pause(); break;
+            case PreloadedMusicTracks::MAIN_MENU_THEME: _mainMenuTheme.pause(); break;
             default: break;
         }
     }

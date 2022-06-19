@@ -24,7 +24,7 @@ namespace game::systems
             if (data.getStorage<game::components::Player>().size() <= 1) {
                 data.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
                 data.getResource<game::resources::EngineResource>().engine->setCurrentMusic(
-                    game::Engine::PreloadedMusics::MAIN_MENU_THEME);
+                    game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
             }
         }
     };

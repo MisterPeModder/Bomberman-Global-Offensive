@@ -87,7 +87,7 @@ namespace game::systems
             if (timer.elapsed() >= 6) {
                 data.getResource<resources::EngineResource>().engine->setScene<game::MainMenuScene>();
                 data.getResource<resources::EngineResource>().engine->setCurrentMusic(
-                    game::Engine::PreloadedMusics::MAIN_MENU_THEME);
+                    game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
             }
             for (auto [color] : ecs::join(data.getStorage<components::Color>())) {
                 if (_screenId == 0) {

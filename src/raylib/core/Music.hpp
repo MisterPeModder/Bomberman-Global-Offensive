@@ -26,14 +26,9 @@ namespace raylib
             /// Default constructor
             Music();
 
-            // /// Consutructor of Music wich create the musics
-            // ///
-            // /// @param filename Music path
-            // Music(const std::filesystem::path &fileName);
-
             /// Destructor
-
             ~Music();
+
             /// Check if music is playing now
             ///
             /// @retval true if the music is currently playing

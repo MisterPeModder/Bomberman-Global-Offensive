@@ -6,7 +6,6 @@
 */
 
 #include "Music.hpp"
-#include <iostream>
 
 /// raylib namespace
 namespace raylib
