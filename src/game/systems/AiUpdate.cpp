@@ -19,7 +19,6 @@
 #include <cmath>
 #include <optional>
 #include <utility>
-#include "logger/Logger.hpp"
 
 using raylib::core::Vector2f;
 using raylib::core::Vector3f;
@@ -60,8 +59,6 @@ namespace game::systems
                 game::components::Player::move(self, data, game::GameAction::MOVE_RIGHT, 0.0);
                 continue;
             }
-            Logger::logger.log(
-                Logger::Severity::Debug, [&](auto &out) { out << "path size at update: " << ai.path.size(); });
             auto [goal, dist] = *next;
 
             if (dist.x > dist.y) {
