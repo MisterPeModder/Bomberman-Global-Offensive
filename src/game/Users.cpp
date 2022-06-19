@@ -12,8 +12,13 @@ namespace game
 {
     Users::Users()
     {
-        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
             _users[i].setId(static_cast<User::UserId>(i));
+            if (i == 0)
+                _users[i].setSkin(User::USER_SKINS::TERRORIST_1);
+            else
+                _users[i].setSkin(User::USER_SKINS::UNKNOWN);
+        }
         _users[0].setAvailable();
     }
 
@@ -76,7 +81,7 @@ namespace game
         return count;
     }
 
-    void Users::connectUser(int gamepadId)
+    void Users::connectUser(int gamepadId, User::USER_SKINS skin)
     {
         unsigned int nbUsers = getAvailableUsers();
 
@@ -84,12 +89,13 @@ namespace game
             return;
         _users[nbUsers].setAvailable();
         _users[nbUsers].setGamepadId(gamepadId);
+        _users[nbUsers].setSkin(skin);
         _users[nbUsers].updateActions(false);
         Logger::logger.log(Logger::Severity::Information,
             [&](auto &out) { out << "User " << nbUsers + 1 << " connected with gamepad " << gamepadId; });
     }
 
-    void Users::disconnectUser(User::UserId user)
+    bool Users::disconnectUser(User::UserId user)
     {
         unsigned int nbUsers = getAvailableUsers();
 
@@ -98,16 +104,44 @@ namespace game
                 _users[0].setKeyboard();
                 Logger::logger.log(Logger::Severity::Information, "User 1 switched to keyboard mode.");
             }
-            return;
+            return false;
         }
         size_t userPos = static_cast<size_t>(user);
 
         Logger::logger.log(Logger::Severity::Information, [&](auto &out) {
             out << "User " << nbUsers - 1 << " with gamepad " << _users[userPos].getGamepadId() << " disconnected";
         });
-        for (size_t i = userPos; i < nbUsers - 1; i++)
+        for (size_t i = userPos; i < nbUsers - 1; i++) {
             _users[i].setGamepadId(_users[i + 1].getGamepadId());
+            _users[i].setSkin(_users[i + 1].getSkin());
+        }
         _users[nbUsers - 1].setAvailable(false);
+        _users[nbUsers - 1].setSkin(User::USER_SKINS::UNKNOWN);
+        return true;
+    }
+
+    User::USER_SKINS Users::getUserSkin(unsigned int id) { return _users[id].getSkin(); }
+
+    localization::ResourceString Users::userSkinToRessourceString(User::USER_SKINS skin)
+    {
+        switch (skin) {
+            case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
+            case User::USER_SKINS::TERRORIST_2: return localization::resources::textures::rsTerroristTwo;
+            case User::USER_SKINS::COUNTER_TERRORIST_1: return localization::resources::textures::rsCounterTerroristOne;
+            case User::USER_SKINS::COUNTER_TERRORIST_2: return localization::resources::textures::rsCounterTerroristTwo;
+            case User::USER_SKINS::NO_SENSE: return localization::resources::textures::rsNoSense;
+            case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
+            default: return localization::resources::textures::rsUnknown;
+        }
+    }
+
+    std::queue<std::string> Users::prepareSkinParameters()
+    {
+        std::queue<std::string> skinQueue;
+
+        for (unsigned int i = 0; i < getAvailableUsers(); i++)
+            skinQueue.push(std::string(userSkinToRessourceString(_users[i].getSkin()).getMsgId()));
+        return skinQueue;
     }
 
     void Users::updateActions(bool fillChanged)
