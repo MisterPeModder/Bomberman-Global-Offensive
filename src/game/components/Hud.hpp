@@ -10,6 +10,8 @@
 
 #include "Player.hpp"
 #include "ecs/Component.hpp"
+#include "ecs/System.hpp"
+#include "ecs/join.hpp"
 #include "game/components/Identity.hpp"
 
 namespace game::components
@@ -24,10 +26,31 @@ namespace game::components
         bool slowness;
         Identity::Id idHud;
 
-        Hud(Player owner, Identity id)
-            : nbBomb(owner.stats.bombLimit), rangeBomb(owner.stats.bombRange), speed(owner.stats.speed),
-              inverted(owner.stats.inverted), slowness(owner.stats.slowness), idHud(id.getCurrentId())
+        // Hud(Player owner, Identity id)
+        //     : nbBomb(owner.stats.bombLimit), rangeBomb(owner.stats.bombRange), speed(owner.stats.speed),
+        //       inverted(owner.stats.inverted), slowness(owner.stats.slowness), idHud(id.getCurrentId())
+        //{
+        // }
+        Hud()
         {
+            nbBomb = 0;
+            rangeBomb = 0;
+            speed = 0;
+            inverted = 0;
+            slowness = 0;
+            idHud = 0;
+        }
+        Hud(ecs::SystemData data)
+        {
+            for (auto [player, id] :
+                ecs::join(data.getStorage<game::components::Player>(), data.getStorage<game::components::Identity>())) {
+                nbBomb = player.stats.bombLimit;
+                rangeBomb = player.stats.bombRange;
+                speed = player.stats.speed;
+                inverted = player.stats.inverted;
+                slowness = player.stats.slowness;
+                idHud = id.getCurrentId();
+            }
         }
     };
 } // namespace game::components

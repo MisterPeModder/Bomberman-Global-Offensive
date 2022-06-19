@@ -16,6 +16,7 @@
 #include "components/Cube.hpp"
 #include "components/CubeColor.hpp"
 #include "components/Destructible.hpp"
+#include "components/Hud.hpp"
 #include "components/Identity.hpp"
 #include "components/Living.hpp"
 #include "components/Model.hpp"
@@ -31,7 +32,6 @@
 #include "components/Texture2D.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
-#include "components/Hud.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
@@ -54,10 +54,10 @@
 #include "resources/Map.hpp"
 #include "resources/RandomDevice.hpp"
 
-#include "systems/DrawHud.hpp"
 #include "systems/Animation.hpp"
 #include "systems/Bomb.hpp"
 #include "systems/Collision.hpp"
+#include "systems/DrawHud.hpp"
 #include "systems/DrawText.hpp"
 #include "systems/DrawTexture.hpp"
 #include "systems/InputManager.hpp"
@@ -204,6 +204,7 @@ namespace game
         _world.addStorage<components::Rectangle>();
         _world.addStorage<components::Texture2D>();
         _world.addStorage<components::Textual>();
+        _world.addStorage<components::Hud>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
         _world.addSystem<systems::RunAnimation>();
@@ -227,7 +228,7 @@ namespace game
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel, systems::DrawTexture, systems::DrawRectangle, systems::DrawText>();
-        _hud.add<systems::DrawTexture, systems::DrawRectangle, systems::DrawText>();
+        _hud.add<systems::DrawTexture, systems::DrawRectangle, systems::DrawText, systems::DrawHud>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 
         _loadTextures();
@@ -258,6 +259,7 @@ namespace game
                     .with<components::Controlable>(owner, components::Player::handleActionEvent)
                     .with<components::BombNoClip>()
                     .with<components::Identity>()
+                    .with<components::Hud>()
                     .build();
             _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
                 textures.get("counter_terrorist_1"));
@@ -339,7 +341,7 @@ namespace game
 
     void Game::_loadHud()
     {
-        auto &textures = _world.getResource<resources::Textures>();
+        // auto &textures = _world.getResource<resources::Textures>();
 
         /*  _world.addEntity()
              .with<game::components::Position>(0, 0)
@@ -393,7 +395,7 @@ namespace game
     void Game::drawFrame()
     {
         _camera.update();
-
+        
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);

@@ -28,6 +28,7 @@ set(SRC
     ${SRCROOT}/Smoke.hpp
     ${INCROOT}/SplashScreen.hpp
     ${SRCROOT}/DrawHud.hpp
+    ${SRCROOT}/DrawHud.cpp
     PARENT_SCOPE)
 
 set(INCDIRS
