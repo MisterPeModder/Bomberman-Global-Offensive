@@ -158,12 +158,13 @@ namespace game
         models.emplace("range_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
         models.emplace("control_down", bonusMesh, false).setMaterialMapTexture(textures.get("control_down"));
         /// Activables
-        models.emplace("no_clip", bonusMesh, false).setMaterialMapTexture(textures.get("no_clip"));
-        models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"));
-        models.emplace("kick_shoes", bonusMesh, false).setMaterialMapTexture(textures.get("kick_shoes"));
-        models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"));
-        models.emplace("stun", bonusMesh, false).setMaterialMapTexture(textures.get("stun"));
-        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"));
+        auto &activable = meshes.get("activable");
+        models.emplace("no_clip", activable, false).setMaterialMapTexture(textures.get("no_clip"));
+        models.emplace("mine", activable, false).setMaterialMapTexture(textures.get("mine"));
+        models.emplace("kick_shoes", activable, false).setMaterialMapTexture(textures.get("kick_shoes"));
+        models.emplace("smoke", activable, false).setMaterialMapTexture(textures.get("smoke"));
+        models.emplace("stun", activable, false).setMaterialMapTexture(textures.get("stun"));
+        models.emplace("punch", activable, false).setMaterialMapTexture(textures.get("punch"));
     }
 
     void Game::setup()
@@ -224,15 +225,12 @@ namespace game
         _world.addSystem<systems::MoveSmoke>();
         _world.addSystem<systems::DrawSmoke>();
         _world.addSystem<systems::DisableNoClip>();
-        /// Setup world systems tags
-        _handleInputs.add<systems::InputManager>();
-        _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::DisableNoClip, systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke>();
         _world.addSystem<systems::CheckGameEnd>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd>();
+            systems::DisableNoClip, systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke,
+            systems::CheckGameEnd>();
         _resolveCollisions.add<systems::Collision>();
         _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 
