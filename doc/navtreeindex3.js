@@ -192,7 +192,7 @@ var NAVTREEINDEX3 =
 "classgame_1_1_main_menu_scene.html":[2,0,2,12],
 "classgame_1_1_main_menu_scene.html#a1fe1ebcbba036e955c506c1312410b67":[2,0,2,12,4],
 "classgame_1_1_main_menu_scene.html#a24cbb3f059e4a1331687f5b530074766":[2,0,2,12,3],
-"classgame_1_1_main_menu_scene.html#a2aaac64d672d6469a949702a3336f14c":[2,0,2,12,6],
+"classgame_1_1_main_menu_scene.html#a2aaac64d672d6469a949702a3336f14c":[2,0,2,12,7],
 "classgame_1_1_main_menu_scene.html#a44fabe4985ebed377774ee7e4502ec29":[2,0,2,12,2],
 "classgame_1_1_main_menu_scene.html#a65cb9c52eb64fdfbaa5abfa6b6b92eb7":[2,0,2,12,1],
 "classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0c":[2,0,2,12,0],
@@ -203,7 +203,8 @@ var NAVTREEINDEX3 =
 "classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca60de8590ad6d4af01e191a70b34e8d1b":[2,0,2,12,0,5],
 "classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0ca8fb143437fff8cb000283e44313b8110":[2,0,2,12,0,4],
 "classgame_1_1_main_menu_scene.html#a95e13054ea418b4b3e9c1fb59de6dc0cad2d8d641dbf2b20c6e5ee0a3d6465d64":[2,0,2,12,0,0],
-"classgame_1_1_main_menu_scene.html#aab1e2478c5047826df733fe3e6172553":[2,0,2,12,5],
+"classgame_1_1_main_menu_scene.html#aab1e2478c5047826df733fe3e6172553":[2,0,2,12,6],
+"classgame_1_1_main_menu_scene.html#adbcb4ea27cef3129f805d02bf6ca11c2":[2,0,2,12,5],
 "classgame_1_1_settings_menu_scene.html":[2,0,2,13],
 "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691":[2,0,2,13,2],
 "classgame_1_1_settings_menu_scene.html#a12be941f390cf44a8f13b23ee7d8b691a0667b4342607bde637ba1e4ef1d0fc96":[2,0,2,13,2,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "classgame_1_1_settings_menu_scene.html#a7d82310452c665fa89ff0646d1ee589e":[2,0,2,13,12],
 "classgame_1_1_settings_menu_scene.html#a889138e3049efef26f662333adf12c4c":[2,0,2,13,3],
 "classgame_1_1_settings_menu_scene.html#a8f2ec513879fbd2c4708e5c425b6951d":[2,0,2,13,7],
-"classgame_1_1_settings_menu_scene.html#a9fd3f1bd12b19c508be534546a3e37be":[2,0,2,13,8],
-"classgame_1_1_settings_menu_scene.html#aa2c42439729cf59935463737b6d32d17":[2,0,2,13,10]
+"classgame_1_1_settings_menu_scene.html#a9fd3f1bd12b19c508be534546a3e37be":[2,0,2,13,8]
 };

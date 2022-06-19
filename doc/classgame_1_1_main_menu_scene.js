@@ -13,6 +13,7 @@ var classgame_1_1_main_menu_scene =
     [ "loadLeftButtons", "classgame_1_1_main_menu_scene.html#a44fabe4985ebed377774ee7e4502ec29", null ],
     [ "loadPlayerInterface", "classgame_1_1_main_menu_scene.html#a24cbb3f059e4a1331687f5b530074766", null ],
     [ "loadPlayerSlot", "classgame_1_1_main_menu_scene.html#a1fe1ebcbba036e955c506c1312410b67", null ],
+    [ "setupWorld", "classgame_1_1_main_menu_scene.html#adbcb4ea27cef3129f805d02bf6ca11c2", null ],
     [ "updateConnectedTexts", "classgame_1_1_main_menu_scene.html#aab1e2478c5047826df733fe3e6172553", null ],
     [ "_firstUserId", "classgame_1_1_main_menu_scene.html#a2aaac64d672d6469a949702a3336f14c", null ]
 ];

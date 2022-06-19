@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"structecs_1_1_join_traits.html":[2,0,1,6],
 "structecs_1_1_join_traits_3_01_entities_01_4.html":[2,0,1,7],
 "structecs_1_1_join_traits_3_01_entities_01_4.html#a0b5e03ba4ea9f08a567e47e3beee6833":[2,0,1,7,0],
 "structecs_1_1_join_traits_3_01_entities_01_4.html#a51ef73f38b3197f0961b7ce913f49a54":[2,0,1,7,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "structgame_1_1components_1_1_rotation_axis.html#aeb2c27c4fae55dc38739df60501f4998":[2,0,2,0,24,1],
 "structgame_1_1components_1_1_scale.html":[2,0,2,0,25],
 "structgame_1_1components_1_1_scale.html#a8eb1fa2f188f1bb2f634516c232a2e0c":[2,0,2,0,25,0],
-"structgame_1_1components_1_1_scale.html#ab4d3e770957dcc659cefe53f80d6dd12":[2,0,2,0,25,2],
-"structgame_1_1components_1_1_scale.html#aec4445ef96ab0eeb2a827c2c7b0294df":[2,0,2,0,25,1]
+"structgame_1_1components_1_1_scale.html#ab4d3e770957dcc659cefe53f80d6dd12":[2,0,2,0,25,2]
 };

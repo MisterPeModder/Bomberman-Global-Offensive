@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"classraylib_1_1shapes_1_1_cone.html#a10d107593ceaba7c941a96f445bcf28e":[2,0,4,3,2,16],
 "classraylib_1_1shapes_1_1_cone.html#a161ba9bbfd020596cfb0555836203e37":[2,0,4,3,2,10],
 "classraylib_1_1shapes_1_1_cone.html#a2de6ab37613f6bdd3d8caea092016a2f":[2,0,4,3,2,1],
 "classraylib_1_1shapes_1_1_cone.html#a4623509566bb61637f2f1ccfb6e07aa6":[2,0,4,3,2,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "functions_f.html":[2,3,0,6],
 "functions_func.html":[2,3,1],
 "functions_func.html":[2,3,1,0],
-"functions_func_a.html":[2,3,1,1],
-"functions_func_b.html":[2,3,1,2]
+"functions_func_a.html":[2,3,1,1]
 };
