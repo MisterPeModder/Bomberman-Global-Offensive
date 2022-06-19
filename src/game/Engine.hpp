@@ -135,6 +135,9 @@ namespace game
         /// @param music The music.
         void setCurrentMusic(PreloadedMusics music);
 
+        /// Update all music streams
+        void updateMusicStreams();
+
       private:
         /// Load the settings from the settings file
         void loadSettings();

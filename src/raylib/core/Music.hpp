@@ -66,6 +66,9 @@ namespace raylib
             /// Get volume of the music
             float getvolume();
 
+            /// Update music stream
+            void update();
+
           private:
             float _volume;
             ::Music _music;

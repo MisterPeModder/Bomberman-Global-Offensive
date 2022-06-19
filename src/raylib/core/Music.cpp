@@ -6,13 +6,14 @@
 */
 
 #include "Music.hpp"
+#include <iostream>
 
 /// raylib namespace
 namespace raylib
 {
     namespace core
     {
-        Music::Music() { _volume = 100; }
+        Music::Music() {}
 
         // Music::Music(const std::filesystem::path &fileName)
         // {
@@ -28,6 +29,7 @@ namespace raylib
         void Music::load(const std::filesystem::path &fileName)
         {
             _music = LoadMusicStream(fileName.generic_string().c_str());
+            setVolume(100);
         }
 
         bool Music::isPlaying()
@@ -39,8 +41,10 @@ namespace raylib
 
         void Music::play()
         {
-            if (_music.stream.buffer)
+            if (_music.stream.buffer) {
+                std::cout << "play" << std::endl;
                 PlayMusicStream(_music);
+            }
         }
 
         void Music::stop()
@@ -68,5 +72,7 @@ namespace raylib
         }
 
         float Music::getvolume() { return _volume; }
+
+        void Music::update() { UpdateMusicStream(_music); }
     } // namespace core
 } // namespace raylib

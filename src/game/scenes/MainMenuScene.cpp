@@ -132,6 +132,7 @@ namespace game
 
                     engine->setScene<GameScene>(
                         Game::Parameters((nbUsers < 2) ? 2 : engine->getUsers().getAvailableUsers()));
+                    engine->setCurrentMusic(game::Engine::PreloadedMusics::GAME_THEME);
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
