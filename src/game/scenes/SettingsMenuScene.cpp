@@ -351,7 +351,7 @@ static void loadAudioSettings(ecs::World &world, raylib::core::Vector2f pos, ray
                     world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(0.f);
                     Logger::logger.log(Logger::Severity::Debug, "Volume set to 0%");
                 } else {
-                    raylib::core::Audio::setMasterVolume(100.f);
+                    raylib::core::Audio::setMasterVolume(1.f);
                     world.getResource<game::resources::EngineResource>().engine->getSettings().setMasterVolume(100.f);
                     Logger::logger.log(Logger::Severity::Debug, "Volume set to 100%");
                 }

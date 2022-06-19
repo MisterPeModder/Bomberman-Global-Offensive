@@ -22,10 +22,17 @@
 #include "Users.hpp"
 #include "settings/Settings.hpp"
 
+#include "raylib/core/Music.hpp"
+
 namespace game
 {
     class Engine {
       public:
+        enum PreloadedMusicTracks {
+            MAIN_MENU_THEME,
+            GAME_THEME,
+        };
+
         /// Constructor
         Engine();
 
@@ -123,6 +130,20 @@ namespace game
         /// @param resolution The resolution.
         void setResolution(raylib::core::Vector2i resolution);
 
+        /// Sets the game engine's current music.
+        ///
+        /// @param music The music.
+        void setCurrentMusic(PreloadedMusicTracks music);
+
+        /// Resume current music
+        void resumeCurrentMusic();
+
+        /// Pause current music
+        void pauseCurrentMusic();
+
+        /// Update all music streams
+        void updateMusicStreams();
+
       private:
         /// Load the settings from the settings file
         void loadSettings();
@@ -134,6 +155,10 @@ namespace game
         Users _users;
         std::unique_ptr<raylib::textures::RenderTexture2D> _renderTarget;
         std::unique_ptr<raylib::shaders::Shader> _globalShader;
+
+        PreloadedMusicTracks _currentMusic;
+        raylib::core::Music _mainMenuTheme;
+        raylib::core::Music _gameTheme;
 
         bool _debugMode;
     };
