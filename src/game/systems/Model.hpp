@@ -24,19 +24,14 @@ namespace game::systems
     struct DrawModel : public ecs::System {
         void run(ecs::SystemData data) override final
         {
-            std::cout << "1" << std::endl;
             auto models = ecs::maybe(data.getStorage<game::components::Model>());
-            std::cout << "1" << std::endl;
             auto modelRefs = ecs::maybe(data.getStorage<game::components::ModelReference>());
-            std::cout << "1" << std::endl;
             auto &poses = data.getStorage<game::components::Position>();
             auto &colors = data.getStorage<game::components::Color>();
             auto scales = ecs::maybe(data.getStorage<game::components::Scale>());
-            std::cout << "1" << std::endl;
             auto sizes = ecs::maybe(data.getStorage<game::components::Size>());
             auto rAxises = ecs::maybe(data.getStorage<game::components::RotationAxis>());
             auto rAngles = ecs::maybe(data.getStorage<game::components::RotationAngle>());
-            std::cout << "1" << std::endl;
 
             for (auto [model, modelRef, pos, color, scale, size, rAxis, rAngle] :
                 ecs::join(models, modelRefs, poses, colors, scales, sizes, rAxises, rAngles)) {

@@ -107,7 +107,7 @@ namespace game
             _availableSkins.push_back(User::USER_SKINS(i));
         }
 
-        _defaultCamera3D.setPosition({15.f, 10.f, 0.f}); // Camera position
+        _defaultCamera3D.setPosition({4.f, 10.f, 0.f}); // Camera position
         _defaultCamera3D.setTarget({0.f, 0.f, 0});  // Camera looking at point
         _defaultCamera3D.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         _defaultCamera3D.setFovY(50.0f);            // Camera field-of-view Y
@@ -240,7 +240,7 @@ namespace game
 
         // player Model
         _world.addEntity()
-            .with<components::Position>(5 * static_cast<int>(id), 0, 0)
+            .with<components::Position>(2 * (static_cast<int>(id) + 1), 0, 0)
             .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
             .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
             .with<components::Size>(0.5f, 0.5f, 0.5f)
