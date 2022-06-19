@@ -122,4 +122,52 @@ var game;
         }
         bm.common.setColorblindFilter(filter.toLowerCase());
     });
+
+    ///////////////////////////////////////////////////////////////////////////
+
+    /**
+     * @param {number} id 
+     * @return {Player}
+     */
+    function makePlayer(id) {
+        var player = {};
+
+        Object.defineProperty(player, 'x', {
+            get: function () { return bm.players.getX(id); },
+            set: function (x) {
+                checkArg('player.x', 0, 'number', x);
+                bm.players.setX(id, x);
+            }
+        });
+        Object.defineProperty(player, 'y', {
+            get: function () { return bm.players.getY(id); },
+            set: function (y) {
+                checkArg('player.y', 0, 'number', y);
+                bm.players.setY(id, y);
+            }
+        });
+
+        readOnly(player, 'setPos', function (x, y) {
+            checkArg('player.setPos', 0, 'number', x);
+            checkArg('player.setPos', 1, 'number', y);
+
+            bm.players.setPos(id, x, y);
+        });
+        return player;
+    }
+
+    /**
+     * Player objects cache
+     * @type {Player[]}
+    */
+    var players = []
+
+    readOnly(game, 'getPlayer', function (slot) {
+        checkArg('game.getPlayer', 0, 'number', slot);
+        if (bm.players.exists(slot) === 0)
+            throw 'player ' + slot + ' does not exist';
+        if (players[slot] === undefined)
+            players[slot] = makePlayer(slot);
+        return players[slot];
+    });
 })(game || (game = {}));

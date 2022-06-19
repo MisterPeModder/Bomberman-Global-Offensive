@@ -6,6 +6,7 @@ set(SRC
     ${INCROOT}/api.hpp
     ${SRCROOT}/common.cpp
     ${SRCROOT}/mods.cpp
+    ${SRCROOT}/players.cpp
     PARENT_SCOPE)
 
 set(INCDIRS
