@@ -246,8 +246,8 @@ namespace game
                                 .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
                                 .with<components::Size>(0.7f, 0.7f, 0.7f)
                                 .with<components::Color>(raylib::core::Color::WHITE)
-                                .with<components::RotationAngle>(0.0f)
-                                .with<components::RotationAxis>(1.f, 0.f, 0.f)
+                                .with<components::RotationAngle>(35.0f - id * 25.f)
+                                .with<components::RotationAxis>(0.f, 1.f, 0.f)
                                 .with<components::Identity>()
                                 .build();
         if (id == 0)
