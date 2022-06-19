@@ -56,13 +56,13 @@ msgid "Quit"
 msgstr "Quitter"
 
 msgid "number Bomb"
-msgstr "nombre de Bomb"
+msgstr "nombre de Bombe"
 
 msgid "Speed"
 msgstr "Vitesse"
 
 msgid "Power Bomb"
-msgstr "Puissance Bomb"
+msgstr "Puissance Bombe"
 
 msgid "User"
 msgstr "Utilisateur"
@@ -202,9 +202,6 @@ msgstr "RT"
 msgid "SPACE"
 msgstr "ESPACE"
 
-msgid "Number Bomb"
-msgstr ""
-
 msgid "NoClip"
 msgstr ""
  
@@ -230,19 +227,11 @@ msgid "KickShoes"
 msgstr ""
 
 msgid "Bombs"
-msgstr ""
-
-msgid "FlashBang"
-msgstr ""
+msgstr "Bombes"
 
 msgid "Inventory"
-msgstr ""
+msgstr "inventaire"
 
-msgid "LandMine"
-msgstr ""
-
-msgid "NoClip"
-msgstr ""
 
 msgid "Power range"
-msgstr ""
+msgstr "portée bombe"
