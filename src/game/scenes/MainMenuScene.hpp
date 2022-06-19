@@ -45,6 +45,7 @@ namespace game
         void loadPlayerInterface();
         void loadLeftButtons();
 
+        components::Identity::Id _animations[4];
         components::Identity::Id _connectedTexts[4];
         components::Identity::Id _skinTexts[4];
         std::deque<User::USER_SKINS> _availableSkins;

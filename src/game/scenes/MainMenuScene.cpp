@@ -12,6 +12,7 @@
 #include "ecs/join.hpp"
 
 #include "ecs/resource/Resource.hpp"
+#include "resources/RandomDevice.hpp"
 
 #include "util/util.hpp"
 
@@ -38,6 +39,7 @@
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
 #include "game/systems/Rectangle.hpp"
+#include "systems/Animation.hpp"
 
 #include "game/resources/Engine.hpp"
 
@@ -116,6 +118,7 @@ namespace game
         _world.addStorage<components::Textual>();
         _world.addStorage<components::KeyboardInput>();
         _world.addStorage<components::ModelReference>();
+        _world.addStorage<components::Animation>();
         _world.addStorage<game::components::KeybindIntercepter>();
 
         _world.addSystem<systems::DrawText>();
@@ -126,6 +129,9 @@ namespace game
         _world.addSystem<systems::DrawTexture>();
         _world.addSystem<systems::DrawFpsCounter>();
         _world.addSystem<systems::DrawTextureBackground>();
+        _world.addSystem<systems::RunAnimation>();
+
+        _world.addResource<resources::RandomDevice>();
 
         _globalNoDraw.add<systems::InputManager, DetectGamepad>();
         _global2D.add<systems::DrawTexture>();
@@ -133,6 +139,7 @@ namespace game
         _global2D.add<systems::DrawSelectedWidget>();
         _global2D.add<systems::DrawFpsCounter>();
         _global3D.add<systems::DrawModel>();
+        _global3D.add<systems::RunAnimation>();
         _background2D.add<systems::DrawTextureBackground>();
 
         loadPlayerTextures();
@@ -229,29 +236,26 @@ namespace game
 
     void MainMenuScene::loadPlayerSlot(size_t id)
     {
-        raylib::core::Color color;
-
-        switch (id) {
-            case 0: color = raylib::core::Color::BLUE; break;
-            case 1: color = raylib::core::Color::RED; break;
-            case 2: color = raylib::core::Color::GREEN; break;
-            default: color = raylib::core::Color::PURPLE; break;
-        }
-
         // player Model
         auto &textures = _world.getResource<resources::Textures>();
         auto playerEntity = _world.addEntity()
                                 .with<components::Position>(1.3f * (static_cast<int>(id)), 0.f, 0.f)
                                 .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
                                 .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
-                                .with<components::Size>(0.5f, 0.5f, 0.5f)
+                                .with<components::Size>(0.7f, 0.7f, 0.7f)
                                 .with<components::Color>(raylib::core::Color::WHITE)
-                                .with<components::RotationAngle>(90.0f)
+                                .with<components::RotationAngle>(0.0f)
                                 .with<components::RotationAxis>(1.f, 0.f, 0.f)
                                 .with<components::Identity>()
                                 .build();
         _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
             textures.get(std::string(localization::resources::textures::rsCounterTerroristOne.getMsgId())));
+
+        auto &anim = _world.getStorage<components::Animation>()[playerEntity.getId()];
+        auto &randDevice = _world.getResource<game::resources::RandomDevice>();
+        unsigned int randVal = randDevice.randInt(0, 3);
+        _animations[id] = _world.getStorage<components::Identity>()[playerEntity.getId()].id;
+        anim.chooseAnimation(randVal);
 
         // Skin Text
         auto builder = _world.addEntity();
