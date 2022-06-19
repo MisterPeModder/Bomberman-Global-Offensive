@@ -33,6 +33,7 @@ namespace game
 
         void setupWorld() override;
 
+        void loadPlayerTextures();
         void updateConnectedTexts();
 
         void updateSkinTexts();

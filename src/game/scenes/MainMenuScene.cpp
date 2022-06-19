@@ -20,6 +20,8 @@
 #include "game/components/KeybindIntercepter.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
+#include "game/components/Animation.hpp"
+#include "resources/AssetMap.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Rectangle.hpp"
 #include "game/components/Size.hpp"
@@ -43,6 +45,7 @@
 #include "game/scenes/IScene.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
+#include "raylib/textures/Texture2D.hpp"
 #include "raylib/core/Window.hpp"
 
 #include "game/Engine.hpp"
@@ -79,20 +82,46 @@ namespace game
         }
     };
 
+    void MainMenuScene::loadPlayerTextures()
+    {
+        auto &textures = _world.getResource<resources::Textures>();
+
+        textures.emplace(std::string(localization::resources::textures::rsTerroristOne.getMsgId()),
+            "assets/player/textures/terrorist_1.png");
+        textures.emplace(std::string(localization::resources::textures::rsTerroristTwo.getMsgId()),
+            "assets/player/textures/terrorist_2.png");
+        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristOne.getMsgId()),
+            "assets/player/textures/counter_terrorist_1.png");
+        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristTwo.getMsgId()),
+            "assets/player/textures/counter_terrorist_2.png");
+        textures.emplace(std::string(localization::resources::textures::rsNoSense.getMsgId()),
+            "assets/player/textures/none_sense.png");
+        textures.emplace(
+            std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
+    }
+
     MainMenuScene::MainMenuScene()
     {
+        _world.addResource<resources::Textures>();
         for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++) {
             _availableSkins.push_back(User::USER_SKINS(i));
         }
 
+        _defaultCamera3D.setPosition({15.f, 10.f, 0.f}); // Camera position
+        _defaultCamera3D.setTarget({0.f, 0.f, 0});  // Camera looking at point
+        _defaultCamera3D.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
+        _defaultCamera3D.setFovY(50.0f);            // Camera field-of-view Y
+        _defaultCamera3D.setProjection(CAMERA_PERSPECTIVE);
+
         _world.addStorage<components::Textual>();
         _world.addStorage<components::KeyboardInput>();
-        _world.addSystem<systems::DrawText>();
-        _world.addSystem<systems::DrawSelectedWidget>();
-        _world.addSystem<systems::DrawRectangle>();
-        _world.addSystem<DetectGamepad>();
+        _world.addStorage<components::ModelReference>();
         _world.addStorage<game::components::KeybindIntercepter>();
 
+        _world.addSystem<systems::DrawText>();
+        _world.addSystem<systems::DrawSelectedWidget>();
+        _world.addSystem<systems::DrawModel>();
+        _world.addSystem<DetectGamepad>();
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::DrawTexture>();
         _world.addSystem<systems::DrawFpsCounter>();
@@ -102,9 +131,11 @@ namespace game
         _global2D.add<systems::DrawTexture>();
         _global2D.add<systems::DrawText>();
         _global2D.add<systems::DrawSelectedWidget>();
-        _global2D.add<systems::DrawRectangle>();
         _global2D.add<systems::DrawFpsCounter>();
+        _global3D.add<systems::DrawModel>();
         _background2D.add<systems::DrawTextureBackground>();
+
+        loadPlayerTextures();
 
         static const std::filesystem::path backgroundPath =
             util::makePath("assets", "images", "background", "main-menu-background.png");
@@ -207,12 +238,16 @@ namespace game
             default: color = raylib::core::Color::PURPLE; break;
         }
 
-        // player Rect
+        // player Model
         _world.addEntity()
-            .with<components::Position>(20 + 20 * static_cast<int>(id), 40)
-            .with<components::Rectangle>()
-            .with<components::Size>(10.f, 30.f)
-            .with<components::Color>(color)
+            .with<components::Position>(5 * static_cast<int>(id), 0, 0)
+            .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
+            .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
+            .with<components::Size>(0.5f, 0.5f, 0.5f)
+            .with<components::Color>(raylib::core::Color::WHITE)
+            .with<components::RotationAngle>(0.0f)
+            .with<components::RotationAxis>(0.f, 1.f, 0.f)
+            .with<components::Identity>()
             .build();
 
         // Skin Text
