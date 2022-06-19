@@ -120,4 +120,6 @@ interface Player {
     y: number;
 
     setPos(x: number, y: number): void;
+    moveTo(x: number, y: number): void;
+    stop(): void;
 }

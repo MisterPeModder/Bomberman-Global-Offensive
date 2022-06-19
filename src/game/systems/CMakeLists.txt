@@ -3,6 +3,8 @@ set(SRCROOT ${SRCROOT}/systems)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/AiUpdate.cpp
+    ${INCROOT}/AiUpdate.hpp
     ${INCROOT}/Animation.hpp
     ${SRCROOT}/Bomb.cpp
     ${INCROOT}/Bomb.hpp

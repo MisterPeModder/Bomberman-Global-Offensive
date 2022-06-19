@@ -153,6 +153,17 @@ var game;
 
             bm.players.setPos(id, x, y);
         });
+
+        readOnly(player, 'moveTo', function (x, y) {
+            checkArg('player.moveTo', 0, 'number', x);
+            checkArg('player.moveTo', 1, 'number', y);
+
+            bm.players.moveTo(id, x, y);
+        });
+
+        readOnly(player, 'stop', function () {
+            bm.players.stop(id);
+        });
         return player;
     }
 
