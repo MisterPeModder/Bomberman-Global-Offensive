@@ -266,7 +266,8 @@ namespace game
                     .with<components::Identity>()
                     .build();
             _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
-                textures.get(localization::resources::textures::rsCounterTerroristOne));
+                textures.get(_params.skinList.front()));
+            _params.skinList.pop();
         }
 
         /// Ground

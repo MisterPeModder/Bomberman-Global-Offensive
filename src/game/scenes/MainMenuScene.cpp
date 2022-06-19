@@ -52,6 +52,24 @@
 namespace game
 {
     struct DetectGamepad : public ecs::System {
+        User::USER_SKINS getUnusedSkin(ecs::SystemData data)
+        {
+            auto engine = data.getResource<game::resources::EngineResource>().engine;
+            auto &users = engine->getUsers();
+            User::USER_SKINS skin = User::USER_SKINS::UNKNOWN;
+
+            for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++) {
+                skin = User::USER_SKINS(i);
+                for (unsigned int j = 0; j < users.getAvailableUsers(); j++) {
+                    if (skin == users.getUserSkin(j))
+                        continue;
+                    else
+                        return skin;
+                }
+            }
+            return skin;
+        }
+
         void run(ecs::SystemData data) override final
         {
             auto engine = data.getResource<game::resources::EngineResource>().engine;
@@ -69,7 +87,7 @@ namespace game
                 users[game::User::UserId::User1].setGamepadId(gamepadId);
                 Logger::logger.log(Logger::Severity::Information, "User 1 switched to gamepad mode.");
             } else {
-                users.connectUser(gamepadId);
+                users.connectUser(gamepadId, getUnusedSkin(data));
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateConnectedTexts();
             }
         }
@@ -77,7 +95,6 @@ namespace game
 
     MainMenuScene::MainMenuScene()
     {
-        std::cout << "Tru to load main menu" << std::endl;
         for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++)
             _availableSkins.push(User::USER_SKINS(i));
 
@@ -98,9 +115,6 @@ namespace game
         _global2D.add<systems::DrawRectangle>();
         loadLeftButtons();
         loadPlayerInterface();
-
-        std::cout << "ENd to load main menu" << std::endl;
-
     }
 
     void MainMenuScene::loadLeftButtons()
@@ -117,7 +131,7 @@ namespace game
             .with<gui::Clickable>(
                 [this](ecs::Entity) {
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
-                    engine->setScene<GameScene>(Game::Parameters(engine->getUsers().getAvailableUsers()));
+                    engine->setScene<GameScene>(Game::Parameters(engine->getUsers().prepareSkinParameters(), engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
@@ -158,19 +172,6 @@ namespace game
             .build();
     }
 
-    localization::ResourceString MainMenuScene::usersSkinToRessourceString(User::USER_SKINS skin)
-    {
-        switch (skin) {
-            case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
-            case User::USER_SKINS::TERRORIST_2: return localization::resources::textures::rsTerroristTwo;
-            case User::USER_SKINS::COUNTER_TERRORIST_1: return localization::resources::textures::rsCounterTerroristOne;
-            case User::USER_SKINS::COUNTER_TERRORIST_2: return localization::resources::textures::rsCounterTerroristTwo;
-            case User::USER_SKINS::NO_SENSE: return localization::resources::textures::rsNoSense;
-            case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
-            default: return localization::resources::textures::rsUnknown;
-        }
-    }
-
     void MainMenuScene::loadPlayerSlot(size_t id)
     {
         raylib::core::Color color;
@@ -193,7 +194,8 @@ namespace game
         // Skin Text
         _world.addEntity()
             .with<components::Position>(20 + static_cast<int>(id) * 20, 75)
-            .with<components::Textual>(usersSkinToRessourceString(_availableSkins.front()), 20, raylib::core::Color::WHITE)
+            .with<components::Textual>(
+                userSkinToRessourceString(_availableSkins.front()), 20, raylib::core::Color::WHITE)
             .with<components::Identity>()
             .build();
         _availableSkins.pop();
@@ -212,10 +214,21 @@ namespace game
         }
     }
 
+    localization::ResourceString MainMenuScene::userSkinToRessourceString(User::USER_SKINS skin)
+    {
+        switch (skin) {
+            case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
+            case User::USER_SKINS::TERRORIST_2: return localization::resources::textures::rsTerroristTwo;
+            case User::USER_SKINS::COUNTER_TERRORIST_1: return localization::resources::textures::rsCounterTerroristOne;
+            case User::USER_SKINS::COUNTER_TERRORIST_2: return localization::resources::textures::rsCounterTerroristTwo;
+            case User::USER_SKINS::NO_SENSE: return localization::resources::textures::rsNoSense;
+            case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
+            default: return localization::resources::textures::rsUnknown;
+        }
+    }
+
     void MainMenuScene::loadPlayerInterface()
     {
-        std::cout << "Tru to load player interface" << std::endl;
-
         for (size_t i = 0; i < 4; i++)
             loadPlayerSlot(i);
 
@@ -232,7 +245,6 @@ namespace game
                     return false;
                 })
             .build();
-        std::cout << "End to load player interface" << std::endl;
     }
 
     void MainMenuScene::updateConnectedTexts()

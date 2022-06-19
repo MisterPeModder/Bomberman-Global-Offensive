@@ -78,7 +78,7 @@ namespace game
         return count;
     }
 
-    void Users::connectUser(int gamepadId)
+    void Users::connectUser(int gamepadId, User::USER_SKINS skin)
     {
         unsigned int nbUsers = getAvailableUsers();
 
@@ -86,6 +86,7 @@ namespace game
             return;
         _users[nbUsers].setAvailable();
         _users[nbUsers].setGamepadId(gamepadId);
+        _users[nbUsers].setSkin(skin);
         Logger::logger.log(Logger::Severity::Information,
             [&](auto &out) { out << "User " << nbUsers + 1 << " connected with gamepad " << gamepadId; });
     }
@@ -106,12 +107,20 @@ namespace game
         Logger::logger.log(Logger::Severity::Information, [&](auto &out) {
             out << "User " << nbUsers - 1 << " with gamepad " << _users[userPos].getGamepadId() << " disconnected";
         });
-        for (size_t i = userPos; i < nbUsers - 1; i++)
+        for (size_t i = userPos; i < nbUsers - 1; i++) {
             _users[i].setGamepadId(_users[i + 1].getGamepadId());
+            _users[i].setSkin(_users[i + 1].getSkin());
+        }
         _users[nbUsers - 1].setAvailable(false);
+        _users[nbUsers - 1].setSkin(User::USER_SKINS::UNKNOWN);
     }
 
-    localization::ResourceString Users::usersSkinToRessourceString(User::USER_SKINS skin)
+    User::USER_SKINS Users::getUserSkin(unsigned int id)
+    {
+        return _users[id].getSkin();
+    }
+
+    localization::ResourceString Users::userSkinToRessourceString(User::USER_SKINS skin)
     {
         switch (skin) {
             case User::USER_SKINS::TERRORIST_1: return localization::resources::textures::rsTerroristOne;
@@ -122,6 +131,16 @@ namespace game
             case User::USER_SKINS::RAINBOW: return localization::resources::textures::rsRainbow;
             default: return localization::resources::textures::rsUnknown;
         }
+    }
+
+
+    std::queue<std::string> Users::prepareSkinParameters()
+    {
+        std::queue<std::string> skinQueue;
+
+        for (unsigned int i = 0; i < getAvailableUsers(); i++)
+            skinQueue.push(std::string(userSkinToRessourceString(_users[i].getSkin()).getMsgId()));
+        return skinQueue;
     }
 
 } // namespace game
