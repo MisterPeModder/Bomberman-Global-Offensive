@@ -48,6 +48,7 @@
 #include "game/GameAction.hpp"
 
 #include "localization/Localization.hpp"
+#include "localization/ResourceString.hpp"
 #include "localization/Resources.hpp"
 
 #include "game/components/KeybindIntercepter.hpp"
@@ -744,7 +745,8 @@ namespace game
 
     void SettingsMenuScene::_updateActionGamepad(GameAction action, size_t userId)
     {
-        std::stringstream ss;
+        std::string_view buttonString;
+
         auto &binds = _world.getResource<game::resources::EngineResource>()
                           .engine->getUsers()[static_cast<game::User::UserId>(userId)]
                           .getKeybinds()
@@ -752,14 +754,14 @@ namespace game
 
         for (auto iter : binds)
             if (iter.action == action && iter.input.isButton()) {
-                ss << static_cast<size_t>(iter.input.getButton());
+                buttonString = _gamepadButtonStrings[iter.input.getButton()];
                 break;
             }
 
         for (auto [text, id] : ecs::join(
                  _world.getStorage<game::components::Textual>(), _world.getStorage<game::components::Identity>())) {
             if (id.id == _actionsGamepadBindings[userId][static_cast<size_t>(action)]) {
-                text.text = ss.str();
+                text.text = buttonString;
                 return;
             }
         }
@@ -852,6 +854,35 @@ namespace game
             getGamepadWidgetId(KEYBINDS_GAMEPAD_ACTIVABLE, id));
     }
 
+    void SettingsMenuScene::_fillGamepadButtonStrings()
+    {
+        using Btn = raylib::core::Gamepad::Button;
+
+        _gamepadButtonStrings[Btn::UNKNOWN] = localization::resources::keybinds::controller::rsUnknown;
+        /// D-Pad
+        _gamepadButtonStrings[Btn::DPAD_FACE_UP] = localization::resources::keybinds::controller::rsDPadUP;
+        _gamepadButtonStrings[Btn::DPAD_FACE_RIGHT] = localization::resources::keybinds::controller::rsDPadRight;
+        _gamepadButtonStrings[Btn::DPAD_FACE_DOWN] = localization::resources::keybinds::controller::rsDPadDown;
+        _gamepadButtonStrings[Btn::DPAD_FACE_LEFT] = localization::resources::keybinds::controller::rsDPadLeft;
+        /// Face Buttons
+        _gamepadButtonStrings[Btn::FACE_UP] = localization::resources::keybinds::controller::rsFaceUP;
+        _gamepadButtonStrings[Btn::FACE_RIGHT] = localization::resources::keybinds::controller::rsFaceRight;
+        _gamepadButtonStrings[Btn::FACE_DOWN] = localization::resources::keybinds::controller::rsFaceDown;
+        _gamepadButtonStrings[Btn::FACE_LEFT] = localization::resources::keybinds::controller::rsFaceLeft;
+        /// Backward buttons
+        _gamepadButtonStrings[Btn::LEFT_BUMPER] = localization::resources::keybinds::controller::rsBumperLeft;
+        _gamepadButtonStrings[Btn::LEFT_TRIGGER] = localization::resources::keybinds::controller::rsTriggerLeft;
+        _gamepadButtonStrings[Btn::RIGHT_BUMPER] = localization::resources::keybinds::controller::rsBumperRight;
+        _gamepadButtonStrings[Btn::RIGHT_TRIGGER] = localization::resources::keybinds::controller::rsTriggerRight;
+        /// Middle buttons
+        _gamepadButtonStrings[Btn::MIDDLE_LEFT] = localization::resources::keybinds::controller::rsMiddleLeft;
+        _gamepadButtonStrings[Btn::MIDDLE] = localization::resources::keybinds::controller::rsMiddle;
+        _gamepadButtonStrings[Btn::MIDDLE_RIGHT] = localization::resources::keybinds::controller::rsMiddleRight;
+        /// Joystick buttons
+        _gamepadButtonStrings[Btn::LEFT_THUMB] = localization::resources::keybinds::controller::rsThumbLeft;
+        _gamepadButtonStrings[Btn::RIGHT_THUMB] = localization::resources::keybinds::controller::rsThumbRight;
+    }
+
     void SettingsMenuScene::_loadGamepadKeybinds(const Section &sct)
     {
         auto &users = _world.getResource<game::resources::EngineResource>().engine->getUsers();
@@ -860,6 +891,8 @@ namespace game
             .with<game::components::Textual>(
                 localization::resources::settings::rsSettingsControllerKeybinds, 20, sct.color)
             .build();
+
+        _fillGamepadButtonStrings();
 
         for (size_t i = 0; i < users.getAvailableUsers(); i++)
             _loadGamepadProfile(sct, i);
