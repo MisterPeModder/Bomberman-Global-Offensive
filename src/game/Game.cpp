@@ -159,12 +159,13 @@ namespace game
         models.emplace("range_down", bonusMesh, false).setMaterialMapTexture(textures.get("range_down"));
         models.emplace("control_down", bonusMesh, false).setMaterialMapTexture(textures.get("control_down"));
         /// Activables
-        models.emplace("no_clip", bonusMesh, false).setMaterialMapTexture(textures.get("no_clip"));
-        models.emplace("mine", bonusMesh, false).setMaterialMapTexture(textures.get("mine"));
-        models.emplace("kick_shoes", bonusMesh, false).setMaterialMapTexture(textures.get("kick_shoes"));
-        models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"));
-        models.emplace("stun", bonusMesh, false).setMaterialMapTexture(textures.get("stun"));
-        models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"));
+        auto &activable = meshes.get("activable");
+        models.emplace("no_clip", activable, false).setMaterialMapTexture(textures.get("no_clip"));
+        models.emplace("mine", activable, false).setMaterialMapTexture(textures.get("mine"));
+        models.emplace("kick_shoes", activable, false).setMaterialMapTexture(textures.get("kick_shoes"));
+        models.emplace("smoke", activable, false).setMaterialMapTexture(textures.get("smoke"));
+        models.emplace("stun", activable, false).setMaterialMapTexture(textures.get("stun"));
+        models.emplace("punch", activable, false).setMaterialMapTexture(textures.get("punch"));
     }
 
     void Game::_loadSounds()
