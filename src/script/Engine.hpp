@@ -104,6 +104,9 @@ namespace bmjs
         /// @returns The game engine instance.
         game::Engine &getGameEngine() noexcept;
 
+        /// Writes a message to the console.
+        void setConsoleOutput(Logger::Severity severity, std::string &&newOutput);
+
       private:
         static std::weak_ptr<Engine> _instance;
         static Engine *_rawInstance;
