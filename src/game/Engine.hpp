@@ -135,6 +135,12 @@ namespace game
         /// @param music The music.
         void setCurrentMusic(PreloadedMusics music);
 
+        /// Resume current music
+        void resumeCurrentMusic();
+
+        /// Pause current music
+        void pauseCurrentMusic();
+
         /// Update all music streams
         void updateMusicStreams();
 
@@ -150,6 +156,7 @@ namespace game
         std::unique_ptr<raylib::textures::RenderTexture2D> _renderTarget;
         std::unique_ptr<raylib::shaders::Shader> _globalShader;
 
+        PreloadedMusics _currentMusic;
         raylib::core::Music _mainMenuTheme;
         raylib::core::Music _gameTheme;
 

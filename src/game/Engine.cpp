@@ -210,12 +210,36 @@ namespace game
                     _gameTheme.stop();
                 _mainMenuTheme.play();
                 break;
+            default: return;
+        }
+        _currentMusic = music;
+    }
+
+    void Engine::resumeCurrentMusic()
+    {
+        switch (_currentMusic) {
+            case PreloadedMusics::GAME_THEME: _gameTheme.resume(); break;
+            case PreloadedMusics::MAIN_MENU_THEME: _mainMenuTheme.resume(); break;
+            default: break;
+        }
+    }
+
+    void Engine::pauseCurrentMusic()
+    {
+        switch (_currentMusic) {
+            case PreloadedMusics::GAME_THEME: _gameTheme.pause(); break;
+            case PreloadedMusics::MAIN_MENU_THEME: _mainMenuTheme.pause(); break;
             default: break;
         }
     }
 
     void Engine::updateMusicStreams()
     {
+        if (_settings.getMusicVolume() != _mainMenuTheme.getvolume())
+            _mainMenuTheme.setVolume(_settings.getMusicVolume());
+        if (_settings.getMusicVolume() != _gameTheme.getvolume())
+            _gameTheme.setVolume(_settings.getMusicVolume());
+
         _mainMenuTheme.update();
         _gameTheme.update();
     }
