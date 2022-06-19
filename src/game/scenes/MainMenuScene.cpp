@@ -32,6 +32,7 @@
 #include "game/systems/DrawSelectedWidget.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/DrawTexture.hpp"
+#include "game/systems/DrawTextureBackground.hpp"
 #include "game/systems/InputManager.hpp"
 #include "game/systems/Model.hpp"
 #include "game/systems/Rectangle.hpp"
@@ -91,6 +92,7 @@ namespace game
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::DrawTexture>();
         _world.addSystem<systems::DrawFpsCounter>();
+        _world.addSystem<systems::DrawTextureBackground>();
 
         _globalNoDraw.add<systems::InputManager, DetectGamepad>();
         _global2D.add<systems::DrawTexture>();
@@ -98,6 +100,19 @@ namespace game
         _global2D.add<systems::DrawSelectedWidget>();
         _global2D.add<systems::DrawRectangle>();
         _global2D.add<systems::DrawFpsCounter>();
+        _background2D.add<systems::DrawTextureBackground>();
+
+        static const std::filesystem::path backgroundPath =
+            util::makePath("assets", "images", "background", "main-menu-background.png");
+
+        _world.addEntity()
+            .with<game::components::Texture2D>(backgroundPath)
+            .with<game::components::Position>(0.f, 0.f)
+            .with<game::components::Scale>(1.f)
+            .with<game::components::RotationAngle>(0.f)
+            .with<game::components::Color>(255, 255, 255, 255)
+            .build();
+
         loadLeftButtons();
         loadPlayerInterface();
     }
