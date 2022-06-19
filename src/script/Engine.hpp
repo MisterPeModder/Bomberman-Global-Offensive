@@ -16,6 +16,7 @@
 
 #include <filesystem>
 #include <memory>
+#include <string>
 #include <vector>
 #include <string_view>
 
@@ -76,6 +77,13 @@ namespace bmjs
         /// @param name The name of the script, minus the extension.
         void loadScript(std::string_view name);
 
+        /// Executes the given JS code.
+        ///
+        /// @param toRun Must be a nul-terminated string.
+        ///
+        /// @throws bmjs::JsException
+        std::string loadString(std::string_view toRun);
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // Modding
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -96,6 +104,9 @@ namespace bmjs
         /// @returns The game engine instance.
         game::Engine &getGameEngine() noexcept;
 
+        /// Writes a message to the console.
+        void setConsoleOutput(Logger::Severity severity, std::string &&newOutput);
+
       private:
         static std::weak_ptr<Engine> _instance;
         static Engine *_rawInstance;
@@ -107,6 +118,7 @@ namespace bmjs
 
         void _load(std::filesystem::path const &path);
         void _loadApi();
+        std::string _loadString(std::string_view toRun);
         void _delete();
 
 #ifndef __EMSCRIPTEN__

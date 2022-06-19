@@ -5,15 +5,33 @@
 ** Engine
 */
 
-#include "script/Engine.hpp"
+#include "ecs/Storage.hpp"
+#include "ecs/World.hpp"
+#include "ecs/join.hpp"
+
+#include "game/Engine.hpp"
+#include "game/gui/components/Console.hpp"
+
 #include "logger/Logger.hpp"
+
+#include "script/Engine.hpp"
+#include "script/JsException.hpp"
 #include "script/api/api.hpp"
+
 #include "util/util.hpp"
 
 #include <filesystem>
 #include <fstream>
 #include <memory>
 #include <string>
+
+#ifndef __EMSCRIPTEN__
+extern "C"
+{
+    static void bmjs_Engine_panic(js_State *) { throw bmjs::JsException("JS engine panic"); }
+    static void bmjs_Engine_report(js_State *, char const *message) { throw bmjs::JsException(message); }
+}
+#endif // !defined(__EMSCRIPTEN__)
 
 namespace bmjs
 {
@@ -68,6 +86,8 @@ namespace bmjs
 
     void Engine::loadApi() { this->_loadApi(); }
 
+    std::string Engine::loadString(std::string_view toRun) { return this->_loadString(toRun); }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Modding
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -99,6 +119,21 @@ namespace bmjs
 
     game::Engine &Engine::getGameEngine() noexcept { return *this->_gameEngine; }
 
+    void Engine::setConsoleOutput(Logger::Severity severity, std::string &&newOutput)
+    {
+        ecs::World &world = this->_gameEngine->getScene().getWorld();
+
+        if (world.hasStorage<game::gui::Console>()) {
+            auto consoles = ecs::join(world.getStorage<game::gui::Console>());
+
+            if (consoles.begin() != consoles.end()) {
+                std::get<0>(*consoles.begin()).setOutput(severity, std::move(newOutput));
+                return;
+            }
+        }
+        Logger::logger.log(severity, newOutput);
+    }
+
 #ifdef __EMSCRIPTEN__
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Emscripten-Specific Magic
@@ -119,6 +154,8 @@ namespace bmjs
         // The API is already preloaded on emscripten
     }
 
+    std::string Engine::_loadString(std::string_view toRun) { return emscripten_run_script_string(toRun.data()); }
+
     void Engine::_delete() {}
 #else
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,6 +166,8 @@ namespace bmjs
 
     Engine::Engine(game::Engine *gameEngine) : _gameEngine(gameEngine), _state(js_newstate(nullptr, nullptr, JS_STRICT))
     {
+        js_atpanic(this->_state, &bmjs_Engine_panic);
+        js_setreport(this->_state, &bmjs_Engine_report);
         bmjs::useApis();
         registerMuJSBindings(this->_state);
     }
@@ -144,6 +183,29 @@ namespace bmjs
     {
         auto apiPath = util::makePath("mods", "api.js");
         this->load(apiPath);
+    }
+
+    std::string Engine::_loadString(std::string_view toRun)
+    {
+        if (js_ploadstring(this->_state, "[console]", toRun.data())) {
+            JsException error(js_trystring(this->_state, -1, "Error"));
+            js_pop(this->_state, 1);
+            throw error;
+        }
+        js_pushundefined(this->_state);
+        if (js_pcall(this->_state, 0)) {
+            JsException error(js_trystring(this->_state, -1, "Error"));
+            js_pop(this->_state, 1);
+            throw error;
+        }
+        if (js_isdefined(this->_state, -1)) {
+            std::string result(js_trystring(this->_state, -1, "[no string representation]"));
+
+            js_pop(this->_state, 1);
+            return result;
+        }
+        js_pop(this->_state, 1);
+        return "undefined";
     }
 
     void Engine::_delete()

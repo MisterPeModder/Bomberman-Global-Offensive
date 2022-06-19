@@ -90,8 +90,10 @@ namespace game
         void _loadMeshes();
         void _loadModels();
         void _updateHud(ecs::SystemData data);
+        void _loadSounds();
 
         ecs::SystemTag _drawing;
+        ecs::SystemTag _drawing2d;
         ecs::SystemTag _handleInputs;
         ecs::SystemTag _update;
         ecs::SystemTag _resolveCollisions;

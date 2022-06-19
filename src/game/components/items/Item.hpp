@@ -40,9 +40,11 @@ namespace game::components
             BombDown,
             InvertedControls,
             /// Activable
+            NoClip,
             LandMine,
             StunGrenade,
             SmokeGrenade,
+            Punch,
             Count,
         };
 
@@ -92,7 +94,7 @@ namespace game::components
 
         /// First activable item.
         /// @note The last is the item preceeding @ref Identifier::Count
-        static constexpr Identifier FIRST_ACTIVABLE = Identifier::LandMine;
+        static constexpr Identifier FIRST_ACTIVABLE = Identifier::NoClip;
 
         /// Get the activable item following @c current.
         /// @note This function consider the activable items as a circular list, beware infinity loops.
@@ -125,13 +127,15 @@ namespace game::components
         static Item BombDown();
         static Item InvertedControls();
         /// Activable
+        static Item NoClip();
         static Item LandMine();
         static Item StunGrenade();
         static Item SmokeGrenade();
+        static Item Punch();
 
         static constexpr size_t POWER_UP_COUNT = 4;
         static constexpr size_t POWER_DOWN_COUNT = 4;
-        static constexpr size_t ACTIVABLE_COUNT = 3;
+        static constexpr size_t ACTIVABLE_COUNT = 5;
 
         static std::array<Identifier, POWER_UP_COUNT> powerUps;
         static std::array<Identifier, POWER_DOWN_COUNT> powerDowns;

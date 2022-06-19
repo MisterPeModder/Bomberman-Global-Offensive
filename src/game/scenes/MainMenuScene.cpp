@@ -17,6 +17,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/Rectangle.hpp"
@@ -78,6 +79,7 @@ namespace game
     MainMenuScene::MainMenuScene()
     {
         _world.addStorage<components::Textual>();
+        _world.addStorage<components::KeyboardInput>();
         _world.addSystem<systems::DrawText>();
         _world.addSystem<systems::DrawSelectedWidget>();
         _world.addSystem<systems::DrawRectangle>();
@@ -109,7 +111,10 @@ namespace game
             .with<gui::Clickable>(
                 [this](ecs::Entity) {
                     auto &engine = _world.getResource<resources::EngineResource>().engine;
-                    engine->setScene<GameScene>(Game::Parameters(engine->getUsers().getAvailableUsers()));
+                    size_t nbUsers = engine->getUsers().getAvailableUsers();
+
+                    engine->setScene<GameScene>(
+                        Game::Parameters((nbUsers < 2) ? 2 : engine->getUsers().getAvailableUsers()));
                 },
                 [this](ecs::Entity btn, gui::Clickable::State state) {
                     _world.getStorage<components::Textual>()[btn.getId()].color =
@@ -130,6 +135,7 @@ namespace game
             })
             .build();
 
+#ifndef __EMSCRIPTEN__
         /// Quit
         _world.addEntity()
             .with<components::Position>(2, 90)
@@ -139,6 +145,7 @@ namespace game
                 MainMenuScene::SETTINGS, gui::Widget::NullTag)
             .with<gui::Clickable>([](ecs::Entity) { raylib::core::Window::setShouldClose(); })
             .build();
+#endif
 
         /// Logo
         _world.addEntity()

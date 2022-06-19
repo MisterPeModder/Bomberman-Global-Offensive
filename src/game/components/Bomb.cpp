@@ -18,6 +18,7 @@
 #include "RotationAngle.hpp"
 #include "RotationAxis.hpp"
 #include "Size.hpp"
+#include "Sound.hpp"
 #include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
@@ -36,6 +37,8 @@ namespace game::components
         if (this->exploded)
             return;
         this->exploded = true;
+        Sound::playSound(data, "C4");
+
         if (type == Type::Classic) {
             for (auto [id, player] : ecs::join(data.getStorage<Identity>(), data.getStorage<Player>())) {
                 if (id.id == owner)
@@ -75,7 +78,9 @@ namespace game::components
                 continue;
 
             if (living) {
-                Logger::logger.log(Logger::Severity::Debug, "Living entity hit by a bomb"); // living->hp--;
+                living->hp--;
+                if (living->hp == 0)
+                    entities.kill(id);
             }
             if (destructible) {
                 entities.kill(id);
