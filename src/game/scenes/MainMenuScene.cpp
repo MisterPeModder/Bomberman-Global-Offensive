@@ -230,6 +230,8 @@ namespace game
             .build();
     }
 
+    void MainMenuScene::setupWorld() { updateConnectedTexts(); }
+
     void MainMenuScene::updateConnectedTexts()
     {
         auto engine = _world.getResource<game::resources::EngineResource>().engine;
