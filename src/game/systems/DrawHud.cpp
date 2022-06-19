@@ -32,9 +32,11 @@ namespace game::systems
             y / 100 * raylib::core::Window::getHeight(), 2, color.asRaylib());
     }
 
-    raylib::core::Color whatColor(std::array<size_t, static_cast<size_t>(game::components::Identifier::Count)> items) {}
-    game::components::Player::Inventory::I
-    Pla
+    raylib::core::Color whatColor(game::components::Item::Identifier id) 
+    {
+        
+        game::components::Item::Identifier::LandMine;
+    }
 
     void DrawHud::run(ecs::SystemData data)
     {
@@ -56,7 +58,8 @@ namespace game::systems
                     break;
                 default: break;
             }
-            drawDataHud(1.0 + x, 3.0 + y, localization::resources::hud::rsNumberbomb, raylib::core::Color::BLUE);
+            player.inventory.drawDataHud(
+                1.0 + x, 3.0 + y, localization::resources::hud::rsNumberbomb, raylib::core::Color::BLUE);
             drawDataHud(5.0 + x, 3.0 + y, std::to_string(player.stats.bombLimit), raylib::core::Color::BLUE);
             drawDataHud(1.0 + x, 4.0 + y, localization::resources::hud::rsPowerBomb, raylib::core::Color::BLUE);
             drawDataHud(5.0 + x, 4.0 + y, std::to_string(player.stats.bombRange), raylib::core::Color::BLUE);
