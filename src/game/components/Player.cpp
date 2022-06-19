@@ -22,6 +22,7 @@
 #include "game/components/RotationAngle.hpp"
 #include "game/components/Scale.hpp"
 #include "game/resources/AssetMap.hpp"
+#include "game/resources/GameClock.hpp"
 #include "game/resources/RandomDevice.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/model/Mesh.hpp"
@@ -119,6 +120,8 @@ namespace game::components
 
     bool Player::handleActionEvent(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
     {
+        if (data.getResource<game::resources::GameClock>().isPaused() && event.action != GameAction::PAUSE)
+            return false;
         if (isMoveAction(event.action))
             move(self, data, event);
         else if (event.action == GameAction::PLACE_BOMB && event.value > 0.9f)
@@ -129,6 +132,8 @@ namespace game::components
             data.getStorage<Player>()[self.getId()].inventory.selectPreviousActivable();
         else if (event.action == GameAction::NEXT_ACTIVABLE && event.value > 0.9f)
             data.getStorage<Player>()[self.getId()].inventory.selectNextActivable();
+        else if (event.action == GameAction::PAUSE && event.value > 0.9f)
+            data.getResource<game::resources::GameClock>().togglePause();
         else
             return false;
         return true;

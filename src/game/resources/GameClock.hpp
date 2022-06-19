@@ -25,6 +25,9 @@ namespace game::resources
 
         void update();
         void pause(bool pause = true);
+        void togglePause();
+
+        bool isPaused() const;
 
       private:
         std::chrono::milliseconds _gameTime;

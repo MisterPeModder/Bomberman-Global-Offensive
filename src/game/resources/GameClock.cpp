@@ -49,4 +49,8 @@ namespace game::resources
         _paused = pause;
     }
 
+    void GameClock::togglePause() { pause(!_paused); }
+
+    bool GameClock::isPaused() const { return _paused; }
+
 } // namespace game::resources
