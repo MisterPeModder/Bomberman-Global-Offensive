@@ -41,6 +41,33 @@ namespace localization
             constexpr ResourceString rsKeyBindActivableShort("Activ.");
             constexpr ResourceString rsKeyBindActivablePreviousShort("Prev.");
             constexpr ResourceString rsKeyBindActivableNextShort("Next");
+
+            namespace controller
+            {
+                constexpr ResourceString rsUnknown("?");
+
+                constexpr ResourceString rsDPadUP("DPAD-UP");
+                constexpr ResourceString rsDPadDown("DPAD-DOWN");
+                constexpr ResourceString rsDPadLeft("DPAD-LEFT");
+                constexpr ResourceString rsDPadRight("DPAD-RIGHT");
+
+                constexpr ResourceString rsFaceUP("FACE-UP");
+                constexpr ResourceString rsFaceDown("FACE-DOWN");
+                constexpr ResourceString rsFaceLeft("FACE-LEFT");
+                constexpr ResourceString rsFaceRight("FACE-RIGHT");
+
+                constexpr ResourceString rsBumperLeft("BUMPER-LEFT");
+                constexpr ResourceString rsBumperRight("BUMPER-RIGHT");
+                constexpr ResourceString rsTriggerLeft("TRIGGER-LEFT");
+                constexpr ResourceString rsTriggerRight("TRIGGER-RIGHT");
+                
+                constexpr ResourceString rsMiddle("MIDDLE");
+                constexpr ResourceString rsMiddleLeft("MIDDLE-LEFT");
+                constexpr ResourceString rsMiddleRight("MIDDLE-RIGHT");
+
+                constexpr ResourceString rsThumbLeft("THUMB-LEFT");
+                constexpr ResourceString rsThumbRight("THUMB-RIGHT");
+            } // namespace controller
         } // namespace keybinds
 
         namespace languages

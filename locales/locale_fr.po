@@ -117,3 +117,63 @@ msgstr "Activable Précedent"
 
 msgid "Reset"
 msgstr "Réinitialiser"
+
+msgid "?"
+msgstr ""
+
+msgid "BUMPER-LEFT"
+msgstr "L (1/A)"
+
+msgid "BUMPER-RIGHT"
+msgstr "R (2/B)"
+
+msgid "DPAD-DOWN"
+msgstr "BAS"
+
+msgid "DPAD-LEFT"
+msgstr "GAUCHE"
+
+msgid "DPAD-RIGHT"
+msgstr "DROITE"
+
+msgid "DPAD-UP"
+msgstr "HAUT"
+
+msgid "FACE-DOWN"
+msgstr "A/X/B"
+
+msgid "FACE-LEFT"
+msgstr "X/[]/Y"
+
+msgid "FACE-RIGHT"
+msgstr "B/O/A"
+
+msgid "FACE-UP"
+msgstr "Y/^/X"
+
+msgid "MIDDLE"
+msgstr "HOME"
+
+msgid "SELECT"
+msgstr ""
+
+msgid "START"
+msgstr ""
+
+msgid "THUMB-LEFT"
+msgstr "L3"
+
+msgid "THUMB-RIGHT"
+msgstr "R3"
+
+msgid "TRIGGER-LEFT"
+msgstr "L (B/2/Z)"
+
+msgid "TRIGGER-RIGHT"
+msgstr "R (B/2/Z)"
+
+msgid "MIDDLE-LEFT"
+msgstr ""
+
+msgid "MIDDLE-RIGHT"
+msgstr ""
