@@ -37,6 +37,7 @@ namespace game::components
         };
 
         struct Stats {
+            enum class ClipState { Default, NoClip, WaitNoCollision };
             /// Default speed of the player (in cells per seconds).
             static constexpr float DEFAULT_SPEED = 4.f;
             /// Current player speed.
@@ -49,8 +50,16 @@ namespace game::components
             bool inverted;
             /// If on slowness effect.
             bool slowness;
+            /// Player NoClip power up related states
+            ClipState clipState;
+            /// Time point after when the player will no longer be stunned
+            std::chrono::steady_clock::time_point stunEnd;
 
-            Stats() : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false), slowness(false) {}
+            Stats()
+                : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false), slowness(false),
+                  clipState(ClipState::Default), stunEnd(std::chrono::steady_clock::now())
+            {
+            }
         };
 
         /// Occurence of each item in a player inventory
@@ -143,6 +152,14 @@ namespace game::components
         /// @param self player entity id.
         /// @param data world data.
         void updateTimedItems(ecs::Entity self, ecs::SystemData data);
+
+        /// Stun the player for a given duration.
+        /// @note Durations doesn't stack.
+        ///
+        /// @param self player entity id.
+        /// @param data world data.
+        /// @param duration stun duration.
+        void stun(ecs::Entity self, ecs::SystemData data, std::chrono::milliseconds duration);
 
         /// Place a bomb at the player position.
         ///

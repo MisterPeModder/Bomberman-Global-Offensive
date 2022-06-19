@@ -88,6 +88,7 @@ namespace game
         void _loadTextures();
         void _loadMeshes();
         void _loadModels();
+        void _loadSounds();
 
         ecs::SystemTag _drawing;
         ecs::SystemTag _drawing2d;

@@ -196,6 +196,14 @@ namespace ecs
             return this->_resources.get<R>(("attempted to access unregistered resource instance"));
         }
 
+        /// @tparam C The component type.
+        ///
+        /// @returns Whether the storage associated with the component @b C exists.
+        template <std::derived_from<Component> C> bool hasStorage() const
+        {
+            return this->_storages.contains<getStorageType<C>>();
+        }
+
         /// Fetches a component storage from this world.
         ///
         /// @tparam C The component type.
