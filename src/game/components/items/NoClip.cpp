@@ -21,11 +21,17 @@ namespace game::components
         noClip.name = "Wall Pass";
         noClip.duration = std::chrono::milliseconds(3000);
         noClip.dropRate = 50;
-        noClip.onApply = [](ecs::Entity player, ecs::SystemData data) {
-            // Player::placeLandMine(player, data);
+        noClip.onApply = [](ecs::Entity placer, ecs::SystemData data) {
+            auto &player = data.getStorage<Player>()[placer.getId()];
+
+            if (player.stats.clipState != Player::Stats::ClipState::Default)
+                return false;
+            player.stats.clipState = Player::Stats::ClipState::NoClip;
             return true;
         };
-        noClip.onTimedOut = [](ecs::Entity placer, ecs::SystemData data) {};
+        noClip.onTimedOut = [](ecs::Entity placer, ecs::SystemData data) {
+            data.getStorage<Player>()[placer.getId()].stats.clipState = Player::Stats::ClipState::WaitNoCollision;
+        };
         return noClip;
     }
 } // namespace game::components

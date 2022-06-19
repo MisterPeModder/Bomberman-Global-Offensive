@@ -97,6 +97,9 @@ namespace game::systems
                     }
                 }
 
+                if (player1 && player1->stats.clipState != Player::Stats::ClipState::Default && !vel2 && !bomb2)
+                    continue;
+
                 float firstMovePercent = (vel2) ? 0.5f : 1.f;
                 resolveCollision(collideRect.getRaylibRectangle(), firstMovePercent, pos1);
                 resolveCollision(collideRect.getRaylibRectangle(), (1 - firstMovePercent), pos2);

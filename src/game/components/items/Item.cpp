@@ -50,8 +50,8 @@ namespace game::components
 
         /// Which item type ?
         int randVal = randDevice.randInt(0, 99);
-        auto itemsPool((randVal < 65) ? std::span<Identifier, std::dynamic_extent>(powerUps)
-                                      : ((randVal < 90) ? std::span<Identifier, std::dynamic_extent>(powerDowns)
+        auto itemsPool((randVal < 45) ? std::span<Identifier, std::dynamic_extent>(powerUps)
+                                      : ((randVal < 70) ? std::span<Identifier, std::dynamic_extent>(powerDowns)
                                                         : std::span<Identifier, std::dynamic_extent>(activables)));
 
         /// Which item ?

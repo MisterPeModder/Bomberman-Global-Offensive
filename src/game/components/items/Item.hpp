@@ -93,7 +93,7 @@ namespace game::components
 
         /// First activable item.
         /// @note The last is the item preceeding @ref Identifier::Count
-        static constexpr Identifier FIRST_ACTIVABLE = Identifier::LandMine;
+        static constexpr Identifier FIRST_ACTIVABLE = Identifier::NoClip;
 
         /// Get the activable item following @c current.
         /// @note This function consider the activable items as a circular list, beware infinity loops.
