@@ -24,6 +24,7 @@ namespace game
 
     void AScene::drawFrame()
     {
+        _world.getResource<game::resources::EngineResource>().engine->updateMusicStreams();
         _world.runSystems(_globalNoDraw);
         raylib::core::scoped::RenderTexture textureMode(
             _world.getResource<game::resources::EngineResource>().engine->getRenderTarget());

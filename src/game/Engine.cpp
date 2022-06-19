@@ -83,6 +83,8 @@ namespace game
         loadSettings();
         _scene = std::make_unique<SplashScene>();
         _scene->getWorld().addResource<resources::EngineResource>(this);
+        _mainMenuTheme.load(util::makePath("assets", "audio", "musics", "main-menu-theme.ogg"));
+        _gameTheme.load(util::makePath("assets", "audio", "musics", "game-theme.ogg"));
     }
 
     Engine::~Engine() { _settings.save(); }
@@ -192,5 +194,52 @@ namespace game
     Users &Engine::getUsers() { return _users; }
 
     const Users &Engine::getUsers() const { return _users; }
+
+    void Engine::setCurrentMusic(PreloadedMusicTracks music)
+    {
+        switch (music) {
+            case PreloadedMusicTracks::GAME_THEME:
+                if (_mainMenuTheme.isPlaying())
+                    _mainMenuTheme.stop();
+                _gameTheme.play();
+                break;
+            case PreloadedMusicTracks::MAIN_MENU_THEME:
+                if (_gameTheme.isPlaying())
+                    _gameTheme.stop();
+                _mainMenuTheme.play();
+                break;
+            default: return;
+        }
+        _currentMusic = music;
+    }
+
+    void Engine::resumeCurrentMusic()
+    {
+        switch (_currentMusic) {
+            case PreloadedMusicTracks::GAME_THEME: _gameTheme.resume(); break;
+            case PreloadedMusicTracks::MAIN_MENU_THEME: _mainMenuTheme.resume(); break;
+            default: break;
+        }
+    }
+
+    void Engine::pauseCurrentMusic()
+    {
+        switch (_currentMusic) {
+            case PreloadedMusicTracks::GAME_THEME: _gameTheme.pause(); break;
+            case PreloadedMusicTracks::MAIN_MENU_THEME: _mainMenuTheme.pause(); break;
+            default: break;
+        }
+    }
+
+    void Engine::updateMusicStreams()
+    {
+        if (_settings.getMusicVolume() != _mainMenuTheme.getvolume())
+            _mainMenuTheme.setVolume(_settings.getMusicVolume());
+        if (_settings.getMusicVolume() != _gameTheme.getvolume())
+            _gameTheme.setVolume(_settings.getMusicVolume());
+
+        _mainMenuTheme.update();
+        _gameTheme.update();
+    }
 
 } // namespace game

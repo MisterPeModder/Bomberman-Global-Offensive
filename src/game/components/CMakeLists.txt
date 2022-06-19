@@ -8,6 +8,7 @@ set(SRC
     ${SRCROOT}/AiControlable.cpp
     ${INCROOT}/AiControlable.hpp
     ${INCROOT}/Animation.hpp
+    ${INCROOT}/Background.hpp
     ${SRCROOT}/Bomb.cpp
     ${INCROOT}/Bomb.hpp
     ${SRCROOT}/BombNoClip.cpp

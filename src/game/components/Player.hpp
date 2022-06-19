@@ -53,11 +53,11 @@ namespace game::components
             /// Player NoClip power up related states
             ClipState clipState;
             /// Time point after when the player will no longer be stunned
-            std::chrono::steady_clock::time_point stunEnd;
+            std::chrono::milliseconds stunEnd;
 
             Stats()
                 : speed(DEFAULT_SPEED), bombRange(1), bombLimit(1), inverted(false), slowness(false),
-                  clipState(ClipState::Default), stunEnd(std::chrono::steady_clock::now())
+                  clipState(ClipState::Default), stunEnd(0)
             {
             }
         };
@@ -67,7 +67,7 @@ namespace game::components
             /// Number of occurence of each item in the inventory.
             std::array<size_t, static_cast<size_t>(Item::Identifier::Count)> items;
             /// Activated items with a timer.
-            std::vector<std::pair<Item::Identifier, std::chrono::steady_clock::time_point>> timedItems;
+            std::vector<std::pair<Item::Identifier, std::chrono::milliseconds>> timedItems;
 
             /// Selected item (activable).
             Item::Identifier selected;

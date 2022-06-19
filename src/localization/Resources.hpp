@@ -110,6 +110,16 @@ namespace localization
             constexpr ResourceString rsNotConnected("Not connected");
             constexpr ResourceString rsConnected("Connected");
         } // namespace menu
+        namespace textures
+        {
+            constexpr ResourceString rsTerroristOne("Terrorist 1");
+            constexpr ResourceString rsTerroristTwo("Terrorist 2");
+            constexpr ResourceString rsCounterTerroristOne("Counter-terrorist 1");
+            constexpr ResourceString rsCounterTerroristTwo("Counter-terrorist 2");
+            constexpr ResourceString rsNoSense("No sense");
+            constexpr ResourceString rsRainbow("Rainbow");
+            constexpr ResourceString rsUnknown("Unknown skin");
+        } // namespace textures
     }     // namespace resources
 } // namespace localization
 
