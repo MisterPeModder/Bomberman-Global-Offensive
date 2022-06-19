@@ -14,7 +14,7 @@
 
 #include "localization/Resources.hpp"
 
-#include <queue>
+#include <deque>
 
 namespace game
 {
@@ -45,7 +45,7 @@ namespace game
 
         components::Identity::Id _connectedTexts[4];
         components::Identity::Id _skinTexts[4];
-        std::queue<User::USER_SKINS> _availableSkins;
+        std::deque<User::USER_SKINS> _availableSkins;
     };
 } // namespace game
 

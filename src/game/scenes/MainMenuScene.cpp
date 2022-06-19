@@ -81,7 +81,7 @@ namespace game
     MainMenuScene::MainMenuScene()
     {
         for (int i = 0; i < User::USER_SKINS::UNKNOWN; i++) {
-            _availableSkins.push(User::USER_SKINS(i));
+            _availableSkins.push_back(User::USER_SKINS(i));
         }
 
         _world.addStorage<components::Textual>();
@@ -206,20 +206,27 @@ namespace game
             .with<components::Controlable>(User::UserId::AllUsers,
                 [this](ecs::Entity controlable, ecs::SystemData data, const Users::ActionEvent &event) {
                     (void)controlable;
-                    if (event.action != GameAction::NEXT_ACTIVABLE || event.value != 1.f)
+                    if ((event.action != GameAction::PREVIOUS_ACTIVABLE && event.action != GameAction::NEXT_ACTIVABLE)
+                        || event.value != 1.f)
                         return false;
 
                     auto &user = data.getResource<game::resources::EngineResource>().engine->getUsers()[event.user];
-                    _availableSkins.push(user.getSkin());
-                    user.setSkin(_availableSkins.front());
-                    _availableSkins.pop();
+                    if (event.action == GameAction::NEXT_ACTIVABLE) {
+                        _availableSkins.push_back(user.getSkin());
+                        user.setSkin(_availableSkins.front());
+                        _availableSkins.pop_front();
+                    } else {
+                        _availableSkins.push_front(user.getSkin());
+                        user.setSkin(_availableSkins.back());
+                        _availableSkins.pop_back();
+                    }
                     updateSkinTexts();
                     return true;
                 });
         if (id == 0) {
             (void)builder.with<components::Textual>(
                 userSkinToRessourceString(_availableSkins.front()), 20, raylib::core::Color::WHITE);
-            _availableSkins.pop();
+            _availableSkins.pop_front();
         } else {
             (void)builder.with<components::Textual>(
                 userSkinToRessourceString(User::USER_SKINS::UNKNOWN), 20, raylib::core::Color::WHITE);
@@ -268,7 +275,7 @@ namespace game
                         auto &lusers = data.getResource<resources::EngineResource>().engine->getUsers();
                         User::USER_SKINS temp = lusers[event.user].getSkin();
                         if (lusers.disconnectUser(event.user)) {
-                            _availableSkins.push(temp);
+                            _availableSkins.push_back(temp);
                             updateSkinTexts();
                         };
                         updateConnectedTexts();
@@ -322,7 +329,7 @@ namespace game
     {
         User::USER_SKINS skin = _availableSkins.front();
 
-        _availableSkins.pop();
+        _availableSkins.pop_front();
         return skin;
     }
 
