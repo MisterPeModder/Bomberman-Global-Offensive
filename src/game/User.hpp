@@ -123,11 +123,17 @@ namespace game
         /// Get the Keybinds.
         ///
         /// @return settings::Keybinds& user keybinds.
-        settings::Keybinds getKeybinds();
+        settings::Keybinds &getKeybinds();
+
+        /// Update the user's actions' values.
+        ///
+        /// @param fillChanged Set to true to fill the changed actions queue.
+        void updateActions(bool fillChanged = true);
+
+        /// Clear the changed actions queue.
+        void clearPendingActions();
 
       private:
-        void fillActions();
-
         int _gamepadId;
         bool _available;
         bool _ignoreKeyboard;

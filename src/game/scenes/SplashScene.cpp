@@ -19,6 +19,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/KeybindIntercepter.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
@@ -78,6 +79,7 @@ namespace game
         _world.addResource<ecs::Timer>();
 
         _world.addStorage<game::components::Textual>();
+        _world.addStorage<game::components::KeybindIntercepter>();
         _world.addStorage<game::components::KeyboardInput>();
 
         _world.addSystem<game::systems::InputManager>();

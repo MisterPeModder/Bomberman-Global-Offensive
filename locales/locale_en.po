@@ -55,8 +55,122 @@ msgstr ""
 msgid "Quit"
 msgstr ""
 
+msgid "(Controller)"
+msgstr ""
+
+msgid "(Keyboard)"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
 msgid "Not connected"
 msgstr ""
 
 msgid "Connected"
+msgstr ""
+
+msgid "FPS"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Down"
+msgstr ""
+
+msgid "Up"
+msgstr ""
+
+msgid "Activable"
+msgstr ""
+
+msgid "Bomb"
+msgstr ""
+
+msgid "User 1"
+msgstr "Player 1"
+
+msgid "User 2"
+msgstr "Player 2"
+
+msgid "User 3"
+msgstr "Player 3"
+
+msgid "User 4"
+msgstr "Player 4"
+
+msgid "Activ."
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Next Activable"
+msgstr ""
+
+msgid "Prev."
+msgstr ""
+
+msgid "Previous Activable"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "?"
+msgstr ""
+
+msgid "BUMPER-LEFT"
+msgstr "LB"
+
+msgid "BUMPER-RIGHT"
+msgstr "RB"
+
+msgid "DPAD-DOWN"
+msgstr "DOWN"
+
+msgid "DPAD-LEFT"
+msgstr "LEFT"
+
+msgid "DPAD-RIGHT"
+msgstr "RIGHT"
+
+msgid "DPAD-UP"
+msgstr "UP"
+
+msgid "FACE-DOWN"
+msgstr "A"
+
+msgid "FACE-LEFT"
+msgstr "X"
+
+msgid "FACE-RIGHT"
+msgstr "B"
+
+msgid "FACE-UP"
+msgstr "Y"
+
+msgid "MIDDLE"
+msgstr "HOME"
+
+msgid "MIDDLE-LEFT"
+msgstr "BACK"
+
+msgid "MIDDLE-RIGHT"
+msgstr "START"
+
+msgid "THUMB-LEFT"
+msgstr "LS"
+
+msgid "THUMB-RIGHT"
+msgstr "RS"
+
+msgid "TRIGGER-LEFT"
+msgstr "LT"
+
+msgid "TRIGGER-RIGHT"
+msgstr "RT"
+
+msgid "SPACE"
 msgstr ""

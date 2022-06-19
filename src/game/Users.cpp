@@ -84,6 +84,7 @@ namespace game
             return;
         _users[nbUsers].setAvailable();
         _users[nbUsers].setGamepadId(gamepadId);
+        _users[nbUsers].updateActions(false);
         Logger::logger.log(Logger::Severity::Information,
             [&](auto &out) { out << "User " << nbUsers + 1 << " connected with gamepad " << gamepadId; });
     }
@@ -107,6 +108,24 @@ namespace game
         for (size_t i = userPos; i < nbUsers - 1; i++)
             _users[i].setGamepadId(_users[i + 1].getGamepadId());
         _users[nbUsers - 1].setAvailable(false);
+    }
+
+    void Users::updateActions(bool fillChanged)
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].updateActions(fillChanged);
+    }
+
+    void Users::save()
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].getProfile().save();
+    }
+
+    void Users::loadDefaults()
+    {
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++)
+            _users[i].getProfile().loadDefaults();
     }
 
 } // namespace game

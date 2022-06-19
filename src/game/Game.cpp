@@ -18,6 +18,7 @@
 #include "components/Destructible.hpp"
 #include "components/History.hpp"
 #include "components/Identity.hpp"
+#include "components/KeybindIntercepter.hpp"
 #include "components/KeyboardInput.hpp"
 #include "components/Living.hpp"
 #include "components/Model.hpp"
@@ -223,6 +224,7 @@ namespace game
         _world.addStorage<components::Model>();
         _world.addStorage<components::CubeColor>();
         _world.addStorage<components::Cube>();
+        _world.addStorage<components::KeybindIntercepter>();
         _world.addStorage<components::SoundReference>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();

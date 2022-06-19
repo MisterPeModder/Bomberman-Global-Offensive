@@ -17,6 +17,7 @@
 
 #include "game/components/Color.hpp"
 #include "game/components/Controlable.hpp"
+#include "game/components/KeybindIntercepter.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
@@ -84,6 +85,7 @@ namespace game
         _world.addSystem<systems::DrawSelectedWidget>();
         _world.addSystem<systems::DrawRectangle>();
         _world.addSystem<DetectGamepad>();
+        _world.addStorage<game::components::KeybindIntercepter>();
 
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::DrawTexture>();
