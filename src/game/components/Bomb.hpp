@@ -111,8 +111,10 @@ namespace game::components
         ///
         /// @param builder bomb entity builder.
         /// @param data world data.
+        /// @param type bomb type.
         /// @return ecs::Entities::Builder& bomb entity builder.
-        static ecs::Entities::Builder &setBombModel(ecs::Entities::Builder &builder, ecs::SystemData data);
+        static ecs::Entities::Builder &setBombModel(
+            ecs::Entities::Builder &builder, ecs::SystemData data, Type type = Type::Classic);
     };
 } // namespace game::components
 
