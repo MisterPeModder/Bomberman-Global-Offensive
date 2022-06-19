@@ -38,7 +38,16 @@ namespace localization
             constexpr ResourceString rsMenuPlay("Play");
             constexpr ResourceString rsMenuQuit("Quit");
         } // namespace menu
-    }     // namespace resources
+        namespace hud
+        {
+            constexpr ResourceString rsNumberbomb("Number Bomb");
+            constexpr ResourceString rsSpeed("Speed");
+            constexpr ResourceString rsPowerBomb("Power Bomb");
+            constexpr ResourceString rsTest("");
+            // constexpr ResourceString rs();
+        } // namespace hud
+
+    } // namespace resources
 } // namespace localization
 
 #endif /* !LOCALIZATION_RESOURCES_HPP_ */
