@@ -28,8 +28,6 @@ namespace game::systems
 {
     static std::optional<std::pair<Vector2f, Vector2f>> nextGoal(Vector3f &pos, game::components::AiControlable &ai)
     {
-        if (ai.path.empty())
-            return {};
         Vector2f goal(ai.path[0]);
         Vector2f dist(std::fabs(pos.x - goal.x), std::fabs(pos.z - goal.y));
 
@@ -53,6 +51,9 @@ namespace game::systems
         auto &ais = data.getStorage<game::components::AiControlable>();
 
         for (auto [self, pos, ai] : ecs::join(entities, positions, ais)) {
+            if (ai.path.empty())
+                return;
+
             auto next = nextGoal(pos, ai);
 
             if (!next) {

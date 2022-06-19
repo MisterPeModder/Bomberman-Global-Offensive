@@ -129,7 +129,7 @@ BMJS_DEFINE void players_moveTo(bmjs::Number playerId, bmjs::Number x, bmjs::Num
     bmjs::players::withPlayer<int>(playerId, engine, [x, y](ecs::Entity self, ecs::World &world) {
         auto &ai = world.getStorage<game::components::AiControlable>()[self.getId()];
 
-        ai.path.emplace_back(static_cast<float>(x), static_cast<float>(y));
+        ai.pathFind({static_cast<float>(x), static_cast<float>(y)}, self, ecs::SystemData(world));
         return 0;
     });
 }
@@ -141,11 +141,8 @@ BMJS_DEFINE void players_stop(bmjs::Number playerId)
     bmjs::players::withPlayer<int>(playerId, engine, [](ecs::Entity self, ecs::World &world) {
         auto &ai = world.getStorage<game::components::AiControlable>()[self.getId()];
 
-        Logger::logger.log(
-            Logger::Severity::Debug, [&](auto &out) { out << "path size before stop: " << ai.path.size(); });
         ai.path.clear();
-        Logger::logger.log(
-            Logger::Severity::Debug, [&](auto &out) { out << "path size before stop: " << ai.path.size(); });
+        game::components::Player::move(self, ecs::SystemData(world), game::GameAction::MOVE_RIGHT, 0.0);
         return 0;
     });
 }
