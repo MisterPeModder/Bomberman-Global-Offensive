@@ -88,10 +88,7 @@
 
 #include "util/util.hpp"
 
-<<<<<<< HEAD
 #include "localization/Localization.hpp"
-=======
->>>>>>> master
 #include "localization/Resources.hpp"
 
 #include <cmath>
@@ -295,12 +292,8 @@ namespace game
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
             systems::PlaySoundReferences, systems::DisableNoClip>();
-<<<<<<< HEAD
-        _resolveCollisions.add<systems::Collision>();
         _drawing2d.add<systems::DrawHud, systems::DrawRectangle>();
-=======
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
->>>>>>> master
         _drawing.add<systems::DrawModel>();
 
         _loadTextures();
