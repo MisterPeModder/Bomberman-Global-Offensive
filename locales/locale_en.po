@@ -161,10 +161,10 @@ msgid "MIDDLE-RIGHT"
 msgstr "START"
 
 msgid "THUMB-LEFT"
-msgstr "L3"
+msgstr "LS"
 
 msgid "THUMB-RIGHT"
-msgstr "R3"
+msgstr "RS"
 
 msgid "TRIGGER-LEFT"
 msgstr "LT"
