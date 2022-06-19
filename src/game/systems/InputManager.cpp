@@ -8,6 +8,7 @@
 #include "InputManager.hpp"
 #include "components/Controlable.hpp"
 #include "ecs/join.hpp"
+#include "game/Engine.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/gui/components/Widget.hpp"
 
@@ -22,7 +23,7 @@ namespace game::systems
         auto inputs = ecs::join(data.getStorage<game::components::KeyboardInput>());
         bool hasActiveInput = std::any_of(inputs.begin(), inputs.end(), [](auto i) { return std::get<0>(i).focused; });
 
-        Users &users = data.getResource<Users>();
+        Users &users = data.getResource<game::resources::EngineResource>().engine->getUsers();
         users.setIgnoreKeyboard(hasActiveInput);
         Users::ActionEvent event = users.getNextAction();
 
@@ -39,7 +40,7 @@ namespace game::systems
         for (auto [widget, controlable, entity] :
             ecs::join(optionalWidgets, data.getStorage<Controlable>(), data.getResource<ecs::Entities>())) {
             /// This entity doesn't listen the sender of the event.
-            if (controlable.userId != event.user)
+            if (controlable.userId != event.user && controlable.userId != User::UserId::AllUsers)
                 continue;
             /// The widget consumed the event.
             if (widget && widget->selected && widget->update(entity, data, event))

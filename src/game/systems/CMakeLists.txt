@@ -25,7 +25,10 @@ set(SRC
     ${SRCROOT}/Movement.cpp
     ${INCROOT}/Movement.hpp
     ${INCROOT}/NoClip.hpp
+    ${INCROOT}/PlaySoundOnce.hpp
     ${INCROOT}/Rectangle.hpp
+    ${SRCROOT}/Smoke.cpp
+    ${INCROOT}/Smoke.hpp
     ${INCROOT}/SplashScreen.hpp
     ${SRCROOT}/UpdateKeyboardInput.cpp
     ${INCROOT}/UpdateKeyboardInput.hpp

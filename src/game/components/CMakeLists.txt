@@ -39,6 +39,7 @@ set(SRC
     ${INCROOT}/Size2D.hpp
     ${SRCROOT}/Textual.hpp
     ${INCROOT}/Texture2D.hpp
+    ${INCROOT}/UseCheck.hpp
     ${SRCROOT}/Velocity.hpp
     PARENT_SCOPE)
 

@@ -27,11 +27,15 @@ namespace raylib
             SetWindowMinSize(1280, 720);
         }
 
+        bool Window::_shouldClose = false;
+
         void Window::close() { CloseWindow(); }
 
         void Window::clear(const Color &color) { ClearBackground(color.asRaylib()); }
 
-        bool Window::shouldClose() { return WindowShouldClose(); }
+        bool Window::getShouldClose() { return _shouldClose || WindowShouldClose(); }
+
+        void Window::setShouldClose() { _shouldClose = true; }
 
         void Window::setTargetFPS(int fps) { SetTargetFPS(fps); }
 

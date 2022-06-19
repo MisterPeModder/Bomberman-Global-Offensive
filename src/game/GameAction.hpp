@@ -22,6 +22,7 @@ namespace game
         TOGGLE_CONSOLE,
         BACK,
         ACTIVATE_ITEM,
+        DISCONNECT,
         COUNT,
     };
 

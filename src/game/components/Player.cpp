@@ -7,7 +7,6 @@
 
 #include "Player.hpp"
 #include "Bomb.hpp"
-#include "BombNoClip.hpp"
 #include "Collidable.hpp"
 #include "Identity.hpp"
 #include "Position.hpp"
@@ -15,13 +14,15 @@
 #include "Velocity.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/join.hpp"
+#include "game/Engine.hpp"
 #include "game/Game.hpp"
+#include "game/components/Animation.hpp"
 #include "game/components/Color.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/RotationAngle.hpp"
-#include "game/components/RotationAxis.hpp"
 #include "game/components/Scale.hpp"
 #include "game/resources/AssetMap.hpp"
+#include "game/resources/RandomDevice.hpp"
 #include "logger/Logger.hpp"
 #include "raylib/model/Mesh.hpp"
 #include "raylib/model/Model.hpp"
@@ -132,8 +133,11 @@ namespace game::components
     void Player::move(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event)
     {
         auto &velocity = data.getStorage<Velocity>()[self.getId()];
-        auto &user = data.getResource<Users>()[event.user];
+        auto &rAngle = data.getStorage<RotationAngle>()[self.getId()];
+        auto &anim = data.getStorage<Animation>()[self.getId()];
+        auto &user = data.getResource<game::resources::EngineResource>().engine->getUsers()[event.user];
         auto &stats = data.getStorage<Player>()[self.getId()].stats;
+        auto &player = data.getStorage<Player>()[self.getId()];
         GameAction bestAction = GameAction::NONE;
         float highestActionValue = 0.f;
 
@@ -145,9 +149,18 @@ namespace game::components
                 highestActionValue = user.getActionValue(current);
             }
         }
-        if (highestActionValue < 0.2f)
+        if (highestActionValue < 0.2f) {
             velocity = {0.f, 0.f, 0.f};
-        else {
+            if (player.animation == Animations::Run) {
+                // Randomize the idle animation id
+                auto &randDevice = data.getResource<game::resources::RandomDevice>();
+                unsigned int randVal = randDevice.randInt(
+                    static_cast<unsigned int>(Animations::Idle_1), static_cast<unsigned int>(Animations::Idle_4));
+
+                anim.chooseAnimation(randVal);
+                player.animation = Animations(randVal);
+            }
+        } else {
             float speed = stats.speed;
 
             if (stats.inverted)
@@ -155,50 +168,50 @@ namespace game::components
             if (stats.slowness)
                 speed *= 0.25f;
             switch (bestAction) {
-                case GameAction::MOVE_LEFT: velocity = {-speed, 0.f, 0.f}; break;
-                case GameAction::MOVE_UP: velocity = {0.f, 0.f, -speed}; break;
-                case GameAction::MOVE_RIGHT: velocity = {speed, 0.f, 0.f}; break;
-                case GameAction::MOVE_DOWN: velocity = {0.f, 0.f, speed}; break;
+                case GameAction::MOVE_LEFT:
+                    velocity = {-speed, 0.f, 0.f};
+                    rAngle.rotationAngle = 270.f;
+                    break;
+                case GameAction::MOVE_UP:
+                    velocity = {0.f, 0.f, -speed};
+                    rAngle.rotationAngle = 180.f;
+                    break;
+                case GameAction::MOVE_RIGHT:
+                    velocity = {speed, 0.f, 0.f};
+                    rAngle.rotationAngle = 90.f;
+                    break;
+                case GameAction::MOVE_DOWN:
+                    velocity = {0.f, 0.f, speed};
+                    rAngle.rotationAngle = 0.f;
+                    break;
                 default: break;
+            }
+            if (velocity != raylib::core::Vector3f(0.f, 0.f, 0.f) && player.animation != Animations::Run) {
+                anim.chooseAnimation(static_cast<unsigned int>(Animations::Run));
+                player.animation = Animations::Run;
             }
         }
     }
 
-    void Player::placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType)
+    void Player::placeBomb(ecs::Entity self, ecs::SystemData data)
     {
-        auto &players = data.getStorage<Player>();
-        auto &positions = data.getStorage<Position>();
-        auto &placer = players[self.getId()];
+        auto &placer = data.getStorage<Player>()[self.getId()];
 
-        if (bombType == Bomb::Type::Classic) {
-            /// Player cannot place more bomb
-            if (placer.placedBombs >= placer.stats.bombLimit)
-                return;
-        }
-        raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(positions[self.getId()]);
-        raylib::core::Vector3f placedPos = {static_cast<float>(bombCell.x), 0.15f, static_cast<float>(bombCell.y)};
+        /// Player cannot place more bomb
+        if (placer.placedBombs >= placer.stats.bombLimit)
+            return;
+        raylib::core::Vector2u bombCell = game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]);
 
-        /// Avoid multiple bombs on the same cell
-        for (auto [bombPos, bomb] : ecs::join(positions, data.getStorage<Bomb>())) {
-            (void)bomb;
-            if (bombPos == placedPos)
-                return;
-        }
+        if (!Bomb::placeBomb(bombCell, data, Bomb::Type::Classic, data.getStorage<Identity>()[self.getId()].id,
+                placer.stats.bombRange))
+            return;
+        ++placer.placedBombs;
+    }
 
-        auto builder = data.getResource<ecs::Entities>().builder();
-
-        Bomb::setBombModel(builder, data)
-            .with<Bomb>(
-                data.getStorage<Bomb>(), bombType, data.getStorage<Identity>()[self.getId()].id, placer.stats.bombRange)
-            .with<Position>(data.getStorage<Position>(), placedPos)
-            .with<Collidable>(data.getStorage<Collidable>())
-            .build();
-        if (bombType == Bomb::Type::Classic)
-            ++placer.placedBombs;
-        /// Disable collision with bomb for all player on the bomb cell
-        for (auto [pos, player, playerId] : ecs::join(positions, players, data.getResource<ecs::Entities>()))
-            if (bombCell == game::Game::worldPosToMapCell(pos))
-                data.getStorage<BombNoClip>()[playerId.getId()].setBombPosition(bombCell);
+    void Player::placeLandMine(ecs::Entity self, ecs::SystemData data)
+    {
+        Bomb::placeBomb(game::Game::worldPosToMapCell(data.getStorage<Position>()[self.getId()]), data,
+            Bomb::Type::LandMine, data.getStorage<Identity>()[self.getId()].id, 2);
     }
 
     void Player::updateTimedItems(ecs::Entity self, ecs::SystemData data)

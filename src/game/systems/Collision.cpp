@@ -15,6 +15,8 @@
 #include "game/components/Size.hpp"
 #include "game/components/Velocity.hpp"
 
+#include "logger/Logger.hpp"
+
 using namespace game::components;
 
 namespace game::systems
@@ -32,10 +34,10 @@ namespace game::systems
         auto maybePlayer = ecs::maybe(data.getStorage<Player>());
         raylib::shapes::Rectangle collideRect;
 
-        for (auto [pos1, size1, vel1, id1, c1, bombNoClip, player, bomb1] :
+        for (auto [pos1, size1, vel1, id1, c1, bombNoClip, player1, bomb1] :
             ecs::join(positions, sizes, velocities, entities, collidable, maybeBombNoClip, maybePlayer, maybeBomb)) {
-            for (auto [pos2, size2, vel2, id2, c2, bomb2] :
-                ecs::join(positions, sizes, optionalVelocity, entities, collidable, maybeBomb)) {
+            for (auto [pos2, size2, vel2, id2, c2, player2, bomb2] :
+                ecs::join(positions, sizes, optionalVelocity, entities, collidable, maybePlayer, maybeBomb)) {
                 (void)c1;
                 (void)c2;
                 /// Do not collide entities with themselves
@@ -48,8 +50,13 @@ namespace game::systems
                 if (!getCollideRect(collideRect, pos1, size1, pos2, size2))
                     continue;
 
-                /// Kick(ed) bomb related tests
+                /// Bomb related tests
                 if (bomb1 || bomb2) {
+                    /// Landmines explode on first collision
+                    if (bomb2 && bomb2->type == Bomb::Type::LandMine) {
+                        bomb2->explode(pos2, data, id2);
+                        break;
+                    }
                     /// Kicked bomb(s)
                     if (bomb1 || (bomb2 && vel2)) {
                         if (bomb1)
@@ -57,19 +64,36 @@ namespace game::systems
                         if (bomb2)
                             bomb2->explode(pos2, data, id2);
                         break;
+                        // /// Two kicked bombs -> Explode
+                        // if (bomb1 && bomb2 && vel2) {
+                        //     bomb1->explode(pos1, data, id1);
+                        //     break;
+                        // }
+                        // /// Only one kicked bomb
+                        // else {
+                        //     if (bomb1 && bomb2) {
+                        //         if (fabsf(vel1.x) > fabsf(vel1.z))
+                        //             pos1.x -= std::copysignf(1.f, vel1.x);
+                        //         else
+                        //             pos1.z -= std::copysignf(1.f, vel1.z);
+                        //     }
+                        //     if (bomb1)
+                        //         bomb1->stop(data, id1);
+                        //     else
+                        //         bomb2->stop(data, id2);
+                        //     if (player1 || player2)
+                        //         Logger::logger.log(Logger::Severity::Debug, "Player stun");
+                        //     break;
+                        // }
+
                     }
                     /// Static bomb (can't be bomb1 because first entity must have a velocity)
-                    else {
-                        /// Landmines explode on first collision
-                        if (bomb2->type == Bomb::Type::LandMine)
-                            bomb2->explode(pos2, data, id2);
-                        else if (player && player->inventory[Item::Identifier::KickShoes]) {
-                            raylib::core::Vector3f posDelta = pos2 - pos1;
-                            /// Kick bomb if the player is moving toward it.
-                            if ((std::fabs(posDelta.x) > std::fabs(posDelta.z)) ? (posDelta.x * vel1.x > 0)
-                                                                                : (posDelta.z * vel1.z > 0))
-                                bomb2->kick(data, id2, vel1);
-                        }
+                    else if (player1 && player1->inventory[Item::Identifier::KickShoes]) {
+                        raylib::core::Vector3f posDelta = pos2 - pos1;
+                        /// Kick bomb if the player is moving toward it.
+                        if ((std::fabs(posDelta.x) > std::fabs(posDelta.z)) ? (posDelta.x * vel1.x > 0)
+                                                                            : (posDelta.z * vel1.z > 0))
+                            bomb2->setVelocity(data, id2, {vel1.x * 1.3f, 0.f, vel1.z * 1.3f});
                     }
                 }
 

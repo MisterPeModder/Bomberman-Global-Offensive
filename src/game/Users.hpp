@@ -62,6 +62,31 @@ namespace game
         /// @param ignore When true all keyboard-bound actions (except for TOGGLE_CONSOLE) will not be handled.
         void setIgnoreKeyboard(bool ignore) noexcept;
 
+        bool isGamepadUsed(int gamepadId) const;
+
+        /// Find the first available gamepad which has @ref getButtonPressed() button down and is not used by any
+        /// user.
+        ///
+        /// @return int gamepad id, -1 if no joining gamepad at the moment.
+        int getJoiningGamepad() const;
+
+        /// Get the number of available (connected) users.
+        ///
+        /// @return unsigned int number of connected users.
+        unsigned int getAvailableUsers() const;
+
+        /// Connect a new user to a given control.
+        /// @note If gamepadId is negative, the user will be connected to the keyboard.
+        ///
+        /// @param gamepadId Control id.
+        void connectUser(int gamepadId);
+
+        /// Disconnect a user.
+        /// @note All following users will be shifted to the left (user 3 become user 2 with profile 2 etc)
+        ///
+        /// @param user User to disconnect.
+        void disconnectUser(User::UserId user);
+
       private:
         std::array<User, static_cast<size_t>(User::UserId::UserCount)> _users;
     };

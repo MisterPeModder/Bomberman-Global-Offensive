@@ -60,13 +60,13 @@ namespace game
             else if (key == "target_framerate")
                 setTargetFramerate(std::stoul(value.data()));
             else if (key == "resolution") {
-                float width;
-                float height;
+                int width;
+                int height;
 
                 if (value.find('x') == std::string::npos)
                     throw InvalidSettingsValue("Resolution must be of form '[width]x[height]'");
-                width = static_cast<float>(std::stoi(value.data()));
-                height = static_cast<float>(std::stoi(value.data() + value.find('x') + 1));
+                width = std::stoi(value.data());
+                height = std::stoi(value.data() + value.find('x') + 1);
                 setResolution({width, height});
             } else if (key == "fullscreen") {
                 bool fullscreen;
@@ -132,9 +132,9 @@ namespace game
 
         unsigned int Settings::getTargetFramerate() const { return _targetFramerate; }
 
-        void Settings::setResolution(raylib::core::Vector2f resolution) { _resolution = resolution; }
+        void Settings::setResolution(raylib::core::Vector2i resolution) { _resolution = resolution; }
 
-        raylib::core::Vector2f Settings::getResolution() const { return _resolution; }
+        raylib::core::Vector2i Settings::getResolution() const { return _resolution; }
 
         void Settings::setFullscreen(bool fullscreen) { _fullscreen = fullscreen; }
 

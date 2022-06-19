@@ -70,23 +70,23 @@ namespace game
         float res = 0.f;
 
         if (isKeyboard() && (!this->_ignoreKeyboard || action == GameAction::TOGGLE_CONSOLE)) {
-            auto binds = _profile.getKeybinds().getKeyboardBindings();
+            auto &binds = _profile.getKeybinds().getKeyboardBindings();
 
             return (binds.end() != std::find_if(binds.begin(), binds.end(), [&](auto iter) {
-                return (iter.second == action && raylib::core::Keyboard::isKeyDown(iter.first));
+                return (iter.action == action && raylib::core::Keyboard::isKeyDown(iter.key));
             }));
         } else {
-            auto binds = _profile.getKeybinds().getGamepadBindings();
+            auto &binds = _profile.getKeybinds().getGamepadBindings();
             raylib::core::Gamepad gamepad(_gamepadId);
 
-            for (auto iter = binds.begin(); iter != binds.end(); ++iter) {
-                if (iter->second != action)
+            for (auto iter : binds) {
+                if (iter.action != action)
                     continue;
-                if (iter->first.isButton()) {
-                    if (gamepad.isButtonDown(iter->first.getButton()))
+                if (iter.input.isButton()) {
+                    if (gamepad.isButtonDown(iter.input.getButton()))
                         return 1;
                 } else {
-                    float axisValue = iter->first.getAxisAbsoluteValue(gamepad.getAxisMovement(iter->first.getAxis()));
+                    float axisValue = iter.input.getAxisAbsoluteValue(gamepad.getAxisMovement(iter.input.getAxis()));
 
                     if (axisValue > res)
                         res = axisValue;
@@ -97,4 +97,12 @@ namespace game
     }
 
     void User::setIgnoreKeyboard(bool ignore) noexcept { this->_ignoreKeyboard = ignore; }
+
+    const settings::Profile &User::getProfile() const { return _profile; }
+
+    settings::Profile &User::getProfile() { return _profile; }
+
+    const settings::Keybinds &User::getKeybinds() const { return _profile.getKeybinds(); }
+
+    settings::Keybinds User::getKeybinds() { return _profile.getKeybinds(); }
 } // namespace game

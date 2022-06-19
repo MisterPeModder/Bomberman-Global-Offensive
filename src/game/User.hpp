@@ -24,6 +24,7 @@ namespace game
             User3,     /// Third user
             User4,     /// Fourth user
             UserCount, /// Number of simultaneaous users possible, Invalid for all functions taking a UserId
+            AllUsers,  /// Matching all users, /!\ not supported for all functions
         };
 
         /// Create a new User.
@@ -79,7 +80,7 @@ namespace game
         ///
         /// @param available wheter or not the user is available.
         /// @todo Detect new gamepad availables.
-        void setAvailable(bool available);
+        void setAvailable(bool available = true);
 
         /// Test if the user is available.
         ///
@@ -103,6 +104,26 @@ namespace game
 
         /// @param ignore When true all keyboard-bound actions (except for TOGGLE_CONSOLE) will not be handled.
         void setIgnoreKeyboard(bool ignore) noexcept;
+
+        /// Get the Profile.
+        ///
+        /// @return const settings::Profile& user profile.
+        const settings::Profile &getProfile() const;
+
+        /// Get the Profile.
+        ///
+        /// @return settings::Profile& user profile.
+        settings::Profile &getProfile();
+
+        /// Get the Keybinds.
+        ///
+        /// @return const settings::Keybinds& user keybinds.
+        const settings::Keybinds &getKeybinds() const;
+
+        /// Get the Keybinds.
+        ///
+        /// @return settings::Keybinds& user keybinds.
+        settings::Keybinds getKeybinds();
 
       private:
         void fillActions();

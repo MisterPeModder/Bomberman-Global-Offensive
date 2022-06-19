@@ -22,6 +22,20 @@ namespace game::components
 {
     /// Player marker.
     struct Player : public ecs::Component {
+        /// The different player animations
+        enum class Animations : unsigned int {
+            Idle_1 = 0,
+            Idle_2 = 1,
+            Idle_3 = 2,
+            Idle_4 = 3,
+            Run = 4,
+            Die = 5,
+            Dance_1 = 6,
+            Dance_2 = 7,
+            Dance_3 = 8,
+            Dance_4 = 9,
+        };
+
         struct Stats {
             /// Default speed of the player (in cells per seconds).
             static constexpr float DEFAULT_SPEED = 4.f;
@@ -109,6 +123,8 @@ namespace game::components
         Inventory inventory;
         /// Number of bomb currently placed on the map.
         size_t placedBombs;
+        /// Animation that is currently playing
+        Animations animation;
 
         /// Callback of the @ref Controlable component of the players.
         ///
@@ -120,7 +136,7 @@ namespace game::components
         static bool handleActionEvent(ecs::Entity self, ecs::SystemData data, const Users::ActionEvent &event);
 
         /// Construct a new Player component
-        Player() : placedBombs(0) {}
+        Player() : placedBombs(0), animation(Animations::Idle_1) {}
 
         /// Update the activated items with a timer.
         ///
@@ -132,10 +148,13 @@ namespace game::components
         ///
         /// @param self player entity
         /// @param data world data
-        /// @param bombType bomb type.
-        /// @return true If the action was consumed.
-        /// @return false If the action wasn't consumed.
-        static void placeBomb(ecs::Entity self, ecs::SystemData data, Bomb::Type bombType = Bomb::Type::Classic);
+        static void placeBomb(ecs::Entity self, ecs::SystemData data);
+
+        /// Place a mine at the player position.
+        ///
+        /// @param self player entity
+        /// @param data world data
+        static void placeLandMine(ecs::Entity self, ecs::SystemData data);
 
       private:
         /// Change the velocity of the player from its action values.

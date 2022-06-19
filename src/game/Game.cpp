@@ -7,6 +7,7 @@
 
 #include "Game.hpp"
 
+#include "components/Animation.hpp"
 #include "components/Bomb.hpp"
 #include "components/BombNoClip.hpp"
 #include "components/Collidable.hpp"
@@ -27,6 +28,7 @@
 #include "components/Scale.hpp"
 #include "components/Size.hpp"
 #include "components/Size2D.hpp"
+#include "components/Smoke.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
 
@@ -50,6 +52,7 @@
 #include "resources/Map.hpp"
 #include "resources/RandomDevice.hpp"
 
+#include "systems/Animation.hpp"
 #include "systems/Bomb.hpp"
 #include "systems/Collision.hpp"
 #include "systems/DrawConsole.hpp"
@@ -59,11 +62,14 @@
 #include "systems/Model.hpp"
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
+#include "systems/Smoke.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
+
+#include "util/util.hpp"
 
 #include <cmath>
 
@@ -102,7 +108,7 @@ namespace game
         textures.emplace("punch", "assets/items/activables/bonus_activable_punch.png");
         textures.emplace("kick_shoes", "assets/items/activables/bonus_activable_kick_shoes.png");
         textures.emplace("smoke", "assets/items/activables/bonus_activable_smoke.png");
-        textures.emplace("stunt", "assets/items/activables/bonus_activable_stunt.png");
+        textures.emplace("stun", "assets/items/activables/bonus_activable_stunt.png");
         /// Power Ups
         textures.emplace("speed_up", "assets/items/power_ups/bonus_up_speed.png");
         textures.emplace("C4_up", "assets/items/power_ups/bonus_up_C4.png");
@@ -140,10 +146,6 @@ namespace game
             .setMaterialMapTexture(textures.get("wall"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("C4", "assets/items/weapons/c4.iqm")
             .setMaterialMapTexture(textures.get("C4"), 0, MATERIAL_MAP_DIFFUSE);
-
-        ////// PLayers
-        models.emplace("player", "assets/player/player.iqm")
-            .setMaterialMapTexture(textures.get("terrorist_1"), 0, MATERIAL_MAP_DIFFUSE);
         ////// Items
         auto &bonusMesh = meshes.get("bonus");
         /// Power Ups
@@ -168,7 +170,7 @@ namespace game
         models.emplace("kick_shoes", bonusMesh, false)
             .setMaterialMapTexture(textures.get("kick_shoes"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("smoke", bonusMesh, false).setMaterialMapTexture(textures.get("smoke"), 0, MATERIAL_MAP_DIFFUSE);
-        models.emplace("stunt", bonusMesh, false).setMaterialMapTexture(textures.get("stunt"), 0, MATERIAL_MAP_DIFFUSE);
+        models.emplace("stun", bonusMesh, false).setMaterialMapTexture(textures.get("stun"), 0, MATERIAL_MAP_DIFFUSE);
         models.emplace("punch", bonusMesh, false).setMaterialMapTexture(textures.get("punch"), 0, MATERIAL_MAP_DIFFUSE);
     }
 
@@ -198,7 +200,6 @@ namespace game
             .build();
 
         /// Add world resources
-        _world.addResource<game::Users>();
         _world.addResource<ecs::Timer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();
@@ -210,6 +211,7 @@ namespace game
         _world.addStorage<components::ItemIdentifier>();
         _world.addStorage<game::gui::Widget>();
         _world.addStorage<components::KeyboardInput>();
+        _world.addStorage<components::Smoke>();
         _world.addStorage<components::RotationAngle>();
         _world.addStorage<components::RotationAxis>();
         _world.addStorage<components::Model>();
@@ -217,6 +219,7 @@ namespace game
         _world.addStorage<components::Cube>();
         /// Add world systems
         _world.addSystem<systems::DrawModel>();
+        _world.addSystem<systems::RunAnimation>();
         _world.addSystem<systems::InputManager>();
         _world.addSystem<systems::Movement>();
         _world.addSystem<systems::Collision>();
@@ -224,38 +227,45 @@ namespace game
         _world.addSystem<systems::PickupItem>();
         _world.addSystem<systems::DisableBombNoClip>();
         _world.addSystem<systems::UpdateItemTimer>();
+        _world.addSystem<systems::MoveSmoke>();
+        _world.addSystem<systems::DrawSmoke>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
-            systems::UpdateItemTimer>();
+            systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke>();
         _resolveCollisions.add<systems::Collision>();
-        _drawing.add<systems::DrawModel>();
+        _drawing.add<systems::DrawModel, systems::DrawSmoke>();
 
         _loadTextures();
         _loadMeshes();
         _loadModels();
 
         /// Player
+        auto &textures = _world.getResource<resources::Textures>();
 
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
             raylib::core::Vector2u cell = _map.getPlayerStartingPosition(owner);
 
-            _world.addEntity()
-                .with<components::Position>(static_cast<float>(cell.x), 0.f, static_cast<float>(cell.y))
-                .with<components::Velocity>()
-                .with<components::Living>(_params.livesCount)
-                .with<components::Collidable>()
-                .with<components::Player>()
-                .with<components::Size>(0.5f, 0.5f, 0.5f)
-                .with<components::ModelReference>(_world.getResource<resources::Models>().get("player"))
-                .with<components::Color>(raylib::core::Color::WHITE)
-                .with<components::RotationAngle>(90.0f)
-                .with<components::RotationAxis>(1.f, 0.f, 0.f)
-                .with<components::Controlable>(owner, components::Player::handleActionEvent)
-                .with<components::BombNoClip>()
-                .with<components::Identity>()
-                .build();
+            auto playerEntity =
+                _world.addEntity()
+                    .with<components::Position>(static_cast<float>(cell.x), 0.f, static_cast<float>(cell.y))
+                    .with<components::Velocity>()
+                    .with<components::Living>(_params.livesCount)
+                    .with<components::Collidable>()
+                    .with<components::Player>()
+                    .with<components::Size>(0.5f, 0.5f, 0.5f)
+                    .with<components::Model>(util::makePath("assets", "player", "player.iqm"))
+                    .with<components::Animation>(util::makePath("assets", "player", "player.iqm"))
+                    .with<components::Color>(raylib::core::Color::WHITE)
+                    .with<components::RotationAngle>(0.0f)
+                    .with<components::RotationAxis>(0.f, 1.f, 0.f)
+                    .with<components::Controlable>(owner, components::Player::handleActionEvent)
+                    .with<components::BombNoClip>()
+                    .with<components::Identity>()
+                    .build();
+            _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
+                textures.get("counter_terrorist_1"), 0, MATERIAL_MAP_DIFFUSE);
         }
 
         /// Ground
@@ -320,7 +330,8 @@ namespace game
         _world.runSystems(_update);
         _world.runSystems(_resolveCollisions);
 
-        raylib::core::scoped::Drawing drawing;
+        raylib::core::scoped::RenderTexture textureMode(
+            _world.getResource<game::resources::EngineResource>().engine->getRenderTarget());
         raylib::core::Window::clear();
         {
             raylib::core::scoped::Mode3D mode3D(_camera);

@@ -8,8 +8,8 @@
 #ifndef GAME_SETTINGS_KEYBINDS_HPP_
 #define GAME_SETTINGS_KEYBINDS_HPP_
 
-#include <map>
 #include <ostream>
+#include <vector>
 #include "GamepadInput.hpp"
 #include "game/GameAction.hpp"
 #include "raylib/core/Keyboard.hpp"
@@ -21,6 +21,19 @@ namespace game
         /// Bindings of keyboards/gamepad inputs to game actions.
         class Keybinds {
           public:
+            struct KeyboardBind {
+                raylib::core::Keyboard::Key key;
+                GameAction action;
+
+                KeyboardBind(raylib::core::Keyboard::Key pKey, GameAction pAction) : key(pKey), action(pAction) {}
+            };
+            struct GamepadBind {
+                GamepadInput input;
+                GameAction action;
+
+                GamepadBind(GamepadInput pInput, GameAction pAction) : input(pInput), action(pAction) {}
+            };
+
             /// Construct a default keybinds set.
             /// @note Will call @ref loadDefaults().
             Keybinds();
@@ -58,7 +71,7 @@ namespace game
             /// @note Does nothing if the key is already unbound.
             ///
             /// @param key key to unbind.
-            void unbindKey(raylib::core::Keyboard::Key key);
+            void unbindKey(raylib::core::Keyboard::Key key, GameAction action = GameAction::NONE);
 
             /// Bind a gamepad input to a game action.
             /// @note Multiple inputs can be bound to the same action.
@@ -72,19 +85,19 @@ namespace game
             /// @note Does nothing if the gamepad input is already unbound.
             ///
             /// @param gamepadInput gamepad input to unbind.
-            void unbindGamepadInput(const GamepadInput &gamepadInput);
+            void unbindGamepadInput(const GamepadInput &gamepadInput, GameAction action = GameAction::NONE);
 
             /// Get the map of the keyboard bindings.
             ///
-            /// @return const std::map<raylib::core::Keyboard::Key, GameAction>& bindings map.
+            /// @return const std::vector<KeyboardBind>& bindings map.
             ///
-            const std::map<raylib::core::Keyboard::Key, GameAction> &getKeyboardBindings() const;
+            const std::vector<KeyboardBind> &getKeyboardBindings() const;
 
             /// Get the map of the gamepad bindings.
             ///
-            /// @return const std::map<GamepadInput, GameAction>& bindings map.
+            /// @return const std::vector<GamepadBind>& bindings map.
             ///
-            const std::map<GamepadInput, GameAction> &getGamepadBindings() const;
+            const std::vector<GamepadBind> &getGamepadBindings() const;
 
             /// Output the bindings in the @c stream.
             /// @note This is used to save bindings in files between sessions.
@@ -95,8 +108,8 @@ namespace game
             const Keybinds &operator>>(std::ostream &stream) const;
 
           private:
-            std::map<raylib::core::Keyboard::Key, GameAction> _keyboardBindings;
-            std::map<GamepadInput, GameAction> _gamepadBindings;
+            std::vector<KeyboardBind> _keyboardBindings;
+            std::vector<GamepadBind> _gamepadBindings;
         };
     } // namespace settings
 } // namespace game
