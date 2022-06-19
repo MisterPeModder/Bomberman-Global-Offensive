@@ -34,6 +34,7 @@
 
 #include "game/resources/Engine.hpp"
 
+#include "game/systems/DrawFpsCounter.hpp"
 #include "game/systems/DrawText.hpp"
 #include "game/systems/DrawTexture.hpp"
 #include "game/systems/InputManager.hpp"
@@ -88,6 +89,7 @@ namespace game
         _world.addSystem<game::systems::SplashScreen>();
         _world.addSystem<game::systems::DrawTexture>();
         _world.addSystem<game::systems::PlaySoundOnce>();
+        _world.addSystem<systems::DrawFpsCounter>();
 
         _globalNoDraw.add<game::systems::InputManager>();
         _globalNoDraw.add<game::systems::SplashScreen>();

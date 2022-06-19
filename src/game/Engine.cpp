@@ -129,8 +129,6 @@ namespace game
             } else
                 _renderTarget->drawYFlipped();
         }
-        if (this->_debugMode)
-            raylib::core::Window::drawFPS(10, 10);
         this->switchScene();
     }
 

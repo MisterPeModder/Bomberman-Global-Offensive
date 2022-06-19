@@ -12,6 +12,8 @@
 #include "User.hpp"
 #include "ecs/resource/Resource.hpp"
 
+#include "localization/Resources.hpp"
+
 namespace game
 {
     /// Resource allowing to get users actions using the keybinds.
@@ -79,13 +81,38 @@ namespace game
         /// @note If gamepadId is negative, the user will be connected to the keyboard.
         ///
         /// @param gamepadId Control id.
-        void connectUser(int gamepadId);
+        /// @param skin User skin
+        void connectUser(int gamepadId, User::USER_SKINS skin);
 
         /// Disconnect a user.
         /// @note All following users will be shifted to the left (user 3 become user 2 with profile 2 etc)
         ///
         /// @param user User to disconnect.
-        void disconnectUser(User::UserId user);
+        ///
+        /// @return bool true if a user is disconnected
+        bool disconnectUser(User::UserId user);
+
+        /// Get the skin of the user
+        ///
+        /// @param id user id
+        /// @return User::USER_SKINS skin
+        ///
+        User::USER_SKINS getUserSkin(unsigned int id);
+
+        ///
+        /// It converts a USER_SKINS enum value to a localization::ResourceString
+        ///
+        /// @param skin The skin to convert.
+        ///
+        /// @return localizarion::RessourceString the ressource.
+        localization::ResourceString userSkinToRessourceString(User::USER_SKINS skin);
+
+        ///
+        /// Prepare the skin to send to paramaters
+        ///
+        ///@return std::queue<std::string>
+        ///
+        std::queue<std::string> prepareSkinParameters();
 
         /// Call @ref User::updateActions() for each user.
         ///
