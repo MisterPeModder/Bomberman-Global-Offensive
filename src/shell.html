@@ -180,6 +180,7 @@
 
         #btn-play {
             margin: 20px;
+            outline: none;
         }
     </style>
 </head>
@@ -203,7 +204,7 @@
 
     <div id="emscripten_wrapper">
         <div id="emscripten_border">
-            <span><input type="button" id="btn-play" value="PLAY" onclick="itsBombinTime()"></span>
+            <span><input type="button" id="btn-play" value="PLAY" onclick="itsBombinTime()" autofocus></span>
             <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1 width=0
                 height=0></canvas>
         </div>
