@@ -189,3 +189,32 @@ msgstr "ESPACE"
 
 msgid "Number Bomb"
 msgstr ""
+
+msgid "NoClip"
+msgstr ""
+ 
+msgid "LandMine"
+msgstr ""
+
+msgid "StunGrenade"
+msgstr ""
+
+msgid "SmokeGrenade"
+msgstr ""
+
+msgid "Punch"
+msgstr ""
+msgid "LandMine"
+msgstr ""
+
+msgid "NoClip"
+msgstr ""
+
+msgid "LandMine"
+msgstr ""
+
+msgid "Activable"
+msgstr "Activable"
+
+msgid "Punch"
+msgstr ""

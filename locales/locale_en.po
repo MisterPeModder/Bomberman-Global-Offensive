@@ -186,8 +186,35 @@ msgstr "RT"
 
 msgid "SPACE"
 msgstr ""
+
 msgid "Number Bomb"
 msgstr ""
 
-msgid "Number Bomb"
+msgid "NoClip"
+msgstr ""
+ 
+msgid "LandMine"
+msgstr ""
+
+msgid "StunGrenade"
+msgstr ""
+
+msgid "SmokeGrenade"
+msgstr ""
+
+msgid "Punch"
+msgstr ""
+msgid "LandMine"
+msgstr ""
+
+msgid "NoClip"
+msgstr ""
+
+msgid "LandMine"
+msgstr ""
+
+msgid "Activable"
+msgstr ""
+
+msgid "Punch"
 msgstr ""

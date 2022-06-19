@@ -109,6 +109,12 @@ namespace localization
             constexpr ResourceString rsNumberbomb("Number Bomb");
             constexpr ResourceString rsSpeed("Speed");
             constexpr ResourceString rsPowerBomb("Power Bomb");
+            constexpr ResourceString rsNoclip("NoClip");
+            constexpr ResourceString rsLandMine("LandMine");
+            constexpr ResourceString rsStunGrenade("StunGrenade");
+            constexpr ResourceString rsSmokeGrenade("SmokeGrenade");
+            constexpr ResourceString rsPunch("Punch");
+            constexpr ResourceString rsActivable("Activable");
             // constexpr ResourceString rs();
         } // namespace hud
 
