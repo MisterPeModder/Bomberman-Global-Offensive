@@ -29,10 +29,12 @@ namespace game::systems
                     raylib::core::Keyboard::Key key = raylib::core::Keyboard::getKeyPressed();
 
                     if (key != raylib::core::Keyboard::Key::NONE) {
-                        Logger::logger.log(Logger::Severity::Information, [&intercepter, &key](auto &out) {
-                            out << "Bind user " << static_cast<size_t>(intercepter.user) << " action "
-                                << static_cast<size_t>(intercepter.action) << " to key " << static_cast<size_t>(key);
-                        });
+                        Logger::logger.log(
+                            Logger::Severity::Information, [inter = std::ref(intercepter), &key](auto &out) {
+                                out << "Bind user " << static_cast<size_t>(inter.get().user) << " action "
+                                    << static_cast<size_t>(inter.get().action) << " to key "
+                                    << static_cast<size_t>(key);
+                            });
                         users[game::User::UserId::User1].getKeybinds().setKeyboardBinding(
                             key, intercepter.action, true);
                         users.updateActions(false);
@@ -49,11 +51,12 @@ namespace game::systems
                     raylib::core::Gamepad gamepad(user.getGamepadId());
 
                     if (gamepad.isButtonDown(btn)) {
-                        Logger::logger.log(Logger::Severity::Information, [&intercepter, &btn](auto &out) {
-                            out << "Bind user " << static_cast<size_t>(intercepter.user) << " action "
-                                << static_cast<size_t>(intercepter.action) << " to gamepad button "
-                                << static_cast<size_t>(btn);
-                        });
+                        Logger::logger.log(
+                            Logger::Severity::Information, [inter = std::ref(intercepter), &btn](auto &out) {
+                                out << "Bind user " << static_cast<size_t>(inter.get().user) << " action "
+                                    << static_cast<size_t>(inter.get().action) << " to gamepad button "
+                                    << static_cast<size_t>(btn);
+                            });
                         user.getKeybinds().setGamepadBinding(
                             game::settings::GamepadInput(btn), intercepter.action, true);
                         users.updateActions(false);
