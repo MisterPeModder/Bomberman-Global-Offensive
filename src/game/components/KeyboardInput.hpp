@@ -25,7 +25,7 @@
 
 namespace game::components
 {
-    class History;
+    struct History;
 
     /// Keyboard-only input field
     class KeyboardInput : public ecs::Component {
