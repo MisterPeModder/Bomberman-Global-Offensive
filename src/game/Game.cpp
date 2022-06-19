@@ -77,6 +77,8 @@
 
 #include "util/util.hpp"
 
+#include "localization/Resources.hpp"
+
 #include <cmath>
 
 namespace game
@@ -102,12 +104,18 @@ namespace game
         textures.emplace("wall", "assets/map/wall.png");
         textures.emplace("ground", "assets/map/ground.png");
         /// Player
-        textures.emplace("terrorist_1", "assets/player/textures/terrorist_1.png");
-        textures.emplace("terrorist_2", "assets/player/textures/terrorist_2.png");
-        textures.emplace("counter_terrorist_1", "assets/player/textures/counter_terrorist_1.png");
-        textures.emplace("counter_terrorist_2", "assets/player/textures/counter_terrorist_2.png");
-        textures.emplace("none_sense", "assets/player/textures/none_sense.png");
-        textures.emplace("rainbow", "assets/player/textures/rainbow.png");
+        textures.emplace(std::string(localization::resources::textures::rsTerroristOne.getMsgId()),
+            "assets/player/textures/terrorist_1.png");
+        textures.emplace(std::string(localization::resources::textures::rsTerroristTwo.getMsgId()),
+            "assets/player/textures/terrorist_2.png");
+        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristOne.getMsgId()),
+            "assets/player/textures/counter_terrorist_1.png");
+        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristTwo.getMsgId()),
+            "assets/player/textures/counter_terrorist_2.png");
+        textures.emplace(std::string(localization::resources::textures::rsNoSense.getMsgId()),
+            "assets/player/textures/none_sense.png");
+        textures.emplace(
+            std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
         /// Activables
         textures.emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
         textures.emplace("mine", "assets/items/activables/bonus_activable_mine.png");
@@ -291,7 +299,8 @@ namespace game
                     .with<components::Identity>()
                     .build();
             _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
-                textures.get("counter_terrorist_1"));
+                textures.get(_params.skinList.front()));
+            _params.skinList.pop();
         }
 
         /// Ground

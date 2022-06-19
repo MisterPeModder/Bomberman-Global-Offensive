@@ -27,6 +27,17 @@ namespace game
             AllUsers,  /// Matching all users, /!\ not supported for all functions
         };
 
+        // Different possible skins
+        enum USER_SKINS {
+            TERRORIST_1,
+            TERRORIST_2,
+            COUNTER_TERRORIST_1,
+            COUNTER_TERRORIST_2,
+            NO_SENSE,
+            RAINBOW,
+            UNKNOWN
+        };
+
         /// Create a new User.
         ///
         /// @param id id of the user.
@@ -75,6 +86,16 @@ namespace game
         ///
         /// @return UserId user id.
         UserId getId() const;
+
+        /// Set the skin
+        ///
+        /// @param skin skin USER_SKINS value
+        void setSkin(USER_SKINS skin);
+
+        /// Get the skin id of the user
+        ///
+        /// @return USER_SKINS user skin
+        USER_SKINS getSkin() const;
 
         /// Set the user available (connected)
         ///
@@ -137,6 +158,7 @@ namespace game
         int _gamepadId;
         bool _available;
         bool _ignoreKeyboard;
+        USER_SKINS _skin;
         settings::Profile _profile;
 
         std::queue<GameAction> _changedActions;
