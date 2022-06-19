@@ -35,11 +35,11 @@ namespace game::components
         Item::Identifier::SpeedShoes, Item::Identifier::FireUp, Item::Identifier::BombUp, Item::Identifier::KickShoes};
     std::array<Item::Identifier, Item::POWER_DOWN_COUNT> Item::powerDowns = {Item::Identifier::ChainBall,
         Item::Identifier::FireDown, Item::Identifier::BombDown, Item::Identifier::InvertedControls};
-    std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables = {
+    std::array<Item::Identifier, Item::ACTIVABLE_COUNT> Item::activables = {Item::Identifier::NoClip,
         Item::Identifier::LandMine, Item::Identifier::StunGrenade, Item::Identifier::SmokeGrenade};
 
     std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes(), FireUp(), BombUp(),
-        KickShoes(), ChainBall(), FireDown(), BombDown(), InvertedControls(), LandMine(), StunGrenade(),
+        KickShoes(), ChainBall(), FireDown(), BombDown(), InvertedControls(), NoClip(), LandMine(), StunGrenade(),
         SmokeGrenade()};
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
@@ -52,8 +52,8 @@ namespace game::components
 
         /// Which item type ?
         int randVal = randDevice.randInt(0, 99);
-        auto itemsPool((randVal < 65) ? std::span<Identifier, std::dynamic_extent>(powerUps)
-                                      : ((randVal < 90) ? std::span<Identifier, std::dynamic_extent>(powerDowns)
+        auto itemsPool((randVal < 45) ? std::span<Identifier, std::dynamic_extent>(powerUps)
+                                      : ((randVal < 70) ? std::span<Identifier, std::dynamic_extent>(powerDowns)
                                                         : std::span<Identifier, std::dynamic_extent>(activables)));
 
         /// Which item ?
@@ -87,6 +87,7 @@ namespace game::components
             case Item::Identifier::KickShoes: model = &models.get("kick_shoes"); break;
             case Item::Identifier::ChainBall: model = &models.get("speed_down"); break;
             case Item::Identifier::InvertedControls: model = &models.get("control_down"); break;
+            case Item::Identifier::NoClip: model = &models.get("no_clip"); break;
             case Item::Identifier::LandMine: model = &models.get("mine"); break;
             case Item::Identifier::StunGrenade: model = &models.get("stun"); break;
             case Item::Identifier::SmokeGrenade: model = &models.get("smoke"); break;

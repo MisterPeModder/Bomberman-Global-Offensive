@@ -85,7 +85,7 @@ namespace game
             for (size_t i = _keyboardBindings.size(); i > 0; i--) {
                 auto &bind = _keyboardBindings[i - 1];
                 if (bind.key == key && (action == GameAction::NONE || bind.action == action))
-                    _keyboardBindings.erase(_keyboardBindings.begin() + i);
+                    _keyboardBindings.erase(_keyboardBindings.begin() + (i - 1));
             }
         }
 
@@ -101,7 +101,7 @@ namespace game
                 const GamepadBind &bind = _gamepadBindings[i - 1];
                 if ((bind.input <=> gamepadInput == std::strong_ordering::equal)
                     && (action == GameAction::NONE || bind.action == action))
-                    _gamepadBindings.erase(_gamepadBindings.begin() + i);
+                    _gamepadBindings.erase(_gamepadBindings.begin() + (i - 1));
             }
         }
 
