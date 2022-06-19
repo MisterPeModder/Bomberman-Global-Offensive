@@ -15,6 +15,7 @@
 #include "game/components/GameEnded.hpp"
 #include "game/components/Living.hpp"
 #include "game/components/Player.hpp"
+#include "game/components/Sound.hpp"
 #include "game/scenes/MainMenuScene.hpp"
 
 namespace game::systems
@@ -42,6 +43,7 @@ namespace game::systems
                             gameEnded.gameEnded = true;
                             gameEnded.endTime = timer.elapsed();
                             anim.chooseAnimation(randVal);
+                            game::components::Sound::playSound(data, "victory");
                         }
                     }
                 }
