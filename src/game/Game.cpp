@@ -26,11 +26,12 @@
 #include "components/RotationAxis.hpp"
 #include "components/Scale.hpp"
 #include "components/Size.hpp"
+#include "components/Smoke.hpp"
 #include "components/Textual.hpp"
 #include "components/Texture2D.hpp"
-#include "components/Smoke.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
+#include "components/Hud.hpp"
 
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
@@ -53,6 +54,7 @@
 #include "resources/Map.hpp"
 #include "resources/RandomDevice.hpp"
 
+#include "systems/DrawHud.hpp"
 #include "systems/Animation.hpp"
 #include "systems/Bomb.hpp"
 #include "systems/Collision.hpp"
@@ -215,6 +217,7 @@ namespace game
         _world.addSystem<systems::DrawRectangle>();
         _world.addSystem<systems::DrawTexture>();
         _world.addSystem<systems::DrawText>();
+        _world.addSystem<systems::DrawHud>();
 
         _world.addSystem<systems::MoveSmoke>();
         _world.addSystem<systems::DrawSmoke>();
@@ -407,7 +410,6 @@ namespace game
             raylib::core::scoped::Mode2D mode2d(_camera2d);
             _world.runSystems(_drawing);
         };
-        }
         _world.maintain();
     }
 } // namespace game

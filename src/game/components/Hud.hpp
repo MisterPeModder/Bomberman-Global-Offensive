@@ -10,15 +10,25 @@
 
 #include "Player.hpp"
 #include "ecs/Component.hpp"
-#include "ecs/System.hpp"
-#include "game/components/Position.hpp"
+#include "game/components/Identity.hpp"
 
 namespace game::components
 {
     /// Cube color component
     struct Hud : public ecs::Component {
         ///
-        Hud(Player owner);
+        size_t nbBomb;
+        size_t rangeBomb;
+        float speed;
+        bool inverted;
+        bool slowness;
+        Identity::Id idHud;
+
+        Hud(Player owner, Identity id)
+            : nbBomb(owner.stats.bombLimit), rangeBomb(owner.stats.bombRange), speed(owner.stats.speed),
+              inverted(owner.stats.inverted), slowness(owner.stats.slowness), idHud(id.getCurrentId())
+        {
+        }
     };
 } // namespace game::components
 

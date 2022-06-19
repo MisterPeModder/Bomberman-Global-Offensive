@@ -75,3 +75,9 @@ msgstr ""
 
 msgid "Connected"
 msgstr ""
+
+msgid "Not connected"
+msgstr ""
+
+msgid "Number Bomb"
+msgstr ""
