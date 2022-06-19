@@ -55,9 +55,6 @@ msgstr "Jouer"
 msgid "Quit"
 msgstr "Quitter"
 
-msgid "number Bomb"
-msgstr "nombre de Bombe"
-
 msgid "Speed"
 msgstr "Vitesse"
 
