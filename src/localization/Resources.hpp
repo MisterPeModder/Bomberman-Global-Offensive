@@ -93,6 +93,7 @@ namespace localization
             constexpr ResourceString rsSettingsKeybinds("Keybinds");
             constexpr ResourceString rsSettingsControllerKeybinds("(Controller)");
             constexpr ResourceString rsSettingsKeyboardKeybinds("(Keyboard)");
+            constexpr ResourceString rsSpace("SPACE");
 
         } // namespace settings
         namespace menu

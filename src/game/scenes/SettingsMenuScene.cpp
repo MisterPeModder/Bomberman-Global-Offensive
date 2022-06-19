@@ -647,7 +647,10 @@ namespace game
 
         for (auto iter : binds)
             if (iter.action == action) {
-                ss << static_cast<char>(iter.key);
+                if (static_cast<char>(iter.key) == ' ')
+                    ss << localization::resources::settings::rsSpace;
+                else
+                    ss << static_cast<char>(iter.key);
                 break;
             }
 
