@@ -34,3 +34,19 @@ msgstr ""
 msgid "Quit"
 msgstr ""
 
+msgid "Bomb number"
+msgstr ""
+
+msgid "Speed"
+msgstr ""
+
+msgid "Power Bomb"
+msgstr ""
+
+msgid "User"
+msgstr ""
+msgid "Number Bomb"
+msgstr ""
+
+msgid "Number Bomb"
+msgstr ""

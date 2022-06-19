@@ -33,3 +33,18 @@ msgstr "Jouer"
 
 msgid "Quit"
 msgstr "Quitter"
+
+msgid "number Bomb"
+msgstr "nombre de Bomb"
+
+msgid "Speed"
+msgstr "Vitesse"
+
+msgid "Power Bomb"
+msgstr "Puissance Bomb"
+
+msgid "User"
+msgstr "Utilisateur"
+
+msgid "Number Bomb"
+msgstr ""
