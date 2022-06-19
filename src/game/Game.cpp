@@ -51,6 +51,7 @@
 
 #include "resources/AssetMap.hpp"
 #include "resources/Engine.hpp"
+#include "resources/GameClock.hpp"
 #include "resources/Map.hpp"
 #include "resources/RandomDevice.hpp"
 
@@ -68,6 +69,7 @@
 #include "systems/NoClip.hpp"
 #include "systems/PlaySoundOnce.hpp"
 #include "systems/Smoke.hpp"
+#include "systems/UpdateGameClock.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
@@ -116,6 +118,8 @@ namespace game
             "assets/player/textures/none_sense.png");
         textures.emplace(
             std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
+        textures.emplace(
+            std::string(localization::resources::textures::rsUnknown.getMsgId()), "assets/player/textures/unknown.png");
         /// Activables
         textures.emplace("no_clip", "assets/items/activables/bonus_activable_no_clip.png");
         textures.emplace("mine", "assets/items/activables/bonus_activable_mine.png");
@@ -236,6 +240,7 @@ namespace game
         _world.addResource<resources::Models>();
         _world.addResource<resources::Sounds>();
         _world.addResource<resources::RandomDevice>();
+        _world.addResource<resources::GameClock>();
         /// Add world storages
         _world.addStorage<components::Bomb>();
         _world.addStorage<components::ItemIdentifier>();
@@ -264,12 +269,13 @@ namespace game
         _world.addSystem<systems::PlaySoundReferences>();
         _world.addSystem<systems::DisableNoClip>();
         _world.addSystem<systems::CheckGameEnd>();
+        _world.addSystem<systems::UpdateGameClock>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::Movement, systems::ExplodeBomb, systems::PickupItem, systems::DisableBombNoClip,
             systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke, systems::CheckGameEnd,
             systems::PlaySoundReferences, systems::DisableNoClip>();
-        _resolveCollisions.add<systems::Collision>();
+        _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
 
         _loadTextures();

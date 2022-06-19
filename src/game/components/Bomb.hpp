@@ -27,7 +27,7 @@ namespace game::components
             LandMine,
         };
         /// Time when the bomb was placed
-        std::chrono::steady_clock::time_point placedTime;
+        std::chrono::milliseconds placedTime;
         /// Radius of the bomb explosion
         size_t radius;
         /// Delay before the explosion
@@ -48,10 +48,10 @@ namespace game::components
         /// @param pOwner @ref owner.
         /// @param pRadius @ref radius
         /// @param pExplosionDelay @ref explosionDelay
-        Bomb(Type pType, Identity::Id pOwner, size_t pRadius = 1,
+        Bomb(std::chrono::milliseconds pPlacedTime, Type pType, Identity::Id pOwner, size_t pRadius = 1,
             std::chrono::milliseconds pExplosionDelay = DEFAULT_DELAY)
-            : placedTime(std::chrono::steady_clock::now()), radius(pRadius), explosionDelay(pExplosionDelay),
-              exploded(false), owner(pOwner), type(pType){};
+            : placedTime(pPlacedTime), radius(pRadius), explosionDelay(pExplosionDelay), exploded(false), owner(pOwner),
+              type(pType){};
 
         /// Explode the bomb.
         ///
