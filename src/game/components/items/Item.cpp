@@ -29,6 +29,11 @@
 #include "game/resources/AssetMap.hpp"
 #include "game/resources/RandomDevice.hpp"
 
+#include <algorithm>
+#include <string_view>
+
+using namespace std::string_view_literals;
+
 namespace game::components
 {
     std::array<Item::Identifier, Item::POWER_UP_COUNT> Item::powerUps = {
@@ -39,9 +44,36 @@ namespace game::components
         Item::Identifier::LandMine, Item::Identifier::StunGrenade, Item::Identifier::SmokeGrenade,
         Item::Identifier::Punch};
 
-    std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {SpeedShoes(), FireUp(), BombUp(),
-        KickShoes(), ChainBall(), FireDown(), BombDown(), InvertedControls(), NoClip(), LandMine(), StunGrenade(),
-        SmokeGrenade(), Punch()};
+    std::array<Item, static_cast<size_t>(Item::Identifier::Count)> Item::items = {
+        SpeedShoes(),
+        FireUp(),
+        BombUp(),
+        KickShoes(),
+        ChainBall(),
+        FireDown(),
+        BombDown(),
+        InvertedControls(),
+        NoClip(),
+        LandMine(),
+        StunGrenade(),
+        SmokeGrenade(),
+        Punch(),
+    };
+    std::array<std::string_view, static_cast<size_t>(Item::Identifier::Count)> Item::NAMES = {
+        "speed_up"sv,
+        "range_up"sv,
+        "C4_up"sv,
+        "kick_shoes"sv,
+        "speed_down"sv,
+        "range_down"sv,
+        "C4_down"sv,
+        "control_down"sv,
+        "no_clip"sv,
+        "mine"sv,
+        "stun"sv,
+        "smoke"sv,
+        "punch"sv,
+    };
 
     bool Item::spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell)
     {
@@ -73,6 +105,15 @@ namespace game::components
     }
 
     const Item &Item::getItem(Identifier identifier) { return items[static_cast<size_t>(identifier)]; }
+
+    const Item *Item::getItem(std::string_view name)
+    {
+        auto found = std::find(NAMES.cbegin(), NAMES.cend(), name);
+
+        if (found == NAMES.cend())
+            return nullptr;
+        return &items[static_cast<std::size_t>(found - NAMES.cbegin())];
+    }
 
     void Item::spawnItem(Identifier identifier, ecs::SystemData data, raylib::core::Vector2u cell)
     {

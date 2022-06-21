@@ -61,7 +61,21 @@ interface Game {
      */
     setColorblindFilter(filter?: 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia' | number): void;
 
+    /**
+     * Fetches a player at the given slot.
+     * 
+     * @param slot The player id.
+     */
     getPlayer(slot: number): Player;
+
+    /**
+     * Spawns an item at a specific location.
+     * 
+     * @param x Item horizontal position
+     * @param y Item vertical position
+     * @param name The item id, leave empty to spawn a random item.
+     */
+    spawnItem(x: number, y: number, name?: ItemId | 'random' | ''): void;
 }
 
 /** Game global variable. */
@@ -123,3 +137,19 @@ interface Player {
     moveTo(x: number, y: number): void;
     stop(): void;
 }
+
+/** Item Identifier. */
+type ItemId =
+    'speed_up'
+    | 'range_up'
+    | 'C4_up'
+    | 'kick_shoes'
+    | 'speed_down'
+    | 'range_down'
+    | 'C4_down'
+    | 'control_down'
+    | 'no_clip'
+    | 'mine'
+    | 'stun'
+    | 'smoke'
+    | 'punch';
