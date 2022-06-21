@@ -22,7 +22,6 @@ namespace raylib
     {
         void Window::open(int width, int height, std::string_view title)
         {
-            SetConfigFlags(FLAG_WINDOW_RESIZABLE);
             InitWindow(width, height, title.data());
             SetWindowMinSize(1280, 720);
         }
