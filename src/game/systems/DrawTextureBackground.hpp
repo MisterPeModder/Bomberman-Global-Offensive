@@ -34,7 +34,8 @@ namespace game::systems
             for (auto [texture, rotation, pos, scale, color] : ecs::join(textures, rotations, poses, scales, colors)) {
                 texture.draw(
                     {pos.x / 100 * raylib::core::Window::getWidth(), pos.y / 100 * raylib::core::Window::getHeight()},
-                    rotation.rotationAngle, scale.scale, color);
+                    rotation.rotationAngle, scale.scale * (static_cast<float>(raylib::core::Window::getWidth()) / 1000),
+                    color);
             }
         }
     };

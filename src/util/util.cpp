@@ -86,7 +86,9 @@ namespace util
         }
 
         // Multi-byte UTF-8 sequence
-        auto [codepoint, size] = raylib::text::utf8ToCodepoint({start, str.cend()});
+        std::size_t startPos = start - str.cbegin();
+        auto [codepoint, size] =
+            raylib::text::utf8ToCodepoint(std::string_view(str.c_str() + startPos, str.size() - startPos));
 
         str.erase(start, start + size);
         return {codepoint, size};

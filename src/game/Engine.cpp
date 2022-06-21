@@ -143,8 +143,6 @@ namespace game
         raylib::core::Audio::setMasterVolume(_settings.getMasterVolume());
         raylib::core::Window::setTargetFPS(_settings.getTargetFramerate());
         raylib::core::Window::setSize(_settings.getResolution().x, _settings.getResolution().y);
-        if (raylib::core::Window::isFullscreen() != _settings.isFullscreen())
-            raylib::core::Window::toggleFullscreen();
         localization::Localization::setLocale(_settings.getLocale());
         this->setResolution(this->_settings.getResolution());
     }
