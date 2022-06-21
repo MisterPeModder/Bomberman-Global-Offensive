@@ -16,7 +16,10 @@
 #include "game/components/Living.hpp"
 #include "game/components/Player.hpp"
 #include "game/components/Sound.hpp"
+#include "game/resources/GameClock.hpp"
 #include "game/scenes/MainMenuScene.hpp"
+
+#include "logger/Logger.hpp"
 
 namespace game::systems
 {
@@ -25,10 +28,11 @@ namespace game::systems
         /// Return to main menu when only one player left
         void run(ecs::SystemData data) override final
         {
-            auto &timer = data.getResource<ecs::Timer>();
+            auto &timer = data.getResource<game::resources::GameClock>();
 
             if (data.getStorage<game::components::Player>().size() <= 1) {
                 for (auto [gameEnded] : ecs::join(data.getStorage<game::components::GameEnded>())) {
+                    gameEnded.endTime += timer.elapsedSeconds();
                     if (!gameEnded.gameEnded) {
                         for (auto [living, entity] :
                             ecs::join(data.getStorage<game::components::Living>(), data.getResource<ecs::Entities>())) {
@@ -38,12 +42,11 @@ namespace game::systems
                                 static_cast<unsigned int>(game::components::Player::Animations::Dance_4));
                             auto &anim = data.getStorage<game::components::Animation>()[entity.getId()];
                             gameEnded.gameEnded = true;
-                            gameEnded.endTime = timer.elapsed();
                             anim.chooseAnimation(randVal);
                             game::components::Sound::playSound(data, "victory");
                         }
                     }
-                    if (gameEnded.endTime + 5 <= timer.elapsed()) {
+                    if (gameEnded.endTime >= 5) {
                         data.getResource<game::resources::EngineResource>().engine->setScene<game::MainMenuScene>();
                         data.getResource<game::resources::EngineResource>().engine->setCurrentMusic(
                             game::Engine::PreloadedMusicTracks::MAIN_MENU_THEME);
