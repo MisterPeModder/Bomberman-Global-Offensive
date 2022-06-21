@@ -26,6 +26,7 @@
 #include "components/Living.hpp"
 #include "components/Model.hpp"
 #include "components/Player.hpp"
+#include "components/PlayerHud.hpp"
 #include "components/Position.hpp"
 #include "components/RotationAngle.hpp"
 #include "components/RotationAxis.hpp"
@@ -33,6 +34,7 @@
 #include "components/Size.hpp"
 #include "components/Size2D.hpp"
 #include "components/Smoke.hpp"
+#include "components/Texture2D.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
 
@@ -64,6 +66,7 @@
 #include "systems/Collision.hpp"
 #include "systems/DrawConsole.hpp"
 #include "systems/DrawFpsCounter.hpp"
+#include "systems/DrawTexture.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/Explosion.hpp"
 #include "systems/InputManager.hpp"
@@ -104,24 +107,27 @@ namespace game
     void Game::_loadTextures()
     {
         auto &textures = _world.getResource<resources::Textures>();
+        auto loadSkin = [](resources::Textures &textures, std::string_view msgid, std::string_view filename) {
+            std::string msgidStr(msgid);
+            std::string pathStr("assets/player/textures/");
+
+            textures.emplace(msgidStr, pathStr + filename.data());
+            textures.emplace("head_" + msgidStr, pathStr + "head_" + filename.data());
+        };
 
         /// Map
         textures.emplace("crate", "assets/map/crate.png");
         textures.emplace("wall", "assets/map/wall.png");
         textures.emplace("ground", "assets/map/ground.png");
         /// Player
-        textures.emplace(std::string(localization::resources::textures::rsTerroristOne.getMsgId()),
-            "assets/player/textures/terrorist_1.png");
-        textures.emplace(std::string(localization::resources::textures::rsTerroristTwo.getMsgId()),
-            "assets/player/textures/terrorist_2.png");
-        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristOne.getMsgId()),
-            "assets/player/textures/counter_terrorist_1.png");
-        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristTwo.getMsgId()),
-            "assets/player/textures/counter_terrorist_2.png");
-        textures.emplace(std::string(localization::resources::textures::rsNoSense.getMsgId()),
-            "assets/player/textures/none_sense.png");
-        textures.emplace(
-            std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
+        loadSkin(textures, localization::resources::textures::rsTerroristOne.getMsgId(), "terrorist_1.png");
+        loadSkin(textures, localization::resources::textures::rsTerroristTwo.getMsgId(), "terrorist_2.png");
+        loadSkin(
+            textures, localization::resources::textures::rsCounterTerroristOne.getMsgId(), "counter_terrorist_1.png");
+        loadSkin(
+            textures, localization::resources::textures::rsCounterTerroristTwo.getMsgId(), "counter_terrorist_2.png");
+        loadSkin(textures, localization::resources::textures::rsNoSense.getMsgId(), "none_sense.png");
+        loadSkin(textures, localization::resources::textures::rsRainbow.getMsgId(), "rainbow.png");
         textures.emplace(
             std::string(localization::resources::textures::rsUnknown.getMsgId()), "assets/player/textures/unknown.png");
         /// Activables
@@ -277,6 +283,7 @@ namespace game
         _world.addSystem<systems::CheckGameEnd>();
         _world.addSystem<systems::ClearExplosions>();
         _world.addSystem<systems::UpdateGameClock>();
+        _world.addSystem<systems::DrawFlippedTexture>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::AiUpdate, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
@@ -284,6 +291,7 @@ namespace game
             systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
+        _drawing2d.add<systems::DrawFlippedTexture>();
 
         _loadTextures();
         _loadMeshes();
@@ -296,6 +304,8 @@ namespace game
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
             raylib::core::Vector2u cell = _map.getPlayerStartingPosition(owner);
+
+            components::PlayerHud::createHud(owner, textures.get("head_" + _params.skinList.front()), _world);
 
             auto playerEntity =
                 _world.addEntity()

@@ -9,6 +9,7 @@
 #define GAME_COMPONENTS_TEXTURE2D_HPP_
 
 #include <filesystem>
+#include "Reference.hpp"
 #include "ecs/Component.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
@@ -18,6 +19,8 @@ namespace game::components
         Texture2D(const raylib::textures::Texture2D &pTexture) : raylib::textures::Texture2D(pTexture) {}
         Texture2D(const std::filesystem::path &pPath) : raylib::textures::Texture2D(pPath) {}
     };
+
+    using Texture2DReference = Reference<raylib::textures::Texture2D>;
 } // namespace game::components
 
 #endif

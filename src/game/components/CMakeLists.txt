@@ -33,6 +33,8 @@ set(SRC
     ${INCROOT}/Model.hpp
     ${SRCROOT}/Player.cpp
     ${INCROOT}/Player.hpp
+    ${SRCROOT}/PlayerHud.cpp
+    ${INCROOT}/PlayerHud.hpp
     ${INCROOT}/Position.hpp
     ${INCROOT}/Position2D.hpp
     ${INCROOT}/Rectangle.hpp
