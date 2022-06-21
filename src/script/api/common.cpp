@@ -5,7 +5,11 @@
 ** Common JS utilities
 */
 
+#include "ecs/Storage.hpp"
+
 #include "game/Engine.hpp"
+#include "game/components/items/Item.hpp"
+
 #include "logger/Logger.hpp"
 #include "raylib/core/Window.hpp"
 #include "script/Engine.hpp"
@@ -107,6 +111,35 @@ BMJS_DEFINE void common_setColorblindFilter(bmjs::String name)
         throw bmjs::JsException(out.str().c_str());
     }
     engine->getGameEngine().setColorBlindShader(found - filterNames.cbegin());
+}
+
+BMJS_DEFINE void common_spawnItem(bmjs::Number x, bmjs::Number y, bmjs::String name)
+{
+    using game::components::Item;
+
+    auto engine = bmjs::Engine::instance().lock();
+
+    if (!engine)
+        return;
+    auto &world = engine->getGameEngine().getScene().getWorld();
+
+    std::string_view nameStr(name);
+
+    if (nameStr.empty() || nameStr == "random") {
+        Item::spawnRandomItem(
+            ecs::SystemData(world), raylib::core::Vector2u(static_cast<unsigned int>(x), static_cast<unsigned int>(y)));
+    } else if (Item const *item = Item::getItem(nameStr); item != nullptr) {
+        Item::spawnItem(item->identifier, ecs::SystemData(world),
+            raylib::core::Vector2u(static_cast<unsigned int>(x), static_cast<unsigned int>(y)));
+    } else {
+        std::ostringstream out;
+
+        out << "Item " << std::quoted(nameStr) << " does not exist, valid items are:" << std::endl;
+        for (auto itemName : Item::NAMES)
+            out << std::quoted(itemName) << ", ";
+        out << " and \"random\".";
+        throw bmjs::JsException(out.str());
+    }
 }
 
 BMJS_API_END

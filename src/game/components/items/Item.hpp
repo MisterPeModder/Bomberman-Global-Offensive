@@ -8,14 +8,16 @@
 #ifndef GAME_COMPONENTS_ITEMS_ITEM_HPP_
 #define GAME_COMPONENTS_ITEMS_ITEM_HPP_
 
-#include <array>
-#include <chrono>
-#include <functional>
 #include "ecs/Component.hpp"
 #include "ecs/Entity.hpp"
 #include "ecs/System.hpp"
 #include "game/resources/RandomDevice.hpp"
 #include "raylib/core/Vector2.hpp"
+
+#include <array>
+#include <chrono>
+#include <functional>
+#include <string_view>
 
 namespace game::components
 {
@@ -47,6 +49,8 @@ namespace game::components
             Punch,
             Count,
         };
+
+        static std::array<std::string_view, static_cast<size_t>(Identifier::Count)> NAMES;
 
         /// @ref Type.
         Type type;
@@ -86,11 +90,25 @@ namespace game::components
         /// @retval false if no item was created.
         static bool spawnRandomItem(ecs::SystemData data, raylib::core::Vector2u cell);
 
+        /// Spawns a specific item on a given cell.
+        ///
+        /// @param item The item to spawn.
+        /// @param data world data.
+        /// @param cell Item position.
+        static void spawnItem(Identifier item, ecs::SystemData data, raylib::core::Vector2u cell);
+
         /// Get an item from its identifier.
         ///
         /// @param identifier item identifier.
         /// @return const Item& item.
         static const Item &getItem(Identifier identifier);
+
+        /// Get an item from its name.
+        ///
+        /// @param name The item's name.
+        ///
+        /// @returns A pointer to the item if found, or @c nullptr if not.
+        static const Item *getItem(std::string_view name);
 
         /// First activable item.
         /// @note The last is the item preceeding @ref Identifier::Count
@@ -112,8 +130,6 @@ namespace game::components
 
       private:
         Item(){};
-
-        static void spawnItem(Identifier item, ecs::SystemData data, raylib::core::Vector2u cell);
 
         //////// Items
         /// Power Ups

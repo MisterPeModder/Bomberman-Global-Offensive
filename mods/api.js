@@ -181,4 +181,10 @@ var game;
             players[slot] = makePlayer(slot);
         return players[slot];
     });
+
+    readOnly(game, 'spawnItem', function (x, y, name) {
+        if (name == null || name === '')
+            name = 'random';
+        bm.common.spawnItem(x, y, name);
+    })
 })(game || (game = {}));
