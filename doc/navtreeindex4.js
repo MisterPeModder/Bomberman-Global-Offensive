@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"classgame_1_1_main_menu_scene.html":[2,0,2,13],
+"classgame_1_1_main_menu_scene.html#a0779f6c7954bb04c3fd946ad907f26ef":[2,0,2,13,2],
 "classgame_1_1_main_menu_scene.html#a1fe1ebcbba036e955c506c1312410b67":[2,0,2,13,5],
 "classgame_1_1_main_menu_scene.html#a24cbb3f059e4a1331687f5b530074766":[2,0,2,13,4],
 "classgame_1_1_main_menu_scene.html#a44fabe4985ebed377774ee7e4502ec29":[2,0,2,13,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "classgame_1_1map_1_1cellular_1_1_rule.html#afbc4807d1e31408ef1f7b1b4a0130b38":[2,0,2,2,0,1,11],
 "classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html":[2,0,2,2,0,1,0],
 "classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html#ac387eaf1c015a85bde316242546a7a25":[2,0,2,2,0,1,0,0],
-"classgame_1_1resources_1_1_asset_map.html":[2,0,2,3,0],
-"classgame_1_1resources_1_1_asset_map.html#a0d1858e0f5d4a90224a74110c9c386a9":[2,0,2,3,0,0],
-"classgame_1_1resources_1_1_asset_map.html#a2cced29a0afda2e9000828a3bb9f2700":[2,0,2,3,0,2]
+"classgame_1_1resources_1_1_asset_map.html":[2,0,2,3,0]
 };

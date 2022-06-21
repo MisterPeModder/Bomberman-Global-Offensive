@@ -12,6 +12,7 @@ var common_8cpp =
     [ "common_setDebugMode", "common_8cpp.html#af99ba64c4fc7f00736c3f14981c7766b", null ],
     [ "common_setHeight", "common_8cpp.html#a575dbcada70a355c5376400dc356f12a", null ],
     [ "common_setWidth", "common_8cpp.html#a512c5bcdce4b4c8e52c4600faa051b20", null ],
+    [ "common_spawnItem", "common_8cpp.html#a3cabb32f2e122fc02df11de9a511f852", null ],
     [ "common_warn", "common_8cpp.html#a4ce964a600d8da3213a54e2fece93e94", null ],
     [ "cvars", "common_8cpp.html#a44214abd9f680e837d90227e2c53234a", null ]
 ];

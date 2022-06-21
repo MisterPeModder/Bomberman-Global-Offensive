@@ -24,6 +24,8 @@ var bindings_8cpp =
     [ "common_setHeight_mujs", "bindings_8cpp.html#a1b689376935ce3ad94732b5467594ee1", null ],
     [ "common_setWidth", "bindings_8cpp.html#a1a0132b1513c993cd226549ca77df125", null ],
     [ "common_setWidth_mujs", "bindings_8cpp.html#ac1fca1c007e6773dcb267ad24b751aea", null ],
+    [ "common_spawnItem", "bindings_8cpp.html#aa9b80bc7f8cf2986f9db646934bdbffe", null ],
+    [ "common_spawnItem_mujs", "bindings_8cpp.html#a64c5e3bfa247fe8da04e21a1835104e9", null ],
     [ "common_warn", "bindings_8cpp.html#a51061543624f44e50e69654518846fd3", null ],
     [ "common_warn_mujs", "bindings_8cpp.html#a38b2caceefe6c037463ad900893dafa8", null ],
     [ "mods_create", "bindings_8cpp.html#a93acb663d5e0a972d15f095b04b35c67", null ],

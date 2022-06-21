@@ -230,16 +230,16 @@ template&lt;typename R , typename... Args&gt; </div>
 
 <p>Registers the JS bindings in the 'bm' global object. </p>
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00441">441</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    {</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        js_newobject(state);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <a class="code" href="namespacebmjs.html#afe2fe7f32eb79e61b719278629858f4f">registerMuJSBindings_common</a>(state);</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <a class="code" href="namespacebmjs.html#a990b83e2b64ddafe39cd87f35125b97a">registerMuJSBindings_mods</a>(state);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <a class="code" href="namespacebmjs.html#a32f78644170cd4939d6b180bd41ede93">registerMuJSBindings_players</a>(state);</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        js_setglobal(state, <span class="stringliteral">&quot;bm&quot;</span>);</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00455">455</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    {</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        js_newobject(state);</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        <a class="code" href="namespacebmjs.html#afe2fe7f32eb79e61b719278629858f4f">registerMuJSBindings_common</a>(state);</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        <a class="code" href="namespacebmjs.html#a990b83e2b64ddafe39cd87f35125b97a">registerMuJSBindings_mods</a>(state);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        <a class="code" href="namespacebmjs.html#a32f78644170cd4939d6b180bd41ede93">registerMuJSBindings_players</a>(state);</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        js_setglobal(state, <span class="stringliteral">&quot;bm&quot;</span>);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -269,51 +269,54 @@ template&lt;typename R , typename... Args&gt; </div>
 
 <p>Registers the functions in the common group. </p>
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00330">330</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    {</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        js_newobject(state);</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a96115394e5fd0b791178a359fad43772">common_debug_mujs</a>, <span class="stringliteral">&quot;debug&quot;</span>, 1);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;debug&quot;</span>);</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ad4c7816e463e0c68b6f984c3f3330b9c">common_error_mujs</a>, <span class="stringliteral">&quot;error&quot;</span>, 1);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;error&quot;</span>);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a7a6a2671459b0fdbeff9d564096c83f2">common_getCVar_mujs</a>, <span class="stringliteral">&quot;getCVar&quot;</span>, 1);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getCVar&quot;</span>);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a07edaa234bf0688827515803245a834f">common_getDebugMode_mujs</a>, <span class="stringliteral">&quot;getDebugMode&quot;</span>, 0);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getDebugMode&quot;</span>);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#acbb9699a0c9dddf6a2fdeeb17ee5abb9">common_getHeight_mujs</a>, <span class="stringliteral">&quot;getHeight&quot;</span>, 0);</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getHeight&quot;</span>);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a62afacaeb9a3e2406b73359ec2122d26">common_getWidth_mujs</a>, <span class="stringliteral">&quot;getWidth&quot;</span>, 0);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getWidth&quot;</span>);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#af4d7239056d964d74c3341bc838ea5aa">common_log_mujs</a>, <span class="stringliteral">&quot;log&quot;</span>, 1);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;log&quot;</span>);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a4ab2c8f8a4c0cfa748e97ad7fc7e420a">common_setCVar_mujs</a>, <span class="stringliteral">&quot;setCVar&quot;</span>, 2);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setCVar&quot;</span>);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a9db21d5e485a3f21cde94d18e185297d">common_setColorblindFilter_mujs</a>, <span class="stringliteral">&quot;setColorblindFilter&quot;</span>, 1);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setColorblindFilter&quot;</span>);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#aad4d04e88692b7957cc3e926a659d30b">common_setDebugMode_mujs</a>, <span class="stringliteral">&quot;setDebugMode&quot;</span>, 1);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setDebugMode&quot;</span>);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a1b689376935ce3ad94732b5467594ee1">common_setHeight_mujs</a>, <span class="stringliteral">&quot;setHeight&quot;</span>, 1);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setHeight&quot;</span>);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ac1fca1c007e6773dcb267ad24b751aea">common_setWidth_mujs</a>, <span class="stringliteral">&quot;setWidth&quot;</span>, 1);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setWidth&quot;</span>);</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a38b2caceefe6c037463ad900893dafa8">common_warn_mujs</a>, <span class="stringliteral">&quot;warn&quot;</span>, 1);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;warn&quot;</span>);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;common&quot;</span>);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00341">341</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        js_newobject(state);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a96115394e5fd0b791178a359fad43772">common_debug_mujs</a>, <span class="stringliteral">&quot;debug&quot;</span>, 1);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;debug&quot;</span>);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ad4c7816e463e0c68b6f984c3f3330b9c">common_error_mujs</a>, <span class="stringliteral">&quot;error&quot;</span>, 1);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;error&quot;</span>);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a7a6a2671459b0fdbeff9d564096c83f2">common_getCVar_mujs</a>, <span class="stringliteral">&quot;getCVar&quot;</span>, 1);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getCVar&quot;</span>);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a07edaa234bf0688827515803245a834f">common_getDebugMode_mujs</a>, <span class="stringliteral">&quot;getDebugMode&quot;</span>, 0);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getDebugMode&quot;</span>);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160; </div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#acbb9699a0c9dddf6a2fdeeb17ee5abb9">common_getHeight_mujs</a>, <span class="stringliteral">&quot;getHeight&quot;</span>, 0);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getHeight&quot;</span>);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a62afacaeb9a3e2406b73359ec2122d26">common_getWidth_mujs</a>, <span class="stringliteral">&quot;getWidth&quot;</span>, 0);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getWidth&quot;</span>);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#af4d7239056d964d74c3341bc838ea5aa">common_log_mujs</a>, <span class="stringliteral">&quot;log&quot;</span>, 1);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;log&quot;</span>);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a4ab2c8f8a4c0cfa748e97ad7fc7e420a">common_setCVar_mujs</a>, <span class="stringliteral">&quot;setCVar&quot;</span>, 2);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setCVar&quot;</span>);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a9db21d5e485a3f21cde94d18e185297d">common_setColorblindFilter_mujs</a>, <span class="stringliteral">&quot;setColorblindFilter&quot;</span>, 1);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setColorblindFilter&quot;</span>);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#aad4d04e88692b7957cc3e926a659d30b">common_setDebugMode_mujs</a>, <span class="stringliteral">&quot;setDebugMode&quot;</span>, 1);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setDebugMode&quot;</span>);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a1b689376935ce3ad94732b5467594ee1">common_setHeight_mujs</a>, <span class="stringliteral">&quot;setHeight&quot;</span>, 1);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setHeight&quot;</span>);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ac1fca1c007e6773dcb267ad24b751aea">common_setWidth_mujs</a>, <span class="stringliteral">&quot;setWidth&quot;</span>, 1);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setWidth&quot;</span>);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a64c5e3bfa247fe8da04e21a1835104e9">common_spawnItem_mujs</a>, <span class="stringliteral">&quot;spawnItem&quot;</span>, 3);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;spawnItem&quot;</span>);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a38b2caceefe6c037463ad900893dafa8">common_warn_mujs</a>, <span class="stringliteral">&quot;warn&quot;</span>, 1);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;warn&quot;</span>);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;common&quot;</span>);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -343,36 +346,36 @@ template&lt;typename R , typename... Args&gt; </div>
 
 <p>Registers the functions in the mods group. </p>
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00377">377</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        js_newobject(state);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a11c3d826f58800cf34b9ce142c01ad6c">mods_create_mujs</a>, <span class="stringliteral">&quot;create&quot;</span>, 2);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;create&quot;</span>);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#af0d3d78451115e678e845ab185381286">mods_debug_mujs</a>, <span class="stringliteral">&quot;debug&quot;</span>, 2);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;debug&quot;</span>);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ab4e5d6fabf64789ce5320bfcb1fdc224">mods_enable_mujs</a>, <span class="stringliteral">&quot;enable&quot;</span>, 1);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;enable&quot;</span>);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a852993c18fcc180d68e5d2ceefba1c89">mods_error_mujs</a>, <span class="stringliteral">&quot;error&quot;</span>, 2);</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;error&quot;</span>);</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#aa4e5d262d9ccd2385e64e3c63c7e62f2">mods_log_mujs</a>, <span class="stringliteral">&quot;log&quot;</span>, 2);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;log&quot;</span>);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a59ebe625dd481c60fa9e690bacb9a4ae">mods_setLoadCallback_mujs</a>, <span class="stringliteral">&quot;setLoadCallback&quot;</span>, 2);</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setLoadCallback&quot;</span>);</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#abc2cb74fa886bb03c764c91b0cb59704">mods_setUnloadCallback_mujs</a>, <span class="stringliteral">&quot;setUnloadCallback&quot;</span>, 2);</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setUnloadCallback&quot;</span>);</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ad6c1ccfb5c69b36f3734df62855f57dd">mods_warn_mujs</a>, <span class="stringliteral">&quot;warn&quot;</span>, 2);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;warn&quot;</span>);</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;mods&quot;</span>);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00391">391</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        js_newobject(state);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a11c3d826f58800cf34b9ce142c01ad6c">mods_create_mujs</a>, <span class="stringliteral">&quot;create&quot;</span>, 2);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;create&quot;</span>);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#af0d3d78451115e678e845ab185381286">mods_debug_mujs</a>, <span class="stringliteral">&quot;debug&quot;</span>, 2);</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;debug&quot;</span>);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ab4e5d6fabf64789ce5320bfcb1fdc224">mods_enable_mujs</a>, <span class="stringliteral">&quot;enable&quot;</span>, 1);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;enable&quot;</span>);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a852993c18fcc180d68e5d2ceefba1c89">mods_error_mujs</a>, <span class="stringliteral">&quot;error&quot;</span>, 2);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;error&quot;</span>);</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#aa4e5d262d9ccd2385e64e3c63c7e62f2">mods_log_mujs</a>, <span class="stringliteral">&quot;log&quot;</span>, 2);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;log&quot;</span>);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a59ebe625dd481c60fa9e690bacb9a4ae">mods_setLoadCallback_mujs</a>, <span class="stringliteral">&quot;setLoadCallback&quot;</span>, 2);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setLoadCallback&quot;</span>);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#abc2cb74fa886bb03c764c91b0cb59704">mods_setUnloadCallback_mujs</a>, <span class="stringliteral">&quot;setUnloadCallback&quot;</span>, 2);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setUnloadCallback&quot;</span>);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ad6c1ccfb5c69b36f3734df62855f57dd">mods_warn_mujs</a>, <span class="stringliteral">&quot;warn&quot;</span>, 2);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;warn&quot;</span>);</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;mods&quot;</span>);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -402,36 +405,36 @@ template&lt;typename R , typename... Args&gt; </div>
 
 <p>Registers the functions in the players group. </p>
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00409">409</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    {</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        js_newobject(state);</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160; </div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#adf4e0e9789676ce7000cdf59bab7c7e8">players_exists_mujs</a>, <span class="stringliteral">&quot;exists&quot;</span>, 1);</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;exists&quot;</span>);</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a8ae797f4a1e638955f9017a8c1533c82">players_getX_mujs</a>, <span class="stringliteral">&quot;getX&quot;</span>, 1);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getX&quot;</span>);</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a75f9027dbcb6e3cdeba60b0534e4479d">players_getY_mujs</a>, <span class="stringliteral">&quot;getY&quot;</span>, 1);</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getY&quot;</span>);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a8946fa41f5c088c076561608ae5e7b10">players_moveTo_mujs</a>, <span class="stringliteral">&quot;moveTo&quot;</span>, 3);</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;moveTo&quot;</span>);</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ac87e962fb6796b65e30d3c4ab7b4bbe5">players_setPos_mujs</a>, <span class="stringliteral">&quot;setPos&quot;</span>, 3);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setPos&quot;</span>);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a71540b4ca63cc2ff9aa8d9bb34bf3450">players_setX_mujs</a>, <span class="stringliteral">&quot;setX&quot;</span>, 2);</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setX&quot;</span>);</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a1cf37c90fc0bc610f5fd10707a1dd753">players_setY_mujs</a>, <span class="stringliteral">&quot;setY&quot;</span>, 2);</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setY&quot;</span>);</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a1b77ae21f0595e796f86ab30f6c778d2">players_stop_mujs</a>, <span class="stringliteral">&quot;stop&quot;</span>, 1);</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;stop&quot;</span>);</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;players&quot;</span>);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00423">423</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    {</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        js_newobject(state);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#adf4e0e9789676ce7000cdf59bab7c7e8">players_exists_mujs</a>, <span class="stringliteral">&quot;exists&quot;</span>, 1);</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;exists&quot;</span>);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a8ae797f4a1e638955f9017a8c1533c82">players_getX_mujs</a>, <span class="stringliteral">&quot;getX&quot;</span>, 1);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getX&quot;</span>);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160; </div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a75f9027dbcb6e3cdeba60b0534e4479d">players_getY_mujs</a>, <span class="stringliteral">&quot;getY&quot;</span>, 1);</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;getY&quot;</span>);</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a8946fa41f5c088c076561608ae5e7b10">players_moveTo_mujs</a>, <span class="stringliteral">&quot;moveTo&quot;</span>, 3);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;moveTo&quot;</span>);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#ac87e962fb6796b65e30d3c4ab7b4bbe5">players_setPos_mujs</a>, <span class="stringliteral">&quot;setPos&quot;</span>, 3);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setPos&quot;</span>);</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160; </div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a71540b4ca63cc2ff9aa8d9bb34bf3450">players_setX_mujs</a>, <span class="stringliteral">&quot;setX&quot;</span>, 2);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setX&quot;</span>);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a1cf37c90fc0bc610f5fd10707a1dd753">players_setY_mujs</a>, <span class="stringliteral">&quot;setY&quot;</span>, 2);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;setY&quot;</span>);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        js_newcfunction(state, &amp;::<a class="code" href="bindings_8cpp.html#a1b77ae21f0595e796f86ab30f6c778d2">players_stop_mujs</a>, <span class="stringliteral">&quot;stop&quot;</span>, 1);</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;stop&quot;</span>);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        js_setproperty(state, -2, <span class="stringliteral">&quot;players&quot;</span>);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -471,39 +474,40 @@ template&lt;typename R , typename... Args&gt; </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="abindings_8cpp_html_adf4e0e9789676ce7000cdf59bab7c7e8"><div class="ttname"><a href="bindings_8cpp.html#adf4e0e9789676ce7000cdf59bab7c7e8">players_exists_mujs</a></div><div class="ttdeci">static void players_exists_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00256">bindings.cpp:256</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a9db21d5e485a3f21cde94d18e185297d"><div class="ttname"><a href="bindings_8cpp.html#a9db21d5e485a3f21cde94d18e185297d">common_setColorblindFilter_mujs</a></div><div class="ttdeci">static void common_setColorblindFilter_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00119">bindings.cpp:119</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a11c3d826f58800cf34b9ce142c01ad6c"><div class="ttname"><a href="bindings_8cpp.html#a11c3d826f58800cf34b9ce142c01ad6c">mods_create_mujs</a></div><div class="ttdeci">static void mods_create_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00159">bindings.cpp:159</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a38b2caceefe6c037463ad900893dafa8"><div class="ttname"><a href="bindings_8cpp.html#a38b2caceefe6c037463ad900893dafa8">common_warn_mujs</a></div><div class="ttdeci">static void common_warn_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00151">bindings.cpp:151</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_adf4e0e9789676ce7000cdf59bab7c7e8"><div class="ttname"><a href="bindings_8cpp.html#adf4e0e9789676ce7000cdf59bab7c7e8">players_exists_mujs</a></div><div class="ttdeci">static void players_exists_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00267">bindings.cpp:267</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a9db21d5e485a3f21cde94d18e185297d"><div class="ttname"><a href="bindings_8cpp.html#a9db21d5e485a3f21cde94d18e185297d">common_setColorblindFilter_mujs</a></div><div class="ttdeci">static void common_setColorblindFilter_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00120">bindings.cpp:120</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a11c3d826f58800cf34b9ce142c01ad6c"><div class="ttname"><a href="bindings_8cpp.html#a11c3d826f58800cf34b9ce142c01ad6c">mods_create_mujs</a></div><div class="ttdeci">static void mods_create_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00170">bindings.cpp:170</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a38b2caceefe6c037463ad900893dafa8"><div class="ttname"><a href="bindings_8cpp.html#a38b2caceefe6c037463ad900893dafa8">common_warn_mujs</a></div><div class="ttdeci">static void common_warn_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00162">bindings.cpp:162</a></div></div>
 <div class="ttc" id="ascript_8hpp_html_ac7e52316c601c34072f1c11b135825d2"><div class="ttname"><a href="script_8hpp.html#ac7e52316c601c34072f1c11b135825d2">BMJS_USE_API</a></div><div class="ttdeci">#define BMJS_USE_API(name)</div><div class="ttdoc">Call this to prevent the api group name from being excluded from the binary.</div><div class="ttdef"><b>Definition:</b> <a href="script_8hpp_source.html#l00081">script.hpp:81</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_abc2cb74fa886bb03c764c91b0cb59704"><div class="ttname"><a href="bindings_8cpp.html#abc2cb74fa886bb03c764c91b0cb59704">mods_setUnloadCallback_mujs</a></div><div class="ttdeci">static void mods_setUnloadCallback_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00225">bindings.cpp:225</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_aa4e5d262d9ccd2385e64e3c63c7e62f2"><div class="ttname"><a href="bindings_8cpp.html#aa4e5d262d9ccd2385e64e3c63c7e62f2">mods_log_mujs</a></div><div class="ttdeci">static void mods_log_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00194">bindings.cpp:194</a></div></div>
-<div class="ttc" id="anamespacebmjs_html_a990b83e2b64ddafe39cd87f35125b97a"><div class="ttname"><a href="namespacebmjs.html#a990b83e2b64ddafe39cd87f35125b97a">bmjs::registerMuJSBindings_mods</a></div><div class="ttdeci">static void registerMuJSBindings_mods(js_State *state)</div><div class="ttdoc">Registers the functions in the mods group.</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00377">bindings.cpp:377</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_ac87e962fb6796b65e30d3c4ab7b4bbe5"><div class="ttname"><a href="bindings_8cpp.html#ac87e962fb6796b65e30d3c4ab7b4bbe5">players_setPos_mujs</a></div><div class="ttdeci">static void players_setPos_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00290">bindings.cpp:290</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_ac1fca1c007e6773dcb267ad24b751aea"><div class="ttname"><a href="bindings_8cpp.html#ac1fca1c007e6773dcb267ad24b751aea">common_setWidth_mujs</a></div><div class="ttdeci">static void common_setWidth_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00143">bindings.cpp:143</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a1b689376935ce3ad94732b5467594ee1"><div class="ttname"><a href="bindings_8cpp.html#a1b689376935ce3ad94732b5467594ee1">common_setHeight_mujs</a></div><div class="ttdeci">static void common_setHeight_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00135">bindings.cpp:135</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a1b77ae21f0595e796f86ab30f6c778d2"><div class="ttname"><a href="bindings_8cpp.html#a1b77ae21f0595e796f86ab30f6c778d2">players_stop_mujs</a></div><div class="ttdeci">static void players_stop_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00318">bindings.cpp:318</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a75f9027dbcb6e3cdeba60b0534e4479d"><div class="ttname"><a href="bindings_8cpp.html#a75f9027dbcb6e3cdeba60b0534e4479d">players_getY_mujs</a></div><div class="ttdeci">static void players_getY_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00272">bindings.cpp:272</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_af0d3d78451115e678e845ab185381286"><div class="ttname"><a href="bindings_8cpp.html#af0d3d78451115e678e845ab185381286">mods_debug_mujs</a></div><div class="ttdeci">static void mods_debug_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00168">bindings.cpp:168</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_ab4e5d6fabf64789ce5320bfcb1fdc224"><div class="ttname"><a href="bindings_8cpp.html#ab4e5d6fabf64789ce5320bfcb1fdc224">mods_enable_mujs</a></div><div class="ttdeci">static void mods_enable_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00177">bindings.cpp:177</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_acbb9699a0c9dddf6a2fdeeb17ee5abb9"><div class="ttname"><a href="bindings_8cpp.html#acbb9699a0c9dddf6a2fdeeb17ee5abb9">common_getHeight_mujs</a></div><div class="ttdeci">static void common_getHeight_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00090">bindings.cpp:90</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a8ae797f4a1e638955f9017a8c1533c82"><div class="ttname"><a href="bindings_8cpp.html#a8ae797f4a1e638955f9017a8c1533c82">players_getX_mujs</a></div><div class="ttdeci">static void players_getX_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00264">bindings.cpp:264</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a59ebe625dd481c60fa9e690bacb9a4ae"><div class="ttname"><a href="bindings_8cpp.html#a59ebe625dd481c60fa9e690bacb9a4ae">mods_setLoadCallback_mujs</a></div><div class="ttdeci">static void mods_setLoadCallback_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00203">bindings.cpp:203</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_aad4d04e88692b7957cc3e926a659d30b"><div class="ttname"><a href="bindings_8cpp.html#aad4d04e88692b7957cc3e926a659d30b">common_setDebugMode_mujs</a></div><div class="ttdeci">static void common_setDebugMode_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00127">bindings.cpp:127</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a71540b4ca63cc2ff9aa8d9bb34bf3450"><div class="ttname"><a href="bindings_8cpp.html#a71540b4ca63cc2ff9aa8d9bb34bf3450">players_setX_mujs</a></div><div class="ttdeci">static void players_setX_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00300">bindings.cpp:300</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a96115394e5fd0b791178a359fad43772"><div class="ttname"><a href="bindings_8cpp.html#a96115394e5fd0b791178a359fad43772">common_debug_mujs</a></div><div class="ttdeci">static void common_debug_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00060">bindings.cpp:60</a></div></div>
-<div class="ttc" id="anamespacebmjs_html_afe2fe7f32eb79e61b719278629858f4f"><div class="ttname"><a href="namespacebmjs.html#afe2fe7f32eb79e61b719278629858f4f">bmjs::registerMuJSBindings_common</a></div><div class="ttdeci">static void registerMuJSBindings_common(js_State *state)</div><div class="ttdoc">Registers the functions in the common group.</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00330">bindings.cpp:330</a></div></div>
-<div class="ttc" id="anamespacebmjs_html_a32f78644170cd4939d6b180bd41ede93"><div class="ttname"><a href="namespacebmjs.html#a32f78644170cd4939d6b180bd41ede93">bmjs::registerMuJSBindings_players</a></div><div class="ttdeci">static void registerMuJSBindings_players(js_State *state)</div><div class="ttdoc">Registers the functions in the players group.</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00409">bindings.cpp:409</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a62afacaeb9a3e2406b73359ec2122d26"><div class="ttname"><a href="bindings_8cpp.html#a62afacaeb9a3e2406b73359ec2122d26">common_getWidth_mujs</a></div><div class="ttdeci">static void common_getWidth_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00096">bindings.cpp:96</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a8946fa41f5c088c076561608ae5e7b10"><div class="ttname"><a href="bindings_8cpp.html#a8946fa41f5c088c076561608ae5e7b10">players_moveTo_mujs</a></div><div class="ttdeci">static void players_moveTo_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00280">bindings.cpp:280</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_ad6c1ccfb5c69b36f3734df62855f57dd"><div class="ttname"><a href="bindings_8cpp.html#ad6c1ccfb5c69b36f3734df62855f57dd">mods_warn_mujs</a></div><div class="ttdeci">static void mods_warn_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00247">bindings.cpp:247</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_ad4c7816e463e0c68b6f984c3f3330b9c"><div class="ttname"><a href="bindings_8cpp.html#ad4c7816e463e0c68b6f984c3f3330b9c">common_error_mujs</a></div><div class="ttdeci">static void common_error_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00068">bindings.cpp:68</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a7a6a2671459b0fdbeff9d564096c83f2"><div class="ttname"><a href="bindings_8cpp.html#a7a6a2671459b0fdbeff9d564096c83f2">common_getCVar_mujs</a></div><div class="ttdeci">static void common_getCVar_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00076">bindings.cpp:76</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a852993c18fcc180d68e5d2ceefba1c89"><div class="ttname"><a href="bindings_8cpp.html#a852993c18fcc180d68e5d2ceefba1c89">mods_error_mujs</a></div><div class="ttdeci">static void mods_error_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00185">bindings.cpp:185</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_af4d7239056d964d74c3341bc838ea5aa"><div class="ttname"><a href="bindings_8cpp.html#af4d7239056d964d74c3341bc838ea5aa">common_log_mujs</a></div><div class="ttdeci">static void common_log_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00102">bindings.cpp:102</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a4ab2c8f8a4c0cfa748e97ad7fc7e420a"><div class="ttname"><a href="bindings_8cpp.html#a4ab2c8f8a4c0cfa748e97ad7fc7e420a">common_setCVar_mujs</a></div><div class="ttdeci">static void common_setCVar_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00110">bindings.cpp:110</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a1cf37c90fc0bc610f5fd10707a1dd753"><div class="ttname"><a href="bindings_8cpp.html#a1cf37c90fc0bc610f5fd10707a1dd753">players_setY_mujs</a></div><div class="ttdeci">static void players_setY_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00309">bindings.cpp:309</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a07edaa234bf0688827515803245a834f"><div class="ttname"><a href="bindings_8cpp.html#a07edaa234bf0688827515803245a834f">common_getDebugMode_mujs</a></div><div class="ttdeci">static void common_getDebugMode_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00084">bindings.cpp:84</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_abc2cb74fa886bb03c764c91b0cb59704"><div class="ttname"><a href="bindings_8cpp.html#abc2cb74fa886bb03c764c91b0cb59704">mods_setUnloadCallback_mujs</a></div><div class="ttdeci">static void mods_setUnloadCallback_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00236">bindings.cpp:236</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_aa4e5d262d9ccd2385e64e3c63c7e62f2"><div class="ttname"><a href="bindings_8cpp.html#aa4e5d262d9ccd2385e64e3c63c7e62f2">mods_log_mujs</a></div><div class="ttdeci">static void mods_log_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00205">bindings.cpp:205</a></div></div>
+<div class="ttc" id="anamespacebmjs_html_a990b83e2b64ddafe39cd87f35125b97a"><div class="ttname"><a href="namespacebmjs.html#a990b83e2b64ddafe39cd87f35125b97a">bmjs::registerMuJSBindings_mods</a></div><div class="ttdeci">static void registerMuJSBindings_mods(js_State *state)</div><div class="ttdoc">Registers the functions in the mods group.</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00391">bindings.cpp:391</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_ac87e962fb6796b65e30d3c4ab7b4bbe5"><div class="ttname"><a href="bindings_8cpp.html#ac87e962fb6796b65e30d3c4ab7b4bbe5">players_setPos_mujs</a></div><div class="ttdeci">static void players_setPos_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00301">bindings.cpp:301</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_ac1fca1c007e6773dcb267ad24b751aea"><div class="ttname"><a href="bindings_8cpp.html#ac1fca1c007e6773dcb267ad24b751aea">common_setWidth_mujs</a></div><div class="ttdeci">static void common_setWidth_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00144">bindings.cpp:144</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a1b689376935ce3ad94732b5467594ee1"><div class="ttname"><a href="bindings_8cpp.html#a1b689376935ce3ad94732b5467594ee1">common_setHeight_mujs</a></div><div class="ttdeci">static void common_setHeight_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00136">bindings.cpp:136</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a1b77ae21f0595e796f86ab30f6c778d2"><div class="ttname"><a href="bindings_8cpp.html#a1b77ae21f0595e796f86ab30f6c778d2">players_stop_mujs</a></div><div class="ttdeci">static void players_stop_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00329">bindings.cpp:329</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a75f9027dbcb6e3cdeba60b0534e4479d"><div class="ttname"><a href="bindings_8cpp.html#a75f9027dbcb6e3cdeba60b0534e4479d">players_getY_mujs</a></div><div class="ttdeci">static void players_getY_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00283">bindings.cpp:283</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_af0d3d78451115e678e845ab185381286"><div class="ttname"><a href="bindings_8cpp.html#af0d3d78451115e678e845ab185381286">mods_debug_mujs</a></div><div class="ttdeci">static void mods_debug_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00179">bindings.cpp:179</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_ab4e5d6fabf64789ce5320bfcb1fdc224"><div class="ttname"><a href="bindings_8cpp.html#ab4e5d6fabf64789ce5320bfcb1fdc224">mods_enable_mujs</a></div><div class="ttdeci">static void mods_enable_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00188">bindings.cpp:188</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_acbb9699a0c9dddf6a2fdeeb17ee5abb9"><div class="ttname"><a href="bindings_8cpp.html#acbb9699a0c9dddf6a2fdeeb17ee5abb9">common_getHeight_mujs</a></div><div class="ttdeci">static void common_getHeight_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00091">bindings.cpp:91</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a8ae797f4a1e638955f9017a8c1533c82"><div class="ttname"><a href="bindings_8cpp.html#a8ae797f4a1e638955f9017a8c1533c82">players_getX_mujs</a></div><div class="ttdeci">static void players_getX_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00275">bindings.cpp:275</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a59ebe625dd481c60fa9e690bacb9a4ae"><div class="ttname"><a href="bindings_8cpp.html#a59ebe625dd481c60fa9e690bacb9a4ae">mods_setLoadCallback_mujs</a></div><div class="ttdeci">static void mods_setLoadCallback_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00214">bindings.cpp:214</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_aad4d04e88692b7957cc3e926a659d30b"><div class="ttname"><a href="bindings_8cpp.html#aad4d04e88692b7957cc3e926a659d30b">common_setDebugMode_mujs</a></div><div class="ttdeci">static void common_setDebugMode_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00128">bindings.cpp:128</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a71540b4ca63cc2ff9aa8d9bb34bf3450"><div class="ttname"><a href="bindings_8cpp.html#a71540b4ca63cc2ff9aa8d9bb34bf3450">players_setX_mujs</a></div><div class="ttdeci">static void players_setX_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00311">bindings.cpp:311</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a96115394e5fd0b791178a359fad43772"><div class="ttname"><a href="bindings_8cpp.html#a96115394e5fd0b791178a359fad43772">common_debug_mujs</a></div><div class="ttdeci">static void common_debug_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00061">bindings.cpp:61</a></div></div>
+<div class="ttc" id="anamespacebmjs_html_afe2fe7f32eb79e61b719278629858f4f"><div class="ttname"><a href="namespacebmjs.html#afe2fe7f32eb79e61b719278629858f4f">bmjs::registerMuJSBindings_common</a></div><div class="ttdeci">static void registerMuJSBindings_common(js_State *state)</div><div class="ttdoc">Registers the functions in the common group.</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00341">bindings.cpp:341</a></div></div>
+<div class="ttc" id="anamespacebmjs_html_a32f78644170cd4939d6b180bd41ede93"><div class="ttname"><a href="namespacebmjs.html#a32f78644170cd4939d6b180bd41ede93">bmjs::registerMuJSBindings_players</a></div><div class="ttdeci">static void registerMuJSBindings_players(js_State *state)</div><div class="ttdoc">Registers the functions in the players group.</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00423">bindings.cpp:423</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a62afacaeb9a3e2406b73359ec2122d26"><div class="ttname"><a href="bindings_8cpp.html#a62afacaeb9a3e2406b73359ec2122d26">common_getWidth_mujs</a></div><div class="ttdeci">static void common_getWidth_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00097">bindings.cpp:97</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a8946fa41f5c088c076561608ae5e7b10"><div class="ttname"><a href="bindings_8cpp.html#a8946fa41f5c088c076561608ae5e7b10">players_moveTo_mujs</a></div><div class="ttdeci">static void players_moveTo_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00291">bindings.cpp:291</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_ad6c1ccfb5c69b36f3734df62855f57dd"><div class="ttname"><a href="bindings_8cpp.html#ad6c1ccfb5c69b36f3734df62855f57dd">mods_warn_mujs</a></div><div class="ttdeci">static void mods_warn_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00258">bindings.cpp:258</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_ad4c7816e463e0c68b6f984c3f3330b9c"><div class="ttname"><a href="bindings_8cpp.html#ad4c7816e463e0c68b6f984c3f3330b9c">common_error_mujs</a></div><div class="ttdeci">static void common_error_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00069">bindings.cpp:69</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a7a6a2671459b0fdbeff9d564096c83f2"><div class="ttname"><a href="bindings_8cpp.html#a7a6a2671459b0fdbeff9d564096c83f2">common_getCVar_mujs</a></div><div class="ttdeci">static void common_getCVar_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00077">bindings.cpp:77</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a852993c18fcc180d68e5d2ceefba1c89"><div class="ttname"><a href="bindings_8cpp.html#a852993c18fcc180d68e5d2ceefba1c89">mods_error_mujs</a></div><div class="ttdeci">static void mods_error_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00196">bindings.cpp:196</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a64c5e3bfa247fe8da04e21a1835104e9"><div class="ttname"><a href="bindings_8cpp.html#a64c5e3bfa247fe8da04e21a1835104e9">common_spawnItem_mujs</a></div><div class="ttdeci">static void common_spawnItem_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00152">bindings.cpp:152</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_af4d7239056d964d74c3341bc838ea5aa"><div class="ttname"><a href="bindings_8cpp.html#af4d7239056d964d74c3341bc838ea5aa">common_log_mujs</a></div><div class="ttdeci">static void common_log_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00103">bindings.cpp:103</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a4ab2c8f8a4c0cfa748e97ad7fc7e420a"><div class="ttname"><a href="bindings_8cpp.html#a4ab2c8f8a4c0cfa748e97ad7fc7e420a">common_setCVar_mujs</a></div><div class="ttdeci">static void common_setCVar_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00111">bindings.cpp:111</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a1cf37c90fc0bc610f5fd10707a1dd753"><div class="ttname"><a href="bindings_8cpp.html#a1cf37c90fc0bc610f5fd10707a1dd753">players_setY_mujs</a></div><div class="ttdeci">static void players_setY_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00320">bindings.cpp:320</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a07edaa234bf0688827515803245a834f"><div class="ttname"><a href="bindings_8cpp.html#a07edaa234bf0688827515803245a834f">common_getDebugMode_mujs</a></div><div class="ttdeci">static void common_getDebugMode_mujs(js_State *state)</div><div class="ttdef"><b>Definition:</b> <a href="bindings_8cpp_source.html#l00085">bindings.cpp:85</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

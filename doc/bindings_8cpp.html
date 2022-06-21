@@ -145,6 +145,8 @@ Functions</h2></td></tr>
 <tr class="separator:a4da39661a8e79748b5b512c11e65228d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a0132b1513c993cd226549ca77df125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#a1a0132b1513c993cd226549ca77df125">common_setWidth</a> (<a class="el" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> width)</td></tr>
 <tr class="separator:a1a0132b1513c993cd226549ca77df125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b80bc7f8cf2986f9db646934bdbffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#aa9b80bc7f8cf2986f9db646934bdbffe">common_spawnItem</a> (<a class="el" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> x, <a class="el" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> y, <a class="el" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name)</td></tr>
+<tr class="separator:aa9b80bc7f8cf2986f9db646934bdbffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51061543624f44e50e69654518846fd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#a51061543624f44e50e69654518846fd3">common_warn</a> (<a class="el" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message)</td></tr>
 <tr class="separator:a51061543624f44e50e69654518846fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93acb663d5e0a972d15f095b04b35c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#a93acb663d5e0a972d15f095b04b35c67">mods_create</a> (<a class="el" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name, <a class="el" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> description)</td></tr>
@@ -203,6 +205,8 @@ Functions</h2></td></tr>
 <tr class="separator:a1b689376935ce3ad94732b5467594ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1fca1c007e6773dcb267ad24b751aea"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#ac1fca1c007e6773dcb267ad24b751aea">common_setWidth_mujs</a> (js_State *state)</td></tr>
 <tr class="separator:ac1fca1c007e6773dcb267ad24b751aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64c5e3bfa247fe8da04e21a1835104e9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#a64c5e3bfa247fe8da04e21a1835104e9">common_spawnItem_mujs</a> (js_State *state)</td></tr>
+<tr class="separator:a64c5e3bfa247fe8da04e21a1835104e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b2caceefe6c037463ad900893dafa8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#a38b2caceefe6c037463ad900893dafa8">common_warn_mujs</a> (js_State *state)</td></tr>
 <tr class="separator:a38b2caceefe6c037463ad900893dafa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11c3d826f58800cf34b9ce142c01ad6c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bindings_8cpp.html#a11c3d826f58800cf34b9ce142c01ad6c">mods_create_mujs</a> (js_State *state)</td></tr>
@@ -267,8 +271,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00053">53</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, message); }</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00057">57</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{ <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a>, message); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -296,13 +300,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00060">60</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 1);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="bindings_8cpp.html#a0792917c23b6acc0e6c83d861c8a4b80">::common_debug</a>(message);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00061">61</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 1);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="bindings_8cpp.html#a0792917c23b6acc0e6c83d861c8a4b80">::common_debug</a>(message);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -322,8 +326,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00049">49</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{ <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a>, message); }</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00053">53</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{ <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a>, message); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -351,13 +355,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00068">68</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 1);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="bindings_8cpp.html#ac81d5ebd52e1246ae9ca65ce9f2a6dc6">::common_error</a>(message);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00069">69</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 1);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="bindings_8cpp.html#ac81d5ebd52e1246ae9ca65ce9f2a6dc6">::common_error</a>(message);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -377,13 +381,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00039">39</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> key(name);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>.find(name);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> it == <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>.end() ? 0 : it-&gt;second;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00043">43</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> key(name);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>.find(name);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> it == <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>.end() ? 0 : it-&gt;second;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -411,13 +415,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00076">76</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 1);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a799414973819f4e6e254244a31e303a5">::common_getCVar</a>(name);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00077">77</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 1);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a799414973819f4e6e254244a31e303a5">::common_getCVar</a>(name);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -436,12 +440,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00077">77</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">auto</span> engine = <a class="code" href="classbmjs_1_1_engine.html#a2d89d7d52d95258a2b69ccc0f2f2f077">bmjs::Engine::instance</a>().lock();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> engine ? engine-&gt;getGameEngine().getDebugMode() : <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00081">81</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">auto</span> engine = <a class="code" href="classbmjs_1_1_engine.html#a2d89d7d52d95258a2b69ccc0f2f2f077">bmjs::Engine::instance</a>().lock();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> engine ? engine-&gt;getGameEngine().getDebugMode() : <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -469,11 +473,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00084">84</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a0deccbd772635ffa5bcf542859699653">::common_getDebugMode</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00085">85</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a0deccbd772635ffa5bcf542859699653">::common_getDebugMode</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -492,8 +496,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00067">67</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374">raylib::core::Window::getHeight</a>(); }</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00071">71</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374">raylib::core::Window::getHeight</a>(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -521,11 +525,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00090">90</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a66773dd86648e86ae55e1db36f57d33f">::common_getHeight</a>();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00091">91</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a66773dd86648e86ae55e1db36f57d33f">::common_getHeight</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -544,8 +548,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00065">65</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255">raylib::core::Window::getWidth</a>(); }</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00069">69</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255">raylib::core::Window::getWidth</a>(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -573,11 +577,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00096">96</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#ad269de7d93e1a45efb8de489cdb9d69b">::common_getWidth</a>();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00097">97</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#ad269de7d93e1a45efb8de489cdb9d69b">::common_getWidth</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -597,8 +601,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00047">47</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{ <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, message); }</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00051">51</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{ <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, message); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -626,13 +630,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00102">102</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 1);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="bindings_8cpp.html#acd818960e6f97de5b61916b04d93feaa">::common_log</a>(message);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00103">103</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 1);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="bindings_8cpp.html#acd818960e6f97de5b61916b04d93feaa">::common_log</a>(message);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -652,33 +656,33 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00084">84</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">auto</span> engine = <a class="code" href="classbmjs_1_1_engine.html#a2d89d7d52d95258a2b69ccc0f2f2f077">bmjs::Engine::instance</a>().lock();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (!engine)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="classgame_1_1_engine.html">game::Engine</a> &amp;gameEngine = engine-&gt;getGameEngine();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> nameStr(name);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    constexpr <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/array.html">std::array&lt;std::string_view, 3&gt;</a> filterNames = {<span class="stringliteral">&quot;protanopia&quot;</span>, <span class="stringliteral">&quot;deuteranopia&quot;</span>, <span class="stringliteral">&quot;tritanopia&quot;</span>};</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">auto</span> found = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a>(filterNames.cbegin(), filterNames.cend(), nameStr);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (nameStr == <span class="stringliteral">&quot;none&quot;</span>) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        gameEngine.<a class="code" href="classgame_1_1_engine.html#afa6aebe86141d93d1dc26c79c1302f9f">removeGlobalShader</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (found == filterNames.cend()) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostringstream.html">std::ostringstream</a> out;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        out &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/quoted.html">std::quoted</a>(nameStr) &lt;&lt; <span class="stringliteral">&quot; is not a valid colorblind filter, valid modes are: &quot;</span> &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">for</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> filterName : filterNames)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            out &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/quoted.html">std::quoted</a>(filterName) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot; and \&quot;none\&quot;.&quot;</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classbmjs_1_1_js_exception.html">bmjs::JsException</a>(out.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostringstream/str.html">str</a>().c_str());</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    engine-&gt;getGameEngine().setColorBlindShader(found - filterNames.cbegin());</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00088">88</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">auto</span> engine = <a class="code" href="classbmjs_1_1_engine.html#a2d89d7d52d95258a2b69ccc0f2f2f077">bmjs::Engine::instance</a>().lock();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (!engine)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classgame_1_1_engine.html">game::Engine</a> &amp;gameEngine = engine-&gt;getGameEngine();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> nameStr(name);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    constexpr <a class="codeRef" href="http://en.cppreference.com/w/cpp/container/array.html">std::array&lt;std::string_view, 3&gt;</a> filterNames = {<span class="stringliteral">&quot;protanopia&quot;</span>, <span class="stringliteral">&quot;deuteranopia&quot;</span>, <span class="stringliteral">&quot;tritanopia&quot;</span>};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">auto</span> found = <a class="codeRef" href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a>(filterNames.cbegin(), filterNames.cend(), nameStr);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (nameStr == <span class="stringliteral">&quot;none&quot;</span>) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        gameEngine.<a class="code" href="classgame_1_1_engine.html#afa6aebe86141d93d1dc26c79c1302f9f">removeGlobalShader</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (found == filterNames.cend()) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostringstream.html">std::ostringstream</a> out;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        out &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/quoted.html">std::quoted</a>(nameStr) &lt;&lt; <span class="stringliteral">&quot; is not a valid colorblind filter, valid modes are: &quot;</span> &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">for</span> (<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> filterName : filterNames)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            out &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/quoted.html">std::quoted</a>(filterName) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot; and \&quot;none\&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classbmjs_1_1_js_exception.html">bmjs::JsException</a>(out.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostringstream/str.html">str</a>().c_str());</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    engine-&gt;getGameEngine().setColorBlindShader(found - filterNames.cbegin());</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -706,13 +710,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00119">119</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 1);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="bindings_8cpp.html#a498e3cd1b9c0d93a3cd0cb0e6f0a2d10">::common_setColorblindFilter</a>(name);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00120">120</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 1);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="bindings_8cpp.html#a498e3cd1b9c0d93a3cd0cb0e6f0a2d10">::common_setColorblindFilter</a>(name);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -742,17 +746,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00027">27</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> key(name);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>.find(name);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> old = it == <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>.end() ? 0 : it-&gt;second;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>[key] = value;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, [&amp;](<span class="keyword">auto</span> &amp;out) { out &lt;&lt; <span class="stringliteral">&quot;cvar &#39;&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;&#39; set to &quot;</span> &lt;&lt; value; });</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> old;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00031">31</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> key(name);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">auto</span> it = <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>.find(name);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> old = it == <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>.end() ? 0 : it-&gt;second;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a>[key] = value;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a>, [&amp;](<span class="keyword">auto</span> &amp;out) { out &lt;&lt; <span class="stringliteral">&quot;cvar &#39;&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;&#39; set to &quot;</span> &lt;&lt; value; });</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> old;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -780,14 +784,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00110">110</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 1);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> value = js_tonumber(state, 2);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a9555c97f3aa59a5b0e5aeba9347adefc">::common_setCVar</a>(name, value);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00111">111</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 1);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> value = js_tonumber(state, 2);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a9555c97f3aa59a5b0e5aeba9347adefc">::common_setCVar</a>(name, value);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -807,13 +811,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00069">69</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">auto</span> engine = <a class="code" href="classbmjs_1_1_engine.html#a2d89d7d52d95258a2b69ccc0f2f2f077">bmjs::Engine::instance</a>().lock();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (engine)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        engine-&gt;getGameEngine().setDebugMode(!!value);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00073">73</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">auto</span> engine = <a class="code" href="classbmjs_1_1_engine.html#a2d89d7d52d95258a2b69ccc0f2f2f077">bmjs::Engine::instance</a>().lock();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (engine)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        engine-&gt;getGameEngine().setDebugMode(!!value);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -841,13 +845,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00127">127</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> value = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="bindings_8cpp.html#a7108e0ca19f1eaa244173c54872bc9cf">::common_setDebugMode</a>(value);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00128">128</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> value = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <a class="code" href="bindings_8cpp.html#a7108e0ca19f1eaa244173c54872bc9cf">::common_setDebugMode</a>(value);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -867,10 +871,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00060">60</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(<a class="code" href="classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255">raylib::core::Window::getWidth</a>(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(height));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00064">64</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(<a class="code" href="classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255">raylib::core::Window::getWidth</a>(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(height));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -898,13 +902,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00135">135</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> height = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="bindings_8cpp.html#a4da39661a8e79748b5b512c11e65228d">::common_setHeight</a>(height);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00136">136</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> height = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="bindings_8cpp.html#a4da39661a8e79748b5b512c11e65228d">::common_setHeight</a>(height);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -924,10 +928,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00055">55</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(width), <a class="code" href="classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374">raylib::core::Window::getHeight</a>());</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00059">59</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(width), <a class="code" href="classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374">raylib::core::Window::getHeight</a>());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -955,13 +959,112 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00143">143</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> width = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="bindings_8cpp.html#a1a0132b1513c993cd226549ca77df125">::common_setWidth</a>(width);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00144">144</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> width = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="bindings_8cpp.html#a1a0132b1513c993cd226549ca77df125">::common_setWidth</a>(width);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa9b80bc7f8cf2986f9db646934bdbffe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b80bc7f8cf2986f9db646934bdbffe">&#9670;&nbsp;</a></span>common_spawnItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void common_spawnItem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a>&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00116">116</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">using</span> <a class="code" href="structgame_1_1components_1_1_item.html">game::components::Item</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">auto</span> engine = <a class="code" href="classbmjs_1_1_engine.html#a2d89d7d52d95258a2b69ccc0f2f2f077">bmjs::Engine::instance</a>().lock();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (!engine)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">auto</span> &amp;world = engine-&gt;getGameEngine().getScene().getWorld();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a> nameStr(name);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">if</span> (nameStr.empty() || nameStr == <span class="stringliteral">&quot;random&quot;</span>) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        Item::spawnRandomItem(</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            <a class="code" href="classecs_1_1_system_data.html">ecs::SystemData</a>(world), <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(x), <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(y)));</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (Item <span class="keyword">const</span> *item = Item::getItem(nameStr); item != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        Item::spawnItem(item-&gt;identifier, <a class="code" href="classecs_1_1_system_data.html">ecs::SystemData</a>(world),</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <a class="code" href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2u</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(x), <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(y)));</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostringstream.html">std::ostringstream</a> out;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;Item &quot;</span> &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/quoted.html">std::quoted</a>(nameStr) &lt;&lt; <span class="stringliteral">&quot; does not exist, valid items are:&quot;</span> &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> itemName : Item::NAMES)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            out &lt;&lt; <a class="codeRef" href="http://en.cppreference.com/w/cpp/io/manip/quoted.html">std::quoted</a>(itemName) &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot; and \&quot;random\&quot;.&quot;</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classbmjs_1_1_js_exception.html">bmjs::JsException</a>(out.<a class="codeRef" href="http://en.cppreference.com/w/cpp/io/basic_ostringstream/str.html">str</a>());</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a64c5e3bfa247fe8da04e21a1835104e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c5e3bfa247fe8da04e21a1835104e9">&#9670;&nbsp;</a></span>common_spawnItem_mujs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void common_spawnItem_mujs </td>
+          <td>(</td>
+          <td class="paramtype">js_State *&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00152">152</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> x = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> y = js_tonumber(state, 2);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 3);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <a class="code" href="bindings_8cpp.html#aa9b80bc7f8cf2986f9db646934bdbffe">::common_spawnItem</a>(x, y, name);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -981,8 +1084,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00051">51</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{ <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a>, message); }</div>
+<p class="definition">Definition at line <a class="el" href="common_8cpp_source.html#l00055">55</a> of file <a class="el" href="common_8cpp_source.html">common.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{ <a class="code" href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a>.<a class="code" href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">log</a>(<a class="code" href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a>, message); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1010,13 +1113,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00151">151</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 1);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="bindings_8cpp.html#a51061543624f44e50e69654518846fd3">::common_warn</a>(message);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00162">162</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 1);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <a class="code" href="bindings_8cpp.html#a51061543624f44e50e69654518846fd3">::common_warn</a>(message);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1081,14 +1184,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00159">159</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 1);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> description = js_tostring(state, 2);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a93acb663d5e0a972d15f095b04b35c67">::mods_create</a>(name, description);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00170">170</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    {</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> name = js_tostring(state, 1);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> description = js_tostring(state, 2);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a93acb663d5e0a972d15f095b04b35c67">::mods_create</a>(name, description);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1149,14 +1252,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00168">168</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 2);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="bindings_8cpp.html#a60d52a06846d939d89fd1d49ed3e4b9e">::mods_debug</a>(modId, message);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00179">179</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 2);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="bindings_8cpp.html#a60d52a06846d939d89fd1d49ed3e4b9e">::mods_debug</a>(modId, message);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1213,13 +1316,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00177">177</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <a class="code" href="bindings_8cpp.html#afa9f43efa4f1fc48ff952bdbb2b1d64b">::mods_enable</a>(modId);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00188">188</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="bindings_8cpp.html#afa9f43efa4f1fc48ff952bdbb2b1d64b">::mods_enable</a>(modId);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1280,14 +1383,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00185">185</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 2);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <a class="code" href="bindings_8cpp.html#af060d9555fee1ec1762505e10e7e6460">::mods_error</a>(modId, message);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00196">196</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 2);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <a class="code" href="bindings_8cpp.html#af060d9555fee1ec1762505e10e7e6460">::mods_error</a>(modId, message);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1348,14 +1451,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00194">194</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 2);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <a class="code" href="bindings_8cpp.html#aa5ce6443426083c155f0d7e82efdc739">::mods_log</a>(modId, message);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00205">205</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 2);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <a class="code" href="bindings_8cpp.html#aa5ce6443426083c155f0d7e82efdc739">::mods_log</a>(modId, message);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1421,27 +1524,27 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00203">203</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        js_copy(state, 2);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keyword">auto</span> onLoad_guard = std::make_shared&lt;bmjs::RegistryGuard&gt;(state);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">bmjs::Function&lt;void&gt;</a> onLoad = [state, onLoad_guard]() {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            js_getregistry(state, onLoad_guard-&gt;getKey().c_str());</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            js_pushundefined(state);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">if</span> (js_pcall(state, 0)) {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <a class="code" href="classbmjs_1_1_js_exception.html">bmjs::JsException</a> error(js_tostring(state, -1));</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                js_pop(state, 1);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="keywordflow">throw</span> error;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            js_pop(state, 1);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        };</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        <a class="code" href="bindings_8cpp.html#a7c78ab3a574880d5f7153b9e6c982bbc">::mods_setLoadCallback</a>(modId, onLoad);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00214">214</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        js_copy(state, 2);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        <span class="keyword">auto</span> onLoad_guard = std::make_shared&lt;bmjs::RegistryGuard&gt;(state);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">bmjs::Function&lt;void&gt;</a> onLoad = [state, onLoad_guard]() {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            js_getregistry(state, onLoad_guard-&gt;getKey().c_str());</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            js_pushundefined(state);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">if</span> (js_pcall(state, 0)) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                <a class="code" href="classbmjs_1_1_js_exception.html">bmjs::JsException</a> error(js_tostring(state, -1));</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                js_pop(state, 1);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">throw</span> error;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            }</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            js_pop(state, 1);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        };</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <a class="code" href="bindings_8cpp.html#a7c78ab3a574880d5f7153b9e6c982bbc">::mods_setLoadCallback</a>(modId, onLoad);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1507,27 +1610,27 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00225">225</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        js_copy(state, 2);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keyword">auto</span> onUnload_guard = std::make_shared&lt;bmjs::RegistryGuard&gt;(state);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">bmjs::Function&lt;void&gt;</a> onUnload = [state, onUnload_guard]() {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            js_getregistry(state, onUnload_guard-&gt;getKey().c_str());</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            js_pushundefined(state);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordflow">if</span> (js_pcall(state, 0)) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <a class="code" href="classbmjs_1_1_js_exception.html">bmjs::JsException</a> error(js_tostring(state, -1));</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                js_pop(state, 1);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordflow">throw</span> error;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            }</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            js_pop(state, 1);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        };</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <a class="code" href="bindings_8cpp.html#ac7be4ccbcd01d653b6f876c92994ad6f">::mods_setUnloadCallback</a>(modId, onUnload);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00236">236</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        js_copy(state, 2);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keyword">auto</span> onUnload_guard = std::make_shared&lt;bmjs::RegistryGuard&gt;(state);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/utility/functional/function.html">bmjs::Function&lt;void&gt;</a> onUnload = [state, onUnload_guard]() {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            js_getregistry(state, onUnload_guard-&gt;getKey().c_str());</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            js_pushundefined(state);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">if</span> (js_pcall(state, 0)) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <a class="code" href="classbmjs_1_1_js_exception.html">bmjs::JsException</a> error(js_tostring(state, -1));</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                js_pop(state, 1);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <span class="keywordflow">throw</span> error;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            js_pop(state, 1);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        };</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <a class="code" href="bindings_8cpp.html#ac7be4ccbcd01d653b6f876c92994ad6f">::mods_setUnloadCallback</a>(modId, onUnload);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1588,14 +1691,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00247">247</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    {</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 2);</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <a class="code" href="bindings_8cpp.html#ab22ebada21a8141c733a5dd6938e5e15">::mods_warn</a>(modId, message);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00258">258</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> modId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <a class="code" href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a> message = js_tostring(state, 2);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <a class="code" href="bindings_8cpp.html#ab22ebada21a8141c733a5dd6938e5e15">::mods_warn</a>(modId, message);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1649,13 +1752,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00256">256</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a32e14663f079ef836def46302642bd91">::players_exists</a>(playerId);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00267">267</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    {</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a32e14663f079ef836def46302642bd91">::players_exists</a>(playerId);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1713,13 +1816,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00264">264</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    {</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#aa318b54c2a5c893423fd338142f1bc03">::players_getX</a>(playerId);</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00275">275</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#aa318b54c2a5c893423fd338142f1bc03">::players_getX</a>(playerId);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1777,13 +1880,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00272">272</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    {</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a22e1d8576de187dd4345e0f9153b7257">::players_getY</a>(playerId);</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        js_pushnumber(state, result);</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00283">283</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> result = <a class="code" href="bindings_8cpp.html#a22e1d8576de187dd4345e0f9153b7257">::players_getY</a>(playerId);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        js_pushnumber(state, result);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1857,15 +1960,15 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00280">280</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> x = js_tonumber(state, 2);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> y = js_tonumber(state, 3);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160; </div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <a class="code" href="bindings_8cpp.html#aabc5f115480a7b7ed280c71533fe9dd5">::players_moveTo</a>(playerId, x, y);</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00291">291</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> x = js_tonumber(state, 2);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> y = js_tonumber(state, 3);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <a class="code" href="bindings_8cpp.html#aabc5f115480a7b7ed280c71533fe9dd5">::players_moveTo</a>(playerId, x, y);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1939,15 +2042,15 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00290">290</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    {</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> x = js_tonumber(state, 2);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> y = js_tonumber(state, 3);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        <a class="code" href="bindings_8cpp.html#a520ce8afc98afd0f376fc7f3509645b3">::players_setPos</a>(playerId, x, y);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00301">301</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> x = js_tonumber(state, 2);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> y = js_tonumber(state, 3);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <a class="code" href="bindings_8cpp.html#a520ce8afc98afd0f376fc7f3509645b3">::players_setPos</a>(playerId, x, y);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2013,14 +2116,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00300">300</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    {</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> x = js_tonumber(state, 2);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <a class="code" href="bindings_8cpp.html#ab245280ae5dd5673213d04e2a0701228">::players_setX</a>(playerId, x);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00311">311</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> x = js_tonumber(state, 2);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160; </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="bindings_8cpp.html#ab245280ae5dd5673213d04e2a0701228">::players_setX</a>(playerId, x);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2086,14 +2189,14 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00309">309</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    {</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> y = js_tonumber(state, 2);</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <a class="code" href="bindings_8cpp.html#af0d126d681e44668a02abccedcd024a1">::players_setY</a>(playerId, y);</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00320">320</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> y = js_tonumber(state, 2);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <a class="code" href="bindings_8cpp.html#af0d126d681e44668a02abccedcd024a1">::players_setY</a>(playerId, y);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2152,13 +2255,13 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00318">318</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <a class="code" href="bindings_8cpp.html#aa2086f6c6b4608748132f10ff3730e5e">::players_stop</a>(playerId);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        js_pushundefined(state);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="bindings_8cpp_source.html#l00329">329</a> of file <a class="el" href="bindings_8cpp_source.html">bindings.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <a class="code" href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a> playerId = js_tonumber(state, 1);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        <a class="code" href="bindings_8cpp.html#aa2086f6c6b4608748132f10ff3730e5e">::players_stop</a>(playerId);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        js_pushundefined(state);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2166,25 +2269,26 @@ Functions</h2></td></tr>
 </div><!-- doc-content -->
 <div class="ttc" id="abindings_8cpp_html_a22e1d8576de187dd4345e0f9153b7257"><div class="ttname"><a href="bindings_8cpp.html#a22e1d8576de187dd4345e0f9153b7257">players_getY</a></div><div class="ttdeci">bmjs::Number players_getY(bmjs::Number playerId)</div><div class="ttdef"><b>Definition:</b> <a href="players_8cpp_source.html#l00081">players.cpp:81</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a902b0d55fddef6f8d651fe1035b7d4bd">Logger::Severity::Error</a></div><div class="ttdeci">@ Error</div><div class="ttdoc">Non critical error / Unexpected behavior.</div></div>
-<div class="ttc" id="abindings_8cpp_html_a4da39661a8e79748b5b512c11e65228d"><div class="ttname"><a href="bindings_8cpp.html#a4da39661a8e79748b5b512c11e65228d">common_setHeight</a></div><div class="ttdeci">void common_setHeight(bmjs::Number height)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00060">common.cpp:60</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a4da39661a8e79748b5b512c11e65228d"><div class="ttname"><a href="bindings_8cpp.html#a4da39661a8e79748b5b512c11e65228d">common_setHeight</a></div><div class="ttdeci">void common_setHeight(bmjs::Number height)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00064">common.cpp:64</a></div></div>
 <div class="ttc" id="abasic_string_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_a520ce8afc98afd0f376fc7f3509645b3"><div class="ttname"><a href="bindings_8cpp.html#a520ce8afc98afd0f376fc7f3509645b3">players_setPos</a></div><div class="ttdeci">void players_setPos(bmjs::Number playerId, bmjs::Number x, bmjs::Number y)</div><div class="ttdef"><b>Definition:</b> <a href="players_8cpp_source.html#l00113">players.cpp:113</a></div></div>
 <div class="ttc" id="aclassgame_1_1_engine_html"><div class="ttname"><a href="classgame_1_1_engine.html">game::Engine</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8hpp_source.html#l00029">Engine.hpp:29</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a1a0132b1513c993cd226549ca77df125"><div class="ttname"><a href="bindings_8cpp.html#a1a0132b1513c993cd226549ca77df125">common_setWidth</a></div><div class="ttdeci">void common_setWidth(bmjs::Number width)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00055">common.cpp:55</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a1a0132b1513c993cd226549ca77df125"><div class="ttname"><a href="bindings_8cpp.html#a1a0132b1513c993cd226549ca77df125">common_setWidth</a></div><div class="ttdeci">void common_setWidth(bmjs::Number width)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00059">common.cpp:59</a></div></div>
 <div class="ttc" id="aclass_logger_html_acd16ad0295ca5210a961ff09326b4d7c"><div class="ttname"><a href="class_logger.html#acd16ad0295ca5210a961ff09326b4d7c">Logger::logger</a></div><div class="ttdeci">static Logger logger</div><div class="ttdoc">Default global logger.</div><div class="ttdef"><b>Definition:</b> <a href="_logger_8hpp_source.html#l00057">Logger.hpp:57</a></div></div>
 <div class="ttc" id="abasic_string_view_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a></div></div>
 <div class="ttc" id="anamespacebmjs_html_aed712f9025418bceda599f26d2922ef5"><div class="ttname"><a href="namespacebmjs.html#aed712f9025418bceda599f26d2922ef5">bmjs::Number</a></div><div class="ttdeci">double Number</div><div class="ttdoc">Javascript number.</div><div class="ttdef"><b>Definition:</b> <a href="script_8hpp_source.html#l00022">script.hpp:22</a></div></div>
 <div class="ttc" id="aclassbmjs_1_1_engine_html_a2d89d7d52d95258a2b69ccc0f2f2f077"><div class="ttname"><a href="classbmjs_1_1_engine.html#a2d89d7d52d95258a2b69ccc0f2f2f077">bmjs::Engine::instance</a></div><div class="ttdeci">static std::weak_ptr&lt; Engine &gt; instance()</div><div class="ttdef"><b>Definition:</b> <a href="script_2_engine_8cpp_source.html#l00058">Engine.cpp:58</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15a0eaadb4fcb48a0a0ed7bc9868be9fbaa">Logger::Severity::Warning</a></div><div class="ttdeci">@ Warning</div><div class="ttdoc">Random informations.</div></div>
+<div class="ttc" id="astructgame_1_1components_1_1_item_html"><div class="ttname"><a href="structgame_1_1components_1_1_item.html">game::components::Item</a></div><div class="ttdef"><b>Definition:</b> <a href="_item_8hpp_source.html#l00024">Item.hpp:24</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_ab245280ae5dd5673213d04e2a0701228"><div class="ttname"><a href="bindings_8cpp.html#ab245280ae5dd5673213d04e2a0701228">players_setX</a></div><div class="ttdeci">void players_setX(bmjs::Number playerId, bmjs::Number x)</div><div class="ttdef"><b>Definition:</b> <a href="players_8cpp_source.html#l00093">players.cpp:93</a></div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a3dfe2ccd40fe2ae40084cc7e710a1374"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a3dfe2ccd40fe2ae40084cc7e710a1374">raylib::core::Window::getHeight</a></div><div class="ttdeci">static int getHeight()</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00056">Window.cpp:56</a></div></div>
 <div class="ttc" id="afind_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/algorithm/find.html">std::find</a></div><div class="ttdeci">T find(T... args)</div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_position_html"><div class="ttname"><a href="structgame_1_1components_1_1_position.html">game::components::Position</a></div><div class="ttdef"><b>Definition:</b> <a href="_position_8hpp_source.html#l00016">Position.hpp:16</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a799414973819f4e6e254244a31e303a5"><div class="ttname"><a href="bindings_8cpp.html#a799414973819f4e6e254244a31e303a5">common_getCVar</a></div><div class="ttdeci">bmjs::Number common_getCVar(bmjs::String name)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00039">common.cpp:39</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a799414973819f4e6e254244a31e303a5"><div class="ttname"><a href="bindings_8cpp.html#a799414973819f4e6e254244a31e303a5">common_getCVar</a></div><div class="ttdeci">bmjs::Number common_getCVar(bmjs::String name)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00043">common.cpp:43</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa82be0f551b8708bc08eb33cd9ded0cf">Logger::Severity::Information</a></div><div class="ttdeci">@ Information</div><div class="ttdoc">Debug messages.</div></div>
 <div class="ttc" id="abindings_8cpp_html_ab22ebada21a8141c733a5dd6938e5e15"><div class="ttname"><a href="bindings_8cpp.html#ab22ebada21a8141c733a5dd6938e5e15">mods_warn</a></div><div class="ttdeci">void mods_warn(bmjs::Number modId, bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="mods_8cpp_source.html#l00066">mods.cpp:66</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_acd818960e6f97de5b61916b04d93feaa"><div class="ttname"><a href="bindings_8cpp.html#acd818960e6f97de5b61916b04d93feaa">common_log</a></div><div class="ttdeci">void common_log(bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00047">common.cpp:47</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a0deccbd772635ffa5bcf542859699653"><div class="ttname"><a href="bindings_8cpp.html#a0deccbd772635ffa5bcf542859699653">common_getDebugMode</a></div><div class="ttdeci">bmjs::Number common_getDebugMode()</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00077">common.cpp:77</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_acd818960e6f97de5b61916b04d93feaa"><div class="ttname"><a href="bindings_8cpp.html#acd818960e6f97de5b61916b04d93feaa">common_log</a></div><div class="ttdeci">void common_log(bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00051">common.cpp:51</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a0deccbd772635ffa5bcf542859699653"><div class="ttname"><a href="bindings_8cpp.html#a0deccbd772635ffa5bcf542859699653">common_getDebugMode</a></div><div class="ttdeci">bmjs::Number common_getDebugMode()</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00081">common.cpp:81</a></div></div>
 <div class="ttc" id="afunction_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/utility/functional/function.html">std::function</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_ai_controlable_html_a4a7eee89496f27b47bac245091768f95"><div class="ttname"><a href="structgame_1_1components_1_1_ai_controlable.html#a4a7eee89496f27b47bac245091768f95">game::components::AiControlable::pathFind</a></div><div class="ttdeci">void pathFind(raylib::core::Vector2f pos, ecs::Entity self, ecs::SystemData data)</div><div class="ttdef"><b>Definition:</b> <a href="_ai_controlable_8cpp_source.html#l00019">AiControlable.cpp:19</a></div></div>
 <div class="ttc" id="anamespacegame_html_a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5"><div class="ttname"><a href="namespacegame.html#a8483766bb6895afd4bba8290587dd663a3dc5ed1f827e8c9a6392edb90af992d5">game::GameAction::MOVE_RIGHT</a></div><div class="ttdeci">@ MOVE_RIGHT</div></div>
@@ -2195,15 +2299,15 @@ Functions</h2></td></tr>
 <div class="ttc" id="aquoted_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/quoted.html">std::quoted</a></div><div class="ttdeci">T quoted(T... args)</div></div>
 <div class="ttc" id="anamespacebmjs_1_1mods_html_ad7f734f8379615eb83240a8264615795"><div class="ttname"><a href="namespacebmjs_1_1mods.html#ad7f734f8379615eb83240a8264615795">bmjs::mods::log</a></div><div class="ttdeci">static void log(Logger::Severity severity, bmjs::Number modId, bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="mods_8cpp_source.html#l00023">mods.cpp:23</a></div></div>
 <div class="ttc" id="anamespacebmjs_html_a0db7f6930d5e59c01c77d68394ee9cab"><div class="ttname"><a href="namespacebmjs.html#a0db7f6930d5e59c01c77d68394ee9cab">bmjs::String</a></div><div class="ttdeci">char const * String</div><div class="ttdoc">Javascript string.</div><div class="ttdef"><b>Definition:</b> <a href="script_8hpp_source.html#l00019">script.hpp:19</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_ad269de7d93e1a45efb8de489cdb9d69b"><div class="ttname"><a href="bindings_8cpp.html#ad269de7d93e1a45efb8de489cdb9d69b">common_getWidth</a></div><div class="ttdeci">bmjs::Number common_getWidth()</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00065">common.cpp:65</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_ad269de7d93e1a45efb8de489cdb9d69b"><div class="ttname"><a href="bindings_8cpp.html#ad269de7d93e1a45efb8de489cdb9d69b">common_getWidth</a></div><div class="ttdeci">bmjs::Number common_getWidth()</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00069">common.cpp:69</a></div></div>
 <div class="ttc" id="aclassgame_1_1_engine_html_afa6aebe86141d93d1dc26c79c1302f9f"><div class="ttname"><a href="classgame_1_1_engine.html#afa6aebe86141d93d1dc26c79c1302f9f">game::Engine::removeGlobalShader</a></div><div class="ttdeci">void removeGlobalShader()</div><div class="ttdoc">Remove the currently loaded global shader.</div><div class="ttdef"><b>Definition:</b> <a href="game_2_engine_8cpp_source.html#l00157">Engine.cpp:157</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a51061543624f44e50e69654518846fd3"><div class="ttname"><a href="bindings_8cpp.html#a51061543624f44e50e69654518846fd3">common_warn</a></div><div class="ttdeci">void common_warn(bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00051">common.cpp:51</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a51061543624f44e50e69654518846fd3"><div class="ttname"><a href="bindings_8cpp.html#a51061543624f44e50e69654518846fd3">common_warn</a></div><div class="ttdeci">void common_warn(bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00055">common.cpp:55</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_a93acb663d5e0a972d15f095b04b35c67"><div class="ttname"><a href="bindings_8cpp.html#a93acb663d5e0a972d15f095b04b35c67">mods_create</a></div><div class="ttdeci">bmjs::Number mods_create(bmjs::String name, bmjs::String description)</div><div class="ttdef"><b>Definition:</b> <a href="mods_8cpp_source.html#l00036">mods.cpp:36</a></div></div>
 <div class="ttc" id="aarray_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/container/array.html">std::array</a></div></div>
 <div class="ttc" id="aclassecs_1_1_world_html_aab1ea951ba59262e6808ace66f709e40"><div class="ttname"><a href="classecs_1_1_world.html#aab1ea951ba59262e6808ace66f709e40">ecs::World::getStorage</a></div><div class="ttdeci">const getStorageType&lt; C &gt; &amp; getStorage() const</div><div class="ttdoc">Fetches a component storage from this world.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00214">World.hpp:214</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a7108e0ca19f1eaa244173c54872bc9cf"><div class="ttname"><a href="bindings_8cpp.html#a7108e0ca19f1eaa244173c54872bc9cf">common_setDebugMode</a></div><div class="ttdeci">void common_setDebugMode(bmjs::Number value)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00069">common.cpp:69</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a7108e0ca19f1eaa244173c54872bc9cf"><div class="ttname"><a href="bindings_8cpp.html#a7108e0ca19f1eaa244173c54872bc9cf">common_setDebugMode</a></div><div class="ttdeci">void common_setDebugMode(bmjs::Number value)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00073">common.cpp:73</a></div></div>
 <div class="ttc" id="aclass_logger_html_a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba"><div class="ttname"><a href="class_logger.html#a4cc16315b37eb0265c2d199880464a15aa603905470e2a5b8c13e96b579ef0dba">Logger::Severity::Debug</a></div><div class="ttdeci">@ Debug</div></div>
-<div class="ttc" id="abindings_8cpp_html_a66773dd86648e86ae55e1db36f57d33f"><div class="ttname"><a href="bindings_8cpp.html#a66773dd86648e86ae55e1db36f57d33f">common_getHeight</a></div><div class="ttdeci">bmjs::Number common_getHeight()</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00067">common.cpp:67</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a66773dd86648e86ae55e1db36f57d33f"><div class="ttname"><a href="bindings_8cpp.html#a66773dd86648e86ae55e1db36f57d33f">common_getHeight</a></div><div class="ttdeci">bmjs::Number common_getHeight()</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00071">common.cpp:71</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_af0d126d681e44668a02abccedcd024a1"><div class="ttname"><a href="bindings_8cpp.html#af0d126d681e44668a02abccedcd024a1">players_setY</a></div><div class="ttdeci">void players_setY(bmjs::Number playerId, bmjs::Number y)</div><div class="ttdef"><b>Definition:</b> <a href="players_8cpp_source.html#l00103">players.cpp:103</a></div></div>
 <div class="ttc" id="abasic_ostringstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ostringstream.html">std::ostringstream</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_a9da72810fb429cabcddd8123f37b8557"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#a9da72810fb429cabcddd8123f37b8557">raylib::core::Vector3::z</a></div><div class="ttdeci">T z</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00182">Vector3.hpp:182</a></div></div>
@@ -2211,25 +2315,27 @@ Functions</h2></td></tr>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a15761c5112bd0ea27e110f33a2663255"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a15761c5112bd0ea27e110f33a2663255">raylib::core::Window::getWidth</a></div><div class="ttdeci">static int getWidth()</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00054">Window.cpp:54</a></div></div>
 <div class="ttc" id="aclassecs_1_1_world_html"><div class="ttname"><a href="classecs_1_1_world.html">ecs::World</a></div><div class="ttdoc">Contains all entities and systems.</div><div class="ttdef"><b>Definition:</b> <a href="world_2_world_8hpp_source.html#l00030">World.hpp:30</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_afa9f43efa4f1fc48ff952bdbb2b1d64b"><div class="ttname"><a href="bindings_8cpp.html#afa9f43efa4f1fc48ff952bdbb2b1d64b">mods_enable</a></div><div class="ttdeci">void mods_enable(bmjs::Number modId)</div><div class="ttdef"><b>Definition:</b> <a href="mods_8cpp_source.html#l00045">mods.cpp:45</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_ac81d5ebd52e1246ae9ca65ce9f2a6dc6"><div class="ttname"><a href="bindings_8cpp.html#ac81d5ebd52e1246ae9ca65ce9f2a6dc6">common_error</a></div><div class="ttdeci">void common_error(bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00049">common.cpp:49</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_ac81d5ebd52e1246ae9ca65ce9f2a6dc6"><div class="ttname"><a href="bindings_8cpp.html#ac81d5ebd52e1246ae9ca65ce9f2a6dc6">common_error</a></div><div class="ttdeci">void common_error(bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00053">common.cpp:53</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector3_html_add73a20dbe53b2f80ae4e892df036980"><div class="ttname"><a href="structraylib_1_1core_1_1_vector3.html#add73a20dbe53b2f80ae4e892df036980">raylib::core::Vector3::x</a></div><div class="ttdeci">T x</div><div class="ttdef"><b>Definition:</b> <a href="_vector3_8hpp_source.html#l00180">Vector3.hpp:180</a></div></div>
 <div class="ttc" id="aclassecs_1_1_entity_html"><div class="ttname"><a href="classecs_1_1_entity.html">ecs::Entity</a></div><div class="ttdoc">Encapsulates a index to an entity that may or may not exist.</div><div class="ttdef"><b>Definition:</b> <a href="_entity_8hpp_source.html#l00021">Entity.hpp:21</a></div></div>
 <div class="ttc" id="aendl_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/manip/endl.html">std::endl</a></div><div class="ttdeci">T endl(T... args)</div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_player_html_a9a7e271668647d07d373f1072b19aa11"><div class="ttname"><a href="structgame_1_1components_1_1_player.html#a9a7e271668647d07d373f1072b19aa11">game::components::Player::move</a></div><div class="ttdeci">static void move(ecs::Entity self, ecs::SystemData data, GameAction action, float value)</div><div class="ttdoc">Performs a move action.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8cpp_source.html#l00142">Player.cpp:142</a></div></div>
-<div class="ttc" id="acommon_8cpp_html_a44214abd9f680e837d90227e2c53234a"><div class="ttname"><a href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a></div><div class="ttdeci">static std::unordered_map&lt; std::string, bmjs::Number &gt; cvars</div><div class="ttdoc">Source Engine styled CVARS. Just for testing, of course.</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00023">common.cpp:23</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a9555c97f3aa59a5b0e5aeba9347adefc"><div class="ttname"><a href="bindings_8cpp.html#a9555c97f3aa59a5b0e5aeba9347adefc">common_setCVar</a></div><div class="ttdeci">bmjs::Number common_setCVar(bmjs::String name, bmjs::Number value)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00027">common.cpp:27</a></div></div>
+<div class="ttc" id="acommon_8cpp_html_a44214abd9f680e837d90227e2c53234a"><div class="ttname"><a href="common_8cpp.html#a44214abd9f680e837d90227e2c53234a">cvars</a></div><div class="ttdeci">static std::unordered_map&lt; std::string, bmjs::Number &gt; cvars</div><div class="ttdoc">Source Engine styled CVARS. Just for testing, of course.</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00027">common.cpp:27</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a9555c97f3aa59a5b0e5aeba9347adefc"><div class="ttname"><a href="bindings_8cpp.html#a9555c97f3aa59a5b0e5aeba9347adefc">common_setCVar</a></div><div class="ttdeci">bmjs::Number common_setCVar(bmjs::String name, bmjs::Number value)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00031">common.cpp:31</a></div></div>
+<div class="ttc" id="astructraylib_1_1core_1_1_vector2_html"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html">raylib::core::Vector2</a></div><div class="ttdoc">The Vector2 struct (compatible with the raylib Vector2)</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00025">Vector2.hpp:25</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_af060d9555fee1ec1762505e10e7e6460"><div class="ttname"><a href="bindings_8cpp.html#af060d9555fee1ec1762505e10e7e6460">mods_error</a></div><div class="ttdeci">void mods_error(bmjs::Number modId, bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="mods_8cpp_source.html#l00061">mods.cpp:61</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_a32e14663f079ef836def46302642bd91"><div class="ttname"><a href="bindings_8cpp.html#a32e14663f079ef836def46302642bd91">players_exists</a></div><div class="ttdeci">bmjs::Number players_exists(bmjs::Number playerId)</div><div class="ttdef"><b>Definition:</b> <a href="players_8cpp_source.html#l00061">players.cpp:61</a></div></div>
 <div class="ttc" id="astr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ostringstream/str.html">std::ostringstream::str</a></div><div class="ttdeci">T str(T... args)</div></div>
 <div class="ttc" id="aclassraylib_1_1core_1_1_window_html_a4db1d089b4108b6a2644b48b72a7f524"><div class="ttname"><a href="classraylib_1_1core_1_1_window.html#a4db1d089b4108b6a2644b48b72a7f524">raylib::core::Window::setSize</a></div><div class="ttdeci">static void setSize(int width, int height)</div><div class="ttdoc">Set the window size.</div><div class="ttdef"><b>Definition:</b> <a href="_window_8cpp_source.html#l00047">Window.cpp:47</a></div></div>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a498e3cd1b9c0d93a3cd0cb0e6f0a2d10"><div class="ttname"><a href="bindings_8cpp.html#a498e3cd1b9c0d93a3cd0cb0e6f0a2d10">common_setColorblindFilter</a></div><div class="ttdeci">void common_setColorblindFilter(bmjs::String name)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00084">common.cpp:84</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a498e3cd1b9c0d93a3cd0cb0e6f0a2d10"><div class="ttname"><a href="bindings_8cpp.html#a498e3cd1b9c0d93a3cd0cb0e6f0a2d10">common_setColorblindFilter</a></div><div class="ttdeci">void common_setColorblindFilter(bmjs::String name)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00088">common.cpp:88</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_aa9b80bc7f8cf2986f9db646934bdbffe"><div class="ttname"><a href="bindings_8cpp.html#aa9b80bc7f8cf2986f9db646934bdbffe">common_spawnItem</a></div><div class="ttdeci">void common_spawnItem(bmjs::Number x, bmjs::Number y, bmjs::String name)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00116">common.cpp:116</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_a60d52a06846d939d89fd1d49ed3e4b9e"><div class="ttname"><a href="bindings_8cpp.html#a60d52a06846d939d89fd1d49ed3e4b9e">mods_debug</a></div><div class="ttdeci">void mods_debug(bmjs::Number modId, bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="mods_8cpp_source.html#l00071">mods.cpp:71</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_aabc5f115480a7b7ed280c71533fe9dd5"><div class="ttname"><a href="bindings_8cpp.html#aabc5f115480a7b7ed280c71533fe9dd5">players_moveTo</a></div><div class="ttdeci">void players_moveTo(bmjs::Number playerId, bmjs::Number x, bmjs::Number y)</div><div class="ttdef"><b>Definition:</b> <a href="players_8cpp_source.html#l00125">players.cpp:125</a></div></div>
 <div class="ttc" id="aclassbmjs_1_1_js_exception_html"><div class="ttname"><a href="classbmjs_1_1_js_exception.html">bmjs::JsException</a></div><div class="ttdoc">Exception thrown by invocations of bmjs::Function.</div><div class="ttdef"><b>Definition:</b> <a href="_js_exception_8hpp_source.html#l00017">JsException.hpp:17</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_ai_controlable_html"><div class="ttname"><a href="structgame_1_1components_1_1_ai_controlable.html">game::components::AiControlable</a></div><div class="ttdoc">Entity controllable by scripts.</div><div class="ttdef"><b>Definition:</b> <a href="_ai_controlable_8hpp_source.html#l00022">AiControlable.hpp:22</a></div></div>
 <div class="ttc" id="abindings_8cpp_html_aa318b54c2a5c893423fd338142f1bc03"><div class="ttname"><a href="bindings_8cpp.html#aa318b54c2a5c893423fd338142f1bc03">players_getX</a></div><div class="ttdeci">bmjs::Number players_getX(bmjs::Number playerId)</div><div class="ttdef"><b>Definition:</b> <a href="players_8cpp_source.html#l00069">players.cpp:69</a></div></div>
-<div class="ttc" id="abindings_8cpp_html_a0792917c23b6acc0e6c83d861c8a4b80"><div class="ttname"><a href="bindings_8cpp.html#a0792917c23b6acc0e6c83d861c8a4b80">common_debug</a></div><div class="ttdeci">void common_debug(bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00053">common.cpp:53</a></div></div>
+<div class="ttc" id="abindings_8cpp_html_a0792917c23b6acc0e6c83d861c8a4b80"><div class="ttname"><a href="bindings_8cpp.html#a0792917c23b6acc0e6c83d861c8a4b80">common_debug</a></div><div class="ttdeci">void common_debug(bmjs::String message)</div><div class="ttdef"><b>Definition:</b> <a href="common_8cpp_source.html#l00057">common.cpp:57</a></div></div>
 <div class="ttc" id="aclassecs_1_1_system_data_html"><div class="ttname"><a href="classecs_1_1_system_data.html">ecs::SystemData</a></div><div class="ttdoc">A view on world data that provides access to Resource and Storage instances to systems.</div><div class="ttdef"><b>Definition:</b> <a href="_system_data_8hpp_source.html#l00022">SystemData.hpp:22</a></div></div>
 <div class="ttc" id="aclass_logger_html_ae82dbfb3d2aa251921e5de89a725187b"><div class="ttname"><a href="class_logger.html#ae82dbfb3d2aa251921e5de89a725187b">Logger::log</a></div><div class="ttdeci">void log(Severity severity, std::string_view content)</div><div class="ttdoc">Add a message to the logs.</div><div class="ttdef"><b>Definition:</b> <a href="logger_2_logger_8cpp_source.html#l00109">Logger.cpp:109</a></div></div>
 <!-- start footer part -->

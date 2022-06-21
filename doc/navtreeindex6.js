@@ -1,5 +1,7 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1core_1_1_gamepad.html#a4ea1d376e277cc9db5d211715ae74ec7":[2,0,4,0,6,10],
+"classraylib_1_1core_1_1_gamepad.html#a54ec3205dbf62d8a592d36d7e11dfbc9":[2,0,4,0,6,19],
 "classraylib_1_1core_1_1_gamepad.html#a6a2a234c3ab0263d9a14db2ccd5e5af7":[2,0,4,0,6,9],
 "classraylib_1_1core_1_1_gamepad.html#a8bd9addbf160511aebbee4d700689da8":[2,0,4,0,6,8],
 "classraylib_1_1core_1_1_gamepad.html#aa72edfbd04e0243ff3cf24be13e9d159":[2,0,4,0,6,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX6 =
 "classraylib_1_1model_1_1_animation.html#a7fd383b3c2df603ae1c12c5378fc09f8":[2,0,4,1,0,5],
 "classraylib_1_1model_1_1_animation.html#a8f623f6cc59369aa80e541cc3b0cde3f":[2,0,4,1,0,4],
 "classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee":[2,0,4,1,0,7],
-"classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54":[2,0,4,1,0,6],
-"classraylib_1_1model_1_1_animation.html#aef0bc8d6db6c27b2a22fe1494e92db89":[2,0,4,1,0,9],
-"classraylib_1_1model_1_1_animation.html#af4bb09fb8eb724b3c0327ea79cc90b5c":[2,0,4,1,0,10]
+"classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54":[2,0,4,1,0,6]
 };
