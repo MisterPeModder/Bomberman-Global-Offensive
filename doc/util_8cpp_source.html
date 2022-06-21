@@ -175,12 +175,14 @@ $(document).ready(function(){initNavTree('util_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// Multi-byte UTF-8 sequence</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">auto</span> [codepoint, size] = <a class="code" href="namespaceraylib_1_1text.html#aa382587153ded95d28ec2a8b01200360">raylib::text::utf8ToCodepoint</a>({start, str.cend()});</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        str.erase(start, start + size);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> {codepoint, size};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace util</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> startPos = start - str.cbegin();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">auto</span> [codepoint, size] =</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="namespaceraylib_1_1text.html#aa382587153ded95d28ec2a8b01200360">raylib::text::utf8ToCodepoint</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>(str.c_str() + startPos, str.size() - startPos));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        str.erase(start, start + size);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> {codepoint, size};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <span class="comment">// namespace util</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespaceraylib_1_1text_html_aa382587153ded95d28ec2a8b01200360"><div class="ttname"><a href="namespaceraylib_1_1text.html#aa382587153ded95d28ec2a8b01200360">raylib::text::utf8ToCodepoint</a></div><div class="ttdeci">std::pair&lt; int, std::size_t &gt; utf8ToCodepoint(std::string_view str) noexcept</div><div class="ttdoc">Decodes the first UTF-8 codepoint in str.</div><div class="ttdef"><b>Definition:</b> <a href="text_8cpp_source.html#l00030">text.cpp:30</a></div></div>

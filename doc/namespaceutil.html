@@ -449,11 +449,13 @@ template&lt;class... Args&gt; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">// Multi-byte UTF-8 sequence</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">auto</span> [codepoint, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>] = <a class="code" href="namespaceraylib_1_1text.html#aa382587153ded95d28ec2a8b01200360">raylib::text::utf8ToCodepoint</a>({start, str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/end.html">cend</a>()});</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/erase.html">erase</a>(start, start + size);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> {codepoint, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="codeRef" href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a> startPos = start - str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/begin.html">cbegin</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keyword">auto</span> [codepoint, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>] =</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <a class="code" href="namespaceraylib_1_1text.html#aa382587153ded95d28ec2a8b01200360">raylib::text::utf8ToCodepoint</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string_view.html">std::string_view</a>(str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/c_str.html">c_str</a>() + startPos, str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/size.html">size</a>() - startPos));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        str.<a class="codeRef" href="http://en.cppreference.com/w/cpp/string/basic_string/erase.html">erase</a>(start, start + size);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> {codepoint, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -562,6 +564,7 @@ template&lt;class... Args&gt; </div>
 <div class="ttc" id="anamespaceutil_html_aaf609dcf39df53532022b41c5650e714"><div class="ttname"><a href="namespaceutil.html#aaf609dcf39df53532022b41c5650e714">util::utf8BoundaryStart</a></div><div class="ttdeci">std::size_t utf8BoundaryStart(std::string_view str, std::size_t index) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="util_8cpp_source.html#l00044">util.cpp:44</a></div></div>
 <div class="ttc" id="anamespaceraylib_1_1text_html_a6f6a87d31882421f67abf604658f68cc"><div class="ttname"><a href="namespaceraylib_1_1text.html#a6f6a87d31882421f67abf604658f68cc">raylib::text::codepointToUtf8</a></div><div class="ttdeci">std::string_view codepointToUtf8(int codepoint) noexcept</div><div class="ttdoc">Encodes an Unicode codepoint to UTF-8.</div><div class="ttdef"><b>Definition:</b> <a href="text_8cpp_source.html#l00022">text.cpp:22</a></div></div>
 <div class="ttc" id="anamespaceutil_html_a242a9ab3d7ed4cf8f348a27f5b47c36d"><div class="ttname"><a href="namespaceutil.html#a242a9ab3d7ed4cf8f348a27f5b47c36d">util::makePath</a></div><div class="ttdeci">std::filesystem::path makePath(std::filesystem::path path, std::string_view nextDir, Args... args)</div><div class="ttdoc">Concatenate multiple directories in a single path.</div><div class="ttdef"><b>Definition:</b> <a href="util_8hpp_source.html#l00034">util.hpp:34</a></div></div>
+<div class="ttc" id="ac_str_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/c_str.html">std::string::c_str</a></div><div class="ttdeci">T c_str(T... args)</div></div>
 <div class="ttc" id="aerase_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/erase.html">std::string::erase</a></div><div class="ttdeci">T erase(T... args)</div></div>
 <div class="ttc" id="aappend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/filesystem/path/append.html">std::filesystem::path::append</a></div><div class="ttdeci">T append(T... args)</div></div>
 <div class="ttc" id="abegin_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/begin.html">std::string::cbegin</a></div><div class="ttdeci">T cbegin(T... args)</div></div>
@@ -570,7 +573,6 @@ template&lt;class... Args&gt; </div>
 <div class="ttc" id="aempty_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/empty.html">std::string::empty</a></div><div class="ttdeci">T empty(T... args)</div></div>
 <div class="ttc" id="astr_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_stringstream/str.html">std::stringstream::str</a></div><div class="ttdeci">T str(T... args)</div></div>
 <div class="ttc" id="asize_t_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/types/size_t.html">std::size_t</a></div></div>
-<div class="ttc" id="aend_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/string/basic_string/end.html">std::string::cend</a></div><div class="ttdeci">T cend(T... args)</div></div>
 <div class="ttc" id="abasic_ifstream_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/io/basic_ifstream.html">std::ifstream</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
