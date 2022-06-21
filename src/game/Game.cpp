@@ -378,6 +378,7 @@ namespace game
         _camera.update();
 
         _world.runSystem<game::systems::UpdateKeyboardInput>();
+        _world.getResource<ecs::Timer>().reset();
 
         _world.runSystems(_handleInputs);
         _world.runSystems(_update);
