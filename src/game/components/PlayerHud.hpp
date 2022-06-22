@@ -16,6 +16,7 @@
 #include "ecs/Component.hpp"
 #include "ecs/System.hpp"
 #include "ecs/World.hpp"
+#include "raylib/core/Vector2.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
 namespace game::components
@@ -45,8 +46,10 @@ namespace game::components
       private:
         using InformationsArray = std::array<Identity::Id, static_cast<size_t>(Info::Count)>;
 
+        void buildInventory(ecs::World &world);
         void setInfoId(Info info, Identity::Id id);
         Identity::Id getInfoId(Info info) const;
+        raylib::core::Vector2f getSelectionPosition(Item::Identifier id) const;
 
         InformationsArray _informations;
     };

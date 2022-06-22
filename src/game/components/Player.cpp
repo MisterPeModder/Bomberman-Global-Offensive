@@ -33,7 +33,7 @@ namespace game::components
     Player::Inventory::Inventory()
     {
         items.fill(0);
-        selected = Item::Identifier::LandMine;
+        selected = Item::Identifier::NoClip;
     }
 
     void Player::Inventory::add(ecs::Entity player, Item::Identifier itemId, ecs::SystemData data)

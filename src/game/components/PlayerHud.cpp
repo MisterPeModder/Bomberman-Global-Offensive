@@ -37,9 +37,19 @@ namespace game::components
             .build();
     }
 
-    static void buildInventory(ecs::World &world, raylib::core::Vector2f pos)
+    raylib::core::Vector2f PlayerHud::getSelectionPosition(Item::Identifier id) const
+    {
+        return {((static_cast<size_t>(owner) % 2 == 0) ? 1.f : 78.5f)
+                + (static_cast<size_t>(id) - static_cast<size_t>(Item::FIRST_ACTIVABLE)) * 4.f,
+            (static_cast<size_t>(owner) / 2 == 0) ? 15.6f : 91.f};
+    }
+
+    void PlayerHud::buildInventory(ecs::World &world)
     {
         auto &textures = world.getResource<game::resources::Textures>();
+        auto &identities = world.getStorage<Identity>();
+        raylib::core::Vector2f pos = getSelectionPosition(Item::Identifier::NoClip);
+
         /// Activables Outline
         world.addEntity()
             .with<Position>(pos.x, pos.y)
@@ -47,12 +57,17 @@ namespace game::components
             .with<Rectangle>(2.f, raylib::core::Color::BLACK)
             .with<Color>(raylib::core::Color::BROWN)
             .build();
-        world.addEntity()
-            .with<Position>(pos.x, pos.y)
-            .with<Size>(4.f, 9.f)
-            .with<Rectangle>(2.f, raylib::core::Color::BLUE)
-            .with<Color>(raylib::core::Color::BLANK)
-            .build();
+        /// Activable selection
+        setInfoId(Info::SelectedItem,
+            identities[world.addEntity()
+                           .with<Position>(pos.x, pos.y)
+                           .with<Size>(4.f, 9.f)
+                           .with<Rectangle>(2.f, raylib::core::Color::BLUE)
+                           .with<Color>(raylib::core::Color::BLANK)
+                           .with<Identity>()
+                           .build()
+                           .getId()]
+                .id);
 
         /// Activables
         size_t firstItem = static_cast<size_t>(Item::FIRST_ACTIVABLE);
@@ -76,10 +91,14 @@ namespace game::components
                 .with<RotationAngle>(-90)
                 .build();
 
-            world.addEntity()
-                .with<Position>(pos.x + 3.5f + 4 * i, pos.y + 0.4f)
-                .with<Textual>("0", 20, raylib::core::Color::RED)
-                .build();
+            setInfoId(static_cast<Info>(static_cast<size_t>(Info::NoClip) + i),
+                identities[world.addEntity()
+                               .with<Position>(pos.x + 3.5f + 4 * i, pos.y + 0.4f)
+                               .with<Textual>("0", 20, raylib::core::Color::RED)
+                               .with<Identity>()
+                               .build()
+                               .getId()]
+                    .id);
         }
     }
 
@@ -91,6 +110,11 @@ namespace game::components
         raylib::core::Vector2f start((ownerId % 2 == 0) ? 0 : 100, (ownerId / 2 == 0) ? 0 : 75);
         auto &identities = world.getStorage<Identity>();
         auto &playerHud = world.getStorage<PlayerHud>()[world.addEntity().with<PlayerHud>(pOwner).build().getId()];
+
+        buildItem(world.addEntity()
+                      .with<Rectangle>(2.f, raylib::core::Color::BLACK)
+                      .with<Color>(raylib::core::Color(180, 180, 180, 180)),
+            {0.f, 0.f}, {25.f, 25.f}, orientation, start);
 
         /// Player head
         buildItem(world.addEntity().with<Texture2DReference>(pHeadSkin).with<Color>(raylib::core::Color::WHITE),
@@ -130,7 +154,7 @@ namespace game::components
                            .getId()]
                 .id);
 
-        buildInventory(world, {(ownerId % 2 == 0) ? 1.f : 78.5f, 15.6f});
+        playerHud.buildInventory(world);
     }
 
     void PlayerHud::setInfoId(Info info, Identity::Id id) { _informations[static_cast<size_t>(info)] = id; }
@@ -146,6 +170,20 @@ namespace game::components
                 text.text = std::to_string(player.stats.speed).substr(0, 3);
             else if (id.id == getInfoId(Info::Range))
                 text.text = std::to_string(player.stats.bombRange);
+            else {
+                size_t firstItem = static_cast<size_t>(Item::FIRST_ACTIVABLE);
+                for (size_t i = firstItem; i < static_cast<size_t>(Item::Identifier::Count); i++)
+                    if (id.id == getInfoId(static_cast<Info>(static_cast<size_t>(Info::NoClip) + i - firstItem))) {
+                        size_t count = player.inventory[static_cast<Item::Identifier>(i)];
+                        text.text = std::to_string(count);
+                        text.color = (count > 0) ? raylib::core::Color::GREEN : raylib::core::Color::RED;
+                    }
+            }
+        }
+
+        for (auto [pos, id] : ecs::join(data.getStorage<Position>(), data.getStorage<Identity>())) {
+            if (id.id == getInfoId(Info::SelectedItem))
+                pos = getSelectionPosition(player.inventory.selected);
         }
     }
 } // namespace game::components
