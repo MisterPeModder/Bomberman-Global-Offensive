@@ -37,6 +37,8 @@ set(SRC
     ${SRCROOT}/Smoke.cpp
     ${INCROOT}/Smoke.hpp
     ${INCROOT}/SplashScreen.hpp
+    ${SRCROOT}/UpdateHud.cpp
+    ${INCROOT}/UpdateHud.hpp
     ${SRCROOT}/UpdateKeyboardInput.cpp
     ${INCROOT}/UpdateKeyboardInput.hpp
     PARENT_SCOPE)

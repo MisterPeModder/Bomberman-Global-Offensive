@@ -29,11 +29,15 @@ namespace game
                 for (auto [rectangle, pos, size, color] : ecs::join(data.getStorage<game::components::Rectangle>(),
                          data.getStorage<game::components::Position>(), data.getStorage<game::components::Size>(),
                          data.getStorage<game::components::Color>())) {
-                    rectangle.draw(raylib::core::Vector2f(pos.x / 100 * raylib::core::Window::getWidth(),
-                                       pos.y / 100 * raylib::core::Window::getHeight()),
-                        raylib::core::Vector2f(size.x / 100 * raylib::core::Window::getWidth(),
-                            size.y / 100 * raylib::core::Window::getHeight()),
-                        color);
+                    auto scaledPos = raylib::core::Vector2f(pos.x / 100 * raylib::core::Window::getWidth(),
+                        pos.y / 100 * raylib::core::Window::getHeight());
+                    auto scaledSize = raylib::core::Vector2f(size.x / 100 * raylib::core::Window::getWidth(),
+                        size.y / 100 * raylib::core::Window::getHeight());
+                    rectangle.draw(scaledPos, scaledSize, color);
+
+                    if (rectangle.outlineThickness != 0.f)
+                        raylib::shapes::Rectangle::drawLines(
+                            scaledPos, scaledSize, rectangle.outlineThickness, rectangle.outlineColor);
                 }
             }
         };

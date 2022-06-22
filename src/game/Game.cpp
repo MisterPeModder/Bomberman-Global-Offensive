@@ -79,6 +79,7 @@
 #include "systems/Rectangle.hpp"
 #include "systems/Smoke.hpp"
 #include "systems/UpdateGameClock.hpp"
+#include "systems/UpdateHud.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
@@ -265,6 +266,7 @@ namespace game
         _world.addStorage<components::SoundReference>();
         _world.addStorage<components::GameEnded>();
         _world.addStorage<components::Explosion>();
+        _world.addStorage<components::PlayerHud>();
         /// Add world systems
         _world.addSystem<systems::AiUpdate>();
         _world.addSystem<systems::DrawModel>();
@@ -285,11 +287,13 @@ namespace game
         _world.addSystem<systems::DrawFlippedTexture>();
         _world.addSystem<systems::DrawRectangle>();
         _world.addSystem<systems::DrawText>();
+        _world.addSystem<systems::UpdateHud>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::AiUpdate, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
             systems::DisableBombNoClip, systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke,
-            systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
+            systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions,
+            systems::UpdateHud>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
         _drawing2d.add<systems::DrawRectangle, systems::DrawFlippedTexture, systems::DrawText,
@@ -306,8 +310,6 @@ namespace game
         for (size_t i = 0; i < _params.playerCount; i++) {
             User::UserId owner = static_cast<User::UserId>(i);
             raylib::core::Vector2u cell = _map.getPlayerStartingPosition(owner);
-
-            components::PlayerHud::createHud(owner, textures.get("head_" + _params.skinList.front()), _world);
 
             auto playerEntity =
                 _world.addEntity()
@@ -329,6 +331,7 @@ namespace game
                     .build();
             _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
                 textures.get(_params.skinList.front()));
+            components::PlayerHud::createHud(owner, textures.get("head_" + _params.skinList.front()), _world);
             _params.skinList.pop();
         }
 
