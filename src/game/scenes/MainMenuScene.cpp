@@ -167,7 +167,7 @@ namespace game
 
         //// Play
         _world.addEntity()
-            .with<components::Position>(2, 12)
+            .with<components::Position>(2, 22)
             .with<components::Textual>(localization::resources::menu::rsMenuPlay, 20, raylib::core::Color::WHITE)
             .with<components::Controlable>(User::UserId::User1)
             .with<gui::Widget>(MainMenuScene::PLAY, gui::Widget::NullTag, gui::Widget::NullTag, gui::Widget::NullTag,
@@ -190,7 +190,7 @@ namespace game
 
         /// Settings
         _world.addEntity()
-            .with<components::Position>(2, 20)
+            .with<components::Position>(2, 30)
             .with<components::Textual>(localization::resources::menu::rsMenuSettings, 20, raylib::core::Color::WHITE)
             .with<components::Controlable>(User::UserId::User1)
             .with<gui::Widget>(MainMenuScene::SETTINGS, gui::Widget::NullTag, MainMenuScene::JOIN_SLOT_ONE,
