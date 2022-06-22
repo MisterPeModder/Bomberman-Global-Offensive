@@ -9,8 +9,10 @@
 #include <cmath>
 #include "Color.hpp"
 #include "Position.hpp"
+#include "Rectangle.hpp"
 #include "RotationAngle.hpp"
 #include "Size.hpp"
+#include "Textual.hpp"
 #include "Texture2D.hpp"
 #include "ecs/Storage.hpp"
 #include "ecs/resource/Entities.hpp"
@@ -21,12 +23,11 @@
 namespace game::components
 {
     static void buildItem(ecs::World::EntityBuilder &builder, raylib::core::Vector2f pos, raylib::core::Vector2f size,
-        raylib::core::Vector2i orientation, raylib::core::Vector2f startPos, bool withText = false)
+        raylib::core::Vector2i orientation, raylib::core::Vector2f startPos, float rightOffset = 0.f)
     {
         if (orientation.x < 0) {
             pos.x += std::fabs(size.x);
-            if (withText)
-                pos.x += 3;
+            pos.x += rightOffset;
         }
         builder.with<Position>(startPos.x + pos.x * orientation.x, startPos.y + pos.y, 0.f)
             .with<Size>(size.x, size.y, 0.f)
@@ -47,28 +48,48 @@ namespace game::components
         /// C4 count
         buildItem(
             world.addEntity().with<Texture2DReference>(textures.get("C4_up")).with<Color>(raylib::core::Color::WHITE),
-            {10.f, 3.f}, {3.f, 5.3f}, orientation, start, true);
+            {10.f, 3.f}, {3.f, 5.3f}, orientation, start, 3.f);
+        buildItem(world.addEntity().with<Textual>("1/1", 25, raylib::core::Color::BLACK), {14.f, 4.f}, {0.f, 0.f},
+            orientation, start, -2.f);
 
         /// Speed
         buildItem(world.addEntity()
                       .with<Texture2DReference>(textures.get("speed_up"))
                       .with<Color>(raylib::core::Color::WHITE),
-            {18.f, 3.f}, {3.f, 5.3f}, orientation, start, true);
+            {18.f, 3.f}, {3.f, 5.3f}, orientation, start, 3.f);
+        buildItem(world.addEntity().with<Textual>("4.0", 25, raylib::core::Color::BLACK), {22.f, 4.f}, {0.f, 0.f},
+            orientation, start, -2.f);
 
         /// Explosion range
         buildItem(world.addEntity()
                       .with<Texture2DReference>(textures.get("range_up"))
                       .with<Color>(raylib::core::Color::WHITE),
-            {10.f, 10.f}, {3.f, 5.3f}, orientation, start, true);
+            {10.f, 10.f}, {3.f, 5.3f}, orientation, start, 3.f);
+        buildItem(world.addEntity().with<Textual>("1", 25, raylib::core::Color::BLACK), {14.f, 11.f}, {0.f, 0.f},
+            orientation, start, -2.f);
+
+        /// Activables Outline
+        buildItem(world.addEntity().with<Rectangle>().with<Color>(raylib::core::Color::BLACK), {0.5f, 16.6f},
+            {21.f, 8.f}, orientation, start);
 
         /// Activables
         size_t firstItem = static_cast<size_t>(Item::FIRST_ACTIVABLE);
         for (size_t i = firstItem; i < static_cast<size_t>(Item::Identifier::Count); i++) {
+            raylib::textures::Texture2D *texture = nullptr;
+            switch (static_cast<Item::Identifier>(i)) {
+                case Item::Identifier::NoClip: texture = &textures.get("no_clip"); break;
+                case Item::Identifier::LandMine: texture = &textures.get("mine"); break;
+                case Item::Identifier::StunGrenade: texture = &textures.get("stun"); break;
+                case Item::Identifier::SmokeGrenade: texture = &textures.get("smoke"); break;
+                case Item::Identifier::Punch: texture = &textures.get("punch"); break;
+                default: &textures.get("no_clip"); break;
+            }
+
             buildItem(world.addEntity()
-                          .with<Texture2DReference>(textures.get("mine"))
+                          .with<Texture2DReference>(*texture)
                           .with<Color>(raylib::core::Color::WHITE)
                           .with<RotationAngle>(-90),
-                {2.f + 4 * (i - firstItem), 24.f}, {4.f, 7.1f}, orientation, start);
+                {1.f + 4 * (i - firstItem), 24.f}, {4.f, 7.1f}, orientation, start);
         }
     }
 } // namespace game::components

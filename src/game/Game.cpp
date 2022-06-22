@@ -66,6 +66,7 @@
 #include "systems/Collision.hpp"
 #include "systems/DrawConsole.hpp"
 #include "systems/DrawFpsCounter.hpp"
+#include "systems/DrawText.hpp"
 #include "systems/DrawTexture.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/Explosion.hpp"
@@ -75,6 +76,7 @@
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
 #include "systems/PlaySoundOnce.hpp"
+#include "systems/Rectangle.hpp"
 #include "systems/Smoke.hpp"
 #include "systems/UpdateGameClock.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
@@ -281,6 +283,8 @@ namespace game
         _world.addSystem<systems::ClearExplosions>();
         _world.addSystem<systems::UpdateGameClock>();
         _world.addSystem<systems::DrawFlippedTexture>();
+        _world.addSystem<systems::DrawRectangle>();
+        _world.addSystem<systems::DrawText>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::AiUpdate, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
@@ -288,7 +292,8 @@ namespace game
             systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
-        _drawing2d.add<systems::DrawFlippedTexture, game::systems::DrawConsole, game::systems::DrawFpsCounter>();
+        _drawing2d.add<systems::DrawRectangle, systems::DrawFlippedTexture, systems::DrawText,
+            game::systems::DrawConsole, game::systems::DrawFpsCounter>();
 
         _loadTextures();
         _loadMeshes();
