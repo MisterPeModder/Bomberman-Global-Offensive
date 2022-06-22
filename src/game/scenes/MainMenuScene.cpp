@@ -157,6 +157,16 @@ namespace game
             .with<game::components::Color>(255, 255, 255, 255)
             .build();
 
+        _world.addEntity()
+            .with<components::Position>(25, 5)
+            .with<components::Textual>(localization::resources::menu::rsJoinInfo, 20, raylib::core::Color::WHITE)
+            .build();
+
+        _world.addEntity()
+            .with<components::Position>(55, 5)
+            .with<components::Textual>(localization::resources::menu::rsLeaveInfo, 20, raylib::core::Color::WHITE)
+            .build();
+
         loadLeftButtons();
         loadPlayerInterface();
     }
@@ -311,6 +321,16 @@ namespace game
             text.text = localization::resources::menu::rsConnected;
             text.color = raylib::core::Color::GREEN;
         }
+
+        std::string leftSwitchButton = localization::resources::keybinds::controller::rsBumperLeft;
+        std::string rightSwitchButton = localization::resources::keybinds::controller::rsBumperRight;
+        std::string switchSkinString = leftSwitchButton + " < "
+            + std::string(localization::resources::menu::rsChangeSkinInfo) + " > " + rightSwitchButton;
+
+        _world.addEntity()
+            .with<components::Position>(17 + static_cast<int>(id) * 19 + static_cast<int>(id) / 2, 78)
+            .with<components::Textual>(switchSkinString, 15, raylib::core::Color::WHITE)
+            .build();
     }
 
     void MainMenuScene::loadPlayerInterface()

@@ -210,3 +210,12 @@ msgstr ""
 
 msgid "FPS"
 msgstr ""
+
+msgid "JoinInfo"
+msgstr "Press START to join"
+
+msgid "LeaveInfo"
+msgstr "Press SELECT to leave"
+
+msgid "ChangeSkinInfo"
+msgstr "Skin"
