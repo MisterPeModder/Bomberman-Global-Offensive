@@ -50,6 +50,7 @@
 #include "raylib/core/Window.hpp"
 #include "raylib/textures/Texture2D.hpp"
 
+#include "game/AnimTimer.hpp"
 #include "game/Engine.hpp"
 #include "game/Game.hpp"
 #include "game/Users.hpp"
@@ -134,6 +135,7 @@ namespace game
         _world.addSystem<systems::RunAnimation>();
 
         _world.addResource<resources::RandomDevice>();
+        _world.addResource<game::AnimTimer>();
 
         _globalNoDraw.add<systems::InputManager, DetectGamepad>();
         _global2D.add<systems::DrawTexture>();
