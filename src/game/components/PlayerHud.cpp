@@ -80,7 +80,7 @@ namespace game::components
                 case Item::Identifier::StunGrenade: texture = &textures.get("stun"); break;
                 case Item::Identifier::SmokeGrenade: texture = &textures.get("smoke"); break;
                 case Item::Identifier::Punch: texture = &textures.get("punch"); break;
-                default: &textures.get("no_clip"); break;
+                default: texture = &textures.get("no_clip"); break;
             }
 
             world.addEntity()

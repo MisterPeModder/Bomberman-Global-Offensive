@@ -110,12 +110,12 @@ namespace game
     void Game::_loadTextures()
     {
         auto &textures = _world.getResource<resources::Textures>();
-        auto loadSkin = [](resources::Textures &textures, std::string_view msgid, std::string_view filename) {
+        auto loadSkin = [](resources::Textures &texs, std::string_view msgid, std::string_view filename) {
             std::string msgidStr(msgid);
             std::string pathStr("assets/player/textures/");
 
-            textures.emplace(msgidStr, pathStr + filename.data());
-            textures.emplace("head_" + msgidStr, pathStr + "head_" + filename.data());
+            texs.emplace(msgidStr, pathStr + filename.data());
+            texs.emplace("head_" + msgidStr, pathStr + "head_" + filename.data());
         };
 
         /// Map
