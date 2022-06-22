@@ -20,6 +20,7 @@ set(SRC
     ${INCROOT}/DrawSelectedWidget.hpp
     ${SRCROOT}/DrawText.cpp
     ${INCROOT}/DrawText.hpp
+    ${SRCROOT}/DrawTexture.cpp
     ${INCROOT}/DrawTexture.hpp
     ${SRCROOT}/Explosion.cpp
     ${INCROOT}/Explosion.hpp

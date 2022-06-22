@@ -34,6 +34,7 @@ namespace game::components
             auto &entities = data.getResource<ecs::Entities>();
             size_t owner = static_cast<size_t>(data.getStorage<Controlable>()[player.getId()].userId);
 
+            /// Add the kick shoes icon in the player HUD.
             entities.builder()
                 .with<Position>(
                     data.getStorage<Position>(), (owner % 2 == 0) ? 18.f : 76.f, (owner / 2 == 0) ? 15.f : 90.f)

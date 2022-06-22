@@ -21,6 +21,7 @@
 
 namespace game::components
 {
+    /// Player HUD Component
     struct PlayerHud : public ecs::Component {
       public:
         enum class Info {
@@ -35,20 +36,41 @@ namespace game::components
             Punch,
             Count,
         };
+        /// User linked to the player.
         User::UserId owner;
 
+        /// Construct a new Player Hud component.
+        /// @warning Use the @ref createHud function to create all the HUD entities.
+        ///
+        /// @param pOwner owner of the player.
         PlayerHud(User::UserId pOwner) : owner(pOwner){};
 
+        /// Create a player HUD.
+        ///
+        /// @param pOwner owner of the player.
+        /// @param pHeadSkin player head texture.
+        /// @param world world.
         static void createHud(User::UserId pOwner, raylib::textures::Texture2D &pHeadSkin, ecs::World &world);
 
+        /// Update the displayed informations on the HUD.
+        ///
+        /// @param data world data.
+        /// @param player player datas.
         void update(ecs::SystemData data, const Player &player);
 
       private:
         using InformationsArray = std::array<Identity::Id, static_cast<size_t>(Info::Count)>;
 
+        /// Build the entities of the inventory section in the HUD.
         void buildInventory(ecs::World &world);
+
+        /// Set the identifier of an HUD info.
         void setInfoId(Info info, Identity::Id id);
+
+        /// Get the identifier of an HUD info.
         Identity::Id getInfoId(Info info) const;
+
+        /// Get the position of an activable item selection.
         raylib::core::Vector2f getSelectionPosition(Item::Identifier id) const;
 
         InformationsArray _informations;
