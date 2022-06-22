@@ -47,9 +47,11 @@ namespace game::systems
             auto &poses = data.getStorage<game::components::Position>();
             auto &sizes = data.getStorage<game::components::Size>();
             auto &colors = data.getStorage<game::components::Color>();
+            auto maybeRotation = ecs::maybe(data.getStorage<game::components::RotationAngle>());
             Vector2 origin = {0.0f, 0.0f};
 
-            for (auto [textureRef, pos, size, color] : ecs::join(textures, poses, sizes, colors)) {
+            for (auto [textureRef, pos, size, color, angle] :
+                ecs::join(textures, poses, sizes, colors, maybeRotation)) {
                 raylib::core::Vector2f scale(
                     raylib::core::Window::getWidth() / 100.f, raylib::core::Window::getHeight() / 100.f);
 
@@ -59,7 +61,7 @@ namespace game::systems
                 Rectangle dest = {
                     scale.x * pos.x, scale.y * pos.y, std::fabs(size.x) * scale.x, std::fabs(size.y) * scale.y};
 
-                DrawTexturePro(raylibTex, source, dest, origin, 0, color.asRaylib());
+                DrawTexturePro(raylibTex, source, dest, origin, (angle) ? angle->rotationAngle : 0, color.asRaylib());
             }
         }
     };

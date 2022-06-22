@@ -224,11 +224,8 @@ namespace game
 
         /// FPS Counter
         _world.addSystem<game::systems::DrawFpsCounter>();
-        _drawing2d.add<game::systems::DrawFpsCounter>();
-
         /// Console
         _world.addSystem<game::systems::DrawConsole>();
-        _drawing2d.add<game::systems::DrawConsole>();
 
         _world.addEntity().with<game::components::GameEnded>().build();
 
@@ -291,7 +288,7 @@ namespace game
             systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
-        _drawing2d.add<systems::DrawFlippedTexture>();
+        _drawing2d.add<systems::DrawFlippedTexture, game::systems::DrawConsole, game::systems::DrawFpsCounter>();
 
         _loadTextures();
         _loadMeshes();
