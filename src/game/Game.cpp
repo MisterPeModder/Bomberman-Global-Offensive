@@ -217,7 +217,7 @@ namespace game
         size_t depth = _map.getSize().y;
 
         _camera.setPosition(
-            {width / 2.f, 15.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
+            {width / 2.f, 18.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
         _camera.setTarget({width / 2.f, 0.f, depth / 2.f});                                // Camera looking at point
         _camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         _camera.setFovY(50.0f);            // Camera field-of-view Y
