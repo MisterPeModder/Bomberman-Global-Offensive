@@ -39,7 +39,7 @@ namespace game
         /// Destructor
         ~Engine();
 
-        /// Sets the active scene and deletes the old one
+        /// Sets the waiting scene that will be used at the end of the drawFrame loop
         template <std::derived_from<IScene> S, typename... Args> void setScene(Args &&...args)
         {
             _waitingScene = std::make_unique<S>(args...);
