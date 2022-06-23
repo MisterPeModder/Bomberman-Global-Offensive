@@ -1,5 +1,5 @@
 <map id="ecs::Timer" name="ecs::Timer">
-<area shape="rect" id="node1" title="Simple timer resource." alt="" coords="32,80,123,107"/>
-<area shape="rect" id="node3" href="$classgame_1_1_game_timer.html" title="Simple timer resource." alt="" coords="5,155,149,181"/>
-<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="21,5,133,32"/>
+<area shape="rect" id="node1" title="Simple timer resource." alt="" coords="29,80,120,107"/>
+<area shape="rect" id="node3" href="$classgame_1_1_anim_timer.html" title="Simple timer resource." alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node2" href="$classecs_1_1_resource.html" title=" " alt="" coords="19,5,131,32"/>
 </map>

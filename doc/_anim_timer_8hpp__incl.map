@@ -1,5 +1,5 @@
-<map id="src/game/GameTimer.hpp" name="src/game/GameTimer.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="87,5,277,32"/>
+<map id="src/game/AnimTimer.hpp" name="src/game/AnimTimer.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="89,5,275,32"/>
 <area shape="rect" id="node2" href="$_resource_8hpp.html" title=" " alt="" coords="5,155,201,181"/>
 <area shape="rect" id="node3" href="$_timer_8hpp.html" title=" " alt="" coords="95,80,269,107"/>
 <area shape="rect" id="node4" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/header/chrono.html" title=" " alt="" coords="249,155,315,181"/>

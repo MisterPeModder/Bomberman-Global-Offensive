@@ -1,0 +1,5 @@
+<map id="game::AnimTimer" name="game::AnimTimer">
+<area shape="rect" id="node1" title="Simple timer resource." alt="" coords="5,155,144,181"/>
+<area shape="rect" id="node2" href="$classecs_1_1_timer.html" title="Simple timer resource." alt="" coords="29,80,120,107"/>
+<area shape="rect" id="node3" href="$classecs_1_1_resource.html" title=" " alt="" coords="19,5,131,32"/>
+</map>

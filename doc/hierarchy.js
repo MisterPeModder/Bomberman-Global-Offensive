@@ -148,7 +148,7 @@ var hierarchy =
     [ "ecs::Resource", "classecs_1_1_resource.html", [
       [ "ecs::Entities", "classecs_1_1_entities.html", null ],
       [ "ecs::Timer", "classecs_1_1_timer.html", [
-        [ "game::GameTimer", "classgame_1_1_game_timer.html", null ]
+        [ "game::AnimTimer", "classgame_1_1_anim_timer.html", null ]
       ] ],
       [ "game::resources::AssetMap< T >", "classgame_1_1resources_1_1_asset_map.html", null ],
       [ "game::resources::EngineResource", "structgame_1_1resources_1_1_engine_resource.html", null ],
@@ -169,8 +169,8 @@ var hierarchy =
     ] ],
     [ "game::SettingsMenuScene::Section", "structgame_1_1_settings_menu_scene_1_1_section.html", null ],
     [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
-    [ "raylib::core::scoped::Shader", "classraylib_1_1core_1_1scoped_1_1_shader.html", null ],
     [ "raylib::shaders::Shader", "classraylib_1_1shaders_1_1_shader.html", null ],
+    [ "raylib::core::scoped::Shader", "classraylib_1_1core_1_1scoped_1_1_shader.html", null ],
     [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", [
       [ "game::components::Sound", "structgame_1_1components_1_1_sound.html", null ]
     ] ],

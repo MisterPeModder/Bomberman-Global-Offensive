@@ -1,10 +1,10 @@
 var NAVTREEINDEX4 =
 {
-"classgame_1_1_game_scene.html#a6611c9e717125b40106efafeb87116e9":[2,0,2,10,0],
-"classgame_1_1_game_scene.html#ab90ba2d90ed6c7697a51e1e1b1639516":[2,0,2,10,3],
-"classgame_1_1_game_scene.html#abf2d834634d7e6aee626a28d82b88f65":[2,0,2,10,2],
-"classgame_1_1_game_scene.html#af0351ad5a2a6e8803f7946435f83eed2":[2,0,2,10,1],
-"classgame_1_1_game_timer.html":[2,0,2,11],
+"classgame_1_1_game_scene.html":[2,0,2,11],
+"classgame_1_1_game_scene.html#a6611c9e717125b40106efafeb87116e9":[2,0,2,11,0],
+"classgame_1_1_game_scene.html#ab90ba2d90ed6c7697a51e1e1b1639516":[2,0,2,11,3],
+"classgame_1_1_game_scene.html#abf2d834634d7e6aee626a28d82b88f65":[2,0,2,11,2],
+"classgame_1_1_game_scene.html#af0351ad5a2a6e8803f7946435f83eed2":[2,0,2,11,1],
 "classgame_1_1_i_scene.html":[2,0,2,12],
 "classgame_1_1_i_scene.html#a23689ac4dc7690f54baa819a4fb4737e":[2,0,2,12,1],
 "classgame_1_1_i_scene.html#a6dc8c2f9b7f74e0281ccb914626bdbf1":[2,0,2,12,3],

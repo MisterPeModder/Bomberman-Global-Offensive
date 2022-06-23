@@ -42,7 +42,7 @@ var searchData=
   ['mod_4731',['Mod',['../classbmjs_1_1_mod.html',1,'bmjs']]],
   ['mode2d_4732',['Mode2D',['../classraylib_1_1core_1_1scoped_1_1_mode2_d.html',1,'raylib::core::scoped']]],
   ['mode3d_4733',['Mode3D',['../classraylib_1_1core_1_1scoped_1_1_mode3_d.html',1,'raylib::core::scoped']]],
-  ['model_4734',['Model',['../classraylib_1_1model_1_1_model.html',1,'raylib::model::Model'],['../structgame_1_1components_1_1_model.html',1,'game::components::Model']]],
+  ['model_4734',['Model',['../structgame_1_1components_1_1_model.html',1,'game::components::Model'],['../classraylib_1_1model_1_1_model.html',1,'raylib::model::Model']]],
   ['modulus_4735',['modulus',['http://en.cppreference.com/w/cpp/utility/functional/modulus.html',1,'std']]],
   ['money_5fbase_4736',['money_base',['http://en.cppreference.com/w/cpp/locale/money_base.html',1,'std']]],
   ['money_5fget_4737',['money_get',['http://en.cppreference.com/w/cpp/locale/money_get.html',1,'std']]],

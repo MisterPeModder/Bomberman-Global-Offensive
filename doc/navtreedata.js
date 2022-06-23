@@ -76,7 +76,7 @@ var NAVTREEINDEX =
 "_keyboard_8hpp_source.html",
 "_test_scene_8cpp.html#a829e3cad3c37c7eb1e26e486d014e07f",
 "classecs_1_1_entities.html#a2d7d09e7b6647bc23266f1cea6062a8f",
-"classgame_1_1_game_scene.html#a6611c9e717125b40106efafeb87116e9",
+"classgame_1_1_game_scene.html",
 "classgame_1_1map_1_1cellular_1_1_rule.html#a5585e5204f1ef64a0dcdcf30239b9759",
 "classraylib_1_1core_1_1_cursor.html#abdc1c721a1f9994bf83a4a0449dfff16",
 "classraylib_1_1core_1_1scoped_1_1_shader.html#ab38fcadf374f3193103c8ccb7cae1140",

@@ -122,7 +122,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="game_2systems_2_animation_8hpp_source.html#l00027">27</a> of file <a class="el" href="game_2systems_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_2systems_2_animation_8hpp_source.html#l00028">28</a> of file <a class="el" href="game_2systems_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aac3b9443873ed03c521d0e2f5a24a322"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac3b9443873ed03c521d0e2f5a24a322">&#9670;&nbsp;</a></span>run()</h2>
@@ -152,20 +152,24 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classecs_1_1_system.html#ad1a93c71ce561822c2b3a2d6ea96ef56">ecs::System</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="game_2systems_2_animation_8hpp_source.html#l00028">28</a> of file <a class="el" href="game_2systems_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keyword">auto</span> models = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_model.html">game::components::Model</a>&gt;());</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keyword">auto</span> modelRefs = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_reference.html">game::components::ModelReference</a>&gt;());</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> [model, modelRef, animation] :</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(models, modelRefs, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_animation.html">game::components::Animation</a>&gt;())) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                    <span class="keyword">auto</span> obj = (model) ? model : ((modelRef) ? &amp;modelRef-&gt;object : <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    <span class="keywordflow">if</span> (!obj)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    animation.updateModel(*obj);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            }</div>
+<p class="definition">Definition at line <a class="el" href="game_2systems_2_animation_8hpp_source.html#l00029">29</a> of file <a class="el" href="game_2systems_2_animation_8hpp_source.html">Animation.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keyword">auto</span> models = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_model.html">game::components::Model</a>&gt;());</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keyword">auto</span> modelRefs = <a class="code" href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a>(<a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_reference.html">game::components::ModelReference</a>&gt;());</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordtype">double</span> elapsed = <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classgame_1_1_anim_timer.html">game::AnimTimer</a>&gt;().elapsed();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">if</span> (elapsed &gt;= 0.025) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    <span class="keywordflow">for</span> (<span class="keyword">auto</span> [model, modelRef, animation] :</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                        <a class="code" href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a>(models, modelRefs, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_animation.html">game::components::Animation</a>&gt;())) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                        <span class="keyword">auto</span> obj = (model) ? model : ((modelRef) ? &amp;modelRef-&gt;object : <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                        <span class="keywordflow">if</span> (!obj)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                        animation.updateModel(*obj);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/data.html">data</a>.getResource&lt;<a class="code" href="classgame_1_1_anim_timer.html">game::AnimTimer</a>&gt;().reset();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -178,6 +182,7 @@ Public Member Functions</h2></td></tr>
 <div class="ttc" id="astructgame_1_1components_1_1_reference_html"><div class="ttname"><a href="structgame_1_1components_1_1_reference.html">game::components::Reference</a></div><div class="ttdoc">Templated Reference component.</div><div class="ttdef"><b>Definition:</b> <a href="_reference_8hpp_source.html#l00017">Reference.hpp:17</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a36bbcee819473693f3869f528beb7bca"><div class="ttname"><a href="namespaceecs.html#a36bbcee819473693f3869f528beb7bca">ecs::maybe</a></div><div class="ttdeci">MaybeJoin&lt; J &gt; maybe(J &amp;joinable)</div><div class="ttdoc">Creates A Joinable structure that yields all indices, returning nullptr for all missing elements and ...</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00053">join.hpp:53</a></div></div>
 <div class="ttc" id="anamespaceecs_html_a1f1840d64435ba74cd587b12787b2bba"><div class="ttname"><a href="namespaceecs.html#a1f1840d64435ba74cd587b12787b2bba">ecs::join</a></div><div class="ttdeci">Join&lt; First, Rest... &gt; join(First &amp;first, Rest &amp;...rest)</div><div class="ttdoc">Combines multiple Joinable values into a single iterable container.</div><div class="ttdef"><b>Definition:</b> <a href="_join_8hpp_source.html#l00036">join.hpp:36</a></div></div>
+<div class="ttc" id="aclassgame_1_1_anim_timer_html"><div class="ttname"><a href="classgame_1_1_anim_timer.html">game::AnimTimer</a></div><div class="ttdoc">Simple timer resource.</div><div class="ttdef"><b>Definition:</b> <a href="_anim_timer_8hpp_source.html#l00020">AnimTimer.hpp:20</a></div></div>
 <div class="ttc" id="astructgame_1_1components_1_1_model_html"><div class="ttname"><a href="structgame_1_1components_1_1_model.html">game::components::Model</a></div><div class="ttdef"><b>Definition:</b> <a href="game_2components_2_model_8hpp_source.html#l00019">Model.hpp:19</a></div></div>
 <div class="ttc" id="adata_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/data.html">std::data</a></div><div class="ttdeci">T data(T... args)</div></div>
 <!-- start footer part -->
