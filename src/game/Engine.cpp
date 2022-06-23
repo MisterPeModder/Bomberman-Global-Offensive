@@ -85,6 +85,7 @@ namespace game
         _scene->getWorld().addResource<resources::EngineResource>(this);
         _mainMenuTheme.load(util::makePath("assets", "audio", "musics", "main-menu-theme.ogg"));
         _gameTheme.load(util::makePath("assets", "audio", "musics", "game-theme.ogg"));
+        _fillGamepadButtonStrings();
     }
 
     Engine::~Engine() { _settings.save(); }
@@ -240,4 +241,37 @@ namespace game
         _gameTheme.update();
     }
 
+    void Engine::_fillGamepadButtonStrings()
+    {
+        using Btn = raylib::core::Gamepad::Button;
+
+        _gamepadButtonStrings[Btn::UNKNOWN] = localization::resources::keybinds::controller::rsUnknown;
+        /// D-Pad
+        _gamepadButtonStrings[Btn::DPAD_FACE_UP] = localization::resources::keybinds::controller::rsDPadUP;
+        _gamepadButtonStrings[Btn::DPAD_FACE_RIGHT] = localization::resources::keybinds::controller::rsDPadRight;
+        _gamepadButtonStrings[Btn::DPAD_FACE_DOWN] = localization::resources::keybinds::controller::rsDPadDown;
+        _gamepadButtonStrings[Btn::DPAD_FACE_LEFT] = localization::resources::keybinds::controller::rsDPadLeft;
+        /// Face Buttons
+        _gamepadButtonStrings[Btn::FACE_UP] = localization::resources::keybinds::controller::rsFaceUP;
+        _gamepadButtonStrings[Btn::FACE_RIGHT] = localization::resources::keybinds::controller::rsFaceRight;
+        _gamepadButtonStrings[Btn::FACE_DOWN] = localization::resources::keybinds::controller::rsFaceDown;
+        _gamepadButtonStrings[Btn::FACE_LEFT] = localization::resources::keybinds::controller::rsFaceLeft;
+        /// Backward buttons
+        _gamepadButtonStrings[Btn::LEFT_BUMPER] = localization::resources::keybinds::controller::rsBumperLeft;
+        _gamepadButtonStrings[Btn::LEFT_TRIGGER] = localization::resources::keybinds::controller::rsTriggerLeft;
+        _gamepadButtonStrings[Btn::RIGHT_BUMPER] = localization::resources::keybinds::controller::rsBumperRight;
+        _gamepadButtonStrings[Btn::RIGHT_TRIGGER] = localization::resources::keybinds::controller::rsTriggerRight;
+        /// Middle buttons
+        _gamepadButtonStrings[Btn::MIDDLE_LEFT] = localization::resources::keybinds::controller::rsMiddleLeft;
+        _gamepadButtonStrings[Btn::MIDDLE] = localization::resources::keybinds::controller::rsMiddle;
+        _gamepadButtonStrings[Btn::MIDDLE_RIGHT] = localization::resources::keybinds::controller::rsMiddleRight;
+        /// Joystick buttons
+        _gamepadButtonStrings[Btn::LEFT_THUMB] = localization::resources::keybinds::controller::rsThumbLeft;
+        _gamepadButtonStrings[Btn::RIGHT_THUMB] = localization::resources::keybinds::controller::rsThumbRight;
+    }
+
+    std::string_view Engine::getGamepadButtonString(raylib::core::Gamepad::Button button)
+    {
+        return _gamepadButtonStrings[button];
+    }
 } // namespace game
