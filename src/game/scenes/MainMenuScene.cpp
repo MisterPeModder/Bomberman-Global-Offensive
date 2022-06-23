@@ -323,16 +323,6 @@ namespace game
             text.text = localization::resources::menu::rsConnected;
             text.color = raylib::core::Color::GREEN;
         }
-
-        std::string leftSwitchButton = localization::resources::keybinds::controller::rsBumperLeft;
-        std::string rightSwitchButton = localization::resources::keybinds::controller::rsBumperRight;
-        std::string switchSkinString = leftSwitchButton + " < "
-            + std::string(localization::resources::menu::rsChangeSkinInfo) + " > " + rightSwitchButton;
-
-        _world.addEntity()
-            .with<components::Position>(17 + static_cast<int>(id) * 19 + static_cast<int>(id) / 2, 78)
-            .with<components::Textual>(switchSkinString, 15, raylib::core::Color::WHITE)
-            .build();
     }
 
     void MainMenuScene::loadPlayerInterface()
@@ -359,7 +349,42 @@ namespace game
             .build();
     }
 
-    void MainMenuScene::setupWorld() { updateConnectedTexts(); }
+    void MainMenuScene::setupWorld()
+    {
+        updateConnectedTexts();
+
+        auto engine = _world.getResource<game::resources::EngineResource>().engine;
+        auto &users = engine->getUsers();
+        for (size_t i = 0; i < 4; i++) {
+            User::UserId id = static_cast<User::UserId>(i);
+            if (!users[id].isAvailable())
+                continue;
+
+            std::string switchSkinString;
+            std::string leftSwitchButton;
+            std::string rightSwitchButton;
+
+            if (users[id].isKeyboard()) {
+                // leftSwitchButton = engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().
+                // leftSwitchButton = engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().find(game::GameAction::PREVIOUS_ACTIVABLE));
+                // leftSwitchButton = engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::PREVIOUS_ACTIVABLE));
+                // rightSwitchButton = engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::NEXT_ACTIVABLE));
+                leftSwitchButton = "E";
+                rightSwitchButton = "A";
+            } else {
+                leftSwitchButton = localization::resources::keybinds::controller::rsBumperLeft;
+                rightSwitchButton = localization::resources::keybinds::controller::rsBumperRight;
+            }
+            switchSkinString = leftSwitchButton + " < " + std::string(localization::resources::menu::rsChangeSkinInfo)
+                + " > " + rightSwitchButton;
+
+            _world.addEntity()
+                .with<components::Position>(17 + static_cast<int>(i) * 19 + static_cast<int>(i) / 2, 78)
+                .with<components::Textual>(switchSkinString, 15, raylib::core::Color::WHITE)
+                // .with<components::Identity>()
+                .build();
+        }
+    }
 
     void MainMenuScene::updateConnectedTexts()
     {
