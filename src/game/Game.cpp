@@ -6,6 +6,7 @@
 */
 
 #include "Game.hpp"
+#include "game/AnimTimer.hpp"
 
 #include "components/AiControlable.hpp"
 #include "components/Animation.hpp"
@@ -83,7 +84,6 @@
 #include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
-#include "game/GameTimer.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
@@ -243,7 +243,7 @@ namespace game
 
         /// Add world resources
         _world.addResource<ecs::Timer>();
-        _world.addResource<game::GameTimer>();
+        _world.addResource<game::AnimTimer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();
         _world.addResource<resources::Meshes>();
