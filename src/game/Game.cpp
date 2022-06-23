@@ -6,6 +6,7 @@
 */
 
 #include "Game.hpp"
+#include "game/AnimTimer.hpp"
 
 #include "components/AiControlable.hpp"
 #include "components/Animation.hpp"
@@ -26,6 +27,7 @@
 #include "components/Living.hpp"
 #include "components/Model.hpp"
 #include "components/Player.hpp"
+#include "components/PlayerHud.hpp"
 #include "components/Position.hpp"
 #include "components/RotationAngle.hpp"
 #include "components/RotationAxis.hpp"
@@ -33,6 +35,7 @@
 #include "components/Size.hpp"
 #include "components/Size2D.hpp"
 #include "components/Smoke.hpp"
+#include "components/Texture2D.hpp"
 #include "components/Velocity.hpp"
 #include "components/items/ItemIdentifier.hpp"
 
@@ -64,6 +67,8 @@
 #include "systems/Collision.hpp"
 #include "systems/DrawConsole.hpp"
 #include "systems/DrawFpsCounter.hpp"
+#include "systems/DrawText.hpp"
+#include "systems/DrawTexture.hpp"
 #include "systems/DrawingCube.hpp"
 #include "systems/Explosion.hpp"
 #include "systems/InputManager.hpp"
@@ -72,12 +77,13 @@
 #include "systems/Movement.hpp"
 #include "systems/NoClip.hpp"
 #include "systems/PlaySoundOnce.hpp"
+#include "systems/Rectangle.hpp"
 #include "systems/Smoke.hpp"
 #include "systems/UpdateGameClock.hpp"
+#include "systems/UpdateHud.hpp"
 #include "systems/UpdateKeyboardInput.hpp"
 
 #include "game/Engine.hpp"
-#include "game/GameTimer.hpp"
 #include "game/components/KeyboardInput.hpp"
 #include "game/scenes/SettingsMenuScene.hpp"
 
@@ -104,24 +110,27 @@ namespace game
     void Game::_loadTextures()
     {
         auto &textures = _world.getResource<resources::Textures>();
+        auto loadSkin = [](resources::Textures &texs, std::string_view msgid, std::string_view filename) {
+            std::string msgidStr(msgid);
+            std::string pathStr("assets/player/textures/");
+
+            texs.emplace(msgidStr, pathStr + filename.data());
+            texs.emplace("head_" + msgidStr, pathStr + "head_" + filename.data());
+        };
 
         /// Map
         textures.emplace("crate", "assets/map/crate.png");
         textures.emplace("wall", "assets/map/wall.png");
         textures.emplace("ground", "assets/map/ground.png");
         /// Player
-        textures.emplace(std::string(localization::resources::textures::rsTerroristOne.getMsgId()),
-            "assets/player/textures/terrorist_1.png");
-        textures.emplace(std::string(localization::resources::textures::rsTerroristTwo.getMsgId()),
-            "assets/player/textures/terrorist_2.png");
-        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristOne.getMsgId()),
-            "assets/player/textures/counter_terrorist_1.png");
-        textures.emplace(std::string(localization::resources::textures::rsCounterTerroristTwo.getMsgId()),
-            "assets/player/textures/counter_terrorist_2.png");
-        textures.emplace(std::string(localization::resources::textures::rsNoSense.getMsgId()),
-            "assets/player/textures/none_sense.png");
-        textures.emplace(
-            std::string(localization::resources::textures::rsRainbow.getMsgId()), "assets/player/textures/rainbow.png");
+        loadSkin(textures, localization::resources::textures::rsTerroristOne.getMsgId(), "terrorist_1.png");
+        loadSkin(textures, localization::resources::textures::rsTerroristTwo.getMsgId(), "terrorist_2.png");
+        loadSkin(
+            textures, localization::resources::textures::rsCounterTerroristOne.getMsgId(), "counter_terrorist_1.png");
+        loadSkin(
+            textures, localization::resources::textures::rsCounterTerroristTwo.getMsgId(), "counter_terrorist_2.png");
+        loadSkin(textures, localization::resources::textures::rsNoSense.getMsgId(), "none_sense.png");
+        loadSkin(textures, localization::resources::textures::rsRainbow.getMsgId(), "rainbow.png");
         textures.emplace(
             std::string(localization::resources::textures::rsUnknown.getMsgId()), "assets/player/textures/unknown.png");
         /// Activables
@@ -208,7 +217,7 @@ namespace game
         size_t depth = _map.getSize().y;
 
         _camera.setPosition(
-            {width / 2.f, 15.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
+            {width / 2.f, 18.f /*static_cast<float>(width)*/, static_cast<float>(depth)}); // Camera position
         _camera.setTarget({width / 2.f, 0.f, depth / 2.f});                                // Camera looking at point
         _camera.setUp({0.0f, 1.0f, 0.0f}); // Camera up vector (rotation towards target)
         _camera.setFovY(50.0f);            // Camera field-of-view Y
@@ -218,11 +227,8 @@ namespace game
 
         /// FPS Counter
         _world.addSystem<game::systems::DrawFpsCounter>();
-        _drawing2d.add<game::systems::DrawFpsCounter>();
-
         /// Console
         _world.addSystem<game::systems::DrawConsole>();
-        _drawing2d.add<game::systems::DrawConsole>();
 
         _world.addEntity().with<game::components::GameEnded>().build();
 
@@ -237,7 +243,7 @@ namespace game
 
         /// Add world resources
         _world.addResource<ecs::Timer>();
-        _world.addResource<game::GameTimer>();
+        _world.addResource<game::AnimTimer>();
         _world.addResource<resources::Map>(_map);
         _world.addResource<resources::Textures>();
         _world.addResource<resources::Meshes>();
@@ -260,6 +266,7 @@ namespace game
         _world.addStorage<components::SoundReference>();
         _world.addStorage<components::GameEnded>();
         _world.addStorage<components::Explosion>();
+        _world.addStorage<components::PlayerHud>();
         /// Add world systems
         _world.addSystem<systems::AiUpdate>();
         _world.addSystem<systems::DrawModel>();
@@ -277,13 +284,20 @@ namespace game
         _world.addSystem<systems::CheckGameEnd>();
         _world.addSystem<systems::ClearExplosions>();
         _world.addSystem<systems::UpdateGameClock>();
+        _world.addSystem<systems::DrawFlippedTexture>();
+        _world.addSystem<systems::DrawRectangle>();
+        _world.addSystem<systems::DrawText>();
+        _world.addSystem<systems::UpdateHud>();
         /// Setup world systems tags
         _handleInputs.add<systems::InputManager>();
         _update.add<systems::AiUpdate, systems::Movement, systems::ExplodeBomb, systems::PickupItem,
             systems::DisableBombNoClip, systems::UpdateItemTimer, systems::RunAnimation, systems::MoveSmoke,
-            systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions>();
+            systems::CheckGameEnd, systems::PlaySoundReferences, systems::DisableNoClip, systems::ClearExplosions,
+            systems::UpdateHud>();
         _resolveCollisions.add<systems::Collision, systems::UpdateGameClock>();
         _drawing.add<systems::DrawModel>();
+        _drawing2d.add<systems::DrawRectangle, systems::DrawFlippedTexture, systems::DrawText,
+            game::systems::DrawConsole, game::systems::DrawFpsCounter>();
 
         _loadTextures();
         _loadMeshes();
@@ -317,6 +331,7 @@ namespace game
                     .build();
             _world.getStorage<components::Model>()[playerEntity.getId()].setMaterialMapTexture(
                 textures.get(_params.skinList.front()));
+            components::PlayerHud::createHud(owner, textures.get("head_" + _params.skinList.front()), _world);
             _params.skinList.pop();
         }
 

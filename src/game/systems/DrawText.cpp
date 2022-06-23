@@ -27,8 +27,8 @@ namespace game::systems
         for (auto [pos, text] :
             ecs::join(data.getStorage<game::components::Position>(), data.getStorage<game::components::Textual>())) {
             raylib::text::Font::getDefault().draw(text.text,
-                {pos.x / 100 * raylib::core::Window::getWidth(), pos.y / 100 * raylib::core::Window::getHeight()},
-                text.fontSize, text.color);
+                {pos.x / 100.f * raylib::core::Window::getWidth(), pos.y / 100.f * raylib::core::Window::getHeight()},
+                text.fontSize * raylib::core::Window::getHeight() / 720.f, text.color);
         }
     }
 } // namespace game::systems

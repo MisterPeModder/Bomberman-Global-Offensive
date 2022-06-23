@@ -56,6 +56,12 @@ namespace raylib
             DrawRectangleLinesEx(this->getRaylibRectangle(), lineThick, _color.asRaylib());
         }
 
+        void Rectangle::drawLines(
+            raylib::core::Vector2f position, raylib::core::Vector2f size, float lineThick, raylib::core::Color color)
+        {
+            DrawRectangleLinesEx({position.x, position.y, size.x, size.y}, lineThick, color.asRaylib());
+        }
+
         void Rectangle::drawRounded(float roundness, float segments) const
         {
             DrawRectangleRounded(this->getRaylibRectangle(), roundness, segments, _color.asRaylib());
