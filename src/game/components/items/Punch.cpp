@@ -12,6 +12,7 @@
 #include "game/Game.hpp"
 #include "game/components/Player.hpp"
 #include "game/components/Position.hpp"
+#include "game/components/Sound.hpp"
 #include "game/components/Velocity.hpp"
 #include "raylib/core/Vector2.hpp"
 
@@ -31,6 +32,7 @@ namespace game::components
             auto &positions = data.getStorage<Position>();
             auto &placerPos = positions[placer.getId()];
 
+            game::components::Sound::playSound(data, "punch");
             /// Punch all nearby ennemies
             for (auto [pos, player, entity] :
                 ecs::join(positions, data.getStorage<Player>(), data.getResource<ecs::Entities>())) {

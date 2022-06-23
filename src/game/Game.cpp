@@ -209,6 +209,8 @@ namespace game
         sounds.emplace("stun", "assets/audio/sounds/flashbang.ogg");
         sounds.emplace("smoke", "assets/audio/sounds/smoke.ogg");
         sounds.emplace("victory", "assets/audio/sounds/wins.ogg");
+        sounds.emplace("punch", "assets/audio/sounds/punch.ogg");
+        sounds.emplace("no_clip", "assets/audio/sounds/ghost.ogg");
     }
 
     void Game::setup()

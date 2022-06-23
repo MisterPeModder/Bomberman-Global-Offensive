@@ -8,6 +8,7 @@
 
 #include "Item.hpp"
 #include "game/components/Player.hpp"
+#include "game/components/Sound.hpp"
 
 namespace game::components
 {
@@ -26,6 +27,7 @@ namespace game::components
 
             if (player.stats.clipState != Player::Stats::ClipState::Default)
                 return false;
+            game::components::Sound::playSound(data, "no_clip");
             player.stats.clipState = Player::Stats::ClipState::NoClip;
             return true;
         };
