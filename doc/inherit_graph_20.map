@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classecs_1_1_system.html" title="The base system type, all systems must inherit from System." alt="" coords="5,823,107,849"/>
+<area shape="rect" id="node1" href="$classecs_1_1_system.html" title="The base system type, all systems must inherit from System." alt="" coords="5,889,107,916"/>
 <area shape="rect" id="node2" href="$structgame_1_1_detect_gamepad.html" title=" " alt="" coords="188,5,361,32"/>
 <area shape="rect" id="node3" href="$structgame_1_1systems_1_1_ai_update.html" title=" " alt="" coords="179,56,370,83"/>
 <area shape="rect" id="node4" href="$structgame_1_1systems_1_1_change_cube.html" title="ChangeCube system." alt="" coords="169,107,381,133"/>
@@ -10,26 +10,28 @@
 <area shape="rect" id="node9" href="$structgame_1_1systems_1_1_disable_no_clip.html" title="Disables the no clip when the player walk off of a crate position." alt="" coords="163,376,386,403"/>
 <area shape="rect" id="node10" href="$structgame_1_1systems_1_1_draw_console.html" title="Updates the first selected input field found." alt="" coords="167,427,383,453"/>
 <area shape="rect" id="node11" href="$structgame_1_1systems_1_1_draw_cube.html" title=" " alt="" coords="176,477,373,504"/>
-<area shape="rect" id="node12" href="$structgame_1_1systems_1_1_draw_fps_counter.html" title=" " alt="" coords="155,528,394,555"/>
-<area shape="rect" id="node13" href="$structgame_1_1systems_1_1_drawing_cube.html" title="Drawing cube system." alt="" coords="166,579,383,605"/>
-<area shape="rect" id="node14" href="$structgame_1_1systems_1_1_draw_model.html" title=" " alt="" coords="173,629,377,656"/>
-<area shape="rect" id="node15" href="$structgame_1_1systems_1_1_draw_rectangle.html" title=" " alt="" coords="160,680,389,707"/>
-<area shape="rect" id="node16" href="$structgame_1_1systems_1_1_draw_selected_widget.html" title="Draw selected widget system." alt="" coords="165,731,385,773"/>
-<area shape="rect" id="node17" href="$structgame_1_1systems_1_1_draw_smoke.html" title="Draw Smoke system." alt="" coords="171,797,379,824"/>
-<area shape="rect" id="node18" href="$structgame_1_1systems_1_1_draw_text.html" title="Draw text system." alt="" coords="179,848,370,875"/>
-<area shape="rect" id="node19" href="$structgame_1_1systems_1_1_draw_texture.html" title=" " alt="" coords="169,899,381,925"/>
-<area shape="rect" id="node20" href="$structgame_1_1systems_1_1_draw_texture_background.html" title=" " alt="" coords="169,950,381,991"/>
-<area shape="rect" id="node21" href="$structgame_1_1systems_1_1_explode_bomb.html" title="Explode bomb system." alt="" coords="165,1016,385,1043"/>
-<area shape="rect" id="node22" href="$structgame_1_1systems_1_1_input_manager.html" title="System managing all the users inputs." alt="" coords="165,1067,385,1093"/>
-<area shape="rect" id="node23" href="$structgame_1_1systems_1_1_keybind_intercept.html" title=" " alt="" coords="155,1117,395,1144"/>
-<area shape="rect" id="node24" href="$structgame_1_1systems_1_1_movement.html" title="Movement system." alt="" coords="175,1168,375,1195"/>
-<area shape="rect" id="node25" href="$structgame_1_1systems_1_1_move_smoke.html" title="Move smoke system." alt="" coords="169,1219,380,1245"/>
-<area shape="rect" id="node26" href="$structgame_1_1systems_1_1_pickup_item.html" title=" " alt="" coords="173,1269,376,1296"/>
-<area shape="rect" id="node27" href="$structgame_1_1systems_1_1_play_sound_once.html" title=" " alt="" coords="159,1320,390,1347"/>
-<area shape="rect" id="node28" href="$structgame_1_1systems_1_1_play_sound_references.html" title=" " alt="" coords="175,1371,374,1413"/>
-<area shape="rect" id="node29" href="$structgame_1_1systems_1_1_run_animation.html" title=" " alt="" coords="163,1437,386,1464"/>
-<area shape="rect" id="node30" href="$structgame_1_1systems_1_1_splash_screen.html" title=" " alt="" coords="166,1488,383,1515"/>
-<area shape="rect" id="node31" href="$structgame_1_1systems_1_1_update_game_clock.html" title="Update the game clock internal time." alt="" coords="167,1539,383,1581"/>
-<area shape="rect" id="node32" href="$structgame_1_1systems_1_1_update_item_timer.html" title=" " alt="" coords="171,1605,378,1646"/>
-<area shape="rect" id="node33" href="$structgame_1_1systems_1_1_update_keyboard_input.html" title="Updates the first selected keyboard input field found." alt="" coords="155,1670,394,1711"/>
+<area shape="rect" id="node12" href="$structgame_1_1systems_1_1_draw_flipped_texture.html" title="Draw texture with a size. The texture is flipped when a size components is negative." alt="" coords="169,529,381,570"/>
+<area shape="rect" id="node13" href="$structgame_1_1systems_1_1_draw_fps_counter.html" title=" " alt="" coords="155,595,394,621"/>
+<area shape="rect" id="node14" href="$structgame_1_1systems_1_1_drawing_cube.html" title="Drawing cube system." alt="" coords="166,645,383,672"/>
+<area shape="rect" id="node15" href="$structgame_1_1systems_1_1_draw_model.html" title=" " alt="" coords="173,696,377,723"/>
+<area shape="rect" id="node16" href="$structgame_1_1systems_1_1_draw_rectangle.html" title=" " alt="" coords="160,747,389,773"/>
+<area shape="rect" id="node17" href="$structgame_1_1systems_1_1_draw_selected_widget.html" title="Draw selected widget system." alt="" coords="165,798,385,839"/>
+<area shape="rect" id="node18" href="$structgame_1_1systems_1_1_draw_smoke.html" title="Draw Smoke system." alt="" coords="171,864,379,891"/>
+<area shape="rect" id="node19" href="$structgame_1_1systems_1_1_draw_text.html" title="Draw text system." alt="" coords="179,915,370,941"/>
+<area shape="rect" id="node20" href="$structgame_1_1systems_1_1_draw_texture.html" title="Draw texture with a scale." alt="" coords="169,965,381,992"/>
+<area shape="rect" id="node21" href="$structgame_1_1systems_1_1_draw_texture_background.html" title=" " alt="" coords="169,1017,381,1058"/>
+<area shape="rect" id="node22" href="$structgame_1_1systems_1_1_explode_bomb.html" title="Explode bomb system." alt="" coords="165,1083,385,1109"/>
+<area shape="rect" id="node23" href="$structgame_1_1systems_1_1_input_manager.html" title="System managing all the users inputs." alt="" coords="165,1133,385,1160"/>
+<area shape="rect" id="node24" href="$structgame_1_1systems_1_1_keybind_intercept.html" title=" " alt="" coords="155,1184,395,1211"/>
+<area shape="rect" id="node25" href="$structgame_1_1systems_1_1_movement.html" title="Movement system." alt="" coords="175,1235,375,1261"/>
+<area shape="rect" id="node26" href="$structgame_1_1systems_1_1_move_smoke.html" title="Move smoke system." alt="" coords="169,1285,380,1312"/>
+<area shape="rect" id="node27" href="$structgame_1_1systems_1_1_pickup_item.html" title=" " alt="" coords="173,1336,376,1363"/>
+<area shape="rect" id="node28" href="$structgame_1_1systems_1_1_play_sound_once.html" title=" " alt="" coords="159,1387,390,1413"/>
+<area shape="rect" id="node29" href="$structgame_1_1systems_1_1_play_sound_references.html" title=" " alt="" coords="175,1438,374,1479"/>
+<area shape="rect" id="node30" href="$structgame_1_1systems_1_1_run_animation.html" title=" " alt="" coords="163,1504,386,1531"/>
+<area shape="rect" id="node31" href="$structgame_1_1systems_1_1_splash_screen.html" title=" " alt="" coords="166,1555,383,1581"/>
+<area shape="rect" id="node32" href="$structgame_1_1systems_1_1_update_game_clock.html" title="Update the game clock internal time." alt="" coords="167,1606,383,1647"/>
+<area shape="rect" id="node33" href="$structgame_1_1systems_1_1_update_hud.html" title=" " alt="" coords="173,1672,376,1699"/>
+<area shape="rect" id="node34" href="$structgame_1_1systems_1_1_update_item_timer.html" title=" " alt="" coords="171,1723,378,1765"/>
+<area shape="rect" id="node35" href="$structgame_1_1systems_1_1_update_keyboard_input.html" title="Updates the first selected keyboard input field found." alt="" coords="155,1789,394,1830"/>
 </map>

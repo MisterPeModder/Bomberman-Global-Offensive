@@ -1,5 +1,5 @@
 <map id="src/game/components/Player.hpp" name="src/game/components/Player.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="2053,5,2220,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="2260,5,2427,47"/>
 <area shape="rect" id="node2" href="$components_2_bomb_8cpp.html" title=" " alt="" coords="5,95,172,136"/>
 <area shape="rect" id="node3" href="$_bomb_down_8cpp.html" title=" " alt="" coords="196,95,365,136"/>
 <area shape="rect" id="node4" href="$_bomb_up_8cpp.html" title=" " alt="" coords="389,95,556,136"/>
@@ -15,11 +15,14 @@
 <area shape="rect" id="node14" href="$_speed_shoes_8cpp.html" title=" " alt="" coords="2361,95,2534,136"/>
 <area shape="rect" id="node15" href="$_stun_grenade_8cpp.html" title=" " alt="" coords="2558,95,2737,136"/>
 <area shape="rect" id="node16" href="$_player_8cpp.html" title=" " alt="" coords="2761,95,2928,136"/>
-<area shape="rect" id="node17" href="$_game_8cpp.html" title=" " alt="" coords="3039,184,3191,211"/>
-<area shape="rect" id="node18" href="$_check_game_end_8hpp.html" title=" " alt="" coords="3003,95,3227,136"/>
-<area shape="rect" id="node19" href="$_no_clip_8hpp.html" title=" " alt="" coords="3251,102,3467,129"/>
-<area shape="rect" id="node20" href="$_ai_update_8cpp.html" title=" " alt="" coords="3491,102,3723,129"/>
-<area shape="rect" id="node21" href="$_collision_8cpp.html" title=" " alt="" coords="3748,102,3976,129"/>
-<area shape="rect" id="node22" href="$_items_8cpp.html" title=" " alt="" coords="4000,102,4209,129"/>
-<area shape="rect" id="node23" href="$players_8cpp.html" title=" " alt="" coords="4234,102,4418,129"/>
+<area shape="rect" id="node17" href="$_player_hud_8hpp.html" title=" " alt="" coords="3492,95,3659,136"/>
+<area shape="rect" id="node19" href="$_game_8cpp.html" title=" " alt="" coords="3123,191,3275,218"/>
+<area shape="rect" id="node20" href="$_update_hud_8cpp.html" title=" " alt="" coords="3574,191,3819,218"/>
+<area shape="rect" id="node21" href="$_check_game_end_8hpp.html" title=" " alt="" coords="3003,95,3227,136"/>
+<area shape="rect" id="node22" href="$_no_clip_8hpp.html" title=" " alt="" coords="3251,102,3467,129"/>
+<area shape="rect" id="node23" href="$_ai_update_8cpp.html" title=" " alt="" coords="3734,102,3966,129"/>
+<area shape="rect" id="node24" href="$_collision_8cpp.html" title=" " alt="" coords="3991,102,4219,129"/>
+<area shape="rect" id="node25" href="$_items_8cpp.html" title=" " alt="" coords="4243,102,4452,129"/>
+<area shape="rect" id="node26" href="$players_8cpp.html" title=" " alt="" coords="4477,102,4661,129"/>
+<area shape="rect" id="node18" href="$_player_hud_8cpp.html" title=" " alt="" coords="3383,184,3549,225"/>
 </map>

@@ -187,6 +187,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a007ad7f5782547831247172ce2ed0668"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1shapes_1_1_rectangle.html#a007ad7f5782547831247172ce2ed0668">draw</a> (<a class="el" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">raylib::core::Vector2f</a> position, <a class="el" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">raylib::core::Vector2f</a> size, <a class="el" href="structraylib_1_1core_1_1_color.html">raylib::core::Color</a> color=<a class="el" href="structraylib_1_1core_1_1_color.html#a2e0d5ab5cb54364d40d71b6bd2347006">raylib::core::Color::DEFAULT_COLOR</a>)</td></tr>
 <tr class="memdesc:a007ad7f5782547831247172ce2ed0668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a rectangle at a particular location and with a particular size, ignoring the rectangle's position and size (and color) members.  <a href="classraylib_1_1shapes_1_1_rectangle.html#a007ad7f5782547831247172ce2ed0668">More...</a><br /></td></tr>
 <tr class="separator:a007ad7f5782547831247172ce2ed0668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66033eca6bf31ac569df920a89e29e0e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classraylib_1_1shapes_1_1_rectangle.html#a66033eca6bf31ac569df920a89e29e0e">drawLines</a> (<a class="el" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">raylib::core::Vector2f</a> position, <a class="el" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">raylib::core::Vector2f</a> size, float lineThick=2.f, <a class="el" href="structraylib_1_1core_1_1_color.html">raylib::core::Color</a> color=<a class="el" href="structraylib_1_1core_1_1_color.html#a2e0d5ab5cb54364d40d71b6bd2347006">raylib::core::Color::DEFAULT_COLOR</a>)</td></tr>
+<tr class="memdesc:a66033eca6bf31ac569df920a89e29e0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw a rectangle at a particular location and with a particular size, ignoring the rectangle's position and size (and color) members.  <a href="classraylib_1_1shapes_1_1_rectangle.html#a66033eca6bf31ac569df920a89e29e0e">More...</a><br /></td></tr>
+<tr class="separator:a66033eca6bf31ac569df920a89e29e0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -373,10 +376,10 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A boolean value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00069">69</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">return</span> CheckCollisionRecs(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), other.<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>());</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00075">75</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> CheckCollisionRecs(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), other.<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -471,7 +474,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ab435485147667ebca875fd05b34bc8c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab435485147667ebca875fd05b34bc8c7">&#9670;&nbsp;</a></span>drawLines() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab435485147667ebca875fd05b34bc8c7">&#9670;&nbsp;</a></span>drawLines() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -501,7 +504,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a8e069d544c5df0b9914d24cdf41384e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e069d544c5df0b9914d24cdf41384e8">&#9670;&nbsp;</a></span>drawLines() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e069d544c5df0b9914d24cdf41384e8">&#9670;&nbsp;</a></span>drawLines() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,6 +531,70 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            DrawRectangleLinesEx(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), lineThick, <a class="code" href="classraylib_1_1shapes_1_1_a_shape.html#ac0afc2eaefeefe5b4e39b5e4997aacad">_color</a>.<a class="code" href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">asRaylib</a>());</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a66033eca6bf31ac569df920a89e29e0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66033eca6bf31ac569df920a89e29e0e">&#9670;&nbsp;</a></span>drawLines() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void raylib::shapes::Rectangle::drawLines </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">raylib::core::Vector2f</a>&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceraylib_1_1core.html#a6b1e1d0f220edd69347fabba22bf7075">raylib::core::Vector2f</a>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>lineThick</em> = <code>2.f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structraylib_1_1core_1_1_color.html">raylib::core::Color</a>&#160;</td>
+          <td class="paramname"><em>color</em> = <code><a class="el" href="structraylib_1_1core_1_1_color.html#a2e0d5ab5cb54364d40d71b6bd2347006">raylib::core::Color::DEFAULT_COLOR</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draw a rectangle at a particular location and with a particular size, ignoring the rectangle's position and size (and color) members. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>the position where the rectangle will be drawn </td></tr>
+    <tr><td class="paramname">size</td><td>the size of the drawn rectangle </td></tr>
+    <tr><td class="paramname">lineThick</td><td>outline thickness. </td></tr>
+    <tr><td class="paramname">color</td><td>the color the the drawn rectangle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00059">59</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            DrawRectangleLinesEx({position.<a class="code" href="structraylib_1_1core_1_1_vector2.html#a000198d5814b224f892bc9ae317015c6">x</a>, position.<a class="code" href="structraylib_1_1core_1_1_vector2.html#af286ae0d4dd1908cf3668c651a509c47">y</a>, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>.x, <a class="codeRef" href="http://en.cppreference.com/w/cpp/iterator/size.html">size</a>.y}, lineThick, color.<a class="code" href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">asRaylib</a>());</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -567,10 +634,10 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00059">59</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            DrawRectangleRounded(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), roundness, segments, <a class="code" href="classraylib_1_1shapes_1_1_a_shape.html#ac0afc2eaefeefe5b4e39b5e4997aacad">_color</a>.<a class="code" href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">asRaylib</a>());</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00065">65</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            DrawRectangleRounded(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), roundness, segments, <a class="code" href="classraylib_1_1shapes_1_1_a_shape.html#ac0afc2eaefeefe5b4e39b5e4997aacad">_color</a>.<a class="code" href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">asRaylib</a>());</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -617,10 +684,10 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00064">64</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            DrawRectangleRoundedLines(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), roundness, segments, lineThick, <a class="code" href="classraylib_1_1shapes_1_1_a_shape.html#ac0afc2eaefeefe5b4e39b5e4997aacad">_color</a>.<a class="code" href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">asRaylib</a>());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00070">70</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            DrawRectangleRoundedLines(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), roundness, segments, lineThick, <a class="code" href="classraylib_1_1shapes_1_1_a_shape.html#ac0afc2eaefeefe5b4e39b5e4997aacad">_color</a>.<a class="code" href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">asRaylib</a>());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -649,10 +716,10 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A rectangle </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00074">74</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">return</span> GetCollisionRec(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), other.<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>());</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="_rectangle_8cpp_source.html#l00080">80</a> of file <a class="el" href="_rectangle_8cpp_source.html">Rectangle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">return</span> GetCollisionRec(this-&gt;<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>(), other.<a class="code" href="classraylib_1_1shapes_1_1_rectangle.html#a8c12e9aadeddf130ecde53dae339eb71">getRaylibRectangle</a>());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -737,7 +804,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="raylib_2shapes_2_rectangle_8hpp_source.html#l00128">128</a> of file <a class="el" href="raylib_2shapes_2_rectangle_8hpp_source.html">Rectangle.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="raylib_2shapes_2_rectangle_8hpp_source.html#l00138">138</a> of file <a class="el" href="raylib_2shapes_2_rectangle_8hpp_source.html">Rectangle.hpp</a>.</p>
 
 </div>
 </div>
@@ -750,7 +817,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="astructraylib_1_1core_1_1_vector2_html_a9d0a198ff9d3e44816cd28207aba2503"><div class="ttname"><a href="structraylib_1_1core_1_1_vector2.html#a9d0a198ff9d3e44816cd28207aba2503">raylib::core::Vector2::asRaylib</a></div><div class="ttdeci">constexpr ::Vector2 asRaylib() const</div><div class="ttdoc">Gets the raylib Vector2.</div><div class="ttdef"><b>Definition:</b> <a href="_vector2_8hpp_source.html#l00123">Vector2.hpp:123</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_a242ab45ef12f929ed0e11ea990af79f9"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a242ab45ef12f929ed0e11ea990af79f9">raylib::core::Color::asRaylib</a></div><div class="ttdeci">constexpr ::Color asRaylib() const</div><div class="ttdoc">Gets the raylib Color.</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00143">Color.hpp:143</a></div></div>
 <div class="ttc" id="asize_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/iterator/size.html">std::size</a></div><div class="ttdeci">T size(T... args)</div></div>
-<div class="ttc" id="aclassraylib_1_1shapes_1_1_rectangle_html_a8ccee08f97ac6efe47b3104b1928174c"><div class="ttname"><a href="classraylib_1_1shapes_1_1_rectangle.html#a8ccee08f97ac6efe47b3104b1928174c">raylib::shapes::Rectangle::_size</a></div><div class="ttdeci">raylib::core::Vector2f _size</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2shapes_2_rectangle_8hpp_source.html#l00128">Rectangle.hpp:128</a></div></div>
+<div class="ttc" id="aclassraylib_1_1shapes_1_1_rectangle_html_a8ccee08f97ac6efe47b3104b1928174c"><div class="ttname"><a href="classraylib_1_1shapes_1_1_rectangle.html#a8ccee08f97ac6efe47b3104b1928174c">raylib::shapes::Rectangle::_size</a></div><div class="ttdeci">raylib::core::Vector2f _size</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2shapes_2_rectangle_8hpp_source.html#l00138">Rectangle.hpp:138</a></div></div>
 <div class="ttc" id="astructraylib_1_1core_1_1_color_html_a2e0d5ab5cb54364d40d71b6bd2347006"><div class="ttname"><a href="structraylib_1_1core_1_1_color.html#a2e0d5ab5cb54364d40d71b6bd2347006">raylib::core::Color::DEFAULT_COLOR</a></div><div class="ttdeci">static const Color DEFAULT_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="raylib_2core_2_color_8hpp_source.html#l00179">Color.hpp:179</a></div></div>
 <div class="ttc" id="aclassraylib_1_1shapes_1_1_a_shape_html_a26d40dd27acbd385d2eeed3c69a063be"><div class="ttname"><a href="classraylib_1_1shapes_1_1_a_shape.html#a26d40dd27acbd385d2eeed3c69a063be">raylib::shapes::AShape::setPosition</a></div><div class="ttdeci">void setPosition(raylib::core::Vector3f position)</div><div class="ttdoc">Sets the position of the shape.</div><div class="ttdef"><b>Definition:</b> <a href="_a_shape_8hpp_source.html#l00030">AShape.hpp:30</a></div></div>
 <div class="ttc" id="aclassraylib_1_1shapes_1_1_a_shape_html_a49143014ff0bab7d7f7be48390650c61"><div class="ttname"><a href="classraylib_1_1shapes_1_1_a_shape.html#a49143014ff0bab7d7f7be48390650c61">raylib::shapes::AShape::setColor</a></div><div class="ttdeci">void setColor(raylib::core::Color color)</div><div class="ttdoc">Sets the color of the shape.</div><div class="ttdef"><b>Definition:</b> <a href="_a_shape_8hpp_source.html#l00050">AShape.hpp:50</a></div></div>

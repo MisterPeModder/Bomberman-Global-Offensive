@@ -23,6 +23,7 @@ var namespacegame_1_1components =
     [ "Living", "structgame_1_1components_1_1_living.html", "structgame_1_1components_1_1_living" ],
     [ "Model", "structgame_1_1components_1_1_model.html", "structgame_1_1components_1_1_model" ],
     [ "Player", "structgame_1_1components_1_1_player.html", "structgame_1_1components_1_1_player" ],
+    [ "PlayerHud", "structgame_1_1components_1_1_player_hud.html", "structgame_1_1components_1_1_player_hud" ],
     [ "Position", "structgame_1_1components_1_1_position.html", "structgame_1_1components_1_1_position" ],
     [ "Position2D", "structgame_1_1components_1_1_position2_d.html", "structgame_1_1components_1_1_position2_d" ],
     [ "Rectangle", "structgame_1_1components_1_1_rectangle.html", "structgame_1_1components_1_1_rectangle" ],

@@ -1,5 +1,16 @@
 var NAVTREEINDEX6 =
 {
+"classraylib_1_1core_1_1_cursor.html#abdc1c721a1f9994bf83a4a0449dfff16":[2,0,4,0,5,4],
+"classraylib_1_1core_1_1_cursor.html#acdc268e9a78214f80acc1a725e2f90f3":[2,0,4,0,5,0],
+"classraylib_1_1core_1_1_gamepad.html":[2,0,4,0,6],
+"classraylib_1_1core_1_1_gamepad.html#a05b5ccb0e5e03cc2de4814a5c1bfd15b":[2,0,4,0,6,13],
+"classraylib_1_1core_1_1_gamepad.html#a082d07e6a7101bc3b87a9eab11e0a74c":[2,0,4,0,6,14],
+"classraylib_1_1core_1_1_gamepad.html#a0e851f349e6c3898d3b1fa0c8676df6a":[2,0,4,0,6,12],
+"classraylib_1_1core_1_1_gamepad.html#a10d3dca5346c61156142122177ea298f":[2,0,4,0,6,6],
+"classraylib_1_1core_1_1_gamepad.html#a21ed5ff42c9d1c01388299b5faba3de9":[2,0,4,0,6,5],
+"classraylib_1_1core_1_1_gamepad.html#a2d7a7dd5ab0af199ae3062dd78ccc09a":[2,0,4,0,6,17],
+"classraylib_1_1core_1_1_gamepad.html#a445c33d88a548c8e20f6823036edcbdd":[2,0,4,0,6,18],
+"classraylib_1_1core_1_1_gamepad.html#a45b1c8bd46257307362fa1a27d0b08b0":[2,0,4,0,6,3],
 "classraylib_1_1core_1_1_gamepad.html#a4ea1d376e277cc9db5d211715ae74ec7":[2,0,4,0,6,10],
 "classraylib_1_1core_1_1_gamepad.html#a54ec3205dbf62d8a592d36d7e11dfbc9":[2,0,4,0,6,19],
 "classraylib_1_1core_1_1_gamepad.html#a6a2a234c3ab0263d9a14db2ccd5e5af7":[2,0,4,0,6,9],
@@ -238,16 +249,5 @@ var NAVTREEINDEX6 =
 "classraylib_1_1core_1_1scoped_1_1_render_texture.html#a58997317e4cd38a6c3022462806f05e1":[2,0,4,0,0,4,1],
 "classraylib_1_1core_1_1scoped_1_1_render_texture.html#a81df50db1f76bd923096960cee49efdd":[2,0,4,0,0,4,0],
 "classraylib_1_1core_1_1scoped_1_1_shader.html":[2,0,4,0,0,5],
-"classraylib_1_1core_1_1scoped_1_1_shader.html#a13c03ac4ecc502890b53efd09cd4573b":[2,0,4,0,0,5,0],
-"classraylib_1_1core_1_1scoped_1_1_shader.html#ab38fcadf374f3193103c8ccb7cae1140":[2,0,4,0,0,5,1],
-"classraylib_1_1model_1_1_animation.html":[2,0,4,1,0],
-"classraylib_1_1model_1_1_animation.html#a0195672975df0df02dffc788d7c51bf1":[2,0,4,1,0,1],
-"classraylib_1_1model_1_1_animation.html#a1cb4533429f46b7a8451f5a326d0a89c":[2,0,4,1,0,8],
-"classraylib_1_1model_1_1_animation.html#a20af427226d2d92ea8b2afb6deb75717":[2,0,4,1,0,2],
-"classraylib_1_1model_1_1_animation.html#a43fa0c41985b8ae0813e48b75dd5dea6":[2,0,4,1,0,0],
-"classraylib_1_1model_1_1_animation.html#a59890df975f849a920deb03561c0dbcf":[2,0,4,1,0,3],
-"classraylib_1_1model_1_1_animation.html#a7fd383b3c2df603ae1c12c5378fc09f8":[2,0,4,1,0,5],
-"classraylib_1_1model_1_1_animation.html#a8f623f6cc59369aa80e541cc3b0cde3f":[2,0,4,1,0,4],
-"classraylib_1_1model_1_1_animation.html#a98b22e6fb30e41623015a0cc419270ee":[2,0,4,1,0,7],
-"classraylib_1_1model_1_1_animation.html#aac11e98d656886d03884bc0ecfbd8f54":[2,0,4,1,0,6]
+"classraylib_1_1core_1_1scoped_1_1_shader.html#a13c03ac4ecc502890b53efd09cd4573b":[2,0,4,0,0,5,0]
 };

@@ -9,6 +9,7 @@ var classraylib_1_1shapes_1_1_rectangle =
     [ "draw", "classraylib_1_1shapes_1_1_rectangle.html#a007ad7f5782547831247172ce2ed0668", null ],
     [ "drawLines", "classraylib_1_1shapes_1_1_rectangle.html#ab435485147667ebca875fd05b34bc8c7", null ],
     [ "drawLines", "classraylib_1_1shapes_1_1_rectangle.html#a8e069d544c5df0b9914d24cdf41384e8", null ],
+    [ "drawLines", "classraylib_1_1shapes_1_1_rectangle.html#a66033eca6bf31ac569df920a89e29e0e", null ],
     [ "drawRounded", "classraylib_1_1shapes_1_1_rectangle.html#aaac44ab40988b7e125057580c9c05536", null ],
     [ "drawRoundedLines", "classraylib_1_1shapes_1_1_rectangle.html#ad161334b7d7931bbbda3cb9c7c885b3a", null ],
     [ "getCollision", "classraylib_1_1shapes_1_1_rectangle.html#a7ea4c4fc61334875ef4ac0b166bad223", null ],

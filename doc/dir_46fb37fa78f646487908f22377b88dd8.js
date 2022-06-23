@@ -42,8 +42,10 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "DrawText.hpp", "_draw_text_8hpp.html", [
       [ "DrawText", "structgame_1_1systems_1_1_draw_text.html", "structgame_1_1systems_1_1_draw_text" ]
     ] ],
+    [ "DrawTexture.cpp", "_draw_texture_8cpp.html", null ],
     [ "DrawTexture.hpp", "_draw_texture_8hpp.html", [
-      [ "DrawTexture", "structgame_1_1systems_1_1_draw_texture.html", "structgame_1_1systems_1_1_draw_texture" ]
+      [ "DrawTexture", "structgame_1_1systems_1_1_draw_texture.html", "structgame_1_1systems_1_1_draw_texture" ],
+      [ "DrawFlippedTexture", "structgame_1_1systems_1_1_draw_flipped_texture.html", "structgame_1_1systems_1_1_draw_flipped_texture" ]
     ] ],
     [ "DrawTextureBackground.hpp", "_draw_texture_background_8hpp.html", [
       [ "DrawTextureBackground", "structgame_1_1systems_1_1_draw_texture_background.html", "structgame_1_1systems_1_1_draw_texture_background" ]
@@ -90,6 +92,10 @@ var dir_46fb37fa78f646487908f22377b88dd8 =
     [ "SplashScreen.hpp", "_splash_screen_8hpp.html", "_splash_screen_8hpp" ],
     [ "UpdateGameClock.hpp", "_update_game_clock_8hpp.html", [
       [ "UpdateGameClock", "structgame_1_1systems_1_1_update_game_clock.html", "structgame_1_1systems_1_1_update_game_clock" ]
+    ] ],
+    [ "UpdateHud.cpp", "_update_hud_8cpp.html", null ],
+    [ "UpdateHud.hpp", "_update_hud_8hpp.html", [
+      [ "UpdateHud", "structgame_1_1systems_1_1_update_hud.html", "structgame_1_1systems_1_1_update_hud" ]
     ] ],
     [ "UpdateKeyboardInput.cpp", "_update_keyboard_input_8cpp.html", "_update_keyboard_input_8cpp" ],
     [ "UpdateKeyboardInput.hpp", "_update_keyboard_input_8hpp.html", [

@@ -1,9 +1,9 @@
 <map id="src/game/components/items" name="src/game/components/items">
 <area shape="rect" id="node1" href="dir_e078b991db8fce4c9dd088dba37f5be0.html" title="items" alt="" coords="92,52,164,100"/>
 <area shape="rect" id="node2" href="dir_5fd2de56c9e34b9f11062f1ca20ce5f5.html" title="resources" alt="" coords="5,148,91,196"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000015_000017.html" title="4" alt="" coords="81,132,90,147"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000015_000017.html" title="5" alt="" coords="81,132,90,147"/>
 <area shape="rect" id="node3" href="dir_ddca5f149c4ce13074f28b270e950ba9.html" title="ecs" alt="" coords="52,244,124,292"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000015_000001.html" title="8" alt="" coords="100,220,110,235"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000015_000001.html" title="9" alt="" coords="100,220,110,235"/>
 <area shape="rect" id="node4" href="dir_d4cc5f0b3cfddd1b0952a9e00053f649.html" title="raylib" alt="" coords="165,148,237,196"/>
 <area shape="rect" id="edge4-headlabel" href="dir_000015_000010.html" title="3" alt="" coords="174,121,184,136"/>
 <area shape="rect" id="edge1-headlabel" href="dir_000017_000001.html" title="6" alt="" coords="74,217,84,231"/>

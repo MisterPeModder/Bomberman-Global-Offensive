@@ -1,5 +1,16 @@
 var NAVTREEINDEX5 =
 {
+"classgame_1_1map_1_1cellular_1_1_rule.html#a5585e5204f1ef64a0dcdcf30239b9759":[2,0,2,2,0,1,5],
+"classgame_1_1map_1_1cellular_1_1_rule.html#a7ec6f34a013c86fa159c9c23a691fbb4":[2,0,2,2,0,1,4],
+"classgame_1_1map_1_1cellular_1_1_rule.html#a8462aec695ecad486074acb9fdca0097":[2,0,2,2,0,1,10],
+"classgame_1_1map_1_1cellular_1_1_rule.html#a85c964385bfef24e9238b4072b6000d1":[2,0,2,2,0,1,7],
+"classgame_1_1map_1_1cellular_1_1_rule.html#aae91d1e6f16e42d07611b2226d87caf8":[2,0,2,2,0,1,2],
+"classgame_1_1map_1_1cellular_1_1_rule.html#aaf9c642523a83250eebe7b4b753988d2":[2,0,2,2,0,1,1],
+"classgame_1_1map_1_1cellular_1_1_rule.html#aec7ce2595fb437ceb7dd91e648aafaff":[2,0,2,2,0,1,9],
+"classgame_1_1map_1_1cellular_1_1_rule.html#afbc4807d1e31408ef1f7b1b4a0130b38":[2,0,2,2,0,1,11],
+"classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html":[2,0,2,2,0,1,0],
+"classgame_1_1map_1_1cellular_1_1_rule_1_1_invalid_rule.html#ac387eaf1c015a85bde316242546a7a25":[2,0,2,2,0,1,0,0],
+"classgame_1_1resources_1_1_asset_map.html":[2,0,2,3,0],
 "classgame_1_1resources_1_1_asset_map.html#a0d1858e0f5d4a90224a74110c9c386a9":[2,0,2,3,0,0],
 "classgame_1_1resources_1_1_asset_map.html#a2cced29a0afda2e9000828a3bb9f2700":[2,0,2,3,0,2],
 "classgame_1_1resources_1_1_asset_map.html#a3b32cde747df2a2da88ae92a8c85259d":[2,0,2,3,0,8],
@@ -238,16 +249,5 @@ var NAVTREEINDEX5 =
 "classraylib_1_1core_1_1_cursor.html#a0739ac607fa9b79acb2d82182c7ca555":[2,0,4,0,5,1],
 "classraylib_1_1core_1_1_cursor.html#a3b3f5e446cf831b820436b5da8809a16":[2,0,4,0,5,2],
 "classraylib_1_1core_1_1_cursor.html#a449cb64157bef180271f72e9f731aa23":[2,0,4,0,5,5],
-"classraylib_1_1core_1_1_cursor.html#a89ab0f0f3a1502b7ffcc2cd77e711268":[2,0,4,0,5,3],
-"classraylib_1_1core_1_1_cursor.html#abdc1c721a1f9994bf83a4a0449dfff16":[2,0,4,0,5,4],
-"classraylib_1_1core_1_1_cursor.html#acdc268e9a78214f80acc1a725e2f90f3":[2,0,4,0,5,0],
-"classraylib_1_1core_1_1_gamepad.html":[2,0,4,0,6],
-"classraylib_1_1core_1_1_gamepad.html#a05b5ccb0e5e03cc2de4814a5c1bfd15b":[2,0,4,0,6,13],
-"classraylib_1_1core_1_1_gamepad.html#a082d07e6a7101bc3b87a9eab11e0a74c":[2,0,4,0,6,14],
-"classraylib_1_1core_1_1_gamepad.html#a0e851f349e6c3898d3b1fa0c8676df6a":[2,0,4,0,6,12],
-"classraylib_1_1core_1_1_gamepad.html#a10d3dca5346c61156142122177ea298f":[2,0,4,0,6,6],
-"classraylib_1_1core_1_1_gamepad.html#a21ed5ff42c9d1c01388299b5faba3de9":[2,0,4,0,6,5],
-"classraylib_1_1core_1_1_gamepad.html#a2d7a7dd5ab0af199ae3062dd78ccc09a":[2,0,4,0,6,17],
-"classraylib_1_1core_1_1_gamepad.html#a445c33d88a548c8e20f6823036edcbdd":[2,0,4,0,6,18],
-"classraylib_1_1core_1_1_gamepad.html#a45b1c8bd46257307362fa1a27d0b08b0":[2,0,4,0,6,3]
+"classraylib_1_1core_1_1_cursor.html#a89ab0f0f3a1502b7ffcc2cd77e711268":[2,0,4,0,5,3]
 };

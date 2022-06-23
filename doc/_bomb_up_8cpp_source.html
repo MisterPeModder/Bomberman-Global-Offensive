@@ -111,12 +111,15 @@ $(document).ready(function(){initNavTree('_bomb_up_8cpp_source.html',''); initRe
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        bombUp.<a class="code" href="structgame_1_1components_1_1_item.html#aeb30fbdcde5fddddd3af4d8cc4faabcf">duration</a> = <a class="codeRef" href="http://en.cppreference.com/w/cpp/chrono/duration/zero.html">std::chrono::milliseconds::zero</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        bombUp.<a class="code" href="structgame_1_1components_1_1_item.html#affa0261c8e45c6c0a758b2c9f089ce8e">dropRate</a> = 30;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        bombUp.<a class="code" href="structgame_1_1components_1_1_item.html#a446f2bb731e90b285ddbca510c5d6fb1">onApply</a> = [](<a class="code" href="classecs_1_1_entity.html">ecs::Entity</a> player, <a class="code" href="classecs_1_1_system_data.html">ecs::SystemData</a> data) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html">Player</a>&gt;()[player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a26bb93b71d1bac3e38c6c621d48d987c">bombLimit</a>++;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        };</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">return</span> bombUp;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <span class="comment">// namespace game::components</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">auto</span> &amp;limit = data.getStorage&lt;<a class="code" href="structgame_1_1components_1_1_player.html">Player</a>&gt;()[player.<a class="code" href="classecs_1_1_entity.html#a5bcfe12cfeda9661b6849b325041e41a">getId</a>()].<a class="code" href="structgame_1_1components_1_1_player.html#ab3c17c894d8bc8737324508b1311a19c">stats</a>.<a class="code" href="structgame_1_1components_1_1_player_1_1_stats.html#a26bb93b71d1bac3e38c6c621d48d987c">bombLimit</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (limit &lt; 9)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                limit++;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">return</span> bombUp;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <span class="comment">// namespace game::components</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="astructgame_1_1components_1_1_player_1_1_stats_html_a26bb93b71d1bac3e38c6c621d48d987c"><div class="ttname"><a href="structgame_1_1components_1_1_player_1_1_stats.html#a26bb93b71d1bac3e38c6c621d48d987c">game::components::Player::Stats::bombLimit</a></div><div class="ttdeci">size_t bombLimit</div><div class="ttdoc">Max number of bomb simulteanously placed per player.</div><div class="ttdef"><b>Definition:</b> <a href="_player_8hpp_source.html#l00048">Player.hpp:48</a></div></div>

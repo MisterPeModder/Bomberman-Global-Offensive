@@ -53,6 +53,7 @@ var hierarchy =
       [ "game::components::Living", "structgame_1_1components_1_1_living.html", null ],
       [ "game::components::Model", "structgame_1_1components_1_1_model.html", null ],
       [ "game::components::Player", "structgame_1_1components_1_1_player.html", null ],
+      [ "game::components::PlayerHud", "structgame_1_1components_1_1_player_hud.html", null ],
       [ "game::components::Position", "structgame_1_1components_1_1_position.html", null ],
       [ "game::components::Position2D", "structgame_1_1components_1_1_position2_d.html", null ],
       [ "game::components::Rectangle", "structgame_1_1components_1_1_rectangle.html", null ],
@@ -168,8 +169,8 @@ var hierarchy =
     ] ],
     [ "game::SettingsMenuScene::Section", "structgame_1_1_settings_menu_scene_1_1_section.html", null ],
     [ "game::settings::Settings", "classgame_1_1settings_1_1_settings.html", null ],
-    [ "raylib::shaders::Shader", "classraylib_1_1shaders_1_1_shader.html", null ],
     [ "raylib::core::scoped::Shader", "classraylib_1_1core_1_1scoped_1_1_shader.html", null ],
+    [ "raylib::shaders::Shader", "classraylib_1_1shaders_1_1_shader.html", null ],
     [ "raylib::core::Sound", "classraylib_1_1core_1_1_sound.html", [
       [ "game::components::Sound", "structgame_1_1components_1_1_sound.html", null ]
     ] ],
@@ -189,6 +190,7 @@ var hierarchy =
       [ "game::systems::DisableNoClip", "structgame_1_1systems_1_1_disable_no_clip.html", null ],
       [ "game::systems::DrawConsole", "structgame_1_1systems_1_1_draw_console.html", null ],
       [ "game::systems::DrawCube", "structgame_1_1systems_1_1_draw_cube.html", null ],
+      [ "game::systems::DrawFlippedTexture", "structgame_1_1systems_1_1_draw_flipped_texture.html", null ],
       [ "game::systems::DrawFpsCounter", "structgame_1_1systems_1_1_draw_fps_counter.html", null ],
       [ "game::systems::DrawingCube", "structgame_1_1systems_1_1_drawing_cube.html", null ],
       [ "game::systems::DrawModel", "structgame_1_1systems_1_1_draw_model.html", null ],
@@ -209,6 +211,7 @@ var hierarchy =
       [ "game::systems::RunAnimation", "structgame_1_1systems_1_1_run_animation.html", null ],
       [ "game::systems::SplashScreen", "structgame_1_1systems_1_1_splash_screen.html", null ],
       [ "game::systems::UpdateGameClock", "structgame_1_1systems_1_1_update_game_clock.html", null ],
+      [ "game::systems::UpdateHud", "structgame_1_1systems_1_1_update_hud.html", null ],
       [ "game::systems::UpdateItemTimer", "structgame_1_1systems_1_1_update_item_timer.html", null ],
       [ "game::systems::UpdateKeyboardInput", "structgame_1_1systems_1_1_update_keyboard_input.html", null ]
     ] ],

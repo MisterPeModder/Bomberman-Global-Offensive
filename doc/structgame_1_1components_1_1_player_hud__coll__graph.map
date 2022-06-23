@@ -1,0 +1,5 @@
+<map id="game::components::PlayerHud" name="game::components::PlayerHud">
+<area shape="rect" id="node1" title="Player HUD Component." alt="" coords="41,124,264,151"/>
+<area shape="rect" id="node2" href="$classecs_1_1_component.html" title="The base component type, all components must inherit from Component." alt="" coords="5,20,132,47"/>
+<area shape="rect" id="node3" href="/__w/Bomberman-Global-Offensive/Bomberman-Global-Offensive/doc/external/cppreference-doxygen-web.tag.xml$cpp/container/array.html" title=" " alt="" coords="156,5,317,61"/>
+</map>

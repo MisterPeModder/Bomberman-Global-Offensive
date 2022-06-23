@@ -71,6 +71,10 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
       [ "Stats", "structgame_1_1components_1_1_player_1_1_stats.html", "structgame_1_1components_1_1_player_1_1_stats" ],
       [ "Inventory", "structgame_1_1components_1_1_player_1_1_inventory.html", "structgame_1_1components_1_1_player_1_1_inventory" ]
     ] ],
+    [ "PlayerHud.cpp", "_player_hud_8cpp.html", "_player_hud_8cpp" ],
+    [ "PlayerHud.hpp", "_player_hud_8hpp.html", [
+      [ "PlayerHud", "structgame_1_1components_1_1_player_hud.html", "structgame_1_1components_1_1_player_hud" ]
+    ] ],
     [ "Position.hpp", "_position_8hpp.html", [
       [ "Position", "structgame_1_1components_1_1_position.html", "structgame_1_1components_1_1_position" ]
     ] ],
@@ -112,9 +116,7 @@ var dir_a5f74f5d785ec5e5a721a58d25c88c44 =
     [ "Textual.hpp", "_textual_8hpp.html", [
       [ "Textual", "structgame_1_1components_1_1_textual.html", "structgame_1_1components_1_1_textual" ]
     ] ],
-    [ "Texture2D.hpp", "game_2components_2_texture2_d_8hpp.html", [
-      [ "Texture2D", "structgame_1_1components_1_1_texture2_d.html", "structgame_1_1components_1_1_texture2_d" ]
-    ] ],
+    [ "Texture2D.hpp", "game_2components_2_texture2_d_8hpp.html", "game_2components_2_texture2_d_8hpp" ],
     [ "UseCheck.hpp", "_use_check_8hpp.html", [
       [ "UseCheck", "structgame_1_1components_1_1_use_check.html", "structgame_1_1components_1_1_use_check" ]
     ] ],
