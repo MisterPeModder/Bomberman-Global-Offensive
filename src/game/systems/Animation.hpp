@@ -8,10 +8,11 @@
 #ifndef GAME_SYSTEMS_ANIMATION_HPP_
 #define GAME_SYSTEMS_ANIMATION_HPP_
 
-#include <iostream>
+#include <chrono>
 #include "ecs/Storage.hpp"
 #include "ecs/System.hpp"
 #include "ecs/join.hpp"
+#include "game/AnimTimer.hpp"
 #include "game/components/Model.hpp"
 #include "game/components/Position.hpp"
 #include "game/components/RotationAngle.hpp"
@@ -29,14 +30,18 @@ namespace game
             {
                 auto models = ecs::maybe(data.getStorage<game::components::Model>());
                 auto modelRefs = ecs::maybe(data.getStorage<game::components::ModelReference>());
+                double elapsed = data.getResource<game::AnimTimer>().elapsed();
 
-                for (auto [model, modelRef, animation] :
-                    ecs::join(models, modelRefs, data.getStorage<game::components::Animation>())) {
-                    auto obj = (model) ? model : ((modelRef) ? &modelRef->object : nullptr);
+                if (elapsed >= 0.025) {
+                    for (auto [model, modelRef, animation] :
+                        ecs::join(models, modelRefs, data.getStorage<game::components::Animation>())) {
+                        auto obj = (model) ? model : ((modelRef) ? &modelRef->object : nullptr);
 
-                    if (!obj)
-                        continue;
-                    animation.updateModel(*obj);
+                        if (!obj)
+                            continue;
+                        animation.updateModel(*obj);
+                    }
+                    data.getResource<game::AnimTimer>().reset();
                 }
             }
         };

@@ -22,7 +22,10 @@ namespace game::components
         bombUp.duration = std::chrono::milliseconds::zero();
         bombUp.dropRate = 30;
         bombUp.onApply = [](ecs::Entity player, ecs::SystemData data) {
-            data.getStorage<Player>()[player.getId()].stats.bombLimit++;
+            auto &limit = data.getStorage<Player>()[player.getId()].stats.bombLimit;
+
+            if (limit < 9)
+                limit++;
             return true;
         };
         return bombUp;

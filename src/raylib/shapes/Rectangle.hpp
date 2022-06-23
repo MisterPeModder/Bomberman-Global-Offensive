@@ -93,6 +93,16 @@ namespace raylib
             /// @param lineThick Thickness of the lines (in pixels)
             void drawLines(float lineThick) const;
 
+            /// Draw a rectangle at a particular location and with a particular size, ignoring the rectangle's
+            /// position and size (and color) members
+            ///
+            /// @param position the position where the rectangle will be drawn
+            /// @param size the size of the drawn rectangle
+            /// @param lineThick outline thickness.
+            /// @param color the color the the drawn rectangle
+            static void drawLines(raylib::core::Vector2f position, raylib::core::Vector2f size, float lineThick = 2.f,
+                raylib::core::Color color = raylib::core::Color::DEFAULT_COLOR);
+
             /// Draws a rectangle with rounded edges
             ///
             /// @param roundness The roundness of the corners in the range 0.0f - 1.0f.
