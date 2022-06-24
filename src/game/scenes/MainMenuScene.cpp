@@ -78,6 +78,7 @@ namespace game
             if (pressedBtn != raylib::core::Gamepad::Button::MIDDLE_RIGHT
                 && users[game::User::UserId::User1].isKeyboard()) {
                 users[game::User::UserId::User1].setGamepadId(gamepadId);
+                dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkinSelectTexts();
                 Logger::logger.log(Logger::Severity::Information, "User 1 switched to gamepad mode.");
             } else {
                 users.connectUser(gamepadId, dynamic_cast<game::MainMenuScene &>(engine->getScene()).getUnusedSkin());
