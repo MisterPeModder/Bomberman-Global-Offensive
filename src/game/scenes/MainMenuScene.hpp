@@ -35,6 +35,7 @@ namespace game
 
         void loadPlayerTextures();
         void updateConnectedTexts();
+        void updateSkinSelectTexts();
         void updateSkins();
 
         User::USER_SKINS getUnusedSkin();
@@ -48,6 +49,7 @@ namespace game
         components::Identity::Id _animations[4];
         components::Identity::Id _connectedTexts[4];
         components::Identity::Id _skinTexts[4];
+        components::Identity::Id _skinSelectTexts[4];
         std::deque<User::USER_SKINS> _availableSkins;
     };
 } // namespace game

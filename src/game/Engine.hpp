@@ -39,7 +39,7 @@ namespace game
         /// Destructor
         ~Engine();
 
-        /// Sets the active scene and deletes the old one
+        /// Sets the waiting scene that will be used at the end of the drawFrame loop
         template <std::derived_from<IScene> S, typename... Args> void setScene(Args &&...args)
         {
             _waitingScene = std::make_unique<S>(args...);
@@ -144,9 +144,14 @@ namespace game
         /// Update all music streams
         void updateMusicStreams();
 
+        std::string_view getGamepadButtonString(raylib::core::Gamepad::Button);
+
       private:
         /// Load the settings from the settings file
         void loadSettings();
+
+        /// Fill the Keybind-ResourceString unordered map
+        void _fillGamepadButtonStrings();
 
         /// Sets the active scene and deletes the old one
         std::unique_ptr<game::IScene> _scene;
@@ -155,6 +160,7 @@ namespace game
         Users _users;
         std::unique_ptr<raylib::textures::RenderTexture2D> _renderTarget;
         std::unique_ptr<raylib::shaders::Shader> _globalShader;
+        std::unordered_map<raylib::core::Gamepad::Button, std::string_view> _gamepadButtonStrings;
 
         PreloadedMusicTracks _currentMusic;
         raylib::core::Music _mainMenuTheme;

@@ -109,6 +109,9 @@ namespace localization
             constexpr ResourceString rsMenuQuit("Quit");
             constexpr ResourceString rsNotConnected("Not connected");
             constexpr ResourceString rsConnected("Connected");
+            constexpr ResourceString rsJoinInfo("JoinInfo");
+            constexpr ResourceString rsLeaveInfo("LeaveInfo");
+            constexpr ResourceString rsChangeSkinInfo("ChangeSkinInfo");
         } // namespace menu
         namespace textures
         {

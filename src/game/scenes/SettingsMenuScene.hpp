@@ -81,7 +81,6 @@ namespace game
         void loadSection(Section section, std::function<void(const Section &)> onLoad);
         void _loadKeyboardKeybinds(const Section &section);
         void _updateActionKey(GameAction action);
-        void _fillGamepadButtonStrings();
 
         void _loadGamepadKeybinds(const Section &section);
         void _loadGamepadProfile(const Section &section, size_t id);
@@ -89,7 +88,6 @@ namespace game
 
         std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsKeyboardBindings;
         std::array<components::Identity::Id, static_cast<size_t>(GameAction::COUNT)> _actionsGamepadBindings[4];
-        std::unordered_map<raylib::core::Gamepad::Button, std::string_view> _gamepadButtonStrings;
     };
 } // namespace game
 

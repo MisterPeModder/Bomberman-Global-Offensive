@@ -210,3 +210,12 @@ msgstr "RT"
 
 msgid "SPACE"
 msgstr "ESPACE"
+
+msgid "JoinInfo"
+msgstr "Appuyer sur START pour rejoindre"
+
+msgid "LeaveInfo"
+msgstr "Appuyer sur SELECT pour quitter"
+
+msgid "ChangeSkinInfo"
+msgstr "Apparence"
