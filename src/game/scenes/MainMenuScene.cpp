@@ -366,9 +366,12 @@ namespace game
 
             if (users[id].isKeyboard()) {
                 // leftSwitchButton = engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().
-                // leftSwitchButton = engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().find(game::GameAction::PREVIOUS_ACTIVABLE));
-                // leftSwitchButton = engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::PREVIOUS_ACTIVABLE));
-                // rightSwitchButton = engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::NEXT_ACTIVABLE));
+                // leftSwitchButton =
+                // engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().find(game::GameAction::PREVIOUS_ACTIVABLE));
+                // leftSwitchButton =
+                // engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::PREVIOUS_ACTIVABLE));
+                // rightSwitchButton =
+                // engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::NEXT_ACTIVABLE));
                 leftSwitchButton = "E";
                 rightSwitchButton = "A";
             } else {
