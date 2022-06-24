@@ -870,7 +870,8 @@ namespace game
 
         for (auto iter : binds)
             if (iter.action == action && iter.input.isButton()) {
-                buttonString = _world.getResource<game::resources::EngineResource>().engine->getGamepadButtonString(iter.input.getButton());
+                buttonString = _world.getResource<game::resources::EngineResource>().engine->getGamepadButtonString(
+                    iter.input.getButton());
                 break;
             }
 
