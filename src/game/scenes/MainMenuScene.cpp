@@ -81,6 +81,7 @@ namespace game
                 users.connectUser(gamepadId, dynamic_cast<game::MainMenuScene &>(engine->getScene()).getUnusedSkin());
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateConnectedTexts();
                 dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkins();
+                dynamic_cast<game::MainMenuScene &>(engine->getScene()).updateSkinSelectTexts();
             }
         }
     };
@@ -323,6 +324,15 @@ namespace game
             text.text = localization::resources::menu::rsConnected;
             text.color = raylib::core::Color::GREEN;
         }
+
+        auto skinSelectText =
+            _world.addEntity()
+                .with<components::Position>(17 + static_cast<int>(id) * 19 + static_cast<int>(id) / 2, 78)
+                .with<components::Textual>(
+                    localization::resources::menu::rsChangeSkinInfo, 15, raylib::core::Color::WHITE)
+                .with<components::Identity>()
+                .build();
+        _skinSelectTexts[id] = _world.getStorage<components::Identity>()[skinSelectText.getId()].id;
     }
 
     void MainMenuScene::loadPlayerInterface()
@@ -342,6 +352,7 @@ namespace game
                             updateSkins();
                         };
                         updateConnectedTexts();
+                        updateSkinSelectTexts();
                         return true;
                     }
                     return false;
@@ -352,40 +363,49 @@ namespace game
     void MainMenuScene::setupWorld()
     {
         updateConnectedTexts();
+        updateSkinSelectTexts();
 
-        auto engine = _world.getResource<game::resources::EngineResource>().engine;
-        auto &users = engine->getUsers();
-        for (size_t i = 0; i < 4; i++) {
-            User::UserId id = static_cast<User::UserId>(i);
-            if (!users[id].isAvailable())
-                continue;
+        // auto engine = _world.getResource<game::resources::EngineResource>().engine;
+        // auto &users = engine->getUsers();
+        for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+            // User::UserId id = static_cast<User::UserId>(i);
+            // if (!users[id].isAvailable())
+            // continue;
 
-            std::string switchSkinString;
-            std::string leftSwitchButton;
-            std::string rightSwitchButton;
+            // std::string switchSkinString;
+            // std::string leftSwitchButton;
+            // std::string rightSwitchButton;
 
-            if (users[id].isKeyboard()) {
-                // leftSwitchButton = engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().
-                // leftSwitchButton =
-                // engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().find(game::GameAction::PREVIOUS_ACTIVABLE));
-                // leftSwitchButton =
-                // engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::PREVIOUS_ACTIVABLE));
-                // rightSwitchButton =
-                // engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::NEXT_ACTIVABLE));
-                leftSwitchButton = "E";
-                rightSwitchButton = "A";
-            } else {
-                leftSwitchButton = localization::resources::keybinds::controller::rsBumperLeft;
-                rightSwitchButton = localization::resources::keybinds::controller::rsBumperRight;
-            }
-            switchSkinString = leftSwitchButton + " < " + std::string(localization::resources::menu::rsChangeSkinInfo)
-                + " > " + rightSwitchButton;
+            // if (users[id].isKeyboard()) {
+            //     // leftSwitchButton = engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().
+            //     // leftSwitchButton =
+            //     //
+            //     engine->getGamepadButtonString(users[id].getKeybinds().getGamepadBindings().find(game::GameAction::PREVIOUS_ACTIVABLE));
+            //     // leftSwitchButton =
+            //     // engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::PREVIOUS_ACTIVABLE));
+            //     // rightSwitchButton =
+            //     // engine->getGamepadButtonString(users[id].getActionValue(game::GameAction::NEXT_ACTIVABLE));
+            //     leftSwitchButton = "E";
+            //     rightSwitchButton = "A";
+            // } else {
+            //     auto &binds = _world.getResource<game::resources::EngineResource>()
+            //                       .engine->getUsers()[static_cast<game::User::UserId>(id)]
+            //                       .getKeybinds()
+            //                       .getGamepadBindings();
 
-            _world.addEntity()
-                .with<components::Position>(17 + static_cast<int>(i) * 19 + static_cast<int>(i) / 2, 78)
-                .with<components::Textual>(switchSkinString, 15, raylib::core::Color::WHITE)
-                // .with<components::Identity>()
-                .build();
+            //     for (auto iter : binds)
+            //         if (iter.action == GameAction::PREVIOUS_ACTIVABLE && iter.input.isButton()) {
+            //             leftSwitchButton =
+            //                 _world.getResource<game::resources::EngineResource>().engine->getGamepadButtonString(
+            //                     iter.input.getButton());
+            //             break;
+            //         }
+
+            //     rightSwitchButton = localization::resources::keybinds::controller::rsBumperRight;
+            // }
+            // if (users[id].isAvailable())
+            //     switchSkinString = leftSwitchButton + " < "
+            //         + std::string(localization::resources::menu::rsChangeSkinInfo) + " > " + rightSwitchButton;
         }
     }
 
@@ -407,6 +427,81 @@ namespace game
                 } else {
                     text.text = localization::resources::menu::rsNotConnected;
                     text.color = raylib::core::Color::RED;
+                }
+            }
+        }
+    }
+
+    void MainMenuScene::updateSkinSelectTexts()
+    {
+        auto engine = _world.getResource<game::resources::EngineResource>().engine;
+        auto &users = engine->getUsers();
+
+        for (auto [text, id] :
+            ecs::join(_world.getStorage<components::Textual>(), _world.getStorage<components::Identity>())) {
+            for (size_t i = 0; i < static_cast<size_t>(User::UserId::UserCount); i++) {
+                        if (_skinSelectTexts[i] != id.id) {
+                            continue;
+                        }
+                User::UserId userId = static_cast<User::UserId>(i);
+
+                if (!users[userId].isAvailable()) {
+                    text.text = "";
+                } else if (users[userId].isKeyboard()) {
+                    std::stringstream leftSwitchButton;
+                    std::stringstream rightSwitchButton;
+                    auto &binds = _world.getResource<game::resources::EngineResource>()
+                                      .engine->getUsers()[game::User::UserId::User1]
+                                      .getKeybinds()
+                                      .getKeyboardBindings();
+
+                    for (auto iter : binds)
+                        if (iter.action == GameAction::PREVIOUS_ACTIVABLE) {
+                            if (static_cast<char>(iter.key) == ' ')
+                                leftSwitchButton << localization::resources::settings::rsSpace;
+                            else
+                                leftSwitchButton << static_cast<char>(iter.key);
+                            break;
+                        }
+
+                    for (auto iter : binds)
+                        if (iter.action == GameAction::NEXT_ACTIVABLE) {
+                            if (static_cast<char>(iter.key) == ' ')
+                                rightSwitchButton << localization::resources::settings::rsSpace;
+                            else
+                                rightSwitchButton << static_cast<char>(iter.key);
+                            break;
+                        }
+
+                    text.text = leftSwitchButton.str() + " < "
+                        + std::string(localization::resources::menu::rsChangeSkinInfo) + " > "
+                        + rightSwitchButton.str();
+                } else {
+                    std::string leftSwitchButton;
+                    std::string rightSwitchButton;
+                    auto &binds = _world.getResource<game::resources::EngineResource>()
+                                      .engine->getUsers()[userId]
+                                      .getKeybinds()
+                                      .getGamepadBindings();
+
+                    for (auto iter : binds)
+                        if (iter.action == GameAction::PREVIOUS_ACTIVABLE && iter.input.isButton()) {
+                            leftSwitchButton =
+                                _world.getResource<game::resources::EngineResource>().engine->getGamepadButtonString(
+                                    iter.input.getButton());
+                            break;
+                        }
+
+                    for (auto iter : binds)
+                        if (iter.action == GameAction::NEXT_ACTIVABLE && iter.input.isButton()) {
+                            rightSwitchButton =
+                                _world.getResource<game::resources::EngineResource>().engine->getGamepadButtonString(
+                                    iter.input.getButton());
+                            break;
+                        }
+
+                    text.text = leftSwitchButton + " < " + std::string(localization::resources::menu::rsChangeSkinInfo)
+                        + " > " + rightSwitchButton;
                 }
             }
         }
