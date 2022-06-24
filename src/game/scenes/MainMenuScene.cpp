@@ -5,6 +5,8 @@
 ** MainMenuScene
 */
 
+#include <sstream>
+
 #include "MainMenuScene.hpp"
 
 #include "ecs/Storage.hpp"
